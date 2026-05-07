@@ -11,6 +11,11 @@ This page collects homework files for **English Coding** Minecraft lessons. Down
 
 ## 📚 코스 / Courses
 
+### 🏗️ [000 — Builder Basics / 빌더 기초](./000-builder-basics)
+
+8주 첫 코스. 에이전트 이동부터 다리·농장·우물·집까지 직접 만듭니다. 코딩 경험 없어도 OK.
+8-week starter course. From agent movement to bridges, farms, wells, and houses. No coding experience needed.
+
 ### 🔺 [001 — Pyramid Problems / 피라미드 문제](./001-pyramid-problems)
 
 8주 코스. 첫 피라미드부터 다이아몬드 구조물까지 직접 코드로 만듭니다.
