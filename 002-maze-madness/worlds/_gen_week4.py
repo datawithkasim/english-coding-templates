@@ -1,20 +1,20 @@
-"""W4 — OR Conditions: 15 mazes.
+"""W4 — OR Conditions with split paths: 10 mazes.
 
-  M1-5  introduce 5 OR rules progressively (one new OR per maze, accumulating).
-  M6-10 mixed-rule variants — same OR detections, different actions.
-  M11-15 combined ORs + singles + boss tier.
+At each split point:
+  - Two parallel walkable corridors fork left and right
+  - Both converge at the same cell ahead
+  - One redstone placed on either LEFT or RIGHT side (alternates per move)
 
-5 standard ORs (each = "EITHER signal triggers SAME action"):
-  OR a: RS LEFT or RIGHT     -> move FORWARD 2
-  OR b: RS UP or DOWN        -> turn 180, move FORWARD 1
-  OR c: RS LEFT or DOWN      -> move UP 2
-  OR d: RS RIGHT or UP       -> move DOWN 2
-  OR e: RS FORWARD or DOWN   -> turn LEFT, move FORWARD 2
+OR rule:
+  RS LEFT or RS RIGHT  ->  agent.move(FORWARD, 4)
+  (agent walks straight through; the forks are visible alternatives the
+   player can also walk; either way reaches the same convergence cell)
 
-For each OR move the generator alternates which detection direction gets the
-redstone (so the same maze tests both sides, validating student's OR usage).
+DSL: F (forward) + a (split point, OR-LR).
+Plus L/R for turn variations in later mazes.
 
-DSL: F + a/b/c/d/e (OR moves) + L/R/U/D (singles for filler).
+Each maze has an entry corridor of 4 cells leading INTO the start (so the
+start is at the end of an approach path, not in the middle of a wall).
 """
 import pathlib
 from _maze_lib import (DELTA, FLOOR_PALETTE, SPAWN_BLOCK,
@@ -23,190 +23,144 @@ from _maze_lib import (DELTA, FLOOR_PALETTE, SPAWN_BLOCK,
                        pillar_for_start, write_builder)
 
 
-def detect_position(direction, pos, f):
-    if direction == "LEFT":    return step(pos, turn_left(f))
-    if direction == "RIGHT":   return step(pos, turn_right(f))
-    if direction == "UP":      return (pos[0], pos[1] + 1, pos[2])
-    if direction == "DOWN":    return (pos[0], pos[1] - 1, pos[2])
-    if direction == "FORWARD": return step(pos, f)
-    raise ValueError(direction)
+SPLIT_LEN = 3   # parallel fork length (cells beyond pos before convergence)
+SPLIT_TOTAL = SPLIT_LEN + 1   # forward steps action takes through main path
+ENTRY_LEN = 4   # cells of approach corridor before maze start
 
 
-# ---- Standard OR rule set ----
-OR_STD = {
-    "a": {"dirs": ["LEFT", "RIGHT"],    "action": [("forward", 2)],
-          "desc": "L|R -> fwd 2"},
-    "b": {"dirs": ["UP", "DOWN"],       "action": [("turn_right",), ("turn_right",), ("forward", 1)],
-          "desc": "U|D -> 180 + fwd 1"},
-    "c": {"dirs": ["LEFT", "DOWN"],     "action": [("up", 2)],
-          "desc": "L|D -> up 2"},
-    "d": {"dirs": ["RIGHT", "UP"],      "action": [("down", 2)],
-          "desc": "R|U -> down 2"},
-    "e": {"dirs": ["FORWARD", "DOWN"],  "action": [("turn_left",), ("forward", 2)],
-          "desc": "F|D -> turn left + fwd 2"},
-}
+def trace(moves):
+    """Trace path. 'a' = LR split section. Returns
+    (agent_path, fork_extras, redstones, end, end_facing)."""
+    pos = (0, 0, 0); f = "+X"
+    agent_path = [pos]
+    fork_extras = []
+    redstones = []
+    a_count = 0
 
-# ---- Variant OR rule sets (mixed-rule mazes) ----
-OR_V1_BIGGER_JUMPS = {
-    "a": {"dirs": ["LEFT", "RIGHT"],    "action": [("forward", 4)],
-          "desc": "L|R -> fwd 4 (V1 bigger)"},
-    "b": {"dirs": ["UP", "DOWN"],       "action": [("turn_right",), ("turn_right",), ("forward", 3)],
-          "desc": "U|D -> 180 + fwd 3 (V1 bigger)"},
-    "c": {"dirs": ["LEFT", "DOWN"],     "action": [("up", 4)],
-          "desc": "L|D -> up 4 (V1 bigger)"},
-    "d": {"dirs": ["RIGHT", "UP"],      "action": [("down", 4)],
-          "desc": "R|U -> down 4 (V1 bigger)"},
-    "e": {"dirs": ["FORWARD", "DOWN"],  "action": [("turn_left",), ("forward", 4)],
-          "desc": "F|D -> turn left + fwd 4 (V1 bigger)"},
-}
-OR_V2_INVERTED = {
-    "a": {"dirs": ["LEFT", "RIGHT"],    "action": [("turn_right",), ("turn_right",), ("forward", 2)],
-          "desc": "L|R -> 180 + fwd 2 (V2 reverse)"},
-    "b": {"dirs": ["UP", "DOWN"],       "action": [("forward", 2)],
-          "desc": "U|D -> fwd 2 (V2 reverse)"},
-    "c": {"dirs": ["LEFT", "DOWN"],     "action": [("down", 2)],
-          "desc": "L|D -> DOWN 2 (V2 reverse)"},
-    "d": {"dirs": ["RIGHT", "UP"],      "action": [("up", 2)],
-          "desc": "R|U -> UP 2 (V2 reverse)"},
-    "e": {"dirs": ["FORWARD", "DOWN"],  "action": [("turn_right",), ("forward", 2)],
-          "desc": "F|D -> turn RIGHT + fwd 2 (V2 reverse)"},
-}
-
-
-def apply_action(action_seq, pos, f, path):
-    for op in action_seq:
-        kind = op[0]
-        if kind == "turn_right":
-            f = turn_right(f)
-        elif kind == "turn_left":
-            f = turn_left(f)
-        elif kind == "forward":
-            for _ in range(op[1]):
-                pos = step(pos, f); path.append(pos)
-        elif kind == "up":
-            for _ in range(op[1]):
-                pos = (pos[0], pos[1] + 1, pos[2]); path.append(pos)
-        elif kind == "down":
-            for _ in range(op[1]):
-                pos = (pos[0], pos[1] - 1, pos[2]); path.append(pos)
-        elif kind == "back":
-            back_f = turn_right(turn_right(f))
-            for _ in range(op[1]):
-                pos = step(pos, back_f); path.append(pos)
-    return pos, f
-
-
-def trace(moves, or_set):
-    pos = (0, 0, 0); f = "+X"; path = [pos]; redstones = []
-    or_counters = {}
     for m in moves:
         if m == "F":
-            pos = step(pos, f); path.append(pos)
+            pos = step(pos, f); agent_path.append(pos)
         elif m == "L":
             redstones.append(step(pos, turn_right(f)))
-            f = turn_left(f); pos = step(pos, f); path.append(pos)
+            f = turn_left(f); pos = step(pos, f); agent_path.append(pos)
         elif m == "R":
             redstones.append(step(pos, turn_left(f)))
-            f = turn_right(f); pos = step(pos, f); path.append(pos)
-        elif m == "U":
-            redstones.append((pos[0], pos[1] - 1, pos[2]))
-            pos = (pos[0], pos[1] + 1, pos[2]); path.append(pos)
-        elif m == "D":
-            redstones.append((pos[0], pos[1] + 1, pos[2]))
-            pos = (pos[0], pos[1] - 1, pos[2]); path.append(pos)
-        elif m in or_set:
-            rule = or_set[m]
-            n = or_counters.get(m, 0)
-            direction = rule["dirs"][n % 2]   # alternate which side gets RS
-            or_counters[m] = n + 1
-            redstones.append(detect_position(direction, pos, f))
-            pos, f = apply_action(rule["action"], pos, f, path)
-    return path, redstones, pos, f
+            f = turn_right(f); pos = step(pos, f); agent_path.append(pos)
+        elif m == "a":
+            # Place RS on LEFT or RIGHT (alternating)
+            if a_count % 2 == 0:
+                rs_pos = step(pos, turn_left(f))
+            else:
+                rs_pos = step(pos, turn_right(f))
+            a_count += 1
+            redstones.append(rs_pos)
+
+            left_dir = turn_left(f)
+            right_dir = turn_right(f)
+
+            # Left fork: turn_left side, parallel SPLIT_LEN cells, then back
+            for i in range(SPLIT_LEN + 1):
+                cx = pos[0] + DELTA[f][0] * i + DELTA[left_dir][0]
+                cy = pos[1]
+                cz = pos[2] + DELTA[f][2] * i + DELTA[left_dir][2]
+                fork_extras.append((cx, cy, cz))
+
+            # Right fork: turn_right side, parallel SPLIT_LEN cells
+            for i in range(SPLIT_LEN + 1):
+                cx = pos[0] + DELTA[f][0] * i + DELTA[right_dir][0]
+                cy = pos[1]
+                cz = pos[2] + DELTA[f][2] * i + DELTA[right_dir][2]
+                fork_extras.append((cx, cy, cz))
+
+            # Agent's actual path: forward SPLIT_TOTAL cells (main path)
+            for _ in range(SPLIT_TOTAL):
+                pos = step(pos, f); agent_path.append(pos)
+
+    return agent_path, fork_extras, redstones, pos, f
 
 
-# (num, name, moves, or_set, label)
+# (num, name, moves)
 MAZES = [
-    # M1-5: progressive intro of 5 ORs (standard rules)
-    (1,  "OR a only (L|R)",          "FFaFFFLFFRFFF",                OR_STD, "STD a only"),
-    (2,  "ORs a + b",                 "FFaFFbFFFLFFRFFF",             OR_STD, "STD a+b"),
-    (3,  "ORs a + b + c",             "FFaFFbFFcFFFLFFRFFF",          OR_STD, "STD a+b+c"),
-    (4,  "ORs a..d",                  "FFaFFbFFcFFdFFLFFRFFF",        OR_STD, "STD a-d"),
-    (5,  "All 5 ORs",                 "FFaFFbFFcFFdFFeFFLFFRFFF",     OR_STD, "STD a-e"),
-
-    # M6-10: variant rules
-    (6,  "Variant: bigger jumps (a)", "FFaFFFaFFFLFFRFFF",            OR_V1_BIGGER_JUMPS, "V1 bigger jumps a"),
-    (7,  "Variant: bigger (a+b+c)",   "FFaFFbFFcFFFLFFRFFF",          OR_V1_BIGGER_JUMPS, "V1 bigger jumps a+b+c"),
-    (8,  "Variant: inverted (a+b)",   "FFaFFbFFLFFRFFF",              OR_V2_INVERTED,     "V2 inverted a+b"),
-    (9,  "Variant: inverted (c+d)",   "FFcFFdFFLFFRFFF",              OR_V2_INVERTED,     "V2 inverted c+d"),
-    (10, "Variant: inverted all",     "FFaFFbFFcFFdFFeFFLFFRFFF",     OR_V2_INVERTED,     "V2 inverted a-e"),
-
-    # M11-15: combined ORs + singles + boss tier
-    (11, "Mix: ORs + L/R turns",      "FFaFFRFFbFFLFFcFFRFFF",        OR_STD, "STD mix ORs + turns"),
-    (12, "Mix: ORs + U/D",            "FFaFFUFFcFFDFFbFFRFFF",        OR_STD, "STD mix ORs + vertical"),
-    (13, "Long mix",                  "FFaFFRFFbFFLFFcFFUFFdFFDFFFLFFRFFF", OR_STD, "STD long mix"),
-    (14, "Variant boss (V1)",         "FFaFFbFFcFFdFFeFFRFFLFFF",     OR_V1_BIGGER_JUMPS, "V1 boss"),
-    (15, "Final boss (STD all)",      "FFaFFRFFbFFLFFcFFUFFdFFDFFeFFRFFLFFF", OR_STD, "STD final boss"),
+    (1,  "Single split (intro)",          "FFaFFF"),
+    (2,  "Single split + L turn",         "FFaFFLFFF"),
+    (3,  "Two splits",                    "FFaFFaFFF"),
+    (4,  "Splits + R turn",               "FFaFFRFFaFFF"),
+    (5,  "Three splits",                  "FFaFFaFFaFFF"),
+    (6,  "Splits + L+R turns",            "FFaFFLFFaFFRFFaFFF"),
+    (7,  "Four splits",                   "FFaFFaFFaFFaFFF"),
+    (8,  "Long mix splits + turns",       "FFaFFRFFaFFLFFaFFRFFaFFF"),
+    (9,  "Five splits weave",             "FFaFFLFFaFFRFFaFFLFFaFFRFFaFFF"),
+    (10, "Boss: 6 splits + many turns",   "FFaFFLFFaFFRFFaFFRFFaFFLFFaFFRFFaFFF"),
 ]
 
 
-# Grid: 2 rows x 8 cols (M1-8 row 0, M9-15 row 1)
+# Grid: 1 row x 10 cols, cols spaced wider for split width
 ROW_SPACING_X = 60
-COL_SPACING_Z = 50
+COL_SPACING_Z = 60   # wider since splits add z-extent +/-1
 
 
 def grid_position(num):
     idx = num - 1
-    row = idx // 8
-    col = idx % 8
-    x_off = 10 + row * ROW_SPACING_X
+    row = idx // 10
+    col = idx % 10
+    x_off = 10 + ENTRY_LEN + row * ROW_SPACING_X   # leave room for entry corridor
     z_off = -col * COL_SPACING_Z
     return x_off, z_off
 
 
-HEADER = '''# Maze Madness — Week 4: OR Conditions (15 mazes)
-# M1-5: introduce 5 OR rules progressively.
-# M6-10: mixed-rule variants (same OR detections, different actions).
-# M11-15: combined ORs + singles + boss.
+HEADER = '''# Maze Madness — Week 4: OR Conditions with Split Paths (10 mazes)
+# Each split point shows TWO parallel walkable forks converging back to main.
+# Agent uses OR rule to decide same action regardless of which side has RS.
 #
-# Standard ORs (M1-5, M11-13, M15):
-#   a: RS LEFT or RIGHT     -> move FORWARD 2
-#   b: RS UP or DOWN        -> turn 180, move FORWARD 1
-#   c: RS LEFT or DOWN      -> move UP 2
-#   d: RS RIGHT or UP       -> move DOWN 2
-#   e: RS FORWARD or DOWN   -> turn LEFT, move FORWARD 2
+# OR rule:
+#   if agent.detect_block(REDSTONE_BLOCK, LEFT) or agent.detect_block(REDSTONE_BLOCK, RIGHT):
+#       agent.move(FORWARD, 4)
 #
-# Each maze chat-prints its rule when built so student knows which to use.
-# Stand facing east (+X). Chat: build1 / m1..m15 / clear.
-# Grid: 2 rows x 8 cols (M1-8 row 0 x=10, M9-15 row 1 x=70).
+# Each maze starts at the end of a 4-cell entry corridor (approach path
+# behind the GLOWSTONE start pillar). Walk down the corridor onto the lime
+# spawn block, run code, and the agent solves the maze.
+#
+# Stand facing east (+X). Chat: build1 / m1..m10 / clear.
 
 
 '''
 
 
-def build_maze_body(num, name, moves, or_set, label):
+def build_maze_body(num, name, moves):
     x_off, z_off = grid_position(num)
-    path, redstones, end, end_f = trace(moves, or_set)
-    path = [(x + x_off, y, z + z_off) for (x, y, z) in path]
+    agent_path, fork_extras, redstones, end, end_f = trace(moves)
+    agent_path = [(x + x_off, y, z + z_off) for (x, y, z) in agent_path]
+    fork_extras = [(x + x_off, y, z + z_off) for (x, y, z) in fork_extras]
     redstones = [(x + x_off, y, z + z_off) for (x, y, z) in redstones]
     end = (end[0] + x_off, end[1], end[2] + z_off)
     dx, dy, dz = DELTA[end_f]
     diamond = (end[0] + dx, end[1] + dy, end[2] + dz)
 
-    path_set = set(path)
+    start = agent_path[0]
+
+    # Entry corridor: ENTRY_LEN cells in -X direction behind start
+    entry_cells = []
+    for i in range(1, ENTRY_LEN + 1):
+        entry_cells.append((start[0] - i, start[1], start[2]))
+
+    # Combined path set for geometry (all walkable air cells)
+    path_set = set(agent_path) | set(fork_extras) | set(entry_cells)
     redstone_set = set(redstones)
     floor_set = floor_for_path(path_set, [redstone_set])
     wall_set = wall_set_for_path(path_set, [redstone_set])
     wall_set.discard(diamond)
-    start = path[0]
-    open_entry(wall_set, start)
+    # Open behind entry corridor's far end so player can step in
+    entry_far = (start[0] - ENTRY_LEN, start[1], start[2])
+    for hy in [0, 1]:
+        wall_set.discard((entry_far[0] - 1, entry_far[1] + hy, entry_far[2]))
+
     spawn = (start[0], start[1] - 1, start[2])
     pillar = pillar_for_start(start)
     floor_block = FLOOR_PALETTE[(num - 1) % 15]
 
     lines = [
         f"# M{num} - {name}",
-        f"# Rule: {label}",
-        f"# {len(redstones)} redstones, {len(path_set)} unique path cells",
+        f"# Splits: {moves.count('a')}, redstones: {len(redstones)}, agent path: {len(agent_path)}",
         f"def build_maze_{num}():",
     ]
     for p in sorted(path_set):
@@ -221,24 +175,24 @@ def build_maze_body(num, name, moves, or_set, label):
     for p in pillar:
         lines.append(f"    blocks.place(GLOWSTONE, pos({p[0]}, {p[1]}, {p[2]}))")
     lines.append(f"    blocks.place(DIAMOND_BLOCK, pos({diamond[0]}, {diamond[1]}, {diamond[2]}))")
-    safe_label = label.replace('"', "'")
-    lines.append(f'    player.say("M{num}: {safe_label}")')
+    lines.append(f'    player.say("M{num}: OR L|R -> forward 4")')
     return "\n".join(lines) + "\n\n"
 
 
 def main():
     here = pathlib.Path(__file__).parent
-    bodies = [(num, build_maze_body(num, name, moves, or_set, label))
-              for (num, name, moves, or_set, label) in MAZES]
+    bodies = [(num, build_maze_body(num, name, moves))
+              for (num, name, moves) in MAZES]
     out = write_builder(here, 4, HEADER, bodies,
-                        ((2, -10, -420), (140, 25, 30)), len(MAZES))
+                        ((2, -10, -620), (90, 25, 30)), len(MAZES))
     print(f"Wrote {out} ({out.stat().st_size} bytes)")
 
     print("\nMaze summary:")
-    for (num, name, moves, or_set, label) in MAZES:
-        path, redstones, _, _ = trace(moves, or_set)
+    for (num, name, moves) in MAZES:
+        ap, fk, rs, _, _ = trace(moves)
         x_off, z_off = grid_position(num)
-        print(f"  M{num:2d} grid({x_off:3d},{z_off:5d})  {name:30s}  rs={len(redstones):2d}  path={len(path):3d}")
+        splits = moves.count("a")
+        print(f"  M{num:2d} grid({x_off:3d},{z_off:5d})  {name:35s}  splits={splits}  rs={len(rs)}  agent_path={len(ap)}  fork_extras={len(fk)}")
 
 
 if __name__ == "__main__":

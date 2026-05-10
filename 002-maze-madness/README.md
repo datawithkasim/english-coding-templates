@@ -18,7 +18,7 @@ You can download each week's files directly from the table below.
 | 1 | 단일 신호 / Singles (L+R+U+D) | 4가지 단일 신호 (15미로) / 4 single signals (15 mazes) | *준비 중* | *준비 중* | *준비 중* | *준비 중* |
 | 2 | 규칙 변형 / Mixed Rules | 매 미로마다 다른 규칙 (15미로) / Different rule per maze (15) | *준비 중* | *준비 중* | *준비 중* | *준비 중* |
 | 3 | AND 조건 / AND Conditions | 5 ANDs (점진 도입 + 변형) / 5 ANDs progressive + variants (10 mazes) | *준비 중* | *준비 중* | *준비 중* | *준비 중* |
-| 4 | OR 조건 / OR Conditions | 5 ORs (점진 + 변형 + 종합) / 5 ORs progressive + variants + boss (15 mazes) | *준비 중* | *준비 중* | *준비 중* | *준비 중* |
+| 4 | OR 조건 / OR Conditions | 분기 경로 (10미로) / Split paths converging at goal (10 mazes) | *준비 중* | *준비 중* | *준비 중* | *준비 중* |
 | 5 | 레드스톤 도어 / Iron Door | 막힌 길 우회 / Route around blocked path | *준비 중* | *준비 중* | *준비 중* | *준비 중* |
 | 6 | 레버 조작 / Lever Interaction | 레버 작동 후 통과 / Interact then pass | *준비 중* | *준비 중* | *준비 중* | *준비 중* |
 | 7 | 다중 레버 / Multi-Lever | 레버 순서대로 / Multiple levers in sequence | *준비 중* | *준비 중* | *준비 중* | *준비 중* |
