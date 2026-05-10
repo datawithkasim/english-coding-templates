@@ -255,10 +255,10 @@ def build_py(geoms):
     body += 'player.on_chat("build1", on_chat_build_all)\n\n\n'
 
     for (num, _, _, _), _ in geoms:
-        body += f"def on_chat_m{num}(): build_maze_{num}()\n"
+        body += f"def on_chat_m{num}():\n    build_maze_{num}()\n"
         body += f'player.on_chat("m{num}", on_chat_m{num})\n\n'
 
-    body += "def on_chat_clr(): clear_zone()\n"
+    body += "def on_chat_clr():\n    clear_zone()\n"
     body += 'player.on_chat("clear", on_chat_clr)\n'
     return body
 

@@ -1545,50 +1545,66 @@ def on_chat_build_all():
 player.on_chat("build1", on_chat_build_all)
 
 
-def on_chat_m1(): build_maze_1()
+def on_chat_m1():
+    build_maze_1()
 player.on_chat("m1", on_chat_m1)
 
-def on_chat_m2(): build_maze_2()
+def on_chat_m2():
+    build_maze_2()
 player.on_chat("m2", on_chat_m2)
 
-def on_chat_m3(): build_maze_3()
+def on_chat_m3():
+    build_maze_3()
 player.on_chat("m3", on_chat_m3)
 
-def on_chat_m4(): build_maze_4()
+def on_chat_m4():
+    build_maze_4()
 player.on_chat("m4", on_chat_m4)
 
-def on_chat_m5(): build_maze_5()
+def on_chat_m5():
+    build_maze_5()
 player.on_chat("m5", on_chat_m5)
 
-def on_chat_m6(): build_maze_6()
+def on_chat_m6():
+    build_maze_6()
 player.on_chat("m6", on_chat_m6)
 
-def on_chat_m7(): build_maze_7()
+def on_chat_m7():
+    build_maze_7()
 player.on_chat("m7", on_chat_m7)
 
-def on_chat_m8(): build_maze_8()
+def on_chat_m8():
+    build_maze_8()
 player.on_chat("m8", on_chat_m8)
 
-def on_chat_m9(): build_maze_9()
+def on_chat_m9():
+    build_maze_9()
 player.on_chat("m9", on_chat_m9)
 
-def on_chat_m10(): build_maze_10()
+def on_chat_m10():
+    build_maze_10()
 player.on_chat("m10", on_chat_m10)
 
-def on_chat_m11(): build_maze_11()
+def on_chat_m11():
+    build_maze_11()
 player.on_chat("m11", on_chat_m11)
 
-def on_chat_m12(): build_maze_12()
+def on_chat_m12():
+    build_maze_12()
 player.on_chat("m12", on_chat_m12)
 
-def on_chat_m13(): build_maze_13()
+def on_chat_m13():
+    build_maze_13()
 player.on_chat("m13", on_chat_m13)
 
-def on_chat_m14(): build_maze_14()
+def on_chat_m14():
+    build_maze_14()
 player.on_chat("m14", on_chat_m14)
 
-def on_chat_m15(): build_maze_15()
+def on_chat_m15():
+    build_maze_15()
 player.on_chat("m15", on_chat_m15)
 
-def on_chat_clr(): clear_zone()
+def on_chat_clr():
+    clear_zone()
 player.on_chat("clear", on_chat_clr)
