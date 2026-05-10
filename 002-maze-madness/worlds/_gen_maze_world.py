@@ -378,22 +378,11 @@ def main():
     py_src = build_py(geoms)
     ts_src = build_ts(geoms)
 
-    # Emit both week-1 and week-2 — same world serves both weeks
-    # (W1 = while loops to wall, W2 = turning at walls; same maze geometry)
-    for week in (1, 2):
-        py_out = here / f"_builder_week-{week}.py"
-        py_out.write_text(py_src, encoding="utf-8")
-        print(f"Wrote {py_out} ({py_out.stat().st_size} bytes)")
-
-        mkcd_out = here.parent / "blocks" / f"week-{week}.mkcd"
-        mkcd_out.parent.mkdir(parents=True, exist_ok=True)
-        with zipfile.ZipFile(mkcd_out, "w", zipfile.ZIP_DEFLATED) as z:
-            z.writestr("pxt.json", json.dumps(PXT_JSON, indent=2))
-            z.writestr("main.py", py_src)
-            z.writestr("main.ts", ts_src)
-            z.writestr("main.blocks", MAIN_BLOCKS)
-            z.writestr("README.md", README_MD)
-        print(f"Wrote {mkcd_out} ({mkcd_out.stat().st_size} bytes)")
+    # One paste-into-MakeCode .py file shared by W1 + W2.
+    # Use it to build mazes inside MC Edu, then export world as week1-2.mcworld.
+    py_out = here / "_builder_week1-2.py"
+    py_out.write_text(py_src, encoding="utf-8")
+    print(f"Wrote {py_out} ({py_out.stat().st_size} bytes)")
 
     print("\nMaze summary:")
     for (num, name, moves, z_off), geom in geoms:

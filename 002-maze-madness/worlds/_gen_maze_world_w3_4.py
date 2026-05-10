@@ -424,20 +424,9 @@ def main():
     py_src = build_py(geoms)
     ts_src = build_ts(geoms)
 
-    for week in (3, 4):
-        py_out = here / f"_builder_week-{week}.py"
-        py_out.write_text(py_src, encoding="utf-8")
-        print(f"Wrote {py_out} ({py_out.stat().st_size} bytes)")
-
-        mkcd_out = here.parent / "blocks" / f"week-{week}.mkcd"
-        mkcd_out.parent.mkdir(parents=True, exist_ok=True)
-        with zipfile.ZipFile(mkcd_out, "w", zipfile.ZIP_DEFLATED) as z:
-            z.writestr("pxt.json", json.dumps(PXT_JSON, indent=2))
-            z.writestr("main.py", py_src)
-            z.writestr("main.ts", ts_src)
-            z.writestr("main.blocks", MAIN_BLOCKS)
-            z.writestr("README.md", README_MD)
-        print(f"Wrote {mkcd_out} ({mkcd_out.stat().st_size} bytes)")
+    py_out = here / "_builder_week3-4.py"
+    py_out.write_text(py_src, encoding="utf-8")
+    print(f"Wrote {py_out} ({py_out.stat().st_size} bytes)")
 
     print("\nMaze summary:")
     for (num, name, moves, z_off), geom in geoms:
