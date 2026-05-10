@@ -20,55 +20,75 @@ from _maze_lib import (DELTA, X_OFFSET, FLOOR_PALETTE, SPAWN_BLOCK,
                        wall_set_for_path, floor_for_path, open_entry,
                        pillar_for_start)
 
+# Grid layout: 4 rows (forward +X) x 10 cols (left -Z from player facing east).
+# Row spacing = 50 in X, col spacing = 40 in Z (negative direction = left).
+ROW_SPACING_X = 50
+COL_SPACING_Z = 40
+GRID_X_BASE = 10  # first row at x=10 (10 blocks east of player)
+
+
+def grid_position(num):
+    """Return (x_offset, z_offset) for maze 1..35 in 4x10 grid."""
+    idx = num - 1
+    row = idx // 10           # 0..3
+    col = idx % 10            # 0..9
+    x_off = GRID_X_BASE + row * ROW_SPACING_X
+    z_off = -col * COL_SPACING_Z  # mazes spread to player's LEFT
+    return x_off, z_off
+
+
+# (num, name, moves) — z/x derived from grid_position(num)
 MAZES = [
     # M1-4 — simple L/R only
-    (1,  "L turn intro",            "FFLFFF",                                            0),
-    (2,  "R turn intro",            "FFRFFF",                                            20),
-    (3,  "L then R",                "FFLFFRFFF",                                         40),
-    (4,  "R then L",                "FFRFFLFFF",                                         65),
+    (1,  "L turn intro",            "FFLFFF"),
+    (2,  "R turn intro",            "FFRFFF"),
+    (3,  "L then R",                "FFLFFRFFF"),
+    (4,  "R then L",                "FFRFFLFFF"),
 
     # M5-8 — add U/D singles
-    (5,  "First climb (U)",         "FFUFFFLFFF",                                        90),
-    (6,  "First descent (D)",       "FFDFFFRFFF",                                        115),
-    (7,  "Climb + turn",            "FFRFFUFFLFFF",                                      140),
-    (8,  "Descent + turn",          "FFLFFDFFRFFF",                                      170),
+    (5,  "First climb (U)",         "FFUFFFLFFF"),
+    (6,  "First descent (D)",       "FFDFFFRFFF"),
+    (7,  "Climb + turn",            "FFRFFUFFLFFF"),
+    (8,  "Descent + turn",          "FFLFFDFFRFFF"),
 
     # M9-13 — dense L+R+U+D
-    (9,  "All 4 singles",           "FFRFFUFFLFFDFFRFFF",                                200),
-    (10, "Climb weave",             "FFUFFLFFUFFRFFUFFF",                                235),
-    (11, "Drop weave",              "FFDFFRFFDFFLFFDFFF",                                270),
-    (12, "Long L/R snake",          "FFRFFLFFRFFLFFRFFLFFF",                             305),
-    (13, "Zigzag 3D",               "FFUFFRFFDFFLFFUFFRFFDFFF",                          345),
+    (9,  "All 4 singles",           "FFRFFUFFLFFDFFRFFF"),
+    (10, "Climb weave",             "FFUFFLFFUFFRFFUFFF"),
+
+    # M11-13 wrap to row 1 (forward from player)
+    (11, "Drop weave",              "FFDFFRFFDFFLFFDFFF"),
+    (12, "Long L/R snake",          "FFRFFLFFRFFLFFRFFLFFF"),
+    (13, "Zigzag 3D",               "FFUFFRFFDFFLFFUFFRFFDFFF"),
 
     # M14-19 — OR conditions
-    (14, "OR side intro (S)",       "FFSFFFLFFF",                                        390),
-    (15, "OR vertical intro (T)",   "FFTFFFRFFF",                                        420),
-    (16, "Two side-ORs",            "FFSFFFSFFLFFRFFF",                                  455),
-    (17, "Side + vertical OR",      "FFSFFTFFLFFRFFF",                                   495),
-    (18, "Triple side-ORs",         "FFSFFRFFSFFLFFSFFF",                                540),
-    (19, "OR + singles",            "FFRFFSFFUFFTFFLFFF",                                585),
+    (14, "OR side intro (S)",       "FFSFFFLFFF"),
+    (15, "OR vertical intro (T)",   "FFTFFFRFFF"),
+    (16, "Two side-ORs",            "FFSFFFSFFLFFRFFF"),
+    (17, "Side + vertical OR",      "FFSFFTFFLFFRFFF"),
+    (18, "Triple side-ORs",         "FFSFFRFFSFFLFFSFFF"),
+    (19, "OR + singles",            "FFRFFSFFUFFTFFLFFF"),
 
     # M20-24 — AND conditions (1-3)
-    (20, "AND #1 (L+D)",            "FF1FFFLFFRFFF",                                     630),
-    (21, "AND #2 (R+D)",            "FF2FFFLFFRFFF",                                     670),
-    (22, "AND #3 (F+D)",            "FF3FFFRFFLFFF",                                     710),
-    (23, "ANDs 1+2",                "FF1FFF2FFLFFF",                                     755),
-    (24, "AND + singles",           "FFRFF1FFLFFUFFRFFF",                                800),
+    (20, "AND #1 (L+D)",            "FF1FFFLFFRFFF"),
+    (21, "AND #2 (R+D)",            "FF2FFFLFFRFFF"),
+    (22, "AND #3 (F+D)",            "FF3FFFRFFLFFF"),
+    (23, "ANDs 1+2",                "FF1FFF2FFLFFF"),
+    (24, "AND + singles",           "FFRFF1FFLFFUFFRFFF"),
 
     # M25-29 — advanced ANDs (4, 5) + mixes
-    (25, "AND #4 (L+R up5)",        "FF4FFFRFFLFFF",                                     845),
-    (26, "AND #5 (U+D back)",       "FFFF5FFFLFFRFFF",                                   890),
-    (27, "ANDs 1+4+5 mix",          "FFF1FFF4FFF5FFLFFF",                                935),
-    (28, "ANDs 2+3 + OR",           "FFF2FFF3FFSFFRFFF",                                 985),
-    (29, "Tight ANDs",              "FFF1FFF2FFF3FFLFFF",                                1030),
+    (25, "AND #4 (L+R up5)",        "FF4FFFRFFLFFF"),
+    (26, "AND #5 (U+D back)",       "FFFF5FFFLFFRFFF"),
+    (27, "ANDs 1+4+5 mix",          "FFF1FFF4FFF5FFLFFF"),
+    (28, "ANDs 2+3 + OR",           "FFF2FFF3FFSFFRFFF"),
+    (29, "Tight ANDs",              "FFF1FFF2FFF3FFLFFF"),
 
     # M30-35 — full mix, advanced
-    (30, "Full singles + ANDs",     "FFRFFLFFUFFDFF1FF2FF3FFRFFF",                       1080),
-    (31, "ORs + ANDs combo",        "FFSFFTFF1FF2FFRFFLFFF",                             1140),
-    (32, "Long 3D climb mix",       "FFUFFRFFUFFLFFUFFDFFRFFLFFUFFDFFF",                 1190),
-    (33, "Snake + OR + AND",        "FFRFFSFFLFFTFF1FFRFFLFFUFFDFFF",                    1245),
-    (34, "AND 4+5 + OR mix",        "FFFFSFF4FFTFF5FFLFFRFFF",                           1310),
-    (35, "Final Boss (all types)",  "FFRFFLFFUFFDFF1FF2FF3FF4FF5FFSFFTFFLFFRFFF",        1370),
+    (30, "Full singles + ANDs",     "FFRFFLFFUFFDFF1FF2FF3FFRFFF"),
+    (31, "ORs + ANDs combo",        "FFSFFTFF1FF2FFRFFLFFF"),
+    (32, "Long 3D climb mix",       "FFUFFRFFUFFLFFUFFDFFRFFLFFUFFDFFF"),
+    (33, "Snake + OR + AND",        "FFRFFSFFLFFTFF1FFRFFLFFUFFDFFF"),
+    (34, "AND 4+5 + OR mix",        "FFFFSFF4FFTFF5FFLFFRFFF"),
+    (35, "Final Boss (all types)",  "FFRFFLFFUFFDFF1FF2FF3FF4FF5FFSFFTFFLFFRFFF"),
 ]
 
 
@@ -106,7 +126,14 @@ HEADER = '''# Maze Madness — Weeks 1-4 Combined: 35 Progressive Mazes
 #           agent.move(FORWARD, 1)
 #
 # Stand facing east (+X). Chat: build1 / m1..m35 / clear.
-# Maze builds 10 blocks east of player.
+#
+# Grid layout: 35 mazes arranged in a 4-row x 10-col grid.
+#   Row direction: +X (forward from player; rows 50 blocks apart)
+#   Col direction: -Z (left of player facing east; cols 40 blocks apart)
+#   Row 0 (M1-10):  x=10,  cols z=0..-360
+#   Row 1 (M11-20): x=60,  cols z=0..-360
+#   Row 2 (M21-30): x=110, cols z=0..-360
+#   Row 3 (M31-35): x=160, cols z=0..-160
 
 
 '''
@@ -175,11 +202,12 @@ def trace(moves):
     return path, redstones, pos, f
 
 
-def build_maze_body(num, name, moves, z_offset):
+def build_maze_body(num, name, moves):
+    x_off, z_off = grid_position(num)
     path, redstones, end, end_f = trace(moves)
-    path = [(x + X_OFFSET, y, z + z_offset) for (x, y, z) in path]
-    redstones = [(x + X_OFFSET, y, z + z_offset) for (x, y, z) in redstones]
-    end = (end[0] + X_OFFSET, end[1], end[2] + z_offset)
+    path = [(x + x_off, y, z + z_off) for (x, y, z) in path]
+    redstones = [(x + x_off, y, z + z_off) for (x, y, z) in redstones]
+    end = (end[0] + x_off, end[1], end[2] + z_off)
     dx, dy, dz = DELTA[end_f]
     diamond = (end[0] + dx, end[1] + dy, end[2] + dz)
 
@@ -212,21 +240,22 @@ def build_maze_body(num, name, moves, z_offset):
 def main():
     here = pathlib.Path(__file__).parent
     out_lines = [HEADER]
-    for (num, name, moves, z) in MAZES:
-        out_lines.append(build_maze_body(num, name, moves, z))
+    for (num, name, moves) in MAZES:
+        out_lines.append(build_maze_body(num, name, moves))
 
+    # Grid bounds: 4 rows in +X (10..220), 10 cols in -Z (0..-380), with buffer
     out_lines.append("def clear_zone():")
-    out_lines.append("    blocks.fill(AIR, pos(2, -4, -20), pos(45, 15, 1500), FillOperation.REPLACE)")
-    out_lines.append("    blocks.fill(GRASS, pos(2, -5, -20), pos(45, -5, 1500), FillOperation.REPLACE)\n\n")
+    out_lines.append("    blocks.fill(AIR, pos(2, -4, -420), pos(225, 15, 30), FillOperation.REPLACE)")
+    out_lines.append("    blocks.fill(GRASS, pos(2, -5, -420), pos(225, -5, 30), FillOperation.REPLACE)\n\n")
 
     out_lines.append("def on_chat_build_all():")
     out_lines.append("    clear_zone()")
-    for (num, _, _, _) in MAZES:
+    for (num, _, _) in MAZES:
         out_lines.append(f"    build_maze_{num}()")
     out_lines.append('    player.say("35 mazes built. 미로 35개 완성!")')
     out_lines.append('player.on_chat("build1", on_chat_build_all)\n\n')
 
-    for (num, _, _, _) in MAZES:
+    for (num, _, _) in MAZES:
         out_lines.append(f"def on_chat_m{num}():")
         out_lines.append(f"    build_maze_{num}()")
         out_lines.append(f'player.on_chat("m{num}", on_chat_m{num})\n')
@@ -241,9 +270,10 @@ def main():
     print(f"Wrote {out_path} ({out_path.stat().st_size} bytes)")
 
     print("\nMaze summary:")
-    for (num, name, moves, z) in MAZES:
+    for (num, name, moves) in MAZES:
         path, redstones, _, _ = trace(moves)
-        print(f"  M{num:2d} z={z:4d}  {name:30s}  rs={len(redstones):2d}  path={len(path):3d}")
+        x_off, z_off = grid_position(num)
+        print(f"  M{num:2d} grid({x_off:3d},{z_off:5d})  {name:30s}  rs={len(redstones):2d}  path={len(path):3d}")
 
 
 if __name__ == "__main__":
