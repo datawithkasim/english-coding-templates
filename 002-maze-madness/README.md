@@ -3,32 +3,26 @@
 8주 동안 미로 탐색, 레드스톤, 레버 작동을 배워 마지막에 **15×15×15 큐브 미로** 를 완성합니다.
 8 weeks of maze navigation, redstone, and lever mechanics — building up to a full **15×15×15 cube maze**.
 
+각 주차는 독립적인 월드 파일을 사용합니다. 매주 한 가지 새로운 개념을 배웁니다.
+Each week has its own world file. Each week introduces one new concept.
+
 ---
 
 ## 📅 주차별 학습 / Weekly Plan
 
-각 주차 월드 파일은 아래 표에서 바로 받으실 수 있습니다.
-You can download each week's world file directly from the table below.
-
-| 주 / Week | 주제 / Topic | 결과물 / Result | 📦 월드 / World |
+| 주 / Week | 주제 / Topic | 핵심 개념 / Concept | 📦 월드 / World |
 |---|---|---|---|
-| 1 | While 루프 / While Loops | 벽까지 자동 이동 / Move until a wall | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-maze-madness/worlds/week1-2.mcworld) |
-| 2 | 방향 전환 / Turning at Walls | 코너 통과 / Navigate corners | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-maze-madness/worlds/week1-2.mcworld) |
-| 3 | AND 조건 / AND Conditions | 두 가지 신호 동시 인식 / Detect two signals at once | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-maze-madness/worlds/week3-4.mcworld) |
-| 4 | OR 조건 / OR Conditions | 여러 신호 중 하나만 / Any one of several signals | *준비 중* |
-| 5 | 레드스톤 기초 / Redstone Basics | 레드스톤 도어 우회 / Route around redstone doors | *준비 중* |
-| 6 | 레버 조작 / Lever Interaction | 레버로 도어 열기 / Open doors with levers | *준비 중* |
-| 7 | 다중 레버 종합 / Multi-Lever Combine | 여러 레버 순서대로 / Sequence multiple levers | *준비 중* |
-| 8 | **최종: 15×15×15 레드스톤 큐브 미로** / **Final: 15×15×15 Redstone Cube Maze** | 자율 풀이 / Autonomous solver | *준비 중* |
+| 1 | While 루프 / While Loops | 벽까지 자동 이동 / Move forward until wall | *준비 중* |
+| 2 | 방향 전환 / Turning at Walls | 좌/우 회전 (L+R 신호) / L+R turn signs | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-maze-madness/worlds/week1-2.mcworld) |
+| 3 | AND 조건 / AND Conditions | 두 가지 신호 동시 인식 / Two signals at once | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-maze-madness/worlds/week3-4.mcworld) |
+| 4 | OR 조건 / OR Conditions | 여러 신호 중 하나만 / Any one of several | *준비 중* |
+| 5 | 레드스톤 도어 / Iron Door | 막힌 길 우회 / Route around blocked path | *준비 중* |
+| 6 | 레버 조작 / Lever Interaction | 레버 작동 후 통과 / Interact then pass | *준비 중* |
+| 7 | 다중 레버 / Multi-Lever | 여러 레버 순서대로 / Multiple levers in sequence | *준비 중* |
+| 8 | **최종: 15×15×15 큐브 미로** / **Final: Cube Maze** | 모든 개념 종합 / All concepts combined | *준비 중* |
 
-> 💡 1-2주는 같은 월드 파일(`week1-2.mcworld`)을 사용합니다. 한 번만 받으시면 됩니다.
-> Weeks 1-2 share the same world file (`week1-2.mcworld`). Download once.
->
-> 💡 3주는 `week3-4.mcworld` (현재 AND 미로 포함). 4주(OR 조건)는 별도 월드로 준비 중.
-> Week 3 uses `week3-4.mcworld` (AND mazes). Week 4 (OR conditions) will get its own world — coming soon.
->
-> 💡 5-6주도 같은 월드 파일(`week5-6.mcworld`)을 사용할 예정입니다 (현재 준비 중).
-> Weeks 5-6 will share the same world file (`week5-6.mcworld`) — coming soon.
+> 💡 매주 월드 파일은 그 주에 배운 개념만으로 풀 수 있도록 설계되었습니다.
+> Each weekly world is solvable using only the concepts taught up to that week.
 
 ---
 
