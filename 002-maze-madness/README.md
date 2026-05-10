@@ -15,10 +15,10 @@ You can download each week's files directly from the table below.
 
 | 주 / Week | 주제 / Topic | 결과물 / Result | 📦 월드 / World | 🧱 블록 / Blocks | 🐍 파이썬 / Python | 🎬 영상 / Video |
 |---|---|---|---|---|---|---|
-| 1 | 단일 신호 / Singles (L+R+U+D) | 4가지 단일 신호 (15미로) / 4 single signals (15 mazes) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-maze-madness/worlds/week1.mcworld) | *준비 중* | *준비 중* | *준비 중* |
-| 2 | 규칙 변형 / Mixed Rules | 매 미로마다 다른 규칙 (15미로) / Different rule per maze (15) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-maze-madness/worlds/week2.mcworld) | *준비 중* | *준비 중* | *준비 중* |
-| 3 | AND 조건 / AND Conditions | 5 ANDs (점진 + 변형) / 5 ANDs progressive + variants (10 mazes) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-maze-madness/worlds/week3.mcworld) | *준비 중* | *준비 중* | *준비 중* |
-| 4 | OR 조건 + 다중 단계 AND / OR + Multi-step ANDs | 3 ORs + 2 ANDs (10미로) / 3 ORs + 2 multi-step ANDs (10 mazes) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-maze-madness/worlds/week4.mcworld) | *준비 중* | *준비 중* | *준비 중* |
+| 1 | 단일 신호 / Singles (L+R+U+D) | 4가지 단일 신호 (15미로) / 4 single signals (15 mazes) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-maze-madness/worlds/week1.mcworld) | *준비 중* | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-maze-madness/python/week1.mkcd) | *준비 중* |
+| 2 | 규칙 변형 / Mixed Rules | 매 미로마다 다른 규칙 (15미로) / Different rule per maze (15) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-maze-madness/worlds/week2.mcworld) | *준비 중* | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-maze-madness/python/week2.mkcd) | *준비 중* |
+| 3 | AND 조건 / AND Conditions | 5 ANDs (점진 + 변형) / 5 ANDs progressive + variants (10 mazes) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-maze-madness/worlds/week3.mcworld) | *준비 중* | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-maze-madness/python/week3.mkcd) | *준비 중* |
+| 4 | OR 조건 + 다중 단계 AND / OR + Multi-step ANDs | 3 ORs + 2 ANDs (10미로) / 3 ORs + 2 multi-step ANDs (10 mazes) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-maze-madness/worlds/week4.mcworld) | *준비 중* | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-maze-madness/python/week4.mkcd) | *준비 중* |
 | 5 | 레드스톤 도어 / Iron Door | 막힌 길 우회 / Route around blocked path | *준비 중* | *준비 중* | *준비 중* | *준비 중* |
 | 6 | 레버 조작 / Lever Interaction | 레버 작동 후 통과 / Interact then pass | *준비 중* | *준비 중* | *준비 중* | *준비 중* |
 | 7 | 다중 레버 / Multi-Lever | 레버 순서대로 / Multiple levers in sequence | *준비 중* | *준비 중* | *준비 중* | *준비 중* |
