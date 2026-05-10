@@ -16,7 +16,7 @@ You can download each week's files directly from the table below.
 | 주 / Week | 주제 / Topic | 결과물 / Result | 📦 월드 / World | 🧱 블록 / Blocks | 🐍 파이썬 / Python | 🎬 영상 / Video |
 |---|---|---|---|---|---|---|
 | 1 | 단일 신호 / Singles (L+R+U+D) | 4가지 단일 신호 (15미로) / 4 single signals (15 mazes) | *준비 중* | *준비 중* | *준비 중* | *준비 중* |
-| 2 | *준비 중* / TBD | *준비 중* | *준비 중* | *준비 중* | *준비 중* | *준비 중* |
+| 2 | 규칙 변형 / Mixed Rules | 매 미로마다 다른 규칙 (15미로) / Different rule per maze (15) | *준비 중* | *준비 중* | *준비 중* | *준비 중* |
 | 3 | AND 조건 / AND Conditions | 두 신호 동시 / Two signals at once | *준비 중* | *준비 중* | *준비 중* | *준비 중* |
 | 4 | OR 조건 / OR Conditions | 여러 신호 중 하나 / Any one of several | *준비 중* | *준비 중* | *준비 중* | *준비 중* |
 | 5 | 레드스톤 도어 / Iron Door | 막힌 길 우회 / Route around blocked path | *준비 중* | *준비 중* | *준비 중* | *준비 중* |
