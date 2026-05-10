@@ -122,6 +122,10 @@ def build_maze_body(num, name, moves):
 
     lines = [f"# M{num} - {name}: {len(redstones)} redstones",
              f"def build_maze_{num}():"]
+    # CARVE: explicit AIR at every path cell so agent has clear traversal
+    # space. Critical for descent (RS UP -> move DOWN) — prior terrain cleared.
+    for p in sorted(path_set):
+        lines.append(f"    blocks.place(AIR, pos({p[0]}, {p[1]}, {p[2]}))")
     for p in sorted(floor_set):
         lines.append(f"    blocks.place({floor_block}, pos({p[0]}, {p[1]}, {p[2]}))")
     for p in sorted(wall_set):
