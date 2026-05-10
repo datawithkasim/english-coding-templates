@@ -15,22 +15,17 @@ You can download each week's files directly from the table below.
 
 | 주 / Week | 주제 / Topic | 결과물 / Result | 📦 월드 / World | 🧱 블록 / Blocks | 🐍 파이썬 / Python | 🎬 영상 / Video |
 |---|---|---|---|---|---|---|
-| 1 | 방향 전환 / Turning at Walls | 좌·우 회전 (M1-4) / L+R turns (M1-4) | *준비 중* | *준비 중* | *준비 중* | *준비 중* |
-| 2 | 3D 이동 / 3D Movement | U+D 추가 (M5-13) / Add U+D (M5-13) | *준비 중* | *준비 중* | *준비 중* | *준비 중* |
-| 3 | OR 조건 + AND 조건 (Part 1) / OR + AND Part 1 | OR + 기본 AND (M14-24) / OR + basic AND (M14-24) | *준비 중* | *준비 중* | *준비 중* | *준비 중* |
-| 4 | 고급 AND + 종합 / Advanced AND + Mix | 고급 + 종합 미로 (M25-35) / Advanced + boss (M25-35) | *준비 중* | *준비 중* | *준비 중* | *준비 중* |
+| 1 | 단일 신호 / Singles (L+R+U+D) | 4가지 단일 신호 (15미로) / 4 single signals (15 mazes) | *준비 중* | *준비 중* | *준비 중* | *준비 중* |
+| 2 | *준비 중* / TBD | *준비 중* | *준비 중* | *준비 중* | *준비 중* | *준비 중* |
+| 3 | AND 조건 / AND Conditions | 두 신호 동시 / Two signals at once | *준비 중* | *준비 중* | *준비 중* | *준비 중* |
+| 4 | OR 조건 / OR Conditions | 여러 신호 중 하나 / Any one of several | *준비 중* | *준비 중* | *준비 중* | *준비 중* |
 | 5 | 레드스톤 도어 / Iron Door | 막힌 길 우회 / Route around blocked path | *준비 중* | *준비 중* | *준비 중* | *준비 중* |
 | 6 | 레버 조작 / Lever Interaction | 레버 작동 후 통과 / Interact then pass | *준비 중* | *준비 중* | *준비 중* | *준비 중* |
 | 7 | 다중 레버 / Multi-Lever | 레버 순서대로 / Multiple levers in sequence | *준비 중* | *준비 중* | *준비 중* | *준비 중* |
 | 8 | **최종: 15×15×15 큐브 미로** / **Final: Cube Maze** | 모든 개념 종합 / All concepts combined | *준비 중* | *준비 중* | *준비 중* | *준비 중* |
 
-> 💡 1-4주는 같은 월드 파일(`weeks1-4.mcworld`, 35개 미로)을 사용합니다.
-> Weeks 1-4 share the same world file (`weeks1-4.mcworld`, 35 mazes total).
-> Each week tackles a specific maze range:
-> - W1 → M1-4 (turns)
-> - W2 → M5-13 (3D movement)
-> - W3 → M14-24 (OR + basic AND)
-> - W4 → M25-35 (advanced AND + boss)
+> 💡 매주 월드 파일은 그 주의 개념만 다룹니다 (이전 주차 개념 복습 포함).
+> Each weekly world covers only that week's concept (with prior-week review).
 
 ---
 
