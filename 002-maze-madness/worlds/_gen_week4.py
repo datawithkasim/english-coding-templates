@@ -1,20 +1,28 @@
-"""W4 — OR Conditions with split paths: 10 mazes.
+"""W4 — OR Conditions with split paths: 10 mazes, 4 OR rule types.
 
-At each split point:
-  - Two parallel walkable corridors fork left and right
-  - Both converge at the same cell ahead
-  - One redstone placed on either LEFT or RIGHT side (alternates per move)
+OR rules — each with its own split geometry (two parallel walkable forks
+converging at the same cell). Action is the same (forward 4) regardless of
+which detection direction has the redstone.
 
-OR rule:
-  RS LEFT or RS RIGHT  ->  agent.move(FORWARD, 4)
-  (agent walks straight through; the forks are visible alternatives the
-   player can also walk; either way reaches the same convergence cell)
+  OR a: RS LEFT or RIGHT     -> forward 4   (forks LEFT and RIGHT)
+  OR b: RS UP or DOWN        -> forward 4   (forks UP and DOWN, vertical)
+  OR c: RS LEFT or DOWN      -> forward 4   (one fork LEFT, one fork DOWN)
+  OR d: RS RIGHT or UP       -> forward 4   (one fork RIGHT, one fork UP)
 
-DSL: F (forward) + a (split point, OR-LR).
-Plus L/R for turn variations in later mazes.
+Solver:
+  while not detect(DIAMOND, FORWARD):
+      if detect(RS, LEFT) or detect(RS, RIGHT):
+          agent.move(FORWARD, 4)
+      elif detect(RS, UP) or detect(RS, DOWN):
+          agent.move(FORWARD, 4)
+      elif detect(RS, LEFT) or detect(RS, DOWN):
+          agent.move(FORWARD, 4)
+      elif detect(RS, RIGHT) or detect(RS, UP):
+          agent.move(FORWARD, 4)
+      else:
+          agent.move(FORWARD, 1)
 
-Each maze has an entry corridor of 4 cells leading INTO the start (so the
-start is at the end of an approach path, not in the middle of a wall).
+Each maze has a 4-cell entry corridor leading INTO the start.
 """
 import pathlib
 from _maze_lib import (DELTA, FLOOR_PALETTE, SPAWN_BLOCK,
@@ -23,19 +31,73 @@ from _maze_lib import (DELTA, FLOOR_PALETTE, SPAWN_BLOCK,
                        pillar_for_start, write_builder)
 
 
-SPLIT_LEN = 3   # parallel fork length (cells beyond pos before convergence)
-SPLIT_TOTAL = SPLIT_LEN + 1   # forward steps action takes through main path
-ENTRY_LEN = 4   # cells of approach corridor before maze start
+SPLIT_LEN = 3
+SPLIT_TOTAL = SPLIT_LEN + 1
+ENTRY_LEN = 4
+
+
+def fork_cells(rule_name, pos, f):
+    """Return list of cells for both forks of given OR rule.
+    Each fork = (length+1) cells parallel to main path."""
+    cells = []
+    if rule_name == "a":   # L|R: forks at perpendicular sides
+        side_dirs = [turn_left(f), turn_right(f)]
+        for sd in side_dirs:
+            base = step(pos, sd)
+            cells.append(base)
+            cur = base
+            for _ in range(SPLIT_LEN):
+                cur = step(cur, f); cells.append(cur)
+    elif rule_name == "b":  # U|D: vertical forks
+        for dy in [1, -1]:
+            base = (pos[0], pos[1] + dy, pos[2])
+            cells.append(base)
+            cur = base
+            for _ in range(SPLIT_LEN):
+                cur = step(cur, f); cells.append(cur)
+    elif rule_name == "c":  # L|D: left fork + down fork
+        # Left fork
+        base = step(pos, turn_left(f))
+        cells.append(base); cur = base
+        for _ in range(SPLIT_LEN):
+            cur = step(cur, f); cells.append(cur)
+        # Down fork
+        base = (pos[0], pos[1] - 1, pos[2])
+        cells.append(base); cur = base
+        for _ in range(SPLIT_LEN):
+            cur = step(cur, f); cells.append(cur)
+    elif rule_name == "d":  # R|U: right fork + up fork
+        base = step(pos, turn_right(f))
+        cells.append(base); cur = base
+        for _ in range(SPLIT_LEN):
+            cur = step(cur, f); cells.append(cur)
+        base = (pos[0], pos[1] + 1, pos[2])
+        cells.append(base); cur = base
+        for _ in range(SPLIT_LEN):
+            cur = step(cur, f); cells.append(cur)
+    return cells
+
+
+def rs_position(rule_name, side_idx, pos, f):
+    """Return redstone position. side_idx 0 or 1 picks first or second
+    detection direction of the OR rule."""
+    if rule_name == "a":
+        return step(pos, turn_left(f)) if side_idx == 0 else step(pos, turn_right(f))
+    if rule_name == "b":
+        return (pos[0], pos[1] + 1, pos[2]) if side_idx == 0 else (pos[0], pos[1] - 1, pos[2])
+    if rule_name == "c":
+        return step(pos, turn_left(f)) if side_idx == 0 else (pos[0], pos[1] - 1, pos[2])
+    if rule_name == "d":
+        return step(pos, turn_right(f)) if side_idx == 0 else (pos[0], pos[1] + 1, pos[2])
+    raise ValueError(rule_name)
 
 
 def trace(moves):
-    """Trace path. 'a' = LR split section. Returns
-    (agent_path, fork_extras, redstones, end, end_facing)."""
     pos = (0, 0, 0); f = "+X"
     agent_path = [pos]
     fork_extras = []
     redstones = []
-    a_count = 0
+    counters = {"a": 0, "b": 0, "c": 0, "d": 0}
 
     for m in moves:
         if m == "F":
@@ -46,33 +108,10 @@ def trace(moves):
         elif m == "R":
             redstones.append(step(pos, turn_left(f)))
             f = turn_right(f); pos = step(pos, f); agent_path.append(pos)
-        elif m == "a":
-            # Place RS on LEFT or RIGHT (alternating)
-            if a_count % 2 == 0:
-                rs_pos = step(pos, turn_left(f))
-            else:
-                rs_pos = step(pos, turn_right(f))
-            a_count += 1
-            redstones.append(rs_pos)
-
-            left_dir = turn_left(f)
-            right_dir = turn_right(f)
-
-            # Left fork: turn_left side, parallel SPLIT_LEN cells, then back
-            for i in range(SPLIT_LEN + 1):
-                cx = pos[0] + DELTA[f][0] * i + DELTA[left_dir][0]
-                cy = pos[1]
-                cz = pos[2] + DELTA[f][2] * i + DELTA[left_dir][2]
-                fork_extras.append((cx, cy, cz))
-
-            # Right fork: turn_right side, parallel SPLIT_LEN cells
-            for i in range(SPLIT_LEN + 1):
-                cx = pos[0] + DELTA[f][0] * i + DELTA[right_dir][0]
-                cy = pos[1]
-                cz = pos[2] + DELTA[f][2] * i + DELTA[right_dir][2]
-                fork_extras.append((cx, cy, cz))
-
-            # Agent's actual path: forward SPLIT_TOTAL cells (main path)
+        elif m in counters:
+            n = counters[m]; counters[m] = n + 1
+            redstones.append(rs_position(m, n % 2, pos, f))
+            fork_extras.extend(fork_cells(m, pos, f))
             for _ in range(SPLIT_TOTAL):
                 pos = step(pos, f); agent_path.append(pos)
 
@@ -81,46 +120,56 @@ def trace(moves):
 
 # (num, name, moves)
 MAZES = [
-    (1,  "Single split (intro)",          "FFaFFF"),
-    (2,  "Single split + L turn",         "FFaFFLFFF"),
-    (3,  "Two splits",                    "FFaFFaFFF"),
-    (4,  "Splits + R turn",               "FFaFFRFFaFFF"),
-    (5,  "Three splits",                  "FFaFFaFFaFFF"),
-    (6,  "Splits + L+R turns",            "FFaFFLFFaFFRFFaFFF"),
-    (7,  "Four splits",                   "FFaFFaFFaFFaFFF"),
-    (8,  "Long mix splits + turns",       "FFaFFRFFaFFLFFaFFRFFaFFF"),
-    (9,  "Five splits weave",             "FFaFFLFFaFFRFFaFFLFFaFFRFFaFFF"),
-    (10, "Boss: 6 splits + many turns",   "FFaFFLFFaFFRFFaFFRFFaFFLFFaFFRFFaFFF"),
+    (1,  "OR a (L|R) — 1 split",            "FFaFFF"),
+    (2,  "OR a — 2 splits",                  "FFaFFaFFF"),
+    (3,  "OR b (U|D) — 1 split",             "FFbFFF"),
+    (4,  "OR b — 2 splits",                  "FFbFFbFFF"),
+    (5,  "OR c (L|D) — 1 split",             "FFcFFF"),
+    (6,  "OR d (R|U) — 1 split",             "FFdFFF"),
+    (7,  "ORs a + b combo",                  "FFaFFbFFaFFbFFF"),
+    (8,  "ORs c + d combo",                  "FFcFFdFFcFFdFFF"),
+    (9,  "All 4 ORs (a+b+c+d)",              "FFaFFbFFcFFdFFF"),
+    (10, "Boss: many splits + L/R turns",    "FFaFFLFFbFFRFFcFFLFFdFFRFFaFFbFFF"),
 ]
 
 
-# Grid: 1 row x 10 cols, cols spaced wider for split width
+# Grid: 1 row x 10 cols (extra wide due to b/d vertical forks)
 ROW_SPACING_X = 60
-COL_SPACING_Z = 60   # wider since splits add z-extent +/-1
+COL_SPACING_Z = 60
 
 
 def grid_position(num):
     idx = num - 1
     row = idx // 10
     col = idx % 10
-    x_off = 10 + ENTRY_LEN + row * ROW_SPACING_X   # leave room for entry corridor
+    x_off = 10 + ENTRY_LEN + row * ROW_SPACING_X
     z_off = -col * COL_SPACING_Z
     return x_off, z_off
 
 
 HEADER = '''# Maze Madness — Week 4: OR Conditions with Split Paths (10 mazes)
-# Each split point shows TWO parallel walkable forks converging back to main.
-# Agent uses OR rule to decide same action regardless of which side has RS.
+# 4 OR rules, each placing redstone on EITHER of two detection sides.
+# Both sides trigger the SAME action (forward 4) — that is the OR.
 #
-# OR rule:
-#   if agent.detect_block(REDSTONE_BLOCK, LEFT) or agent.detect_block(REDSTONE_BLOCK, RIGHT):
-#       agent.move(FORWARD, 4)
+# OR a: RS LEFT or RIGHT  -> forward 4  (forks left + right)
+# OR b: RS UP or DOWN     -> forward 4  (forks up + down, vertical)
+# OR c: RS LEFT or DOWN   -> forward 4  (forks left + down)
+# OR d: RS RIGHT or UP    -> forward 4  (forks right + up)
 #
-# Each maze starts at the end of a 4-cell entry corridor (approach path
-# behind the GLOWSTONE start pillar). Walk down the corridor onto the lime
-# spawn block, run code, and the agent solves the maze.
+# Solver:
+#   while not agent.detect_block(DIAMOND_BLOCK, FORWARD):
+#       if agent.detect_block(REDSTONE_BLOCK, LEFT) or agent.detect_block(REDSTONE_BLOCK, RIGHT):
+#           agent.move(FORWARD, 4)
+#       elif agent.detect_block(REDSTONE_BLOCK, UP) or agent.detect_block(REDSTONE_BLOCK, DOWN):
+#           agent.move(FORWARD, 4)
+#       elif agent.detect_block(REDSTONE_BLOCK, LEFT) or agent.detect_block(REDSTONE_BLOCK, DOWN):
+#           agent.move(FORWARD, 4)
+#       elif agent.detect_block(REDSTONE_BLOCK, RIGHT) or agent.detect_block(REDSTONE_BLOCK, UP):
+#           agent.move(FORWARD, 4)
+#       else:
+#           agent.move(FORWARD, 1)
 #
-# Stand facing east (+X). Chat: build1 / m1..m10 / clear.
+# Each maze has a 4-cell entry corridor leading into the GLOWSTONE start.
 
 
 '''
@@ -138,18 +187,13 @@ def build_maze_body(num, name, moves):
 
     start = agent_path[0]
 
-    # Entry corridor: ENTRY_LEN cells in -X direction behind start
-    entry_cells = []
-    for i in range(1, ENTRY_LEN + 1):
-        entry_cells.append((start[0] - i, start[1], start[2]))
+    entry_cells = [(start[0] - i, start[1], start[2]) for i in range(1, ENTRY_LEN + 1)]
 
-    # Combined path set for geometry (all walkable air cells)
     path_set = set(agent_path) | set(fork_extras) | set(entry_cells)
     redstone_set = set(redstones)
     floor_set = floor_for_path(path_set, [redstone_set])
     wall_set = wall_set_for_path(path_set, [redstone_set])
     wall_set.discard(diamond)
-    # Open behind entry corridor's far end so player can step in
     entry_far = (start[0] - ENTRY_LEN, start[1], start[2])
     for hy in [0, 1]:
         wall_set.discard((entry_far[0] - 1, entry_far[1] + hy, entry_far[2]))
@@ -158,9 +202,12 @@ def build_maze_body(num, name, moves):
     pillar = pillar_for_start(start)
     floor_block = FLOOR_PALETTE[(num - 1) % 15]
 
+    rule_count = {c: moves.count(c) for c in "abcd" if c in moves}
+    summary = " ".join(f"{c}={n}" for c, n in rule_count.items())
+
     lines = [
         f"# M{num} - {name}",
-        f"# Splits: {moves.count('a')}, redstones: {len(redstones)}, agent path: {len(agent_path)}",
+        f"# Splits: {summary}, redstones: {len(redstones)}",
         f"def build_maze_{num}():",
     ]
     for p in sorted(path_set):
@@ -175,7 +222,7 @@ def build_maze_body(num, name, moves):
     for p in pillar:
         lines.append(f"    blocks.place(GLOWSTONE, pos({p[0]}, {p[1]}, {p[2]}))")
     lines.append(f"    blocks.place(DIAMOND_BLOCK, pos({diamond[0]}, {diamond[1]}, {diamond[2]}))")
-    lines.append(f'    player.say("M{num}: OR L|R -> forward 4")')
+    lines.append(f'    player.say("M{num}: {name}")')
     return "\n".join(lines) + "\n\n"
 
 
@@ -191,8 +238,8 @@ def main():
     for (num, name, moves) in MAZES:
         ap, fk, rs, _, _ = trace(moves)
         x_off, z_off = grid_position(num)
-        splits = moves.count("a")
-        print(f"  M{num:2d} grid({x_off:3d},{z_off:5d})  {name:35s}  splits={splits}  rs={len(rs)}  agent_path={len(ap)}  fork_extras={len(fk)}")
+        rules = "".join(c for c in "abcd" if c in moves)
+        print(f"  M{num:2d} grid({x_off:3d},{z_off:5d})  rules=[{rules:4s}]  agent={len(ap):2d}  forks={len(fk):2d}  rs={len(rs):2d}  | {name}")
 
 
 if __name__ == "__main__":
