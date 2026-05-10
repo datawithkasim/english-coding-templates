@@ -7,16 +7,19 @@
 
 ## 📅 주차별 학습 / Weekly Plan
 
-| 주 / Week | 주제 / Topic | 결과물 / Result |
-|----------|-------------|----------------|
-| 1 | 에이전트와 첫 인사 / Meeting the Agent | 7칸 직선 길 / 7-block path |
-| 2 | 반복문 / Loops | 20블록 벽 / 20-block wall |
-| 3 | 변수 / Variables | 크기 조절 가능한 벽 / Resizable wall |
-| 4 | 중첩 반복문 / Nested Loops | 7×7 정사각형 바닥 / 7×7 square floor |
-| 5 | 첫 피라미드 / First Pyramid | 5층 피라미드 / 5-layer pyramid |
-| 6 | 거꾸로 피라미드 / Inverted Pyramid | 거꾸로 피라미드 / Inverted pyramid |
-| 7 | 피라미드 변형 / Variations | 속이 빈 피라미드 / Hollow pyramid |
-| 8 | **최종: 다이아몬드** / **Final: Diamond** | 완전한 다이아몬드 / Full diamond |
+각 주차 자료는 아래 표에서 바로 받으실 수 있습니다 — 따로 페이지에 들어가지 않으셔도 됩니다.
+You can download each week's files directly from the table below — no need to click into separate pages.
+
+| 주 / Week | 주제 / Topic | 결과물 / Result | 📦 월드 / World | 🧱 블록 / Blocks | 🐍 파이썬 / Python | 🎬 영상 / Video |
+|---|---|---|---|---|---|---|
+| 1 | 에이전트와 첫 인사 / Meeting the Agent | 7칸 직선 길 / 7-block path | *준비 중* | *준비 중* | *준비 중* | *준비 중* |
+| 2 | 반복문 / Loops | 20블록 벽 / 20-block wall | *준비 중* | *준비 중* | *준비 중* | *준비 중* |
+| 3 | 변수 / Variables | 크기 조절 가능한 벽 / Resizable wall | *준비 중* | *준비 중* | *준비 중* | *준비 중* |
+| 4 | 중첩 반복문 / Nested Loops | 7×7 정사각형 바닥 / 7×7 square floor | *준비 중* | *준비 중* | *준비 중* | *준비 중* |
+| 5 | 첫 피라미드 / First Pyramid | 5층 피라미드 / 5-layer pyramid | *준비 중* | *준비 중* | *준비 중* | *준비 중* |
+| 6 | 거꾸로 피라미드 / Inverted Pyramid | 거꾸로 피라미드 / Inverted pyramid | *준비 중* | *준비 중* | *준비 중* | *준비 중* |
+| 7 | 피라미드 변형 / Variations | 속이 빈 피라미드 / Hollow pyramid | *준비 중* | *준비 중* | *준비 중* | *준비 중* |
+| 8 | **최종: 다이아몬드** / **Final: Diamond** | 완전한 다이아몬드 / Full diamond | *준비 중* | *준비 중* | *준비 중* | *준비 중* |
 
 ---
 
