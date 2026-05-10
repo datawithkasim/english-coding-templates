@@ -33,6 +33,9 @@ import zipfile
 FACINGS = ["+X", "+Z", "-X", "-Z"]
 DELTA = {"+X": (1, 0, 0), "+Z": (0, 0, 1), "-X": (-1, 0, 0), "-Z": (0, 0, -1)}
 
+X_OFFSET = 10  # build 10 blocks east of player so player isn't engulfed
+PILLAR_HEIGHT = 4  # GLOWSTONE pillar above start cell for visibility
+
 
 def turn_right(f):
     return FACINGS[(FACINGS.index(f) + 1) % 4]
@@ -119,9 +122,9 @@ ANDS_WITH_REVISIT = {"5"}
 def maze_geometry(num, name, moves, z_offset):
     path, redstones, end, end_f = trace(moves)
 
-    path = [(x, y, z + z_offset) for (x, y, z) in path]
-    redstones = [(x, y, z + z_offset) for (x, y, z) in redstones]
-    end = (end[0], end[1], end[2] + z_offset)
+    path = [(x + X_OFFSET, y, z + z_offset) for (x, y, z) in path]
+    redstones = [(x + X_OFFSET, y, z + z_offset) for (x, y, z) in redstones]
+    end = (end[0] + X_OFFSET, end[1], end[2] + z_offset)
 
     dx, dy, dz = DELTA[end_f]
     diamond = (end[0] + dx, end[1] + dy, end[2] + dz)
@@ -159,7 +162,8 @@ def maze_geometry(num, name, moves, z_offset):
         wall_set.discard((start[0] - 1, start[1] + hy, start[2]))
 
     spawn = (start[0], start[1] - 1, start[2])
-    return floor_set, wall_set, redstones, spawn, diamond, len(set(path))
+    pillar = [(start[0], start[1] + 2 + i, start[2]) for i in range(PILLAR_HEIGHT)]
+    return floor_set, wall_set, redstones, spawn, diamond, len(set(path)), pillar
 
 
 FLOOR_PALETTE = [
@@ -183,7 +187,7 @@ SPAWN_BLOCK = "LIME_STAINED_GLASS"
 
 
 def gen_maze_py(num, name, geom):
-    floor_set, wall_set, redstones, spawn, diamond, path_len = geom
+    floor_set, wall_set, redstones, spawn, diamond, path_len, pillar = geom
     floor_block = FLOOR_PALETTE[(num - 1) % len(FLOOR_PALETTE)]
     lines = [
         f"# M{num} — {name}: {len(redstones)} redstones, {path_len} unique path cells, floor={floor_block}",
@@ -196,12 +200,14 @@ def gen_maze_py(num, name, geom):
     for p in redstones:
         lines.append(f"    blocks.place(REDSTONE_BLOCK, pos({p[0]}, {p[1]}, {p[2]}))")
     lines.append(f"    blocks.place({SPAWN_BLOCK}, pos({spawn[0]}, {spawn[1]}, {spawn[2]}))")
+    for p in pillar:
+        lines.append(f"    blocks.place(GLOWSTONE, pos({p[0]}, {p[1]}, {p[2]}))")
     lines.append(f"    blocks.place(DIAMOND_BLOCK, pos({diamond[0]}, {diamond[1]}, {diamond[2]}))")
     return "\n".join(lines) + "\n\n"
 
 
 def gen_maze_ts(num, name, geom):
-    floor_set, wall_set, redstones, spawn, diamond, path_len = geom
+    floor_set, wall_set, redstones, spawn, diamond, path_len, pillar = geom
     floor_block = FLOOR_PALETTE[(num - 1) % len(FLOOR_PALETTE)]
     lines = [
         f"// M{num} — {name}: {len(redstones)} redstones, {path_len} unique path cells, floor={floor_block}",
@@ -214,6 +220,8 @@ def gen_maze_ts(num, name, geom):
     for p in redstones:
         lines.append(f"    blocks.place(REDSTONE_BLOCK, pos({p[0]}, {p[1]}, {p[2]}))")
     lines.append(f"    blocks.place({SPAWN_BLOCK}, pos({spawn[0]}, {spawn[1]}, {spawn[2]}))")
+    for p in pillar:
+        lines.append(f"    blocks.place(GLOWSTONE, pos({p[0]}, {p[1]}, {p[2]}))")
     lines.append(f"    blocks.place(DIAMOND_BLOCK, pos({diamond[0]}, {diamond[1]}, {diamond[2]}))")
     lines.append("}")
     return "\n".join(lines) + "\n\n"
@@ -296,8 +304,8 @@ def build_py(geoms):
         body += gen_maze_py(num, name, geom)
 
     body += "def clear_zone():\n"
-    body += "    blocks.fill(AIR, pos(-15, -4, -15), pos(25, 15, 700), FillOperation.REPLACE)\n"
-    body += "    blocks.fill(GRASS, pos(-15, -5, -15), pos(25, -5, 700), FillOperation.REPLACE)\n\n\n"
+    body += "    blocks.fill(AIR, pos(2, -4, -15), pos(35, 15, 700), FillOperation.REPLACE)\n"
+    body += "    blocks.fill(GRASS, pos(2, -5, -15), pos(35, -5, 700), FillOperation.REPLACE)\n\n\n"
 
     body += "def on_chat_build_all():\n    clear_zone()\n"
     for (num, _, _, _), _ in geoms:
@@ -320,8 +328,8 @@ def build_ts(geoms):
         body += gen_maze_ts(num, name, geom)
 
     body += "function clear_zone () {\n"
-    body += "    blocks.fill(AIR, pos(-15, -4, -15), pos(25, 15, 700), FillOperation.Replace)\n"
-    body += "    blocks.fill(GRASS, pos(-15, -5, -15), pos(25, -5, 700), FillOperation.Replace)\n"
+    body += "    blocks.fill(AIR, pos(2, -4, -15), pos(35, 15, 700), FillOperation.Replace)\n"
+    body += "    blocks.fill(GRASS, pos(2, -5, -15), pos(35, -5, 700), FillOperation.Replace)\n"
     body += "}\n\n"
 
     body += 'player.onChat("build1", function () {\n'
@@ -396,8 +404,15 @@ README_MD = '''# Maze Madness — Week 3+4 World Builder
 - Floor: rotating colored stained glass per maze
 - Walls + ceiling: clear `GLASS`
 - Spawn: `LIME_STAINED_GLASS` (entry behind it is OPEN)
+- **Start pillar**: 4-block `GLOWSTONE` tower above each start (visible from far)
 - Goal: `DIAMOND_BLOCK`
 - Signposts: `REDSTONE_BLOCK`
+
+## Build position
+
+Mazes build **10 blocks east** of player position so the build does not engulf
+the player. Stand still, type `build1`, then walk/teleport agent to the
+glowstone start pillar.
 '''
 
 
@@ -426,7 +441,7 @@ def main():
 
     print("\nMaze summary:")
     for (num, name, moves, z_off), geom in geoms:
-        floor_set, wall_set, redstones, _, _, path_len = geom
+        floor_set, wall_set, redstones, _, _, path_len, _ = geom
         print(f"  M{num:2d} z={z_off:3d}  {name:35s}  rs={len(redstones):2d}  cells={path_len:3d}  walls={len(wall_set):3d}")
 
 
