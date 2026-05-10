@@ -1,36 +1,50 @@
-"""W1 — While Loops: 15 straight corridors of varying length.
-Solver: while not detect(DIAMOND_BLOCK, FORWARD): move(FORWARD, 1)
+"""W1 — Turning at Walls (L+R only): 15 mazes with left/right turn signposts.
+Solver:
+  while not detect(DIAMOND, FORWARD):
+    if RS LEFT: turn RIGHT, forward 1
+    elif RS RIGHT: turn LEFT, forward 1
+    else: forward 1
 """
 import pathlib
-from _maze_lib import (X_OFFSET, FLOOR_PALETTE, SPAWN_BLOCK,
+from _maze_lib import (DELTA, X_OFFSET, FLOOR_PALETTE, SPAWN_BLOCK,
+                       turn_right, turn_left, step,
                        wall_set_for_path, floor_for_path, open_entry,
                        pillar_for_start, write_builder)
 
-# (num, name, length, z_offset)
+# DSL: F, L, R only.
 MAZES = [
-    (1,  "5블록 / Length 5",   5,   0),
-    (2,  "7블록 / Length 7",   7,   20),
-    (3,  "10블록 / Length 10", 10,  40),
-    (4,  "12블록 / Length 12", 12,  60),
-    (5,  "15블록 / Length 15", 15,  85),
-    (6,  "18블록 / Length 18", 18,  110),
-    (7,  "22블록 / Length 22", 22,  140),
-    (8,  "25블록 / Length 25", 25,  170),
-    (9,  "30블록 / Length 30", 30,  205),
-    (10, "35블록 / Length 35", 35,  245),
-    (11, "40블록 / Length 40", 40,  290),
-    (12, "45블록 / Length 45", 45,  340),
-    (13, "50블록 / Length 50", 50,  395),
-    (14, "60블록 / Length 60", 60,  455),
-    (15, "80블록 / Length 80", 80,  525),
+    (1,  "1 turn (L)",       "FFFLFFF",                            0),
+    (2,  "1 turn (R)",       "FFFRFFF",                            25),
+    (3,  "2 turns L+R",      "FFLFFRFFF",                          50),
+    (4,  "3 turns",          "FFRFFLFFRFFF",                       75),
+    (5,  "4 turns",          "FFLFFRFFLFFRFFF",                    105),
+    (6,  "5 turns",          "FFRFFLFFRFFLFFRFFF",                 140),
+    (7,  "6 turns",          "FFLFFRFFLFFRFFLFFRFFF",              175),
+    (8,  "7 turns",          "FFRFFLFFRFFLFFRFFLFFRFFF",           210),
+    (9,  "8 turns dense",    "FRFLFRFLFRFLFRFLFFF",                250),
+    (10, "9 turns long",     "FFRFFLFFRFFLFFRFFLFFRFFLFFRFFF",     285),
+    (11, "10 turns weave",   "FFLFFRFFLFFRFFLFFRFFLFFRFFLFFRFFF",  330),
+    (12, "11 turns drift",   "FRFLFRFLFRFLFRFLFRFLFFFLFRFFF",      375),
+    (13, "12 turns tight",   "FRLRLRLRLRLRLRLRLFFF",               420),
+    (14, "13 turns mix",     "FFRFFLFLFRFRFLFLFRFRFLFLFRFFF",      465),
+    (15, "14 turns boss",    "FRFLFRFLFRFLFRFLFRFLFRFLFRFLFFF",    520),
 ]
 
-HEADER = '''# Maze Madness — Week 1: While Loops (벽까지 자동 이동)
-# 15 straight corridors of varying length. Agent walks forward until DIAMOND.
+HEADER = '''# Maze Madness — Week 1: Turning at Walls (방향 전환 — L+R only)
+# 15 mazes with left/right redstone turn signposts. No vertical, no ANDs.
+#
+# Signpost rules:
+#   RS on LEFT  -> turn RIGHT, forward 1
+#   RS on RIGHT -> turn LEFT,  forward 1
 #
 # Solver:
 #   while not agent.detect_block(DIAMOND_BLOCK, FORWARD):
-#       agent.move(FORWARD, 1)
+#       if agent.detect_block(REDSTONE_BLOCK, LEFT):
+#           agent.turn(RIGHT_TURN); agent.move(FORWARD, 1)
+#       elif agent.detect_block(REDSTONE_BLOCK, RIGHT):
+#           agent.turn(LEFT_TURN); agent.move(FORWARD, 1)
+#       else:
+#           agent.move(FORWARD, 1)
 #
 # Stand facing east (+X). Chat: build1 / m1..m15 / clear.
 # Maze builds 10 blocks east of player.
@@ -39,24 +53,47 @@ HEADER = '''# Maze Madness — Week 1: While Loops (벽까지 자동 이동)
 '''
 
 
-def build_maze_body(num, name, length, z_offset):
-    path_set = set((X_OFFSET + i, 0, z_offset) for i in range(length))
-    floor_set = floor_for_path(path_set)
-    end_x = X_OFFSET + length - 1
-    diamond = (end_x + 1, 0, z_offset)
-    wall_set = wall_set_for_path(path_set)
+def trace(moves):
+    pos = (0, 0, 0); f = "+X"; path = [pos]; redstones = []
+    for m in moves:
+        if m == "F":
+            pos = step(pos, f); path.append(pos)
+        elif m == "R":
+            redstones.append(step(pos, turn_left(f)))
+            f = turn_right(f); pos = step(pos, f); path.append(pos)
+        elif m == "L":
+            redstones.append(step(pos, turn_right(f)))
+            f = turn_left(f); pos = step(pos, f); path.append(pos)
+    return path, redstones, pos, f
+
+
+def build_maze_body(num, name, moves, z_offset):
+    path, redstones, end, end_f = trace(moves)
+    path = [(x + X_OFFSET, y, z + z_offset) for (x, y, z) in path]
+    redstones = [(x + X_OFFSET, y, z + z_offset) for (x, y, z) in redstones]
+    end = (end[0] + X_OFFSET, end[1], end[2] + z_offset)
+    dx, dy, dz = DELTA[end_f]
+    diamond = (end[0] + dx, end[1] + dy, end[2] + dz)
+
+    path_set = set(path)
+    redstone_set = set(redstones)
+    floor_set = floor_for_path(path_set, [redstone_set])
+    wall_set = wall_set_for_path(path_set, [redstone_set])
     wall_set.discard(diamond)
-    start = (X_OFFSET, 0, z_offset)
+    start = path[0]
     open_entry(wall_set, start)
-    spawn = (start[0], -1, z_offset)
+    spawn = (start[0], start[1] - 1, start[2])
     pillar = pillar_for_start(start)
     floor_block = FLOOR_PALETTE[(num - 1) % 15]
 
-    lines = [f"# M{num} - {name}", f"def build_maze_{num}():"]
+    lines = [f"# M{num} - {name}: {len(redstones)} redstones",
+             f"def build_maze_{num}():"]
     for p in sorted(floor_set):
         lines.append(f"    blocks.place({floor_block}, pos({p[0]}, {p[1]}, {p[2]}))")
     for p in sorted(wall_set):
         lines.append(f"    blocks.place(GLASS, pos({p[0]}, {p[1]}, {p[2]}))")
+    for p in redstones:
+        lines.append(f"    blocks.place(REDSTONE_BLOCK, pos({p[0]}, {p[1]}, {p[2]}))")
     lines.append(f"    blocks.place({SPAWN_BLOCK}, pos({spawn[0]}, {spawn[1]}, {spawn[2]}))")
     for p in pillar:
         lines.append(f"    blocks.place(GLOWSTONE, pos({p[0]}, {p[1]}, {p[2]}))")
@@ -66,10 +103,10 @@ def build_maze_body(num, name, length, z_offset):
 
 def main():
     here = pathlib.Path(__file__).parent
-    bodies = [(num, build_maze_body(num, name, length, z))
-              for (num, name, length, z) in MAZES]
+    bodies = [(num, build_maze_body(num, name, moves, z))
+              for (num, name, moves, z) in MAZES]
     out = write_builder(here, 1, HEADER, bodies,
-                        ((2, -4, -10), (110, 8, 620)), len(MAZES))
+                        ((2, -4, -15), (35, 8, 600)), len(MAZES))
     print(f"Wrote {out} ({out.stat().st_size} bytes)")
 
 

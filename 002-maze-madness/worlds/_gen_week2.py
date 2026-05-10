@@ -1,45 +1,53 @@
-"""W2 — Turning at Walls: 15 mazes with L/R turns (no vertical, no ANDs).
+"""W2 — 3D Movement (L+R+U+D): 15 mazes adding vertical signposts.
 Solver:
   while not detect(DIAMOND, FORWARD):
-    if RS LEFT: turn RIGHT
-    elif RS RIGHT: turn LEFT
-    move FORWARD 1
+    if RS DOWN: move UP 1
+    elif RS UP: move DOWN 1
+    elif RS LEFT: turn RIGHT, forward 1
+    elif RS RIGHT: turn LEFT, forward 1
+    else: forward 1
 """
 import pathlib
-from _maze_lib import (FACINGS, X_OFFSET, FLOOR_PALETTE, SPAWN_BLOCK,
+from _maze_lib import (DELTA, X_OFFSET, FLOOR_PALETTE, SPAWN_BLOCK,
                        turn_right, turn_left, step,
                        wall_set_for_path, floor_for_path, open_entry,
                        pillar_for_start, write_builder)
 
-# DSL: F, L, R only.
+# DSL: F, L, R, U, D.
 MAZES = [
-    (1,  "1 turn (L)",       "FFFLFFF",                            0),
-    (2,  "1 turn (R)",       "FFFRFFF",                            25),
-    (3,  "2 turns L+R",      "FFLFFRFFF",                          50),
-    (4,  "3 turns",          "FFRFFLFFRFFF",                       75),
-    (5,  "4 turns",          "FFLFFRFFLFFRFFF",                    105),
-    (6,  "5 turns",          "FFRFFLFFRFFLFFRFFF",                 140),
-    (7,  "6 turns",          "FFLFFRFFLFFRFFLFFRFFF",              175),
-    (8,  "7 turns",          "FFRFFLFFRFFLFFRFFLFFRFFF",           210),
-    (9,  "8 turns dense",    "FRFLFRFLFRFLFRFLFFF",                250),
-    (10, "9 turns long",     "FFRFFLFFRFFLFFRFFLFFRFFLFFRFFF",     285),
-    (11, "10 turns weave",   "FFLFFRFFLFFRFFLFFRFFLFFRFFLFFRFFF",  330),
-    (12, "11 turns drift",   "FRFLFRFLFRFLFRFLFRFLFFFLFRFFF",      375),
-    (13, "12 turns tight",   "FRLRLRLRLRLRLRLRLFFF",               420),
-    (14, "13 turns mix",     "FFRFFLFLFRFRFLFLFRFRFLFLFRFFF",      465),
-    (15, "14 turns boss",    "FRFLFRFLFRFLFRFLFRFLFRFLFRFLFFF",    520),
+    (1,  "Review L+R",          "FFLFFFRFFF",                                 0),
+    (2,  "First climb (U)",     "FFUFFFLFFF",                                 25),
+    (3,  "First descent (D)",   "FFDFFFRFFF",                                 50),
+    (4,  "L+R+U",               "FFRFFUFFLFFF",                               75),
+    (5,  "L+R+D",               "FFLFFDFFRFFF",                               100),
+    (6,  "All 4 types",         "FFRFFUFFLFFDFFRFFF",                         130),
+    (7,  "Climb weave",         "FFUFFLFFUFFRFFUFFF",                         165),
+    (8,  "Descent weave",       "FFDFFRFFDFFLFFDFFF",                         200),
+    (9,  "Up-down weave",       "FFUFFDFFUFFDFFRFFF",                         235),
+    (10, "Mix all types",       "FFRFFUFFLFFDFFRFFLFFUFFF",                   270),
+    (11, "Long mix",            "FFRFFLFFUFFDFFRFFLFFUFFDFFRFFF",             315),
+    (12, "Tight mix",           "FRFLFUFRFLFDFRFLFFF",                        365),
+    (13, "Climb tower",         "FFUFFUFFRFFLFFDFFDFFLFFRFFF",                400),
+    (14, "Long descent",        "FFDFFDFFLFFRFFUFFUFFRFFLFFF",                445),
+    (15, "Boss: 3D snake",      "FFRFFUFFLFFDFFRFFUFFLFFDFFRFFUFFLFFDFFF",    490),
 ]
 
-HEADER = '''# Maze Madness — Week 2: Turning at Walls (방향 전환)
-# 15 mazes with L+R redstone turn signs (no vertical, no ANDs).
+HEADER = '''# Maze Madness — Week 2: 3D Movement (L+R+U+D)
+# 15 mazes adding vertical (UP/DOWN) signposts to W1's L+R turns.
 #
 # Signpost rules:
-#   RS on LEFT  -> turn RIGHT, forward 1
-#   RS on RIGHT -> turn LEFT,  forward 1
+#   RS DOWN  -> move UP 1     (climb)
+#   RS UP    -> move DOWN 1   (drop)
+#   RS LEFT  -> turn RIGHT, forward 1
+#   RS RIGHT -> turn LEFT,  forward 1
 #
 # Solver:
 #   while not agent.detect_block(DIAMOND_BLOCK, FORWARD):
-#       if agent.detect_block(REDSTONE_BLOCK, LEFT):
+#       if agent.detect_block(REDSTONE_BLOCK, DOWN):
+#           agent.move(UP, 1)
+#       elif agent.detect_block(REDSTONE_BLOCK, UP):
+#           agent.move(DOWN, 1)
+#       elif agent.detect_block(REDSTONE_BLOCK, LEFT):
 #           agent.turn(RIGHT_TURN); agent.move(FORWARD, 1)
 #       elif agent.detect_block(REDSTONE_BLOCK, RIGHT):
 #           agent.turn(LEFT_TURN); agent.move(FORWARD, 1)
@@ -47,17 +55,13 @@ HEADER = '''# Maze Madness — Week 2: Turning at Walls (방향 전환)
 #           agent.move(FORWARD, 1)
 #
 # Stand facing east (+X). Chat: build1 / m1..m15 / clear.
-# Maze builds 10 blocks east of player.
 
 
 '''
 
 
 def trace(moves):
-    pos = (0, 0, 0)
-    f = "+X"
-    path = [pos]
-    redstones = []
+    pos = (0, 0, 0); f = "+X"; path = [pos]; redstones = []
     for m in moves:
         if m == "F":
             pos = step(pos, f); path.append(pos)
@@ -67,6 +71,12 @@ def trace(moves):
         elif m == "L":
             redstones.append(step(pos, turn_right(f)))
             f = turn_left(f); pos = step(pos, f); path.append(pos)
+        elif m == "U":
+            redstones.append((pos[0], pos[1]-1, pos[2]))
+            pos = (pos[0], pos[1]+1, pos[2]); path.append(pos)
+        elif m == "D":
+            redstones.append((pos[0], pos[1]+1, pos[2]))
+            pos = (pos[0], pos[1]-1, pos[2]); path.append(pos)
     return path, redstones, pos, f
 
 
@@ -75,7 +85,6 @@ def build_maze_body(num, name, moves, z_offset):
     path = [(x + X_OFFSET, y, z + z_offset) for (x, y, z) in path]
     redstones = [(x + X_OFFSET, y, z + z_offset) for (x, y, z) in redstones]
     end = (end[0] + X_OFFSET, end[1], end[2] + z_offset)
-    from _maze_lib import DELTA
     dx, dy, dz = DELTA[end_f]
     diamond = (end[0] + dx, end[1] + dy, end[2] + dz)
 
@@ -110,7 +119,7 @@ def main():
     bodies = [(num, build_maze_body(num, name, moves, z))
               for (num, name, moves, z) in MAZES]
     out = write_builder(here, 2, HEADER, bodies,
-                        ((2, -4, -15), (35, 8, 600)), len(MAZES))
+                        ((2, -4, -15), (40, 15, 600)), len(MAZES))
     print(f"Wrote {out} ({out.stat().st_size} bytes)")
 
 
