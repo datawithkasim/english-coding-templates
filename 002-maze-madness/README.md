@@ -1,45 +1,40 @@
-# 🌀 002 — Maze Madness / 미로 챌린지
+# 🌀 002 — 미로 챌린지
 
-8주 동안 미로 탐색, 레드스톤, 레버 작동을 배워 마지막에 **15×15×15 큐브 미로** 를 완성합니다.
-8 weeks of maze navigation, redstone, and lever mechanics — building up to a full **15×15×15 cube maze**.
+8주 동안 미로 탐색, 레드스톤, 레버 작동을 배워 마지막에 **15×15×15 큐브 미로**를 완성합니다.
 
 각 주차는 한 가지 새로운 개념을 배우는 독립적인 월드입니다.
-Each week introduces one new concept in its own world.
 
 ---
 
-## 📅 주차별 학습 / Weekly Plan
+## 📅 주차별 학습
 
 각 주차 자료는 아래 표에서 바로 받으실 수 있습니다.
-You can download each week's files directly from the table below.
 
-| 주 / Week | 주제 / Topic | 결과물 / Result | 📦 월드 / World | 🧱 블록 / Blocks | 🐍 파이썬 / Python | 🎬 영상 / Video |
-|---|---|---|---|---|---|---|
-| 1 | 단일 신호 / Singles (L+R+U+D) | 4가지 단일 신호 (15미로) / 4 single signals (15 mazes) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-maze-madness/worlds/week1.mcworld) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-maze-madness/blocks/week1.mkcd) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-maze-madness/python/week1.mkcd) | *준비 중* |
-| 2 | 규칙 변형 / Mixed Rules | 매 미로마다 다른 규칙 (15미로) / Different rule per maze (15) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-maze-madness/worlds/week2.mcworld) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-maze-madness/blocks/week2.mkcd) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-maze-madness/python/week2.mkcd) | *준비 중* |
-| 3 | AND 조건 / AND Conditions | 5 ANDs (점진 + 변형) / 5 ANDs progressive + variants (10 mazes) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-maze-madness/worlds/week3.mcworld) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-maze-madness/blocks/week3.mkcd) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-maze-madness/python/week3.mkcd) | *준비 중* |
-| 4 | OR 조건 + 다중 단계 AND / OR + Multi-step ANDs | 3 ORs + 2 ANDs (10미로) / 3 ORs + 2 multi-step ANDs (10 mazes) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-maze-madness/worlds/week4.mcworld) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-maze-madness/blocks/week4.mkcd) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-maze-madness/python/week4.mkcd) | *준비 중* |
-| 5 | 레드스톤 도어 / Iron Door | 막힌 길 우회 / Route around blocked path | *준비 중* | *준비 중* | *준비 중* | *준비 중* |
-| 6 | 레버 조작 / Lever Interaction | 레버 작동 후 통과 / Interact then pass | *준비 중* | *준비 중* | *준비 중* | *준비 중* |
-| 7 | 다중 레버 / Multi-Lever | 레버 순서대로 / Multiple levers in sequence | *준비 중* | *준비 중* | *준비 중* | *준비 중* |
-| 8 | **최종: 15×15×15 큐브 미로** / **Final: Cube Maze** | 모든 개념 종합 / All concepts combined | *준비 중* | *준비 중* | *준비 중* | *준비 중* |
+| 주 | 주제 | 📦 월드 | 🧱 블록 | 🐍 파이썬 | 🎬 영상 |
+|---|---|---|---|---|---|
+| 1 | 단일 신호 (L+R+U+D) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-maze-madness/worlds/week1.mcworld) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-maze-madness/blocks/week1.mkcd) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-maze-madness/python/week1.mkcd) | *준비 중* |
+| 2 | 규칙 변형 | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-maze-madness/worlds/week2.mcworld) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-maze-madness/blocks/week2.mkcd) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-maze-madness/python/week2.mkcd) | *준비 중* |
+| 3 | AND 조건 | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-maze-madness/worlds/week3.mcworld) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-maze-madness/blocks/week3.mkcd) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-maze-madness/python/week3.mkcd) | *준비 중* |
+| 4 | OR 조건 + 다중 단계 AND | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-maze-madness/worlds/week4.mcworld) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-maze-madness/blocks/week4.mkcd) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-maze-madness/python/week4.mkcd) | *준비 중* |
+| 5 | 레드스톤 도어 | *준비 중* | *준비 중* | *준비 중* | *준비 중* |
+| 6 | 레버 조작 | *준비 중* | *준비 중* | *준비 중* | *준비 중* |
+| 7 | 다중 레버 | *준비 중* | *준비 중* | *준비 중* | *준비 중* |
+| 8 | **최종: 15×15×15 큐브 미로** | *준비 중* | *준비 중* | *준비 중* | *준비 중* |
 
 > 💡 매주 월드 파일은 그 주의 개념만 다룹니다 (이전 주차 개념 복습 포함).
-> Each weekly world covers only that week's concept (with prior-week review).
 
 ---
 
-## 📂 자료 / Files
+## 📂 자료
 
-- 📦 [`worlds/`](./worlds) — 매주 월드 파일 / Weekly world files
-- 🐍 [`python/`](./python) — 파이썬 코드 템플릿 / Python templates
-- 🧱 [`blocks/`](./blocks) — 블록 코드 템플릿 / Block templates
+- 📦 [`worlds/`](./worlds) — 매주 월드 파일
+- 🐍 [`python/`](./python) — 파이썬 코드 템플릿
+- 🧱 [`blocks/`](./blocks) — 블록 코드 템플릿
 
-각 자료는 매주 **노션 숙제 페이지** 에서도 직접 다운로드할 수 있습니다 (카카오톡으로 안내).
-You can also download each file directly from the **weekly Notion homework page** (sent via KakaoTalk).
+각 자료는 매주 **노션 숙제 페이지**에서도 바로 받으실 수 있습니다. (페이지 링크는 카카오톡으로 안내드립니다.)
 
 ---
 
-## 🎬 데모 영상 / Demo Videos
+## 🎬 데모 영상
 
-YouTube 재생목록: *준비 중 / Coming soon*
+YouTube 재생목록: *준비 중*
