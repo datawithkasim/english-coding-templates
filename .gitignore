@@ -1,0 +1,6 @@
+# 월드 빌더 / 생성기 스크립트 (선생님 전용, 학부모 노출 X)
+**/worlds/_builder_*.py
+**/worlds/_gen_*.py
+**/worlds/_builder_lib.py
+**/worlds/_maze_lib.py
+**/worlds/__pycache__/

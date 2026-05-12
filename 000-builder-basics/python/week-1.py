@@ -1,3 +1,2 @@
-# Week 1 Python template / 파이썬 템플릿
+# 1주차 파이썬 템플릿
 # 준비 중입니다 — 선생님이 곧 업로드해 드릴게요.
-# Coming soon — your teacher will upload this file before Week 1 starts.
