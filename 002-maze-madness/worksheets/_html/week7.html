@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>🎚️ M002 Week 7 — English Worksheet</title>
+<style>
+@page { size: A4; margin: 18mm 16mm 22mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-family: "Inter", "Segoe UI", system-ui, sans-serif; color: #1a1a2e; }
+body { font-size: 15px; line-height: 1.55; }
+
+.cover { border-bottom: 3px solid #ff7849; padding-bottom: 14px; margin-bottom: 20px; }
+.brand { font-size: 14px; font-weight: 800; color: #ff7849; letter-spacing: .06em; }
+h1 { font-size: 28px; color: #6b4ee6; margin: 8px 0 6px; line-height: 1.25; }
+h2 { font-size: 19px; color: #6b4ee6; margin: 22px 0 12px; padding-top: 10px; border-top: 1px solid #eee; page-break-before: always; }
+section.first h2, h2:first-of-type { border-top: none; padding-top: 0; page-break-before: avoid; }
+h3, h4 { font-size: 15px; margin: 14px 0 8px; color: #1a1a2e; }
+p { margin: 8px 0; }
+strong { color: #1a1a2e; }
+em { color: #555; }
+
+ul, ol { margin: 8px 0 8px 24px; }
+li { margin: 3px 0; }
+
+pre {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 13.5px;
+  background: #1e1e2e;
+  color: #b9f6ca;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 10px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  page-break-inside: avoid;
+  line-height: 1.5;
+}
+pre code { background: transparent; padding: 0; color: inherit; }
+code {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  background: #fff1e8;
+  color: #ff7849;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+blockquote {
+  margin: 10px 0;
+  padding: 10px 16px;
+  background: #fff6ef;
+  border-left: 3px solid #ff7849;
+  border-radius: 0 6px 6px 0;
+  color: #6a3a1c;
+}
+
+.write-space {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #ffffff 0,
+    #ffffff 27px,
+    #d4d4d4 27px,
+    #d4d4d4 28px
+  );
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  min-height: 114px;
+  margin: 10px 0 20px;
+  page-break-inside: avoid;
+}
+.write-space.short { min-height: 86px; }
+.write-space.tall { min-height: 170px; }
+
+hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
+
+.meta { color: #666; font-size: 13px; margin: 0 0 14px; }
+.answer-lines {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 14px 16px;
+  background: #fafafa;
+  white-space: pre;
+  line-height: 2.2;
+}
+
+footer {
+  position: fixed;
+  bottom: 10mm; left: 16mm; right: 16mm;
+  text-align: center;
+  font-size: 10px;
+  color: #aaa;
+}
+footer b { color: #ff7849; }
+</style>
+</head>
+<body>
+<div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
+<h1>🎚️ M002 Week 7 — English Worksheet</h1>
+<p><strong>Topic:</strong> Multi-Lever Puzzles · <strong>Course:</strong> Maze Madness · <strong>Time:</strong> about 45 minutes</p>
+<p>This week the maze has <strong>multiple levers</strong> that must be flipped in the right order. You will also wrap your "move and flip" pattern into a <strong>function</strong> to keep the code clean.</p>
+<hr />
+<h2>1 · Predict 🔮</h2>
+<p>Read each set of steps. Before you imagine the agent doing it, write what you think will happen.</p>
+<pre><code>function flip_next_lever:
+    while no lever ahead:
+        move forward
+    interact ahead
+
+flip_next_lever
+flip_next_lever
+flip_next_lever
+</code></pre>
+<p><strong>How many levers does the agent flip? Why use a function?</strong></p>
+<div class="write-space"></div>
+
+<pre><code>function flip_next_lever:
+    while no lever ahead:
+        move forward
+    interact ahead
+
+flip_next_lever
+turn right
+flip_next_lever
+</code></pre>
+<p><strong>Between the two function calls, the agent </strong>turns right<strong>. Why might that matter?</strong></p>
+<div class="write-space"></div>
+
+<pre><code>flip lever B
+flip lever A
+</code></pre>
+<p><strong>The maze needs lever A flipped FIRST, then lever B. What happens with this order?</strong></p>
+<div class="write-space"></div>
+
+<hr />
+<h2>2 · Spot the Bug 🐛</h2>
+<p>Each block of code below was meant to do something, but it is broken. Read what the code is <strong>supposed</strong> to do, then rewrite it so it works. After that, explain why the original was wrong and why your fix works.</p>
+<p><strong>Bug A</strong> — The agent is supposed to flip <strong>3 levers</strong> in a row. The code repeats the same pattern 3 times — turn that into a function.</p>
+<pre><code>while no lever ahead:
+    move forward
+interact ahead
+
+while no lever ahead:
+    move forward
+interact ahead
+
+while no lever ahead:
+    move forward
+interact ahead
+</code></pre>
+<p><strong>Write the fixed code using a function:</strong></p>
+<div class="write-space"></div>
+
+<p><strong>Why is the function version better?</strong></p>
+<div class="write-space"></div>
+
+<p><strong>Bug B</strong> — Lever <strong>A must be flipped before lever B</strong>, otherwise the door stays closed.</p>
+<pre><code>flip_next_lever   # lever B
+turn right
+flip_next_lever   # lever A
+</code></pre>
+<p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div>
+
+<p><strong>Bug C</strong> — The function should <strong>only flip a lever</strong> — not turn or move after. Right now the function does too much.</p>
+<pre><code>function flip_next_lever:
+    while no lever ahead:
+        move forward
+    interact ahead
+    turn right
+    move forward
+</code></pre>
+<p><strong>Hint:</strong> keep the function small. Move the turn and the extra move outside.</p>
+<p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div>
+
+<hr />
+<h2>3 · Tell Me What You Built 📸</h2>
+<p>Now switch to your homework world. The maze has <strong>multiple levers</strong> that must be flipped in the correct order. Use <strong>at least one function</strong> in your solution. When you finish, come back here.</p>
+<p>Send a photo or video of the agent reaching the end, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.</p>
+<blockquote>
+<p>First, I planned the order of levers as …</p>
+<p>My function <code>…</code> does …</p>
+<p>I called the function … times.</p>
+<p>The order mattered because …</p>
+<p>The hardest part was …</p>
+<p>If I had more time, I would …</p>
+</blockquote>
+<div class="write-space tall" style="min-height: 340px"></div>
+
+<hr />
+<h2>4 · Record Your Walkthrough 🎥</h2>
+<p>Now take a video on your phone (or a parent's phone) while the agent runs the maze. Talk through it like you are teaching someone who has never seen it. Try to use these words: <strong>lever</strong>, <strong>function</strong>, <strong>call</strong>, <strong>order</strong>, <strong>interact</strong>.</p>
+<blockquote>
+<ol>
+<li>Show all the levers in the maze and say the order to flip them.</li>
+<li>Run your code and follow the agent through.</li>
+<li>Read your function and the calls out loud and say what each one does.</li>
+<li>Show one bug you hit and how you fixed it.</li>
+</ol>
+</blockquote>
+<p><strong>Write what you will say in your video.</strong> Use the space below to plan it before you record — you can read from it while filming.</p>
+<div class="write-space tall" style="min-height: 340px"></div>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.</p>
+</body>
+</html>

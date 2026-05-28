@@ -10,16 +10,16 @@
 
 각 주차 자료는 아래 표에서 바로 받으실 수 있습니다 — 따로 페이지에 들어가지 않으셔도 됩니다.
 
-| 주 | 주제 | 📦 월드 | 🧱 블록 | 🐍 파이썬 | 🎬 영상 |
-|---|---|---|---|---|---|
-| 1 | 에이전트와 첫 인사 | *준비 중* | *준비 중* | *준비 중* | *준비 중* |
-| 2 | 반복문 | *준비 중* | *준비 중* | *준비 중* | *준비 중* |
-| 3 | 변수 | *준비 중* | *준비 중* | *준비 중* | *준비 중* |
-| 4 | 중첩 반복문 | *준비 중* | *준비 중* | *준비 중* | *준비 중* |
-| 5 | 첫 피라미드 | *준비 중* | *준비 중* | *준비 중* | *준비 중* |
-| 6 | 거꾸로 피라미드 | *준비 중* | *준비 중* | *준비 중* | *준비 중* |
-| 7 | 피라미드 변형 | *준비 중* | *준비 중* | *준비 중* | *준비 중* |
-| 8 | **최종: 다이아몬드 구조물** | *준비 중* | *준비 중* | *준비 중* | *준비 중* |
+| 주 | 주제 | 📦 월드 | 🧱 블록 | 🐍 파이썬 | 🎬 영상 | 📝 워크시트 |
+|---|---|---|---|---|---|---|
+| 1 | 에이전트와 첫 인사 | *준비 중* | *준비 중* | *준비 중* | *준비 중* | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/001-pyramid-problems/worksheets/week-1.pdf) |
+| 2 | 반복문 | *준비 중* | *준비 중* | *준비 중* | *준비 중* | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/001-pyramid-problems/worksheets/week-2.pdf) |
+| 3 | 변수 | *준비 중* | *준비 중* | *준비 중* | *준비 중* | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/001-pyramid-problems/worksheets/week-3.pdf) |
+| 4 | 중첩 반복문 | *준비 중* | *준비 중* | *준비 중* | *준비 중* | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/001-pyramid-problems/worksheets/week-4.pdf) |
+| 5 | 첫 피라미드 | *준비 중* | *준비 중* | *준비 중* | *준비 중* | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/001-pyramid-problems/worksheets/week-5.pdf) |
+| 6 | 거꾸로 피라미드 | *준비 중* | *준비 중* | *준비 중* | *준비 중* | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/001-pyramid-problems/worksheets/week-6.pdf) |
+| 7 | 피라미드 변형 | *준비 중* | *준비 중* | *준비 중* | *준비 중* | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/001-pyramid-problems/worksheets/week-7.pdf) |
+| 8 | **최종: 다이아몬드 구조물** | *준비 중* | *준비 중* | *준비 중* | *준비 중* | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/001-pyramid-problems/worksheets/week-8.pdf) |
 
 ---
 

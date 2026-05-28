@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>🌀 M002 Week 2 — English Worksheet</title>
+<style>
+@page { size: A4; margin: 18mm 16mm 22mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-family: "Inter", "Segoe UI", system-ui, sans-serif; color: #1a1a2e; }
+body { font-size: 15px; line-height: 1.55; }
+
+.cover { border-bottom: 3px solid #ff7849; padding-bottom: 14px; margin-bottom: 20px; }
+.brand { font-size: 14px; font-weight: 800; color: #ff7849; letter-spacing: .06em; }
+h1 { font-size: 28px; color: #6b4ee6; margin: 8px 0 6px; line-height: 1.25; }
+h2 { font-size: 19px; color: #6b4ee6; margin: 22px 0 12px; padding-top: 10px; border-top: 1px solid #eee; page-break-before: always; }
+section.first h2, h2:first-of-type { border-top: none; padding-top: 0; page-break-before: avoid; }
+h3, h4 { font-size: 15px; margin: 14px 0 8px; color: #1a1a2e; }
+p { margin: 8px 0; }
+strong { color: #1a1a2e; }
+em { color: #555; }
+
+ul, ol { margin: 8px 0 8px 24px; }
+li { margin: 3px 0; }
+
+pre {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 13.5px;
+  background: #1e1e2e;
+  color: #b9f6ca;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 10px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  page-break-inside: avoid;
+  line-height: 1.5;
+}
+pre code { background: transparent; padding: 0; color: inherit; }
+code {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  background: #fff1e8;
+  color: #ff7849;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+blockquote {
+  margin: 10px 0;
+  padding: 10px 16px;
+  background: #fff6ef;
+  border-left: 3px solid #ff7849;
+  border-radius: 0 6px 6px 0;
+  color: #6a3a1c;
+}
+
+.write-space {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #ffffff 0,
+    #ffffff 27px,
+    #d4d4d4 27px,
+    #d4d4d4 28px
+  );
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  min-height: 114px;
+  margin: 10px 0 20px;
+  page-break-inside: avoid;
+}
+.write-space.short { min-height: 86px; }
+.write-space.tall { min-height: 170px; }
+
+hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
+
+.meta { color: #666; font-size: 13px; margin: 0 0 14px; }
+.answer-lines {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 14px 16px;
+  background: #fafafa;
+  white-space: pre;
+  line-height: 2.2;
+}
+
+footer {
+  position: fixed;
+  bottom: 10mm; left: 16mm; right: 16mm;
+  text-align: center;
+  font-size: 10px;
+  color: #aaa;
+}
+footer b { color: #ff7849; }
+</style>
+</head>
+<body>
+<div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
+<h1>🌀 M002 Week 2 — English Worksheet</h1>
+<p><strong>Topic:</strong> Turning at Walls · <strong>Course:</strong> Maze Madness · <strong>Time:</strong> about 45 minutes</p>
+<p>This week your agent follows one simple rule: if there's a wall in front, turn; if not, move forward.</p>
+<hr />
+<h2>1 · Predict 🔮</h2>
+<p>Read each set of steps. Before you imagine the agent doing it, write what you think will happen.</p>
+<pre><code>if wall ahead:
+    turn right
+otherwise:
+    move forward
+</code></pre>
+<p><strong>What does the agent do if there's a wall in front? What if the path is clear?</strong></p>
+<div class="write-space"></div>
+
+<pre><code>keep doing forever:
+    if wall ahead:
+        turn right
+    otherwise:
+        move forward
+</code></pre>
+<p><strong>What is the agent doing in plain English?</strong></p>
+<div class="write-space"></div>
+
+<pre><code>direction = &quot;right&quot;
+
+if direction is &quot;left&quot;:
+    turn left
+otherwise if direction is &quot;right&quot;:
+    turn right
+otherwise:
+    move forward
+</code></pre>
+<p><strong>What does the agent do? What would change if <code>direction</code> was set to <code>"back"</code>?</strong></p>
+<div class="write-space"></div>
+
+<hr />
+<h2>2 · Spot the Bug 🐛</h2>
+<p>Each pair shows clean steps first, then a broken version of the same idea. Circle what's different and explain the bug in one short sentence.</p>
+<p><strong>Pair A</strong></p>
+<pre><code># clean
+if wall ahead:
+    turn right
+otherwise:
+    move forward
+</code></pre>
+<pre><code># buggy
+if path is clear:
+    turn right
+otherwise:
+    move forward
+</code></pre>
+<p><strong>What is wrong?</strong></p>
+<div class="write-space"></div>
+
+<p><strong>Pair B</strong></p>
+<pre><code># clean
+if wall ahead:
+    turn right
+otherwise:
+    move forward
+</code></pre>
+<pre><code># buggy
+if wall ahead:
+    turn right
+    move forward
+</code></pre>
+<p><strong>What is wrong?</strong></p>
+<div class="write-space"></div>
+
+<p><strong>Pair C</strong></p>
+<pre><code># clean
+if direction is &quot;left&quot;:
+    turn left
+otherwise if direction is &quot;right&quot;:
+    turn right
+otherwise:
+    move forward
+</code></pre>
+<pre><code># buggy
+if direction is &quot;left&quot;:
+    turn right
+otherwise if direction is &quot;right&quot;:
+    turn left
+otherwise:
+    move forward
+</code></pre>
+<p><strong>What is wrong?</strong></p>
+<div class="write-space"></div>
+
+<hr />
+<h2>3 · Tell Me What You Built 📸</h2>
+<p>Now switch to your homework world. Get your agent through this week's maze using <code>if</code> / <code>otherwise</code>. When you finish, come back here.</p>
+<p>Send a photo or video of your agent solving the maze, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.</p>
+<blockquote>
+<p>First, I read the maze and noticed …</p>
+<p>I chose <code>if</code> / <code>otherwise</code> because …</p>
+<p>The condition I checked was …</p>
+<p>My agent got stuck when …</p>
+<p>I fixed it by …</p>
+<p>Next time, I want to try …</p>
+</blockquote>
+<div class="write-space tall"></div>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + a photo or video of your agent solving the maze to teacher on KakaoTalk.</p>
+</body>
+</html>

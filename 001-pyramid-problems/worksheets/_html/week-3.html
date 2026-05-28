@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>🔢 M001 Week 3 — English Worksheet</title>
+<style>
+@page { size: A4; margin: 18mm 16mm 22mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-family: "Inter", "Segoe UI", system-ui, sans-serif; color: #1a1a2e; }
+body { font-size: 15px; line-height: 1.55; }
+
+.cover { border-bottom: 3px solid #ff7849; padding-bottom: 14px; margin-bottom: 20px; }
+.brand { font-size: 14px; font-weight: 800; color: #ff7849; letter-spacing: .06em; }
+h1 { font-size: 28px; color: #6b4ee6; margin: 8px 0 6px; line-height: 1.25; }
+h2 { font-size: 19px; color: #6b4ee6; margin: 22px 0 12px; padding-top: 10px; border-top: 1px solid #eee; page-break-before: always; }
+section.first h2, h2:first-of-type { border-top: none; padding-top: 0; page-break-before: avoid; }
+h3, h4 { font-size: 15px; margin: 14px 0 8px; color: #1a1a2e; }
+p { margin: 8px 0; }
+strong { color: #1a1a2e; }
+em { color: #555; }
+
+ul, ol { margin: 8px 0 8px 24px; }
+li { margin: 3px 0; }
+
+pre {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 13.5px;
+  background: #1e1e2e;
+  color: #b9f6ca;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 10px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  page-break-inside: avoid;
+  line-height: 1.5;
+}
+pre code { background: transparent; padding: 0; color: inherit; }
+code {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  background: #fff1e8;
+  color: #ff7849;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+blockquote {
+  margin: 10px 0;
+  padding: 10px 16px;
+  background: #fff6ef;
+  border-left: 3px solid #ff7849;
+  border-radius: 0 6px 6px 0;
+  color: #6a3a1c;
+}
+
+.write-space {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #ffffff 0,
+    #ffffff 27px,
+    #d4d4d4 27px,
+    #d4d4d4 28px
+  );
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  min-height: 114px;
+  margin: 10px 0 20px;
+  page-break-inside: avoid;
+}
+.write-space.short { min-height: 86px; }
+.write-space.tall { min-height: 170px; }
+
+hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
+
+.meta { color: #666; font-size: 13px; margin: 0 0 14px; }
+.answer-lines {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 14px 16px;
+  background: #fafafa;
+  white-space: pre;
+  line-height: 2.2;
+}
+
+footer {
+  position: fixed;
+  bottom: 10mm; left: 16mm; right: 16mm;
+  text-align: center;
+  font-size: 10px;
+  color: #aaa;
+}
+footer b { color: #ff7849; }
+</style>
+</head>
+<body>
+<div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
+<h1>🔢 M001 Week 3 — English Worksheet</h1>
+<p><strong>Topic:</strong> Variables · <strong>Course:</strong> Pyramid Problems · <strong>Time:</strong> about 45 minutes</p>
+<hr />
+<h2>1 · Predict 🔮</h2>
+<p>Read each set of steps. Before you imagine the agent doing it, write what you think will happen.</p>
+<pre><code>set size to 5
+repeat size times:
+    place block down
+    move forward
+</code></pre>
+<p><strong>How many blocks does the agent place?</strong></p>
+<div class="write-space"></div>
+
+<pre><code>set size to 3
+repeat size times:
+    place block down
+    move forward
+set size to 6
+repeat size times:
+    place block down
+    move forward
+</code></pre>
+<p><strong>How long is the full line of blocks? Why?</strong></p>
+<div class="write-space"></div>
+
+<pre><code>set height to 4
+repeat height times:
+    place block down
+    move up by 1
+</code></pre>
+<p><strong>What does the agent build? How tall?</strong></p>
+<div class="write-space"></div>
+
+<hr />
+<h2>2 · Spot the Bug 🐛</h2>
+<p>Each block of code below was meant to do something, but it is broken. Read what the code is <strong>supposed</strong> to do, then rewrite it so it works. After that, explain why the original was wrong and why your fix works.</p>
+<p><strong>Bug A</strong> — The agent is supposed to build a row of 7 blocks using a variable called <code>size</code>.</p>
+<pre><code>repeat 7 times:
+    place block down
+    move forward
+</code></pre>
+<p><strong>Write the fixed code using a variable:</strong></p>
+<div class="write-space"></div>
+
+<p><strong>Why is using a variable better here?</strong></p>
+<div class="write-space"></div>
+
+<p><strong>Bug B</strong> — The agent is supposed to build a row of <code>size</code> blocks. The size should be 5.</p>
+<pre><code>set size to 5
+repeat 3 times:
+    place block down
+    move forward
+</code></pre>
+<p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div>
+
+<p><strong>Bug C</strong> — The agent is supposed to build a tower that is <code>height</code> blocks tall, where <code>height</code> is 6.</p>
+<pre><code>set height to 6
+repeat height times:
+    place block down
+    move forward
+</code></pre>
+<p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div>
+
+<hr />
+<h2>3 · Tell Me What You Built 📸</h2>
+<p>Now switch to your homework world. Use a <code>size</code> variable to build a <strong>size-5 wall</strong>, then change the variable to <strong>12</strong> and run it again. Compare the two results. When you finish, come back here.</p>
+<p>Send a photo or video of what you built, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.</p>
+<blockquote>
+<p>First, I …</p>
+<p>I made a variable called …</p>
+<p>I set it to …</p>
+<p>I used the variable in my loop because …</p>
+<p>The hardest part was …</p>
+<p>If I changed the variable to a bigger number, the build would …</p>
+</blockquote>
+<div class="write-space tall" style="min-height: 340px"></div>
+
+<hr />
+<h2>4 · Record Your Walkthrough 🎥</h2>
+<p>Now take a video on your phone (or a parent's phone) while you walk the camera around what you built. Talk through it like you are teaching someone who has never seen it. Try to use these words: <strong>variable</strong>, <strong>set</strong>, <strong>loop</strong>, <strong>repeat</strong>, <strong>block</strong>.</p>
+<blockquote>
+<ol>
+<li>Show what you built.</li>
+<li>Read your variable and loop out loud and say what each one does.</li>
+<li>Change the variable to a different number and run the code again — show the new result.</li>
+<li>Say why variables are useful.</li>
+</ol>
+</blockquote>
+<p><strong>Write what you will say in your video.</strong> Use the space below to plan it before you record — you can read from it while filming.</p>
+<div class="write-space tall" style="min-height: 340px"></div>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.</p>
+</body>
+</html>
