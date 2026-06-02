@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>🎚️ M002 Week 7 — English Worksheet</title>
+<title>🧱 M002 Week 7 — English Worksheet</title>
 <style>
 @page { size: A4; margin: 18mm 16mm 22mm; }
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -97,68 +97,56 @@ footer b { color: #ff7849; }
 </head>
 <body>
 <div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
-<h1>🎚️ M002 Week 7 — English Worksheet</h1>
-<p><strong>Topic:</strong> Multi-Lever Puzzles · <strong>Course:</strong> Maze Madness · <strong>Time:</strong> about 45 minutes</p>
-<p>This week the maze has <strong>multiple levers</strong> that must be flipped in the right order. You will also wrap your "move and flip" pattern into a <strong>function</strong> to keep the code clean.</p>
+<h1>🧱 M002 Week 7 — English Worksheet</h1>
+<p><strong>Topic:</strong> Pistons and Mazes · <strong>Course:</strong> Maze Madness · <strong>Time:</strong> about 45 minutes</p>
+<p>This week the maze uses <strong>pistons</strong>. A piston pushes or pulls a block when it gets a redstone signal. A <strong>sticky piston</strong> can pull a block back, opening a path. Your agent flips a lever to power a piston, then crosses the gap it opens.</p>
 <hr />
 <h2>1 · Predict 🔮</h2>
 <p>Read each set of steps. Before you imagine the agent doing it, write what you think will happen.</p>
-<pre><code>function flip_next_lever:
-    while no lever ahead:
-        move forward
-    interact ahead
-
-flip_next_lever
-flip_next_lever
-flip_next_lever
+<pre><code>move forward
+interact ahead
+move forward
 </code></pre>
-<p><strong>How many levers does the agent flip? Why use a function?</strong></p>
+<p><strong>The agent walks up to a lever, flips it, and a sticky piston pulls a block back. What happens to the path? Can the agent move forward now?</strong></p>
 <div class="write-space"></div>
 
-<pre><code>function flip_next_lever:
-    while no lever ahead:
-        move forward
+<pre><code>if gap ahead:
     interact ahead
-
-flip_next_lever
-turn right
-flip_next_lever
+otherwise:
+    move forward
 </code></pre>
-<p><strong>Between the two function calls, the agent </strong>turns right<strong>. Why might that matter?</strong></p>
+<p><strong>There is a gap in the floor with a piston bridge. What does the agent do at the gap? What does it do on solid ground?</strong></p>
 <div class="write-space"></div>
 
-<pre><code>flip lever B
-flip lever A
+<pre><code>keep doing forever:
+    if gap ahead:
+        interact ahead
+        move forward
+    otherwise:
+        move forward
 </code></pre>
-<p><strong>The maze needs lever A flipped FIRST, then lever B. What happens with this order?</strong></p>
+<p><strong>Describe in plain English what the agent is doing, step by step.</strong></p>
 <div class="write-space"></div>
 
 <hr />
 <h2>2 · Spot the Bug 🐛</h2>
 <p>Each block of code below was meant to do something, but it is broken. Read what the code is <strong>supposed</strong> to do, then rewrite it so it works. After that, explain why the original was wrong and why your fix works.</p>
-<p><strong>Bug A</strong> — The agent is supposed to flip <strong>3 levers</strong> in a row. The code repeats the same pattern 3 times — turn that into a function.</p>
-<pre><code>while no lever ahead:
-    move forward
-interact ahead
-
-while no lever ahead:
-    move forward
-interact ahead
-
-while no lever ahead:
-    move forward
+<p><strong>Bug A</strong> — The agent is supposed to <strong>power the piston first</strong>, then cross the gap it opens.</p>
+<pre><code>move forward
+move forward
 interact ahead
 </code></pre>
-<p><strong>Write the fixed code using a function:</strong></p>
+<p><strong>Hint:</strong> flip the lever <em>before</em> you reach the gap, not after.</p>
+<p><strong>Write the fixed code:</strong></p>
 <div class="write-space"></div>
 
-<p><strong>Why is the function version better?</strong></p>
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
 <div class="write-space"></div>
 
-<p><strong>Bug B</strong> — Lever <strong>A must be flipped before lever B</strong>, otherwise the door stays closed.</p>
-<pre><code>flip_next_lever   # lever B
-turn right
-flip_next_lever   # lever A
+<p><strong>Bug B</strong> — The agent should only <code>interact</code> when there is a <strong>gap</strong> ahead. Right now it tries to flip a lever on every step.</p>
+<pre><code>keep doing forever:
+    interact ahead
+    move forward
 </code></pre>
 <p><strong>Write the fixed code:</strong></p>
 <div class="write-space"></div>
@@ -166,15 +154,13 @@ flip_next_lever   # lever A
 <p><strong>Why was it wrong? Why does your fix work?</strong></p>
 <div class="write-space"></div>
 
-<p><strong>Bug C</strong> — The function should <strong>only flip a lever</strong> — not turn or move after. Right now the function does too much.</p>
-<pre><code>function flip_next_lever:
-    while no lever ahead:
-        move forward
-    interact ahead
-    turn right
-    move forward
+<p><strong>Bug C</strong> — A sticky piston holds the bridge <strong>only while the lever is ON</strong>. The agent must cross <strong>before</strong> turning the lever back off.</p>
+<pre><code>interact ahead
+move forward
+interact ahead
+move forward
 </code></pre>
-<p><strong>Hint:</strong> keep the function small. Move the turn and the extra move outside.</p>
+<p><strong>Hint:</strong> the second <code>interact</code> switches the lever OFF and the bridge disappears. Cross first.</p>
 <p><strong>Write the fixed code:</strong></p>
 <div class="write-space"></div>
 
@@ -183,26 +169,32 @@ flip_next_lever   # lever A
 
 <hr />
 <h2>3 · Tell Me What You Built 📸</h2>
-<p>Now switch to your homework world. The maze has <strong>multiple levers</strong> that must be flipped in the correct order. Use <strong>at least one function</strong> in your solution. When you finish, come back here.</p>
-<p>Send a photo or video of the agent reaching the end, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.</p>
+<p>Now switch to your homework world. The maze has a <strong>gap</strong> (or a blocked path) and a <strong>piston</strong> that opens it when powered. Write code that:</p>
+<ol>
+<li>moves the agent to the lever,</li>
+<li>flips it (<code>interact</code>) so the piston opens the path,</li>
+<li>crosses while the path is open,</li>
+<li>reaches the goal.</li>
+</ol>
+<p>When you finish, come back here. Send a photo or video of the agent reaching the end, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.</p>
 <blockquote>
-<p>First, I planned the order of levers as …</p>
-<p>My function <code>…</code> does …</p>
-<p>I called the function … times.</p>
-<p>The order mattered because …</p>
+<p>First, I walked the agent to …</p>
+<p>I powered the piston by …</p>
+<p>Once the path opened, the agent …</p>
 <p>The hardest part was …</p>
+<p>To fix it, I …</p>
 <p>If I had more time, I would …</p>
 </blockquote>
 <div class="write-space tall" style="min-height: 340px"></div>
 
 <hr />
 <h2>4 · Record Your Walkthrough 🎥</h2>
-<p>Now take a video on your phone (or a parent's phone) while the agent runs the maze. Talk through it like you are teaching someone who has never seen it. Try to use these words: <strong>lever</strong>, <strong>function</strong>, <strong>call</strong>, <strong>order</strong>, <strong>interact</strong>.</p>
+<p>Now take a video on your phone (or a parent's phone) while the agent runs the maze. Talk through it like you are teaching someone who has never seen it. Try to use these words: <strong>piston</strong>, <strong>redstone</strong>, <strong>signal</strong>, <strong>gap</strong>, <strong>bridge</strong>.</p>
 <blockquote>
 <ol>
-<li>Show all the levers in the maze and say the order to flip them.</li>
-<li>Run your code and follow the agent through.</li>
-<li>Read your function and the calls out loud and say what each one does.</li>
+<li>Show the gap (or blocked path) and the piston in the maze.</li>
+<li>Run your code and show the agent powering the piston and crossing.</li>
+<li>Read your code out loud and say which line opens the path.</li>
 <li>Show one bug you hit and how you fixed it.</li>
 </ol>
 </blockquote>

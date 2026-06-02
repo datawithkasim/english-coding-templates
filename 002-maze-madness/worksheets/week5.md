@@ -1,8 +1,15 @@
-# 🔴 M002 Week 5 — English Worksheet
+# 🧊 M002 Week 5 — English Worksheet
 
-**Topic:** Redstone Basics — Signals and Power · **Course:** Maze Madness · **Time:** about 45 minutes
+**Topic:** Mini Cube Puzzle · **Course:** Maze Madness · **Time:** about 45 minutes
 
-This week your agent meets a **closed redstone door**. The door blocks the path — so the agent treats it like a wall and goes around it.
+This week you finish the **mini cube**. You already have starter code that builds part of the cube. Your job is to **keep it going** — add more decisions with conditionals, and leave a way out through the **top**.
+
+> Two ways to finish — pick the one that fits you:
+>
+> - **Challenge:** add **2 more conditionals**, and make **one of them an `OR`**.
+> - **Steady:** keep the same pattern the starter uses and **fill the whole cube**.
+>
+> Either way: the agent must **break a hole in the top** and climb out.
 
 ---
 
@@ -11,36 +18,36 @@ This week your agent meets a **closed redstone door**. The door blocks the path 
 Read each set of steps. Before you imagine the agent doing it, write what you think will happen.
 
 ```
-keep doing forever:
-    if wall ahead:
-        turn right
-    otherwise:
-        move forward
+repeat 5 times:
+    place block
+    move forward
 ```
 
-**A closed door is in front of the agent. Does the agent treat it as a wall? Why?**
+**What shape does the agent leave behind? How long is it?**
 
 <div class="write-space"></div>
 
 ```
-keep doing forever:
-    if wall ahead OR door ahead:
-        turn right
-    otherwise:
-        move forward
+if on the edge OR on the top layer:
+    place block
+otherwise:
+    leave empty
 ```
 
-**How is this different from the code above? What does it do at a closed door?**
+**Only one condition needs to be true. Which spots get a block? Which stay empty?**
 
 <div class="write-space"></div>
 
 ```
-A maze has:
-- one open path
-- one closed door blocking a shortcut
+repeat for each layer:
+    fill the layer
+move up
+if at the top:
+    break block above
+    climb out
 ```
 
-**Should the agent ever try to walk through the door? Why or why not?**
+**Describe in plain English what the agent does, from the first layer to climbing out.**
 
 <div class="write-space"></div>
 
@@ -50,13 +57,13 @@ A maze has:
 
 Each block of code below was meant to do something, but it is broken. Read what the code is **supposed** to do, then rewrite it so it works. After that, explain why the original was wrong and why your fix works.
 
-**Bug A** — The agent is supposed to treat **both walls and closed doors** as obstacles.
+**Bug A** — The agent should place a block on **every edge** of the layer, then move up. Right now it moves up **before** finishing the layer.
 
 ```
-if wall ahead:
-    turn right
-otherwise:
-    move forward
+place block
+move up
+place block
+place block
 ```
 
 **Write the fixed code:**
@@ -67,14 +74,14 @@ otherwise:
 
 <div class="write-space"></div>
 
-**Bug B** — The agent is supposed to **go around** the closed door by turning, walking past, then turning back.
+**Bug B** — The agent should leave a block when it is on the **bottom layer** `OR` on an **outer wall**. Right now it only fills the bottom layer.
 
 ```
-if door ahead:
-    move forward
+if on the bottom layer:
+    place block
 ```
 
-**Hint:** moving forward into a door doesn't work. Write a route-around instead.
+**Hint:** one condition is missing. Add the wall check with `OR`.
 
 **Write the fixed code:**
 
@@ -84,14 +91,14 @@ if door ahead:
 
 <div class="write-space"></div>
 
-**Bug C** — A redstone block next to a door **opens** it. The agent should stop treating that door as a wall once redstone is placed.
+**Bug C** — After the cube is full, the agent should **break the block above** and climb out the top. Right now it tries to climb **before** making the hole, so it gets stuck.
 
 ```
-if door ahead:
-    turn right
+move up
+break block above
 ```
 
-**Hint:** add a check — only turn if the door is **closed**.
+**Hint:** make the hole first, then move into it.
 
 **Write the fixed code:**
 
@@ -103,21 +110,34 @@ if door ahead:
 
 ---
 
-## 3 · Tell Me What You Built 📸
+## 3 · Finish the Cube 📸
 
-Now switch to your homework world. The maze has at least one **closed redstone door** in the way. Write code that **routes around** the door to reach the goal. When you finish, come back here.
+Open this week's world. You will find the **mini cube starter** — some of the cube is already built. Finish it your way:
 
-Send a photo or video of the agent reaching the end, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.
+**Challenge path**
 
-> First, I read the maze and noticed …
+1. Keep the starter running.
+2. Add **2 more conditionals** that decide where blocks go (for example: a different block on corners, or skip a spot to leave a pattern).
+3. Make **one** of them use `OR` (for example: `if on a corner OR on the top → place glass`).
+4. Make sure the agent **breaks a hole in the top** and climbs out.
+
+**Steady path**
+
+1. Keep the **same pattern** the starter uses.
+2. Repeat it until the **whole cube is filled**.
+3. Make sure the agent **breaks a hole in the top** and climbs out.
+
+When you finish, come back here. Send a **photo or video** of the finished cube (and the hole in the top!), then explain what you did. Use these sentence starters — write 4 to 6 sentences total.
+
+> First, I looked at the starter code and saw …
 >
-> I treated the door as a wall because …
+> To keep building, I …
 >
-> The agent went around the door by …
+> I used a conditional when …
 >
-> The hardest part was …
+> I made the hole in the top by …
 >
-> To fix it, I …
+> One tricky moment was when …
 >
 > If I had more time, I would …
 
@@ -127,12 +147,12 @@ Send a photo or video of the agent reaching the end, then explain what you did. 
 
 ## 4 · Record Your Walkthrough 🎥
 
-Now take a video on your phone (or a parent's phone) while the agent runs the maze. Talk through it like you are teaching someone who has never seen it. Try to use these words: **redstone**, **door**, **signal**, **wall**, **route**.
+Now take a video on your phone (or a parent's phone) while the agent builds the cube. Talk through it like you are teaching someone who has never seen it. Try to use these words: **cube**, **layer**, **conditional**, **OR**, **hole**.
 
-> 1. Show the closed door in the maze.
-> 2. Run your code and show the agent going around it.
-> 3. Read your code out loud and say which line stops the agent walking into the door.
-> 4. Show one bug you hit and how you fixed it.
+> 1. Show the starter cube before you run your code.
+> 2. Run your code and watch the cube fill up.
+> 3. Read your conditional out loud and say what makes it run.
+> 4. Show the agent breaking the hole in the top and climbing out.
 
 **Write what you will say in your video.** Use the space below to plan it before you record — you can read from it while filming.
 

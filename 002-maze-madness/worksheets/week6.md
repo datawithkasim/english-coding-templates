@@ -1,8 +1,8 @@
 # 🕹️ M002 Week 6 — English Worksheet
 
-**Topic:** Lever Interaction — Opening Doors · **Course:** Maze Madness · **Time:** about 45 minutes
+**Topic:** Redstone Levers and Mazes · **Course:** Maze Madness · **Time:** about 45 minutes
 
-This week your agent **flips a lever** to open a closed redstone door, then walks through.
+This week the maze has **redstone levers**. Your agent **flips a lever** to open a closed redstone door, then walks through to clear the maze.
 
 ---
 

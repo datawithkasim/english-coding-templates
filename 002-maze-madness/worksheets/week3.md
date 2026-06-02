@@ -1,8 +1,8 @@
 # 🔀 M002 Week 3 — English Worksheet
 
-**Topic:** AND & OR — Smarter Decisions · **Course:** Maze Madness · **Time:** about 45 minutes
+**Topic:** AND Conditions — Two Things at Once · **Course:** Maze Madness · **Time:** about 45 minutes
 
-This week your agent checks **two things at once** using `AND` and `OR`.
+This week your agent checks **two things at the same time** using `AND`. With `AND`, the action only happens when **both** conditions are true.
 
 ---
 
@@ -20,11 +20,11 @@ if wall ahead AND wall on right:
 <div class="write-space"></div>
 
 ```
-if no wall ahead OR no wall below:
+if no wall ahead AND no wall below:
     move forward
 ```
 
-**Only one condition needs to be true. When does the agent move?**
+**Both must be true to move. The path ahead is clear but there is a wall below — does the agent move?**
 
 <div class="write-space"></div>
 
@@ -32,13 +32,11 @@ if no wall ahead OR no wall below:
 keep doing forever:
     if wall ahead AND wall on right:
         turn left
-    otherwise if wall ahead:
-        turn right
     otherwise:
         move forward
 ```
 
-**The agent reaches a corner with walls on the front AND right. What does it do?**
+**The agent reaches a corner with walls on the front AND right. What does it do? What happens at an open path?**
 
 <div class="write-space"></div>
 
@@ -51,7 +49,7 @@ Each block of code below was meant to do something, but it is broken. Read what 
 **Bug A** — The agent is supposed to turn left **only when** there is a wall ahead AND a wall on the right (a dead-end corner).
 
 ```
-if wall ahead OR wall on right:
+if wall ahead:
     turn left
 ```
 
@@ -63,10 +61,10 @@ if wall ahead OR wall on right:
 
 <div class="write-space"></div>
 
-**Bug B** — The agent is supposed to move forward when **either** the path ahead is clear OR the path below is clear.
+**Bug B** — The agent should move forward only when the path ahead is clear AND the path on the left is also clear (a wide-open spot).
 
 ```
-if no wall ahead AND no wall below:
+if no wall ahead:
     move forward
 ```
 
@@ -78,16 +76,14 @@ if no wall ahead AND no wall below:
 
 <div class="write-space"></div>
 
-**Bug C** — At a fork (path on the right OR path on the left), the agent should **always turn right** if it can, otherwise turn left.
+**Bug C** — At a dead-end corner (wall ahead AND wall on right), the agent should turn left. Right now it turns left whenever there is **any** wall, so it spins in place too early.
 
 ```
-if no wall on left:
+if wall ahead AND wall ahead:
     turn left
-otherwise if no wall on right:
-    turn right
 ```
 
-**Hint:** the order is wrong.
+**Hint:** the two checks should be **different** — front *and* right.
 
 **Write the fixed code:**
 
@@ -101,7 +97,7 @@ otherwise if no wall on right:
 
 ## 3 · Tell Me What You Built 📸
 
-Now switch to your homework world. Solve the maze with forks using `AND` and `OR` conditions. When you finish, come back here.
+Now switch to your homework world. Solve the maze using at least one `AND` condition. When you finish, come back here.
 
 Send a photo or video of the agent reaching the end, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.
 
@@ -109,7 +105,7 @@ Send a photo or video of the agent reaching the end, then explain what you did. 
 >
 > I used **AND** when …
 >
-> I used **OR** when …
+> Both conditions were true when …
 >
 > One tricky moment was when …
 >
@@ -123,12 +119,12 @@ Send a photo or video of the agent reaching the end, then explain what you did. 
 
 ## 4 · Record Your Walkthrough 🎥
 
-Now take a video on your phone (or a parent's phone) while the agent runs the maze. Talk through it like you are teaching someone who has never seen it. Try to use these words: **AND**, **OR**, **condition**, **both**, **either**.
+Now take a video on your phone (or a parent's phone) while the agent runs the maze. Talk through it like you are teaching someone who has never seen it. Try to use these words: **AND**, **condition**, **both**, **true**, **turn**.
 
 > 1. Show the start of the maze, then run your code.
-> 2. Read each `if … AND …` and `if … OR …` block out loud and say what makes it run.
-> 3. Show one bug you hit and how you fixed it.
-> 4. Say in your own words how **AND** is different from **OR**.
+> 2. Read each `if … AND …` block out loud and say what makes it run.
+> 3. Show one spot where the agent did **nothing** because only one condition was true.
+> 4. Say in your own words what **AND** means.
 
 **Write what you will say in your video.** Use the space below to plan it before you record — you can read from it while filming.
 

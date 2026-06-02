@@ -1,8 +1,8 @@
-# 🎚️ M002 Week 7 — English Worksheet
+# 🧱 M002 Week 7 — English Worksheet
 
-**Topic:** Multi-Lever Puzzles · **Course:** Maze Madness · **Time:** about 45 minutes
+**Topic:** Pistons and Mazes · **Course:** Maze Madness · **Time:** about 45 minutes
 
-This week the maze has **multiple levers** that must be flipped in the right order. You will also wrap your "move and flip" pattern into a **function** to keep the code clean.
+This week the maze uses **pistons**. A piston pushes or pulls a block when it gets a redstone signal. A **sticky piston** can pull a block back, opening a path. Your agent flips a lever to power a piston, then crosses the gap it opens.
 
 ---
 
@@ -11,41 +11,36 @@ This week the maze has **multiple levers** that must be flipped in the right ord
 Read each set of steps. Before you imagine the agent doing it, write what you think will happen.
 
 ```
-function flip_next_lever:
-    while no lever ahead:
-        move forward
-    interact ahead
-
-flip_next_lever
-flip_next_lever
-flip_next_lever
+move forward
+interact ahead
+move forward
 ```
 
-**How many levers does the agent flip? Why use a function?**
+**The agent walks up to a lever, flips it, and a sticky piston pulls a block back. What happens to the path? Can the agent move forward now?**
 
 <div class="write-space"></div>
 
 ```
-function flip_next_lever:
-    while no lever ahead:
-        move forward
+if gap ahead:
     interact ahead
-
-flip_next_lever
-turn right
-flip_next_lever
+otherwise:
+    move forward
 ```
 
-**Between the two function calls, the agent **turns right**. Why might that matter?**
+**There is a gap in the floor with a piston bridge. What does the agent do at the gap? What does it do on solid ground?**
 
 <div class="write-space"></div>
 
 ```
-flip lever B
-flip lever A
+keep doing forever:
+    if gap ahead:
+        interact ahead
+        move forward
+    otherwise:
+        move forward
 ```
 
-**The maze needs lever A flipped FIRST, then lever B. What happens with this order?**
+**Describe in plain English what the agent is doing, step by step.**
 
 <div class="write-space"></div>
 
@@ -55,36 +50,30 @@ flip lever A
 
 Each block of code below was meant to do something, but it is broken. Read what the code is **supposed** to do, then rewrite it so it works. After that, explain why the original was wrong and why your fix works.
 
-**Bug A** — The agent is supposed to flip **3 levers** in a row. The code repeats the same pattern 3 times — turn that into a function.
+**Bug A** — The agent is supposed to **power the piston first**, then cross the gap it opens.
 
 ```
-while no lever ahead:
-    move forward
-interact ahead
-
-while no lever ahead:
-    move forward
-interact ahead
-
-while no lever ahead:
-    move forward
+move forward
+move forward
 interact ahead
 ```
 
-**Write the fixed code using a function:**
+**Hint:** flip the lever *before* you reach the gap, not after.
+
+**Write the fixed code:**
 
 <div class="write-space"></div>
 
-**Why is the function version better?**
+**Why was it wrong? Why does your fix work?**
 
 <div class="write-space"></div>
 
-**Bug B** — Lever **A must be flipped before lever B**, otherwise the door stays closed.
+**Bug B** — The agent should only `interact` when there is a **gap** ahead. Right now it tries to flip a lever on every step.
 
 ```
-flip_next_lever   # lever B
-turn right
-flip_next_lever   # lever A
+keep doing forever:
+    interact ahead
+    move forward
 ```
 
 **Write the fixed code:**
@@ -95,18 +84,16 @@ flip_next_lever   # lever A
 
 <div class="write-space"></div>
 
-**Bug C** — The function should **only flip a lever** — not turn or move after. Right now the function does too much.
+**Bug C** — A sticky piston holds the bridge **only while the lever is ON**. The agent must cross **before** turning the lever back off.
 
 ```
-function flip_next_lever:
-    while no lever ahead:
-        move forward
-    interact ahead
-    turn right
-    move forward
+interact ahead
+move forward
+interact ahead
+move forward
 ```
 
-**Hint:** keep the function small. Move the turn and the extra move outside.
+**Hint:** the second `interact` switches the lever OFF and the bridge disappears. Cross first.
 
 **Write the fixed code:**
 
@@ -120,19 +107,24 @@ function flip_next_lever:
 
 ## 3 · Tell Me What You Built 📸
 
-Now switch to your homework world. The maze has **multiple levers** that must be flipped in the correct order. Use **at least one function** in your solution. When you finish, come back here.
+Now switch to your homework world. The maze has a **gap** (or a blocked path) and a **piston** that opens it when powered. Write code that:
 
-Send a photo or video of the agent reaching the end, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.
+1. moves the agent to the lever,
+2. flips it (`interact`) so the piston opens the path,
+3. crosses while the path is open,
+4. reaches the goal.
 
-> First, I planned the order of levers as …
+When you finish, come back here. Send a photo or video of the agent reaching the end, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.
+
+> First, I walked the agent to …
 >
-> My function `…` does …
+> I powered the piston by …
 >
-> I called the function … times.
->
-> The order mattered because …
+> Once the path opened, the agent …
 >
 > The hardest part was …
+>
+> To fix it, I …
 >
 > If I had more time, I would …
 
@@ -142,11 +134,11 @@ Send a photo or video of the agent reaching the end, then explain what you did. 
 
 ## 4 · Record Your Walkthrough 🎥
 
-Now take a video on your phone (or a parent's phone) while the agent runs the maze. Talk through it like you are teaching someone who has never seen it. Try to use these words: **lever**, **function**, **call**, **order**, **interact**.
+Now take a video on your phone (or a parent's phone) while the agent runs the maze. Talk through it like you are teaching someone who has never seen it. Try to use these words: **piston**, **redstone**, **signal**, **gap**, **bridge**.
 
-> 1. Show all the levers in the maze and say the order to flip them.
-> 2. Run your code and follow the agent through.
-> 3. Read your function and the calls out loud and say what each one does.
+> 1. Show the gap (or blocked path) and the piston in the maze.
+> 2. Run your code and show the agent powering the piston and crossing.
+> 3. Read your code out loud and say which line opens the path.
 > 4. Show one bug you hit and how you fixed it.
 
 **Write what you will say in your video.** Use the space below to plan it before you record — you can read from it while filming.

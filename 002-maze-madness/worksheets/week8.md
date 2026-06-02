@@ -1,6 +1,6 @@
 # 🏆 M002 Week 8 — English Worksheet
 
-**Topic:** Final Project — 15×15×15 Redstone Cube Maze · **Course:** Maze Madness · **Time:** about 60 minutes
+**Topic:** Capstone — 15×15×15 Cube Maze · **Course:** Maze Madness · **Time:** about 60 minutes
 
 This is the **final project**. You design a 3D cube maze with redstone doors and levers, then write code that solves it on its own.
 

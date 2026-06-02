@@ -1,8 +1,11 @@
-# 🧱 M002 Week 4 — English Worksheet
+# 🔂 M002 Week 4 — English Worksheet
 
-**Topic:** Midpoint Check — Build a Maze & Solve It · **Course:** Maze Madness · **Time:** about 45 minutes
+**Topic:** AND and OR Conditions — Smarter Decisions · **Course:** Maze Madness · **Time:** about 45 minutes
 
-This is your **midpoint check**. You design a maze yourself, then solve it with the code you learned in Weeks 1–3.
+Last week your agent used `AND` (both true). This week you add `OR` (**either** one true) and use them **together** in the same maze.
+
+- `AND` → the action happens **only when both** conditions are true.
+- `OR` → the action happens **when at least one** condition is true.
 
 ---
 
@@ -11,39 +14,34 @@ This is your **midpoint check**. You design a maze yourself, then solve it with 
 Read each set of steps. Before you imagine the agent doing it, write what you think will happen.
 
 ```
-keep doing forever:
-    if wall ahead:
-        turn right
-    otherwise:
-        move forward
+if wall ahead AND wall on right:
+    turn left
 ```
 
-**This is a classic "right-hand wall follower". On an L-shaped maze, does the agent reach the goal? Why or why not?**
+**Both must be true. The agent has a wall ahead but an open path on the right — does it turn left?**
+
+<div class="write-space"></div>
+
+```
+if no wall ahead OR no wall below:
+    move forward
+```
+
+**Only one needs to be true. The path ahead is blocked but the path below is open — does the agent move?**
 
 <div class="write-space"></div>
 
 ```
 keep doing forever:
-    if no wall ahead:
-        move forward
-    otherwise if no wall on right:
-        turn right
-    otherwise:
+    if wall ahead AND wall on right:
         turn left
+    otherwise if no wall ahead OR no wall on left:
+        move forward
+    otherwise:
+        turn right
 ```
 
-**Two things can go wrong with this agent on your own maze. Name one of them.**
-
-<div class="write-space"></div>
-
-```
-A maze with:
-- 3 corners
-- 1 dead end
-- 1 path to the goal
-```
-
-**Sketch a quick floor plan of how this maze could look. (Draw boxes for walls.)**
+**The agent reaches a corner with walls on the front AND right. What does it do? At an open junction, which branch runs?**
 
 <div class="write-space"></div>
 
@@ -53,11 +51,11 @@ A maze with:
 
 Each block of code below was meant to do something, but it is broken. Read what the code is **supposed** to do, then rewrite it so it works. After that, explain why the original was wrong and why your fix works.
 
-**Bug A** — At a dead end (walls on the front AND right AND left), the agent should **turn around** (turn right twice).
+**Bug A** — The agent should turn left **only when** there is a wall ahead AND a wall on the right (a dead-end corner). Right now it turns at *any* wall.
 
 ```
-if wall ahead AND wall on right AND wall on left:
-    turn right
+if wall ahead OR wall on right:
+    turn left
 ```
 
 **Write the fixed code:**
@@ -68,38 +66,31 @@ if wall ahead AND wall on right AND wall on left:
 
 <div class="write-space"></div>
 
-**Bug B** — At a fork, the agent should **prefer going forward** if it can, then right, then left.
+**Bug B** — The agent should move forward when **either** the path ahead is clear OR the path below is clear.
+
+```
+if no wall ahead AND no wall below:
+    move forward
+```
+
+**Write the fixed code:**
+
+<div class="write-space"></div>
+
+**Why was it wrong? Why does your fix work?**
+
+<div class="write-space"></div>
+
+**Bug C** — At a fork the agent should **turn right if it can** (path on the right), otherwise turn left. Right now the order is wrong, so it always turns left first.
 
 ```
 if no wall on left:
     turn left
 otherwise if no wall on right:
     turn right
-otherwise:
-    move forward
 ```
 
-**Hint:** the priorities are upside-down.
-
-**Write the fixed code:**
-
-<div class="write-space"></div>
-
-**Why was it wrong? Why does your fix work?**
-
-<div class="write-space"></div>
-
-**Bug C** — The agent's loop never stops, even after reaching the goal.
-
-```
-keep doing forever:
-    if wall ahead:
-        turn right
-    otherwise:
-        move forward
-```
-
-**Hint:** swap "keep doing forever" for a while loop that stops at the goal.
+**Hint:** check the right side first.
 
 **Write the fixed code:**
 
@@ -113,27 +104,21 @@ keep doing forever:
 
 ## 3 · Tell Me What You Built 📸
 
-Now switch to your homework world. **Design and build your own 2D maze**. It must include:
+Now switch to your homework world. Solve the maze using **both** an `AND` condition and an `OR` condition. When you finish, come back here.
 
-- at least **3 corners**
-- at least **1 dead end**
-- a clear **start** and **goal**
+Send a photo or video of the agent reaching the end, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.
 
-Then solve it with your own agent code (while loop + conditions). When you finish, come back here.
-
-Send a photo or video of the agent solving your maze, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.
-
-> First, I sketched the maze with …
+> First, I …
 >
-> My maze has … corners and … dead ends.
+> I used **AND** when …
 >
-> My agent's strategy was …
+> I used **OR** when …
 >
-> The agent got stuck when …
+> One tricky moment was when …
 >
-> I fixed it by …
+> To fix it, I …
 >
-> If I had more time, I would add …
+> If I had more time, I would …
 
 <div class="write-space tall" style="min-height: 340px"></div>
 
@@ -141,12 +126,12 @@ Send a photo or video of the agent solving your maze, then explain what you did.
 
 ## 4 · Record Your Walkthrough 🎥
 
-Now take a video on your phone (or a parent's phone) while the agent runs your maze. Talk through it like you are teaching someone who has never seen it. Try to use these words: **maze**, **corner**, **dead end**, **strategy**, **stuck**.
+Now take a video on your phone (or a parent's phone) while the agent runs the maze. Talk through it like you are teaching someone who has never seen it. Try to use these words: **AND**, **OR**, **condition**, **both**, **either**.
 
-> 1. Show the maze from above and point out the start, the goal, and the dead end.
-> 2. Run your code and follow the agent through.
+> 1. Show the start of the maze, then run your code.
+> 2. Read each `if … AND …` and `if … OR …` block out loud and say what makes it run.
 > 3. Show one bug you hit and how you fixed it.
-> 4. Say what your agent's strategy is in one sentence.
+> 4. Say in your own words how **AND** is different from **OR**.
 
 **Write what you will say in your video.** Use the space below to plan it before you record — you can read from it while filming.
 
