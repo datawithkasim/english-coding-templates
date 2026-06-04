@@ -1,0 +1,32 @@
+# ✨ 영어코딩 — 추가 워크시트
+
+이 폴더는 특정 코스 주차에 묶이지 않은 **단독 워크시트** 를 모아두는 곳입니다.
+
+하나의 개념(예: 중첩 반복문)을 집중해서 연습할 때, 또는 보충·심화 학습이 필요할 때 꺼내 쓰실 수 있습니다.
+
+---
+
+## 📚 워크시트 목록
+
+| 워크시트 | 종류 | 개념 | 📝 받기 |
+|---|---|---|---|
+| 중첩 반복문 (Nesting) | 연습 | 반복문 안의 반복문 | [PDF](https://github.com/datawithkasim/english-coding-templates/raw/master/999-extras/worksheets/nesting.pdf) |
+| 미로 1주차 단어 (Maze Wk1 Words) | 단어 | while · loop · detect · wall · forward | [PDF](https://github.com/datawithkasim/english-coding-templates/raw/master/999-extras/worksheets/vocab-week1-maze.pdf) |
+
+> 단어 워크시트는 매주 코스에서 배우는 핵심 단어를 따로 연습하는 자료입니다. 숙제와 함께 보내드릴 수 있습니다.
+
+---
+
+## ➕ 새 워크시트 추가하기
+
+1. `worksheets/이름.md` 로 원본을 만듭니다.
+   - 일반 워크시트는 `scripts/templates/week-template.md`
+   - 단어 워크시트는 `scripts/templates/vocab-template.md` 를 복사해서 채우면 됩니다.
+2. `python scripts/build-worksheets.py` 를 실행하면 PDF가 자동으로 만들어집니다.
+3. 위 목록 표에 한 줄 추가합니다.
+
+---
+
+## 📩 자세한 안내
+
+제출은 **카카오톡** 으로, 평소 숙제와 동일합니다. 궁금한 점은 선생님께 편하게 연락 주세요.
