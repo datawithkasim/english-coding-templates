@@ -17,7 +17,24 @@ import re
 import markdown
 
 ROOT = Path(__file__).resolve().parent.parent
-EDGE = r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
+
+
+def find_edge() -> str:
+    """Locate Microsoft Edge portably; raise with a hint if missing."""
+    for name in ("msedge", "microsoft-edge", "msedge.exe"):
+        found = shutil.which(name)
+        if found:
+            return found
+    for candidate in (
+        r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe",
+        r"C:\Program Files\Microsoft\Edge\Application\msedge.exe",
+    ):
+        if Path(candidate).exists():
+            return candidate
+    raise RuntimeError(
+        "Microsoft Edge not found. Install Edge, or add msedge to PATH. "
+        "(PDF rendering uses Edge's headless --print-to-pdf.)"
+    )
 
 CSS = """
 @page { size: A4; margin: 18mm 16mm 22mm; }
@@ -154,11 +171,10 @@ def title_from_md(md_text: str, fallback: str) -> str:
 
 
 def render_pdf(html_path: Path, pdf_path: Path) -> None:
-    if not Path(EDGE).exists():
-        raise RuntimeError(f"Edge not found at {EDGE}")
+    edge = find_edge()
     url = html_path.resolve().as_uri()
     cmd = [
-        EDGE,
+        edge,
         "--headless=new",
         "--disable-gpu",
         f"--print-to-pdf={pdf_path.resolve()}",
