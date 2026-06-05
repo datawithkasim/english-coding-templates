@@ -4,3 +4,7 @@
 **/worlds/_builder_lib.py
 **/worlds/_maze_lib.py
 **/worlds/__pycache__/
+.rs001_verify/
+.wd001_verify/
+.wd002_verify/
+.wd003_verify/
