@@ -20,8 +20,11 @@
 | 6 | 레드스톤 레버와 미로 | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-maze-madness/worlds/week6.mcworld) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-maze-madness/blocks/week6.mkcd) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-maze-madness/python/week6.mkcd) | [블록](https://youtu.be/GPgcbVsoZHE) · [파이썬](https://youtu.be/s5tDDfs-0ek) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-maze-madness/worksheets/week6.pdf) |
 | 7 | 피스톤과 미로 | *준비 중* | *준비 중* | *준비 중* | *준비 중* | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-maze-madness/worksheets/week7.pdf) |
 | 8 | **최종: 15×15×15 큐브 미로** | *준비 중* | *준비 중* | *준비 중* | *준비 중* | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-maze-madness/worksheets/week8.pdf) |
+| 🧩 **확장 (심화)** | 레드스톤 트레일 솔버 · 3D 큐브 미로 | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-maze-madness/worlds/extension-advanced.mcworld) | — | — | *없음* | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-maze-madness/worksheets/extension-advanced.pdf) |
 
 > 💡 매주 월드 파일은 그 주의 개념만 다룹니다 (이전 주차 개념 복습 포함).
+>
+> 🧩 **확장 (심화)** 줄은 주차 진도와 별개인 **도전 과제** 입니다. 주차 미로를 모두 끝내고 더 어려운 걸 원하는 학생을 위한 자료로, 에이전트가 레드스톤 트레일을 따라 **3D 큐브 미로**를 스스로 풉니다.
 
 ---
 

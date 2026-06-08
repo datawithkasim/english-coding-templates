@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>🧩 M002 Extension — Advanced Worksheet</title>
+<style>
+@page { size: A4; margin: 18mm 16mm 22mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-family: "Inter", "Segoe UI", system-ui, sans-serif; color: #1a1a2e; }
+body { font-size: 15px; line-height: 1.55; }
+
+.cover { border-bottom: 3px solid #ff7849; padding-bottom: 14px; margin-bottom: 20px; }
+.brand { font-size: 14px; font-weight: 800; color: #ff7849; letter-spacing: .06em; }
+h1 { font-size: 28px; color: #6b4ee6; margin: 8px 0 6px; line-height: 1.25; }
+h2 { font-size: 19px; color: #6b4ee6; margin: 22px 0 12px; padding-top: 10px; border-top: 1px solid #eee; page-break-before: always; }
+section.first h2, h2:first-of-type { border-top: none; padding-top: 0; page-break-before: avoid; }
+h3, h4 { font-size: 15px; margin: 14px 0 8px; color: #1a1a2e; }
+p { margin: 8px 0; }
+strong { color: #1a1a2e; }
+em { color: #555; }
+
+ul, ol { margin: 8px 0 8px 24px; }
+li { margin: 3px 0; }
+
+pre {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 13.5px;
+  background: #1e1e2e;
+  color: #b9f6ca;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 10px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  page-break-inside: avoid;
+  line-height: 1.5;
+}
+pre code { background: transparent; padding: 0; color: inherit; }
+code {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  background: #fff1e8;
+  color: #ff7849;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+blockquote {
+  margin: 10px 0;
+  padding: 10px 16px;
+  background: #fff6ef;
+  border-left: 3px solid #ff7849;
+  border-radius: 0 6px 6px 0;
+  color: #6a3a1c;
+}
+
+.write-space {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #ffffff 0,
+    #ffffff 27px,
+    #d4d4d4 27px,
+    #d4d4d4 28px
+  );
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  min-height: 114px;
+  margin: 10px 0 20px;
+  page-break-inside: avoid;
+}
+.write-space.short { min-height: 86px; }
+.write-space.tall { min-height: 170px; }
+
+hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
+
+.meta { color: #666; font-size: 13px; margin: 0 0 14px; }
+.answer-lines {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 14px 16px;
+  background: #fafafa;
+  white-space: pre;
+  line-height: 2.2;
+}
+
+footer {
+  position: fixed;
+  bottom: 10mm; left: 16mm; right: 16mm;
+  text-align: center;
+  font-size: 10px;
+  color: #aaa;
+}
+footer b { color: #ff7849; }
+</style>
+</head>
+<body>
+<div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
+<h1>🧩 M002 Extension — Advanced Worksheet</h1>
+<p><strong>Topic:</strong> Redstone Trail Solver (3D Cube Maze) · <strong>Course:</strong> Maze Madness · <strong>Level:</strong> Extension (Advanced) · <strong>Time:</strong> about 60 minutes</p>
+<p>This is an <strong>extension challenge</strong> for students who have finished the weekly mazes and want something harder. The agent solves a <strong>3D cube maze</strong> on its own by following a <strong>redstone trail</strong> — reading redstone above, below, left, right and ahead, then deciding what to do at every step.</p>
+<p>You drive it with <strong>chat commands</strong>: type <code>l</code> to turn left, <code>r</code> to turn right, <code>run</code> to start the solver, and <code>rl</code> to teleport the agent back to you.</p>
+<hr />
+<h2>1 · Read the Chat Commands 🎛️</h2>
+<p>Each block of code binds a <strong>chat word</strong> to an action. When you type that word in chat, the agent runs the code.</p>
+<pre><code>def on_on_chat():
+    agent.turn(LEFT_TURN)
+player.on_chat(&quot;l&quot;, on_on_chat)
+</code></pre>
+<p><strong>What does the agent do when you type <code>l</code> in chat?</strong></p>
+<div class="write-space short"></div>
+
+<pre><code>def on_on_chat4():
+    agent.teleport_to_player()
+player.on_chat(&quot;rl&quot;, on_on_chat4)
+</code></pre>
+<p><strong>You typed <code>rl</code>. Where does the agent go? When would that be useful?</strong></p>
+<div class="write-space"></div>
+
+<p><strong>Why is it handy to bind small helpers like <code>l</code>, <code>r</code> and <code>rl</code> to chat <em>before</em> you write the big <code>run</code> solver?</strong></p>
+<div class="write-space"></div>
+
+<hr />
+<h2>2 · Trace the Solver 🔍</h2>
+<p>This is the loop that runs when you type <code>run</code>. It checks redstone in different directions and reacts.</p>
+<pre><code>while True:
+    agent.move(FORWARD, 1)
+    if agent.detect(REDSTONE, DOWN) and agent.detect(REDSTONE, RIGHT):
+        agent.move(FORWARD, 1)
+        agent.interact(LEFT)
+    elif agent.detect(BLOCK, RIGHT) and agent.detect(REDSTONE, LEFT):
+        agent.move(FORWARD, 1)
+        agent.turn(LEFT_TURN)
+        agent.move(FORWARD, 1)
+    elif agent.detect(REDSTONE, DOWN):
+        agent.move(UP, 1)
+    elif agent.detect(REDSTONE, UP):
+        agent.move(DOWN, 4)
+</code></pre>
+<p><strong>The loop starts with <code>while True</code>. When does it stop on its own?</strong></p>
+<div class="write-space short"></div>
+
+<p><strong>The redstone is a <em>trail</em> the agent follows. In your own words, what does <code>detect(REDSTONE, DOWN)</code> tell the agent?</strong></p>
+<div class="write-space"></div>
+
+<p><strong>This maze is 3D — the agent goes up and down, not just flat. Which two lines move it between floors? What does each one do?</strong></p>
+<div class="write-space"></div>
+
+<p><strong>Why does the order of the <code>if</code> / <code>elif</code> checks matter? What would change if the <code>elif agent.detect(REDSTONE, DOWN)</code> check came <em>first</em>, before the others?</strong></p>
+<div class="write-space"></div>
+
+<hr />
+<h2>3 · Spot the Bug 🐛</h2>
+<p>Each block below is broken. Read what it is <strong>supposed</strong> to do, rewrite it so it works, then explain the fix.</p>
+<p><strong>Bug A</strong> — The solver should keep going until the maze is done, checking the trail on every step.</p>
+<pre><code>agent.move(FORWARD, 1)
+if agent.detect(REDSTONE, DOWN):
+    agent.move(UP, 1)
+</code></pre>
+<p><strong>Hint:</strong> this only checks <em>once</em>. What wraps a block so it repeats?</p>
+<p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div>
+
+<p><strong>Bug B</strong> — When there is redstone <strong>down and to the right</strong>, the agent should step forward then flip a lever on its <strong>left</strong>.</p>
+<pre><code>if agent.detect(REDSTONE, DOWN) or agent.detect(REDSTONE, RIGHT):
+    agent.interact(LEFT)
+</code></pre>
+<p><strong>Hint:</strong> "down <strong>and</strong> right" — both must be true. And it should move forward before it interacts.</p>
+<p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div>
+
+<hr />
+<h2>4 · Make It Your Own 🛠️</h2>
+<p>Open the extension world and run the solver with <code>run</code>. Now <strong>change one thing</strong> and predict what happens before you test it.</p>
+<p>Pick <strong>one</strong> idea (or your own):</p>
+<ul>
+<li>Add a new chat command, like <code>back</code>, that turns the agent around (two right turns).</li>
+<li>Change <code>agent.move(DOWN, 4)</code> to a different number and watch where the agent lands.</li>
+<li>Add an <code>elif</code> that does something when there is redstone straight <strong>ahead</strong>.</li>
+</ul>
+<p><strong>Which change did you pick? Write the code for it.</strong></p>
+<div class="write-space tall" style="min-height: 200px"></div>
+
+<p><strong>Predict first:</strong> what do you think will happen when you run it?</p>
+<div class="write-space short"></div>
+
+<p><strong>Then test it.</strong> What actually happened? If it surprised you, why?</p>
+<div class="write-space"></div>
+
+<hr />
+<h2>5 · Tell Me What You Built 📸</h2>
+<p>When the agent finishes the cube maze, come back here. Send a photo or video of the agent reaching the goal, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.</p>
+<blockquote>
+<p>The maze was 3D, so the agent had to …</p>
+<p>The redstone trail told the agent to …</p>
+<p>I used <code>detect</code> to …</p>
+<p>The change I made in section 4 was …</p>
+<p>The hardest part was …</p>
+<p>If I had more time, I would …</p>
+</blockquote>
+<div class="write-space tall" style="min-height: 340px"></div>
+
+<hr />
+<h2>6 · Record Your Walkthrough 🎥</h2>
+<p>Take a video on your phone (or a parent's phone) while the agent solves the maze. Talk through it like you are teaching someone who has never seen it. Try to use these words: <strong>detect</strong>, <strong>redstone</strong>, <strong>trail</strong>, <strong>loop</strong>, <strong>3D</strong>, <strong>elif</strong>.</p>
+<blockquote>
+<ol>
+<li>Show the cube maze and the redstone trail before you start.</li>
+<li>Type <code>run</code> and show the agent following the trail.</li>
+<li>Read one <code>if</code> / <code>elif</code> line out loud and say what decision it makes.</li>
+<li>Show the change you made in section 4 and what it did.</li>
+</ol>
+</blockquote>
+<p><strong>Write what you will say in your video.</strong> Plan it here first — you can read from it while filming.</p>
+<div class="write-space tall" style="min-height: 340px"></div>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.</p>
+</body>
+</html>
