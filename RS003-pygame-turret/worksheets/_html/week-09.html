@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>🚧 RS003 Week 9 — English Worksheet</title>
+<style>
+@page { size: A4; margin: 18mm 16mm 22mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-family: "Inter", "Segoe UI", system-ui, sans-serif; color: #1a1a2e; }
+body { font-size: 15px; line-height: 1.55; }
+
+.cover { border-bottom: 3px solid #ff7849; padding-bottom: 14px; margin-bottom: 20px; }
+.brand { font-size: 14px; font-weight: 800; color: #ff7849; letter-spacing: .06em; }
+h1 { font-size: 28px; color: #6b4ee6; margin: 8px 0 6px; line-height: 1.25; }
+h2 { font-size: 19px; color: #6b4ee6; margin: 22px 0 12px; padding-top: 10px; border-top: 1px solid #eee; page-break-before: always; }
+section.first h2, h2:first-of-type { border-top: none; padding-top: 0; page-break-before: avoid; }
+h3, h4 { font-size: 15px; margin: 14px 0 8px; color: #1a1a2e; }
+p { margin: 8px 0; }
+strong { color: #1a1a2e; }
+em { color: #555; }
+
+ul, ol { margin: 8px 0 8px 24px; }
+li { margin: 3px 0; }
+
+pre {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 13.5px;
+  background: #1e1e2e;
+  color: #b9f6ca;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 10px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  page-break-inside: avoid;
+  line-height: 1.5;
+}
+pre code { background: transparent; padding: 0; color: inherit; }
+code {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  background: #fff1e8;
+  color: #ff7849;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+blockquote {
+  margin: 10px 0;
+  padding: 10px 16px;
+  background: #fff6ef;
+  border-left: 3px solid #ff7849;
+  border-radius: 0 6px 6px 0;
+  color: #6a3a1c;
+}
+
+.write-space {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #ffffff 0,
+    #ffffff 27px,
+    #d4d4d4 27px,
+    #d4d4d4 28px
+  );
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  min-height: 114px;
+  margin: 10px 0 20px;
+  page-break-inside: avoid;
+}
+.write-space.short { min-height: 86px; }
+.write-space.tall { min-height: 170px; }
+
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
+hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
+
+.meta { color: #666; font-size: 13px; margin: 0 0 14px; }
+.answer-lines {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 14px 16px;
+  background: #fafafa;
+  white-space: pre;
+  line-height: 2.2;
+}
+
+footer {
+  position: fixed;
+  bottom: 10mm; left: 16mm; right: 16mm;
+  text-align: center;
+  font-size: 10px;
+  color: #aaa;
+}
+footer b { color: #ff7849; }
+</style>
+</head>
+<body>
+<div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
+<h1>🚧 RS003 Week 9 — English Worksheet</h1>
+<p><strong>Topic:</strong> Keep the Aim Inside the Screen · <strong>Course:</strong> Pygame Turret · <strong>Time:</strong> about 45 minutes</p>
+<p>This week you stop the barrel from flying off the screen. You set a <strong>minimum</strong> and <strong>maximum</strong> X with constants, then use comparisons (<code>&lt;</code>, <code>&gt;</code>) to keep the aim inside. The trick of forcing a value back inside a range is called <strong>clamping</strong>.</p>
+<blockquote>
+<p>🧠 Words to know: <strong>minimum / maximum</strong>, <strong>compare (<code>&lt;</code>, <code>&gt;</code>)</strong>, <strong>clamp</strong>, <strong>boundary</strong>, <strong>limit</strong></p>
+</blockquote>
+<h2>1 · Predict 🔮</h2>
+<p>Read each piece of code. Before you run it, write what you think will happen.</p>
+<pre><code class="language-python">MIN_X = 50
+MAX_X = WIDTH - 50
+if keys[pygame.K_LEFT] and gun_tip_x &gt; MIN_X:
+    gun_tip_x -= SPEED
+</code></pre>
+<div class="qa"><p><strong>The gun only moves left if two things are true. When does it stop moving left?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-python">if gun_tip_x &lt; MIN_X:
+    gun_tip_x = MIN_X
+if gun_tip_x &gt; MAX_X:
+    gun_tip_x = MAX_X
+</code></pre>
+<div class="qa"><p><strong>This runs AFTER the gun moves. What does it do if the gun went too far left or too far right?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-python">pygame.draw.line(screen, RED, (MIN_X, 0), (MIN_X, HEIGHT), 2)
+pygame.draw.line(screen, RED, (MAX_X, 0), (MAX_X, HEIGHT), 2)
+</code></pre>
+<div class="qa"><p><strong>Two vertical red lines are drawn. What do they show the player?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>2 · Run It 🏃</h2>
+<h3>🎯 Type the example, run it, and hit the walls</h3>
+<pre><code class="language-python">import pygame
+pygame.init()
+
+WIDTH, HEIGHT = 800, 600
+CENTER_X = WIDTH // 2
+screen = pygame.display.set_mode((WIDTH, HEIGHT))
+
+MIN_X = 50
+MAX_X = WIDTH - 50
+gun_tip_x = CENTER_X
+SPEED = 5
+RED = (200, 0, 0)
+
+clock = pygame.time.Clock()
+running = True
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+
+    keys = pygame.key.get_pressed()
+    if keys[pygame.K_LEFT] and gun_tip_x &gt; MIN_X:
+        gun_tip_x -= SPEED
+    if keys[pygame.K_RIGHT] and gun_tip_x &lt; MAX_X:
+        gun_tip_x += SPEED
+
+    screen.fill((135, 206, 235))
+    pygame.draw.line(screen, RED, (MIN_X, 0), (MIN_X, HEIGHT), 2)
+    pygame.draw.line(screen, RED, (MAX_X, 0), (MAX_X, HEIGHT), 2)
+    pygame.draw.rect(screen, (0, 100, 0), (CENTER_X - 30, HEIGHT - 80, 60, 40))
+    pygame.draw.line(screen, (80, 80, 80), (CENTER_X, HEIGHT - 80), (gun_tip_x, HEIGHT - 200), 10)
+    pygame.display.flip()
+    clock.tick(60)
+
+pygame.quit()
+</code></pre>
+<div class="qa"><p><strong>Aim all the way left, then all the way right. Where does the barrel stop? What stops it?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>3 · Spot the Bug 🐛</h2>
+<p>Each block below was meant to do something but is broken. Fix it, then explain why the original was wrong.</p>
+<p><strong>Bug A</strong> — The gun should not move past the left wall, but it flies right off the left edge of the screen.</p>
+<pre><code class="language-python">if keys[pygame.K_LEFT]:
+    gun_tip_x -= SPEED
+</code></pre>
+<p><strong>Hint:</strong> there is no check that the gun is still past <code>MIN_X</code>.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug B</strong> — The clamp is supposed to pull the gun back if it goes too far, but the comparisons are backwards so it teleports to the wrong wall.</p>
+<pre><code class="language-python">if gun_tip_x &gt; MIN_X:
+    gun_tip_x = MIN_X
+if gun_tip_x &lt; MAX_X:
+    gun_tip_x = MAX_X
+</code></pre>
+<p><strong>Hint:</strong> if the gun is <strong>smaller</strong> than MIN_X it went too far left. Check the directions.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug C</strong> — The right boundary line is supposed to sit a little inside the right edge, but it is drawn off the screen and you cannot see it.</p>
+<pre><code class="language-python">MAX_X = WIDTH + 50
+</code></pre>
+<p><strong>Hint:</strong> the screen ends at <code>WIDTH</code>. To sit inside, the boundary must be a bit <strong>less</strong> than that.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>4 · Modify It 🔧</h2>
+<h3>🎯 Make the play area narrower</h3>
+<p>Change <code>MIN_X</code> and <code>MAX_X</code> so the gun has a smaller space to aim in.</p>
+<div class="qa"><p><strong>Write the new values you chose:</strong></p>
+<div class="write-space"></div></div>
+
+<h3>🎯 Try the clamp method instead of the guard method</h3>
+<p>Right now the example checks <code>&gt; MIN_X</code> before moving. Rewrite it so the gun moves freely, then a clamp pulls it back inside afterwards.</p>
+<div class="qa"><p><strong>Write your clamp lines:</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Hint:</strong> both methods keep the gun inside. The clamp lets it move first, then snaps it back if it went too far.</p>
+<h2>5 · Make It 📸</h2>
+<h3>🎯 Build a turret that stays on screen</h3>
+<p>Build a program where:</p>
+<ol>
+<li>the barrel aims left and right,</li>
+<li>it can never leave the screen,</li>
+<li>red boundary lines show where the limits are.</li>
+</ol>
+<p>Send a <strong>photo or video</strong> showing the gun stopping at both walls, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.</p>
+<div class="qa"><blockquote>
+<p>First, I set MIN_X and MAX_X to …</p>
+<p>The gun stops on the left because …</p>
+<p>The gun stops on the right because …</p>
+<p>Clamping means …</p>
+<p>One tricky moment was when …</p>
+<p>If I had more time, I would …</p>
+</blockquote>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<h2>6 · Record Your Walkthrough 🎥</h2>
+<p>Take a video while the gun hits both walls. Talk through it like you are teaching someone. Try to use these words: <strong>minimum</strong>, <strong>maximum</strong>, <strong>compare</strong>, <strong>clamp</strong>, <strong>boundary</strong>.</p>
+<blockquote>
+<ol>
+<li>Aim into the left wall and show it stop.</li>
+<li>Aim into the right wall and show it stop.</li>
+<li>Read one boundary check out loud and explain it.</li>
+<li>Say what would happen with no limits at all.</li>
+</ol>
+</blockquote>
+<div class="qa"><p><strong>Write what you will say in your video.</strong> Plan it here before you record.</p>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your photo or video to teacher on KakaoTalk.</p>
+</body>
+</html>

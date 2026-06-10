@@ -71,6 +71,11 @@ blockquote {
 .write-space.short { min-height: 86px; }
 .write-space.tall { min-height: 170px; }
 
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
 hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
 
 .meta { color: #666; font-size: 13px; margin: 0 0 14px; }
@@ -99,7 +104,6 @@ footer b { color: #ff7849; }
 <div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
 <h1>🪣 M000 Week 6 — English Worksheet</h1>
 <p><strong>Topic:</strong> Building a Well · <strong>Course:</strong> Builder Basics · <strong>Time:</strong> about 45 minutes</p>
-<hr />
 <h2>1 · Predict 🔮</h2>
 <p>Read each set of steps. Before you imagine the agent doing it, write what you think will happen.</p>
 <pre><code>repeat 4 times:
@@ -108,15 +112,15 @@ footer b { color: #ff7849; }
         move forward
     turn right
 </code></pre>
-<p><strong>What shape does the agent leave on the ground? How many blocks total?</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>What shape does the agent leave on the ground? How many blocks total?</strong></p>
+<div class="write-space"></div></div>
 
 <pre><code>repeat 3 times:
     destroy block down
     move down by 1
 </code></pre>
-<p><strong>What does the agent do? How deep is the hole?</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>What does the agent do? How deep is the hole?</strong></p>
+<div class="write-space"></div></div>
 
 <pre><code>repeat 4 times:
     repeat 3 times:
@@ -127,10 +131,9 @@ repeat 3 times:
     destroy block down
     move down by 1
 </code></pre>
-<p><strong>Put together, what does the agent build? Describe in one sentence.</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>Put together, what does the agent build? Describe in one sentence.</strong></p>
+<div class="write-space"></div></div>
 
-<hr />
 <h2>2 · Spot the Bug 🐛</h2>
 <p>Each block of code below was meant to do something, but it is broken. Read what the code is <strong>supposed</strong> to do, then rewrite it so it works. After that, explain why the original was wrong and why your fix works.</p>
 <p><strong>Bug A</strong> — The agent is supposed to build the <strong>4 sides</strong> of a 3×3 square wall around the well.</p>
@@ -139,21 +142,21 @@ repeat 3 times:
     move forward
     turn right
 </code></pre>
-<p><strong>Write the fixed code:</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
 
-<p><strong>Why was it wrong? Why does your fix work?</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
 
 <p><strong>Bug B</strong> — The agent is supposed to <strong>dig 3 blocks straight down</strong> to make the well hole.</p>
 <pre><code>repeat 3 times:
     destroy block down
 </code></pre>
-<p><strong>Write the fixed code:</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
 
-<p><strong>Why was it wrong? Why does your fix work?</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
 
 <p><strong>Bug C</strong> — The agent is supposed to build the square wall <strong>first</strong>, then dig the hole.</p>
 <pre><code>repeat 3 times:
@@ -165,17 +168,16 @@ repeat 4 times:
         move forward
     turn right
 </code></pre>
-<p><strong>Write the fixed code:</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
 
-<p><strong>Why was it wrong? Why does your fix work?</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
 
-<hr />
 <h2>3 · Tell Me What You Built 📸</h2>
 <p>Now switch to your homework world. Build a <strong>deeper well</strong> — at least 5 blocks deep, with the 3×3 square wall on top. When you finish, come back here.</p>
 <p>Send a photo or video of your well, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.</p>
-<blockquote>
+<div class="qa"><blockquote>
 <p>First, I built the square wall by …</p>
 <p>Then I dug down by …</p>
 <p>The well is … blocks wide and … blocks deep.</p>
@@ -183,9 +185,8 @@ repeat 4 times:
 <p>To fix it, I …</p>
 <p>If I had more time, I would …</p>
 </blockquote>
-<div class="write-space tall" style="min-height: 340px"></div>
+<div class="write-space tall" style="min-height: 340px"></div></div>
 
-<hr />
 <h2>4 · Record Your Walkthrough 🎥</h2>
 <p>Now take a video on your phone (or a parent's phone) while you walk the camera around your well. Talk through it like you are teaching someone who has never seen it. Try to use these words: <strong>square</strong>, <strong>wall</strong>, <strong>dig</strong>, <strong>destroy</strong>, <strong>deep</strong>.</p>
 <blockquote>
@@ -196,8 +197,8 @@ repeat 4 times:
 <li>Say how wide the wall is and how deep the well goes.</li>
 </ol>
 </blockquote>
-<p><strong>Write what you will say in your video.</strong> Use the space below to plan it before you record — you can read from it while filming.</p>
-<div class="write-space tall" style="min-height: 340px"></div>
+<div class="qa"><p><strong>Write what you will say in your video.</strong> Use the space below to plan it before you record — you can read from it while filming.</p>
+<div class="write-space tall" style="min-height: 340px"></div></div>
 
 <hr />
 <h3>Submit ✅</h3>

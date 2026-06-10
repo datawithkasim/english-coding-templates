@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>🎨 WD001 Week 2 — English Worksheet</title>
+<style>
+@page { size: A4; margin: 18mm 16mm 22mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-family: "Inter", "Segoe UI", system-ui, sans-serif; color: #1a1a2e; }
+body { font-size: 15px; line-height: 1.55; }
+
+.cover { border-bottom: 3px solid #ff7849; padding-bottom: 14px; margin-bottom: 20px; }
+.brand { font-size: 14px; font-weight: 800; color: #ff7849; letter-spacing: .06em; }
+h1 { font-size: 28px; color: #6b4ee6; margin: 8px 0 6px; line-height: 1.25; }
+h2 { font-size: 19px; color: #6b4ee6; margin: 22px 0 12px; padding-top: 10px; border-top: 1px solid #eee; page-break-before: always; }
+section.first h2, h2:first-of-type { border-top: none; padding-top: 0; page-break-before: avoid; }
+h3, h4 { font-size: 15px; margin: 14px 0 8px; color: #1a1a2e; }
+p { margin: 8px 0; }
+strong { color: #1a1a2e; }
+em { color: #555; }
+
+ul, ol { margin: 8px 0 8px 24px; }
+li { margin: 3px 0; }
+
+pre {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 13.5px;
+  background: #1e1e2e;
+  color: #b9f6ca;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 10px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  page-break-inside: avoid;
+  line-height: 1.5;
+}
+pre code { background: transparent; padding: 0; color: inherit; }
+code {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  background: #fff1e8;
+  color: #ff7849;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+blockquote {
+  margin: 10px 0;
+  padding: 10px 16px;
+  background: #fff6ef;
+  border-left: 3px solid #ff7849;
+  border-radius: 0 6px 6px 0;
+  color: #6a3a1c;
+}
+
+.write-space {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #ffffff 0,
+    #ffffff 27px,
+    #d4d4d4 27px,
+    #d4d4d4 28px
+  );
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  min-height: 114px;
+  margin: 10px 0 20px;
+  page-break-inside: avoid;
+}
+.write-space.short { min-height: 86px; }
+.write-space.tall { min-height: 170px; }
+
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
+hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
+
+.meta { color: #666; font-size: 13px; margin: 0 0 14px; }
+.answer-lines {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 14px 16px;
+  background: #fafafa;
+  white-space: pre;
+  line-height: 2.2;
+}
+
+footer {
+  position: fixed;
+  bottom: 10mm; left: 16mm; right: 16mm;
+  text-align: center;
+  font-size: 10px;
+  color: #aaa;
+}
+footer b { color: #ff7849; }
+</style>
+</head>
+<body>
+<div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
+<h1>🎨 WD001 Week 2 — English Worksheet</h1>
+<p><strong>Topic:</strong> First Steps in CSS — Colors and Text · <strong>Course:</strong> Web Design: CSS · <strong>Time:</strong> about 45 minutes</p>
+<p>This week you give your page <strong>style</strong>. HTML decides <strong>what</strong> is on the page; CSS decides <strong>how it looks</strong>. You write CSS inside a <code>&lt;style&gt;</code> tag, choose a tag with a <strong>selector</strong>, and set properties like <code>color</code>, <code>font-size</code>, and <code>background-color</code>.</p>
+<h2>1 · Predict 🔮</h2>
+<p>Read each bit of CSS. Before you imagine the browser drawing it, write what you think will happen.</p>
+<pre><code class="language-html">&lt;style&gt;
+  h1 {
+    color: blue;
+  }
+&lt;/style&gt;
+</code></pre>
+<div class="qa"><p><strong>Every <code>&lt;h1&gt;</code> on the page — what colour does the text become?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-html">&lt;style&gt;
+  body {
+    background-color: black;
+  }
+  p {
+    color: black;
+  }
+&lt;/style&gt;
+</code></pre>
+<div class="qa"><p><strong>The background and the paragraph text are both black. What problem do you predict?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-html">&lt;style&gt;
+  h1 {
+    font-size: 60px;
+  }
+  p {
+    font-size: 12px;
+  }
+&lt;/style&gt;
+</code></pre>
+<div class="qa"><p><strong>Which text looks bigger on the page, the heading or the paragraph? By a lot or a little?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-html">&lt;style&gt;
+  p {
+    color: red;
+    color: green;
+  }
+&lt;/style&gt;
+</code></pre>
+<div class="qa"><p><strong>Two <code>color</code> lines on the same <code>p</code>. Which colour wins? Make a guess, then test it.</strong></p>
+<div class="write-space"></div></div>
+
+<h2>2 · Spot the Bug 🐛</h2>
+<p>Each bit of CSS below was meant to do something, but it is broken. Read what it is <strong>supposed</strong> to do, then rewrite it so it works. After that, explain why the original was wrong and why your fix works.</p>
+<p><strong>Bug A</strong> — The heading is supposed to turn orange. Nothing changes.</p>
+<pre><code class="language-html">&lt;style&gt;
+  h1
+    color: orange;
+  }
+&lt;/style&gt;
+</code></pre>
+<p><strong>Hint:</strong> a curly bracket is missing where the rule starts.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug B</strong> — The paragraph text is supposed to be size 20. Nothing changes.</p>
+<pre><code class="language-html">&lt;style&gt;
+  p {
+    font-size: 20
+  }
+&lt;/style&gt;
+</code></pre>
+<p><strong>Hint:</strong> the value needs a unit, and the line needs to end properly.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug C</strong> — The whole page background is supposed to be light yellow, but the colour shows up on the headings instead.</p>
+<pre><code class="language-html">&lt;style&gt;
+  h1 {
+    background-color: #fff8e7;
+  }
+&lt;/style&gt;
+</code></pre>
+<p><strong>Hint:</strong> which selector means "the whole page"?</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>3 · Restyle Your Page 📸</h2>
+<p>Open last week's About Me page in Replit. Add a <code>&lt;style&gt;</code> tag and make it yours:</p>
+<ol>
+<li>pick a <strong>background colour</strong> for the whole page (<code>body</code>),</li>
+<li>give your heading and your paragraph <strong>different colours</strong>,</li>
+<li>choose a font with <code>font-family</code>.</li>
+</ol>
+<p>You can start from this and change the values to your own taste:</p>
+<pre><code class="language-html">&lt;style&gt;
+  body {
+    background-color: #fff8e7;
+    font-family: Arial, sans-serif;
+  }
+  h1 {
+    color: #d4380d;
+    font-size: 36px;
+  }
+  p {
+    color: #333333;
+    font-size: 18px;
+  }
+&lt;/style&gt;
+</code></pre>
+<p>Then try your <strong>heading size two different ways</strong> (for example <code>36px</code> and <code>48px</code>) and keep the one you like better.</p>
+<p>When you finish, send a <strong>photo or video</strong> of your page (or a picture of your code), then explain what you did. Use these sentence starters — write 4 to 6 sentences total.</p>
+<div class="qa"><blockquote>
+<p>The colours I chose were …</p>
+<p>I made my heading and paragraph different by …</p>
+<p>I tried my heading at ___ and at ___ , and I kept …</p>
+<p>The font I picked was …</p>
+<p>One tricky moment was when …</p>
+<p>If I had more time, I would …</p>
+</blockquote>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<h2>4 · Record Your Walkthrough 🎥</h2>
+<p>Now take a video on your phone (or a parent's phone) while you show your styled page. Talk through it like you are teaching someone who has never used CSS. Try to use these words: <strong>style</strong>, <strong>selector</strong>, <strong>colour</strong>, <strong>font</strong>, <strong>background</strong>.</p>
+<blockquote>
+<ol>
+<li>Show your page before and after styling, if you can.</li>
+<li>Read one CSS rule out loud and say which tag it changes.</li>
+<li>Show your two heading sizes and say which one you kept.</li>
+<li>Show one thing you got wrong at first and how you fixed it.</li>
+</ol>
+</blockquote>
+<div class="qa"><p><strong>Write what you will say in your video.</strong> Use the space below to plan it before you record — you can read from it while filming.</p>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.</p>
+</body>
+</html>

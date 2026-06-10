@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>⚡ WD002 Week 7 — English Worksheet</title>
+<style>
+@page { size: A4; margin: 18mm 16mm 22mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-family: "Inter", "Segoe UI", system-ui, sans-serif; color: #1a1a2e; }
+body { font-size: 15px; line-height: 1.55; }
+
+.cover { border-bottom: 3px solid #ff7849; padding-bottom: 14px; margin-bottom: 20px; }
+.brand { font-size: 14px; font-weight: 800; color: #ff7849; letter-spacing: .06em; }
+h1 { font-size: 28px; color: #6b4ee6; margin: 8px 0 6px; line-height: 1.25; }
+h2 { font-size: 19px; color: #6b4ee6; margin: 22px 0 12px; padding-top: 10px; border-top: 1px solid #eee; page-break-before: always; }
+section.first h2, h2:first-of-type { border-top: none; padding-top: 0; page-break-before: avoid; }
+h3, h4 { font-size: 15px; margin: 14px 0 8px; color: #1a1a2e; }
+p { margin: 8px 0; }
+strong { color: #1a1a2e; }
+em { color: #555; }
+
+ul, ol { margin: 8px 0 8px 24px; }
+li { margin: 3px 0; }
+
+pre {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 13.5px;
+  background: #1e1e2e;
+  color: #b9f6ca;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 10px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  page-break-inside: avoid;
+  line-height: 1.5;
+}
+pre code { background: transparent; padding: 0; color: inherit; }
+code {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  background: #fff1e8;
+  color: #ff7849;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+blockquote {
+  margin: 10px 0;
+  padding: 10px 16px;
+  background: #fff6ef;
+  border-left: 3px solid #ff7849;
+  border-radius: 0 6px 6px 0;
+  color: #6a3a1c;
+}
+
+.write-space {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #ffffff 0,
+    #ffffff 27px,
+    #d4d4d4 27px,
+    #d4d4d4 28px
+  );
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  min-height: 114px;
+  margin: 10px 0 20px;
+  page-break-inside: avoid;
+}
+.write-space.short { min-height: 86px; }
+.write-space.tall { min-height: 170px; }
+
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
+hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
+
+.meta { color: #666; font-size: 13px; margin: 0 0 14px; }
+.answer-lines {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 14px 16px;
+  background: #fafafa;
+  white-space: pre;
+  line-height: 2.2;
+}
+
+footer {
+  position: fixed;
+  bottom: 10mm; left: 16mm; right: 16mm;
+  text-align: center;
+  font-size: 10px;
+  color: #aaa;
+}
+footer b { color: #ff7849; }
+</style>
+</head>
+<body>
+<div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
+<h1>⚡ WD002 Week 7 — English Worksheet</h1>
+<p><strong>Topic:</strong> Functions — Organizing Your Code · <strong>Course:</strong> Web Dev Basics: JavaScript · <strong>Time:</strong> about 45 minutes</p>
+<p>This week you wrap code into reusable chunks. A <em>function</em> is a named block you can run again and again. <strong>Parameters</strong> are the values you hand it; <strong><code>return</code></strong> is the answer it hands back. You will build a calculator that shares one tidy set of functions.</p>
+<h2>1 · Predict 🔮</h2>
+<p>Read each piece of code. Before you run it, write what you think will happen.</p>
+<pre><code class="language-html">&lt;script&gt;
+  function add(a, b) {
+    return a + b;
+  }
+  console.log(add(2, 3));
+&lt;/script&gt;
+</code></pre>
+<div class="qa"><p><strong>What number prints?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-html">&lt;script&gt;
+  function greet(name) {
+    return &quot;Hi, &quot; + name + &quot;!&quot;;
+  }
+  console.log(greet(&quot;Dami&quot;));
+&lt;/script&gt;
+</code></pre>
+<div class="qa"><p><strong>What sentence prints?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-html">&lt;script&gt;
+  function double(n) {
+    return n * 2;
+  }
+  console.log(double(5));
+  console.log(double(10));
+&lt;/script&gt;
+</code></pre>
+<div class="qa"><p><strong>The same function is called twice with different inputs. What two numbers print?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-html">&lt;script&gt;
+  function add(a, b) {
+    let total = a + b;
+  }
+  console.log(add(4, 4));
+&lt;/script&gt;
+</code></pre>
+<div class="qa"><p><strong>This function has no <code>return</code>. What does <code>console.log</code> show? (Hint: a function that returns nothing gives back <code>undefined</code>.)</strong></p>
+<div class="write-space"></div></div>
+
+<h2>2 · Spot the Bug 🐛</h2>
+<p>Each block was meant to do something, but it is broken. Read what it is <strong>supposed</strong> to do, then rewrite it so it works. After that, explain why the original was wrong and why your fix works.</p>
+<p><strong>Bug A</strong> — <code>add(3, 4)</code> should give back <code>7</code>. Right now it prints <code>undefined</code>.</p>
+<pre><code class="language-html">&lt;script&gt;
+  function add(a, b) {
+    a + b;
+  }
+  console.log(add(3, 4));
+&lt;/script&gt;
+</code></pre>
+<p><strong>Hint:</strong> the function adds the numbers but never hands the answer back. One keyword is missing.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug B</strong> — This should multiply two numbers. Right now it always gives the <strong>same</strong> answer no matter what you pass in.</p>
+<pre><code class="language-html">&lt;script&gt;
+  let a = 2;
+  let b = 3;
+  function multiply(a, b) {
+    return 2 * 3;
+  }
+  console.log(multiply(5, 5));
+&lt;/script&gt;
+</code></pre>
+<p><strong>Hint:</strong> the function ignores its parameters and uses fixed numbers instead. Use <code>a</code> and <code>b</code>.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug C</strong> — Clicking should show the sum on the page. Right now you get an error because the function name does not match.</p>
+<pre><code class="language-html">&lt;input id=&quot;n1&quot; type=&quot;number&quot;&gt;
+&lt;input id=&quot;n2&quot; type=&quot;number&quot;&gt;
+&lt;button onclick=&quot;showSum()&quot;&gt;Add&lt;/button&gt;
+&lt;p id=&quot;out&quot;&gt;&lt;/p&gt;
+
+&lt;script&gt;
+  function showsum() {
+    let a = Number(document.querySelector(&quot;#n1&quot;).value);
+    let b = Number(document.querySelector(&quot;#n2&quot;).value);
+    document.querySelector(&quot;#out&quot;).textContent = a + b;
+  }
+&lt;/script&gt;
+</code></pre>
+<p><strong>Hint:</strong> the button calls one name; the function is spelled with different capitals. Match them exactly.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>3 · Make It Yours 📸</h2>
+<p>Build a <strong>calculator</strong> page with three functions: add, subtract, and multiply.</p>
+<ol>
+<li>Make two input boxes for numbers.</li>
+<li>Write three functions — <code>add(a, b)</code>, <code>subtract(a, b)</code>, <code>multiply(a, b)</code> — each one <code>return</code>s its answer.</li>
+<li>Add three buttons. Each button reads both inputs (as <code>Number</code>), calls the right function, and shows the result on the page.</li>
+<li>Notice how all three buttons share the same way of reading inputs — that is what functions are for.</li>
+</ol>
+<p><strong>Stretch:</strong> add a divide button, and show a friendly message if someone tries to divide by 0.</p>
+<p>When you finish, come back here. Send a <strong>photo or video</strong> of all three operations working, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.</p>
+<div class="qa"><blockquote>
+<p>First, I wrote a function called …</p>
+<p>Each function takes parameters, which are …</p>
+<p>I used <code>return</code> to …</p>
+<p>The three buttons share code because …</p>
+<p>One tricky moment was when …</p>
+<p>If I had more time, I would …</p>
+</blockquote>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<h2>4 · Record Your Walkthrough 🎥</h2>
+<p>Take a video on your phone (or a parent's phone) while your calculator runs. Talk through it like you are teaching someone who has never seen it. Try to use these words: <strong>function</strong>, <strong>parameter</strong>, <strong>return</strong>, <strong>reuse</strong>, <strong>calculator</strong>.</p>
+<blockquote>
+<ol>
+<li>Type two numbers and click each operation.</li>
+<li>Read one function out loud and point to its parameters.</li>
+<li>Show where <code>return</code> hands the answer back.</li>
+<li>Explain why functions are tidier than repeating the same code.</li>
+</ol>
+</blockquote>
+<div class="qa"><p><strong>Write what you will say in your video.</strong> Plan it here before you record — you can read from it while filming.</p>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.</p>
+</body>
+</html>

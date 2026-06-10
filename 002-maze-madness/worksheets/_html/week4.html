@@ -71,6 +71,11 @@ blockquote {
 .write-space.short { min-height: 86px; }
 .write-space.tall { min-height: 170px; }
 
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
 hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
 
 .meta { color: #666; font-size: 13px; margin: 0 0 14px; }
@@ -104,20 +109,19 @@ footer b { color: #ff7849; }
 <li><code>AND</code> → the action happens <strong>only when both</strong> conditions are true.</li>
 <li><code>OR</code> → the action happens <strong>when at least one</strong> condition is true.</li>
 </ul>
-<hr />
 <h2>1 · Predict 🔮</h2>
 <p>Read each set of steps. Before you imagine the agent doing it, write what you think will happen.</p>
 <pre><code>if wall ahead AND wall on right:
     turn left
 </code></pre>
-<p><strong>Both must be true. The agent has a wall ahead but an open path on the right — does it turn left?</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>Both must be true. The agent has a wall ahead but an open path on the right — does it turn left?</strong></p>
+<div class="write-space"></div></div>
 
 <pre><code>if no wall ahead OR no wall below:
     move forward
 </code></pre>
-<p><strong>Only one needs to be true. The path ahead is blocked but the path below is open — does the agent move?</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>Only one needs to be true. The path ahead is blocked but the path below is open — does the agent move?</strong></p>
+<div class="write-space"></div></div>
 
 <pre><code>keep doing forever:
     if wall ahead AND wall on right:
@@ -127,31 +131,30 @@ footer b { color: #ff7849; }
     otherwise:
         turn right
 </code></pre>
-<p><strong>The agent reaches a corner with walls on the front AND right. What does it do? At an open junction, which branch runs?</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>The agent reaches a corner with walls on the front AND right. What does it do? At an open junction, which branch runs?</strong></p>
+<div class="write-space"></div></div>
 
-<hr />
 <h2>2 · Spot the Bug 🐛</h2>
 <p>Each block of code below was meant to do something, but it is broken. Read what the code is <strong>supposed</strong> to do, then rewrite it so it works. After that, explain why the original was wrong and why your fix works.</p>
 <p><strong>Bug A</strong> — The agent should turn left <strong>only when</strong> there is a wall ahead AND a wall on the right (a dead-end corner). Right now it turns at <em>any</em> wall.</p>
 <pre><code>if wall ahead OR wall on right:
     turn left
 </code></pre>
-<p><strong>Write the fixed code:</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
 
-<p><strong>Why was it wrong? Why does your fix work?</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
 
 <p><strong>Bug B</strong> — The agent should move forward when <strong>either</strong> the path ahead is clear OR the path below is clear.</p>
 <pre><code>if no wall ahead AND no wall below:
     move forward
 </code></pre>
-<p><strong>Write the fixed code:</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
 
-<p><strong>Why was it wrong? Why does your fix work?</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
 
 <p><strong>Bug C</strong> — At a fork the agent should <strong>turn right if it can</strong> (path on the right), otherwise turn left. Right now the order is wrong, so it always turns left first.</p>
 <pre><code>if no wall on left:
@@ -160,17 +163,16 @@ otherwise if no wall on right:
     turn right
 </code></pre>
 <p><strong>Hint:</strong> check the right side first.</p>
-<p><strong>Write the fixed code:</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
 
-<p><strong>Why was it wrong? Why does your fix work?</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
 
-<hr />
 <h2>3 · Tell Me What You Built 📸</h2>
 <p>Now switch to your homework world. Solve the maze using <strong>both</strong> an <code>AND</code> condition and an <code>OR</code> condition. When you finish, come back here.</p>
 <p>Send a photo or video of the agent reaching the end, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.</p>
-<blockquote>
+<div class="qa"><blockquote>
 <p>First, I …</p>
 <p>I used <strong>AND</strong> when …</p>
 <p>I used <strong>OR</strong> when …</p>
@@ -178,9 +180,8 @@ otherwise if no wall on right:
 <p>To fix it, I …</p>
 <p>If I had more time, I would …</p>
 </blockquote>
-<div class="write-space tall" style="min-height: 340px"></div>
+<div class="write-space tall" style="min-height: 340px"></div></div>
 
-<hr />
 <h2>4 · Record Your Walkthrough 🎥</h2>
 <p>Now take a video on your phone (or a parent's phone) while the agent runs the maze. Talk through it like you are teaching someone who has never seen it. Try to use these words: <strong>AND</strong>, <strong>OR</strong>, <strong>condition</strong>, <strong>both</strong>, <strong>either</strong>.</p>
 <blockquote>
@@ -191,8 +192,8 @@ otherwise if no wall on right:
 <li>Say in your own words how <strong>AND</strong> is different from <strong>OR</strong>.</li>
 </ol>
 </blockquote>
-<p><strong>Write what you will say in your video.</strong> Use the space below to plan it before you record — you can read from it while filming.</p>
-<div class="write-space tall" style="min-height: 340px"></div>
+<div class="qa"><p><strong>Write what you will say in your video.</strong> Use the space below to plan it before you record — you can read from it while filming.</p>
+<div class="write-space tall" style="min-height: 340px"></div></div>
 
 <hr />
 <h3>Submit ✅</h3>

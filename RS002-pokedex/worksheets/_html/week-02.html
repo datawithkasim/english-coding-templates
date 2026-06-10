@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>🔴 RS002 Week 2 — English Worksheet</title>
+<style>
+@page { size: A4; margin: 18mm 16mm 22mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-family: "Inter", "Segoe UI", system-ui, sans-serif; color: #1a1a2e; }
+body { font-size: 15px; line-height: 1.55; }
+
+.cover { border-bottom: 3px solid #ff7849; padding-bottom: 14px; margin-bottom: 20px; }
+.brand { font-size: 14px; font-weight: 800; color: #ff7849; letter-spacing: .06em; }
+h1 { font-size: 28px; color: #6b4ee6; margin: 8px 0 6px; line-height: 1.25; }
+h2 { font-size: 19px; color: #6b4ee6; margin: 22px 0 12px; padding-top: 10px; border-top: 1px solid #eee; page-break-before: always; }
+section.first h2, h2:first-of-type { border-top: none; padding-top: 0; page-break-before: avoid; }
+h3, h4 { font-size: 15px; margin: 14px 0 8px; color: #1a1a2e; }
+p { margin: 8px 0; }
+strong { color: #1a1a2e; }
+em { color: #555; }
+
+ul, ol { margin: 8px 0 8px 24px; }
+li { margin: 3px 0; }
+
+pre {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 13.5px;
+  background: #1e1e2e;
+  color: #b9f6ca;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 10px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  page-break-inside: avoid;
+  line-height: 1.5;
+}
+pre code { background: transparent; padding: 0; color: inherit; }
+code {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  background: #fff1e8;
+  color: #ff7849;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+blockquote {
+  margin: 10px 0;
+  padding: 10px 16px;
+  background: #fff6ef;
+  border-left: 3px solid #ff7849;
+  border-radius: 0 6px 6px 0;
+  color: #6a3a1c;
+}
+
+.write-space {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #ffffff 0,
+    #ffffff 27px,
+    #d4d4d4 27px,
+    #d4d4d4 28px
+  );
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  min-height: 114px;
+  margin: 10px 0 20px;
+  page-break-inside: avoid;
+}
+.write-space.short { min-height: 86px; }
+.write-space.tall { min-height: 170px; }
+
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
+hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
+
+.meta { color: #666; font-size: 13px; margin: 0 0 14px; }
+.answer-lines {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 14px 16px;
+  background: #fafafa;
+  white-space: pre;
+  line-height: 2.2;
+}
+
+footer {
+  position: fixed;
+  bottom: 10mm; left: 16mm; right: 16mm;
+  text-align: center;
+  font-size: 10px;
+  color: #aaa;
+}
+footer b { color: #ff7849; }
+</style>
+</head>
+<body>
+<div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
+<h1>🔴 RS002 Week 2 — English Worksheet</h1>
+<p><strong>Topic:</strong> Trainer Profile — More Variables · <strong>Course:</strong> Pokédex App · <strong>Time:</strong> about 45 minutes</p>
+<p>This week you grow last week's intro into a full <strong>trainer card</strong>. You ask for more details — region and favourite type — clean each answer with <code>.strip()</code>, give every answer a default, and print a tidy card. Same pattern as Week 1, just repeated for more fields.</p>
+<h2>1 · Recall 🧠</h2>
+<p>From memory — no peeking at Week 1:</p>
+<div class="qa"><p><strong>Write the line that asks the user for their name and stores it in <code>trainer_name</code>.</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Write the line that prints <code>환영합니다, 지우 트레이너님!</code> using an f-string (the name is in <code>trainer_name</code>).</strong></p>
+<div class="write-space"></div></div>
+
+<h2>2 · Predict 🔮</h2>
+<p>Read each block. Before you run it, write what you think will happen.</p>
+<pre><code class="language-python">region = input(&quot;어느 지역에서 오셨나요? &quot;).strip()
+print(f&quot;[{region}]&quot;)
+</code></pre>
+<div class="qa"><p><strong>The user types <code>관동</code> (with spaces before and after). What prints between the brackets, exactly?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-python">fav_type = input(&quot;좋아하는 타입은? &quot;).strip()
+if fav_type == &quot;&quot;:
+    fav_type = &quot;비밀&quot;
+print(f&quot;선호 타입: {fav_type}&quot;)
+</code></pre>
+<div class="qa"><p><strong>The user presses Enter without typing. What is printed?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-python">print(f&quot;이름: {trainer_name}&quot;)
+print(f&quot;지역: {region}&quot;)
+print(f&quot;선호 타입: {fav_type}&quot;)
+</code></pre>
+<div class="qa"><p><strong>Three lines, three variables. Describe what kind of screen this makes.</strong></p>
+<div class="write-space"></div></div>
+
+<h2>3 · Spot the Bug 🐛</h2>
+<p>Read what each block is <strong>supposed</strong> to do, fix it, then explain the fix.</p>
+<p><strong>Bug A</strong> — Every answer should have its spaces trimmed. This one forgets <code>.strip()</code> on the region.</p>
+<pre><code class="language-python">trainer_name = input(&quot;이름: &quot;).strip()
+region = input(&quot;지역: &quot;)
+</code></pre>
+<p><strong>Hint:</strong> add the same cleaning step you used for the name.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug B</strong> — When the user leaves the type blank, it should become <code>비밀</code>. Right now the check happens <em>after</em> the card is printed, so it is too late.</p>
+<pre><code class="language-python">fav_type = input(&quot;타입: &quot;).strip()
+print(f&quot;선호 타입: {fav_type}&quot;)
+
+if fav_type == &quot;&quot;:
+    fav_type = &quot;비밀&quot;
+</code></pre>
+<p><strong>Hint:</strong> set the default <em>before</em> you print.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug C</strong> — The card should print three different fields. Right now it prints the name three times by mistake.</p>
+<pre><code class="language-python">print(f&quot;이름: {trainer_name}&quot;)
+print(f&quot;지역: {trainer_name}&quot;)
+print(f&quot;선호 타입: {trainer_name}&quot;)
+</code></pre>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>4 · Modify It ✏️</h2>
+<p>Start from this working trainer card:</p>
+<pre><code class="language-python">trainer_name = input(&quot;트레이너 이름: &quot;).strip()
+if trainer_name == &quot;&quot;:
+    trainer_name = &quot;이름 모를 트레이너&quot;
+
+region = input(&quot;어느 지역에서 오셨나요? &quot;).strip()
+if region == &quot;&quot;:
+    region = &quot;이름 모를 지역&quot;
+
+fav_type = input(&quot;좋아하는 포켓몬 타입은? &quot;).strip()
+if fav_type == &quot;&quot;:
+    fav_type = &quot;비밀&quot;
+
+print(f&quot;\n=== 트레이너 카드 ===&quot;)
+print(f&quot;이름: {trainer_name}&quot;)
+print(f&quot;지역: {region}&quot;)
+print(f&quot;선호 타입: {fav_type}&quot;)
+</code></pre>
+<p>Make these changes one at a time and run after each:</p>
+<ol>
+<li>Add a friendly closing line that uses both <code>region</code> and <code>trainer_name</code>.</li>
+<li>Change the region default to something fun.</li>
+<li>Add a blank line (<code>\n</code>) somewhere to make the card easier to read.</li>
+</ol>
+<div class="qa"><p><strong>Write your changed / added lines here:</strong></p>
+<div class="write-space"></div></div>
+
+<h2>5 · Make It 📸</h2>
+<p>Build your own <strong>trainer card</strong> with <strong>at least four fields</strong> (for example: name, region, favourite type, favourite Pokémon, years of adventuring — your choice). Every field should:</p>
+<ul>
+<li>be cleaned with <code>.strip()</code>,</li>
+<li>have a sensible default when the user types nothing.</li>
+</ul>
+<p>When it works, send a <strong>photo or video</strong> on KakaoTalk, then explain what you did. Use these starters — write 4 to 6 sentences.</p>
+<div class="qa"><blockquote>
+<p>First, I asked the trainer for …</p>
+<p>I used <code>.strip()</code> so that …</p>
+<p>For empty answers, my program …</p>
+<p>My fourth field was … and I added it by …</p>
+<p>The trickiest part was …</p>
+<p>If I had more time, I would add …</p>
+</blockquote>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<h2>6 · Record Your Walkthrough 🎥</h2>
+<p>Film your program running. Teach it like the viewer has never seen it. Try to use: <strong>variable</strong>, <strong>strip</strong>, <strong>default</strong>, <strong>field</strong>, <strong>trainer card</strong>.</p>
+<blockquote>
+<ol>
+<li>Run your program and fill in every field.</li>
+<li>Read one <code>input(...).strip()</code> line out loud and say what <code>.strip()</code> does.</li>
+<li>Run it again and leave a field blank to show the default.</li>
+<li>Show your finished trainer card on screen.</li>
+</ol>
+</blockquote>
+<div class="qa"><p><strong>Plan what you will say here first:</strong></p>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+</content></p>
+</body>
+</html>

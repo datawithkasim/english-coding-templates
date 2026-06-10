@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>✨ RS003 Week 12 — English Worksheet</title>
+<style>
+@page { size: A4; margin: 18mm 16mm 22mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-family: "Inter", "Segoe UI", system-ui, sans-serif; color: #1a1a2e; }
+body { font-size: 15px; line-height: 1.55; }
+
+.cover { border-bottom: 3px solid #ff7849; padding-bottom: 14px; margin-bottom: 20px; }
+.brand { font-size: 14px; font-weight: 800; color: #ff7849; letter-spacing: .06em; }
+h1 { font-size: 28px; color: #6b4ee6; margin: 8px 0 6px; line-height: 1.25; }
+h2 { font-size: 19px; color: #6b4ee6; margin: 22px 0 12px; padding-top: 10px; border-top: 1px solid #eee; page-break-before: always; }
+section.first h2, h2:first-of-type { border-top: none; padding-top: 0; page-break-before: avoid; }
+h3, h4 { font-size: 15px; margin: 14px 0 8px; color: #1a1a2e; }
+p { margin: 8px 0; }
+strong { color: #1a1a2e; }
+em { color: #555; }
+
+ul, ol { margin: 8px 0 8px 24px; }
+li { margin: 3px 0; }
+
+pre {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 13.5px;
+  background: #1e1e2e;
+  color: #b9f6ca;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 10px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  page-break-inside: avoid;
+  line-height: 1.5;
+}
+pre code { background: transparent; padding: 0; color: inherit; }
+code {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  background: #fff1e8;
+  color: #ff7849;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+blockquote {
+  margin: 10px 0;
+  padding: 10px 16px;
+  background: #fff6ef;
+  border-left: 3px solid #ff7849;
+  border-radius: 0 6px 6px 0;
+  color: #6a3a1c;
+}
+
+.write-space {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #ffffff 0,
+    #ffffff 27px,
+    #d4d4d4 27px,
+    #d4d4d4 28px
+  );
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  min-height: 114px;
+  margin: 10px 0 20px;
+  page-break-inside: avoid;
+}
+.write-space.short { min-height: 86px; }
+.write-space.tall { min-height: 170px; }
+
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
+hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
+
+.meta { color: #666; font-size: 13px; margin: 0 0 14px; }
+.answer-lines {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 14px 16px;
+  background: #fafafa;
+  white-space: pre;
+  line-height: 2.2;
+}
+
+footer {
+  position: fixed;
+  bottom: 10mm; left: 16mm; right: 16mm;
+  text-align: center;
+  font-size: 10px;
+  color: #aaa;
+}
+footer b { color: #ff7849; }
+</style>
+</head>
+<body>
+<div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
+<h1>✨ RS003 Week 12 — English Worksheet</h1>
+<p><strong>Topic:</strong> Twinkling Stars and Drifting Clouds · <strong>Course:</strong> Pygame Turret · <strong>Time:</strong> about 45 minutes</p>
+<p>This week your background <strong>moves</strong>. Stars twinkle at different brightnesses and clouds drift slowly across the screen, wrapping back around when they leave. You store each star and cloud as a small <strong>dictionary</strong> of facts and loop over a <strong>list</strong> of them every frame.</p>
+<blockquote>
+<p>🧠 Words to know: <strong>list</strong>, <strong>dictionary</strong>, <strong>drift</strong>, <strong>wrap-around</strong>, <strong>brightness</strong></p>
+</blockquote>
+<h2>1 · Predict 🔮</h2>
+<p>Read each piece of code. Before you run it, write what you think will happen.</p>
+<pre><code class="language-python">stars = []
+for i in range(80):
+    stars.append({&quot;x&quot;: random.randint(0, WIDTH), &quot;y&quot;: random.randint(0, HEIGHT - 100), &quot;phase&quot;: random.randint(0, 60)})
+</code></pre>
+<div class="qa"><p><strong>This builds a list of 80 stars. What three facts does each star remember?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-python">cloud[&quot;x&quot;] = cloud[&quot;x&quot;] - cloud[&quot;speed&quot;]
+if cloud[&quot;x&quot;] &lt; -cloud[&quot;size&quot;]:
+    cloud[&quot;x&quot;] = WIDTH + cloud[&quot;size&quot;]
+</code></pre>
+<div class="qa"><p><strong>Each cloud moves left a little every frame. What happens when a cloud goes off the left edge?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-python">brightness = 100 + ((frame + star[&quot;phase&quot;]) * 4 % 156)
+pygame.draw.circle(screen, (brightness, brightness, brightness), (star[&quot;x&quot;], star[&quot;y&quot;]), 2)
+</code></pre>
+<div class="qa"><p><strong>The brightness changes every frame and each star has a different <code>phase</code>. What do the stars look like together?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>2 · Run It 🏃</h2>
+<h3>🎯 Type the example, run it, and watch it breathe</h3>
+<pre><code class="language-python">import pygame
+import random
+pygame.init()
+
+WIDTH, HEIGHT = 800, 600
+screen = pygame.display.set_mode((WIDTH, HEIGHT))
+clock = pygame.time.Clock()
+
+stars = []
+for i in range(80):
+    stars.append({&quot;x&quot;: random.randint(0, WIDTH), &quot;y&quot;: random.randint(0, HEIGHT - 100), &quot;phase&quot;: random.randint(0, 60)})
+
+clouds = []
+for i in range(5):
+    clouds.append({&quot;x&quot;: random.randint(0, WIDTH), &quot;y&quot;: random.randint(40, 200), &quot;speed&quot;: random.uniform(0.3, 1.0), &quot;size&quot;: random.randint(40, 80)})
+
+frame = 0
+running = True
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+
+    screen.fill((20, 30, 80))
+
+    for star in stars:
+        brightness = 100 + ((frame + star[&quot;phase&quot;]) * 4 % 156)
+        pygame.draw.circle(screen, (brightness, brightness, brightness), (star[&quot;x&quot;], star[&quot;y&quot;]), 2)
+
+    for cloud in clouds:
+        cloud[&quot;x&quot;] = cloud[&quot;x&quot;] - cloud[&quot;speed&quot;]
+        if cloud[&quot;x&quot;] &lt; -cloud[&quot;size&quot;]:
+            cloud[&quot;x&quot;] = WIDTH + cloud[&quot;size&quot;]
+            cloud[&quot;y&quot;] = random.randint(40, 200)
+        cx = int(cloud[&quot;x&quot;])
+        pygame.draw.circle(screen, (200, 200, 220), (cx, cloud[&quot;y&quot;]), cloud[&quot;size&quot;] // 2)
+        pygame.draw.circle(screen, (200, 200, 220), (cx + 20, cloud[&quot;y&quot;] - 10), cloud[&quot;size&quot;] // 2)
+        pygame.draw.circle(screen, (200, 200, 220), (cx - 20, cloud[&quot;y&quot;] - 5), cloud[&quot;size&quot;] // 2)
+
+    pygame.display.flip()
+    frame = frame + 1
+    clock.tick(60)
+
+pygame.quit()
+</code></pre>
+<div class="qa"><p><strong>Watch for 10 seconds. Describe what the stars do and what the clouds do:</strong></p>
+<div class="write-space"></div></div>
+
+<h2>3 · Spot the Bug 🐛</h2>
+<p>Each block below was meant to do something but is broken. Fix it, then explain why the original was wrong.</p>
+<p><strong>Bug A</strong> — All the stars are supposed to twinkle at different times, but instead they all flash on and off together.</p>
+<pre><code class="language-python">stars.append({&quot;x&quot;: random.randint(0, WIDTH), &quot;y&quot;: random.randint(0, HEIGHT - 100), &quot;phase&quot;: 0})
+</code></pre>
+<p><strong>Hint:</strong> every star has the same <code>phase</code>, so they share the same beat.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug B</strong> — Clouds should keep flowing forever, but once they leave the left side they never come back and the sky goes empty.</p>
+<pre><code class="language-python">cloud[&quot;x&quot;] = cloud[&quot;x&quot;] - cloud[&quot;speed&quot;]
+pygame.draw.circle(screen, (200, 200, 220), (int(cloud[&quot;x&quot;]), cloud[&quot;y&quot;]), cloud[&quot;size&quot;] // 2)
+</code></pre>
+<p><strong>Hint:</strong> there is no wrap-around to send the cloud back to the right side.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug C</strong> — The program crashes when drawing a cloud because a position has a decimal point.</p>
+<pre><code class="language-python">cloud[&quot;x&quot;] = cloud[&quot;x&quot;] - cloud[&quot;speed&quot;]
+pygame.draw.circle(screen, (200, 200, 220), (cloud[&quot;x&quot;], cloud[&quot;y&quot;]), cloud[&quot;size&quot;] // 2)
+</code></pre>
+<p><strong>Hint:</strong> <code>speed</code> is a decimal, so <code>cloud["x"]</code> becomes a decimal. Positions must be whole numbers.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>4 · Modify It 🔧</h2>
+<h3>🎯 Add more clouds at different speeds</h3>
+<p>Change <code>range(5)</code> to make more clouds. The speeds and sizes are already random, so they will all differ.</p>
+<div class="qa"><p><strong>Write the new cloud count you chose and how the sky looks now:</strong></p>
+<div class="write-space"></div></div>
+
+<h3>🎯 Give stars a few different colours</h3>
+<p>Most stars are white, but make some of them slightly yellow or blue.</p>
+<div class="qa"><p><strong>Describe how you decided which stars get which colour:</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Hint:</strong> you can store a <code>"color"</code> fact in each star's dictionary, picked with <code>random.choice([...])</code> when you build the list.</p>
+<h2>5 · Make It 📸</h2>
+<h3>🎯 Build a living background behind your turret</h3>
+<p>Build a scene with a moving background — twinkling stars, drifting clouds, or your own idea like falling snow — placed behind your turret from earlier weeks.</p>
+<p>Send a <strong>photo or video</strong> of your living scene, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.</p>
+<div class="qa"><blockquote>
+<p>First, I stored each star as a dictionary with …</p>
+<p>I looped over the list every frame to …</p>
+<p>The clouds drift because I …</p>
+<p>They wrap around the screen by …</p>
+<p>One tricky moment was when …</p>
+<p>If I had more time, I would …</p>
+</blockquote>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<h2>6 · Record Your Walkthrough 🎥</h2>
+<p>Take a video of your living background. Talk through it like you are teaching someone. Try to use these words: <strong>list</strong>, <strong>dictionary</strong>, <strong>drift</strong>, <strong>wrap-around</strong>, <strong>brightness</strong>.</p>
+<blockquote>
+<ol>
+<li>Show the stars twinkling and clouds drifting.</li>
+<li>Read the line that builds one star out loud and name its facts.</li>
+<li>Point at the wrap-around code and explain it.</li>
+<li>Change the cloud count live and show the difference.</li>
+</ol>
+</blockquote>
+<div class="qa"><p><strong>Write what you will say in your video.</strong> Plan it here before you record.</p>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your photo or video to teacher on KakaoTalk.</p>
+</body>
+</html>

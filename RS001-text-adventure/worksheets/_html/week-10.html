@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>🌳 RS001 Week 10 — English Worksheet</title>
+<style>
+@page { size: A4; margin: 18mm 16mm 22mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-family: "Inter", "Segoe UI", system-ui, sans-serif; color: #1a1a2e; }
+body { font-size: 15px; line-height: 1.55; }
+
+.cover { border-bottom: 3px solid #ff7849; padding-bottom: 14px; margin-bottom: 20px; }
+.brand { font-size: 14px; font-weight: 800; color: #ff7849; letter-spacing: .06em; }
+h1 { font-size: 28px; color: #6b4ee6; margin: 8px 0 6px; line-height: 1.25; }
+h2 { font-size: 19px; color: #6b4ee6; margin: 22px 0 12px; padding-top: 10px; border-top: 1px solid #eee; page-break-before: always; }
+section.first h2, h2:first-of-type { border-top: none; padding-top: 0; page-break-before: avoid; }
+h3, h4 { font-size: 15px; margin: 14px 0 8px; color: #1a1a2e; }
+p { margin: 8px 0; }
+strong { color: #1a1a2e; }
+em { color: #555; }
+
+ul, ol { margin: 8px 0 8px 24px; }
+li { margin: 3px 0; }
+
+pre {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 13.5px;
+  background: #1e1e2e;
+  color: #b9f6ca;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 10px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  page-break-inside: avoid;
+  line-height: 1.5;
+}
+pre code { background: transparent; padding: 0; color: inherit; }
+code {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  background: #fff1e8;
+  color: #ff7849;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+blockquote {
+  margin: 10px 0;
+  padding: 10px 16px;
+  background: #fff6ef;
+  border-left: 3px solid #ff7849;
+  border-radius: 0 6px 6px 0;
+  color: #6a3a1c;
+}
+
+.write-space {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #ffffff 0,
+    #ffffff 27px,
+    #d4d4d4 27px,
+    #d4d4d4 28px
+  );
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  min-height: 114px;
+  margin: 10px 0 20px;
+  page-break-inside: avoid;
+}
+.write-space.short { min-height: 86px; }
+.write-space.tall { min-height: 170px; }
+
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
+hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
+
+.meta { color: #666; font-size: 13px; margin: 0 0 14px; }
+.answer-lines {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 14px 16px;
+  background: #fafafa;
+  white-space: pre;
+  line-height: 2.2;
+}
+
+footer {
+  position: fixed;
+  bottom: 10mm; left: 16mm; right: 16mm;
+  text-align: center;
+  font-size: 10px;
+  color: #aaa;
+}
+footer b { color: #ff7849; }
+</style>
+</head>
+<body>
+<div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
+<h1>🌳 RS001 Week 10 — English Worksheet</h1>
+<p><strong>Topic:</strong> Deeper Branches — Path → Enemy → Reward · <strong>Course:</strong> Text Adventure (Python) · <strong>Time:</strong> about 45 minutes</p>
+<p>This week one choice ripples forward. The path you pick decides the enemy, the <strong>reward</strong>, and the <strong>next place</strong> — and the reward then changes what happens after. Choices stack into a chain.</p>
+<pre><code class="language-python">if path == &quot;left&quot;:
+    enemy = &quot;goblin&quot;
+    reward = &quot;gold coin&quot;
+    next_place = &quot;deep cave&quot;
+
+if reward == &quot;gold coin&quot;:
+    game.say(&quot;A merchant shows you a secret passage.&quot;)
+</code></pre>
+<h2>1 · Predict 🔮</h2>
+<p>Read each piece of code. Before you run it in your head, write what you think happens.</p>
+<pre><code class="language-python">path = &quot;left&quot;
+if path == &quot;left&quot;:
+    reward = &quot;map&quot;
+else:
+    reward = &quot;ring&quot;
+game.say(f&quot;You won a {reward}.&quot;)
+</code></pre>
+<div class="qa"><p><strong>Which reward is printed?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-python">reward = &quot;ring&quot;
+if reward == &quot;coin&quot;:
+    game.say(&quot;The merchant helps you.&quot;)
+elif reward == &quot;ring&quot;:
+    game.say(&quot;The ring glows and reveals a hidden path.&quot;)
+</code></pre>
+<div class="qa"><p><strong>Which message appears?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-python">path = &quot;right&quot;
+if path == &quot;left&quot;:
+    reward = &quot;map&quot;
+game.say(f&quot;You won a {reward}.&quot;)
+</code></pre>
+<div class="qa"><p><strong>The player went right, but there is no <code>else</code>. What goes wrong on the last line?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>2 · Spot the Bug 🐛</h2>
+<p>Each block was meant to do something, but it is broken. Read what it is <strong>supposed</strong> to do, fix it, then explain why the original was wrong.</p>
+<p><strong>Bug A</strong> — Both paths should set <code>reward</code>, so the line after always has a value. Right now only the left path sets it, so the right path crashes.</p>
+<pre><code class="language-python">path = game.ask(&quot;way?&quot;).strip().lower()
+if path == &quot;left&quot;:
+    reward = &quot;map&quot;
+game.say(f&quot;You found a {reward}.&quot;)
+</code></pre>
+<p><strong>Hint:</strong> add an <code>else</code> (or second branch) that also sets <code>reward</code>.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug B</strong> — The reward should change the <strong>next</strong> scene. Right now the second <code>if</code> checks the wrong reward name, so the special scene never fires.</p>
+<pre><code class="language-python">reward = &quot;golden key&quot;
+game.say(f&quot;You picked up a {reward}.&quot;)
+if reward == &quot;gold key&quot;:
+    game.say(&quot;The key opens a hidden door.&quot;)
+</code></pre>
+<p><strong>Hint:</strong> the name you store and the name you check must match exactly.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug C</strong> — This three-way path should give each route its own enemy, reward, and next place. Right now the middle path reuses the left path's reward.</p>
+<pre><code class="language-python">path = &quot;middle&quot;
+if path == &quot;left&quot;:
+    reward = &quot;map&quot;
+elif path == &quot;middle&quot;:
+    reward = &quot;map&quot;
+elif path == &quot;right&quot;:
+    reward = &quot;ring&quot;
+game.say(f&quot;Reward: {reward}&quot;)
+</code></pre>
+<p><strong>Hint:</strong> the middle path should have a reward of its own.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>3 · 🎯 Chain Your Choices</h2>
+<p>Open your game. Make the path choice set <strong>three</strong> things — the enemy, the reward, and the next place. Then add a second branch that reads the <strong>reward</strong> and changes the next scene. That is two layers of cause and effect.</p>
+<p>When it works, send a <strong>photo or video</strong>, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.</p>
+<div class="qa"><blockquote>
+<p>First, the path choice decided …</p>
+<p>The reward from that path was …</p>
+<p>Later, the reward changed the story because …</p>
+<p>I made sure every branch set the variables so that …</p>
+<p>One tricky moment was when …</p>
+<p>If I had more time, I would …</p>
+</blockquote>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<h2>4 · Record Your Walkthrough 🎥</h2>
+<p>Take a video on your phone (or a parent's phone) while your game runs. Teach it like the viewer has never coded. Try to use these words: <strong>branch</strong>, <strong>reward</strong>, <strong>next</strong>, <strong>chain</strong>, <strong>depends on</strong>.</p>
+<blockquote>
+<ol>
+<li>Run your game down one path and show the reward.</li>
+<li>Show how that reward changes the next scene.</li>
+<li>Run a different path and show a different chain.</li>
+<li>Read one branch out loud and explain what depends on what.</li>
+</ol>
+</blockquote>
+<div class="qa"><p><strong>Write what you will say in your video.</strong> Plan it here first.</p>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.</p>
+</body>
+</html>

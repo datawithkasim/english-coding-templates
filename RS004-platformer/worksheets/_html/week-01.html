@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>🪟 RS004 Week 1 — English Worksheet</title>
+<style>
+@page { size: A4; margin: 18mm 16mm 22mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-family: "Inter", "Segoe UI", system-ui, sans-serif; color: #1a1a2e; }
+body { font-size: 15px; line-height: 1.55; }
+
+.cover { border-bottom: 3px solid #ff7849; padding-bottom: 14px; margin-bottom: 20px; }
+.brand { font-size: 14px; font-weight: 800; color: #ff7849; letter-spacing: .06em; }
+h1 { font-size: 28px; color: #6b4ee6; margin: 8px 0 6px; line-height: 1.25; }
+h2 { font-size: 19px; color: #6b4ee6; margin: 22px 0 12px; padding-top: 10px; border-top: 1px solid #eee; page-break-before: always; }
+section.first h2, h2:first-of-type { border-top: none; padding-top: 0; page-break-before: avoid; }
+h3, h4 { font-size: 15px; margin: 14px 0 8px; color: #1a1a2e; }
+p { margin: 8px 0; }
+strong { color: #1a1a2e; }
+em { color: #555; }
+
+ul, ol { margin: 8px 0 8px 24px; }
+li { margin: 3px 0; }
+
+pre {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 13.5px;
+  background: #1e1e2e;
+  color: #b9f6ca;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 10px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  page-break-inside: avoid;
+  line-height: 1.5;
+}
+pre code { background: transparent; padding: 0; color: inherit; }
+code {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  background: #fff1e8;
+  color: #ff7849;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+blockquote {
+  margin: 10px 0;
+  padding: 10px 16px;
+  background: #fff6ef;
+  border-left: 3px solid #ff7849;
+  border-radius: 0 6px 6px 0;
+  color: #6a3a1c;
+}
+
+.write-space {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #ffffff 0,
+    #ffffff 27px,
+    #d4d4d4 27px,
+    #d4d4d4 28px
+  );
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  min-height: 114px;
+  margin: 10px 0 20px;
+  page-break-inside: avoid;
+}
+.write-space.short { min-height: 86px; }
+.write-space.tall { min-height: 170px; }
+
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
+hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
+
+.meta { color: #666; font-size: 13px; margin: 0 0 14px; }
+.answer-lines {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 14px 16px;
+  background: #fafafa;
+  white-space: pre;
+  line-height: 2.2;
+}
+
+footer {
+  position: fixed;
+  bottom: 10mm; left: 16mm; right: 16mm;
+  text-align: center;
+  font-size: 10px;
+  color: #aaa;
+}
+footer b { color: #ff7849; }
+</style>
+</head>
+<body>
+<div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
+<h1>🪟 RS004 Week 1 — English Worksheet</h1>
+<p><strong>Topic:</strong> Game Window &amp; Game Loop · <strong>Course:</strong> Platformer Game · <strong>Time:</strong> about 45 minutes</p>
+<p>This week you open your very first <strong>game window</strong> and start the <strong>game loop</strong> — the heartbeat that runs every frame: read events → update → draw. Everything you build for the next 16 weeks lives inside this loop.</p>
+<blockquote>
+<p>Keep these words handy: <strong>game loop</strong>, <strong>event</strong>, <strong><code>pygame.QUIT</code></strong>, <strong><code>flip()</code></strong>, <strong>FPS</strong>, <strong>RGB</strong>.</p>
+</blockquote>
+<h2>1 · Predict 🔮</h2>
+<p>Read each snippet. Before you run it, write what you think will happen.</p>
+<pre><code class="language-python">screen.fill((135, 206, 235))
+pygame.display.flip()
+</code></pre>
+<div class="qa"><p><strong>What colour fills the screen, and what does <code>flip()</code> do?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-python">for event in pygame.event.get():
+    if event.type == pygame.QUIT:
+        running = False
+</code></pre>
+<div class="qa"><p><strong>A player clicks the X button. What happens to <code>running</code>, and then to the loop?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-python">clock.tick(60)
+</code></pre>
+<div class="qa"><p><strong>This line is at the end of the loop. What is it controlling?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>2 · Read &amp; Match 🔗</h2>
+<p>Match each line to its job. Write the letter next to each number.</p>
+<div class="answer-lines">1. pygame.init()
+2. pygame.display.set_mode((800, 600))
+3. pygame.display.set_caption(&quot;나의 플랫포머&quot;)
+4. screen.fill(SKY_BLUE)
+5. pygame.display.flip()
+</div>
+<pre><code>A. paints the whole screen one colour
+B. starts up pygame so we can use it
+C. shows everything we drew this frame
+D. makes the 800×600 window
+E. writes the title on the window bar
+</code></pre>
+<div class="qa"><p><strong>1 → ___  2 → ___  3 → ___  4 → ___  5 → ___</strong></p>
+<div class="write-space"></div></div>
+
+<h2>3 · Spot the Bug 🐛</h2>
+<p>Each snippet is broken. Read what it should do, then rewrite it so it works. Explain why the original was wrong.</p>
+<p><strong>Bug A</strong> — The window should stay open until the player closes it. Right now it flashes open and shuts instantly.</p>
+<pre><code class="language-python">running = True
+for event in pygame.event.get():
+    if event.type == pygame.QUIT:
+        running = False
+screen.fill((135, 206, 235))
+pygame.display.flip()
+</code></pre>
+<p><strong>Hint:</strong> the drawing and event-reading need to <em>repeat</em>. What kind of loop is missing?</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug B</strong> — The screen should turn sky-blue, but the window stays black even though <code>fill</code> runs.</p>
+<pre><code class="language-python">screen.fill((135, 206, 235))
+clock.tick(60)
+</code></pre>
+<p><strong>Hint:</strong> we filled the screen but never <em>showed</em> it.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>4 · Colour Lab 🎨</h2>
+<p>Each colour is <code>(Red, Green, Blue)</code>, where each number is 0–255. Write down what colour you expect, then check it in code.</p>
+<pre><code>(255, 0, 0)      → ___________
+(0, 0, 0)        → ___________
+(255, 255, 255)  → ___________
+(135, 206, 235)  → ___________
+</code></pre>
+<div class="write-space"></div>
+
+<div class="qa"><p><strong>Now invent one.</strong> Write an RGB value for a sunset orange sky, then test it in <code>screen.fill(...)</code>.</p>
+<div class="write-space"></div></div>
+
+<h2>5 · Build &amp; Show 📸</h2>
+<p>Open your starter file. You have a working 800×600 sky-blue window at 60 FPS. Make it yours:</p>
+<ol>
+<li>Change the background to a colour you like, and write down what its RGB numbers mean.</li>
+<li>Change the window size to 1024×768.</li>
+<li>Give the window your own caption (title).</li>
+</ol>
+<p>When it works, send a <strong>photo or video</strong> of your window running, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.</p>
+<div class="qa"><blockquote>
+<p>First, I changed the background to …</p>
+<p>The three numbers in the colour mean …</p>
+<p>I made the window bigger by …</p>
+<p>The game loop keeps the window open because …</p>
+<p>One thing I was unsure about was …</p>
+<p>If I had more time, I would …</p>
+</blockquote>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<h2>6 · Record Your Walkthrough 🎥</h2>
+<p>Take a video on your phone while your window runs. Talk through it like you are teaching someone who has never seen Pygame. Try to use these words: <strong>game loop</strong>, <strong>event</strong>, <strong>fill</strong>, <strong>flip</strong>, <strong>FPS</strong>.</p>
+<blockquote>
+<ol>
+<li>Show your window opening.</li>
+<li>Point at the line that sets the background colour.</li>
+<li>Explain what the game loop does every frame.</li>
+<li>Click the X and show the window closing — say which line made that work.</li>
+</ol>
+</blockquote>
+<div class="qa"><p><strong>Write what you will say in your video.</strong> Plan it here before you record — you can read from it while filming.</p>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.</p>
+</body>
+</html>

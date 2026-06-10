@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>🔴 RS002 Week 15 — English Worksheet</title>
+<style>
+@page { size: A4; margin: 18mm 16mm 22mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-family: "Inter", "Segoe UI", system-ui, sans-serif; color: #1a1a2e; }
+body { font-size: 15px; line-height: 1.55; }
+
+.cover { border-bottom: 3px solid #ff7849; padding-bottom: 14px; margin-bottom: 20px; }
+.brand { font-size: 14px; font-weight: 800; color: #ff7849; letter-spacing: .06em; }
+h1 { font-size: 28px; color: #6b4ee6; margin: 8px 0 6px; line-height: 1.25; }
+h2 { font-size: 19px; color: #6b4ee6; margin: 22px 0 12px; padding-top: 10px; border-top: 1px solid #eee; page-break-before: always; }
+section.first h2, h2:first-of-type { border-top: none; padding-top: 0; page-break-before: avoid; }
+h3, h4 { font-size: 15px; margin: 14px 0 8px; color: #1a1a2e; }
+p { margin: 8px 0; }
+strong { color: #1a1a2e; }
+em { color: #555; }
+
+ul, ol { margin: 8px 0 8px 24px; }
+li { margin: 3px 0; }
+
+pre {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 13.5px;
+  background: #1e1e2e;
+  color: #b9f6ca;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 10px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  page-break-inside: avoid;
+  line-height: 1.5;
+}
+pre code { background: transparent; padding: 0; color: inherit; }
+code {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  background: #fff1e8;
+  color: #ff7849;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+blockquote {
+  margin: 10px 0;
+  padding: 10px 16px;
+  background: #fff6ef;
+  border-left: 3px solid #ff7849;
+  border-radius: 0 6px 6px 0;
+  color: #6a3a1c;
+}
+
+.write-space {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #ffffff 0,
+    #ffffff 27px,
+    #d4d4d4 27px,
+    #d4d4d4 28px
+  );
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  min-height: 114px;
+  margin: 10px 0 20px;
+  page-break-inside: avoid;
+}
+.write-space.short { min-height: 86px; }
+.write-space.tall { min-height: 170px; }
+
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
+hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
+
+.meta { color: #666; font-size: 13px; margin: 0 0 14px; }
+.answer-lines {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 14px 16px;
+  background: #fafafa;
+  white-space: pre;
+  line-height: 2.2;
+}
+
+footer {
+  position: fixed;
+  bottom: 10mm; left: 16mm; right: 16mm;
+  text-align: center;
+  font-size: 10px;
+  color: #aaa;
+}
+footer b { color: #ff7849; }
+</style>
+</head>
+<body>
+<div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
+<h1>🔴 RS002 Week 15 — English Worksheet</h1>
+<p><strong>Topic:</strong> Multiple Files — <code>import</code> Your Own Data · <strong>Course:</strong> Pokédex App · <strong>Time:</strong> about 45 minutes</p>
+<p>This week your project grows into <strong>two files</strong>. The Pokémon data moves into <code>pokemon_data.py</code>, and your game lives in <code>main.py</code>, which pulls the data in with <code>from pokemon_data import pokedex</code>. Splitting files is how real programs stay organised.</p>
+<h2>1 · Recall 🧠</h2>
+<p>From memory:</p>
+<div class="qa"><p><strong>Write a function <code>battle(p1, p2)</code> that returns whichever Pokémon has the higher <code>hp + attack</code> (return <code>None</code> on a tie).</strong></p>
+<div class="write-space"></div></div>
+
+<h2>2 · Predict 🔮</h2>
+<p>Read each block. Before you run it, write what you think will happen.</p>
+<p>Two files:</p>
+<pre><code class="language-python"># pokemon_data.py
+pokedex = [
+    {&quot;name&quot;: &quot;피카츄&quot;, &quot;type&quot;: &quot;전기&quot;},
+    {&quot;name&quot;: &quot;파이리&quot;, &quot;type&quot;: &quot;불&quot;},
+]
+</code></pre>
+<pre><code class="language-python"># main.py
+from pokemon_data import pokedex
+print(len(pokedex))
+print(pokedex[0][&quot;name&quot;])
+</code></pre>
+<div class="qa"><p><strong>When you run <code>main.py</code>, what two lines print?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-python"># main.py
+import random
+from pokemon_data import pokedex
+
+print(random.choice(pokedex)[&quot;name&quot;])
+</code></pre>
+<div class="qa"><p><strong>Both <code>import</code> styles appear here. What does this line print? Could it change each run?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-python"># main.py
+from pokemon_data import pokedex
+print(pokemon_data)
+</code></pre>
+<div class="qa"><p><strong><code>from ... import pokedex</code> only brings in <code>pokedex</code>. What happens on the <code>print</code> line?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>3 · Spot the Bug 🐛</h2>
+<p>Read what each block is <strong>supposed</strong> to do, fix it, then explain the fix.</p>
+<p><strong>Bug A</strong> — <code>main.py</code> should pull in the dex from the data file. Right now nothing is imported, so <code>pokedex</code> does not exist.</p>
+<pre><code class="language-python"># main.py
+print(len(pokedex))
+</code></pre>
+<p><strong>Hint:</strong> add a <code>from pokemon_data import pokedex</code> line at the top.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug B</strong> — The data lives in <code>pokemon_data.py</code>, but this import names the wrong file.</p>
+<pre><code class="language-python"># main.py
+from pokemon import pokedex
+print(pokedex[0][&quot;name&quot;])
+</code></pre>
+<p><strong>Hint:</strong> the module name must match the file name (without <code>.py</code>).</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug C</strong> — <code>random.choice</code> is used but only the data is imported. The program crashes on <code>random</code>.</p>
+<pre><code class="language-python"># main.py
+from pokemon_data import pokedex
+print(random.choice(pokedex)[&quot;name&quot;])
+</code></pre>
+<p><strong>Hint:</strong> <code>random</code> is a separate module — import it too.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>4 · Modify It ✏️</h2>
+<p>Start from this working two-file setup:</p>
+<pre><code class="language-python"># pokemon_data.py — data only
+pokedex = [
+    {&quot;name&quot;: &quot;피카츄&quot;, &quot;type&quot;: &quot;전기&quot;, &quot;hp&quot;: 35, &quot;attack&quot;: 55},
+    {&quot;name&quot;: &quot;이상해씨&quot;, &quot;type&quot;: &quot;풀&quot;, &quot;hp&quot;: 45, &quot;attack&quot;: 49},
+    {&quot;name&quot;: &quot;파이리&quot;, &quot;type&quot;: &quot;불&quot;, &quot;hp&quot;: 39, &quot;attack&quot;: 52},
+    {&quot;name&quot;: &quot;꼬부기&quot;, &quot;type&quot;: &quot;물&quot;, &quot;hp&quot;: 44, &quot;attack&quot;: 48},
+]
+</code></pre>
+<pre><code class="language-python"># main.py — the game
+import random
+from pokemon_data import pokedex
+
+def show_pokemon(p):
+    print(f&quot;{p['name']} ({p['type']}) — HP {p['hp']}, ATK {p['attack']}&quot;)
+
+def battle(p1, p2):
+    score1 = p1[&quot;hp&quot;] + p1[&quot;attack&quot;]
+    score2 = p2[&quot;hp&quot;] + p2[&quot;attack&quot;]
+    if score1 &gt; score2:
+        return p1
+    elif score2 &gt; score1:
+        return p2
+    return None
+
+trainer = input(&quot;트레이너 이름: &quot;).strip() or &quot;이름 모를 트레이너&quot;
+print(f&quot;\n환영합니다, {trainer} 트레이너님!&quot;)
+
+print(&quot;\n=== 포켓몬 도감 ===&quot;)
+for i, p in enumerate(pokedex):
+    print(f&quot;{i+1}. {p['name']}&quot;)
+
+choice = input(&quot;\n원하는 포켓몬 이름: &quot;).strip()
+my_pokemon = None
+for p in pokedex:
+    if p[&quot;name&quot;] == choice:
+        my_pokemon = p
+        break
+
+if my_pokemon == None:
+    print(&quot;도감에 없는 포켓몬이어서 피카츄로 시작합니다.&quot;)
+    my_pokemon = pokedex[0]
+
+enemy = random.choice(pokedex)
+print(f&quot;\n🥊 배틀 시작!&quot;)
+show_pokemon(my_pokemon)
+print(&quot;   vs&quot;)
+show_pokemon(enemy)
+
+winner = battle(my_pokemon, enemy)
+if winner == my_pokemon:
+    print(f&quot;\n🏆 {trainer} 트레이너님의 승리!&quot;)
+elif winner == enemy:
+    print(f&quot;\n😢 졌습니다... 다시 도전해보세요!&quot;)
+else:
+    print(f&quot;\n⚖️ 무승부!&quot;)
+</code></pre>
+<p>Make these changes one at a time and run after each:</p>
+<ol>
+<li>Add two more Pokémon <strong>in <code>pokemon_data.py</code> only</strong> and confirm they appear in <code>main.py</code>.</li>
+<li>Move your <code>show_pokemon</code> style (emojis, layout) to your taste.</li>
+<li>Add a second list <code>wild_pokemon</code> to the data file and <code>import</code> it as well.</li>
+</ol>
+<div class="qa"><p><strong>Write your changed / added lines here:</strong></p>
+<div class="write-space"></div></div>
+
+<h2>5 · Make It 📸</h2>
+<p>Split your Week 14 app into <strong>two files</strong>: <code>pokemon_data.py</code> for the dex, <code>main.py</code> for everything else. <code>main.py</code> imports the dex and still runs the full app.</p>
+<p>When it works, send a <strong>video or screenshots of both files</strong> on KakaoTalk. Then explain what you did. Use these starters — write 4 to 6 sentences.</p>
+<div class="qa"><blockquote>
+<p>First, I moved … into <code>pokemon_data.py</code>.</p>
+<p>In <code>main.py</code> I brought it in with …</p>
+<p><code>from pokemon_data import pokedex</code> means …</p>
+<p><code>import X</code> and <code>from X import Y</code> are different because …</p>
+<p>The trickiest part was …</p>
+<p>Splitting files is helpful because …</p>
+</blockquote>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<h2>6 · Record Your Walkthrough 🎥</h2>
+<p>Film both files and the app running. Try to use: <strong>import</strong>, <strong>module</strong>, <strong>from import</strong>, <strong>data file</strong>, <strong>main file</strong>.</p>
+<blockquote>
+<ol>
+<li>Show <code>pokemon_data.py</code> and read its <code>pokedex</code>.</li>
+<li>Show the <code>import</code> line in <code>main.py</code> and explain it.</li>
+<li>Run <code>main.py</code> and play through one battle.</li>
+<li>Add one Pokémon to the data file live and show it appear.</li>
+</ol>
+</blockquote>
+<div class="qa"><p><strong>Plan what you will say here first:</strong></p>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + <strong>both files</strong> + your walkthrough video to teacher on KakaoTalk.
+</content></p>
+</body>
+</html>

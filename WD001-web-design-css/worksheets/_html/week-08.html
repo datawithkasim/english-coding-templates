@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>🏆 WD001 Week 8 — English Worksheet</title>
+<style>
+@page { size: A4; margin: 18mm 16mm 22mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-family: "Inter", "Segoe UI", system-ui, sans-serif; color: #1a1a2e; }
+body { font-size: 15px; line-height: 1.55; }
+
+.cover { border-bottom: 3px solid #ff7849; padding-bottom: 14px; margin-bottom: 20px; }
+.brand { font-size: 14px; font-weight: 800; color: #ff7849; letter-spacing: .06em; }
+h1 { font-size: 28px; color: #6b4ee6; margin: 8px 0 6px; line-height: 1.25; }
+h2 { font-size: 19px; color: #6b4ee6; margin: 22px 0 12px; padding-top: 10px; border-top: 1px solid #eee; page-break-before: always; }
+section.first h2, h2:first-of-type { border-top: none; padding-top: 0; page-break-before: avoid; }
+h3, h4 { font-size: 15px; margin: 14px 0 8px; color: #1a1a2e; }
+p { margin: 8px 0; }
+strong { color: #1a1a2e; }
+em { color: #555; }
+
+ul, ol { margin: 8px 0 8px 24px; }
+li { margin: 3px 0; }
+
+pre {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 13.5px;
+  background: #1e1e2e;
+  color: #b9f6ca;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 10px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  page-break-inside: avoid;
+  line-height: 1.5;
+}
+pre code { background: transparent; padding: 0; color: inherit; }
+code {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  background: #fff1e8;
+  color: #ff7849;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+blockquote {
+  margin: 10px 0;
+  padding: 10px 16px;
+  background: #fff6ef;
+  border-left: 3px solid #ff7849;
+  border-radius: 0 6px 6px 0;
+  color: #6a3a1c;
+}
+
+.write-space {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #ffffff 0,
+    #ffffff 27px,
+    #d4d4d4 27px,
+    #d4d4d4 28px
+  );
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  min-height: 114px;
+  margin: 10px 0 20px;
+  page-break-inside: avoid;
+}
+.write-space.short { min-height: 86px; }
+.write-space.tall { min-height: 170px; }
+
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
+hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
+
+.meta { color: #666; font-size: 13px; margin: 0 0 14px; }
+.answer-lines {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 14px 16px;
+  background: #fafafa;
+  white-space: pre;
+  line-height: 2.2;
+}
+
+footer {
+  position: fixed;
+  bottom: 10mm; left: 16mm; right: 16mm;
+  text-align: center;
+  font-size: 10px;
+  color: #aaa;
+}
+footer b { color: #ff7849; }
+</style>
+</head>
+<body>
+<div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
+<h1>🏆 WD001 Week 8 — English Worksheet</h1>
+<p><strong>Topic:</strong> Final Project — One-Page Personal Site · <strong>Course:</strong> Web Design: CSS · <strong>Time:</strong> about 45 minutes</p>
+<p>This is your <strong>final build</strong>. You will combine everything from the last seven weeks into one cohesive one-page site about you: a hero section, a menu, cards, hover effects, and a responsive layout — all sharing one colour palette so it feels like <strong>your</strong> site.</p>
+<blockquote>
+<p>Your site should include all of these:</p>
+<ul>
+<li>a <strong>hero section</strong> (background image + heading + short intro)</li>
+<li>a <strong>navigation menu</strong> (Flexbox)</li>
+<li><strong>3 or more cards</strong> (hobbies, favourites, dreams…)</li>
+<li><strong>hover effects</strong></li>
+<li>a <strong>responsive</strong> layout that works on a phone</li>
+<li>a <strong>consistent colour palette</strong></li>
+</ul>
+</blockquote>
+<h2>1 · Plan First 🔮</h2>
+<p>Before you write code, sketch your site so you know what you are building. Picture your page from top to bottom.</p>
+<div class="qa"><p><strong>List the sections of your page in order, from top to bottom.</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Which week's idea does each section come from? (For example: hero → Week 5, menu → Week 4.)</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Pick your colour palette: write down 2 or 3 colours you will use everywhere (you can write them as names or hex codes like <code>#d4380d</code>).</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Which 3 things will your cards be about?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>2 · Spot the Bug 🐛</h2>
+<p>These bugs mix up ideas from across the whole course. Read what each is <strong>supposed</strong> to do, then rewrite it so it works, and explain your fix.</p>
+<p><strong>Bug A</strong> — The hero text is supposed to sit in the middle, but it is stuck in the corner.</p>
+<pre><code class="language-html">&lt;style&gt;
+  .hero {
+    background-image: url('me.jpg');
+    background-size: cover;
+    height: 400px;
+  }
+&lt;/style&gt;
+</code></pre>
+<p><strong>Hint:</strong> centring in the hero needs <code>display: flex</code> plus centring across and down.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug B</strong> — On phones the cards are supposed to stack, but they stay squished in a row.</p>
+<pre><code class="language-html">&lt;style&gt;
+  .cards {
+    display: flex;
+  }
+  @media (min-width: 600px) {
+    .cards {
+      flex-direction: column;
+    }
+  }
+&lt;/style&gt;
+</code></pre>
+<p><strong>Hint:</strong> should the column rule run on <strong>small</strong> screens or <strong>big</strong> ones?</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug C</strong> — The card is supposed to grow smoothly on hover, but it snaps and the colours clash with the rest of the page.</p>
+<pre><code class="language-html">&lt;style&gt;
+  .card:hover {
+    transform: scale(1.05);
+    background-color: lime;
+  }
+&lt;/style&gt;
+</code></pre>
+<p><strong>Hint:</strong> add a <code>transition</code> for smoothness, and pick a hover colour that matches your palette.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>3 · Build Your Site 📸</h2>
+<p>In Replit, combine your work from Weeks 1–7 into <strong>one page</strong>. Bring in your hero, your menu, your cards, your hover effects, and your responsive media query. Then polish: make all the colours and fonts match so it feels like one site.</p>
+<p>Work in this order so it stays manageable:</p>
+<ol>
+<li>Start with the <strong>hero section</strong> at the top.</li>
+<li>Add your <strong>menu</strong> under it.</li>
+<li>Add your <strong>row of cards</strong>.</li>
+<li>Add <strong>hover effects</strong> to the cards.</li>
+<li>Add a <strong>media query</strong> so it stacks nicely on a phone.</li>
+<li>Go back and make every colour fit your <strong>palette</strong>.</li>
+</ol>
+<p>When you finish, send a <strong>PC screenshot and a phone screenshot</strong> of your finished site (a Replit link is welcome too), then explain what you did. Use these sentence starters — write 4 to 6 sentences total.</p>
+<div class="qa"><blockquote>
+<p>My site has these sections …</p>
+<p>I used Flexbox in …</p>
+<p>My hover effects are on …</p>
+<p>On a phone my site changes by …</p>
+<p>The hardest part was …</p>
+<p>The part I'm most proud of is …</p>
+</blockquote>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<h2>4 · Present Your Site 🎥</h2>
+<p>This week you <strong>present</strong> your finished site, like a real designer showing their work. Take a video on your phone (or a parent's phone) and walk through everything you built. Try to use these words: <strong>hero</strong>, <strong>flexbox</strong>, <strong>hover</strong>, <strong>responsive</strong>, <strong>palette</strong>.</p>
+<blockquote>
+<ol>
+<li>Show your full site, scrolling from top to bottom.</li>
+<li>Say what each section is and which week's idea it came from.</li>
+<li>Point out where you used Flexbox and where you used hover effects.</li>
+<li>Make the window narrow (or show your phone) and say how the layout changes.</li>
+<li>Finish with the hardest part and how you solved it.</li>
+</ol>
+</blockquote>
+<div class="qa"><p><strong>Write what you will say in your presentation.</strong> Use the space below to plan it before you record — you can read from it while filming.</p>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your PC and phone screenshots + your presentation video to teacher on KakaoTalk.</p>
+</body>
+</html>

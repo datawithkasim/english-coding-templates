@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>🟥 RS004 Week 3 — English Worksheet</title>
+<style>
+@page { size: A4; margin: 18mm 16mm 22mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-family: "Inter", "Segoe UI", system-ui, sans-serif; color: #1a1a2e; }
+body { font-size: 15px; line-height: 1.55; }
+
+.cover { border-bottom: 3px solid #ff7849; padding-bottom: 14px; margin-bottom: 20px; }
+.brand { font-size: 14px; font-weight: 800; color: #ff7849; letter-spacing: .06em; }
+h1 { font-size: 28px; color: #6b4ee6; margin: 8px 0 6px; line-height: 1.25; }
+h2 { font-size: 19px; color: #6b4ee6; margin: 22px 0 12px; padding-top: 10px; border-top: 1px solid #eee; page-break-before: always; }
+section.first h2, h2:first-of-type { border-top: none; padding-top: 0; page-break-before: avoid; }
+h3, h4 { font-size: 15px; margin: 14px 0 8px; color: #1a1a2e; }
+p { margin: 8px 0; }
+strong { color: #1a1a2e; }
+em { color: #555; }
+
+ul, ol { margin: 8px 0 8px 24px; }
+li { margin: 3px 0; }
+
+pre {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 13.5px;
+  background: #1e1e2e;
+  color: #b9f6ca;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 10px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  page-break-inside: avoid;
+  line-height: 1.5;
+}
+pre code { background: transparent; padding: 0; color: inherit; }
+code {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  background: #fff1e8;
+  color: #ff7849;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+blockquote {
+  margin: 10px 0;
+  padding: 10px 16px;
+  background: #fff6ef;
+  border-left: 3px solid #ff7849;
+  border-radius: 0 6px 6px 0;
+  color: #6a3a1c;
+}
+
+.write-space {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #ffffff 0,
+    #ffffff 27px,
+    #d4d4d4 27px,
+    #d4d4d4 28px
+  );
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  min-height: 114px;
+  margin: 10px 0 20px;
+  page-break-inside: avoid;
+}
+.write-space.short { min-height: 86px; }
+.write-space.tall { min-height: 170px; }
+
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
+hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
+
+.meta { color: #666; font-size: 13px; margin: 0 0 14px; }
+.answer-lines {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 14px 16px;
+  background: #fafafa;
+  white-space: pre;
+  line-height: 2.2;
+}
+
+footer {
+  position: fixed;
+  bottom: 10mm; left: 16mm; right: 16mm;
+  text-align: center;
+  font-size: 10px;
+  color: #aaa;
+}
+footer b { color: #ff7849; }
+</style>
+</head>
+<body>
+<div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
+<h1>🟥 RS004 Week 3 — English Worksheet</h1>
+<p><strong>Topic:</strong> Player &amp; Keyboard Movement · <strong>Course:</strong> Platformer Game · <strong>Time:</strong> about 45 minutes</p>
+<p>This week a <strong>player</strong> appears — a rectangle you control with the <strong>arrow keys</strong>. You will learn <code>pygame.Rect</code> to track position, read held-down keys with <code>pygame.key.get_pressed()</code>, and stop the player from sliding off the screen.</p>
+<blockquote>
+<p>Keep these words handy: <strong>Rect</strong>, <strong>position</strong>, <strong><code>get_pressed()</code></strong>, <strong>speed</strong>, <strong>boundary (edge)</strong>.</p>
+</blockquote>
+<h2>1 · Predict 🔮</h2>
+<p>Read each snippet. Before you run it, write what you think will happen.</p>
+<pre><code class="language-python">player = pygame.Rect(100, 500, 50, 50)
+</code></pre>
+<div class="qa"><p><strong>What do the four numbers mean? Where on the screen is the player?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-python">keys = pygame.key.get_pressed()
+if keys[pygame.K_RIGHT]:
+    player.x = player.x + 5
+</code></pre>
+<div class="qa"><p><strong>The right arrow is held down. What happens to the player each frame?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-python">if player.x &gt; WIDTH - player.width:
+    player.x = WIDTH - player.width
+</code></pre>
+<div class="qa"><p><strong>The player runs into the right wall. What does this code stop from happening?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>2 · Rect Reading 📐</h2>
+<p>A player is <code>pygame.Rect(100, 500, 50, 50)</code>. Fill in the blanks.</p>
+<pre><code>player.x       = ___
+player.y       = ___
+player.width   = ___
+player.right   = ___   (hint: x + width)
+player.bottom  = ___   (hint: y + height)
+</code></pre>
+<div class="write-space"></div>
+
+<h2>3 · Spot the Bug 🐛</h2>
+<p>Each snippet is broken. Rewrite it so it works, then explain why the original was wrong.</p>
+<p><strong>Bug A</strong> — Arrow keys should move the player smoothly while held. Right now the player only moves on a brand-new key press, one step at a time.</p>
+<pre><code class="language-python">for event in pygame.event.get():
+    if event.type == pygame.KEYDOWN:
+        if event.key == pygame.K_RIGHT:
+            player.x = player.x + 5
+</code></pre>
+<p><strong>Hint:</strong> for <em>held</em> keys we use <code>pygame.key.get_pressed()</code>, not <code>KEYDOWN</code> events.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug B</strong> — The player should stop at the left edge. Right now it disappears off the left side.</p>
+<pre><code class="language-python">keys = pygame.key.get_pressed()
+if keys[pygame.K_LEFT]:
+    player.x = player.x - 5
+</code></pre>
+<p><strong>Hint:</strong> after moving, check if <code>player.x</code> went below 0 and pull it back.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug C</strong> — Both arrows should work. Right now only the right arrow does anything.</p>
+<pre><code class="language-python">keys = pygame.key.get_pressed()
+if keys[pygame.K_RIGHT]:
+    player.x = player.x + 5
+    if keys[pygame.K_LEFT]:
+        player.x = player.x - 5
+</code></pre>
+<p><strong>Hint:</strong> the left check is trapped <em>inside</em> the right check. They should be separate.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>4 · Tune the Feel 🛠️</h2>
+<p>Start from your working player. Change one thing at a time and note the effect.</p>
+<ol>
+<li>Set <code>PLAYER_SPEED</code> to 2, then 10. Which feels best to you, and why?</li>
+</ol>
+<div class="write-space"></div>
+
+<ol start="2">
+<li>Change the player's colour and size. Write what you picked.</li>
+</ol>
+<div class="write-space"></div>
+
+<ol start="3">
+<li><strong>Stretch:</strong> make the player start in the middle of the screen instead of the left. Which number did you change?</li>
+</ol>
+<div class="write-space"></div>
+
+<h2>5 · Build &amp; Show 📸</h2>
+<p>Put your player on top of last week's gradient sky. It should move left and right with the arrow keys and stop at both walls.</p>
+<p>When it works, send a <strong>photo or video</strong>, then explain what you did. Use these starters — write 4 to 6 sentences.</p>
+<div class="qa"><blockquote>
+<p>First, I made the player with <code>pygame.Rect(...)</code> which means …</p>
+<p>To move it, I used <code>get_pressed()</code> because …</p>
+<p>I stopped it leaving the screen by …</p>
+<p>The speed I chose was ___ because …</p>
+<p>One tricky moment was …</p>
+<p>If I had more time, I would …</p>
+</blockquote>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<h2>6 · Record Your Walkthrough 🎥</h2>
+<p>Take a video while you move the player around. Teach it to someone new. Try to use these words: <strong>Rect</strong>, <strong>arrow keys</strong>, <strong>speed</strong>, <strong>edge</strong>, <strong>boundary</strong>.</p>
+<blockquote>
+<ol>
+<li>Show the player moving left and right.</li>
+<li>Run into a wall and show it stops.</li>
+<li>Read the boundary check out loud and explain it.</li>
+<li>Show what happens when you change the speed.</li>
+</ol>
+</blockquote>
+<div class="qa"><p><strong>Write what you will say in your video.</strong> Plan it here first.</p>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.</p>
+</body>
+</html>

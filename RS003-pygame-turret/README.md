@@ -26,8 +26,11 @@
 | 14 | HUD + 다중 타겟 (응용) | 본인만의 타겟·HUD 디자인 · 결과 영상 | [week-14.md](./worksheets/week-14.md) | [여러 함수 사용](https://datawithkasim.github.io/english-coding-slides/python/rs003-pygame-turret/week-07-multiple-functions.html) |
 | 15 | 미니 프로젝트 통합 — 스페이스 발사 (학습) | 모든 개념을 한 게임에서 사용 · 결과 영상 또는 코드 사진 | [week-15.md](./worksheets/week-15.md) | [최종 미니 게임](https://datawithkasim.github.io/english-coding-slides/python/rs003-pygame-turret/week-08-final-mini-game.html) |
 | 16 | 폴리시 — 사운드·하이스코어·발표 (응용) | 완성 게임 영상 + 발표 자료 | [week-16.md](./worksheets/week-16.md) | [최종 미니 게임](https://datawithkasim.github.io/english-coding-slides/python/rs003-pygame-turret/week-08-final-mini-game.html) |
+| ✨ | AI로 게임 아트 만들기 (확장) | Gemini 프롬프트로 32-bit 스프라이트(적 3·플레이어 1·배경 1) 제작 · 코딩 없음, 이미지 5장 + 프롬프트 설명 영상 제출 | [extension-ai-art.md](./worksheets/extension-ai-art.md) | — |
 
 > 💡 한 슬라이드 덱은 학습 주 + 응용 주 두 주에 걸쳐 사용합니다. 매주 만든 코드는 마지막 주까지 그대로 이어집니다.
+
+> ✨ 확장 워크시트는 정규 16주에 추가로 풀 수 있는 보너스 과제입니다. 함수·리스트·딕셔너리를 익힌 뒤 아무 때나 사용하세요.
 
 ---
 

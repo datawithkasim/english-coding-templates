@@ -71,6 +71,11 @@ blockquote {
 .write-space.short { min-height: 86px; }
 .write-space.tall { min-height: 170px; }
 
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
 hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
 
 .meta { color: #666; font-size: 13px; margin: 0 0 14px; }
@@ -99,15 +104,14 @@ footer b { color: #ff7849; }
 <div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
 <h1>🏠 M000 Week 5 — English Worksheet</h1>
 <p><strong>Topic:</strong> Roofed House · <strong>Course:</strong> Builder Basics · <strong>Time:</strong> about 45 minutes</p>
-<hr />
 <h2>1 · Predict 🔮</h2>
 <p>Read each set of steps. Before you imagine the agent doing it, write what you think will happen.</p>
 <pre><code>repeat 3 times:
     place block down
     move forward
 </code></pre>
-<p><strong>What does the agent do? Write one sentence.</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>What does the agent do? Write one sentence.</strong></p>
+<div class="write-space"></div></div>
 
 <pre><code>repeat 4 times:
     repeat 4 times:
@@ -115,18 +119,17 @@ footer b { color: #ff7849; }
         move forward
     turn right
 </code></pre>
-<p><strong>How many blocks are placed in total? What shape does it make?</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>How many blocks are placed in total? What shape does it make?</strong></p>
+<div class="write-space"></div></div>
 
 <pre><code>move up by 1
 repeat 3 times:
     place block down
     move forward
 </code></pre>
-<p><strong>Where do the new blocks land — at the same height as the walls, or higher?</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>Where do the new blocks land — at the same height as the walls, or higher?</strong></p>
+<div class="write-space"></div></div>
 
-<hr />
 <h2>2 · Spot the Bug 🐛</h2>
 <p>Each pair shows clean steps first, then a broken version of the same idea. Circle what's different and explain the bug in one short sentence.</p>
 <p><strong>Pair A</strong></p>
@@ -140,8 +143,8 @@ repeat 4 times:
     place block down
     move forward
 </code></pre>
-<p><strong>What is wrong?</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>What is wrong?</strong></p>
+<div class="write-space"></div></div>
 
 <p><strong>Pair B</strong></p>
 <pre><code># clean
@@ -156,8 +159,8 @@ repeat 4 times:
     move forward
     turn right
 </code></pre>
-<p><strong>What is wrong?</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>What is wrong?</strong></p>
+<div class="write-space"></div></div>
 
 <p><strong>Pair C</strong></p>
 <pre><code># clean
@@ -170,14 +173,13 @@ place block down
 move forward
 move up by 1
 </code></pre>
-<p><strong>What is wrong?</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>What is wrong?</strong></p>
+<div class="write-space"></div></div>
 
-<hr />
 <h2>3 · Tell Me What You Built 📸</h2>
 <p>Now switch to your homework world. Build your roofed house. When you finish, come back here.</p>
 <p>Send a photo or video of your house, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.</p>
-<blockquote>
+<div class="qa"><blockquote>
 <p>First, I …</p>
 <p>Then I used a loop to …</p>
 <p>The hardest part was …</p>
@@ -185,7 +187,7 @@ move up by 1
 <p>My roof works because …</p>
 <p>Next time, I want to try …</p>
 </blockquote>
-<div class="write-space tall"></div>
+<div class="write-space tall"></div></div>
 
 <hr />
 <h3>Submit ✅</h3>

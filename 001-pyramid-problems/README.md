@@ -2,7 +2,7 @@
 
 8주 동안 마인크래프트 에이전트로 한 줄짜리 길에서 출발해 다이아몬드 구조물까지 코드로 직접 쌓아 올립니다.
 
-반복문과 변수, 중첩 반복문을 차근차근 익히는 **두 번째 코스**입니다.
+반복문과 변수, 중첩 반복문을 차근차근 익히고, 마지막에는 함수로 나만의 명령어를 만드는 **두 번째 코스**입니다.
 
 ---
 
@@ -17,8 +17,8 @@
 | 3 | 변수 | *준비 중* | *준비 중* | *준비 중* | *준비 중* | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/001-pyramid-problems/worksheets/week3.pdf) |
 | 4 | 중첩 반복문 | *준비 중* | *준비 중* | *준비 중* | *준비 중* | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/001-pyramid-problems/worksheets/week4.pdf) |
 | 5 | 첫 피라미드 | *준비 중* | *준비 중* | *준비 중* | *준비 중* | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/001-pyramid-problems/worksheets/week5.pdf) |
-| 6 | 거꾸로 피라미드 | *준비 중* | *준비 중* | *준비 중* | *준비 중* | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/001-pyramid-problems/worksheets/week6.pdf) |
-| 7 | 피라미드 변형 | *준비 중* | *준비 중* | *준비 중* | *준비 중* | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/001-pyramid-problems/worksheets/week7.pdf) |
+| 6 | 피라미드 변형 (거꾸로·속 빈) | *준비 중* | *준비 중* | *준비 중* | *준비 중* | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/001-pyramid-problems/worksheets/week6.pdf) |
+| 7 | 함수 | *준비 중* | *준비 중* | *준비 중* | *준비 중* | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/001-pyramid-problems/worksheets/week7.pdf) |
 | 8 | **최종: 다이아몬드 구조물** | *준비 중* | *준비 중* | *준비 중* | *준비 중* | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/001-pyramid-problems/worksheets/week8.pdf) |
 
 ---

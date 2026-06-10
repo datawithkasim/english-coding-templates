@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>🧱 RS004 Week 7 — English Worksheet</title>
+<style>
+@page { size: A4; margin: 18mm 16mm 22mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-family: "Inter", "Segoe UI", system-ui, sans-serif; color: #1a1a2e; }
+body { font-size: 15px; line-height: 1.55; }
+
+.cover { border-bottom: 3px solid #ff7849; padding-bottom: 14px; margin-bottom: 20px; }
+.brand { font-size: 14px; font-weight: 800; color: #ff7849; letter-spacing: .06em; }
+h1 { font-size: 28px; color: #6b4ee6; margin: 8px 0 6px; line-height: 1.25; }
+h2 { font-size: 19px; color: #6b4ee6; margin: 22px 0 12px; padding-top: 10px; border-top: 1px solid #eee; page-break-before: always; }
+section.first h2, h2:first-of-type { border-top: none; padding-top: 0; page-break-before: avoid; }
+h3, h4 { font-size: 15px; margin: 14px 0 8px; color: #1a1a2e; }
+p { margin: 8px 0; }
+strong { color: #1a1a2e; }
+em { color: #555; }
+
+ul, ol { margin: 8px 0 8px 24px; }
+li { margin: 3px 0; }
+
+pre {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 13.5px;
+  background: #1e1e2e;
+  color: #b9f6ca;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 10px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  page-break-inside: avoid;
+  line-height: 1.5;
+}
+pre code { background: transparent; padding: 0; color: inherit; }
+code {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  background: #fff1e8;
+  color: #ff7849;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+blockquote {
+  margin: 10px 0;
+  padding: 10px 16px;
+  background: #fff6ef;
+  border-left: 3px solid #ff7849;
+  border-radius: 0 6px 6px 0;
+  color: #6a3a1c;
+}
+
+.write-space {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #ffffff 0,
+    #ffffff 27px,
+    #d4d4d4 27px,
+    #d4d4d4 28px
+  );
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  min-height: 114px;
+  margin: 10px 0 20px;
+  page-break-inside: avoid;
+}
+.write-space.short { min-height: 86px; }
+.write-space.tall { min-height: 170px; }
+
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
+hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
+
+.meta { color: #666; font-size: 13px; margin: 0 0 14px; }
+.answer-lines {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 14px 16px;
+  background: #fafafa;
+  white-space: pre;
+  line-height: 2.2;
+}
+
+footer {
+  position: fixed;
+  bottom: 10mm; left: 16mm; right: 16mm;
+  text-align: center;
+  font-size: 10px;
+  color: #aaa;
+}
+footer b { color: #ff7849; }
+</style>
+</head>
+<body>
+<div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
+<h1>🧱 RS004 Week 7 — English Worksheet</h1>
+<p><strong>Topic:</strong> Platform Collision · <strong>Course:</strong> Platformer Game · <strong>Time:</strong> about 45 minutes</p>
+<p>This week your player can <strong>land on platforms</strong>. You keep platforms in a <strong>list</strong>, check each one with <code>colliderect()</code>, and only land when the player is falling <em>down</em> onto the top of a platform.</p>
+<blockquote>
+<p>Keep these words handy: <strong>platform</strong>, <strong>list</strong>, <strong><code>colliderect()</code></strong>, <strong>land</strong>, <strong>falling (vy &gt; 0)</strong>.</p>
+</blockquote>
+<h2>1 · Predict 🔮</h2>
+<p>Read each snippet. Before you run it, write what you think will happen.</p>
+<pre><code class="language-python">platforms = [
+    pygame.Rect(0, 550, 800, 50),
+    pygame.Rect(200, 450, 120, 20),
+]
+for plat in platforms:
+    pygame.draw.rect(screen, BROWN, plat)
+</code></pre>
+<div class="qa"><p><strong>How many platforms get drawn? What does the <code>for</code> loop do here?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-python">if player.colliderect(plat) and velocity_y &gt; 0:
+    player.bottom = plat.top
+    velocity_y = 0
+    on_ground = True
+</code></pre>
+<div class="qa"><p><strong>Why check <code>velocity_y &gt; 0</code>? What does <code>player.bottom = plat.top</code> do?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-python">on_ground = False
+for plat in platforms:
+    if player.colliderect(plat) and velocity_y &gt; 0:
+        ...
+</code></pre>
+<div class="qa"><p><strong>Why is <code>on_ground</code> set to <code>False</code> <em>before</em> the loop, every frame?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>2 · Why <code>velocity_y &gt; 0</code>? 🤔</h2>
+<p>The player can touch a platform while moving up <em>or</em> down. We only want to land when moving <strong>down</strong>.</p>
+<div class="qa"><p><strong>What would go wrong if we removed the <code>velocity_y &gt; 0</code> check and the player jumped up through a platform?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>3 · Spot the Bug 🐛</h2>
+<p>Each snippet is broken. Rewrite it so it works, then explain why the original was wrong.</p>
+<p><strong>Bug A</strong> — The player should land on every platform. Right now it only ever lands on the first one.</p>
+<pre><code class="language-python">plat = platforms[0]
+if player.colliderect(plat) and velocity_y &gt; 0:
+    player.bottom = plat.top
+    velocity_y = 0
+    on_ground = True
+</code></pre>
+<p><strong>Hint:</strong> we check only one platform. How do we check <em>all</em> of them?</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug B</strong> — The player should stand on top of a platform. Right now it sinks halfway into it.</p>
+<pre><code class="language-python">for plat in platforms:
+    if player.colliderect(plat) and velocity_y &gt; 0:
+        velocity_y = 0
+        on_ground = True
+</code></pre>
+<p><strong>Hint:</strong> nothing snaps the player's bottom to the platform top.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug C</strong> — <code>on_ground</code> should be <code>True</code> only when actually standing on something. Right now it gets stuck <code>True</code> even after the player walks off a platform into the air.</p>
+<pre><code class="language-python">on_ground = True
+for plat in platforms:
+    if player.colliderect(plat) and velocity_y &gt; 0:
+        player.bottom = plat.top
+        velocity_y = 0
+</code></pre>
+<p><strong>Hint:</strong> start each frame assuming the player is <em>not</em> on the ground.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>4 · Refactor &amp; Extend 🛠️</h2>
+<p>Start from your working collision code.</p>
+<ol>
+<li>Move the collision check into a function <code>handle_collisions(player, vy, platforms)</code> that returns the new <code>vy</code> and <code>on_ground</code>. Why is a function cleaner here?</li>
+</ol>
+<div class="write-space"></div>
+
+<ol start="2">
+<li>Add a fifth platform that can only be reached with a jump. Write its <code>Rect</code> values.</li>
+</ol>
+<div class="write-space"></div>
+
+<ol start="3">
+<li><strong>Stretch:</strong> mark the highest platform with a "finish" colour. Which platform did you choose?</li>
+</ol>
+<div class="write-space"></div>
+
+<h2>5 · Build &amp; Show 📸</h2>
+<p>Add platforms to your jumping player. Place several so the player can hop up from one to the next.</p>
+<p>When it works, send a <strong>photo or video</strong> of the player climbing the platforms, then explain what you did. Use these starters — write 4 to 6 sentences.</p>
+<div class="qa"><blockquote>
+<p>First, I kept my platforms in a list so that …</p>
+<p><code>colliderect()</code> checks whether …</p>
+<p>I only land when <code>velocity_y &gt; 0</code> because …</p>
+<p><code>player.bottom = plat.top</code> makes the player …</p>
+<p>One tricky moment was …</p>
+<p>If I had more time, I would …</p>
+</blockquote>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<h2>6 · Record Your Walkthrough 🎥</h2>
+<p>Take a video of the player jumping across platforms. Teach it to someone new. Try to use these words: <strong>platform</strong>, <strong>list</strong>, <strong>colliderect</strong>, <strong>land</strong>, <strong>falling</strong>.</p>
+<blockquote>
+<ol>
+<li>Show the player landing on a platform.</li>
+<li>Jump up to a higher platform.</li>
+<li>Read your collision check out loud and explain <code>velocity_y &gt; 0</code>.</li>
+<li>Walk off a platform and show the player falls again.</li>
+</ol>
+</blockquote>
+<div class="qa"><p><strong>Write what you will say in your video.</strong> Plan it here first.</p>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.</p>
+</body>
+</html>

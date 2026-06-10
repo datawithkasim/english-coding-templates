@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>⚡ WD002 Week 4 — English Worksheet</title>
+<style>
+@page { size: A4; margin: 18mm 16mm 22mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-family: "Inter", "Segoe UI", system-ui, sans-serif; color: #1a1a2e; }
+body { font-size: 15px; line-height: 1.55; }
+
+.cover { border-bottom: 3px solid #ff7849; padding-bottom: 14px; margin-bottom: 20px; }
+.brand { font-size: 14px; font-weight: 800; color: #ff7849; letter-spacing: .06em; }
+h1 { font-size: 28px; color: #6b4ee6; margin: 8px 0 6px; line-height: 1.25; }
+h2 { font-size: 19px; color: #6b4ee6; margin: 22px 0 12px; padding-top: 10px; border-top: 1px solid #eee; page-break-before: always; }
+section.first h2, h2:first-of-type { border-top: none; padding-top: 0; page-break-before: avoid; }
+h3, h4 { font-size: 15px; margin: 14px 0 8px; color: #1a1a2e; }
+p { margin: 8px 0; }
+strong { color: #1a1a2e; }
+em { color: #555; }
+
+ul, ol { margin: 8px 0 8px 24px; }
+li { margin: 3px 0; }
+
+pre {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 13.5px;
+  background: #1e1e2e;
+  color: #b9f6ca;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 10px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  page-break-inside: avoid;
+  line-height: 1.5;
+}
+pre code { background: transparent; padding: 0; color: inherit; }
+code {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  background: #fff1e8;
+  color: #ff7849;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+blockquote {
+  margin: 10px 0;
+  padding: 10px 16px;
+  background: #fff6ef;
+  border-left: 3px solid #ff7849;
+  border-radius: 0 6px 6px 0;
+  color: #6a3a1c;
+}
+
+.write-space {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #ffffff 0,
+    #ffffff 27px,
+    #d4d4d4 27px,
+    #d4d4d4 28px
+  );
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  min-height: 114px;
+  margin: 10px 0 20px;
+  page-break-inside: avoid;
+}
+.write-space.short { min-height: 86px; }
+.write-space.tall { min-height: 170px; }
+
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
+hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
+
+.meta { color: #666; font-size: 13px; margin: 0 0 14px; }
+.answer-lines {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 14px 16px;
+  background: #fafafa;
+  white-space: pre;
+  line-height: 2.2;
+}
+
+footer {
+  position: fixed;
+  bottom: 10mm; left: 16mm; right: 16mm;
+  text-align: center;
+  font-size: 10px;
+  color: #aaa;
+}
+footer b { color: #ff7849; }
+</style>
+</head>
+<body>
+<div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
+<h1>⚡ WD002 Week 4 — English Worksheet</h1>
+<p><strong>Topic:</strong> User Input — Talking with Input Boxes · <strong>Course:</strong> Web Dev Basics: JavaScript · <strong>Time:</strong> about 45 minutes</p>
+<p>This week the user gets to <strong>type</strong>. An <code>&lt;input&gt;</code> box collects text, and <code>.value</code> reads whatever is inside it. You will grab that value, save it in a variable, show it on the page — and politely warn the user when the box is empty.</p>
+<h2>1 · Predict 🔮</h2>
+<p>Read each piece of code. Before you run it, write what you think will happen.</p>
+<pre><code class="language-html">&lt;input id=&quot;nameBox&quot; type=&quot;text&quot;&gt;
+&lt;button id=&quot;show&quot;&gt;Show&lt;/button&gt;
+
+&lt;script&gt;
+  document.querySelector(&quot;#show&quot;).addEventListener(&quot;click&quot;, function() {
+    let name = document.querySelector(&quot;#nameBox&quot;).value;
+    console.log(name);
+  });
+&lt;/script&gt;
+</code></pre>
+<div class="qa"><p><strong>The user types <code>Jiwoo</code> and clicks Show. What prints to the console?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-html">&lt;input id=&quot;nameBox&quot; type=&quot;text&quot;&gt;
+&lt;h1 id=&quot;out&quot;&gt;&lt;/h1&gt;
+
+&lt;script&gt;
+  document.querySelector(&quot;#go&quot;).addEventListener(&quot;click&quot;, function() {
+    let name = document.querySelector(&quot;#nameBox&quot;).value;
+    document.querySelector(&quot;#out&quot;).textContent = &quot;Hi, &quot; + name + &quot;!&quot;;
+  });
+&lt;/script&gt;
+</code></pre>
+<div class="qa"><p><strong>The user types <code>Ari</code>. What full sentence ends up on the screen?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-html">&lt;script&gt;
+  let name = document.querySelector(&quot;#nameBox&quot;).value;
+  if (name === &quot;&quot;) {
+    alert(&quot;Please type something&quot;);
+  }
+&lt;/script&gt;
+</code></pre>
+<div class="qa"><p><strong>The user clicks without typing anything. What happens?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-html">&lt;input id=&quot;ageBox&quot; type=&quot;text&quot;&gt;
+
+&lt;script&gt;
+  let age = document.querySelector(&quot;#ageBox&quot;).value;
+  console.log(age + 1);
+&lt;/script&gt;
+</code></pre>
+<div class="qa"><p><strong>The user types <code>10</code>. You might expect <code>11</code>. What actually prints, and why? (Hint: <code>.value</code> is always text.)</strong></p>
+<div class="write-space"></div></div>
+
+<h2>2 · Spot the Bug 🐛</h2>
+<p>Each block was meant to do something, but it is broken. Read what it is <strong>supposed</strong> to do, then rewrite it so it works. After that, explain why the original was wrong and why your fix works.</p>
+<p><strong>Bug A</strong> — Clicking should show what the user typed. Right now it always shows the <strong>same</strong> word, no matter what is typed.</p>
+<pre><code class="language-html">&lt;input id=&quot;nameBox&quot; type=&quot;text&quot;&gt;
+&lt;h1 id=&quot;out&quot;&gt;&lt;/h1&gt;
+
+&lt;script&gt;
+  document.querySelector(&quot;#show&quot;).addEventListener(&quot;click&quot;, function() {
+    document.querySelector(&quot;#out&quot;).textContent = &quot;nameBox&quot;;
+  });
+&lt;/script&gt;
+</code></pre>
+<p><strong>Hint:</strong> the code shows the text <code>"nameBox"</code>, not the box's <code>.value</code>. Read the value first.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug B</strong> — This should warn the user when the box is empty. Right now the warning shows even when they <em>did</em> type something.</p>
+<pre><code class="language-html">&lt;script&gt;
+  let name = document.querySelector(&quot;#nameBox&quot;).value;
+  if (name = &quot;&quot;) {
+    alert(&quot;Box is empty!&quot;);
+  }
+&lt;/script&gt;
+</code></pre>
+<p><strong>Hint:</strong> one equals sign <em>sets</em> a value; you want to <em>compare</em>. How many equals signs do you need to check if two things are the same?</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug C</strong> — This should add two numbers the user types. Right now typing <code>3</code> and <code>4</code> gives <code>34</code> instead of <code>7</code>.</p>
+<pre><code class="language-html">&lt;script&gt;
+  let a = document.querySelector(&quot;#num1&quot;).value;
+  let b = document.querySelector(&quot;#num2&quot;).value;
+  console.log(a + b);
+&lt;/script&gt;
+</code></pre>
+<p><strong>Hint:</strong> <code>.value</code> hands you text, so <code>+</code> glues the text together. Turn each value into a number first with <code>Number(...)</code>.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>3 · Make It Yours 📸</h2>
+<p>Build a page that asks for a <strong>name</strong> and an <strong>age</strong>, then shows a short introduction.</p>
+<ol>
+<li>Add two input boxes and a button.</li>
+<li>When the button is clicked, read both values with <code>.value</code>.</li>
+<li>Show a sentence like <code>Hi, I'm ___ and I'm ___ years old.</code> on the page.</li>
+<li>If <strong>either</strong> box is empty, show a warning instead of the sentence.</li>
+</ol>
+<p><strong>Stretch:</strong> add the age to a number (for example, show "Next year you'll be ___") — remember to turn the value into a <code>Number</code> first.</p>
+<p>When you finish, come back here. Send a <strong>photo or video</strong> of both a filled-in result and the empty-box warning, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.</p>
+<div class="qa"><blockquote>
+<p>First, I made input boxes for …</p>
+<p>I used <code>.value</code> to …</p>
+<p>To check for an empty box, I …</p>
+<p>When both boxes are filled, the page shows …</p>
+<p>One tricky moment was when …</p>
+<p>If I had more time, I would …</p>
+</blockquote>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<h2>4 · Record Your Walkthrough 🎥</h2>
+<p>Take a video on your phone (or a parent's phone) while your page runs. Talk through it like you are teaching someone who has never seen it. Try to use these words: <strong>input</strong>, <strong>value</strong>, <strong>empty</strong>, <strong>warning</strong>, <strong>variable</strong>.</p>
+<blockquote>
+<ol>
+<li>Show the empty boxes, then type into them.</li>
+<li>Click the button and show the introduction appear.</li>
+<li>Clear a box and show the warning.</li>
+<li>Read one line out loud and say where it reads the value.</li>
+</ol>
+</blockquote>
+<div class="qa"><p><strong>Write what you will say in your video.</strong> Plan it here before you record — you can read from it while filming.</p>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.</p>
+</body>
+</html>

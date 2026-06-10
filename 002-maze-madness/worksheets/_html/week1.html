@@ -71,6 +71,11 @@ blockquote {
 .write-space.short { min-height: 86px; }
 .write-space.tall { min-height: 170px; }
 
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
 hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
 
 .meta { color: #666; font-size: 13px; margin: 0 0 14px; }
@@ -100,21 +105,20 @@ footer b { color: #ff7849; }
 <h1>🔁 M002 Week 1 — English Worksheet</h1>
 <p><strong>Topic:</strong> While Loops — Move Until You Hit a Wall · <strong>Course:</strong> Maze Madness · <strong>Time:</strong> about 45 minutes</p>
 <p>This week your agent uses a <strong>while loop</strong> to keep moving forward until it hits a wall.</p>
-<hr />
 <h2>1 · Predict 🔮</h2>
 <p>Read each set of steps. Before you imagine the agent doing it, write what you think will happen.</p>
 <pre><code>while no wall ahead:
     move forward
 </code></pre>
-<p><strong>When does the agent stop? Why?</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>When does the agent stop? Why?</strong></p>
+<div class="write-space"></div></div>
 
 <pre><code>move forward
 move forward
 move forward
 </code></pre>
-<p><strong>How is this different from the while loop above? What if the wall is only 2 steps away?</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>How is this different from the while loop above? What if the wall is only 2 steps away?</strong></p>
+<div class="write-space"></div></div>
 
 <pre><code>while no wall ahead:
     move forward
@@ -122,10 +126,9 @@ turn right
 while no wall ahead:
     move forward
 </code></pre>
-<p><strong>The agent finishes the first while loop. What happens next?</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>The agent finishes the first while loop. What happens next?</strong></p>
+<div class="write-space"></div></div>
 
-<hr />
 <h2>2 · Spot the Bug 🐛</h2>
 <p>Each block of code below was meant to do something, but it is broken. Read what the code is <strong>supposed</strong> to do, then rewrite it so it works. After that, explain why the original was wrong and why your fix works.</p>
 <p><strong>Bug A</strong> — The agent is supposed to keep moving forward <strong>until</strong> it hits a wall.</p>
@@ -133,11 +136,11 @@ while no wall ahead:
     move forward
 </code></pre>
 <p><strong>Hint:</strong> the condition is backwards.</p>
-<p><strong>Write the fixed code:</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
 
-<p><strong>Why was it wrong? Why does your fix work?</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
 
 <p><strong>Bug B</strong> — The agent is supposed to move forward step by step. Right now it only checks the wall <strong>once</strong>, before moving 10 steps no matter what.</p>
 <pre><code>if no wall ahead:
@@ -152,11 +155,11 @@ while no wall ahead:
     move forward
     move forward
 </code></pre>
-<p><strong>Write the fixed code using a while loop:</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>Write the fixed code using a while loop:</strong></p>
+<div class="write-space"></div></div>
 
-<p><strong>Why was it wrong? Why does your while loop work better?</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>Why was it wrong? Why does your while loop work better?</strong></p>
+<div class="write-space"></div></div>
 
 <p><strong>Bug C</strong> — The agent is supposed to stop <strong>right in front</strong> of the wall, not crash into it.</p>
 <pre><code>while no wall ahead:
@@ -164,17 +167,16 @@ while no wall ahead:
     move forward
 </code></pre>
 <p><strong>Hint:</strong> the agent moves twice before checking again.</p>
-<p><strong>Write the fixed code:</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
 
-<p><strong>Why was it wrong? Why does your fix work?</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
 
-<hr />
 <h2>3 · Tell Me What You Built 📸</h2>
 <p>Now switch to your homework world. Use a <strong>while loop</strong> to move the agent from the start of the straight maze all the way to the wall. When you finish, come back here.</p>
 <p>Send a photo or video of the agent reaching the wall, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.</p>
-<blockquote>
+<div class="qa"><blockquote>
 <p>First, I read the maze and noticed …</p>
 <p>My while loop checked …</p>
 <p>The agent stopped because …</p>
@@ -182,9 +184,8 @@ while no wall ahead:
 <p>To fix it, I …</p>
 <p>A while loop is useful because …</p>
 </blockquote>
-<div class="write-space tall" style="min-height: 340px"></div>
+<div class="write-space tall" style="min-height: 340px"></div></div>
 
-<hr />
 <h2>4 · Record Your Walkthrough 🎥</h2>
 <p>Now take a video on your phone (or a parent's phone) while the agent runs the maze. Talk through it like you are teaching someone who has never seen it. Try to use these words: <strong>while</strong>, <strong>loop</strong>, <strong>detect</strong>, <strong>wall</strong>, <strong>forward</strong>.</p>
 <blockquote>
@@ -195,8 +196,8 @@ while no wall ahead:
 <li>Say why a while loop is better than writing <code>move forward</code> many times.</li>
 </ol>
 </blockquote>
-<p><strong>Write what you will say in your video.</strong> Use the space below to plan it before you record — you can read from it while filming.</p>
-<div class="write-space tall" style="min-height: 340px"></div>
+<div class="qa"><p><strong>Write what you will say in your video.</strong> Use the space below to plan it before you record — you can read from it while filming.</p>
+<div class="write-space tall" style="min-height: 340px"></div></div>
 
 <hr />
 <h3>Submit ✅</h3>

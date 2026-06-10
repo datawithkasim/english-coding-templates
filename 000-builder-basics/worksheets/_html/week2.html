@@ -71,6 +71,11 @@ blockquote {
 .write-space.short { min-height: 86px; }
 .write-space.tall { min-height: 170px; }
 
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
 hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
 
 .meta { color: #666; font-size: 13px; margin: 0 0 14px; }
@@ -99,7 +104,6 @@ footer b { color: #ff7849; }
 <div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
 <h1>🧱 M000 Week 2 — English Worksheet</h1>
 <p><strong>Topic:</strong> Placing Blocks · <strong>Course:</strong> Builder Basics · <strong>Time:</strong> about 45 minutes</p>
-<hr />
 <h2>1 · Predict 🔮</h2>
 <p>Read each set of steps. Before you imagine the agent doing it, write what you think will happen.</p>
 <pre><code>place block down
@@ -108,26 +112,25 @@ place block down
 move forward
 place block down
 </code></pre>
-<p><strong>How many blocks did the agent place? What does it look like?</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>How many blocks did the agent place? What does it look like?</strong></p>
+<div class="write-space"></div></div>
 
 <pre><code>place block down
 turn right
 move forward
 place block down
 </code></pre>
-<p><strong>Where are the two blocks compared to each other?</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>Where are the two blocks compared to each other?</strong></p>
+<div class="write-space"></div></div>
 
 <pre><code>move up by 1
 place block down
 move up by 1
 place block down
 </code></pre>
-<p><strong>Are the blocks stacked, in a line, or floating? Explain.</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>Are the blocks stacked, in a line, or floating? Explain.</strong></p>
+<div class="write-space"></div></div>
 
-<hr />
 <h2>2 · Spot the Bug 🐛</h2>
 <p>Each block of code below was meant to do something, but it is broken. Read what the code is <strong>supposed</strong> to do, then rewrite it so it works. After that, explain why the original was wrong and why your fix works.</p>
 <p><strong>Bug A</strong> — The agent is supposed to place a block, move forward, and place another block.</p>
@@ -135,39 +138,38 @@ place block down
 place block down
 move forward
 </code></pre>
-<p><strong>Write the fixed code:</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
 
-<p><strong>Why was it wrong? Why does your fix work?</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
 
 <p><strong>Bug B</strong> — The agent is supposed to place a row of 3 blocks in a line.</p>
 <pre><code>place block down
 place block down
 place block down
 </code></pre>
-<p><strong>Write the fixed code:</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
 
-<p><strong>Why was it wrong? Why does your fix work?</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
 
 <p><strong>Bug C</strong> — The agent is supposed to place 2 blocks stacked on top of each other.</p>
 <pre><code>place block down
 move forward
 place block down
 </code></pre>
-<p><strong>Write the fixed code:</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
 
-<p><strong>Why was it wrong? Why does your fix work?</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
 
-<hr />
 <h2>3 · Tell Me What You Built 📸</h2>
 <p>Now switch to your homework world. Place <strong>5 blocks</strong> in different positions, using <strong>at least 2 different block types</strong> (stone, dirt, wood — your choice). When you finish, come back here.</p>
 <p>Send a photo or video of what you placed, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.</p>
-<blockquote>
+<div class="qa"><blockquote>
 <p>First, I …</p>
 <p>I used the command … to place the block.</p>
 <p>Then I moved … so the next block would land …</p>
@@ -175,9 +177,8 @@ place block down
 <p>To fix it, I …</p>
 <p>If I had more time, I would …</p>
 </blockquote>
-<div class="write-space tall" style="min-height: 340px"></div>
+<div class="write-space tall" style="min-height: 340px"></div></div>
 
-<hr />
 <h2>4 · Record Your Walkthrough 🎥</h2>
 <p>Now take a video on your phone (or a parent's phone) while you walk the camera through your world. Talk through it like you are teaching someone who has never seen it. Try to use these words: <strong>place</strong>, <strong>block</strong>, <strong>move</strong>, <strong>forward</strong>, <strong>up</strong>.</p>
 <blockquote>
@@ -188,8 +189,8 @@ place block down
 <li>Point out the block you are most proud of and say why.</li>
 </ol>
 </blockquote>
-<p><strong>Write what you will say in your video.</strong> Use the space below to plan it before you record — you can read from it while filming.</p>
-<div class="write-space tall" style="min-height: 340px"></div>
+<div class="qa"><p><strong>Write what you will say in your video.</strong> Use the space below to plan it before you record — you can read from it while filming.</p>
+<div class="write-space tall" style="min-height: 340px"></div></div>
 
 <hr />
 <h3>Submit ✅</h3>

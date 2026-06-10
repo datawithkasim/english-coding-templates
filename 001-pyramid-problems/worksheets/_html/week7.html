@@ -71,6 +71,11 @@ blockquote {
 .write-space.short { min-height: 86px; }
 .write-space.tall { min-height: 170px; }
 
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
 hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
 
 .meta { color: #666; font-size: 13px; margin: 0 0 14px; }
@@ -99,7 +104,6 @@ footer b { color: #ff7849; }
 <div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
 <h1>🔷 M001 Week 7 — English Worksheet</h1>
 <p><strong>Topic:</strong> Pyramid Variations · <strong>Course:</strong> Pyramid Problems · <strong>Time:</strong> about 45 minutes</p>
-<hr />
 <h2>1 · Predict 🔮</h2>
 <p>Read each set of steps. Before you imagine the agent doing it, write what you think will happen.</p>
 <pre><code>set size to 7
@@ -110,8 +114,8 @@ repeat size times:
         move forward
     [turn and walk back to start of next row]
 </code></pre>
-<p><strong>Which blocks get placed — all of them, or just some? Where?</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>Which blocks get placed — all of them, or just some? Where?</strong></p>
+<div class="write-space"></div></div>
 
 <pre><code>set size to 9
 while size &gt; 0:
@@ -119,8 +123,8 @@ while size &gt; 0:
     move up by 1
     set size to size - 4
 </code></pre>
-<p><strong>How is this pyramid different from a normal one? How many layers?</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>How is this pyramid different from a normal one? How many layers?</strong></p>
+<div class="write-space"></div></div>
 
 <pre><code>set size to 7
 while size &gt; 0:
@@ -128,10 +132,9 @@ while size &gt; 0:
     move up by 1
     set size to size - 2
 </code></pre>
-<p><strong>Is this pyramid filled or hollow? Could a person walk inside it?</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>Is this pyramid filled or hollow? Could a person walk inside it?</strong></p>
+<div class="write-space"></div></div>
 
-<hr />
 <h2>2 · Spot the Bug 🐛</h2>
 <p>Each block of code below was meant to do something, but it is broken. Read what the code is <strong>supposed</strong> to do, then rewrite it so it works. After that, explain why the original was wrong and why your fix works.</p>
 <p><strong>Bug A</strong> — The agent is supposed to build a <strong>hollow layer</strong> — only place a block when it is on the edge of the square (not in the middle).</p>
@@ -141,11 +144,11 @@ while size &gt; 0:
         move forward
     [turn and walk back to start of next row]
 </code></pre>
-<p><strong>Write the fixed code:</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
 
-<p><strong>Why was it wrong? Why does your fix work?</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
 
 <p><strong>Bug B</strong> — The agent is supposed to build a <strong>stepped pyramid</strong> where each layer is 4 blocks shorter than the one below.</p>
 <pre><code>set size to 9
@@ -154,11 +157,11 @@ while size &gt; 0:
     move up by 1
     set size to size - 1
 </code></pre>
-<p><strong>Write the fixed code:</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
 
-<p><strong>Why was it wrong? Why does your fix work?</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
 
 <p><strong>Bug C</strong> — The agent is supposed to build a pyramid with a <strong>gap of 2 blocks</strong> between each layer (the layers float).</p>
 <pre><code>set size to 7
@@ -167,17 +170,16 @@ while size &gt; 0:
     move up by 1
     set size to size - 2
 </code></pre>
-<p><strong>Write the fixed code:</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
 
-<p><strong>Why was it wrong? Why does your fix work?</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
 
-<hr />
 <h2>3 · Tell Me What You Built 📸</h2>
 <p>Now switch to your homework world. Build <strong>one pyramid variation</strong> — hollow, stepped, two-block pattern, or your own idea. Give your variation a <strong>name</strong> and a <strong>one-sentence description</strong>. When you finish, come back here.</p>
 <p>Send a photo or video of your variation, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.</p>
-<blockquote>
+<div class="qa"><blockquote>
 <p>My variation is called …</p>
 <p>The idea is …</p>
 <p>I changed the … part of the code to make it different.</p>
@@ -185,9 +187,8 @@ while size &gt; 0:
 <p>To fix it, I …</p>
 <p>If I had more time, I would change …</p>
 </blockquote>
-<div class="write-space tall" style="min-height: 340px"></div>
+<div class="write-space tall" style="min-height: 340px"></div></div>
 
-<hr />
 <h2>4 · Record Your Walkthrough 🎥</h2>
 <p>Now take a video on your phone (or a parent's phone) while you walk the camera around your variation. Talk through it like you are teaching someone who has never seen it. Try to use these words: <strong>hollow</strong>, <strong>stepped</strong>, <strong>layer</strong>, <strong>variation</strong>, <strong>edge</strong>.</p>
 <blockquote>
@@ -198,8 +199,8 @@ while size &gt; 0:
 <li>Say the name of your variation and what makes it interesting.</li>
 </ol>
 </blockquote>
-<p><strong>Write what you will say in your video.</strong> Use the space below to plan it before you record — you can read from it while filming.</p>
-<div class="write-space tall" style="min-height: 340px"></div>
+<div class="qa"><p><strong>Write what you will say in your video.</strong> Use the space below to plan it before you record — you can read from it while filming.</p>
+<div class="write-space tall" style="min-height: 340px"></div></div>
 
 <hr />
 <h3>Submit ✅</h3>

@@ -71,6 +71,11 @@ blockquote {
 .write-space.short { min-height: 86px; }
 .write-space.tall { min-height: 170px; }
 
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
 hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
 
 .meta { color: #666; font-size: 13px; margin: 0 0 14px; }
@@ -99,7 +104,6 @@ footer b { color: #ff7849; }
 <div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
 <h1>🔺 M001 Week 5 — English Worksheet</h1>
 <p><strong>Topic:</strong> First Pyramid · <strong>Course:</strong> Pyramid Problems · <strong>Time:</strong> about 45 minutes</p>
-<hr />
 <h2>1 · Predict 🔮</h2>
 <p>Read each set of steps. Before you imagine the agent doing it, write what you think will happen.</p>
 <pre><code>set size to 9
@@ -109,8 +113,8 @@ repeat size times:
         move forward
     [turn and walk back to start of next row]
 </code></pre>
-<p><strong>This builds the </strong>bottom<strong> layer of the pyramid. How long is each side?</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>This builds the </strong>bottom<strong> layer of the pyramid. How long is each side?</strong></p>
+<div class="write-space"></div></div>
 
 <pre><code>set size to 9
 while size &gt; 0:
@@ -118,8 +122,8 @@ while size &gt; 0:
     move up by 1
     set size to size - 2
 </code></pre>
-<p><strong>Why does the pyramid shrink by 2 each layer instead of 1?</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>Why does the pyramid shrink by 2 each layer instead of 1?</strong></p>
+<div class="write-space"></div></div>
 
 <pre><code>set size to 9
 while size &gt; 0:
@@ -127,10 +131,9 @@ while size &gt; 0:
     move up by 1
     set size to size - 2
 </code></pre>
-<p><strong>How many layers does the pyramid have? List the sizes from bottom to top.</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>How many layers does the pyramid have? List the sizes from bottom to top.</strong></p>
+<div class="write-space"></div></div>
 
-<hr />
 <h2>2 · Spot the Bug 🐛</h2>
 <p>Each block of code below was meant to do something, but it is broken. Read what the code is <strong>supposed</strong> to do, then rewrite it so it works. After that, explain why the original was wrong and why your fix works.</p>
 <p><strong>Bug A</strong> — The agent is supposed to build a pyramid where each layer is <strong>2 blocks smaller</strong> than the one below.</p>
@@ -140,11 +143,11 @@ while size &gt; 0:
     move up by 1
     set size to size - 1
 </code></pre>
-<p><strong>Write the fixed code:</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
 
-<p><strong>Why was it wrong? Why does your fix work?</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
 
 <p><strong>Bug B</strong> — Each new layer must sit <strong>on top</strong> of the one below.</p>
 <pre><code>set size to 9
@@ -152,11 +155,11 @@ while size &gt; 0:
     [build one size × size square layer]
     set size to size - 2
 </code></pre>
-<p><strong>Write the fixed code:</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
 
-<p><strong>Why was it wrong? Why does your fix work?</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
 
 <p><strong>Bug C</strong> — The agent is supposed to <strong>stop</strong> building once the layer is gone (size 0 or smaller).</p>
 <pre><code>set size to 9
@@ -165,17 +168,16 @@ while size &gt; -10:
     move up by 1
     set size to size - 2
 </code></pre>
-<p><strong>Write the fixed code:</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
 
-<p><strong>Why was it wrong? Why does your fix work?</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
 
-<hr />
 <h2>3 · Tell Me What You Built 📸</h2>
 <p>Now switch to your homework world. Build a pyramid <strong>starting at size 7</strong> (so the layers go 7 → 5 → 3 → 1). Then try once more with a <strong>different material</strong> — sandstone, gold, or your choice. When you finish, come back here.</p>
 <p>Send a photo or video of your pyramid, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.</p>
-<blockquote>
+<div class="qa"><blockquote>
 <p>First, I …</p>
 <p>The bottom layer is … blocks long.</p>
 <p>Each new layer gets smaller by … because …</p>
@@ -183,9 +185,8 @@ while size &gt; -10:
 <p>The hardest part was …</p>
 <p>If I had more time, I would …</p>
 </blockquote>
-<div class="write-space tall" style="min-height: 340px"></div>
+<div class="write-space tall" style="min-height: 340px"></div></div>
 
-<hr />
 <h2>4 · Record Your Walkthrough 🎥</h2>
 <p>Now take a video on your phone (or a parent's phone) while you walk the camera around your pyramid. Talk through it like you are teaching someone who has never seen it. Try to use these words: <strong>pyramid</strong>, <strong>layer</strong>, <strong>size</strong>, <strong>shrink</strong>, <strong>stack</strong>.</p>
 <blockquote>
@@ -196,8 +197,8 @@ while size &gt; -10:
 <li>Say how many layers your pyramid has and how the size changes each time.</li>
 </ol>
 </blockquote>
-<p><strong>Write what you will say in your video.</strong> Use the space below to plan it before you record — you can read from it while filming.</p>
-<div class="write-space tall" style="min-height: 340px"></div>
+<div class="qa"><p><strong>Write what you will say in your video.</strong> Use the space below to plan it before you record — you can read from it while filming.</p>
+<div class="write-space tall" style="min-height: 340px"></div></div>
 
 <hr />
 <h3>Submit ✅</h3>

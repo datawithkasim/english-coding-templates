@@ -71,6 +71,11 @@ blockquote {
 .write-space.short { min-height: 86px; }
 .write-space.tall { min-height: 170px; }
 
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
 hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
 
 .meta { color: #666; font-size: 13px; margin: 0 0 14px; }
@@ -104,32 +109,32 @@ footer b { color: #ff7849; }
 <h3>while</h3>
 <p><em>keep doing something as long as a condition is true</em>
 Example: While there is no wall, the agent keeps moving.</p>
-<p><strong>Your sentence:</strong></p>
-<div class="write-space short"></div>
+<div class="qa"><p><strong>Your sentence:</strong></p>
+<div class="write-space short"></div></div>
 
 <h3>loop</h3>
 <p><em>code that repeats</em>
 Example: A loop runs the same step again and again.</p>
-<p><strong>Your sentence:</strong></p>
-<div class="write-space short"></div>
+<div class="qa"><p><strong>Your sentence:</strong></p>
+<div class="write-space short"></div></div>
 
 <h3>detect</h3>
 <p><em>to notice or find something</em>
 Example: The agent can detect a wall right in front of it.</p>
-<p><strong>Your sentence:</strong></p>
-<div class="write-space short"></div>
+<div class="qa"><p><strong>Your sentence:</strong></p>
+<div class="write-space short"></div></div>
 
 <h3>wall</h3>
 <p><em>a block that stops the agent</em>
 Example: The agent stops when it reaches a wall.</p>
-<p><strong>Your sentence:</strong></p>
-<div class="write-space short"></div>
+<div class="qa"><p><strong>Your sentence:</strong></p>
+<div class="write-space short"></div></div>
 
 <h3>forward</h3>
 <p><em>toward the front — the way you are facing</em>
 Example: Move forward one step at a time.</p>
-<p><strong>Your sentence:</strong></p>
-<div class="write-space short"></div>
+<div class="qa"><p><strong>Your sentence:</strong></p>
+<div class="write-space short"></div></div>
 
 <hr />
 <h3>Submit ✅</h3>

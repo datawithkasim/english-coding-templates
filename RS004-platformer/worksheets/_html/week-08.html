@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>🧗 RS004 Week 8 — English Worksheet</title>
+<style>
+@page { size: A4; margin: 18mm 16mm 22mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-family: "Inter", "Segoe UI", system-ui, sans-serif; color: #1a1a2e; }
+body { font-size: 15px; line-height: 1.55; }
+
+.cover { border-bottom: 3px solid #ff7849; padding-bottom: 14px; margin-bottom: 20px; }
+.brand { font-size: 14px; font-weight: 800; color: #ff7849; letter-spacing: .06em; }
+h1 { font-size: 28px; color: #6b4ee6; margin: 8px 0 6px; line-height: 1.25; }
+h2 { font-size: 19px; color: #6b4ee6; margin: 22px 0 12px; padding-top: 10px; border-top: 1px solid #eee; page-break-before: always; }
+section.first h2, h2:first-of-type { border-top: none; padding-top: 0; page-break-before: avoid; }
+h3, h4 { font-size: 15px; margin: 14px 0 8px; color: #1a1a2e; }
+p { margin: 8px 0; }
+strong { color: #1a1a2e; }
+em { color: #555; }
+
+ul, ol { margin: 8px 0 8px 24px; }
+li { margin: 3px 0; }
+
+pre {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 13.5px;
+  background: #1e1e2e;
+  color: #b9f6ca;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 10px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  page-break-inside: avoid;
+  line-height: 1.5;
+}
+pre code { background: transparent; padding: 0; color: inherit; }
+code {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  background: #fff1e8;
+  color: #ff7849;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+blockquote {
+  margin: 10px 0;
+  padding: 10px 16px;
+  background: #fff6ef;
+  border-left: 3px solid #ff7849;
+  border-radius: 0 6px 6px 0;
+  color: #6a3a1c;
+}
+
+.write-space {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #ffffff 0,
+    #ffffff 27px,
+    #d4d4d4 27px,
+    #d4d4d4 28px
+  );
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  min-height: 114px;
+  margin: 10px 0 20px;
+  page-break-inside: avoid;
+}
+.write-space.short { min-height: 86px; }
+.write-space.tall { min-height: 170px; }
+
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
+hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
+
+.meta { color: #666; font-size: 13px; margin: 0 0 14px; }
+.answer-lines {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 14px 16px;
+  background: #fafafa;
+  white-space: pre;
+  line-height: 2.2;
+}
+
+footer {
+  position: fixed;
+  bottom: 10mm; left: 16mm; right: 16mm;
+  text-align: center;
+  font-size: 10px;
+  color: #aaa;
+}
+footer b { color: #ff7849; }
+</style>
+</head>
+<body>
+<div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
+<h1>🧗 RS004 Week 8 — English Worksheet</h1>
+<p><strong>Topic:</strong> Side Collision + Varied Platforms (Apply) · <strong>Course:</strong> Platformer Game · <strong>Time:</strong> about 45 minutes</p>
+<p>Until now the player only landed from above. This week walls <strong>block from the side</strong>, and bumping your <strong>head</strong> on a platform stops you and drops you back down. The trick: handle the <strong>horizontal</strong> move and the <strong>vertical</strong> move <em>separately</em>.</p>
+<blockquote>
+<p>Keep these words handy: <strong>side collision</strong>, <strong>horizontal / vertical</strong>, <strong><code>player.right</code> / <code>player.left</code></strong>, <strong>head bump</strong>, <strong>wall</strong>.</p>
+</blockquote>
+<h2>1 · Predict 🔮</h2>
+<p>Read each snippet. Before you run it, write what you think will happen.</p>
+<pre><code class="language-python">player.x = player.x + vx
+for plat in platforms:
+    if player.colliderect(plat):
+        if vx &gt; 0:
+            player.right = plat.left
+</code></pre>
+<div class="qa"><p><strong>The player moves right into a wall. What does <code>player.right = plat.left</code> do?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-python">elif vy &lt; 0:
+    player.top = plat.bottom
+    vy = 0
+</code></pre>
+<div class="qa"><p><strong><code>vy &lt; 0</code> means moving up. The player's head hits a platform. What happens next?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-python"># 1. move horizontally, check horizontal collisions
+# 2. move vertically, check vertical collisions
+</code></pre>
+<div class="qa"><p><strong>Why do we handle horizontal and vertical movement in two separate steps?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>2 · Edge Words 📐</h2>
+<p>Match the line to what it lines up. A player runs into a platform.</p>
+<div class="answer-lines">1. player.right = plat.left
+2. player.left  = plat.right
+3. player.bottom = plat.top
+4. player.top   = plat.bottom
+</div>
+<pre><code>A. player landing on top of the platform
+B. player's head bumping the platform's underside
+C. player stopped at the platform's left wall (moving right)
+D. player stopped at the platform's right wall (moving left)
+</code></pre>
+<div class="qa"><p><strong>1 → ___  2 → ___  3 → ___  4 → ___</strong></p>
+<div class="write-space"></div></div>
+
+<h2>3 · Spot the Bug 🐛</h2>
+<p>Each snippet is broken. Rewrite it so it works, then explain why the original was wrong.</p>
+<p><strong>Bug A</strong> — Moving right into a wall should stop the player at the wall. Right now the player slides straight through.</p>
+<pre><code class="language-python">player.x = player.x + vx
+for plat in platforms:
+    if player.colliderect(plat):
+        vx = 0
+</code></pre>
+<p><strong>Hint:</strong> setting <code>vx = 0</code> after moving doesn't undo the overlap. Snap the player's edge to the wall.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug B</strong> — Head bumps and landings should both work. Right now a head bump is treated like a landing, so the player sticks to the ceiling.</p>
+<pre><code class="language-python">player.y = player.y + vy
+for plat in platforms:
+    if player.colliderect(plat):
+        player.bottom = plat.top
+        vy = 0
+</code></pre>
+<p><strong>Hint:</strong> check the <em>direction</em> of <code>vy</code>. Down (<code>&gt; 0</code>) is landing, up (<code>&lt; 0</code>) is a head bump.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug C</strong> — Horizontal and vertical checks should be separate. Right now they happen in one move, and the player jitters and gets stuck in corners.</p>
+<pre><code class="language-python">player.x += vx
+player.y += vy
+for plat in platforms:
+    if player.colliderect(plat):
+        player.right = plat.left
+        player.bottom = plat.top
+</code></pre>
+<p><strong>Hint:</strong> move on X and resolve X first, <em>then</em> move on Y and resolve Y.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>4 · Design with Walls 🛠️</h2>
+<p>Start from your working full collision.</p>
+<ol>
+<li>Add one tall thin platform to act as a <strong>wall</strong>. Walk into it from both sides and confirm it blocks you. Write its <code>Rect</code>.</li>
+</ol>
+<div class="write-space"></div>
+
+<ol start="2">
+<li>Add a low platform you can bump your <strong>head</strong> on. Where did you place it?</li>
+</ol>
+<div class="write-space"></div>
+
+<ol start="3">
+<li><strong>Stretch:</strong> build a narrow corridor the player must walk through. Sketch the idea in words.</li>
+</ol>
+<div class="write-space"></div>
+
+<h2>5 · Build &amp; Show 📸</h2>
+<p>Design <strong>your own</strong> level using platforms of different sizes — include at least one wall the player bumps into from the side.</p>
+<p>When it works, send a <strong>photo or video</strong> showing top, side, and head collisions, then explain what you did. Use these starters — write 4 to 6 sentences.</p>
+<div class="qa"><blockquote>
+<p>First, I split movement into horizontal and vertical because …</p>
+<p>When the player hits a wall on the right, I set …</p>
+<p>A head bump is when <code>vy &lt; 0</code>, and I handle it by …</p>
+<p>My level has a wall / corridor at …</p>
+<p>One tricky moment was …</p>
+<p>If I had more time, I would …</p>
+</blockquote>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<h2>6 · Record Your Walkthrough 🎥</h2>
+<p>Take a video showing all three collision types. Teach it to someone new. Try to use these words: <strong>side collision</strong>, <strong>wall</strong>, <strong>head bump</strong>, <strong>horizontal</strong>, <strong>vertical</strong>.</p>
+<blockquote>
+<ol>
+<li>Walk into a wall from the side and show it blocks you.</li>
+<li>Jump up under a platform and bump your head.</li>
+<li>Land on a platform from above.</li>
+<li>Read one collision line out loud and explain which edge it lines up.</li>
+</ol>
+</blockquote>
+<div class="qa"><p><strong>Write what you will say in your video.</strong> Plan it here first.</p>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.</p>
+</body>
+</html>

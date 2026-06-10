@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>⚡ WD002 Week 8 — English Worksheet</title>
+<style>
+@page { size: A4; margin: 18mm 16mm 22mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-family: "Inter", "Segoe UI", system-ui, sans-serif; color: #1a1a2e; }
+body { font-size: 15px; line-height: 1.55; }
+
+.cover { border-bottom: 3px solid #ff7849; padding-bottom: 14px; margin-bottom: 20px; }
+.brand { font-size: 14px; font-weight: 800; color: #ff7849; letter-spacing: .06em; }
+h1 { font-size: 28px; color: #6b4ee6; margin: 8px 0 6px; line-height: 1.25; }
+h2 { font-size: 19px; color: #6b4ee6; margin: 22px 0 12px; padding-top: 10px; border-top: 1px solid #eee; page-break-before: always; }
+section.first h2, h2:first-of-type { border-top: none; padding-top: 0; page-break-before: avoid; }
+h3, h4 { font-size: 15px; margin: 14px 0 8px; color: #1a1a2e; }
+p { margin: 8px 0; }
+strong { color: #1a1a2e; }
+em { color: #555; }
+
+ul, ol { margin: 8px 0 8px 24px; }
+li { margin: 3px 0; }
+
+pre {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 13.5px;
+  background: #1e1e2e;
+  color: #b9f6ca;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 10px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  page-break-inside: avoid;
+  line-height: 1.5;
+}
+pre code { background: transparent; padding: 0; color: inherit; }
+code {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  background: #fff1e8;
+  color: #ff7849;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+blockquote {
+  margin: 10px 0;
+  padding: 10px 16px;
+  background: #fff6ef;
+  border-left: 3px solid #ff7849;
+  border-radius: 0 6px 6px 0;
+  color: #6a3a1c;
+}
+
+.write-space {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #ffffff 0,
+    #ffffff 27px,
+    #d4d4d4 27px,
+    #d4d4d4 28px
+  );
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  min-height: 114px;
+  margin: 10px 0 20px;
+  page-break-inside: avoid;
+}
+.write-space.short { min-height: 86px; }
+.write-space.tall { min-height: 170px; }
+
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
+hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
+
+.meta { color: #666; font-size: 13px; margin: 0 0 14px; }
+.answer-lines {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 14px 16px;
+  background: #fafafa;
+  white-space: pre;
+  line-height: 2.2;
+}
+
+footer {
+  position: fixed;
+  bottom: 10mm; left: 16mm; right: 16mm;
+  text-align: center;
+  font-size: 10px;
+  color: #aaa;
+}
+footer b { color: #ff7849; }
+</style>
+</head>
+<body>
+<div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
+<h1>⚡ WD002 Week 8 — English Worksheet</h1>
+<p><strong>Topic:</strong> Final Project — Interactive Quiz App · <strong>Course:</strong> Web Dev Basics: JavaScript · <strong>Time:</strong> about 45 minutes</p>
+<p>This is the big one. You will combine <strong>everything</strong> from the last 8 weeks — variables, the DOM, events, input, conditionals, arrays, loops, and functions — into your own <strong>interactive quiz app</strong>. You already have all the pieces. This week you put them together and present.</p>
+<h2>1 · Recall 🧠</h2>
+<p>Before you build, prove to yourself that the pieces are ready. Answer from memory — peek at earlier weeks only if you are stuck.</p>
+<p><strong>Write an array of 3 of your own quiz questions, as objects. (Look at the shape: each has a question, choices, and the answer index.)</strong></p>
+<pre><code>let questions = [
+  { q: &quot;______&quot;, choices: [&quot;___&quot;, &quot;___&quot;, &quot;___&quot;], answer: __ },
+  ...
+];
+</code></pre>
+<div class="write-space"></div>
+
+<p><strong>Which line below shows a question on screen, and which one checks the answer? Label each.</strong></p>
+<pre><code>document.querySelector(&quot;#question&quot;).textContent = questions[current].q;
+if (chosen === questions[current].answer) { score = score + 1; }
+</code></pre>
+<div class="write-space"></div>
+
+<div class="qa"><p><strong>How do you move to the next question and know when the quiz is over? Write it in plain English.</strong></p>
+<div class="write-space"></div></div>
+
+<h2>2 · Spot the Bug 🐛</h2>
+<p>Each block is part of a quiz app, but it is broken. Read what it is <strong>supposed</strong> to do, then rewrite it so it works. Explain why the original was wrong and why your fix works.</p>
+<p><strong>Bug A</strong> — A correct answer should add 1 to the score. Right now the score goes up <strong>every</strong> time, even on wrong answers.</p>
+<pre><code>function checkAnswer(chosen) {
+  score = score + 1;
+  current = current + 1;
+}
+</code></pre>
+<p><strong>Hint:</strong> the score should only rise when <code>chosen</code> matches the correct answer. Add an <code>if</code>.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug B</strong> — After the last question, the quiz should stop and show the final score. Right now it crashes with <code>undefined</code> because it tries to show a question that does not exist.</p>
+<pre><code>function checkAnswer(chosen) {
+  current = current + 1;
+  showQuestion();
+}
+</code></pre>
+<p><strong>Hint:</strong> check whether <code>current</code> is still less than <code>questions.length</code> before showing another question.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug C</strong> — The restart button should set everything back to the start. Right now it resets the score but the quiz stays on the last question.</p>
+<pre><code>function restart() {
+  score = 0;
+  showQuestion();
+}
+</code></pre>
+<p><strong>Hint:</strong> one more variable needs to go back to 0 before the first question can show.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>3 · Build Your Quiz App 📸</h2>
+<p>Now build the real thing. Your quiz app must have:</p>
+<ol>
+<li><strong>At least 5 questions</strong> stored in an array (each one an object with a question, choices, and the correct answer).</li>
+<li>One question shown at a time, with its answer choices on buttons.</li>
+<li>A correct answer adds 1 to the score; a wrong answer adds 0.</li>
+<li>The <strong>final score</strong> shown after the last question.</li>
+<li>A <strong>restart</strong> button that begins the quiz again from question 1.</li>
+</ol>
+<p>Make your questions about something you love — games, K-pop, animals, your favorite show. It is your app.</p>
+<p><strong>Stretch:</strong> show which questions you got wrong, add a timer, or make the page celebrate a perfect score.</p>
+<p>When you finish, send a <strong>photo or video</strong> of a full play-through (answering questions, then the final score, then a restart), and explain what you did. Use these sentence starters — write 4 to 6 sentences total.</p>
+<div class="qa"><blockquote>
+<p>First, I designed my questions as …</p>
+<p>To show one question at a time, I …</p>
+<p>The score goes up only when …</p>
+<p>My restart button works by …</p>
+<p>The hardest part was …</p>
+<p>The part I am most proud of is …</p>
+</blockquote>
+<div class="write-space tall" style="min-height: 360px"></div></div>
+
+<h2>4 · Final Presentation 🎤</h2>
+<p>Record a video where you <strong>present</strong> your finished quiz app, like you are showing it to someone for the first time. Try to use these words: <strong>array</strong>, <strong>object</strong>, <strong>score</strong>, <strong>function</strong>, <strong>condition</strong>.</p>
+<blockquote>
+<ol>
+<li>Play through your quiz from start to final score, then restart it.</li>
+<li>Show how your quiz questions are stored (array + objects).</li>
+<li>Point to where the answer-checking logic lives.</li>
+<li>Explain how the score is saved and shown on screen.</li>
+<li>Say what was hardest and how you solved it.</li>
+</ol>
+</blockquote>
+<div class="qa"><p><strong>Write what you will say in your presentation.</strong> Plan it here before you record — you can read from it while filming.</p>
+<div class="write-space tall" style="min-height: 360px"></div></div>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your finished quiz app (video of it running, and a photo of the full code or a Replit link) to teacher on KakaoTalk.</p>
+</body>
+</html>

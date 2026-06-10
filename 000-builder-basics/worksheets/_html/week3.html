@@ -71,6 +71,11 @@ blockquote {
 .write-space.short { min-height: 86px; }
 .write-space.tall { min-height: 170px; }
 
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
 hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
 
 .meta { color: #666; font-size: 13px; margin: 0 0 14px; }
@@ -99,15 +104,14 @@ footer b { color: #ff7849; }
 <div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
 <h1>🌉 M000 Week 3 — English Worksheet</h1>
 <p><strong>Topic:</strong> Bridge Building · <strong>Course:</strong> Builder Basics · <strong>Time:</strong> about 45 minutes</p>
-<hr />
 <h2>1 · Predict 🔮</h2>
 <p>Read each set of steps. Before you imagine the agent doing it, write what you think will happen.</p>
 <pre><code>repeat 5 times:
     place block down
     move forward
 </code></pre>
-<p><strong>What does the agent build? Write one sentence.</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>What does the agent build? Write one sentence.</strong></p>
+<div class="write-space"></div></div>
 
 <pre><code>repeat 3 times:
     place block down
@@ -117,17 +121,16 @@ repeat 3 times:
     place block down
     move forward
 </code></pre>
-<p><strong>What shape does the agent leave on the ground?</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>What shape does the agent leave on the ground?</strong></p>
+<div class="write-space"></div></div>
 
 <pre><code>repeat 7 times:
     place block down
     move forward
 </code></pre>
-<p><strong>If the gap below the agent is 7 blocks wide, does the bridge reach the other side? Explain.</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>If the gap below the agent is 7 blocks wide, does the bridge reach the other side? Explain.</strong></p>
+<div class="write-space"></div></div>
 
-<hr />
 <h2>2 · Spot the Bug 🐛</h2>
 <p>Each block of code below was meant to do something, but it is broken. Read what the code is <strong>supposed</strong> to do, then rewrite it so it works. After that, explain why the original was wrong and why your fix works.</p>
 <p><strong>Bug A</strong> — The agent is supposed to build a <strong>5-block-long bridge</strong> by repeating "place block, move forward".</p>
@@ -138,39 +141,38 @@ move forward
 place block down
 move forward
 </code></pre>
-<p><strong>Write the fixed code using a loop:</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>Write the fixed code using a loop:</strong></p>
+<div class="write-space"></div></div>
 
-<p><strong>Why was the original wrong? Why does your fix work?</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>Why was the original wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
 
 <p><strong>Bug B</strong> — The agent is supposed to build a bridge that is exactly <strong>6 blocks long</strong>.</p>
 <pre><code>repeat 5 times:
     place block down
     move forward
 </code></pre>
-<p><strong>Write the fixed code:</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
 
-<p><strong>Why was it wrong? Why does your fix work?</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
 
 <p><strong>Bug C</strong> — The agent is supposed to lay 4 blocks in a line. The blocks should be next to each other, not on top of each other.</p>
 <pre><code>repeat 4 times:
     place block down
     move up by 1
 </code></pre>
-<p><strong>Write the fixed code:</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
 
-<p><strong>Why was it wrong? Why does your fix work?</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
 
-<hr />
 <h2>3 · Tell Me What You Built 📸</h2>
 <p>Now switch to your homework world. Build a <strong>15-block bridge</strong> across the river or cliff. When you finish, come back here.</p>
 <p>Send a photo or video of your bridge, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.</p>
-<blockquote>
+<div class="qa"><blockquote>
 <p>First, I …</p>
 <p>I used a loop to …</p>
 <p>The bridge is … blocks long.</p>
@@ -178,9 +180,8 @@ move forward
 <p>To fix it, I …</p>
 <p>If I had more time, I would …</p>
 </blockquote>
-<div class="write-space tall" style="min-height: 340px"></div>
+<div class="write-space tall" style="min-height: 340px"></div></div>
 
-<hr />
 <h2>4 · Record Your Walkthrough 🎥</h2>
 <p>Now take a video on your phone (or a parent's phone) while you walk the camera across the bridge. Talk through it like you are teaching someone who has never seen it. Try to use these words: <strong>loop</strong>, <strong>repeat</strong>, <strong>place</strong>, <strong>block</strong>, <strong>bridge</strong>.</p>
 <blockquote>
@@ -191,8 +192,8 @@ move forward
 <li>Say how many blocks long your bridge is.</li>
 </ol>
 </blockquote>
-<p><strong>Write what you will say in your video.</strong> Use the space below to plan it before you record — you can read from it while filming.</p>
-<div class="write-space tall" style="min-height: 340px"></div>
+<div class="qa"><p><strong>Write what you will say in your video.</strong> Use the space below to plan it before you record — you can read from it while filming.</p>
+<div class="write-space tall" style="min-height: 340px"></div></div>
 
 <hr />
 <h3>Submit ✅</h3>

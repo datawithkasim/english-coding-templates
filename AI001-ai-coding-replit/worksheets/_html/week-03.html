@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>🤖 AI001 Week 3 — English Worksheet</title>
+<style>
+@page { size: A4; margin: 18mm 16mm 22mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-family: "Inter", "Segoe UI", system-ui, sans-serif; color: #1a1a2e; }
+body { font-size: 15px; line-height: 1.55; }
+
+.cover { border-bottom: 3px solid #ff7849; padding-bottom: 14px; margin-bottom: 20px; }
+.brand { font-size: 14px; font-weight: 800; color: #ff7849; letter-spacing: .06em; }
+h1 { font-size: 28px; color: #6b4ee6; margin: 8px 0 6px; line-height: 1.25; }
+h2 { font-size: 19px; color: #6b4ee6; margin: 22px 0 12px; padding-top: 10px; border-top: 1px solid #eee; page-break-before: always; }
+section.first h2, h2:first-of-type { border-top: none; padding-top: 0; page-break-before: avoid; }
+h3, h4 { font-size: 15px; margin: 14px 0 8px; color: #1a1a2e; }
+p { margin: 8px 0; }
+strong { color: #1a1a2e; }
+em { color: #555; }
+
+ul, ol { margin: 8px 0 8px 24px; }
+li { margin: 3px 0; }
+
+pre {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 13.5px;
+  background: #1e1e2e;
+  color: #b9f6ca;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 10px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  page-break-inside: avoid;
+  line-height: 1.5;
+}
+pre code { background: transparent; padding: 0; color: inherit; }
+code {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  background: #fff1e8;
+  color: #ff7849;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+blockquote {
+  margin: 10px 0;
+  padding: 10px 16px;
+  background: #fff6ef;
+  border-left: 3px solid #ff7849;
+  border-radius: 0 6px 6px 0;
+  color: #6a3a1c;
+}
+
+.write-space {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #ffffff 0,
+    #ffffff 27px,
+    #d4d4d4 27px,
+    #d4d4d4 28px
+  );
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  min-height: 114px;
+  margin: 10px 0 20px;
+  page-break-inside: avoid;
+}
+.write-space.short { min-height: 86px; }
+.write-space.tall { min-height: 170px; }
+
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
+hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
+
+.meta { color: #666; font-size: 13px; margin: 0 0 14px; }
+.answer-lines {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 14px 16px;
+  background: #fafafa;
+  white-space: pre;
+  line-height: 2.2;
+}
+
+footer {
+  position: fixed;
+  bottom: 10mm; left: 16mm; right: 16mm;
+  text-align: center;
+  font-size: 10px;
+  color: #aaa;
+}
+footer b { color: #ff7849; }
+</style>
+</head>
+<body>
+<div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
+<h1>🤖 AI001 Week 3 — English Worksheet</h1>
+<p><strong>Topic:</strong> Context and Examples · <strong>Course:</strong> AI Coding with Replit Agent · <strong>Time:</strong> about 45 minutes</p>
+<p>This week you make your prompts smarter by adding <strong>context</strong> (who you are, what you like, who it is for) and <strong>examples</strong> ("make it like this site"). You also use <strong>negative constraints</strong> — telling the AI what <em>not</em> to do.</p>
+<h2>1 · Predict 🔮</h2>
+<p>Read each prompt. Before the AI builds it, write how the extra information will change the result.</p>
+<pre><code>Build a gallery site that shows cat photos.
+</code></pre>
+<div class="qa"><p><strong>This works, but the AI knows nothing about you. What might it guess wrong?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code>I'm 12 and I love cats. Build a gallery of cat photos,
+Pinterest-style cards, with cute warm colors.
+</code></pre>
+<div class="qa"><p><strong>The context and example were added. How will this result be different from the first?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code>Build a study site for me. Don't use complicated words,
+and don't make the buttons tiny.
+</code></pre>
+<div class="qa"><p><strong>Two "don't" rules were added. Why might telling the AI what NOT to do help?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>2 · Spot the Weak Prompt 🐛</h2>
+<p>Each prompt below is missing context, an example, or a needed "don't" rule. Read what the student <strong>wanted</strong>, then rewrite it to add what is missing.</p>
+<p><strong>Prompt A</strong> — The student is <strong>11</strong> and wants their <strong>first</strong> project: a simple page about <strong>soccer</strong>, easy to understand.</p>
+<pre><code>Make a soccer page.
+</code></pre>
+<p><strong>Hint:</strong> add who you are ("I'm 11, this is my first project") and a "keep it simple" rule.</p>
+<div class="qa"><p><strong>Write a stronger prompt:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>What context or constraint did you add?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Prompt B</strong> — The student wants their page to <strong>look like the Naver homepage</strong> layout.</p>
+<pre><code>Make a homepage with news on it.
+</code></pre>
+<p><strong>Hint:</strong> give an example: "make the layout like the Naver homepage".</p>
+<div class="qa"><p><strong>Write a stronger prompt:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>What example did you give?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Prompt C</strong> — The student keeps getting <strong>dark colors</strong> and <strong>hard words</strong>, but they want <strong>bright colors</strong> and <strong>simple words</strong>.</p>
+<pre><code>Make a fun page about space.
+</code></pre>
+<p><strong>Hint:</strong> add the example feel you want ("bright, cartoon-style") and the "don't" rules.</p>
+<div class="qa"><p><strong>Write a stronger prompt:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>What did you add?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>3 · A Site About Something You Love 📸</h2>
+<p>Pick a topic you really like. Write <strong>one prompt</strong> that includes all three:</p>
+<ul>
+<li><strong>context</strong> — who you are or who the site is for,</li>
+<li><strong>an example</strong> — at least one site or style to copy ("like ___"),</li>
+<li><strong>a constraint</strong> — at least one "don't" rule.</li>
+</ul>
+<p>Run it in Replit. Send a <strong>photo or video</strong> of the result, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.</p>
+<div class="qa"><blockquote>
+<p>My topic was …</p>
+<p>The context I gave the AI was …</p>
+<p>The example I used was "make it like …"</p>
+<p>The "don't" rule I added was …</p>
+<p>Adding context changed the result by …</p>
+<p>If I had more time, I would …</p>
+</blockquote>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<h2>4 · Save Your Best Prompt 🗒️</h2>
+<div class="qa"><p>Write the full prompt you used in part 3, word for word. Underline the <strong>context</strong>, circle the <strong>example</strong>, and box the <strong>"don't" rule</strong> so you can see all three parts.</p>
+<div class="write-space tall" style="min-height: 240px"></div></div>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + a photo (or video) of your site + the prompt you used to teacher on KakaoTalk.</p>
+</body>
+</html>

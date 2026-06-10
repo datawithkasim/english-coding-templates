@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>🔴 RS002 Week 13 — English Worksheet</title>
+<style>
+@page { size: A4; margin: 18mm 16mm 22mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-family: "Inter", "Segoe UI", system-ui, sans-serif; color: #1a1a2e; }
+body { font-size: 15px; line-height: 1.55; }
+
+.cover { border-bottom: 3px solid #ff7849; padding-bottom: 14px; margin-bottom: 20px; }
+.brand { font-size: 14px; font-weight: 800; color: #ff7849; letter-spacing: .06em; }
+h1 { font-size: 28px; color: #6b4ee6; margin: 8px 0 6px; line-height: 1.25; }
+h2 { font-size: 19px; color: #6b4ee6; margin: 22px 0 12px; padding-top: 10px; border-top: 1px solid #eee; page-break-before: always; }
+section.first h2, h2:first-of-type { border-top: none; padding-top: 0; page-break-before: avoid; }
+h3, h4 { font-size: 15px; margin: 14px 0 8px; color: #1a1a2e; }
+p { margin: 8px 0; }
+strong { color: #1a1a2e; }
+em { color: #555; }
+
+ul, ol { margin: 8px 0 8px 24px; }
+li { margin: 3px 0; }
+
+pre {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 13.5px;
+  background: #1e1e2e;
+  color: #b9f6ca;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 10px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  page-break-inside: avoid;
+  line-height: 1.5;
+}
+pre code { background: transparent; padding: 0; color: inherit; }
+code {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  background: #fff1e8;
+  color: #ff7849;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+blockquote {
+  margin: 10px 0;
+  padding: 10px 16px;
+  background: #fff6ef;
+  border-left: 3px solid #ff7849;
+  border-radius: 0 6px 6px 0;
+  color: #6a3a1c;
+}
+
+.write-space {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #ffffff 0,
+    #ffffff 27px,
+    #d4d4d4 27px,
+    #d4d4d4 28px
+  );
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  min-height: 114px;
+  margin: 10px 0 20px;
+  page-break-inside: avoid;
+}
+.write-space.short { min-height: 86px; }
+.write-space.tall { min-height: 170px; }
+
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
+hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
+
+.meta { color: #666; font-size: 13px; margin: 0 0 14px; }
+.answer-lines {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 14px 16px;
+  background: #fafafa;
+  white-space: pre;
+  line-height: 2.2;
+}
+
+footer {
+  position: fixed;
+  bottom: 10mm; left: 16mm; right: 16mm;
+  text-align: center;
+  font-size: 10px;
+  color: #aaa;
+}
+footer b { color: #ff7849; }
+</style>
+</head>
+<body>
+<div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
+<h1>🔴 RS002 Week 13 — English Worksheet</h1>
+<p><strong>Topic:</strong> Random Battles — <code>import random</code> · <strong>Course:</strong> Pokédex App · <strong>Time:</strong> about 45 minutes</p>
+<p>This week your dex becomes a game. You <code>import random</code> to pick wild Pokémon out of nowhere, then compare stats with <code>if</code> / <code>elif</code> / <code>else</code> to decide a winner. Run it twice and you get two different battles — that is <strong>randomness</strong>.</p>
+<h2>1 · Recall 🧠</h2>
+<p>From memory:</p>
+<div class="qa"><p><strong>Write a function that takes a dictionary <code>p</code> and prints its name and attack.</strong></p>
+<div class="write-space"></div></div>
+
+<h2>2 · Predict 🔮</h2>
+<p>Read each block. Before you run it, write what you think will happen.</p>
+<pre><code class="language-python">import random
+
+wild = [&quot;꼬렛&quot;, &quot;구구&quot;, &quot;캐터피&quot;]
+print(random.choice(wild))
+print(random.choice(wild))
+</code></pre>
+<div class="qa"><p><strong>Could the two printed names be different? Could they be the same? Why?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-python">a = {&quot;name&quot;: &quot;피카츄&quot;, &quot;attack&quot;: 55}
+b = {&quot;name&quot;: &quot;이상해씨&quot;, &quot;attack&quot;: 49}
+
+if a[&quot;attack&quot;] &gt; b[&quot;attack&quot;]:
+    print(f&quot;{a['name']} 승리!&quot;)
+else:
+    print(f&quot;{b['name']} 승리!&quot;)
+</code></pre>
+<div class="qa"><p><strong>Which name is printed? Why?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-python">import random
+
+dex = [{&quot;name&quot;: &quot;피카츄&quot;}, {&quot;name&quot;: &quot;파이리&quot;}]
+mine = random.choice(dex)
+print(mine[&quot;name&quot;])
+</code></pre>
+<div class="qa"><p><strong><code>random.choice</code> here picks a whole dictionary. What kind of thing is <code>mine</code>, and what prints?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>3 · Spot the Bug 🐛</h2>
+<p>Read what each block is <strong>supposed</strong> to do, fix it, then explain the fix.</p>
+<p><strong>Bug A</strong> — This should pick a random Pokémon. Right now <code>random</code> was never imported, so it crashes.</p>
+<pre><code class="language-python">dex = [&quot;피카츄&quot;, &quot;이상해씨&quot;, &quot;파이리&quot;]
+print(random.choice(dex))
+</code></pre>
+<p><strong>Hint:</strong> you must bring the tool in before using it.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug B</strong> — A draw (equal attack) should print <code>무승부</code>. Right now equal stats wrongly count as a loss.</p>
+<pre><code class="language-python">a = {&quot;name&quot;: &quot;피카츄&quot;, &quot;attack&quot;: 50}
+b = {&quot;name&quot;: &quot;파이리&quot;, &quot;attack&quot;: 50}
+
+if a[&quot;attack&quot;] &gt; b[&quot;attack&quot;]:
+    print(f&quot;{a['name']} 승리!&quot;)
+else:
+    print(f&quot;{b['name']} 승리!&quot;)
+</code></pre>
+<p><strong>Hint:</strong> add an <code>elif</code> for <code>&lt;</code> and an <code>else</code> for the tie.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug C</strong> — This should compare two Pokémon's stats. Right now it compares a Pokémon to its own name string and crashes.</p>
+<pre><code class="language-python">import random
+dex = [{&quot;name&quot;: &quot;피카츄&quot;, &quot;attack&quot;: 55}, {&quot;name&quot;: &quot;파이리&quot;, &quot;attack&quot;: 52}]
+
+mine = random.choice(dex)
+enemy = random.choice(dex)
+
+if mine[&quot;attack&quot;] &gt; enemy:
+    print(&quot;승리!&quot;)
+</code></pre>
+<p><strong>Hint:</strong> compare <code>enemy["attack"]</code>, not <code>enemy</code> itself.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>4 · Modify It ✏️</h2>
+<p>Start from this working stat battle:</p>
+<pre><code class="language-python">import random
+
+pokedex = [
+    {&quot;name&quot;: &quot;피카츄&quot;, &quot;hp&quot;: 35, &quot;attack&quot;: 55},
+    {&quot;name&quot;: &quot;이상해씨&quot;, &quot;hp&quot;: 45, &quot;attack&quot;: 49},
+    {&quot;name&quot;: &quot;파이리&quot;, &quot;hp&quot;: 39, &quot;attack&quot;: 52},
+]
+
+my_pokemon = random.choice(pokedex)
+enemy = random.choice(pokedex)
+
+print(f&quot;\n🥊 {my_pokemon['name']} vs {enemy['name']}&quot;)
+print(f&quot;   체력: {my_pokemon['hp']} vs {enemy['hp']}&quot;)
+
+my_score = my_pokemon[&quot;hp&quot;] + my_pokemon[&quot;attack&quot;]
+enemy_score = enemy[&quot;hp&quot;] + enemy[&quot;attack&quot;]
+
+if my_score &gt; enemy_score:
+    print(f&quot;\n🏆 {my_pokemon['name']}의 승리!&quot;)
+elif my_score &lt; enemy_score:
+    print(f&quot;\n😢 {enemy['name']}에게 졌습니다...&quot;)
+else:
+    print(f&quot;\n⚖️ 무승부!&quot;)
+</code></pre>
+<p>Make these changes one at a time and run after each:</p>
+<ol>
+<li>Print each Pokémon's <code>attack</code> as well as its <code>hp</code> before the result.</li>
+<li>Change the score formula to weight attack more (for example <code>attack * 2 + hp</code>).</li>
+<li>Run the program five times and write down how many times you won.</li>
+</ol>
+<div class="qa"><p><strong>Write your changed / added lines here, and your win count:</strong></p>
+<div class="write-space"></div></div>
+
+<h2>5 · Make It 📸</h2>
+<p>Add a <strong>Battle!</strong> option to your Week 12 menu. When chosen, it picks a random enemy from the dex and battles your Pokémon by comparing stats, printing the winner.</p>
+<p>When it works, send a <strong>video</strong> on KakaoTalk showing the <strong>battle run at least three times</strong> so we can see the random results change. Then explain what you did. Use these starters — write 4 to 6 sentences.</p>
+<div class="qa"><blockquote>
+<p>First, I imported … so I could …</p>
+<p><code>random.choice</code> picked … from my dex.</p>
+<p>I decided the winner by comparing …</p>
+<p>Running it again gave a different result because …</p>
+<p>The trickiest part was …</p>
+<p>If I had more time, I would make the battle …</p>
+</blockquote>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<h2>6 · Record Your Walkthrough 🎥</h2>
+<p>Film several battles. Teach it like the viewer is new. Try to use: <strong>import</strong>, <strong>random</strong>, <strong>choice</strong>, <strong>score</strong>, <strong>if / elif / else</strong>.</p>
+<blockquote>
+<ol>
+<li>Run the battle three times and point out the different match-ups.</li>
+<li>Read your <code>random.choice</code> line out loud.</li>
+<li>Explain how the winner is decided from the stats.</li>
+<li>Say why the result changes each run.</li>
+</ol>
+</blockquote>
+<div class="qa"><p><strong>Plan what you will say here first:</strong></p>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+</content></p>
+</body>
+</html>
