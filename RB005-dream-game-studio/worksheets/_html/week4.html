@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>🎮 RB005 Week 4 — English Worksheet</title>
+<style>
+@page { size: A4; margin: 18mm 16mm 22mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-family: "Inter", "Segoe UI", system-ui, sans-serif; color: #1a1a2e; }
+body { font-size: 15px; line-height: 1.55; }
+
+.cover { border-bottom: 3px solid #ff7849; padding-bottom: 14px; margin-bottom: 20px; }
+.brand { font-size: 14px; font-weight: 800; color: #ff7849; letter-spacing: .06em; }
+h1 { font-size: 28px; color: #6b4ee6; margin: 8px 0 6px; line-height: 1.25; }
+h2 { font-size: 19px; color: #6b4ee6; margin: 22px 0 12px; padding-top: 10px; border-top: 1px solid #eee; page-break-before: always; }
+section.first h2, h2:first-of-type { border-top: none; padding-top: 0; page-break-before: avoid; }
+h3, h4 { font-size: 15px; margin: 14px 0 8px; color: #1a1a2e; }
+p { margin: 8px 0; }
+strong { color: #1a1a2e; }
+em { color: #555; }
+
+ul, ol { margin: 8px 0 8px 24px; }
+li { margin: 3px 0; }
+
+pre {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 13.5px;
+  background: #1e1e2e;
+  color: #b9f6ca;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 10px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  page-break-inside: avoid;
+  line-height: 1.5;
+}
+pre code { background: transparent; padding: 0; color: inherit; }
+code {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  background: #fff1e8;
+  color: #ff7849;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+blockquote {
+  margin: 10px 0;
+  padding: 10px 16px;
+  background: #fff6ef;
+  border-left: 3px solid #ff7849;
+  border-radius: 0 6px 6px 0;
+  color: #6a3a1c;
+}
+
+.write-space {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #ffffff 0,
+    #ffffff 27px,
+    #d4d4d4 27px,
+    #d4d4d4 28px
+  );
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  min-height: 114px;
+  margin: 10px 0 20px;
+  page-break-inside: avoid;
+}
+.write-space.short { min-height: 86px; }
+.write-space.tall { min-height: 170px; }
+
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
+hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
+
+.meta { color: #666; font-size: 13px; margin: 0 0 14px; }
+.answer-lines {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 14px 16px;
+  background: #fafafa;
+  white-space: pre;
+  line-height: 2.2;
+}
+
+footer {
+  position: fixed;
+  bottom: 10mm; left: 16mm; right: 16mm;
+  text-align: center;
+  font-size: 10px;
+  color: #aaa;
+}
+footer b { color: #ff7849; }
+</style>
+</head>
+<body>
+<div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
+<h1>🎮 RB005 Week 4 — English Worksheet</h1>
+<p><strong>Topic:</strong> Game Feel — Juice with Tweens and Sound · <strong>Course:</strong> Dream Game Studio · <strong>Time:</strong> about 45 minutes</p>
+<p><strong>Juice</strong> is the little touches that make a game feel alive: smooth movement and sound. This week you add juice to your game with <code>TweenService</code> and <code>Sound</code>.</p>
+<h2>1 · Predict 🔮</h2>
+<p>Read each script. Before you run it in Studio, write what you think will happen.</p>
+<pre><code class="language-lua">local TweenService = game:GetService(&quot;TweenService&quot;)
+local door = workspace.Door
+
+local info = TweenInfo.new(0.5)
+local tween = TweenService:Create(door, info, {Position = door.Position + Vector3.new(0, 6, 0)})
+tween:Play()
+</code></pre>
+<div class="qa"><p><strong>What does the door do? How far does it go, and how long does it take?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-lua">local TweenService = game:GetService(&quot;TweenService&quot;)
+local star = workspace.WinStar
+
+local info = TweenInfo.new(2)
+local tween = TweenService:Create(star, info, {Transparency = 1})
+tween:Play()
+</code></pre>
+<div class="qa"><p><strong>What does the player see happen to the star over 2 seconds?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-lua">local pad = script.Parent
+local sound = pad.PopSound
+
+pad.Touched:Connect(function(hit)
+    sound:Play()
+end)
+</code></pre>
+<div class="qa"><p><strong><code>PopSound</code> is a Sound inside the pad with its SoundId already set. When does the sound play? A player stands on the pad and wiggles — does it play once or many times?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>2 · Spot the Bug 🐛</h2>
+<p>Each block of code below was meant to do something, but it is broken. Read what the code is <strong>supposed</strong> to do, then rewrite it so it works. After that, explain why the original was wrong and why your fix works.</p>
+<p><strong>Bug A</strong> — The door should slide up smoothly. The script runs with no errors — but the door never moves.</p>
+<pre><code class="language-lua">local TweenService = game:GetService(&quot;TweenService&quot;)
+local door = workspace.Door
+
+local info = TweenInfo.new(0.5)
+local tween = TweenService:Create(door, info, {Position = door.Position + Vector3.new(0, 6, 0)})
+</code></pre>
+<p><strong>Hint:</strong> the tween was created … but was it ever started?</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug B</strong> — The secret wall should fade away in <strong>half a second</strong>. Instead it fades so slowly nobody ever notices.</p>
+<pre><code class="language-lua">local TweenService = game:GetService(&quot;TweenService&quot;)
+local wall = workspace.SecretWall
+
+local info = TweenInfo.new(500)
+local tween = TweenService:Create(wall, info, {Transparency = 1})
+tween:Play()
+</code></pre>
+<p><strong>Hint:</strong> <code>TweenInfo.new</code> takes <strong>seconds</strong>. How long is 500 seconds?</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug C</strong> — The script should make a sound and play it. It runs with no errors — but you hear nothing.</p>
+<pre><code class="language-lua">local sound = Instance.new(&quot;Sound&quot;)
+sound.Parent = script.Parent
+sound:Play()
+sound.SoundId = &quot;rbxassetid://9118823106&quot;
+</code></pre>
+<p><strong>Hint:</strong> look at the <strong>order</strong> of the lines. What was the SoundId when <code>Play()</code> ran?</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>3 · Tell Me What You Built 📸</h2>
+<p>Now open your game and add juice: at least <strong>one tween</strong> and <strong>one sound</strong> on a moment that matters (winning, picking up, opening a door). When it feels good, come back here.</p>
+<p>Send a photo or video of the juicy moment, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.</p>
+<div class="qa"><blockquote>
+<p>I added a tween to …</p>
+<p>My TweenInfo time is … seconds because …</p>
+<p>My sound plays when …</p>
+<p>Before the juice, that moment felt … Now it feels …</p>
+<p>One tricky moment was when …</p>
+<p>To fix it, I …</p>
+</blockquote>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<h2>4 · Record Your Walkthrough 🎥</h2>
+<p>Now take a video on your phone (or a parent's phone) while your game runs. Talk through it like you are teaching someone who has never seen it. Try to use these words: <strong>TweenService</strong>, <strong>TweenInfo</strong>, <strong>tween</strong>, <strong>sound</strong>, <strong>juice</strong>.</p>
+<blockquote>
+<ol>
+<li>Show the moment BEFORE the juice triggers, then trigger it.</li>
+<li>Open your script, show the tween, and read your <code>TweenInfo</code> time out loud.</li>
+<li>Trigger your sound and say which event plays it.</li>
+<li>Say in your own words what <strong>juice</strong> adds to a game.</li>
+</ol>
+</blockquote>
+<div class="qa"><p><strong>Write what you will say in your video.</strong> Use the space below to plan it before you record — you can read from it while filming.</p>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.</p>
+</body>
+</html>

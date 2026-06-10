@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>🎮 RB005 Week 1 — English Worksheet</title>
+<style>
+@page { size: A4; margin: 18mm 16mm 22mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-family: "Inter", "Segoe UI", system-ui, sans-serif; color: #1a1a2e; }
+body { font-size: 15px; line-height: 1.55; }
+
+.cover { border-bottom: 3px solid #ff7849; padding-bottom: 14px; margin-bottom: 20px; }
+.brand { font-size: 14px; font-weight: 800; color: #ff7849; letter-spacing: .06em; }
+h1 { font-size: 28px; color: #6b4ee6; margin: 8px 0 6px; line-height: 1.25; }
+h2 { font-size: 19px; color: #6b4ee6; margin: 22px 0 12px; padding-top: 10px; border-top: 1px solid #eee; page-break-before: always; }
+section.first h2, h2:first-of-type { border-top: none; padding-top: 0; page-break-before: avoid; }
+h3, h4 { font-size: 15px; margin: 14px 0 8px; color: #1a1a2e; }
+p { margin: 8px 0; }
+strong { color: #1a1a2e; }
+em { color: #555; }
+
+ul, ol { margin: 8px 0 8px 24px; }
+li { margin: 3px 0; }
+
+pre {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 13.5px;
+  background: #1e1e2e;
+  color: #b9f6ca;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 10px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  page-break-inside: avoid;
+  line-height: 1.5;
+}
+pre code { background: transparent; padding: 0; color: inherit; }
+code {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  background: #fff1e8;
+  color: #ff7849;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+blockquote {
+  margin: 10px 0;
+  padding: 10px 16px;
+  background: #fff6ef;
+  border-left: 3px solid #ff7849;
+  border-radius: 0 6px 6px 0;
+  color: #6a3a1c;
+}
+
+.write-space {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #ffffff 0,
+    #ffffff 27px,
+    #d4d4d4 27px,
+    #d4d4d4 28px
+  );
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  min-height: 114px;
+  margin: 10px 0 20px;
+  page-break-inside: avoid;
+}
+.write-space.short { min-height: 86px; }
+.write-space.tall { min-height: 170px; }
+
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
+hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
+
+.meta { color: #666; font-size: 13px; margin: 0 0 14px; }
+.answer-lines {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 14px 16px;
+  background: #fafafa;
+  white-space: pre;
+  line-height: 2.2;
+}
+
+footer {
+  position: fixed;
+  bottom: 10mm; left: 16mm; right: 16mm;
+  text-align: center;
+  font-size: 10px;
+  color: #aaa;
+}
+footer b { color: #ff7849; }
+</style>
+</head>
+<body>
+<div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
+<h1>🎮 RB005 Week 1 — English Worksheet</h1>
+<p><strong>Topic:</strong> Design Your Game — One Mechanic, One Map · <strong>Course:</strong> Dream Game Studio · <strong>Time:</strong> about 45 minutes</p>
+<p>This is YOUR game now. Before you build anything, you need a plan: what does the player <strong>do</strong>, and how do they <strong>win</strong>? Great games start small — <strong>one mechanic, one map</strong>.</p>
+<h2>1 · Think 🔮</h2>
+<p>Read each question. Write what you think before class.</p>
+<div class="qa"><p><strong>A core loop is what the player does again and again. In tag, the loop is: run → chase → tag → run again. What is the loop in an obby (jumping game)?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>A win condition tells the player when they are done. Imagine a game with no win condition — it just never ends. Why might players quit a game that never says "You win!"?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>You have 4 weeks. Game A has one mechanic and one map. Game B has pets, 100 levels, and an open world. Which one will actually be FINISHED in 4 weeks? Why?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>2 · Fix the Design 🐛</h2>
+<p>A student wrote this design. It sounds amazing — and it is way too big to ever finish.</p>
+<blockquote>
+<p><strong>My game:</strong> An open world with 100 levels, a pet system, a shop, multiplayer battles, and a city you can build yourself.</p>
+</blockquote>
+<p>Your job: cut it down to <strong>one mechanic, one map</strong>.</p>
+<div class="qa"><p><strong>Which ONE part would you keep for version 1? Why that one?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Rewrite the design as one sentence with one mechanic and one map.</strong> (Shape: "Players ___ to ___ on one ___ map.")</p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>The cut features are not deleted forever — they go on a "later list." Why is a later list better than trying to build everything now?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>3 · Tell Me What You Built 📸</h2>
+<p>Now write YOUR design doc — on paper or in a doc. It needs four things: your game in <strong>one sentence</strong>, the <strong>loop</strong> (what the player does every 30 seconds), the <strong>win condition</strong>, and <strong>3 dream features</strong> with a circle around the ONE you will build for version 1.</p>
+<p>Send a photo or video of your design doc, then explain it here. Use these sentence starters — write 4 to 6 sentences total.</p>
+<div class="qa"><blockquote>
+<p>My game in one sentence is …</p>
+<p>Every 30 seconds, the player …</p>
+<p>You win when …</p>
+<p>My three dream features are …</p>
+<p>For version 1, I circled … because …</p>
+<p>If version 1 goes well, next I would add …</p>
+</blockquote>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<h2>4 · Record Your Walkthrough 🎥</h2>
+<p>Now take a video on your phone (or a parent's phone) and <strong>pitch your game in 1 minute</strong>, like you are selling it to a friend. Try to use these words: <strong>mechanic</strong>, <strong>loop</strong>, <strong>win condition</strong>, <strong>version 1</strong>, <strong>player</strong>.</p>
+<blockquote>
+<ol>
+<li>Say your game's name and your one-sentence idea.</li>
+<li>Explain the loop: what the player does every 30 seconds.</li>
+<li>Say the win condition.</li>
+<li>Say which ONE feature you picked for version 1 — and why you cut the rest.</li>
+</ol>
+</blockquote>
+<div class="qa"><p><strong>Write what you will say in your video.</strong> Use the space below to plan it before you record — you can read from it while filming.</p>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.</p>
+</body>
+</html>

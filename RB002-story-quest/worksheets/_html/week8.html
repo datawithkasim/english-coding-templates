@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>📜 RB002 Week 8 — English Worksheet</title>
+<style>
+@page { size: A4; margin: 18mm 16mm 22mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-family: "Inter", "Segoe UI", system-ui, sans-serif; color: #1a1a2e; }
+body { font-size: 15px; line-height: 1.55; }
+
+.cover { border-bottom: 3px solid #ff7849; padding-bottom: 14px; margin-bottom: 20px; }
+.brand { font-size: 14px; font-weight: 800; color: #ff7849; letter-spacing: .06em; }
+h1 { font-size: 28px; color: #6b4ee6; margin: 8px 0 6px; line-height: 1.25; }
+h2 { font-size: 19px; color: #6b4ee6; margin: 22px 0 12px; padding-top: 10px; border-top: 1px solid #eee; page-break-before: always; }
+section.first h2, h2:first-of-type { border-top: none; padding-top: 0; page-break-before: avoid; }
+h3, h4 { font-size: 15px; margin: 14px 0 8px; color: #1a1a2e; }
+p { margin: 8px 0; }
+strong { color: #1a1a2e; }
+em { color: #555; }
+
+ul, ol { margin: 8px 0 8px 24px; }
+li { margin: 3px 0; }
+
+pre {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 13.5px;
+  background: #1e1e2e;
+  color: #b9f6ca;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 10px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  page-break-inside: avoid;
+  line-height: 1.5;
+}
+pre code { background: transparent; padding: 0; color: inherit; }
+code {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  background: #fff1e8;
+  color: #ff7849;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+blockquote {
+  margin: 10px 0;
+  padding: 10px 16px;
+  background: #fff6ef;
+  border-left: 3px solid #ff7849;
+  border-radius: 0 6px 6px 0;
+  color: #6a3a1c;
+}
+
+.write-space {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #ffffff 0,
+    #ffffff 27px,
+    #d4d4d4 27px,
+    #d4d4d4 28px
+  );
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  min-height: 114px;
+  margin: 10px 0 20px;
+  page-break-inside: avoid;
+}
+.write-space.short { min-height: 86px; }
+.write-space.tall { min-height: 170px; }
+
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
+hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
+
+.meta { color: #666; font-size: 13px; margin: 0 0 14px; }
+.answer-lines {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 14px 16px;
+  background: #fafafa;
+  white-space: pre;
+  line-height: 2.2;
+}
+
+footer {
+  position: fixed;
+  bottom: 10mm; left: 16mm; right: 16mm;
+  text-align: center;
+  font-size: 10px;
+  color: #aaa;
+}
+footer b { color: #ff7849; }
+</style>
+</head>
+<body>
+<div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
+<h1>📜 RB002 Week 8 — English Worksheet</h1>
+<p><strong>Topic:</strong> Ship It — Publish &amp; Present · <strong>Course:</strong> Story Quest · <strong>Time:</strong> about 45 minutes</p>
+<p>This week you <strong>ship</strong> your quest. Publish it to Roblox (File → Publish to Roblox), give it a clear name, description, and icon, set it to <strong>Public</strong> in Game Settings → Permissions, and present it like a real game developer.</p>
+<h2>1 · Predict 🔮</h2>
+<p>This week you read <strong>your own scripts</strong>. Open your Story Quest game in Roblox Studio, find each kind of line, and answer.</p>
+<pre><code class="language-lua">print(&quot;Elder: Welcome, &quot; .. player.Name .. &quot;!&quot;)
+</code></pre>
+<div class="qa"><p><strong>Find a line in YOUR NPC script that uses <code>player.Name</code>. If your friend Mina plays your published game, what exactly will the NPC say to her?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-lua">local questDone = false
+</code></pre>
+<div class="qa"><p><strong>Find YOUR quest-state variable. What is its value when the game starts? Which line changes it, and at what moment in the quest?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-lua">giveReward(player, 100)
+</code></pre>
+<div class="qa"><p><strong>Find YOUR reward call. What are the two arguments? What would change for the player if you wrote <code>500</code> instead?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>2 · Spot the Bug 🐛</h2>
+<p>These are <strong>launch-checklist</strong> problems. Each game below is about to ship, but something is broken. Read what is <strong>supposed</strong> to happen, write the fix, then explain why the original was wrong and why your fix works.</p>
+<p><strong>Bug A</strong> — Your friend should be able to join your game. Instead Roblox tells her she cannot play it.</p>
+<pre><code>Game Settings → Permissions → Private ✔
+</code></pre>
+<div class="qa"><p><strong>Write the fix (what do you change, and where?):</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug B</strong> — Players should be able to <strong>finish</strong> the quest. The world only has 5 crystals, but the NPC script asks for more.</p>
+<pre><code class="language-lua">elseif crystals.Value &gt;= 10 then
+    questDone = true
+    giveReward(player, 100)
+</code></pre>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug C</strong> — When the quest finishes, the player should <strong>see</strong> that it is done. Right now the coins go up silently and players feel lost.</p>
+<pre><code class="language-lua">elseif crystals.Value &gt;= 5 then
+    questDone = true
+    giveReward(player, 100)
+end
+</code></pre>
+<p><strong>Hint:</strong> add an ending message — a <code>print</code> or a label line like <code>"Quest complete!"</code>.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>3 · Tell Me What You Built 📸</h2>
+<p>Now publish your game: File → Publish to Roblox, then in Game Settings add a name, a description, and an icon, and set Permissions to <strong>Public</strong>. Play it once from the Roblox app or website — not Studio. When you finish, come back here.</p>
+<p>Send a photo or video of your game page on Roblox, then write your <strong>presentation plan</strong>. Use these sentence starters — write 4 to 6 sentences total.</p>
+<div class="qa"><blockquote>
+<p>My game is called … and the quest story is …</p>
+<p>The hardest bug I had was …</p>
+<p>I fixed it by …</p>
+<p>My favorite script is … because …</p>
+<p>I set my game to Public so that …</p>
+<p>In my next update, I will …</p>
+</blockquote>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<h2>4 · Record Your Walkthrough 🎥</h2>
+<p>Now take a video on your phone (or a parent's phone) and <strong>present your game</strong> like a real developer. Talk through it like you are showing it at a game show. Try to use these words: <strong>publish</strong>, <strong>public</strong>, <strong>description</strong>, <strong>quest</strong>, <strong>update</strong>.</p>
+<blockquote>
+<ol>
+<li>Show your game page on Roblox — say the name and read your description out loud.</li>
+<li>Play your quest from start to finish: talk to the NPCs, collect the items, get the reward.</li>
+<li>Tell the story of your quest in your own words.</li>
+<li>Open your favorite script in Studio and read it out loud. Say why you like it.</li>
+<li>Say one idea for your next update.</li>
+</ol>
+</blockquote>
+<div class="qa"><p><strong>Write what you will say in your video.</strong> Use the space below to plan it before you record — you can read from it while filming.</p>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.</p>
+</body>
+</html>

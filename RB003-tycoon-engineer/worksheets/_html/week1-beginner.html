@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>🏭 RB003 Week 1 — English Worksheet (Beginner)</title>
+<style>
+@page { size: A4; margin: 18mm 16mm 22mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-family: "Inter", "Segoe UI", system-ui, sans-serif; color: #1a1a2e; }
+body { font-size: 15px; line-height: 1.55; }
+
+.cover { border-bottom: 3px solid #ff7849; padding-bottom: 14px; margin-bottom: 20px; }
+.brand { font-size: 14px; font-weight: 800; color: #ff7849; letter-spacing: .06em; }
+h1 { font-size: 28px; color: #6b4ee6; margin: 8px 0 6px; line-height: 1.25; }
+h2 { font-size: 19px; color: #6b4ee6; margin: 22px 0 12px; padding-top: 10px; border-top: 1px solid #eee; page-break-before: always; }
+section.first h2, h2:first-of-type { border-top: none; padding-top: 0; page-break-before: avoid; }
+h3, h4 { font-size: 15px; margin: 14px 0 8px; color: #1a1a2e; }
+p { margin: 8px 0; }
+strong { color: #1a1a2e; }
+em { color: #555; }
+
+ul, ol { margin: 8px 0 8px 24px; }
+li { margin: 3px 0; }
+
+pre {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 13.5px;
+  background: #1e1e2e;
+  color: #b9f6ca;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 10px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  page-break-inside: avoid;
+  line-height: 1.5;
+}
+pre code { background: transparent; padding: 0; color: inherit; }
+code {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  background: #fff1e8;
+  color: #ff7849;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+blockquote {
+  margin: 10px 0;
+  padding: 10px 16px;
+  background: #fff6ef;
+  border-left: 3px solid #ff7849;
+  border-radius: 0 6px 6px 0;
+  color: #6a3a1c;
+}
+
+.write-space {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #ffffff 0,
+    #ffffff 27px,
+    #d4d4d4 27px,
+    #d4d4d4 28px
+  );
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  min-height: 114px;
+  margin: 10px 0 20px;
+  page-break-inside: avoid;
+}
+.write-space.short { min-height: 86px; }
+.write-space.tall { min-height: 170px; }
+
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
+hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
+
+.meta { color: #666; font-size: 13px; margin: 0 0 14px; }
+.answer-lines {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 14px 16px;
+  background: #fafafa;
+  white-space: pre;
+  line-height: 2.2;
+}
+
+footer {
+  position: fixed;
+  bottom: 10mm; left: 16mm; right: 16mm;
+  text-align: center;
+  font-size: 10px;
+  color: #aaa;
+}
+footer b { color: #ff7849; }
+</style>
+</head>
+<body>
+<div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
+<h1>🏭 RB003 Week 1 — English Worksheet (Beginner)</h1>
+<p><strong>Topic:</strong> The Dropper — Making Parts with Code · <strong>Course:</strong> Tycoon Engineer · <strong>Level:</strong> Beginner · <strong>Time:</strong> about 30 minutes</p>
+<p>This week your script <strong>creates parts from code</strong> using <code>Instance.new</code>. A dropper spawns ore again and again with a <code>while</code> loop and <code>task.wait</code>.</p>
+<h2>1 · Predict 🔮</h2>
+<p>Read the script. Before you imagine running it in Roblox Studio, circle or write your answer.</p>
+<pre><code class="language-lua">local ore = Instance.new(&quot;Part&quot;)
+ore.Position = Vector3.new(0, 10, 0)
+ore.Parent = workspace
+</code></pre>
+<p><strong>The ore has a Parent. Does an ore appear in the game? Circle one:</strong> yes · no</p>
+<div class="qa"><p><strong>Why?</strong></p>
+<div class="write-space short"></div></div>
+
+<pre><code class="language-lua">local ore = Instance.new(&quot;Part&quot;)
+ore.Position = Vector3.new(0, 10, 0)
+</code></pre>
+<div class="qa"><p><strong>This time the <code>ore.Parent</code> line is missing. Does an ore appear? Circle one:</strong> yes · no</p>
+<div class="write-space short"></div></div>
+
+<h2>2 · Find the Difference 🐛</h2>
+<p>Each pair shows clean code first, then a broken version of the same idea. Circle what's different and write one short sentence about the bug.</p>
+<p><strong>Pair A</strong> — The ore should <strong>appear in the game</strong>.</p>
+<pre><code class="language-lua">-- clean
+local ore = Instance.new(&quot;Part&quot;)
+ore.Position = Vector3.new(0, 10, 0)
+ore.Parent = workspace
+</code></pre>
+<pre><code class="language-lua">-- buggy
+local ore = Instance.new(&quot;Part&quot;)
+ore.Position = Vector3.new(0, 10, 0)
+</code></pre>
+<div class="qa"><p><strong>What is wrong? Why does the buggy ore never appear?</strong></p>
+<div class="write-space short"></div></div>
+
+<p><strong>Pair B</strong> — The dropper should spawn one ore <strong>every 2 seconds</strong>, not freeze the game.</p>
+<pre><code class="language-lua">-- clean
+while true do
+    local ore = Instance.new(&quot;Part&quot;)
+    ore.Parent = workspace
+    task.wait(2)
+end
+</code></pre>
+<pre><code class="language-lua">-- buggy
+while true do
+    local ore = Instance.new(&quot;Part&quot;)
+    ore.Parent = workspace
+end
+</code></pre>
+<div class="qa"><p><strong>What is wrong?</strong></p>
+<div class="write-space short"></div></div>
+
+<h2>3 · Fill the Gap ✏️</h2>
+<p>The ore should appear in the game. One word is missing. Fill it in using the word bank.</p>
+<pre><code class="language-lua">local ore = Instance.new(&quot;Part&quot;)
+ore.____ = workspace
+</code></pre>
+<p><strong>Word bank:</strong> <code>Parent</code> · <code>Size</code> · <code>Position</code></p>
+<div class="qa"><p><strong>Write the missing word:</strong></p>
+<div class="write-space short"></div></div>
+
+<h2>4 · Tell Me What You Built 📸</h2>
+<p>Now switch to Roblox Studio and open your tycoon. Build a dropper that spawns an ore every 2 seconds. When you finish, come back here.</p>
+<p>Send a photo or video of your dropper spawning ore, then explain what you did. Use these sentence starters — write 2 or 3 sentences.</p>
+<div class="qa"><blockquote>
+<p>I used <code>Instance.new</code> to …</p>
+<p>My loop spawns a new ore every …</p>
+<p>One tricky moment was when …</p>
+</blockquote>
+<div class="write-space tall" style="min-height: 240px"></div></div>
+
+<h2>5 · Record Your Walkthrough 🎥</h2>
+<p>Take a video on your phone (or a parent's phone) while your dropper runs. Talk like you are teaching a friend. Try to use these words: <strong>Instance.new</strong>, <strong>Parent</strong>, <strong>loop</strong>, <strong>task.wait</strong>.</p>
+<blockquote>
+<ol>
+<li>Show your dropper in Roblox Studio, then press Play.</li>
+<li>Read your <code>while</code> loop out loud.</li>
+<li>Say in your own words what <code>task.wait(2)</code> does.</li>
+</ol>
+</blockquote>
+<div class="qa"><p><strong>Write what you will say in your video.</strong> You can read from it while filming.</p>
+<div class="write-space tall" style="min-height: 240px"></div></div>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.</p>
+</body>
+</html>

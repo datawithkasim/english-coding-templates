@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>🎮 RB005 Week 3 — English Worksheet</title>
+<style>
+@page { size: A4; margin: 18mm 16mm 22mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-family: "Inter", "Segoe UI", system-ui, sans-serif; color: #1a1a2e; }
+body { font-size: 15px; line-height: 1.55; }
+
+.cover { border-bottom: 3px solid #ff7849; padding-bottom: 14px; margin-bottom: 20px; }
+.brand { font-size: 14px; font-weight: 800; color: #ff7849; letter-spacing: .06em; }
+h1 { font-size: 28px; color: #6b4ee6; margin: 8px 0 6px; line-height: 1.25; }
+h2 { font-size: 19px; color: #6b4ee6; margin: 22px 0 12px; padding-top: 10px; border-top: 1px solid #eee; page-break-before: always; }
+section.first h2, h2:first-of-type { border-top: none; padding-top: 0; page-break-before: avoid; }
+h3, h4 { font-size: 15px; margin: 14px 0 8px; color: #1a1a2e; }
+p { margin: 8px 0; }
+strong { color: #1a1a2e; }
+em { color: #555; }
+
+ul, ol { margin: 8px 0 8px 24px; }
+li { margin: 3px 0; }
+
+pre {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 13.5px;
+  background: #1e1e2e;
+  color: #b9f6ca;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 10px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  page-break-inside: avoid;
+  line-height: 1.5;
+}
+pre code { background: transparent; padding: 0; color: inherit; }
+code {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  background: #fff1e8;
+  color: #ff7849;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+blockquote {
+  margin: 10px 0;
+  padding: 10px 16px;
+  background: #fff6ef;
+  border-left: 3px solid #ff7849;
+  border-radius: 0 6px 6px 0;
+  color: #6a3a1c;
+}
+
+.write-space {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #ffffff 0,
+    #ffffff 27px,
+    #d4d4d4 27px,
+    #d4d4d4 28px
+  );
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  min-height: 114px;
+  margin: 10px 0 20px;
+  page-break-inside: avoid;
+}
+.write-space.short { min-height: 86px; }
+.write-space.tall { min-height: 170px; }
+
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
+hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
+
+.meta { color: #666; font-size: 13px; margin: 0 0 14px; }
+.answer-lines {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 14px 16px;
+  background: #fafafa;
+  white-space: pre;
+  line-height: 2.2;
+}
+
+footer {
+  position: fixed;
+  bottom: 10mm; left: 16mm; right: 16mm;
+  text-align: center;
+  font-size: 10px;
+  color: #aaa;
+}
+footer b { color: #ff7849; }
+</style>
+</head>
+<body>
+<div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
+<h1>🎮 RB005 Week 3 — English Worksheet</h1>
+<p><strong>Topic:</strong> Core Mechanic — Pick Your Pattern · <strong>Course:</strong> Dream Game Studio · <strong>Time:</strong> about 45 minutes</p>
+<p>You finished RB001–004, so you own a toolbox of script <strong>patterns</strong>. This week you pick the right pattern from the toolbox and script your game's <strong>core mechanic</strong> — the thing the player does again and again.</p>
+<h2>1 · Predict 🔮</h2>
+<p>Read each pattern. Before you run it in Studio, write what you think will happen.</p>
+<p><strong>Pattern A — the pickup</strong></p>
+<pre><code class="language-lua">local coin = script.Parent
+local debounce = false
+
+coin.Touched:Connect(function(hit)
+    local player = game.Players:GetPlayerFromCharacter(hit.Parent)
+    if player and not debounce then
+        debounce = true
+        player.leaderstats.Coins.Value += 1
+        coin:Destroy()
+    end
+end)
+</code></pre>
+<div class="qa"><p><strong>A player touches the coin. What happens to their leaderstats? Why does the coin only count once?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Pattern B — the countdown</strong></p>
+<pre><code class="language-lua">local timeLeft = 30
+
+while timeLeft &gt; 0 do
+    print(timeLeft .. &quot; seconds left!&quot;)
+    task.wait(1)
+    timeLeft -= 1
+end
+
+print(&quot;Time is up!&quot;)
+</code></pre>
+<div class="qa"><p><strong>What prints in the Output, and how long does the whole loop take?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Pattern C — the if-gate</strong></p>
+<pre><code class="language-lua">local door = workspace.GoldDoor
+
+door.Touched:Connect(function(hit)
+    local player = game.Players:GetPlayerFromCharacter(hit.Parent)
+    if player and player.leaderstats.Coins.Value &gt;= 10 then
+        door.CanCollide = false
+        door.Transparency = 0.5
+    end
+end)
+</code></pre>
+<div class="qa"><p><strong>A player with 4 coins touches the door. What happens? What about a player with 12 coins?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Match the pattern to the game idea. Write A, B, or C next to each, then say which pattern is closest to YOUR game's core mechanic and why.</strong></p>
+<div class="qa"><blockquote>
+<p>A collecting game where players grab gems for points → ___</p>
+<p>A survival game where each round lasts 30 seconds → ___</p>
+<p>An adventure game with a boss door that needs 10 keys → ___</p>
+</blockquote>
+<div class="write-space"></div></div>
+
+<h2>2 · Spot the Bug 🐛</h2>
+<p>Each block of code below was meant to do something, but it is broken. Read what the code is <strong>supposed</strong> to do, then rewrite it so it works. After that, explain why the original was wrong and why your fix works.</p>
+<p><strong>Bug A</strong> — One touch should give the player <strong>1</strong> coin, then the coin disappears. Right now one touch gives 5, 10, sometimes 20 coins.</p>
+<pre><code class="language-lua">local coin = script.Parent
+
+coin.Touched:Connect(function(hit)
+    local player = game.Players:GetPlayerFromCharacter(hit.Parent)
+    if player then
+        player.leaderstats.Coins.Value += 1
+    end
+end)
+</code></pre>
+<p><strong>Hint:</strong> <code>Touched</code> fires many times for one touch. What did we use in RB003 to stop that?</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug B</strong> — Lava should set the toucher's health to 0. It works for players, but the Output shows a red error when a loose part falls onto the lava.</p>
+<pre><code class="language-lua">local lava = script.Parent
+
+lava.Touched:Connect(function(hit)
+    local humanoid = hit.Parent:FindFirstChild(&quot;Humanoid&quot;)
+    humanoid.Health = 0
+end)
+</code></pre>
+<p><strong>Hint:</strong> a falling part has no Humanoid — so what is <code>humanoid</code> then?</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug C</strong> — The countdown should tick once per second. Right now all 30 numbers print instantly in one frame.</p>
+<pre><code class="language-lua">local timeLeft = 30
+
+while timeLeft &gt; 0 do
+    print(timeLeft .. &quot; seconds left!&quot;)
+    timeLeft -= 1
+end
+</code></pre>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>3 · Tell Me What You Built 📸</h2>
+<p>Now open your game and script YOUR core mechanic, using the pattern you matched in section 1 (or a mix). When it works, come back here.</p>
+<p>Send a photo or video of your mechanic working, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.</p>
+<div class="qa"><blockquote>
+<p>My core mechanic is …</p>
+<p>I used the … pattern because …</p>
+<p>The event my script listens for is …</p>
+<p>One tricky moment was when …</p>
+<p>To fix it, I …</p>
+<p>If I had more time, I would …</p>
+</blockquote>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<h2>4 · Record Your Walkthrough 🎥</h2>
+<p>Now take a video on your phone (or a parent's phone) while your core mechanic runs. Talk through it like you are teaching someone who has never seen your game. Try to use these words: <strong>pattern</strong>, <strong>event</strong>, <strong>debounce</strong>, <strong>leaderstats</strong>, <strong>task.wait</strong>.</p>
+<blockquote>
+<ol>
+<li>Play your game and show the core mechanic working.</li>
+<li>Name the pattern you used from the toolbox.</li>
+<li>Open your script and read the most important line out loud.</li>
+<li>Explain one check in your code (like <code>if player</code> or <code>not debounce</code>) and why it is there.</li>
+</ol>
+</blockquote>
+<div class="qa"><p><strong>Write what you will say in your video.</strong> Use the space below to plan it before you record — you can read from it while filming.</p>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.</p>
+</body>
+</html>
