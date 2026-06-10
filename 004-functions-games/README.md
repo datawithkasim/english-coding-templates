@@ -22,6 +22,8 @@
 | 8 | **최종: 미니게임 / 던전** | *준비 중* | *준비 중* | *준비 중* | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/004-functions-games/worksheets/week8-beginner.pdf) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/004-functions-games/worksheets/week8.pdf) |
 
 > 💡 앞 코스에서 배운 함수·좌표·반복문을 모두 합쳐, 플레이어가 직접 노는 공간을 만듭니다.
+>
+> 📝 워크시트는 두 가지입니다 — **초급**은 처음 배우는 친구용, **심화**는 더 깊이 연습하고 싶은 친구용입니다.
 
 ---
 
