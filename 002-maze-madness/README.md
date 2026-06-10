@@ -10,19 +10,21 @@
 
 각 주차 자료는 아래 표에서 바로 받으실 수 있습니다 — 따로 페이지에 들어가지 않으셔도 됩니다.
 
-| 주 | 주제 | 📦 월드 | 🧱 블록 | 🐍 파이썬 | 🎬 영상 | 📝 워크시트 |
+| 주 | 주제 | 📦 월드 | 🎬 영상 (블록) | 🎬 영상 (파이썬) | 📝 워크시트 (초급) | 📝 워크시트 (심화) |
 |---|---|---|---|---|---|---|
-| 1 | While 루프 | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-maze-madness/worlds/week1.mcworld) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-maze-madness/blocks/week1.mkcd) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-maze-madness/python/week1.mkcd) | *준비 중* | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-maze-madness/worksheets/week1.pdf) |
-| 2 | 방향 전환 | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-maze-madness/worlds/week2.mcworld) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-maze-madness/blocks/week2.mkcd) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-maze-madness/python/week2.mkcd) | [블록](https://youtu.be/Egz4CKLAw_I) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-maze-madness/worksheets/week2.pdf) |
-| 3 | AND 조건 | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-maze-madness/worlds/week3.mcworld) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-maze-madness/blocks/week3.mkcd) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-maze-madness/python/week3.mkcd) | [블록](https://youtu.be/2HQVfmIrEjU) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-maze-madness/worksheets/week3.pdf) |
-| 4 | AND / OR 조건 | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-maze-madness/worlds/week4.mcworld) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-maze-madness/blocks/week4.mkcd) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-maze-madness/python/week4.mkcd) | [블록](https://youtu.be/pxHECHypa44) · [파이썬](https://youtu.be/IIW0JhHaGZ4) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-maze-madness/worksheets/week4.pdf) |
-| 5 | 미니 큐브 퍼즐 | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-maze-madness/worlds/week5.mcworld) | *준비 중* | *준비 중* | *준비 중* | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-maze-madness/worksheets/week5.pdf) |
-| 6 | 레드스톤 레버와 미로 | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-maze-madness/worlds/week6.mcworld) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-maze-madness/blocks/week6.mkcd) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-maze-madness/python/week6.mkcd) | [블록](https://youtu.be/GPgcbVsoZHE) · [파이썬](https://youtu.be/s5tDDfs-0ek) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-maze-madness/worksheets/week6.pdf) |
-| 7 | 피스톤과 미로 | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-maze-madness/worlds/week7.mcworld) | *준비 중* | *준비 중* | *준비 중* | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-maze-madness/worksheets/week7.pdf) |
-| 8 | **최종: 15×15×15 큐브 미로** | *준비 중* | *준비 중* | *준비 중* | *준비 중* | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-maze-madness/worksheets/week8.pdf) |
-| 🧩 **확장 (심화)** | 레드스톤 트레일 솔버 · 3D 큐브 미로 | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-maze-madness/worlds/extension-advanced.mcworld) | — | — | *없음* | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-maze-madness/worksheets/extension-advanced.pdf) |
+| 1 | While 루프 | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-maze-madness/worlds/week1.mcworld) | *준비 중* | *준비 중* | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-maze-madness/worksheets/week1-beginner.pdf) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-maze-madness/worksheets/week1.pdf) |
+| 2 | 방향 전환 | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-maze-madness/worlds/week2.mcworld) | [보기](https://youtu.be/Egz4CKLAw_I) | *준비 중* | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-maze-madness/worksheets/week2-beginner.pdf) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-maze-madness/worksheets/week2.pdf) |
+| 3 | AND 조건 | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-maze-madness/worlds/week3.mcworld) | [보기](https://youtu.be/2HQVfmIrEjU) | *준비 중* | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-maze-madness/worksheets/week3-beginner.pdf) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-maze-madness/worksheets/week3.pdf) |
+| 4 | AND / OR 조건 | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-maze-madness/worlds/week4.mcworld) | [보기](https://youtu.be/pxHECHypa44) | [보기](https://youtu.be/IIW0JhHaGZ4) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-maze-madness/worksheets/week4-beginner.pdf) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-maze-madness/worksheets/week4.pdf) |
+| 5 | 미니 큐브 퍼즐 | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-maze-madness/worlds/week5.mcworld) | *준비 중* | *준비 중* | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-maze-madness/worksheets/week5-beginner.pdf) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-maze-madness/worksheets/week5.pdf) |
+| 6 | 레드스톤 레버와 미로 | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-maze-madness/worlds/week6.mcworld) | [보기](https://youtu.be/GPgcbVsoZHE) | [보기](https://youtu.be/s5tDDfs-0ek) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-maze-madness/worksheets/week6-beginner.pdf) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-maze-madness/worksheets/week6.pdf) |
+| 7 | 피스톤과 미로 | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-maze-madness/worlds/week7.mcworld) | *준비 중* | *준비 중* | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-maze-madness/worksheets/week7-beginner.pdf) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-maze-madness/worksheets/week7.pdf) |
+| 8 | **최종: 15×15×15 큐브 미로** | *준비 중* | *준비 중* | *준비 중* | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-maze-madness/worksheets/week8-beginner.pdf) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-maze-madness/worksheets/week8.pdf) |
+| 🧩 **확장 (심화)** | 레드스톤 트레일 솔버 · 3D 큐브 미로 | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-maze-madness/worlds/extension-advanced.mcworld) | *없음* | *없음* | — | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-maze-madness/worksheets/extension-advanced.pdf) |
 
 > 💡 매주 월드 파일은 그 주의 개념만 다룹니다 (이전 주차 개념 복습 포함).
+>
+> 📝 워크시트는 두 가지입니다 — **초급**은 처음 배우는 친구용, **심화**는 더 깊이 연습하고 싶은 친구용입니다.
 >
 > 🧩 **확장 (심화)** 줄은 주차 진도와 별개인 **도전 과제** 입니다. 주차 미로를 모두 끝내고 더 어려운 걸 원하는 학생을 위한 자료로, 에이전트가 레드스톤 트레일을 따라 **3D 큐브 미로**를 스스로 풉니다.
 
@@ -31,8 +33,7 @@
 ## 📂 자료
 
 - 📦 [`worlds/`](./worlds) — 매주 월드 파일
-- 🐍 [`python/`](./python) — 파이썬 코드 템플릿
-- 🧱 [`blocks/`](./blocks) — 블록 코드 템플릿
+- 📝 [`worksheets/`](./worksheets) — 매주 영어 워크시트 (초급·심화 PDF)
 
 각 자료는 매주 **노션 숙제 페이지** 에서도 바로 받으실 수 있습니다. (페이지 링크는 카카오톡으로 안내드립니다.)
 
