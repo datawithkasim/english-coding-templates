@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>🏪 RS001 Week 4 — English Worksheet</title>
+<style>
+@page { size: A4; margin: 18mm 16mm 22mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-family: "Inter", "Segoe UI", system-ui, sans-serif; color: #1a1a2e; }
+body { font-size: 15px; line-height: 1.55; }
+
+.cover { border-bottom: 3px solid #ff7849; padding-bottom: 14px; margin-bottom: 20px; }
+.brand { font-size: 14px; font-weight: 800; color: #ff7849; letter-spacing: .06em; }
+h1 { font-size: 28px; color: #6b4ee6; margin: 8px 0 6px; line-height: 1.25; }
+h2 { font-size: 19px; color: #6b4ee6; margin: 22px 0 12px; padding-top: 10px; border-top: 1px solid #eee; page-break-before: always; }
+section.first h2, h2:first-of-type { border-top: none; padding-top: 0; page-break-before: avoid; }
+h3, h4 { font-size: 15px; margin: 14px 0 8px; color: #1a1a2e; }
+p { margin: 8px 0; }
+strong { color: #1a1a2e; }
+em { color: #555; }
+
+ul, ol { margin: 8px 0 8px 24px; }
+li { margin: 3px 0; }
+
+pre {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 13.5px;
+  background: #1e1e2e;
+  color: #b9f6ca;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 10px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  page-break-inside: avoid;
+  line-height: 1.5;
+}
+pre code { background: transparent; padding: 0; color: inherit; }
+code {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  background: #fff1e8;
+  color: #ff7849;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+blockquote {
+  margin: 10px 0;
+  padding: 10px 16px;
+  background: #fff6ef;
+  border-left: 3px solid #ff7849;
+  border-radius: 0 6px 6px 0;
+  color: #6a3a1c;
+}
+
+.write-space {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #ffffff 0,
+    #ffffff 27px,
+    #d4d4d4 27px,
+    #d4d4d4 28px
+  );
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  min-height: 114px;
+  margin: 10px 0 20px;
+  page-break-inside: avoid;
+}
+.write-space.short { min-height: 86px; }
+.write-space.tall { min-height: 170px; }
+
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
+hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
+
+.meta { color: #666; font-size: 13px; margin: 0 0 14px; }
+.answer-lines {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 14px 16px;
+  background: #fafafa;
+  white-space: pre;
+  line-height: 2.2;
+}
+
+footer {
+  position: fixed;
+  bottom: 10mm; left: 16mm; right: 16mm;
+  text-align: center;
+  font-size: 10px;
+  color: #aaa;
+}
+footer b { color: #ff7849; }
+</style>
+</head>
+<body>
+<div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
+<h1>🏪 RS001 Week 4 — English Worksheet</h1>
+<p><strong>Topic:</strong> Parallel Lists — A Shop Scene · <strong>Course:</strong> Text Adventure (Python) · <strong>Time:</strong> about 45 minutes</p>
+<p>This week you use <strong>parallel lists</strong> — several lists that line up by index. Item <code>[1]</code>'s name, power, and price all sit at index <code>1</code> in three different lists. Together they build a shop.</p>
+<pre><code class="language-python">shop_weapons = [&quot;wooden stick&quot;, &quot;iron sword&quot;, &quot;magic staff&quot;]
+shop_power   = [2, 8, 15]
+shop_price   = [5, 30, 80]
+game.say(f&quot;{shop_weapons[1]} — power {shop_power[1]}, {shop_price[1]} gold&quot;)
+</code></pre>
+<h2>1 · Predict 🔮</h2>
+<p>Read each piece of code. Before you run it in your head, write what you think the screen will show.</p>
+<pre><code class="language-python">names = [&quot;dagger&quot;, &quot;axe&quot;, &quot;spear&quot;]
+price = [10, 40, 25]
+game.say(f&quot;{names[1]} costs {price[1]} gold&quot;)
+</code></pre>
+<div class="qa"><p><strong>Which item and which price get printed together?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-python">names = [&quot;dagger&quot;, &quot;axe&quot;, &quot;spear&quot;]
+power = [3, 9, 6]
+game.say(f&quot;{names[0]} — power {power[2]}&quot;)
+</code></pre>
+<div class="qa"><p><strong>The indexes do not match. What strange sentence comes out?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-python">names = [&quot;dagger&quot;, &quot;axe&quot;]
+price = [10, 40]
+game.say(f&quot;{names[2]} costs {price[2]} gold&quot;)
+</code></pre>
+<div class="qa"><p><strong>Each list only has 2 items. What happens when the code asks for <code>[2]</code>?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>2 · Spot the Bug 🐛</h2>
+<p>Each block was meant to do something, but it is broken. Read what it is <strong>supposed</strong> to do, fix it, then explain why the original was wrong.</p>
+<p><strong>Bug A</strong> — This shop line should show the <strong>axe</strong> with <strong>its own</strong> price. Right now it shows the axe's name but the dagger's price.</p>
+<pre><code class="language-python">names = [&quot;dagger&quot;, &quot;axe&quot;, &quot;spear&quot;]
+price = [10, 40, 25]
+game.say(f&quot;{names[1]} costs {price[0]} gold&quot;)
+</code></pre>
+<p><strong>Hint:</strong> the name and the price should share the same index.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug B</strong> — A new weapon <code>"hammer"</code> was added to the names list, but the other lists were not updated. Now line 4 crashes when it reaches the hammer.</p>
+<pre><code class="language-python">names = [&quot;stick&quot;, &quot;sword&quot;, &quot;staff&quot;, &quot;hammer&quot;]
+power = [2, 8, 15]
+price = [5, 30, 80]
+game.say(f&quot;{names[3]} — power {power[3]}, {price[3]} gold&quot;)
+</code></pre>
+<p><strong>Hint:</strong> if one list grows, the parallel lists must grow too.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug C</strong> — This should print a full 3-line shop menu. Right now line 2 forgot to change its index, so the same weapon shows up twice.</p>
+<pre><code class="language-python">names = [&quot;stick&quot;, &quot;sword&quot;, &quot;staff&quot;]
+price = [5, 30, 80]
+game.say(f&quot;1. {names[0]} — {price[0]} gold&quot;)
+game.say(f&quot;2. {names[0]} — {price[1]} gold&quot;)
+game.say(f&quot;3. {names[2]} — {price[2]} gold&quot;)
+</code></pre>
+<p><strong>Hint:</strong> look closely at the name index on line 2.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>3 · 🎯 Build Your Shop</h2>
+<p>Open your game. After your opening and inventory, add a <strong>shop scene</strong> built from parallel lists: weapon names, their power, and their price. Print a clear numbered menu the player could buy from. Put it in your hometown if you like.</p>
+<p>When it works, send a <strong>photo or video</strong>, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.</p>
+<div class="qa"><blockquote>
+<p>First, I made three lists for …</p>
+<p>They line up by index so that …</p>
+<p>The item at index 2 was …</p>
+<p>When I added a new weapon, I remembered to …</p>
+<p>One tricky moment was when …</p>
+<p>If I had more time, I would …</p>
+</blockquote>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<h2>4 · Record Your Walkthrough 🎥</h2>
+<p>Take a video on your phone (or a parent's phone) while your shop prints. Teach it like the viewer has never coded. Try to use these words: <strong>parallel list</strong>, <strong>index</strong>, <strong>power</strong>, <strong>price</strong>, <strong>line up</strong>.</p>
+<blockquote>
+<ol>
+<li>Run your game and show the shop menu.</li>
+<li>Pick one weapon and read its name, power, and price.</li>
+<li>Point to where all three sit at the same index.</li>
+<li>Explain what would break if one list were shorter than the others.</li>
+</ol>
+</blockquote>
+<div class="qa"><p><strong>Write what you will say in your video.</strong> Plan it here first.</p>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.</p>
+</body>
+</html>

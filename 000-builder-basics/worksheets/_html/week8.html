@@ -71,6 +71,11 @@ blockquote {
 .write-space.short { min-height: 86px; }
 .write-space.tall { min-height: 170px; }
 
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
 hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
 
 .meta { color: #666; font-size: 13px; margin: 0 0 14px; }
@@ -99,7 +104,6 @@ footer b { color: #ff7849; }
 <div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
 <h1>🏘️ M000 Week 8 — English Worksheet</h1>
 <p><strong>Topic:</strong> Build a Village (Final Project) · <strong>Course:</strong> Builder Basics · <strong>Time:</strong> about 60 minutes</p>
-<hr />
 <h2>1 · Predict 🔮</h2>
 <p>Read each set of steps. Before you imagine the agent doing it, write what you think will happen.</p>
 <pre><code>set size to 5
@@ -113,8 +117,8 @@ repeat height times:
         turn right
     move up by 1
 </code></pre>
-<p><strong>Which part of the village is this — house, well, or farm house?</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>Which part of the village is this — house, well, or farm house?</strong></p>
+<div class="write-space"></div></div>
 
 <pre><code>repeat 4 times:
     repeat 3 times:
@@ -125,8 +129,8 @@ repeat 3 times:
     destroy block down
     move down by 1
 </code></pre>
-<p><strong>Which part of the village is this?</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>Which part of the village is this?</strong></p>
+<div class="write-space"></div></div>
 
 <pre><code># Stage 1
 [house walls + roof]
@@ -137,10 +141,9 @@ move to next spot
 move to next spot
 [farm house]
 </code></pre>
-<p><strong>This is the skeleton for the whole village. What does the agent need between each stage?</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>This is the skeleton for the whole village. What does the agent need between each stage?</strong></p>
+<div class="write-space"></div></div>
 
-<hr />
 <h2>2 · Spot the Bug 🐛</h2>
 <p>Each block of code below was meant to do something, but it is broken. Read what the code is <strong>supposed</strong> to do, then rewrite it so it works. After that, explain why the original was wrong and why your fix works.</p>
 <p><strong>Bug A</strong> — The village should have <strong>a house with a roof, a well, and a farm house</strong> — three structures, side by side.</p>
@@ -150,11 +153,11 @@ move to next spot
 [well code]
 </code></pre>
 <p><strong>Hint:</strong> something is missing. Rewrite the skeleton to include all three structures.</p>
-<p><strong>Write the fixed skeleton:</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>Write the fixed skeleton:</strong></p>
+<div class="write-space"></div></div>
 
-<p><strong>What was missing? Why does the full version work?</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>What was missing? Why does the full version work?</strong></p>
+<div class="write-space"></div></div>
 
 <p><strong>Bug B</strong> — Between each structure, the agent must <strong>walk to a new spot</strong> so the next structure doesn't land on top of the last one.</p>
 <pre><code># House
@@ -165,11 +168,11 @@ move to next spot
 [farm house code]
 </code></pre>
 <p><strong>Hint:</strong> add the missing "move to next spot" steps. You don't need to write the full house/well/farm code — write where the agent should walk between stages.</p>
-<p><strong>Write the fixed skeleton:</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>Write the fixed skeleton:</strong></p>
+<div class="write-space"></div></div>
 
-<p><strong>Why was the original wrong? Why does your fix work?</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>Why was the original wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
 
 <p><strong>Bug C</strong> — The house roof should sit on top of the walls, but in this code the agent stays on the ground after the walls.</p>
 <pre><code>repeat height times:
@@ -185,17 +188,16 @@ repeat size times:
         move forward
 </code></pre>
 <p><strong>Hint:</strong> the agent finishes the walls on the ground. Where should it go before placing the roof?</p>
-<p><strong>Write the fixed code:</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
 
-<p><strong>Why was it wrong? Why does your fix work?</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
 
-<hr />
 <h2>3 · Tell Me What You Built 📸</h2>
 <p>Now switch to your homework world. Build your village — <strong>a house with a roof, a well, and a farm house</strong> at minimum. If you have time, add a standalone farm too. When you finish, come back here.</p>
 <p>Send a photo or video of your whole village, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.</p>
-<blockquote>
+<div class="qa"><blockquote>
 <p>First, I built the …</p>
 <p>Then I built the …</p>
 <p>To move between structures, the agent …</p>
@@ -203,9 +205,8 @@ repeat size times:
 <p>The hardest part was …</p>
 <p>The thing I am most proud of is …</p>
 </blockquote>
-<div class="write-space tall" style="min-height: 340px"></div>
+<div class="write-space tall" style="min-height: 340px"></div></div>
 
-<hr />
 <h2>4 · Record Your Walkthrough 🎥</h2>
 <p>Now take a video on your phone (or a parent's phone) while you walk the camera through your village. Talk through it like you are teaching someone who has never seen it. Try to use these words: <strong>village</strong>, <strong>house</strong>, <strong>roof</strong>, <strong>well</strong>, <strong>farm house</strong>.</p>
 <blockquote>
@@ -216,8 +217,8 @@ repeat size times:
 <li>Say what you would add next if you had more time.</li>
 </ol>
 </blockquote>
-<p><strong>Write what you will say in your video.</strong> Use the space below to plan it before you record — you can read from it while filming.</p>
-<div class="write-space tall" style="min-height: 340px"></div>
+<div class="qa"><p><strong>Write what you will say in your video.</strong> Use the space below to plan it before you record — you can read from it while filming.</p>
+<div class="write-space tall" style="min-height: 340px"></div></div>
 
 <hr />
 <h3>Submit ✅</h3>

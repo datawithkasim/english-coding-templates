@@ -71,6 +71,11 @@ blockquote {
 .write-space.short { min-height: 86px; }
 .write-space.tall { min-height: 170px; }
 
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
 hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
 
 .meta { color: #666; font-size: 13px; margin: 0 0 14px; }
@@ -100,7 +105,6 @@ footer b { color: #ff7849; }
 <h1>🏆 M002 Week 8 — English Worksheet</h1>
 <p><strong>Topic:</strong> Capstone — 15×15×15 Cube Maze · <strong>Course:</strong> Maze Madness · <strong>Time:</strong> about 60 minutes</p>
 <p>This is the <strong>final project</strong>. You design a 3D cube maze with redstone doors and levers, then write code that solves it on its own.</p>
-<hr />
 <h2>1 · Predict 🔮</h2>
 <p>Read each set of steps. Before you imagine the agent doing it, write what you think will happen.</p>
 <pre><code>A cube maze: 15 wide, 15 deep, 15 tall.
@@ -109,8 +113,8 @@ footer b { color: #ff7849; }
 - at least 1 lever
 - a clear start and finish
 </code></pre>
-<p><strong>Sketch (in words) one floor of your maze. Where is the start? Where is the goal?</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>Sketch (in words) one floor of your maze. Where is the start? Where is the goal?</strong></p>
+<div class="write-space"></div></div>
 
 <pre><code>keep doing until at goal:
     if wall ahead OR closed door ahead:
@@ -120,18 +124,17 @@ footer b { color: #ff7849; }
     otherwise:
         move forward
 </code></pre>
-<p><strong>This is one strategy. Name one type of maze where this will get stuck.</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>This is one strategy. Name one type of maze where this will get stuck.</strong></p>
+<div class="write-space"></div></div>
 
 <pre><code>function go_to_next_floor:
     while no stairs ahead:
         move forward
     move up by 1
 </code></pre>
-<p><strong>Why is it useful to have a function called <code>go_to_next_floor</code> in a 3D maze?</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>Why is it useful to have a function called <code>go_to_next_floor</code> in a 3D maze?</strong></p>
+<div class="write-space"></div></div>
 
-<hr />
 <h2>2 · Spot the Bug 🐛</h2>
 <p>Each block of code below was meant to do something, but it is broken. Read what the code is <strong>supposed</strong> to do, then rewrite it so it works. After that, explain why the original was wrong and why your fix works.</p>
 <p><strong>Bug A</strong> — The agent must use <code>interact</code> only when there is a <strong>lever</strong> ahead — not on every step.</p>
@@ -142,11 +145,11 @@ footer b { color: #ff7849; }
     otherwise:
         move forward
 </code></pre>
-<p><strong>Write the fixed code:</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
 
-<p><strong>Why was it wrong? Why does your fix work?</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
 
 <p><strong>Bug B</strong> — The agent should <strong>stop</strong> when it reaches the goal. Right now it keeps running forever.</p>
 <pre><code>keep doing forever:
@@ -155,11 +158,11 @@ footer b { color: #ff7849; }
     otherwise:
         move forward
 </code></pre>
-<p><strong>Write the fixed code:</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
 
-<p><strong>Why was it wrong? Why does your fix work?</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
 
 <p><strong>Bug C</strong> — On a 3D maze the agent must also handle <strong>going up to the next floor</strong>. Right now the code only handles left/right/forward.</p>
 <pre><code>if wall ahead:
@@ -167,13 +170,12 @@ footer b { color: #ff7849; }
 otherwise:
     move forward
 </code></pre>
-<p><strong>Write the fixed code (add an "if stairs ahead" or similar):</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>Write the fixed code (add an "if stairs ahead" or similar):</strong></p>
+<div class="write-space"></div></div>
 
-<p><strong>Why was it wrong? Why does your fix work?</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
 
-<hr />
 <h2>3 · Tell Me What You Built 📸</h2>
 <p>Now build your <strong>final project</strong>. Your maze must include:</p>
 <ul>
@@ -185,7 +187,7 @@ otherwise:
 <li>agent code that solves it on its own using <code>while</code> + <code>if/else</code> + <code>interact</code></li>
 </ul>
 <p>When you finish, come back here. Send a photo or video of the agent solving your maze, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.</p>
-<blockquote>
+<div class="qa"><blockquote>
 <p>My maze has … floors and … levers.</p>
 <p>The agent's strategy is …</p>
 <p>The hardest part of building the maze was …</p>
@@ -193,9 +195,8 @@ otherwise:
 <p>To fix it, I …</p>
 <p>The thing I am most proud of is …</p>
 </blockquote>
-<div class="write-space tall" style="min-height: 340px"></div>
+<div class="write-space tall" style="min-height: 340px"></div></div>
 
-<hr />
 <h2>4 · Record Your Walkthrough 🎥</h2>
 <p>Now take a video on your phone (or a parent's phone) while the agent runs your maze. Talk through it like you are teaching someone who has never seen it. Try to use these words: <strong>cube</strong>, <strong>floor</strong>, <strong>lever</strong>, <strong>door</strong>, <strong>strategy</strong>.</p>
 <blockquote>
@@ -207,8 +208,8 @@ otherwise:
 <li>Say what you learned across the 8 weeks of this course.</li>
 </ol>
 </blockquote>
-<p><strong>Write what you will say in your video.</strong> Use the space below to plan it before you record — you can read from it while filming.</p>
-<div class="write-space tall" style="min-height: 340px"></div>
+<div class="qa"><p><strong>Write what you will say in your video.</strong> Use the space below to plan it before you record — you can read from it while filming.</p>
+<div class="write-space tall" style="min-height: 340px"></div></div>
 
 <hr />
 <h3>Submit ✅</h3>

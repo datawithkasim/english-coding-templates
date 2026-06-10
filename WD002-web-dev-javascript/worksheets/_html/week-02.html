@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>⚡ WD002 Week 2 — English Worksheet</title>
+<style>
+@page { size: A4; margin: 18mm 16mm 22mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-family: "Inter", "Segoe UI", system-ui, sans-serif; color: #1a1a2e; }
+body { font-size: 15px; line-height: 1.55; }
+
+.cover { border-bottom: 3px solid #ff7849; padding-bottom: 14px; margin-bottom: 20px; }
+.brand { font-size: 14px; font-weight: 800; color: #ff7849; letter-spacing: .06em; }
+h1 { font-size: 28px; color: #6b4ee6; margin: 8px 0 6px; line-height: 1.25; }
+h2 { font-size: 19px; color: #6b4ee6; margin: 22px 0 12px; padding-top: 10px; border-top: 1px solid #eee; page-break-before: always; }
+section.first h2, h2:first-of-type { border-top: none; padding-top: 0; page-break-before: avoid; }
+h3, h4 { font-size: 15px; margin: 14px 0 8px; color: #1a1a2e; }
+p { margin: 8px 0; }
+strong { color: #1a1a2e; }
+em { color: #555; }
+
+ul, ol { margin: 8px 0 8px 24px; }
+li { margin: 3px 0; }
+
+pre {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 13.5px;
+  background: #1e1e2e;
+  color: #b9f6ca;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 10px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  page-break-inside: avoid;
+  line-height: 1.5;
+}
+pre code { background: transparent; padding: 0; color: inherit; }
+code {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  background: #fff1e8;
+  color: #ff7849;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+blockquote {
+  margin: 10px 0;
+  padding: 10px 16px;
+  background: #fff6ef;
+  border-left: 3px solid #ff7849;
+  border-radius: 0 6px 6px 0;
+  color: #6a3a1c;
+}
+
+.write-space {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #ffffff 0,
+    #ffffff 27px,
+    #d4d4d4 27px,
+    #d4d4d4 28px
+  );
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  min-height: 114px;
+  margin: 10px 0 20px;
+  page-break-inside: avoid;
+}
+.write-space.short { min-height: 86px; }
+.write-space.tall { min-height: 170px; }
+
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
+hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
+
+.meta { color: #666; font-size: 13px; margin: 0 0 14px; }
+.answer-lines {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 14px 16px;
+  background: #fafafa;
+  white-space: pre;
+  line-height: 2.2;
+}
+
+footer {
+  position: fixed;
+  bottom: 10mm; left: 16mm; right: 16mm;
+  text-align: center;
+  font-size: 10px;
+  color: #aaa;
+}
+footer b { color: #ff7849; }
+</style>
+</head>
+<body>
+<div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
+<h1>⚡ WD002 Week 2 — English Worksheet</h1>
+<p><strong>Topic:</strong> Variables and the DOM — Changing the Page Live · <strong>Course:</strong> Web Dev Basics: JavaScript · <strong>Time:</strong> about 45 minutes</p>
+<p>This week you reach into the page and change it with code. A <strong>variable</strong> (<code>let</code>) stores a piece of information. <code>document.querySelector()</code> grabs an element by its <code>id</code>, and <code>.textContent</code> swaps the words inside it. Put them together and a click can rewrite the screen.</p>
+<h2>1 · Predict 🔮</h2>
+<p>Read each piece of code. Before you run it, write what you think will happen.</p>
+<pre><code class="language-html">&lt;h1 id=&quot;title&quot;&gt;Hello&lt;/h1&gt;
+
+&lt;script&gt;
+  let element = document.querySelector(&quot;#title&quot;);
+  element.textContent = &quot;Goodbye&quot;;
+&lt;/script&gt;
+</code></pre>
+<div class="qa"><p><strong>What word ends up on the screen — <code>Hello</code> or <code>Goodbye</code>? Why?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-html">&lt;script&gt;
+  let name = &quot;Minjun&quot;;
+  let greeting = &quot;Hi, &quot; + name + &quot;!&quot;;
+  console.log(greeting);
+&lt;/script&gt;
+</code></pre>
+<div class="qa"><p><strong>What full sentence does the console show? What is the <code>+</code> doing here?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-html">&lt;h1 id=&quot;title&quot;&gt;Start&lt;/h1&gt;
+&lt;button onclick=&quot;change()&quot;&gt;Go&lt;/button&gt;
+
+&lt;script&gt;
+  function change() {
+    let element = document.querySelector(&quot;#title&quot;);
+    element.textContent = &quot;Changed!&quot;;
+  }
+&lt;/script&gt;
+</code></pre>
+<div class="qa"><p><strong>Before the button is clicked, what does the title say? After one click?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-html">&lt;script&gt;
+  let count = 5;
+  count = count + 1;
+  console.log(count);
+&lt;/script&gt;
+</code></pre>
+<div class="qa"><p><strong>A variable can be changed after it is made. What number prints?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>2 · Spot the Bug 🐛</h2>
+<p>Each block was meant to do something, but it is broken. Read what it is <strong>supposed</strong> to do, then rewrite it so it works. After that, explain why the original was wrong and why your fix works.</p>
+<p><strong>Bug A</strong> — This should change the heading text to <code>Welcome</code>. Right now nothing changes on the page.</p>
+<pre><code class="language-html">&lt;h1 id=&quot;title&quot;&gt;Hello&lt;/h1&gt;
+
+&lt;script&gt;
+  let element = document.querySelector(&quot;title&quot;);
+  element.textContent = &quot;Welcome&quot;;
+&lt;/script&gt;
+</code></pre>
+<p><strong>Hint:</strong> to select something by its <code>id</code>, the selector needs a special symbol in front.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug B</strong> — This should show <code>Hi, Sora!</code> on the page. Right now it shows the words <code>Hi, name!</code> exactly.</p>
+<pre><code class="language-html">&lt;h1 id=&quot;out&quot;&gt;&lt;/h1&gt;
+
+&lt;script&gt;
+  let name = &quot;Sora&quot;;
+  document.querySelector(&quot;#out&quot;).textContent = &quot;Hi, name!&quot;;
+&lt;/script&gt;
+</code></pre>
+<p><strong>Hint:</strong> the variable is stuck inside the quotes, so it is treated as plain text. Pull it out and join it with <code>+</code>.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug C</strong> — Clicking should change the heading. Right now you get an error because the element cannot be found.</p>
+<pre><code class="language-html">&lt;h1 id=&quot;message&quot;&gt;Hi&lt;/h1&gt;
+&lt;button onclick=&quot;update()&quot;&gt;Update&lt;/button&gt;
+
+&lt;script&gt;
+  function update() {
+    let element = document.querySelector(&quot;#mesage&quot;);
+    element.textContent = &quot;Updated!&quot;;
+  }
+&lt;/script&gt;
+</code></pre>
+<p><strong>Hint:</strong> compare the <code>id</code> in the HTML with the one in the selector, letter by letter.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>3 · Make It Yours 📸</h2>
+<p>Build a page where clicking <strong>one</strong> button changes <strong>3 or more things</strong> on the screen at once.</p>
+<ol>
+<li>Put a few elements on the page, each with its own <code>id</code> (a heading, a subtitle, a paragraph…).</li>
+<li>Store a value in a variable with <code>let</code>.</li>
+<li>In a function, use <code>querySelector</code> and <code>.textContent</code> to change each element.</li>
+<li>Use your variable in at least one of the changes (join it with <code>+</code>).</li>
+</ol>
+<p><strong>Stretch:</strong> try putting a <em>different</em> value in the variable and watch how every change updates. What does that tell you about variables?</p>
+<p>When you finish, come back here. Send a <strong>photo or video</strong> of the page before and after the click, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.</p>
+<div class="qa"><blockquote>
+<p>First, I gave each element an <code>id</code> so …</p>
+<p>I stored ___ in a variable called …</p>
+<p>When the button is clicked, my function changes …</p>
+<p>I used the variable when I …</p>
+<p>One tricky moment was when …</p>
+<p>If I had more time, I would …</p>
+</blockquote>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<h2>4 · Record Your Walkthrough 🎥</h2>
+<p>Take a video on your phone (or a parent's phone) while your page runs. Talk through it like you are teaching someone who has never seen it. Try to use these words: <strong>variable</strong>, <strong>DOM</strong>, <strong>querySelector</strong>, <strong>textContent</strong>, <strong>id</strong>.</p>
+<blockquote>
+<ol>
+<li>Show the page before clicking.</li>
+<li>Click the button and show everything change at once.</li>
+<li>Read one line out loud and say which element it grabs.</li>
+<li>Show where your variable is used.</li>
+</ol>
+</blockquote>
+<div class="qa"><p><strong>Write what you will say in your video.</strong> Plan it here before you record — you can read from it while filming.</p>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.</p>
+</body>
+</html>

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>🔴 RS002 Week 7 — English Worksheet</title>
+<style>
+@page { size: A4; margin: 18mm 16mm 22mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-family: "Inter", "Segoe UI", system-ui, sans-serif; color: #1a1a2e; }
+body { font-size: 15px; line-height: 1.55; }
+
+.cover { border-bottom: 3px solid #ff7849; padding-bottom: 14px; margin-bottom: 20px; }
+.brand { font-size: 14px; font-weight: 800; color: #ff7849; letter-spacing: .06em; }
+h1 { font-size: 28px; color: #6b4ee6; margin: 8px 0 6px; line-height: 1.25; }
+h2 { font-size: 19px; color: #6b4ee6; margin: 22px 0 12px; padding-top: 10px; border-top: 1px solid #eee; page-break-before: always; }
+section.first h2, h2:first-of-type { border-top: none; padding-top: 0; page-break-before: avoid; }
+h3, h4 { font-size: 15px; margin: 14px 0 8px; color: #1a1a2e; }
+p { margin: 8px 0; }
+strong { color: #1a1a2e; }
+em { color: #555; }
+
+ul, ol { margin: 8px 0 8px 24px; }
+li { margin: 3px 0; }
+
+pre {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 13.5px;
+  background: #1e1e2e;
+  color: #b9f6ca;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 10px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  page-break-inside: avoid;
+  line-height: 1.5;
+}
+pre code { background: transparent; padding: 0; color: inherit; }
+code {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  background: #fff1e8;
+  color: #ff7849;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+blockquote {
+  margin: 10px 0;
+  padding: 10px 16px;
+  background: #fff6ef;
+  border-left: 3px solid #ff7849;
+  border-radius: 0 6px 6px 0;
+  color: #6a3a1c;
+}
+
+.write-space {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #ffffff 0,
+    #ffffff 27px,
+    #d4d4d4 27px,
+    #d4d4d4 28px
+  );
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  min-height: 114px;
+  margin: 10px 0 20px;
+  page-break-inside: avoid;
+}
+.write-space.short { min-height: 86px; }
+.write-space.tall { min-height: 170px; }
+
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
+hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
+
+.meta { color: #666; font-size: 13px; margin: 0 0 14px; }
+.answer-lines {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 14px 16px;
+  background: #fafafa;
+  white-space: pre;
+  line-height: 2.2;
+}
+
+footer {
+  position: fixed;
+  bottom: 10mm; left: 16mm; right: 16mm;
+  text-align: center;
+  font-size: 10px;
+  color: #aaa;
+}
+footer b { color: #ff7849; }
+</style>
+</head>
+<body>
+<div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
+<h1>🔴 RS002 Week 7 — English Worksheet</h1>
+<p><strong>Topic:</strong> Validating Input — <code>in</code> / <code>not in</code> · <strong>Course:</strong> Pokédex App · <strong>Time:</strong> about 45 minutes</p>
+<p>This week you make your program <strong>safe</strong>. When the trainer types a Pokémon that is not in the dex, you do not crash — you check with <code>in</code> / <code>not in</code>, give them a clear message, and fall back to a safe <strong>default</strong>.</p>
+<h2>1 · Recall 🧠</h2>
+<p>From memory:</p>
+<div class="qa"><p><strong>Write a loop that prints every name in <code>names</code> that contains the text in <code>search</code>.</strong></p>
+<div class="write-space"></div></div>
+
+<h2>2 · Predict 🔮</h2>
+<p>Read each block. Before you run it, write what you think will happen.</p>
+<pre><code class="language-python">pokedex = [&quot;피카츄&quot;, &quot;이상해씨&quot;, &quot;파이리&quot;]
+print(&quot;피카츄&quot; in pokedex)
+print(&quot;리자몽&quot; in pokedex)
+</code></pre>
+<div class="qa"><p><strong>Write <code>True</code> or <code>False</code> for each line.</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-python">pokedex = [&quot;피카츄&quot;, &quot;이상해씨&quot;, &quot;파이리&quot;]
+choice = &quot;리자몽&quot;
+
+if choice not in pokedex:
+    print(&quot;도감에 없어요&quot;)
+</code></pre>
+<div class="qa"><p><strong>Does the message print? Why?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-python">pokedex = [&quot;피카츄&quot;, &quot;이상해씨&quot;]
+choice = input(&quot;이름: &quot;).strip()
+
+if choice not in pokedex:
+    choice = &quot;피카츄&quot;
+
+print(f&quot;선택: {choice}&quot;)
+</code></pre>
+<div class="qa"><p><strong>The user types <code>없는포켓몬</code>. What does the last line print? Why?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>3 · Spot the Bug 🐛</h2>
+<p>Read what each block is <strong>supposed</strong> to do, fix it, then explain the fix.</p>
+<p><strong>Bug A</strong> — This should warn the user when their choice is <strong>not</strong> in the dex. Right now it warns when the choice <strong>is</strong> in the dex.</p>
+<pre><code class="language-python">pokedex = [&quot;피카츄&quot;, &quot;이상해씨&quot;, &quot;파이리&quot;]
+choice = input(&quot;이름: &quot;).strip()
+
+if choice in pokedex:
+    print(&quot;도감에 없어요&quot;)
+</code></pre>
+<p><strong>Hint:</strong> the condition is backwards.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug B</strong> — When the choice is missing, this should fall back to a default Pokémon. Right now it sets the default but then the rest of the program still uses the bad choice.</p>
+<pre><code class="language-python">pokedex = [&quot;피카츄&quot;, &quot;이상해씨&quot;, &quot;파이리&quot;]
+choice = input(&quot;이름: &quot;).strip()
+
+if choice not in pokedex:
+    print(&quot;기본값으로 진행합니다.&quot;)
+    default = &quot;피카츄&quot;
+
+print(f&quot;선택된 포켓몬: {choice}&quot;)
+</code></pre>
+<p><strong>Hint:</strong> assign the default back into <code>choice</code>, not a new unused variable.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug C</strong> — This should give the user a second chance, then fall back. Right now it never re-asks; it just keeps the first bad answer.</p>
+<pre><code class="language-python">pokedex = [&quot;피카츄&quot;, &quot;이상해씨&quot;, &quot;파이리&quot;]
+choice = input(&quot;이름: &quot;).strip()
+
+if choice not in pokedex:
+    print(&quot;다시 시도해보세요.&quot;)
+
+if choice in pokedex:
+    print(f&quot;✅ {choice}&quot;)
+else:
+    print(&quot;❌ 못 찾음&quot;)
+</code></pre>
+<p><strong>Hint:</strong> after the warning, ask again with another <code>input(...)</code>.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>4 · Modify It ✏️</h2>
+<p>Start from this working validation:</p>
+<pre><code class="language-python">pokedex = [&quot;피카츄&quot;, &quot;이상해씨&quot;, &quot;파이리&quot;, &quot;꼬부기&quot;]
+
+choice = input(&quot;포켓몬 이름: &quot;).strip()
+
+if choice not in pokedex:
+    print(f&quot;'{choice}'을(를) 찾을 수 없어 기본 포켓몬으로 진행합니다.&quot;)
+    choice = &quot;피카츄&quot;
+
+print(f&quot;\n선택된 포켓몬: {choice}&quot;)
+</code></pre>
+<p>Make these changes one at a time and run after each:</p>
+<ol>
+<li>Add a second chance: after the warning, re-ask once before falling back.</li>
+<li>Change the default Pokémon to a different one in your dex.</li>
+<li>Add a friendly success line when the choice <strong>is</strong> valid the first time.</li>
+</ol>
+<div class="qa"><p><strong>Write your changed / added lines here:</strong></p>
+<div class="write-space"></div></div>
+
+<h2>5 · Make It 📸</h2>
+<p>Add <strong>validation</strong> to your Week 6 search. If the trainer's choice is not in the dex, warn them and fall back to a safe default. The program should never crash, no matter what they type.</p>
+<p>When it works, send a <strong>photo or video</strong> on KakaoTalk showing both a <strong>valid</strong> choice and an <strong>invalid</strong> one. Then explain what you did. Use these starters — write 4 to 6 sentences.</p>
+<div class="qa"><blockquote>
+<p>First, I checked the choice with <code>not in</code> so that …</p>
+<p>When the Pokémon was missing, my program …</p>
+<p>My safe default was … because …</p>
+<p>I tested it by typing …</p>
+<p>The trickiest part was …</p>
+<p>Validating input matters because …</p>
+</blockquote>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<h2>6 · Record Your Walkthrough 🎥</h2>
+<p>Film your validation running. Teach it like the viewer is new. Try to use: <strong>in</strong>, <strong>not in</strong>, <strong>validate</strong>, <strong>default</strong>, <strong>safe</strong>.</p>
+<blockquote>
+<ol>
+<li>Type a valid Pokémon and show it works.</li>
+<li>Type something fake and show the warning + default.</li>
+<li>Read your <code>not in</code> line out loud and explain it.</li>
+<li>Say why a program should never crash on bad input.</li>
+</ol>
+</blockquote>
+<div class="qa"><p><strong>Plan what you will say here first:</strong></p>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+</content></p>
+</body>
+</html>

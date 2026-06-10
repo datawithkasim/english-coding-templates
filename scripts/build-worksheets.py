@@ -104,6 +104,11 @@ blockquote {
 .write-space.short { min-height: 86px; }
 .write-space.tall { min-height: 170px; }
 
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
 hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
 
 .meta { color: #666; font-size: 13px; margin: 0 0 14px; }
@@ -150,6 +155,24 @@ def wrap_html(title: str, body_html: str) -> str:
         r'<div class="answer-lines">\1</div>',
         body_html,
     )
+    # Glue each question to its answer box: wrap the single immediately-
+    # preceding block (the question paragraph, a sentence-starter blockquote,
+    # or a sub-heading) together with the write-space in a .qa block so a page
+    # break can never split a prompt from its lines. The tempered `(?!</tag>)`
+    # dot keeps each anchor to ONE block so a match can't span many paragraphs.
+    anchor = (
+        r'<p>(?:(?!</p>)[\s\S])*?</p>\s*'
+        r'|<blockquote>(?:(?!</blockquote>)[\s\S])*?</blockquote>\s*'
+        r'|<h[34]>(?:(?!</h[34]>)[\s\S])*?</h[34]>\s*'
+    )
+    body_html = re.sub(
+        r'(' + anchor + r')(<div class="write-space[^"]*"[^>]*>\s*</div>)',
+        r'<div class="qa">\1\2</div>',
+        body_html,
+    )
+    # An <hr> right before an <h2> is redundant — every <h2> already starts a
+    # fresh page — and a lone rule can orphan onto a blank page. Drop it.
+    body_html = re.sub(r'<hr\s*/?>\s*(?=<h2)', '', body_html)
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>

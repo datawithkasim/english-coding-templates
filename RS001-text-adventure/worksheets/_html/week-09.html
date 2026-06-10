@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>🔀 RS001 Week 9 — English Worksheet</title>
+<style>
+@page { size: A4; margin: 18mm 16mm 22mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-family: "Inter", "Segoe UI", system-ui, sans-serif; color: #1a1a2e; }
+body { font-size: 15px; line-height: 1.55; }
+
+.cover { border-bottom: 3px solid #ff7849; padding-bottom: 14px; margin-bottom: 20px; }
+.brand { font-size: 14px; font-weight: 800; color: #ff7849; letter-spacing: .06em; }
+h1 { font-size: 28px; color: #6b4ee6; margin: 8px 0 6px; line-height: 1.25; }
+h2 { font-size: 19px; color: #6b4ee6; margin: 22px 0 12px; padding-top: 10px; border-top: 1px solid #eee; page-break-before: always; }
+section.first h2, h2:first-of-type { border-top: none; padding-top: 0; page-break-before: avoid; }
+h3, h4 { font-size: 15px; margin: 14px 0 8px; color: #1a1a2e; }
+p { margin: 8px 0; }
+strong { color: #1a1a2e; }
+em { color: #555; }
+
+ul, ol { margin: 8px 0 8px 24px; }
+li { margin: 3px 0; }
+
+pre {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 13.5px;
+  background: #1e1e2e;
+  color: #b9f6ca;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 10px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  page-break-inside: avoid;
+  line-height: 1.5;
+}
+pre code { background: transparent; padding: 0; color: inherit; }
+code {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  background: #fff1e8;
+  color: #ff7849;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+blockquote {
+  margin: 10px 0;
+  padding: 10px 16px;
+  background: #fff6ef;
+  border-left: 3px solid #ff7849;
+  border-radius: 0 6px 6px 0;
+  color: #6a3a1c;
+}
+
+.write-space {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #ffffff 0,
+    #ffffff 27px,
+    #d4d4d4 27px,
+    #d4d4d4 28px
+  );
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  min-height: 114px;
+  margin: 10px 0 20px;
+  page-break-inside: avoid;
+}
+.write-space.short { min-height: 86px; }
+.write-space.tall { min-height: 170px; }
+
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
+hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
+
+.meta { color: #666; font-size: 13px; margin: 0 0 14px; }
+.answer-lines {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 14px 16px;
+  background: #fafafa;
+  white-space: pre;
+  line-height: 2.2;
+}
+
+footer {
+  position: fixed;
+  bottom: 10mm; left: 16mm; right: 16mm;
+  text-align: center;
+  font-size: 10px;
+  color: #aaa;
+}
+footer b { color: #ff7849; }
+</style>
+</head>
+<body>
+<div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
+<h1>🔀 RS001 Week 9 — English Worksheet</h1>
+<p><strong>Topic:</strong> Cause and Effect — Enemies Appear · <strong>Course:</strong> Text Adventure (Python) · <strong>Time:</strong> about 45 minutes</p>
+<p>This week one choice changes what happens next. <code>if</code> / <code>else</code> lets you run different code depending on the player's path — so the <strong>left</strong> road meets a goblin and the <strong>right</strong> road meets an orc.</p>
+<pre><code class="language-python">path = game.ask(&quot;Which way? (left/right)&quot;).strip().lower()
+if path == &quot;left&quot;:
+    enemy = &quot;goblin&quot;
+else:
+    enemy = &quot;orc&quot;
+game.say(f&quot;A {enemy} appears!&quot;)
+</code></pre>
+<h2>1 · Predict 🔮</h2>
+<p>Read each piece of code. Before you run it in your head, write what you think happens.</p>
+<pre><code class="language-python">path = &quot;left&quot;
+if path == &quot;left&quot;:
+    game.say(&quot;cave&quot;)
+else:
+    game.say(&quot;field&quot;)
+</code></pre>
+<div class="qa"><p><strong>Which word is printed?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-python">paths = [&quot;left&quot;, &quot;right&quot;]
+enemies = [&quot;goblin&quot;, &quot;orc&quot;]
+path = &quot;right&quot;
+if path == paths[0]:
+    game.say(enemies[0])
+elif path == paths[1]:
+    game.say(enemies[1])
+</code></pre>
+<div class="qa"><p><strong>Which enemy is printed, and which branch ran?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-python">path = &quot;up&quot;
+if path == &quot;left&quot;:
+    game.say(&quot;goblin&quot;)
+elif path == &quot;right&quot;:
+    game.say(&quot;orc&quot;)
+</code></pre>
+<div class="qa"><p><strong>The player typed <code>"up"</code>. What appears on screen?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>2 · Spot the Bug 🐛</h2>
+<p>Each block was meant to do something, but it is broken. Read what it is <strong>supposed</strong> to do, fix it, then explain why the original was wrong.</p>
+<p><strong>Bug A</strong> — Left should give a goblin and right should give an orc. Right now <strong>both</strong> paths give a goblin.</p>
+<pre><code class="language-python">path = game.ask(&quot;way?&quot;).strip().lower()
+if path == &quot;left&quot;:
+    enemy = &quot;goblin&quot;
+if path == &quot;right&quot;:
+    enemy = &quot;goblin&quot;
+game.say(f&quot;A {enemy} appears!&quot;)
+</code></pre>
+<p><strong>Hint:</strong> the second branch has the wrong enemy.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug B</strong> — The second branch should be an <code>elif</code>, not a fresh <code>if</code>, so the two choices are linked as one decision.</p>
+<pre><code class="language-python">path = game.ask(&quot;way?&quot;).strip().lower()
+if path == &quot;left&quot;:
+    game.say(&quot;A goblin blocks the cave.&quot;)
+else path == &quot;right&quot;:
+    game.say(&quot;An orc roams the field.&quot;)
+</code></pre>
+<p><strong>Hint:</strong> the word after the first branch should be <code>elif</code>.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug C</strong> — The enemy's name and HP should come from the <strong>same</strong> index. Here the name is from the left path but the HP is from the right.</p>
+<pre><code class="language-python">paths = [&quot;left&quot;, &quot;right&quot;]
+enemies = [&quot;goblin&quot;, &quot;orc&quot;]
+enemy_hp = [10, 25]
+path = &quot;left&quot;
+if path == paths[0]:
+    game.say(f&quot;{enemies[0]} (HP {enemy_hp[1]})&quot;)
+</code></pre>
+<p><strong>Hint:</strong> match the index across all three lists.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>3 · 🎯 Branch Your Story</h2>
+<p>Open your game. After your validated path choice, make the path <strong>matter</strong>: each direction should meet a different enemy. Use <code>if</code> / <code>else</code> (or <code>elif</code>) and describe each encounter so it feels different.</p>
+<p>When it works, send a <strong>photo or video</strong>, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.</p>
+<div class="qa"><blockquote>
+<p>First, I asked the player to choose a path, and …</p>
+<p>If they went left, the game …</p>
+<p>If they went right, the game …</p>
+<p>The cause was the choice and the effect was …</p>
+<p>One tricky moment was when …</p>
+<p>If I had more time, I would …</p>
+</blockquote>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<h2>4 · Record Your Walkthrough 🎥</h2>
+<p>Take a video on your phone (or a parent's phone) while your game runs. Teach it like the viewer has never coded. Try to use these words: <strong>if</strong>, <strong>else</strong>, <strong>branch</strong>, <strong>cause</strong>, <strong>effect</strong>.</p>
+<blockquote>
+<ol>
+<li>Run your game and take the left path.</li>
+<li>Run it again and take the right path.</li>
+<li>Show that each choice leads to a different enemy.</li>
+<li>Read your <code>if</code> / <code>else</code> out loud and explain which branch runs when.</li>
+</ol>
+</blockquote>
+<div class="qa"><p><strong>Write what you will say in your video.</strong> Plan it here first.</p>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.</p>
+</body>
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>⭐ WD003 Week 4 — English Worksheet</title>
+<style>
+@page { size: A4; margin: 18mm 16mm 22mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-family: "Inter", "Segoe UI", system-ui, sans-serif; color: #1a1a2e; }
+body { font-size: 15px; line-height: 1.55; }
+
+.cover { border-bottom: 3px solid #ff7849; padding-bottom: 14px; margin-bottom: 20px; }
+.brand { font-size: 14px; font-weight: 800; color: #ff7849; letter-spacing: .06em; }
+h1 { font-size: 28px; color: #6b4ee6; margin: 8px 0 6px; line-height: 1.25; }
+h2 { font-size: 19px; color: #6b4ee6; margin: 22px 0 12px; padding-top: 10px; border-top: 1px solid #eee; page-break-before: always; }
+section.first h2, h2:first-of-type { border-top: none; padding-top: 0; page-break-before: avoid; }
+h3, h4 { font-size: 15px; margin: 14px 0 8px; color: #1a1a2e; }
+p { margin: 8px 0; }
+strong { color: #1a1a2e; }
+em { color: #555; }
+
+ul, ol { margin: 8px 0 8px 24px; }
+li { margin: 3px 0; }
+
+pre {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 13.5px;
+  background: #1e1e2e;
+  color: #b9f6ca;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 10px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  page-break-inside: avoid;
+  line-height: 1.5;
+}
+pre code { background: transparent; padding: 0; color: inherit; }
+code {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  background: #fff1e8;
+  color: #ff7849;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+blockquote {
+  margin: 10px 0;
+  padding: 10px 16px;
+  background: #fff6ef;
+  border-left: 3px solid #ff7849;
+  border-radius: 0 6px 6px 0;
+  color: #6a3a1c;
+}
+
+.write-space {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #ffffff 0,
+    #ffffff 27px,
+    #d4d4d4 27px,
+    #d4d4d4 28px
+  );
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  min-height: 114px;
+  margin: 10px 0 20px;
+  page-break-inside: avoid;
+}
+.write-space.short { min-height: 86px; }
+.write-space.tall { min-height: 170px; }
+
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
+hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
+
+.meta { color: #666; font-size: 13px; margin: 0 0 14px; }
+.answer-lines {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 14px 16px;
+  background: #fafafa;
+  white-space: pre;
+  line-height: 2.2;
+}
+
+footer {
+  position: fixed;
+  bottom: 10mm; left: 16mm; right: 16mm;
+  text-align: center;
+  font-size: 10px;
+  color: #aaa;
+}
+footer b { color: #ff7849; }
+</style>
+</head>
+<body>
+<div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
+<h1>⭐ WD003 Week 4 — English Worksheet</h1>
+<p><strong>Topic:</strong> Hero + About — Polish · <strong>Course:</strong> Portfolio Site · <strong>Time:</strong> about 45 minutes</p>
+<p>This week you make your <strong>Hero</strong> and <strong>About</strong> sections look great. The Hero is the <strong>first impression</strong> — big text, lots of space, centered. The About section sits a photo next to your introduction, side by side. And you make both work on a <strong>phone</strong> with a media query.</p>
+<blockquote>
+<p>Two new tools this week: <strong>Flexbox</strong> (<code>display: flex</code>) to line things up, and a <strong>media query</strong> (<code>@media (max-width: 600px)</code>) to change the layout on small screens.</p>
+</blockquote>
+<h2>1 · Predict 🔮</h2>
+<p>Read each block of CSS. Before you imagine the page, write what you think will happen.</p>
+<pre><code class="language-css">#hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+</code></pre>
+<div class="qa"><p><strong><code>100vh</code> means "100% of the screen height." How big is the Hero, and where does its content sit?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-css">#about {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+</code></pre>
+<div class="qa"><p><strong>The About section has a photo and a paragraph inside it. With <code>display: flex</code>, do they sit side by side or stacked? What does <code>gap</code> do?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-css">@media (max-width: 600px) {
+  #about { flex-direction: column; }
+}
+</code></pre>
+<div class="qa"><p><strong>On a wide laptop the About content is side by side. What happens when the screen gets narrower than 600px?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>2 · Spot the Bug 🐛</h2>
+<p>Each block of CSS below was meant to do something, but it is broken. Read what the code is <strong>supposed</strong> to do, then rewrite it so it works. After that, explain why the original was wrong and why your fix works.</p>
+<p><strong>Bug A</strong> — The Hero content is supposed to be centered in the middle of the screen, but everything is stuck in the top-left corner.</p>
+<pre><code class="language-css">#hero {
+  height: 100vh;
+  display: flex;
+}
+</code></pre>
+<p><strong>Hint:</strong> flex can center, but only when you tell it to — on both axes.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug B</strong> — The About photo and paragraph are supposed to sit side by side, but they are stacked on top of each other on the laptop.</p>
+<pre><code class="language-css">#about {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+</code></pre>
+<p><strong>Hint:</strong> one of these lines forces a stack. The default flex direction is a row.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug C</strong> — On a phone, the side-by-side About layout is supposed to stack into a column so it fits. Right now the media query never triggers because the condition is backwards.</p>
+<pre><code class="language-css">@media (min-width: 600px) {
+  #about { flex-direction: column; }
+}
+</code></pre>
+<p><strong>Hint:</strong> you want this to apply on <em>small</em> screens, not big ones.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>3 · Build Your Hero + About 📸</h2>
+<p>Open your site and finish these two sections.</p>
+<ol>
+<li>Make the Hero <strong>full screen height</strong> and center your name and one-line tagline inside it.</li>
+<li>Give the Hero a background using one of your color variables.</li>
+<li>In the About section, place your <strong>photo next to your introduction</strong> with Flexbox.</li>
+<li>Add a media query so that on a narrow screen, the About content <strong>stacks</strong> and the Hero text shrinks a little.</li>
+</ol>
+<p>When you finish, open your site on a <strong>laptop and on a phone</strong> (or resize the browser window narrow). Send <strong>photos or a video</strong> of both layouts, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.</p>
+<div class="qa"><blockquote>
+<p>My Hero section says …</p>
+<p>I centered the Hero content by …</p>
+<p>In the About section, Flexbox lined up …</p>
+<p>On a phone, my layout changes by …</p>
+<p>The hardest part was …</p>
+<p>If I had more time, I would …</p>
+</blockquote>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<h2>4 · Record Your Walkthrough 🎥</h2>
+<p>Now take a video on your phone (or a parent's phone) while you show both layouts. Talk through it like you are teaching someone who has never used Flexbox. Try to use these words: <strong>Hero</strong>, <strong>Flexbox</strong>, <strong>center</strong>, <strong>media query</strong>, <strong>mobile</strong>.</p>
+<blockquote>
+<ol>
+<li>Show your Hero filling the whole screen.</li>
+<li>Show your About section side by side on a wide screen.</li>
+<li>Make the window narrow (or open it on a phone) and show the layout change.</li>
+<li>Read your media query out loud and say what makes it trigger.</li>
+</ol>
+</blockquote>
+<div class="qa"><p><strong>Write what you will say in your video.</strong> Use the space below to plan it before you record — you can read from it while filming.</p>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.</p>
+</body>
+</html>

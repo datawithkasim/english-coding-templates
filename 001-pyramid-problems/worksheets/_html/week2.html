@@ -71,6 +71,11 @@ blockquote {
 .write-space.short { min-height: 86px; }
 .write-space.tall { min-height: 170px; }
 
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
 hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
 
 .meta { color: #666; font-size: 13px; margin: 0 0 14px; }
@@ -99,30 +104,28 @@ footer b { color: #ff7849; }
 <div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
 <h1>🔁 M001 Week 2 — English Worksheet</h1>
 <p><strong>Topic:</strong> Loops · <strong>Course:</strong> Pyramid Problems · <strong>Time:</strong> about 45 minutes</p>
-<hr />
 <h2>1 · Predict 🔮</h2>
 <p>Read each set of steps. Before you imagine the agent doing it, write what you think will happen.</p>
 <pre><code>repeat 4 times:
     place block down
     move forward
 </code></pre>
-<p><strong>What does the agent build? How many blocks?</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>What does the agent build? How many blocks?</strong></p>
+<div class="write-space"></div></div>
 
 <pre><code>repeat 6 times:
     place block down
     move up by 1
 </code></pre>
-<p><strong>Is this a wall lying flat, or a tower standing up? How tall?</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>Is this a wall lying flat, or a tower standing up? How tall?</strong></p>
+<div class="write-space"></div></div>
 
 <pre><code>repeat 5 times:
     move forward
 </code></pre>
-<p><strong>Does the agent place any blocks? Where does it end up?</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>Does the agent place any blocks? Where does it end up?</strong></p>
+<div class="write-space"></div></div>
 
-<hr />
 <h2>2 · Spot the Bug 🐛</h2>
 <p>Each block of code below was meant to do something, but it is broken. Read what the code is <strong>supposed</strong> to do, then rewrite it so it works. After that, explain why the original was wrong and why your fix works.</p>
 <p><strong>Bug A</strong> — The agent is supposed to use a loop to place a row of <strong>5 blocks</strong>.</p>
@@ -136,21 +139,21 @@ place block down
 move forward
 place block down
 </code></pre>
-<p><strong>Write the fixed code using a loop:</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>Write the fixed code using a loop:</strong></p>
+<div class="write-space"></div></div>
 
-<p><strong>Why was the original code messy? Why does your loop work?</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>Why was the original code messy? Why does your loop work?</strong></p>
+<div class="write-space"></div></div>
 
 <p><strong>Bug B</strong> — The agent is supposed to build a tower <strong>5 blocks tall</strong>, with one block at each height.</p>
 <pre><code>repeat 5 times:
     place block down
 </code></pre>
-<p><strong>Write the fixed code:</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
 
-<p><strong>Why was it wrong? Why does your fix work?</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
 
 <p><strong>Bug C</strong> — The agent is supposed to build a row of 6 blocks, all in a straight line on the ground.</p>
 <pre><code>repeat 6 times:
@@ -158,17 +161,16 @@ place block down
     move forward
     turn right
 </code></pre>
-<p><strong>Write the fixed code:</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
 
-<p><strong>Why was it wrong? Why does your fix work?</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
 
-<hr />
 <h2>3 · Tell Me What You Built 📸</h2>
 <p>Now switch to your homework world. Use a loop to build a <strong>20-block straight wall</strong>. Then build a <strong>U-shaped wall</strong> (three sides). When you finish, come back here.</p>
 <p>Send a photo or video of what you built, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.</p>
-<blockquote>
+<div class="qa"><blockquote>
 <p>First, I …</p>
 <p>My loop repeated … times.</p>
 <p>Inside the loop, the agent …</p>
@@ -176,9 +178,8 @@ place block down
 <p>To fix it, I …</p>
 <p>A loop is useful because …</p>
 </blockquote>
-<div class="write-space tall" style="min-height: 340px"></div>
+<div class="write-space tall" style="min-height: 340px"></div></div>
 
-<hr />
 <h2>4 · Record Your Walkthrough 🎥</h2>
 <p>Now take a video on your phone (or a parent's phone) while you walk the camera around what you built. Talk through it like you are teaching someone who has never seen it. Try to use these words: <strong>loop</strong>, <strong>repeat</strong>, <strong>times</strong>, <strong>block</strong>, <strong>agent</strong>.</p>
 <blockquote>
@@ -189,8 +190,8 @@ place block down
 <li>Say why a loop is better than writing the same lines over and over.</li>
 </ol>
 </blockquote>
-<p><strong>Write what you will say in your video.</strong> Use the space below to plan it before you record — you can read from it while filming.</p>
-<div class="write-space tall" style="min-height: 340px"></div>
+<div class="qa"><p><strong>Write what you will say in your video.</strong> Use the space below to plan it before you record — you can read from it while filming.</p>
+<div class="write-space tall" style="min-height: 340px"></div></div>
 
 <hr />
 <h3>Submit ✅</h3>

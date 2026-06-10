@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>🏗️ WD003 Week 2 — English Worksheet</title>
+<style>
+@page { size: A4; margin: 18mm 16mm 22mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-family: "Inter", "Segoe UI", system-ui, sans-serif; color: #1a1a2e; }
+body { font-size: 15px; line-height: 1.55; }
+
+.cover { border-bottom: 3px solid #ff7849; padding-bottom: 14px; margin-bottom: 20px; }
+.brand { font-size: 14px; font-weight: 800; color: #ff7849; letter-spacing: .06em; }
+h1 { font-size: 28px; color: #6b4ee6; margin: 8px 0 6px; line-height: 1.25; }
+h2 { font-size: 19px; color: #6b4ee6; margin: 22px 0 12px; padding-top: 10px; border-top: 1px solid #eee; page-break-before: always; }
+section.first h2, h2:first-of-type { border-top: none; padding-top: 0; page-break-before: avoid; }
+h3, h4 { font-size: 15px; margin: 14px 0 8px; color: #1a1a2e; }
+p { margin: 8px 0; }
+strong { color: #1a1a2e; }
+em { color: #555; }
+
+ul, ol { margin: 8px 0 8px 24px; }
+li { margin: 3px 0; }
+
+pre {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 13.5px;
+  background: #1e1e2e;
+  color: #b9f6ca;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 10px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  page-break-inside: avoid;
+  line-height: 1.5;
+}
+pre code { background: transparent; padding: 0; color: inherit; }
+code {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  background: #fff1e8;
+  color: #ff7849;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+blockquote {
+  margin: 10px 0;
+  padding: 10px 16px;
+  background: #fff6ef;
+  border-left: 3px solid #ff7849;
+  border-radius: 0 6px 6px 0;
+  color: #6a3a1c;
+}
+
+.write-space {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #ffffff 0,
+    #ffffff 27px,
+    #d4d4d4 27px,
+    #d4d4d4 28px
+  );
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  min-height: 114px;
+  margin: 10px 0 20px;
+  page-break-inside: avoid;
+}
+.write-space.short { min-height: 86px; }
+.write-space.tall { min-height: 170px; }
+
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
+hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
+
+.meta { color: #666; font-size: 13px; margin: 0 0 14px; }
+.answer-lines {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 14px 16px;
+  background: #fafafa;
+  white-space: pre;
+  line-height: 2.2;
+}
+
+footer {
+  position: fixed;
+  bottom: 10mm; left: 16mm; right: 16mm;
+  text-align: center;
+  font-size: 10px;
+  color: #aaa;
+}
+footer b { color: #ff7849; }
+</style>
+</head>
+<body>
+<div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
+<h1>🏗️ WD003 Week 2 — English Worksheet</h1>
+<p><strong>Topic:</strong> Page Structure — HTML Sections · <strong>Course:</strong> Portfolio Site · <strong>Time:</strong> about 45 minutes</p>
+<p>This week you turn last week's paper plan into <strong>real HTML</strong>. You use meaningful tags — <code>&lt;nav&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;footer&gt;</code> — and give each section an <code>id</code> so the nav menu can jump to it. No colors yet. This week is all about <strong>structure</strong>.</p>
+<blockquote>
+<p>Remember: <code>id="about"</code> on a section, and <code>href="#about"</code> on a nav link, work as a pair. The <code>#</code> link finds the matching <code>id</code> and jumps there.</p>
+</blockquote>
+<h2>1 · Predict 🔮</h2>
+<p>Read each block of HTML. Before you imagine the page, write what you think will happen.</p>
+<pre><code class="language-html">&lt;nav&gt;
+  &lt;a href=&quot;#projects&quot;&gt;Projects&lt;/a&gt;
+&lt;/nav&gt;
+
+&lt;section id=&quot;projects&quot;&gt;
+  &lt;h2&gt;Projects&lt;/h2&gt;
+&lt;/section&gt;
+</code></pre>
+<div class="qa"><p><strong>A visitor clicks the "Projects" link. What happens, and why?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-html">&lt;section id=&quot;about&quot;&gt;
+  &lt;h2&gt;About&lt;/h2&gt;
+&lt;/section&gt;
+
+&lt;section id=&quot;contact&quot;&gt;
+  &lt;h2&gt;Contact&lt;/h2&gt;
+&lt;/section&gt;
+</code></pre>
+<div class="qa"><p><strong>There are two sections here. How does the browser know where one ends and the next begins?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-html">&lt;nav&gt;
+  &lt;a href=&quot;#hero&quot;&gt;Home&lt;/a&gt;
+  &lt;a href=&quot;#contact&quot;&gt;Contact&lt;/a&gt;
+&lt;/nav&gt;
+
+&lt;section id=&quot;hero&quot;&gt;&lt;h1&gt;Minjun&lt;/h1&gt;&lt;/section&gt;
+&lt;section id=&quot;about&quot;&gt;&lt;h2&gt;About&lt;/h2&gt;&lt;/section&gt;
+</code></pre>
+<div class="qa"><p><strong>The nav has a "Contact" link, but there is no <code>id="contact"</code> anywhere on the page. What happens when you click it?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>2 · Spot the Bug 🐛</h2>
+<p>Each block of HTML below was meant to do something, but it is broken. Read what the code is <strong>supposed</strong> to do, then rewrite it so it works. After that, explain why the original was wrong and why your fix works.</p>
+<p><strong>Bug A</strong> — The nav link is supposed to jump to the About section, but clicking it does nothing.</p>
+<pre><code class="language-html">&lt;nav&gt;
+  &lt;a href=&quot;about&quot;&gt;About&lt;/a&gt;
+&lt;/nav&gt;
+
+&lt;section id=&quot;about&quot;&gt;
+  &lt;h2&gt;About&lt;/h2&gt;
+&lt;/section&gt;
+</code></pre>
+<p><strong>Hint:</strong> an <code>id</code> link needs one small symbol in front.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug B</strong> — Each section is supposed to have a <em>different</em> <code>id</code> so the nav can tell them apart. Right now two sections share the same one.</p>
+<pre><code class="language-html">&lt;section id=&quot;section&quot;&gt;
+  &lt;h2&gt;About&lt;/h2&gt;
+&lt;/section&gt;
+
+&lt;section id=&quot;section&quot;&gt;
+  &lt;h2&gt;Projects&lt;/h2&gt;
+&lt;/section&gt;
+</code></pre>
+<p><strong>Hint:</strong> an <code>id</code> is a name. Two things should not share the same name.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug C</strong> — This page is supposed to have a navigation bar, but the link is floating loose with no <code>&lt;nav&gt;</code> around it, and the section never closes.</p>
+<pre><code class="language-html">&lt;a href=&quot;#hero&quot;&gt;Home&lt;/a&gt;
+
+&lt;section id=&quot;hero&quot;&gt;
+  &lt;h1&gt;My Name&lt;/h1&gt;
+</code></pre>
+<p><strong>Hint:</strong> wrap the link, and close the tag you opened.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>3 · Build Your Sections 📸</h2>
+<p>Open your editor and build the <strong>five sections</strong> from your Week 1 plan as real HTML. No design yet — placeholder text is fine.</p>
+<ol>
+<li>Add a <code>&lt;nav&gt;</code> with four links: Home, About, Projects, Contact.</li>
+<li>Add five blocks: a Hero <code>&lt;section&gt;</code>, an About <code>&lt;section&gt;</code>, a Projects <code>&lt;section&gt;</code>, a Contact <code>&lt;section&gt;</code>, and a <code>&lt;footer&gt;</code>.</li>
+<li>Give each section a matching <code>id</code> so the nav links jump to them.</li>
+<li>Put a placeholder heading in each section so you can see where you are.</li>
+</ol>
+<p>When you finish, click each nav link and watch the page jump. Send a <strong>photo or video</strong> of your result (the page, or your code), then explain what you did. Use these sentence starters — write 4 to 6 sentences total.</p>
+<div class="qa"><blockquote>
+<p>First, I looked at my Week 1 plan and …</p>
+<p>I gave each section an <code>id</code> so that …</p>
+<p>When I clicked a nav link, the page …</p>
+<p>One link did not work at first because …</p>
+<p>To fix it, I …</p>
+<p>Next week I want to start on …</p>
+</blockquote>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<h2>4 · Record Your Walkthrough 🎥</h2>
+<p>Now take a video on your phone (or a parent's phone) while you click through your page. Talk through it like you are teaching someone who has never seen HTML. Try to use these words: <strong>section</strong>, <strong>nav</strong>, <strong>id</strong>, <strong>link</strong>, <strong>footer</strong>.</p>
+<blockquote>
+<ol>
+<li>Show your page from top to bottom.</li>
+<li>Click a nav link and show the page jumping to that section.</li>
+<li>Read one section's <code>id</code> and the matching <code>href</code> out loud, and say how they pair up.</li>
+<li>Show one bug you hit and how you fixed it.</li>
+</ol>
+</blockquote>
+<div class="qa"><p><strong>Write what you will say in your video.</strong> Use the space below to plan it before you record — you can read from it while filming.</p>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.</p>
+</body>
+</html>

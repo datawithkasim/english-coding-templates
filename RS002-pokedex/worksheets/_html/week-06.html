@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>🔴 RS002 Week 6 — English Worksheet</title>
+<style>
+@page { size: A4; margin: 18mm 16mm 22mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-family: "Inter", "Segoe UI", system-ui, sans-serif; color: #1a1a2e; }
+body { font-size: 15px; line-height: 1.55; }
+
+.cover { border-bottom: 3px solid #ff7849; padding-bottom: 14px; margin-bottom: 20px; }
+.brand { font-size: 14px; font-weight: 800; color: #ff7849; letter-spacing: .06em; }
+h1 { font-size: 28px; color: #6b4ee6; margin: 8px 0 6px; line-height: 1.25; }
+h2 { font-size: 19px; color: #6b4ee6; margin: 22px 0 12px; padding-top: 10px; border-top: 1px solid #eee; page-break-before: always; }
+section.first h2, h2:first-of-type { border-top: none; padding-top: 0; page-break-before: avoid; }
+h3, h4 { font-size: 15px; margin: 14px 0 8px; color: #1a1a2e; }
+p { margin: 8px 0; }
+strong { color: #1a1a2e; }
+em { color: #555; }
+
+ul, ol { margin: 8px 0 8px 24px; }
+li { margin: 3px 0; }
+
+pre {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 13.5px;
+  background: #1e1e2e;
+  color: #b9f6ca;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 10px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  page-break-inside: avoid;
+  line-height: 1.5;
+}
+pre code { background: transparent; padding: 0; color: inherit; }
+code {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  background: #fff1e8;
+  color: #ff7849;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+blockquote {
+  margin: 10px 0;
+  padding: 10px 16px;
+  background: #fff6ef;
+  border-left: 3px solid #ff7849;
+  border-radius: 0 6px 6px 0;
+  color: #6a3a1c;
+}
+
+.write-space {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #ffffff 0,
+    #ffffff 27px,
+    #d4d4d4 27px,
+    #d4d4d4 28px
+  );
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  min-height: 114px;
+  margin: 10px 0 20px;
+  page-break-inside: avoid;
+}
+.write-space.short { min-height: 86px; }
+.write-space.tall { min-height: 170px; }
+
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
+hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
+
+.meta { color: #666; font-size: 13px; margin: 0 0 14px; }
+.answer-lines {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 14px 16px;
+  background: #fafafa;
+  white-space: pre;
+  line-height: 2.2;
+}
+
+footer {
+  position: fixed;
+  bottom: 10mm; left: 16mm; right: 16mm;
+  text-align: center;
+  font-size: 10px;
+  color: #aaa;
+}
+footer b { color: #ff7849; }
+</style>
+</head>
+<body>
+<div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
+<h1>🔴 RS002 Week 6 — English Worksheet</h1>
+<p><strong>Topic:</strong> Partial-Match Search (KR/EN) — <code>in</code> inside a Loop · <strong>Course:</strong> Pokédex App · <strong>Time:</strong> about 45 minutes</p>
+<p>This week your search gets smart. Typing just <code>피카</code> should still find <code>피카츄</code>. You use the <code>in</code> keyword to check <strong>partial matches</strong>, loop over the whole dex, and support <strong>both Korean and English</strong> names at once.</p>
+<h2>1 · Recall 🧠</h2>
+<p>From memory:</p>
+<div class="qa"><p><strong>Write the line that reads a search word from the user and cleans it with both <code>.strip()</code> and <code>.lower()</code>.</strong></p>
+<div class="write-space"></div></div>
+
+<h2>2 · Predict 🔮</h2>
+<p>Read each block. Before you run it, write what you think will happen.</p>
+<pre><code class="language-python">print(&quot;피카&quot; in &quot;피카츄&quot;)
+print(&quot;츄&quot; in &quot;피카츄&quot;)
+print(&quot;리자몽&quot; in &quot;피카츄&quot;)
+</code></pre>
+<div class="qa"><p><strong><code>in</code> checks if the small text is <em>inside</em> the big text. Write <code>True</code> or <code>False</code> for each line.</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-python">names_kr = [&quot;피카츄&quot;, &quot;이상해씨&quot;, &quot;파이리&quot;]
+search = &quot;이상&quot;
+
+for name in names_kr:
+    if search in name:
+        print(name)
+</code></pre>
+<div class="qa"><p><strong>Which names get printed? Why?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-python">names_en = [&quot;pikachu&quot;, &quot;bulbasaur&quot;, &quot;charmander&quot;]
+search = &quot;CHAR&quot;.lower()
+
+for name in names_en:
+    if search in name.lower():
+        print(name)
+</code></pre>
+<div class="qa"><p><strong>The search is lowered, and each name is lowered before checking. Which name matches?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>3 · Spot the Bug 🐛</h2>
+<p>Read what each block is <strong>supposed</strong> to do, fix it, then explain the fix.</p>
+<p><strong>Bug A</strong> — This should find any name <strong>containing</strong> the search word. Right now it only matches an <strong>exact</strong> full name.</p>
+<pre><code class="language-python">names = [&quot;피카츄&quot;, &quot;이상해씨&quot;, &quot;파이리&quot;]
+search = input(&quot;검색: &quot;).strip()
+
+for name in names:
+    if search == name:
+        print(name)
+</code></pre>
+<p><strong>Hint:</strong> swap the exact-match check for a partial-match check.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug B</strong> — This should match English names no matter the capitals. Typing <code>CHAR</code> finds nothing.</p>
+<pre><code class="language-python">names_en = [&quot;pikachu&quot;, &quot;bulbasaur&quot;, &quot;charmander&quot;]
+search = input(&quot;search: &quot;).strip()
+
+for name in names_en:
+    if search in name:
+        print(name)
+</code></pre>
+<p><strong>Hint:</strong> lower <strong>both</strong> the search word and each name before comparing.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug C</strong> — When nothing matches, this should tell the user. Right now it prints nothing at all and looks broken.</p>
+<pre><code class="language-python">names = [&quot;피카츄&quot;, &quot;이상해씨&quot;, &quot;파이리&quot;]
+search = input(&quot;검색: &quot;).strip().lower()
+
+for name in names:
+    if search in name.lower():
+        print(name)
+</code></pre>
+<p><strong>Hint:</strong> count matches with a <code>found_count</code> variable, and print a message if it stays <code>0</code>.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>4 · Modify It ✏️</h2>
+<p>Start from this working bilingual search:</p>
+<pre><code class="language-python">names_kr = [&quot;피카츄&quot;, &quot;이상해씨&quot;, &quot;파이리&quot;, &quot;꼬부기&quot;]
+names_en = [&quot;pikachu&quot;, &quot;bulbasaur&quot;, &quot;charmander&quot;, &quot;squirtle&quot;]
+types = [&quot;전기&quot;, &quot;풀&quot;, &quot;불&quot;, &quot;물&quot;]
+hp = [35, 45, 39, 44]
+
+search = input(&quot;\n포켓몬 검색 (한국어/영어, 부분 입력 OK): &quot;).strip().lower()
+
+found_count = 0
+for i in range(len(names_kr)):
+    if search in names_kr[i] or search in names_en[i].lower():
+        print(f&quot;  #{i+1}  {names_kr[i]} ({names_en[i]})  타입:{types[i]}  HP:{hp[i]}&quot;)
+        found_count = found_count + 1
+
+if found_count == 0:
+    print(f&quot;  '{search}' 와 일치하는 포켓몬이 없습니다.&quot;)
+else:
+    print(f&quot;\n총 {found_count}마리 발견!&quot;)
+</code></pre>
+<p>Make these changes one at a time and run after each:</p>
+<ol>
+<li>Add one more Pokémon to all four lists and test searching for it in both Korean and English.</li>
+<li>Make the search also match the <strong>type</strong> (so typing <code>전기</code> lists all electric Pokémon).</li>
+<li>Change the "not found" message to suggest checking the spelling.</li>
+</ol>
+<div class="qa"><p><strong>Write your changed / added lines here:</strong></p>
+<div class="write-space"></div></div>
+
+<h2>5 · Make It 📸</h2>
+<p>Add <strong>partial KR/EN search</strong> to your own Pokédex. Typing part of a name in either language should list every match, with a clear message when nothing matches.</p>
+<p>When it works, send a <strong>photo or video</strong> on KakaoTalk showing <strong>three different searches</strong> (a Korean partial, an English partial, and one with no match). Then explain what you did. Use these starters — write 4 to 6 sentences.</p>
+<div class="qa"><blockquote>
+<p>First, I kept two parallel name lists for …</p>
+<p>The <code>in</code> keyword let me match …</p>
+<p>I supported both languages by …</p>
+<p>I knew nothing matched when …</p>
+<p>The trickiest part was …</p>
+<p>Partial search is friendlier than exact search because …</p>
+</blockquote>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<h2>6 · Record Your Walkthrough 🎥</h2>
+<p>Film your search running. Teach it like the viewer is new. Try to use: <strong>in</strong>, <strong>partial match</strong>, <strong>loop</strong>, <strong>bilingual</strong>, <strong>found count</strong>.</p>
+<blockquote>
+<ol>
+<li>Search <code>피카</code> and show it finds 피카츄.</li>
+<li>Search an English partial and show it works.</li>
+<li>Read the line with <code>or</code> out loud and explain why two checks are needed.</li>
+<li>Search something fake and show the "not found" message.</li>
+</ol>
+</blockquote>
+<div class="qa"><p><strong>Plan what you will say here first:</strong></p>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+</content></p>
+</body>
+</html>

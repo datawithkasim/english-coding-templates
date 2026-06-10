@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>🏆 RS001 Week 16 — English Worksheet</title>
+<style>
+@page { size: A4; margin: 18mm 16mm 22mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-family: "Inter", "Segoe UI", system-ui, sans-serif; color: #1a1a2e; }
+body { font-size: 15px; line-height: 1.55; }
+
+.cover { border-bottom: 3px solid #ff7849; padding-bottom: 14px; margin-bottom: 20px; }
+.brand { font-size: 14px; font-weight: 800; color: #ff7849; letter-spacing: .06em; }
+h1 { font-size: 28px; color: #6b4ee6; margin: 8px 0 6px; line-height: 1.25; }
+h2 { font-size: 19px; color: #6b4ee6; margin: 22px 0 12px; padding-top: 10px; border-top: 1px solid #eee; page-break-before: always; }
+section.first h2, h2:first-of-type { border-top: none; padding-top: 0; page-break-before: avoid; }
+h3, h4 { font-size: 15px; margin: 14px 0 8px; color: #1a1a2e; }
+p { margin: 8px 0; }
+strong { color: #1a1a2e; }
+em { color: #555; }
+
+ul, ol { margin: 8px 0 8px 24px; }
+li { margin: 3px 0; }
+
+pre {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 13.5px;
+  background: #1e1e2e;
+  color: #b9f6ca;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 10px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  page-break-inside: avoid;
+  line-height: 1.5;
+}
+pre code { background: transparent; padding: 0; color: inherit; }
+code {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  background: #fff1e8;
+  color: #ff7849;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+blockquote {
+  margin: 10px 0;
+  padding: 10px 16px;
+  background: #fff6ef;
+  border-left: 3px solid #ff7849;
+  border-radius: 0 6px 6px 0;
+  color: #6a3a1c;
+}
+
+.write-space {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #ffffff 0,
+    #ffffff 27px,
+    #d4d4d4 27px,
+    #d4d4d4 28px
+  );
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  min-height: 114px;
+  margin: 10px 0 20px;
+  page-break-inside: avoid;
+}
+.write-space.short { min-height: 86px; }
+.write-space.tall { min-height: 170px; }
+
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
+hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
+
+.meta { color: #666; font-size: 13px; margin: 0 0 14px; }
+.answer-lines {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 14px 16px;
+  background: #fafafa;
+  white-space: pre;
+  line-height: 2.2;
+}
+
+footer {
+  position: fixed;
+  bottom: 10mm; left: 16mm; right: 16mm;
+  text-align: center;
+  font-size: 10px;
+  color: #aaa;
+}
+footer b { color: #ff7849; }
+</style>
+</head>
+<body>
+<div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
+<h1>🏆 RS001 Week 16 — English Worksheet</h1>
+<p><strong>Topic:</strong> Everything Together — The Finished Game · <strong>Course:</strong> Text Adventure (Python) · <strong>Time:</strong> about 60 minutes</p>
+<p>This is the final week. You bring together <strong>every</strong> idea from weeks 1–15 into one game: variables, lists, cleaned and validated input, branching, battle functions, randomness, an inventory, and a score-based ending. Then you present it.</p>
+<pre><code class="language-python">if score == 3 and &quot;golden key&quot; in backpack and &quot;gem&quot; in backpack:
+    ending = &quot;King ending — every secret and treasure is yours!&quot;
+elif score == 3 and (&quot;golden key&quot; in backpack or &quot;map&quot; in backpack):
+    ending = &quot;Sage ending — you solved the riddles and found the way.&quot;
+</code></pre>
+<h2>1 · Predict 🔮</h2>
+<p>Read each piece of code. Before you run it in your head, write what you think happens.</p>
+<pre><code class="language-python">backpack = [&quot;sword&quot;, &quot;map&quot;]
+if &quot;map&quot; in backpack:
+    game.say(&quot;You unfold the map.&quot;)
+else:
+    game.say(&quot;You are lost.&quot;)
+</code></pre>
+<div class="qa"><p><strong>Which message appears?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-python">score = 3
+backpack = [&quot;golden key&quot;]
+if score == 3 and &quot;golden key&quot; in backpack:
+    game.say(&quot;Best ending!&quot;)
+else:
+    game.say(&quot;Another ending.&quot;)
+</code></pre>
+<div class="qa"><p><strong><code>and</code> needs both sides true. Which message appears?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-python">score = 3
+backpack = [&quot;map&quot;]
+if score == 3 and (&quot;golden key&quot; in backpack or &quot;map&quot; in backpack):
+    game.say(&quot;Sage ending&quot;)
+</code></pre>
+<div class="qa"><p><strong><code>or</code> needs only one side true. Does the sage ending print? Why?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>2 · Spot the Bug 🐛</h2>
+<p>Each block was meant to do something, but it is broken. Read what it is <strong>supposed</strong> to do, fix it, then explain why the original was wrong.</p>
+<p><strong>Bug A</strong> — A reward won in battle should be added to the inventory. Right now the reward is named but never goes into the backpack.</p>
+<pre><code class="language-python">backpack = [&quot;sword&quot;]
+reward = &quot;golden key&quot;
+game.say(f&quot;You won a {reward}!&quot;)
+game.say(f&quot;Bag: {backpack}&quot;)
+</code></pre>
+<p><strong>Hint:</strong> use <code>backpack.append(reward)</code> to add it.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug B</strong> — The best ending should need <strong>both</strong> a perfect score <strong>and</strong> the golden key. Right now it uses <code>or</code>, so it fires too easily.</p>
+<pre><code class="language-python">score = 1
+backpack = [&quot;golden key&quot;]
+if score == 3 or &quot;golden key&quot; in backpack:
+    game.say(&quot;King ending — perfect run!&quot;)
+else:
+    game.say(&quot;A smaller ending.&quot;)
+</code></pre>
+<p><strong>Hint:</strong> swap <code>or</code> for <code>and</code> so both conditions must be true.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug C</strong> — The endings should be checked from <strong>best to worst</strong>, so the rarest one is found first. Right now a low-bar ending is checked first and steals every player.</p>
+<pre><code class="language-python">if score &gt;= 1:
+    ending = &quot;Adventurer ending&quot;
+elif score == 3 and &quot;golden key&quot; in backpack:
+    ending = &quot;King ending&quot;
+game.say(ending)
+</code></pre>
+<p><strong>Hint:</strong> put the strictest condition (the King ending) at the top.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>3 · 🎯 Finish Your Game</h2>
+<p>Open your game. Make sure all the pieces are connected into one flow, start to finish:</p>
+<ul>
+<li>a hero built from variables,</li>
+<li>a cleaned, validated path choice,</li>
+<li>at least one battle using your <code>fight()</code> function,</li>
+<li>some randomness (enemy, reward, or encounter),</li>
+<li>an inventory the player fills,</li>
+<li>a score from riddles,</li>
+<li>a final ending chosen with <code>and</code> / <code>or</code> from the score and the inventory.</li>
+</ul>
+<p>Then play it all the way through at least once. When it works, send a <strong>photo or video</strong>, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.</p>
+<div class="qa"><blockquote>
+<p>First, I made sure my game flowed from the opening to …</p>
+<p>The piece I am proudest of is …</p>
+<p>My endings split based on …</p>
+<p>The hardest bug to fix was …</p>
+<p>To fix it, I …</p>
+<p>If I had more time, I would …</p>
+</blockquote>
+<div class="write-space tall" style="min-height: 380px"></div></div>
+
+<h2>4 · Record Your Presentation 🎥</h2>
+<p>Record a full play-through on your phone (or a parent's phone) and present your game. Teach it like the viewer has never coded. Try to use these words: <strong>variable</strong>, <strong>function</strong>, <strong>random</strong>, <strong>inventory</strong>, <strong>ending</strong>.</p>
+<blockquote>
+<ol>
+<li>Play your game from start to finish.</li>
+<li>Show one or two pieces of code you are most proud of and say what they do.</li>
+<li>Tell us the hardest bug you hit and how you solved it.</li>
+<li>Say one thing you would change if you built it again.</li>
+</ol>
+</blockquote>
+<div class="qa"><p><strong>Write what you will say in your presentation.</strong> Plan it here first — you can read from it while filming.</p>
+<div class="write-space tall" style="min-height: 380px"></div></div>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your full play-through video (and your code) to teacher on KakaoTalk.</p>
+</body>
+</html>

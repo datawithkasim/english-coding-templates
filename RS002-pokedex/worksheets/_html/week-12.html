@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>🔴 RS002 Week 12 — English Worksheet</title>
+<style>
+@page { size: A4; margin: 18mm 16mm 22mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-family: "Inter", "Segoe UI", system-ui, sans-serif; color: #1a1a2e; }
+body { font-size: 15px; line-height: 1.55; }
+
+.cover { border-bottom: 3px solid #ff7849; padding-bottom: 14px; margin-bottom: 20px; }
+.brand { font-size: 14px; font-weight: 800; color: #ff7849; letter-spacing: .06em; }
+h1 { font-size: 28px; color: #6b4ee6; margin: 8px 0 6px; line-height: 1.25; }
+h2 { font-size: 19px; color: #6b4ee6; margin: 22px 0 12px; padding-top: 10px; border-top: 1px solid #eee; page-break-before: always; }
+section.first h2, h2:first-of-type { border-top: none; padding-top: 0; page-break-before: avoid; }
+h3, h4 { font-size: 15px; margin: 14px 0 8px; color: #1a1a2e; }
+p { margin: 8px 0; }
+strong { color: #1a1a2e; }
+em { color: #555; }
+
+ul, ol { margin: 8px 0 8px 24px; }
+li { margin: 3px 0; }
+
+pre {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 13.5px;
+  background: #1e1e2e;
+  color: #b9f6ca;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 10px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  page-break-inside: avoid;
+  line-height: 1.5;
+}
+pre code { background: transparent; padding: 0; color: inherit; }
+code {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  background: #fff1e8;
+  color: #ff7849;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+blockquote {
+  margin: 10px 0;
+  padding: 10px 16px;
+  background: #fff6ef;
+  border-left: 3px solid #ff7849;
+  border-radius: 0 6px 6px 0;
+  color: #6a3a1c;
+}
+
+.write-space {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #ffffff 0,
+    #ffffff 27px,
+    #d4d4d4 27px,
+    #d4d4d4 28px
+  );
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  min-height: 114px;
+  margin: 10px 0 20px;
+  page-break-inside: avoid;
+}
+.write-space.short { min-height: 86px; }
+.write-space.tall { min-height: 170px; }
+
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
+hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
+
+.meta { color: #666; font-size: 13px; margin: 0 0 14px; }
+.answer-lines {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 14px 16px;
+  background: #fafafa;
+  white-space: pre;
+  line-height: 2.2;
+}
+
+footer {
+  position: fixed;
+  bottom: 10mm; left: 16mm; right: 16mm;
+  text-align: center;
+  font-size: 10px;
+  color: #aaa;
+}
+footer b { color: #ff7849; }
+</style>
+</head>
+<body>
+<div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
+<h1>🔴 RS002 Week 12 — English Worksheet</h1>
+<p><strong>Topic:</strong> Refactor the Whole App into Functions · <strong>Course:</strong> Pokédex App · <strong>Time:</strong> about 45 minutes</p>
+<p>This week you tidy everything. All those lines you wrote one by one over the last 11 weeks get grouped into <strong>named functions</strong>, and your main code shrinks to a short <strong>menu loop</strong> that just <em>calls</em> them. This is called <strong>refactoring</strong> — same behaviour, cleaner shape.</p>
+<h2>1 · Recall 🧠</h2>
+<p>From memory:</p>
+<div class="qa"><p><strong>Write a function <code>count_dex(pokedex)</code> that returns how many Pokémon are in the list.</strong></p>
+<div class="write-space"></div></div>
+
+<h2>2 · Predict 🔮</h2>
+<p>Read each block. Before you run it, write what you think will happen.</p>
+<pre><code class="language-python">def show_menu():
+    print(&quot;1. 도감 보기&quot;)
+    print(&quot;2. 종료&quot;)
+
+show_menu()
+choice = input(&quot;선택: &quot;).strip()
+print(f&quot;고른 메뉴: {choice}&quot;)
+</code></pre>
+<div class="qa"><p><strong>The user types <code>1</code>. What is printed in total?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-python">while True:
+    cmd = input(&quot;명령 (q로 종료): &quot;).strip()
+    if cmd == &quot;q&quot;:
+        break
+    print(f&quot;입력: {cmd}&quot;)
+</code></pre>
+<div class="qa"><p><strong>The user types <code>a</code>, then <code>b</code>, then <code>q</code>. What does each round do, and when does it stop?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-python">trainer = input(&quot;이름: &quot;).strip() or &quot;이름 모를 트레이너&quot;
+print(trainer)
+</code></pre>
+<div class="qa"><p><strong>The user presses Enter without typing. What prints? What does <code>or</code> do here?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>3 · Spot the Bug 🐛</h2>
+<p>Read what each block is <strong>supposed</strong> to do, fix it, then explain the fix.</p>
+<p><strong>Bug A</strong> — A function must be <strong>defined above</strong> where it is called. Right now <code>show_menu</code> is called before it exists, so the program crashes.</p>
+<pre><code class="language-python">show_menu()
+
+def show_menu():
+    print(&quot;=== 메뉴 ===&quot;)
+</code></pre>
+<p><strong>Hint:</strong> move the definition above the call.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug B</strong> — This menu loop should keep running until the user picks <code>3</code>. Right now it runs once and stops.</p>
+<pre><code class="language-python">choice = input(&quot;선택: &quot;).strip()
+if choice == &quot;1&quot;:
+    print(&quot;도감 보기&quot;)
+elif choice == &quot;3&quot;:
+    print(&quot;종료&quot;)
+</code></pre>
+<p><strong>Hint:</strong> wrap it in <code>while True:</code> and <code>break</code> on <code>3</code>.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug C</strong> — When the user types something that is not a menu number, the app should say so. Right now an unknown choice silently does nothing.</p>
+<pre><code class="language-python">while True:
+    choice = input(&quot;선택: &quot;).strip()
+    if choice == &quot;1&quot;:
+        print(&quot;도감 보기&quot;)
+    elif choice == &quot;2&quot;:
+        break
+</code></pre>
+<p><strong>Hint:</strong> add an <code>else</code> for unknown input.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>4 · Modify It ✏️</h2>
+<p>Start from this working function-based app:</p>
+<pre><code class="language-python">def show_intro(trainer_name):
+    print(f&quot;\n=== 포켓몬 도감 ===&quot;)
+    print(f&quot;환영합니다, {trainer_name} 트레이너님!\n&quot;)
+
+def show_menu():
+    print(&quot;\n--- 메뉴 ---&quot;)
+    print(&quot;1. 도감 보기&quot;)
+    print(&quot;2. 포켓몬 검색&quot;)
+    print(&quot;3. 종료&quot;)
+
+def list_all(pokedex):
+    for p in pokedex:
+        print(f&quot;  {p['name']}  타입:{p['type']}  HP:{p['hp']}&quot;)
+
+def search_pokemon(pokedex):
+    keyword = input(&quot;검색어: &quot;).strip().lower()
+    matches = [p for p in pokedex if keyword in p[&quot;name&quot;].lower()]
+    if matches:
+        for p in matches:
+            print(f&quot;  {p['name']} ({p['type']})&quot;)
+    else:
+        print(&quot;검색 결과 없음&quot;)
+
+pokedex = [
+    {&quot;name&quot;: &quot;피카츄&quot;, &quot;type&quot;: &quot;전기&quot;, &quot;hp&quot;: 35},
+    {&quot;name&quot;: &quot;이상해씨&quot;, &quot;type&quot;: &quot;풀&quot;, &quot;hp&quot;: 45},
+]
+
+trainer = input(&quot;트레이너 이름: &quot;).strip() or &quot;이름 모를 트레이너&quot;
+show_intro(trainer)
+
+while True:
+    show_menu()
+    choice = input(&quot;선택: &quot;).strip()
+    if choice == &quot;1&quot;:
+        list_all(pokedex)
+    elif choice == &quot;2&quot;:
+        search_pokemon(pokedex)
+    elif choice == &quot;3&quot;:
+        print(&quot;또 만나요!&quot;)
+        break
+    else:
+        print(&quot;1~3 중에서 골라주세요.&quot;)
+</code></pre>
+<p>Make these changes one at a time and run after each:</p>
+<ol>
+<li>Add a new menu option <code>4. 포켓몬 수 보기</code> that prints <code>len(pokedex)</code>.</li>
+<li>Move the dex count into its own function and call it from the menu.</li>
+<li>Make the intro show how many Pokémon are registered.</li>
+</ol>
+<div class="qa"><p><strong>Write your changed / added lines here:</strong></p>
+<div class="write-space"></div></div>
+
+<h2>5 · Make It 📸</h2>
+<p>Refactor your <strong>whole Week 11 app</strong> so the main code is a short <strong>menu loop</strong> that only calls functions. Aim for a main section under ~10 lines. Every action (list, search, show) lives in its own function.</p>
+<p>When it works, send a <strong>video</strong> on KakaoTalk and tell us <strong>how many functions</strong> you made. Then explain what you did. Use these starters — write 4 to 6 sentences.</p>
+<div class="qa"><blockquote>
+<p>First, I grouped my code into functions called …</p>
+<p>My main loop now only …</p>
+<p>I made … functions in total.</p>
+<p>Functions must be defined before they are called because …</p>
+<p>The trickiest part was …</p>
+<p>Refactoring did not change what the app does, but it …</p>
+</blockquote>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<h2>6 · Record Your Walkthrough 🎥</h2>
+<p>Film it running. Teach it like the viewer is new. Try to use: <strong>refactor</strong>, <strong>function</strong>, <strong>menu loop</strong>, <strong>call</strong>, <strong>break</strong>.</p>
+<blockquote>
+<ol>
+<li>Run the menu and try every option, including quit.</li>
+<li>Scroll to your main loop and show how short it is.</li>
+<li>Point to one function and explain what the loop <em>calls</em>.</li>
+<li>Say why a short main loop is easier to read and fix.</li>
+</ol>
+</blockquote>
+<div class="qa"><p><strong>Plan what you will say here first:</strong></p>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+</content></p>
+</body>
+</html>

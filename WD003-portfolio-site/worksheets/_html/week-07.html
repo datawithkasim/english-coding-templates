@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>✉️ WD003 Week 7 — English Worksheet</title>
+<style>
+@page { size: A4; margin: 18mm 16mm 22mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-family: "Inter", "Segoe UI", system-ui, sans-serif; color: #1a1a2e; }
+body { font-size: 15px; line-height: 1.55; }
+
+.cover { border-bottom: 3px solid #ff7849; padding-bottom: 14px; margin-bottom: 20px; }
+.brand { font-size: 14px; font-weight: 800; color: #ff7849; letter-spacing: .06em; }
+h1 { font-size: 28px; color: #6b4ee6; margin: 8px 0 6px; line-height: 1.25; }
+h2 { font-size: 19px; color: #6b4ee6; margin: 22px 0 12px; padding-top: 10px; border-top: 1px solid #eee; page-break-before: always; }
+section.first h2, h2:first-of-type { border-top: none; padding-top: 0; page-break-before: avoid; }
+h3, h4 { font-size: 15px; margin: 14px 0 8px; color: #1a1a2e; }
+p { margin: 8px 0; }
+strong { color: #1a1a2e; }
+em { color: #555; }
+
+ul, ol { margin: 8px 0 8px 24px; }
+li { margin: 3px 0; }
+
+pre {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 13.5px;
+  background: #1e1e2e;
+  color: #b9f6ca;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 10px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  page-break-inside: avoid;
+  line-height: 1.5;
+}
+pre code { background: transparent; padding: 0; color: inherit; }
+code {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  background: #fff1e8;
+  color: #ff7849;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+blockquote {
+  margin: 10px 0;
+  padding: 10px 16px;
+  background: #fff6ef;
+  border-left: 3px solid #ff7849;
+  border-radius: 0 6px 6px 0;
+  color: #6a3a1c;
+}
+
+.write-space {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #ffffff 0,
+    #ffffff 27px,
+    #d4d4d4 27px,
+    #d4d4d4 28px
+  );
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  min-height: 114px;
+  margin: 10px 0 20px;
+  page-break-inside: avoid;
+}
+.write-space.short { min-height: 86px; }
+.write-space.tall { min-height: 170px; }
+
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
+hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
+
+.meta { color: #666; font-size: 13px; margin: 0 0 14px; }
+.answer-lines {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 14px 16px;
+  background: #fafafa;
+  white-space: pre;
+  line-height: 2.2;
+}
+
+footer {
+  position: fixed;
+  bottom: 10mm; left: 16mm; right: 16mm;
+  text-align: center;
+  font-size: 10px;
+  color: #aaa;
+}
+footer b { color: #ff7849; }
+</style>
+</head>
+<body>
+<div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
+<h1>✉️ WD003 Week 7 — English Worksheet</h1>
+<p><strong>Topic:</strong> Contact Form + Smooth Scroll · <strong>Course:</strong> Portfolio Site · <strong>Time:</strong> about 45 minutes</p>
+<p>This week you add a <strong>contact form</strong> and <strong>smooth scrolling</strong>. The form has a name field and a message field. When the visitor clicks Send, JavaScript stops the page from reloading, hides the form, and shows a thank-you message. And one line of CSS makes your nav links glide instead of jumping.</p>
+<blockquote>
+<p><code>event.preventDefault()</code> stops the form's default behavior (reloading the page) so <em>your</em> code can run instead. <code>scroll-behavior: smooth</code> on <code>html</code> makes <code>#</code> links glide.</p>
+</blockquote>
+<h2>1 · Predict 🔮</h2>
+<p>Read each block of code. Before you imagine the page, write what you think will happen.</p>
+<pre><code class="language-css">html { scroll-behavior: smooth; }
+</code></pre>
+<div class="qa"><p><strong>A visitor clicks a nav link that points to <code>#contact</code>. How is the scroll different now compared to before this line?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-js">form.addEventListener(&quot;submit&quot;, function(event) {
+  event.preventDefault();
+  form.style.display = &quot;none&quot;;
+  thanks.style.display = &quot;block&quot;;
+});
+</code></pre>
+<div class="qa"><p><strong>The visitor fills in the form and clicks Send. List, in order, what happens on the page.</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-html">&lt;input type=&quot;text&quot; id=&quot;contactName&quot; placeholder=&quot;Name&quot; required&gt;
+</code></pre>
+<div class="qa"><p><strong>The visitor leaves this field empty and clicks Send. What does <code>required</code> do?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>2 · Spot the Bug 🐛</h2>
+<p>Each block of code below was meant to do something, but it is broken. Read what the code is <strong>supposed</strong> to do, then rewrite it so it works. After that, explain why the original was wrong and why your fix works.</p>
+<p><strong>Bug A</strong> — When the form is submitted, the page is supposed to stay put and show a thank-you message. Right now the whole page reloads and nothing seems to happen.</p>
+<pre><code class="language-js">form.addEventListener(&quot;submit&quot;, function(event) {
+  form.style.display = &quot;none&quot;;
+  thanks.style.display = &quot;block&quot;;
+});
+</code></pre>
+<p><strong>Hint:</strong> the form's default action is reloading. One line stops it.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug B</strong> — The thank-you message is supposed to be hidden until the form is sent, then appear. Right now it shows from the very start.</p>
+<pre><code class="language-html">&lt;p id=&quot;thanks&quot;&gt;Thanks, your message has been sent!&lt;/p&gt;
+</code></pre>
+<p><strong>Hint:</strong> it needs to start hidden, and your JavaScript will reveal it later.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug C</strong> — Smooth scrolling is supposed to apply to the whole page when nav links are clicked. Right now it is set on the wrong thing, so nothing glides.</p>
+<pre><code class="language-css">button { scroll-behavior: smooth; }
+</code></pre>
+<p><strong>Hint:</strong> smooth scrolling belongs on the page itself, not on a button.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>3 · Build Your Contact Form 📸</h2>
+<p>Open your site and finish the Contact section.</p>
+<ol>
+<li>Build a <code>&lt;form&gt;</code> with a <strong>name</strong> <code>&lt;input&gt;</code>, a <strong>message</strong> <code>&lt;textarea&gt;</code>, and a Send <code>&lt;button&gt;</code>.</li>
+<li>Add a thank-you <code>&lt;p&gt;</code> that <strong>starts hidden</strong>.</li>
+<li>In JavaScript, handle the form's <code>submit</code>: call <code>event.preventDefault()</code>, hide the form, and show the thank-you message.</li>
+<li>Add <code>scroll-behavior: smooth</code> to <code>html</code> and click your nav links to feel the difference.</li>
+</ol>
+<p>When you finish, send <strong>photos or a video</strong> of the form before and after you submit it, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.</p>
+<div class="qa"><blockquote>
+<p>My contact form has fields for …</p>
+<p>When I click Send, <code>event.preventDefault()</code> stops …</p>
+<p>After submitting, the form …</p>
+<p>Smooth scroll made my nav links …</p>
+<p>The hardest part was …</p>
+<p>If I had more time, I would …</p>
+</blockquote>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<h2>4 · Record Your Walkthrough 🎥</h2>
+<p>Now take a video on your phone (or a parent's phone) while you use your form and nav. Talk through it like you are teaching someone who has never made a form. Try to use these words: <strong>form</strong>, <strong>submit</strong>, <strong>prevent default</strong>, <strong>smooth scroll</strong>, <strong>message</strong>.</p>
+<blockquote>
+<ol>
+<li>Show your contact form and fill it in.</li>
+<li>Click Send and show the form being replaced by the thank-you message.</li>
+<li>Read your <code>preventDefault</code> line out loud and say why it matters.</li>
+<li>Click a nav link and show the smooth scroll.</li>
+</ol>
+</blockquote>
+<div class="qa"><p><strong>Write what you will say in your video.</strong> Use the space below to plan it before you record — you can read from it while filming.</p>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.</p>
+</body>
+</html>

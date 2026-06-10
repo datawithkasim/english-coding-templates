@@ -71,6 +71,11 @@ blockquote {
 .write-space.short { min-height: 86px; }
 .write-space.tall { min-height: 170px; }
 
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
 hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
 
 .meta { color: #666; font-size: 13px; margin: 0 0 14px; }
@@ -100,7 +105,6 @@ footer b { color: #ff7849; }
 <h1>🌀 M002 Week 2 — English Worksheet</h1>
 <p><strong>Topic:</strong> Turning at Walls · <strong>Course:</strong> Maze Madness · <strong>Time:</strong> about 45 minutes</p>
 <p>This week your agent follows one simple rule: if there's a wall in front, turn; if not, move forward.</p>
-<hr />
 <h2>1 · Predict 🔮</h2>
 <p>Read each set of steps. Before you imagine the agent doing it, write what you think will happen.</p>
 <pre><code>if wall ahead:
@@ -108,8 +112,8 @@ footer b { color: #ff7849; }
 otherwise:
     move forward
 </code></pre>
-<p><strong>What does the agent do if there's a wall in front? What if the path is clear?</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>What does the agent do if there's a wall in front? What if the path is clear?</strong></p>
+<div class="write-space"></div></div>
 
 <pre><code>keep doing forever:
     if wall ahead:
@@ -117,8 +121,8 @@ otherwise:
     otherwise:
         move forward
 </code></pre>
-<p><strong>What is the agent doing in plain English?</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>What is the agent doing in plain English?</strong></p>
+<div class="write-space"></div></div>
 
 <pre><code>direction = &quot;right&quot;
 
@@ -129,10 +133,9 @@ otherwise if direction is &quot;right&quot;:
 otherwise:
     move forward
 </code></pre>
-<p><strong>What does the agent do? What would change if <code>direction</code> was set to <code>"back"</code>?</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>What does the agent do? What would change if <code>direction</code> was set to <code>"back"</code>?</strong></p>
+<div class="write-space"></div></div>
 
-<hr />
 <h2>2 · Spot the Bug 🐛</h2>
 <p>Each pair shows clean steps first, then a broken version of the same idea. Circle what's different and explain the bug in one short sentence.</p>
 <p><strong>Pair A</strong></p>
@@ -148,8 +151,8 @@ if path is clear:
 otherwise:
     move forward
 </code></pre>
-<p><strong>What is wrong?</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>What is wrong?</strong></p>
+<div class="write-space"></div></div>
 
 <p><strong>Pair B</strong></p>
 <pre><code># clean
@@ -163,8 +166,8 @@ if wall ahead:
     turn right
     move forward
 </code></pre>
-<p><strong>What is wrong?</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>What is wrong?</strong></p>
+<div class="write-space"></div></div>
 
 <p><strong>Pair C</strong></p>
 <pre><code># clean
@@ -183,14 +186,13 @@ otherwise if direction is &quot;right&quot;:
 otherwise:
     move forward
 </code></pre>
-<p><strong>What is wrong?</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>What is wrong?</strong></p>
+<div class="write-space"></div></div>
 
-<hr />
 <h2>3 · Tell Me What You Built 📸</h2>
 <p>Now switch to your homework world. Get your agent through this week's maze using <code>if</code> / <code>otherwise</code>. When you finish, come back here.</p>
 <p>Send a photo or video of your agent solving the maze, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.</p>
-<blockquote>
+<div class="qa"><blockquote>
 <p>First, I read the maze and noticed …</p>
 <p>I chose <code>if</code> / <code>otherwise</code> because …</p>
 <p>The condition I checked was …</p>
@@ -198,7 +200,7 @@ otherwise:
 <p>I fixed it by …</p>
 <p>Next time, I want to try …</p>
 </blockquote>
-<div class="write-space tall"></div>
+<div class="write-space tall"></div></div>
 
 <hr />
 <h3>Submit ✅</h3>

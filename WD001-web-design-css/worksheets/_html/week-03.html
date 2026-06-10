@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>📦 WD001 Week 3 — English Worksheet</title>
+<style>
+@page { size: A4; margin: 18mm 16mm 22mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-family: "Inter", "Segoe UI", system-ui, sans-serif; color: #1a1a2e; }
+body { font-size: 15px; line-height: 1.55; }
+
+.cover { border-bottom: 3px solid #ff7849; padding-bottom: 14px; margin-bottom: 20px; }
+.brand { font-size: 14px; font-weight: 800; color: #ff7849; letter-spacing: .06em; }
+h1 { font-size: 28px; color: #6b4ee6; margin: 8px 0 6px; line-height: 1.25; }
+h2 { font-size: 19px; color: #6b4ee6; margin: 22px 0 12px; padding-top: 10px; border-top: 1px solid #eee; page-break-before: always; }
+section.first h2, h2:first-of-type { border-top: none; padding-top: 0; page-break-before: avoid; }
+h3, h4 { font-size: 15px; margin: 14px 0 8px; color: #1a1a2e; }
+p { margin: 8px 0; }
+strong { color: #1a1a2e; }
+em { color: #555; }
+
+ul, ol { margin: 8px 0 8px 24px; }
+li { margin: 3px 0; }
+
+pre {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 13.5px;
+  background: #1e1e2e;
+  color: #b9f6ca;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 10px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  page-break-inside: avoid;
+  line-height: 1.5;
+}
+pre code { background: transparent; padding: 0; color: inherit; }
+code {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  background: #fff1e8;
+  color: #ff7849;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+blockquote {
+  margin: 10px 0;
+  padding: 10px 16px;
+  background: #fff6ef;
+  border-left: 3px solid #ff7849;
+  border-radius: 0 6px 6px 0;
+  color: #6a3a1c;
+}
+
+.write-space {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #ffffff 0,
+    #ffffff 27px,
+    #d4d4d4 27px,
+    #d4d4d4 28px
+  );
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  min-height: 114px;
+  margin: 10px 0 20px;
+  page-break-inside: avoid;
+}
+.write-space.short { min-height: 86px; }
+.write-space.tall { min-height: 170px; }
+
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
+hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
+
+.meta { color: #666; font-size: 13px; margin: 0 0 14px; }
+.answer-lines {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 14px 16px;
+  background: #fafafa;
+  white-space: pre;
+  line-height: 2.2;
+}
+
+footer {
+  position: fixed;
+  bottom: 10mm; left: 16mm; right: 16mm;
+  text-align: center;
+  font-size: 10px;
+  color: #aaa;
+}
+footer b { color: #ff7849; }
+</style>
+</head>
+<body>
+<div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
+<h1>📦 WD001 Week 3 — English Worksheet</h1>
+<p><strong>Topic:</strong> The Box Model — Padding, Margin, Border · <strong>Course:</strong> Web Design: CSS · <strong>Time:</strong> about 45 minutes</p>
+<p>This week you learn that <strong>every element is a box</strong>. Around the content there is <code>padding</code> (space <strong>inside</strong> the box), then a <code>border</code> (the line <strong>around</strong> it), then <code>margin</code> (space <strong>outside</strong>, pushing other boxes away). You will also use <code>border-radius</code> to round the corners.</p>
+<h2>1 · Predict 🔮</h2>
+<p>Read each bit of CSS. Before you imagine the browser drawing it, write what you think will happen.</p>
+<pre><code class="language-html">&lt;style&gt;
+  .card {
+    border: 2px solid red;
+    padding: 30px;
+  }
+&lt;/style&gt;
+</code></pre>
+<div class="qa"><p><strong>Lots of padding. Is the text close to the border or far from it?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-html">&lt;style&gt;
+  .card {
+    border: 2px solid black;
+    margin: 40px;
+  }
+&lt;/style&gt;
+</code></pre>
+<div class="qa"><p><strong>Lots of margin. Does the space go </strong>inside<strong> the box or </strong>outside<strong> it, pushing other things away?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-html">&lt;style&gt;
+  .card {
+    border-radius: 50px;
+    width: 100px;
+    height: 100px;
+  }
+&lt;/style&gt;
+</code></pre>
+<div class="qa"><p><strong>A 100×100 box with a 50px corner radius. What shape do you think it becomes?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-html">&lt;style&gt;
+  .card {
+    padding: 0px;
+    border: 1px solid blue;
+  }
+&lt;/style&gt;
+</code></pre>
+<div class="qa"><p><strong>No padding at all. Where does the text sit compared to the border line?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>2 · Spot the Bug 🐛</h2>
+<p>Each bit of CSS below was meant to do something, but it is broken. Read what it is <strong>supposed</strong> to do, then rewrite it so it works. After that, explain why the original was wrong and why your fix works.</p>
+<p><strong>Bug A</strong> — The card is supposed to have a visible line around it. There is no line.</p>
+<pre><code class="language-html">&lt;style&gt;
+  .card {
+    border: solid blue;
+  }
+&lt;/style&gt;
+</code></pre>
+<p><strong>Hint:</strong> a border needs a <strong>thickness</strong> too.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug B</strong> — The text inside the card is supposed to have breathing room, but it is squished right up against the border.</p>
+<pre><code class="language-html">&lt;style&gt;
+  .card {
+    border: 2px solid green;
+    margin: 20px;
+  }
+&lt;/style&gt;
+</code></pre>
+<p><strong>Hint:</strong> which property adds space <strong>inside</strong> the box?</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug C</strong> — The card is supposed to have softly rounded corners, but the corners are still sharp.</p>
+<pre><code class="language-html">&lt;style&gt;
+  .card {
+    border: 2px solid #d4380d;
+    radius: 12px;
+  }
+&lt;/style&gt;
+</code></pre>
+<p><strong>Hint:</strong> check the property name.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>3 · Build 3 Cards 📸</h2>
+<p>In Replit, build <strong>3 cards</strong> about you — for example: favourite food, favourite movie, favourite school subject. Each card has a heading and a short line of text. Make each card a little <strong>different</strong> in colour or border so they don't all look the same.</p>
+<p>You can start one card like this and change it to your own:</p>
+<pre><code class="language-html">&lt;div class=&quot;card&quot;&gt;
+  &lt;h2&gt;My Favorite Game&lt;/h2&gt;
+  &lt;p&gt;Minecraft is the best!&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;style&gt;
+  .card {
+    background-color: #ffffff;
+    border: 2px solid #d4380d;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 16px;
+    width: 300px;
+  }
+&lt;/style&gt;
+</code></pre>
+<p>When you finish, send a <strong>photo or video</strong> of your cards (or a picture of your code), then explain what you did. Use these sentence starters — write 4 to 6 sentences total.</p>
+<div class="qa"><blockquote>
+<p>My three cards are about …</p>
+<p>I made them look different by …</p>
+<p>I used padding to …</p>
+<p>I used border-radius to …</p>
+<p>One tricky moment was when …</p>
+<p>If I had more time, I would …</p>
+</blockquote>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<h2>4 · Record Your Walkthrough 🎥</h2>
+<p>Now take a video on your phone (or a parent's phone) while you show your cards. Talk through it like you are teaching someone who has never seen the box model. Try to use these words: <strong>box</strong>, <strong>padding</strong>, <strong>margin</strong>, <strong>border</strong>, <strong>rounded</strong>.</p>
+<blockquote>
+<ol>
+<li>Show your three cards in the browser.</li>
+<li>Point to one card and show where the padding is and where the margin is.</li>
+<li>Say what <code>border-radius</code> did to the corners.</li>
+<li>Show one thing you got wrong at first and how you fixed it.</li>
+</ol>
+</blockquote>
+<div class="qa"><p><strong>Write what you will say in your video.</strong> Use the space below to plan it before you record — you can read from it while filming.</p>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.</p>
+</body>
+</html>

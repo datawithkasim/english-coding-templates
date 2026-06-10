@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>🔫 RS003 Week 5 — English Worksheet</title>
+<style>
+@page { size: A4; margin: 18mm 16mm 22mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-family: "Inter", "Segoe UI", system-ui, sans-serif; color: #1a1a2e; }
+body { font-size: 15px; line-height: 1.55; }
+
+.cover { border-bottom: 3px solid #ff7849; padding-bottom: 14px; margin-bottom: 20px; }
+.brand { font-size: 14px; font-weight: 800; color: #ff7849; letter-spacing: .06em; }
+h1 { font-size: 28px; color: #6b4ee6; margin: 8px 0 6px; line-height: 1.25; }
+h2 { font-size: 19px; color: #6b4ee6; margin: 22px 0 12px; padding-top: 10px; border-top: 1px solid #eee; page-break-before: always; }
+section.first h2, h2:first-of-type { border-top: none; padding-top: 0; page-break-before: avoid; }
+h3, h4 { font-size: 15px; margin: 14px 0 8px; color: #1a1a2e; }
+p { margin: 8px 0; }
+strong { color: #1a1a2e; }
+em { color: #555; }
+
+ul, ol { margin: 8px 0 8px 24px; }
+li { margin: 3px 0; }
+
+pre {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 13.5px;
+  background: #1e1e2e;
+  color: #b9f6ca;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 10px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  page-break-inside: avoid;
+  line-height: 1.5;
+}
+pre code { background: transparent; padding: 0; color: inherit; }
+code {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  background: #fff1e8;
+  color: #ff7849;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+blockquote {
+  margin: 10px 0;
+  padding: 10px 16px;
+  background: #fff6ef;
+  border-left: 3px solid #ff7849;
+  border-radius: 0 6px 6px 0;
+  color: #6a3a1c;
+}
+
+.write-space {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #ffffff 0,
+    #ffffff 27px,
+    #d4d4d4 27px,
+    #d4d4d4 28px
+  );
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  min-height: 114px;
+  margin: 10px 0 20px;
+  page-break-inside: avoid;
+}
+.write-space.short { min-height: 86px; }
+.write-space.tall { min-height: 170px; }
+
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
+hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
+
+.meta { color: #666; font-size: 13px; margin: 0 0 14px; }
+.answer-lines {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 14px 16px;
+  background: #fafafa;
+  white-space: pre;
+  line-height: 2.2;
+}
+
+footer {
+  position: fixed;
+  bottom: 10mm; left: 16mm; right: 16mm;
+  text-align: center;
+  font-size: 10px;
+  color: #aaa;
+}
+footer b { color: #ff7849; }
+</style>
+</head>
+<body>
+<div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
+<h1>🔫 RS003 Week 5 — English Worksheet</h1>
+<p><strong>Topic:</strong> Add the Gun with a Function · <strong>Course:</strong> Pygame Turret · <strong>Time:</strong> about 45 minutes</p>
+<p>This week you add a <strong>gun barrel</strong> to your turret and wrap the whole turret in a <strong>function</strong> called <code>draw_turret</code>. Then you give the function a <strong>parameter</strong> so you can draw the same turret at any X position you like.</p>
+<blockquote>
+<p>🧠 Words to know: <strong>function</strong>, <strong>define (<code>def</code>)</strong>, <strong>call</strong>, <strong>parameter</strong>, <strong>line (barrel)</strong></p>
+</blockquote>
+<h2>1 · Predict 🔮</h2>
+<p>Read each piece of code. Before you run it, write what you think will happen.</p>
+<pre><code class="language-python">def draw_turret():
+    pygame.draw.rect(screen, DARK_GREEN, (CENTER_X - 30, HEIGHT - 80, 60, 40))
+    pygame.draw.line(screen, GRAY, (CENTER_X, HEIGHT - 80), (CENTER_X, HEIGHT - 140), 8)
+</code></pre>
+<div class="qa"><p><strong>This defines a function but does not run it yet. What two shapes will it draw when it IS called?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-python">screen.fill(SKY)
+draw_turret()
+pygame.display.flip()
+</code></pre>
+<div class="qa"><p><strong>Now the function is called. When does the turret actually appear?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-python">def draw_turret(x):
+    pygame.draw.rect(screen, DARK_GREEN, (x - 30, HEIGHT - 80, 60, 40))
+
+draw_turret(200)
+draw_turret(400)
+draw_turret(600)
+</code></pre>
+<div class="qa"><p><strong>The function now takes <code>x</code>. How many turrets appear, and where?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>2 · Run It 🏃</h2>
+<h3>🎯 Type the example, run it, and find the barrel</h3>
+<pre><code class="language-python">import pygame
+pygame.init()
+
+WIDTH, HEIGHT = 800, 600
+CENTER_X = WIDTH // 2
+screen = pygame.display.set_mode((WIDTH, HEIGHT))
+
+SKY = (135, 206, 235)
+DARK_GREEN = (0, 100, 0)
+GRAY = (80, 80, 80)
+BLACK = (0, 0, 0)
+
+def draw_turret():
+    pygame.draw.rect(screen, DARK_GREEN, (CENTER_X - 30, HEIGHT - 80, 60, 40))
+    pygame.draw.circle(screen, BLACK, (CENTER_X, HEIGHT - 80), 10)
+    pygame.draw.line(screen, GRAY, (CENTER_X, HEIGHT - 80), (CENTER_X, HEIGHT - 150), 10)
+
+clock = pygame.time.Clock()
+running = True
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+    screen.fill(SKY)
+    draw_turret()
+    pygame.display.flip()
+    clock.tick(60)
+
+pygame.quit()
+</code></pre>
+<div class="qa"><p><strong>Where does the barrel point? What two points does the <code>line</code> connect?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>3 · Spot the Bug 🐛</h2>
+<p>Each block below was meant to do something but is broken. Fix it, then explain why the original was wrong.</p>
+<p><strong>Bug A</strong> — The turret function is written but nothing appears on screen.</p>
+<pre><code class="language-python">def draw_turret():
+    pygame.draw.rect(screen, DARK_GREEN, (CENTER_X - 30, HEIGHT - 80, 60, 40))
+
+screen.fill(SKY)
+pygame.display.flip()
+</code></pre>
+<p><strong>Hint:</strong> a function only runs when you <strong>call</strong> it.</p>
+<div class="qa"><p><strong>Write the fixed code (show the loop body):</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug B</strong> — The barrel is supposed to stand <strong>up</strong> from the base. Right now it lies flat sideways.</p>
+<pre><code class="language-python">pygame.draw.line(screen, GRAY, (CENTER_X, HEIGHT - 80), (CENTER_X + 60, HEIGHT - 80), 10)
+</code></pre>
+<p><strong>Hint:</strong> to go up, the second point needs a <strong>smaller</strong> Y, not a bigger X.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug C</strong> — This should draw three turrets at 200, 400, and 600, but Python gives an error about a missing argument.</p>
+<pre><code class="language-python">def draw_turret(x):
+    pygame.draw.rect(screen, DARK_GREEN, (x - 30, HEIGHT - 80, 60, 40))
+
+draw_turret()
+</code></pre>
+<p><strong>Hint:</strong> the function needs an <code>x</code> value when you call it.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>4 · Modify It 🔧</h2>
+<h3>🎯 Give the function a position parameter</h3>
+<p>Change <code>draw_turret()</code> so it takes an <code>x</code>, and use <code>x</code> everywhere the position appears instead of <code>CENTER_X</code>.</p>
+<div class="qa"><p><strong>Write your new function header line (the <code>def ...</code> line):</strong></p>
+<div class="write-space"></div></div>
+
+<h3>🎯 Draw a whole row of turrets</h3>
+<p>Call your function three times with different X values to make a row.</p>
+<div class="qa"><p><strong>Write the three calls you used:</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Hint:</strong> <code>draw_turret(200)</code> draws one turret centred at X = 200. Change the number for each one.</p>
+<h2>5 · Make It 📸</h2>
+<h3>🎯 Build a turret you can place anywhere</h3>
+<p>Build a program that:</p>
+<ol>
+<li>has a <code>draw_turret(x)</code> function with a base, a pivot, and a barrel,</li>
+<li>is called inside the game loop,</li>
+<li>draws at least one turret on screen.</li>
+</ol>
+<p>Send a <strong>photo or video</strong> of your turret, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.</p>
+<div class="qa"><blockquote>
+<p>First, I wrapped my turret in a function called …</p>
+<p>I gave it a parameter so that …</p>
+<p>The barrel points up because the second point has …</p>
+<p>To draw more than one turret, I …</p>
+<p>One tricky moment was when …</p>
+<p>If I had more time, I would …</p>
+</blockquote>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<h2>6 · Record Your Walkthrough 🎥</h2>
+<p>Take a video of your turret. Talk through it like you are teaching someone. Try to use these words: <strong>function</strong>, <strong>define</strong>, <strong>call</strong>, <strong>parameter</strong>, <strong>barrel</strong>.</p>
+<blockquote>
+<ol>
+<li>Show your turret with its barrel.</li>
+<li>Read your <code>def draw_turret(x)</code> line out loud and explain the parameter.</li>
+<li>Point at where you <strong>call</strong> the function.</li>
+<li>Change the X value live and show the turret move.</li>
+</ol>
+</blockquote>
+<div class="qa"><p><strong>Write what you will say in your video.</strong> Plan it here before you record.</p>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your photo or video to teacher on KakaoTalk.</p>
+</body>
+</html>

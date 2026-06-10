@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>👾 RS004 Week 13 — English Worksheet</title>
+<style>
+@page { size: A4; margin: 18mm 16mm 22mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-family: "Inter", "Segoe UI", system-ui, sans-serif; color: #1a1a2e; }
+body { font-size: 15px; line-height: 1.55; }
+
+.cover { border-bottom: 3px solid #ff7849; padding-bottom: 14px; margin-bottom: 20px; }
+.brand { font-size: 14px; font-weight: 800; color: #ff7849; letter-spacing: .06em; }
+h1 { font-size: 28px; color: #6b4ee6; margin: 8px 0 6px; line-height: 1.25; }
+h2 { font-size: 19px; color: #6b4ee6; margin: 22px 0 12px; padding-top: 10px; border-top: 1px solid #eee; page-break-before: always; }
+section.first h2, h2:first-of-type { border-top: none; padding-top: 0; page-break-before: avoid; }
+h3, h4 { font-size: 15px; margin: 14px 0 8px; color: #1a1a2e; }
+p { margin: 8px 0; }
+strong { color: #1a1a2e; }
+em { color: #555; }
+
+ul, ol { margin: 8px 0 8px 24px; }
+li { margin: 3px 0; }
+
+pre {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 13.5px;
+  background: #1e1e2e;
+  color: #b9f6ca;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 10px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  page-break-inside: avoid;
+  line-height: 1.5;
+}
+pre code { background: transparent; padding: 0; color: inherit; }
+code {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  background: #fff1e8;
+  color: #ff7849;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+blockquote {
+  margin: 10px 0;
+  padding: 10px 16px;
+  background: #fff6ef;
+  border-left: 3px solid #ff7849;
+  border-radius: 0 6px 6px 0;
+  color: #6a3a1c;
+}
+
+.write-space {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #ffffff 0,
+    #ffffff 27px,
+    #d4d4d4 27px,
+    #d4d4d4 28px
+  );
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  min-height: 114px;
+  margin: 10px 0 20px;
+  page-break-inside: avoid;
+}
+.write-space.short { min-height: 86px; }
+.write-space.tall { min-height: 170px; }
+
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
+hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
+
+.meta { color: #666; font-size: 13px; margin: 0 0 14px; }
+.answer-lines {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 14px 16px;
+  background: #fafafa;
+  white-space: pre;
+  line-height: 2.2;
+}
+
+footer {
+  position: fixed;
+  bottom: 10mm; left: 16mm; right: 16mm;
+  text-align: center;
+  font-size: 10px;
+  color: #aaa;
+}
+footer b { color: #ff7849; }
+</style>
+</head>
+<body>
+<div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
+<h1>👾 RS004 Week 13 — English Worksheet</h1>
+<p><strong>Topic:</strong> Enemies &amp; Game Over · <strong>Course:</strong> Platformer Game · <strong>Time:</strong> about 45 minutes</p>
+<p>This week your game gets <strong>enemies</strong>. You build an <code>Enemy</code> <strong>class</strong> that patrols left and right on its own. Touching an enemy triggers <strong>Game Over</strong>, and pressing <strong>R</strong> restarts. A <code>game_state</code> variable decides what the game is doing.</p>
+<blockquote>
+<p>Keep these words handy: <strong>class</strong>, <strong>patrol</strong>, <strong>game_state</strong>, <strong>Game Over</strong>, <strong>restart (R)</strong>.</p>
+</blockquote>
+<h2>1 · Predict 🔮</h2>
+<p>Read each snippet. Before you run it, write what you think will happen.</p>
+<pre><code class="language-python">def update(self):
+    self.rect.x = self.rect.x + self.direction * self.speed
+    if self.rect.x &gt; self.start_x + self.range_x:
+        self.direction = -1
+    if self.rect.x &lt; self.start_x:
+        self.direction = 1
+</code></pre>
+<div class="qa"><p><strong>The enemy reaches the right end of its range. What happens to <code>direction</code>?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-python">if player.colliderect(enemy.rect):
+    game_state = &quot;gameover&quot;
+</code></pre>
+<div class="qa"><p><strong>The player touches an enemy. What does the game switch to?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-python">elif game_state == &quot;gameover&quot;:
+    if keys[pygame.K_r]:
+        player.x = start_x
+        player.y = start_y
+        game_state = &quot;playing&quot;
+</code></pre>
+<div class="qa"><p><strong>The game is over and R is pressed. What resets, and what does the game become?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>2 · Read the Class 🏷️</h2>
+<p>An <code>Enemy</code> is created with <code>Enemy(300, 530, 40, 40, 200)</code>. Match each value.</p>
+<pre><code>1. 300   2. 530   3. 40   4. 40   5. 200
+</code></pre>
+<pre><code>A. patrol range (how far it walks)
+B. start x
+C. start y
+D. width
+E. height
+</code></pre>
+<div class="qa"><p><strong>1 → ___  2 → ___  3 → ___  4 → ___  5 → ___</strong></p>
+<div class="write-space"></div></div>
+
+<h2>3 · Spot the Bug 🐛</h2>
+<p>Each snippet is broken. Rewrite it so it works, then explain why the original was wrong.</p>
+<p><strong>Bug A</strong> — The enemy should walk back and forth. Right now it walks off the right side and never comes back.</p>
+<pre><code class="language-python">def update(self):
+    self.rect.x = self.rect.x + self.speed
+</code></pre>
+<p><strong>Hint:</strong> there is no <code>direction</code>, so it only ever moves one way. It needs to flip at the edges.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug B</strong> — Movement should stop once the game is over. Right now the player keeps moving on the Game Over screen.</p>
+<pre><code class="language-python">keys = pygame.key.get_pressed()
+if keys[pygame.K_LEFT]:
+    player.x -= PLAYER_SPEED
+if keys[pygame.K_RIGHT]:
+    player.x += PLAYER_SPEED
+for enemy in enemies:
+    enemy.update()
+    if player.colliderect(enemy.rect):
+        game_state = &quot;gameover&quot;
+</code></pre>
+<p><strong>Hint:</strong> wrap the play logic so it only runs when <code>game_state == "playing"</code>.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug C</strong> — R should restart the game, but pressing it does nothing.</p>
+<pre><code class="language-python">if game_state == &quot;gameover&quot;:
+    player.x = start_x
+    player.y = start_y
+    game_state = &quot;playing&quot;
+</code></pre>
+<p><strong>Hint:</strong> this restarts every frame with no key check. Only restart when R is pressed.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>4 · Populate &amp; Polish 🛠️</h2>
+<p>Start from your working enemies.</p>
+<ol>
+<li>Add a second enemy with a <em>different</em> patrol range. Write its <code>Enemy(...)</code> line.</li>
+</ol>
+<div class="write-space"></div>
+
+<ol start="2">
+<li>Change an enemy's speed. Does a faster enemy make the level harder or just annoying?</li>
+</ol>
+<div class="write-space"></div>
+
+<ol start="3">
+<li><strong>Stretch:</strong> show the final score on the Game Over screen. Where do you draw it?</li>
+</ol>
+<div class="write-space"></div>
+
+<h2>5 · Build &amp; Show 📸</h2>
+<p>Add patrolling enemies to your own level. Place at least three, and make sure the level is still clearable.</p>
+<p>When it works, send a <strong>photo or video</strong> showing you dodging enemies <em>and</em> a Game Over, then explain what you did. Use these starters — write 4 to 6 sentences.</p>
+<div class="qa"><blockquote>
+<p>First, my <code>Enemy</code> class patrols by …</p>
+<p>The <code>direction</code> flips when …</p>
+<p>Touching an enemy sets <code>game_state</code> to …</p>
+<p>I restart with R by …</p>
+<p>One tricky moment was …</p>
+<p>If I had more time, I would …</p>
+</blockquote>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<h2>6 · Record Your Walkthrough 🎥</h2>
+<p>Take a video showing dodging, dying, and restarting. Teach it to someone new. Try to use these words: <strong>class</strong>, <strong>patrol</strong>, <strong>game_state</strong>, <strong>Game Over</strong>, <strong>restart</strong>.</p>
+<blockquote>
+<ol>
+<li>Show an enemy patrolling back and forth.</li>
+<li>Dodge one, then touch one and trigger Game Over.</li>
+<li>Read the patrol <code>update</code> out loud and explain the direction flip.</li>
+<li>Press R and show the restart.</li>
+</ol>
+</blockquote>
+<div class="qa"><p><strong>Write what you will say in your video.</strong> Plan it here first.</p>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.</p>
+</body>
+</html>

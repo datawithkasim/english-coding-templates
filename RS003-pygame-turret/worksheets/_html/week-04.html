@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>🏰 RS003 Week 4 — English Worksheet</title>
+<style>
+@page { size: A4; margin: 18mm 16mm 22mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-family: "Inter", "Segoe UI", system-ui, sans-serif; color: #1a1a2e; }
+body { font-size: 15px; line-height: 1.55; }
+
+.cover { border-bottom: 3px solid #ff7849; padding-bottom: 14px; margin-bottom: 20px; }
+.brand { font-size: 14px; font-weight: 800; color: #ff7849; letter-spacing: .06em; }
+h1 { font-size: 28px; color: #6b4ee6; margin: 8px 0 6px; line-height: 1.25; }
+h2 { font-size: 19px; color: #6b4ee6; margin: 22px 0 12px; padding-top: 10px; border-top: 1px solid #eee; page-break-before: always; }
+section.first h2, h2:first-of-type { border-top: none; padding-top: 0; page-break-before: avoid; }
+h3, h4 { font-size: 15px; margin: 14px 0 8px; color: #1a1a2e; }
+p { margin: 8px 0; }
+strong { color: #1a1a2e; }
+em { color: #555; }
+
+ul, ol { margin: 8px 0 8px 24px; }
+li { margin: 3px 0; }
+
+pre {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 13.5px;
+  background: #1e1e2e;
+  color: #b9f6ca;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 10px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  page-break-inside: avoid;
+  line-height: 1.5;
+}
+pre code { background: transparent; padding: 0; color: inherit; }
+code {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  background: #fff1e8;
+  color: #ff7849;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+blockquote {
+  margin: 10px 0;
+  padding: 10px 16px;
+  background: #fff6ef;
+  border-left: 3px solid #ff7849;
+  border-radius: 0 6px 6px 0;
+  color: #6a3a1c;
+}
+
+.write-space {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #ffffff 0,
+    #ffffff 27px,
+    #d4d4d4 27px,
+    #d4d4d4 28px
+  );
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  min-height: 114px;
+  margin: 10px 0 20px;
+  page-break-inside: avoid;
+}
+.write-space.short { min-height: 86px; }
+.write-space.tall { min-height: 170px; }
+
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
+hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
+
+.meta { color: #666; font-size: 13px; margin: 0 0 14px; }
+.answer-lines {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 14px 16px;
+  background: #fafafa;
+  white-space: pre;
+  line-height: 2.2;
+}
+
+footer {
+  position: fixed;
+  bottom: 10mm; left: 16mm; right: 16mm;
+  text-align: center;
+  font-size: 10px;
+  color: #aaa;
+}
+footer b { color: #ff7849; }
+</style>
+</head>
+<body>
+<div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
+<h1>🏰 RS003 Week 4 — English Worksheet</h1>
+<p><strong>Topic:</strong> A Three-Part Base — Ground + Base + Pivot · <strong>Course:</strong> Pygame Turret · <strong>Time:</strong> about 45 minutes</p>
+<p>This week your base grows from one rectangle into a <strong>three-part scene</strong>: a long ground bar across the bottom, the base body on top of it, and a small pivot circle where the gun will spin. You also learn that <strong>draw order</strong> decides what sits in front.</p>
+<blockquote>
+<p>🧠 Words to know: <strong>ground</strong>, <strong>palette</strong>, <strong>outline (border)</strong>, <strong>draw order</strong>, <strong>pivot</strong></p>
+</blockquote>
+<h2>1 · Predict 🔮</h2>
+<p>Read each piece of code. Before you run it, write what you think will happen.</p>
+<pre><code class="language-python">pygame.draw.rect(screen, EARTH, (0, HEIGHT - 50, WIDTH, 50))
+</code></pre>
+<div class="qa"><p><strong>This rectangle starts at the far left and is as wide as the whole screen. What does it look like?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-python">pygame.draw.rect(screen, DARK_GREEN, (CENTER_X - 35, HEIGHT - 90, 70, 45))
+pygame.draw.rect(screen, BLACK, (CENTER_X - 35, HEIGHT - 90, 70, 45), 2)
+</code></pre>
+<div class="qa"><p><strong>The same rectangle is drawn twice. The second one has an extra <code>2</code> at the end. What does that <code>2</code> add?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-python">screen.fill(SKY)
+pygame.draw.rect(screen, EARTH, ...)   # ground
+pygame.draw.circle(screen, SILVER, ...) # pivot
+</code></pre>
+<div class="qa"><p><strong>Things are drawn from first to last. Which one ends up on top — the sky, the ground, or the pivot?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>2 · Run It 🏃</h2>
+<h3>🎯 Type the example, run it, and name the three parts</h3>
+<pre><code class="language-python">import pygame
+pygame.init()
+
+WIDTH, HEIGHT = 800, 600
+CENTER_X = WIDTH // 2
+screen = pygame.display.set_mode((WIDTH, HEIGHT))
+clock = pygame.time.Clock()
+
+SKY = (135, 206, 235)
+EARTH = (95, 60, 30)
+DARK_GREEN = (0, 100, 0)
+LIGHT_GREEN = (50, 150, 50)
+BLACK = (0, 0, 0)
+SILVER = (180, 180, 180)
+
+running = True
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+
+    screen.fill(SKY)
+    pygame.draw.rect(screen, EARTH, (0, HEIGHT - 50, WIDTH, 50))
+    pygame.draw.rect(screen, LIGHT_GREEN, (0, HEIGHT - 55, WIDTH, 8))
+    pygame.draw.rect(screen, DARK_GREEN, (CENTER_X - 35, HEIGHT - 90, 70, 45))
+    pygame.draw.rect(screen, BLACK, (CENTER_X - 35, HEIGHT - 90, 70, 45), 2)
+    pygame.draw.circle(screen, SILVER, (CENTER_X, HEIGHT - 90), 12)
+    pygame.draw.circle(screen, BLACK, (CENTER_X, HEIGHT - 90), 12, 2)
+    pygame.display.flip()
+    clock.tick(60)
+
+pygame.quit()
+</code></pre>
+<div class="qa"><p><strong>Name the three parts you can see and where each one is:</strong></p>
+<div class="write-space"></div></div>
+
+<h2>3 · Spot the Bug 🐛</h2>
+<p>Each block below was meant to do something but is broken. Fix it, then explain why the original was wrong.</p>
+<p><strong>Bug A</strong> — The ground should appear <strong>behind</strong> the base. Right now the ground is drawn last and covers the base.</p>
+<pre><code class="language-python">pygame.draw.rect(screen, DARK_GREEN, (CENTER_X - 35, HEIGHT - 90, 70, 45))
+pygame.draw.rect(screen, EARTH, (0, HEIGHT - 50, WIDTH, 50))
+</code></pre>
+<p><strong>Hint:</strong> whatever is drawn last sits on top.</p>
+<div class="qa"><p><strong>Write the fixed code (show both lines in the right order):</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug B</strong> — The base is supposed to have a thin <strong>black outline</strong>, but right now the whole base turns solid black.</p>
+<pre><code class="language-python">pygame.draw.rect(screen, BLACK, (CENTER_X - 35, HEIGHT - 90, 70, 45))
+</code></pre>
+<p><strong>Hint:</strong> a missing last number means "fill completely". Add the border thickness.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug C</strong> — The ground should stretch <strong>all the way across</strong> the screen. Right now it only covers part of the width.</p>
+<pre><code class="language-python">pygame.draw.rect(screen, EARTH, (0, HEIGHT - 50, 200, 50))
+</code></pre>
+<p><strong>Hint:</strong> the third number is the width of the rectangle.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>4 · Modify It 🔧</h2>
+<h3>🎯 Recolour the whole scene with your own palette</h3>
+<p>At the top of the program, the colours are stored as constants. Change <code>SKY</code>, <code>EARTH</code>, and the greens to your own colours and run it.</p>
+<div class="qa"><p><strong>Write the colours you chose and what mood they give your scene:</strong></p>
+<div class="write-space"></div></div>
+
+<h3>🎯 Add one extra detail to the base</h3>
+<p>Add a small detail to your base — for example an antenna line going up, or a flag rectangle on the side.</p>
+<div class="qa"><p><strong>Describe the detail you added and the shape you used to draw it:</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Hint:</strong> an antenna is a <code>pygame.draw.line</code>; a flag is a small <code>pygame.draw.rect</code>. Remember to draw it <strong>after</strong> the base so it shows on top.</p>
+<h2>5 · Make It 📸</h2>
+<h3>🎯 Build your own three-part base</h3>
+<p>Build a scene that has:</p>
+<ol>
+<li>a ground bar across the bottom,</li>
+<li>a base body with an outline,</li>
+<li>a pivot circle on top,</li>
+<li>one extra detail of your own.</li>
+</ol>
+<p>Send a <strong>photo or video</strong> of your base, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.</p>
+<div class="qa"><blockquote>
+<p>First, I drew the ground by …</p>
+<p>I gave the base an outline by adding …</p>
+<p>The draw order matters because …</p>
+<p>My extra detail is … and I made it with …</p>
+<p>One tricky moment was when …</p>
+<p>If I had more time, I would …</p>
+</blockquote>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<h2>6 · Record Your Walkthrough 🎥</h2>
+<p>Take a video of your three-part base. Talk through it like you are teaching someone. Try to use these words: <strong>ground</strong>, <strong>palette</strong>, <strong>outline</strong>, <strong>draw order</strong>, <strong>pivot</strong>.</p>
+<blockquote>
+<ol>
+<li>Show all three parts and name them.</li>
+<li>Read one rectangle line out loud and explain its four numbers.</li>
+<li>Explain how draw order decides what sits in front.</li>
+<li>Show the detail you added on top.</li>
+</ol>
+</blockquote>
+<div class="qa"><p><strong>Write what you will say in your video.</strong> Plan it here before you record.</p>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your photo or video to teacher on KakaoTalk.</p>
+</body>
+</html>

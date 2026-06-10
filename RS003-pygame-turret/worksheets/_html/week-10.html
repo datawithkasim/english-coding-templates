@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>💥 RS003 Week 10 — English Worksheet</title>
+<style>
+@page { size: A4; margin: 18mm 16mm 22mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-family: "Inter", "Segoe UI", system-ui, sans-serif; color: #1a1a2e; }
+body { font-size: 15px; line-height: 1.55; }
+
+.cover { border-bottom: 3px solid #ff7849; padding-bottom: 14px; margin-bottom: 20px; }
+.brand { font-size: 14px; font-weight: 800; color: #ff7849; letter-spacing: .06em; }
+h1 { font-size: 28px; color: #6b4ee6; margin: 8px 0 6px; line-height: 1.25; }
+h2 { font-size: 19px; color: #6b4ee6; margin: 22px 0 12px; padding-top: 10px; border-top: 1px solid #eee; page-break-before: always; }
+section.first h2, h2:first-of-type { border-top: none; padding-top: 0; page-break-before: avoid; }
+h3, h4 { font-size: 15px; margin: 14px 0 8px; color: #1a1a2e; }
+p { margin: 8px 0; }
+strong { color: #1a1a2e; }
+em { color: #555; }
+
+ul, ol { margin: 8px 0 8px 24px; }
+li { margin: 3px 0; }
+
+pre {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 13.5px;
+  background: #1e1e2e;
+  color: #b9f6ca;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 10px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  page-break-inside: avoid;
+  line-height: 1.5;
+}
+pre code { background: transparent; padding: 0; color: inherit; }
+code {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  background: #fff1e8;
+  color: #ff7849;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+blockquote {
+  margin: 10px 0;
+  padding: 10px 16px;
+  background: #fff6ef;
+  border-left: 3px solid #ff7849;
+  border-radius: 0 6px 6px 0;
+  color: #6a3a1c;
+}
+
+.write-space {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #ffffff 0,
+    #ffffff 27px,
+    #d4d4d4 27px,
+    #d4d4d4 28px
+  );
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  min-height: 114px;
+  margin: 10px 0 20px;
+  page-break-inside: avoid;
+}
+.write-space.short { min-height: 86px; }
+.write-space.tall { min-height: 170px; }
+
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
+hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
+
+.meta { color: #666; font-size: 13px; margin: 0 0 14px; }
+.answer-lines {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 14px 16px;
+  background: #fafafa;
+  white-space: pre;
+  line-height: 2.2;
+}
+
+footer {
+  position: fixed;
+  bottom: 10mm; left: 16mm; right: 16mm;
+  text-align: center;
+  font-size: 10px;
+  color: #aaa;
+}
+footer b { color: #ff7849; }
+</style>
+</head>
+<body>
+<div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
+<h1>💥 RS003 Week 10 — English Worksheet</h1>
+<p><strong>Topic:</strong> Feedback When You Hit the Wall · <strong>Course:</strong> Pygame Turret · <strong>Time:</strong> about 45 minutes</p>
+<p>This week the boundary <strong>reacts</strong>. When the aim slams into a wall, the line flashes red and the screen shakes for a moment. You learn to use <strong>timer variables</strong> that count down frame by frame, and <code>random</code> to make a shake.</p>
+<blockquote>
+<p>🧠 Words to know: <strong>timer</strong>, <strong>flash</strong>, <strong>shake</strong>, <strong>offset</strong>, <strong>random</strong></p>
+</blockquote>
+<h2>1 · Predict 🔮</h2>
+<p>Read each piece of code. Before you run it, write what you think will happen.</p>
+<pre><code class="language-python">flash_timer = 0
+if gun_tip_x &gt; MAX_X:
+    gun_tip_x = MAX_X
+    flash_timer = 10
+</code></pre>
+<div class="qa"><p><strong>When the gun hits the right wall, <code>flash_timer</code> is set to 10. What might 10 mean here?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-python">if flash_timer &gt; 0:
+    flash_timer = flash_timer - 1
+</code></pre>
+<div class="qa"><p><strong>This runs every loop. How long does <code>flash_timer</code> stay above 0 after being set to 10?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-python">shake_x = random.randint(-5, 5) if shake_timer &gt; 0 else 0
+pygame.draw.rect(screen, GREEN, (CENTER_X - 30 + shake_x, HEIGHT - 80, 60, 40))
+</code></pre>
+<div class="qa"><p><strong>While the shake timer is running, <code>shake_x</code> is a small random number. What does adding it to every position do?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>2 · Run It 🏃</h2>
+<h3>🎯 Type the example, run it, and slam the wall</h3>
+<pre><code class="language-python">import pygame
+import random
+pygame.init()
+
+WIDTH, HEIGHT = 800, 600
+CENTER_X = WIDTH // 2
+screen = pygame.display.set_mode((WIDTH, HEIGHT))
+clock = pygame.time.Clock()
+
+MIN_X = 50
+MAX_X = WIDTH - 50
+gun_tip_x = CENTER_X
+SPEED = 6
+flash_timer = 0
+shake_timer = 0
+
+running = True
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+
+    keys = pygame.key.get_pressed()
+    if keys[pygame.K_LEFT]:
+        gun_tip_x -= SPEED
+    if keys[pygame.K_RIGHT]:
+        gun_tip_x += SPEED
+
+    if gun_tip_x &lt; MIN_X:
+        gun_tip_x = MIN_X
+        flash_timer = 10
+        shake_timer = 10
+    if gun_tip_x &gt; MAX_X:
+        gun_tip_x = MAX_X
+        flash_timer = 10
+        shake_timer = 10
+
+    shake_x = random.randint(-5, 5) if shake_timer &gt; 0 else 0
+    shake_y = random.randint(-5, 5) if shake_timer &gt; 0 else 0
+
+    screen.fill((135, 206, 235))
+    line_color = (255, 50, 50) if flash_timer &gt; 0 else (180, 180, 180)
+    line_width = 6 if flash_timer &gt; 0 else 2
+    pygame.draw.line(screen, line_color, (MIN_X + shake_x, 0), (MIN_X + shake_x, HEIGHT), line_width)
+    pygame.draw.line(screen, line_color, (MAX_X + shake_x, 0), (MAX_X + shake_x, HEIGHT), line_width)
+    pygame.draw.rect(screen, (0, 100, 0), (CENTER_X - 30 + shake_x, HEIGHT - 80 + shake_y, 60, 40))
+    pygame.draw.line(screen, (80, 80, 80), (CENTER_X + shake_x, HEIGHT - 80 + shake_y), (gun_tip_x + shake_x, HEIGHT - 200 + shake_y), 10)
+    pygame.display.flip()
+
+    if flash_timer &gt; 0:
+        flash_timer = flash_timer - 1
+    if shake_timer &gt; 0:
+        shake_timer = shake_timer - 1
+
+    clock.tick(60)
+
+pygame.quit()
+</code></pre>
+<div class="qa"><p><strong>Slam into a wall. Describe what flashes and what shakes, and how long it lasts:</strong></p>
+<div class="write-space"></div></div>
+
+<h2>3 · Spot the Bug 🐛</h2>
+<p>Each block below was meant to do something but is broken. Fix it, then explain why the original was wrong.</p>
+<p><strong>Bug A</strong> — The wall should flash for a moment then go back to grey, but once it flashes it stays red forever.</p>
+<pre><code class="language-python">if gun_tip_x &gt; MAX_X:
+    gun_tip_x = MAX_X
+    flash_timer = 10
+</code></pre>
+<p><strong>Hint:</strong> the timer is set but never counts down.</p>
+<div class="qa"><p><strong>Write the fixed code (show where the timer goes down):</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug B</strong> — The screen should only shake when you hit a wall, but it shakes all the time even in the middle.</p>
+<pre><code class="language-python">shake_x = random.randint(-5, 5)
+</code></pre>
+<p><strong>Hint:</strong> only shake while the shake timer is running.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug C</strong> — The shake should move everything together, but right now the barrel jumps around while the base stays still, so they come apart.</p>
+<pre><code class="language-python">pygame.draw.rect(screen, GREEN, (CENTER_X - 30, HEIGHT - 80, 60, 40))
+pygame.draw.line(screen, GRAY, (CENTER_X + shake_x, HEIGHT - 80), (gun_tip_x + shake_x, HEIGHT - 200), 10)
+</code></pre>
+<p><strong>Hint:</strong> the base does not have the shake offset added.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>4 · Modify It 🔧</h2>
+<h3>🎯 Tune the shake strength and length</h3>
+<p>Change <code>random.randint(-5, 5)</code> to a bigger range, and change the timer from 10 to a bigger or smaller number.</p>
+<div class="qa"><p><strong>Write the shake range and timer length you chose, and how it feels:</strong></p>
+<div class="write-space"></div></div>
+
+<h3>🎯 Design your own hit feedback</h3>
+<p>Replace or add to the flash with your own idea — a flash of the whole screen, a colour change on the barrel, anything visual.</p>
+<div class="qa"><p><strong>Describe your feedback idea and the timer that controls it:</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Hint:</strong> any feedback works the same way — set a timer to a number on the hit, count it down each loop, and do something special while it is above 0.</p>
+<h2>5 · Make It 📸</h2>
+<h3>🎯 Build a turret that reacts to walls</h3>
+<p>Build a program where:</p>
+<ol>
+<li>the aim is clamped to the screen,</li>
+<li>hitting a wall flashes the boundary,</li>
+<li>hitting a wall shakes the scene for a moment,</li>
+<li>everything shakes together.</li>
+</ol>
+<p>Send a <strong>video</strong> showing a wall hit, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.</p>
+<div class="qa"><blockquote>
+<p>First, I made a timer that …</p>
+<p>When the gun hits a wall, I set the timer to …</p>
+<p>Each loop the timer goes down by …</p>
+<p>The shake uses random numbers to …</p>
+<p>One tricky moment was when …</p>
+<p>If I had more time, I would …</p>
+</blockquote>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<h2>6 · Record Your Walkthrough 🎥</h2>
+<p>Take a video showing a wall hit and the reaction. Talk through it like you are teaching someone. Try to use these words: <strong>timer</strong>, <strong>flash</strong>, <strong>shake</strong>, <strong>offset</strong>, <strong>random</strong>.</p>
+<blockquote>
+<ol>
+<li>Aim into a wall and show the flash and shake.</li>
+<li>Read your timer line out loud and say what 10 means.</li>
+<li>Point at where the timer counts down.</li>
+<li>Show your own feedback idea.</li>
+</ol>
+</blockquote>
+<div class="qa"><p><strong>Write what you will say in your video.</strong> Plan it here before you record.</p>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your wall-hit video to teacher on KakaoTalk.</p>
+</body>
+</html>

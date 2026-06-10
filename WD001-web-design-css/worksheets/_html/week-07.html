@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>✨ WD001 Week 7 — English Worksheet</title>
+<style>
+@page { size: A4; margin: 18mm 16mm 22mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-family: "Inter", "Segoe UI", system-ui, sans-serif; color: #1a1a2e; }
+body { font-size: 15px; line-height: 1.55; }
+
+.cover { border-bottom: 3px solid #ff7849; padding-bottom: 14px; margin-bottom: 20px; }
+.brand { font-size: 14px; font-weight: 800; color: #ff7849; letter-spacing: .06em; }
+h1 { font-size: 28px; color: #6b4ee6; margin: 8px 0 6px; line-height: 1.25; }
+h2 { font-size: 19px; color: #6b4ee6; margin: 22px 0 12px; padding-top: 10px; border-top: 1px solid #eee; page-break-before: always; }
+section.first h2, h2:first-of-type { border-top: none; padding-top: 0; page-break-before: avoid; }
+h3, h4 { font-size: 15px; margin: 14px 0 8px; color: #1a1a2e; }
+p { margin: 8px 0; }
+strong { color: #1a1a2e; }
+em { color: #555; }
+
+ul, ol { margin: 8px 0 8px 24px; }
+li { margin: 3px 0; }
+
+pre {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 13.5px;
+  background: #1e1e2e;
+  color: #b9f6ca;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 10px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  page-break-inside: avoid;
+  line-height: 1.5;
+}
+pre code { background: transparent; padding: 0; color: inherit; }
+code {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  background: #fff1e8;
+  color: #ff7849;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+blockquote {
+  margin: 10px 0;
+  padding: 10px 16px;
+  background: #fff6ef;
+  border-left: 3px solid #ff7849;
+  border-radius: 0 6px 6px 0;
+  color: #6a3a1c;
+}
+
+.write-space {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #ffffff 0,
+    #ffffff 27px,
+    #d4d4d4 27px,
+    #d4d4d4 28px
+  );
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  min-height: 114px;
+  margin: 10px 0 20px;
+  page-break-inside: avoid;
+}
+.write-space.short { min-height: 86px; }
+.write-space.tall { min-height: 170px; }
+
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
+hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
+
+.meta { color: #666; font-size: 13px; margin: 0 0 14px; }
+.answer-lines {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 14px 16px;
+  background: #fafafa;
+  white-space: pre;
+  line-height: 2.2;
+}
+
+footer {
+  position: fixed;
+  bottom: 10mm; left: 16mm; right: 16mm;
+  text-align: center;
+  font-size: 10px;
+  color: #aaa;
+}
+footer b { color: #ff7849; }
+</style>
+</head>
+<body>
+<div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
+<h1>✨ WD001 Week 7 — English Worksheet</h1>
+<p><strong>Topic:</strong> Hover Effects and Animations · <strong>Course:</strong> Web Design: CSS · <strong>Time:</strong> about 45 minutes</p>
+<p>This week you make your page <strong>feel alive</strong>. <code>:hover</code> adds a style that only shows when the mouse is on top of something. <code>transition</code> makes the change smooth instead of sudden, and <code>transform: scale()</code> grows an element a little. Together they make buttons and cards that react when you point at them.</p>
+<h2>1 · Predict 🔮</h2>
+<p>Read each bit of CSS. Before you imagine the browser drawing it, write what you think will happen.</p>
+<pre><code class="language-html">&lt;style&gt;
+  .btn {
+    background-color: red;
+  }
+  .btn:hover {
+    background-color: blue;
+  }
+&lt;/style&gt;
+</code></pre>
+<div class="qa"><p><strong>What colour is the button normally? What colour when the mouse is on it?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-html">&lt;style&gt;
+  .card:hover {
+    transform: scale(1.2);
+  }
+&lt;/style&gt;
+</code></pre>
+<div class="qa"><p><strong><code>scale(1.2)</code> on hover. Does the card get bigger or smaller when you point at it?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-html">&lt;style&gt;
+  .btn {
+    background-color: red;
+    transition: background-color 1s;
+  }
+  .btn:hover {
+    background-color: blue;
+  }
+&lt;/style&gt;
+</code></pre>
+<div class="qa"><p><strong>With <code>transition: background-color 1s</code>, does the colour change instantly or fade slowly?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-html">&lt;style&gt;
+  .card:hover {
+    transform: scale(0.8);
+  }
+&lt;/style&gt;
+</code></pre>
+<div class="qa"><p><strong><code>scale(0.8)</code> is less than 1. What do you think happens to the card on hover?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>2 · Spot the Bug 🐛</h2>
+<p>Each bit of CSS below was meant to do something, but it is broken. Read what it is <strong>supposed</strong> to do, then rewrite it so it works. After that, explain why the original was wrong and why your fix works.</p>
+<p><strong>Bug A</strong> — The button is supposed to change colour when you point at it, but it never changes.</p>
+<pre><code class="language-html">&lt;style&gt;
+  .btn hover {
+    background-color: green;
+  }
+&lt;/style&gt;
+</code></pre>
+<p><strong>Hint:</strong> <code>:hover</code> attaches to the selector in a special way.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug B</strong> — The card is supposed to grow <strong>smoothly</strong> on hover, but it snaps to the bigger size instantly.</p>
+<pre><code class="language-html">&lt;style&gt;
+  .card:hover {
+    transform: scale(1.1);
+  }
+&lt;/style&gt;
+</code></pre>
+<p><strong>Hint:</strong> which property makes a change happen smoothly over time, and where should it go?</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug C</strong> — The button is supposed to get slightly bigger on hover, but instead it disappears or breaks.</p>
+<pre><code class="language-html">&lt;style&gt;
+  .btn:hover {
+    transform: scale;
+  }
+&lt;/style&gt;
+</code></pre>
+<p><strong>Hint:</strong> <code>scale</code> needs a number to know how much to grow.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>3 · Build 3 Hover Cards 📸</h2>
+<p>In Replit, build <strong>3 cards with hover effects</strong>, and make each card react <strong>differently</strong>. For example: one changes colour, one grows a little, one gets a shadow. Use <code>transition</code> so the change is smooth.</p>
+<p>You can start from this button and use the same idea on your cards:</p>
+<pre><code class="language-html">&lt;button class=&quot;btn&quot;&gt;Click Me&lt;/button&gt;
+
+&lt;style&gt;
+  .btn {
+    background-color: #d4380d;
+    color: #ffffff;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+  }
+  .btn:hover {
+    background-color: #b32d09;
+    transform: scale(1.05);
+  }
+&lt;/style&gt;
+</code></pre>
+<p>Try your transition at <code>0.1s</code>, <code>0.5s</code>, and <code>1s</code>, and keep the speed that feels most natural to you.</p>
+<p>When you finish, send a <strong>video</strong> (hover effects are easier to see in a video) or a picture of your code, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.</p>
+<div class="qa"><blockquote>
+<p>My three hover effects are …</p>
+<p>I made the change smooth by using …</p>
+<p>I tried the transition at ___ and kept …</p>
+<p><code>transform: scale()</code> did …</p>
+<p>One tricky moment was when …</p>
+<p>If I had more time, I would …</p>
+</blockquote>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<h2>4 · Record Your Walkthrough 🎥</h2>
+<p>Now take a video on your phone (or a parent's phone) while you hover over your cards. Talk through it like you are teaching someone who has never made a hover effect. Try to use these words: <strong>hover</strong>, <strong>transition</strong>, <strong>scale</strong>, <strong>smooth</strong>, <strong>effect</strong>.</p>
+<blockquote>
+<ol>
+<li>Show all three cards, then hover over each one.</li>
+<li>Read one <code>:hover</code> rule out loud and say what it changes.</li>
+<li>Point out which card changes colour, which grows, and which gets a shadow.</li>
+<li>Show one thing you got wrong at first and how you fixed it.</li>
+</ol>
+</blockquote>
+<div class="qa"><p><strong>Write what you will say in your video.</strong> Use the space below to plan it before you record — you can read from it while filming.</p>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.</p>
+</body>
+</html>

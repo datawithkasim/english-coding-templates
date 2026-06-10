@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>⬅️➡️ RS003 Week 7 — English Worksheet</title>
+<style>
+@page { size: A4; margin: 18mm 16mm 22mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-family: "Inter", "Segoe UI", system-ui, sans-serif; color: #1a1a2e; }
+body { font-size: 15px; line-height: 1.55; }
+
+.cover { border-bottom: 3px solid #ff7849; padding-bottom: 14px; margin-bottom: 20px; }
+.brand { font-size: 14px; font-weight: 800; color: #ff7849; letter-spacing: .06em; }
+h1 { font-size: 28px; color: #6b4ee6; margin: 8px 0 6px; line-height: 1.25; }
+h2 { font-size: 19px; color: #6b4ee6; margin: 22px 0 12px; padding-top: 10px; border-top: 1px solid #eee; page-break-before: always; }
+section.first h2, h2:first-of-type { border-top: none; padding-top: 0; page-break-before: avoid; }
+h3, h4 { font-size: 15px; margin: 14px 0 8px; color: #1a1a2e; }
+p { margin: 8px 0; }
+strong { color: #1a1a2e; }
+em { color: #555; }
+
+ul, ol { margin: 8px 0 8px 24px; }
+li { margin: 3px 0; }
+
+pre {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 13.5px;
+  background: #1e1e2e;
+  color: #b9f6ca;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 10px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  page-break-inside: avoid;
+  line-height: 1.5;
+}
+pre code { background: transparent; padding: 0; color: inherit; }
+code {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  background: #fff1e8;
+  color: #ff7849;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+blockquote {
+  margin: 10px 0;
+  padding: 10px 16px;
+  background: #fff6ef;
+  border-left: 3px solid #ff7849;
+  border-radius: 0 6px 6px 0;
+  color: #6a3a1c;
+}
+
+.write-space {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #ffffff 0,
+    #ffffff 27px,
+    #d4d4d4 27px,
+    #d4d4d4 28px
+  );
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  min-height: 114px;
+  margin: 10px 0 20px;
+  page-break-inside: avoid;
+}
+.write-space.short { min-height: 86px; }
+.write-space.tall { min-height: 170px; }
+
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
+hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
+
+.meta { color: #666; font-size: 13px; margin: 0 0 14px; }
+.answer-lines {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 14px 16px;
+  background: #fafafa;
+  white-space: pre;
+  line-height: 2.2;
+}
+
+footer {
+  position: fixed;
+  bottom: 10mm; left: 16mm; right: 16mm;
+  text-align: center;
+  font-size: 10px;
+  color: #aaa;
+}
+footer b { color: #ff7849; }
+</style>
+</head>
+<body>
+<div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
+<h1>⬅️➡️ RS003 Week 7 — English Worksheet</h1>
+<p><strong>Topic:</strong> Move the Gun Left and Right · <strong>Course:</strong> Pygame Turret · <strong>Time:</strong> about 45 minutes</p>
+<p>This week your turret comes to life. The barrel <strong>aims</strong> left and right while you hold the arrow keys. You learn that the X axis goes across the screen — <strong>left makes X smaller, right makes X bigger</strong> — and that the base stays still while only the gun moves.</p>
+<blockquote>
+<p>🧠 Words to know: <strong>X axis</strong>, <strong>key press</strong>, <strong>arrow key</strong>, <strong>increase / decrease</strong>, <strong>speed</strong></p>
+</blockquote>
+<h2>1 · Predict 🔮</h2>
+<p>Read each piece of code. Before you run it, write what you think will happen.</p>
+<pre><code class="language-python">gun_x = CENTER_X
+SPEED = 5
+gun_x -= SPEED
+</code></pre>
+<div class="qa"><p><strong>Does <code>gun_x -= 5</code> move the gun left or right? Why?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-python">keys = pygame.key.get_pressed()
+if keys[pygame.K_LEFT]:
+    gun_x -= SPEED
+if keys[pygame.K_RIGHT]:
+    gun_x += SPEED
+</code></pre>
+<div class="qa"><p><strong>What happens while you hold the LEFT key? What about holding RIGHT?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-python">pygame.draw.rect(screen, DARK_GREEN, (CENTER_X - 30, HEIGHT - 80, 60, 40))
+pygame.draw.line(screen, GRAY, (CENTER_X, HEIGHT - 80), (gun_x, HEIGHT - 200), 10)
+</code></pre>
+<div class="qa"><p><strong>The base uses <code>CENTER_X</code> but the barrel tip uses <code>gun_x</code>. When you press a key, which part moves and which part stays still?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>2 · Run It 🏃</h2>
+<h3>🎯 Type the example, run it, and aim the barrel</h3>
+<pre><code class="language-python">import pygame
+pygame.init()
+
+WIDTH, HEIGHT = 800, 600
+CENTER_X = WIDTH // 2
+screen = pygame.display.set_mode((WIDTH, HEIGHT))
+
+SKY = (135, 206, 235)
+DARK_GREEN = (0, 100, 0)
+GRAY = (80, 80, 80)
+BLACK = (0, 0, 0)
+
+gun_tip_x = CENTER_X
+SPEED = 5
+
+clock = pygame.time.Clock()
+running = True
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+
+    keys = pygame.key.get_pressed()
+    if keys[pygame.K_LEFT]:
+        gun_tip_x -= SPEED
+    if keys[pygame.K_RIGHT]:
+        gun_tip_x += SPEED
+
+    screen.fill(SKY)
+    pygame.draw.rect(screen, DARK_GREEN, (CENTER_X - 30, HEIGHT - 80, 60, 40))
+    pygame.draw.circle(screen, BLACK, (CENTER_X, HEIGHT - 80), 10)
+    pygame.draw.line(screen, GRAY, (CENTER_X, HEIGHT - 80), (gun_tip_x, HEIGHT - 200), 10)
+    pygame.display.flip()
+    clock.tick(60)
+
+pygame.quit()
+</code></pre>
+<div class="qa"><p><strong>Hold LEFT, then RIGHT. Describe how the barrel tip moves and what stays still:</strong></p>
+<div class="write-space"></div></div>
+
+<h2>3 · Spot the Bug 🐛</h2>
+<p>Each block below was meant to do something but is broken. Fix it, then explain why the original was wrong.</p>
+<p><strong>Bug A</strong> — Pressing RIGHT should move the barrel right, but it moves <strong>left</strong> instead.</p>
+<pre><code class="language-python">if keys[pygame.K_RIGHT]:
+    gun_tip_x -= SPEED
+</code></pre>
+<p><strong>Hint:</strong> right means X gets bigger.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug B</strong> — The barrel should only move <strong>while a key is held</strong>, but it drifts on its own without any key press.</p>
+<pre><code class="language-python">gun_tip_x += SPEED
+if keys[pygame.K_LEFT]:
+    gun_tip_x -= SPEED
+</code></pre>
+<p><strong>Hint:</strong> the first line runs every loop no matter what.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug C</strong> — The keys do nothing at all. The barrel never moves.</p>
+<pre><code class="language-python">for event in pygame.event.get():
+    if event.type == pygame.QUIT:
+        running = False
+    if keys[pygame.K_LEFT]:
+        gun_tip_x -= SPEED
+</code></pre>
+<p><strong>Hint:</strong> <code>keys</code> was never asked for. You need <code>pygame.key.get_pressed()</code> outside the event loop.</p>
+<div class="qa"><p><strong>Write the fixed code (show where <code>keys</code> is set and used):</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>4 · Modify It 🔧</h2>
+<h3>🎯 Change the aiming speed</h3>
+<p>Try <code>SPEED = 2</code>, then <code>SPEED = 10</code>. Run each one.</p>
+<div class="qa"><p><strong>Write how the aiming feels at slow speed versus fast speed:</strong></p>
+<div class="write-space"></div></div>
+
+<h3>🎯 Keep the base still, move only the gun</h3>
+<p>Make sure your base rectangle uses <code>CENTER_X</code> and only the barrel tip uses <code>gun_tip_x</code>.</p>
+<div class="qa"><p><strong>Write down which line uses <code>CENTER_X</code> and which line uses <code>gun_tip_x</code>:</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Hint:</strong> the base is bolted to the ground. Only the moving end of the barrel should follow <code>gun_tip_x</code>.</p>
+<h2>5 · Make It 📸</h2>
+<h3>🎯 Build an aiming turret</h3>
+<p>Build a program where:</p>
+<ol>
+<li>the barrel aims left and right with the arrow keys,</li>
+<li>the base stays still,</li>
+<li>you can choose the aiming speed with a <code>SPEED</code> constant.</li>
+</ol>
+<p>Send a <strong>video</strong> (so the movement is visible), then explain what you did. Use these sentence starters — write 4 to 6 sentences total.</p>
+<div class="qa"><blockquote>
+<p>First, I made a variable to hold the barrel position called …</p>
+<p>Pressing LEFT changes it by … and RIGHT by …</p>
+<p>The base stays still because it uses …</p>
+<p>I set the speed to … because …</p>
+<p>One tricky moment was when …</p>
+<p>If I had more time, I would …</p>
+</blockquote>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<h2>6 · Record Your Walkthrough 🎥</h2>
+<p>Take a video while you aim the turret with the arrow keys. Talk through it like you are teaching someone. Try to use these words: <strong>X axis</strong>, <strong>key press</strong>, <strong>arrow key</strong>, <strong>increase</strong>, <strong>speed</strong>.</p>
+<blockquote>
+<ol>
+<li>Show the barrel aiming left and right as you press keys.</li>
+<li>Read your two <code>if keys[...]</code> lines out loud and say which way each moves.</li>
+<li>Point at the line that keeps the base still.</li>
+<li>Change the SPEED live and show the difference.</li>
+</ol>
+</blockquote>
+<div class="qa"><p><strong>Write what you will say in your video.</strong> Plan it here before you record.</p>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your aiming video to teacher on KakaoTalk.</p>
+</body>
+</html>

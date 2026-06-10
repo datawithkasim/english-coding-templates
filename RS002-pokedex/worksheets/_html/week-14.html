@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>🔴 RS002 Week 14 — English Worksheet</title>
+<style>
+@page { size: A4; margin: 18mm 16mm 22mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-family: "Inter", "Segoe UI", system-ui, sans-serif; color: #1a1a2e; }
+body { font-size: 15px; line-height: 1.55; }
+
+.cover { border-bottom: 3px solid #ff7849; padding-bottom: 14px; margin-bottom: 20px; }
+.brand { font-size: 14px; font-weight: 800; color: #ff7849; letter-spacing: .06em; }
+h1 { font-size: 28px; color: #6b4ee6; margin: 8px 0 6px; line-height: 1.25; }
+h2 { font-size: 19px; color: #6b4ee6; margin: 22px 0 12px; padding-top: 10px; border-top: 1px solid #eee; page-break-before: always; }
+section.first h2, h2:first-of-type { border-top: none; padding-top: 0; page-break-before: avoid; }
+h3, h4 { font-size: 15px; margin: 14px 0 8px; color: #1a1a2e; }
+p { margin: 8px 0; }
+strong { color: #1a1a2e; }
+em { color: #555; }
+
+ul, ol { margin: 8px 0 8px 24px; }
+li { margin: 3px 0; }
+
+pre {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 13.5px;
+  background: #1e1e2e;
+  color: #b9f6ca;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 10px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  page-break-inside: avoid;
+  line-height: 1.5;
+}
+pre code { background: transparent; padding: 0; color: inherit; }
+code {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  background: #fff1e8;
+  color: #ff7849;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+blockquote {
+  margin: 10px 0;
+  padding: 10px 16px;
+  background: #fff6ef;
+  border-left: 3px solid #ff7849;
+  border-radius: 0 6px 6px 0;
+  color: #6a3a1c;
+}
+
+.write-space {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #ffffff 0,
+    #ffffff 27px,
+    #d4d4d4 27px,
+    #d4d4d4 28px
+  );
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  min-height: 114px;
+  margin: 10px 0 20px;
+  page-break-inside: avoid;
+}
+.write-space.short { min-height: 86px; }
+.write-space.tall { min-height: 170px; }
+
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
+hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
+
+.meta { color: #666; font-size: 13px; margin: 0 0 14px; }
+.answer-lines {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 14px 16px;
+  background: #fafafa;
+  white-space: pre;
+  line-height: 2.2;
+}
+
+footer {
+  position: fixed;
+  bottom: 10mm; left: 16mm; right: 16mm;
+  text-align: center;
+  font-size: 10px;
+  color: #aaa;
+}
+footer b { color: #ff7849; }
+</style>
+</head>
+<body>
+<div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
+<h1>🔴 RS002 Week 14 — English Worksheet</h1>
+<p><strong>Topic:</strong> Best-of-3 Tournament + Type Advantage · <strong>Course:</strong> Pokédex App · <strong>Time:</strong> about 45 minutes</p>
+<p>This week one battle becomes a <strong>best-of-3 tournament</strong>. You track wins and losses in a <code>while</code> loop, and you add a <strong>type-advantage</strong> bonus using a small dictionary (water beats fire, and so on). Lots of pieces working together — functions, dictionaries, loops, randomness.</p>
+<h2>1 · Recall 🧠</h2>
+<p>From memory:</p>
+<div class="qa"><p><strong>Write the line that picks a random Pokémon dictionary from a list called <code>pokedex</code> (assume <code>random</code> is imported).</strong></p>
+<div class="write-space"></div></div>
+
+<h2>2 · Predict 🔮</h2>
+<p>Read each block. Before you run it, write what you think will happen.</p>
+<pre><code class="language-python">TYPE_ADVANTAGE = {&quot;물&quot;: &quot;불&quot;, &quot;불&quot;: &quot;풀&quot;}
+print(TYPE_ADVANTAGE.get(&quot;물&quot;))
+print(TYPE_ADVANTAGE.get(&quot;전기&quot;))
+</code></pre>
+<div class="qa"><p><strong><code>.get</code> returns the value, or <code>None</code> if the key is missing. What two lines print?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-python">wins = 0
+losses = 0
+while wins &lt; 2 and losses &lt; 2:
+    wins = wins + 1
+    print(f&quot;{wins}승 {losses}패&quot;)
+</code></pre>
+<div class="qa"><p><strong>The loop keeps going while BOTH are under 2. Write every line it prints, and say when it stops.</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-python">attacker = {&quot;type&quot;: &quot;물&quot;}
+defender = {&quot;type&quot;: &quot;불&quot;}
+TYPE_ADVANTAGE = {&quot;물&quot;: &quot;불&quot;}
+
+if TYPE_ADVANTAGE.get(attacker[&quot;type&quot;]) == defender[&quot;type&quot;]:
+    print(&quot;효과적!&quot;)
+else:
+    print(&quot;보통&quot;)
+</code></pre>
+<div class="qa"><p><strong>Does <code>효과적!</code> print? Walk through the comparison.</strong></p>
+<div class="write-space"></div></div>
+
+<h2>3 · Spot the Bug 🐛</h2>
+<p>Read what each block is <strong>supposed</strong> to do, fix it, then explain the fix.</p>
+<p><strong>Bug A</strong> — This loop should stop once <strong>either</strong> side reaches 2. Right now it stops only when both reach 2, which can loop forever.</p>
+<pre><code class="language-python">wins = 0
+losses = 0
+while wins &lt; 2 or losses &lt; 2:
+    pass  # battle happens here
+</code></pre>
+<p><strong>Hint:</strong> swap <code>or</code> for <code>and</code>.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug B</strong> — The advantage check should be safe even when the type is not in the table. Right now an unlisted type crashes with a <code>KeyError</code>.</p>
+<pre><code class="language-python">TYPE_ADVANTAGE = {&quot;물&quot;: &quot;불&quot;, &quot;불&quot;: &quot;풀&quot;}
+attacker = {&quot;type&quot;: &quot;전기&quot;}
+defender = {&quot;type&quot;: &quot;물&quot;}
+
+if TYPE_ADVANTAGE[attacker[&quot;type&quot;]] == defender[&quot;type&quot;]:
+    print(&quot;효과적!&quot;)
+</code></pre>
+<p><strong>Hint:</strong> use <code>.get(...)</code> instead of <code>[...]</code> so a missing key returns <code>None</code>.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug C</strong> — A win should add <strong>one</strong> to <code>wins</code>. Right now it resets <code>wins</code> to 1 every round, so the trainer can never reach 2.</p>
+<pre><code class="language-python">wins = 0
+# round 1 won
+wins = 1
+# round 2 won
+wins = 1
+print(f&quot;{wins}승&quot;)
+</code></pre>
+<p><strong>Hint:</strong> add to the current value with <code>wins = wins + 1</code>.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>4 · Modify It ✏️</h2>
+<p>Start from this working tournament:</p>
+<pre><code class="language-python">import random
+
+TYPE_ADVANTAGE = {&quot;물&quot;: &quot;불&quot;, &quot;불&quot;: &quot;풀&quot;, &quot;풀&quot;: &quot;전기&quot;, &quot;전기&quot;: &quot;물&quot;}
+
+def calculate_score(attacker, defender):
+    base = attacker[&quot;hp&quot;] + attacker[&quot;attack&quot;]
+    if TYPE_ADVANTAGE.get(attacker[&quot;type&quot;]) == defender[&quot;type&quot;]:
+        base = int(base * 1.2)
+        print(f&quot;  ✨ {attacker['name']}의 {attacker['type']} 타입이 효과적입니다!&quot;)
+    return base
+
+def battle_round(my_p, enemy_p):
+    my_score = calculate_score(my_p, enemy_p)
+    enemy_score = calculate_score(enemy_p, my_p)
+    if my_score &gt; enemy_score:
+        return &quot;win&quot;
+    elif my_score &lt; enemy_score:
+        return &quot;lose&quot;
+    else:
+        return &quot;draw&quot;
+
+def tournament(my_pokemon, pokedex):
+    wins = 0
+    losses = 0
+    print(f&quot;\n=== 토너먼트 시작! 내 포켓몬: {my_pokemon['name']} ===&quot;)
+    while wins &lt; 2 and losses &lt; 2:
+        enemy = random.choice(pokedex)
+        print(f&quot;\n🥊 {my_pokemon['name']} vs {enemy['name']}&quot;)
+        result = battle_round(my_pokemon, enemy)
+        if result == &quot;win&quot;:
+            wins = wins + 1
+            print(f&quot;  → 승리! ({wins}승 {losses}패)&quot;)
+        elif result == &quot;lose&quot;:
+            losses = losses + 1
+            print(f&quot;  → 패배... ({wins}승 {losses}패)&quot;)
+        else:
+            print(&quot;  → 무승부, 재경기!&quot;)
+    if wins == 2:
+        print(f&quot;\n🏆 토너먼트 우승! {my_pokemon['name']} 최강!&quot;)
+    else:
+        print(f&quot;\n😢 토너먼트 패배. 다음 기회에...&quot;)
+
+pokedex = [
+    {&quot;name&quot;: &quot;피카츄&quot;, &quot;type&quot;: &quot;전기&quot;, &quot;hp&quot;: 35, &quot;attack&quot;: 55},
+    {&quot;name&quot;: &quot;이상해씨&quot;, &quot;type&quot;: &quot;풀&quot;, &quot;hp&quot;: 45, &quot;attack&quot;: 49},
+    {&quot;name&quot;: &quot;꼬부기&quot;, &quot;type&quot;: &quot;물&quot;, &quot;hp&quot;: 44, &quot;attack&quot;: 48},
+    {&quot;name&quot;: &quot;파이리&quot;, &quot;type&quot;: &quot;불&quot;, &quot;hp&quot;: 39, &quot;attack&quot;: 52},
+]
+
+tournament(pokedex[0], pokedex)
+</code></pre>
+<p>Make these changes one at a time and run after each:</p>
+<ol>
+<li>Add one more pair to <code>TYPE_ADVANTAGE</code>.</li>
+<li>Change the bonus from <code>1.2</code> (20%) to a stronger number and see how it changes results.</li>
+<li>Make the tournament best-of-5 (first to 3 wins).</li>
+</ol>
+<div class="qa"><p><strong>Write your changed / added lines here:</strong></p>
+<div class="write-space"></div></div>
+
+<h2>5 · Make It 📸</h2>
+<p>Add a <strong>Tournament</strong> mode to your app: best-of-3 random battles with a type-advantage bonus. Track wins and losses and announce the champion.</p>
+<p>When it works, send a <strong>video</strong> on KakaoTalk showing <strong>one full tournament</strong> from start to result. Then explain what you did. Use these starters — write 4 to 6 sentences.</p>
+<div class="qa"><blockquote>
+<p>First, I tracked wins and losses with …</p>
+<p>My <code>while</code> loop kept going while …</p>
+<p>I gave a type bonus by checking …</p>
+<p>I used <code>.get</code> instead of <code>[...]</code> so that …</p>
+<p>The trickiest part was …</p>
+<p>If I had more time, I would add the rule …</p>
+</blockquote>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<h2>6 · Record Your Walkthrough 🎥</h2>
+<p>Film a full tournament. Teach it like the viewer is new. Try to use: <strong>tournament</strong>, <strong>while loop</strong>, <strong>type advantage</strong>, <strong>get</strong>, <strong>best of three</strong>.</p>
+<blockquote>
+<ol>
+<li>Run one complete tournament and narrate each round.</li>
+<li>Point to the <code>while wins &lt; 2 and losses &lt; 2</code> line and explain it.</li>
+<li>Show a round where the type bonus kicks in.</li>
+<li>Explain why <code>.get</code> keeps the program from crashing.</li>
+</ol>
+</blockquote>
+<div class="qa"><p><strong>Plan what you will say here first:</strong></p>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+</content></p>
+</body>
+</html>

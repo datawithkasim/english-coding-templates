@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>💬 RS001 Week 1 — English Worksheet</title>
+<style>
+@page { size: A4; margin: 18mm 16mm 22mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-family: "Inter", "Segoe UI", system-ui, sans-serif; color: #1a1a2e; }
+body { font-size: 15px; line-height: 1.55; }
+
+.cover { border-bottom: 3px solid #ff7849; padding-bottom: 14px; margin-bottom: 20px; }
+.brand { font-size: 14px; font-weight: 800; color: #ff7849; letter-spacing: .06em; }
+h1 { font-size: 28px; color: #6b4ee6; margin: 8px 0 6px; line-height: 1.25; }
+h2 { font-size: 19px; color: #6b4ee6; margin: 22px 0 12px; padding-top: 10px; border-top: 1px solid #eee; page-break-before: always; }
+section.first h2, h2:first-of-type { border-top: none; padding-top: 0; page-break-before: avoid; }
+h3, h4 { font-size: 15px; margin: 14px 0 8px; color: #1a1a2e; }
+p { margin: 8px 0; }
+strong { color: #1a1a2e; }
+em { color: #555; }
+
+ul, ol { margin: 8px 0 8px 24px; }
+li { margin: 3px 0; }
+
+pre {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 13.5px;
+  background: #1e1e2e;
+  color: #b9f6ca;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 10px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  page-break-inside: avoid;
+  line-height: 1.5;
+}
+pre code { background: transparent; padding: 0; color: inherit; }
+code {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  background: #fff1e8;
+  color: #ff7849;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+blockquote {
+  margin: 10px 0;
+  padding: 10px 16px;
+  background: #fff6ef;
+  border-left: 3px solid #ff7849;
+  border-radius: 0 6px 6px 0;
+  color: #6a3a1c;
+}
+
+.write-space {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #ffffff 0,
+    #ffffff 27px,
+    #d4d4d4 27px,
+    #d4d4d4 28px
+  );
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  min-height: 114px;
+  margin: 10px 0 20px;
+  page-break-inside: avoid;
+}
+.write-space.short { min-height: 86px; }
+.write-space.tall { min-height: 170px; }
+
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
+hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
+
+.meta { color: #666; font-size: 13px; margin: 0 0 14px; }
+.answer-lines {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 14px 16px;
+  background: #fafafa;
+  white-space: pre;
+  line-height: 2.2;
+}
+
+footer {
+  position: fixed;
+  bottom: 10mm; left: 16mm; right: 16mm;
+  text-align: center;
+  font-size: 10px;
+  color: #aaa;
+}
+footer b { color: #ff7849; }
+</style>
+</head>
+<body>
+<div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
+<h1>💬 RS001 Week 1 — English Worksheet</h1>
+<p><strong>Topic:</strong> Talking to the Computer — Variables · <strong>Course:</strong> Text Adventure (Python) · <strong>Time:</strong> about 45 minutes</p>
+<p>This week you start your adventure game. The computer <strong>asks</strong> the player a question with <code>game.ask()</code>, <strong>remembers</strong> the answer inside a <strong>variable</strong>, and <strong>shows</strong> it back with <code>game.say()</code>. A variable is just a labelled box that holds a value.</p>
+<pre><code class="language-python">name = game.ask(&quot;What is your name?&quot;)
+game.say(f&quot;Welcome, {name}! Your adventure begins.&quot;)
+</code></pre>
+<h2>1 · Predict 🔮</h2>
+<p>Read each piece of code. Before you run it in your head, write what you think the screen will show.</p>
+<pre><code class="language-python">hero = game.ask(&quot;Hero name?&quot;)
+game.say(f&quot;Hello {hero}&quot;)
+</code></pre>
+<div class="qa"><p><strong>The player types <code>Mina</code>. What appears on screen?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-python">hero = game.ask(&quot;Hero name?&quot;)
+game.say(&quot;Hello {hero}&quot;)
+</code></pre>
+<div class="qa"><p><strong>This one has no <code>f</code> before the quotes. How is the output different from the one above?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-python">weapon = game.ask(&quot;Pick a weapon&quot;)
+if weapon == &quot;&quot;:
+    weapon = &quot;rusty sword&quot;
+game.say(f&quot;You hold a {weapon}.&quot;)
+</code></pre>
+<div class="qa"><p><strong>The player just presses enter without typing anything. What weapon do they end up with? Why?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>2 · Spot the Bug 🐛</h2>
+<p>Each block below was meant to do something, but it is broken. Read what it is <strong>supposed</strong> to do, fix it, then explain why the original was wrong.</p>
+<p><strong>Bug A</strong> — The code should greet the player by the name they typed. Right now it always prints the word <code>name</code> instead of their answer.</p>
+<pre><code class="language-python">name = game.ask(&quot;What is your name?&quot;)
+game.say(f&quot;Welcome, name!&quot;)
+</code></pre>
+<p><strong>Hint:</strong> the variable only gets swapped in when it is inside <code>{ }</code>.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug B</strong> — If the player types nothing, the game should call them <code>brave traveller</code>. Right now an empty answer slips through and the greeting looks empty.</p>
+<pre><code class="language-python">name = game.ask(&quot;What is your name?&quot;)
+game.say(f&quot;Welcome, {name}!&quot;)
+</code></pre>
+<p><strong>Hint:</strong> check for an empty answer with <code>if name == "":</code> <em>before</em> you say the greeting.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug C</strong> — The intro should print on <strong>three separate lines</strong>. Right now it all runs together on one line.</p>
+<pre><code class="language-python">game.say(&quot;Welcome! You enter a dark forest. Two paths lie ahead.&quot;)
+</code></pre>
+<p><strong>Hint:</strong> <code>\n</code> means "new line". Where would you put it to split the sentence?</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>3 · 🎯 Build Your Opening</h2>
+<p>Open your game project. Write a short program that:</p>
+<ul>
+<li>asks the player for their <strong>name</strong>,</li>
+<li>uses a default name if they type nothing,</li>
+<li>prints a <strong>welcome message</strong> that uses their name,</li>
+<li>uses <code>\n</code> at least once so the intro is easy to read.</li>
+</ul>
+<p>Make it your own — the forest, a castle, a spaceship, anything you like.</p>
+<p>When it works, send a <strong>photo or video</strong> of your screen, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.</p>
+<div class="qa"><blockquote>
+<p>First, I asked the player for …</p>
+<p>I stored the answer in a variable called …</p>
+<p>If the player typed nothing, I …</p>
+<p>I used <code>\n</code> to …</p>
+<p>One tricky moment was when …</p>
+<p>If I had more time, I would …</p>
+</blockquote>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<h2>4 · Record Your Walkthrough 🎥</h2>
+<p>Take a video on your phone (or a parent's phone) while your program runs. Talk through it like you are teaching someone who has never seen code. Try to use these words: <strong>variable</strong>, <strong>ask</strong>, <strong>say</strong>, <strong>f-string</strong>, <strong>new line</strong>.</p>
+<blockquote>
+<ol>
+<li>Run your program and answer your own question.</li>
+<li>Point to the line that stores the answer in a variable.</li>
+<li>Read your <code>f"..."</code> line out loud and say how the variable gets swapped in.</li>
+<li>Show what happens when you type nothing.</li>
+</ol>
+</blockquote>
+<div class="qa"><p><strong>Write what you will say in your video.</strong> Plan it here first — you can read from it while filming.</p>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.</p>
+</body>
+</html>

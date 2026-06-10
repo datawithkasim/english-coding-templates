@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>📝 WD003 Week 1 — English Worksheet</title>
+<style>
+@page { size: A4; margin: 18mm 16mm 22mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-family: "Inter", "Segoe UI", system-ui, sans-serif; color: #1a1a2e; }
+body { font-size: 15px; line-height: 1.55; }
+
+.cover { border-bottom: 3px solid #ff7849; padding-bottom: 14px; margin-bottom: 20px; }
+.brand { font-size: 14px; font-weight: 800; color: #ff7849; letter-spacing: .06em; }
+h1 { font-size: 28px; color: #6b4ee6; margin: 8px 0 6px; line-height: 1.25; }
+h2 { font-size: 19px; color: #6b4ee6; margin: 22px 0 12px; padding-top: 10px; border-top: 1px solid #eee; page-break-before: always; }
+section.first h2, h2:first-of-type { border-top: none; padding-top: 0; page-break-before: avoid; }
+h3, h4 { font-size: 15px; margin: 14px 0 8px; color: #1a1a2e; }
+p { margin: 8px 0; }
+strong { color: #1a1a2e; }
+em { color: #555; }
+
+ul, ol { margin: 8px 0 8px 24px; }
+li { margin: 3px 0; }
+
+pre {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 13.5px;
+  background: #1e1e2e;
+  color: #b9f6ca;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 10px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  page-break-inside: avoid;
+  line-height: 1.5;
+}
+pre code { background: transparent; padding: 0; color: inherit; }
+code {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  background: #fff1e8;
+  color: #ff7849;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+blockquote {
+  margin: 10px 0;
+  padding: 10px 16px;
+  background: #fff6ef;
+  border-left: 3px solid #ff7849;
+  border-radius: 0 6px 6px 0;
+  color: #6a3a1c;
+}
+
+.write-space {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #ffffff 0,
+    #ffffff 27px,
+    #d4d4d4 27px,
+    #d4d4d4 28px
+  );
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  min-height: 114px;
+  margin: 10px 0 20px;
+  page-break-inside: avoid;
+}
+.write-space.short { min-height: 86px; }
+.write-space.tall { min-height: 170px; }
+
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
+hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
+
+.meta { color: #666; font-size: 13px; margin: 0 0 14px; }
+.answer-lines {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 14px 16px;
+  background: #fafafa;
+  white-space: pre;
+  line-height: 2.2;
+}
+
+footer {
+  position: fixed;
+  bottom: 10mm; left: 16mm; right: 16mm;
+  text-align: center;
+  font-size: 10px;
+  color: #aaa;
+}
+footer b { color: #ff7849; }
+</style>
+</head>
+<body>
+<div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
+<h1>📝 WD003 Week 1 — English Worksheet</h1>
+<p><strong>Topic:</strong> Site Planning — Sketch on Paper First · <strong>Course:</strong> Portfolio Site · <strong>Time:</strong> about 45 minutes</p>
+<p>This week there is <strong>no code yet</strong>. You plan your site on paper first — a <strong>wireframe</strong>. A wireframe shows <em>what goes where</em>, with no colors and no real text. Just boxes and labels. Planning first means less getting lost later.</p>
+<blockquote>
+<p>A portfolio site usually has these sections: <strong>Hero</strong>, <strong>About</strong>, <strong>Projects</strong>, <strong>Contact</strong>, and a <strong>Footer</strong>. You will arrange them, then decide what <em>yours</em> says about <em>you</em>.</p>
+</blockquote>
+<h2>1 · Predict 🔮</h2>
+<p>Read each plan below. Before you imagine the page, write what you think a visitor would see.</p>
+<pre><code>[ Nav: Home / About / Projects / Contact ]
+[ Hero: my name + one line ]
+[ About: photo + a few sentences ]
+[ Projects: 3 cards ]
+[ Contact: a form ]
+[ Footer ]
+</code></pre>
+<div class="qa"><p><strong>A visitor lands at the top and scrolls down. List, in order, what they see.</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code>[ Hero ]
+[ Contact ]
+[ About ]
+[ Projects ]
+</code></pre>
+<div class="qa"><p><strong>This site puts Contact second, right after the Hero. Is that a good first impression? What would a visitor know about this person before they are asked to send a message?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code>[ Nav: Home / About / Projects / Contact ]
+[ Hero ]
+[ About ]
+</code></pre>
+<div class="qa"><p><strong>The nav menu has four links, but the page only has a Hero and an About section. What happens when a visitor clicks "Projects"?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>2 · Spot the Bug 🐛</h2>
+<p>Each plan below was meant to do something, but it does not quite work yet. Read what the plan is <strong>supposed</strong> to do, then rewrite it so it makes sense. After that, explain why the original was a problem.</p>
+<p><strong>Bug A</strong> — This wireframe is supposed to introduce the person <em>before</em> showing their work. Right now the Projects come before anyone knows who made them.</p>
+<pre><code>[ Hero ]
+[ Projects ]
+[ About ]
+[ Contact ]
+</code></pre>
+<div class="qa"><p><strong>Write the fixed order:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was the original order a problem? Why does your order work better?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug B</strong> — A wireframe is supposed to use <strong>boxes and labels only</strong> — no colors, no finished text, no real photos. This one has jumped ahead.</p>
+<pre><code>[ Hero: bright orange background, font is &quot;Pretendard Bold 64px&quot;,
+  exact paragraph already written out, real photo placed ]
+</code></pre>
+<p><strong>Hint:</strong> a wireframe decides <em>position</em>, not <em>paint</em>. Strip it back.</p>
+<div class="qa"><p><strong>Write a proper wireframe label for the Hero:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why is it better to leave the colors and final text for later?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug C</strong> — Every section is supposed to have a clear <strong>label</strong> so you know what it is for. This plan has a mystery box.</p>
+<pre><code>[ Nav ]
+[ Hero ]
+[ ??? ]
+[ Footer ]
+</code></pre>
+<p><strong>Hint:</strong> name the box, and say what one thing it shows.</p>
+<div class="qa"><p><strong>Write the fixed plan:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why does naming every box now save you trouble later?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>3 · Plan Your Own Site 📸</h2>
+<p>Now make <em>your</em> wireframe. On paper, sketch your site as a column of boxes — one box per section. Inside each box, write only a <strong>label</strong> and one note about what it shows.</p>
+<ol>
+<li>Draw at least the five sections: <strong>Hero, About, Projects, Contact, Footer</strong>.</li>
+<li>Pick <strong>three words</strong> that represent you (for example: <em>coding, funny, creative</em>).</li>
+<li>Choose <strong>2 colors and 1 font</strong> you might use, and write them in the margin.</li>
+<li>Write <strong>3–4 sentences</strong> of self-introduction for your About section.</li>
+</ol>
+<p>When you finish, send a <strong>photo or video</strong> of your paper sketch, then explain your plan. Use these sentence starters — write 4 to 6 sentences total.</p>
+<div class="qa"><blockquote>
+<p>The three words I picked for myself are …</p>
+<p>My Hero section will say …</p>
+<p>In my About section, I want to tell visitors …</p>
+<p>The hardest part of planning was …</p>
+<p>I chose these colors because …</p>
+<p>If I had more time, I would add …</p>
+</blockquote>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<h2>4 · Record Your Walkthrough 🎥</h2>
+<p>Now take a video on your phone (or a parent's phone) and walk through your paper plan. Talk through it like you are showing someone what your finished site <em>will</em> look like. Try to use these words: <strong>wireframe</strong>, <strong>section</strong>, <strong>Hero</strong>, <strong>About</strong>, <strong>layout</strong>.</p>
+<blockquote>
+<ol>
+<li>Hold up your sketch and point to each section from top to bottom.</li>
+<li>Read your three words and say why they fit you.</li>
+<li>Read your About sentences out loud.</li>
+<li>Say which section you are most excited to build.</li>
+</ol>
+</blockquote>
+<div class="qa"><p><strong>Write what you will say in your video.</strong> Use the space below to plan it before you record — you can read from it while filming.</p>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your sketch photo + your walkthrough video to teacher on KakaoTalk.</p>
+</body>
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>📋 RS001 Week 3 — English Worksheet</title>
+<style>
+@page { size: A4; margin: 18mm 16mm 22mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-family: "Inter", "Segoe UI", system-ui, sans-serif; color: #1a1a2e; }
+body { font-size: 15px; line-height: 1.55; }
+
+.cover { border-bottom: 3px solid #ff7849; padding-bottom: 14px; margin-bottom: 20px; }
+.brand { font-size: 14px; font-weight: 800; color: #ff7849; letter-spacing: .06em; }
+h1 { font-size: 28px; color: #6b4ee6; margin: 8px 0 6px; line-height: 1.25; }
+h2 { font-size: 19px; color: #6b4ee6; margin: 22px 0 12px; padding-top: 10px; border-top: 1px solid #eee; page-break-before: always; }
+section.first h2, h2:first-of-type { border-top: none; padding-top: 0; page-break-before: avoid; }
+h3, h4 { font-size: 15px; margin: 14px 0 8px; color: #1a1a2e; }
+p { margin: 8px 0; }
+strong { color: #1a1a2e; }
+em { color: #555; }
+
+ul, ol { margin: 8px 0 8px 24px; }
+li { margin: 3px 0; }
+
+pre {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 13.5px;
+  background: #1e1e2e;
+  color: #b9f6ca;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 10px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  page-break-inside: avoid;
+  line-height: 1.5;
+}
+pre code { background: transparent; padding: 0; color: inherit; }
+code {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  background: #fff1e8;
+  color: #ff7849;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+blockquote {
+  margin: 10px 0;
+  padding: 10px 16px;
+  background: #fff6ef;
+  border-left: 3px solid #ff7849;
+  border-radius: 0 6px 6px 0;
+  color: #6a3a1c;
+}
+
+.write-space {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #ffffff 0,
+    #ffffff 27px,
+    #d4d4d4 27px,
+    #d4d4d4 28px
+  );
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  min-height: 114px;
+  margin: 10px 0 20px;
+  page-break-inside: avoid;
+}
+.write-space.short { min-height: 86px; }
+.write-space.tall { min-height: 170px; }
+
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
+hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
+
+.meta { color: #666; font-size: 13px; margin: 0 0 14px; }
+.answer-lines {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 14px 16px;
+  background: #fafafa;
+  white-space: pre;
+  line-height: 2.2;
+}
+
+footer {
+  position: fixed;
+  bottom: 10mm; left: 16mm; right: 16mm;
+  text-align: center;
+  font-size: 10px;
+  color: #aaa;
+}
+footer b { color: #ff7849; }
+</style>
+</head>
+<body>
+<div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
+<h1>📋 RS001 Week 3 — English Worksheet</h1>
+<p><strong>Topic:</strong> Lists and Choices · <strong>Course:</strong> Text Adventure (Python) · <strong>Time:</strong> about 45 minutes</p>
+<p>This week you learn the <strong>list</strong> — one box that holds many values. You pull a value out by its <strong>index</strong>: the first item is <code>[0]</code>, the second is <code>[1]</code>, the third is <code>[2]</code>.</p>
+<pre><code class="language-python">weapons = [&quot;sword&quot;, &quot;bow&quot;, &quot;wand&quot;]
+game.say(f&quot;You can choose: {weapons[0]}, {weapons[1]}, {weapons[2]}&quot;)
+</code></pre>
+<h2>1 · Predict 🔮</h2>
+<p>Read each piece of code. Before you run it in your head, write what you think the screen will show.</p>
+<pre><code class="language-python">paths = [&quot;left&quot;, &quot;middle&quot;, &quot;right&quot;]
+game.say(paths[1])
+</code></pre>
+<div class="qa"><p><strong>Which word appears? (Careful — counting starts at 0.)</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-python">enemies = [&quot;goblin&quot;, &quot;orc&quot;, &quot;dragon&quot;]
+enemy_hp = [10, 25, 100]
+game.say(f&quot;{enemies[2]} has {enemy_hp[2]} HP&quot;)
+</code></pre>
+<div class="qa"><p><strong>The two lists share the same index. What sentence is printed?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-python">items = [&quot;map&quot;, &quot;key&quot;, &quot;torch&quot;]
+game.say(items[3])
+</code></pre>
+<div class="qa"><p><strong>The list has 3 items but the code asks for <code>[3]</code>. What goes wrong?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>2 · Spot the Bug 🐛</h2>
+<p>Each block was meant to do something, but it is broken. Read what it is <strong>supposed</strong> to do, fix it, then explain why the original was wrong.</p>
+<p><strong>Bug A</strong> — This should print the <strong>first</strong> weapon in the list. Right now it prints the second one.</p>
+<pre><code class="language-python">weapons = [&quot;sword&quot;, &quot;bow&quot;, &quot;wand&quot;]
+game.say(f&quot;Your first weapon: {weapons[1]}&quot;)
+</code></pre>
+<p><strong>Hint:</strong> the first item is not <code>[1]</code>.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug B</strong> — This should show all three paths as a numbered menu. Right now every line shows the <strong>same</strong> path.</p>
+<pre><code class="language-python">paths = [&quot;cave&quot;, &quot;river&quot;, &quot;field&quot;]
+game.say(f&quot;1: {paths[0]}&quot;)
+game.say(f&quot;2: {paths[0]}&quot;)
+game.say(f&quot;3: {paths[0]}&quot;)
+</code></pre>
+<p><strong>Hint:</strong> lines 2 and 3 should use a different index.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug C</strong> — The enemy name and its HP should belong to the <strong>same</strong> enemy. Right now the name is the goblin but the HP is the dragon's.</p>
+<pre><code class="language-python">enemy_names = [&quot;goblin&quot;, &quot;orc&quot;, &quot;dragon&quot;]
+enemy_hp = [10, 25, 100]
+game.say(f&quot;A {enemy_names[0]} appears! HP: {enemy_hp[2]}&quot;)
+</code></pre>
+<p><strong>Hint:</strong> the same enemy lives at the same index in both lists.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>3 · 🎯 Add an Inventory</h2>
+<p>Open your game. After your opening, add a <strong>list</strong> for the hero's starting items (an inventory) and show them on screen. Then add a second list — a menu of <strong>paths</strong> the player can read.</p>
+<p>When it works, send a <strong>photo or video</strong>, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.</p>
+<div class="qa"><blockquote>
+<p>First, I made a list called …</p>
+<p>The items inside it were …</p>
+<p>To show the second item, I used index …</p>
+<p>I learned that the first item is …</p>
+<p>One tricky moment was when …</p>
+<p>If I had more time, I would …</p>
+</blockquote>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<h2>4 · Record Your Walkthrough 🎥</h2>
+<p>Take a video on your phone (or a parent's phone) while your inventory prints. Teach it like the viewer has never coded. Try to use these words: <strong>list</strong>, <strong>index</strong>, <strong>first</strong>, <strong>inventory</strong>, <strong>value</strong>.</p>
+<blockquote>
+<ol>
+<li>Run your game and show the inventory on screen.</li>
+<li>Point to the list in your code and read the items.</li>
+<li>Pick one item and say its index out loud.</li>
+<li>Explain why the first item is index 0, not 1.</li>
+</ol>
+</blockquote>
+<div class="qa"><p><strong>Write what you will say in your video.</strong> Plan it here first.</p>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.</p>
+</body>
+</html>

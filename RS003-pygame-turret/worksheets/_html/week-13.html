@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>🧩 RS003 Week 13 — English Worksheet</title>
+<style>
+@page { size: A4; margin: 18mm 16mm 22mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-family: "Inter", "Segoe UI", system-ui, sans-serif; color: #1a1a2e; }
+body { font-size: 15px; line-height: 1.55; }
+
+.cover { border-bottom: 3px solid #ff7849; padding-bottom: 14px; margin-bottom: 20px; }
+.brand { font-size: 14px; font-weight: 800; color: #ff7849; letter-spacing: .06em; }
+h1 { font-size: 28px; color: #6b4ee6; margin: 8px 0 6px; line-height: 1.25; }
+h2 { font-size: 19px; color: #6b4ee6; margin: 22px 0 12px; padding-top: 10px; border-top: 1px solid #eee; page-break-before: always; }
+section.first h2, h2:first-of-type { border-top: none; padding-top: 0; page-break-before: avoid; }
+h3, h4 { font-size: 15px; margin: 14px 0 8px; color: #1a1a2e; }
+p { margin: 8px 0; }
+strong { color: #1a1a2e; }
+em { color: #555; }
+
+ul, ol { margin: 8px 0 8px 24px; }
+li { margin: 3px 0; }
+
+pre {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 13.5px;
+  background: #1e1e2e;
+  color: #b9f6ca;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 10px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  page-break-inside: avoid;
+  line-height: 1.5;
+}
+pre code { background: transparent; padding: 0; color: inherit; }
+code {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  background: #fff1e8;
+  color: #ff7849;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+blockquote {
+  margin: 10px 0;
+  padding: 10px 16px;
+  background: #fff6ef;
+  border-left: 3px solid #ff7849;
+  border-radius: 0 6px 6px 0;
+  color: #6a3a1c;
+}
+
+.write-space {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #ffffff 0,
+    #ffffff 27px,
+    #d4d4d4 27px,
+    #d4d4d4 28px
+  );
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  min-height: 114px;
+  margin: 10px 0 20px;
+  page-break-inside: avoid;
+}
+.write-space.short { min-height: 86px; }
+.write-space.tall { min-height: 170px; }
+
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
+hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
+
+.meta { color: #666; font-size: 13px; margin: 0 0 14px; }
+.answer-lines {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 14px 16px;
+  background: #fafafa;
+  white-space: pre;
+  line-height: 2.2;
+}
+
+footer {
+  position: fixed;
+  bottom: 10mm; left: 16mm; right: 16mm;
+  text-align: center;
+  font-size: 10px;
+  color: #aaa;
+}
+footer b { color: #ff7849; }
+</style>
+</head>
+<body>
+<div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
+<h1>🧩 RS003 Week 13 — English Worksheet</h1>
+<p><strong>Topic:</strong> A Second Function · <strong>Course:</strong> Pygame Turret · <strong>Time:</strong> about 45 minutes</p>
+<p>This week you split your game into <strong>several small functions</strong> — one for the ground, one for the turret, one for a target, one for the aim marker. The functions work together by sharing the gun's X position, and the marker changes colour when the aim lines up with the target.</p>
+<blockquote>
+<p>🧠 Words to know: <strong>function</strong>, <strong>call</strong>, <strong>share a value</strong>, <strong>target</strong>, <strong>marker</strong></p>
+</blockquote>
+<h2>1 · Predict 🔮</h2>
+<p>Read each piece of code. Before you run it, write what you think will happen.</p>
+<pre><code class="language-python">def draw_ground():
+    pygame.draw.rect(screen, GREEN, (0, HEIGHT - 50, WIDTH, 50))
+
+def draw_turret(gun_x):
+    ...
+
+draw_ground()
+draw_turret(CENTER_X)
+</code></pre>
+<div class="qa"><p><strong><code>draw_ground</code> takes no input but <code>draw_turret</code> takes a <code>gun_x</code>. Why does only one of them need a value?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-python">def draw_marker(gun_x):
+    distance = abs(gun_x - TARGET_X)
+    color = YELLOW if distance &lt; 20 else RED
+    pygame.draw.circle(screen, color, (gun_x, HEIGHT - 200), 8)
+</code></pre>
+<div class="qa"><p><strong><code>abs(gun_x - TARGET_X)</code> is how far the aim is from the target. When does the marker turn yellow?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-python">draw_ground()
+draw_target()
+draw_turret(gun_x)
+draw_marker(gun_x)
+</code></pre>
+<div class="qa"><p><strong>Four functions are called in a row. Which one is drawn last, and what does that mean for what sits in front?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>2 · Run It 🏃</h2>
+<h3>🎯 Type the example, run it, and line up the target</h3>
+<pre><code class="language-python">import pygame
+pygame.init()
+
+WIDTH, HEIGHT = 800, 600
+CENTER_X = WIDTH // 2
+screen = pygame.display.set_mode((WIDTH, HEIGHT))
+
+SKY = (135, 206, 235)
+GREEN = (0, 100, 0)
+GRAY = (80, 80, 80)
+RED = (200, 0, 0)
+YELLOW = (255, 255, 0)
+BLACK = (0, 0, 0)
+
+TARGET_X = 600
+TARGET_Y = HEIGHT - 200
+
+def draw_ground():
+    pygame.draw.rect(screen, GREEN, (0, HEIGHT - 50, WIDTH, 50))
+
+def draw_turret(gun_x):
+    pygame.draw.rect(screen, GREEN, (CENTER_X - 30, HEIGHT - 90, 60, 40))
+    pygame.draw.line(screen, GRAY, (CENTER_X, HEIGHT - 90), (gun_x, HEIGHT - 200), 10)
+
+def draw_target():
+    pygame.draw.circle(screen, BLACK, (TARGET_X, TARGET_Y), 25)
+    pygame.draw.circle(screen, RED, (TARGET_X, TARGET_Y), 18)
+    pygame.draw.circle(screen, YELLOW, (TARGET_X, TARGET_Y), 8)
+
+def draw_marker(gun_x):
+    distance = abs(gun_x - TARGET_X)
+    color = YELLOW if distance &lt; 20 else RED
+    pygame.draw.circle(screen, color, (gun_x, HEIGHT - 200), 8)
+
+gun_x = CENTER_X
+SPEED = 5
+MIN_X, MAX_X = 100, WIDTH - 100
+
+clock = pygame.time.Clock()
+running = True
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+    keys = pygame.key.get_pressed()
+    if keys[pygame.K_LEFT] and gun_x &gt; MIN_X:
+        gun_x -= SPEED
+    if keys[pygame.K_RIGHT] and gun_x &lt; MAX_X:
+        gun_x += SPEED
+
+    screen.fill(SKY)
+    draw_ground()
+    draw_target()
+    draw_turret(gun_x)
+    draw_marker(gun_x)
+    pygame.display.flip()
+    clock.tick(60)
+
+pygame.quit()
+</code></pre>
+<div class="qa"><p><strong>Aim slowly toward the target. What happens to the marker colour as you get close?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>3 · Spot the Bug 🐛</h2>
+<p>Each block below was meant to do something but is broken. Fix it, then explain why the original was wrong.</p>
+<p><strong>Bug A</strong> — The marker should follow the gun, but it is stuck in the centre and never moves.</p>
+<pre><code class="language-python">def draw_marker():
+    pygame.draw.circle(screen, RED, (CENTER_X, HEIGHT - 200), 8)
+</code></pre>
+<p><strong>Hint:</strong> the marker needs the gun's position passed in.</p>
+<div class="qa"><p><strong>Write the fixed code (the whole function):</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug B</strong> — The target should sit <strong>behind</strong> the marker, but right now the target circle covers the marker so you cannot see when you are aiming on it.</p>
+<pre><code class="language-python">draw_ground()
+draw_turret(gun_x)
+draw_marker(gun_x)
+draw_target()
+</code></pre>
+<p><strong>Hint:</strong> whatever is drawn last sits on top.</p>
+<div class="qa"><p><strong>Write the fixed code (calls in the right order):</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug C</strong> — The marker is supposed to turn yellow only when the aim is <strong>close</strong> to the target, but it is yellow everywhere.</p>
+<pre><code class="language-python">distance = gun_x - TARGET_X
+color = YELLOW if distance &lt; 20 else RED
+</code></pre>
+<p><strong>Hint:</strong> without <code>abs</code>, a big negative distance is also "less than 20".</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>4 · Modify It 🔧</h2>
+<h3>🎯 Move the target somewhere new</h3>
+<p>Change <code>TARGET_X</code> so the target sits in a different spot, then aim at it.</p>
+<div class="qa"><p><strong>Write the new TARGET_X you chose:</strong></p>
+<div class="write-space"></div></div>
+
+<h3>🎯 Add a fourth function of your own</h3>
+<p>Write one more small function — for example <code>draw_score()</code> or <code>draw_clouds()</code> — and call it in the loop.</p>
+<div class="qa"><p><strong>Write your function name and what it draws:</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Hint:</strong> a function is just a name for a group of drawing lines. If it needs a changing value (like the gun position), pass it in as a parameter.</p>
+<h2>5 · Make It 📸</h2>
+<h3>🎯 Build a game split into functions</h3>
+<p>Build a program where:</p>
+<ol>
+<li>the ground, turret, target, and marker are each their own function,</li>
+<li>the functions share the gun's position,</li>
+<li>the marker changes colour when you aim on the target.</li>
+</ol>
+<p>Send a <strong>photo or video</strong> of your aimed-on target, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.</p>
+<div class="qa"><blockquote>
+<p>First, I split my code into functions for …</p>
+<p>The functions share the gun position by …</p>
+<p>The marker turns yellow when …</p>
+<p>I used <code>abs(...)</code> to …</p>
+<p>One tricky moment was when …</p>
+<p>If I had more time, I would …</p>
+</blockquote>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<h2>6 · Record Your Walkthrough 🎥</h2>
+<p>Take a video while you aim onto the target. Talk through it like you are teaching someone. Try to use these words: <strong>function</strong>, <strong>call</strong>, <strong>share</strong>, <strong>target</strong>, <strong>marker</strong>.</p>
+<blockquote>
+<ol>
+<li>Show the marker turning yellow on the target.</li>
+<li>Read your function names out loud and say what each one draws.</li>
+<li>Explain how the gun position is shared between functions.</li>
+<li>Point at the line that decides the marker colour.</li>
+</ol>
+</blockquote>
+<div class="qa"><p><strong>Write what you will say in your video.</strong> Plan it here before you record.</p>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your photo or video to teacher on KakaoTalk.</p>
+</body>
+</html>

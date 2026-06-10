@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>⚙️ RS003 Week 2 — English Worksheet</title>
+<style>
+@page { size: A4; margin: 18mm 16mm 22mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-family: "Inter", "Segoe UI", system-ui, sans-serif; color: #1a1a2e; }
+body { font-size: 15px; line-height: 1.55; }
+
+.cover { border-bottom: 3px solid #ff7849; padding-bottom: 14px; margin-bottom: 20px; }
+.brand { font-size: 14px; font-weight: 800; color: #ff7849; letter-spacing: .06em; }
+h1 { font-size: 28px; color: #6b4ee6; margin: 8px 0 6px; line-height: 1.25; }
+h2 { font-size: 19px; color: #6b4ee6; margin: 22px 0 12px; padding-top: 10px; border-top: 1px solid #eee; page-break-before: always; }
+section.first h2, h2:first-of-type { border-top: none; padding-top: 0; page-break-before: avoid; }
+h3, h4 { font-size: 15px; margin: 14px 0 8px; color: #1a1a2e; }
+p { margin: 8px 0; }
+strong { color: #1a1a2e; }
+em { color: #555; }
+
+ul, ol { margin: 8px 0 8px 24px; }
+li { margin: 3px 0; }
+
+pre {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 13.5px;
+  background: #1e1e2e;
+  color: #b9f6ca;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 10px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  page-break-inside: avoid;
+  line-height: 1.5;
+}
+pre code { background: transparent; padding: 0; color: inherit; }
+code {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  background: #fff1e8;
+  color: #ff7849;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+blockquote {
+  margin: 10px 0;
+  padding: 10px 16px;
+  background: #fff6ef;
+  border-left: 3px solid #ff7849;
+  border-radius: 0 6px 6px 0;
+  color: #6a3a1c;
+}
+
+.write-space {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #ffffff 0,
+    #ffffff 27px,
+    #d4d4d4 27px,
+    #d4d4d4 28px
+  );
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  min-height: 114px;
+  margin: 10px 0 20px;
+  page-break-inside: avoid;
+}
+.write-space.short { min-height: 86px; }
+.write-space.tall { min-height: 170px; }
+
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
+hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
+
+.meta { color: #666; font-size: 13px; margin: 0 0 14px; }
+.answer-lines {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 14px 16px;
+  background: #fafafa;
+  white-space: pre;
+  line-height: 2.2;
+}
+
+footer {
+  position: fixed;
+  bottom: 10mm; left: 16mm; right: 16mm;
+  text-align: center;
+  font-size: 10px;
+  color: #aaa;
+}
+footer b { color: #ff7849; }
+</style>
+</head>
+<body>
+<div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
+<h1>⚙️ RS003 Week 2 — English Worksheet</h1>
+<p><strong>Topic:</strong> FPS, Title, and a Colour-Cycling Background · <strong>Course:</strong> Pygame Turret · <strong>Time:</strong> about 45 minutes</p>
+<p>This week you make last week's window feel <strong>alive</strong>. You add a <strong>clock</strong> to control the frame rate (FPS), give the title bar a nicer name, and make the background colour slowly change over time.</p>
+<blockquote>
+<p>🧠 Words to know: <strong>clock</strong>, <strong>FPS (frames per second)</strong>, <strong>frame</strong>, <strong>tick</strong>, <strong>modulo (<code>%</code>)</strong></p>
+</blockquote>
+<h2>1 · Predict 🔮</h2>
+<p>Read each piece of code. Before you run it, write what you think will happen.</p>
+<pre><code class="language-python">clock = pygame.time.Clock()
+FPS = 60
+clock.tick(FPS)
+</code></pre>
+<div class="qa"><p><strong>What does <code>clock.tick(60)</code> do to the speed of the game loop?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-python">frame_count = 0
+r = (frame_count * 1) % 256
+frame_count = frame_count + 1
+</code></pre>
+<div class="qa"><p><strong><code>frame_count</code> goes up by 1 every loop. What does <code>% 256</code> do when it reaches 256?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-python">r = (frame_count) % 256
+g = 100
+b = (200 - frame_count) % 256
+screen.fill((r, g, b))
+</code></pre>
+<div class="qa"><p><strong>Red is climbing and blue is falling, while green stays still. Describe how the background colour changes as time passes.</strong></p>
+<div class="write-space"></div></div>
+
+<h2>2 · Run It 🏃</h2>
+<h3>🎯 Type the example, run it, and watch the colours move</h3>
+<pre><code class="language-python">import pygame
+pygame.init()
+
+WIDTH, HEIGHT = 800, 600
+screen = pygame.display.set_mode((WIDTH, HEIGHT))
+pygame.display.set_caption(&quot;⚙️ My Turret Game v2 — 60 FPS&quot;)
+
+clock = pygame.time.Clock()
+FPS = 60
+frame_count = 0
+
+running = True
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+
+    r = (frame_count) % 256
+    g = 100
+    b = (200 - frame_count) % 256
+
+    screen.fill((r, g, b))
+    pygame.display.flip()
+
+    clock.tick(FPS)
+    frame_count = frame_count + 1
+
+pygame.quit()
+</code></pre>
+<div class="qa"><p><strong>Watch for 10 seconds. What does the background do?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>3 · Spot the Bug 🐛</h2>
+<p>Each block below was meant to do something but is broken. Fix it, then explain why the original was wrong.</p>
+<p><strong>Bug A</strong> — This game runs fine but your computer's fan gets loud and the CPU hits 100%.</p>
+<pre><code class="language-python">running = True
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+    screen.fill((100, 100, 200))
+    pygame.display.flip()
+</code></pre>
+<p><strong>Hint:</strong> without a clock, the loop runs as fast as it possibly can.</p>
+<div class="qa"><p><strong>Write the fixed code (show the loop):</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug B</strong> — The background should cycle colours, but the program crashes with an error about a colour value being too big.</p>
+<pre><code class="language-python">r = frame_count
+screen.fill((r, 100, 50))
+</code></pre>
+<p><strong>Hint:</strong> colour numbers must stay between 0 and 255. <code>frame_count</code> keeps growing past 255.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug C</strong> — The colour is supposed to keep changing, but it is stuck on one colour forever.</p>
+<pre><code class="language-python">frame_count = 0
+running = True
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+    r = frame_count % 256
+    screen.fill((r, 100, 100))
+    pygame.display.flip()
+    clock.tick(60)
+</code></pre>
+<p><strong>Hint:</strong> the frame counter never goes up.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>4 · Modify It 🔧</h2>
+<h3>🎯 Compare 30, 60, and 120 FPS</h3>
+<p>Change <code>FPS</code> to 30, run it, then to 60, then to 120. Watch how fast the colours move each time.</p>
+<div class="qa"><p><strong>Write what changed between 30, 60, and 120 FPS:</strong></p>
+<div class="write-space"></div></div>
+
+<h3>🎯 Invent your own colour formula</h3>
+<p>Right now red rises and blue falls. Change the formulas so the colours change in your own way. For example, make the screen slowly get darker, or make green move too.</p>
+<div class="qa"><p><strong>Write the formulas you used for r, g, and b:</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Hint:</strong> any formula works as long as you wrap the result in <code>% 256</code> so it stays a valid colour.</p>
+<h2>5 · Make It 📸</h2>
+<h3>🎯 Tune your own living background</h3>
+<p>Make a window that:</p>
+<ol>
+<li>runs at a steady frame rate using a clock,</li>
+<li>has your own title in the bar,</li>
+<li>slowly changes its background colour with your own formula.</li>
+</ol>
+<p>When it works, send a <strong>photo or video</strong> of your moving background, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.</p>
+<div class="qa"><blockquote>
+<p>First, I added a clock so the loop …</p>
+<p>I set the FPS to … because …</p>
+<p>My colour formula makes the screen …</p>
+<p>I used <code>% 256</code> to make sure …</p>
+<p>One tricky moment was when …</p>
+<p>If I had more time, I would …</p>
+</blockquote>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<h2>6 · Record Your Walkthrough 🎥</h2>
+<p>Take a video while your background cycles. Talk through it like you are teaching someone. Try to use these words: <strong>clock</strong>, <strong>FPS</strong>, <strong>frame</strong>, <strong>tick</strong>, <strong>modulo</strong>.</p>
+<blockquote>
+<ol>
+<li>Show the background slowly changing colour.</li>
+<li>Read your colour formula out loud and say what makes it change.</li>
+<li>Show what happens to the speed when you change FPS.</li>
+<li>Say why <code>clock.tick</code> matters for your computer.</li>
+</ol>
+</blockquote>
+<div class="qa"><p><strong>Write what you will say in your video.</strong> Plan it here before you record.</p>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your FPS comparison video to teacher on KakaoTalk.</p>
+</body>
+</html>

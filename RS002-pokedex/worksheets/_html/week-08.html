@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>🔴 RS002 Week 8 — English Worksheet</title>
+<style>
+@page { size: A4; margin: 18mm 16mm 22mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-family: "Inter", "Segoe UI", system-ui, sans-serif; color: #1a1a2e; }
+body { font-size: 15px; line-height: 1.55; }
+
+.cover { border-bottom: 3px solid #ff7849; padding-bottom: 14px; margin-bottom: 20px; }
+.brand { font-size: 14px; font-weight: 800; color: #ff7849; letter-spacing: .06em; }
+h1 { font-size: 28px; color: #6b4ee6; margin: 8px 0 6px; line-height: 1.25; }
+h2 { font-size: 19px; color: #6b4ee6; margin: 22px 0 12px; padding-top: 10px; border-top: 1px solid #eee; page-break-before: always; }
+section.first h2, h2:first-of-type { border-top: none; padding-top: 0; page-break-before: avoid; }
+h3, h4 { font-size: 15px; margin: 14px 0 8px; color: #1a1a2e; }
+p { margin: 8px 0; }
+strong { color: #1a1a2e; }
+em { color: #555; }
+
+ul, ol { margin: 8px 0 8px 24px; }
+li { margin: 3px 0; }
+
+pre {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 13.5px;
+  background: #1e1e2e;
+  color: #b9f6ca;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 10px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  page-break-inside: avoid;
+  line-height: 1.5;
+}
+pre code { background: transparent; padding: 0; color: inherit; }
+code {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  background: #fff1e8;
+  color: #ff7849;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+blockquote {
+  margin: 10px 0;
+  padding: 10px 16px;
+  background: #fff6ef;
+  border-left: 3px solid #ff7849;
+  border-radius: 0 6px 6px 0;
+  color: #6a3a1c;
+}
+
+.write-space {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #ffffff 0,
+    #ffffff 27px,
+    #d4d4d4 27px,
+    #d4d4d4 28px
+  );
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  min-height: 114px;
+  margin: 10px 0 20px;
+  page-break-inside: avoid;
+}
+.write-space.short { min-height: 86px; }
+.write-space.tall { min-height: 170px; }
+
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
+hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
+
+.meta { color: #666; font-size: 13px; margin: 0 0 14px; }
+.answer-lines {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 14px 16px;
+  background: #fafafa;
+  white-space: pre;
+  line-height: 2.2;
+}
+
+footer {
+  position: fixed;
+  bottom: 10mm; left: 16mm; right: 16mm;
+  text-align: center;
+  font-size: 10px;
+  color: #aaa;
+}
+footer b { color: #ff7849; }
+</style>
+</head>
+<body>
+<div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
+<h1>🔴 RS002 Week 8 — English Worksheet</h1>
+<p><strong>Topic:</strong> Validation Everywhere + Logging Bad Input · <strong>Course:</strong> Pokédex App · <strong>Time:</strong> about 45 minutes</p>
+<p>This week you apply the validation pattern to <strong>every</strong> input in your app — name, region, search — and you <strong>log</strong> every bad attempt into a list. At the end you print a little session report. You will meet your first <strong>function</strong> here too: a reusable <code>safe_input</code>.</p>
+<h2>1 · Recall 🧠</h2>
+<p>From memory:</p>
+<div class="qa"><p><strong>Write an <code>if</code> that warns and falls back to <code>"피카츄"</code> when <code>choice</code> is <code>not in</code> the list <code>pokedex</code>.</strong></p>
+<div class="write-space"></div></div>
+
+<h2>2 · Predict 🔮</h2>
+<p>Read each block. Before you run it, write what you think will happen.</p>
+<pre><code class="language-python">invalid_attempts = []
+invalid_attempts.append(&quot;리자몽&quot;)
+invalid_attempts.append(&quot;타입null&quot;)
+print(len(invalid_attempts))
+print(invalid_attempts)
+</code></pre>
+<div class="qa"><p><strong>What two lines print?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-python">invalid_attempts = [&quot;리자몽&quot;, &quot;타입null&quot;]
+print(f&quot;잘못 입력: {', '.join(invalid_attempts)}&quot;)
+</code></pre>
+<div class="qa"><p><strong><code>', '.join(...)</code> glues list items with a comma between them. What prints?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-python">def safe_input(prompt, default=&quot;&quot;):
+    answer = input(prompt).strip()
+    if answer == &quot;&quot;:
+        answer = default
+    return answer
+
+name = safe_input(&quot;이름: &quot;, &quot;이름 모를 트레이너&quot;)
+print(name)
+</code></pre>
+<div class="qa"><p><strong>The user presses Enter. What gets printed? Trace the path through the function.</strong></p>
+<div class="write-space"></div></div>
+
+<h2>3 · Spot the Bug 🐛</h2>
+<p>Read what each block is <strong>supposed</strong> to do, fix it, then explain the fix.</p>
+<p><strong>Bug A</strong> — Each bad answer should be <strong>added</strong> to the log. Right now it replaces the whole log every time, so only the last one survives.</p>
+<pre><code class="language-python">invalid_attempts = []
+invalid_attempts = &quot;리자몽&quot;
+invalid_attempts = &quot;타입null&quot;
+print(invalid_attempts)
+</code></pre>
+<p><strong>Hint:</strong> use <code>.append(...)</code> to add to a list.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug B</strong> — This function should <strong>return</strong> the cleaned answer so the caller can use it. Right now it prints inside and returns nothing.</p>
+<pre><code class="language-python">def safe_input(prompt, default=&quot;&quot;):
+    answer = input(prompt).strip()
+    if answer == &quot;&quot;:
+        answer = default
+    print(answer)
+
+name = safe_input(&quot;이름: &quot;, &quot;트레이너&quot;)
+print(f&quot;환영합니다, {name}!&quot;)
+</code></pre>
+<p><strong>Hint:</strong> swap the <code>print</code> for a <code>return</code>.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug C</strong> — The report should only list bad attempts <strong>if there were any</strong>. Right now it prints an empty list and a confusing message even when everything was fine.</p>
+<pre><code class="language-python">invalid_attempts = []
+print(f&quot;잘못 입력한 내용: {', '.join(invalid_attempts)}&quot;)
+</code></pre>
+<p><strong>Hint:</strong> wrap the report in <code>if invalid_attempts:</code>.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>4 · Modify It ✏️</h2>
+<p>Start from this working safe-input + log:</p>
+<pre><code class="language-python">invalid_attempts = []
+
+def safe_input(prompt, valid_list=None, default=&quot;&quot;):
+    answer = input(prompt).strip()
+
+    if valid_list and answer not in valid_list:
+        invalid_attempts.append(answer)
+        print(f&quot;  ⚠️ '{answer}' 은(는) 인식 못해요. 다시 시도하세요.&quot;)
+        answer = input(prompt).strip()
+        if valid_list and answer not in valid_list:
+            invalid_attempts.append(answer)
+            print(f&quot;  기본값 ({default})으로 진행합니다.&quot;)
+            answer = default
+
+    if answer == &quot;&quot; and default:
+        answer = default
+
+    return answer
+
+pokedex = [&quot;피카츄&quot;, &quot;이상해씨&quot;, &quot;파이리&quot;]
+choice = safe_input(&quot;포켓몬 이름: &quot;, pokedex, &quot;피카츄&quot;)
+print(f&quot;선택: {choice}&quot;)
+
+print(f&quot;\n=== 세션 통계 ===&quot;)
+print(f&quot;잘못된 입력 횟수: {len(invalid_attempts)}&quot;)
+if invalid_attempts:
+    print(f&quot;잘못 입력한 내용: {', '.join(invalid_attempts)}&quot;)
+</code></pre>
+<p>Make these changes one at a time and run after each:</p>
+<ol>
+<li>Call <code>safe_input</code> a second time for the trainer's <strong>region</strong> (no <code>valid_list</code>, just a default).</li>
+<li>Change the warning emoji or message to your own style.</li>
+<li>Make the report also print a friendly line when there were <strong>zero</strong> bad attempts.</li>
+</ol>
+<div class="qa"><p><strong>Write your changed / added lines here:</strong></p>
+<div class="write-space"></div></div>
+
+<h2>5 · Make It 📸</h2>
+<p>Apply <code>safe_input</code> to <strong>every</strong> input in your Pokédex (name, region, type, search). Log every bad attempt and print a session report at the end.</p>
+<p>When it works, send a <strong>video</strong> on KakaoTalk where you <strong>deliberately type some bad input</strong> so the report has something to show. Then explain what you did. Use these starters — write 4 to 6 sentences.</p>
+<div class="qa"><blockquote>
+<p>First, I wrote a function called <code>safe_input</code> that …</p>
+<p>I logged bad attempts by …</p>
+<p>I used the same function for … different inputs.</p>
+<p>My session report showed …</p>
+<p>The trickiest part was …</p>
+<p>Reusing one function for every input is better than copying code because …</p>
+</blockquote>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<h2>6 · Record Your Walkthrough 🎥</h2>
+<p>Film it running with some bad input on purpose. Try to use: <strong>function</strong>, <strong>safe_input</strong>, <strong>log</strong>, <strong>append</strong>, <strong>report</strong>.</p>
+<blockquote>
+<ol>
+<li>Run the app and type a few bad answers on purpose.</li>
+<li>Show the warnings appear and the defaults kick in.</li>
+<li>Read your <code>safe_input</code> function out loud and explain <code>return</code>.</li>
+<li>Show the session report at the end with the logged attempts.</li>
+</ol>
+</blockquote>
+<div class="qa"><p><strong>Plan what you will say here first:</strong></p>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+</content></p>
+</body>
+</html>

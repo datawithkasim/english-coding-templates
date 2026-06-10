@@ -71,6 +71,11 @@ blockquote {
 .write-space.short { min-height: 86px; }
 .write-space.tall { min-height: 170px; }
 
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
 hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
 
 .meta { color: #666; font-size: 13px; margin: 0 0 14px; }
@@ -99,7 +104,6 @@ footer b { color: #ff7849; }
 <div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
 <h1>🏡 M000 Week 7 — English Worksheet</h1>
 <p><strong>Topic:</strong> Farm House (House + Adjacent Farm) · <strong>Course:</strong> Builder Basics · <strong>Time:</strong> about 45 minutes</p>
-<hr />
 <h2>1 · Predict 🔮</h2>
 <p>Read each set of steps. Before you imagine the agent doing it, write what you think will happen.</p>
 <pre><code>set size to 3
@@ -113,8 +117,8 @@ repeat height times:
         turn right
     move up by 1
 </code></pre>
-<p><strong>What does the agent build? How tall is it?</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>What does the agent build? How tall is it?</strong></p>
+<div class="write-space"></div></div>
 
 <pre><code>set size to 3
 
@@ -130,8 +134,8 @@ repeat size times:
     turn left
     turn left
 </code></pre>
-<p><strong>What shape does the agent leave on the ground? What is it for in a farm house?</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>What shape does the agent leave on the ground? What is it for in a farm house?</strong></p>
+<div class="write-space"></div></div>
 
 <pre><code>move down by 2
 turn right
@@ -139,10 +143,9 @@ repeat 4 times:
     move forward
 turn left
 </code></pre>
-<p><strong>The agent just finished a house. Where is it going next?</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>The agent just finished a house. Where is it going next?</strong></p>
+<div class="write-space"></div></div>
 
-<hr />
 <h2>2 · Spot the Bug 🐛</h2>
 <p>Each block of code below was meant to do something, but it is broken. Read what the code is <strong>supposed</strong> to do, then rewrite it so it works. After that, explain why the original was wrong and why your fix works.</p>
 <p><strong>Bug A</strong> — The agent is supposed to build the <strong>house walls first</strong>, then the <strong>farm patch beside it</strong> (two clear stages).</p>
@@ -161,11 +164,11 @@ repeat 2 times:
         turn right
     move up by 1
 </code></pre>
-<p><strong>Write the fixed code:</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
 
-<p><strong>Why was the order wrong? Why does your fix work?</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>Why was the order wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
 
 <p><strong>Bug B</strong> — The agent is supposed to walk to the spot beside the house, <strong>then</strong> build the farm patch. The farm should land on the ground, not on top of the house.</p>
 <pre><code>repeat 3 times:
@@ -175,11 +178,11 @@ repeat 2 times:
     turn right
 move down by 2
 </code></pre>
-<p><strong>Write the fixed code:</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
 
-<p><strong>Why was it wrong? Why does your fix work?</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
 
 <p><strong>Bug C</strong> — The agent is supposed to use the <strong>same <code>size</code> variable</strong> for the house walls and the farm patch, so changing one number changes both.</p>
 <pre><code>repeat 4 times:
@@ -194,17 +197,16 @@ repeat 5 times:
         move forward
     turn right
 </code></pre>
-<p><strong>Write the fixed code using one <code>size</code> variable:</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>Write the fixed code using one <code>size</code> variable:</strong></p>
+<div class="write-space"></div></div>
 
-<p><strong>Why was it wrong? Why does your fix work?</strong></p>
-<div class="write-space"></div>
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
 
-<hr />
 <h2>3 · Tell Me What You Built 📸</h2>
 <p>Now switch to your homework world. Build your farm house — small house with walls and roof, plus a farm patch beside it. Try making the farm bigger (5×5) <strong>or</strong> add a path between the house and farm. When you finish, come back here.</p>
 <p>Send a photo or video of your farm house, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.</p>
-<blockquote>
+<div class="qa"><blockquote>
 <p>First, I built the house walls by …</p>
 <p>Then I built the roof by …</p>
 <p>To get to the farm spot, the agent had to …</p>
@@ -212,9 +214,8 @@ repeat 5 times:
 <p>The hardest part was …</p>
 <p>If I had more time, I would …</p>
 </blockquote>
-<div class="write-space tall" style="min-height: 340px"></div>
+<div class="write-space tall" style="min-height: 340px"></div></div>
 
-<hr />
 <h2>4 · Record Your Walkthrough 🎥</h2>
 <p>Now take a video on your phone (or a parent's phone) while you walk the camera around your farm house. Talk through it like you are teaching someone who has never seen it. Try to use these words: <strong>walls</strong>, <strong>roof</strong>, <strong>farm</strong>, <strong>patch</strong>, <strong>stage</strong>.</p>
 <blockquote>
@@ -225,8 +226,8 @@ repeat 5 times:
 <li>Say how big the house is and how big the farm is.</li>
 </ol>
 </blockquote>
-<p><strong>Write what you will say in your video.</strong> Use the space below to plan it before you record — you can read from it while filming.</p>
-<div class="write-space tall" style="min-height: 340px"></div>
+<div class="qa"><p><strong>Write what you will say in your video.</strong> Use the space below to plan it before you record — you can read from it while filming.</p>
+<div class="write-space tall" style="min-height: 340px"></div></div>
 
 <hr />
 <h3>Submit ✅</h3>

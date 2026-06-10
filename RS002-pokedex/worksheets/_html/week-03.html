@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>🔴 RS002 Week 3 — English Worksheet</title>
+<style>
+@page { size: A4; margin: 18mm 16mm 22mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-family: "Inter", "Segoe UI", system-ui, sans-serif; color: #1a1a2e; }
+body { font-size: 15px; line-height: 1.55; }
+
+.cover { border-bottom: 3px solid #ff7849; padding-bottom: 14px; margin-bottom: 20px; }
+.brand { font-size: 14px; font-weight: 800; color: #ff7849; letter-spacing: .06em; }
+h1 { font-size: 28px; color: #6b4ee6; margin: 8px 0 6px; line-height: 1.25; }
+h2 { font-size: 19px; color: #6b4ee6; margin: 22px 0 12px; padding-top: 10px; border-top: 1px solid #eee; page-break-before: always; }
+section.first h2, h2:first-of-type { border-top: none; padding-top: 0; page-break-before: avoid; }
+h3, h4 { font-size: 15px; margin: 14px 0 8px; color: #1a1a2e; }
+p { margin: 8px 0; }
+strong { color: #1a1a2e; }
+em { color: #555; }
+
+ul, ol { margin: 8px 0 8px 24px; }
+li { margin: 3px 0; }
+
+pre {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 13.5px;
+  background: #1e1e2e;
+  color: #b9f6ca;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 10px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  page-break-inside: avoid;
+  line-height: 1.5;
+}
+pre code { background: transparent; padding: 0; color: inherit; }
+code {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  background: #fff1e8;
+  color: #ff7849;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+blockquote {
+  margin: 10px 0;
+  padding: 10px 16px;
+  background: #fff6ef;
+  border-left: 3px solid #ff7849;
+  border-radius: 0 6px 6px 0;
+  color: #6a3a1c;
+}
+
+.write-space {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #ffffff 0,
+    #ffffff 27px,
+    #d4d4d4 27px,
+    #d4d4d4 28px
+  );
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  min-height: 114px;
+  margin: 10px 0 20px;
+  page-break-inside: avoid;
+}
+.write-space.short { min-height: 86px; }
+.write-space.tall { min-height: 170px; }
+
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
+hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
+
+.meta { color: #666; font-size: 13px; margin: 0 0 14px; }
+.answer-lines {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 14px 16px;
+  background: #fafafa;
+  white-space: pre;
+  line-height: 2.2;
+}
+
+footer {
+  position: fixed;
+  bottom: 10mm; left: 16mm; right: 16mm;
+  text-align: center;
+  font-size: 10px;
+  color: #aaa;
+}
+footer b { color: #ff7849; }
+</style>
+</head>
+<body>
+<div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
+<h1>🔴 RS002 Week 3 — English Worksheet</h1>
+<p><strong>Topic:</strong> Lists + Indexing — A Menu of Pokémon · <strong>Course:</strong> Pokédex App · <strong>Time:</strong> about 45 minutes</p>
+<p>This week you store <strong>many Pokémon in one list</strong> instead of many separate variables. You pull values back out with an <strong>index</strong> (<code>[0]</code>, <code>[1]</code>, <code>[2]</code>), and you learn that the first item lives at index <code>0</code>, not <code>1</code>.</p>
+<h2>1 · Recall 🧠</h2>
+<p>From memory:</p>
+<div class="qa"><p><strong>Write the line that asks the trainer's name and stores it (cleaned) in <code>trainer_name</code>.</strong></p>
+<div class="write-space"></div></div>
+
+<h2>2 · Predict 🔮</h2>
+<p>Read each block. Before you run it, write what you think will happen.</p>
+<pre><code class="language-python">starters = [&quot;피카츄&quot;, &quot;이상해씨&quot;, &quot;파이리&quot;]
+print(starters[0])
+</code></pre>
+<div class="qa"><p><strong>What gets printed? Which Pokémon is at index <code>0</code>?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-python">starters = [&quot;피카츄&quot;, &quot;이상해씨&quot;, &quot;파이리&quot;]
+print(starters[1])
+print(starters[3])
+</code></pre>
+<div class="qa"><p><strong>The first <code>print</code> is fine. What happens on the second one? Why?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-python">names = [&quot;피카츄&quot;, &quot;이상해씨&quot;, &quot;파이리&quot;]
+types = [&quot;전기&quot;, &quot;풀&quot;, &quot;불&quot;]
+hp = [35, 45, 39]
+
+print(f&quot;이름: {names[1]}&quot;)
+print(f&quot;타입: {types[1]}&quot;)
+print(f&quot;체력: {hp[1]}&quot;)
+</code></pre>
+<div class="qa"><p><strong>These three lists line up by position. Which Pokémon's info is printed? Write out the three lines it prints.</strong></p>
+<div class="write-space"></div></div>
+
+<h2>3 · Spot the Bug 🐛</h2>
+<p>Read what each block is <strong>supposed</strong> to do, fix it, then explain the fix.</p>
+<p><strong>Bug A</strong> — This should print the <strong>first</strong> Pokémon, <code>피카츄</code>. Right now it prints the second one.</p>
+<pre><code class="language-python">starters = [&quot;피카츄&quot;, &quot;이상해씨&quot;, &quot;파이리&quot;]
+print(starters[1])
+</code></pre>
+<p><strong>Hint:</strong> the first item is not at index <code>1</code>.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug B</strong> — This should print all three starters as a numbered menu. Right now line 3 reaches for an item that does not exist and crashes.</p>
+<pre><code class="language-python">starters = [&quot;피카츄&quot;, &quot;이상해씨&quot;, &quot;파이리&quot;]
+print(f&quot;1. {starters[0]}&quot;)
+print(f&quot;2. {starters[1]}&quot;)
+print(f&quot;3. {starters[3]}&quot;)
+</code></pre>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug C</strong> — These parallel lists should show 피카츄's matching type. Right now name and type do not line up.</p>
+<pre><code class="language-python">names = [&quot;피카츄&quot;, &quot;이상해씨&quot;, &quot;파이리&quot;]
+types = [&quot;전기&quot;, &quot;풀&quot;, &quot;불&quot;]
+
+print(f&quot;이름: {names[0]}&quot;)
+print(f&quot;타입: {types[2]}&quot;)
+</code></pre>
+<p><strong>Hint:</strong> to keep one Pokémon together, use the <strong>same index</strong> in every list.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>4 · Modify It ✏️</h2>
+<p>Start from this working starter menu:</p>
+<pre><code class="language-python">starters = [&quot;피카츄&quot;, &quot;이상해씨&quot;, &quot;파이리&quot;]
+
+print(&quot;=== 시작 포켓몬을 골라주세요 ===&quot;)
+print(f&quot;1. {starters[0]} — 전기 타입&quot;)
+print(f&quot;2. {starters[1]} — 풀 타입&quot;)
+print(f&quot;3. {starters[2]} — 불 타입&quot;)
+</code></pre>
+<p>Make these changes one at a time and run after each:</p>
+<ol>
+<li>Add a fourth starter (꼬부기, 물 타입) to the list and add its menu line.</li>
+<li>Change the order of the list and watch the menu numbers follow.</li>
+<li>Add a <code>types</code> list and use <code>types[0]</code> instead of writing <code>전기</code> by hand.</li>
+</ol>
+<div class="qa"><p><strong>Write your changed / added lines here:</strong></p>
+<div class="write-space"></div></div>
+
+<h2>5 · Make It 📸</h2>
+<p>In your homework world, show your <strong>Week 2 trainer card first</strong>, then below it a <strong>starter menu of at least three Pokémon</strong> pulled from a list by index. Use a matching <code>types</code> list so each line shows the right type.</p>
+<p>When it works, send a <strong>photo or video</strong> on KakaoTalk, then explain what you did. Use these starters — write 4 to 6 sentences.</p>
+<div class="qa"><blockquote>
+<p>First, I made a list called … with …</p>
+<p>I pulled each Pokémon out using …</p>
+<p>Index <code>0</code> gave me … because …</p>
+<p>To keep the name and type matched, I …</p>
+<p>The trickiest part was …</p>
+<p>A list is better than three separate variables because …</p>
+</blockquote>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<h2>6 · Record Your Walkthrough 🎥</h2>
+<p>Film your menu running. Teach it like the viewer is new. Try to use: <strong>list</strong>, <strong>index</strong>, <strong>zero</strong>, <strong>parallel list</strong>, <strong>menu</strong>.</p>
+<blockquote>
+<ol>
+<li>Run your program and show the starter menu.</li>
+<li>Point to your list and read it out loud.</li>
+<li>Explain why <code>starters[0]</code> is the first Pokémon, not the second.</li>
+<li>Show how name and type stay matched by using the same index.</li>
+</ol>
+</blockquote>
+<div class="qa"><p><strong>Plan what you will say here first:</strong></p>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+</content></p>
+</body>
+</html>
