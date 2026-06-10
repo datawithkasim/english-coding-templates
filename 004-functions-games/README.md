@@ -12,14 +12,14 @@
 
 | 주 | 주제 | 📦 월드 | 🎬 영상 (블록) | 🎬 영상 (파이썬) | 📝 워크시트 (초급) | 📝 워크시트 (심화) |
 |---|---|---|---|---|---|---|
-| 1 | 함수 더 깊이 (매개변수·반환) | *준비 중* | *준비 중* | *준비 중* | *준비 중* | *준비 중* |
-| 2 | 채팅 명령어 | *준비 중* | *준비 중* | *준비 중* | *준비 중* | *준비 중* |
-| 3 | 월드 감지하기 | *준비 중* | *준비 중* | *준비 중* | *준비 중* | *준비 중* |
-| 4 | 플레이어 이벤트 | *준비 중* | *준비 중* | *준비 중* | *준비 중* | *준비 중* |
-| 5 | 함수 라이브러리 | *준비 중* | *준비 중* | *준비 중* | *준비 중* | *준비 중* |
-| 6 | 반응하는 공간 | *준비 중* | *준비 중* | *준비 중* | *준비 중* | *준비 중* |
-| 7 | 자동으로 만들어지는 공간 | *준비 중* | *준비 중* | *준비 중* | *준비 중* | *준비 중* |
-| 8 | **최종: 미니게임 / 던전** | *준비 중* | *준비 중* | *준비 중* | *준비 중* | *준비 중* |
+| 1 | 함수 더 깊이 (매개변수·반환) | *준비 중* | *준비 중* | *준비 중* | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/004-functions-games/worksheets/week1-beginner.pdf) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/004-functions-games/worksheets/week1.pdf) |
+| 2 | 채팅 명령어 | *준비 중* | *준비 중* | *준비 중* | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/004-functions-games/worksheets/week2-beginner.pdf) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/004-functions-games/worksheets/week2.pdf) |
+| 3 | 월드 감지하기 | *준비 중* | *준비 중* | *준비 중* | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/004-functions-games/worksheets/week3-beginner.pdf) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/004-functions-games/worksheets/week3.pdf) |
+| 4 | 플레이어 이벤트 | *준비 중* | *준비 중* | *준비 중* | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/004-functions-games/worksheets/week4-beginner.pdf) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/004-functions-games/worksheets/week4.pdf) |
+| 5 | 함수 라이브러리 | *준비 중* | *준비 중* | *준비 중* | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/004-functions-games/worksheets/week5-beginner.pdf) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/004-functions-games/worksheets/week5.pdf) |
+| 6 | 반응하는 공간 | *준비 중* | *준비 중* | *준비 중* | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/004-functions-games/worksheets/week6-beginner.pdf) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/004-functions-games/worksheets/week6.pdf) |
+| 7 | 자동으로 만들어지는 공간 | *준비 중* | *준비 중* | *준비 중* | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/004-functions-games/worksheets/week7-beginner.pdf) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/004-functions-games/worksheets/week7.pdf) |
+| 8 | **최종: 미니게임 / 던전** | *준비 중* | *준비 중* | *준비 중* | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/004-functions-games/worksheets/week8-beginner.pdf) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/004-functions-games/worksheets/week8.pdf) |
 
 > 💡 앞 코스에서 배운 함수·좌표·반복문을 모두 합쳐, 플레이어가 직접 노는 공간을 만듭니다.
 
