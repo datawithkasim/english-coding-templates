@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>🏭 RB003 Week 6 — English Worksheet</title>
+<style>
+@page { size: A4; margin: 18mm 16mm 22mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-family: "Inter", "Segoe UI", system-ui, sans-serif; color: #1a1a2e; }
+body { font-size: 15px; line-height: 1.55; }
+
+.cover { border-bottom: 3px solid #ff7849; padding-bottom: 14px; margin-bottom: 20px; }
+.brand { font-size: 14px; font-weight: 800; color: #ff7849; letter-spacing: .06em; }
+h1 { font-size: 28px; color: #6b4ee6; margin: 8px 0 6px; line-height: 1.25; }
+h2 { font-size: 19px; color: #6b4ee6; margin: 22px 0 12px; padding-top: 10px; border-top: 1px solid #eee; page-break-before: always; }
+section.first h2, h2:first-of-type { border-top: none; padding-top: 0; page-break-before: avoid; }
+h3, h4 { font-size: 15px; margin: 14px 0 8px; color: #1a1a2e; }
+p { margin: 8px 0; }
+strong { color: #1a1a2e; }
+em { color: #555; }
+
+ul, ol { margin: 8px 0 8px 24px; }
+li { margin: 3px 0; }
+
+pre {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 13.5px;
+  background: #1e1e2e;
+  color: #b9f6ca;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 10px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  page-break-inside: avoid;
+  line-height: 1.5;
+}
+pre code { background: transparent; padding: 0; color: inherit; }
+code {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  background: #fff1e8;
+  color: #ff7849;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+blockquote {
+  margin: 10px 0;
+  padding: 10px 16px;
+  background: #fff6ef;
+  border-left: 3px solid #ff7849;
+  border-radius: 0 6px 6px 0;
+  color: #6a3a1c;
+}
+
+.write-space {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #ffffff 0,
+    #ffffff 27px,
+    #d4d4d4 27px,
+    #d4d4d4 28px
+  );
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  min-height: 114px;
+  margin: 10px 0 20px;
+  page-break-inside: avoid;
+}
+.write-space.short { min-height: 86px; }
+.write-space.tall { min-height: 170px; }
+
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
+hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
+
+.meta { color: #666; font-size: 13px; margin: 0 0 14px; }
+.answer-lines {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 14px 16px;
+  background: #fafafa;
+  white-space: pre;
+  line-height: 2.2;
+}
+
+footer {
+  position: fixed;
+  bottom: 10mm; left: 16mm; right: 16mm;
+  text-align: center;
+  font-size: 10px;
+  color: #aaa;
+}
+footer b { color: #ff7849; }
+</style>
+</head>
+<body>
+<div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
+<h1>🏭 RB003 Week 6 — English Worksheet</h1>
+<p><strong>Topic:</strong> Saving with DataStores — Keep Cash After Leaving · <strong>Course:</strong> Tycoon Engineer · <strong>Time:</strong> about 45 minutes</p>
+<p>This week your tycoon remembers. A <strong>DataStore</strong> saves each player's cash when they leave and loads it when they join again. <code>pcall</code> means <strong>"try safely — if saving fails, the game keeps running."</strong> To test saving in Studio, turn on <strong>Game Settings → Security → Enable Studio Access to API Services</strong>.</p>
+<h2>1 · Predict 🔮</h2>
+<p>Read each script. Before you imagine it running in Studio, write what you think will happen.</p>
+<pre><code class="language-lua">local DataStoreService = game:GetService(&quot;DataStoreService&quot;)
+local store = DataStoreService:GetDataStore(&quot;CashStore&quot;)
+local Players = game:GetService(&quot;Players&quot;)
+
+Players.PlayerRemoving:Connect(function(player)
+    local cash = player.leaderstats.Cash
+    pcall(function()
+        store:SetAsync(player.UserId, cash.Value)
+    end)
+end)
+</code></pre>
+<div class="qa"><p><strong>When does the save happen — every second, or when a player leaves? What number gets saved?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-lua">local saved = store:GetAsync(player.UserId)
+
+if saved ~= nil then
+    cash.Value = saved
+else
+    cash.Value = 0
+end
+</code></pre>
+<div class="qa"><p><strong>A brand-new player joins for the first time. What does <code>GetAsync</code> return for them? What does their cash become?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-lua">local ok = pcall(function()
+    store:SetAsync(player.UserId, cash.Value)
+end)
+
+if ok then
+    print(&quot;Saved!&quot;)
+else
+    print(&quot;Save failed — but the game keeps running.&quot;)
+end
+</code></pre>
+<div class="qa"><p><strong>The internet has a problem and <code>SetAsync</code> fails. Does the script crash? What prints?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>2 · Spot the Bug 🐛</h2>
+<p>Each script below was meant to do something, but it is broken. Read what the code is <strong>supposed</strong> to do, then rewrite it so it works. After that, explain why the original was wrong and why your fix works.</p>
+<p><strong>Bug A</strong> — The save should still work even if the player <strong>changes their username</strong> next month. The key must be something that never changes.</p>
+<pre><code class="language-lua">Players.PlayerRemoving:Connect(function(player)
+    local cash = player.leaderstats.Cash
+    pcall(function()
+        store:SetAsync(player.Name, cash.Value)
+    end)
+end)
+</code></pre>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug B</strong> — Loading should work for <strong>everyone</strong> — old players get their saved cash, and brand-new players start at 0. Right now the script breaks for new players, because they have no save yet.</p>
+<pre><code class="language-lua">local saved = store:GetAsync(player.UserId)
+cash.Value = saved
+</code></pre>
+<p><strong>Hint:</strong> check for <code>nil</code> before using <code>saved</code>.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug C</strong> — Saving should be <strong>safe</strong>. If the network fails for one player, the script should keep running for everyone else. Right now one failed save makes the whole script error.</p>
+<pre><code class="language-lua">Players.PlayerRemoving:Connect(function(player)
+    local cash = player.leaderstats.Cash
+    store:SetAsync(player.UserId, cash.Value)
+end)
+</code></pre>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>3 · Tell Me What You Built 📸</h2>
+<p>Now switch to your tycoon in Roblox Studio. Add saving with a DataStore: save cash when a player leaves, load it when they join. When you finish, come back here.</p>
+<p>Send a photo or video of your cash coming back after you rejoin, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.</p>
+<div class="qa"><blockquote>
+<p>First, I …</p>
+<p>My game saves cash when …</p>
+<p>I used <strong>pcall</strong> because …</p>
+<p>I tested saving by …</p>
+<p>One tricky moment was when …</p>
+<p>If I had more time, I would …</p>
+</blockquote>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<h2>4 · Record Your Walkthrough 🎥</h2>
+<p>Now take a video on your phone (or a parent's phone) while you test saving. Talk through it like you are teaching someone who has never seen it. Try to use these words: <strong>DataStore</strong>, <strong>save</strong>, <strong>load</strong>, <strong>pcall</strong>, <strong>UserId</strong>.</p>
+<blockquote>
+<ol>
+<li>Earn some cash, then stop the test (this is "leaving").</li>
+<li>Play again and show your cash is still there.</li>
+<li>Read your <code>SetAsync</code> line out loud and say when it runs.</li>
+<li>Say in your own words what <strong>pcall</strong> does.</li>
+</ol>
+</blockquote>
+<div class="qa"><p><strong>Write what you will say in your video.</strong> Use the space below to plan it before you record — you can read from it while filming.</p>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.</p>
+</body>
+</html>

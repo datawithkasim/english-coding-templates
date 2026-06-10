@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>🎮 RB005 Week 8 — English Worksheet</title>
+<style>
+@page { size: A4; margin: 18mm 16mm 22mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-family: "Inter", "Segoe UI", system-ui, sans-serif; color: #1a1a2e; }
+body { font-size: 15px; line-height: 1.55; }
+
+.cover { border-bottom: 3px solid #ff7849; padding-bottom: 14px; margin-bottom: 20px; }
+.brand { font-size: 14px; font-weight: 800; color: #ff7849; letter-spacing: .06em; }
+h1 { font-size: 28px; color: #6b4ee6; margin: 8px 0 6px; line-height: 1.25; }
+h2 { font-size: 19px; color: #6b4ee6; margin: 22px 0 12px; padding-top: 10px; border-top: 1px solid #eee; page-break-before: always; }
+section.first h2, h2:first-of-type { border-top: none; padding-top: 0; page-break-before: avoid; }
+h3, h4 { font-size: 15px; margin: 14px 0 8px; color: #1a1a2e; }
+p { margin: 8px 0; }
+strong { color: #1a1a2e; }
+em { color: #555; }
+
+ul, ol { margin: 8px 0 8px 24px; }
+li { margin: 3px 0; }
+
+pre {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 13.5px;
+  background: #1e1e2e;
+  color: #b9f6ca;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 10px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  page-break-inside: avoid;
+  line-height: 1.5;
+}
+pre code { background: transparent; padding: 0; color: inherit; }
+code {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  background: #fff1e8;
+  color: #ff7849;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+blockquote {
+  margin: 10px 0;
+  padding: 10px 16px;
+  background: #fff6ef;
+  border-left: 3px solid #ff7849;
+  border-radius: 0 6px 6px 0;
+  color: #6a3a1c;
+}
+
+.write-space {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #ffffff 0,
+    #ffffff 27px,
+    #d4d4d4 27px,
+    #d4d4d4 28px
+  );
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  min-height: 114px;
+  margin: 10px 0 20px;
+  page-break-inside: avoid;
+}
+.write-space.short { min-height: 86px; }
+.write-space.tall { min-height: 170px; }
+
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
+hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
+
+.meta { color: #666; font-size: 13px; margin: 0 0 14px; }
+.answer-lines {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 14px 16px;
+  background: #fafafa;
+  white-space: pre;
+  line-height: 2.2;
+}
+
+footer {
+  position: fixed;
+  bottom: 10mm; left: 16mm; right: 16mm;
+  text-align: center;
+  font-size: 10px;
+  color: #aaa;
+}
+footer b { color: #ff7849; }
+</style>
+</head>
+<body>
+<div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
+<h1>🎮 RB005 Week 8 — English Worksheet</h1>
+<p><strong>Topic:</strong> Launch &amp; Showcase — Publish and Present · <strong>Course:</strong> Dream Game Studio · <strong>Time:</strong> about 45 minutes</p>
+<p>This is it — <strong>launch week</strong>. You publish your game as <strong>Public</strong> and present it like a real game studio: what the game is, your hardest bug story, your favorite script read out loud, and what you would build next.</p>
+<h2>1 · Predict 🔮</h2>
+<p>Read each situation. Before it happens for real, write what you think will happen.</p>
+<blockquote>
+<p>You publish your game and set it to <strong>Public</strong>. Your classmate searches its title on Roblox from their own house.</p>
+</blockquote>
+<div class="qa"><p><strong>What can your classmate do now that they could not do yesterday? What can they NOT do (hint: they cannot open your scripts)?</strong></p>
+<div class="write-space"></div></div>
+
+<blockquote>
+<p>Your game is Public, but you only ever tested it <strong>alone in Studio</strong>. A stranger joins and clicks Play.</p>
+</blockquote>
+<div class="qa"><p><strong>Predict one thing that might go wrong for the stranger that never went wrong for you. How would you find out about it?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-lua">local door = script.Parent
+
+door.Touched:Connect(function(hit)
+    local player = game.Players:GetPlayerFromCharacter(hit.Parent)
+    if player and player.leaderstats.Coins.Value &gt;= 5 then
+        door.CanCollide = false
+        door.Transparency = 0.7
+    end
+end)
+</code></pre>
+<div class="qa"><p><strong>In your showcase you read a script like this out loud. Practice now: what does this script do, in one or two sentences a non-coder could understand?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>2 · Spot the Bug 🐛</h2>
+<p>Launch-day bugs! Read what each one is <strong>supposed</strong> to be, write your fix, then explain why the original was wrong and why your fix works.</p>
+<p><strong>Bug A</strong> — Everyone should be able to find and play the game. You told the whole class it is live, but nobody can join.</p>
+<blockquote>
+<p>In Game Settings → Permissions, the game is still set to <strong>Private</strong>.</p>
+</blockquote>
+<div class="qa"><p><strong>Write the fix (what setting do you change, and to what):</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug B</strong> — Players should start with <strong>0 coins</strong> and earn them by playing. But this test script from week 6 is still in <code>ServerScriptService</code>, so everyone wins instantly.</p>
+<pre><code class="language-lua">-- TEST: remove before launch!
+game.Players.PlayerAdded:Connect(function(player)
+    local leaderstats = player:WaitForChild(&quot;leaderstats&quot;)
+    leaderstats.Coins.Value = 999
+end)
+</code></pre>
+<div class="qa"><p><strong>Write the fix:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug C</strong> — A showcase presentation should be interesting for the audience. This is a classmate's whole plan:</p>
+<blockquote>
+<p><em>"Hi. This is my game. I show the game now. … OK that's all. The end."</em></p>
+</blockquote>
+<div class="qa"><p><strong>Write a fixed plan (list at least 4 things the presentation should include — think: what the game is, the hardest bug story, a script read aloud, what comes next):</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>3 · Tell Me What You Built 📸</h2>
+<p>Publish your game as <strong>Public</strong>, then plan your showcase here. Send a photo or video of your live game page, and write your presentation plan. Use these sentence starters — write 4 to 6 sentences total.</p>
+<div class="qa"><blockquote>
+<p>My game is called … and it is a game where …</p>
+<p>The hardest bug I ever had was … and I fixed it by …</p>
+<p>My favorite script is the one that … because …</p>
+<p>In Roblox 1 week 1, I could not … but this week I …</p>
+<p>The next thing I would build is …</p>
+<p>The best moment of these 5 courses was …</p>
+</blockquote>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<h2>4 · Record Your Walkthrough 🎥</h2>
+<p>This week your video <strong>IS</strong> the presentation. Take a video on your phone (or a parent's phone) and present your game from start to finish, like you are on stage at a game studio. Try to use these words: <strong>publish</strong>, <strong>public</strong>, <strong>bug</strong>, <strong>script</strong>, <strong>update</strong>.</p>
+<blockquote>
+<ol>
+<li>Say your game's name and what kind of game it is. Show the title screen.</li>
+<li>Play your game on camera and show the core mechanic.</li>
+<li>Tell your hardest bug story — what happened, and how you fixed it.</li>
+<li>Open your favorite script and read it out loud. Explain it in simple words.</li>
+<li>Finish with what you would build next if the studio kept going.</li>
+</ol>
+</blockquote>
+<div class="qa"><p><strong>Write what you will say in your video.</strong> Use the space below to plan it before you record — you can read from it while filming.</p>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.</p>
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>📜 RB002 Week 6 — English Worksheet (Beginner)</title>
+<style>
+@page { size: A4; margin: 18mm 16mm 22mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-family: "Inter", "Segoe UI", system-ui, sans-serif; color: #1a1a2e; }
+body { font-size: 15px; line-height: 1.55; }
+
+.cover { border-bottom: 3px solid #ff7849; padding-bottom: 14px; margin-bottom: 20px; }
+.brand { font-size: 14px; font-weight: 800; color: #ff7849; letter-spacing: .06em; }
+h1 { font-size: 28px; color: #6b4ee6; margin: 8px 0 6px; line-height: 1.25; }
+h2 { font-size: 19px; color: #6b4ee6; margin: 22px 0 12px; padding-top: 10px; border-top: 1px solid #eee; page-break-before: always; }
+section.first h2, h2:first-of-type { border-top: none; padding-top: 0; page-break-before: avoid; }
+h3, h4 { font-size: 15px; margin: 14px 0 8px; color: #1a1a2e; }
+p { margin: 8px 0; }
+strong { color: #1a1a2e; }
+em { color: #555; }
+
+ul, ol { margin: 8px 0 8px 24px; }
+li { margin: 3px 0; }
+
+pre {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 13.5px;
+  background: #1e1e2e;
+  color: #b9f6ca;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 10px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  page-break-inside: avoid;
+  line-height: 1.5;
+}
+pre code { background: transparent; padding: 0; color: inherit; }
+code {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  background: #fff1e8;
+  color: #ff7849;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+blockquote {
+  margin: 10px 0;
+  padding: 10px 16px;
+  background: #fff6ef;
+  border-left: 3px solid #ff7849;
+  border-radius: 0 6px 6px 0;
+  color: #6a3a1c;
+}
+
+.write-space {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #ffffff 0,
+    #ffffff 27px,
+    #d4d4d4 27px,
+    #d4d4d4 28px
+  );
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  min-height: 114px;
+  margin: 10px 0 20px;
+  page-break-inside: avoid;
+}
+.write-space.short { min-height: 86px; }
+.write-space.tall { min-height: 170px; }
+
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
+hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
+
+.meta { color: #666; font-size: 13px; margin: 0 0 14px; }
+.answer-lines {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 14px 16px;
+  background: #fafafa;
+  white-space: pre;
+  line-height: 2.2;
+}
+
+footer {
+  position: fixed;
+  bottom: 10mm; left: 16mm; right: 16mm;
+  text-align: center;
+  font-size: 10px;
+  color: #aaa;
+}
+footer b { color: #ff7849; }
+</style>
+</head>
+<body>
+<div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
+<h1>📜 RB002 Week 6 — English Worksheet (Beginner)</h1>
+<p><strong>Topic:</strong> Functions with Parameters &amp; Returns · <strong>Course:</strong> Story Quest · <strong>Level:</strong> Beginner · <strong>Time:</strong> about 30 minutes</p>
+<p>This week you write functions that take <strong>parameters</strong> and give back <strong>return</strong> values. A parameter is a slot in the function. You fill the slot when you <strong>call</strong> the function.</p>
+<h2>1 · Predict 🔮</h2>
+<p>Read the script. Before you imagine it running in Roblox Studio, circle or write your answer.</p>
+<pre><code class="language-lua">local function giveReward(player, amount)
+    player.leaderstats.Coins.Value += amount
+end
+
+giveReward(player, 50)
+</code></pre>
+<p><strong>Does the player get 50 coins? Circle one:</strong> yes · no</p>
+<div class="qa"><p><strong>Why?</strong></p>
+<div class="write-space short"></div></div>
+
+<pre><code class="language-lua">local function questComplete(count)
+    return count &gt;= 5
+end
+
+print(questComplete(2))
+</code></pre>
+<div class="qa"><p><strong>Does this print <code>true</code>? Circle one:</strong> yes · no</p>
+<div class="write-space short"></div></div>
+
+<h2>2 · Find the Difference 🐛</h2>
+<p>Each pair shows a clean script first, then a broken version of the same idea. Circle what's different and write one short sentence about the bug.</p>
+<p><strong>Pair A</strong> — The call should fill <strong>both</strong> slots: the player and the amount.</p>
+<pre><code class="language-lua">-- clean
+giveReward(player, 50)
+</code></pre>
+<pre><code class="language-lua">-- buggy
+giveReward(player)
+</code></pre>
+<div class="qa"><p><strong>What is wrong? What is missing in the buggy call?</strong></p>
+<div class="write-space short"></div></div>
+
+<p><strong>Pair B</strong> — The function should <strong>return</strong> the answer.</p>
+<pre><code class="language-lua">-- clean
+local function questComplete(count)
+    return count &gt;= 5
+end
+</code></pre>
+<pre><code class="language-lua">-- buggy
+local function questComplete(count)
+    count &gt;= 5
+end
+</code></pre>
+<div class="qa"><p><strong>What is wrong? Which word is missing?</strong></p>
+<div class="write-space short"></div></div>
+
+<h2>3 · Fill the Gap ✏️</h2>
+<p>The function should give back <code>true</code> when the count is 5 or more. One word is missing. Fill it in using the word bank.</p>
+<pre><code class="language-lua">local function questComplete(count)
+    ______ count &gt;= 5
+end
+</code></pre>
+<p><strong>Word bank:</strong> <code>return</code> · <code>print</code> · <code>local</code></p>
+<div class="qa"><p><strong>Write the missing word:</strong></p>
+<div class="write-space short"></div></div>
+
+<h2>4 · Tell Me What You Built 📸</h2>
+<p>Now open your Story Quest game in Roblox Studio. Write a <code>giveReward</code> function and call it with two arguments. When you finish, come back here.</p>
+<p>Send a photo or video of your function working, then explain what you did. Use these sentence starters — write 2 or 3 sentences.</p>
+<div class="qa"><blockquote>
+<p>My function <code>giveReward</code> takes …</p>
+<p>I called it with …</p>
+<p>One tricky moment was when …</p>
+</blockquote>
+<div class="write-space tall" style="min-height: 240px"></div></div>
+
+<h2>5 · Record Your Walkthrough 🎥</h2>
+<p>Take a video on your phone (or a parent's phone) while you play your game in Studio. Talk like you are teaching a friend. Try to use these words: <strong>function</strong>, <strong>parameter</strong>, <strong>call</strong>.</p>
+<blockquote>
+<ol>
+<li>Open your script and read your <code>giveReward</code> function out loud.</li>
+<li>Press Play and show the reward happening in the game.</li>
+<li>Say in your own words what a <strong>parameter</strong> is.</li>
+</ol>
+</blockquote>
+<div class="qa"><p><strong>Write what you will say in your video.</strong> You can read from it while filming.</p>
+<div class="write-space tall" style="min-height: 240px"></div></div>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.</p>
+</body>
+</html>

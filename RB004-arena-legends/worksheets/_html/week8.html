@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>⚔️ RB004 Week 8 — English Worksheet</title>
+<style>
+@page { size: A4; margin: 18mm 16mm 22mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-family: "Inter", "Segoe UI", system-ui, sans-serif; color: #1a1a2e; }
+body { font-size: 15px; line-height: 1.55; }
+
+.cover { border-bottom: 3px solid #ff7849; padding-bottom: 14px; margin-bottom: 20px; }
+.brand { font-size: 14px; font-weight: 800; color: #ff7849; letter-spacing: .06em; }
+h1 { font-size: 28px; color: #6b4ee6; margin: 8px 0 6px; line-height: 1.25; }
+h2 { font-size: 19px; color: #6b4ee6; margin: 22px 0 12px; padding-top: 10px; border-top: 1px solid #eee; page-break-before: always; }
+section.first h2, h2:first-of-type { border-top: none; padding-top: 0; page-break-before: avoid; }
+h3, h4 { font-size: 15px; margin: 14px 0 8px; color: #1a1a2e; }
+p { margin: 8px 0; }
+strong { color: #1a1a2e; }
+em { color: #555; }
+
+ul, ol { margin: 8px 0 8px 24px; }
+li { margin: 3px 0; }
+
+pre {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 13.5px;
+  background: #1e1e2e;
+  color: #b9f6ca;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 10px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  page-break-inside: avoid;
+  line-height: 1.5;
+}
+pre code { background: transparent; padding: 0; color: inherit; }
+code {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  background: #fff1e8;
+  color: #ff7849;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+blockquote {
+  margin: 10px 0;
+  padding: 10px 16px;
+  background: #fff6ef;
+  border-left: 3px solid #ff7849;
+  border-radius: 0 6px 6px 0;
+  color: #6a3a1c;
+}
+
+.write-space {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #ffffff 0,
+    #ffffff 27px,
+    #d4d4d4 27px,
+    #d4d4d4 28px
+  );
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  min-height: 114px;
+  margin: 10px 0 20px;
+  page-break-inside: avoid;
+}
+.write-space.short { min-height: 86px; }
+.write-space.tall { min-height: 170px; }
+
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
+hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
+
+.meta { color: #666; font-size: 13px; margin: 0 0 14px; }
+.answer-lines {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 14px 16px;
+  background: #fafafa;
+  white-space: pre;
+  line-height: 2.2;
+}
+
+footer {
+  position: fixed;
+  bottom: 10mm; left: 16mm; right: 16mm;
+  text-align: center;
+  font-size: 10px;
+  color: #aaa;
+}
+footer b { color: #ff7849; }
+</style>
+</head>
+<body>
+<div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
+<h1>⚔️ RB004 Week 8 — English Worksheet</h1>
+<p><strong>Topic:</strong> Ship It — Publish &amp; Playtest Party · <strong>Course:</strong> Arena Legends · <strong>Time:</strong> about 45 minutes</p>
+<p>This is launch week. You <strong>publish</strong> your arena, make it <strong>Public</strong>, and join the class <strong>playtest party</strong> — everyone plays everyone's arena. Light code this week: you read <strong>your own</strong> round loop and get your game ready for real players.</p>
+<h2>1 · Predict 🔮</h2>
+<p>These are pieces of a round loop like yours. For each one, <strong>find the matching part in YOUR script</strong> and answer about your own game.</p>
+<pre><code class="language-lua">status.Value = &quot;Intermission...&quot;
+task.wait(10)
+</code></pre>
+<div class="qa"><p><strong>Find your intermission. How many seconds is YOUR intermission? What do players see on screen while they wait?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-lua">if points.Red &gt;= Settings.WinScore then
+    status.Value = &quot;Red team wins!&quot;
+end
+</code></pre>
+<div class="qa"><p><strong>Open YOUR Settings ModuleScript. What is your <code>WinScore</code>? How many points does Blue need to win in your game?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-lua">for i = Settings.RoundLength, 0, -1 do
+    timeLeft.Value = i
+    task.wait(1)
+end
+</code></pre>
+<div class="qa"><p><strong>What is YOUR <code>RoundLength</code>? About how long is one full round of your game, intermission included?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>2 · Spot the Bug 🐛</h2>
+<p>These are not script bugs — they are <strong>launch checklist</strong> bugs. Each setting below would ruin the playtest party. Read what it is <strong>supposed</strong> to be, write the fixed setting, and explain why it matters.</p>
+<p><strong>Bug A</strong> — At the playtest party, your whole class should be able to join your arena <strong>at the same time</strong>.</p>
+<pre><code>File → Game Settings → Options
+Maximum Player Count: 1
+</code></pre>
+<div class="qa"><p><strong>Write the fixed setting:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug B</strong> — This SpawnLocation is supposed to be for the <strong>Red team only</strong>. Right now players from both teams appear on it.</p>
+<pre><code>SpawnLocation → Properties
+Neutral: ✅ true
+TeamColor: Bright red
+</code></pre>
+<div class="qa"><p><strong>Write the fixed setting:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug C</strong> — Your classmates click your game link… and Roblox says they can't join.</p>
+<pre><code>File → Game Settings → Permissions
+Playability: Private
+</code></pre>
+<p><strong>Hint:</strong> after changing this, you still need to publish again so the change goes online.</p>
+<div class="qa"><p><strong>Write the fixed setting:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>3 · Tell Me What You Built 📸</h2>
+<p>Now publish your arena: <strong>File → Publish to Roblox</strong>, then Game Settings → Permissions → <strong>Public</strong>. Join the class playtest party and play your classmates' arenas too. When you finish, come back here.</p>
+<p>Send a photo or video of your published game page or classmates playing in your arena, then write your <strong>presentation plan</strong> for class. Use these sentence starters — write 4 to 6 sentences total.</p>
+<div class="qa"><blockquote>
+<p>My game mode is …</p>
+<p>The hardest multiplayer bug I fixed was …</p>
+<p>My favorite script in my game is … because …</p>
+<p>One balance decision I made was … (speed, win score, round length, power-up spots)</p>
+<p>When my classmates played my arena, …</p>
+<p>If I made Arena Legends 2, I would …</p>
+</blockquote>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<h2>4 · Record Your Walkthrough 🎥</h2>
+<p>Now take a video on your phone (or a parent's phone) — this one is your <strong>launch trailer + presentation</strong>. Talk through it like you are showing your game to a new player. Try to use these words: <strong>publish</strong>, <strong>Public</strong>, <strong>server</strong>, <strong>round</strong>, <strong>balance</strong>.</p>
+<blockquote>
+<ol>
+<li>Show your game page on Roblox and say its name. Show that it is Public.</li>
+<li>Join your game and play part of a round: spawn, score, power-up, winner message.</li>
+<li>Tell us the hardest multiplayer bug you fixed and how you fixed it.</li>
+<li>Show your favorite script and read one line of it out loud.</li>
+<li>Explain one balance decision — why those numbers?</li>
+</ol>
+</blockquote>
+<div class="qa"><p><strong>Write what you will say in your video.</strong> Use the space below to plan it before you record — you can read from it while filming.</p>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.</p>
+</body>
+</html>

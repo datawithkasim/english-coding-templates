@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>🏃 RB001 Week 7 — English Worksheet</title>
+<style>
+@page { size: A4; margin: 18mm 16mm 22mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-family: "Inter", "Segoe UI", system-ui, sans-serif; color: #1a1a2e; }
+body { font-size: 15px; line-height: 1.55; }
+
+.cover { border-bottom: 3px solid #ff7849; padding-bottom: 14px; margin-bottom: 20px; }
+.brand { font-size: 14px; font-weight: 800; color: #ff7849; letter-spacing: .06em; }
+h1 { font-size: 28px; color: #6b4ee6; margin: 8px 0 6px; line-height: 1.25; }
+h2 { font-size: 19px; color: #6b4ee6; margin: 22px 0 12px; padding-top: 10px; border-top: 1px solid #eee; page-break-before: always; }
+section.first h2, h2:first-of-type { border-top: none; padding-top: 0; page-break-before: avoid; }
+h3, h4 { font-size: 15px; margin: 14px 0 8px; color: #1a1a2e; }
+p { margin: 8px 0; }
+strong { color: #1a1a2e; }
+em { color: #555; }
+
+ul, ol { margin: 8px 0 8px 24px; }
+li { margin: 3px 0; }
+
+pre {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 13.5px;
+  background: #1e1e2e;
+  color: #b9f6ca;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 10px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  page-break-inside: avoid;
+  line-height: 1.5;
+}
+pre code { background: transparent; padding: 0; color: inherit; }
+code {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  background: #fff1e8;
+  color: #ff7849;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+blockquote {
+  margin: 10px 0;
+  padding: 10px 16px;
+  background: #fff6ef;
+  border-left: 3px solid #ff7849;
+  border-radius: 0 6px 6px 0;
+  color: #6a3a1c;
+}
+
+.write-space {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #ffffff 0,
+    #ffffff 27px,
+    #d4d4d4 27px,
+    #d4d4d4 28px
+  );
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  min-height: 114px;
+  margin: 10px 0 20px;
+  page-break-inside: avoid;
+}
+.write-space.short { min-height: 86px; }
+.write-space.tall { min-height: 170px; }
+
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
+hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
+
+.meta { color: #666; font-size: 13px; margin: 0 0 14px; }
+.answer-lines {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 14px 16px;
+  background: #fafafa;
+  white-space: pre;
+  line-height: 2.2;
+}
+
+footer {
+  position: fixed;
+  bottom: 10mm; left: 16mm; right: 16mm;
+  text-align: center;
+  font-size: 10px;
+  color: #aaa;
+}
+footer b { color: #ff7849; }
+</style>
+</head>
+<body>
+<div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
+<h1>🏃 RB001 Week 7 — English Worksheet</h1>
+<p><strong>Topic:</strong> Build Week — Your Full Obby · <strong>Course:</strong> Obby Architect · <strong>Time:</strong> about 45 minutes</p>
+<p>No new syntax this week. You already know everything you need: parts, colors, lava, doors, loops, vanishing bridges, coins, and the leaderboard. This week you put it <strong>all together</strong> into one full obby with a start, checkpoints, and a win pad.</p>
+<h2>1 · Predict 🔮</h2>
+<p>Read each script. These mix ideas from past weeks. Write what you think will happen.</p>
+<pre><code class="language-lua">local winPad = script.Parent
+
+winPad.Touched:Connect(function(otherPart)
+    local humanoid = otherPart.Parent:FindFirstChildWhichIsA(&quot;Humanoid&quot;)
+    if humanoid then
+        print(&quot;You win!&quot;)
+        for i = 1, 6 do
+            winPad.Color = Color3.fromRGB(255, 215, 0)
+            task.wait(0.2)
+            winPad.Color = Color3.fromRGB(85, 255, 127)
+            task.wait(0.2)
+        end
+    end
+end)
+</code></pre>
+<div class="qa"><p><strong>A player jumps onto the win pad. What prints in the Output? What does the pad look like, and for about how many seconds?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-lua">local lava = script.Parent
+
+lava.Touched:Connect(function(otherPart)
+    local humanoid = otherPart.Parent:FindFirstChildWhichIsA(&quot;Humanoid&quot;)
+    if humanoid then
+        humanoid.Health = 0
+    end
+end)
+</code></pre>
+<div class="qa"><p><strong>A player touches the lava — what happens? A loose part falls onto the lava — what happens then?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-lua">local platform = script.Parent
+
+while true do
+    for i = 1, 10 do
+        platform.Transparency = i / 10
+        task.wait(0.1)
+    end
+    platform.CanCollide = false
+    task.wait(2)
+    platform.Transparency = 0
+    platform.CanCollide = true
+    task.wait(3)
+end
+</code></pre>
+<div class="qa"><p><strong>This is one platform of your bridge. In each cycle, for how many seconds is it solid and safe? When should a player run across?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>2 · Spot the Bug 🐛</h2>
+<p>Each script below was meant to do something, but it is broken. Read what the script is <strong>supposed</strong> to do, then rewrite it so it works. After that, explain why the original was wrong and why your fix works.</p>
+<p><strong>Bug A</strong> — The win pad should celebrate only when a <strong>player</strong> touches it. But a loose part rolled onto the pad and the game printed "You win!" with nobody there.</p>
+<pre><code class="language-lua">local winPad = script.Parent
+
+winPad.Touched:Connect(function(otherPart)
+    print(&quot;You win!&quot;)
+    for i = 1, 6 do
+        winPad.Color = Color3.fromRGB(255, 215, 0)
+        task.wait(0.2)
+        winPad.Color = Color3.fromRGB(85, 255, 127)
+        task.wait(0.2)
+    end
+end)
+</code></pre>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug B</strong> — The lava should only hurt players. But when a coin fell onto the lava, the Output showed a red error and the lava stopped working.</p>
+<pre><code class="language-lua">local lava = script.Parent
+
+lava.Touched:Connect(function(otherPart)
+    local humanoid = otherPart.Parent:FindFirstChildWhichIsA(&quot;Humanoid&quot;)
+    humanoid.Health = 0
+end)
+</code></pre>
+<p><strong>Hint:</strong> a falling coin has no Humanoid, so <code>humanoid</code> is <code>nil</code>.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug C</strong> — The secret door should <strong>open</strong>: turn invisible and let the player walk through. It turns invisible — but the player still bumps into an invisible wall.</p>
+<pre><code class="language-lua">local door = script.Parent
+
+door.Touched:Connect(function(otherPart)
+    local humanoid = otherPart.Parent:FindFirstChildWhichIsA(&quot;Humanoid&quot;)
+    if humanoid then
+        door.Transparency = 1
+    end
+end)
+</code></pre>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>3 · Tell Me What You Built 📸</h2>
+<div class="qa"><p>Plan first, then build. List your obby sections in order, <strong>easy → hard</strong>. Write where the checkpoints (SpawnLocation parts) go, and where you will put lava, doors, vanishing bridges, and coins.</p>
+<div class="write-space"></div></div>
+
+<p>Now build your full obby in Roblox Studio: a start, at least 3 sections, at least 1 checkpoint, coins, and a win pad at the end. Beat it yourself in Play mode. When you finish, come back here.</p>
+<p>Send a photo or video of your finished obby, then explain what you built. Use these sentence starters — write 4 to 6 sentences total.</p>
+<div class="qa"><blockquote>
+<p>My obby has … sections, in this order: …</p>
+<p>The easiest section is … and the hardest is …</p>
+<p>I put a checkpoint at … because …</p>
+<p>One tricky moment was when …</p>
+<p>To fix it, I …</p>
+<p>If I had more time, I would …</p>
+</blockquote>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<h2>4 · Record Your Walkthrough 🎥</h2>
+<p>Now take a video on your phone (or a parent's phone) while you <strong>playtest</strong> your full obby from start to finish. Talk through it like you are teaching someone who has never seen it. Try to use these words: <strong>section</strong>, <strong>checkpoint</strong>, <strong>playtest</strong>, <strong>humanoid</strong>, <strong>win</strong>.</p>
+<blockquote>
+<ol>
+<li>Start at the spawn and play through every section — show that each one <strong>can be beaten</strong>.</li>
+<li>Fall on purpose once and show that the checkpoint works — you respawn there, not at the start.</li>
+<li>Collect a coin and show the leaderboard go up.</li>
+<li>Touch the win pad and read your win-pad script out loud — say what the <code>if humanoid then</code> check stops.</li>
+</ol>
+</blockquote>
+<div class="qa"><p><strong>Write what you will say in your video.</strong> Use the space below to plan it before you record — you can read from it while filming.</p>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.</p>
+</body>
+</html>
