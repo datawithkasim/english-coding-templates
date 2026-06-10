@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>🧊 M003 Week 7 — English Worksheet</title>
+<style>
+@page { size: A4; margin: 18mm 16mm 22mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-family: "Inter", "Segoe UI", system-ui, sans-serif; color: #1a1a2e; }
+body { font-size: 15px; line-height: 1.55; }
+
+.cover { border-bottom: 3px solid #ff7849; padding-bottom: 14px; margin-bottom: 20px; }
+.brand { font-size: 14px; font-weight: 800; color: #ff7849; letter-spacing: .06em; }
+h1 { font-size: 28px; color: #6b4ee6; margin: 8px 0 6px; line-height: 1.25; }
+h2 { font-size: 19px; color: #6b4ee6; margin: 22px 0 12px; padding-top: 10px; border-top: 1px solid #eee; page-break-before: always; }
+section.first h2, h2:first-of-type { border-top: none; padding-top: 0; page-break-before: avoid; }
+h3, h4 { font-size: 15px; margin: 14px 0 8px; color: #1a1a2e; }
+p { margin: 8px 0; }
+strong { color: #1a1a2e; }
+em { color: #555; }
+
+ul, ol { margin: 8px 0 8px 24px; }
+li { margin: 3px 0; }
+
+pre {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 13.5px;
+  background: #1e1e2e;
+  color: #b9f6ca;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 10px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  page-break-inside: avoid;
+  line-height: 1.5;
+}
+pre code { background: transparent; padding: 0; color: inherit; }
+code {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  background: #fff1e8;
+  color: #ff7849;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+blockquote {
+  margin: 10px 0;
+  padding: 10px 16px;
+  background: #fff6ef;
+  border-left: 3px solid #ff7849;
+  border-radius: 0 6px 6px 0;
+  color: #6a3a1c;
+}
+
+.write-space {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #ffffff 0,
+    #ffffff 27px,
+    #d4d4d4 27px,
+    #d4d4d4 28px
+  );
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  min-height: 114px;
+  margin: 10px 0 20px;
+  page-break-inside: avoid;
+}
+.write-space.short { min-height: 86px; }
+.write-space.tall { min-height: 170px; }
+
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
+hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
+
+.meta { color: #666; font-size: 13px; margin: 0 0 14px; }
+.answer-lines {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 14px 16px;
+  background: #fafafa;
+  white-space: pre;
+  line-height: 2.2;
+}
+
+footer {
+  position: fixed;
+  bottom: 10mm; left: 16mm; right: 16mm;
+  text-align: center;
+  font-size: 10px;
+  color: #aaa;
+}
+footer b { color: #ff7849; }
+</style>
+</head>
+<body>
+<div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
+<h1>🧊 M003 Week 7 — English Worksheet</h1>
+<p><strong>Topic:</strong> Voxel Statue — Building Layer by Layer · <strong>Course:</strong> 3D Coordinates · <strong>Time:</strong> about 45 minutes</p>
+<p>This week you build a statue <strong>one layer at a time</strong>. Each layer is a small pixel-art grid, and the layers stack <strong>upward along y</strong>: layer 1 at height 0, layer 2 at height 1, and so on. In the plans below, <code>#</code> means stone and <code>.</code> means air.</p>
+<h2>1 · Predict 🔮</h2>
+<p>Read each plan and set of steps. Before you imagine it happening, write what you think you will see.</p>
+<pre><code>layer 1:   # # #      layer 2:   . # .
+           # # #                 . # .
+           # # #                 . # .
+
+build layer 1 at height 0
+build layer 2 at height 1
+</code></pre>
+<div class="qa"><p><strong>Layer 1 is a full 3×3 square. Layer 2 is only the middle row. What does the statue look like from the side — wide at the bottom or wide at the top?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code>build layer 2 at height 0
+build layer 1 at height 1
+</code></pre>
+<div class="qa"><p><strong>Same two layers, but the order is swapped. What does the statue look like now? Does it look like it could fall over?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code>set h to 0
+repeat 4 times:
+    build layer 2 at height h
+    add 1 to h
+</code></pre>
+<div class="qa"><p><strong>Layer 2 (the thin middle strip) is built 4 times, each time one block higher. What shape do you get?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>2 · Spot the Bug 🐛</h2>
+<p>Each block of code below was meant to do something, but it is broken. Read what the code is <strong>supposed</strong> to do, then rewrite it so it works. After that, explain why the original was wrong and why your fix works.</p>
+<p><strong>Bug A</strong> — The statue plan says: <strong>feet</strong> layer at the bottom, <strong>body</strong> layer in the middle, <strong>head</strong> layer on top. Right now the statue is upside down.</p>
+<pre><code>build head layer at height 0
+build body layer at height 1
+build feet layer at height 2
+</code></pre>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug B</strong> — Every layer should start at the <strong>same corner</strong>, x = 0 and z = 0, so the statue stands straight. Right now the statue leans to one side.</p>
+<pre><code>build layer 1 at (0, 0, 0)
+build layer 2 at (1, 1, 0)
+build layer 3 at (0, 2, 0)
+</code></pre>
+<p><strong>Hint:</strong> compare the <strong>x</strong> number on each line. Only the <strong>y</strong> number should change.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug C</strong> — The plan has exactly <strong>three</strong> layers: 1, 2, 3. Right now the statue is too tall and has the wrong middle.</p>
+<pre><code>build layer 1 at height 0
+build layer 2 at height 1
+build layer 2 at height 2
+build layer 3 at height 3
+</code></pre>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>3 · Tell Me What You Built 📸</h2>
+<p>Now switch to your homework world. Draw a <strong>layer plan</strong> for a small statue — at least 3 layers, each one a small grid — then build it layer by layer, going up one height at a time. When you finish, come back here.</p>
+<p>Send a photo or video of your statue, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.</p>
+<div class="qa"><blockquote>
+<p>First, I planned my layers by …</p>
+<p>My statue has … layers, and layer 1 is …</p>
+<p>Each layer went one higher because …</p>
+<p>I kept every layer at the same corner so that …</p>
+<p>One tricky moment was when …</p>
+<p>If I had more time, I would …</p>
+</blockquote>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<h2>4 · Record Your Walkthrough 🎥</h2>
+<p>Now take a video on your phone (or a parent's phone) while you show your statue in the world. Talk through it like you are teaching someone who has never built layer by layer. Try to use these words: <strong>layer</strong>, <strong>height</strong>, <strong>stack</strong>, <strong>plan</strong>, <strong>grid</strong>.</p>
+<blockquote>
+<ol>
+<li>Show your layer plan on paper, then show the finished statue.</li>
+<li>Point at the bottom layer and say its height, then point at the top layer and say its height.</li>
+<li>Show how two layers are different shapes but sit on the same corner.</li>
+<li>Say in your own words why the <strong>order</strong> of the layers matters.</li>
+</ol>
+</blockquote>
+<div class="qa"><p><strong>Write what you will say in your video.</strong> Use the space below to plan it before you record — you can read from it while filming.</p>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.</p>
+</body>
+</html>
