@@ -1,6 +1,6 @@
 # 🏆 M002 Week 8 — English Worksheet (Beginner)
 
-**Topic:** Capstone — Cube Maze · **Course:** Maze Madness · **Level:** Beginner · **Time:** about 45 minutes
+**Topic:** Capstone — 20×20×20 Cube Maze · **Course:** Maze Madness · **Level:** Beginner · **Time:** about 45 minutes
 
 This is the **final project**. You design your own maze with a redstone door and a lever, then write code that solves it.
 
@@ -112,6 +112,7 @@ keep doing until ____________:
 
 Now build your **final project**. Your maze needs:
 
+- a **20 × 20 × 20** cube shape
 - walls and a clear path
 - **1 redstone door**
 - **1 lever** the agent must flip
