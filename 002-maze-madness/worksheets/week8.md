@@ -1,6 +1,6 @@
 # 🏆 M002 Week 8 — English Worksheet
 
-**Topic:** Capstone — 15×15×15 Cube Maze · **Course:** Maze Madness · **Time:** about 60 minutes
+**Topic:** Capstone — 20×20×20 Cube Maze · **Course:** Maze Madness · **Time:** about 60 minutes
 
 This is the **final project**. You design a 3D cube maze with redstone doors and levers, then write code that solves it on its own.
 
@@ -11,7 +11,7 @@ This is the **final project**. You design a 3D cube maze with redstone doors and
 Read each set of steps. Before you imagine the agent doing it, write what you think will happen.
 
 ```
-A cube maze: 15 wide, 15 deep, 15 tall.
+A cube maze: 20 wide, 20 deep, 20 tall.
 - multiple floors
 - at least 1 redstone door
 - at least 1 lever
@@ -113,7 +113,7 @@ otherwise:
 
 Now build your **final project**. Your maze must include:
 
-- a **15 × 15 × 15** cube structure
+- a **20 × 20 × 20** cube structure
 - **more than one floor**
 - at least **1 redstone door**
 - at least **1 lever** the agent must flip
