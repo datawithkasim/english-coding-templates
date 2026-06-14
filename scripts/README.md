@@ -2,6 +2,8 @@
 
 워크시트·핸드아웃을 PDF로 빌드하는 도구가 들어 있습니다.
 
+> 📄 워크시트 PDF 생성 규칙·구조 전체 설명(작성자/AI용): **[WORKSHEET-GENERATION.md](./WORKSHEET-GENERATION.md)**
+
 ## build-worksheets.py
 
 모든 `*/worksheets/*.md` 파일을 인쇄용 PDF로 변환합니다.
