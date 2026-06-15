@@ -1,45 +1,40 @@
 # 🧊 M003 Week 7 — English Worksheet
 
-**Topic:** Voxel Statue — Building Layer by Layer · **Course:** 3D Coordinates · **Time:** about 45 minutes
+**Topic:** Designing the Museum · **Course:** 3D Coordinates · **Time:** about 45 minutes
 
-This week you build a statue **one layer at a time**. Each layer is a small pixel-art grid, and the layers stack **upward along y**: layer 1 at height 0, layer 2 at height 1, and so on. In the plans below, `#` means stone and `.` means air.
+A museum brings together everything in this course: a **floor** laid out with (x, z), **pictures on the walls** drawn with (x, y), and **sculptures on pedestals** placed with (x, y, z). This week you make a **blueprint** — you decide the coordinates of every piece **before** you build, so nothing overlaps and every sculpture sits on its stand.
 
 ---
 
 ## 1 · Predict 🔮
 
-Read each plan and set of steps. Before you imagine it happening, write what you think you will see.
+Read each plan. Before you imagine it happening, write what you think you will see.
 
 ```
-layer 1:   # # #      layer 2:   . # .
-           # # #                 . # .
-           # # #                 . # .
-
-build layer 1 at height 0
-build layer 2 at height 1
+floor:    fill stone from (0, 0, 0) to (8, 0, 8)
+picture:  (drawn on the back wall, where z = 0, using x and y)
+pedestal: fill stone from (2, 0, 2) to (4, 1, 4)
 ```
 
-**Layer 1 is a full 3×3 square. Layer 2 is only the middle row. What does the statue look like from the side — wide at the bottom or wide at the top?**
+**The floor is flat (y stays 0). The picture stands up the back wall. The pedestal is a short box. Looking down from above, do the picture and the pedestal sit in different places? Why won't they crash?**
 
 <div class="write-space"></div>
 
 ```
-build layer 2 at height 0
-build layer 1 at height 1
+pedestal A: fill stone from (1, 0, 1) to (2, 1, 2)
+pedestal B: fill stone from (6, 0, 6) to (7, 1, 7)
 ```
 
-**Same two layers, but the order is swapped. What does the statue look like now? Does it look like it could fall over?**
+**Two pedestals. Read their (x, z) footprints. Are they far apart or on top of each other? How do you know from the numbers?**
 
 <div class="write-space"></div>
 
 ```
-set h to 0
-repeat 4 times:
-    build layer 2 at height h
-    add 1 to h
+pedestal: fill stone from (2, 0, 2) to (4, 1, 4)
+statue:   place gold block at (3, 2, 3)
 ```
 
-**Layer 2 (the thin middle strip) is built 4 times, each time one block higher. What shape do you get?**
+**The pedestal fills up to height 1. The statue is placed at height 2. Does the statue rest on the pedestal, float above it, or sink into it?**
 
 <div class="write-space"></div>
 
@@ -49,12 +44,28 @@ repeat 4 times:
 
 Each block of code below was meant to do something, but it is broken. Read what the code is **supposed** to do, then rewrite it so it works. After that, explain why the original was wrong and why your fix works.
 
-**Bug A** — The statue plan says: **feet** layer at the bottom, **body** layer in the middle, **head** layer on top. Right now the statue is upside down.
+**Bug A** — The statue should rest **on top** of the pedestal. The pedestal fills up to height 1, so the statue belongs at height 2. Right now it floats high in the air.
 
 ```
-build head layer at height 0
-build body layer at height 1
-build feet layer at height 2
+fill stone from (2, 0, 2) to (4, 1, 4)
+place gold block at (3, 5, 3)
+```
+
+**Hint:** the top of the pedestal is one block above where the stone ends.
+
+**Write the fixed code:**
+
+<div class="write-space"></div>
+
+**Why was it wrong? Why does your fix work?**
+
+<div class="write-space"></div>
+
+**Bug B** — These two pedestals should stand in **different corners** of the floor. Right now they share the same (x, z) footprint and pile up in one spot.
+
+```
+fill stone from (1, 0, 1) to (2, 1, 2)
+fill stone from (1, 0, 1) to (2, 1, 2)
 ```
 
 **Write the fixed code:**
@@ -65,32 +76,20 @@ build feet layer at height 2
 
 <div class="write-space"></div>
 
-**Bug B** — Every layer should start at the **same corner**, x = 0 and z = 0, so the statue stands straight. Right now the statue leans to one side.
+**Bug C** — This picture should **stand up the back wall**, where z stays 0 and the blocks climb with x and y. Right now it is lying flat on the floor.
 
 ```
-build layer 1 at (0, 0, 0)
-build layer 2 at (1, 1, 0)
-build layer 3 at (0, 2, 0)
+set x to 0
+repeat 4 times:
+    place red block at (x, 0, 0)
+    add 1 to x
+set x to 0
+repeat 4 times:
+    place red block at (x, 0, 1)
+    add 1 to x
 ```
 
-**Hint:** compare the **x** number on each line. Only the **y** number should change.
-
-**Write the fixed code:**
-
-<div class="write-space"></div>
-
-**Why was it wrong? Why does your fix work?**
-
-<div class="write-space"></div>
-
-**Bug C** — The plan has exactly **three** layers: 1, 2, 3. Right now the statue is too tall and has the wrong middle.
-
-```
-build layer 1 at height 0
-build layer 2 at height 1
-build layer 2 at height 2
-build layer 3 at height 3
-```
+**Hint:** a wall picture grows **up** (y), it does not step **forward** (z). The second row should be one block higher, not one block forward.
 
 **Write the fixed code:**
 
@@ -104,17 +103,29 @@ build layer 3 at height 3
 
 ## 3 · Tell Me What You Built 📸
 
-Now switch to your homework world. Draw a **layer plan** for a small statue — at least 3 layers, each one a small grid — then build it layer by layer, going up one height at a time. When you finish, come back here.
+Now switch to your homework world. Draw a **blueprint** of one museum room **before** you build. Looking down from above, mark the floor, the back wall picture, and at least **two pedestals** — and write the coordinates of each.
 
-Send a photo or video of your statue, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.
+Floor: from ( … , … , … ) to ( … , … , … )
 
-> First, I planned my layers by …
+<div class="write-space"></div>
+
+Pedestal 1: from ( … , … , … ) to ( … , … , … ) · its statue at ( … , … , … )
+
+<div class="write-space"></div>
+
+Pedestal 2: from ( … , … , … ) to ( … , … , … ) · its statue at ( … , … , … )
+
+<div class="write-space"></div>
+
+Now build your room from the blueprint, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.
+
+> First, I planned …
 >
-> My statue has … layers, and layer 1 is …
+> I kept my two pedestals from overlapping by …
 >
-> Each layer went one higher because …
+> Each statue sits on its pedestal because its height starts at …
 >
-> I kept every layer at the same corner so that …
+> My wall picture stands up because it grows along … not …
 >
 > One tricky moment was when …
 >
@@ -126,12 +137,12 @@ Send a photo or video of your statue, then explain what you did. Use these sente
 
 ## 4 · Record Your Walkthrough 🎥
 
-Now take a video on your phone (or a parent's phone) while you show your statue in the world. Talk through it like you are teaching someone who has never built layer by layer. Try to use these words: **layer**, **height**, **stack**, **plan**, **grid**.
+Now take a video on your phone (or a parent's phone) while you walk through your museum room. Talk through it like you are giving a tour. Try to use these words: **blueprint**, **floor**, **pedestal**, **sculpture**, **overlap**.
 
-> 1. Show your layer plan on paper, then show the finished statue.
-> 2. Point at the bottom layer and say its height, then point at the top layer and say its height.
-> 3. Show how two layers are different shapes but sit on the same corner.
-> 4. Say in your own words why the **order** of the layers matters.
+> 1. Show your blueprint on paper, then show the built room.
+> 2. Point at two pedestals and say their (x, z) footprints, and why they don't overlap.
+> 3. Show a statue resting on its pedestal and say the height it starts at.
+> 4. Say in your own words how planning coordinates first made the room work.
 
 **Write what you will say in your video.** Use the space below to plan it before you record — you can read from it while filming.
 

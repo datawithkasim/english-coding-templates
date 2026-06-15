@@ -103,74 +103,84 @@ footer b { color: #ff7849; }
 <body>
 <div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
 <h1>🧊 M003 Week 8 — English Worksheet (Beginner)</h1>
-<p><strong>Topic:</strong> Final — Two-Faced Statue · <strong>Course:</strong> 3D Coordinates · <strong>Level:</strong> Beginner · <strong>Time:</strong> about 30 minutes</p>
-<p>This is your final build. No new commands — just everything from this course together. Your statue shows <strong>one picture from the front</strong> and a <strong>different picture from the side</strong>. The two faces meet at one corner.</p>
+<p><strong>Topic:</strong> Final — My Own Museum · <strong>Course:</strong> 3D Coordinates · <strong>Level:</strong> Beginner · <strong>Time:</strong> about 40 minutes</p>
+<p>This is your big final build. No new commands — everything from this course working together. Your museum has a <strong>room</strong> to walk into, a <strong>flat picture</strong> on the wall (2D, drawn with x and y), and a <strong>solid sculpture</strong> on a pedestal (3D, placed with x, y, z).</p>
 <h2>1 · Predict 🔮</h2>
 <p>Read the steps. Before you imagine it happening, circle or write your answer.</p>
-<pre><code>fill stone from (0, 0, 0) to (4, 4, 0)
+<pre><code># a picture on the back wall — z stays 0, blocks climb with x and y
+place red block at (1, 1, 0)
+place red block at (2, 1, 0)
 </code></pre>
-<p><strong>From the front you see a big square. From the side, do you see the same big square? Circle one:</strong> yes · no</p>
+<p><strong>These blocks stay at z = 0 and only x and y change. Is this a flat picture, like a painting on a wall? Circle one:</strong> yes · no</p>
 <div class="qa"><p><strong>Why?</strong></p>
 <div class="write-space short"></div></div>
 
-<pre><code>front face: fill stone from (0, 0, 0) to (4, 4, 0)
-side face:  fill stone from (0, 0, 0) to (0, 4, 4)
+<pre><code># a sculpture — all three numbers used
+fill stone from (4, 0, 4) to (5, 1, 5)
+place gold block at (4, 2, 4)
 </code></pre>
-<div class="qa"><p><strong>Both faces go up to height 4. Are the two faces the same height? Circle one:</strong> yes · no</p>
+<div class="qa"><p><strong>This uses x, y, and z. Is this a solid thing you can walk all the way around? Circle one:</strong> yes · no</p>
 <div class="write-space short"></div></div>
 
 <h2>2 · Find the Difference 🐛</h2>
 <p>Each pair shows clean steps first, then a broken version of the same idea. Circle what's different and write one short sentence about the bug.</p>
-<p><strong>Pair A</strong> — The side face should sit at the <strong>corner</strong> (x = 0), not cut through the front picture.</p>
+<p><strong>Pair A</strong> — The museum room should be <strong>hollow</strong> so visitors can walk in.</p>
 <pre><code># clean
-fill stone from (0, 0, 0) to (4, 4, 0)
-fill stone from (0, 0, 0) to (0, 4, 4)
+fill stone from (0, 0, 0) to (8, 4, 8)
+fill air from (1, 1, 1) to (7, 3, 7)
 </code></pre>
 <pre><code># buggy
-fill stone from (0, 0, 0) to (4, 4, 0)
-fill stone from (2, 0, 0) to (2, 4, 4)
+fill stone from (0, 0, 0) to (8, 4, 8)
 </code></pre>
-<div class="qa"><p><strong>What is wrong? What happens to the front picture?</strong></p>
+<div class="qa"><p><strong>What is wrong? Can a visitor get inside the buggy museum?</strong></p>
 <div class="write-space short"></div></div>
 
-<p><strong>Pair B</strong> — Both faces should be the <strong>same height</strong>.</p>
+<p><strong>Pair B</strong> — The statue should rest <strong>on top</strong> of its pedestal, at height 2.</p>
 <pre><code># clean
-fill stone from (0, 0, 0) to (4, 4, 0)
-fill stone from (0, 0, 0) to (0, 4, 4)
+fill stone from (4, 0, 4) to (5, 1, 5)
+place gold block at (4, 2, 4)
 </code></pre>
 <pre><code># buggy
-fill stone from (0, 0, 0) to (4, 4, 0)
-fill stone from (0, 0, 0) to (0, 2, 4)
+fill stone from (4, 0, 4) to (5, 1, 5)
+place gold block at (4, 0, 4)
 </code></pre>
 <div class="qa"><p><strong>What is wrong?</strong></p>
 <div class="write-space short"></div></div>
 
-<h2>3 · Fill the Gap ✏️</h2>
-<p>Both faces should go up to the <strong>same height</strong>. One number is missing. Fill it in using the word bank.</p>
-<pre><code>fill stone from (0, 0, 0) to (4, 4, 0)
-fill stone from (0, 0, 0) to (0, ____, 4)
-</code></pre>
-<p><strong>Word bank:</strong> <code>4</code> · <code>2</code> · <code>9</code></p>
-<div class="qa"><p><strong>Write the missing number:</strong></p>
+<h2>3 · Plan Your Museum 🗺️</h2>
+<p>Plan <strong>before</strong> you build. Looking down from above, write where each piece goes.</p>
+<div class="qa"><p>My room: from ( … , … , … ) to ( … , … , … )</p>
 <div class="write-space short"></div></div>
 
-<h2>4 · Tell Me What You Built 📸</h2>
-<p>Now switch to your homework world. Draw your <strong>front picture</strong> and your <strong>side picture</strong> on paper first, then build your two-faced statue so the faces meet at one corner. When you finish, come back here.</p>
-<p>Send a photo or video of <strong>both views</strong>, then explain what you did. Use these sentence starters — write 2 or 3 sentences.</p>
-<div class="qa"><blockquote>
-<p>My front picture is … and my side picture is …</p>
-<p>The two faces meet at …</p>
-<p>One tricky moment was when …</p>
-</blockquote>
-<div class="write-space tall" style="min-height: 240px"></div></div>
+<div class="qa"><p>My wall picture shows … and stays at z = …</p>
+<div class="write-space short"></div></div>
 
-<h2>5 · Record Your Walkthrough 🎥</h2>
-<p>Take a video on your phone (or a parent's phone) while you walk around your statue. Talk like you are teaching a friend. Try to use these words: <strong>front view</strong>, <strong>side view</strong>, <strong>face</strong>, <strong>height</strong>.</p>
+<div class="qa"><p>My pedestal: from ( … , … , … ) to ( … , … , … ) · my sculpture on top at ( … , … , … )</p>
+<div class="write-space short"></div></div>
+
+<h2>4 · Build Your Museum 📸</h2>
+<p>Now switch to your homework world and build your museum from your plan. Check your build against this list:</p>
+<blockquote>
+<p>☐ A <strong>room</strong> with a floor and walls that you can stand inside.</p>
+<p>☐ A <strong>doorway</strong> to walk in through.</p>
+<p>☐ At least <strong>one flat picture</strong> on a wall (2D — only x and y change).</p>
+<p>☐ At least <strong>one sculpture</strong> on a pedestal (3D — x, y, and z).</p>
+</blockquote>
+<p>Send a photo or video of your museum, then explain what you did. Use these sentence starters — write 2 or 3 sentences.</p>
+<div class="qa"><blockquote>
+<p>My museum has …</p>
+<p>My flat picture is 2D because …</p>
+<p>My sculpture is 3D because …</p>
+</blockquote>
+<div class="write-space tall" style="min-height: 300px"></div></div>
+
+<h2>5 · Record Your Tour 🎥</h2>
+<p>Take a video on your phone (or a parent's phone) and give a <strong>tour</strong> of your museum. Talk like you are showing a visitor around. Try to use these words: <strong>museum</strong>, <strong>2D</strong>, <strong>3D</strong>, <strong>picture</strong>, <strong>sculpture</strong>.</p>
 <blockquote>
 <ol>
-<li>Stand in front of the statue and say what the front picture shows.</li>
-<li>Walk to the side and say what the side picture shows.</li>
-<li>Say in your own words how the statue shows two different pictures.</li>
+<li>Walk in through the doorway.</li>
+<li>Stop at your flat picture and say why it is 2D.</li>
+<li>Walk around your sculpture and say why it is 3D.</li>
 </ol>
 </blockquote>
 <div class="qa"><p><strong>Write what you will say in your video.</strong> You can read from it while filming.</p>

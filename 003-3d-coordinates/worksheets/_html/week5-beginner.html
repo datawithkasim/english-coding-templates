@@ -103,71 +103,86 @@ footer b { color: #ff7849; }
 <body>
 <div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
 <h1>🧊 M003 Week 5 — English Worksheet (Beginner)</h1>
-<p><strong>Topic:</strong> Boxes and Rooms — Filling a Volume · <strong>Course:</strong> 3D Coordinates · <strong>Level:</strong> Beginner · <strong>Time:</strong> about 30 minutes</p>
-<p>This week one command builds a whole box. <code>fill</code> takes <strong>two corners</strong> and fills everything between them. Remember: <strong>y is height</strong>. Fill with <strong>air</strong> to make the inside empty.</p>
+<p><strong>Topic:</strong> Into 3D (x, y, z) · <strong>Course:</strong> 3D Coordinates · <strong>Level:</strong> Beginner · <strong>Time:</strong> about 30 minutes</p>
+<p>You know the wall (x, y) and the floor (x, z). This week you use <strong>all three numbers at once</strong>: <strong>(x, y, z)</strong>. x is across, <strong>y is up (height)</strong>, z is forward. Now you can put a block <strong>anywhere</strong> in space.</p>
 <h2>1 · Predict 🔮</h2>
 <p>Read the steps. Before you imagine it happening, circle or write your answer.</p>
-<pre><code>fill stone from (0, 0, 0) to (4, 3, 4)
+<pre><code>set y to 0
+repeat 5 times:
+    place stone block at (3, y, 3)
+    add 1 to y
 </code></pre>
-<p><strong>Is the box full of stone all the way through? Circle one:</strong> yes · no</p>
+<p><strong>The middle number y grows by 1 each time. Does this build a tower going up? Circle one:</strong> yes · no</p>
 <div class="qa"><p><strong>Why?</strong></p>
 <div class="write-space short"></div></div>
 
-<pre><code>fill stone from (0, 0, 0) to (4, 3, 4)
-fill air from (1, 1, 1) to (3, 2, 3)
+<pre><code>place gold block at (2, 6, 2)
 </code></pre>
-<div class="qa"><p><strong>The second line fills the inside with air. Can you stand inside now? Circle one:</strong> yes · no</p>
+<div class="qa"><p><strong>y is 6 and there is nothing below it. Is the gold block high in the air? Circle one:</strong> yes · no</p>
 <div class="write-space short"></div></div>
 
 <h2>2 · Find the Difference 🐛</h2>
 <p>Each pair shows clean steps first, then a broken version of the same idea. Circle what's different and write one short sentence about the bug.</p>
-<p><strong>Pair A</strong> — This should make a <strong>room</strong> you can stand inside.</p>
+<p><strong>Pair A</strong> — The tower should go <strong>up</strong>, so the <strong>middle</strong> number (y) must grow.</p>
 <pre><code># clean
-fill stone from (0, 0, 0) to (4, 3, 4)
-fill air from (1, 1, 1) to (3, 2, 3)
+set y to 0
+repeat 4 times:
+    place stone block at (3, y, 3)
+    add 1 to y
 </code></pre>
 <pre><code># buggy
-fill stone from (0, 0, 0) to (4, 3, 4)
+set z to 0
+repeat 4 times:
+    place stone block at (3, 0, z)
+    add 1 to z
 </code></pre>
-<div class="qa"><p><strong>What is wrong? Why can't you go inside the buggy one?</strong></p>
+<div class="qa"><p><strong>What is wrong? Does the buggy one go up, or forward?</strong></p>
 <div class="write-space short"></div></div>
 
-<p><strong>Pair B</strong> — <code>fill</code> wants the <strong>small</strong> corner first, then the big corner.</p>
+<p><strong>Pair B</strong> — The tower should start <strong>on the ground</strong>, where y is 0.</p>
 <pre><code># clean
-fill stone from (0, 0, 0) to (4, 3, 4)
+set y to 0
+repeat 4 times:
+    place stone block at (2, y, 2)
+    add 1 to y
 </code></pre>
 <pre><code># buggy
-fill stone from (4, 3, 4) to (0, 0, 0)
+set y to 3
+repeat 4 times:
+    place stone block at (2, y, 2)
+    add 1 to y
 </code></pre>
-<div class="qa"><p><strong>What is wrong?</strong></p>
+<div class="qa"><p><strong>What is wrong? Where does the buggy tower start?</strong></p>
 <div class="write-space short"></div></div>
 
 <h2>3 · Fill the Gap ✏️</h2>
-<p>The room should be <strong>empty inside</strong>. One word is missing. Fill it in using the word bank.</p>
-<pre><code>fill stone from (0, 0, 0) to (4, 3, 4)
-fill ____ from (1, 1, 1) to (3, 2, 3)
+<p>The tower should grow <strong>up into the sky</strong>. The middle number must grow. One word is missing. Fill it in using the word bank.</p>
+<pre><code>set y to 0
+repeat 5 times:
+    place stone block at (3, y, 3)
+    add 1 to ____
 </code></pre>
-<p><strong>Word bank:</strong> <code>air</code> · <code>stone</code> · <code>water</code></p>
+<p><strong>Word bank:</strong> <code>y</code> · <code>x</code> · <code>z</code></p>
 <div class="qa"><p><strong>Write the missing word:</strong></p>
 <div class="write-space short"></div></div>
 
 <h2>4 · Tell Me What You Built 📸</h2>
-<p>Now switch to your homework world. Build a <strong>hollow room</strong>: fill a stone box, then fill the inside with air. When you finish, come back here.</p>
-<p>Send a photo or video of you standing inside your room, then explain what you did. Use these sentence starters — write 2 or 3 sentences.</p>
+<p>Now switch to your homework world. Build a <strong>tower</strong> that goes up using a loop, then put a gold block floating in the air above it. When you finish, come back here.</p>
+<p>Send a photo or video of your tower, then explain what you did. Use these sentence starters — write 2 or 3 sentences.</p>
 <div class="qa"><blockquote>
-<p>My two corners were …</p>
-<p>To make it hollow, I …</p>
-<p>One tricky moment was when …</p>
+<p>My tower is … blocks tall.</p>
+<p>The number that grew was <strong>y</strong>, which means …</p>
+<p>My floating block is at ( … , … , … ).</p>
 </blockquote>
 <div class="write-space tall" style="min-height: 240px"></div></div>
 
 <h2>5 · Record Your Walkthrough 🎥</h2>
-<p>Take a video on your phone (or a parent's phone) while you show your room in the world. Talk like you are teaching a friend. Try to use these words: <strong>fill</strong>, <strong>corner</strong>, <strong>hollow</strong>, <strong>air</strong>.</p>
+<p>Take a video on your phone (or a parent's phone) while you show your tower in the world. Talk like you are teaching a friend. Try to use these words: <strong>x</strong>, <strong>y</strong>, <strong>z</strong>, <strong>height</strong>, <strong>up</strong>.</p>
 <blockquote>
 <ol>
-<li>Show your room from outside, then walk inside it.</li>
-<li>Point at one corner and say its coordinate out loud.</li>
-<li>Say in your own words what <code>fill air</code> does.</li>
+<li>Show your tower from the bottom to the top.</li>
+<li>Read your loop out loud and say which number grows.</li>
+<li>Point at the floating block and say all three of its numbers.</li>
 </ol>
 </blockquote>
 <div class="qa"><p><strong>Write what you will say in your video.</strong> You can read from it while filming.</p>

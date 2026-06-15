@@ -1,8 +1,8 @@
 # 🧊 M003 Week 6 — English Worksheet (Beginner)
 
-**Topic:** Building Solid Shapes with the Builder · **Course:** 3D Coordinates · **Level:** Beginner · **Time:** about 30 minutes
+**Topic:** Building Things in 3D — Boxes & Rooms · **Course:** 3D Coordinates · **Level:** Beginner · **Time:** about 30 minutes
 
-This week you use the **builder** — an invisible helper that moves through the world. The pattern: move the builder to the start, **place a mark**, move along x, y, or z, then **fill** between the mark and the builder.
+This week one command builds a whole box. `fill` takes **two corners** — each one a full `(x, y, z)` — and fills everything between them. Remember: **y is height**. Fill with **air** to hollow out the inside and make a room.
 
 ---
 
@@ -11,25 +11,21 @@ This week you use the **builder** — an invisible helper that moves through the
 Read the steps. Before you imagine it happening, circle or write your answer.
 
 ```
-move builder to (0, 0, 0)
-place mark
-move builder along x by 5
-fill from mark with stone
+fill stone from (0, 0, 0) to (4, 3, 4)
 ```
 
-**Does this build a line of stone? Circle one:** yes · no
+**Is the box full of stone all the way through? Circle one:** yes · no
 
 **Why?**
 
 <div class="write-space short"></div>
 
 ```
-move builder to (0, 0, 0)
-move builder along x by 5
-fill from mark with stone
+fill stone from (0, 0, 0) to (4, 3, 4)
+fill air from (1, 1, 1) to (3, 2, 3)
 ```
 
-**The builder never placed a mark. Does `fill` build the line? Circle one:** yes · no
+**The second line fills the inside with air. Can you stand inside now? Circle one:** yes · no
 
 <div class="write-space short"></div>
 
@@ -39,44 +35,33 @@ fill from mark with stone
 
 Each pair shows clean steps first, then a broken version of the same idea. Circle what's different and write one short sentence about the bug.
 
-**Pair A** — The mark must go down **before** the builder moves.
+**Pair A** — This should make a **room** you can stand inside.
 
 ```
 # clean
-move builder to (0, 0, 0)
-place mark
-move builder along x by 5
-fill from mark with stone
+fill stone from (0, 0, 0) to (4, 3, 4)
+fill air from (1, 1, 1) to (3, 2, 3)
 ```
 
 ```
 # buggy
-move builder to (0, 0, 0)
-move builder along x by 5
-place mark
-fill from mark with stone
+fill stone from (0, 0, 0) to (4, 3, 4)
 ```
 
-**What is wrong? Why does the buggy one make only one block?**
+**What is wrong? Why can't you go inside the buggy one?**
 
 <div class="write-space short"></div>
 
-**Pair B** — The builder must go to the start corner **first**.
+**Pair B** — `fill` wants the **small** corner first, then the big corner.
 
 ```
 # clean
-move builder to (0, 0, 0)
-place mark
-move builder along x by 6
-trace wall with stone
+fill stone from (0, 0, 0) to (4, 3, 4)
 ```
 
 ```
 # buggy
-place mark
-move builder along x by 6
-trace wall with stone
-move builder to (0, 0, 0)
+fill stone from (4, 3, 4) to (0, 0, 0)
 ```
 
 **What is wrong?**
@@ -87,16 +72,14 @@ move builder to (0, 0, 0)
 
 ## 3 · Fill the Gap ✏️
 
-The builder needs a start point before it moves. One word is missing. Fill it in using the word bank.
+The room should be **empty inside**. One word is missing. Fill it in using the word bank.
 
 ```
-move builder to (0, 0, 0)
-place ____
-move builder along x by 5
-fill from mark with stone
+fill stone from (0, 0, 0) to (4, 3, 4)
+fill ____ from (1, 1, 1) to (3, 2, 3)
 ```
 
-**Word bank:** `mark` · `block` · `wall`
+**Word bank:** `air` · `stone` · `water`
 
 **Write the missing word:**
 
@@ -106,13 +89,13 @@ fill from mark with stone
 
 ## 4 · Tell Me What You Built 📸
 
-Now switch to your homework world. Use the builder to make a **stone wall**: move to a start corner, place a mark, move along x and then up along y, then fill. When you finish, come back here.
+Now switch to your homework world. Build a **hollow room**: fill a stone box, then fill the inside with air. When you finish, come back here.
 
-Send a photo or video of your wall, then explain what you did. Use these sentence starters — write 2 or 3 sentences.
+Send a photo or video of you standing inside your room, then explain what you did. Use these sentence starters — write 2 or 3 sentences.
 
-> I moved the builder to …
+> My two corners were …
 >
-> I placed the mark before …
+> To make it hollow, I …
 >
 > One tricky moment was when …
 
@@ -122,11 +105,11 @@ Send a photo or video of your wall, then explain what you did. Use these sentenc
 
 ## 5 · Record Your Walkthrough 🎥
 
-Take a video on your phone (or a parent's phone) while you show your wall in the world. Talk like you are teaching a friend. Try to use these words: **builder**, **mark**, **fill**, **axis**.
+Take a video on your phone (or a parent's phone) while you show your room in the world. Talk like you are teaching a friend. Try to use these words: **fill**, **corner**, **hollow**, **air**.
 
-> 1. Show the empty spot, then run your code so the wall appears.
-> 2. Point at the corner where the mark went down.
-> 3. Say in your own words why the mark comes **before** moving.
+> 1. Show your room from outside, then walk inside it.
+> 2. Point at one corner and say its coordinate out loud — all three numbers.
+> 3. Say in your own words what `fill air` does.
 
 **Write what you will say in your video.** You can read from it while filming.
 
