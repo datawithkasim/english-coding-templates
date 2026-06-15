@@ -103,43 +103,52 @@ footer b { color: #ff7849; }
 <body>
 <div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
 <h1>🧊 M003 Week 8 — English Worksheet</h1>
-<p><strong>Topic:</strong> Final — Two-Faced Statue · <strong>Course:</strong> 3D Coordinates · <strong>Time:</strong> about 45 minutes</p>
-<p>This is your final build. No new commands — just everything from this course working together. Your statue shows <strong>one picture from the front</strong> and a <strong>different picture from the side</strong>. The front face is flat along <strong>x and y</strong>, the side face is flat along <strong>z and y</strong>, and they meet at one corner edge.</p>
+<p><strong>Topic:</strong> Final — My Own Museum · <strong>Course:</strong> 3D Coordinates · <strong>Time:</strong> about 60 minutes</p>
+<p>This is your big final project. No new commands — every idea from this course working together in one build. Your museum is a <strong>room</strong> visitors walk into, with <strong>flat pictures</strong> on the walls (2D art, drawn with x and y) and <strong>solid sculptures</strong> on pedestals (3D art, placed with x, y, z). Plan it like a real architect: coordinates first, then build.</p>
 <h2>1 · Predict 🔮</h2>
-<p>Read each plan. Before you imagine it happening, write what you think each <strong>view</strong> will show.</p>
-<pre><code>fill stone from (0, 0, 0) to (4, 4, 0)
+<p>Read each plan. Before you imagine it happening, write what you think you will see.</p>
+<pre><code># 2D art: a picture on the back wall — z stays 0, blocks climb with x and y
+set x to 0
+repeat 5 times:
+    place red block at (x, 1, 0)
+    add 1 to x
 </code></pre>
-<div class="qa"><p><strong>This wall stretches along x and y, and z stays 0. From the front you see a 5×5 square. What do you see from the side — the same square or something much thinner?</strong></p>
+<div class="qa"><p><strong>Every block stays at z = 0; only x changes. Is this flat like a painting, or solid like a statue? From which direction do you look to see the whole picture?</strong></p>
 <div class="write-space"></div></div>
 
-<pre><code>front face: fill stone from (0, 0, 0) to (4, 4, 0)
-side face:  fill stone from (0, 0, 0) to (0, 4, 4)
+<pre><code># 3D art: a sculpture on a pedestal — all three numbers used
+fill stone from (4, 0, 4) to (5, 1, 5)
+place gold block at (4, 2, 4)
+place gold block at (5, 2, 5)
 </code></pre>
-<div class="qa"><p><strong>Two faces, both 5 tall. Do they touch each other? Which blocks belong to both faces at the same time?</strong></p>
+<div class="qa"><p><strong>This uses x, y, and z. Is it flat or solid? Can a visitor walk all the way around it? Where do the gold blocks sit — on top of the pedestal or beside it?</strong></p>
 <div class="write-space"></div></div>
 
-<pre><code>front face: fill stone from (0, 0, 0) to (4, 4, 0)
-side face:  fill stone from (0, 0, 0) to (0, 2, 4)
+<pre><code>gallery floor: fill stone from (0, 0, 0) to (10, 0, 10)
+pedestal A:    fill stone from (2, 0, 2) to (3, 1, 3)
+pedestal B:    fill stone from (7, 0, 7) to (8, 1, 8)
 </code></pre>
-<div class="qa"><p><strong>Now the side face only goes up to height 2. Standing at the corner, do the two faces look like one statue or like a mistake? Why?</strong></p>
+<div class="qa"><p><strong>Read the (x, z) footprints. Are the two pedestals far apart? Looking down from above, sketch in words where each one sits on the floor.</strong></p>
 <div class="write-space"></div></div>
 
 <h2>2 · Spot the Bug 🐛</h2>
 <p>Each block of code below was meant to do something, but it is broken. Read what the code is <strong>supposed</strong> to do, then rewrite it so it works. After that, explain why the original was wrong and why your fix works.</p>
-<p><strong>Bug A</strong> — The two faces should meet only at the <strong>corner edge</strong> at x = 0, z = 0. Right now the side face slices through the <strong>middle</strong> of the front picture, so the front view is ruined.</p>
-<pre><code>fill stone from (0, 0, 0) to (4, 4, 0)
-fill stone from (2, 0, 0) to (2, 4, 4)
+<p><strong>Bug A</strong> — The gallery should be a <strong>hollow room</strong> with a doorway. Right now it is a solid block of stone with no inside.</p>
+<pre><code>fill stone from (0, 0, 0) to (10, 4, 10)
+fill air from (5, 2, 0) to (6, 3, 0)
 </code></pre>
-<p><strong>Hint:</strong> look at the <strong>x</strong> numbers in the second line.</p>
+<p><strong>Hint:</strong> before you can cut a doorway, the inside has to be hollowed out with air.</p>
 <div class="qa"><p><strong>Write the fixed code:</strong></p>
 <div class="write-space"></div></div>
 
 <div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
 <div class="write-space"></div></div>
 
-<p><strong>Bug B</strong> — Both faces should be the <strong>same height</strong> — up to y = 4. Right now one face is shorter than the other.</p>
-<pre><code>fill stone from (0, 0, 0) to (4, 4, 0)
-fill stone from (0, 0, 0) to (0, 2, 4)
+<p><strong>Bug B</strong> — These two sculptures should stand on <strong>two different pedestals</strong>. Right now both pedestals share the same (x, z) footprint, so they pile up in one spot.</p>
+<pre><code>fill stone from (2, 0, 2) to (3, 1, 3)
+place gold block at (2, 2, 2)
+fill stone from (2, 0, 2) to (3, 1, 3)
+place blue block at (2, 2, 2)
 </code></pre>
 <div class="qa"><p><strong>Write the fixed code:</strong></p>
 <div class="write-space"></div></div>
@@ -147,57 +156,74 @@ fill stone from (0, 0, 0) to (0, 2, 4)
 <div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
 <div class="write-space"></div></div>
 
-<p><strong>Bug C</strong> — Both faces should sit on the <strong>ground</strong>, starting at y = 0. Right now one face floats one block in the air.</p>
-<pre><code>fill stone from (0, 0, 0) to (4, 4, 0)
-fill stone from (0, 1, 0) to (0, 5, 4)
+<p><strong>Bug C</strong> — This wall picture should be <strong>flat 2D art</strong> that stands up the back wall — z stays 0 while the picture climbs with x and y. Right now the second row steps <strong>forward</strong> onto the floor instead of <strong>up</strong> the wall.</p>
+<pre><code>set x to 0
+repeat 4 times:
+    place red block at (x, 1, 0)
+    add 1 to x
+set x to 0
+repeat 4 times:
+    place red block at (x, 1, 1)
+    add 1 to x
 </code></pre>
-<p><strong>Hint:</strong> compare the <strong>y</strong> numbers where each face starts.</p>
+<p><strong>Hint:</strong> to climb the wall, the row above should raise <strong>y</strong>, not raise z.</p>
 <div class="qa"><p><strong>Write the fixed code:</strong></p>
 <div class="write-space"></div></div>
 
 <div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
 <div class="write-space"></div></div>
 
-<h2>3 · Tell Me What You Built 📸</h2>
-<div class="qa"><p>Plan <strong>before</strong> you build. Sketch your <strong>front view</strong> picture as a grid (use <code>#</code> for stone, <code>.</code> for air):</p>
-<div class="write-space tall" style="min-height: 240px"></div></div>
-
-<div class="qa"><p>Sketch your <strong>side view</strong> picture as a grid — same height as the front:</p>
-<div class="write-space tall" style="min-height: 240px"></div></div>
-
-<div class="qa"><p><strong>List the corner coordinates of each face</strong> — front face from ( … , … , … ) to ( … , … , … ), side face from ( … , … , … ) to ( … , … , … ):</p>
+<h2>3 · Blueprint Your Museum 🗺️</h2>
+<p>Plan <strong>before</strong> you build. This is the biggest build of the course, so a clear blueprint matters. Looking down from above, write the coordinates of every piece.</p>
+<div class="qa"><p>Gallery room: from ( … , … , … ) to ( … , … , … ) · doorway at ( … , … , … )</p>
 <div class="write-space"></div></div>
 
-<p>Now switch to your homework world and build your two-faced statue. Check your build against this list:</p>
+<div class="qa"><p>Wall picture 1 — shows … · stands on the wall where … stays 0</p>
+<div class="write-space short"></div></div>
+
+<div class="qa"><p>Wall picture 2 — shows … · stands on the wall where … stays 0</p>
+<div class="write-space short"></div></div>
+
+<div class="qa"><p>Pedestal 1: from ( … , … , … ) to ( … , … , … ) · sculpture on top at ( … , … , … )</p>
+<div class="write-space short"></div></div>
+
+<div class="qa"><p>Pedestal 2: from ( … , … , … ) to ( … , … , … ) · sculpture on top at ( … , … , … )</p>
+<div class="write-space short"></div></div>
+
+<h2>4 · Build Your Museum 📸</h2>
+<p>Now switch to your homework world and build your museum from your blueprint. Check your build against this list:</p>
 <blockquote>
-<p>☐ The front view shows one clear picture.</p>
-<p>☐ The side view shows a <strong>different</strong> clear picture.</p>
-<p>☐ Both faces are the <strong>same height</strong>.</p>
-<p>☐ Both faces start at the <strong>ground</strong> — the bases line up.</p>
-<p>☐ The faces meet at one corner edge, not through the middle.</p>
+<p>☐ A <strong>gallery room</strong> with a floor, walls, and a <strong>doorway</strong> to walk through.</p>
+<p>☐ At least <strong>two different flat pictures</strong> on the walls — <strong>2D art</strong>, where only x and y change.</p>
+<p>☐ At least <strong>two sculptures</strong>, each on its <strong>own pedestal</strong> — <strong>3D art</strong>, using x, y, and z.</p>
+<p>☐ The two pedestals <strong>do not overlap</strong>, and each sculpture <strong>rests on top</strong> of its pedestal.</p>
+<p>☐ The museum matches the coordinates on your blueprint.</p>
 </blockquote>
-<p>Send a photo or video of <strong>both views</strong>, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.</p>
+<p>Send a photo or video of your finished museum, then explain what you built. Use these sentence starters — write 6 to 8 sentences total.</p>
 <div class="qa"><blockquote>
-<p>My front picture is … and my side picture is …</p>
-<p>The two faces meet at …</p>
-<p>I made both faces the same height by …</p>
+<p>First, I planned …</p>
+<p>My gallery room is … and its doorway is at …</p>
+<p>My 2D pictures are flat because …</p>
+<p>My 3D sculptures are solid because …</p>
+<p>I kept my pedestals from overlapping by …</p>
+<p>Each sculpture rests on its pedestal because its height starts at …</p>
 <p>One tricky moment was when …</p>
 <p>If I had more time, I would …</p>
 </blockquote>
-<div class="write-space tall" style="min-height: 340px"></div></div>
+<div class="write-space tall" style="min-height: 360px"></div></div>
 
-<h2>4 · Record Your Walkthrough 🎥</h2>
-<p>Now take a video on your phone (or a parent's phone) while you walk around your statue. Talk through it like you are teaching someone who has never seen it. Try to use these words: <strong>front view</strong>, <strong>side view</strong>, <strong>face</strong>, <strong>corner</strong>, <strong>height</strong>.</p>
+<h2>5 · Record Your Gallery Tour 🎥</h2>
+<p>Take a video on your phone (or a parent's phone) and give a full <strong>gallery tour</strong> of your museum. Talk like a museum guide showing visitors around. Try to use these words: <strong>museum</strong>, <strong>2D</strong>, <strong>3D</strong>, <strong>pedestal</strong>, <strong>coordinate</strong>.</p>
 <blockquote>
 <ol>
-<li>Stand in front of the statue and say what the front picture shows.</li>
-<li>Walk around to the side and say what the side picture shows.</li>
-<li>Point at the corner edge where the two faces meet and say its coordinates.</li>
-<li>Say in your own words how planning with coordinates made this build possible.</li>
+<li>Walk in through the doorway and welcome your visitors.</li>
+<li>Stop at a flat picture and say why it is <strong>2D</strong> — which numbers change and which stays the same.</li>
+<li>Walk around a sculpture and say why it is <strong>3D</strong> — and which pedestal it stands on.</li>
+<li>Point out how you planned the whole room with coordinates so nothing overlaps.</li>
 </ol>
 </blockquote>
 <div class="qa"><p><strong>Write what you will say in your video.</strong> Use the space below to plan it before you record — you can read from it while filming.</p>
-<div class="write-space tall" style="min-height: 340px"></div></div>
+<div class="write-space tall" style="min-height: 360px"></div></div>
 
 <hr />
 <h3>Submit ✅</h3>

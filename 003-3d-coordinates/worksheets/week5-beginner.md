@@ -1,8 +1,8 @@
 # 🧊 M003 Week 5 — English Worksheet (Beginner)
 
-**Topic:** Boxes and Rooms — Filling a Volume · **Course:** 3D Coordinates · **Level:** Beginner · **Time:** about 30 minutes
+**Topic:** Into 3D (x, y, z) · **Course:** 3D Coordinates · **Level:** Beginner · **Time:** about 30 minutes
 
-This week one command builds a whole box. `fill` takes **two corners** and fills everything between them. Remember: **y is height**. Fill with **air** to make the inside empty.
+You know the wall (x, y) and the floor (x, z). This week you use **all three numbers at once**: **(x, y, z)**. x is across, **y is up (height)**, z is forward. Now you can put a block **anywhere** in space.
 
 ---
 
@@ -11,21 +11,23 @@ This week one command builds a whole box. `fill` takes **two corners** and fills
 Read the steps. Before you imagine it happening, circle or write your answer.
 
 ```
-fill stone from (0, 0, 0) to (4, 3, 4)
+set y to 0
+repeat 5 times:
+    place stone block at (3, y, 3)
+    add 1 to y
 ```
 
-**Is the box full of stone all the way through? Circle one:** yes · no
+**The middle number y grows by 1 each time. Does this build a tower going up? Circle one:** yes · no
 
 **Why?**
 
 <div class="write-space short"></div>
 
 ```
-fill stone from (0, 0, 0) to (4, 3, 4)
-fill air from (1, 1, 1) to (3, 2, 3)
+place gold block at (2, 6, 2)
 ```
 
-**The second line fills the inside with air. Can you stand inside now? Circle one:** yes · no
+**y is 6 and there is nothing below it. Is the gold block high in the air? Circle one:** yes · no
 
 <div class="write-space short"></div>
 
@@ -35,36 +37,47 @@ fill air from (1, 1, 1) to (3, 2, 3)
 
 Each pair shows clean steps first, then a broken version of the same idea. Circle what's different and write one short sentence about the bug.
 
-**Pair A** — This should make a **room** you can stand inside.
+**Pair A** — The tower should go **up**, so the **middle** number (y) must grow.
 
 ```
 # clean
-fill stone from (0, 0, 0) to (4, 3, 4)
-fill air from (1, 1, 1) to (3, 2, 3)
+set y to 0
+repeat 4 times:
+    place stone block at (3, y, 3)
+    add 1 to y
 ```
 
 ```
 # buggy
-fill stone from (0, 0, 0) to (4, 3, 4)
+set z to 0
+repeat 4 times:
+    place stone block at (3, 0, z)
+    add 1 to z
 ```
 
-**What is wrong? Why can't you go inside the buggy one?**
+**What is wrong? Does the buggy one go up, or forward?**
 
 <div class="write-space short"></div>
 
-**Pair B** — `fill` wants the **small** corner first, then the big corner.
+**Pair B** — The tower should start **on the ground**, where y is 0.
 
 ```
 # clean
-fill stone from (0, 0, 0) to (4, 3, 4)
+set y to 0
+repeat 4 times:
+    place stone block at (2, y, 2)
+    add 1 to y
 ```
 
 ```
 # buggy
-fill stone from (4, 3, 4) to (0, 0, 0)
+set y to 3
+repeat 4 times:
+    place stone block at (2, y, 2)
+    add 1 to y
 ```
 
-**What is wrong?**
+**What is wrong? Where does the buggy tower start?**
 
 <div class="write-space short"></div>
 
@@ -72,14 +85,16 @@ fill stone from (4, 3, 4) to (0, 0, 0)
 
 ## 3 · Fill the Gap ✏️
 
-The room should be **empty inside**. One word is missing. Fill it in using the word bank.
+The tower should grow **up into the sky**. The middle number must grow. One word is missing. Fill it in using the word bank.
 
 ```
-fill stone from (0, 0, 0) to (4, 3, 4)
-fill ____ from (1, 1, 1) to (3, 2, 3)
+set y to 0
+repeat 5 times:
+    place stone block at (3, y, 3)
+    add 1 to ____
 ```
 
-**Word bank:** `air` · `stone` · `water`
+**Word bank:** `y` · `x` · `z`
 
 **Write the missing word:**
 
@@ -89,15 +104,15 @@ fill ____ from (1, 1, 1) to (3, 2, 3)
 
 ## 4 · Tell Me What You Built 📸
 
-Now switch to your homework world. Build a **hollow room**: fill a stone box, then fill the inside with air. When you finish, come back here.
+Now switch to your homework world. Build a **tower** that goes up using a loop, then put a gold block floating in the air above it. When you finish, come back here.
 
-Send a photo or video of you standing inside your room, then explain what you did. Use these sentence starters — write 2 or 3 sentences.
+Send a photo or video of your tower, then explain what you did. Use these sentence starters — write 2 or 3 sentences.
 
-> My two corners were …
+> My tower is … blocks tall.
 >
-> To make it hollow, I …
+> The number that grew was **y**, which means …
 >
-> One tricky moment was when …
+> My floating block is at ( … , … , … ).
 
 <div class="write-space tall" style="min-height: 240px"></div>
 
@@ -105,11 +120,11 @@ Send a photo or video of you standing inside your room, then explain what you di
 
 ## 5 · Record Your Walkthrough 🎥
 
-Take a video on your phone (or a parent's phone) while you show your room in the world. Talk like you are teaching a friend. Try to use these words: **fill**, **corner**, **hollow**, **air**.
+Take a video on your phone (or a parent's phone) while you show your tower in the world. Talk like you are teaching a friend. Try to use these words: **x**, **y**, **z**, **height**, **up**.
 
-> 1. Show your room from outside, then walk inside it.
-> 2. Point at one corner and say its coordinate out loud.
-> 3. Say in your own words what `fill air` does.
+> 1. Show your tower from the bottom to the top.
+> 2. Read your loop out loud and say which number grows.
+> 3. Point at the floating block and say all three of its numbers.
 
 **Write what you will say in your video.** You can read from it while filming.
 

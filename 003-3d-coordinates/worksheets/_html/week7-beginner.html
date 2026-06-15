@@ -103,82 +103,73 @@ footer b { color: #ff7849; }
 <body>
 <div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
 <h1>🧊 M003 Week 7 — English Worksheet (Beginner)</h1>
-<p><strong>Topic:</strong> Voxel Statue — Building Layer by Layer · <strong>Course:</strong> 3D Coordinates · <strong>Level:</strong> Beginner · <strong>Time:</strong> about 30 minutes</p>
-<p>This week you build a statue <strong>one layer at a time</strong>. Each layer is a small grid, and the layers stack <strong>upward along y</strong>. In the plans below, <code>#</code> means stone and <code>.</code> means air.</p>
+<p><strong>Topic:</strong> Designing the Museum · <strong>Course:</strong> 3D Coordinates · <strong>Level:</strong> Beginner · <strong>Time:</strong> about 30 minutes</p>
+<p>A museum needs three things you already know: a <strong>floor</strong> (x, z), <strong>pictures on the walls</strong> (x, y), and <strong>sculptures on pedestals</strong> (x, y, z). This week you design <strong>one corner</strong> of a museum and plan where each piece goes.</p>
 <h2>1 · Predict 🔮</h2>
 <p>Read the steps. Before you imagine it happening, circle or write your answer.</p>
-<pre><code>layer 1:   # # #      layer 2:   . # .
-           # # #                 . # .
-           # # #                 . # .
-
-build layer 1 at height 0
-build layer 2 at height 1
+<pre><code>fill stone from (2, 0, 2) to (4, 1, 4)
 </code></pre>
-<p><strong>Layer 1 is big and layer 2 is small. Does the statue get thinner at the top? Circle one:</strong> yes · no</p>
+<p><strong>This is a short, solid box — a </strong>pedestal<strong> to stand art on. It fills up to height 1. Is the </strong>top<strong> of the pedestal at height 2? Circle one:</strong> yes · no</p>
 <div class="qa"><p><strong>Why?</strong></p>
 <div class="write-space short"></div></div>
 
-<pre><code>build layer 2 at height 0
-build layer 1 at height 1
+<pre><code>place gold block at (3, 2, 3)
 </code></pre>
-<div class="qa"><p><strong>Same layers, swapped order. Is the big layer on top now? Circle one:</strong> yes · no</p>
+<div class="qa"><p><strong>The pedestal above fills up to height 1, so its top is at height 2. Does this gold block sit right on top of the pedestal? Circle one:</strong> yes · no</p>
 <div class="write-space short"></div></div>
 
 <h2>2 · Find the Difference 🐛</h2>
 <p>Each pair shows clean steps first, then a broken version of the same idea. Circle what's different and write one short sentence about the bug.</p>
-<p><strong>Pair A</strong> — The layers should go in order: 1 at the bottom, 3 at the top.</p>
+<p><strong>Pair A</strong> — The sculpture should sit <strong>on top</strong> of the pedestal, at height 2.</p>
 <pre><code># clean
-build layer 1 at height 0
-build layer 2 at height 1
-build layer 3 at height 2
+fill stone from (2, 0, 2) to (4, 1, 4)
+place gold block at (3, 2, 3)
 </code></pre>
 <pre><code># buggy
-build layer 3 at height 0
-build layer 2 at height 1
-build layer 1 at height 2
+fill stone from (2, 0, 2) to (4, 1, 4)
+place gold block at (3, 0, 3)
 </code></pre>
-<div class="qa"><p><strong>What is wrong? What does the buggy statue look like?</strong></p>
+<div class="qa"><p><strong>What is wrong? Where does the buggy gold block end up?</strong></p>
 <div class="write-space short"></div></div>
 
-<p><strong>Pair B</strong> — Every layer should start at the <strong>same corner</strong> so the statue stands straight.</p>
+<p><strong>Pair B</strong> — Two artworks should stand in <strong>different spots</strong> on the floor so they don't crash into each other.</p>
 <pre><code># clean
-build layer 1 at (0, 0, 0)
-build layer 2 at (0, 1, 0)
+place gold block at (2, 2, 2)
+place blue block at (6, 2, 6)
 </code></pre>
 <pre><code># buggy
-build layer 1 at (0, 0, 0)
-build layer 2 at (1, 1, 0)
+place gold block at (2, 2, 2)
+place blue block at (2, 2, 2)
 </code></pre>
 <div class="qa"><p><strong>What is wrong?</strong></p>
 <div class="write-space short"></div></div>
 
 <h2>3 · Fill the Gap ✏️</h2>
-<p>Each layer goes <strong>one higher</strong> than the last. One number is missing. Fill it in using the word bank.</p>
-<pre><code>build layer 1 at height 0
-build layer 2 at height ____
-build layer 3 at height 2
+<p>The pedestal fills up to height 1, so its <strong>top</strong> is at height 2. The sculpture must start there. One number is missing. Fill it in using the word bank.</p>
+<pre><code>fill stone from (2, 0, 2) to (4, 1, 4)
+place gold block at (3, ____, 3)
 </code></pre>
-<p><strong>Word bank:</strong> <code>1</code> · <code>5</code> · <code>0</code></p>
+<p><strong>Word bank:</strong> <code>2</code> · <code>0</code> · <code>9</code></p>
 <div class="qa"><p><strong>Write the missing number:</strong></p>
 <div class="write-space short"></div></div>
 
 <h2>4 · Tell Me What You Built 📸</h2>
-<p>Now switch to your homework world. Draw a small <strong>layer plan</strong> — 3 layers — then build your statue layer by layer, going up one height at a time. When you finish, come back here.</p>
-<p>Send a photo or video of your statue, then explain what you did. Use these sentence starters — write 2 or 3 sentences.</p>
+<p>Now switch to your homework world. Design <strong>one museum corner</strong>: build a pedestal, put a small sculpture on top of it, and draw a small pixel-art picture on the wall behind it. When you finish, come back here.</p>
+<p>Send a photo or video of your corner, then explain what you did. Use these sentence starters — write 2 or 3 sentences.</p>
 <div class="qa"><blockquote>
-<p>My statue has … layers …</p>
-<p>Each layer went one higher because …</p>
-<p>One tricky moment was when …</p>
+<p>My pedestal is at …</p>
+<p>My sculpture sits on top because its height starts at …</p>
+<p>My wall picture shows …</p>
 </blockquote>
 <div class="write-space tall" style="min-height: 240px"></div></div>
 
 <h2>5 · Record Your Walkthrough 🎥</h2>
-<p>Take a video on your phone (or a parent's phone) while you show your statue in the world. Talk like you are teaching a friend. Try to use these words: <strong>layer</strong>, <strong>height</strong>, <strong>stack</strong>, <strong>plan</strong>.</p>
+<p>Take a video on your phone (or a parent's phone) while you show your museum corner. Talk like you are teaching a friend. Try to use these words: <strong>museum</strong>, <strong>pedestal</strong>, <strong>sculpture</strong>, <strong>picture</strong>.</p>
 <blockquote>
 <ol>
-<li>Show your layer plan on paper, then show the finished statue.</li>
-<li>Point at the bottom layer and the top layer and say their heights.</li>
-<li>Say in your own words why the order of the layers matters.</li>
+<li>Show the pedestal and say its coordinates.</li>
+<li>Show the sculpture on top and say what height it starts at.</li>
+<li>Point at the wall picture and say what it shows.</li>
 </ol>
 </blockquote>
 <div class="qa"><p><strong>Write what you will say in your video.</strong> You can read from it while filming.</p>

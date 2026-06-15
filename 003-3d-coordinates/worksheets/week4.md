@@ -1,8 +1,8 @@
 # 🧊 M003 Week 4 — English Worksheet
 
-**Topic:** Adding Height (3D begins) · **Course:** 3D Coordinates · **Time:** about 45 minutes
+**Topic:** The Ground Plane (x, z) · **Course:** 3D Coordinates · **Time:** about 45 minutes
 
-This week a position gets a **third number**: **(x, y, z)**. The new number **y is height**. y = 0 is the ground, and bigger y means higher in the sky. Now you can build **up**.
+For three weeks you drew standing up on a **wall** with (x, y). This week you look **down** at the **floor**, where the two numbers are **(x, z)**: x is how far **across**, z is how far **forward**. A nested loop fills a whole floor — x runs across each row, z steps forward to the next row.
 
 ---
 
@@ -11,30 +11,36 @@ This week a position gets a **third number**: **(x, y, z)**. The new number **y 
 Read each set of steps. Before you imagine it happening, write what you think you will see.
 
 ```
-set y to 0
+place gold block at (3, 0)
+place gold block at (3, 5)
+```
+
+**On the floor these are (x, z). The two blocks share the same x. Are they close together or far apart? Which number changed, and what does it mean?**
+
+<div class="write-space"></div>
+
+```
+set z to 0
 repeat 5 times:
-    place stone block at (3, y, 3)
-    add 1 to y
+    place stone block at (2, z)
+    add 1 to z
 ```
 
-**Which way does this build — across the ground or up into the sky? How tall is it?**
+**Which way does this line run — across or forward? How long is it? Which number stays the same?**
 
 <div class="write-space"></div>
 
 ```
-place gold block at (2, 6, 2)
+set z to 0
+repeat 3 times:
+    set x to 0
+    repeat 4 times:
+        place stone block at (x, z)
+        add 1 to x
+    add 1 to z
 ```
 
-**y is 6 and there are no blocks below it. Where does the gold block sit — on the ground or in the air?**
-
-<div class="write-space"></div>
-
-```
-place red block at (0, 0, 0)
-place red block at (0, 4, 0)
-```
-
-**Both blocks share the same x and z. What is different about them? If you stand next to the first block and look up, what do you see?**
+**The inner loop runs x across, the outer loop steps z forward. What shape covers the floor — a line or a rectangle? How wide and how deep?**
 
 <div class="write-space"></div>
 
@@ -44,16 +50,16 @@ place red block at (0, 4, 0)
 
 Each block of code below was meant to do something, but it is broken. Read what the code is **supposed** to do, then rewrite it so it works. After that, explain why the original was wrong and why your fix works.
 
-**Bug A** — This should build a **tower going up** at x = 3, z = 3. Right now it makes a flat line on the ground instead.
+**Bug A** — The path should run **forward** at x = 2, from (2, 0) to (2, 4). x should stay 2. Right now it runs across instead.
 
 ```
 set n to 0
-repeat 4 times:
-    place stone block at (3, 0, n)
+repeat 5 times:
+    place stone block at (n, 2)
     add 1 to n
 ```
 
-**Hint:** look at which slot n is in — the height slot is the **middle** one.
+**Hint:** look at which slot n is in — the x slot (across) or the z slot (forward).
 
 **Write the fixed code:**
 
@@ -63,14 +69,18 @@ repeat 4 times:
 
 <div class="write-space"></div>
 
-**Bug B** — This should build a tower **up from the ground** at (2, 0, 2). Right now it builds **down into the ground**.
+**Bug B** — This should fill a floor **5 across and 3 forward**. Right now each row lands on top of the last one, so you get a thin line instead of a rectangle.
 
 ```
-set y to 0
-repeat 4 times:
-    place stone block at (2, y, 2)
-    take 1 from y
+set z to 0
+repeat 3 times:
+    set x to 0
+    repeat 5 times:
+        place stone block at (x, z)
+        add 1 to x
 ```
+
+**Hint:** after each row, the floor needs to step forward to the next z.
 
 **Write the fixed code:**
 
@@ -80,13 +90,10 @@ repeat 4 times:
 
 <div class="write-space"></div>
 
-**Bug C** — This should make a line of stone blocks sitting **on the ground**, where y = 0. Right now the whole line **floats in the air**.
+**Bug C** — The floor block should land at **(4, 6)** — 4 across, 6 forward. Right now it lands somewhere else.
 
 ```
-set x to 0
-repeat 4 times:
-    place stone block at (x, 3, 0)
-    add 1 to x
+place gold block at (6, 4)
 ```
 
 **Write the fixed code:**
@@ -101,17 +108,17 @@ repeat 4 times:
 
 ## 3 · Tell Me What You Built 📸
 
-Now switch to your homework world. Build a **tower** that goes up using a loop, then place a **floating gold block** in the air above it, like a beacon. When you finish, come back here.
+Now switch to your homework world. Fill a **floor pad** with a nested loop, then lay a **path** across it that runs forward (z grows) or across (x grows). When you finish, come back here.
 
-Send a photo or video of your tower, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.
+Send a photo or video of your floor, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.
 
 > First, I …
 >
-> My tower is … blocks tall because my loop …
+> My floor pad is … across and … forward.
 >
-> The number that grew was **y**, which means …
+> The inner loop grew the number … and the outer loop grew the number …
 >
-> My floating gold block is at ( … , … , … ).
+> My path runs … because it grows the number …
 >
 > One tricky moment was when …
 >
@@ -123,12 +130,12 @@ Send a photo or video of your tower, then explain what you did. Use these senten
 
 ## 4 · Record Your Walkthrough 🎥
 
-Now take a video on your phone (or a parent's phone) while you show your tower in the world. Talk through it like you are teaching someone who has never seen 3D coordinates. Try to use these words: **y**, **height**, **tower**, **coordinate**, **up**.
+Now take a video on your phone (or a parent's phone) while you look down at your floor. Talk through it like you are teaching someone who only knew the wall before. Try to use these words: **floor**, **x**, **z**, **forward**, **across**.
 
-> 1. Show your tower from the bottom to the top.
-> 2. Show your code and say which number grows in the loop.
-> 3. Point at the floating gold block and say its full coordinate — all three numbers.
-> 4. Say in your own words what **y** means.
+> 1. Show the block at (0, 0) where the floor begins.
+> 2. Show your code and say which loop runs **across** and which steps **forward**.
+> 3. Walk along your path and say which number is growing as you move.
+> 4. Say in your own words why the floor uses **x and z**, not x and y.
 
 **Write what you will say in your video.** Use the space below to plan it before you record — you can read from it while filming.
 

@@ -1,8 +1,8 @@
 # 🧊 M003 Week 4 — English Worksheet (Beginner)
 
-**Topic:** Adding Height (3D begins) · **Course:** 3D Coordinates · **Level:** Beginner · **Time:** about 30 minutes
+**Topic:** The Ground Plane (x, z) · **Course:** 3D Coordinates · **Level:** Beginner · **Time:** about 30 minutes
 
-This week a position gets a **third number**: **(x, y, z)**. The new number **y is height**. y = 0 is the ground, and bigger y means higher up.
+For three weeks you drew standing up on a **wall** with (x, y). This week you look **down** at the **floor**. On the floor the two numbers are **(x, z)**: x is still how far **across**, and the new number **z** is how far **forward**.
 
 ---
 
@@ -11,23 +11,21 @@ This week a position gets a **third number**: **(x, y, z)**. The new number **y 
 Read the steps. Before you imagine it happening, circle or write your answer.
 
 ```
-set y to 0
-repeat 5 times:
-    place stone block at (3, y, 3)
-    add 1 to y
+place gold block at (3, 0)
+place gold block at (3, 5)
 ```
 
-**y grows by 1 each time. Does this build a tower going up? Circle one:** yes · no
+**On the floor these are (x, z). Both have the same x. Do they land in the same spot? Circle one:** yes · no
 
 **Why?**
 
 <div class="write-space short"></div>
 
 ```
-place gold block at (2, 6, 2)
+place red block at (0, 0)
 ```
 
-**y is 6. Is the gold block high in the air? Circle one:** yes · no
+**Counting starts at 0. Is (0, 0) the corner where the floor begins? Circle one:** yes · no
 
 <div class="write-space short"></div>
 
@@ -37,47 +35,41 @@ place gold block at (2, 6, 2)
 
 Each pair shows clean steps first, then a broken version of the same idea. Circle what's different and write one short sentence about the bug.
 
-**Pair A** — The tower should go **up**, so the **middle** number must grow.
+**Pair A** — The floor block should land at **(2, 5)** — 2 across on x, 5 forward on z.
 
 ```
 # clean
-set y to 0
-repeat 4 times:
-    place stone block at (3, y, 3)
-    add 1 to y
+place gold block at (2, 5)
 ```
 
 ```
 # buggy
-set z to 0
-repeat 4 times:
-    place stone block at (3, 0, z)
-    add 1 to z
+place gold block at (5, 2)
 ```
 
-**What is wrong? Does the buggy tower go up?**
+**What is wrong? Which two numbers got mixed up?**
 
 <div class="write-space short"></div>
 
-**Pair B** — The tower should start **on the ground**, where y is 0.
+**Pair B** — The path should go **forward**, so the **z** number must grow.
 
 ```
 # clean
-set y to 0
+set z to 0
 repeat 4 times:
-    place stone block at (2, y, 2)
-    add 1 to y
+    place block at (3, z)
+    add 1 to z
 ```
 
 ```
 # buggy
-set y to 3
+set x to 0
 repeat 4 times:
-    place stone block at (2, y, 2)
-    add 1 to y
+    place block at (x, 0)
+    add 1 to x
 ```
 
-**What is wrong? Where does the buggy tower start?**
+**What is wrong? Which way does the buggy path go — forward or across?**
 
 <div class="write-space short"></div>
 
@@ -85,16 +77,16 @@ repeat 4 times:
 
 ## 3 · Fill the Gap ✏️
 
-The tower should grow **up into the sky**. One word is missing. Fill it in using the word bank.
+The path should go **straight forward** at x = 3. The **z** number must grow each time. One word is missing. Fill it in using the word bank.
 
 ```
-set y to 0
-repeat 5 times:
-    place stone block at (3, y, 3)
+set z to 0
+repeat 4 times:
+    place block at (3, z)
     add 1 to ____
 ```
 
-**Word bank:** `y` · `x` · `z`
+**Word bank:** `z` · `x` · `block`
 
 **Write the missing word:**
 
@@ -104,15 +96,15 @@ repeat 5 times:
 
 ## 4 · Tell Me What You Built 📸
 
-Now switch to your homework world. Build a **tower** that goes up using a loop, then put a gold block in the air above it. When you finish, come back here.
+Now switch to your homework world. On the floor, build a **path** going forward from (0, 0), then add a second path going **across** so they make a plus or a corner. When you finish, come back here.
 
-Send a photo or video of your tower, then explain what you did. Use these sentence starters — write 2 or 3 sentences.
+Send a photo or video of your floor, then explain what you did. Use these sentence starters — write 2 or 3 sentences.
 
-> My tower is … blocks tall.
+> My forward path grew the number …
 >
-> The number that grew was **y**, which means …
+> My across path grew the number …
 >
-> One tricky moment was when …
+> The two paths meet at …
 
 <div class="write-space tall" style="min-height: 240px"></div>
 
@@ -120,11 +112,11 @@ Send a photo or video of your tower, then explain what you did. Use these senten
 
 ## 5 · Record Your Walkthrough 🎥
 
-Take a video on your phone (or a parent's phone) while you show your tower in the world. Talk like you are teaching a friend. Try to use these words: **y**, **height**, **tower**, **up**.
+Take a video on your phone (or a parent's phone) while you look down at your floor. Talk like you are teaching a friend. Try to use these words: **floor**, **x**, **z**, **forward**, **across**.
 
-> 1. Show your tower from the bottom to the top.
-> 2. Read your loop out loud and say which number grows.
-> 3. Say in your own words what **y** means.
+> 1. Show the block at (0, 0) where the floor begins.
+> 2. Walk along your forward path and say which number is growing.
+> 3. Say in your own words what **x** and **z** mean on the floor.
 
 **Write what you will say in your video.** You can read from it while filming.
 

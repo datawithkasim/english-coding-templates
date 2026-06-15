@@ -1,8 +1,8 @@
 # 🧊 M003 Week 1 — English Worksheet (Beginner)
 
-**Topic:** First Steps with Coordinates (2D) · **Course:** 3D Coordinates · **Level:** Beginner · **Time:** about 30 minutes
+**Topic:** First Steps with Coordinates (x, y) · **Course:** 3D Coordinates · **Level:** Beginner · **Time:** about 30 minutes
 
-This week every spot in the world gets a name made of **two numbers: (x, z)**. x is how far across, z is how far along. Counting starts at **0**.
+This week you draw on a flat **wall**. Every spot on the wall gets a name made of **two numbers: (x, y)**. x is how far **across**, y is how far **up**. Counting starts at **0**.
 
 ---
 
@@ -25,7 +25,7 @@ place gold block at (3, 5)
 place red block at (0, 0)
 ```
 
-**Counting starts at 0. Is (0, 0) the starting corner of the world? Circle one:** yes · no
+**Counting starts at 0. Is (0, 0) the bottom corner where the wall begins? Circle one:** yes · no
 
 <div class="write-space short"></div>
 
@@ -35,7 +35,7 @@ place red block at (0, 0)
 
 Each pair shows clean steps first, then a broken version of the same idea. Circle what's different and write one short sentence about the bug.
 
-**Pair A** — The block should land at **(2, 5)** — x first, then z.
+**Pair A** — The block should land at **(2, 5)** — x first, then y.
 
 ```
 # clean
@@ -51,7 +51,7 @@ place gold block at (5, 2)
 
 <div class="write-space short"></div>
 
-**Pair B** — The block should sit at the **starting corner**, where counting begins.
+**Pair B** — The block should sit at the **bottom corner**, where counting begins.
 
 ```
 # clean
@@ -71,7 +71,7 @@ place red block at (1, 1)
 
 ## 3 · Fill the Gap ✏️
 
-The gold block should sit on the starting edge, where z is **zero**. One number is missing. Fill it in using the word bank.
+The gold block should sit on the **bottom row** of the wall, where y is **zero**. One number is missing. Fill it in using the word bank.
 
 ```
 place gold block at (4, ____)
@@ -103,11 +103,11 @@ Send a photo or video of your blocks, then explain what you did. Use these sente
 
 ## 5 · Record Your Walkthrough 🎥
 
-Take a video on your phone (or a parent's phone) while you show your blocks in the world. Talk like you are teaching a friend. Try to use these words: **coordinate**, **x**, **z**, **zero**.
+Take a video on your phone (or a parent's phone) while you show your blocks on the wall. Talk like you are teaching a friend. Try to use these words: **coordinate**, **x**, **y**, **zero**.
 
 > 1. Show the gold block at (0, 0).
 > 2. Point at one block and say its coordinate out loud.
-> 3. Say in your own words what **x** and **z** mean.
+> 3. Say in your own words what **x** and **y** mean.
 
 **Write what you will say in your video.** You can read from it while filming.
 

@@ -1,8 +1,8 @@
 # 🧊 M003 Week 6 — English Worksheet
 
-**Topic:** Building Solid Shapes with the Builder · **Course:** 3D Coordinates · **Time:** about 45 minutes
+**Topic:** Building Things in 3D — Boxes & Rooms · **Course:** 3D Coordinates · **Time:** about 45 minutes
 
-This week you use the **builder** — an invisible helper that moves through the world. The pattern is always the same: move the builder to the start, **place a mark**, move along **x**, **y**, or **z**, then **trace** or **fill** between the mark and where the builder is now.
+This week one command builds a whole box. `fill` takes **two corner coordinates** — `(x, y, z)` to `(x, y, z)` — and fills everything between them. Remember: **y is height**. Fill with stone to make a solid box, then fill the inside with **air** to make a room you can walk into.
 
 ---
 
@@ -11,38 +11,29 @@ This week you use the **builder** — an invisible helper that moves through the
 Read each set of steps. Before you imagine it happening, write what you think you will see.
 
 ```
-move builder to (0, 0, 0)
-place mark
-move builder along x by 5
-fill from mark with stone
+fill stone from (0, 0, 0) to (4, 3, 4)
 ```
 
-**The builder marks, then moves along x only. What shape appears — a line, a wall, or a box?**
+**One command, two corners. Is the box solid or hollow? How tall is it — look at the middle number.**
 
 <div class="write-space"></div>
 
 ```
-move builder to (0, 0, 0)
-place mark
-move builder along x by 5
-move builder along y by 3
-fill from mark with stone
+fill stone from (0, 0, 0) to (4, 3, 4)
+fill air from (1, 1, 1) to (3, 2, 3)
 ```
 
-**Now the builder also moves up along y. What shape does `fill` make this time? How tall is it?**
+**The second line fills the inside with air. What is left after both lines run? Could you stand inside it?**
 
 <div class="write-space"></div>
 
 ```
-move builder to (0, 0, 0)
-place mark
-move builder along x by 5
-move builder along z by 5
-move builder along y by 3
-fill from mark with stone
+fill stone from (0, 0, 0) to (4, 3, 4)
+fill air from (1, 1, 1) to (3, 2, 3)
+fill air from (2, 1, 0) to (2, 2, 0)
 ```
 
-**The builder moves along all three axes — x, z, and y. What shape do you get now? Is it flat or solid?**
+**The third line removes blocks from the front wall, starting at height 1. What did we just make? Can you walk in now?**
 
 <div class="write-space"></div>
 
@@ -52,16 +43,13 @@ fill from mark with stone
 
 Each block of code below was meant to do something, but it is broken. Read what the code is **supposed** to do, then rewrite it so it works. After that, explain why the original was wrong and why your fix works.
 
-**Bug A** — This should build a stone line from **(0, 0, 0)** to **(5, 0, 0)**. Right now only one block appears.
+**Bug A** — This should build a solid stone box from corner **(0, 0, 0)** up to corner **(4, 3, 4)**. Right now nothing fills.
 
 ```
-move builder to (0, 0, 0)
-move builder along x by 5
-place mark
-fill from mark with stone
+fill stone from (4, 3, 4) to (0, 0, 0)
 ```
 
-**Hint:** the mark must go down **before** the builder moves, not after.
+**Hint:** `fill` wants the **small** corner first, then the big corner.
 
 **Write the fixed code:**
 
@@ -71,13 +59,10 @@ fill from mark with stone
 
 <div class="write-space"></div>
 
-**Bug B** — This should trace a wall that **starts at the corner (0, 0, 0)**. Right now the wall appears wherever the builder happened to be standing.
+**Bug B** — This should build a **room** you can stand inside. Right now it is a solid block of stone — there is no inside at all.
 
 ```
-place mark
-move builder along x by 6
-trace wall with stone
-move builder to (0, 0, 0)
+fill stone from (0, 0, 0) to (6, 4, 6)
 ```
 
 **Write the fixed code:**
@@ -88,16 +73,15 @@ move builder to (0, 0, 0)
 
 <div class="write-space"></div>
 
-**Bug C** — This should fill a stone wall 5 long and 3 tall. Right now `fill from mark` has nothing to work with.
+**Bug C** — The room should have a **doorway** you can walk through. Right now the doorway floats in the middle of the wall, one block above the ground.
 
 ```
-move builder to (0, 0, 0)
-move builder along x by 4
-move builder along y by 2
-fill from mark with stone
+fill stone from (0, 0, 0) to (6, 4, 6)
+fill air from (1, 1, 1) to (5, 3, 5)
+fill air from (3, 2, 0) to (3, 3, 0)
 ```
 
-**Hint:** read every line — is there a `place mark` anywhere?
+**Hint:** look at the **y** numbers in the last line. The floor inside the room is at height 0, so your feet stand at height 1.
 
 **Write the fixed code:**
 
@@ -111,17 +95,17 @@ fill from mark with stone
 
 ## 3 · Tell Me What You Built 📸
 
-Now switch to your homework world. Use the builder to make a **solid shape**: move to a start corner, place a mark, move along at least **two axes**, then fill. When you finish, come back here.
+Now switch to your homework world. Build a **hollow room** with at least one **doorway**: fill a stone box, fill the inside with air, then cut the doorway. When you finish, come back here.
 
-Send a photo or video of your shape, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.
+Send a photo or video of you standing inside your room, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.
 
-> First, I moved the builder to …
+> First, I …
 >
-> I placed the mark before … because …
+> My two corners were ( … , … , … ) and ( … , … , … ) because …
 >
-> The builder moved along … and then along …
+> To make it hollow, I …
 >
-> The shape I got was …
+> My doorway starts at height … so that …
 >
 > One tricky moment was when …
 >
@@ -133,12 +117,12 @@ Send a photo or video of your shape, then explain what you did. Use these senten
 
 ## 4 · Record Your Walkthrough 🎥
 
-Now take a video on your phone (or a parent's phone) while you show your shape in the world. Talk through it like you are teaching someone who has never seen the builder. Try to use these words: **builder**, **mark**, **trace**, **fill**, **axis**.
+Now take a video on your phone (or a parent's phone) while you show your room in the world. Talk through it like you are teaching someone who has never seen `fill`. Try to use these words: **fill**, **corner**, **hollow**, **air**, **doorway**.
 
-> 1. Show the empty spot, then run your code so the shape appears.
-> 2. Point at the start corner and say where the mark went down.
-> 3. Say which axes the builder moved along — x, y, or z — and in what order.
-> 4. Say in your own words why the mark must come **before** the builder moves.
+> 1. Show your room from outside, then run your code in a fresh spot.
+> 2. Point at your two corners and say their coordinates out loud.
+> 3. Walk through the doorway and stand inside — say which line made the inside hollow.
+> 4. Say in your own words why `fill air` is just as useful as `fill stone`.
 
 **Write what you will say in your video.** Use the space below to plan it before you record — you can read from it while filming.
 

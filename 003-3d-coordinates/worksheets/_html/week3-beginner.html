@@ -103,56 +103,56 @@ footer b { color: #ff7849; }
 <body>
 <div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
 <h1>🧊 M003 Week 3 — English Worksheet (Beginner)</h1>
-<p><strong>Topic:</strong> Pixel Art · <strong>Course:</strong> 3D Coordinates · <strong>Level:</strong> Beginner · <strong>Time:</strong> about 30 minutes</p>
-<p>This week you draw <strong>pictures with blocks</strong>. A picture is made of <strong>rows</strong>. A loop inside a loop draws the picture row by row.</p>
+<p><strong>Topic:</strong> Pixel Art on the Wall (x, y) · <strong>Course:</strong> 3D Coordinates · <strong>Level:</strong> Beginner · <strong>Time:</strong> about 30 minutes</p>
+<p>This week you draw <strong>pictures with blocks</strong> on the wall. A picture is made of <strong>rows</strong>. A loop inside a loop draws the picture row by row: the inner loop grows <strong>x</strong> across, then the outer loop grows <strong>y</strong> up to the next row.</p>
 <h2>1 · Predict 🔮</h2>
 <p>Read the steps. Before you imagine it happening, circle or write your answer.</p>
-<pre><code>set z to 0
+<pre><code>set y to 0
 repeat 2 times:
     set x to 0
     repeat 3 times:
-        place red block at (x, z)
+        place red block at (x, y)
         add 1 to x
-    add 1 to z
+    add 1 to y
 </code></pre>
-<p><strong>Does this picture have 2 rows? Circle one:</strong> yes · no</p>
+<p><strong>Does this picture have 2 rows, one above the other? Circle one:</strong> yes · no</p>
 <div class="qa"><p><strong>Why?</strong></p>
 <div class="write-space short"></div></div>
 
-<pre><code>set z to 0
+<pre><code>set y to 0
 repeat 2 times:
     set x to 0
     repeat 3 times:
-        place red block at (x, z)
+        place red block at (x, y)
         add 1 to x
 </code></pre>
-<div class="qa"><p><strong>This time z never grows. Do the two rows land on top of each other? Circle one:</strong> yes · no</p>
+<div class="qa"><p><strong>This time y never grows. Do the two rows land on top of each other? Circle one:</strong> yes · no</p>
 <div class="write-space short"></div></div>
 
 <h2>2 · Find the Difference 🐛</h2>
 <p>Each pair shows clean steps first, then a broken version of the same idea. Circle what's different and write one short sentence about the bug.</p>
-<p><strong>Pair A</strong> — After each row, the picture should step to the <strong>next z</strong>.</p>
+<p><strong>Pair A</strong> — After each row, the picture should step <strong>up</strong> to the next y.</p>
 <pre><code># clean
-set z to 0
+set y to 0
 repeat 3 times:
     set x to 0
     repeat 4 times:
-        place blue block at (x, z)
+        place blue block at (x, y)
         add 1 to x
-    add 1 to z
+    add 1 to y
 </code></pre>
 <pre><code># buggy
-set z to 0
+set y to 0
 repeat 3 times:
     set x to 0
     repeat 4 times:
-        place blue block at (x, z)
+        place blue block at (x, y)
         add 1 to x
 </code></pre>
 <div class="qa"><p><strong>What is wrong? Where do all the rows land?</strong></p>
 <div class="write-space short"></div></div>
 
-<p><strong>Pair B</strong> — The row should look like <strong>red, red, blue</strong>.</p>
+<p><strong>Pair B</strong> — The bottom row should look like <strong>red, red, blue</strong>.</p>
 <pre><code># clean
 place red block at (0, 0)
 place red block at (1, 0)
@@ -168,35 +168,35 @@ place red block at (2, 0)
 
 <h2>3 · Fill the Gap ✏️</h2>
 <p>The inner loop should make each row grow <strong>across</strong>. One word is missing. Fill it in using the word bank.</p>
-<pre><code>set z to 0
+<pre><code>set y to 0
 repeat 3 times:
     set x to 0
     repeat 4 times:
-        place blue block at (x, z)
+        place blue block at (x, y)
         add 1 to ____
-    add 1 to z
+    add 1 to y
 </code></pre>
-<p><strong>Word bank:</strong> <code>x</code> · <code>z</code> · <code>block</code></p>
+<p><strong>Word bank:</strong> <code>x</code> · <code>y</code> · <code>block</code></p>
 <div class="qa"><p><strong>Write the missing word:</strong></p>
 <div class="write-space short"></div></div>
 
 <h2>4 · Tell Me What You Built 📸</h2>
-<p>Now switch to your homework world. Draw a small <strong>pixel art picture</strong> on the ground — a heart, a flower, or a letter — using rows of colored blocks. When you finish, come back here.</p>
+<p>Now switch to your homework world. Draw a small <strong>pixel art picture</strong> on the wall — a heart, a flower, or a letter — using rows of colored blocks. When you finish, come back here.</p>
 <p>Send a photo or video of your picture, then explain what you did. Use these sentence starters — write 2 or 3 sentences.</p>
 <div class="qa"><blockquote>
 <p>My picture is a …</p>
-<p>The colors in row 1 are …</p>
+<p>The colors in the bottom row are …</p>
 <p>One tricky moment was when …</p>
 </blockquote>
 <div class="write-space tall" style="min-height: 240px"></div></div>
 
 <h2>5 · Record Your Walkthrough 🎥</h2>
-<p>Take a video on your phone (or a parent's phone) while you show your picture in the world. Talk like you are teaching a friend. Try to use these words: <strong>row</strong>, <strong>loop</strong>, <strong>pattern</strong>, <strong>color</strong>.</p>
+<p>Take a video on your phone (or a parent's phone) while you show your picture on the wall. Talk like you are teaching a friend. Try to use these words: <strong>row</strong>, <strong>loop</strong>, <strong>pattern</strong>, <strong>color</strong>.</p>
 <blockquote>
 <ol>
 <li>Show your finished picture.</li>
-<li>Point at row 1 and say the colors in order.</li>
-<li>Say in your own words how the rows make a picture.</li>
+<li>Point at the bottom row and say the colors in order.</li>
+<li>Say in your own words how the rows stack up to make a picture.</li>
 </ol>
 </blockquote>
 <div class="qa"><p><strong>Write what you will say in your video.</strong> You can read from it while filming.</p>

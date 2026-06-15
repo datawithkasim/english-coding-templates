@@ -103,86 +103,89 @@ footer b { color: #ff7849; }
 <body>
 <div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
 <h1>🧊 M003 Week 2 — English Worksheet (Beginner)</h1>
-<p><strong>Topic:</strong> Lines and Grids · <strong>Course:</strong> 3D Coordinates · <strong>Level:</strong> Beginner · <strong>Time:</strong> about 30 minutes</p>
-<p>This week you place a <strong>line of blocks with a loop</strong>. One number stays the same, the other grows by 1 each time.</p>
+<p><strong>Topic:</strong> Lines &amp; Rectangles on the Wall (x, y) · <strong>Course:</strong> 3D Coordinates · <strong>Level:</strong> Beginner · <strong>Time:</strong> about 30 minutes</p>
+<p>This week you use a <strong>loop</strong> to draw a whole <strong>line</strong> of blocks on the wall instead of placing them one at a time. Grow <strong>x</strong> to go across. Grow <strong>y</strong> to go up.</p>
 <h2>1 · Predict 🔮</h2>
 <p>Read the steps. Before you imagine it happening, circle or write your answer.</p>
-<pre><code>set z to 0
-repeat 3 times:
-    place stone block at (2, z)
-    add 1 to z
+<pre><code>set x to 0
+repeat 4 times:
+    place stone block at (x, 0)
+    add 1 to x
 </code></pre>
-<p><strong>z grows by 1 each time. Do the blocks make a line? Circle one:</strong> yes · no</p>
+<p><strong>x grows and y stays 0. Does this draw a line going across, or a line going up? Circle one:</strong> across · up</p>
 <div class="qa"><p><strong>Why?</strong></p>
 <div class="write-space short"></div></div>
 
-<pre><code>repeat 3 times:
-    place stone block at (2, 0)
+<pre><code>set y to 0
+repeat 4 times:
+    place stone block at (0, y)
+    add 1 to y
 </code></pre>
-<div class="qa"><p><strong>The numbers never change. Do the blocks land in different spots? Circle one:</strong> yes · no</p>
+<div class="qa"><p><strong>This time y grows and x stays 0. Across or up? Circle one:</strong> across · up</p>
 <div class="write-space short"></div></div>
 
 <h2>2 · Find the Difference 🐛</h2>
 <p>Each pair shows clean steps first, then a broken version of the same idea. Circle what's different and write one short sentence about the bug.</p>
-<p><strong>Pair A</strong> — The loop should make a line. The blocks need to <strong>move along</strong> after each place.</p>
+<p><strong>Pair A</strong> — The line should go <strong>across</strong> the bottom of the wall.</p>
 <pre><code># clean
-set z to 0
+set x to 0
 repeat 4 times:
-    place stone block at (3, z)
-    add 1 to z
+    place block at (x, 0)
+    add 1 to x
 </code></pre>
 <pre><code># buggy
-set z to 0
+set x to 0
 repeat 4 times:
-    place stone block at (3, z)
+    place block at (0, x)
+    add 1 to x
 </code></pre>
-<div class="qa"><p><strong>What is wrong? Where do all the buggy blocks land?</strong></p>
+<div class="qa"><p><strong>What is wrong? Which way does the buggy line go?</strong></p>
 <div class="write-space short"></div></div>
 
 <p><strong>Pair B</strong> — The line should be <strong>4 blocks long</strong>.</p>
 <pre><code># clean
 set x to 0
 repeat 4 times:
-    place gold block at (x, 0)
+    place block at (x, 0)
     add 1 to x
 </code></pre>
 <pre><code># buggy
 set x to 0
-repeat 3 times:
-    place gold block at (x, 0)
+repeat 2 times:
+    place block at (x, 0)
     add 1 to x
 </code></pre>
-<div class="qa"><p><strong>What is wrong?</strong></p>
+<div class="qa"><p><strong>What is wrong? How long is the buggy line?</strong></p>
 <div class="write-space short"></div></div>
 
 <h2>3 · Fill the Gap ✏️</h2>
-<p>The loop should make a line that grows along z. One word is missing. Fill it in using the word bank.</p>
-<pre><code>set z to 0
+<p>You want a line going <strong>straight up</strong> the left edge of the wall. x must stay <strong>0</strong> while y grows. One number is missing. Fill it in using the word bank.</p>
+<pre><code>set y to 0
 repeat 4 times:
-    place stone block at (2, z)
-    ____ 1 to z
+    place block at (____, y)
+    add 1 to y
 </code></pre>
-<p><strong>Word bank:</strong> <code>add</code> · <code>take</code> · <code>move</code></p>
-<div class="qa"><p><strong>Write the missing word:</strong></p>
+<p><strong>Word bank:</strong> <code>0</code> · <code>y</code> · <code>4</code></p>
+<div class="qa"><p><strong>Write the missing number:</strong></p>
 <div class="write-space short"></div></div>
 
 <h2>4 · Tell Me What You Built 📸</h2>
-<p>Now switch to your homework world. Use a loop to build a <strong>line of blocks</strong>, then try a second line to start a square. When you finish, come back here.</p>
-<p>Send a photo or video of your lines, then explain what you did. Use these sentence starters — write 2 or 3 sentences.</p>
+<p>Now switch to your homework world. Use a loop to draw <strong>one line going across</strong> and another loop for <strong>one line going up</strong>, so they meet at the corner (0, 0) and make an <strong>L</strong> shape. When you finish, come back here.</p>
+<p>Send a photo or video of your L, then explain what you did. Use these sentence starters — write 2 or 3 sentences.</p>
 <div class="qa"><blockquote>
-<p>My loop repeated … times because …</p>
-<p>The number that grew was …</p>
-<p>One tricky moment was when …</p>
+<p>My across line grew the number …</p>
+<p>My up line grew the number …</p>
+<p>The two lines meet at …</p>
 </blockquote>
 <div class="write-space tall" style="min-height: 240px"></div></div>
 
 <h2>5 · Record Your Walkthrough 🎥</h2>
-<p>Take a video on your phone (or a parent's phone) while you show your line in the world. Talk like you are teaching a friend. Try to use these words: <strong>loop</strong>, <strong>line</strong>, <strong>repeat</strong>, <strong>grow</strong>.</p>
+<p>Take a video on your phone (or a parent's phone) while you show your L on the wall. Talk like you are teaching a friend. Try to use these words: <strong>loop</strong>, <strong>line</strong>, <strong>across</strong>, <strong>up</strong>.</p>
 <blockquote>
 <ol>
-<li>Show your line, then show the code that built it.</li>
-<li>Read your loop out loud and say which number grows.</li>
-<li>Say in your own words why a loop is faster than placing blocks one by one.</li>
+<li>Run the loop that draws the across line.</li>
+<li>Run the loop that draws the up line.</li>
+<li>Say which number (x or y) grew in each loop.</li>
 </ol>
 </blockquote>
 <div class="qa"><p><strong>Write what you will say in your video.</strong> You can read from it while filming.</p>

@@ -1,8 +1,8 @@
 # 🧊 M003 Week 5 — English Worksheet
 
-**Topic:** Boxes and Rooms — Filling a Volume · **Course:** 3D Coordinates · **Time:** about 45 minutes
+**Topic:** Into 3D (x, y, z) · **Course:** 3D Coordinates · **Time:** about 45 minutes
 
-This week one command builds a whole box. `fill` takes **two corner coordinates** — `(x, y, z)` to `(x, y, z)` — and fills everything between them. Remember: **y is height**. Fill with stone to make a solid box, then fill the inside with **air** to make a room.
+You know the wall (x, y) and the floor (x, z). This week you put them together and use **all three numbers at once**: **(x, y, z)** — x across, **y up (height)**, z forward. With three numbers you can place a block **anywhere** in space, and build **up**.
 
 ---
 
@@ -11,29 +11,30 @@ This week one command builds a whole box. `fill` takes **two corner coordinates*
 Read each set of steps. Before you imagine it happening, write what you think you will see.
 
 ```
-fill stone from (0, 0, 0) to (4, 3, 4)
+set y to 0
+repeat 5 times:
+    place stone block at (3, y, 3)
+    add 1 to y
 ```
 
-**One command, two corners. Is the box solid or hollow? How tall is it — look at the middle number.**
+**Which way does this build — across the ground or up into the sky? How tall is it? Which two numbers stay the same?**
 
 <div class="write-space"></div>
 
 ```
-fill stone from (0, 0, 0) to (4, 3, 4)
-fill air from (1, 1, 1) to (3, 2, 3)
+place gold block at (2, 6, 2)
 ```
 
-**The second line fills the inside with air. What is left after both lines run? Could you stand inside it?**
+**y is 6 and there are no blocks below it. Where does the gold block sit — on the ground or in the air?**
 
 <div class="write-space"></div>
 
 ```
-fill stone from (0, 0, 0) to (4, 3, 4)
-fill air from (1, 1, 1) to (3, 2, 3)
-fill air from (2, 1, 0) to (2, 2, 0)
+place red block at (0, 0, 0)
+place red block at (0, 4, 0)
 ```
 
-**The third line removes blocks from the front wall, starting at height 1. What did we just make? Can you walk in now?**
+**Both blocks share the same x and z. What is different about them? If you stand next to the first block and look up, what do you see?**
 
 <div class="write-space"></div>
 
@@ -43,13 +44,16 @@ fill air from (2, 1, 0) to (2, 2, 0)
 
 Each block of code below was meant to do something, but it is broken. Read what the code is **supposed** to do, then rewrite it so it works. After that, explain why the original was wrong and why your fix works.
 
-**Bug A** — This should build a solid stone box from corner **(0, 0, 0)** up to corner **(4, 3, 4)**. Right now nothing fills.
+**Bug A** — This should build a **tower going up** at x = 3, z = 3. Right now it makes a flat line on the ground instead.
 
 ```
-fill stone from (4, 3, 4) to (0, 0, 0)
+set n to 0
+repeat 4 times:
+    place stone block at (3, 0, n)
+    add 1 to n
 ```
 
-**Hint:** `fill` wants the **small** corner first, then the big corner.
+**Hint:** which slot is n in? The height slot is the **middle** one.
 
 **Write the fixed code:**
 
@@ -59,10 +63,13 @@ fill stone from (4, 3, 4) to (0, 0, 0)
 
 <div class="write-space"></div>
 
-**Bug B** — This should build a **room** you can stand inside. Right now it is a solid block of stone — there is no inside at all.
+**Bug B** — This should build a tower **up from the ground** at (2, 0, 2). Right now it builds **down into the ground**.
 
 ```
-fill stone from (0, 0, 0) to (6, 4, 6)
+set y to 0
+repeat 4 times:
+    place stone block at (2, y, 2)
+    take 1 from y
 ```
 
 **Write the fixed code:**
@@ -73,15 +80,14 @@ fill stone from (0, 0, 0) to (6, 4, 6)
 
 <div class="write-space"></div>
 
-**Bug C** — The room should have a **doorway** you can walk through. Right now the doorway floats in the middle of the wall, one block above the ground.
+**Bug C** — This should make a line of stone blocks sitting **on the ground**, where y = 0. Right now the whole line **floats in the air**.
 
 ```
-fill stone from (0, 0, 0) to (6, 4, 6)
-fill air from (1, 1, 1) to (5, 3, 5)
-fill air from (3, 2, 0) to (3, 3, 0)
+set x to 0
+repeat 4 times:
+    place stone block at (x, 3, 0)
+    add 1 to x
 ```
-
-**Hint:** look at the **y** numbers in the last line. The floor inside the room is at height 0, so your feet stand at height 1.
 
 **Write the fixed code:**
 
@@ -95,17 +101,17 @@ fill air from (3, 2, 0) to (3, 3, 0)
 
 ## 3 · Tell Me What You Built 📸
 
-Now switch to your homework world. Build a **hollow room** with at least one **doorway**: fill a stone box, fill the inside with air, then cut the doorway. When you finish, come back here.
+Now switch to your homework world. Build a **tower** that goes up using a loop, then place a **floating gold block** in the air above it, like a beacon. When you finish, come back here.
 
-Send a photo or video of you standing inside your room, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.
+Send a photo or video of your tower, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.
 
 > First, I …
 >
-> My two corners were ( … , … , … ) and ( … , … , … ) because …
+> My tower is … blocks tall because my loop …
 >
-> To make it hollow, I …
+> The number that grew was **y**, which means …
 >
-> My doorway starts at height … so that …
+> My floating gold block is at ( … , … , … ).
 >
 > One tricky moment was when …
 >
@@ -117,12 +123,12 @@ Send a photo or video of you standing inside your room, then explain what you di
 
 ## 4 · Record Your Walkthrough 🎥
 
-Now take a video on your phone (or a parent's phone) while you show your room in the world. Talk through it like you are teaching someone who has never seen `fill`. Try to use these words: **fill**, **corner**, **hollow**, **air**, **doorway**.
+Now take a video on your phone (or a parent's phone) while you show your tower in the world. Talk through it like you are teaching someone who has only seen flat pictures before. Try to use these words: **x**, **y**, **z**, **height**, **coordinate**.
 
-> 1. Show your room from outside, then run your code in a fresh spot.
-> 2. Point at your two corners and say their coordinates out loud.
-> 3. Walk through the doorway and stand inside — say which line made the inside hollow.
-> 4. Say in your own words why `fill air` is just as useful as `fill stone`.
+> 1. Show your tower from the bottom to the top.
+> 2. Show your code and say which number grows in the loop.
+> 3. Point at the floating gold block and say its full coordinate — all three numbers in order.
+> 4. Say in your own words what each of **x**, **y**, and **z** means.
 
 **Write what you will say in your video.** Use the space below to plan it before you record — you can read from it while filming.
 
