@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>🧩 M002 Extension 2 — Piston & Logic Maze</title>
+<style>
+@page { size: A4; margin: 18mm 16mm 22mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-family: "Inter", "Segoe UI", system-ui, sans-serif; color: #1a1a2e; }
+body { font-size: 15px; line-height: 1.55; }
+
+.cover { border-bottom: 3px solid #ff7849; padding-bottom: 14px; margin-bottom: 20px; }
+.brand { font-size: 14px; font-weight: 800; color: #ff7849; letter-spacing: .06em; }
+h1 { font-size: 28px; color: #6b4ee6; margin: 8px 0 6px; line-height: 1.25; }
+h2 { font-size: 19px; color: #6b4ee6; margin: 22px 0 12px; padding-top: 10px; border-top: 1px solid #eee; page-break-before: always; }
+section.first h2, h2:first-of-type { border-top: none; padding-top: 0; page-break-before: avoid; }
+h3, h4 { font-size: 15px; margin: 14px 0 8px; color: #1a1a2e; }
+p { margin: 8px 0; }
+strong { color: #1a1a2e; }
+em { color: #555; }
+
+ul, ol { margin: 8px 0 8px 24px; }
+li { margin: 3px 0; }
+
+pre {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 13.5px;
+  background: #1e1e2e;
+  color: #b9f6ca;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 10px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  page-break-inside: avoid;
+  line-height: 1.5;
+}
+pre code { background: transparent; padding: 0; color: inherit; }
+code {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  background: #fff1e8;
+  color: #ff7849;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+blockquote {
+  margin: 10px 0;
+  padding: 10px 16px;
+  background: #fff6ef;
+  border-left: 3px solid #ff7849;
+  border-radius: 0 6px 6px 0;
+  color: #6a3a1c;
+}
+
+.write-space {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #ffffff 0,
+    #ffffff 27px,
+    #d4d4d4 27px,
+    #d4d4d4 28px
+  );
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  min-height: 114px;
+  margin: 10px 0 20px;
+  page-break-inside: avoid;
+}
+.write-space.short { min-height: 86px; }
+.write-space.tall { min-height: 170px; }
+
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
+hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
+
+.meta { color: #666; font-size: 13px; margin: 0 0 14px; }
+.answer-lines {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 14px 16px;
+  background: #fafafa;
+  white-space: pre;
+  line-height: 2.2;
+}
+
+footer {
+  position: fixed;
+  bottom: 10mm; left: 16mm; right: 16mm;
+  text-align: center;
+  font-size: 10px;
+  color: #aaa;
+}
+footer b { color: #ff7849; }
+</style>
+</head>
+<body>
+<div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
+<h1>🧩 M002 Extension 2 — Piston &amp; Logic Maze</h1>
+<p><strong>Topic:</strong> Two Pistons + AND Conditions · <strong>Course:</strong> Maze Madness · <strong>Level:</strong> Extension (Advanced) · <strong>Time:</strong> about 60 minutes</p>
+<p>This is an <strong>extension challenge</strong> for students who have finished the weekly mazes. The agent follows a <strong>redstone trail</strong> through a long maze. At some junctions it must check <strong>two things at once</strong> (an <strong>AND</strong> condition) to pick the right way. Twice along the path a <strong>lever powers a piston</strong> that pulls a block back and opens the way through. Your job is to get the agent through the <strong>whole maze</strong>, start to finish.</p>
+<p>You drive it with <strong>chat commands</strong>: type <code>l</code> to turn left, <code>r</code> to turn right, <code>run</code> to start the solver, and <code>rl</code> to teleport the agent back to you.</p>
+<h2>1 · Read the Chat Commands 🎛️</h2>
+<p>Each block of code binds a <strong>chat word</strong> to an action. When you type that word in chat, the agent runs the code.</p>
+<pre><code>def on_on_chat():
+    agent.turn(RIGHT_TURN)
+player.on_chat(&quot;r&quot;, on_on_chat)
+</code></pre>
+<div class="qa"><p><strong>What does the agent do when you type <code>r</code> in chat?</strong></p>
+<div class="write-space short"></div></div>
+
+<pre><code>def on_on_chat4():
+    agent.teleport_to_player()
+player.on_chat(&quot;rl&quot;, on_on_chat4)
+</code></pre>
+<div class="qa"><p><strong>You typed <code>rl</code>. Where does the agent go? When would that help you while solving a long maze?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>This maze has two pistons far apart. Why is it useful to test the agent on the <em>first half</em> with <code>l</code> and <code>r</code> before you type <code>run</code> on the whole thing?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>2 · Trace the Solver 🔍</h2>
+<p>This is the loop that runs when you type <code>run</code>. It follows the trail, makes AND decisions at junctions, and flips a lever when it reaches a piston gate.</p>
+<pre><code>while True:
+    agent.move(FORWARD, 1)
+    if agent.detect(REDSTONE, LEFT) and agent.detect(REDSTONE, AHEAD):
+        agent.turn(LEFT_TURN)
+        agent.move(FORWARD, 1)
+    elif agent.detect(BLOCK, AHEAD) and agent.detect(REDSTONE, RIGHT):
+        agent.turn(RIGHT_TURN)
+        agent.move(FORWARD, 1)
+    elif agent.detect(BLOCK, AHEAD):
+        agent.interact(AHEAD)
+        agent.move(FORWARD, 1)
+</code></pre>
+<div class="qa"><p><strong>The loop starts with <code>while True</code>. When does it stop on its own?</strong></p>
+<div class="write-space short"></div></div>
+
+<div class="qa"><p><strong>Look at the first check: <code>detect(REDSTONE, LEFT) and detect(REDSTONE, AHEAD)</code>. Both have to be true. Describe a spot in the maze where that happens.</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>The last <code>elif</code> is the piston gate. There is a </strong>block ahead<strong> with no redstone trail beside it. What does <code>agent.interact(AHEAD)</code> do there, and why can the agent move forward right after?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why does the order of the checks matter? What would go wrong if <code>elif agent.detect(BLOCK, AHEAD)</code> came <em>first</em>, before the two AND checks?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>3 · Spot the Bug 🐛</h2>
+<p>Each block below is broken. Read what it is <strong>supposed</strong> to do, rewrite it so it works, then explain the fix.</p>
+<p><strong>Bug A</strong> — At a junction the agent should turn left <strong>only when there is redstone on the left <em>and</em> redstone ahead</strong>. Right now it turns on either one.</p>
+<pre><code>if agent.detect(REDSTONE, LEFT) or agent.detect(REDSTONE, AHEAD):
+    agent.turn(LEFT_TURN)
+    agent.move(FORWARD, 1)
+</code></pre>
+<p><strong>Hint:</strong> "left <strong>and</strong> ahead" — both must be true at the same time.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug B</strong> — The solver should keep following the trail for the <strong>whole maze</strong>, checking on every step. This only checks once and stops.</p>
+<pre><code>agent.move(FORWARD, 1)
+if agent.detect(BLOCK, AHEAD):
+    agent.interact(AHEAD)
+    agent.move(FORWARD, 1)
+</code></pre>
+<p><strong>Hint:</strong> what wraps a block of code so it repeats until the maze is done?</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug C</strong> — At a piston gate the agent must <strong>flip the lever first</strong>, then cross the gap it opens. Here it walks forward before powering the piston, so it hits a closed wall.</p>
+<pre><code>agent.move(FORWARD, 1)
+agent.move(FORWARD, 1)
+agent.interact(AHEAD)
+</code></pre>
+<p><strong>Hint:</strong> power the piston <strong>before</strong> you reach the gap, not after.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>4 · Make It Your Own 🛠️</h2>
+<p>Open the <strong>M002 EXT 2</strong> world and run the solver with <code>run</code>. Now <strong>change one thing</strong> and predict what happens before you test it.</p>
+<p>Pick <strong>one</strong> idea (or your own):</p>
+<ul>
+<li>Add a new chat command, like <code>back</code>, that turns the agent around (two right turns).</li>
+<li>Make the agent place a block (<code>agent.place(...)</code>) each time it flips a lever, so you can see how far it got.</li>
+<li>Add an <code>elif</code> that handles a junction where redstone is on the <strong>right and ahead</strong> at the same time.</li>
+</ul>
+<div class="qa"><p><strong>Which change did you pick? Write the code for it.</strong></p>
+<div class="write-space tall" style="min-height: 200px"></div></div>
+
+<div class="qa"><p><strong>Predict first:</strong> what do you think will happen when you run it?</p>
+<div class="write-space short"></div></div>
+
+<div class="qa"><p><strong>Then test it.</strong> What actually happened? If it surprised you, why?</p>
+<div class="write-space"></div></div>
+
+<h2>5 · Finish the Whole Maze 📸</h2>
+<p>The goal is to get the agent from the <strong>start to the very end</strong> — past both piston gates and every junction. Run <code>run</code>, watch where it gets stuck, fix your code, and run it again until it reaches the goal.</p>
+<p>When the agent finishes, come back here. Send a photo or video of the agent at the goal, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.</p>
+<div class="qa"><blockquote>
+<p>The maze had two pistons, so the agent had to …</p>
+<p>At a junction I used an AND condition to …</p>
+<p>When the agent hit a piston gate, it had to flip the lever first because …</p>
+<p>The change I made in section 4 was …</p>
+<p>The hardest part of finishing the whole maze was …</p>
+<p>If I had more time, I would …</p>
+</blockquote>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<h2>6 · Record Your Walkthrough 🎥</h2>
+<p>Take a video on your phone (or a parent's phone) while the agent solves the whole maze. Talk through it like you are teaching someone who has never seen it. Try to use these words: <strong>detect</strong>, <strong>redstone</strong>, <strong>trail</strong>, <strong>AND</strong>, <strong>piston</strong>, <strong>lever</strong>, <strong>loop</strong>.</p>
+<blockquote>
+<ol>
+<li>Show the maze and the redstone trail before you start.</li>
+<li>Type <code>run</code> and show the agent following the trail.</li>
+<li>Read one AND check out loud and say what decision it makes.</li>
+<li>Show the agent reaching a piston gate and flipping the lever.</li>
+<li>Show it reaching the goal at the end.</li>
+</ol>
+</blockquote>
+<div class="qa"><p><strong>Write what you will say in your video.</strong> Plan it here first — you can read from it while filming.</p>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.</p>
+</body>
+</html>
