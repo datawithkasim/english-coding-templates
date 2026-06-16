@@ -8,18 +8,21 @@
 
 ## 📅 주차별 학습
 
-| 주차 | 주제 | 숙제 | 워크시트 | 슬라이드 |
-|---|---|---|---|---|
-| 1 | 사이트 기획 (와이어프레임) | 종이 스케치 사진 + 소개 글 3~4줄 + 사진 1장 준비 | [week-01.md](./worksheets/week-01.md) | [Planning](https://datawithkasim.github.io/english-coding-slides/webdev/web003-portfolio/week-01-planning.html) |
-| 2 | 페이지 구조 (HTML 섹션) | 5개 섹션 HTML 완성 + 네비게이션 동작 확인 | [week-02.md](./worksheets/week-02.md) | [HTML Structure](https://datawithkasim.github.io/english-coding-slides/webdev/web003-portfolio/week-02-html-structure.html) |
-| 3 | 디자인 시스템 (CSS 변수·간격) | 색깔 변수 + 간격 시스템 적용 | [week-03.md](./worksheets/week-03.md) | [Design System](https://datawithkasim.github.io/english-coding-slides/webdev/web003-portfolio/week-03-design-system.html) |
-| 4 | 히어로 + About 섹션 | 히어로·About 완성 + PC·모바일 화면 | [week-04.md](./worksheets/week-04.md) | [Hero + About](https://datawithkasim.github.io/english-coding-slides/webdev/web003-portfolio/week-04-hero-about.html) |
-| 5 | 프로젝트 갤러리 (CSS Grid) | 프로젝트 카드 3개 이상 + 그리드 정렬 | [week-05.md](./worksheets/week-05.md) | [Project Gallery](https://datawithkasim.github.io/english-coding-slides/webdev/web003-portfolio/week-05-project-gallery.html) |
-| 6 | 다크 모드 토글 (JavaScript) | 자기 사이트에 다크 모드 추가하기 (보너스: localStorage) | [week-06.md](./worksheets/week-06.md) | [Dark Mode](https://datawithkasim.github.io/english-coding-slides/webdev/web003-portfolio/week-06-dark-mode.html) |
-| 7 | 연락처 폼 + 부드러운 스크롤 | 연락처 폼 추가 + smooth 스크롤 확인 | [week-07.md](./worksheets/week-07.md) | [Form + Smooth Scroll](https://datawithkasim.github.io/english-coding-slides/webdev/web003-portfolio/week-07-form-smooth-scroll.html) |
-| 8 | 최종 마무리 — 사이트 공개 | 완성된 사이트 공개 링크 + PC·모바일 화면 | [week-08.md](./worksheets/week-08.md) | [Publish](https://datawithkasim.github.io/english-coding-slides/webdev/web003-portfolio/week-08-publish.html) |
+| 주차 | 주제 | 숙제 | 워크시트 | PDF | 슬라이드 |
+|---|---|---|---|---|---|
+| 1 | 사이트 기획 (브랜드 키트 + 와이어프레임) | 나만의 브랜드 키트(단어 3개·색·글꼴) + 종이 와이어프레임 사진 또는 영상 | [week-01.md](./worksheets/week-01.md) | [📄 PDF](./worksheets/week-01.pdf) | [Planning](https://datawithkasim.github.io/english-coding-slides/webdev/web003-portfolio/week-01-planning.html) |
+| 2 | 페이지 구조 (HTML 섹션) | 5개 섹션 HTML 완성 + 네비게이션 동작 확인 | [week-02.md](./worksheets/week-02.md) | [📄 PDF](./worksheets/week-02.pdf) | [HTML Structure](https://datawithkasim.github.io/english-coding-slides/webdev/web003-portfolio/week-02-html-structure.html) |
+| 3 | 디자인 시스템 (CSS 변수·간격) | 색깔 변수 + 간격 시스템 적용 | [week-03.md](./worksheets/week-03.md) | [📄 PDF](./worksheets/week-03.pdf) | [Design System](https://datawithkasim.github.io/english-coding-slides/webdev/web003-portfolio/week-03-design-system.html) |
+| 4 | 히어로 + About 섹션 | 히어로·About 완성 + PC·모바일 화면 | [week-04.md](./worksheets/week-04.md) | [📄 PDF](./worksheets/week-04.pdf) | [Hero + About](https://datawithkasim.github.io/english-coding-slides/webdev/web003-portfolio/week-04-hero-about.html) |
+| 5 | 프로젝트 갤러리 (CSS Grid) | 프로젝트 카드 3개 이상 + 그리드 정렬 | [week-05.md](./worksheets/week-05.md) | [📄 PDF](./worksheets/week-05.pdf) | [Project Gallery](https://datawithkasim.github.io/english-coding-slides/webdev/web003-portfolio/week-05-project-gallery.html) |
+| 6 | 다크 모드 토글 (JavaScript) | 자기 사이트에 다크 모드 추가하기 (보너스: localStorage) | [week-06.md](./worksheets/week-06.md) | [📄 PDF](./worksheets/week-06.pdf) | [Dark Mode](https://datawithkasim.github.io/english-coding-slides/webdev/web003-portfolio/week-06-dark-mode.html) |
+| 7 | 연락처 폼 + 부드러운 스크롤 | 연락처 폼 추가 + smooth 스크롤 확인 | [week-07.md](./worksheets/week-07.md) | [📄 PDF](./worksheets/week-07.pdf) | [Form + Smooth Scroll](https://datawithkasim.github.io/english-coding-slides/webdev/web003-portfolio/week-07-form-smooth-scroll.html) |
+| 8 | 최종 마무리 — 사이트 공개 | 완성된 사이트 공개 링크 + PC·모바일 화면 | [week-08.md](./worksheets/week-08.md) | [📄 PDF](./worksheets/week-08.pdf) | [Publish](https://datawithkasim.github.io/english-coding-slides/webdev/web003-portfolio/week-08-publish.html) |
+| ✨ | 탄소 발자국 트래커 기획 (확장) | 환경 웹 앱의 브랜드 키트 + 종이 와이어프레임 설계 (코딩 없음) · 사진 또는 영상 제출 | [extension-carbon-tracker.md](./worksheets/extension-carbon-tracker.md) | [📄 PDF](./worksheets/extension-carbon-tracker.pdf) | — |
 
 > 💡 숙제는 매 주 누적입니다 — 이전 주차 완성본 위에 그 주의 새 섹션·기능을 더해 갑니다.
+
+> ✨ 확장 워크시트는 정규 8주에 추가로 풀 수 있는 보너스 과제입니다. 코딩이 전혀 없는 기획·디자인 과제라 1주차를 마친 뒤 아무 때나 사용할 수 있습니다.
 
 ---
 

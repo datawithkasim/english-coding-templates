@@ -6,16 +6,16 @@
 
 ## 📅 주차별 자료
 
-| 주차 | 주제 | 숙제 | 워크시트 | 슬라이드 |
-|---|---|---|---|---|
-| 1 | JavaScript 첫 만남 (`console.log` · `alert`) | 내 이름이 담긴 인사말 버튼 만들기 | [워크시트](./worksheets/week-01.md) | [슬라이드](https://datawithkasim.github.io/english-coding-slides/webdev/web002-javascript/week-01-hello-js.html) |
-| 2 | 변수와 DOM (`let` · `querySelector` · `textContent`) | 버튼 하나로 화면 3가지 이상 바꾸기 | [워크시트](./worksheets/week-02.md) | [슬라이드](https://datawithkasim.github.io/english-coding-slides/webdev/web002-javascript/week-02-variables-dom.html) |
-| 3 | 이벤트 (`addEventListener` · 점수 카운터) | +1 · -1 · 초기화 카운터 (0 미만 방지) | [워크시트](./worksheets/week-03.md) | [슬라이드](https://datawithkasim.github.io/english-coding-slides/webdev/web002-javascript/week-03-events.html) |
-| 4 | 사용자 입력 (`<input>` · `.value`) | 이름+나이 입력 소개 페이지 (빈 값 경고) | [워크시트](./worksheets/week-04.md) | [슬라이드](https://datawithkasim.github.io/english-coding-slides/webdev/web002-javascript/week-04-user-input.html) |
-| 5 | 조건문 (`if / else` · `===` · `&&` · `||`) | 1~100 숫자 맞히기 게임 (시도 횟수 표시) | [워크시트](./worksheets/week-05.md) | [슬라이드](https://datawithkasim.github.io/english-coding-slides/webdev/web002-javascript/week-05-conditionals.html) |
-| 6 | 배열과 반복문 (`array` · `length` · `for`) | 좋아하는 이모티콘 5개 무작위 뽑기 | [워크시트](./worksheets/week-06.md) | [슬라이드](https://datawithkasim.github.io/english-coding-slides/webdev/web002-javascript/week-06-arrays-loops.html) |
-| 7 | 함수 (`function` · 매개변수 · `return`) | 더하기·빼기·곱하기 계산기 페이지 | [워크시트](./worksheets/week-07.md) | [슬라이드](https://datawithkasim.github.io/english-coding-slides/webdev/web002-javascript/week-07-functions.html) |
-| 8 | 최종 프로젝트: 대화형 퀴즈 앱 | 5문제 이상 퀴즈 앱 완성 + 발표 | [워크시트](./worksheets/week-08.md) | [슬라이드](https://datawithkasim.github.io/english-coding-slides/webdev/web002-javascript/week-08-final-quiz.html) |
+| 주차 | 주제 | 숙제 | 워크시트 | PDF | 슬라이드 |
+|---|---|---|---|---|---|
+| 1 | JavaScript 첫 만남 (`console.log` · `alert`) | 내 이름이 담긴 인사말 버튼 만들기 | [워크시트](./worksheets/week-01.md) | [📄 PDF](./worksheets/week-01.pdf) | [슬라이드](https://datawithkasim.github.io/english-coding-slides/webdev/web002-javascript/week-01-hello-js.html) |
+| 2 | 변수와 DOM (`let` · `querySelector` · `textContent`) | 버튼 하나로 화면 3가지 이상 바꾸기 | [워크시트](./worksheets/week-02.md) | [📄 PDF](./worksheets/week-02.pdf) | [슬라이드](https://datawithkasim.github.io/english-coding-slides/webdev/web002-javascript/week-02-variables-dom.html) |
+| 3 | 이벤트 (`addEventListener` · 점수 카운터) | +1 · -1 · 초기화 카운터 (0 미만 방지) | [워크시트](./worksheets/week-03.md) | [📄 PDF](./worksheets/week-03.pdf) | [슬라이드](https://datawithkasim.github.io/english-coding-slides/webdev/web002-javascript/week-03-events.html) |
+| 4 | 사용자 입력 (`<input>` · `.value`) | 이름+나이 입력 소개 페이지 (빈 값 경고) | [워크시트](./worksheets/week-04.md) | [📄 PDF](./worksheets/week-04.pdf) | [슬라이드](https://datawithkasim.github.io/english-coding-slides/webdev/web002-javascript/week-04-user-input.html) |
+| 5 | 조건문 (`if / else` · `===` · `&&` · `||`) | 1~100 숫자 맞히기 게임 (시도 횟수 표시) | [워크시트](./worksheets/week-05.md) | [📄 PDF](./worksheets/week-05.pdf) | [슬라이드](https://datawithkasim.github.io/english-coding-slides/webdev/web002-javascript/week-05-conditionals.html) |
+| 6 | 배열과 반복문 (`array` · `length` · `for`) | 좋아하는 이모티콘 5개 무작위 뽑기 | [워크시트](./worksheets/week-06.md) | [📄 PDF](./worksheets/week-06.pdf) | [슬라이드](https://datawithkasim.github.io/english-coding-slides/webdev/web002-javascript/week-06-arrays-loops.html) |
+| 7 | 함수 (`function` · 매개변수 · `return`) | 더하기·빼기·곱하기 계산기 페이지 | [워크시트](./worksheets/week-07.md) | [📄 PDF](./worksheets/week-07.pdf) | [슬라이드](https://datawithkasim.github.io/english-coding-slides/webdev/web002-javascript/week-07-functions.html) |
+| 8 | 최종 프로젝트: 대화형 퀴즈 앱 | 5문제 이상 퀴즈 앱 완성 + 발표 | [워크시트](./worksheets/week-08.md) | [📄 PDF](./worksheets/week-08.pdf) | [슬라이드](https://datawithkasim.github.io/english-coding-slides/webdev/web002-javascript/week-08-final-quiz.html) |
 
 > 💡 매주 한 가지 개념에 집중하고, 이전 주차 개념은 다음 주차에서 다시 복습됩니다.
 
