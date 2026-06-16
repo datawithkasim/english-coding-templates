@@ -6,16 +6,16 @@
 
 ## 📅 주차별 안내
 
-| 주차 | 주제 | 숙제 | 워크시트 | 슬라이드 |
-|---|---|---|---|---|
-| 1 | AI와 첫 대화 — Replit Agent 만나기 | 자기 이름이 들어간 웹페이지를 프롬프트만으로 만들기 | [워크시트](./worksheets/week-01.md) | [슬라이드](https://datawithkasim.github.io/english-coding-slides/ai-coding/ai001-replit-agent/week-01-first-prompt.html) |
-| 2 | 좋은 프롬프트 vs 나쁜 프롬프트 | "게임을 만들어줘"를 3단계 프롬프트로 다시 쓰고 결과 비교 | [워크시트](./worksheets/week-02.md) | [슬라이드](https://datawithkasim.github.io/english-coding-slides/ai-coding/ai001-replit-agent/week-02-good-prompts.html) |
-| 3 | 컨텍스트와 예시 주기 | 좋아하는 주제로 사이트 만들기 (컨텍스트 + 예시 포함) | [워크시트](./worksheets/week-03.md) | [슬라이드](https://datawithkasim.github.io/english-coding-slides/ai-coding/ai001-replit-agent/week-03-context-examples.html) |
-| 4 | 단계별로 나누기 | 간단한 앱 하나를 4~5단계 프롬프트로 나눠서 만들기 | [워크시트](./worksheets/week-04.md) | [슬라이드](https://datawithkasim.github.io/english-coding-slides/ai-coding/ai001-replit-agent/week-04-step-by-step.html) |
-| 5 | 수정과 반복 — 첫 결과는 100%가 아니다 | 한 프로젝트를 수정 프롬프트로 다듬어 완성도 높이기 | [워크시트](./worksheets/week-05.md) | [슬라이드](https://datawithkasim.github.io/english-coding-slides/ai-coding/ai001-replit-agent/week-05-iteration.html) |
-| 6 | 디버깅 — AI에게 오류 설명하기 | 이전 프로젝트의 안 되는 부분을 AI에게 설명해 고치기 | [워크시트](./worksheets/week-06.md) | [슬라이드](https://datawithkasim.github.io/english-coding-slides/ai-coding/ai001-replit-agent/week-06-debugging.html) |
-| 7 | 코드 이해하기 — 만들기만 하지 않기 | 자기 프로젝트 코드를 AI에게 설명받고 자기 말로 다시 적기 | [워크시트](./worksheets/week-07.md) | [슬라이드](https://datawithkasim.github.io/english-coding-slides/ai-coding/ai001-replit-agent/week-07-understand-code.html) |
-| 8 | 최종 프로젝트 — 자기만의 앱 | 7주간 배운 기술을 합쳐 자기만의 앱을 완성하고 발표하기 | [워크시트](./worksheets/week-08.md) | [슬라이드](https://datawithkasim.github.io/english-coding-slides/ai-coding/ai001-replit-agent/week-08-final-project.html) |
+| 주차 | 주제 | 숙제 | 워크시트 | PDF | 슬라이드 |
+|---|---|---|---|---|---|
+| 1 | AI와 첫 대화 — Replit Agent 만나기 | 자기 이름이 들어간 웹페이지를 프롬프트만으로 만들기 | [워크시트](./worksheets/week-01.md) | [📄 PDF](./worksheets/week-01.pdf) | [슬라이드](https://datawithkasim.github.io/english-coding-slides/ai-coding/ai001-replit-agent/week-01-first-prompt.html) |
+| 2 | 좋은 프롬프트 vs 나쁜 프롬프트 | "게임을 만들어줘"를 3단계 프롬프트로 다시 쓰고 결과 비교 | [워크시트](./worksheets/week-02.md) | [📄 PDF](./worksheets/week-02.pdf) | [슬라이드](https://datawithkasim.github.io/english-coding-slides/ai-coding/ai001-replit-agent/week-02-good-prompts.html) |
+| 3 | 컨텍스트와 예시 주기 | 좋아하는 주제로 사이트 만들기 (컨텍스트 + 예시 포함) | [워크시트](./worksheets/week-03.md) | [📄 PDF](./worksheets/week-03.pdf) | [슬라이드](https://datawithkasim.github.io/english-coding-slides/ai-coding/ai001-replit-agent/week-03-context-examples.html) |
+| 4 | 단계별로 나누기 | 간단한 앱 하나를 4~5단계 프롬프트로 나눠서 만들기 | [워크시트](./worksheets/week-04.md) | [📄 PDF](./worksheets/week-04.pdf) | [슬라이드](https://datawithkasim.github.io/english-coding-slides/ai-coding/ai001-replit-agent/week-04-step-by-step.html) |
+| 5 | 수정과 반복 — 첫 결과는 100%가 아니다 | 한 프로젝트를 수정 프롬프트로 다듬어 완성도 높이기 | [워크시트](./worksheets/week-05.md) | [📄 PDF](./worksheets/week-05.pdf) | [슬라이드](https://datawithkasim.github.io/english-coding-slides/ai-coding/ai001-replit-agent/week-05-iteration.html) |
+| 6 | 디버깅 — AI에게 오류 설명하기 | 이전 프로젝트의 안 되는 부분을 AI에게 설명해 고치기 | [워크시트](./worksheets/week-06.md) | [📄 PDF](./worksheets/week-06.pdf) | [슬라이드](https://datawithkasim.github.io/english-coding-slides/ai-coding/ai001-replit-agent/week-06-debugging.html) |
+| 7 | 코드 이해하기 — 만들기만 하지 않기 | 자기 프로젝트 코드를 AI에게 설명받고 자기 말로 다시 적기 | [워크시트](./worksheets/week-07.md) | [📄 PDF](./worksheets/week-07.pdf) | [슬라이드](https://datawithkasim.github.io/english-coding-slides/ai-coding/ai001-replit-agent/week-07-understand-code.html) |
+| 8 | 최종 프로젝트 — 자기만의 앱 | 7주간 배운 기술을 합쳐 자기만의 앱을 완성하고 발표하기 | [워크시트](./worksheets/week-08.md) | [📄 PDF](./worksheets/week-08.pdf) | [슬라이드](https://datawithkasim.github.io/english-coding-slides/ai-coding/ai001-replit-agent/week-08-final-project.html) |
 
 > 💡 매주 한 가지 프롬프트 원칙에 집중합니다 (이전 주차 원칙 복습 포함). 이 코스는 Replit 계정과 Replit Agent 접근 권한이 필요합니다.
 
