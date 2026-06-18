@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>🏗️ M002 Extension 3 — Build Your Own 6-Maze Challenge</title>
+<style>
+@page { size: A4; margin: 18mm 16mm 22mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-family: "Inter", "Segoe UI", system-ui, sans-serif; color: #1a1a2e; }
+body { font-size: 15px; line-height: 1.55; }
+
+.cover { border-bottom: 3px solid #ff7849; padding-bottom: 14px; margin-bottom: 20px; }
+.brand { font-size: 14px; font-weight: 800; color: #ff7849; letter-spacing: .06em; }
+h1 { font-size: 28px; color: #6b4ee6; margin: 8px 0 6px; line-height: 1.25; }
+h2 { font-size: 19px; color: #6b4ee6; margin: 22px 0 12px; padding-top: 10px; border-top: 1px solid #eee; page-break-before: always; }
+section.first h2, h2:first-of-type { border-top: none; padding-top: 0; page-break-before: avoid; }
+h3, h4 { font-size: 15px; margin: 14px 0 8px; color: #1a1a2e; }
+p { margin: 8px 0; }
+strong { color: #1a1a2e; }
+em { color: #555; }
+
+ul, ol { margin: 8px 0 8px 24px; }
+li { margin: 3px 0; }
+
+pre {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 13.5px;
+  background: #1e1e2e;
+  color: #b9f6ca;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 10px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  page-break-inside: avoid;
+  line-height: 1.5;
+}
+pre code { background: transparent; padding: 0; color: inherit; }
+code {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  background: #fff1e8;
+  color: #ff7849;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+blockquote {
+  margin: 10px 0;
+  padding: 10px 16px;
+  background: #fff6ef;
+  border-left: 3px solid #ff7849;
+  border-radius: 0 6px 6px 0;
+  color: #6a3a1c;
+}
+
+.write-space {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #ffffff 0,
+    #ffffff 27px,
+    #d4d4d4 27px,
+    #d4d4d4 28px
+  );
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  min-height: 114px;
+  margin: 10px 0 20px;
+  page-break-inside: avoid;
+}
+.write-space.short { min-height: 86px; }
+.write-space.tall { min-height: 170px; }
+
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
+hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
+
+.meta { color: #666; font-size: 13px; margin: 0 0 14px; }
+.answer-lines {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 14px 16px;
+  background: #fafafa;
+  white-space: pre;
+  line-height: 2.2;
+}
+
+footer {
+  position: fixed;
+  bottom: 10mm; left: 16mm; right: 16mm;
+  text-align: center;
+  font-size: 10px;
+  color: #aaa;
+}
+footer b { color: #ff7849; }
+</style>
+</head>
+<body>
+<div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
+<h1>🏗️ M002 Extension 3 — Build Your Own 6-Maze Challenge</h1>
+<p><strong>Topic:</strong> Design a Maze + Write the Solution · <strong>Course:</strong> Maze Madness · <strong>Level:</strong> Extension (Advanced) · <strong>Time:</strong> about 75 minutes</p>
+<p>This is the big <strong>builder challenge</strong> for students who have finished the weekly mazes. This time you are not solving someone else's maze — <strong>you are the maze maker.</strong> You will design one long maze that <strong>stretches through 6 different sections</strong>, wire it with pistons and doors, and then write the <strong>solution code</strong> that drives the agent all the way to the end.</p>
+<p>Open the <strong>M002 EXT 3 — Cube World</strong> and build inside it. You drive the agent with <strong>chat commands</strong> just like before: <code>l</code> turns left, <code>r</code> turns right, <code>run</code> starts your solver, and <code>rl</code> teleports the agent back to you.</p>
+<p><strong>Your maze must include at least:</strong></p>
+<ul>
+<li><strong>2 pistons</strong> (each opens a wall or path when powered)</li>
+<li><strong>2 doors</strong> (the agent opens them with <code>agent.interact(...)</code>)</li>
+<li><strong>4 AND conditions</strong> in your solution code (<code>... and ...</code>)</li>
+<li><strong>1 OR condition</strong> in your solution code (<code>... or ...</code>)</li>
+</ul>
+<p>Keep this page beside you while you build — you will check off each part as you go.</p>
+<h2>1 · Plan Your 6 Mazes 🗺️</h2>
+<p>A great maze is <strong>planned before it is built.</strong> Your maze runs through <strong>6 sections</strong> in a row — the agent finishes one and walks straight into the next. Give each section one job.</p>
+<div class="qa"><p><strong>Sketch your 6 sections.</strong> For each one, write the section number and what makes it tricky (a turn, a piston, a door, a junction where the agent must check two things).</p>
+<div class="write-space tall" style="min-height: 260px"></div></div>
+
+<div class="qa"><p><strong>Where will your 2 pistons go? Which sections, and what does each piston open?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Where will your 2 doors go? What is behind each one?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>2 · Build the Maze 🧱</h2>
+<p>Now build it in the world. Walk the path yourself first (no code) and make sure a person can get from start to end. <strong>Check off each part as you place it.</strong></p>
+<blockquote>
+<p>☐ Section 1 built</p>
+<p>☐ Section 2 built</p>
+<p>☐ Section 3 built</p>
+<p>☐ Section 4 built</p>
+<p>☐ Section 5 built</p>
+<p>☐ Section 6 built</p>
+<p>☐ Piston #1 placed and tested</p>
+<p>☐ Piston #2 placed and tested</p>
+<p>☐ Door #1 placed</p>
+<p>☐ Door #2 placed</p>
+<p>☐ A clear START block and a clear GOAL block</p>
+</blockquote>
+<div class="qa"><p><strong>Did anything break while you built it? What did you have to change?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>3 · Write the Solution 💻</h2>
+<p>Now write the <strong>solver</strong> — the code that gets the agent through your whole maze. Use a <code>while True</code> loop so it checks on every step.</p>
+<p>Here is the shape to start from. Fill it in for <strong>your</strong> maze. Remember the rule: your solution needs <strong>at least 4 AND conditions and 1 OR condition.</strong></p>
+<pre><code>while True:
+    agent.move(FORWARD, 1)
+
+    # a junction — turn only when BOTH things are true (AND)
+    if agent.detect(BLOCK, LEFT) and agent.detect(REDSTONE, AHEAD):
+        agent.turn(LEFT_TURN)
+
+    # a door OR a piston gate — handle either one (OR)
+    elif agent.detect(BLOCK, AHEAD) or agent.detect(REDSTONE, RIGHT):
+        agent.interact(AHEAD)
+        agent.move(FORWARD, 1)
+</code></pre>
+<div class="qa"><p><strong>Write your full solution here.</strong> Add more <code>if</code> / <code>elif</code> checks until it covers all 6 sections. Mark each AND with <code># AND</code> and your OR with <code># OR</code> in a comment so you can count them.</p>
+<div class="write-space tall" style="min-height: 360px"></div></div>
+
+<h2>4 · Count Your Logic ✅</h2>
+<p>Go back through the solution you just wrote and <strong>count.</strong> Write the number, then copy out one real line from your code as proof.</p>
+<div class="qa"><p><strong>How many AND conditions did you use? (need at least 4)</strong></p>
+<div class="write-space short"></div></div>
+
+<div class="qa"><p><strong>Copy one of your AND lines here:</strong></p>
+<div class="write-space short"></div></div>
+
+<div class="qa"><p><strong>How many OR conditions did you use? (need at least 1)</strong></p>
+<div class="write-space short"></div></div>
+
+<div class="qa"><p><strong>Copy your OR line here:</strong></p>
+<div class="write-space short"></div></div>
+
+<div class="qa"><p><strong>Why did that one spot need an OR instead of an AND? What two different things is it checking for?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>5 · Test It and Finish 📸</h2>
+<p>Type <code>run</code> and watch the agent. It will get stuck somewhere — that is normal. Find where it stops, fix that part of your code or your maze, and run it again. Keep going until the agent reaches the <strong>GOAL</strong> all by itself. Use <code>rl</code> to send it back to the start between tries.</p>
+<p>When the agent finishes your maze on its own, come back here. Send a photo or video of the agent at the goal, then explain what you did. Use these sentence starters — write 5 to 7 sentences total.</p>
+<div class="qa"><blockquote>
+<p>My maze runs through 6 sections. The trickiest section was …</p>
+<p>I put my 2 pistons in … because …</p>
+<p>The agent opens my doors with <code>agent.interact(...)</code>, which works because …</p>
+<p>I used an AND condition at … to make the agent …</p>
+<p>I needed an OR condition at … because …</p>
+<p>The agent kept getting stuck at … until I …</p>
+<p>If I built a version 2, I would add …</p>
+</blockquote>
+<div class="write-space tall" style="min-height: 360px"></div></div>
+
+<h2>6 · Present Your Maze 🎥</h2>
+<p>You built this maze, so you are the expert. Take a video on your phone (or a parent's phone) and <strong>present your maze like a designer showing off their game.</strong> Try to use these words: <strong>section</strong>, <strong>piston</strong>, <strong>door</strong>, <strong>detect</strong>, <strong>AND</strong>, <strong>OR</strong>, <strong>loop</strong>.</p>
+<blockquote>
+<ol>
+<li>Show the whole maze from the start and point out the 6 sections.</li>
+<li>Show each piston and each door, and say what it does.</li>
+<li>Read one AND check from your code out loud and say what decision it makes.</li>
+<li>Read your OR check and say why it needed OR.</li>
+<li>Type <code>run</code> and let the agent solve your maze to the goal.</li>
+</ol>
+</blockquote>
+<div class="qa"><p><strong>Write what you will say in your video.</strong> Plan it here first — you can read from it while filming.</p>
+<div class="write-space tall" style="min-height: 360px"></div></div>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.</p>
+</body>
+</html>
