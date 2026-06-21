@@ -2,7 +2,7 @@
 
 **Topic:** Pixel Art 2 — Cat & Tree (x, y) · **Course:** 3D Coordinates · **Level:** Beginner · **Time:** about 30 minutes
 
-This week you copy **two more pictures** — a **cat** and a **tree**. Every block sits at a spot named by **two numbers — (x, y)**. x is how far **across**, y is how far **up**. You read the picture and place each block at its (x, y).
+This week you copy **two more pictures** — a **cat face** and a **tree**. Every block sits at a spot named by **two numbers — (x, y)**. x is how far **across**, y is how far **up**. You read the picture and place each block at its (x, y).
 
 **First, build your canvas.** Run this to make a blank **15 × 15** wall, then put a **red block at your feet** as your **home spot**:
 
@@ -34,8 +34,8 @@ place brown block at (8, 3)
 <div class="write-space short"></div>
 
 ```
-place black block at (3, 15)
-place black block at (4, 15)
+place orange block at (2, 15)
+place orange block at (3, 15)
 ```
 
 **These share y = 15 and x grows. Do they go across or up? Circle one:** across · up
@@ -114,7 +114,7 @@ Stand on your **home spot** (the red block).
 
 <div style="page-break-inside:avoid;break-inside:avoid;margin:12px 0"><p style="font-weight:700;margin:0 0 6px">🌱 Small tree</p><table style="border-collapse:collapse;margin:4px 0"><tr><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:32px"></th><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:32px">1</th><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:32px">2</th><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:32px">3</th><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:32px">4</th><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:32px">5</th></tr><tr><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:32px">5</th><td style="width:32px;height:32px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:32px;height:32px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:32px;height:32px;padding:0;background:#4f8a2e;border:1px solid #0000002a"></td><td style="width:32px;height:32px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:32px;height:32px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td></tr><tr><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:32px">4</th><td style="width:32px;height:32px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:32px;height:32px;padding:0;background:#4f8a2e;border:1px solid #0000002a"></td><td style="width:32px;height:32px;padding:0;background:#4f8a2e;border:1px solid #0000002a"></td><td style="width:32px;height:32px;padding:0;background:#4f8a2e;border:1px solid #0000002a"></td><td style="width:32px;height:32px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td></tr><tr><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:32px">3</th><td style="width:32px;height:32px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:32px;height:32px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:32px;height:32px;padding:0;background:#6b4423;border:1px solid #0000002a"></td><td style="width:32px;height:32px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:32px;height:32px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td></tr><tr><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:32px">2</th><td style="width:32px;height:32px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:32px;height:32px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:32px;height:32px;padding:0;background:#6b4423;border:1px solid #0000002a"></td><td style="width:32px;height:32px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:32px;height:32px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td></tr><tr><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:32px">1</th><td style="width:32px;height:32px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:32px;height:32px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:32px;height:32px;padding:0;background:#6b4423;border:1px solid #0000002a"></td><td style="width:32px;height:32px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:32px;height:32px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td></tr></table></div>
 
-**Now pick one big picture — the 🐈 cat or the 🌳 tree from the main worksheet grid — and copy it the same way.** Read each colored square and place that color at its (x, y).
+**Now pick one big picture — the 🐱 cat face or the 🌳 tree from the main worksheet grid — and copy it the same way.** Read each colored square and place that color at its (x, y).
 
 When you finish, send a photo of your picture, then explain what you did. Use these sentence starters — write 2 or 3 sentences.
 
