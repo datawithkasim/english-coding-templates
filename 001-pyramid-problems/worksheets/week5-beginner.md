@@ -2,7 +2,7 @@
 
 **Topic:** First Pyramid · **Course:** Pyramid Problems · **Level:** Beginner · **Time:** about 30 minutes
 
-A pyramid is square layers stacked up. Each layer is **smaller** than the one below it.
+The agent walks around a **square** and drops blocks as it walks. Stack squares that get **smaller** and you get a pyramid.
 
 ---
 
@@ -11,28 +11,30 @@ A pyramid is square layers stacked up. Each layer is **smaller** than the one be
 Read the steps. Before you imagine the agent doing it, circle or write your answer.
 
 ```
-set size to 5
-while size > 0:
-    [build one size × size square layer]
-    move up by 1
-    set size to size - 2
+set f to 4
+place on move ON
+repeat 4 times:
+    move forward by f
+    turn left
 ```
 
-**The layers go 5, then …, then … Circle one:** 5 · 4 · 3 → 5 · 3 · 1
+**What shape does the agent draw? Circle one:** line · square · circle
 
-**Where is the biggest layer — bottom or top?**
+**How many sides does it draw? Circle one:** 1 · 3 · 4
 
 <div class="write-space short"></div>
 
 ```
-set size to 5
-while size > 0:
-    [build one size × size square layer]
+set f to 5
+repeat 3 times:
+    [draw one square]
     move up by 1
-    set size to size - 2
+    change f by -2
 ```
 
-**How many layers does this pyramid have? Circle one:** 2 · 3 · 5
+**The sides go 5, then …, then … Circle one:** 5 · 3 · 1 → 5 · 4 · 3
+
+**Which square is biggest — bottom or top?**
 
 <div class="write-space short"></div>
 
@@ -42,46 +44,44 @@ while size > 0:
 
 Each pair shows clean steps first, then a broken version of the same idea. Circle what's different and write one short sentence about the bug.
 
-**Pair A** — Each new layer must sit **on top** of the one below.
+**Pair A** — The agent must draw a closed **square**.
 
 ```
 # clean
-while size > 0:
-    [build layer]
-    move up by 1
-    set size to size - 2
+place on move ON
+repeat 4 times:
+    move forward by f
+    turn left
 ```
 
 ```
 # buggy
-while size > 0:
-    [build layer]
-    set size to size - 2
+place on move ON
+repeat 4 times:
+    move forward by f
 ```
 
-**What is wrong? Where do all the layers land?**
+**What is wrong? What shape does the buggy code draw instead?**
 
 <div class="write-space short"></div>
 
-**Pair B** — Each layer should be **2 smaller** than the one below.
+**Pair B** — Each new layer should be **2 smaller** than the one below.
 
 ```
 # clean
-while size > 0:
-    [build layer]
-    move up by 1
-    set size to size - 2
+[draw one square]
+move up by 1
+change f by -2
 ```
 
 ```
 # buggy
-while size > 0:
-    [build layer]
-    move up by 1
-    set size to size - 1
+[draw one square]
+move up by 1
+change f by 2
 ```
 
-**What is wrong? Does the buggy pyramid still work, or does it look different?**
+**What is wrong? Does the buggy tower get smaller or bigger as it goes up?**
 
 <div class="write-space short"></div>
 
@@ -89,17 +89,17 @@ while size > 0:
 
 ## 3 · Fill the Gap ✏️
 
-The pyramid should shrink and stop when the size reaches 0. One line is missing. Fill it in using the word bank.
+Each square must sit one block **higher** than the last. One line is missing. Fill it in using the word bank.
 
 ```
-set size to 5
-while size > 0:
-    [build layer]
-    move up by 1
+set f to 5
+repeat 3 times:
+    [draw one square]
     ____________
+    change f by -2
 ```
 
-**Word bank:** `set size to size - 2` · `set size to size + 2` · `move forward`
+**Word bank:** `move up by 1` · `move down by 1` · `turn left`
 
 **Write the missing line:**
 
@@ -109,11 +109,11 @@ while size > 0:
 
 ## 4 · Tell Me What You Built 📸
 
-Now switch to your homework world. Build a pyramid **starting at size 5** (so the layers go 5 → 3 → 1). When you finish, come back here.
+Now switch to your homework world. Run your `pyra` command to build a pyramid. If the agent gets stuck or faces the wrong way, use your helper commands — `1` turns it left, `r` turns it right, `r1` brings it back to you.
 
 Send a photo or video of your pyramid, then explain what you did. Use these sentence starters — write 2 or 3 sentences.
 
-> The bottom layer is … blocks long.
+> The bottom square has sides … blocks long.
 >
 > Each new layer gets smaller by …
 >
@@ -125,10 +125,10 @@ Send a photo or video of your pyramid, then explain what you did. Use these sent
 
 ## 5 · Record Your Walkthrough 🎥
 
-Take a video on your phone (or a parent's phone) and walk the camera around your pyramid. Talk like you are teaching a friend. Try to use these words: **pyramid**, **layer**, **size**, **shrink**.
+Take a video on your phone (or a parent's phone) and walk the camera around your pyramid. Talk like you are teaching a friend. Try to use these words: **square**, **side**, **layer**, **shrink**.
 
 > 1. Walk around the pyramid and show all 4 sides.
-> 2. Say the sizes of the layers from bottom to top.
+> 2. Say the side length of each layer from bottom to top.
 > 3. Show one bug you hit and how you fixed it.
 
 **Write what you will say in your video.** You can read from it while filming.

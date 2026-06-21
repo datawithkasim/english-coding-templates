@@ -104,89 +104,88 @@ footer b { color: #ff7849; }
 <div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
 <h1>🔺 M001 Week 5 — English Worksheet (Beginner)</h1>
 <p><strong>Topic:</strong> First Pyramid · <strong>Course:</strong> Pyramid Problems · <strong>Level:</strong> Beginner · <strong>Time:</strong> about 30 minutes</p>
-<p>A pyramid is square layers stacked up. Each layer is <strong>smaller</strong> than the one below it.</p>
+<p>The agent walks around a <strong>square</strong> and drops blocks as it walks. Stack squares that get <strong>smaller</strong> and you get a pyramid.</p>
 <h2>1 · Predict 🔮</h2>
 <p>Read the steps. Before you imagine the agent doing it, circle or write your answer.</p>
-<pre><code>set size to 5
-while size &gt; 0:
-    [build one size × size square layer]
-    move up by 1
-    set size to size - 2
+<pre><code>set f to 4
+place on move ON
+repeat 4 times:
+    move forward by f
+    turn left
 </code></pre>
-<p><strong>The layers go 5, then …, then … Circle one:</strong> 5 · 4 · 3 → 5 · 3 · 1</p>
-<div class="qa"><p><strong>Where is the biggest layer — bottom or top?</strong></p>
+<p><strong>What shape does the agent draw? Circle one:</strong> line · square · circle</p>
+<div class="qa"><p><strong>How many sides does it draw? Circle one:</strong> 1 · 3 · 4</p>
 <div class="write-space short"></div></div>
 
-<pre><code>set size to 5
-while size &gt; 0:
-    [build one size × size square layer]
+<pre><code>set f to 5
+repeat 3 times:
+    [draw one square]
     move up by 1
-    set size to size - 2
+    change f by -2
 </code></pre>
-<div class="qa"><p><strong>How many layers does this pyramid have? Circle one:</strong> 2 · 3 · 5</p>
+<p><strong>The sides go 5, then …, then … Circle one:</strong> 5 · 3 · 1 → 5 · 4 · 3</p>
+<div class="qa"><p><strong>Which square is biggest — bottom or top?</strong></p>
 <div class="write-space short"></div></div>
 
 <h2>2 · Find the Difference 🐛</h2>
 <p>Each pair shows clean steps first, then a broken version of the same idea. Circle what's different and write one short sentence about the bug.</p>
-<p><strong>Pair A</strong> — Each new layer must sit <strong>on top</strong> of the one below.</p>
+<p><strong>Pair A</strong> — The agent must draw a closed <strong>square</strong>.</p>
 <pre><code># clean
-while size &gt; 0:
-    [build layer]
-    move up by 1
-    set size to size - 2
+place on move ON
+repeat 4 times:
+    move forward by f
+    turn left
 </code></pre>
 <pre><code># buggy
-while size &gt; 0:
-    [build layer]
-    set size to size - 2
+place on move ON
+repeat 4 times:
+    move forward by f
 </code></pre>
-<div class="qa"><p><strong>What is wrong? Where do all the layers land?</strong></p>
+<div class="qa"><p><strong>What is wrong? What shape does the buggy code draw instead?</strong></p>
 <div class="write-space short"></div></div>
 
-<p><strong>Pair B</strong> — Each layer should be <strong>2 smaller</strong> than the one below.</p>
+<p><strong>Pair B</strong> — Each new layer should be <strong>2 smaller</strong> than the one below.</p>
 <pre><code># clean
-while size &gt; 0:
-    [build layer]
-    move up by 1
-    set size to size - 2
+[draw one square]
+move up by 1
+change f by -2
 </code></pre>
 <pre><code># buggy
-while size &gt; 0:
-    [build layer]
-    move up by 1
-    set size to size - 1
+[draw one square]
+move up by 1
+change f by 2
 </code></pre>
-<div class="qa"><p><strong>What is wrong? Does the buggy pyramid still work, or does it look different?</strong></p>
+<div class="qa"><p><strong>What is wrong? Does the buggy tower get smaller or bigger as it goes up?</strong></p>
 <div class="write-space short"></div></div>
 
 <h2>3 · Fill the Gap ✏️</h2>
-<p>The pyramid should shrink and stop when the size reaches 0. One line is missing. Fill it in using the word bank.</p>
-<pre><code>set size to 5
-while size &gt; 0:
-    [build layer]
-    move up by 1
+<p>Each square must sit one block <strong>higher</strong> than the last. One line is missing. Fill it in using the word bank.</p>
+<pre><code>set f to 5
+repeat 3 times:
+    [draw one square]
     ____________
+    change f by -2
 </code></pre>
-<p><strong>Word bank:</strong> <code>set size to size - 2</code> · <code>set size to size + 2</code> · <code>move forward</code></p>
+<p><strong>Word bank:</strong> <code>move up by 1</code> · <code>move down by 1</code> · <code>turn left</code></p>
 <div class="qa"><p><strong>Write the missing line:</strong></p>
 <div class="write-space short"></div></div>
 
 <h2>4 · Tell Me What You Built 📸</h2>
-<p>Now switch to your homework world. Build a pyramid <strong>starting at size 5</strong> (so the layers go 5 → 3 → 1). When you finish, come back here.</p>
+<p>Now switch to your homework world. Run your <code>pyra</code> command to build a pyramid. If the agent gets stuck or faces the wrong way, use your helper commands — <code>1</code> turns it left, <code>r</code> turns it right, <code>r1</code> brings it back to you.</p>
 <p>Send a photo or video of your pyramid, then explain what you did. Use these sentence starters — write 2 or 3 sentences.</p>
 <div class="qa"><blockquote>
-<p>The bottom layer is … blocks long.</p>
+<p>The bottom square has sides … blocks long.</p>
 <p>Each new layer gets smaller by …</p>
 <p>The hardest part was …</p>
 </blockquote>
 <div class="write-space tall" style="min-height: 240px"></div></div>
 
 <h2>5 · Record Your Walkthrough 🎥</h2>
-<p>Take a video on your phone (or a parent's phone) and walk the camera around your pyramid. Talk like you are teaching a friend. Try to use these words: <strong>pyramid</strong>, <strong>layer</strong>, <strong>size</strong>, <strong>shrink</strong>.</p>
+<p>Take a video on your phone (or a parent's phone) and walk the camera around your pyramid. Talk like you are teaching a friend. Try to use these words: <strong>square</strong>, <strong>side</strong>, <strong>layer</strong>, <strong>shrink</strong>.</p>
 <blockquote>
 <ol>
 <li>Walk around the pyramid and show all 4 sides.</li>
-<li>Say the sizes of the layers from bottom to top.</li>
+<li>Say the side length of each layer from bottom to top.</li>
 <li>Show one bug you hit and how you fixed it.</li>
 </ol>
 </blockquote>

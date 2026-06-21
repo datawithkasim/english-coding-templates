@@ -104,44 +104,45 @@ footer b { color: #ff7849; }
 <div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
 <h1>🔺 M001 Week 5 — English Worksheet</h1>
 <p><strong>Topic:</strong> First Pyramid · <strong>Course:</strong> Pyramid Problems · <strong>Time:</strong> about 45 minutes</p>
+<p>This week the agent <strong>walks the edges</strong> of a square and drops blocks as it moves. Stack those squares, shrink each one, and a pyramid grows.</p>
 <h2>1 · Predict 🔮</h2>
 <p>Read each set of steps. Before you imagine the agent doing it, write what you think will happen.</p>
-<pre><code>set size to 9
-repeat size times:
-    repeat size times:
-        place block down
-        move forward
-    [turn and walk back to start of next row]
+<pre><code>set f to 6
+place on move ON
+repeat 4 times:
+    move forward by f
+    turn left
 </code></pre>
-<div class="qa"><p><strong>This builds the </strong>bottom<strong> layer of the pyramid. How long is each side?</strong></p>
+<div class="qa"><p><strong>What shape does the agent draw? How many blocks long is each side?</strong></p>
 <div class="write-space"></div></div>
 
-<pre><code>set size to 9
-while size &gt; 0:
-    [build one size × size square layer]
-    move up by 1
-    set size to size - 2
-</code></pre>
-<div class="qa"><p><strong>Why does the pyramid shrink by 2 each layer instead of 1?</strong></p>
+<div class="qa"><p><strong>Why is it <code>repeat 4 times</code> and <code>turn left</code>? What would <code>repeat 3 times</code> draw instead?</strong></p>
 <div class="write-space"></div></div>
 
-<pre><code>set size to 9
-while size &gt; 0:
-    [build one size × size square layer]
+<pre><code>set f to 6
+repeat 3 times:
+    [draw one f × f square]
     move up by 1
-    set size to size - 2
+    change f by -2
 </code></pre>
-<div class="qa"><p><strong>How many layers does the pyramid have? List the sizes from bottom to top.</strong></p>
+<div class="qa"><p><strong>List the side length of each layer from bottom to top. Looking from the side, what shape do the stacked squares make?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code>place on move ON
+move forward by 4
+place on move OFF
+move forward by 4
+</code></pre>
+<div class="qa"><p><strong>Where do the blocks end up? Why does turning <code>place on move</code> OFF matter when the agent moves up to start the next layer?</strong></p>
 <div class="write-space"></div></div>
 
 <h2>2 · Spot the Bug 🐛</h2>
 <p>Each block of code below was meant to do something, but it is broken. Read what the code is <strong>supposed</strong> to do, then rewrite it so it works. After that, explain why the original was wrong and why your fix works.</p>
-<p><strong>Bug A</strong> — The agent is supposed to build a pyramid where each layer is <strong>2 blocks smaller</strong> than the one below.</p>
-<pre><code>set size to 9
-while size &gt; 0:
-    [build one size × size square layer]
-    move up by 1
-    set size to size - 1
+<p><strong>Bug A</strong> — The agent is supposed to draw a closed <strong>square</strong> outline.</p>
+<pre><code>set f to 6
+place on move ON
+repeat 4 times:
+    move forward by f
 </code></pre>
 <div class="qa"><p><strong>Write the fixed code:</strong></p>
 <div class="write-space"></div></div>
@@ -149,11 +150,12 @@ while size &gt; 0:
 <div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
 <div class="write-space"></div></div>
 
-<p><strong>Bug B</strong> — Each new layer must sit <strong>on top</strong> of the one below.</p>
-<pre><code>set size to 9
-while size &gt; 0:
-    [build one size × size square layer]
-    set size to size - 2
+<p><strong>Bug B</strong> — Each new layer must be <strong>2 blocks smaller</strong> than the one below, so the tower narrows into a pyramid.</p>
+<pre><code>set f to 8
+repeat 4 times:
+    [draw one f × f square]
+    move up by 1
+    change f by 2
 </code></pre>
 <div class="qa"><p><strong>Write the fixed code:</strong></p>
 <div class="write-space"></div></div>
@@ -161,12 +163,11 @@ while size &gt; 0:
 <div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
 <div class="write-space"></div></div>
 
-<p><strong>Bug C</strong> — The agent is supposed to <strong>stop</strong> building once the layer is gone (size 0 or smaller).</p>
-<pre><code>set size to 9
-while size &gt; -10:
-    [build one size × size square layer]
-    move up by 1
-    set size to size - 2
+<p><strong>Bug C</strong> — Each square must sit one block <strong>higher</strong> than the last.</p>
+<pre><code>set f to 8
+repeat 4 times:
+    [draw one f × f square]
+    change f by -2
 </code></pre>
 <div class="qa"><p><strong>Write the fixed code:</strong></p>
 <div class="write-space"></div></div>
@@ -175,26 +176,26 @@ while size &gt; -10:
 <div class="write-space"></div></div>
 
 <h2>3 · Tell Me What You Built 📸</h2>
-<p>Now switch to your homework world. Build a pyramid <strong>starting at size 7</strong> (so the layers go 7 → 5 → 3 → 1). Then try once more with a <strong>different material</strong> — sandstone, gold, or your choice. When you finish, come back here.</p>
+<p>Now switch to your homework world. Run your <code>pyra</code> command to build a pyramid. Then change the <strong>starting value of <code>f</code></strong> (try a smaller number) and build a shorter one. If the agent ends up facing the wrong way or stuck, use your helper commands to reset it — <code>1</code> turns it left, <code>r</code> turns it right, and <code>r1</code> teleports it back to you.</p>
 <p>Send a photo or video of your pyramid, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.</p>
 <div class="qa"><blockquote>
 <p>First, I …</p>
-<p>The bottom layer is … blocks long.</p>
-<p>Each new layer gets smaller by … because …</p>
-<p>The pyramid has … layers in total.</p>
+<p>The bottom square has sides … blocks long.</p>
+<p>Each new layer shrinks by … because …</p>
+<p><code>place on move</code> matters because …</p>
 <p>The hardest part was …</p>
 <p>If I had more time, I would …</p>
 </blockquote>
 <div class="write-space tall" style="min-height: 340px"></div></div>
 
 <h2>4 · Record Your Walkthrough 🎥</h2>
-<p>Now take a video on your phone (or a parent's phone) while you walk the camera around your pyramid. Talk through it like you are teaching someone who has never seen it. Try to use these words: <strong>pyramid</strong>, <strong>layer</strong>, <strong>size</strong>, <strong>shrink</strong>, <strong>stack</strong>.</p>
+<p>Now take a video on your phone (or a parent's phone) while you walk the camera around your pyramid. Talk through it like you are teaching someone who has never seen it. Try to use these words: <strong>square</strong>, <strong>side</strong>, <strong>layer</strong>, <strong>shrink</strong>, <strong>place on move</strong>, <strong>variable f</strong>.</p>
 <blockquote>
 <ol>
 <li>Walk around the pyramid and show all 4 sides.</li>
-<li>Read your <code>while</code> loop out loud and say what each part does.</li>
+<li>Read your <code>repeat 4 times</code> loop out loud and say how it draws one square.</li>
+<li>Say what <code>change f by -2</code> does to each layer.</li>
 <li>Show one bug you hit and how you fixed it.</li>
-<li>Say how many layers your pyramid has and how the size changes each time.</li>
 </ol>
 </blockquote>
 <div class="qa"><p><strong>Write what you will say in your video.</strong> Use the space below to plan it before you record — you can read from it while filming.</p>
