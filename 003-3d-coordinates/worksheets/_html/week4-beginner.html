@@ -103,78 +103,94 @@ footer b { color: #ff7849; }
 <body>
 <div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
 <h1>🧊 M003 Week 4 — English Worksheet (Beginner)</h1>
-<p><strong>Topic:</strong> The Ground Plane (x, z) · <strong>Course:</strong> 3D Coordinates · <strong>Level:</strong> Beginner · <strong>Time:</strong> about 30 minutes</p>
-<p>For three weeks you drew standing up on a <strong>wall</strong> with (x, y). This week you look <strong>down</strong> at the <strong>floor</strong>. On the floor the two numbers are <strong>(x, z)</strong>: x is still how far <strong>across</strong>, and the new number <strong>z</strong> is how far <strong>forward</strong>.</p>
+<p><strong>Topic:</strong> Pixel Art 2 — Cat &amp; Tree (x, y) · <strong>Course:</strong> 3D Coordinates · <strong>Level:</strong> Beginner · <strong>Time:</strong> about 30 minutes</p>
+<p>This week you copy <strong>two more pictures</strong> — a <strong>cat</strong> and a <strong>tree</strong>. Every block sits at a spot named by <strong>two numbers — (x, y)</strong>. x is how far <strong>across</strong>, y is how far <strong>up</strong>. You read the picture and place each block at its (x, y).</p>
+<p><strong>First, build your canvas.</strong> Run this to make a blank <strong>15 × 15</strong> wall, then put a <strong>red block at your feet</strong> as your <strong>home spot</strong>:</p>
+<div style="display:flex; gap:14px; align-items:flex-start; margin:10px 0; page-break-inside:avoid; break-inside:avoid"><div style="flex:1; min-width:0"><p style="margin:0 0 4px; font-weight:700">🧩 Blocks</p><img src="../assets/week3-canvas-blocks.png" alt="MakeCode blocks: on chat command run, fill with white concrete from ~1 ~1 ~0 to ~15 ~15 ~0, replace" style="width:100%; max-width:240px; border-radius:8px; display:block"></div><div style="flex:1; min-width:0"><p style="margin:0 0 4px; font-weight:700">🐍 Python</p><pre style="margin:0; white-space:pre; font-size:12px">def on_run():
+    blocks.fill(WHITE_CONCRETE,
+        pos(1, 1, 0),
+        pos(15, 15, 0),
+        FillOperation.REPLACE)
+player.on_chat("run", on_run)</pre></div></div>
+
+<blockquote>
+<p>🔴 <strong>Stand on the red block every time you run.</strong> If you move, the picture moves too and the blocks land in the wrong place. Same spot every time = a clean picture.</p>
+</blockquote>
 <h2>1 · Predict 🔮</h2>
 <p>Read the steps. Before you imagine it happening, circle or write your answer.</p>
-<pre><code>place gold block at (3, 0)
-place gold block at (3, 5)
+<pre><code>place brown block at (8, 1)
+place brown block at (8, 2)
+place brown block at (8, 3)
 </code></pre>
-<p><strong>On the floor these are (x, z). Both have the same x. Do they land in the same spot? Circle one:</strong> yes · no</p>
-<div class="qa"><p><strong>Why?</strong></p>
+<p><strong>Do these blocks make a line going up? Circle one:</strong> across · up</p>
+<div class="qa"><p><strong>Which number stays the same — x or y? (This is the tree trunk.)</strong></p>
 <div class="write-space short"></div></div>
 
-<pre><code>place red block at (0, 0)
+<pre><code>place black block at (3, 15)
+place black block at (4, 15)
 </code></pre>
-<div class="qa"><p><strong>Counting starts at 0. Is (0, 0) the corner where the floor begins? Circle one:</strong> yes · no</p>
+<div class="qa"><p><strong>These share y = 15 and x grows. Do they go across or up? Circle one:</strong> across · up</p>
 <div class="write-space short"></div></div>
 
 <h2>2 · Find the Difference 🐛</h2>
-<p>Each pair shows clean steps first, then a broken version of the same idea. Circle what's different and write one short sentence about the bug.</p>
-<p><strong>Pair A</strong> — The floor block should land at <strong>(2, 5)</strong> — 2 across on x, 5 forward on z.</p>
-<pre><code># clean
-place gold block at (2, 5)
+<p>Each pair shows the <strong>correct</strong> line first, then a <strong>broken</strong> one. Circle what's different and write one short sentence about the bug.</p>
+<p><strong>Pair A</strong> — The tree trunk should grow <strong>up</strong> at x = 8: (8, 1), (8, 2), (8, 3).</p>
+<pre><code># correct
+place brown block at (8, 1)
+place brown block at (8, 2)
+place brown block at (8, 3)
 </code></pre>
-<pre><code># buggy
-place gold block at (5, 2)
+<pre><code># broken
+place brown block at (8, 1)
+place brown block at (8, 1)
+place brown block at (8, 1)
 </code></pre>
-<div class="qa"><p><strong>What is wrong? Which two numbers got mixed up?</strong></p>
+<div class="qa"><p><strong>What is wrong? Where do all three blocks land?</strong></p>
 <div class="write-space short"></div></div>
 
-<p><strong>Pair B</strong> — The path should go <strong>forward</strong>, so the <strong>z</strong> number must grow.</p>
-<pre><code># clean
-set z to 0
-repeat 4 times:
-    place block at (3, z)
-    add 1 to z
+<p><strong>Pair B</strong> — The trunk should grow <strong>up</strong> at x = 8.</p>
+<pre><code># correct
+place brown block at (8, 2)
+place brown block at (8, 3)
 </code></pre>
-<pre><code># buggy
-set x to 0
-repeat 4 times:
-    place block at (x, 0)
-    add 1 to x
+<pre><code># broken
+place brown block at (2, 8)
+place brown block at (3, 8)
 </code></pre>
-<div class="qa"><p><strong>What is wrong? Which way does the buggy path go — forward or across?</strong></p>
+<div class="qa"><p><strong>What is wrong? Which two numbers got swapped?</strong></p>
 <div class="write-space short"></div></div>
 
 <h2>3 · Fill the Gap ✏️</h2>
-<p>The path should go <strong>straight forward</strong> at x = 3. The <strong>z</strong> number must grow each time. One word is missing. Fill it in using the word bank.</p>
-<pre><code>set z to 0
-repeat 4 times:
-    place block at (3, z)
-    add 1 to ____
+<p>To grow the trunk <strong>up</strong>, the <strong>second</strong> number (y) has to grow. Fill in the missing numbers so the trunk goes up.</p>
+<pre><code>place brown block at (8, 1)
+place brown block at (8, __)
+place brown block at (8, __)
 </code></pre>
-<p><strong>Word bank:</strong> <code>z</code> · <code>x</code> · <code>block</code></p>
-<div class="qa"><p><strong>Write the missing word:</strong></p>
+<p><strong>Word bank for the blanks:</strong> <code>2</code> · <code>3</code></p>
+<div class="qa"><p><strong>Write the two missing numbers:</strong></p>
 <div class="write-space short"></div></div>
 
 <h2>4 · Tell Me What You Built 📸</h2>
-<p>Now switch to your homework world. On the floor, build a <strong>path</strong> going forward from (0, 0), then add a second path going <strong>across</strong> so they make a plus or a corner. When you finish, come back here.</p>
-<p>Send a photo or video of your floor, then explain what you did. Use these sentence starters — write 2 or 3 sentences.</p>
+<p>Stand on your <strong>home spot</strong> (the red block).</p>
+<p><strong>Warm up first.</strong> Copy this small tree onto your wall. Read each square's (x, y) and place that color there.</p>
+<div style="page-break-inside:avoid;break-inside:avoid;margin:12px 0"><p style="font-weight:700;margin:0 0 6px">🌱 Small tree</p><table style="border-collapse:collapse;margin:4px 0"><tr><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:32px"></th><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:32px">1</th><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:32px">2</th><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:32px">3</th><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:32px">4</th><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:32px">5</th></tr><tr><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:32px">5</th><td style="width:32px;height:32px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:32px;height:32px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:32px;height:32px;padding:0;background:#4f8a2e;border:1px solid #0000002a"></td><td style="width:32px;height:32px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:32px;height:32px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td></tr><tr><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:32px">4</th><td style="width:32px;height:32px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:32px;height:32px;padding:0;background:#4f8a2e;border:1px solid #0000002a"></td><td style="width:32px;height:32px;padding:0;background:#4f8a2e;border:1px solid #0000002a"></td><td style="width:32px;height:32px;padding:0;background:#4f8a2e;border:1px solid #0000002a"></td><td style="width:32px;height:32px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td></tr><tr><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:32px">3</th><td style="width:32px;height:32px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:32px;height:32px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:32px;height:32px;padding:0;background:#6b4423;border:1px solid #0000002a"></td><td style="width:32px;height:32px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:32px;height:32px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td></tr><tr><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:32px">2</th><td style="width:32px;height:32px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:32px;height:32px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:32px;height:32px;padding:0;background:#6b4423;border:1px solid #0000002a"></td><td style="width:32px;height:32px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:32px;height:32px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td></tr><tr><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:32px">1</th><td style="width:32px;height:32px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:32px;height:32px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:32px;height:32px;padding:0;background:#6b4423;border:1px solid #0000002a"></td><td style="width:32px;height:32px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:32px;height:32px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td></tr></table></div>
+
+<p><strong>Now pick one big picture — the 🐈 cat or the 🌳 tree from the main worksheet grid — and copy it the same way.</strong> Read each colored square and place that color at its (x, y).</p>
+<p>When you finish, send a photo of your picture, then explain what you did. Use these sentence starters — write 2 or 3 sentences.</p>
 <div class="qa"><blockquote>
-<p>My forward path grew the number …</p>
-<p>My across path grew the number …</p>
-<p>The two paths meet at …</p>
+<p>I built the …</p>
+<p>The lowest block in my picture is at (x = …, y = …).</p>
+<p>One tricky moment was when …</p>
 </blockquote>
 <div class="write-space tall" style="min-height: 240px"></div></div>
 
 <h2>5 · Record Your Walkthrough 🎥</h2>
-<p>Take a video on your phone (or a parent's phone) while you look down at your floor. Talk like you are teaching a friend. Try to use these words: <strong>floor</strong>, <strong>x</strong>, <strong>z</strong>, <strong>forward</strong>, <strong>across</strong>.</p>
+<p>Take a video on your phone (or a parent's phone) while you show your picture on the wall. Talk like you are teaching a friend. Try to use these words: <strong>x</strong>, <strong>y</strong>, <strong>across</strong>, <strong>up</strong>, <strong>home spot</strong>.</p>
 <blockquote>
 <ol>
-<li>Show the block at (0, 0) where the floor begins.</li>
-<li>Walk along your forward path and say which number is growing.</li>
-<li>Say in your own words what <strong>x</strong> and <strong>z</strong> mean on the floor.</li>
+<li>Show your home spot (the red block) and say why you stand on it.</li>
+<li>Show your finished picture.</li>
+<li>Point at one block and read its coordinate: "this one is at x …, y …".</li>
 </ol>
 </blockquote>
 <div class="qa"><p><strong>Write what you will say in your video.</strong> You can read from it while filming.</p>
