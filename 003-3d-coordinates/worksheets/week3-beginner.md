@@ -2,7 +2,18 @@
 
 **Topic:** Pixel Art on the Wall (x, y) · **Course:** 3D Coordinates · **Level:** Beginner · **Time:** about 30 minutes
 
-This week you draw **pictures with blocks** on the wall. A picture is made of **rows**. A loop inside a loop draws the picture row by row: the inner loop grows **x** across, then the outer loop grows **y** up to the next row.
+This week you **copy a picture made of blocks** onto your wall. Every block sits at a spot named by **two numbers — (x, y)**. x is how far **across**, y is how far **up**. You read the picture and place each block at its (x, y).
+
+**First, build your canvas.** Run this to make a blank **15 × 15** wall, then put a **red block at your feet** as your **home spot**:
+
+<div style="display:flex; gap:14px; align-items:flex-start; margin:10px 0; page-break-inside:avoid; break-inside:avoid"><div style="flex:1; min-width:0"><p style="margin:0 0 4px; font-weight:700">🧩 Blocks</p><img src="../assets/week3-canvas-blocks.png" alt="MakeCode blocks: on chat command run, fill with white concrete from ~1 ~1 ~0 to ~15 ~15 ~0, replace" style="width:100%; max-width:240px; border-radius:8px; display:block"></div><div style="flex:1; min-width:0"><p style="margin:0 0 4px; font-weight:700">🐍 Python</p><pre style="margin:0; white-space:pre; font-size:12px">def on_run():
+    blocks.fill(WHITE_CONCRETE,
+        pos(1, 1, 0),
+        pos(15, 15, 0),
+        FillOperation.REPLACE)
+player.on_chat("run", on_run)</pre></div></div>
+
+> 🔴 **Stand on the red block every time you run.** If you move, the picture moves too and the blocks land in the wrong place. Same spot every time = a clean picture.
 
 ---
 
@@ -11,31 +22,23 @@ This week you draw **pictures with blocks** on the wall. A picture is made of **
 Read the steps. Before you imagine it happening, circle or write your answer.
 
 ```
-set y to 0
-repeat 2 times:
-    set x to 0
-    repeat 3 times:
-        place red block at (x, y)
-        add 1 to x
-    add 1 to y
+place red block at (6, 1)
+place red block at (7, 1)
+place red block at (8, 1)
 ```
 
-**Does this picture have 2 rows, one above the other? Circle one:** yes · no
+**Do these blocks make a line going across? Circle one:** across · up
 
-**Why?**
+**Which number stays the same — x or y?**
 
 <div class="write-space short"></div>
 
 ```
-set y to 0
-repeat 2 times:
-    set x to 0
-    repeat 3 times:
-        place red block at (x, y)
-        add 1 to x
+place green block at (8, 13)
+place green block at (8, 14)
 ```
 
-**This time y never grows. Do the two rows land on top of each other? Circle one:** yes · no
+**These share x = 8 and y grows. Do they go across or up? Circle one:** across · up
 
 <div class="write-space short"></div>
 
@@ -43,52 +46,43 @@ repeat 2 times:
 
 ## 2 · Find the Difference 🐛
 
-Each pair shows clean steps first, then a broken version of the same idea. Circle what's different and write one short sentence about the bug.
+Each pair shows the **correct** line first, then a **broken** one. Circle what's different and write one short sentence about the bug.
 
-**Pair A** — After each row, the picture should step **up** to the next y.
+**Pair A** — A line should grow **across** at the bottom: (5, 1), (6, 1), (7, 1).
 
 ```
-# clean
-set y to 0
-repeat 3 times:
-    set x to 0
-    repeat 4 times:
-        place blue block at (x, y)
-        add 1 to x
-    add 1 to y
+# correct
+place red block at (5, 1)
+place red block at (6, 1)
+place red block at (7, 1)
 ```
 
 ```
-# buggy
-set y to 0
-repeat 3 times:
-    set x to 0
-    repeat 4 times:
-        place blue block at (x, y)
-        add 1 to x
+# broken
+place red block at (5, 1)
+place red block at (5, 1)
+place red block at (5, 1)
 ```
 
-**What is wrong? Where do all the rows land?**
+**What is wrong? Where do all three blocks land?**
 
 <div class="write-space short"></div>
 
-**Pair B** — The bottom row should look like **red, red, blue**.
+**Pair B** — The stem should grow **up** at x = 8.
 
 ```
-# clean
-place red block at (0, 0)
-place red block at (1, 0)
-place blue block at (2, 0)
+# correct
+place brown block at (8, 13)
+place brown block at (8, 14)
 ```
 
 ```
-# buggy
-place blue block at (0, 0)
-place red block at (1, 0)
-place red block at (2, 0)
+# broken
+place brown block at (13, 8)
+place brown block at (14, 8)
 ```
 
-**What is wrong?**
+**What is wrong? Which two numbers got swapped?**
 
 <div class="write-space short"></div>
 
@@ -96,21 +90,17 @@ place red block at (2, 0)
 
 ## 3 · Fill the Gap ✏️
 
-The inner loop should make each row grow **across**. One word is missing. Fill it in using the word bank.
+To move **across** a row, the **first** number (x) has to grow. Fill in the missing numbers so this line goes across the bottom.
 
 ```
-set y to 0
-repeat 3 times:
-    set x to 0
-    repeat 4 times:
-        place blue block at (x, y)
-        add 1 to ____
-    add 1 to y
+place yellow block at (6, 1)
+place yellow block at (__, 1)
+place yellow block at (__, 1)
 ```
 
-**Word bank:** `x` · `y` · `block`
+**Word bank for the blanks:** `7` · `8`
 
-**Write the missing word:**
+**Write the two missing numbers:**
 
 <div class="write-space short"></div>
 
@@ -118,13 +108,20 @@ repeat 3 times:
 
 ## 4 · Tell Me What You Built 📸
 
-Now switch to your homework world. Draw a small **pixel art picture** on the wall — a heart, a flower, or a letter — using rows of colored blocks. When you finish, come back here.
+Stand on your **home spot** (the red block).
 
-Send a photo or video of your picture, then explain what you did. Use these sentence starters — write 2 or 3 sentences.
+**Warm up first.** Copy this small green cross onto your wall. Read each green square's (x, y) and place a green block there.
 
-> My picture is a …
+<div style="page-break-inside:avoid;break-inside:avoid;margin:16px 0"><p style="font-weight:700;margin:0 0 6px">🟩 Green cross</p><table style="border-collapse:collapse;margin:4px 0"><tr><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:32px"></th><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:32px">1</th><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:32px">2</th><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:32px">3</th><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:32px">4</th><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:32px">5</th></tr><tr><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:32px">5</th><td style="width:32px;height:32px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:32px;height:32px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:32px;height:32px;padding:0;background:#5a8f2b;border:1px solid #0000002a"></td><td style="width:32px;height:32px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:32px;height:32px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td></tr><tr><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:32px">4</th><td style="width:32px;height:32px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:32px;height:32px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:32px;height:32px;padding:0;background:#5a8f2b;border:1px solid #0000002a"></td><td style="width:32px;height:32px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:32px;height:32px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td></tr><tr><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:32px">3</th><td style="width:32px;height:32px;padding:0;background:#5a8f2b;border:1px solid #0000002a"></td><td style="width:32px;height:32px;padding:0;background:#5a8f2b;border:1px solid #0000002a"></td><td style="width:32px;height:32px;padding:0;background:#5a8f2b;border:1px solid #0000002a"></td><td style="width:32px;height:32px;padding:0;background:#5a8f2b;border:1px solid #0000002a"></td><td style="width:32px;height:32px;padding:0;background:#5a8f2b;border:1px solid #0000002a"></td></tr><tr><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:32px">2</th><td style="width:32px;height:32px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:32px;height:32px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:32px;height:32px;padding:0;background:#5a8f2b;border:1px solid #0000002a"></td><td style="width:32px;height:32px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:32px;height:32px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td></tr><tr><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:32px">1</th><td style="width:32px;height:32px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:32px;height:32px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:32px;height:32px;padding:0;background:#5a8f2b;border:1px solid #0000002a"></td><td style="width:32px;height:32px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:32px;height:32px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td></tr></table></div>
+
+**Now pick one big picture — the 🍍 pineapple or the 🍎 apple from the main worksheet grid — and copy it the same way.** Read each colored square and place that color at its (x, y).
+
+
+When you finish, send a photo of your picture, then explain what you did. Use these sentence starters — write 2 or 3 sentences.
+
+> I built the …
 >
-> The colors in the bottom row are …
+> The lowest block in my picture is at (x = …, y = …).
 >
 > One tricky moment was when …
 
@@ -134,11 +131,11 @@ Send a photo or video of your picture, then explain what you did. Use these sent
 
 ## 5 · Record Your Walkthrough 🎥
 
-Take a video on your phone (or a parent's phone) while you show your picture on the wall. Talk like you are teaching a friend. Try to use these words: **row**, **loop**, **pattern**, **color**.
+Take a video on your phone (or a parent's phone) while you show your picture on the wall. Talk like you are teaching a friend. Try to use these words: **x**, **y**, **across**, **up**, **home spot**.
 
-> 1. Show your finished picture.
-> 2. Point at the bottom row and say the colors in order.
-> 3. Say in your own words how the rows stack up to make a picture.
+> 1. Show your home spot (the red block) and say why you stand on it.
+> 2. Show your finished picture.
+> 3. Point at one block and read its coordinate: "this one is at x …, y …".
 
 **Write what you will say in your video.** You can read from it while filming.
 
