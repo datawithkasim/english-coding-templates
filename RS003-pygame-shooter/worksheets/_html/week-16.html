@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>🏆 RS003 Week 16 — English Worksheet</title>
+<style>
+@page { size: A4; margin: 18mm 16mm 22mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-family: "Inter", "Segoe UI", system-ui, sans-serif; color: #1a1a2e; }
+body { font-size: 15px; line-height: 1.55; }
+
+.cover { border-bottom: 3px solid #ff7849; padding-bottom: 14px; margin-bottom: 20px; }
+.brand { font-size: 14px; font-weight: 800; color: #ff7849; letter-spacing: .06em; }
+h1 { font-size: 28px; color: #6b4ee6; margin: 8px 0 6px; line-height: 1.25; }
+h2 { font-size: 19px; color: #6b4ee6; margin: 22px 0 12px; padding-top: 10px; border-top: 1px solid #eee; page-break-before: always; }
+section.first h2, h2:first-of-type { border-top: none; padding-top: 0; page-break-before: avoid; }
+h3, h4 { font-size: 15px; margin: 14px 0 8px; color: #1a1a2e; }
+p { margin: 8px 0; }
+strong { color: #1a1a2e; }
+em { color: #555; }
+
+ul, ol { margin: 8px 0 8px 24px; }
+li { margin: 3px 0; }
+
+pre {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 13.5px;
+  background: #1e1e2e;
+  color: #b9f6ca;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 10px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  page-break-inside: avoid;
+  line-height: 1.5;
+}
+pre code { background: transparent; padding: 0; color: inherit; }
+code {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  background: #fff1e8;
+  color: #ff7849;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+blockquote {
+  margin: 10px 0;
+  padding: 10px 16px;
+  background: #fff6ef;
+  border-left: 3px solid #ff7849;
+  border-radius: 0 6px 6px 0;
+  color: #6a3a1c;
+}
+
+.write-space {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #ffffff 0,
+    #ffffff 27px,
+    #d4d4d4 27px,
+    #d4d4d4 28px
+  );
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  min-height: 114px;
+  margin: 10px 0 20px;
+  page-break-inside: avoid;
+}
+.write-space.short { min-height: 86px; }
+.write-space.tall { min-height: 170px; }
+
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
+hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
+
+.meta { color: #666; font-size: 13px; margin: 0 0 14px; }
+.answer-lines {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 14px 16px;
+  background: #fafafa;
+  white-space: pre;
+  line-height: 2.2;
+}
+
+footer {
+  position: fixed;
+  bottom: 10mm; left: 16mm; right: 16mm;
+  text-align: center;
+  font-size: 10px;
+  color: #aaa;
+}
+footer b { color: #ff7849; }
+</style>
+</head>
+<body>
+<div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
+<h1>🏆 RS003 Week 16 — English Worksheet</h1>
+<p><strong>Topic:</strong> Polish — Missiles, Sprites, High Score, and Show &amp; Tell · <strong>Course:</strong> Pygame Space Shooter · <strong>Time:</strong> about 45 minutes</p>
+<p>This is the final week. You add the <strong>polish</strong> that makes a game feel finished: a second weapon (<strong>missiles</strong> with the M key) that hits harder, a <strong>high score</strong> that remembers your best, a restart key, and best of all you swap your drawn shapes for real <strong>PNG sprites</strong> loaded from image files. Then you present your finished game.</p>
+<blockquote>
+<p>🧠 Words to know: <strong>missile</strong>, <strong>sprite</strong>, <strong>image.load</strong>, <strong>high score</strong>, <strong>restart</strong></p>
+</blockquote>
+<h2>1 · Predict 🔮</h2>
+<p>Read each piece of code. Before you run it, write what you think will happen.</p>
+<pre><code class="language-python">ship_img = pygame.image.load(&quot;ship.png&quot;).convert_alpha()
+enemy_img = pygame.image.load(&quot;enemy.png&quot;).convert_alpha()
+screen.blit(ship_img, (ship_x - ship_img.get_width() // 2, ship_y))
+</code></pre>
+<div class="qa"><p><strong>These lines load picture files and put them on screen. What replaces your drawn rectangles and triangles?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-python">if event.key == pygame.K_m:
+    missiles.append([ship_x, ship_y - 20])
+</code></pre>
+<div class="qa"><p><strong>Pressing M fires a missile instead of a bullet. Why might a game want a second, stronger weapon?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-python">high_score = 0
+if event.key == pygame.K_r and game_over:
+    if score &gt; high_score:
+        high_score = score
+    score = 0
+    game_over = False
+</code></pre>
+<div class="qa"><p><strong>Pressing R restarts the game. When does the high score update?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>2 · Run It 🏃</h2>
+<h3>🎯 Type the example, run it, and fire both weapons</h3>
+<blockquote>
+<p>💡 For the sprite version below you need two small picture files saved next to your code: <code>ship.png</code> and <code>enemy.png</code>. If you finished the <strong>AI Art</strong> extension, use those. No images yet? Use the drawn shapes from week 15 and add <code>ship.png</code>/<code>enemy.png</code> once you have them.</p>
+</blockquote>
+<pre><code class="language-python">import pygame, random
+pygame.init()
+WIDTH, HEIGHT = 800, 600
+screen = pygame.display.set_mode((WIDTH, HEIGHT))
+pygame.display.set_caption(&quot;Space Shooter&quot;)
+font = pygame.font.SysFont(None, 40)
+big_font = pygame.font.SysFont(None, 72)
+clock = pygame.time.Clock()
+
+SPACE = (10, 12, 40); WHITE = (255, 255, 255)
+RED = (230, 60, 60); YELLOW = (255, 210, 40); GREY = (120, 120, 140)
+
+ship_img = pygame.image.load(&quot;ship.png&quot;).convert_alpha()
+enemy_img = pygame.image.load(&quot;enemy.png&quot;).convert_alpha()
+
+ship_x, ship_y = WIDTH // 2, HEIGHT - 100
+SPEED = 5
+bullets = []          # each: [x, y]
+missiles = []         # each: [x, y]
+enemies = []          # each: {&quot;x&quot;,&quot;y&quot;,&quot;type&quot;,&quot;points&quot;}
+effects = []          # each: [x, y, timer]
+score = 0
+high_score = 0
+spawn_timer = 0
+game_over = False
+start_time = pygame.time.get_ticks()
+GAME_TIME = 30000
+
+running = True
+while running:
+    elapsed = pygame.time.get_ticks() - start_time
+    time_left = max(0, (GAME_TIME - elapsed) // 1000)
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_SPACE and not game_over:
+                bullets.append([ship_x, ship_y - 20])
+            if event.key == pygame.K_m and not game_over:
+                missiles.append([ship_x, ship_y - 20])
+            if event.key == pygame.K_r and game_over:
+                if score &gt; high_score:
+                    high_score = score
+                score = 0
+                enemies.clear()
+                start_time = pygame.time.get_ticks()
+                game_over = False
+
+    if time_left == 0:
+        game_over = True
+
+    if not game_over:
+        keys = pygame.key.get_pressed()
+        if keys[pygame.K_LEFT]:  ship_x -= SPEED
+        if keys[pygame.K_RIGHT]: ship_x += SPEED
+        if keys[pygame.K_UP]:    ship_y -= SPEED
+        if keys[pygame.K_DOWN]:  ship_y += SPEED
+        ship_x = max(20, min(WIDTH - 20, ship_x))
+        ship_y = max(20, min(HEIGHT - 60, ship_y))
+
+        spawn_timer += 1
+        if spawn_timer &gt;= 40:
+            spawn_timer = 0
+            kind = random.choice([&quot;alien&quot;, &quot;meteor&quot;])
+            points = 1 if kind == &quot;alien&quot; else 3
+            enemies.append({&quot;x&quot;: random.randint(40, WIDTH - 40), &quot;y&quot;: -20, &quot;type&quot;: kind, &quot;points&quot;: points})
+
+        for e in enemies: e[&quot;y&quot;] += 2
+        for b in bullets: b[1] -= 8
+        for mi in missiles: mi[1] -= 4
+
+        for e in enemies[:]:
+            for b in bullets[:]:
+                if abs(b[0] - e[&quot;x&quot;]) &lt; 22 and abs(b[1] - e[&quot;y&quot;]) &lt; 22:
+                    score += e[&quot;points&quot;]
+                    effects.append([e[&quot;x&quot;], e[&quot;y&quot;], 8])
+                    if e in enemies: enemies.remove(e)
+                    if b in bullets: bullets.remove(b)
+            for mi in missiles[:]:
+                if abs(mi[0] - e[&quot;x&quot;]) &lt; 30 and abs(mi[1] - e[&quot;y&quot;]) &lt; 30:
+                    score += e[&quot;points&quot;] * 2
+                    effects.append([e[&quot;x&quot;], e[&quot;y&quot;], 12])
+                    if e in enemies: enemies.remove(e)
+                    if mi in missiles: missiles.remove(mi)
+
+        bullets = [b for b in bullets if b[1] &gt; -10]
+        missiles = [m for m in missiles if m[1] &gt; -10]
+        enemies = [e for e in enemies if e[&quot;y&quot;] &lt; HEIGHT + 20]
+
+    screen.fill(SPACE)
+    for b in bullets:   pygame.draw.rect(screen, YELLOW, (b[0] - 2, b[1] - 8, 4, 12))
+    for mi in missiles: pygame.draw.rect(screen, WHITE, (mi[0] - 4, mi[1] - 12, 8, 18))
+    for e in enemies:   screen.blit(enemy_img, (e[&quot;x&quot;] - enemy_img.get_width() // 2, e[&quot;y&quot;] - enemy_img.get_height() // 2))
+    for fx in effects:  pygame.draw.circle(screen, YELLOW, (fx[0], fx[1]), fx[2])
+    effects = [[x, y, t - 1] for x, y, t in effects if t &gt; 1]
+    screen.blit(ship_img, (ship_x - ship_img.get_width() // 2, ship_y))
+    screen.blit(font.render(f&quot;Score: {score}   Time: {time_left}   Best: {high_score}&quot;, True, WHITE), (10, 10))
+
+    if game_over:
+        screen.blit(big_font.render(&quot;GAME OVER&quot;, True, RED), (WIDTH // 2 - 160, HEIGHT // 2 - 60))
+        screen.blit(font.render(f&quot;Final: {score}    Press R to restart&quot;, True, WHITE), (WIDTH // 2 - 200, HEIGHT // 2 + 20))
+
+    pygame.display.flip()
+    clock.tick(60)
+
+pygame.quit()
+</code></pre>
+<div class="qa"><p><strong>Play one round. What is different about firing M instead of SPACE, what do the sprites look like, and what does R do?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>3 · Spot the Bug 🐛</h2>
+<p>Each block below was meant to do something but is broken. Fix it, then explain why the original was wrong.</p>
+<p><strong>Bug A</strong> — The sprite is supposed to show your <code>ship.png</code> picture, but the program crashes saying it cannot find the file.</p>
+<pre><code class="language-python">ship_img = pygame.image.load(&quot;ship.png&quot;)
+</code></pre>
+<p><strong>Hint:</strong> the picture file must be saved in the <strong>same folder</strong> as your code, with the exact name. Also use <code>.convert_alpha()</code> so the see-through background stays see-through.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug B</strong> — The high score should remember your best across rounds, but it resets to 0 every restart.</p>
+<pre><code class="language-python">if event.key == pygame.K_r and game_over:
+    high_score = 0
+    score = 0
+    game_over = False
+</code></pre>
+<p><strong>Hint:</strong> before resetting, compare the score to the best so far.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug C</strong> — After the timer hits 0, the player should not be able to keep flying or firing, but the game keeps playing.</p>
+<pre><code class="language-python">keys = pygame.key.get_pressed()
+if keys[pygame.K_LEFT]:
+    ship_x -= SPEED
+</code></pre>
+<p><strong>Hint:</strong> movement should only run while the game is not over.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<h2>4 · Modify It 🔧</h2>
+<h3>🎯 Tune your two weapons</h3>
+<p>A missile is worth <code>e["points"] * 2</code> and travels slower. Change those numbers — make missiles faster, slower, or worth even more.</p>
+<div class="qa"><p><strong>Write what you changed about the bullet and the missile:</strong></p>
+<div class="write-space"></div></div>
+
+<h3>🎯 Add a difficulty or a title screen</h3>
+<p>Pick one polish idea: a start screen before the game, or Easy/Hard modes that change the spawn speed or the timer.</p>
+<div class="qa"><p><strong>Describe what you added and how it changes the game:</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Hint:</strong> a title screen is just another <code>game_state</code> — show text and wait for a key before starting the timer.</p>
+<h2>5 · Make It 🎤</h2>
+<h3>🎯 Finish your game and prepare your show &amp; tell</h3>
+<p>Finish your polished game with two weapons, PNG sprites, a high score, and restart. Then get ready to present it.</p>
+<p>Use these sentence starters for your presentation notes — write 4 to 6 sentences total.</p>
+<div class="qa"><blockquote>
+<p>My game is called …</p>
+<p>The function I am most proud of is … because …</p>
+<p>My favourite polish feature is …</p>
+<p>The hardest bug I solved was …</p>
+<p>I fixed it by …</p>
+<p>The next thing I would add is …</p>
+</blockquote>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<h2>6 · Record Your Final Video 🎥</h2>
+<p>Take a video of your finished game from start to game over to restart. Talk through it like you are presenting to the class. Try to use these words: <strong>missile</strong>, <strong>sprite</strong>, <strong>image.load</strong>, <strong>high score</strong>, <strong>restart</strong>.</p>
+<blockquote>
+<ol>
+<li>Play a full round, firing both bullets and missiles, and let the timer run out.</li>
+<li>Show the game-over screen and the high score.</li>
+<li>Press R and show it restart.</li>
+<li>Explain how you loaded your PNG sprites and one bug you fixed.</li>
+</ol>
+</blockquote>
+<div class="qa"><p><strong>Write what you will say in your video.</strong> Plan it here before you record — this is your show &amp; tell.</p>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your full-play video + your show &amp; tell notes to teacher on KakaoTalk.</p>
+</body>
+</html>

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>🔁 RS003 Week 11 — English Worksheet</title>
+<style>
+@page { size: A4; margin: 18mm 16mm 22mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-family: "Inter", "Segoe UI", system-ui, sans-serif; color: #1a1a2e; }
+body { font-size: 15px; line-height: 1.55; }
+
+.cover { border-bottom: 3px solid #ff7849; padding-bottom: 14px; margin-bottom: 20px; }
+.brand { font-size: 14px; font-weight: 800; color: #ff7849; letter-spacing: .06em; }
+h1 { font-size: 28px; color: #6b4ee6; margin: 8px 0 6px; line-height: 1.25; }
+h2 { font-size: 19px; color: #6b4ee6; margin: 22px 0 12px; padding-top: 10px; border-top: 1px solid #eee; page-break-before: always; }
+section.first h2, h2:first-of-type { border-top: none; padding-top: 0; page-break-before: avoid; }
+h3, h4 { font-size: 15px; margin: 14px 0 8px; color: #1a1a2e; }
+p { margin: 8px 0; }
+strong { color: #1a1a2e; }
+em { color: #555; }
+
+ul, ol { margin: 8px 0 8px 24px; }
+li { margin: 3px 0; }
+
+pre {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 13.5px;
+  background: #1e1e2e;
+  color: #b9f6ca;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 10px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  page-break-inside: avoid;
+  line-height: 1.5;
+}
+pre code { background: transparent; padding: 0; color: inherit; }
+code {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  background: #fff1e8;
+  color: #ff7849;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+blockquote {
+  margin: 10px 0;
+  padding: 10px 16px;
+  background: #fff6ef;
+  border-left: 3px solid #ff7849;
+  border-radius: 0 6px 6px 0;
+  color: #6a3a1c;
+}
+
+.write-space {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #ffffff 0,
+    #ffffff 27px,
+    #d4d4d4 27px,
+    #d4d4d4 28px
+  );
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  min-height: 114px;
+  margin: 10px 0 20px;
+  page-break-inside: avoid;
+}
+.write-space.short { min-height: 86px; }
+.write-space.tall { min-height: 170px; }
+
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
+hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
+
+.meta { color: #666; font-size: 13px; margin: 0 0 14px; }
+.answer-lines {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 14px 16px;
+  background: #fafafa;
+  white-space: pre;
+  line-height: 2.2;
+}
+
+footer {
+  position: fixed;
+  bottom: 10mm; left: 16mm; right: 16mm;
+  text-align: center;
+  font-size: 10px;
+  color: #aaa;
+}
+footer b { color: #ff7849; }
+</style>
+</head>
+<body>
+<div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
+<h1>🔁 RS003 Week 11 — English Worksheet</h1>
+<p><strong>Topic:</strong> Repeat with a For Loop · <strong>Course:</strong> Pygame Space Shooter · <strong>Time:</strong> about 45 minutes</p>
+<p>This week one short loop draws <strong>many things</strong>. A <code>for</code> loop with <code>range(N)</code> repeats N times, and by using the loop counter <code>i</code> you can spread a <strong>row of enemies</strong> across the top of the screen or scatter stars across the background. Your scene gets a lot richer with very little code.</p>
+<blockquote>
+<p>🧠 Words to know: <strong>for loop</strong>, <strong>range</strong>, <strong>counter (<code>i</code>)</strong>, <strong>pattern</strong>, <strong>spacing</strong></p>
+</blockquote>
+<h2>1 · Predict 🔮</h2>
+<p>Read each piece of code. Before you run it, write what you think will happen.</p>
+<pre><code class="language-python">for i in range(5):
+    x = 100 + (i * 150)
+    pygame.draw.rect(screen, RED, (x - 18, 60, 36, 36))
+</code></pre>
+<div class="qa"><p><strong>The loop runs 5 times. What are the X values for each enemy? <code>i</code> is 0, 1, 2, 3, 4.</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-python">for i in range(40):
+    x = i * 20 + 10
+    pygame.draw.circle(screen, WHITE, (x, 30), 2)
+</code></pre>
+<div class="qa"><p><strong>How many stars appear along the top? How far apart is each one?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-python">for i in range(5):
+    pygame.draw.rect(screen, RED, (100, 60, 36, 36))
+</code></pre>
+<div class="qa"><p><strong>This loop never uses <code>i</code> in the position. What goes wrong with the picture?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>2 · Run It 🏃</h2>
+<h3>🎯 Type the example, run it, and count the enemies</h3>
+<pre><code class="language-python">import pygame
+pygame.init()
+
+WIDTH, HEIGHT = 800, 600
+screen = pygame.display.set_mode((WIDTH, HEIGHT))
+
+SPACE = (10, 12, 40)
+WHITE = (255, 255, 255)
+RED = (230, 60, 60)
+
+screen.fill(SPACE)
+
+for i in range(40):
+    x = i * 20 + 10
+    pygame.draw.circle(screen, WHITE, (x, 30), 2)
+
+for i in range(5):
+    x = 100 + (i * 150)
+    pygame.draw.rect(screen, RED, (x - 18, 80, 36, 36))
+
+pygame.display.flip()
+pygame.time.wait(3000)
+pygame.quit()
+</code></pre>
+<div class="qa"><p><strong>How many enemies are in the row? How many stars along the top?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>3 · Spot the Bug 🐛</h2>
+<p>Each block below was meant to do something but is broken. Fix it, then explain why the original was wrong.</p>
+<p><strong>Bug A</strong> — This should draw 5 enemies spread across the top, but all 5 land on top of each other in one spot.</p>
+<pre><code class="language-python">for i in range(5):
+    x = 100
+    pygame.draw.rect(screen, RED, (x - 18, 80, 36, 36))
+</code></pre>
+<p><strong>Hint:</strong> <code>x</code> is the same every time. Use <code>i</code> to spread them out.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug B</strong> — This should draw 10 stars, but only one appears.</p>
+<pre><code class="language-python">i = 0
+x = i * 20 + 10
+pygame.draw.circle(screen, WHITE, (x, 30), 2)
+</code></pre>
+<p><strong>Hint:</strong> there is no loop at all — it only runs once.</p>
+<div class="qa"><p><strong>Write the fixed code using a for loop:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug C</strong> — The enemies are supposed to fit on screen, but some are drawn way off the right edge where you cannot see them.</p>
+<pre><code class="language-python">for i in range(20):
+    x = i * 200
+    pygame.draw.rect(screen, RED, (x - 18, 80, 36, 36))
+</code></pre>
+<p><strong>Hint:</strong> <code>i * 200</code> gets bigger than the screen width very fast. Use a smaller gap or fewer enemies.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>4 · Modify It 🔧</h2>
+<h3>🎯 Change how many and how far apart</h3>
+<p>Change <code>range(5)</code> to draw more enemies, and change the spacing number so they fit nicely.</p>
+<div class="qa"><p><strong>Write the range and spacing you chose:</strong></p>
+<div class="write-space"></div></div>
+
+<h3>🎯 Add the enemies and stars to your shooter</h3>
+<p>Open your ship program from an earlier week and add a star loop to the background and a row of enemies across the top.</p>
+<div class="qa"><p><strong>Describe where you put the loops in your game loop and what changed on screen:</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Hint:</strong> draw the background loops <strong>after</strong> <code>screen.fill(...)</code> but <strong>before</strong> the ship, so the ship sits in front.</p>
+<h2>5 · Make It 📸</h2>
+<h3>🎯 Fill your scene with a pattern</h3>
+<p>Build a scene that uses at least two <code>for</code> loops — for example a row of enemies across the top and stars in the background — added to your ship.</p>
+<p>Send a <strong>photo or video</strong> of your richer scene, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.</p>
+<div class="qa"><blockquote>
+<p>First, I used a for loop to draw …</p>
+<p>The counter <code>i</code> helped me spread them out by …</p>
+<p>I chose the spacing … so that …</p>
+<p>My second loop draws …</p>
+<p>One tricky moment was when …</p>
+<p>If I had more time, I would …</p>
+</blockquote>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<h2>6 · Record Your Walkthrough 🎥</h2>
+<p>Take a video of your patterned scene. Talk through it like you are teaching someone. Try to use these words: <strong>for loop</strong>, <strong>range</strong>, <strong>counter</strong>, <strong>pattern</strong>, <strong>spacing</strong>.</p>
+<blockquote>
+<ol>
+<li>Show your row of enemies and your stars.</li>
+<li>Read one for loop out loud and say how many times it runs.</li>
+<li>Explain how <code>i</code> makes each item land in a different spot.</li>
+<li>Change the count or spacing live and show the difference.</li>
+</ol>
+</blockquote>
+<div class="qa"><p><strong>Write what you will say in your video.</strong> Plan it here before you record.</p>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your photo or video to teacher on KakaoTalk.</p>
+</body>
+</html>
