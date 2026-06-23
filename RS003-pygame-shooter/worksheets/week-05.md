@@ -1,0 +1,221 @@
+# 🚀 RS003 Week 5 — English Worksheet
+
+**Topic:** Wrap the Ship in a Function · **Course:** Pygame Space Shooter · **Time:** about 45 minutes
+
+This week you wrap your whole spaceship in a **function** called `draw_ship`. Then you give the function a **parameter** so you can draw the same ship at any X position you like.
+
+> 🧠 Words to know: **function**, **define (`def`)**, **call**, **parameter**, **polygon (nose)**
+
+---
+
+## 1 · Predict 🔮
+
+Read each piece of code. Before you run it, write what you think will happen.
+
+```python
+def draw_ship():
+    pygame.draw.rect(screen, CYAN, (CENTER_X - 20, HEIGHT - 80, 40, 50))
+    pygame.draw.polygon(screen, WHITE, [(CENTER_X, HEIGHT - 100), (CENTER_X - 20, HEIGHT - 80), (CENTER_X + 20, HEIGHT - 80)])
+```
+
+**This defines a function but does not run it yet. What two shapes will it draw when it IS called?**
+
+<div class="write-space"></div>
+
+```python
+screen.fill(SPACE)
+draw_ship()
+pygame.display.flip()
+```
+
+**Now the function is called. When does the ship actually appear?**
+
+<div class="write-space"></div>
+
+```python
+def draw_ship(x):
+    pygame.draw.rect(screen, CYAN, (x - 20, HEIGHT - 80, 40, 50))
+
+draw_ship(200)
+draw_ship(400)
+draw_ship(600)
+```
+
+**The function now takes `x`. How many ships appear, and where?**
+
+<div class="write-space"></div>
+
+---
+
+## 2 · Run It 🏃
+
+### 🎯 Type the example, run it, and find the nose
+
+```python
+import pygame
+pygame.init()
+
+WIDTH, HEIGHT = 800, 600
+CENTER_X = WIDTH // 2
+screen = pygame.display.set_mode((WIDTH, HEIGHT))
+
+SPACE = (10, 12, 40)
+CYAN = (80, 220, 255)
+WHITE = (255, 255, 255)
+RED = (230, 60, 60)
+
+def draw_ship():
+    pygame.draw.rect(screen, CYAN, (CENTER_X - 20, HEIGHT - 80, 40, 50))
+    pygame.draw.polygon(screen, WHITE, [(CENTER_X, HEIGHT - 100), (CENTER_X - 20, HEIGHT - 80), (CENTER_X + 20, HEIGHT - 80)])
+    pygame.draw.rect(screen, RED, (CENTER_X - 16, HEIGHT - 30, 8, 10))
+    pygame.draw.rect(screen, RED, (CENTER_X + 8, HEIGHT - 30, 8, 10))
+
+clock = pygame.time.Clock()
+running = True
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+    screen.fill(SPACE)
+    draw_ship()
+    pygame.display.flip()
+    clock.tick(60)
+
+pygame.quit()
+```
+
+**Where does the nose point? What three points does the `polygon` connect?**
+
+<div class="write-space"></div>
+
+---
+
+## 3 · Spot the Bug 🐛
+
+Each block below was meant to do something but is broken. Fix it, then explain why the original was wrong.
+
+**Bug A** — The ship function is written but nothing appears on screen.
+
+```python
+def draw_ship():
+    pygame.draw.rect(screen, CYAN, (CENTER_X - 20, HEIGHT - 80, 40, 50))
+
+screen.fill(SPACE)
+pygame.display.flip()
+```
+
+**Hint:** a function only runs when you **call** it.
+
+**Write the fixed code (show the loop body):**
+
+<div class="write-space"></div>
+
+**Why was it wrong? Why does your fix work?**
+
+<div class="write-space"></div>
+
+**Bug B** — The nose is supposed to point **up** from the body. Right now its tip is below the body so it points down.
+
+```python
+pygame.draw.polygon(screen, WHITE, [(CENTER_X, HEIGHT - 60), (CENTER_X - 20, HEIGHT - 80), (CENTER_X + 20, HEIGHT - 80)])
+```
+
+**Hint:** to point up, the tip point needs a **smaller** Y than the two base points.
+
+**Write the fixed code:**
+
+<div class="write-space"></div>
+
+**Why was it wrong? Why does your fix work?**
+
+<div class="write-space"></div>
+
+**Bug C** — This should draw three ships at 200, 400, and 600, but Python gives an error about a missing argument.
+
+```python
+def draw_ship(x):
+    pygame.draw.rect(screen, CYAN, (x - 20, HEIGHT - 80, 40, 50))
+
+draw_ship()
+```
+
+**Hint:** the function needs an `x` value when you call it.
+
+**Write the fixed code:**
+
+<div class="write-space"></div>
+
+**Why was it wrong? Why does your fix work?**
+
+<div class="write-space"></div>
+
+---
+
+## 4 · Modify It 🔧
+
+### 🎯 Give the function a position parameter
+
+Change `draw_ship()` so it takes an `x`, and use `x` everywhere the position appears instead of `CENTER_X`.
+
+**Write your new function header line (the `def ...` line):**
+
+<div class="write-space"></div>
+
+### 🎯 Draw a whole fleet of ships
+
+Call your function three times with different X values to make a fleet.
+
+**Write the three calls you used:**
+
+<div class="write-space"></div>
+
+**Hint:** `draw_ship(200)` draws one ship centred at X = 200. Change the number for each one.
+
+---
+
+## 5 · Make It 📸
+
+### 🎯 Build a ship you can place anywhere
+
+Build a program that:
+
+1. has a `draw_ship(x)` function with a body, a nose, and thrusters,
+2. is called inside the game loop,
+3. draws at least one ship on screen.
+
+Send a **photo or video** of your ship, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.
+
+> First, I wrapped my ship in a function called …
+>
+> I gave it a parameter so that …
+>
+> The nose points up because the tip point has …
+>
+> To draw more than one ship, I …
+>
+> One tricky moment was when …
+>
+> If I had more time, I would …
+
+<div class="write-space tall" style="min-height: 340px"></div>
+
+---
+
+## 6 · Record Your Walkthrough 🎥
+
+Take a video of your ship. Talk through it like you are teaching someone. Try to use these words: **function**, **define**, **call**, **parameter**, **nose**.
+
+> 1. Show your ship with its nose.
+> 2. Read your `def draw_ship(x)` line out loud and explain the parameter.
+> 3. Point at where you **call** the function.
+> 4. Change the X value live and show the ship move.
+
+**Write what you will say in your video.** Plan it here before you record.
+
+<div class="write-space tall" style="min-height: 340px"></div>
+
+---
+
+### Submit ✅
+
+Send this worksheet + your photo or video to teacher on KakaoTalk.

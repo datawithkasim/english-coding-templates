@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>📊 RS003 Week 14 — English Worksheet</title>
+<style>
+@page { size: A4; margin: 18mm 16mm 22mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-family: "Inter", "Segoe UI", system-ui, sans-serif; color: #1a1a2e; }
+body { font-size: 15px; line-height: 1.55; }
+
+.cover { border-bottom: 3px solid #ff7849; padding-bottom: 14px; margin-bottom: 20px; }
+.brand { font-size: 14px; font-weight: 800; color: #ff7849; letter-spacing: .06em; }
+h1 { font-size: 28px; color: #6b4ee6; margin: 8px 0 6px; line-height: 1.25; }
+h2 { font-size: 19px; color: #6b4ee6; margin: 22px 0 12px; padding-top: 10px; border-top: 1px solid #eee; page-break-before: always; }
+section.first h2, h2:first-of-type { border-top: none; padding-top: 0; page-break-before: avoid; }
+h3, h4 { font-size: 15px; margin: 14px 0 8px; color: #1a1a2e; }
+p { margin: 8px 0; }
+strong { color: #1a1a2e; }
+em { color: #555; }
+
+ul, ol { margin: 8px 0 8px 24px; }
+li { margin: 3px 0; }
+
+pre {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 13.5px;
+  background: #1e1e2e;
+  color: #b9f6ca;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 10px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  page-break-inside: avoid;
+  line-height: 1.5;
+}
+pre code { background: transparent; padding: 0; color: inherit; }
+code {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  background: #fff1e8;
+  color: #ff7849;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+blockquote {
+  margin: 10px 0;
+  padding: 10px 16px;
+  background: #fff6ef;
+  border-left: 3px solid #ff7849;
+  border-radius: 0 6px 6px 0;
+  color: #6a3a1c;
+}
+
+.write-space {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #ffffff 0,
+    #ffffff 27px,
+    #d4d4d4 27px,
+    #d4d4d4 28px
+  );
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  min-height: 114px;
+  margin: 10px 0 20px;
+  page-break-inside: avoid;
+}
+.write-space.short { min-height: 86px; }
+.write-space.tall { min-height: 170px; }
+
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
+hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
+
+.meta { color: #666; font-size: 13px; margin: 0 0 14px; }
+.answer-lines {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 14px 16px;
+  background: #fafafa;
+  white-space: pre;
+  line-height: 2.2;
+}
+
+footer {
+  position: fixed;
+  bottom: 10mm; left: 16mm; right: 16mm;
+  text-align: center;
+  font-size: 10px;
+  color: #aaa;
+}
+footer b { color: #ff7849; }
+</style>
+</head>
+<body>
+<div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
+<h1>📊 RS003 Week 14 — English Worksheet</h1>
+<p><strong>Topic:</strong> A HUD and Enemy Types · <strong>Course:</strong> Pygame Space Shooter · <strong>Time:</strong> about 45 minutes</p>
+<p>This week your game shows a <strong>score and timer</strong> on screen (a HUD) and has <strong>several enemies</strong> at once, each a different type. Each enemy is a dictionary with its own position, type, and points — aliens are worth 1 point and meteors are worth 3.</p>
+<blockquote>
+<p>🧠 Words to know: <strong>HUD</strong>, <strong>score</strong>, <strong>timer</strong>, <strong>list of dictionaries</strong>, <strong>enemy type</strong></p>
+</blockquote>
+<h2>1 · Predict 🔮</h2>
+<p>Read each piece of code. Before you run it, write what you think will happen.</p>
+<pre><code class="language-python">font = pygame.font.SysFont(None, 32)
+score_text = font.render(f&quot;Score: {score}&quot;, True, (255, 255, 255))
+screen.blit(score_text, (10, 10))
+</code></pre>
+<div class="qa"><p><strong>These three lines put text on screen. What does the player see in the top-left corner?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-python">enemies = []
+for i in range(3):
+    kind = random.choice([&quot;alien&quot;, &quot;meteor&quot;])
+    points = 1 if kind == &quot;alien&quot; else 3
+    enemies.append({&quot;x&quot;: random.randint(150, WIDTH - 150), &quot;y&quot;: 120, &quot;type&quot;: kind, &quot;points&quot;: points})
+</code></pre>
+<div class="qa"><p><strong>How many enemies are made? What is different about each one?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-python">score = score + hit[&quot;points&quot;]
+</code></pre>
+<div class="qa"><p><strong>Score goes up by the enemy's <code>points</code>. An alien is worth 1 and a meteor is worth 3. Which gives more points?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>2 · Run It 🏃</h2>
+<h3>🎯 Type the example, run it, and watch the score</h3>
+<pre><code class="language-python">import pygame
+import random
+pygame.init()
+
+WIDTH, HEIGHT = 800, 600
+CENTER_X = WIDTH // 2
+screen = pygame.display.set_mode((WIDTH, HEIGHT))
+clock = pygame.time.Clock()
+font = pygame.font.SysFont(None, 32)
+
+RED = (230, 60, 60)
+GREY = (120, 120, 140)
+
+def new_enemy():
+    kind = random.choice([&quot;alien&quot;, &quot;meteor&quot;])
+    points = 1 if kind == &quot;alien&quot; else 3
+    return {&quot;x&quot;: random.randint(150, WIDTH - 150), &quot;y&quot;: 120, &quot;type&quot;: kind, &quot;points&quot;: points}
+
+enemies = [new_enemy() for i in range(3)]
+
+def draw_enemy(e):
+    color = RED if e[&quot;type&quot;] == &quot;alien&quot; else GREY
+    pygame.draw.rect(screen, color, (e[&quot;x&quot;] - 18, e[&quot;y&quot;] - 18, 36, 36))
+
+def draw_hud(score, time_left):
+    screen.blit(font.render(f&quot;Score: {score}&quot;, True, (255, 255, 255)), (10, 10))
+    screen.blit(font.render(f&quot;Time: {time_left}&quot;, True, (255, 255, 255)), (WIDTH - 150, 10))
+
+def get_aimed_enemy(ship_x):
+    for e in enemies:
+        if abs(ship_x - e[&quot;x&quot;]) &lt; 22:
+            return e
+    return None
+
+ship_x = CENTER_X
+ship_y = HEIGHT - 100
+score = 0
+start_time = pygame.time.get_ticks()
+GAME_DURATION = 30000
+
+running = True
+while running:
+    elapsed = pygame.time.get_ticks() - start_time
+    time_left = max(0, (GAME_DURATION - elapsed) // 1000)
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+        if event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
+            hit = get_aimed_enemy(ship_x)
+            if hit:
+                score = score + hit[&quot;points&quot;]
+                new = new_enemy()
+                hit[&quot;x&quot;], hit[&quot;type&quot;], hit[&quot;points&quot;] = new[&quot;x&quot;], new[&quot;type&quot;], new[&quot;points&quot;]
+
+    keys = pygame.key.get_pressed()
+    if keys[pygame.K_LEFT] and ship_x &gt; 100:
+        ship_x -= 6
+    if keys[pygame.K_RIGHT] and ship_x &lt; WIDTH - 100:
+        ship_x += 6
+
+    screen.fill((10, 12, 40))
+    for e in enemies:
+        draw_enemy(e)
+    pygame.draw.rect(screen, (80, 220, 255), (ship_x - 20, ship_y, 40, 50))
+    pygame.draw.polygon(screen, (255, 255, 255), [(ship_x, ship_y - 20), (ship_x - 20, ship_y), (ship_x + 20, ship_y)])
+    aimed = get_aimed_enemy(ship_x)
+    laser_color = (255, 210, 40) if aimed else (230, 60, 60)
+    pygame.draw.line(screen, laser_color, (ship_x, ship_y - 20), (ship_x, 120), 4)
+    draw_hud(score, time_left)
+    pygame.display.flip()
+    clock.tick(60)
+
+pygame.quit()
+</code></pre>
+<div class="qa"><p><strong>Line up under an alien and press SPACE, then a meteor. Which gave you more points? What does the timer do?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>3 · Spot the Bug 🐛</h2>
+<p>Each block below was meant to do something but is broken. Fix it, then explain why the original was wrong.</p>
+<p><strong>Bug A</strong> — The score is supposed to appear on screen, but the number never shows up.</p>
+<pre><code class="language-python">score_text = font.render(f&quot;Score: {score}&quot;, True, (255, 255, 255))
+</code></pre>
+<p><strong>Hint:</strong> rendering the text is not enough — it must be put on the screen.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug B</strong> — Hitting a meteor should give more points than an alien, but every enemy gives the same score.</p>
+<pre><code class="language-python">score = score + 1
+</code></pre>
+<p><strong>Hint:</strong> the score should depend on the enemy's type.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug C</strong> — Pressing SPACE on empty space should do nothing, but the program crashes when you miss.</p>
+<pre><code class="language-python">hit = get_aimed_enemy(ship_x)
+score = score + hit[&quot;points&quot;]
+</code></pre>
+<p><strong>Hint:</strong> when nothing is lined up, <code>hit</code> is <code>None</code>, and <code>None["points"]</code> is an error.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>4 · Modify It 🔧</h2>
+<h3>🎯 Add more enemies</h3>
+<p>Change <code>range(3)</code> so more enemies appear at once.</p>
+<div class="qa"><p><strong>Write the new number you chose and how the game feels with more enemies:</strong></p>
+<div class="write-space"></div></div>
+
+<h3>🎯 Change the game length</h3>
+<p>Change <code>GAME_DURATION</code> to make the round longer or shorter (it is in milliseconds, so 30000 is 30 seconds).</p>
+<div class="qa"><p><strong>Write the new duration you chose and what 1000 milliseconds equals in seconds:</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Hint:</strong> keep the enemies inside <code>150</code> to <code>WIDTH - 150</code> so they never spawn off screen or under the HUD.</p>
+<h2>5 · Make It 📸</h2>
+<h3>🎯 Build a scored shooting game</h3>
+<p>Build a program where:</p>
+<ol>
+<li>several enemies appear at once,</li>
+<li>a HUD shows score and time,</li>
+<li>meteors are worth more than aliens,</li>
+<li>missing does not crash the game.</li>
+</ol>
+<p>Send a <strong>video</strong> of 30 seconds of play, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.</p>
+<div class="qa"><blockquote>
+<p>First, I stored my enemies as a list of …</p>
+<p>My HUD shows … in the corner.</p>
+<p>Meteors give more points because …</p>
+<p>I stopped misses from crashing by …</p>
+<p>One tricky moment was when …</p>
+<p>If I had more time, I would …</p>
+</blockquote>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<h2>6 · Record Your Walkthrough 🎥</h2>
+<p>Take a video of a full 30-second round. Talk through it like you are teaching someone. Try to use these words: <strong>HUD</strong>, <strong>score</strong>, <strong>timer</strong>, <strong>dictionary</strong>, <strong>enemy type</strong>.</p>
+<blockquote>
+<ol>
+<li>Show the HUD with score and time changing.</li>
+<li>Hit an alien and a meteor, and say the point difference.</li>
+<li>Read the line that renders the score out loud.</li>
+<li>Show what happens when you miss.</li>
+</ol>
+</blockquote>
+<div class="qa"><p><strong>Write what you will say in your video.</strong> Plan it here before you record.</p>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your 30-second play video to teacher on KakaoTalk.</p>
+</body>
+</html>

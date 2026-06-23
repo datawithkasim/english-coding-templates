@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>🚧 RS003 Week 9 — English Worksheet</title>
+<style>
+@page { size: A4; margin: 18mm 16mm 22mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-family: "Inter", "Segoe UI", system-ui, sans-serif; color: #1a1a2e; }
+body { font-size: 15px; line-height: 1.55; }
+
+.cover { border-bottom: 3px solid #ff7849; padding-bottom: 14px; margin-bottom: 20px; }
+.brand { font-size: 14px; font-weight: 800; color: #ff7849; letter-spacing: .06em; }
+h1 { font-size: 28px; color: #6b4ee6; margin: 8px 0 6px; line-height: 1.25; }
+h2 { font-size: 19px; color: #6b4ee6; margin: 22px 0 12px; padding-top: 10px; border-top: 1px solid #eee; page-break-before: always; }
+section.first h2, h2:first-of-type { border-top: none; padding-top: 0; page-break-before: avoid; }
+h3, h4 { font-size: 15px; margin: 14px 0 8px; color: #1a1a2e; }
+p { margin: 8px 0; }
+strong { color: #1a1a2e; }
+em { color: #555; }
+
+ul, ol { margin: 8px 0 8px 24px; }
+li { margin: 3px 0; }
+
+pre {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 13.5px;
+  background: #1e1e2e;
+  color: #b9f6ca;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 10px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  page-break-inside: avoid;
+  line-height: 1.5;
+}
+pre code { background: transparent; padding: 0; color: inherit; }
+code {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  background: #fff1e8;
+  color: #ff7849;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+blockquote {
+  margin: 10px 0;
+  padding: 10px 16px;
+  background: #fff6ef;
+  border-left: 3px solid #ff7849;
+  border-radius: 0 6px 6px 0;
+  color: #6a3a1c;
+}
+
+.write-space {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #ffffff 0,
+    #ffffff 27px,
+    #d4d4d4 27px,
+    #d4d4d4 28px
+  );
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  min-height: 114px;
+  margin: 10px 0 20px;
+  page-break-inside: avoid;
+}
+.write-space.short { min-height: 86px; }
+.write-space.tall { min-height: 170px; }
+
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
+hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
+
+.meta { color: #666; font-size: 13px; margin: 0 0 14px; }
+.answer-lines {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 14px 16px;
+  background: #fafafa;
+  white-space: pre;
+  line-height: 2.2;
+}
+
+footer {
+  position: fixed;
+  bottom: 10mm; left: 16mm; right: 16mm;
+  text-align: center;
+  font-size: 10px;
+  color: #aaa;
+}
+footer b { color: #ff7849; }
+</style>
+</head>
+<body>
+<div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
+<h1>🚧 RS003 Week 9 — English Worksheet</h1>
+<p><strong>Topic:</strong> Keep the Ship Inside the Screen · <strong>Course:</strong> Pygame Space Shooter · <strong>Time:</strong> about 45 minutes</p>
+<p>This week you stop the ship from flying off the screen on any side. You set a <strong>minimum</strong> and <strong>maximum</strong> for both X and Y, then use comparisons (<code>&lt;</code>, <code>&gt;</code>) to keep the ship inside all four walls. The trick of forcing a value back inside a range is called <strong>clamping</strong>.</p>
+<blockquote>
+<p>🧠 Words to know: <strong>minimum / maximum</strong>, <strong>compare (<code>&lt;</code>, <code>&gt;</code>)</strong>, <strong>clamp</strong>, <strong>boundary</strong>, <strong>limit</strong></p>
+</blockquote>
+<h2>1 · Predict 🔮</h2>
+<p>Read each piece of code. Before you run it, write what you think will happen.</p>
+<pre><code class="language-python">if ship_x &lt; 20: ship_x = 20
+if ship_x &gt; WIDTH - 20: ship_x = WIDTH - 20
+</code></pre>
+<div class="qa"><p><strong>These two lines run AFTER the ship moves. What do they do if the ship went too far left or too far right?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-python">if ship_y &lt; 20: ship_y = 20
+if ship_y &gt; HEIGHT - 60: ship_y = HEIGHT - 60
+</code></pre>
+<div class="qa"><p><strong>These keep the ship inside the top and bottom. Why is the bottom limit <code>HEIGHT - 60</code> and not just <code>HEIGHT</code>?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-python">pygame.draw.rect(screen, RED, (0, 0, WIDTH, HEIGHT), 3)
+</code></pre>
+<div class="qa"><p><strong>A red rectangle outline is drawn around the whole edge of the screen. What does it show the player?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>2 · Run It 🏃</h2>
+<h3>🎯 Type the example, run it, and hit the walls</h3>
+<pre><code class="language-python">import pygame
+pygame.init()
+
+WIDTH, HEIGHT = 800, 600
+CENTER_X = WIDTH // 2
+screen = pygame.display.set_mode((WIDTH, HEIGHT))
+
+ship_x = CENTER_X
+ship_y = HEIGHT - 100
+SPEED = 5
+RED = (230, 60, 60)
+
+clock = pygame.time.Clock()
+running = True
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+
+    keys = pygame.key.get_pressed()
+    if keys[pygame.K_LEFT]:  ship_x -= SPEED
+    if keys[pygame.K_RIGHT]: ship_x += SPEED
+    if keys[pygame.K_UP]:    ship_y -= SPEED
+    if keys[pygame.K_DOWN]:  ship_y += SPEED
+
+    if ship_x &lt; 20: ship_x = 20
+    if ship_x &gt; WIDTH - 20: ship_x = WIDTH - 20
+    if ship_y &lt; 20: ship_y = 20
+    if ship_y &gt; HEIGHT - 60: ship_y = HEIGHT - 60
+
+    screen.fill((10, 12, 40))
+    pygame.draw.rect(screen, RED, (0, 0, WIDTH, HEIGHT), 3)
+    pygame.draw.rect(screen, (80, 220, 255), (ship_x - 20, ship_y, 40, 50))
+    pygame.draw.polygon(screen, (255, 255, 255), [(ship_x, ship_y - 20), (ship_x - 20, ship_y), (ship_x + 20, ship_y)])
+    pygame.display.flip()
+    clock.tick(60)
+
+pygame.quit()
+</code></pre>
+<div class="qa"><p><strong>Fly into each of the four walls. Where does the ship stop? What stops it?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>3 · Spot the Bug 🐛</h2>
+<p>Each block below was meant to do something but is broken. Fix it, then explain why the original was wrong.</p>
+<p><strong>Bug A</strong> — The ship should not fly past the left wall, but it flies right off the left edge of the screen.</p>
+<pre><code class="language-python">if keys[pygame.K_LEFT]:
+    ship_x -= SPEED
+</code></pre>
+<p><strong>Hint:</strong> there is no clamp pulling the ship back if it goes past the left wall.</p>
+<div class="qa"><p><strong>Write the fixed code (add the left clamp):</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug B</strong> — The clamp is supposed to pull the ship back if it goes too far, but the comparisons are backwards so it teleports to the wrong wall.</p>
+<pre><code class="language-python">if ship_x &gt; 20:
+    ship_x = 20
+if ship_x &lt; WIDTH - 20:
+    ship_x = WIDTH - 20
+</code></pre>
+<p><strong>Hint:</strong> if the ship is <strong>smaller</strong> than 20 it went too far left. Check the directions.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug C</strong> — The ship is clamped left and right, but it still flies off the <strong>top</strong> and <strong>bottom</strong> of the screen.</p>
+<pre><code class="language-python">if ship_x &lt; 20: ship_x = 20
+if ship_x &gt; WIDTH - 20: ship_x = WIDTH - 20
+</code></pre>
+<p><strong>Hint:</strong> there are only two clamps here. You need two more for <code>ship_y</code>.</p>
+<div class="qa"><p><strong>Write the fixed code (add the top and bottom clamps):</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>4 · Modify It 🔧</h2>
+<h3>🎯 Make the play area smaller</h3>
+<p>Change the clamp numbers so the ship has a smaller space to fly in (for example keep it in the bottom half).</p>
+<div class="qa"><p><strong>Write the new clamp values you chose:</strong></p>
+<div class="write-space"></div></div>
+
+<h3>🎯 Try the guard method instead of the clamp method</h3>
+<p>Right now the example lets the ship move freely, then clamps it back. Rewrite one direction so the ship only moves while it is still inside the wall (check <code>&gt; 20</code> before moving).</p>
+<div class="qa"><p><strong>Write your guarded move lines:</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Hint:</strong> both methods keep the ship inside. The clamp lets it move first, then snaps it back if it went too far.</p>
+<h2>5 · Make It 📸</h2>
+<h3>🎯 Build a ship that stays on screen</h3>
+<p>Build a program where:</p>
+<ol>
+<li>the ship flies in all four directions,</li>
+<li>it can never leave the screen on any side,</li>
+<li>a red border shows where the limits are.</li>
+</ol>
+<p>Send a <strong>photo or video</strong> showing the ship stopping at all four walls, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.</p>
+<div class="qa"><blockquote>
+<p>First, I set my clamp limits to …</p>
+<p>The ship stops on the left because …</p>
+<p>The ship stops at the bottom because …</p>
+<p>Clamping means …</p>
+<p>One tricky moment was when …</p>
+<p>If I had more time, I would …</p>
+</blockquote>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<h2>6 · Record Your Walkthrough 🎥</h2>
+<p>Take a video while the ship hits all four walls. Talk through it like you are teaching someone. Try to use these words: <strong>minimum</strong>, <strong>maximum</strong>, <strong>compare</strong>, <strong>clamp</strong>, <strong>boundary</strong>.</p>
+<blockquote>
+<ol>
+<li>Fly into the left and right walls and show it stop.</li>
+<li>Fly into the top and bottom walls and show it stop.</li>
+<li>Read one clamp line out loud and explain it.</li>
+<li>Say what would happen with no limits at all.</li>
+</ol>
+</blockquote>
+<div class="qa"><p><strong>Write what you will say in your video.</strong> Plan it here before you record.</p>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your photo or video to teacher on KakaoTalk.</p>
+</body>
+</html>

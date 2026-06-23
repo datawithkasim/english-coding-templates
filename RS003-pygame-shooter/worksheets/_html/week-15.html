@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>🎮 RS003 Week 15 — English Worksheet</title>
+<style>
+@page { size: A4; margin: 18mm 16mm 22mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-family: "Inter", "Segoe UI", system-ui, sans-serif; color: #1a1a2e; }
+body { font-size: 15px; line-height: 1.55; }
+
+.cover { border-bottom: 3px solid #ff7849; padding-bottom: 14px; margin-bottom: 20px; }
+.brand { font-size: 14px; font-weight: 800; color: #ff7849; letter-spacing: .06em; }
+h1 { font-size: 28px; color: #6b4ee6; margin: 8px 0 6px; line-height: 1.25; }
+h2 { font-size: 19px; color: #6b4ee6; margin: 22px 0 12px; padding-top: 10px; border-top: 1px solid #eee; page-break-before: always; }
+section.first h2, h2:first-of-type { border-top: none; padding-top: 0; page-break-before: avoid; }
+h3, h4 { font-size: 15px; margin: 14px 0 8px; color: #1a1a2e; }
+p { margin: 8px 0; }
+strong { color: #1a1a2e; }
+em { color: #555; }
+
+ul, ol { margin: 8px 0 8px 24px; }
+li { margin: 3px 0; }
+
+pre {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 13.5px;
+  background: #1e1e2e;
+  color: #b9f6ca;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 10px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  page-break-inside: avoid;
+  line-height: 1.5;
+}
+pre code { background: transparent; padding: 0; color: inherit; }
+code {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  background: #fff1e8;
+  color: #ff7849;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+blockquote {
+  margin: 10px 0;
+  padding: 10px 16px;
+  background: #fff6ef;
+  border-left: 3px solid #ff7849;
+  border-radius: 0 6px 6px 0;
+  color: #6a3a1c;
+}
+
+.write-space {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #ffffff 0,
+    #ffffff 27px,
+    #d4d4d4 27px,
+    #d4d4d4 28px
+  );
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  min-height: 114px;
+  margin: 10px 0 20px;
+  page-break-inside: avoid;
+}
+.write-space.short { min-height: 86px; }
+.write-space.tall { min-height: 170px; }
+
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
+hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
+
+.meta { color: #666; font-size: 13px; margin: 0 0 14px; }
+.answer-lines {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 14px 16px;
+  background: #fafafa;
+  white-space: pre;
+  line-height: 2.2;
+}
+
+footer {
+  position: fixed;
+  bottom: 10mm; left: 16mm; right: 16mm;
+  text-align: center;
+  font-size: 10px;
+  color: #aaa;
+}
+footer b { color: #ff7849; }
+</style>
+</head>
+<body>
+<div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
+<h1>🎮 RS003 Week 15 — English Worksheet</h1>
+<p><strong>Topic:</strong> Put It All Together — Fire at Falling Enemies · <strong>Course:</strong> Pygame Space Shooter · <strong>Time:</strong> about 45 minutes</p>
+<p>This week everything you have learned comes together into one <strong>playable mini game</strong>. Constants, for loops, functions, ship movement, falling enemies, and a score — all in a single program. Enemies fall from the top; press SPACE to fire a bullet; a hit scores a point and makes a flash.</p>
+<blockquote>
+<p>🧠 Words to know: <strong>integrate</strong>, <strong>hit detection</strong>, <strong>bullet</strong>, <strong>score</strong>, <strong>hit effect</strong></p>
+</blockquote>
+<h2>1 · Predict 🔮</h2>
+<p>Read each piece of code. Before you run it, write what you think will happen.</p>
+<pre><code class="language-python">if event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
+    bullets.append([ship_x, ship_y - 20])
+</code></pre>
+<div class="qa"><p><strong>Pressing SPACE adds a bullet to a list. What two numbers does each bullet remember?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-python">for e in enemies[:]:
+    for b in bullets[:]:
+        if abs(b[0] - e[&quot;x&quot;]) &lt; 22 and abs(b[1] - e[&quot;y&quot;]) &lt; 22:
+            score += e[&quot;points&quot;]
+            effects.append([e[&quot;x&quot;], e[&quot;y&quot;], 8])
+            enemies.remove(e)
+            bullets.remove(b)
+</code></pre>
+<div class="qa"><p><strong>A bullet hits an enemy when it is close in both X and Y. What three things happen on a hit?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-python">for fx in effects:
+    pygame.draw.circle(screen, YELLOW, (fx[0], fx[1]), fx[2])
+effects = [[x, y, t - 1] for x, y, t in effects if t &gt; 1]
+</code></pre>
+<div class="qa"><p><strong>Each effect is a yellow circle with a timer. What does the flash look like as the timer counts down?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>2 · Run It 🏃</h2>
+<h3>🎯 Type the example, run it, and shoot an enemy</h3>
+<pre><code class="language-python">import pygame, random
+pygame.init()
+WIDTH, HEIGHT = 800, 600
+screen = pygame.display.set_mode((WIDTH, HEIGHT))
+pygame.display.set_caption(&quot;Space Shooter&quot;)
+font = pygame.font.SysFont(None, 40)
+clock = pygame.time.Clock()
+
+SPACE = (10, 12, 40); WHITE = (255, 255, 255); CYAN = (80, 220, 255)
+RED = (230, 60, 60); YELLOW = (255, 210, 40); GREY = (120, 120, 140)
+
+def draw_ship(x, y):
+    pygame.draw.rect(screen, CYAN, (x - 20, y, 40, 50))
+    pygame.draw.polygon(screen, WHITE, [(x, y - 20), (x - 20, y), (x + 20, y)])
+
+def draw_enemy(e):
+    color = RED if e[&quot;type&quot;] == &quot;alien&quot; else GREY
+    pygame.draw.rect(screen, color, (e[&quot;x&quot;] - 18, e[&quot;y&quot;] - 18, 36, 36))
+
+ship_x, ship_y = WIDTH // 2, HEIGHT - 100
+SPEED = 5
+bullets = []          # each: [x, y]
+enemies = []          # each: {&quot;x&quot;,&quot;y&quot;,&quot;type&quot;,&quot;points&quot;}
+effects = []          # each: [x, y, timer]   hit flash
+score = 0
+spawn_timer = 0
+
+running = True
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_SPACE:
+                bullets.append([ship_x, ship_y - 20])
+
+    keys = pygame.key.get_pressed()
+    if keys[pygame.K_LEFT]:  ship_x -= SPEED
+    if keys[pygame.K_RIGHT]: ship_x += SPEED
+    if keys[pygame.K_UP]:    ship_y -= SPEED
+    if keys[pygame.K_DOWN]:  ship_y += SPEED
+    ship_x = max(20, min(WIDTH - 20, ship_x))
+    ship_y = max(20, min(HEIGHT - 60, ship_y))
+
+    spawn_timer += 1
+    if spawn_timer &gt;= 40:
+        spawn_timer = 0
+        kind = random.choice([&quot;alien&quot;, &quot;meteor&quot;])
+        points = 1 if kind == &quot;alien&quot; else 3
+        enemies.append({&quot;x&quot;: random.randint(40, WIDTH - 40), &quot;y&quot;: -20, &quot;type&quot;: kind, &quot;points&quot;: points})
+
+    for e in enemies: e[&quot;y&quot;] += 2
+    for b in bullets: b[1] -= 8
+
+    for e in enemies[:]:
+        for b in bullets[:]:
+            if abs(b[0] - e[&quot;x&quot;]) &lt; 22 and abs(b[1] - e[&quot;y&quot;]) &lt; 22:
+                score += e[&quot;points&quot;]
+                effects.append([e[&quot;x&quot;], e[&quot;y&quot;], 8])
+                if e in enemies: enemies.remove(e)
+                if b in bullets: bullets.remove(b)
+
+    bullets = [b for b in bullets if b[1] &gt; -10]
+    enemies = [e for e in enemies if e[&quot;y&quot;] &lt; HEIGHT + 20]
+
+    screen.fill(SPACE)
+    for b in bullets:  pygame.draw.rect(screen, YELLOW, (b[0] - 2, b[1] - 8, 4, 12))
+    for e in enemies:  draw_enemy(e)
+    for fx in effects: pygame.draw.circle(screen, YELLOW, (fx[0], fx[1]), fx[2])
+    effects = [[x, y, t - 1] for x, y, t in effects if t &gt; 1]
+    draw_ship(ship_x, ship_y)
+    screen.blit(font.render(f&quot;Score: {score}&quot;, True, WHITE), (10, 10))
+    pygame.display.flip()
+    clock.tick(60)
+
+pygame.quit()
+</code></pre>
+<div class="qa"><p><strong>Fly under a falling enemy and press SPACE. What happens to the score and the enemy, and what flash do you see?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>3 · Spot the Bug 🐛</h2>
+<p>Each block below was meant to do something but is broken. Fix it, then explain why the original was wrong.</p>
+<p><strong>Bug A</strong> — Pressing SPACE should fire one bullet per press, but right now it fires a huge stream of bullets and the game slows down.</p>
+<pre><code class="language-python">keys = pygame.key.get_pressed()
+if keys[pygame.K_SPACE]:
+    bullets.append([ship_x, ship_y - 20])
+</code></pre>
+<p><strong>Hint:</strong> <code>get_pressed</code> is true every frame the key is down. A <code>KEYDOWN</code> event fires once per press.</p>
+<div class="qa"><p><strong>Write the fixed code (use the event instead):</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug B</strong> — When a bullet hits an enemy, the enemy should disappear and you score, but the enemy stays and you can score off it forever.</p>
+<pre><code class="language-python">if abs(b[0] - e[&quot;x&quot;]) &lt; 22 and abs(b[1] - e[&quot;y&quot;]) &lt; 22:
+    score += e[&quot;points&quot;]
+</code></pre>
+<p><strong>Hint:</strong> the enemy and the bullet are never removed after a hit.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug C</strong> — Bullets fly <strong>up</strong> the screen, but right now they move down instead.</p>
+<pre><code class="language-python">for b in bullets:
+    b[1] += 8
+</code></pre>
+<p><strong>Hint:</strong> up means the Y position should get smaller.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>4 · Modify It 🔧</h2>
+<h3>🎯 Make the game easier or harder</h3>
+<p>Change the <code>&lt; 22</code> hit distance. A bigger number is more forgiving; a smaller number needs precise aim. You can also change how often enemies spawn (<code>&gt;= 40</code>).</p>
+<div class="qa"><p><strong>Write the values you chose and whether it made the game easier or harder:</strong></p>
+<div class="write-space"></div></div>
+
+<h3>🎯 Add one feature from an earlier week</h3>
+<p>Bring back something you built before — the falling starfield, the boost speed, the screen shake — into the final game.</p>
+<div class="qa"><p><strong>Write which feature you added and which week it came from:</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Hint:</strong> you already wrote that code. Copy the part you need and place it in the right spot in the game loop.</p>
+<h2>5 · Make It 📸</h2>
+<h3>🎯 Build your full mini game</h3>
+<p>Build a program that:</p>
+<ol>
+<li>uses constants, a list, and functions,</li>
+<li>flies the ship and stays on screen,</li>
+<li>spawns falling enemies and fires bullets,</li>
+<li>scores a point and shows a flash on each hit.</li>
+</ol>
+<p>Send a <strong>photo or video</strong> of you scoring, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.</p>
+<div class="qa"><blockquote>
+<p>First, I brought together my … from earlier weeks.</p>
+<p>A point is scored when …</p>
+<p>After a hit, the enemy …</p>
+<p>The feature I am most proud of is …</p>
+<p>One tricky moment was when …</p>
+<p>If I had more time, I would …</p>
+</blockquote>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<h2>6 · Record Your Walkthrough 🎥</h2>
+<p>Take a video of you playing and scoring. Talk through it like you are teaching someone. Try to use these words: <strong>integrate</strong>, <strong>hit detection</strong>, <strong>bullet</strong>, <strong>score</strong>, <strong>hit effect</strong>.</p>
+<blockquote>
+<ol>
+<li>Fire at a falling enemy and score a point.</li>
+<li>Read the hit-detection line out loud and explain it.</li>
+<li>Point at where the hit flash is made.</li>
+<li>Name two earlier-week ideas you can see in this game.</li>
+</ol>
+</blockquote>
+<div class="qa"><p><strong>Write what you will say in your video.</strong> Plan it here before you record.</p>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your scoring video to teacher on KakaoTalk.</p>
+</body>
+</html>
