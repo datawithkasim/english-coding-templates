@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>🧊 M003 Week 5 — English Worksheet</title>
+<title>🌳 M003 Week 5 — English Worksheet</title>
 <style>
 @page { size: A4; margin: 18mm 16mm 22mm; }
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -102,94 +102,106 @@ footer b { color: #ff7849; }
 </head>
 <body>
 <div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
-<h1>🧊 M003 Week 5 — English Worksheet</h1>
-<p><strong>Topic:</strong> Into 3D (x, y, z) · <strong>Course:</strong> 3D Coordinates · <strong>Time:</strong> about 45 minutes</p>
-<p>You know the wall (x, y) and the floor (x, z). This week you put them together and use <strong>all three numbers at once</strong>: <strong>(x, y, z)</strong> — x across, <strong>y up (height)</strong>, z forward. With three numbers you can place a block <strong>anywhere</strong> in space, and build <strong>up</strong>.</p>
+<h1>🌳 M003 Week 5 — English Worksheet</h1>
+<p><strong>Topic:</strong> Layer Up — Terrain &amp; Trees · <strong>Course:</strong> 3D Coordinates · <strong>Time:</strong> about 45 minutes</p>
+<p>You already know the floor — <strong>(x, z)</strong>, across and forward. This week you go <strong>up</strong>. One <strong><code>fill</code></strong> makes a solid box between <strong>two corners</strong>. Raise the <strong>middle number (y)</strong> and the box gets <strong>taller</strong>; stack wider and narrower boxes and flat ground turns into <strong>trees, hills, and towers</strong>.</p>
+<p><strong>Your mission this week: build this tree.</strong> A fat brown <strong>trunk</strong> going up, then a green <strong>cap</strong> of boxes that get <strong>smaller</strong> as they rise.</p>
+<div style="display:flex; gap:14px; align-items:flex-start; margin:10px 0; page-break-inside:avoid; break-inside:avoid"><div style="flex:0 0 auto"><p style="margin:0 0 4px; font-weight:700">🌳 Build this</p><img src="../assets/week5-tree.png" alt="A Minecraft tree: a fat brown trunk with a green cap made of three stacked boxes, each box narrower than the one below" style="width:100%; max-width:200px; border-radius:8px; display:block"></div><div style="flex:1; min-width:0"><p style="margin:0 0 4px; font-weight:700">🧱 The idea</p><p style="margin:0 0 6px">• A <b>3 × 3</b> brown <b>trunk</b>, stacked up the <b>y</b> axis.</p><p style="margin:0 0 6px">• A green <b>cap</b> of 3 boxes: <b>widest</b> at the bottom, each one above is <b>narrower and higher</b>.</p><p style="margin:0">• Every box is one <code>fill</code> between two corners.</p></div></div>
+
+<h3>🧭 Read every coordinate the same way: <strong>(x, y, z)</strong></h3>
+<div style="display:flex; gap:8px; flex-wrap:wrap; margin:6px 0 2px"><div style="flex:1; min-width:120px; background:#fff3ea; border:1px solid #ffd9c2; border-radius:8px; padding:8px 12px"><b style="color:#e0681c">1st number = X</b><br>across → (left ↔ right)</div><div style="flex:1; min-width:120px; background:#f0ecff; border:1px solid #d9cdff; border-radius:8px; padding:8px 12px"><b style="color:#6b4ee6">2nd number = Y</b><br>up ↑ (height)</div><div style="flex:1; min-width:120px; background:#e8f7ef; border:1px solid #c4ead6; border-radius:8px; padding:8px 12px"><b style="color:#1a8f5a">3rd number = Z</b><br>forward ⤴ (depth)</div></div>
+
+<pre style="margin:8px 0; font-size:14px">pos( <span style="color:#ffb27a; font-weight:700">x</span> , <span style="color:#c3b1ff; font-weight:700">y</span> , <span style="color:#7ee6a8; font-weight:700">z</span> )   →   ( <span style="color:#ffb27a; font-weight:700">across</span> , <span style="color:#c3b1ff; font-weight:700">up</span> , <span style="color:#7ee6a8; font-weight:700">forward</span> )</pre>
+
+<blockquote>
+<p>🌱 <strong>Big idea:</strong> the <strong>2nd number (y)</strong> is height. Raise it and the box grows <strong>up</strong>. Stretch the <strong>1st (x)</strong> and <strong>3rd (z)</strong> to make a box <strong>wider</strong>.</p>
+</blockquote>
 <h2>1 · Predict 🔮</h2>
-<p>Read each set of steps. Before you imagine it happening, write what you think you will see.</p>
-<pre><code>set y to 0
-repeat 5 times:
-    place stone block at (3, y, 3)
-    add 1 to y
+<p>Read each set of steps. Look at each <strong>column</strong> — remember <strong>1st = x, 2nd = y, 3rd = z</strong>. Then write what you think you will see.</p>
+<pre><code>fill BROWN from (3, 0, 3) to (5, 6, 5)
 </code></pre>
-<div class="qa"><p><strong>Which way does this build — across the ground or up into the sky? How tall is it? Which two numbers stay the same?</strong></p>
+<div class="qa"><p><strong>X goes 3 → 5 and Z goes 3 → 5, so how wide is the trunk across and deep? Y goes 0 → 6, so how tall is it?</strong></p>
 <div class="write-space"></div></div>
 
-<pre><code>place gold block at (2, 6, 2)
+<pre><code>fill GREEN from (1, 7, 1) to (7, 8, 7)
+fill GREEN from (2, 9, 2) to (6, 11, 6)
 </code></pre>
-<div class="qa"><p><strong>y is 6 and there are no blocks below it. Where does the gold block sit — on the ground or in the air?</strong></p>
+<div class="qa"><p><strong>Both are green boxes. Look at the x and z columns — which box is wider? Look at the y column — which box sits higher?</strong></p>
 <div class="write-space"></div></div>
 
-<pre><code>place red block at (0, 0, 0)
-place red block at (0, 4, 0)
+<pre><code>fill GREEN from (3, 12, 3) to (5, 14, 5)
 </code></pre>
-<div class="qa"><p><strong>Both blocks share the same x and z. What is different about them? If you stand next to the first block and look up, what do you see?</strong></p>
+<div class="qa"><p><strong>This is the smallest cap box. Its y starts at 12 — is it near the top of the tree or the bottom?</strong></p>
 <div class="write-space"></div></div>
 
 <h2>2 · Spot the Bug 🐛</h2>
 <p>Each block of code below was meant to do something, but it is broken. Read what the code is <strong>supposed</strong> to do, then rewrite it so it works. After that, explain why the original was wrong and why your fix works.</p>
-<p><strong>Bug A</strong> — This should build a <strong>tower going up</strong> at x = 3, z = 3. Right now it makes a flat line on the ground instead.</p>
-<pre><code>set n to 0
-repeat 4 times:
-    place stone block at (3, 0, n)
-    add 1 to n
+<p><strong>Bug A</strong> — This should stack a <strong>second cap box on top</strong> of the first. Right now both boxes use the <strong>same y</strong>, so the second lands on the <strong>same level</strong> and nothing stacks up.</p>
+<pre><code>fill GREEN from (1, 7, 1) to (7, 8, 7)
+fill GREEN from (2, 7, 2) to (6, 8, 6)
 </code></pre>
-<p><strong>Hint:</strong> which slot is n in? The height slot is the <strong>middle</strong> one.</p>
+<p><strong>Hint:</strong> the <strong>2nd number (y)</strong> is height. Both boxes stop at y = 8. Which number must go higher?</p>
 <div class="qa"><p><strong>Write the fixed code:</strong></p>
 <div class="write-space"></div></div>
 
 <div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
 <div class="write-space"></div></div>
 
-<p><strong>Bug B</strong> — This should build a tower <strong>up from the ground</strong> at (2, 0, 2). Right now it builds <strong>down into the ground</strong>.</p>
-<pre><code>set y to 0
-repeat 4 times:
-    place stone block at (2, y, 2)
-    take 1 from y
+<p><strong>Bug B</strong> — This should build the <strong>trunk going up</strong> at x = 3–5, z = 3–5. Right now it makes a <strong>flat slab</strong> on the ground with no height.</p>
+<pre><code>fill BROWN from (3, 0, 3) to (5, 0, 5)
 </code></pre>
+<p><strong>Hint:</strong> check the <strong>2nd column (y)</strong> in both corners.</p>
 <div class="qa"><p><strong>Write the fixed code:</strong></p>
 <div class="write-space"></div></div>
 
 <div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
 <div class="write-space"></div></div>
 
-<p><strong>Bug C</strong> — This should make a line of stone blocks sitting <strong>on the ground</strong>, where y = 0. Right now the whole line <strong>floats in the air</strong>.</p>
-<pre><code>set x to 0
-repeat 4 times:
-    place stone block at (x, 3, 0)
-    add 1 to x
+<p><strong>Bug C</strong> — This green box should be a <strong>wide cap</strong> that sticks out past the trunk. Right now it is the <strong>same width</strong> as the trunk, so there is no cap.</p>
+<pre><code>fill GREEN from (3, 7, 3) to (5, 8, 5)
 </code></pre>
+<p><strong>Hint:</strong> the trunk's x and z go 3 → 5. To overhang, the cap's <strong>1st (x)</strong> and <strong>3rd (z)</strong> must be wider.</p>
 <div class="qa"><p><strong>Write the fixed code:</strong></p>
 <div class="write-space"></div></div>
 
 <div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
 <div class="write-space"></div></div>
 
-<h2>3 · Tell Me What You Built 📸</h2>
-<p>Now switch to your homework world. Build a <strong>tower</strong> that goes up using a loop, then place a <strong>floating gold block</strong> in the air above it, like a beacon. When you finish, come back here.</p>
-<p>Send a photo or video of your tower, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.</p>
+<h2>3 · Build the Tree 📸</h2>
+<p>Now switch to your homework world and <strong>build the tree from the top of this sheet</strong>. Here is the exact recipe. Notice the colours: <b style="color:#e0681c">x</b> · <b style="color:#6b4ee6">y</b> · <b style="color:#1a8f5a">z</b> in every corner.</p>
+<div style="display:flex; gap:14px; align-items:flex-start; margin:10px 0; page-break-inside:avoid; break-inside:avoid"><div style="flex:0 0 auto; max-width:200px"><p style="margin:0 0 4px; font-weight:700">🧱 Blocks</p><img src="../assets/week5-tree-blocks.png" alt="MakeCode blocks: on chat command run — fill with brown from ~3 ~0 ~3 to ~5 ~6 ~5 replace, then three fill with green: 1,7,1 to 7,8,7; 2,9,2 to 6,11,6; 3,12,3 to 5,14,5; each replace" style="width:100%; max-width:200px; border-radius:8px; display:block; border:1px solid #e2e2e2"></div><div style="flex:1; min-width:0"><p style="margin:0 0 4px; font-weight:700">🐍 Python</p><pre style="margin:0; white-space:pre; font-size:11.5px">def on_run():
+    blocks.fill(BROWN_CONCRETE,
+        pos(<span style="color:#ffb27a">3</span>, <span style="color:#c3b1ff">0</span>, <span style="color:#7ee6a8">3</span>), pos(<span style="color:#ffb27a">5</span>, <span style="color:#c3b1ff">6</span>, <span style="color:#7ee6a8">5</span>),
+        FillOperation.REPLACE)
+    blocks.fill(GREEN_CONCRETE,
+        pos(<span style="color:#ffb27a">1</span>, <span style="color:#c3b1ff">7</span>, <span style="color:#7ee6a8">1</span>), pos(<span style="color:#ffb27a">7</span>, <span style="color:#c3b1ff">8</span>, <span style="color:#7ee6a8">7</span>),
+        FillOperation.REPLACE)
+    # ...two more cap boxes: y = 9–11, then y = 12–14
+player.on_chat("run", on_run)</pre></div></div>
+
+<p>When you finish, send a <strong>photo or video</strong> of your tree, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.</p>
 <div class="qa"><blockquote>
-<p>First, I …</p>
-<p>My tower is … blocks tall because my loop …</p>
-<p>The number that grew was <strong>y</strong>, which means …</p>
-<p>My floating gold block is at ( … , … , … ).</p>
+<p>First, I built the trunk by …</p>
+<p>My trunk is … tall and … wide because the <strong>x</strong>, <strong>y</strong>, <strong>z</strong> numbers were …</p>
+<p>The number that grew for each new cap box was <strong>y</strong>, which means …</p>
+<p>My cap gets narrower because each box's <strong>x</strong> and <strong>z</strong> …</p>
 <p>One tricky moment was when …</p>
 <p>If I had more time, I would …</p>
 </blockquote>
-<div class="write-space tall" style="min-height: 340px"></div></div>
+<div class="write-space tall" style="min-height: 300px"></div></div>
 
 <h2>4 · Record Your Walkthrough 🎥</h2>
-<p>Now take a video on your phone (or a parent's phone) while you show your tower in the world. Talk through it like you are teaching someone who has only seen flat pictures before. Try to use these words: <strong>x</strong>, <strong>y</strong>, <strong>z</strong>, <strong>height</strong>, <strong>coordinate</strong>.</p>
+<p>Take a video on your phone (or a parent's phone) while you show your tree in the world. Talk through it like you are teaching someone who has only seen flat pictures before. Try to use these words: <strong>layer</strong>, <strong>fill</strong>, <strong>x</strong>, <strong>y</strong>, <strong>z</strong>, <strong>trunk</strong>, <strong>cap</strong>.</p>
 <blockquote>
 <ol>
-<li>Show your tower from the bottom to the top.</li>
-<li>Show your code and say which number grows in the loop.</li>
-<li>Point at the floating gold block and say its full coordinate — all three numbers in order.</li>
-<li>Say in your own words what each of <strong>x</strong>, <strong>y</strong>, and <strong>z</strong> means.</li>
+<li>Show your tree from the bottom of the trunk up to the top of the cap.</li>
+<li>Point at one cap box and read its corner out loud — say which number is <strong>x</strong>, which is <strong>y</strong>, which is <strong>z</strong>.</li>
+<li>Show two boxes and say which one is <strong>wider</strong> and why that makes a cap.</li>
+<li>Say in your own words what each of <strong>x</strong>, <strong>y</strong>, and <strong>z</strong> does.</li>
 </ol>
 </blockquote>
 <div class="qa"><p><strong>Write what you will say in your video.</strong> Use the space below to plan it before you record — you can read from it while filming.</p>
-<div class="write-space tall" style="min-height: 340px"></div></div>
+<div class="write-space tall" style="min-height: 320px"></div></div>
 
 <hr />
 <h3>Submit ✅</h3>
