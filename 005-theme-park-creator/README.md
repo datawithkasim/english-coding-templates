@@ -10,16 +10,16 @@
 
 각 주차 자료는 아래 표에서 바로 받으실 수 있습니다 — 따로 페이지에 들어가지 않으셔도 됩니다.
 
-| 주 | 주제 | 📦 월드 | 🎬 영상 | 📝 워크시트 (초급) | 📝 워크시트 (심화) |
-|---|---|---|---|---|---|
-| 1 | 명령어 집중 훈련 — 문법과 좌표(`~`), `/tp`·`/give`·`/gamemode`·`/time`·`/weather`·`/summon`·`/effect` | *준비 중* | *준비 중* | *준비 중* | *준비 중* |
-| 2 | `/fill`과 `/clone` — 가게 건물을 한 번에 짓고 통째로 복사하기 | *준비 중* | *준비 중* | *준비 중* | *준비 중* |
-| 3 | 반응하는 가게 — `/setblock`, 버튼·레드스톤, 디스펜서, 동물 소환, 소리·파티클 효과까지 작동하는 게임 가게 완성 | *준비 중* | *준비 중* | *준비 중* | *준비 중* |
-| 4 | 함수(.mcfunction) — 코드에 이름 붙이기, 채팅 한 줄로 가게 전체 짓기 | *준비 중* | *준비 중* | *준비 중* | *준비 중* |
-| 5 | `/execute`와 선택자(`@p`·`@a`·`@e`) — 방문객이 다가오면 반응하는 테마파크 | *준비 중* | *준비 중* | *준비 중* | *준비 중* |
-| 6 | 롤러코스터 I — 레일·파워 레일·출발역, 속도의 원리 | *준비 중* | *준비 중* | *준비 중* | *준비 중* |
-| 7 | 롤러코스터 II — 타는 동안 펼쳐지는 명령어 연출 (`/title`·`/particle`·`/playsound`) | *준비 중* | *준비 중* | *준비 중* | *준비 중* |
-| 8 | **최종: 그랜드 오프닝** — 입구 게이트 + 가게 3곳 + 롤러코스터 + 개장 세리머니 | *준비 중* | *준비 중* | *준비 중* | *준비 중* |
+| 주 | 주제 | 📦 월드 | 🎬 영상 | 📝 워크시트 (초급) | 📝 워크시트 (심화) | 📄 워크시트 (초급·DOCX) | 📄 워크시트 (심화·DOCX) |
+|---|---|---|---|---|---|---|---|
+| 1 | 함수와 파라미터 — 숫자 하나로 롤러코스터 크기 바꾸기 (메이크코드 롤러코스터 확장) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/005-theme-park-creator/worlds/week1.mcworld) | *준비 중* | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/005-theme-park-creator/worksheets/week1-beginner.pdf) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/005-theme-park-creator/worksheets/week1.pdf) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/005-theme-park-creator/worksheets/week1-beginner.docx) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/005-theme-park-creator/worksheets/week1.docx) |
+| 2 | `/fill`과 `/clone` — 가게 건물을 한 번에 짓고 통째로 복사하기 | *준비 중* | *준비 중* | *준비 중* | *준비 중* | *준비 중* | *준비 중* |
+| 3 | 반응하는 가게 — `/setblock`, 버튼·레드스톤, 디스펜서, 동물 소환, 소리·파티클 효과까지 작동하는 게임 가게 완성 | *준비 중* | *준비 중* | *준비 중* | *준비 중* | *준비 중* | *준비 중* |
+| 4 | 함수(.mcfunction) — 코드에 이름 붙이기, 채팅 한 줄로 가게 전체 짓기 | *준비 중* | *준비 중* | *준비 중* | *준비 중* | *준비 중* | *준비 중* |
+| 5 | `/execute`와 선택자(`@p`·`@a`·`@e`) — 방문객이 다가오면 반응하는 테마파크 | *준비 중* | *준비 중* | *준비 중* | *준비 중* | *준비 중* | *준비 중* |
+| 6 | 롤러코스터 I — 레일·파워 레일·출발역, 속도의 원리 | *준비 중* | *준비 중* | *준비 중* | *준비 중* | *준비 중* | *준비 중* |
+| 7 | 롤러코스터 II — 타는 동안 펼쳐지는 명령어 연출 (`/title`·`/particle`·`/playsound`) | *준비 중* | *준비 중* | *준비 중* | *준비 중* | *준비 중* | *준비 중* |
+| 8 | **최종: 그랜드 오프닝** — 입구 게이트 + 가게 3곳 + 롤러코스터 + 개장 세리머니 | *준비 중* | *준비 중* | *준비 중* | *준비 중* | *준비 중* | *준비 중* |
 
 > 💡 명령어 하나하나가 모여 함수가 되고, 함수가 모여 테마파크 전체가 됩니다 — 진짜 프로그래밍이 작동하는 방식 그대로입니다.
 >
