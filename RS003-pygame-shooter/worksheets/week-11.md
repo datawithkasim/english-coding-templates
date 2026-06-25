@@ -2,7 +2,7 @@
 
 **Topic:** Repeat with a For Loop · **Course:** Pygame Space Shooter · **Time:** about 45 minutes
 
-This week one short loop draws **many things**. A `for` loop with `range(N)` repeats N times, and by using the loop counter `i` you can spread a **row of enemies** across the top of the screen or scatter stars across the background. Your scene gets a lot richer with very little code.
+This week is about **thinking about and explaining code**. One short loop can draw **many things**. A `for` loop with `range(N)` repeats N times, and by using the loop counter `i` you can spread a **row of enemies** across the top of the screen or scatter stars across the background. You will read loops, fix broken ones, and explain the code you wrote with your teacher in the lesson.
 
 > 🧠 Words to know: **for loop**, **range**, **counter (`i`)**, **pattern**, **spacing**
 
@@ -10,7 +10,7 @@ This week one short loop draws **many things**. A `for` loop with `range(N)` rep
 
 ## 1 · Predict 🔮
 
-Read each piece of code. Before you run it, write what you think will happen.
+Read each piece of code. Write what you think will happen in your head — no need to run anything.
 
 ```python
 for i in range(5):
@@ -41,47 +41,21 @@ for i in range(5):
 
 <div class="write-space"></div>
 
----
-
-## 2 · Run It 🏃
-
-### 🎯 Type the example, run it, and count the enemies
-
 ```python
-import pygame
-pygame.init()
-
-WIDTH, HEIGHT = 800, 600
-screen = pygame.display.set_mode((WIDTH, HEIGHT))
-
-SPACE = (10, 12, 40)
-WHITE = (255, 255, 255)
-RED = (230, 60, 60)
-
-screen.fill(SPACE)
-
-for i in range(40):
-    x = i * 20 + 10
-    pygame.draw.circle(screen, WHITE, (x, 30), 2)
-
 for i in range(5):
     x = 100 + (i * 150)
     pygame.draw.rect(screen, RED, (x - 18, 80, 36, 36))
-
-pygame.display.flip()
-pygame.time.wait(3000)
-pygame.quit()
 ```
 
-**How many enemies are in the row? How many stars along the top?**
+**This draws a row of enemies near the top. Where on screen does the first enemy land, and where does the last one land?**
 
 <div class="write-space"></div>
 
 ---
 
-## 3 · Spot the Bug 🐛
+## 2 · Spot the Bug 🐛
 
-Each block below was meant to do something but is broken. Fix it, then explain why the original was wrong.
+Each block below was meant to do something but is broken.
 
 **Bug A** — This should draw 5 enemies spread across the top, but all 5 land on top of each other in one spot.
 
@@ -139,62 +113,68 @@ for i in range(20):
 
 ---
 
-## 4 · Modify It 🔧
+## 3 · Explain the Code 📖
 
-### 🎯 Change how many and how far apart
+Here is a working example. Read it carefully and answer the questions about it. You do not need to run it.
 
-Change `range(5)` to draw more enemies, and change the spacing number so they fit nicely.
+```python
+import pygame
+pygame.init()
 
-**Write the range and spacing you chose:**
+WIDTH, HEIGHT = 800, 600
+screen = pygame.display.set_mode((WIDTH, HEIGHT))
+
+SPACE = (10, 12, 40)
+WHITE = (255, 255, 255)
+RED = (230, 60, 60)
+
+screen.fill(SPACE)
+
+for i in range(40):
+    x = i * 20 + 10
+    pygame.draw.circle(screen, WHITE, (x, 30), 2)
+
+for i in range(5):
+    x = 100 + (i * 150)
+    pygame.draw.rect(screen, RED, (x - 18, 80, 36, 36))
+
+pygame.display.flip()
+pygame.time.wait(3000)
+pygame.quit()
+```
+
+**How many times does the first `for` loop run, and what does each turn of the loop draw?**
 
 <div class="write-space"></div>
 
-### 🎯 Add the enemies and stars to your shooter
-
-Open your ship program from an earlier week and add a star loop to the background and a row of enemies across the top.
-
-**Describe where you put the loops in your game loop and what changed on screen:**
+**In the second loop, how many enemies are drawn, and how does `i` change where each one lands?**
 
 <div class="write-space"></div>
 
-**Hint:** draw the background loops **after** `screen.fill(...)` but **before** the ship, so the ship sits in front.
+**Why do the stars get drawn before the enemies? What would happen if the enemy loop came first?**
+
+<div class="write-space"></div>
+
+**What does `screen.fill(SPACE)` do, and why is it at the top before the loops?**
+
+<div class="write-space"></div>
+
+**What do you think `pygame.time.wait(3000)` does to the picture on screen?**
+
+<div class="write-space"></div>
 
 ---
 
-## 5 · Make It 📸
+## 4 · Explain Your Lesson Code 🎥
 
-### 🎯 Fill your scene with a pattern
+In today's lesson you wrote your own loop code with your teacher. Now explain that code in a short phone video. You may show your scene running while you talk. Try to use these words: **for loop**, **range**, **counter**, **pattern**, **spacing**.
 
-Build a scene that uses at least two `for` loops — for example a row of enemies across the top and stars in the background — added to your ship.
-
-Send a **photo or video** of your richer scene, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.
-
-> First, I used a for loop to draw …
->
-> The counter `i` helped me spread them out by …
->
-> I chose the spacing … so that …
->
-> My second loop draws …
->
-> One tricky moment was when …
->
-> If I had more time, I would …
-
-<div class="write-space tall" style="min-height: 340px"></div>
-
----
-
-## 6 · Record Your Walkthrough 🎥
-
-Take a video of your patterned scene. Talk through it like you are teaching someone. Try to use these words: **for loop**, **range**, **counter**, **pattern**, **spacing**.
-
-> 1. Show your row of enemies and your stars.
+> 1. Show the code you wrote in the lesson and what appears on screen.
 > 2. Read one for loop out loud and say how many times it runs.
-> 3. Explain how `i` makes each item land in a different spot.
-> 4. Change the count or spacing live and show the difference.
+> 3. Explain how the counter `i` makes each item land in a different spot.
+> 4. Say what spacing you used and why it fits on screen.
 
-**Write what you will say in your video.** Plan it here before you record.
+**Write what you will say in your video. Plan it here before you record.**
 
 <div class="write-space tall" style="min-height: 340px"></div>
 
@@ -202,4 +182,4 @@ Take a video of your patterned scene. Talk through it like you are teaching some
 
 ### Submit ✅
 
-Send this worksheet + your photo or video to teacher on KakaoTalk.
+Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.

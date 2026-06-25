@@ -2,7 +2,7 @@
 
 **Topic:** Variable Speed — Hold Shift to Boost · **Course:** Pygame Space Shooter · **Time:** about 45 minutes
 
-This week you make the flying **feel good**. The ship's thrusters speed up while you hold **Shift**, and when you let go of the arrow keys it slowly coasts to a stop with **friction**, like drifting through space. You learn about a **velocity** variable that builds up and slows down.
+This week is about how the flying **feels good**. You will think about and explain the code that makes the ship speed up while you hold **Shift**, and slowly coast to a stop with **friction**, like drifting through space. You learn about a **velocity** variable that builds up and slows down.
 
 > 🧠 Words to know: **velocity**, **acceleration**, **friction**, **max speed**, **Shift key**
 
@@ -10,7 +10,7 @@ This week you make the flying **feel good**. The ship's thrusters speed up while
 
 ## 1 · Predict 🔮
 
-Read each piece of code. Before you run it, write what you think will happen.
+Read each piece of code. Just by reading it, write what you think will happen.
 
 ```python
 velocity_x = 0
@@ -40,71 +40,22 @@ max_v = MAX_SPEED_FAST if keys[pygame.K_LSHIFT] else MAX_SPEED
 
 <div class="write-space"></div>
 
----
-
-## 2 · Run It 🏃
-
-### 🎯 Type the example, run it, and feel the drift
-
 ```python
-import pygame
-pygame.init()
-
-WIDTH, HEIGHT = 800, 600
-CENTER_X = WIDTH // 2
-screen = pygame.display.set_mode((WIDTH, HEIGHT))
-clock = pygame.time.Clock()
-
-ship_x = CENTER_X
-ship_y = HEIGHT - 100
-velocity_x = 0
-ACCEL = 0.5
-MAX_SPEED = 8
-MAX_SPEED_FAST = 16
-FRICTION = 0.85
-
-running = True
-while running:
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            running = False
-
-    keys = pygame.key.get_pressed()
-    max_v = MAX_SPEED_FAST if (keys[pygame.K_LSHIFT] or keys[pygame.K_RSHIFT]) else MAX_SPEED
-
-    if keys[pygame.K_LEFT]:
-        velocity_x -= ACCEL
-    if keys[pygame.K_RIGHT]:
-        velocity_x += ACCEL
-
-    if velocity_x > max_v:
-        velocity_x = max_v
-    if velocity_x < -max_v:
-        velocity_x = -max_v
-
-    if not keys[pygame.K_LEFT] and not keys[pygame.K_RIGHT]:
-        velocity_x = velocity_x * FRICTION
-
-    ship_x = ship_x + int(velocity_x)
-
-    screen.fill((10, 12, 40))
-    pygame.draw.rect(screen, (80, 220, 255), (ship_x - 20, ship_y, 40, 50))
-    pygame.draw.polygon(screen, (255, 255, 255), [(ship_x, ship_y - 20), (ship_x - 20, ship_y), (ship_x + 20, ship_y)])
-    pygame.display.flip()
-    clock.tick(60)
-
-pygame.quit()
+if velocity_x > max_v:
+    velocity_x = max_v
+if velocity_x < -max_v:
+    velocity_x = -max_v
 ```
 
-**Hold RIGHT, then let go. Does the ship stop instantly or coast? Now hold Shift and fly. What changes?**
+**If `velocity_x` tries to grow past `max_v`, what do these lines do to it?**
 
 <div class="write-space"></div>
 
 ---
 
-## 3 · Spot the Bug 🐛
+## 2 · Spot the Bug 🐛
 
-Each block below was meant to do something but is broken. Fix it, then explain why the original was wrong.
+Each block below was meant to do something but is broken. Write the fixed code, then explain why the original was wrong.
 
 **Bug A** — The ship should coast to a stop when you let go, but instead it keeps sliding forever.
 
@@ -163,67 +114,92 @@ pygame.draw.rect(screen, CYAN, (ship_x - 20, ship_y, 40, 50))
 
 ---
 
-## 4 · Modify It 🔧
+## 3 · Explain the Code 📖
 
-### 🎯 Tune the friction
+Read this full program. It makes the ship speed up, coast, and boost. Answer the questions by reading only — you do not need to run it.
 
-Try `FRICTION = 0.5`, then `0.85`, then `0.99`. Run each one and let go after flying.
+```python
+import pygame
+pygame.init()
 
-**Write how each friction value feels (which one is slippery, which one is grippy):**
+WIDTH, HEIGHT = 800, 600
+CENTER_X = WIDTH // 2
+screen = pygame.display.set_mode((WIDTH, HEIGHT))
+clock = pygame.time.Clock()
+
+ship_x = CENTER_X
+ship_y = HEIGHT - 100
+velocity_x = 0
+ACCEL = 0.5
+MAX_SPEED = 8
+MAX_SPEED_FAST = 16
+FRICTION = 0.85
+
+running = True
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+
+    keys = pygame.key.get_pressed()
+    max_v = MAX_SPEED_FAST if (keys[pygame.K_LSHIFT] or keys[pygame.K_RSHIFT]) else MAX_SPEED
+
+    if keys[pygame.K_LEFT]:
+        velocity_x -= ACCEL
+    if keys[pygame.K_RIGHT]:
+        velocity_x += ACCEL
+
+    if velocity_x > max_v:
+        velocity_x = max_v
+    if velocity_x < -max_v:
+        velocity_x = -max_v
+
+    if not keys[pygame.K_LEFT] and not keys[pygame.K_RIGHT]:
+        velocity_x = velocity_x * FRICTION
+
+    ship_x = ship_x + int(velocity_x)
+
+    screen.fill((10, 12, 40))
+    pygame.draw.rect(screen, (80, 220, 255), (ship_x - 20, ship_y, 40, 50))
+    pygame.draw.polygon(screen, (255, 255, 255), [(ship_x, ship_y - 20), (ship_x - 20, ship_y), (ship_x + 20, ship_y)])
+    pygame.display.flip()
+    clock.tick(60)
+
+pygame.quit()
+```
+
+**Which line makes the ship speed up when you press RIGHT, and how does it change `velocity_x`?**
 
 <div class="write-space"></div>
 
-### 🎯 Make Boost mode look different
-
-Add a visual change while Shift is held — for example, make the thrusters a different colour or bigger.
-
-**Describe what you changed and which key state triggers it:**
+**What does the line `max_v = MAX_SPEED_FAST if ... else MAX_SPEED` decide, and what makes it pick the fast number?**
 
 <div class="write-space"></div>
 
-**Hint:** you already know `keys[pygame.K_LSHIFT]`. Use it to pick a colour the same way the code picks `max_v`.
+**The line `velocity_x = velocity_x * FRICTION` only runs when no arrow key is held. Why is that the right time to slow the ship down?**
+
+<div class="write-space"></div>
+
+**Why does the code use `int(velocity_x)` instead of just `velocity_x` when changing `ship_x`?**
+
+<div class="write-space"></div>
+
+**`velocity_x` can become a negative number. What does a negative velocity make the ship do?**
+
+<div class="write-space"></div>
 
 ---
 
-## 5 · Make It 📸
+## 4 · Explain Your Lesson Code 🎥
 
-### 🎯 Build a ship with feel
+In today's live lesson you wrote your own ship-with-feel code. Now explain it. Record a short phone video. You may show your ship running while you talk. Try to use these words: **velocity**, **acceleration**, **friction**, **max speed**, **Shift**.
 
-Build a program where:
+> 1. Show your ship flying slowly, then hold Shift and fly fast.
+> 2. Let go of the keys and show the ship coasting to a stop.
+> 3. Point to your friction line and say what 0.85 does.
+> 4. Explain how your code stops the ship going past the max speed.
 
-1. the ship speeds up while held (acceleration),
-2. it coasts to a stop when released (friction),
-3. Shift gives a faster top speed (boost),
-4. it never crashes from decimal positions.
-
-Send a **video** comparing normal flying and Boost flying, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.
-
-> First, I added a velocity variable that …
->
-> Acceleration makes the ship …
->
-> Friction makes it … when I let go.
->
-> Holding Shift changes the top speed to …
->
-> One tricky moment was when …
->
-> If I had more time, I would …
-
-<div class="write-space tall" style="min-height: 340px"></div>
-
----
-
-## 6 · Record Your Walkthrough 🎥
-
-Take a video showing normal flying and Boost flying. Talk through it like you are teaching someone. Try to use these words: **velocity**, **acceleration**, **friction**, **max speed**, **Shift**.
-
-> 1. Fly slowly, then hold Shift and fly fast.
-> 2. Let go of the keys and show the ship coasting.
-> 3. Read your friction line out loud and say what 0.85 does.
-> 4. Show the difference between two friction values you tried.
-
-**Write what you will say in your video.** Plan it here before you record.
+**Write what you will say in your video. Plan it here before you record.**
 
 <div class="write-space tall" style="min-height: 340px"></div>
 
@@ -231,4 +207,4 @@ Take a video showing normal flying and Boost flying. Talk through it like you ar
 
 ### Submit ✅
 
-Send this worksheet + your normal/Boost comparison video to teacher on KakaoTalk.
+Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.

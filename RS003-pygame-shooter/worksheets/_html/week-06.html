@@ -104,12 +104,12 @@ footer b { color: #ff7849; }
 <div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
 <h1>🚀 RS003 Week 6 — English Worksheet</h1>
 <p><strong>Topic:</strong> A Fleet of Ships — Many Parameters · <strong>Course:</strong> Pygame Space Shooter · <strong>Time:</strong> about 45 minutes</p>
-<p>This week one function makes a whole <strong>fleet of different ships</strong>. You give <code>draw_ship</code> more parameters — position, colour, and size — so a single function can draw a small green scout, a big red boss ship, and a blue one, all at once.</p>
+<p>This week is about thinking and talking about code, not typing it in the app. One function makes a whole <strong>fleet of different ships</strong>: you give <code>draw_ship</code> more parameters — position, colour, and size — so a single function can draw a small green scout, a big red boss ship, and a blue one, all at once. You will predict, debug, and explain code, then explain the code you wrote in today's lesson.</p>
 <blockquote>
 <p>🧠 Words to know: <strong>parameter</strong>, <strong>argument</strong>, <strong>default value</strong>, <strong>keyword argument</strong>, <strong>scale (size)</strong></p>
 </blockquote>
 <h2>1 · Predict 🔮</h2>
-<p>Read each piece of code. Before you run it, write what you think will happen.</p>
+<p>Read each piece of code. Do not run anything — just write what you think will happen.</p>
 <pre><code class="language-python">def draw_ship(x, body_color, size=1):
     ...
 </code></pre>
@@ -128,48 +128,13 @@ draw_ship(600, BLUE, size=0.8)
 <div class="qa"><p><strong>If <code>size</code> is 1.2, what does <code>int(40 * size)</code> work out to? Why is <code>int(...)</code> needed?</strong></p>
 <div class="write-space"></div></div>
 
-<h2>2 · Run It 🏃</h2>
-<h3>🎯 Type the example, run it, and compare the three ships</h3>
-<pre><code class="language-python">import pygame
-pygame.init()
-
-WIDTH, HEIGHT = 800, 600
-screen = pygame.display.set_mode((WIDTH, HEIGHT))
-clock = pygame.time.Clock()
-
-SPACE = (10, 12, 40)
-WHITE = (255, 255, 255)
-GREEN = (60, 200, 120)
-RED = (230, 60, 60)
-BLUE = (80, 140, 255)
-
-def draw_ship(x, body_color, size=1):
-    w = int(40 * size)
-    h = int(50 * size)
-    nose = int(20 * size)
-    y = HEIGHT - 120
-    pygame.draw.rect(screen, body_color, (x - w // 2, y, w, h))
-    pygame.draw.polygon(screen, WHITE, [(x, y - nose), (x - w // 2, y), (x + w // 2, y)])
-
-running = True
-while running:
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            running = False
-    screen.fill(SPACE)
-    draw_ship(200, GREEN, size=0.8)
-    draw_ship(400, RED, size=1.2)
-    draw_ship(600, BLUE, size=0.8)
-    pygame.display.flip()
-    clock.tick(60)
-
-pygame.quit()
+<pre><code class="language-python">draw_ship(400, RED)
 </code></pre>
-<div class="qa"><p><strong>Describe the three ships — their colour, size, and position:</strong></p>
+<div class="qa"><p><strong>Here <code>size</code> is left out. What size will this ship be, and how do you know?</strong></p>
 <div class="write-space"></div></div>
 
-<h2>3 · Spot the Bug 🐛</h2>
-<p>Each block below was meant to do something but is broken. Fix it, then explain why the original was wrong.</p>
+<h2>2 · Spot the Bug 🐛</h2>
+<p>Each block below was meant to do something but is broken.</p>
 <p><strong>Bug A</strong> — This should draw a ship in any colour, but every ship comes out the same colour no matter what you pass in.</p>
 <pre><code class="language-python">def draw_ship(x, body_color, size=1):
     pygame.draw.rect(screen, GREEN, (x - 20, HEIGHT - 120, 40, 50))
@@ -205,52 +170,73 @@ draw_ship(400, RED)
 <div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
 <div class="write-space"></div></div>
 
-<h2>4 · Modify It 🔧</h2>
-<h3>🎯 Line up five ships in different colours</h3>
-<p>Call <code>draw_ship</code> five times across the screen, each with a different colour.</p>
-<div class="qa"><p><strong>Write your five calls:</strong></p>
+<h2>3 · Explain the Code 📖</h2>
+<p>Read this working example carefully. You do not need to run it — just answer the questions about how it works.</p>
+<pre><code class="language-python">import pygame
+pygame.init()
+
+WIDTH, HEIGHT = 800, 600
+screen = pygame.display.set_mode((WIDTH, HEIGHT))
+clock = pygame.time.Clock()
+
+SPACE = (10, 12, 40)
+WHITE = (255, 255, 255)
+GREEN = (60, 200, 120)
+RED = (230, 60, 60)
+BLUE = (80, 140, 255)
+
+def draw_ship(x, body_color, size=1):
+    w = int(40 * size)
+    h = int(50 * size)
+    nose = int(20 * size)
+    y = HEIGHT - 120
+    pygame.draw.rect(screen, body_color, (x - w // 2, y, w, h))
+    pygame.draw.polygon(screen, WHITE, [(x, y - nose), (x - w // 2, y), (x + w // 2, y)])
+
+running = True
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+    screen.fill(SPACE)
+    draw_ship(200, GREEN, size=0.8)
+    draw_ship(400, RED, size=1.2)
+    draw_ship(600, BLUE, size=0.8)
+    pygame.display.flip()
+    clock.tick(60)
+
+pygame.quit()
+</code></pre>
+<div class="qa"><p><strong>What are the three parameters of <code>draw_ship</code>, and which one has a default value?</strong></p>
 <div class="write-space"></div></div>
 
-<h3>🎯 Make the middle one the boss</h3>
-<p>Use the <code>size</code> parameter to make one ship clearly bigger than the rest.</p>
-<div class="qa"><p><strong>Write the call for your boss ship and the size you gave it:</strong></p>
+<div class="qa"><p><strong>Look at <code>w = int(40 * size)</code>. Why does a bigger <code>size</code> make a wider ship?</strong></p>
 <div class="write-space"></div></div>
 
-<p><strong>Hint:</strong> a <code>size</code> above 1 makes it bigger; below 1 makes it smaller. Spread the X values evenly so they do not overlap.</p>
-<h2>5 · Make It 📸</h2>
-<h3>🎯 Build your own ship fleet</h3>
-<p>Build a program that:</p>
-<ol>
-<li>has a <code>draw_ship(x, color, size)</code> function,</li>
-<li>draws several ships in a row,</li>
-<li>uses different colours and at least two different sizes.</li>
-</ol>
-<p>Send a <strong>photo or video</strong> of your fleet, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.</p>
-<div class="qa"><blockquote>
-<p>First, I added parameters for …</p>
-<p>I gave <code>size</code> a default value so that …</p>
-<p>My boss ship is bigger because …</p>
-<p>I used <code>int(...)</code> to …</p>
-<p>One tricky moment was when …</p>
-<p>If I had more time, I would …</p>
-</blockquote>
-<div class="write-space tall" style="min-height: 340px"></div></div>
+<div class="qa"><p><strong>In <code>draw_ship(400, RED, size=1.2)</code>, name each argument and say which parameter it goes to.</strong></p>
+<div class="write-space"></div></div>
 
-<h2>6 · Record Your Walkthrough 🎥</h2>
-<p>Take a video of your ship fleet. Talk through it like you are teaching someone. Try to use these words: <strong>parameter</strong>, <strong>argument</strong>, <strong>default value</strong>, <strong>keyword argument</strong>, <strong>scale</strong>.</p>
+<div class="qa"><p><strong>Why can the same <code>draw_ship</code> function draw three different ships? What changes each time?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>The <code>pygame.draw.polygon</code> line draws the white nose. How does it use <code>size</code> to stay the right shape?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>4 · Explain Your Lesson Code 🎥</h2>
+<p>In today's live lesson you wrote your own ship-fleet code. Record a short video on your phone explaining that code in your own words. You may show your fleet running on screen. Try to use these words: <strong>parameter</strong>, <strong>argument</strong>, <strong>default value</strong>, <strong>keyword argument</strong>, <strong>scale</strong>.</p>
 <blockquote>
 <ol>
 <li>Show your row of ships.</li>
-<li>Read one function call out loud and name each argument.</li>
-<li>Explain what the default value of <code>size</code> does.</li>
+<li>Read one of your function calls out loud and name each argument.</li>
+<li>Explain what the default value of <code>size</code> does in your code.</li>
 <li>Point at your boss ship and say what makes it bigger.</li>
 </ol>
 </blockquote>
-<div class="qa"><p><strong>Write what you will say in your video.</strong> Plan it here before you record.</p>
+<div class="qa"><p><strong>Write what you will say in your video. Plan it here before you record.</strong></p>
 <div class="write-space tall" style="min-height: 340px"></div></div>
 
 <hr />
 <h3>Submit ✅</h3>
-<p>Send this worksheet + your photo or video to teacher on KakaoTalk.</p>
+<p>Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.</p>
 </body>
 </html>

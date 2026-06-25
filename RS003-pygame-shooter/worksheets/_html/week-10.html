@@ -104,12 +104,12 @@ footer b { color: #ff7849; }
 <div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
 <h1>💥 RS003 Week 10 — English Worksheet</h1>
 <p><strong>Topic:</strong> Feedback When You Hit the Edge · <strong>Course:</strong> Pygame Space Shooter · <strong>Time:</strong> about 45 minutes</p>
-<p>This week the screen edge <strong>reacts</strong>. When the ship slams into a wall, the border flashes red and the whole scene shakes for a moment. You learn to use <strong>timer variables</strong> that count down frame by frame, and <code>random</code> to make a shake.</p>
+<p>This week is about <strong>thinking and talking</strong> about the code that makes the screen react when the ship hits a wall. The border flashes red and the scene shakes for a moment using <strong>timer variables</strong> that count down frame by frame and <code>random</code> to make a shake. You will read code, find bugs on paper, and explain the code you wrote in the lesson.</p>
 <blockquote>
 <p>🧠 Words to know: <strong>timer</strong>, <strong>flash</strong>, <strong>shake</strong>, <strong>offset</strong>, <strong>random</strong></p>
 </blockquote>
 <h2>1 · Predict 🔮</h2>
-<p>Read each piece of code. Before you run it, write what you think will happen.</p>
+<p>Read each piece of code. Write what you think it does. You are reading only — do not run anything.</p>
 <pre><code class="language-python">flash_timer = 0
 if ship_x &gt; WIDTH - 20:
     ship_x = WIDTH - 20
@@ -130,8 +130,49 @@ pygame.draw.rect(screen, CYAN, (ship_x - 20 + shake_x, ship_y, 40, 50))
 <div class="qa"><p><strong>While the shake timer is running, <code>shake_x</code> is a small random number. What does adding it to every position do?</strong></p>
 <div class="write-space"></div></div>
 
-<h2>2 · Run It 🏃</h2>
-<h3>🎯 Type the example, run it, and slam the wall</h3>
+<pre><code class="language-python">border_color = (255, 50, 50) if flash_timer &gt; 0 else (60, 60, 90)
+border_width = 6 if flash_timer &gt; 0 else 2
+</code></pre>
+<div class="qa"><p><strong>What colour and width is the border while <code>flash_timer</code> is above 0? What about when it is 0?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>2 · Spot the Bug 🐛</h2>
+<p>Each block below was meant to do something but is broken. Find the problem on paper.</p>
+<p><strong>Bug A</strong> — The border should flash for a moment then go back to grey, but once it flashes it stays red forever.</p>
+<pre><code class="language-python">if ship_x &gt; WIDTH - 20:
+    ship_x = WIDTH - 20
+    flash_timer = 10
+</code></pre>
+<p><strong>Hint:</strong> the timer is set but never counts down.</p>
+<div class="qa"><p><strong>Write the fixed code (show where the timer goes down):</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug B</strong> — The screen should only shake when you hit a wall, but it shakes all the time even in the middle.</p>
+<pre><code class="language-python">shake_x = random.randint(-5, 5)
+</code></pre>
+<p><strong>Hint:</strong> only shake while the shake timer is running.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug C</strong> — The shake should move the whole ship together, but right now the nose jumps around while the body stays still, so they come apart.</p>
+<pre><code class="language-python">pygame.draw.rect(screen, CYAN, (ship_x - 20, ship_y, 40, 50))
+pygame.draw.polygon(screen, WHITE, [(ship_x + shake_x, ship_y - 20), (ship_x - 20 + shake_x, ship_y), (ship_x + 20 + shake_x, ship_y)])
+</code></pre>
+<p><strong>Hint:</strong> the body does not have the shake offset added.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>3 · Explain the Code 📖</h2>
+<p>Read this working example. It is the full program from your lesson. Answer the questions by reading the code — you do not need to run it.</p>
 <pre><code class="language-python">import pygame
 import random
 pygame.init()
@@ -187,91 +228,36 @@ while running:
 
 pygame.quit()
 </code></pre>
-<div class="qa"><p><strong>Slam into a wall. Describe what flashes and what shakes, and how long it lasts:</strong></p>
+<div class="qa"><p><strong>The line <code>if ship_x &lt; 20 or ship_x &gt; WIDTH - 20 ...</code> checks four things. What is it checking for?</strong></p>
 <div class="write-space"></div></div>
 
-<h2>3 · Spot the Bug 🐛</h2>
-<p>Each block below was meant to do something but is broken. Fix it, then explain why the original was wrong.</p>
-<p><strong>Bug A</strong> — The border should flash for a moment then go back to grey, but once it flashes it stays red forever.</p>
-<pre><code class="language-python">if ship_x &gt; WIDTH - 20:
-    ship_x = WIDTH - 20
-    flash_timer = 10
-</code></pre>
-<p><strong>Hint:</strong> the timer is set but never counts down.</p>
-<div class="qa"><p><strong>Write the fixed code (show where the timer goes down):</strong></p>
+<div class="qa"><p><strong>When that check is true, which two timers get set, and what number do they get?</strong></p>
 <div class="write-space"></div></div>
 
-<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="qa"><p><strong>The four lines like <code>if ship_x &lt; 20: ship_x = 20</code> keep the ship on screen. In your own words, what do they stop happening?</strong></p>
 <div class="write-space"></div></div>
 
-<p><strong>Bug B</strong> — The screen should only shake when you hit a wall, but it shakes all the time even in the middle.</p>
-<pre><code class="language-python">shake_x = random.randint(-5, 5)
-</code></pre>
-<p><strong>Hint:</strong> only shake while the shake timer is running.</p>
-<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="qa"><p><strong>Why is <code>shake_x</code> added to both the rectangle and the polygon, instead of just one of them?</strong></p>
 <div class="write-space"></div></div>
 
-<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="qa"><p><strong>Near the bottom, both timers go down by 1 each loop. What would happen if you deleted those two <code>if</code> blocks?</strong></p>
 <div class="write-space"></div></div>
 
-<p><strong>Bug C</strong> — The shake should move the whole ship together, but right now the nose jumps around while the body stays still, so they come apart.</p>
-<pre><code class="language-python">pygame.draw.rect(screen, CYAN, (ship_x - 20, ship_y, 40, 50))
-pygame.draw.polygon(screen, WHITE, [(ship_x + shake_x, ship_y - 20), (ship_x - 20 + shake_x, ship_y), (ship_x + 20 + shake_x, ship_y)])
-</code></pre>
-<p><strong>Hint:</strong> the body does not have the shake offset added.</p>
-<div class="qa"><p><strong>Write the fixed code:</strong></p>
-<div class="write-space"></div></div>
-
-<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
-<div class="write-space"></div></div>
-
-<h2>4 · Modify It 🔧</h2>
-<h3>🎯 Tune the shake strength and length</h3>
-<p>Change <code>random.randint(-5, 5)</code> to a bigger range, and change the timer from 10 to a bigger or smaller number.</p>
-<div class="qa"><p><strong>Write the shake range and timer length you chose, and how it feels:</strong></p>
-<div class="write-space"></div></div>
-
-<h3>🎯 Design your own hit feedback</h3>
-<p>Replace or add to the flash with your own idea — a flash of the whole screen, a colour change on the ship, anything visual.</p>
-<div class="qa"><p><strong>Describe your feedback idea and the timer that controls it:</strong></p>
-<div class="write-space"></div></div>
-
-<p><strong>Hint:</strong> any feedback works the same way — set a timer to a number on the hit, count it down each loop, and do something special while it is above 0.</p>
-<h2>5 · Make It 📸</h2>
-<h3>🎯 Build a ship that reacts to walls</h3>
-<p>Build a program where:</p>
-<ol>
-<li>the ship is clamped to the screen,</li>
-<li>hitting a wall flashes the border,</li>
-<li>hitting a wall shakes the scene for a moment,</li>
-<li>everything shakes together.</li>
-</ol>
-<p>Send a <strong>video</strong> showing a wall hit, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.</p>
-<div class="qa"><blockquote>
-<p>First, I made a timer that …</p>
-<p>When the ship hits a wall, I set the timer to …</p>
-<p>Each loop the timer goes down by …</p>
-<p>The shake uses random numbers to …</p>
-<p>One tricky moment was when …</p>
-<p>If I had more time, I would …</p>
-</blockquote>
-<div class="write-space tall" style="min-height: 340px"></div></div>
-
-<h2>6 · Record Your Walkthrough 🎥</h2>
-<p>Take a video showing a wall hit and the reaction. Talk through it like you are teaching someone. Try to use these words: <strong>timer</strong>, <strong>flash</strong>, <strong>shake</strong>, <strong>offset</strong>, <strong>random</strong>.</p>
+<h2>4 · Explain Your Lesson Code 🎥</h2>
+<p>Explain the code <strong>you</strong> wrote in today's lesson. Record a short video on your phone. You can show the program running, then talk through your code like you are teaching someone. Try to use these words: <strong>timer</strong>, <strong>flash</strong>, <strong>shake</strong>, <strong>offset</strong>, <strong>random</strong>.</p>
 <blockquote>
 <ol>
 <li>Fly into a wall and show the flash and shake.</li>
 <li>Read your timer line out loud and say what 10 means.</li>
-<li>Point at where the timer counts down.</li>
-<li>Show your own feedback idea.</li>
+<li>Point at where the timer counts down each loop.</li>
+<li>Show where the <strong>offset</strong> (shake) is added to the ship.</li>
 </ol>
 </blockquote>
-<div class="qa"><p><strong>Write what you will say in your video.</strong> Plan it here before you record.</p>
+<div class="qa"><p><strong>Write what you will say in your video. Plan it here before you record.</strong></p>
 <div class="write-space tall" style="min-height: 340px"></div></div>
 
 <hr />
 <h3>Submit ✅</h3>
-<p>Send this worksheet + your wall-hit video to teacher on KakaoTalk.</p>
+<p>Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.</p>
 </body>
 </html>

@@ -104,12 +104,12 @@ footer b { color: #ff7849; }
 <div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
 <h1>🟩 RS003 Week 3 — English Worksheet</h1>
 <p><strong>Topic:</strong> Build the Ship Body · <strong>Course:</strong> Pygame Space Shooter · <strong>Time:</strong> about 45 minutes</p>
-<p>This week you draw the first piece of your spaceship: a <strong>body</strong> that sits in the middle-bottom of the screen. You learn to draw shapes, store important numbers as <strong>constants</strong>, and find the centre of the screen with <strong>integer division</strong> (<code>//</code>).</p>
+<p>This week you think about the code that draws the first piece of your spaceship: a <strong>body</strong> that sits in the middle-bottom of the screen. You read code that draws shapes, stores important numbers as <strong>constants</strong>, and finds the centre of the screen with <strong>integer division</strong> (<code>//</code>). You will read it, fix it, and explain it.</p>
 <blockquote>
 <p>🧠 Words to know: <strong>constant</strong>, <strong>rectangle</strong>, <strong>circle</strong>, <strong>integer division (<code>//</code>)</strong>, <strong>centre</strong></p>
 </blockquote>
 <h2>1 · Predict 🔮</h2>
-<p>Read each piece of code. Before you run it, write what you think will happen.</p>
+<p>Read each piece of code. Just from reading it, write what you think it does. Do not run it.</p>
 <pre><code class="language-python">WIDTH = 800
 CENTER_X = WIDTH // 2
 </code></pre>
@@ -126,40 +126,15 @@ CENTER_X = WIDTH // 2
 <div class="qa"><p><strong>What shape, where, and how big? What does the last number 8 control?</strong></p>
 <div class="write-space"></div></div>
 
-<h2>2 · Run It 🏃</h2>
-<h3>🎯 Type the example, run it, and find the ship body</h3>
-<pre><code class="language-python">import pygame
-pygame.init()
-
-WIDTH = 800
-HEIGHT = 600
-CENTER_X = WIDTH // 2
-
-screen = pygame.display.set_mode((WIDTH, HEIGHT))
-pygame.display.set_caption(&quot;Space Shooter&quot;)
-
-SPACE = (10, 12, 40)
-CYAN = (80, 220, 255)
-
-clock = pygame.time.Clock()
-running = True
-while running:
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            running = False
-
-    screen.fill(SPACE)
-    pygame.draw.rect(screen, CYAN, (CENTER_X - 20, HEIGHT - 80, 40, 50))
-    pygame.display.flip()
-    clock.tick(60)
-
-pygame.quit()
+<pre><code class="language-python">screen.fill(SPACE)
+pygame.draw.rect(screen, CYAN, (CENTER_X - 20, HEIGHT - 80, 40, 50))
+pygame.display.flip()
 </code></pre>
-<div class="qa"><p><strong>Where does the cyan rectangle sit? Is it really in the centre across? How can you tell?</strong></p>
+<div class="qa"><p><strong>In what order do these three lines run? What would you see if <code>screen.fill(SPACE)</code> came AFTER the rectangle instead of before it?</strong></p>
 <div class="write-space"></div></div>
 
-<h2>3 · Spot the Bug 🐛</h2>
-<p>Each block below was meant to do something but is broken. Fix it, then explain why the original was wrong.</p>
+<h2>2 · Spot the Bug 🐛</h2>
+<p>Each block below was meant to do something but is broken. Fix it on paper, then explain why the original was wrong.</p>
 <p><strong>Bug A</strong> — The ship body should sit in the <strong>centre</strong> across the screen. Right now it is glued to the left edge.</p>
 <pre><code class="language-python">pygame.draw.rect(screen, CYAN, (0, HEIGHT - 80, 40, 50))
 </code></pre>
@@ -190,55 +165,65 @@ pygame.quit()
 <div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
 <div class="write-space"></div></div>
 
-<h2>4 · Modify It 🔧</h2>
-<h3>🎯 Add a cockpit circle on the body</h3>
-<p>A ship needs a cockpit. Add a small circle on top of the body where the pilot sits.</p>
-<pre><code class="language-python">pygame.draw.circle(screen, (255, 255, 255), (CENTER_X, HEIGHT - 70), 8)
+<h2>3 · Explain the Code 📖</h2>
+<p>Read this working example line by line. Then answer the questions below by reading only — you do not need to run it.</p>
+<pre><code class="language-python">import pygame
+pygame.init()
+
+WIDTH = 800
+HEIGHT = 600
+CENTER_X = WIDTH // 2
+
+screen = pygame.display.set_mode((WIDTH, HEIGHT))
+pygame.display.set_caption(&quot;Space Shooter&quot;)
+
+SPACE = (10, 12, 40)
+CYAN = (80, 220, 255)
+
+clock = pygame.time.Clock()
+running = True
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+
+    screen.fill(SPACE)
+    pygame.draw.rect(screen, CYAN, (CENTER_X - 20, HEIGHT - 80, 40, 50))
+    pygame.display.flip()
+    clock.tick(60)
+
+pygame.quit()
 </code></pre>
-<div class="qa"><p><strong>Add this line below the rectangle, run it, and write what you see:</strong></p>
+<div class="qa"><p><strong><code>WIDTH</code>, <code>HEIGHT</code>, <code>SPACE</code>, and <code>CYAN</code> are all constants. What is each one used for?</strong></p>
 <div class="write-space"></div></div>
 
-<h3>🎯 Resize the body using constants</h3>
-<p>Make the body wider, then narrower, by changing only the width number. Then try making the body its own constant so the size is easy to change in one place.</p>
-<div class="qa"><p><strong>Write the constant you made and the size it sets (for example <code>BODY_WIDTH = 40</code>):</strong></p>
+<div class="qa"><p><strong>The rectangle's left value is <code>CENTER_X - 20</code>, not <code>CENTER_X</code>. Why subtract 20? What would happen if you used <code>CENTER_X</code> on its own?</strong></p>
 <div class="write-space"></div></div>
 
-<p><strong>Hint:</strong> a constant is just a name in CAPITALS that holds a number you do not want to keep retyping.</p>
-<h2>5 · Make It 📸</h2>
-<h3>🎯 Draw your own ship body in the centre</h3>
-<p>Build a window that:</p>
-<ol>
-<li>uses constants for <code>WIDTH</code> and <code>HEIGHT</code>,</li>
-<li>finds the centre with <code>//</code>,</li>
-<li>draws a body rectangle in the middle-bottom,</li>
-<li>adds a cockpit circle on top.</li>
-</ol>
-<p>Send a <strong>photo or video</strong> of your ship body, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.</p>
-<div class="qa"><blockquote>
-<p>First, I set up my constants for …</p>
-<p>I found the centre by …</p>
-<p>I placed the body at the bottom by using …</p>
-<p>I added a cockpit circle so that …</p>
-<p>One tricky moment was when …</p>
-<p>If I had more time, I would …</p>
-</blockquote>
-<div class="write-space tall" style="min-height: 340px"></div></div>
+<div class="qa"><p><strong>What does the <code>while running:</code> loop do? What makes the loop stop?</strong></p>
+<div class="write-space"></div></div>
 
-<h2>6 · Record Your Walkthrough 🎥</h2>
-<p>Take a video of your ship body. Talk through it like you are teaching someone. Try to use these words: <strong>constant</strong>, <strong>rectangle</strong>, <strong>circle</strong>, <strong>integer division</strong>, <strong>centre</strong>.</p>
+<div class="qa"><p><strong>Why is the cyan rectangle drawn in the middle across the screen? Point to the exact lines that make this happen.</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Is the rectangle near the top or near the bottom of the window? How can you tell from the numbers?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>4 · Explain Your Lesson Code 🎥</h2>
+<p>In today's live lesson you wrote code with your teacher to draw your ship body. Now explain that code in a short phone video. You may show it running on the screen. Try to use these words: <strong>constant</strong>, <strong>rectangle</strong>, <strong>circle</strong>, <strong>integer division</strong>, <strong>centre</strong>.</p>
 <blockquote>
 <ol>
-<li>Show your body sitting in the middle-bottom.</li>
+<li>Show your ship body sitting in the middle-bottom of the screen.</li>
 <li>Read your <code>CENTER_X</code> line out loud and say what <code>//</code> does.</li>
-<li>Point at the rectangle's four numbers and name each one.</li>
+<li>Point at your rectangle's four numbers and name each one (left, top, width, height).</li>
 <li>Say why Y = 0 is the top, not the bottom.</li>
 </ol>
 </blockquote>
-<div class="qa"><p><strong>Write what you will say in your video.</strong> Plan it here before you record.</p>
+<div class="qa"><p><strong>Write what you will say in your video. Plan it here before you record.</strong></p>
 <div class="write-space tall" style="min-height: 340px"></div></div>
 
 <hr />
 <h3>Submit ✅</h3>
-<p>Send this worksheet + your photo or video to teacher on KakaoTalk.</p>
+<p>Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.</p>
 </body>
 </html>

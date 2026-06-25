@@ -104,12 +104,12 @@ footer b { color: #ff7849; }
 <div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
 <h1>🏎️ RS003 Week 8 — English Worksheet</h1>
 <p><strong>Topic:</strong> Variable Speed — Hold Shift to Boost · <strong>Course:</strong> Pygame Space Shooter · <strong>Time:</strong> about 45 minutes</p>
-<p>This week you make the flying <strong>feel good</strong>. The ship's thrusters speed up while you hold <strong>Shift</strong>, and when you let go of the arrow keys it slowly coasts to a stop with <strong>friction</strong>, like drifting through space. You learn about a <strong>velocity</strong> variable that builds up and slows down.</p>
+<p>This week is about how the flying <strong>feels good</strong>. You will think about and explain the code that makes the ship speed up while you hold <strong>Shift</strong>, and slowly coast to a stop with <strong>friction</strong>, like drifting through space. You learn about a <strong>velocity</strong> variable that builds up and slows down.</p>
 <blockquote>
 <p>🧠 Words to know: <strong>velocity</strong>, <strong>acceleration</strong>, <strong>friction</strong>, <strong>max speed</strong>, <strong>Shift key</strong></p>
 </blockquote>
 <h2>1 · Predict 🔮</h2>
-<p>Read each piece of code. Before you run it, write what you think will happen.</p>
+<p>Read each piece of code. Just by reading it, write what you think will happen.</p>
 <pre><code class="language-python">velocity_x = 0
 ACCEL = 0.5
 velocity_x += ACCEL
@@ -129,8 +129,55 @@ ship_x = ship_x + int(velocity_x)
 <div class="qa"><p><strong>What does holding Shift change about the top speed?</strong></p>
 <div class="write-space"></div></div>
 
-<h2>2 · Run It 🏃</h2>
-<h3>🎯 Type the example, run it, and feel the drift</h3>
+<pre><code class="language-python">if velocity_x &gt; max_v:
+    velocity_x = max_v
+if velocity_x &lt; -max_v:
+    velocity_x = -max_v
+</code></pre>
+<div class="qa"><p><strong>If <code>velocity_x</code> tries to grow past <code>max_v</code>, what do these lines do to it?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>2 · Spot the Bug 🐛</h2>
+<p>Each block below was meant to do something but is broken. Write the fixed code, then explain why the original was wrong.</p>
+<p><strong>Bug A</strong> — The ship should coast to a stop when you let go, but instead it keeps sliding forever.</p>
+<pre><code class="language-python">if keys[pygame.K_LEFT]:
+    velocity_x -= ACCEL
+if keys[pygame.K_RIGHT]:
+    velocity_x += ACCEL
+ship_x += int(velocity_x)
+</code></pre>
+<p><strong>Hint:</strong> nothing slows the velocity down when no key is held.</p>
+<div class="qa"><p><strong>Write the fixed code (add the friction step):</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug B</strong> — The ship is supposed to have a top speed, but holding a key for a long time makes it shoot across the screen far too fast.</p>
+<pre><code class="language-python">if keys[pygame.K_RIGHT]:
+    velocity_x += ACCEL
+ship_x += int(velocity_x)
+</code></pre>
+<p><strong>Hint:</strong> the velocity is never capped at a maximum.</p>
+<div class="qa"><p><strong>Write the fixed code (add the speed limit):</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug C</strong> — The program crashes because Pygame is given a position with a decimal point.</p>
+<pre><code class="language-python">ship_x = ship_x + velocity_x
+pygame.draw.rect(screen, CYAN, (ship_x - 20, ship_y, 40, 50))
+</code></pre>
+<p><strong>Hint:</strong> velocity is a decimal; screen positions must be whole numbers.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>3 · Explain the Code 📖</h2>
+<p>Read this full program. It makes the ship speed up, coast, and boost. Answer the questions by reading only — you do not need to run it.</p>
 <pre><code class="language-python">import pygame
 pygame.init()
 
@@ -179,95 +226,36 @@ while running:
 
 pygame.quit()
 </code></pre>
-<div class="qa"><p><strong>Hold RIGHT, then let go. Does the ship stop instantly or coast? Now hold Shift and fly. What changes?</strong></p>
+<div class="qa"><p><strong>Which line makes the ship speed up when you press RIGHT, and how does it change <code>velocity_x</code>?</strong></p>
 <div class="write-space"></div></div>
 
-<h2>3 · Spot the Bug 🐛</h2>
-<p>Each block below was meant to do something but is broken. Fix it, then explain why the original was wrong.</p>
-<p><strong>Bug A</strong> — The ship should coast to a stop when you let go, but instead it keeps sliding forever.</p>
-<pre><code class="language-python">if keys[pygame.K_LEFT]:
-    velocity_x -= ACCEL
-if keys[pygame.K_RIGHT]:
-    velocity_x += ACCEL
-ship_x += int(velocity_x)
-</code></pre>
-<p><strong>Hint:</strong> nothing slows the velocity down when no key is held.</p>
-<div class="qa"><p><strong>Write the fixed code (add the friction step):</strong></p>
+<div class="qa"><p><strong>What does the line <code>max_v = MAX_SPEED_FAST if ... else MAX_SPEED</code> decide, and what makes it pick the fast number?</strong></p>
 <div class="write-space"></div></div>
 
-<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="qa"><p><strong>The line <code>velocity_x = velocity_x * FRICTION</code> only runs when no arrow key is held. Why is that the right time to slow the ship down?</strong></p>
 <div class="write-space"></div></div>
 
-<p><strong>Bug B</strong> — The ship is supposed to have a top speed, but holding a key for a long time makes it shoot across the screen far too fast.</p>
-<pre><code class="language-python">if keys[pygame.K_RIGHT]:
-    velocity_x += ACCEL
-ship_x += int(velocity_x)
-</code></pre>
-<p><strong>Hint:</strong> the velocity is never capped at a maximum.</p>
-<div class="qa"><p><strong>Write the fixed code (add the speed limit):</strong></p>
+<div class="qa"><p><strong>Why does the code use <code>int(velocity_x)</code> instead of just <code>velocity_x</code> when changing <code>ship_x</code>?</strong></p>
 <div class="write-space"></div></div>
 
-<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="qa"><p><strong><code>velocity_x</code> can become a negative number. What does a negative velocity make the ship do?</strong></p>
 <div class="write-space"></div></div>
 
-<p><strong>Bug C</strong> — The program crashes because Pygame is given a position with a decimal point.</p>
-<pre><code class="language-python">ship_x = ship_x + velocity_x
-pygame.draw.rect(screen, CYAN, (ship_x - 20, ship_y, 40, 50))
-</code></pre>
-<p><strong>Hint:</strong> velocity is a decimal; screen positions must be whole numbers.</p>
-<div class="qa"><p><strong>Write the fixed code:</strong></p>
-<div class="write-space"></div></div>
-
-<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
-<div class="write-space"></div></div>
-
-<h2>4 · Modify It 🔧</h2>
-<h3>🎯 Tune the friction</h3>
-<p>Try <code>FRICTION = 0.5</code>, then <code>0.85</code>, then <code>0.99</code>. Run each one and let go after flying.</p>
-<div class="qa"><p><strong>Write how each friction value feels (which one is slippery, which one is grippy):</strong></p>
-<div class="write-space"></div></div>
-
-<h3>🎯 Make Boost mode look different</h3>
-<p>Add a visual change while Shift is held — for example, make the thrusters a different colour or bigger.</p>
-<div class="qa"><p><strong>Describe what you changed and which key state triggers it:</strong></p>
-<div class="write-space"></div></div>
-
-<p><strong>Hint:</strong> you already know <code>keys[pygame.K_LSHIFT]</code>. Use it to pick a colour the same way the code picks <code>max_v</code>.</p>
-<h2>5 · Make It 📸</h2>
-<h3>🎯 Build a ship with feel</h3>
-<p>Build a program where:</p>
-<ol>
-<li>the ship speeds up while held (acceleration),</li>
-<li>it coasts to a stop when released (friction),</li>
-<li>Shift gives a faster top speed (boost),</li>
-<li>it never crashes from decimal positions.</li>
-</ol>
-<p>Send a <strong>video</strong> comparing normal flying and Boost flying, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.</p>
-<div class="qa"><blockquote>
-<p>First, I added a velocity variable that …</p>
-<p>Acceleration makes the ship …</p>
-<p>Friction makes it … when I let go.</p>
-<p>Holding Shift changes the top speed to …</p>
-<p>One tricky moment was when …</p>
-<p>If I had more time, I would …</p>
-</blockquote>
-<div class="write-space tall" style="min-height: 340px"></div></div>
-
-<h2>6 · Record Your Walkthrough 🎥</h2>
-<p>Take a video showing normal flying and Boost flying. Talk through it like you are teaching someone. Try to use these words: <strong>velocity</strong>, <strong>acceleration</strong>, <strong>friction</strong>, <strong>max speed</strong>, <strong>Shift</strong>.</p>
+<h2>4 · Explain Your Lesson Code 🎥</h2>
+<p>In today's live lesson you wrote your own ship-with-feel code. Now explain it. Record a short phone video. You may show your ship running while you talk. Try to use these words: <strong>velocity</strong>, <strong>acceleration</strong>, <strong>friction</strong>, <strong>max speed</strong>, <strong>Shift</strong>.</p>
 <blockquote>
 <ol>
-<li>Fly slowly, then hold Shift and fly fast.</li>
-<li>Let go of the keys and show the ship coasting.</li>
-<li>Read your friction line out loud and say what 0.85 does.</li>
-<li>Show the difference between two friction values you tried.</li>
+<li>Show your ship flying slowly, then hold Shift and fly fast.</li>
+<li>Let go of the keys and show the ship coasting to a stop.</li>
+<li>Point to your friction line and say what 0.85 does.</li>
+<li>Explain how your code stops the ship going past the max speed.</li>
 </ol>
 </blockquote>
-<div class="qa"><p><strong>Write what you will say in your video.</strong> Plan it here before you record.</p>
+<div class="qa"><p><strong>Write what you will say in your video. Plan it here before you record.</strong></p>
 <div class="write-space tall" style="min-height: 340px"></div></div>
 
 <hr />
 <h3>Submit ✅</h3>
-<p>Send this worksheet + your normal/Boost comparison video to teacher on KakaoTalk.</p>
+<p>Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.</p>
 </body>
 </html>
