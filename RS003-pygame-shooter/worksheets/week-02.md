@@ -2,7 +2,7 @@
 
 **Topic:** FPS, Title, and a Colour-Cycling Nebula · **Course:** Pygame Space Shooter · **Time:** about 45 minutes
 
-This week you make last week's window feel **alive**. You add a **clock** to control the frame rate (FPS), give the title bar a nicer name, and make the deep-space background slowly shift colour like a glowing nebula.
+This week you think about the code that makes last week's window feel **alive** — a **clock** that controls the frame rate (FPS), a nicer title bar, and a deep-space background that slowly shifts colour like a glowing nebula. You will read it, predict it, fix it, and explain it in your own words.
 
 > 🧠 Words to know: **clock**, **FPS (frames per second)**, **frame**, **tick**, **modulo (`%`)**
 
@@ -10,7 +10,7 @@ This week you make last week's window feel **alive**. You add a **clock** to con
 
 ## 1 · Predict 🔮
 
-Read each piece of code. Before you run it, write what you think will happen.
+Read each piece of code. Just from reading it, write what you think will happen. Do not run it.
 
 ```python
 clock = pygame.time.Clock()
@@ -43,52 +43,19 @@ screen.fill((r, g, b))
 
 <div class="write-space"></div>
 
----
-
-## 2 · Run It 🏃
-
-### 🎯 Type the example, run it, and watch the colours move
-
 ```python
-import pygame
-pygame.init()
-
-WIDTH, HEIGHT = 800, 600
-screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("⚙️ Space Shooter v2 — 60 FPS")
-
-clock = pygame.time.Clock()
-FPS = 60
-frame_count = 0
-
-running = True
-while running:
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            running = False
-
-    r = (frame_count) % 256
-    g = 100
-    b = (200 - frame_count) % 256
-
-    screen.fill((r, g, b))
-    pygame.display.flip()
-
-    clock.tick(FPS)
-    frame_count = frame_count + 1
-
-pygame.quit()
 ```
 
-**Watch for 10 seconds. What does the nebula background do?**
+**What part of the window will this line change?**
 
 <div class="write-space"></div>
 
 ---
 
-## 3 · Spot the Bug 🐛
+## 2 · Spot the Bug 🐛
 
-Each block below was meant to do something but is broken. Fix it, then explain why the original was wrong.
+Each block below was meant to do something but is broken. Read it carefully and fix it on paper, then explain why the original was wrong.
 
 **Bug A** — This game runs fine but your computer's fan gets loud and the CPU hits 100%.
 
@@ -156,66 +123,73 @@ while running:
 
 ---
 
-## 4 · Modify It 🔧
+## 3 · Explain the Code 📖
 
-### 🎯 Compare 30, 60, and 120 FPS
+Read this working program line by line. Do not run it. Answer the questions using only what you can see.
 
-Change `FPS` to 30, run it, then to 60, then to 120. Watch how fast the colours move each time.
+```python
+import pygame
+pygame.init()
 
-**Write what changed between 30, 60, and 120 FPS:**
+WIDTH, HEIGHT = 800, 600
+screen = pygame.display.set_mode((WIDTH, HEIGHT))
+pygame.display.set_caption("⚙️ Space Shooter v2 — 60 FPS")
+
+clock = pygame.time.Clock()
+FPS = 60
+frame_count = 0
+
+running = True
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+
+    r = (frame_count) % 256
+    g = 100
+    b = (200 - frame_count) % 256
+
+    screen.fill((r, g, b))
+    pygame.display.flip()
+
+    clock.tick(FPS)
+    frame_count = frame_count + 1
+
+pygame.quit()
+```
+
+**Which line decides how many frames happen each second, and what number is it set to?**
 
 <div class="write-space"></div>
 
-### 🎯 Invent your own colour formula
-
-Right now red rises and blue falls. Change the formulas so the colours change in your own way. For example, make the space slowly get darker, or make green move too.
-
-**Write the formulas you used for r, g, and b:**
+**The green value `g` is always 100. The red and blue values change. Explain why green stays the same colour but red and blue do not.**
 
 <div class="write-space"></div>
 
-**Hint:** any formula works as long as you wrap the result in `% 256` so it stays a valid colour.
+**What does `frame_count = frame_count + 1` do, and why does the nebula need it?**
+
+<div class="write-space"></div>
+
+**What makes the loop stop and the window close?**
+
+<div class="write-space"></div>
+
+**`clock.tick(FPS)` is near the bottom of the loop. In your own words, what would happen to the speed of the colours if you removed it?**
+
+<div class="write-space"></div>
 
 ---
 
-## 5 · Make It 📸
+## 4 · Explain Your Lesson Code 🎥
 
-### 🎯 Tune your own living nebula
+Now explain the code **you** wrote during today's lesson. Record a short phone video where you talk through your own nebula code. You can show it running too. Try to use these words: **clock**, **FPS**, **frame**, **tick**, **modulo**.
 
-Make a window that:
-
-1. runs at a steady frame rate using a clock,
-2. has your own title in the bar,
-3. slowly changes its background colour with your own formula.
-
-When it works, send a **photo or video** of your moving nebula, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.
-
-> First, I added a clock so the loop …
->
-> I set the FPS to … because …
->
-> My colour formula makes the space …
->
-> I used `% 256` to make sure …
->
-> One tricky moment was when …
->
-> If I had more time, I would …
-
-<div class="write-space tall" style="min-height: 340px"></div>
-
----
-
-## 6 · Record Your Walkthrough 🎥
-
-Take a video while your nebula cycles. Talk through it like you are teaching someone. Try to use these words: **clock**, **FPS**, **frame**, **tick**, **modulo**.
-
-> 1. Show the background slowly changing colour.
+> 1. Show your background slowly changing colour.
 > 2. Read your colour formula out loud and say what makes it change.
-> 3. Show what happens to the speed when you change FPS.
-> 4. Say why `clock.tick` matters for your computer.
+> 3. Say what FPS you used and what `clock.tick` does for your computer.
+> 4. Point to the line that makes the colour keep moving.
 
-**Write what you will say in your video.** Plan it here before you record.
+**Write what you will say in your video. Plan it here before you record.**
 
 <div class="write-space tall" style="min-height: 340px"></div>
 
@@ -223,4 +197,4 @@ Take a video while your nebula cycles. Talk through it like you are teaching som
 
 ### Submit ✅
 
-Send this worksheet + your FPS comparison video to teacher on KakaoTalk.
+Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.

@@ -104,12 +104,12 @@ footer b { color: #ff7849; }
 <div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
 <h1>🚧 RS003 Week 9 — English Worksheet</h1>
 <p><strong>Topic:</strong> Keep the Ship Inside the Screen · <strong>Course:</strong> Pygame Space Shooter · <strong>Time:</strong> about 45 minutes</p>
-<p>This week you stop the ship from flying off the screen on any side. You set a <strong>minimum</strong> and <strong>maximum</strong> for both X and Y, then use comparisons (<code>&lt;</code>, <code>&gt;</code>) to keep the ship inside all four walls. The trick of forcing a value back inside a range is called <strong>clamping</strong>.</p>
+<p>This week you think about how to stop the ship from flying off the screen on any side. You set a <strong>minimum</strong> and <strong>maximum</strong> for both X and Y, then use comparisons (<code>&lt;</code>, <code>&gt;</code>) to keep the ship inside all four walls. The trick of forcing a value back inside a range is called <strong>clamping</strong>. In this worksheet you read code, fix code, and explain code.</p>
 <blockquote>
 <p>🧠 Words to know: <strong>minimum / maximum</strong>, <strong>compare (<code>&lt;</code>, <code>&gt;</code>)</strong>, <strong>clamp</strong>, <strong>boundary</strong>, <strong>limit</strong></p>
 </blockquote>
 <h2>1 · Predict 🔮</h2>
-<p>Read each piece of code. Before you run it, write what you think will happen.</p>
+<p>Read each piece of code. Write what you think it does. Just think it through in your head — no running.</p>
 <pre><code class="language-python">if ship_x &lt; 20: ship_x = 20
 if ship_x &gt; WIDTH - 20: ship_x = WIDTH - 20
 </code></pre>
@@ -127,8 +127,52 @@ if ship_y &gt; HEIGHT - 60: ship_y = HEIGHT - 60
 <div class="qa"><p><strong>A red rectangle outline is drawn around the whole edge of the screen. What does it show the player?</strong></p>
 <div class="write-space"></div></div>
 
-<h2>2 · Run It 🏃</h2>
-<h3>🎯 Type the example, run it, and hit the walls</h3>
+<pre><code class="language-python">keys = pygame.key.get_pressed()
+if keys[pygame.K_LEFT]:  ship_x -= SPEED
+if keys[pygame.K_RIGHT]: ship_x += SPEED
+</code></pre>
+<div class="qa"><p><strong>If the player holds the LEFT arrow, what happens to <code>ship_x</code> each frame? Would the ship leave the screen without the clamp lines?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>2 · Spot the Bug 🐛</h2>
+<p>Each block below was meant to do something but is broken. Write the fixed code, then explain why the original was wrong.</p>
+<p><strong>Bug A</strong> — The ship should not fly past the left wall, but it flies right off the left edge of the screen.</p>
+<pre><code class="language-python">if keys[pygame.K_LEFT]:
+    ship_x -= SPEED
+</code></pre>
+<p><strong>Hint:</strong> there is no clamp pulling the ship back if it goes past the left wall.</p>
+<div class="qa"><p><strong>Write the fixed code (add the left clamp):</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug B</strong> — The clamp is supposed to pull the ship back if it goes too far, but the comparisons are backwards so it teleports to the wrong wall.</p>
+<pre><code class="language-python">if ship_x &gt; 20:
+    ship_x = 20
+if ship_x &lt; WIDTH - 20:
+    ship_x = WIDTH - 20
+</code></pre>
+<p><strong>Hint:</strong> if the ship is <strong>smaller</strong> than 20 it went too far left. Check the directions.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug C</strong> — The ship is clamped left and right, but it still flies off the <strong>top</strong> and <strong>bottom</strong> of the screen.</p>
+<pre><code class="language-python">if ship_x &lt; 20: ship_x = 20
+if ship_x &gt; WIDTH - 20: ship_x = WIDTH - 20
+</code></pre>
+<p><strong>Hint:</strong> there are only two clamps here. You need two more for <code>ship_y</code>.</p>
+<div class="qa"><p><strong>Write the fixed code (add the top and bottom clamps):</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>3 · Explain the Code 📖</h2>
+<p>Read this working example. It is the full ship-stays-on-screen program. Answer the questions about it. Reading only — no running.</p>
 <pre><code class="language-python">import pygame
 pygame.init()
 
@@ -168,92 +212,36 @@ while running:
 
 pygame.quit()
 </code></pre>
-<div class="qa"><p><strong>Fly into each of the four walls. Where does the ship stop? What stops it?</strong></p>
+<div class="qa"><p><strong>What do the lines <code>ship_x = CENTER_X</code> and <code>ship_y = HEIGHT - 100</code> decide?</strong></p>
 <div class="write-space"></div></div>
 
-<h2>3 · Spot the Bug 🐛</h2>
-<p>Each block below was meant to do something but is broken. Fix it, then explain why the original was wrong.</p>
-<p><strong>Bug A</strong> — The ship should not fly past the left wall, but it flies right off the left edge of the screen.</p>
-<pre><code class="language-python">if keys[pygame.K_LEFT]:
-    ship_x -= SPEED
-</code></pre>
-<p><strong>Hint:</strong> there is no clamp pulling the ship back if it goes past the left wall.</p>
-<div class="qa"><p><strong>Write the fixed code (add the left clamp):</strong></p>
+<div class="qa"><p><strong>The four <code>if keys[...]</code> lines come BEFORE the four clamp lines. Why is that order important?</strong></p>
 <div class="write-space"></div></div>
 
-<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="qa"><p><strong>Point to the four clamp lines. Which one stops the ship at the </strong>right<strong> wall, and what is its maximum?</strong></p>
 <div class="write-space"></div></div>
 
-<p><strong>Bug B</strong> — The clamp is supposed to pull the ship back if it goes too far, but the comparisons are backwards so it teleports to the wrong wall.</p>
-<pre><code class="language-python">if ship_x &gt; 20:
-    ship_x = 20
-if ship_x &lt; WIDTH - 20:
-    ship_x = WIDTH - 20
-</code></pre>
-<p><strong>Hint:</strong> if the ship is <strong>smaller</strong> than 20 it went too far left. Check the directions.</p>
-<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="qa"><p><strong>What would change on the screen if you deleted the line <code>pygame.draw.rect(screen, RED, (0, 0, WIDTH, HEIGHT), 3)</code>?</strong></p>
 <div class="write-space"></div></div>
 
-<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="qa"><p><strong><code>SPEED</code> is set to 5. If you made it 20, would the clamps still keep the ship inside? Why or why not?</strong></p>
 <div class="write-space"></div></div>
 
-<p><strong>Bug C</strong> — The ship is clamped left and right, but it still flies off the <strong>top</strong> and <strong>bottom</strong> of the screen.</p>
-<pre><code class="language-python">if ship_x &lt; 20: ship_x = 20
-if ship_x &gt; WIDTH - 20: ship_x = WIDTH - 20
-</code></pre>
-<p><strong>Hint:</strong> there are only two clamps here. You need two more for <code>ship_y</code>.</p>
-<div class="qa"><p><strong>Write the fixed code (add the top and bottom clamps):</strong></p>
-<div class="write-space"></div></div>
-
-<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
-<div class="write-space"></div></div>
-
-<h2>4 · Modify It 🔧</h2>
-<h3>🎯 Make the play area smaller</h3>
-<p>Change the clamp numbers so the ship has a smaller space to fly in (for example keep it in the bottom half).</p>
-<div class="qa"><p><strong>Write the new clamp values you chose:</strong></p>
-<div class="write-space"></div></div>
-
-<h3>🎯 Try the guard method instead of the clamp method</h3>
-<p>Right now the example lets the ship move freely, then clamps it back. Rewrite one direction so the ship only moves while it is still inside the wall (check <code>&gt; 20</code> before moving).</p>
-<div class="qa"><p><strong>Write your guarded move lines:</strong></p>
-<div class="write-space"></div></div>
-
-<p><strong>Hint:</strong> both methods keep the ship inside. The clamp lets it move first, then snaps it back if it went too far.</p>
-<h2>5 · Make It 📸</h2>
-<h3>🎯 Build a ship that stays on screen</h3>
-<p>Build a program where:</p>
-<ol>
-<li>the ship flies in all four directions,</li>
-<li>it can never leave the screen on any side,</li>
-<li>a red border shows where the limits are.</li>
-</ol>
-<p>Send a <strong>photo or video</strong> showing the ship stopping at all four walls, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.</p>
-<div class="qa"><blockquote>
-<p>First, I set my clamp limits to …</p>
-<p>The ship stops on the left because …</p>
-<p>The ship stops at the bottom because …</p>
-<p>Clamping means …</p>
-<p>One tricky moment was when …</p>
-<p>If I had more time, I would …</p>
-</blockquote>
-<div class="write-space tall" style="min-height: 340px"></div></div>
-
-<h2>6 · Record Your Walkthrough 🎥</h2>
-<p>Take a video while the ship hits all four walls. Talk through it like you are teaching someone. Try to use these words: <strong>minimum</strong>, <strong>maximum</strong>, <strong>compare</strong>, <strong>clamp</strong>, <strong>boundary</strong>.</p>
+<h2>4 · Explain Your Lesson Code 🎥</h2>
+<p>In today's live lesson you wrote your own ship-stays-on-screen code. Now record a short video on your phone where you explain the code you wrote. You can show it running on screen if you like. Try to use these words: <strong>minimum</strong>, <strong>maximum</strong>, <strong>compare</strong>, <strong>clamp</strong>, <strong>boundary</strong>.</p>
 <blockquote>
 <ol>
-<li>Fly into the left and right walls and show it stop.</li>
-<li>Fly into the top and bottom walls and show it stop.</li>
-<li>Read one clamp line out loud and explain it.</li>
+<li>Show your code and point to your four clamp lines.</li>
+<li>Read one clamp line out loud and explain what it does.</li>
+<li>Explain where the ship stops and why.</li>
 <li>Say what would happen with no limits at all.</li>
 </ol>
 </blockquote>
-<div class="qa"><p><strong>Write what you will say in your video.</strong> Plan it here before you record.</p>
+<div class="qa"><p><strong>Write what you will say in your video. Plan it here before you record.</strong></p>
 <div class="write-space tall" style="min-height: 340px"></div></div>
 
 <hr />
 <h3>Submit ✅</h3>
-<p>Send this worksheet + your photo or video to teacher on KakaoTalk.</p>
+<p>Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.</p>
 </body>
 </html>

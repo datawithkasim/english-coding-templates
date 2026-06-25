@@ -104,12 +104,12 @@ footer b { color: #ff7849; }
 <div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
 <h1>🚀 RS003 Week 4 — English Worksheet</h1>
 <p><strong>Topic:</strong> A Three-Part Ship — Body + Nose + Thrusters · <strong>Course:</strong> Pygame Space Shooter · <strong>Time:</strong> about 45 minutes</p>
-<p>This week your ship grows from one rectangle into a <strong>three-part craft</strong>: a body rectangle, a pointed <strong>nose</strong> triangle on top, and two <strong>thruster</strong> blocks at the bottom. You build each part from variables, and you learn that <strong>draw order</strong> decides what sits in front.</p>
+<p>This week is all about <strong>thinking about</strong> and <strong>explaining</strong> the three-part ship — a body rectangle, a pointed <strong>nose</strong> triangle, and two <strong>thruster</strong> blocks — and how <strong>draw order</strong> decides what sits in front.</p>
 <blockquote>
 <p>🧠 Words to know: <strong>polygon</strong>, <strong>triangle</strong>, <strong>palette</strong>, <strong>draw order</strong>, <strong>thruster</strong></p>
 </blockquote>
 <h2>1 · Predict 🔮</h2>
-<p>Read each piece of code. Before you run it, write what you think will happen.</p>
+<p>Read each piece of code and write what you think it does. Just read — no running.</p>
 <pre><code class="language-python">pygame.draw.rect(screen, CYAN, (CENTER_X - 20, HEIGHT - 80, 40, 50))
 </code></pre>
 <div class="qa"><p><strong>This is the ship body. Where does it sit on the screen and how big is it?</strong></p>
@@ -128,44 +128,14 @@ pygame.draw.rect(screen, RED, ...)      # thruster
 <div class="qa"><p><strong>Things are drawn from first to last. Which one ends up on top — the space, the body, or the nose?</strong></p>
 <div class="write-space"></div></div>
 
-<h2>2 · Run It 🏃</h2>
-<h3>🎯 Type the example, run it, and name the three parts</h3>
-<pre><code class="language-python">import pygame
-pygame.init()
-
-WIDTH, HEIGHT = 800, 600
-CENTER_X = WIDTH // 2
-screen = pygame.display.set_mode((WIDTH, HEIGHT))
-clock = pygame.time.Clock()
-
-SPACE = (10, 12, 40)
-CYAN = (80, 220, 255)
-WHITE = (255, 255, 255)
-RED = (230, 60, 60)
-
-y = HEIGHT - 80
-
-running = True
-while running:
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            running = False
-
-    screen.fill(SPACE)
-    pygame.draw.rect(screen, CYAN, (CENTER_X - 20, y, 40, 50))                            # body
-    pygame.draw.polygon(screen, WHITE, [(CENTER_X, y - 20), (CENTER_X - 20, y), (CENTER_X + 20, y)])  # nose
-    pygame.draw.rect(screen, RED, (CENTER_X - 16, y + 50, 8, 10))                         # thruster L
-    pygame.draw.rect(screen, RED, (CENTER_X + 8, y + 50, 8, 10))                          # thruster R
-    pygame.display.flip()
-    clock.tick(60)
-
-pygame.quit()
+<pre><code class="language-python">pygame.draw.rect(screen, RED, (CENTER_X - 16, y + 50, 8, 10))   # thruster L
+pygame.draw.rect(screen, RED, (CENTER_X + 8, y + 50, 8, 10))    # thruster R
 </code></pre>
-<div class="qa"><p><strong>Name the three parts you can see and where each one is:</strong></p>
+<div class="qa"><p><strong>These two lines draw the thrusters. What is different between them, and why does that put one on each side?</strong></p>
 <div class="write-space"></div></div>
 
-<h2>3 · Spot the Bug 🐛</h2>
-<p>Each block below was meant to do something but is broken. Fix it, then explain why the original was wrong.</p>
+<h2>2 · Spot the Bug 🐛</h2>
+<p>Each block below was meant to do something but is broken. Write the fixed code, then explain why the original was wrong.</p>
 <p><strong>Bug A</strong> — The body should appear <strong>behind</strong> the nose. Right now the body is drawn last and covers the nose.</p>
 <pre><code class="language-python">pygame.draw.polygon(screen, WHITE, [(CENTER_X, y - 20), (CENTER_X - 20, y), (CENTER_X + 20, y)])
 pygame.draw.rect(screen, CYAN, (CENTER_X - 20, y, 40, 50))
@@ -198,53 +168,69 @@ pygame.draw.rect(screen, RED, (CENTER_X - 16, y + 50, 8, 10))
 <div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
 <div class="write-space"></div></div>
 
-<h2>4 · Modify It 🔧</h2>
-<h3>🎯 Recolour the whole ship with your own palette</h3>
-<p>At the top of the program, the colours are stored as constants. Change <code>SPACE</code>, <code>CYAN</code>, and the others to your own colours and run it.</p>
-<div class="qa"><p><strong>Write the colours you chose and what mood they give your ship:</strong></p>
+<h2>3 · Explain the Code 📖</h2>
+<p>Read this full program. It draws the three-part ship. Answer the questions below by reading — you do not need to run it.</p>
+<pre><code class="language-python">import pygame
+pygame.init()
+
+WIDTH, HEIGHT = 800, 600
+CENTER_X = WIDTH // 2
+screen = pygame.display.set_mode((WIDTH, HEIGHT))
+clock = pygame.time.Clock()
+
+SPACE = (10, 12, 40)
+CYAN = (80, 220, 255)
+WHITE = (255, 255, 255)
+RED = (230, 60, 60)
+
+y = HEIGHT - 80
+
+running = True
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+
+    screen.fill(SPACE)
+    pygame.draw.rect(screen, CYAN, (CENTER_X - 20, y, 40, 50))                            # body
+    pygame.draw.polygon(screen, WHITE, [(CENTER_X, y - 20), (CENTER_X - 20, y), (CENTER_X + 20, y)])  # nose
+    pygame.draw.rect(screen, RED, (CENTER_X - 16, y + 50, 8, 10))                         # thruster L
+    pygame.draw.rect(screen, RED, (CENTER_X + 8, y + 50, 8, 10))                          # thruster R
+    pygame.display.flip()
+    clock.tick(60)
+
+pygame.quit()
+</code></pre>
+<div class="qa"><p><strong>What do <code>SPACE</code>, <code>CYAN</code>, <code>WHITE</code>, and <code>RED</code> store, and why are they written at the top with capital letters?</strong></p>
 <div class="write-space"></div></div>
 
-<h3>🎯 Add one extra detail to the ship</h3>
-<p>Add a small detail to your ship — for example a wing line on the side, or a light circle on the nose.</p>
-<div class="qa"><p><strong>Describe the detail you added and the shape you used to draw it:</strong></p>
+<div class="qa"><p><strong>The line <code>screen.fill(SPACE)</code> runs first inside the loop. What does it do before any shapes are drawn?</strong></p>
 <div class="write-space"></div></div>
 
-<p><strong>Hint:</strong> a wing is a <code>pygame.draw.line</code>; a light is a small <code>pygame.draw.circle</code>. Remember to draw it <strong>after</strong> the body so it shows on top.</p>
-<h2>5 · Make It 📸</h2>
-<h3>🎯 Build your own three-part ship</h3>
-<p>Build a scene that has:</p>
-<ol>
-<li>a body rectangle,</li>
-<li>a nose triangle on top,</li>
-<li>two thrusters at the bottom,</li>
-<li>one extra detail of your own.</li>
-</ol>
-<p>Send a <strong>photo or video</strong> of your ship, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.</p>
-<div class="qa"><blockquote>
-<p>First, I drew the body by …</p>
-<p>I built the nose as a triangle by …</p>
-<p>The draw order matters because …</p>
-<p>My extra detail is … and I made it with …</p>
-<p>One tricky moment was when …</p>
-<p>If I had more time, I would …</p>
-</blockquote>
-<div class="write-space tall" style="min-height: 340px"></div></div>
+<div class="qa"><p><strong>Look at the three points in the <code>polygon</code> line. Which point is the tip of the nose, and how can you tell?</strong></p>
+<div class="write-space"></div></div>
 
-<h2>6 · Record Your Walkthrough 🎥</h2>
-<p>Take a video of your three-part ship. Talk through it like you are teaching someone. Try to use these words: <strong>polygon</strong>, <strong>triangle</strong>, <strong>palette</strong>, <strong>draw order</strong>, <strong>thruster</strong>.</p>
+<div class="qa"><p><strong>The two thruster lines both use <code>RED</code>. What makes one go to the left and the other to the right?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>If you moved the body line to be the <em>last</em> draw line, what would happen to the nose and thrusters?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>4 · Explain Your Lesson Code 🎥</h2>
+<p>In today's live lesson you wrote your own three-part ship code. Now record a short phone video explaining <strong>the code you wrote</strong>. You can show it running. Try to use these words: <strong>polygon</strong>, <strong>triangle</strong>, <strong>palette</strong>, <strong>draw order</strong>, <strong>thruster</strong>.</p>
 <blockquote>
 <ol>
-<li>Show all three parts and name them.</li>
-<li>Read the polygon line out loud and explain its three points.</li>
-<li>Explain how draw order decides what sits in front.</li>
-<li>Show the detail you added on top.</li>
+<li>Show your code and name the three parts — body, nose, thrusters.</li>
+<li>Read your polygon line out loud and explain its three points.</li>
+<li>Explain how draw order decides what sits in front in your ship.</li>
+<li>Point to your palette colours and say what mood they give.</li>
 </ol>
 </blockquote>
-<div class="qa"><p><strong>Write what you will say in your video.</strong> Plan it here before you record.</p>
+<div class="qa"><p><strong>Write what you will say in your video. Plan it here before you record.</strong></p>
 <div class="write-space tall" style="min-height: 340px"></div></div>
 
 <hr />
 <h3>Submit ✅</h3>
-<p>Send this worksheet + your photo or video to teacher on KakaoTalk.</p>
+<p>Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.</p>
 </body>
 </html>

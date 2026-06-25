@@ -2,7 +2,7 @@
 
 **Topic:** Build the Ship Body · **Course:** Pygame Space Shooter · **Time:** about 45 minutes
 
-This week you draw the first piece of your spaceship: a **body** that sits in the middle-bottom of the screen. You learn to draw shapes, store important numbers as **constants**, and find the centre of the screen with **integer division** (`//`).
+This week you think about the code that draws the first piece of your spaceship: a **body** that sits in the middle-bottom of the screen. You read code that draws shapes, stores important numbers as **constants**, and finds the centre of the screen with **integer division** (`//`). You will read it, fix it, and explain it.
 
 > 🧠 Words to know: **constant**, **rectangle**, **circle**, **integer division (`//`)**, **centre**
 
@@ -10,7 +10,7 @@ This week you draw the first piece of your spaceship: a **body** that sits in th
 
 ## 1 · Predict 🔮
 
-Read each piece of code. Before you run it, write what you think will happen.
+Read each piece of code. Just from reading it, write what you think it does. Do not run it.
 
 ```python
 WIDTH = 800
@@ -37,50 +37,21 @@ pygame.draw.circle(screen, WHITE, (CENTER_X, HEIGHT - 90), 8)
 
 <div class="write-space"></div>
 
----
-
-## 2 · Run It 🏃
-
-### 🎯 Type the example, run it, and find the ship body
-
 ```python
-import pygame
-pygame.init()
-
-WIDTH = 800
-HEIGHT = 600
-CENTER_X = WIDTH // 2
-
-screen = pygame.display.set_mode((WIDTH, HEIGHT))
-pygame.display.set_caption("Space Shooter")
-
-SPACE = (10, 12, 40)
-CYAN = (80, 220, 255)
-
-clock = pygame.time.Clock()
-running = True
-while running:
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            running = False
-
-    screen.fill(SPACE)
-    pygame.draw.rect(screen, CYAN, (CENTER_X - 20, HEIGHT - 80, 40, 50))
-    pygame.display.flip()
-    clock.tick(60)
-
-pygame.quit()
+screen.fill(SPACE)
+pygame.draw.rect(screen, CYAN, (CENTER_X - 20, HEIGHT - 80, 40, 50))
+pygame.display.flip()
 ```
 
-**Where does the cyan rectangle sit? Is it really in the centre across? How can you tell?**
+**In what order do these three lines run? What would you see if `screen.fill(SPACE)` came AFTER the rectangle instead of before it?**
 
 <div class="write-space"></div>
 
 ---
 
-## 3 · Spot the Bug 🐛
+## 2 · Spot the Bug 🐛
 
-Each block below was meant to do something but is broken. Fix it, then explain why the original was wrong.
+Each block below was meant to do something but is broken. Fix it on paper, then explain why the original was wrong.
 
 **Bug A** — The ship body should sit in the **centre** across the screen. Right now it is glued to the left edge.
 
@@ -132,71 +103,71 @@ pygame.draw.rect(screen, CYAN, (CENTER_X - 20, 80, 40, 50))
 
 ---
 
-## 4 · Modify It 🔧
+## 3 · Explain the Code 📖
 
-### 🎯 Add a cockpit circle on the body
-
-A ship needs a cockpit. Add a small circle on top of the body where the pilot sits.
+Read this working example line by line. Then answer the questions below by reading only — you do not need to run it.
 
 ```python
-pygame.draw.circle(screen, (255, 255, 255), (CENTER_X, HEIGHT - 70), 8)
+import pygame
+pygame.init()
+
+WIDTH = 800
+HEIGHT = 600
+CENTER_X = WIDTH // 2
+
+screen = pygame.display.set_mode((WIDTH, HEIGHT))
+pygame.display.set_caption("Space Shooter")
+
+SPACE = (10, 12, 40)
+CYAN = (80, 220, 255)
+
+clock = pygame.time.Clock()
+running = True
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+
+    screen.fill(SPACE)
+    pygame.draw.rect(screen, CYAN, (CENTER_X - 20, HEIGHT - 80, 40, 50))
+    pygame.display.flip()
+    clock.tick(60)
+
+pygame.quit()
 ```
 
-**Add this line below the rectangle, run it, and write what you see:**
+**`WIDTH`, `HEIGHT`, `SPACE`, and `CYAN` are all constants. What is each one used for?**
 
 <div class="write-space"></div>
 
-### 🎯 Resize the body using constants
-
-Make the body wider, then narrower, by changing only the width number. Then try making the body its own constant so the size is easy to change in one place.
-
-**Write the constant you made and the size it sets (for example `BODY_WIDTH = 40`):**
+**The rectangle's left value is `CENTER_X - 20`, not `CENTER_X`. Why subtract 20? What would happen if you used `CENTER_X` on its own?**
 
 <div class="write-space"></div>
 
-**Hint:** a constant is just a name in CAPITALS that holds a number you do not want to keep retyping.
+**What does the `while running:` loop do? What makes the loop stop?**
+
+<div class="write-space"></div>
+
+**Why is the cyan rectangle drawn in the middle across the screen? Point to the exact lines that make this happen.**
+
+<div class="write-space"></div>
+
+**Is the rectangle near the top or near the bottom of the window? How can you tell from the numbers?**
+
+<div class="write-space"></div>
 
 ---
 
-## 5 · Make It 📸
+## 4 · Explain Your Lesson Code 🎥
 
-### 🎯 Draw your own ship body in the centre
+In today's live lesson you wrote code with your teacher to draw your ship body. Now explain that code in a short phone video. You may show it running on the screen. Try to use these words: **constant**, **rectangle**, **circle**, **integer division**, **centre**.
 
-Build a window that:
-
-1. uses constants for `WIDTH` and `HEIGHT`,
-2. finds the centre with `//`,
-3. draws a body rectangle in the middle-bottom,
-4. adds a cockpit circle on top.
-
-Send a **photo or video** of your ship body, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.
-
-> First, I set up my constants for …
->
-> I found the centre by …
->
-> I placed the body at the bottom by using …
->
-> I added a cockpit circle so that …
->
-> One tricky moment was when …
->
-> If I had more time, I would …
-
-<div class="write-space tall" style="min-height: 340px"></div>
-
----
-
-## 6 · Record Your Walkthrough 🎥
-
-Take a video of your ship body. Talk through it like you are teaching someone. Try to use these words: **constant**, **rectangle**, **circle**, **integer division**, **centre**.
-
-> 1. Show your body sitting in the middle-bottom.
+> 1. Show your ship body sitting in the middle-bottom of the screen.
 > 2. Read your `CENTER_X` line out loud and say what `//` does.
-> 3. Point at the rectangle's four numbers and name each one.
+> 3. Point at your rectangle's four numbers and name each one (left, top, width, height).
 > 4. Say why Y = 0 is the top, not the bottom.
 
-**Write what you will say in your video.** Plan it here before you record.
+**Write what you will say in your video. Plan it here before you record.**
 
 <div class="write-space tall" style="min-height: 340px"></div>
 
@@ -204,4 +175,4 @@ Take a video of your ship body. Talk through it like you are teaching someone. T
 
 ### Submit ✅
 
-Send this worksheet + your photo or video to teacher on KakaoTalk.
+Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.

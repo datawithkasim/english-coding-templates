@@ -104,12 +104,12 @@ footer b { color: #ff7849; }
 <div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
 <h1>🧩 RS003 Week 13 — English Worksheet</h1>
 <p><strong>Topic:</strong> Many Cooperating Functions · <strong>Course:</strong> Pygame Space Shooter · <strong>Time:</strong> about 45 minutes</p>
-<p>This week you split your game into <strong>several small functions</strong> — one for the starfield, one for the ship, one for an enemy, one for the aiming laser. The functions work together by sharing the ship's X position, and the laser changes colour when the ship lines up under the enemy.</p>
+<p>This week your game was split into <strong>several small functions</strong> — one for the starfield, one for the ship, one for an enemy, one for the aiming laser. In this worksheet you will read that code, think about what it does, and explain it in your own words. The laser changes colour when the ship lines up under the enemy.</p>
 <blockquote>
 <p>🧠 Words to know: <strong>function</strong>, <strong>call</strong>, <strong>share a value</strong>, <strong>enemy</strong>, <strong>laser</strong></p>
 </blockquote>
 <h2>1 · Predict 🔮</h2>
-<p>Read each piece of code. Before you run it, write what you think will happen.</p>
+<p>Read each piece of code and write what you think will happen. You do not run anything — just read and think.</p>
 <pre><code class="language-python">def draw_stars():
     for i in range(40):
         pygame.draw.circle(screen, WHITE, (i * 20 + 10, 30), 2)
@@ -139,8 +139,51 @@ draw_laser(ship_x)
 <div class="qa"><p><strong>Four functions are called in a row. Which one is drawn last, and what does that mean for what sits in front?</strong></p>
 <div class="write-space"></div></div>
 
-<h2>2 · Run It 🏃</h2>
-<h3>🎯 Type the example, run it, and line up the enemy</h3>
+<pre><code class="language-python">draw_ship(ship_x)
+draw_laser(ship_x)
+</code></pre>
+<div class="qa"><p><strong>Both functions are given the same <code>ship_x</code>. How do these two functions share the ship's position?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>2 · Spot the Bug 🐛</h2>
+<p>Each block below was meant to do something but is broken. Write the fixed code, then explain why the original was wrong.</p>
+<p><strong>Bug A</strong> — The laser should follow the ship, but it is stuck in the centre and never moves.</p>
+<pre><code class="language-python">def draw_laser():
+    pygame.draw.line(screen, RED, (CENTER_X, HEIGHT - 140), (CENTER_X, ENEMY_Y), 4)
+</code></pre>
+<p><strong>Hint:</strong> the laser needs the ship's position passed in.</p>
+<div class="qa"><p><strong>Write the fixed code (the whole function):</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug B</strong> — The ship should sit <strong>in front of</strong> the laser, but right now the laser is drawn last and covers the ship.</p>
+<pre><code class="language-python">draw_stars()
+draw_enemy()
+draw_ship(ship_x)
+draw_laser(ship_x)
+</code></pre>
+<p><strong>Hint:</strong> whatever is drawn last sits on top.</p>
+<div class="qa"><p><strong>Write the fixed code (calls in the right order):</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug C</strong> — The laser is supposed to turn yellow only when the ship is <strong>close</strong> to lined up, but it is yellow everywhere.</p>
+<pre><code class="language-python">distance = ship_x - ENEMY_X
+color = YELLOW if distance &lt; 20 else RED
+</code></pre>
+<p><strong>Hint:</strong> without <code>abs</code>, a big negative distance is also "less than 20".</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>3 · Explain the Code 📖</h2>
+<p>Read this working program carefully. You do not run it — just read it and answer the questions about it.</p>
 <pre><code class="language-python">import pygame
 pygame.init()
 
@@ -199,92 +242,36 @@ while running:
 
 pygame.quit()
 </code></pre>
-<div class="qa"><p><strong>Fly slowly under the enemy. What happens to the laser colour as you line up?</strong></p>
+<div class="qa"><p><strong>Which four functions does this program have, and what does each one draw?</strong></p>
 <div class="write-space"></div></div>
 
-<h2>3 · Spot the Bug 🐛</h2>
-<p>Each block below was meant to do something but is broken. Fix it, then explain why the original was wrong.</p>
-<p><strong>Bug A</strong> — The laser should follow the ship, but it is stuck in the centre and never moves.</p>
-<pre><code class="language-python">def draw_laser():
-    pygame.draw.line(screen, RED, (CENTER_X, HEIGHT - 140), (CENTER_X, ENEMY_Y), 4)
-</code></pre>
-<p><strong>Hint:</strong> the laser needs the ship's position passed in.</p>
-<div class="qa"><p><strong>Write the fixed code (the whole function):</strong></p>
+<div class="qa"><p><strong>How does <code>draw_laser</code> know where the ship is right now?</strong></p>
 <div class="write-space"></div></div>
 
-<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="qa"><p><strong>Inside the loop, <code>draw_laser(ship_x)</code> is called before <code>draw_ship(ship_x)</code>. Why does that order matter?</strong></p>
 <div class="write-space"></div></div>
 
-<p><strong>Bug B</strong> — The ship should sit <strong>in front of</strong> the laser, but right now the laser is drawn last and covers the ship.</p>
-<pre><code class="language-python">draw_stars()
-draw_enemy()
-draw_ship(ship_x)
-draw_laser(ship_x)
-</code></pre>
-<p><strong>Hint:</strong> whatever is drawn last sits on top.</p>
-<div class="qa"><p><strong>Write the fixed code (calls in the right order):</strong></p>
+<div class="qa"><p><strong>The <code>MIN_X</code> and <code>MAX_X</code> lines keep <code>ship_x</code> between 100 and 700. What would go wrong if they were missing?</strong></p>
 <div class="write-space"></div></div>
 
-<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="qa"><p><strong>The line <code>color = YELLOW if distance &lt; 20 else RED</code> decides the laser colour. In plain words, what does this line say?</strong></p>
 <div class="write-space"></div></div>
 
-<p><strong>Bug C</strong> — The laser is supposed to turn yellow only when the ship is <strong>close</strong> to lined up, but it is yellow everywhere.</p>
-<pre><code class="language-python">distance = ship_x - ENEMY_X
-color = YELLOW if distance &lt; 20 else RED
-</code></pre>
-<p><strong>Hint:</strong> without <code>abs</code>, a big negative distance is also "less than 20".</p>
-<div class="qa"><p><strong>Write the fixed code:</strong></p>
-<div class="write-space"></div></div>
-
-<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
-<div class="write-space"></div></div>
-
-<h2>4 · Modify It 🔧</h2>
-<h3>🎯 Move the enemy somewhere new</h3>
-<p>Change <code>ENEMY_X</code> so the enemy sits in a different spot, then line up under it.</p>
-<div class="qa"><p><strong>Write the new ENEMY_X you chose:</strong></p>
-<div class="write-space"></div></div>
-
-<h3>🎯 Add a fourth function of your own</h3>
-<p>Write one more small function — for example <code>draw_score()</code> or <code>draw_meteors()</code> — and call it in the loop.</p>
-<div class="qa"><p><strong>Write your function name and what it draws:</strong></p>
-<div class="write-space"></div></div>
-
-<p><strong>Hint:</strong> a function is just a name for a group of drawing lines. If it needs a changing value (like the ship position), pass it in as a parameter.</p>
-<h2>5 · Make It 📸</h2>
-<h3>🎯 Build a game split into functions</h3>
-<p>Build a program where:</p>
-<ol>
-<li>the starfield, ship, enemy, and laser are each their own function,</li>
-<li>the functions share the ship's position,</li>
-<li>the laser changes colour when you line up under the enemy.</li>
-</ol>
-<p>Send a <strong>photo or video</strong> of your lined-up laser, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.</p>
-<div class="qa"><blockquote>
-<p>First, I split my code into functions for …</p>
-<p>The functions share the ship position by …</p>
-<p>The laser turns yellow when …</p>
-<p>I used <code>abs(...)</code> to …</p>
-<p>One tricky moment was when …</p>
-<p>If I had more time, I would …</p>
-</blockquote>
-<div class="write-space tall" style="min-height: 340px"></div></div>
-
-<h2>6 · Record Your Walkthrough 🎥</h2>
-<p>Take a video while you line up under the enemy. Talk through it like you are teaching someone. Try to use these words: <strong>function</strong>, <strong>call</strong>, <strong>share</strong>, <strong>enemy</strong>, <strong>laser</strong>.</p>
+<h2>4 · Explain Your Lesson Code 🎥</h2>
+<p>In today's live lesson you wrote your own code that splits the game into functions. Now record a short video on your phone explaining <strong>the code you wrote</strong>. You may show your result running while you talk. Try to use these words: <strong>function</strong>, <strong>call</strong>, <strong>share</strong>, <strong>enemy</strong>, <strong>laser</strong>.</p>
 <blockquote>
 <ol>
-<li>Show the laser turning yellow under the enemy.</li>
 <li>Read your function names out loud and say what each one draws.</li>
-<li>Explain how the ship position is shared between functions.</li>
-<li>Point at the line that decides the laser colour.</li>
+<li>Explain how the ship position is <strong>shared</strong> between your functions.</li>
+<li>Point at the line that decides the laser colour, and say when it turns yellow.</li>
+<li>Show the laser lining up under the enemy if you can.</li>
 </ol>
 </blockquote>
-<div class="qa"><p><strong>Write what you will say in your video.</strong> Plan it here before you record.</p>
+<div class="qa"><p><strong>Write what you will say in your video. Plan it here before you record.</strong></p>
 <div class="write-space tall" style="min-height: 340px"></div></div>
 
 <hr />
 <h3>Submit ✅</h3>
-<p>Send this worksheet + your photo or video to teacher on KakaoTalk.</p>
+<p>Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.</p>
 </body>
 </html>

@@ -104,12 +104,12 @@ footer b { color: #ff7849; }
 <div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
 <h1>🕹️ RS003 Week 7 — English Worksheet</h1>
 <p><strong>Topic:</strong> Fly the Ship in Four Directions · <strong>Course:</strong> Pygame Space Shooter · <strong>Time:</strong> about 45 minutes</p>
-<p>This week your ship comes to life. It <strong>flies</strong> up, down, left, and right while you hold the arrow keys. You learn that the X axis goes across the screen and the Y axis goes down it — <strong>left makes X smaller, right makes X bigger, up makes Y smaller, down makes Y bigger</strong> — and that the ship is drawn wherever those two numbers say.</p>
+<p>This week you think about how the ship <strong>flies</strong> up, down, left, and right while you hold the arrow keys. You read the code, predict what it does, fix broken code, and explain it in your own words — including the code you wrote in today's live lesson.</p>
 <blockquote>
 <p>🧠 Words to know: <strong>X axis</strong>, <strong>Y axis</strong>, <strong>key press</strong>, <strong>increase / decrease</strong>, <strong>speed</strong></p>
 </blockquote>
 <h2>1 · Predict 🔮</h2>
-<p>Read each piece of code. Before you run it, write what you think will happen.</p>
+<p>Read each piece of code. Write what you think it does. You do not run anything — just think it through.</p>
 <pre><code class="language-python">ship_x = CENTER_X
 ship_y = HEIGHT - 100
 SPEED = 5
@@ -133,8 +133,53 @@ pygame.draw.polygon(screen, WHITE, [(ship_x, ship_y - 20), (ship_x - 20, ship_y)
 <div class="qa"><p><strong>The body and nose both use <code>ship_x</code> and <code>ship_y</code>. When you press a key, what moves?</strong></p>
 <div class="write-space"></div></div>
 
-<h2>2 · Run It 🏃</h2>
-<h3>🎯 Type the example, run it, and fly the ship</h3>
+<pre><code class="language-python">SPEED = 2
+SPEED = 10
+</code></pre>
+<div class="qa"><p><strong>One of these makes the ship fly slowly and one makes it fly fast. Which is which, and why?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>2 · Spot the Bug 🐛</h2>
+<p>Each block below was meant to do something but is broken. Write the fixed code, then explain why the original was wrong.</p>
+<p><strong>Bug A</strong> — Pressing UP should move the ship up, but it moves <strong>down</strong> instead.</p>
+<pre><code class="language-python">if keys[pygame.K_UP]:
+    ship_y += SPEED
+</code></pre>
+<p><strong>Hint:</strong> up means Y gets smaller.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug B</strong> — The ship should only move <strong>while a key is held</strong>, but it drifts to the right on its own without any key press.</p>
+<pre><code class="language-python">ship_x += SPEED
+if keys[pygame.K_LEFT]:
+    ship_x -= SPEED
+</code></pre>
+<p><strong>Hint:</strong> the first line runs every loop no matter what.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug C</strong> — The keys do nothing at all. The ship never moves.</p>
+<pre><code class="language-python">for event in pygame.event.get():
+    if event.type == pygame.QUIT:
+        running = False
+    if keys[pygame.K_LEFT]:
+        ship_x -= SPEED
+</code></pre>
+<p><strong>Hint:</strong> <code>keys</code> was never asked for. You need <code>pygame.key.get_pressed()</code> outside the event loop.</p>
+<div class="qa"><p><strong>Write the fixed code (show where <code>keys</code> is set and used):</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>3 · Explain the Code 📖</h2>
+<p>Here is the full working program from this week. Read it carefully and answer the questions below. You do not need to run it.</p>
 <pre><code class="language-python">import pygame
 pygame.init()
 
@@ -174,94 +219,36 @@ while running:
 
 pygame.quit()
 </code></pre>
-<div class="qa"><p><strong>Fly in all four directions. Describe how the ship moves for each arrow key:</strong></p>
+<div class="qa"><p><strong>What do <code>ship_x</code> and <code>ship_y</code> hold, and what is the starting position of the ship?</strong></p>
 <div class="write-space"></div></div>
 
-<h2>3 · Spot the Bug 🐛</h2>
-<p>Each block below was meant to do something but is broken. Fix it, then explain why the original was wrong.</p>
-<p><strong>Bug A</strong> — Pressing UP should move the ship up, but it moves <strong>down</strong> instead.</p>
-<pre><code class="language-python">if keys[pygame.K_UP]:
-    ship_y += SPEED
-</code></pre>
-<p><strong>Hint:</strong> up means Y gets smaller.</p>
-<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="qa"><p><strong>What does <code>keys = pygame.key.get_pressed()</code> give you, and why is it inside the <code>while</code> loop?</strong></p>
 <div class="write-space"></div></div>
 
-<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="qa"><p><strong>Why does the same <code>ship_x</code> and <code>ship_y</code> appear in the body, the nose, and both thrusters?</strong></p>
 <div class="write-space"></div></div>
 
-<p><strong>Bug B</strong> — The ship should only move <strong>while a key is held</strong>, but it drifts to the right on its own without any key press.</p>
-<pre><code class="language-python">ship_x += SPEED
-if keys[pygame.K_LEFT]:
-    ship_x -= SPEED
-</code></pre>
-<p><strong>Hint:</strong> the first line runs every loop no matter what.</p>
-<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="qa"><p><strong>What would change on screen if you set <code>SPEED = 10</code> instead of <code>5</code>?</strong></p>
 <div class="write-space"></div></div>
 
-<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="qa"><p><strong>Why is <code>screen.fill(SPACE)</code> called every loop before the ship is drawn?</strong></p>
 <div class="write-space"></div></div>
 
-<p><strong>Bug C</strong> — The keys do nothing at all. The ship never moves.</p>
-<pre><code class="language-python">for event in pygame.event.get():
-    if event.type == pygame.QUIT:
-        running = False
-    if keys[pygame.K_LEFT]:
-        ship_x -= SPEED
-</code></pre>
-<p><strong>Hint:</strong> <code>keys</code> was never asked for. You need <code>pygame.key.get_pressed()</code> outside the event loop.</p>
-<div class="qa"><p><strong>Write the fixed code (show where <code>keys</code> is set and used):</strong></p>
-<div class="write-space"></div></div>
-
-<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
-<div class="write-space"></div></div>
-
-<h2>4 · Modify It 🔧</h2>
-<h3>🎯 Change the flying speed</h3>
-<p>Try <code>SPEED = 2</code>, then <code>SPEED = 10</code>. Run each one.</p>
-<div class="qa"><p><strong>Write how the flying feels at slow speed versus fast speed:</strong></p>
-<div class="write-space"></div></div>
-
-<h3>🎯 Move the whole ship together</h3>
-<p>Make sure every part of the ship — body, nose, and thrusters — uses <code>ship_x</code> and <code>ship_y</code>, so they all fly together.</p>
-<div class="qa"><p><strong>Write down two lines that use <code>ship_x</code> and <code>ship_y</code>:</strong></p>
-<div class="write-space"></div></div>
-
-<p><strong>Hint:</strong> if one part forgets to use <code>ship_x</code> or <code>ship_y</code>, that part stays behind while the rest flies away.</p>
-<h2>5 · Make It 📸</h2>
-<h3>🎯 Build a flying ship</h3>
-<p>Build a program where:</p>
-<ol>
-<li>the ship flies in all four directions with the arrow keys,</li>
-<li>all parts move together,</li>
-<li>you can choose the flying speed with a <code>SPEED</code> constant.</li>
-</ol>
-<p>Send a <strong>video</strong> (so the movement is visible), then explain what you did. Use these sentence starters — write 4 to 6 sentences total.</p>
-<div class="qa"><blockquote>
-<p>First, I made variables to hold the ship position called …</p>
-<p>Pressing LEFT changes <code>ship_x</code> by … and UP changes <code>ship_y</code> by …</p>
-<p>All the parts move together because they use …</p>
-<p>I set the speed to … because …</p>
-<p>One tricky moment was when …</p>
-<p>If I had more time, I would …</p>
-</blockquote>
-<div class="write-space tall" style="min-height: 340px"></div></div>
-
-<h2>6 · Record Your Walkthrough 🎥</h2>
-<p>Take a video while you fly the ship with the arrow keys. Talk through it like you are teaching someone. Try to use these words: <strong>X axis</strong>, <strong>Y axis</strong>, <strong>key press</strong>, <strong>increase</strong>, <strong>speed</strong>.</p>
+<h2>4 · Explain Your Lesson Code 🎥</h2>
+<p>In today's live lesson you wrote your own flying-ship code. Now explain <strong>your own code</strong> in a short phone video. You may show it running on screen. Talk through it like you are teaching someone, and try to use these words: <strong>X axis</strong>, <strong>Y axis</strong>, <strong>key press</strong>, <strong>increase</strong>, <strong>speed</strong>.</p>
 <blockquote>
 <ol>
-<li>Show the ship flying in all four directions as you press keys.</li>
-<li>Read your four <code>if keys[...]</code> lines out loud and say which way each moves.</li>
-<li>Point at where the ship position is used to draw the body.</li>
-<li>Change the SPEED live and show the difference.</li>
+<li>Show your ship flying in all four directions as you press the keys.</li>
+<li>Read your four <code>if keys[...]</code> lines out loud and say which way each one moves the ship.</li>
+<li>Point at where <code>ship_x</code> and <code>ship_y</code> are used to draw the ship.</li>
+<li>Say what <code>SPEED</code> does and what number you chose.</li>
 </ol>
 </blockquote>
-<div class="qa"><p><strong>Write what you will say in your video.</strong> Plan it here before you record.</p>
+<div class="qa"><p><strong>Write what you will say in your video. Plan it here before you record.</strong></p>
 <div class="write-space tall" style="min-height: 340px"></div></div>
 
 <hr />
 <h3>Submit ✅</h3>
-<p>Send this worksheet + your flying video to teacher on KakaoTalk.</p>
+<p>Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.</p>
 </body>
 </html>

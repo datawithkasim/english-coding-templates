@@ -2,7 +2,7 @@
 
 **Topic:** A HUD and Enemy Types · **Course:** Pygame Space Shooter · **Time:** about 45 minutes
 
-This week your game shows a **score and timer** on screen (a HUD) and has **several enemies** at once, each a different type. Each enemy is a dictionary with its own position, type, and points — aliens are worth 1 point and meteors are worth 3.
+This week is about **thinking about and explaining** the code for a game that shows a **score and timer** on screen (a HUD) and has **several enemies** at once, each a different type. Each enemy is a dictionary with its own position, type, and points — aliens are worth 1 point and meteors are worth 3.
 
 > 🧠 Words to know: **HUD**, **score**, **timer**, **list of dictionaries**, **enemy type**
 
@@ -10,7 +10,7 @@ This week your game shows a **score and timer** on screen (a HUD) and has **seve
 
 ## 1 · Predict 🔮
 
-Read each piece of code. Before you run it, write what you think will happen.
+Read each piece of code. Write what you think it does. You do not run anything — just think and explain.
 
 ```python
 font = pygame.font.SysFont(None, 32)
@@ -35,6 +35,14 @@ for i in range(3):
 <div class="write-space"></div>
 
 ```python
+enemies = [new_enemy() for i in range(3)]
+```
+
+**This is a shorter way to fill a list. How many enemies go into the list, and what does `new_enemy()` give back each time?**
+
+<div class="write-space"></div>
+
+```python
 score = score + hit["points"]
 ```
 
@@ -44,9 +52,64 @@ score = score + hit["points"]
 
 ---
 
-## 2 · Run It 🏃
+## 2 · Spot the Bug 🐛
 
-### 🎯 Type the example, run it, and watch the score
+Each block below was meant to do something but is broken. Write the fixed code, then explain why the original was wrong.
+
+**Bug A** — The score is supposed to appear on screen, but the number never shows up.
+
+```python
+score_text = font.render(f"Score: {score}", True, (255, 255, 255))
+```
+
+**Hint:** rendering the text is not enough — it must be put on the screen.
+
+**Write the fixed code:**
+
+<div class="write-space"></div>
+
+**Why was it wrong? Why does your fix work?**
+
+<div class="write-space"></div>
+
+**Bug B** — Hitting a meteor should give more points than an alien, but every enemy gives the same score.
+
+```python
+score = score + 1
+```
+
+**Hint:** the score should depend on the enemy's type.
+
+**Write the fixed code:**
+
+<div class="write-space"></div>
+
+**Why was it wrong? Why does your fix work?**
+
+<div class="write-space"></div>
+
+**Bug C** — Pressing SPACE on empty space should do nothing, but the program crashes when you miss.
+
+```python
+hit = get_aimed_enemy(ship_x)
+score = score + hit["points"]
+```
+
+**Hint:** when nothing is lined up, `hit` is `None`, and `None["points"]` is an error.
+
+**Write the fixed code:**
+
+<div class="write-space"></div>
+
+**Why was it wrong? Why does your fix work?**
+
+<div class="write-space"></div>
+
+---
+
+## 3 · Explain the Code 📖
+
+Read this working program. Then answer the questions below. You do not run it — just read it carefully and explain.
 
 ```python
 import pygame
@@ -124,128 +187,38 @@ while running:
 pygame.quit()
 ```
 
-**Line up under an alien and press SPACE, then a meteor. Which gave you more points? What does the timer do?**
+**What does `new_enemy()` return, and which keys does the dictionary have?**
+
+<div class="write-space"></div>
+
+**The `draw_hud` function shows two things. What are they, and where on the screen does each one go?**
+
+<div class="write-space"></div>
+
+**What does `get_aimed_enemy(ship_x)` do, and what does it return when nothing is lined up?**
+
+<div class="write-space"></div>
+
+**When you hit an enemy with SPACE, two things happen to it: the score changes and the enemy is replaced. Explain in your own words.**
+
+<div class="write-space"></div>
+
+**The laser line changes color. When is it yellow, and when is it red?**
 
 <div class="write-space"></div>
 
 ---
 
-## 3 · Spot the Bug 🐛
+## 4 · Explain Your Lesson Code 🎥
 
-Each block below was meant to do something but is broken. Fix it, then explain why the original was wrong.
-
-**Bug A** — The score is supposed to appear on screen, but the number never shows up.
-
-```python
-score_text = font.render(f"Score: {score}", True, (255, 255, 255))
-```
-
-**Hint:** rendering the text is not enough — it must be put on the screen.
-
-**Write the fixed code:**
-
-<div class="write-space"></div>
-
-**Why was it wrong? Why does your fix work?**
-
-<div class="write-space"></div>
-
-**Bug B** — Hitting a meteor should give more points than an alien, but every enemy gives the same score.
-
-```python
-score = score + 1
-```
-
-**Hint:** the score should depend on the enemy's type.
-
-**Write the fixed code:**
-
-<div class="write-space"></div>
-
-**Why was it wrong? Why does your fix work?**
-
-<div class="write-space"></div>
-
-**Bug C** — Pressing SPACE on empty space should do nothing, but the program crashes when you miss.
-
-```python
-hit = get_aimed_enemy(ship_x)
-score = score + hit["points"]
-```
-
-**Hint:** when nothing is lined up, `hit` is `None`, and `None["points"]` is an error.
-
-**Write the fixed code:**
-
-<div class="write-space"></div>
-
-**Why was it wrong? Why does your fix work?**
-
-<div class="write-space"></div>
-
----
-
-## 4 · Modify It 🔧
-
-### 🎯 Add more enemies
-
-Change `range(3)` so more enemies appear at once.
-
-**Write the new number you chose and how the game feels with more enemies:**
-
-<div class="write-space"></div>
-
-### 🎯 Change the game length
-
-Change `GAME_DURATION` to make the round longer or shorter (it is in milliseconds, so 30000 is 30 seconds).
-
-**Write the new duration you chose and what 1000 milliseconds equals in seconds:**
-
-<div class="write-space"></div>
-
-**Hint:** keep the enemies inside `150` to `WIDTH - 150` so they never spawn off screen or under the HUD.
-
----
-
-## 5 · Make It 📸
-
-### 🎯 Build a scored shooting game
-
-Build a program where:
-
-1. several enemies appear at once,
-2. a HUD shows score and time,
-3. meteors are worth more than aliens,
-4. missing does not crash the game.
-
-Send a **video** of 30 seconds of play, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.
-
-> First, I stored my enemies as a list of …
->
-> My HUD shows … in the corner.
->
-> Meteors give more points because …
->
-> I stopped misses from crashing by …
->
-> One tricky moment was when …
->
-> If I had more time, I would …
-
-<div class="write-space tall" style="min-height: 340px"></div>
-
----
-
-## 6 · Record Your Walkthrough 🎥
-
-Take a video of a full 30-second round. Talk through it like you are teaching someone. Try to use these words: **HUD**, **score**, **timer**, **dictionary**, **enemy type**.
+In today's live lesson you wrote your own version of this game. Make a short phone video where you **explain the code you wrote**. You can show the game running while you talk. Try to use these words: **HUD**, **score**, **timer**, **dictionary**, **enemy type**.
 
 > 1. Show the HUD with score and time changing.
-> 2. Hit an alien and a meteor, and say the point difference.
-> 3. Read the line that renders the score out loud.
-> 4. Show what happens when you miss.
+> 2. Read out loud the line that renders the score, and say what it does.
+> 3. Hit an alien and a meteor, and say which gives more points and why.
+> 4. Show what happens when you miss, and explain why it does not crash.
 
-**Write what you will say in your video.** Plan it here before you record.
+**Write what you will say in your video. Plan it here before you record.**
 
 <div class="write-space tall" style="min-height: 340px"></div>
 
@@ -253,4 +226,4 @@ Take a video of a full 30-second round. Talk through it like you are teaching so
 
 ### Submit ✅
 
-Send this worksheet + your 30-second play video to teacher on KakaoTalk.
+Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.
