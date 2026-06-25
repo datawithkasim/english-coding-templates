@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>🧱 WD001 — Build, Style & Box It Up</title>
+<style>
+@page { size: A4; margin: 18mm 16mm 22mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-family: "Inter", "Segoe UI", system-ui, sans-serif; color: #1a1a2e; }
+body { font-size: 15px; line-height: 1.55; }
+
+.cover { border-bottom: 3px solid #ff7849; padding-bottom: 14px; margin-bottom: 20px; }
+.brand { font-size: 14px; font-weight: 800; color: #ff7849; letter-spacing: .06em; }
+h1 { font-size: 28px; color: #6b4ee6; margin: 8px 0 6px; line-height: 1.25; }
+h2 { font-size: 19px; color: #6b4ee6; margin: 22px 0 12px; padding-top: 10px; border-top: 1px solid #eee; page-break-before: always; }
+section.first h2, h2:first-of-type { border-top: none; padding-top: 0; page-break-before: avoid; }
+h3, h4 { font-size: 15px; margin: 14px 0 8px; color: #1a1a2e; }
+p { margin: 8px 0; }
+strong { color: #1a1a2e; }
+em { color: #555; }
+
+ul, ol { margin: 8px 0 8px 24px; }
+li { margin: 3px 0; }
+
+pre {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 13.5px;
+  background: #1e1e2e;
+  color: #b9f6ca;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 10px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  page-break-inside: avoid;
+  line-height: 1.5;
+}
+pre code { background: transparent; padding: 0; color: inherit; }
+code {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  background: #fff1e8;
+  color: #ff7849;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+blockquote {
+  margin: 10px 0;
+  padding: 10px 16px;
+  background: #fff6ef;
+  border-left: 3px solid #ff7849;
+  border-radius: 0 6px 6px 0;
+  color: #6a3a1c;
+}
+
+.write-space {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #ffffff 0,
+    #ffffff 27px,
+    #d4d4d4 27px,
+    #d4d4d4 28px
+  );
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  min-height: 114px;
+  margin: 10px 0 20px;
+  page-break-inside: avoid;
+}
+.write-space.short { min-height: 86px; }
+.write-space.tall { min-height: 170px; }
+
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
+hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
+
+.meta { color: #666; font-size: 13px; margin: 0 0 14px; }
+.answer-lines {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 14px 16px;
+  background: #fafafa;
+  white-space: pre;
+  line-height: 2.2;
+}
+
+footer {
+  position: fixed;
+  bottom: 10mm; left: 16mm; right: 16mm;
+  text-align: center;
+  font-size: 10px;
+  color: #aaa;
+}
+footer b { color: #ff7849; }
+</style>
+</head>
+<body>
+<div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
+<h1>🧱 WD001 — Build, Style &amp; Box It Up</h1>
+<p><strong>Topic:</strong> Make a real web page, style it from a <code>main.css</code> file, then group it with <code>&lt;div&gt;</code>s · <strong>Course:</strong> Web Design: CSS · <strong>Time:</strong> about 90 minutes</p>
+<p>In this worksheet you build a small web page from nothing, then style it with <strong>CSS</strong> kept in its own file called <strong><code>main.css</code></strong>. Real websites keep their styles in a separate file so the HTML stays clean and one stylesheet can paint the whole site. You will do it that way from day one.</p>
+<p>Your page will have a heading, a few paragraphs, a <strong>weekly timetable</strong>, some <strong>buttons</strong>, and a couple of <strong>inputs</strong>. Then you will learn the most useful container in web design: the <strong><code>&lt;div&gt;</code></strong> — an invisible box you put things inside so you can move and style them <strong>as a group</strong>.</p>
+<h2>1 · Predict 🔮</h2>
+<p>Read each bit of code. Before you imagine the browser drawing it, write what you think shows up.</p>
+<pre><code class="language-html">&lt;head&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;main.css&quot;&gt;
+&lt;/head&gt;
+</code></pre>
+<div class="qa"><p><strong>This line connects an HTML page to a separate file called <code>main.css</code>. If <code>main.css</code> is empty, does the page change? When does the styling actually appear?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-html">&lt;button&gt;Click me&lt;/button&gt;
+&lt;input placeholder=&quot;your name&quot;&gt;
+</code></pre>
+<div class="qa"><p><strong>What do you think these two look like on the page? Which one can you type into?</strong></p>
+<div class="write-space"></div></div>
+
+<p>In <code>main.css</code>:</p>
+<pre><code class="language-css">button {
+  background-color: tomato;
+  color: white;
+}
+</code></pre>
+<div class="qa"><p><strong>The HTML did not change — only <code>main.css</code> did. What happens to every button on the page? Why does the HTML not need editing?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-html">&lt;div&gt;
+  &lt;h1&gt;Coco&lt;/h1&gt;
+  &lt;p&gt;My cat.&lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+<div class="qa"><p><strong>A <code>&lt;div&gt;</code> is invisible. Do you think you will <em>see</em> a box on screen? Write your guess.</strong></p>
+<div class="write-space"></div></div>
+
+<h2>2 · Spot the Bug 🐛</h2>
+<p>Each bit of code below was meant to do something but is broken. Read what it is <strong>supposed</strong> to do, rewrite it so it works, then explain why the original was wrong.</p>
+<p><strong>Bug A</strong> — This is supposed to connect the page to its stylesheet, but no styles ever show up.</p>
+<pre><code class="language-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;mian.css&quot;&gt;
+</code></pre>
+<p><strong>Hint:</strong> the file is named <code>main.css</code>. Read the filename letter by letter.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug B</strong> — This CSS in <code>main.css</code> is supposed to make all paragraphs gray.</p>
+<pre><code class="language-css">p {
+  color = gray;
+}
+</code></pre>
+<p><strong>Hint:</strong> in CSS you do not use <code>=</code>. Look at how <code>color: white;</code> was written above.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug C</strong> — This <code>&lt;div&gt;</code> is supposed to wrap a heading and a paragraph together, but the box never closes.</p>
+<pre><code class="language-html">&lt;div&gt;
+  &lt;h1&gt;About Me&lt;/h1&gt;
+  &lt;p&gt;I like coding.&lt;/p&gt;
+</code></pre>
+<p><strong>Hint:</strong> every <code>&lt;div&gt;</code> needs a matching <code>&lt;/div&gt;</code>.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>3 · Build the Page 🏗️</h2>
+<p>Open Replit and start a new HTML project. You will make <strong>two files</strong>: <code>index.html</code> for the content and <code>main.css</code> for the styles. Link them in the <code>&lt;head&gt;</code>.</p>
+<p>Your page is a little "My Week" page. It needs all of these:</p>
+<ul>
+<li>a <strong>heading</strong> with a title,</li>
+<li>a few <strong>paragraphs</strong> about your week,</li>
+<li>a <strong>weekly timetable</strong> (a table with the days and what you do),</li>
+<li>two <strong>buttons</strong>,</li>
+<li>two <strong>inputs</strong> people can type into.</li>
+</ul>
+<p>Start from this and change the words to be about you:</p>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;My Week&lt;/title&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;main.css&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;My Week&lt;/h1&gt;
+  &lt;p&gt;Hi, I'm ___. Here is what my week looks like.&lt;/p&gt;
+  &lt;p&gt;My favorite day is ___ because ___.&lt;/p&gt;
+
+  &lt;table&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Day&lt;/th&gt;
+      &lt;th&gt;What I do&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Monday&lt;/td&gt;
+      &lt;td&gt;___&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Tuesday&lt;/td&gt;
+      &lt;td&gt;___&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Wednesday&lt;/td&gt;
+      &lt;td&gt;___&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+
+  &lt;p&gt;Sign up to hear about my week:&lt;/p&gt;
+  &lt;input placeholder=&quot;your name&quot;&gt;
+  &lt;input placeholder=&quot;your email&quot;&gt;
+  &lt;button&gt;Sign up&lt;/button&gt;
+  &lt;button&gt;Clear&lt;/button&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>A <code>&lt;table&gt;</code> is made of rows (<code>&lt;tr&gt;</code>). Header cells use <code>&lt;th&gt;</code>, normal cells use <code>&lt;td&gt;</code>. Add more days if you like.</p>
+<p>Run it. Right now it looks plain — that is fine. We style it next.</p>
+<div class="qa"><p><strong>Write one sentence: what does your timetable show, and what do your two buttons say?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>4 · Style It With <code>main.css</code> 🎨</h2>
+<p>Now open <code>main.css</code> (the empty file) and make the page look good. Everything you write here paints the page through the <code>&lt;link&gt;</code> you already added — you do <strong>not</strong> touch <code>index.html</code> again.</p>
+<p>Each rule picks an element (<code>body</code>, <code>h1</code>, <code>table</code>, <code>button</code>, <code>input</code>) and changes how it looks:</p>
+<pre><code class="language-css">body {
+  background-color: beige;
+  font-family: Arial;
+}
+
+h1 {
+  color: darkblue;
+}
+
+p {
+  color: gray;
+}
+
+table {
+  border: 1px solid darkblue;
+}
+
+th, td {
+  padding: 8px;
+}
+
+button {
+  background-color: tomato;
+  color: white;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+input {
+  padding: 8px;
+}
+</code></pre>
+<p>Type these into <code>main.css</code>, run the page, then make it yours:</p>
+<ul>
+<li>change the <code>background-color</code> and the <code>h1</code> color,</li>
+<li>give the <code>button</code> a color you like,</li>
+<li>add <code>padding</code> to a cell or input to space it out.</li>
+</ul>
+<p><code>padding</code> adds space <strong>inside</strong> an element so text does not touch the edge.</p>
+<div class="qa"><p><strong>Write the three colors you chose and where each one goes:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Run the page. What changed the moment you saved <code>main.css</code>? Did any rule not work the way you expected?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>5 · Group It With a <code>&lt;div&gt;</code> 📦</h2>
+<p>Right now everything floats down the page on its own. A <code>&lt;div&gt;</code> lets you wrap parts into one box you can style as a group.</p>
+<p>In <code>index.html</code>, wrap your sign-up parts in a <code>&lt;div&gt;</code> with a class name:</p>
+<pre><code class="language-html">&lt;div class=&quot;signup&quot;&gt;
+  &lt;p&gt;Sign up to hear about my week:&lt;/p&gt;
+  &lt;input placeholder=&quot;your name&quot;&gt;
+  &lt;input placeholder=&quot;your email&quot;&gt;
+  &lt;button&gt;Sign up&lt;/button&gt;
+  &lt;button&gt;Clear&lt;/button&gt;
+&lt;/div&gt;
+</code></pre>
+<p>Then style that box in <code>main.css</code>. A <code>.</code> before the name means "the element with this class":</p>
+<pre><code class="language-css">.signup {
+  background-color: white;
+  padding: 20px;
+  border: 2px solid darkblue;
+  border-radius: 12px;
+}
+</code></pre>
+<p>Run it. Your sign-up section is now one tidy card, and everything inside moved together.</p>
+<div class="qa"><p><strong>In your own words: what does a <code>&lt;div&gt;</code> do, and why is it useful to wrap things in one?</strong></p>
+<div class="write-space tall" style="min-height: 220px"></div></div>
+
+<h2>6 · Record Your Walkthrough 🎥</h2>
+<p>Take a photo or short video of your finished page and show both files. Talk through it like you are teaching someone new. Try to use these words: <strong>HTML</strong>, <strong>main.css</strong>, <strong>link</strong>, <strong>table</strong>, <strong>div</strong>.</p>
+<blockquote>
+<ol>
+<li>Show your finished page in the browser.</li>
+<li>Show <code>main.css</code> and read one rule, then point to what it changes on the page.</li>
+<li>Point to your timetable and your <code>&lt;div&gt;</code> and say what is inside each.</li>
+<li>Explain why the styles live in a separate file.</li>
+</ol>
+</blockquote>
+<div class="qa"><p><strong>Plan what you will say below before you record — you can read from it while filming.</strong></p>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your page (photo or video) to teacher on KakaoTalk.</p>
+</body>
+</html>
