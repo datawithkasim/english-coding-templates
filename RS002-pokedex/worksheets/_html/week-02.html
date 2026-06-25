@@ -104,7 +104,10 @@ footer b { color: #ff7849; }
 <div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
 <h1>🔴 RS002 Week 2 — English Worksheet</h1>
 <p><strong>Topic:</strong> Trainer Profile — More Variables · <strong>Course:</strong> Pokédex App · <strong>Time:</strong> about 45 minutes</p>
-<p>This week you grow last week's intro into a full <strong>trainer card</strong>. You ask for more details — region and favourite type — clean each answer with <code>.strip()</code>, give every answer a default, and print a tidy card. Same pattern as Week 1, just repeated for more fields.</p>
+<blockquote>
+<p>🧠 Words to know: <strong>variable</strong>, <strong>strip</strong>, <strong>default</strong>, <strong>field</strong>, <strong>trainer card</strong></p>
+</blockquote>
+<p>This week you read and think about a full <strong>trainer card</strong>. It asks for more details — region and favourite type — cleans each answer with <code>.strip()</code>, gives every answer a default, and prints a tidy card. You will trace the code on paper, fix some bugs in your head, and then explain the code you wrote in the live lesson.</p>
 <h2>1 · Recall 🧠</h2>
 <p>From memory — no peeking at Week 1:</p>
 <div class="qa"><p><strong>Write the line that asks the user for their name and stores it in <code>trainer_name</code>.</strong></p>
@@ -114,7 +117,7 @@ footer b { color: #ff7849; }
 <div class="write-space"></div></div>
 
 <h2>2 · Predict 🔮</h2>
-<p>Read each block. Before you run it, write what you think will happen.</p>
+<p>Read each block. Write what you think will happen — no need to run it.</p>
 <pre><code class="language-python">region = input(&quot;어느 지역에서 오셨나요? &quot;).strip()
 print(f&quot;[{region}]&quot;)
 </code></pre>
@@ -137,7 +140,7 @@ print(f&quot;선호 타입: {fav_type}&quot;)
 <div class="write-space"></div></div>
 
 <h2>3 · Spot the Bug 🐛</h2>
-<p>Read what each block is <strong>supposed</strong> to do, fix it, then explain the fix.</p>
+<p>Read what each block is <strong>supposed</strong> to do, fix it on paper, then explain the fix.</p>
 <p><strong>Bug A</strong> — Every answer should have its spaces trimmed. This one forgets <code>.strip()</code> on the region.</p>
 <pre><code class="language-python">trainer_name = input(&quot;이름: &quot;).strip()
 region = input(&quot;지역: &quot;)
@@ -174,8 +177,8 @@ print(f&quot;선호 타입: {trainer_name}&quot;)
 <div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
 <div class="write-space"></div></div>
 
-<h2>4 · Modify It ✏️</h2>
-<p>Start from this working trainer card:</p>
+<h2>4 · Explain the Code 📖</h2>
+<p>Here is a complete, working trainer card. Read it carefully, then answer the questions.</p>
 <pre><code class="language-python">trainer_name = input(&quot;트레이너 이름: &quot;).strip()
 if trainer_name == &quot;&quot;:
     trainer_name = &quot;이름 모를 트레이너&quot;
@@ -193,48 +196,36 @@ print(f&quot;이름: {trainer_name}&quot;)
 print(f&quot;지역: {region}&quot;)
 print(f&quot;선호 타입: {fav_type}&quot;)
 </code></pre>
-<p>Make these changes one at a time and run after each:</p>
-<ol>
-<li>Add a friendly closing line that uses both <code>region</code> and <code>trainer_name</code>.</li>
-<li>Change the region default to something fun.</li>
-<li>Add a blank line (<code>\n</code>) somewhere to make the card easier to read.</li>
-</ol>
-<div class="qa"><p><strong>Write your changed / added lines here:</strong></p>
+<div class="qa"><p><strong>What does <code>.strip()</code> do to the user's answer, and why do we add it to every <code>input(...)</code> line?</strong></p>
 <div class="write-space"></div></div>
 
-<h2>5 · Make It 📸</h2>
-<p>Build your own <strong>trainer card</strong> with <strong>at least four fields</strong> (for example: name, region, favourite type, favourite Pokémon, years of adventuring — your choice). Every field should:</p>
-<ul>
-<li>be cleaned with <code>.strip()</code>,</li>
-<li>have a sensible default when the user types nothing.</li>
-</ul>
-<p>When it works, send a <strong>photo or video</strong> on KakaoTalk, then explain what you did. Use these starters — write 4 to 6 sentences.</p>
-<div class="qa"><blockquote>
-<p>First, I asked the trainer for …</p>
-<p>I used <code>.strip()</code> so that …</p>
-<p>For empty answers, my program …</p>
-<p>My fourth field was … and I added it by …</p>
-<p>The trickiest part was …</p>
-<p>If I had more time, I would add …</p>
-</blockquote>
-<div class="write-space tall" style="min-height: 340px"></div></div>
+<div class="qa"><p><strong>Look at the line <code>if trainer_name == "":</code>. When is this True, and what does the program do when it is?</strong></p>
+<div class="write-space"></div></div>
 
-<h2>6 · Record Your Walkthrough 🎥</h2>
-<p>Film your program running. Teach it like the viewer has never seen it. Try to use: <strong>variable</strong>, <strong>strip</strong>, <strong>default</strong>, <strong>field</strong>, <strong>trainer card</strong>.</p>
+<div class="qa"><p><strong>This card has three fields. Name them, and name the variable that holds each one.</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>The first print line has <code>\n</code> in it. What does <code>\n</code> do to the trainer card on screen?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>If the user types nothing for all three questions, what does the finished trainer card show?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>5 · Explain Your Lesson Code 🎥</h2>
+<p>In today's live lesson you wrote your own trainer card. Now explain <strong>the code you wrote</strong> in a short phone video. You may show it running. Teach it like the viewer has never seen it, and use these key words: <strong>variable</strong>, <strong>strip</strong>, <strong>default</strong>, <strong>field</strong>, <strong>trainer card</strong>.</p>
 <blockquote>
 <ol>
-<li>Run your program and fill in every field.</li>
-<li>Read one <code>input(...).strip()</code> line out loud and say what <code>.strip()</code> does.</li>
-<li>Run it again and leave a field blank to show the default.</li>
-<li>Show your finished trainer card on screen.</li>
+<li>Show your code and point to one <code>input(...).strip()</code> line — say what the <strong>variable</strong> holds and what <code>.strip()</code> does.</li>
+<li>Point to one <code>if ... == "":</code> block and explain the <strong>default</strong> for that <strong>field</strong>.</li>
+<li>Run your program once and leave a field blank to show the default working.</li>
+<li>Show your finished <strong>trainer card</strong> on screen and read it out.</li>
 </ol>
 </blockquote>
-<div class="qa"><p><strong>Plan what you will say here first:</strong></p>
+<div class="qa"><p><strong>Write what you will say in your video. Plan it here before you record.</strong></p>
 <div class="write-space tall" style="min-height: 340px"></div></div>
 
 <hr />
 <h3>Submit ✅</h3>
-<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.
-</content></p>
+<p>Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.</p>
 </body>
 </html>

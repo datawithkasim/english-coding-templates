@@ -2,7 +2,9 @@
 
 **Topic:** Dictionaries — Real Pokémon Data · **Course:** Pokédex App · **Time:** about 45 minutes
 
-This week you meet the **dictionary** — a way to keep all of one Pokémon's facts together with **named keys** instead of four loose parallel lists. `pikachu["name"]` reads the value behind the key `"name"`. No more lining up indexes!
+This week you think about the **dictionary** — a way to keep all of one Pokémon's facts together with **named keys** instead of four loose parallel lists. `pikachu["name"]` reads the value behind the key `"name"`. No more lining up indexes! In this worksheet you read code, debug on paper, and explain the dictionary code you wrote in your live lesson.
+
+> 🧠 Words to know: dictionary, key, value, KeyError, list of dictionaries
 
 ---
 
@@ -18,7 +20,7 @@ From memory:
 
 ## 2 · Predict 🔮
 
-Read each block. Before you run it, write what you think will happen.
+Read each block. Write what you think it would print.
 
 ```python
 pikachu = {"name": "피카츄", "type": "전기", "hp": 35}
@@ -35,7 +37,7 @@ pikachu = {"name": "피카츄", "type": "전기", "hp": 35}
 print(pikachu["attack"])
 ```
 
-**There is no `"attack"` key. What happens when this runs?**
+**There is no `"attack"` key. What happens with this block?**
 
 <div class="write-space"></div>
 
@@ -116,9 +118,9 @@ for pokemon in pokedex:
 
 ---
 
-## 4 · Modify It ✏️
+## 4 · Explain the Code 📖
 
-Start from this working dictionary search:
+Read this working dictionary search carefully.
 
 ```python
 pokedex = [
@@ -142,50 +144,38 @@ if found == False:
     print("도감에서 찾을 수 없습니다.")
 ```
 
-Make these changes one at a time and run after each:
+**What is `pokedex` — and what is each item inside it?**
 
-1. Add one more Pokémon dictionary to the list (all four keys).
-2. Add an `"id"` key to each Pokémon and print it in the search result.
-3. Change the exact-match `==` to a partial match with `in` (so `피카` finds 피카츄).
+<div class="write-space"></div>
 
-**Write your changed / added lines here:**
+**The loop variable is `pokemon`. What does `pokemon["name"]` read on each pass?**
+
+<div class="write-space"></div>
+
+**What is the job of the `found` variable, and when does it become `True`?**
+
+<div class="write-space"></div>
+
+**If the user types a name that is not in the dex, which line runs and why?**
+
+<div class="write-space"></div>
+
+**Why is this dictionary version clearer than four parallel lists with `names[i]`, `types[i]`, and so on?**
 
 <div class="write-space"></div>
 
 ---
 
-## 5 · Make It 📸
+## 5 · Explain Your Lesson Code 🎥
 
-Rebuild your Week 4 Pokédex (the four parallel lists) as a **list of dictionaries**. Each Pokémon is one dictionary with keys `name`, `type`, `hp`, `attack`. Keep your search working on the new structure.
+In your live lesson you wrote dictionary code. Now explain **that** code in a short phone video. You may show it running. Teach it like the viewer is new, and try to use: **dictionary**, **key**, **value**, **KeyError**, **list of dictionaries**.
 
-When it works, send a **photo or video** on KakaoTalk, then explain what you did. Use these starters — write 4 to 6 sentences.
-
-> First, I turned each Pokémon into a dictionary with keys …
->
-> I read a value using `pokemon[...]` where … is the key.
->
-> A dictionary is tidier than parallel lists because …
->
-> My search loop now reads …
->
-> The trickiest part was …
->
-> A `KeyError` happens when …
-
-<div class="write-space tall" style="min-height: 340px"></div>
-
----
-
-## 6 · Record Your Walkthrough 🎥
-
-Film it running. Teach it like the viewer is new. Try to use: **dictionary**, **key**, **value**, **KeyError**, **list of dictionaries**.
-
-> 1. Show one Pokémon dictionary and read its keys out loud.
-> 2. Run a search and show the matching Pokémon's full info.
+> 1. Show one Pokémon dictionary from your lesson and read its keys out loud.
+> 2. Run your search and show the matching Pokémon's full info.
 > 3. Explain why `pokemon["name"]` is clearer than `names[i]`.
 > 4. Mention one `KeyError` you hit (or could hit) and how to avoid it.
 
-**Plan what you will say here first:**
+**Write what you will say in your video. Plan it here before you record.**
 
 <div class="write-space tall" style="min-height: 340px"></div>
 
@@ -193,5 +183,4 @@ Film it running. Teach it like the viewer is new. Try to use: **dictionary**, **
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
-</content>
+Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.

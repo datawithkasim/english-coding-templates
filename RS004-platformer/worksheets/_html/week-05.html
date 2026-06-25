@@ -104,12 +104,12 @@ footer b { color: #ff7849; }
 <div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
 <h1>🪂 RS004 Week 5 — English Worksheet</h1>
 <p><strong>Topic:</strong> Gravity &amp; Jump · <strong>Course:</strong> Platformer Game · <strong>Time:</strong> about 45 minutes</p>
-<p>This week your player learns to <strong>fall</strong> and <strong>jump</strong>. A <code>velocity_y</code> value grows every frame (gravity pulls down), and a jump gives it a sudden <em>negative</em> push (upward). The player can only jump when it is on the ground.</p>
+<p>This week is about <strong>thinking through</strong> how a player learns to <strong>fall</strong> and <strong>jump</strong>, and <strong>explaining</strong> the code you wrote in the live lesson. A <code>velocity_y</code> value grows every frame (gravity pulls down), and a jump gives it a sudden <em>negative</em> push (upward). The player can only jump when it is on the ground.</p>
 <blockquote>
 <p>Keep these words handy: <strong>velocity</strong>, <strong>gravity</strong>, <strong>jump strength</strong>, <strong>on ground</strong>, <strong>accelerate</strong>.</p>
 </blockquote>
 <h2>1 · Predict 🔮</h2>
-<p>Read each snippet. Before you run it, write what you think will happen.</p>
+<p>Read each snippet and write what you think it does. Do not run anything — just think.</p>
 <pre><code class="language-python">velocity_y = velocity_y + GRAVITY
 player.y = player.y + velocity_y
 </code></pre>
@@ -143,7 +143,7 @@ frame 3:  velocity_y = ___
 <div class="write-space"></div></div>
 
 <h2>3 · Spot the Bug 🐛</h2>
-<p>Each snippet is broken. Rewrite it so it works, then explain why the original was wrong.</p>
+<p>Each snippet is broken. On paper, write the fixed code, then explain why the original was wrong.</p>
 <p><strong>Bug A</strong> — The player should fall, but it just sits in the air doing nothing.</p>
 <pre><code class="language-python">velocity_y = 0
 player.y = player.y + velocity_y
@@ -178,51 +178,57 @@ player.y = player.y + velocity_y
 <div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
 <div class="write-space"></div></div>
 
-<h2>4 · Tune the Jump 🛠️</h2>
-<p>Start from your working jump. Change values one at a time and write down the feel.</p>
-<ol>
-<li>Try <code>GRAVITY = 0.3</code>, then <code>GRAVITY = 1.2</code>. What changes about the fall?</li>
-</ol>
-<div class="write-space"></div>
+<h2>4 · Explain the Code 📖</h2>
+<p>Here is a working gravity-and-jump player, like the one from your lesson. Read it carefully, then answer the questions.</p>
+<pre><code class="language-python">GRAVITY = 0.7
+JUMP_STRENGTH = -14
+velocity_y = 0
+on_ground = True
 
-<ol start="2">
-<li>Try <code>JUMP_STRENGTH = -8</code>, then <code>-20</code>. What changes about the jump height?</li>
-</ol>
-<div class="write-space"></div>
+# inside the event loop
+if event.key == pygame.K_SPACE and on_ground:
+    velocity_y = JUMP_STRENGTH
+    on_ground = False
 
-<ol start="3">
-<li><strong>Stretch:</strong> add a <code>MAX_FALL</code> cap so the player never falls faster than a set speed. Why might that help?</li>
-</ol>
-<div class="write-space"></div>
+# every frame
+velocity_y = velocity_y + GRAVITY
+player.y = player.y + velocity_y
 
-<h2>5 · Build &amp; Show 📸</h2>
-<p>Add gravity and a spacebar jump to last week's player. It must fall, land, and jump again from the ground.</p>
-<p>When it works, send a <strong>photo or video</strong> of a jump, then explain what you did. Use these starters — write 4 to 6 sentences.</p>
-<div class="qa"><blockquote>
-<p>First, gravity works by adding <code>GRAVITY</code> to …</p>
-<p>A jump is just <code>velocity_y</code> becoming a negative number, which means …</p>
-<p>The player can only jump when …</p>
-<p>The <code>GRAVITY</code> and <code>JUMP_STRENGTH</code> values I liked best were …</p>
-<p>One tricky moment was …</p>
-<p>If I had more time, I would …</p>
-</blockquote>
-<div class="write-space tall" style="min-height: 340px"></div></div>
+if player.y &gt;= HEIGHT - 50:
+    player.y = HEIGHT - 50
+    velocity_y = 0
+    on_ground = True
+</code></pre>
+<div class="qa"><p><strong>What does the line <code>velocity_y = velocity_y + GRAVITY</code> do every frame?</strong></p>
+<div class="write-space"></div></div>
 
-<h2>6 · Record Your Walkthrough 🎥</h2>
-<p>Take a video showing a jump and a landing. Teach it to someone new. Try to use these words: <strong>gravity</strong>, <strong>velocity</strong>, <strong>jump strength</strong>, <strong>on ground</strong>, <strong>land</strong>.</p>
+<div class="qa"><p><strong>Why does a jump set <code>velocity_y</code> to a <em>negative</em> number instead of a positive one?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Right after a jump, <code>on_ground</code> becomes <code>False</code>. Why is that important?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>What three things happen when <code>player.y &gt;= HEIGHT - 50</code> is true?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>If you deleted the line <code>velocity_y = 0</code> at the bottom, what would go wrong?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>5 · Explain Your Lesson Code 🎥</h2>
+<p>In the live lesson you wrote your own gravity and jump code. Now explain <em>your</em> code in a short phone video. You may show it running. Try to use these words: <strong>gravity</strong>, <strong>velocity</strong>, <strong>jump strength</strong>, <strong>on ground</strong>, <strong>land</strong>.</p>
 <blockquote>
 <ol>
-<li>Show the player falling and landing.</li>
-<li>Show a jump from the ground.</li>
-<li>Read the gravity line out loud and explain it.</li>
-<li>Try to jump in mid-air and show that it doesn't work — say why.</li>
+<li>Show your player falling and landing.</li>
+<li>Read your gravity line out loud and explain what it does.</li>
+<li>Show a jump from the ground and explain how the jump works.</li>
+<li>Try to jump in mid-air, show it doesn't work, and say why.</li>
 </ol>
 </blockquote>
-<div class="qa"><p><strong>Write what you will say in your video.</strong> Plan it here first.</p>
+<div class="qa"><p><strong>Write what you will say in your video. Plan it here before you record.</strong></p>
 <div class="write-space tall" style="min-height: 340px"></div></div>
 
 <hr />
 <h3>Submit ✅</h3>
-<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.</p>
+<p>Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.</p>
 </body>
 </html>

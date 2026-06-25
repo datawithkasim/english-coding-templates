@@ -2,7 +2,7 @@
 
 **Topic:** Gradient Background (Apply) · **Course:** Platformer Game · **Time:** about 45 minutes
 
-This week your flat sky becomes a **gradient** — a smooth blend from one colour at the top to another at the bottom. You will gather all your colours into one **palette** and draw the sky one line at a time.
+This week your flat sky becomes a **gradient** — a smooth blend from one colour at the top to another at the bottom. In this worksheet you will read gradient code, work out the blend maths on paper, and explain how the sky is drawn one line at a time.
 
 > Keep these words handy: **gradient**, **palette**, **blend (interpolate)**, **`draw.line`**, **frame**.
 
@@ -10,7 +10,7 @@ This week your flat sky becomes a **gradient** — a smooth blend from one colou
 
 ## 1 · Predict 🔮
 
-Read each snippet. Before you run it, write what you think will happen.
+Read each snippet. Write what you think it does — just read it, no need to run it.
 
 ```python
 for y in range(HEIGHT):
@@ -105,58 +105,55 @@ pygame.draw.line(screen, (r, SKY_TOP[1], SKY_TOP[2]), (0, y), (WIDTH, y))
 
 ---
 
-## 4 · Modify the Sky 🛠️
+## 4 · Explain the Code 📖
 
-Start from your working `draw_gradient_background()` function. Make small changes and write down what each does.
+Here is a working gradient background. Read it carefully, then answer the questions.
 
-1. Swap `SKY_TOP` and `SKY_BOTTOM`. What happens to the direction of the blend?
+```python
+SKY_TOP = (100, 180, 255)
+SKY_BOTTOM = (200, 230, 255)
+
+def draw_gradient_background():
+    for y in range(HEIGHT):
+        t = y / HEIGHT
+        r = int(SKY_TOP[0] * (1 - t) + SKY_BOTTOM[0] * t)
+        g = int(SKY_TOP[1] * (1 - t) + SKY_BOTTOM[1] * t)
+        b = int(SKY_TOP[2] * (1 - t) + SKY_BOTTOM[2] * t)
+        pygame.draw.line(screen, (r, g, b), (0, y), (WIDTH, y))
+```
+
+**What does the `for y in range(HEIGHT)` loop do, and how many lines does it draw?**
 
 <div class="write-space"></div>
 
-2. Pick two brand-new colours (a sunrise: warm at the bottom, dark at the top). Write the RGB values you chose.
+**The line `t = y / HEIGHT` — what value does `t` have at the top row, and what value near the bottom row?**
 
 <div class="write-space"></div>
 
-3. **Stretch:** make a *three*-colour gradient (top → middle → bottom). 
+**Why does the code blend `r`, `g`, and `b` separately instead of just once?**
 
-> Hint: split the screen in half. Blend top→middle for the upper rows, then middle→bottom for the lower rows.
+<div class="write-space"></div>
+
+**What would happen to the sky if you swapped `SKY_TOP` and `SKY_BOTTOM`?**
+
+<div class="write-space"></div>
+
+**Why does `draw_gradient_background()` use the names `SKY_TOP` and `SKY_BOTTOM` instead of writing the numbers straight into the loop?**
 
 <div class="write-space"></div>
 
 ---
 
-## 5 · Build & Show 📸
+## 5 · Explain Your Lesson Code 🎥
 
-Build **your own** gradient background and run it on top of last week's window.
+In today's live lesson you wrote your own gradient sky. Now explain the code *you* wrote. Record a short video on your phone — you can show it running. Try to use these words: **gradient**, **palette**, **blend**, **line**, **loop**.
 
-When it works, send a **photo or video**, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.
+> 1. Show your gradient sky running and say which two palette colours you used (top and bottom).
+> 2. Point at your `for` loop and explain how it draws the sky line by line.
+> 3. Read your blend line out loud and explain what `t` does as `y` goes down.
+> 4. Show one colour you changed and say what changed on screen.
 
-> First, I chose my top and bottom colours: …
->
-> The `for y in range(HEIGHT)` loop draws the sky by …
->
-> The `t` value controls …
->
-> I kept my colours in a palette so that …
->
-> One tricky moment was …
->
-> If I had more time, I would …
-
-<div class="write-space tall" style="min-height: 340px"></div>
-
----
-
-## 6 · Record Your Walkthrough 🎥
-
-Take a video while your gradient sky runs. Teach it to someone new. Try to use these words: **gradient**, **palette**, **blend**, **line**, **loop**.
-
-> 1. Show your gradient sky.
-> 2. Point at your two palette colours and say which is top, which is bottom.
-> 3. Read the blend line out loud and explain what `t` does.
-> 4. Show one colour you changed and the before/after.
-
-**Write what you will say in your video.** Plan it here first.
+**Write what you will say in your video. Plan it here before you record.**
 
 <div class="write-space tall" style="min-height: 340px"></div>
 
@@ -164,4 +161,4 @@ Take a video while your gradient sky runs. Teach it to someone new. Try to use t
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.

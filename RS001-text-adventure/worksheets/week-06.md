@@ -2,20 +2,15 @@
 
 **Topic:** Clean Every Input Safely · **Course:** Text Adventure (Python) · **Time:** about 45 minutes
 
-This week you apply `.strip().lower()` to **every** `ask()` in your game, and you accept several spellings of the same answer — Korean, English, short forms — so almost any sensible input works.
+This week you think about how `.strip().lower()` cleans **every** `ask()` in your game, and how a game can accept several spellings of the same answer — Korean, English, short forms — so almost any sensible input works. You will read code closely and explain it in your own words.
 
-```python
-direction = game.ask("Which way? (left/right)")
-direction = direction.strip().lower()
-if direction in ["left", "l", "왼쪽"]:
-    direction = "left"
-```
+> 🧠 Words to know: **clean**, **strip**, **lower**, **in**, **spelling**
 
 ---
 
 ## 1 · Predict 🔮
 
-Read each piece of code. Before you run it in your head, write what you think happens.
+Read each piece of code. Run it in your head and write what you think happens.
 
 ```python
 d = "  RIGHT "
@@ -53,7 +48,7 @@ game.say(f"[{d}]")
 
 ## 2 · Spot the Bug 🐛
 
-Each block was meant to do something, but it is broken. Read what it is **supposed** to do, fix it, then explain why the original was wrong.
+Each block was meant to do something, but it is broken. Read what it is **supposed** to do, fix it on paper, then explain why the original was wrong.
 
 **Bug A** — This should accept `"left"`, `"l"`, or `"왼쪽"` and turn them all into `"left"`. Right now it only matches the full word `"left"`.
 
@@ -113,38 +108,49 @@ game.say(d)
 
 ---
 
-## 3 · 🎯 Clean the Whole Game
+## 3 · Explain the Code 📖
 
-Open your game. Go through **every** `ask()` you have written so far and add `.strip().lower()` to each one. Pick one important choice (a direction, for example) and make it accept several spellings.
+Read this working example slowly. It cleans the player's answer and accepts several spellings of "left".
 
-When it works, send a **photo or video**, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.
+```python
+direction = game.ask("Which way? (left/right)")
+direction = direction.strip().lower()
+if direction in ["left", "l", "왼쪽"]:
+    direction = "left"
+```
 
-> First, I found every place I used `ask()`, and …
->
-> The choice I made accept many spellings was …
->
-> The spellings I allowed were …
->
-> I tested it by typing different versions, and …
->
-> One tricky moment was when …
->
-> If I had more time, I would …
+**What does `.strip()` remove from the player's answer?**
 
-<div class="write-space tall" style="min-height: 340px"></div>
+<div class="write-space"></div>
+
+**What does `.lower()` do to a capital letter the player typed?**
+
+<div class="write-space"></div>
+
+**Why must the words in the list `["left", "l", "왼쪽"]` all be lowercase?**
+
+<div class="write-space"></div>
+
+**The player types `"  Left "`. After line 2, what is the value of `direction`? Does the `if` match?**
+
+<div class="write-space"></div>
+
+**Why is it helpful to turn `"l"` and `"왼쪽"` both into `"left"` before the rest of the game runs?**
+
+<div class="write-space"></div>
 
 ---
 
-## 4 · Record Your Walkthrough 🎥
+## 4 · Explain Your Lesson Code 🎥
 
-Take a video on your phone (or a parent's phone) while your game runs. Teach it like the viewer has never coded. Try to use these words: **clean**, **strip**, **lower**, **in**, **spelling**.
+In today's live lesson you cleaned the inputs in your own game. Now explain that code in a short video on your phone (or a parent's phone). You may show your game running. Teach it like the viewer has never coded. Try to use these words: **clean**, **strip**, **lower**, **in**, **spelling**.
 
-> 1. Run your game and type one answer the "normal" way.
-> 2. Run it again and type a different spelling of the same answer.
-> 3. Show both answers leading to the same path.
-> 4. Read your `if ... in [ ... ]` line out loud and explain it.
+> 1. Show one `ask()` line from your game and read your `.strip().lower()` out loud.
+> 2. Explain what `.strip()` and `.lower()` each do to the player's answer.
+> 3. Read your `if ... in [ ... ]` line and say which spellings you allowed.
+> 4. Run it once with a "normal" answer and once with a different spelling, and show both reaching the same path.
 
-**Write what you will say in your video.** Plan it here first.
+**Write what you will say in your video. Plan it here before you record.**
 
 <div class="write-space tall" style="min-height: 340px"></div>
 
@@ -152,4 +158,4 @@ Take a video on your phone (or a parent's phone) while your game runs. Teach it 
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.

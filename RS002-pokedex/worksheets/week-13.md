@@ -2,7 +2,9 @@
 
 **Topic:** Random Battles — `import random` · **Course:** Pokédex App · **Time:** about 45 minutes
 
-This week your dex becomes a game. You `import random` to pick wild Pokémon out of nowhere, then compare stats with `if` / `elif` / `else` to decide a winner. Run it twice and you get two different battles — that is **randomness**.
+> 🧠 Words to know: **import**, **random**, **choice**, **score**, **if / elif / else**
+
+This week your dex becomes a game. In your live lesson you used `import random` to pick wild Pokémon out of nowhere, then compared stats with `if` / `elif` / `else` to decide a winner. This worksheet is about reading that code, thinking about what it does, and explaining it in your own words.
 
 ---
 
@@ -18,7 +20,7 @@ From memory:
 
 ## 2 · Predict 🔮
 
-Read each block. Before you run it, write what you think will happen.
+Read each block. Write what you think will happen.
 
 ```python
 import random
@@ -62,7 +64,7 @@ print(mine["name"])
 
 ## 3 · Spot the Bug 🐛
 
-Read what each block is **supposed** to do, fix it, then explain the fix.
+Read what each block is **supposed** to do, find the problem, then explain the fix on paper.
 
 **Bug A** — This should pick a random Pokémon. Right now `random` was never imported, so it crashes.
 
@@ -128,9 +130,9 @@ if mine["attack"] > enemy:
 
 ---
 
-## 4 · Modify It ✏️
+## 4 · Explain the Code 📖
 
-Start from this working stat battle:
+Read this working stat battle. You do not need to run it — read it and answer.
 
 ```python
 import random
@@ -158,50 +160,38 @@ else:
     print(f"\n⚖️ 무승부!")
 ```
 
-Make these changes one at a time and run after each:
+**What does `random.choice(pokedex)` give back — a name, a number, or a whole dictionary?**
 
-1. Print each Pokémon's `attack` as well as its `hp` before the result.
-2. Change the score formula to weight attack more (for example `attack * 2 + hp`).
-3. Run the program five times and write down how many times you won.
+<div class="write-space"></div>
 
-**Write your changed / added lines here, and your win count:**
+**How is `my_score` calculated? Which two stats are added together?**
+
+<div class="write-space"></div>
+
+**When does the program reach the `elif` line instead of the first `if`?**
+
+<div class="write-space"></div>
+
+**When does the `else` line run, and what does it print?**
+
+<div class="write-space"></div>
+
+**If you ran this program twice, why might you see a different match-up each time?**
 
 <div class="write-space"></div>
 
 ---
 
-## 5 · Make It 📸
+## 5 · Explain Your Lesson Code 🎥
 
-Add a **Battle!** option to your Week 12 menu. When chosen, it picks a random enemy from the dex and battles your Pokémon by comparing stats, printing the winner.
+In your live lesson you wrote a **Battle!** feature. Now explain *that* code — the one you wrote — in a short phone video. You may show it running. Teach it like the viewer is new, and use these key words: **import**, **random**, **choice**, **score**, **if / elif / else**.
 
-When it works, send a **video** on KakaoTalk showing the **battle run at least three times** so we can see the random results change. Then explain what you did. Use these starters — write 4 to 6 sentences.
-
-> First, I imported … so I could …
->
-> `random.choice` picked … from my dex.
->
-> I decided the winner by comparing …
->
-> Running it again gave a different result because …
->
-> The trickiest part was …
->
-> If I had more time, I would make the battle …
-
-<div class="write-space tall" style="min-height: 340px"></div>
-
----
-
-## 6 · Record Your Walkthrough 🎥
-
-Film several battles. Teach it like the viewer is new. Try to use: **import**, **random**, **choice**, **score**, **if / elif / else**.
-
-> 1. Run the battle three times and point out the different match-ups.
-> 2. Read your `random.choice` line out loud.
-> 3. Explain how the winner is decided from the stats.
+> 1. Run your battle a few times and point out the different match-ups.
+> 2. Read your `random.choice` line out loud and say what it picks.
+> 3. Explain how your code decides the winner from the stats.
 > 4. Say why the result changes each run.
 
-**Plan what you will say here first:**
+**Write what you will say in your video. Plan it here before you record.**
 
 <div class="write-space tall" style="min-height: 340px"></div>
 
@@ -209,5 +199,4 @@ Film several battles. Teach it like the viewer is new. Try to use: **import**, *
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
-</content>
+Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.

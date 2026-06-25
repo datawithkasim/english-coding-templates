@@ -104,14 +104,17 @@ footer b { color: #ff7849; }
 <div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
 <h1>🔴 RS002 Week 16 — English Worksheet</h1>
 <p><strong>Topic:</strong> Final Polish + Presentation · <strong>Course:</strong> Pokédex App · <strong>Time:</strong> about 45 minutes</p>
-<p>This is the last week. You bring <strong>everything</strong> — intro, list, search, battle, tournament, two files — together into one menu-driven Pokédex app, polish it, and prepare a <strong>5-minute demo</strong> to present to your friends. Nothing new to learn; everything to combine.</p>
+<p>This is the last week. In the live lesson you brought <strong>everything</strong> together — intro, list, search, battle, tournament, two files — into one menu-driven Pokédex app. This worksheet is about <strong>thinking through</strong> that finished app and <strong>explaining</strong> the code you built. Nothing new to learn; just read, predict, debug on paper, and get ready to present.</p>
+<blockquote>
+<p>🧠 Words to know: menu loop, function, return, import, two files, demo</p>
+</blockquote>
 <h2>1 · Recall 🧠</h2>
 <p>From memory:</p>
 <div class="qa"><p><strong>Write the two <code>import</code> lines a <code>main.py</code> needs: one for the random module, one to bring in <code>pokedex</code> from <code>pokemon_data</code>.</strong></p>
 <div class="write-space"></div></div>
 
 <h2>2 · Predict 🔮</h2>
-<p>Read each block. Before you run it, write what you think will happen.</p>
+<p>Read each block. Write what you think it does.</p>
 <pre><code class="language-python">def main_menu():
     print(&quot;1. 도감 보기&quot;)
     print(&quot;2. 종료&quot;)
@@ -189,8 +192,8 @@ if c == &quot;2&quot;:
 <div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
 <div class="write-space"></div></div>
 
-<h2>4 · Modify It ✏️</h2>
-<p>Start from this near-final app (<code>main.py</code>, using <code>pokemon_data.py</code> from last week):</p>
+<h2>4 · Explain the Code 📖</h2>
+<p>This is the finished Pokédex app you built in the live lesson (<code>main.py</code>, reading data from <code>pokemon_data.py</code>). Read it carefully and answer the questions below.</p>
 <pre><code class="language-python">import random
 from pokemon_data import pokedex
 
@@ -240,42 +243,34 @@ while True:
     else:
         print(&quot;1~4 중에서 골라주세요.&quot;)
 </code></pre>
-<p>Make these changes one at a time and run after each:</p>
-<ol>
-<li>Add a <code>5. 토너먼트</code> option that calls your Week 14 tournament function.</li>
-<li>Add an ASCII-art logo that prints once when the app starts.</li>
-<li>Make the goodbye line show how many Pokémon were registered.</li>
-</ol>
-<div class="qa"><p><strong>Write your changed / added lines here:</strong></p>
+<div class="qa"><p><strong>The <code>import</code> line brings <code>pokedex</code> from another file. Why is the data kept in <code>pokemon_data.py</code> instead of inside <code>main.py</code>?</strong></p>
 <div class="write-space"></div></div>
 
-<h2>5 · Make It 📸</h2>
-<p>Assemble your <strong>final Pokédex app</strong>: a menu loop offering list, search, battle, and tournament, reading data from <code>pokemon_data.py</code>. Polish the wording and layout so it feels finished. Then prepare a <strong>5-minute demo</strong>.</p>
-<p>When it works, send a <strong>video</strong> on KakaoTalk of the whole app running, <strong>both files</strong>, and your <strong>presentation notes</strong>. Then explain what you did. Use these starters — write 4 to 6 sentences.</p>
-<div class="qa"><blockquote>
-<p>First, I combined … into one menu app.</p>
-<p>The function I am most proud of is … because …</p>
-<p>Splitting into two files helped me …</p>
-<p>The hardest problem this term was … and I solved it by …</p>
-<p>The feature I would add next is …</p>
-<p>Two weeks ago I could not … but now I can …</p>
-</blockquote>
-<div class="write-space tall" style="min-height: 360px"></div></div>
+<div class="qa"><p><strong><code>main_menu</code> ends with <code>return input(...)</code>. What does the value it returns become in the loop below?</strong></p>
+<div class="write-space"></div></div>
 
-<h2>6 · Present It 🎤</h2>
-<p>Prepare a <strong>5-minute demo</strong> for your friends. Use this checklist — tick each before you present:</p>
+<div class="qa"><p><strong>In <code>search_pokedex</code>, what does <code>kw in p["name"].lower()</code> check, and why are both sides made lowercase?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Trace the <code>while True</code> loop: what makes it stop, and what would happen if that line were missing?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>The last <code>else</code> runs when the user types something like <code>9</code>. Why is it useful to have it there?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>5 · Explain Your Lesson Code 🎥</h2>
+<p>Present the <strong>finished Pokédex app you built across this whole course</strong>. Record a video on your phone: show the app <strong>running</strong> from start to finish, then explain the key parts in your own words. Use the words you know.</p>
 <blockquote>
-<p>☐ Run the Pokédex app from start to finish once.
-☐ Explain one or two functions you are most proud of.
-☐ Explain why splitting into two files helped.
-☐ Share the hardest problem you hit and how you solved it.</p>
+<p>First, I run my Pokédex app and show the menu, then I pick …</p>
+<p>The function I am most proud of is … because …</p>
+<p>I split the code into two files so that …</p>
+<p>The hardest problem this term was … and I solved it by …</p>
 </blockquote>
-<div class="qa"><p><strong>Write your presentation script here.</strong> You can read from it while presenting and while you record.</p>
-<div class="write-space tall" style="min-height: 360px"></div></div>
+<div class="qa"><p><strong>Write what you will say in your video. Plan it here before you record.</strong></p>
+<div class="write-space tall" style="min-height: 340px"></div></div>
 
 <hr />
 <h3>Submit ✅</h3>
-<p>Send your finished app <strong>video</strong>, <strong>both code files</strong>, and your <strong>presentation notes</strong> to teacher on KakaoTalk.
-</content></p>
+<p>Send this worksheet + your finished-Pokédex presentation video to teacher on KakaoTalk.</p>
 </body>
 </html>

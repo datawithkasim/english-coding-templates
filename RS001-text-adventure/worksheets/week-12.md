@@ -2,7 +2,9 @@
 
 **Topic:** Three Battles, Three Different Choices · **Course:** Text Adventure (Python) · **Time:** about 45 minutes
 
-This week you wrap a whole battle into one **function** called `fight()`, then call it three times with different enemies and different action menus. One function, many battles — no copy-paste.
+This week you think about how a whole battle fits inside one **function** called `fight()`, then how calling it three times gives three different enemies and three different action menus. One function, many battles — you will read it, predict it, and explain it in your own words.
+
+> 🧠 Words to know: **function**, **call**, **parameter**, **return**, **reuse**
 
 ```python
 def fight(enemy_name, actions):
@@ -21,7 +23,7 @@ fight("forest goblin", ["fight", "trap", "run"])
 
 ## 1 · Predict 🔮
 
-Read each piece of code. Before you run it in your head, write what you think happens.
+Read each piece of code. Run it in your head and write what you think happens.
 
 ```python
 actions = ["fight", "trap", "run"]
@@ -124,38 +126,57 @@ fight("bat", "fly")
 
 ---
 
-## 3 · 🎯 Three Battles
+## 3 · Explain the Code 📖
 
-Open your game. Write a `fight()` function, then call it for **three** different enemies, each with its own action menu and its own result. Reuse the function — do not copy-paste the battle code three times.
+Read this working battle carefully. It is one `fight()` function called three times for three different enemies.
 
-When it works, send a **photo or video**, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.
+```python
+def fight(enemy_name, actions):
+    game.say(f"=== {enemy_name} appears! ===")
+    game.say(f"Choices: {', '.join(actions)}")
+    action = game.ask("Do what? ").strip().lower()
+    if action == actions[0]:
+        game.say("A hard-fought win!")
+        return True
+    return False
 
-> First, I wrote a `fight()` function that …
->
-> My three enemies were …
->
-> Each enemy had a different menu, for example …
->
-> Reusing the function meant I only had to fix bugs …
->
-> One tricky moment was when …
->
-> If I had more time, I would …
+fight("forest goblin", ["fight", "trap", "run"])
+fight("cave troll", ["smash", "dodge", "run"])
+fight("ice wraith", ["freeze", "burn", "run"])
+```
 
-<div class="write-space tall" style="min-height: 340px"></div>
+**What are the two parameters of `fight()`, and what does each one hold?**
+
+<div class="write-space"></div>
+
+**The function is written once but the battle happens three times. How does that work?**
+
+<div class="write-space"></div>
+
+**When does `fight()` return `True`, and when does it return `False`?**
+
+<div class="write-space"></div>
+
+**Each call passes a different `actions` list. Where in the function does that list get used?**
+
+<div class="write-space"></div>
+
+**Why is using one `fight()` function better than copy-pasting the battle code three times?**
+
+<div class="write-space"></div>
 
 ---
 
-## 4 · Record Your Walkthrough 🎥
+## 4 · Explain Your Lesson Code 🎥
 
-Take a video on your phone (or a parent's phone) while your three battles run. Teach it like the viewer has never coded. Try to use these words: **function**, **call**, **parameter**, **return**, **reuse**.
+In today's live lesson you wrote your own `fight()` code. Now explain it. Take a short video on your phone (or a parent's phone) showing your code — you may let it run — and teach it like the viewer has never coded. Try to use these words: **function**, **call**, **parameter**, **return**, **reuse**.
 
-> 1. Run your game through all three battles.
-> 2. Point to the one `fight()` function in your code.
-> 3. Show the three different calls and their different menus.
-> 4. Explain why one function is better than three copies.
+> 1. Show the one `fight()` function you wrote in the lesson.
+> 2. Point to its parameters and say what each one holds.
+> 3. Show the three different calls and read out their different menus.
+> 4. Explain why one function you reuse is better than three copies.
 
-**Write what you will say in your video.** Plan it here first.
+**Write what you will say in your video. Plan it here before you record.**
 
 <div class="write-space tall" style="min-height: 340px"></div>
 
@@ -163,4 +184,4 @@ Take a video on your phone (or a parent's phone) while your three battles run. T
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.

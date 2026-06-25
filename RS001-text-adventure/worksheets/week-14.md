@@ -2,7 +2,9 @@
 
 **Topic:** Random Encounters + a Bigger Reward Pool · **Course:** Text Adventure (Python) · **Time:** about 45 minutes
 
-This week randomness spreads through your whole game. Each path draws a random enemy from its own pool, rewards come from a big pool, and a surprise encounter fires only **some** of the time using a weighted `True`/`False` pick.
+This week is about thinking through randomness and explaining it in your own words. Each path draws a random enemy from its own pool, rewards come from a big pool, and a surprise encounter fires only **some** of the time using a weighted `True`/`False` pick. You will read code, fix a broken version on paper, then explain the game you wrote in your live lesson.
+
+> 🧠 Words to know: **random**, **pool**, **encounter**, **odds**, **different**
 
 ```python
 import random
@@ -17,7 +19,7 @@ if random.choice([True, False, False]):   # about 1 in 3
 
 ## 1 · Predict 🔮
 
-Read each piece of code. Before you run it in your head, write what you think happens.
+Read each piece of code. Run it in your head and write what you think happens.
 
 ```python
 import random
@@ -56,7 +58,7 @@ if random.choice([True, True, True, False]):
 
 ## 2 · Spot the Bug 🐛
 
-Each block was meant to do something, but it is broken. Read what it is **supposed** to do, fix it, then explain why the original was wrong.
+Each block was meant to do something, but it is broken. Read what it is **supposed** to do, fix it on paper, then explain why the original was wrong.
 
 **Bug A** — Each path should draw from its **own** enemy pool. Right now both paths draw from the same list, so left and right feel identical.
 
@@ -121,38 +123,63 @@ game.say(f"You found {reward}")
 
 ---
 
-## 3 · 🎯 Make Every Playthrough Different
+## 3 · Explain the Code 📖
 
-Open your game. Add at least three kinds of randomness: a random enemy per path, a reward drawn from a bigger pool, and a surprise encounter that fires only some of the time. Tune the odds so the surprise is not too common or too rare.
+Read this working example. It picks a random enemy from the path's own pool, draws a reward from a bigger pool, and fires a surprise encounter only some of the time.
 
-When it works, send a **photo or video**, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.
+```python
+import random
 
-> First, I gave each path its own enemy pool, which were …
->
-> My reward pool had these items …
->
-> My surprise encounter fired about … of the time.
->
-> I tuned the odds by …
->
-> One tricky moment was when …
->
-> If I had more time, I would …
+left_enemies = ["goblin", "bat", "spider"]
+right_enemies = ["orc", "troll", "wolf"]
+rewards = ["gold", "potion", "map", "gem", "key"]
 
-<div class="write-space tall" style="min-height: 340px"></div>
+path = "left"
+if path == "left":
+    enemy = random.choice(left_enemies)
+else:
+    enemy = random.choice(right_enemies)
+game.say(f"A {enemy} blocks the path!")
+
+reward = random.choice(rewards)
+game.say(f"You won a {reward}.")
+
+if random.choice([True, False, False]):   # about 1 in 3
+    game.say("A bandit jumps out!")
+```
+
+**Which list does the enemy come from when `path` is `"left"`?**
+
+<div class="write-space"></div>
+
+**Why does the `reward` line give a different result on different playthroughs?**
+
+<div class="write-space"></div>
+
+**Look at `[True, False, False]`. About how often does the bandit appear?**
+
+<div class="write-space"></div>
+
+**If you wanted the bandit to appear more often, how would you change that list?**
+
+<div class="write-space"></div>
+
+**In your own words, why does this code make every playthrough feel different?**
+
+<div class="write-space"></div>
 
 ---
 
-## 4 · Record Your Walkthrough 🎥
+## 4 · Explain Your Lesson Code 🎥
 
-Take a video on your phone (or a parent's phone). Play your game at least **twice** so the differences show. Teach it like the viewer has never coded. Try to use these words: **random**, **pool**, **encounter**, **odds**, **different**.
+Take a short video on your phone (or a parent's phone) and explain the game **you** wrote in today's live lesson. You can show it running. Teach it like the viewer has never coded. Try to use these words: **random**, **pool**, **encounter**, **odds**, **different**.
 
-> 1. Play once and narrate the enemy, reward, and any surprise.
-> 2. Play again and show what came out differently.
-> 3. Point to your weighted `True/False` line and explain the odds.
-> 4. Say why every playthrough now feels fresh.
+> 1. Point to your enemy pools and say what is in each path's pool.
+> 2. Show your reward pool and play once so a random reward appears.
+> 3. Point to your weighted `True/False` line and explain the odds of the surprise encounter.
+> 4. Say why every playthrough now feels different.
 
-**Write what you will say in your video.** Plan it here first.
+**Write what you will say in your video. Plan it here before you record.**
 
 <div class="write-space tall" style="min-height: 340px"></div>
 
@@ -160,4 +187,4 @@ Take a video on your phone (or a parent's phone). Play your game at least **twic
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.

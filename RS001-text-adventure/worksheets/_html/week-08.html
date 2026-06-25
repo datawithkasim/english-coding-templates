@@ -104,7 +104,10 @@ footer b { color: #ff7849; }
 <div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
 <h1>🧰 RS001 Week 8 — English Worksheet</h1>
 <p><strong>Topic:</strong> Validation Across the Whole Game · <strong>Course:</strong> Text Adventure (Python) · <strong>Time:</strong> about 45 minutes</p>
-<p>This week you wrap the "clean → validate → retry → default" pattern into <strong>one reusable function</strong> called <code>safe_choice()</code>. Then you use it everywhere — directions, weapons, actions — so no input can ever break your game.</p>
+<p>This week you think about wrapping the "clean → validate → retry → default" pattern into <strong>one reusable function</strong> called <code>safe_choice()</code>. You read it, trace it, fix broken versions of it, and then explain — in your own words — the code you wrote in today's live lesson.</p>
+<blockquote>
+<p>🧠 Words to know: <strong>function</strong>, <strong>return</strong>, <strong>reuse</strong>, <strong>default</strong>, <strong>valid</strong></p>
+</blockquote>
 <pre><code class="language-python">def safe_choice(prompt, valid_list, default):
     answer = game.ask(prompt).strip().lower()
     if answer not in valid_list:
@@ -114,7 +117,7 @@ footer b { color: #ff7849; }
     return answer
 </code></pre>
 <h2>1 · Predict 🔮</h2>
-<p>Read each piece of code. Before you run it in your head, write what you think happens.</p>
+<p>Read each piece of code. In your head, work out what happens, then write your answer.</p>
 <pre><code class="language-python">def greet(name):
     return f&quot;Hi {name}!&quot;
 
@@ -143,7 +146,7 @@ game.say(f&quot;{direction}, {action}&quot;)
 <div class="write-space"></div></div>
 
 <h2>2 · Spot the Bug 🐛</h2>
-<p>Each block was meant to do something, but it is broken. Read what it is <strong>supposed</strong> to do, fix it, then explain why the original was wrong.</p>
+<p>Each block was meant to do something, but it is broken. Read what it is <strong>supposed</strong> to do, fix it on paper, then explain why the original was wrong.</p>
 <p><strong>Bug A</strong> — <code>safe_choice</code> should hand the answer back to whoever called it. Right now it cleans the answer but forgets to <code>return</code> it, so the caller gets nothing.</p>
 <pre><code class="language-python">def safe_choice(prompt, valid_list, default):
     answer = game.ask(prompt).strip().lower()
@@ -188,34 +191,46 @@ game.say(f&quot;You chose {action}.&quot;)
 <div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
 <div class="write-space"></div></div>
 
-<h2>3 · 🎯 Protect the Whole Game</h2>
-<p>Open your game. Add a <code>safe_choice()</code> function and use it for <strong>every</strong> choice the player makes — direction, weapon, action. Then try to break your own game on purpose: type empty answers, nonsense, and CAPS. It should never crash.</p>
-<p>When it works, send a <strong>photo or video</strong>, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.</p>
-<div class="qa"><blockquote>
-<p>First, I wrote a function called <code>safe_choice</code> that …</p>
-<p>I used it for these choices in my game …</p>
-<p>To test it, I deliberately typed …</p>
-<p>Reusing one function was better than copying because …</p>
-<p>One tricky moment was when …</p>
-<p>If I had more time, I would …</p>
-</blockquote>
-<div class="write-space tall" style="min-height: 340px"></div></div>
+<h2>3 · Explain the Code 📖</h2>
+<p>Here is the full <code>safe_choice</code> function from this week. Read it slowly, then answer the questions below.</p>
+<pre><code class="language-python">def safe_choice(prompt, valid_list, default):
+    answer = game.ask(prompt).strip().lower()
+    if answer not in valid_list:
+        answer = game.ask(&quot;Try again: &quot; + prompt).strip().lower()
+    if answer not in valid_list:
+        answer = default
+    return answer
+</code></pre>
+<div class="qa"><p><strong>What do <code>.strip()</code> and <code>.lower()</code> do to the player's answer, and why are they used together here?</strong></p>
+<div class="write-space"></div></div>
 
-<h2>4 · Record Your Walkthrough 🎥</h2>
-<p>Take a video on your phone (or a parent's phone) while you try to break your game. Teach it like the viewer has never coded. Try to use these words: <strong>function</strong>, <strong>return</strong>, <strong>reuse</strong>, <strong>default</strong>, <strong>valid</strong>.</p>
+<div class="qa"><p><strong>The function asks a second time before giving up. Which line does the asking-again, and when does it happen?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>If the player still gives a bad answer after the second try, what value does <code>answer</code> end up holding?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why does the last line say <code>return answer</code> instead of <code>game.say(answer)</code>?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>The three inputs are <code>prompt</code>, <code>valid_list</code>, and <code>default</code>. In one sentence each, what job does each one do?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>4 · Explain Your Lesson Code 🎥</h2>
+<p>In today's live lesson you wrote your own <code>safe_choice()</code> and used it in your game. Now explain <strong>your</strong> code. Take a short video on your phone (or a parent's phone) and teach it like the viewer has never coded. You may show it running. Try to use these words: <strong>function</strong>, <strong>return</strong>, <strong>reuse</strong>, <strong>default</strong>, <strong>valid</strong>.</p>
 <blockquote>
 <ol>
-<li>Run your game and answer normally first.</li>
-<li>Run it again and type nonsense at every prompt.</li>
-<li>Show the default keeping the game alive.</li>
-<li>Read your <code>safe_choice</code> function out loud and explain <code>return</code>.</li>
+<li>Read your <code>safe_choice</code> function out loud and say what each part does.</li>
+<li>Point to a place where you reused it, and explain why reusing beats copying.</li>
+<li>Explain what your <code>default</code> is and why it is a valid answer.</li>
+<li>Explain why the function ends with <code>return</code>.</li>
 </ol>
 </blockquote>
-<div class="qa"><p><strong>Write what you will say in your video.</strong> Plan it here first.</p>
+<div class="qa"><p><strong>Write what you will say in your video. Plan it here before you record.</strong></p>
 <div class="write-space tall" style="min-height: 340px"></div></div>
 
 <hr />
 <h3>Submit ✅</h3>
-<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.</p>
+<p>Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.</p>
 </body>
 </html>

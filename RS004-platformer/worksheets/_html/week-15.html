@@ -104,12 +104,12 @@ footer b { color: #ff7849; }
 <div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
 <h1>🏰 RS004 Week 15 — English Worksheet</h1>
 <p><strong>Topic:</strong> Multi-Level Structure · <strong>Course:</strong> Platformer Game · <strong>Time:</strong> about 45 minutes</p>
-<p>This week your game holds <strong>many levels</strong>. Every level is a dictionary of platforms, coins, enemies, and a finish. A <code>load_level()</code> function sets up the current one, and reaching the finish loads the <strong>next</strong> — until the last one, which means <strong>victory</strong>.</p>
+<p>This week your game holds <strong>many levels</strong>. Every level is a dictionary of platforms, coins, enemies, and a finish. A <code>load_level()</code> function sets up the current one, and reaching the finish loads the <strong>next</strong> — until the last one, which means <strong>victory</strong>. In this worksheet you will read, trace, and explain this code in your own words.</p>
 <blockquote>
 <p>Keep these words handy: <strong>levels list</strong>, <strong><code>load_level()</code></strong>, <strong>next level</strong>, <strong>victory</strong>, <strong>game_state</strong>.</p>
 </blockquote>
 <h2>1 · Predict 🔮</h2>
-<p>Read each snippet. Before you run it, write what you think will happen.</p>
+<p>Read each snippet. Write what you think it does.</p>
 <pre><code class="language-python">LEVELS = [
     { &quot;platforms&quot;: [...], &quot;coins&quot;: [...], &quot;enemies&quot;: [...], &quot;finish&quot;: (...) },
     { &quot;platforms&quot;: [...], &quot;coins&quot;: [...], &quot;enemies&quot;: [...], &quot;finish&quot;: (...) },
@@ -187,51 +187,63 @@ clear again:     current_level = ___   →  game_state = ___
 <div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
 <div class="write-space"></div></div>
 
-<h2>4 · Author Your Levels 🛠️</h2>
-<p>Start from your working multi-level loader.</p>
-<ol>
-<li>Write the data for your <strong>first</strong> level (platforms, coins, enemies, finish). Reuse a level you already designed.</li>
-</ol>
-<div class="write-space tall" style="min-height: 180px"></div>
+<h2>4 · Explain the Code 📖</h2>
+<p>This is a working multi-level loader. Read it carefully, then answer the questions.</p>
+<pre><code class="language-python">LEVELS = [
+    { &quot;platforms&quot;: [...], &quot;coins&quot;: [...], &quot;enemies&quot;: [...], &quot;finish&quot;: (...) },
+    { &quot;platforms&quot;: [...], &quot;coins&quot;: [...], &quot;enemies&quot;: [...], &quot;finish&quot;: (...) },
+    { &quot;platforms&quot;: [...], &quot;coins&quot;: [...], &quot;enemies&quot;: [...], &quot;finish&quot;: (...) },
+]
 
-<ol start="2">
-<li>Make your <strong>second</strong> level a little harder than the first. What did you change to raise the difficulty?</li>
-</ol>
-<div class="write-space"></div>
+def load_level(idx):
+    data = LEVELS[idx]
+    platforms = [pygame.Rect(*p) for p in data[&quot;platforms&quot;]]
+    coins = [pygame.Rect(c[0], c[1], 20, 20) for c in data[&quot;coins&quot;]]
+    enemies = [Enemy(*e) for e in data[&quot;enemies&quot;]]
+    finish = pygame.Rect(*data[&quot;finish&quot;])
+    return platforms, coins, enemies, finish
 
-<ol start="3">
-<li><strong>Stretch:</strong> make level three the hardest, with a tricky final jump. Describe it.</li>
-</ol>
-<div class="write-space"></div>
+current_level = 0
+platforms, coins, enemies, finish = load_level(current_level)
 
-<h2>5 · Build &amp; Show 📸</h2>
-<p>Build <strong>your own</strong> three levels that play one after another, ending in a victory screen.</p>
-<p>When it works, send a <strong>photo or video</strong> clearing all three levels, then explain what you did. Use these starters — write 4 to 6 sentences.</p>
-<div class="qa"><blockquote>
-<p>First, I store every level as data in <code>LEVELS</code> so that …</p>
-<p><code>load_level()</code> sets up the current level by …</p>
-<p>When the player clears a level, the game …</p>
-<p>After the last level, the game shows …</p>
-<p>One tricky moment was …</p>
-<p>If I had more time, I would …</p>
-</blockquote>
-<div class="write-space tall" style="min-height: 340px"></div></div>
+# inside the game loop:
+if player.colliderect(finish):
+    current_level += 1
+    if current_level &lt; len(LEVELS):
+        platforms, coins, enemies, finish = load_level(current_level)
+    else:
+        game_state = &quot;victory&quot;
+</code></pre>
+<div class="qa"><p><strong>What does <code>LEVELS</code> hold, and what does each item in it describe?</strong></p>
+<div class="write-space"></div></div>
 
-<h2>6 · Record Your Walkthrough 🎥</h2>
-<p>Take a video clearing all three levels. Teach it to someone new. Try to use these words: <strong>levels list</strong>, <strong>load_level</strong>, <strong>next level</strong>, <strong>victory</strong>, <strong>game_state</strong>.</p>
+<div class="qa"><p><strong>Inside <code>load_level</code>, why is each enemy wrapped in <code>Enemy(*e)</code> instead of left as a tuple?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>What does the line <code>current_level += 1</code> do, and when does it run?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Explain the <code>if current_level &lt; len(LEVELS)</code> check. What does each branch do?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>When does <code>game_state</code> become <code>"victory"</code>?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>5 · Explain Your Lesson Code 🎥</h2>
+<p>Explain the multi-level game <strong>you wrote in today's lesson</strong>. Record a short video on your phone (you can show it running) and walk through your own code using these words: <strong>levels list</strong>, <strong>load_level</strong>, <strong>next level</strong>, <strong>victory</strong>, <strong>game_state</strong>.</p>
 <blockquote>
 <ol>
-<li>Show level 1 and clear it.</li>
-<li>Show the game loading level 2, then 3.</li>
-<li>Read the "next level or victory" check out loud and explain it.</li>
-<li>Reach the victory screen.</li>
+<li>Show your <code>LEVELS</code> list and point out one level's data.</li>
+<li>Show <code>load_level</code> and explain how it turns data into game objects.</li>
+<li>Clear a level and read the "next level or victory" check out loud.</li>
+<li>Reach the victory screen and explain what <code>game_state</code> became.</li>
 </ol>
 </blockquote>
-<div class="qa"><p><strong>Write what you will say in your video.</strong> Plan it here first.</p>
+<div class="qa"><p><strong>Write what you will say in your video. Plan it here before you record.</strong></p>
 <div class="write-space tall" style="min-height: 340px"></div></div>
 
 <hr />
 <h3>Submit ✅</h3>
-<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.</p>
+<p>Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.</p>
 </body>
 </html>

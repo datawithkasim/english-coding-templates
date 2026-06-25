@@ -104,12 +104,12 @@ footer b { color: #ff7849; }
 <div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
 <h1>🟥 RS004 Week 3 — English Worksheet</h1>
 <p><strong>Topic:</strong> Player &amp; Keyboard Movement · <strong>Course:</strong> Platformer Game · <strong>Time:</strong> about 45 minutes</p>
-<p>This week a <strong>player</strong> appears — a rectangle you control with the <strong>arrow keys</strong>. You will learn <code>pygame.Rect</code> to track position, read held-down keys with <code>pygame.key.get_pressed()</code>, and stop the player from sliding off the screen.</p>
+<p>This week a <strong>player</strong> appears — a rectangle you control with the <strong>arrow keys</strong>. In the live lesson you wrote the code for it. On this worksheet you will think about and explain that code: how <code>pygame.Rect</code> tracks position, how <code>pygame.key.get_pressed()</code> reads held-down keys, and how the player is stopped from sliding off the screen.</p>
 <blockquote>
 <p>Keep these words handy: <strong>Rect</strong>, <strong>position</strong>, <strong><code>get_pressed()</code></strong>, <strong>speed</strong>, <strong>boundary (edge)</strong>.</p>
 </blockquote>
 <h2>1 · Predict 🔮</h2>
-<p>Read each snippet. Before you run it, write what you think will happen.</p>
+<p>Read each snippet. Write what you think it does.</p>
 <pre><code class="language-python">player = pygame.Rect(100, 500, 50, 50)
 </code></pre>
 <div class="qa"><p><strong>What do the four numbers mean? Where on the screen is the player?</strong></p>
@@ -139,7 +139,7 @@ player.bottom  = ___   (hint: y + height)
 <div class="write-space"></div>
 
 <h2>3 · Spot the Bug 🐛</h2>
-<p>Each snippet is broken. Rewrite it so it works, then explain why the original was wrong.</p>
+<p>Each snippet is broken. Write the fixed code, then explain why the original was wrong.</p>
 <p><strong>Bug A</strong> — Arrow keys should move the player smoothly while held. Right now the player only moves on a brand-new key press, one step at a time.</p>
 <pre><code class="language-python">for event in pygame.event.get():
     if event.type == pygame.KEYDOWN:
@@ -179,51 +179,55 @@ if keys[pygame.K_RIGHT]:
 <div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
 <div class="write-space"></div></div>
 
-<h2>4 · Tune the Feel 🛠️</h2>
-<p>Start from your working player. Change one thing at a time and note the effect.</p>
-<ol>
-<li>Set <code>PLAYER_SPEED</code> to 2, then 10. Which feels best to you, and why?</li>
-</ol>
-<div class="write-space"></div>
+<h2>4 · Explain the Code 📖</h2>
+<p>Here is a working player. Read it carefully and answer the questions below.</p>
+<pre><code class="language-python">PLAYER_SPEED = 5
+player = pygame.Rect(100, 500, 50, 50)
 
-<ol start="2">
-<li>Change the player's colour and size. Write what you picked.</li>
-</ol>
-<div class="write-space"></div>
+keys = pygame.key.get_pressed()
 
-<ol start="3">
-<li><strong>Stretch:</strong> make the player start in the middle of the screen instead of the left. Which number did you change?</li>
-</ol>
-<div class="write-space"></div>
+if keys[pygame.K_RIGHT]:
+    player.x = player.x + PLAYER_SPEED
+if keys[pygame.K_LEFT]:
+    player.x = player.x - PLAYER_SPEED
 
-<h2>5 · Build &amp; Show 📸</h2>
-<p>Put your player on top of last week's gradient sky. It should move left and right with the arrow keys and stop at both walls.</p>
-<p>When it works, send a <strong>photo or video</strong>, then explain what you did. Use these starters — write 4 to 6 sentences.</p>
-<div class="qa"><blockquote>
-<p>First, I made the player with <code>pygame.Rect(...)</code> which means …</p>
-<p>To move it, I used <code>get_pressed()</code> because …</p>
-<p>I stopped it leaving the screen by …</p>
-<p>The speed I chose was ___ because …</p>
-<p>One tricky moment was …</p>
-<p>If I had more time, I would …</p>
-</blockquote>
-<div class="write-space tall" style="min-height: 340px"></div></div>
+if player.x &lt; 0:
+    player.x = 0
+if player.x &gt; WIDTH - player.width:
+    player.x = WIDTH - player.width
 
-<h2>6 · Record Your Walkthrough 🎥</h2>
-<p>Take a video while you move the player around. Teach it to someone new. Try to use these words: <strong>Rect</strong>, <strong>arrow keys</strong>, <strong>speed</strong>, <strong>edge</strong>, <strong>boundary</strong>.</p>
+pygame.draw.rect(screen, (255, 0, 0), player)
+</code></pre>
+<div class="qa"><p><strong>What does <code>PLAYER_SPEED</code> control, and what would happen if you made it bigger?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why are the two arrow-key checks both <code>if</code> (not <code>if</code>/<code>elif</code>)? What does that let the player do?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>The line <code>if player.x &lt; 0: player.x = 0</code> — in your own words, what is it protecting against?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>What does <code>WIDTH - player.width</code> mean, and why not just use <code>WIDTH</code>?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>What is the last line doing, and what would the player look like without it?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>5 · Explain Your Lesson Code 🎥</h2>
+<p>Explain the code <strong>you</strong> wrote in today's lesson. Record a short phone video — you may show it running while you talk. Try to use these words: <strong>Rect</strong>, <strong>arrow keys</strong>, <strong>speed</strong>, <strong>edge</strong>, <strong>boundary</strong>.</p>
 <blockquote>
 <ol>
-<li>Show the player moving left and right.</li>
+<li>Show your player moving left and right.</li>
 <li>Run into a wall and show it stops.</li>
-<li>Read the boundary check out loud and explain it.</li>
-<li>Show what happens when you change the speed.</li>
+<li>Read your boundary check out loud and explain what it does.</li>
+<li>Point to where you set the speed and say what number you chose and why.</li>
 </ol>
 </blockquote>
-<div class="qa"><p><strong>Write what you will say in your video.</strong> Plan it here first.</p>
+<div class="qa"><p><strong>Write what you will say in your video. Plan it here before you record.</strong></p>
 <div class="write-space tall" style="min-height: 340px"></div></div>
 
 <hr />
 <h3>Submit ✅</h3>
-<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.</p>
+<p>Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.</p>
 </body>
 </html>

@@ -104,7 +104,10 @@ footer b { color: #ff7849; }
 <div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
 <h1>⚔️ RS001 Week 11 — English Worksheet</h1>
 <p><strong>Topic:</strong> Strategy — Fight or Think? · <strong>Course:</strong> Text Adventure (Python) · <strong>Time:</strong> about 45 minutes</p>
-<p>This week the player solves a problem in more than one way. You offer a menu of actions — fight, think, run — and each one leads to a different result. The <strong>order</strong> of your <code>if</code> / <code>elif</code> / <code>else</code> decides which result wins.</p>
+<p>This week you think about code that lets the player solve a problem in more than one way. A menu of actions — fight, think, run — leads to a different result for each choice. The <strong>order</strong> of your <code>if</code> / <code>elif</code> / <code>else</code> decides which result wins. Read the code, predict what it does, and get ready to explain it in your own words.</p>
+<blockquote>
+<p>🧠 Words to know: <strong>action</strong>, <strong>menu</strong>, <strong>elif</strong>, <strong>else</strong>, <strong>outcome</strong></p>
+</blockquote>
 <pre><code class="language-python">action = game.ask(&quot;Fight or think?&quot;).strip().lower()
 if action == &quot;fight&quot;:
     game.say(&quot;You swing your sword!&quot;)
@@ -114,7 +117,7 @@ else:
     game.say(&quot;You hesitate and get hit!&quot;)
 </code></pre>
 <h2>1 · Predict 🔮</h2>
-<p>Read each piece of code. Before you run it in your head, write what you think happens.</p>
+<p>Read each piece of code. Run it in your head and write what you think happens.</p>
 <pre><code class="language-python">action = &quot;think&quot;
 if action == &quot;fight&quot;:
     game.say(&quot;attack&quot;)
@@ -144,7 +147,7 @@ game.say(f&quot;Choose: {actions[0]} / {actions[1]} / {actions[2]}&quot;)
 <div class="write-space"></div></div>
 
 <h2>2 · Spot the Bug 🐛</h2>
-<p>Each block was meant to do something, but it is broken. Read what it is <strong>supposed</strong> to do, fix it, then explain why the original was wrong.</p>
+<p>Each block was meant to do something, but it is broken. Read what it is <strong>supposed</strong> to do, fix it on paper, then explain why the original was wrong.</p>
 <p><strong>Bug A</strong> — Each action should give a <strong>different</strong> result. Right now "fight" and "think" print the same thing.</p>
 <pre><code class="language-python">action = game.ask(&quot;do?&quot;).strip().lower()
 if action == &quot;fight&quot;:
@@ -187,34 +190,50 @@ game.say(f&quot;You chose: {action}&quot;)
 <div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
 <div class="write-space"></div></div>
 
-<h2>3 · 🎯 Add a Battle Menu</h2>
-<p>Open your game. When the player meets an enemy, give them a menu: fight, think, run (or your own). Each action should lead to a different outcome. Validate the answer so off-menu input is handled.</p>
-<p>When it works, send a <strong>photo or video</strong>, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.</p>
-<div class="qa"><blockquote>
-<p>First, the enemy appeared and I offered the actions …</p>
-<p>Fighting led to …</p>
-<p>Thinking led to …</p>
-<p>Running led to …</p>
-<p>One tricky moment was when …</p>
-<p>If I had more time, I would …</p>
-</blockquote>
-<div class="write-space tall" style="min-height: 340px"></div></div>
+<h2>3 · Explain the Code 📖</h2>
+<p>Here is a working battle menu. Read it carefully and answer the questions below.</p>
+<pre><code class="language-python">actions = [&quot;fight&quot;, &quot;think&quot;, &quot;run&quot;]
+game.say(f&quot;An enemy appears! Choose: {actions[0]} / {actions[1]} / {actions[2]}&quot;)
+action = game.ask(&quot;What do you do?&quot;).strip().lower()
+if action == &quot;fight&quot;:
+    game.say(&quot;You swing your sword and win the hard way!&quot;)
+elif action == &quot;think&quot;:
+    game.say(&quot;You spot the enemy's weakness and win cleverly!&quot;)
+elif action == &quot;run&quot;:
+    game.say(&quot;You escape, but the enemy keeps your gold.&quot;)
+else:
+    game.say(&quot;You hesitate and get hit!&quot;)
+</code></pre>
+<div class="qa"><p><strong>What is stored in the <code>actions</code> list, and how is it used to print the menu?</strong></p>
+<div class="write-space"></div></div>
 
-<h2>4 · Record Your Walkthrough 🎥</h2>
-<p>Take a video on your phone (or a parent's phone) while your battle runs. Teach it like the viewer has never coded. Try to use these words: <strong>action</strong>, <strong>menu</strong>, <strong>elif</strong>, <strong>else</strong>, <strong>outcome</strong>.</p>
+<div class="qa"><p><strong>Why does this code use <code>elif</code> for "think" and "run" instead of three separate <code>if</code> statements?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Which line runs if the player types "dance"? Why?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>The <code>.strip().lower()</code> runs on the player's answer. What does it do, and why does it help the comparisons work?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Each branch prints a different <code>outcome</code>. Name the outcome for "fight" and the outcome for "run".</strong></p>
+<div class="write-space"></div></div>
+
+<h2>4 · Explain Your Lesson Code 🎥</h2>
+<p>Explain the battle menu code <strong>you</strong> wrote in today's live lesson. Record a short video on your phone (or a parent's phone). You may show it running. Teach it like the viewer has never coded, and try to use these words: <strong>action</strong>, <strong>menu</strong>, <strong>elif</strong>, <strong>else</strong>, <strong>outcome</strong>.</p>
 <blockquote>
 <ol>
-<li>Run your game and fight the enemy.</li>
-<li>Run it again and think instead — show the different result.</li>
-<li>Type something off-menu and show what happens.</li>
-<li>Read your <code>if</code> / <code>elif</code> / <code>else</code> out loud and explain why order matters.</li>
+<li>Show the menu your code prints and read out the actions on it.</li>
+<li>Point to your <code>if</code> / <code>elif</code> / <code>else</code> and explain what each branch does.</li>
+<li>Show what happens when the player types something off-menu, and explain why.</li>
+<li>Explain why the order of your branches matters.</li>
 </ol>
 </blockquote>
-<div class="qa"><p><strong>Write what you will say in your video.</strong> Plan it here first.</p>
+<div class="qa"><p><strong>Write what you will say in your video. Plan it here before you record.</strong></p>
 <div class="write-space tall" style="min-height: 340px"></div></div>
 
 <hr />
 <h3>Submit ✅</h3>
-<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.</p>
+<p>Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.</p>
 </body>
 </html>

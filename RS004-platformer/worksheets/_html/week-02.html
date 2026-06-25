@@ -104,12 +104,12 @@ footer b { color: #ff7849; }
 <div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
 <h1>🌈 RS004 Week 2 — English Worksheet</h1>
 <p><strong>Topic:</strong> Gradient Background (Apply) · <strong>Course:</strong> Platformer Game · <strong>Time:</strong> about 45 minutes</p>
-<p>This week your flat sky becomes a <strong>gradient</strong> — a smooth blend from one colour at the top to another at the bottom. You will gather all your colours into one <strong>palette</strong> and draw the sky one line at a time.</p>
+<p>This week your flat sky becomes a <strong>gradient</strong> — a smooth blend from one colour at the top to another at the bottom. In this worksheet you will read gradient code, work out the blend maths on paper, and explain how the sky is drawn one line at a time.</p>
 <blockquote>
 <p>Keep these words handy: <strong>gradient</strong>, <strong>palette</strong>, <strong>blend (interpolate)</strong>, <strong><code>draw.line</code></strong>, <strong>frame</strong>.</p>
 </blockquote>
 <h2>1 · Predict 🔮</h2>
-<p>Read each snippet. Before you run it, write what you think will happen.</p>
+<p>Read each snippet. Write what you think it does — just read it, no need to run it.</p>
 <pre><code class="language-python">for y in range(HEIGHT):
     pygame.draw.line(screen, (100, 180, 255), (0, y), (WIDTH, y))
 </code></pre>
@@ -169,54 +169,49 @@ pygame.draw.line(screen, (r, SKY_TOP[1], SKY_TOP[2]), (0, y), (WIDTH, y))
 <div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
 <div class="write-space"></div></div>
 
-<h2>4 · Modify the Sky 🛠️</h2>
-<p>Start from your working <code>draw_gradient_background()</code> function. Make small changes and write down what each does.</p>
-<ol>
-<li>Swap <code>SKY_TOP</code> and <code>SKY_BOTTOM</code>. What happens to the direction of the blend?</li>
-</ol>
-<div class="write-space"></div>
+<h2>4 · Explain the Code 📖</h2>
+<p>Here is a working gradient background. Read it carefully, then answer the questions.</p>
+<pre><code class="language-python">SKY_TOP = (100, 180, 255)
+SKY_BOTTOM = (200, 230, 255)
 
-<ol start="2">
-<li>Pick two brand-new colours (a sunrise: warm at the bottom, dark at the top). Write the RGB values you chose.</li>
-</ol>
-<div class="write-space"></div>
-
-<ol start="3">
-<li><strong>Stretch:</strong> make a <em>three</em>-colour gradient (top → middle → bottom). </li>
-</ol>
-<div class="qa"><blockquote>
-<p>Hint: split the screen in half. Blend top→middle for the upper rows, then middle→bottom for the lower rows.</p>
-</blockquote>
+def draw_gradient_background():
+    for y in range(HEIGHT):
+        t = y / HEIGHT
+        r = int(SKY_TOP[0] * (1 - t) + SKY_BOTTOM[0] * t)
+        g = int(SKY_TOP[1] * (1 - t) + SKY_BOTTOM[1] * t)
+        b = int(SKY_TOP[2] * (1 - t) + SKY_BOTTOM[2] * t)
+        pygame.draw.line(screen, (r, g, b), (0, y), (WIDTH, y))
+</code></pre>
+<div class="qa"><p><strong>What does the <code>for y in range(HEIGHT)</code> loop do, and how many lines does it draw?</strong></p>
 <div class="write-space"></div></div>
 
-<h2>5 · Build &amp; Show 📸</h2>
-<p>Build <strong>your own</strong> gradient background and run it on top of last week's window.</p>
-<p>When it works, send a <strong>photo or video</strong>, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.</p>
-<div class="qa"><blockquote>
-<p>First, I chose my top and bottom colours: …</p>
-<p>The <code>for y in range(HEIGHT)</code> loop draws the sky by …</p>
-<p>The <code>t</code> value controls …</p>
-<p>I kept my colours in a palette so that …</p>
-<p>One tricky moment was …</p>
-<p>If I had more time, I would …</p>
-</blockquote>
-<div class="write-space tall" style="min-height: 340px"></div></div>
+<div class="qa"><p><strong>The line <code>t = y / HEIGHT</code> — what value does <code>t</code> have at the top row, and what value near the bottom row?</strong></p>
+<div class="write-space"></div></div>
 
-<h2>6 · Record Your Walkthrough 🎥</h2>
-<p>Take a video while your gradient sky runs. Teach it to someone new. Try to use these words: <strong>gradient</strong>, <strong>palette</strong>, <strong>blend</strong>, <strong>line</strong>, <strong>loop</strong>.</p>
+<div class="qa"><p><strong>Why does the code blend <code>r</code>, <code>g</code>, and <code>b</code> separately instead of just once?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>What would happen to the sky if you swapped <code>SKY_TOP</code> and <code>SKY_BOTTOM</code>?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why does <code>draw_gradient_background()</code> use the names <code>SKY_TOP</code> and <code>SKY_BOTTOM</code> instead of writing the numbers straight into the loop?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>5 · Explain Your Lesson Code 🎥</h2>
+<p>In today's live lesson you wrote your own gradient sky. Now explain the code <em>you</em> wrote. Record a short video on your phone — you can show it running. Try to use these words: <strong>gradient</strong>, <strong>palette</strong>, <strong>blend</strong>, <strong>line</strong>, <strong>loop</strong>.</p>
 <blockquote>
 <ol>
-<li>Show your gradient sky.</li>
-<li>Point at your two palette colours and say which is top, which is bottom.</li>
-<li>Read the blend line out loud and explain what <code>t</code> does.</li>
-<li>Show one colour you changed and the before/after.</li>
+<li>Show your gradient sky running and say which two palette colours you used (top and bottom).</li>
+<li>Point at your <code>for</code> loop and explain how it draws the sky line by line.</li>
+<li>Read your blend line out loud and explain what <code>t</code> does as <code>y</code> goes down.</li>
+<li>Show one colour you changed and say what changed on screen.</li>
 </ol>
 </blockquote>
-<div class="qa"><p><strong>Write what you will say in your video.</strong> Plan it here first.</p>
+<div class="qa"><p><strong>Write what you will say in your video. Plan it here before you record.</strong></p>
 <div class="write-space tall" style="min-height: 340px"></div></div>
 
 <hr />
 <h3>Submit ✅</h3>
-<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.</p>
+<p>Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.</p>
 </body>
 </html>

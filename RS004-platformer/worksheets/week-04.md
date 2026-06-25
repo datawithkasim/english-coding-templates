@@ -2,7 +2,7 @@
 
 **Topic:** Player Faces a Direction (Apply) · **Course:** Platformer Game · **Time:** about 45 minutes
 
-This week your player gets a **face**. A `facing` variable remembers which way it last moved, and a `draw_player()` function uses it to put the eyes on the correct side. One function takes charge of *all* the drawing — that is **separation of concerns**.
+This week your player gets a **face**. A `facing` variable remembers which way it last moved, and a `draw_player()` function uses it to put the eyes on the correct side. One function takes charge of *all* the drawing — that is **separation of concerns**. This worksheet is for thinking about and explaining that code, not for building it here.
 
 > Keep these words handy: **facing**, **state variable**, **`draw_player()`**, **offset**, **separation of concerns**.
 
@@ -10,7 +10,7 @@ This week your player gets a **face**. A `facing` variable remembers which way i
 
 ## 1 · Predict 🔮
 
-Read each snippet. Before you run it, write what you think will happen.
+Read each snippet. Write what you think will happen.
 
 ```python
 facing = "right"
@@ -46,7 +46,7 @@ else:
 
 ## 2 · Spot the Bug 🐛
 
-Each snippet is broken. Rewrite it so it works, then explain why the original was wrong.
+Each snippet is broken. Write the fixed code on paper, then explain why the original was wrong.
 
 **Bug A** — The eyes should follow the player as it moves. Right now the eyes stay frozen in one spot while the body slides away.
 
@@ -106,56 +106,57 @@ if keys[pygame.K_RIGHT]:
 
 ---
 
-## 3 · Extend the Look 🛠️
+## 3 · Explain the Code 📖
 
-Start from your working `draw_player()`. Add one idea at a time.
+Here is a working `draw_player()` that puts the eye on the correct side and changes colour with direction.
 
-1. When the player is standing still (no key held), put the eye in the **middle**. How will you know it is standing still?
+```python
+def draw_player(rect, facing):
+    body_color = (220, 50, 50) if facing == "right" else (180, 30, 30)
+    pygame.draw.rect(screen, body_color, rect)
+
+    if facing == "right":
+        eye_x = rect.x + 35
+    else:
+        eye_x = rect.x + 15
+    eye_y = rect.y + 15
+    pygame.draw.circle(screen, (255, 255, 255), (eye_x, eye_y), 6)
+```
+
+Read it carefully and answer:
+
+**Why does `draw_player()` take `facing` as one of its inputs?**
 
 <div class="write-space"></div>
 
-2. Add a second eye so the player has two. Where do you place the second one?
+**The first line uses a one-line `if`/`else`. What two colours can `body_color` become, and what decides which one?**
 
 <div class="write-space"></div>
 
-3. **Stretch:** make the body colour go darker while moving fast. What decides "fast"?
+**The eye uses `rect.x + 35` or `rect.x + 15`. Why is the eye built from `rect.x` instead of a fixed number like `135`?**
+
+<div class="write-space"></div>
+
+**`eye_y` is always `rect.y + 15`. Why does the up/down position stay the same when the left/right position changes?**
+
+<div class="write-space"></div>
+
+**This one function draws the body AND the eye. Why is keeping all the drawing in one place (separation of concerns) helpful?**
 
 <div class="write-space"></div>
 
 ---
 
-## 4 · Build & Show 📸
+## 4 · Explain Your Lesson Code 🎥
 
-Design **your own** player character. It must clearly show which way it is facing when it moves.
+Explain the code **you wrote in today's lesson**. Record a short video on your phone — you may show your player turning left and right while it runs. Try to use these words: **facing**, **draw_player**, **offset**, **direction**, **function**.
 
-When it works, send a **photo or video** showing it moving *both* ways, then explain what you did. Use these starters — write 4 to 6 sentences.
+> 1. Show your player facing right, then left.
+> 2. Point at your `facing` variable and say when it changes.
+> 3. Read your eye-position line out loud and explain the offset.
+> 4. Show one choice you made in your code and why.
 
-> First, I drew my player with `draw_player()` which is in charge of …
->
-> The `facing` variable remembers …
->
-> I made the eyes follow the body by …
->
-> My character shows direction by …
->
-> One tricky moment was …
->
-> If I had more time, I would …
-
-<div class="write-space tall" style="min-height: 340px"></div>
-
----
-
-## 5 · Record Your Walkthrough 🎥
-
-Take a video showing the player turning left and right. Teach it to someone new. Try to use these words: **facing**, **draw_player**, **offset**, **direction**, **function**.
-
-> 1. Show the player facing right, then left.
-> 2. Point at the `facing` variable and say when it changes.
-> 3. Read the eye-position line out loud and explain the offset.
-> 4. Show one design choice you made and why.
-
-**Write what you will say in your video.** Plan it here first.
+**Write what you will say in your video. Plan it here before you record.**
 
 <div class="write-space tall" style="min-height: 340px"></div>
 
@@ -163,4 +164,4 @@ Take a video showing the player turning left and right. Teach it to someone new.
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.

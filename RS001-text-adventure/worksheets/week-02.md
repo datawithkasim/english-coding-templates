@@ -2,7 +2,9 @@
 
 **Topic:** Variables Go Deeper — A Rich Opening · **Course:** Text Adventure (Python) · **Time:** about 45 minutes
 
-This week you keep last week's code and **add more variables**. Your hero gets a name, a weapon, and a hometown — and your opening scene grows. Every variable that could be empty gets a safe default.
+This week you think about how more variables make an opening richer. Your hero gets a name, a weapon, and a hometown, and every variable that could be empty gets a safe default. You will read the code, debug it on paper, and explain the code you wrote in your live lesson.
+
+> 🧠 Words to know: **variable**, **default**, **empty**, **f-string**, **opening**
 
 ```python
 hero = game.ask("Hero's name?")
@@ -20,7 +22,7 @@ game.say(f"{hero}, you grip your {weapon} and set out.")
 
 ## 1 · Predict 🔮
 
-Read each piece of code. Before you run it in your head, write what you think the screen will show.
+Read each piece of code. Run it in your head and write what you think the screen will show.
 
 ```python
 hero = "Mina"
@@ -58,7 +60,7 @@ game.say(f"=== The Adventure Begins ===\n{hero}, your story starts now.")
 
 ## 2 · Spot the Bug 🐛
 
-Each block was meant to do something, but it is broken. Read what it is **supposed** to do, fix it, then explain why the original was wrong.
+Each block was meant to do something, but it is broken. Read what it is **supposed** to do, fix it on paper, then explain why the original was wrong.
 
 **Bug A** — Three variables (`hero`, `weapon`, `hometown`) should all appear in the final sentence. Right now `weapon` is spelled differently in two places, so it crashes.
 
@@ -119,42 +121,54 @@ game.say(f"Welcome, {name}.")
 
 ---
 
-## 3 · 🎯 Grow Your Opening
+## 3 · Explain the Code 📖
 
-Open your game from last week. **Do not delete it.** On top of it, add:
+Read this working opening carefully. It asks for two variables, gives each a safe default, then prints one sentence.
 
-- a **weapon** variable and a **hometown** variable, each with a safe default,
-- one variable of **your own** (favourite colour, animal, food …) that appears in the opening,
-- a multi-line opening that uses all your variables.
+```python
+hero = game.ask("Hero's name?")
+if hero == "":
+    hero = "brave traveller"
 
-When it works, send a **photo or video**, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.
+weapon = game.ask("Starting weapon?")
+if weapon == "":
+    weapon = "rusty sword"
 
-> First, I kept last week's code and added …
->
-> My own extra variable was …
->
-> I gave every variable a default so that …
->
-> I made the opening easier to read by …
->
-> One tricky moment was when …
->
-> If I had more time, I would …
+game.say(f"{hero}, you grip your {weapon} and set out.")
+```
 
-<div class="write-space tall" style="min-height: 340px"></div>
+**What does the variable `hero` store after the player answers?**
+
+<div class="write-space"></div>
+
+**What happens when the player leaves the weapon answer empty?**
+
+<div class="write-space"></div>
+
+**Why does the last line use an `f` before the quotes?**
+
+<div class="write-space"></div>
+
+**Which two values get swapped into the final sentence?**
+
+<div class="write-space"></div>
+
+**Why is it useful to give each variable a default?**
+
+<div class="write-space"></div>
 
 ---
 
-## 4 · Record Your Walkthrough 🎥
+## 4 · Explain Your Lesson Code 🎥
 
-Take a video on your phone (or a parent's phone) while your opening runs. Teach it like the viewer has never coded. Try to use these words: **variable**, **default**, **empty**, **f-string**, **opening**.
+Explain the code **you wrote in today's live lesson**. Take a short video on your phone (or a parent's phone) and walk through your own opening. You may show it running. Teach it like the viewer has never coded, and use these words: **variable**, **default**, **empty**, **f-string**, **opening**.
 
-> 1. Run your opening and answer your own questions.
-> 2. Point to each variable and say what it stores.
+> 1. Point to each variable you made and say what it stores.
+> 2. Show which variables have a default and explain why.
 > 3. Show what happens when you leave one answer empty.
 > 4. Read your final sentence and say which variables got swapped in.
 
-**Write what you will say in your video.** Plan it here first.
+**Write what you will say in your video. Plan it here before you record.**
 
 <div class="write-space tall" style="min-height: 340px"></div>
 
@@ -162,4 +176,4 @@ Take a video on your phone (or a parent's phone) while your opening runs. Teach 
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.

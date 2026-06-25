@@ -2,22 +2,15 @@
 
 **Topic:** Stopping Mistakes — Validating Input · **Course:** Text Adventure (Python) · **Time:** about 45 minutes
 
-This week you check whether an answer is **allowed** before you act on it. `in` and `not in` test if a value is inside a list of valid choices. If the answer is wrong, you give a second chance — and if it is still wrong, you fall back to a safe default.
+This week you think about how to check whether an answer is **allowed** before you act on it. `in` and `not in` test if a value is inside a list of valid choices. If the answer is wrong, you give a second chance — and if it is still wrong, you fall back to a safe default. In this worksheet you read code, fix code on paper, and explain the code you wrote in your live lesson.
 
-```python
-valid = ["left", "right", "back"]
-choice = game.ask("Where to?").strip().lower()
-if choice in valid:
-    game.say(f"You go {choice}.")
-else:
-    game.say("You cannot go that way.")
-```
+> 🧠 Words to know: **valid**, **in**, **not in**, **retry**, **default**
 
 ---
 
 ## 1 · Predict 🔮
 
-Read each piece of code. Before you run it in your head, write what you think happens.
+Read each piece of code. Picture what happens in your head, then write your answer.
 
 ```python
 valid = ["left", "right"]
@@ -58,7 +51,7 @@ game.say(choice)
 
 ## 2 · Spot the Bug 🐛
 
-Each block was meant to do something, but it is broken. Read what it is **supposed** to do, fix it, then explain why the original was wrong.
+Each block was meant to do something, but it is broken. Read what it is **supposed** to do, fix it on paper, then explain why the original was wrong.
 
 **Bug A** — This should warn the player when their choice is **not** valid. Right now the warning shows for valid answers instead.
 
@@ -121,38 +114,56 @@ game.say(f"You move {choice}.")
 
 ---
 
-## 3 · 🎯 Validate a Choice
+## 3 · Explain the Code 📖
 
-Open your game. Take your path choice and validate it against a list of valid directions. If the player gets it wrong, give one extra try, then fall back to a safe default so the game keeps going.
+Read this working example. It validates a choice, gives one retry, then falls back to a safe default.
 
-When it works, send a **photo or video**, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.
+```python
+valid = ["left", "right", "back"]
+choice = game.ask("Where to?").strip().lower()
+if choice not in valid:
+    game.say("That is not a real direction.")
+    choice = game.ask("Try again — left, right, or back?").strip().lower()
+if choice not in valid:
+    choice = "left"
+game.say(f"You go {choice}.")
+```
 
-> First, I listed the valid choices, which were …
->
-> I used `in` (or `not in`) to …
->
-> When the player typed something wrong, the game …
->
-> My safe default was …
->
-> One tricky moment was when …
->
-> If I had more time, I would …
+**What does the list `valid` hold, and why does the code need it?**
 
-<div class="write-space tall" style="min-height: 340px"></div>
+<div class="write-space"></div>
+
+**What does `not in` check on the first `if` line?**
+
+<div class="write-space"></div>
+
+**Why is the player asked a second time inside the first `if`?**
+
+<div class="write-space"></div>
+
+**The second `if` runs after the retry. What does it do if the answer is still wrong?**
+
+<div class="write-space"></div>
+
+**If the player typed `"jump"` both times, what value reaches the last `game.say` line?**
+
+<div class="write-space"></div>
 
 ---
 
-## 4 · Record Your Walkthrough 🎥
+## 4 · Explain Your Lesson Code 🎥
 
-Take a video on your phone (or a parent's phone) while your game runs. Teach it like the viewer has never coded. Try to use these words: **valid**, **in**, **not in**, **retry**, **default**.
+Explain the validation code **you** wrote in today's live lesson. Record a short video on your phone (or a parent's phone). You may show your game running while you talk. Teach it like the viewer has never coded. Try to use these words: **valid**, **in**, **not in**, **retry**, **default**.
 
-> 1. Run your game and type a valid answer.
-> 2. Run it again and type something silly on purpose.
-> 3. Show the retry, then the safe default kicking in.
-> 4. Read your validation line out loud and explain what `not in` checks.
+> First, I list my valid choices, which are …
+>
+> I use `in` (or `not in`) to check whether …
+>
+> When the player types something wrong, my game gives a retry by …
+>
+> If it is still wrong, my safe default is …
 
-**Write what you will say in your video.** Plan it here first.
+**Write what you will say in your video. Plan it here before you record.**
 
 <div class="write-space tall" style="min-height: 340px"></div>
 
@@ -160,4 +171,4 @@ Take a video on your phone (or a parent's phone) while your game runs. Teach it 
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.

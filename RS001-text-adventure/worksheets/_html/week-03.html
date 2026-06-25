@@ -104,12 +104,15 @@ footer b { color: #ff7849; }
 <div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
 <h1>📋 RS001 Week 3 — English Worksheet</h1>
 <p><strong>Topic:</strong> Lists and Choices · <strong>Course:</strong> Text Adventure (Python) · <strong>Time:</strong> about 45 minutes</p>
-<p>This week you learn the <strong>list</strong> — one box that holds many values. You pull a value out by its <strong>index</strong>: the first item is <code>[0]</code>, the second is <code>[1]</code>, the third is <code>[2]</code>.</p>
+<p>This week you think about the <strong>list</strong> — one box that holds many values. You pull a value out by its <strong>index</strong>: the first item is <code>[0]</code>, the second is <code>[1]</code>, the third is <code>[2]</code>. On this sheet you read code, predict it, fix it on paper, and explain the code you wrote in today's lesson.</p>
+<blockquote>
+<p>🧠 Words to know: <strong>list</strong>, <strong>index</strong>, <strong>first</strong>, <strong>inventory</strong>, <strong>value</strong></p>
+</blockquote>
 <pre><code class="language-python">weapons = [&quot;sword&quot;, &quot;bow&quot;, &quot;wand&quot;]
 game.say(f&quot;You can choose: {weapons[0]}, {weapons[1]}, {weapons[2]}&quot;)
 </code></pre>
 <h2>1 · Predict 🔮</h2>
-<p>Read each piece of code. Before you run it in your head, write what you think the screen will show.</p>
+<p>Read each piece of code. Run it in your head — do not type it. Write what you think the screen will show.</p>
 <pre><code class="language-python">paths = [&quot;left&quot;, &quot;middle&quot;, &quot;right&quot;]
 game.say(paths[1])
 </code></pre>
@@ -130,7 +133,7 @@ game.say(items[3])
 <div class="write-space"></div></div>
 
 <h2>2 · Spot the Bug 🐛</h2>
-<p>Each block was meant to do something, but it is broken. Read what it is <strong>supposed</strong> to do, fix it, then explain why the original was wrong.</p>
+<p>Each block was meant to do something, but it is broken. Read what it is <strong>supposed</strong> to do, fix it on paper, then explain why the original was wrong.</p>
 <p><strong>Bug A</strong> — This should print the <strong>first</strong> weapon in the list. Right now it prints the second one.</p>
 <pre><code class="language-python">weapons = [&quot;sword&quot;, &quot;bow&quot;, &quot;wand&quot;]
 game.say(f&quot;Your first weapon: {weapons[1]}&quot;)
@@ -167,34 +170,39 @@ game.say(f&quot;A {enemy_names[0]} appears! HP: {enemy_hp[2]}&quot;)
 <div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
 <div class="write-space"></div></div>
 
-<h2>3 · 🎯 Add an Inventory</h2>
-<p>Open your game. After your opening, add a <strong>list</strong> for the hero's starting items (an inventory) and show them on screen. Then add a second list — a menu of <strong>paths</strong> the player can read.</p>
-<p>When it works, send a <strong>photo or video</strong>, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.</p>
-<div class="qa"><blockquote>
-<p>First, I made a list called …</p>
-<p>The items inside it were …</p>
-<p>To show the second item, I used index …</p>
-<p>I learned that the first item is …</p>
-<p>One tricky moment was when …</p>
-<p>If I had more time, I would …</p>
-</blockquote>
-<div class="write-space tall" style="min-height: 340px"></div></div>
+<h2>3 · Explain the Code 📖</h2>
+<p>Here is a working inventory. The hero starts with a <strong>list</strong> of items, and the code shows them on screen.</p>
+<pre><code class="language-python">inventory = [&quot;map&quot;, &quot;key&quot;, &quot;torch&quot;]
+game.say(f&quot;You carry: {inventory[0]}, {inventory[1]}, {inventory[2]}&quot;)
+game.say(f&quot;The first item in your inventory is the {inventory[0]}.&quot;)
+</code></pre>
+<div class="qa"><p><strong>What is the name of the list, and what three values are inside it?</strong></p>
+<div class="write-space"></div></div>
 
-<h2>4 · Record Your Walkthrough 🎥</h2>
-<p>Take a video on your phone (or a parent's phone) while your inventory prints. Teach it like the viewer has never coded. Try to use these words: <strong>list</strong>, <strong>index</strong>, <strong>first</strong>, <strong>inventory</strong>, <strong>value</strong>.</p>
+<div class="qa"><p><strong><code>inventory[0]</code> gives which item? Why that one and not the second?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Which index would you use to show the <code>torch</code>?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>The last line says "the first item." What does the word <em>index</em> mean in your own words?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>4 · Explain Your Lesson Code 🎥</h2>
+<p>Today in your lesson you wrote your own inventory list. Make a short video on your phone (or a parent's phone) that explains the code <strong>you</strong> wrote. You may show it running. Teach it like the viewer has never coded. Try to use these words: <strong>list</strong>, <strong>index</strong>, <strong>first</strong>, <strong>inventory</strong>, <strong>value</strong>.</p>
 <blockquote>
 <ol>
-<li>Run your game and show the inventory on screen.</li>
-<li>Point to the list in your code and read the items.</li>
-<li>Pick one item and say its index out loud.</li>
+<li>Point to the list you wrote and read the items out loud.</li>
+<li>Pick one item and say its index.</li>
 <li>Explain why the first item is index 0, not 1.</li>
+<li>Say one thing that was tricky and how you worked it out.</li>
 </ol>
 </blockquote>
-<div class="qa"><p><strong>Write what you will say in your video.</strong> Plan it here first.</p>
+<div class="qa"><p><strong>Write what you will say in your video. Plan it here before you record.</strong></p>
 <div class="write-space tall" style="min-height: 340px"></div></div>
 
 <hr />
 <h3>Submit ✅</h3>
-<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.</p>
+<p>Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.</p>
 </body>
 </html>

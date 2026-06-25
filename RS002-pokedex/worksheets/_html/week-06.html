@@ -104,14 +104,17 @@ footer b { color: #ff7849; }
 <div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
 <h1>🔴 RS002 Week 6 — English Worksheet</h1>
 <p><strong>Topic:</strong> Partial-Match Search (KR/EN) — <code>in</code> inside a Loop · <strong>Course:</strong> Pokédex App · <strong>Time:</strong> about 45 minutes</p>
-<p>This week your search gets smart. Typing just <code>피카</code> should still find <code>피카츄</code>. You use the <code>in</code> keyword to check <strong>partial matches</strong>, loop over the whole dex, and support <strong>both Korean and English</strong> names at once.</p>
+<blockquote>
+<p>🧠 Words to know: <strong>in</strong>, <strong>partial match</strong>, <strong>loop</strong>, <strong>bilingual</strong>, <strong>found count</strong></p>
+</blockquote>
+<p>This week your search gets smart. Typing just <code>피카</code> should still find <code>피카츄</code>. In the live lesson you wrote code that uses the <code>in</code> keyword to check <strong>partial matches</strong>, loops over the whole dex, and supports <strong>both Korean and English</strong> names at once. This worksheet is about reading that code closely and explaining how it works.</p>
 <h2>1 · Recall 🧠</h2>
 <p>From memory:</p>
 <div class="qa"><p><strong>Write the line that reads a search word from the user and cleans it with both <code>.strip()</code> and <code>.lower()</code>.</strong></p>
 <div class="write-space"></div></div>
 
 <h2>2 · Predict 🔮</h2>
-<p>Read each block. Before you run it, write what you think will happen.</p>
+<p>Read each block. Write what you think will happen — no need to run anything.</p>
 <pre><code class="language-python">print(&quot;피카&quot; in &quot;피카츄&quot;)
 print(&quot;츄&quot; in &quot;피카츄&quot;)
 print(&quot;리자몽&quot; in &quot;피카츄&quot;)
@@ -140,7 +143,7 @@ for name in names_en:
 <div class="write-space"></div></div>
 
 <h2>3 · Spot the Bug 🐛</h2>
-<p>Read what each block is <strong>supposed</strong> to do, fix it, then explain the fix.</p>
+<p>Read what each block is <strong>supposed</strong> to do, fix it on paper, then explain the fix.</p>
 <p><strong>Bug A</strong> — This should find any name <strong>containing</strong> the search word. Right now it only matches an <strong>exact</strong> full name.</p>
 <pre><code class="language-python">names = [&quot;피카츄&quot;, &quot;이상해씨&quot;, &quot;파이리&quot;]
 search = input(&quot;검색: &quot;).strip()
@@ -186,8 +189,8 @@ for name in names:
 <div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
 <div class="write-space"></div></div>
 
-<h2>4 · Modify It ✏️</h2>
-<p>Start from this working bilingual search:</p>
+<h2>4 · Explain the Code 📖</h2>
+<p>Read this working bilingual search carefully. It is the same shape as the code you wrote in the live lesson.</p>
 <pre><code class="language-python">names_kr = [&quot;피카츄&quot;, &quot;이상해씨&quot;, &quot;파이리&quot;, &quot;꼬부기&quot;]
 names_en = [&quot;pikachu&quot;, &quot;bulbasaur&quot;, &quot;charmander&quot;, &quot;squirtle&quot;]
 types = [&quot;전기&quot;, &quot;풀&quot;, &quot;불&quot;, &quot;물&quot;]
@@ -206,44 +209,36 @@ if found_count == 0:
 else:
     print(f&quot;\n총 {found_count}마리 발견!&quot;)
 </code></pre>
-<p>Make these changes one at a time and run after each:</p>
-<ol>
-<li>Add one more Pokémon to all four lists and test searching for it in both Korean and English.</li>
-<li>Make the search also match the <strong>type</strong> (so typing <code>전기</code> lists all electric Pokémon).</li>
-<li>Change the "not found" message to suggest checking the spelling.</li>
-</ol>
-<div class="qa"><p><strong>Write your changed / added lines here:</strong></p>
+<div class="qa"><p><strong>The four lists <code>names_kr</code>, <code>names_en</code>, <code>types</code>, and <code>hp</code> are kept in the same order. Why does index <code>i</code> give you one full Pokémon across all four lists?</strong></p>
 <div class="write-space"></div></div>
 
-<h2>5 · Make It 📸</h2>
-<p>Add <strong>partial KR/EN search</strong> to your own Pokédex. Typing part of a name in either language should list every match, with a clear message when nothing matches.</p>
-<p>When it works, send a <strong>photo or video</strong> on KakaoTalk showing <strong>three different searches</strong> (a Korean partial, an English partial, and one with no match). Then explain what you did. Use these starters — write 4 to 6 sentences.</p>
-<div class="qa"><blockquote>
-<p>First, I kept two parallel name lists for …</p>
-<p>The <code>in</code> keyword let me match …</p>
-<p>I supported both languages by …</p>
-<p>I knew nothing matched when …</p>
-<p>The trickiest part was …</p>
-<p>Partial search is friendlier than exact search because …</p>
-</blockquote>
-<div class="write-space tall" style="min-height: 340px"></div></div>
+<div class="qa"><p><strong>The <code>if</code> line uses <code>or</code> with two <code>in</code> checks. In plain English, when is this <code>if</code> line <code>True</code>?</strong></p>
+<div class="write-space"></div></div>
 
-<h2>6 · Record Your Walkthrough 🎥</h2>
-<p>Film your search running. Teach it like the viewer is new. Try to use: <strong>in</strong>, <strong>partial match</strong>, <strong>loop</strong>, <strong>bilingual</strong>, <strong>found count</strong>.</p>
+<div class="qa"><p><strong>Why is <code>.lower()</code> used on both <code>search</code> and <code>names_en[i]</code>, but not on <code>names_kr[i]</code>?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>What does <code>found_count</code> do, and how does the code use it to decide which final message to print?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why does partial-match search (<code>in</code>) feel friendlier to the user than exact-match search (<code>==</code>)?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>5 · Explain Your Lesson Code 🎥</h2>
+<p>Explain the code <strong>you wrote in today's lesson</strong>. Film a short video on your phone where you walk through your own bilingual search (you may show it running). Teach it like the viewer is new. Try to use: <strong>in</strong>, <strong>partial match</strong>, <strong>loop</strong>, <strong>bilingual</strong>, <strong>found count</strong>.</p>
 <blockquote>
 <ol>
-<li>Search <code>피카</code> and show it finds 피카츄.</li>
-<li>Search an English partial and show it works.</li>
-<li>Read the line with <code>or</code> out loud and explain why two checks are needed.</li>
-<li>Search something fake and show the "not found" message.</li>
+<li>Show your two parallel name lists and say why they stay in the same order.</li>
+<li>Read your <code>if</code> line with <code>or</code> out loud and explain why two checks are needed.</li>
+<li>Search <code>피카</code>, then an English partial, and show both find a match.</li>
+<li>Search something fake and show how <code>found_count</code> triggers the "not found" message.</li>
 </ol>
 </blockquote>
-<div class="qa"><p><strong>Plan what you will say here first:</strong></p>
+<div class="qa"><p><strong>Write what you will say in your video. Plan it here before you record.</strong></p>
 <div class="write-space tall" style="min-height: 340px"></div></div>
 
 <hr />
 <h3>Submit ✅</h3>
-<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.
-</content></p>
+<p>Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.</p>
 </body>
 </html>

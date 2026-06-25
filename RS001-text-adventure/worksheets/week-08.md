@@ -2,7 +2,9 @@
 
 **Topic:** Validation Across the Whole Game · **Course:** Text Adventure (Python) · **Time:** about 45 minutes
 
-This week you wrap the "clean → validate → retry → default" pattern into **one reusable function** called `safe_choice()`. Then you use it everywhere — directions, weapons, actions — so no input can ever break your game.
+This week you think about wrapping the "clean → validate → retry → default" pattern into **one reusable function** called `safe_choice()`. You read it, trace it, fix broken versions of it, and then explain — in your own words — the code you wrote in today's live lesson.
+
+> 🧠 Words to know: **function**, **return**, **reuse**, **default**, **valid**
 
 ```python
 def safe_choice(prompt, valid_list, default):
@@ -18,7 +20,7 @@ def safe_choice(prompt, valid_list, default):
 
 ## 1 · Predict 🔮
 
-Read each piece of code. Before you run it in your head, write what you think happens.
+Read each piece of code. In your head, work out what happens, then write your answer.
 
 ```python
 def greet(name):
@@ -60,7 +62,7 @@ game.say(f"{direction}, {action}")
 
 ## 2 · Spot the Bug 🐛
 
-Each block was meant to do something, but it is broken. Read what it is **supposed** to do, fix it, then explain why the original was wrong.
+Each block was meant to do something, but it is broken. Read what it is **supposed** to do, fix it on paper, then explain why the original was wrong.
 
 **Bug A** — `safe_choice` should hand the answer back to whoever called it. Right now it cleans the answer but forgets to `return` it, so the caller gets nothing.
 
@@ -126,38 +128,52 @@ game.say(f"You chose {action}.")
 
 ---
 
-## 3 · 🎯 Protect the Whole Game
+## 3 · Explain the Code 📖
 
-Open your game. Add a `safe_choice()` function and use it for **every** choice the player makes — direction, weapon, action. Then try to break your own game on purpose: type empty answers, nonsense, and CAPS. It should never crash.
+Here is the full `safe_choice` function from this week. Read it slowly, then answer the questions below.
 
-When it works, send a **photo or video**, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.
+```python
+def safe_choice(prompt, valid_list, default):
+    answer = game.ask(prompt).strip().lower()
+    if answer not in valid_list:
+        answer = game.ask("Try again: " + prompt).strip().lower()
+    if answer not in valid_list:
+        answer = default
+    return answer
+```
 
-> First, I wrote a function called `safe_choice` that …
->
-> I used it for these choices in my game …
->
-> To test it, I deliberately typed …
->
-> Reusing one function was better than copying because …
->
-> One tricky moment was when …
->
-> If I had more time, I would …
+**What do `.strip()` and `.lower()` do to the player's answer, and why are they used together here?**
 
-<div class="write-space tall" style="min-height: 340px"></div>
+<div class="write-space"></div>
+
+**The function asks a second time before giving up. Which line does the asking-again, and when does it happen?**
+
+<div class="write-space"></div>
+
+**If the player still gives a bad answer after the second try, what value does `answer` end up holding?**
+
+<div class="write-space"></div>
+
+**Why does the last line say `return answer` instead of `game.say(answer)`?**
+
+<div class="write-space"></div>
+
+**The three inputs are `prompt`, `valid_list`, and `default`. In one sentence each, what job does each one do?**
+
+<div class="write-space"></div>
 
 ---
 
-## 4 · Record Your Walkthrough 🎥
+## 4 · Explain Your Lesson Code 🎥
 
-Take a video on your phone (or a parent's phone) while you try to break your game. Teach it like the viewer has never coded. Try to use these words: **function**, **return**, **reuse**, **default**, **valid**.
+In today's live lesson you wrote your own `safe_choice()` and used it in your game. Now explain **your** code. Take a short video on your phone (or a parent's phone) and teach it like the viewer has never coded. You may show it running. Try to use these words: **function**, **return**, **reuse**, **default**, **valid**.
 
-> 1. Run your game and answer normally first.
-> 2. Run it again and type nonsense at every prompt.
-> 3. Show the default keeping the game alive.
-> 4. Read your `safe_choice` function out loud and explain `return`.
+> 1. Read your `safe_choice` function out loud and say what each part does.
+> 2. Point to a place where you reused it, and explain why reusing beats copying.
+> 3. Explain what your `default` is and why it is a valid answer.
+> 4. Explain why the function ends with `return`.
 
-**Write what you will say in your video.** Plan it here first.
+**Write what you will say in your video. Plan it here before you record.**
 
 <div class="write-space tall" style="min-height: 340px"></div>
 
@@ -165,4 +181,4 @@ Take a video on your phone (or a parent's phone) while you try to break your gam
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.

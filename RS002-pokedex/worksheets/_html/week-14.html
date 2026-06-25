@@ -104,14 +104,17 @@ footer b { color: #ff7849; }
 <div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
 <h1>🔴 RS002 Week 14 — English Worksheet</h1>
 <p><strong>Topic:</strong> Best-of-3 Tournament + Type Advantage · <strong>Course:</strong> Pokédex App · <strong>Time:</strong> about 45 minutes</p>
-<p>This week one battle becomes a <strong>best-of-3 tournament</strong>. You track wins and losses in a <code>while</code> loop, and you add a <strong>type-advantage</strong> bonus using a small dictionary (water beats fire, and so on). Lots of pieces working together — functions, dictionaries, loops, randomness.</p>
+<p>This week you think about a <strong>best-of-3 tournament</strong>. You read how wins and losses are tracked in a <code>while</code> loop, and how a <strong>type-advantage</strong> bonus uses a small dictionary (water beats fire, and so on). Your job is to read the code closely, debug it on paper, and explain how it works in your own words.</p>
+<blockquote>
+<p>🧠 Words to know: <strong>tournament</strong>, <strong>while loop</strong>, <strong>type advantage</strong>, <strong>get</strong>, <strong>best of three</strong></p>
+</blockquote>
 <h2>1 · Recall 🧠</h2>
 <p>From memory:</p>
 <div class="qa"><p><strong>Write the line that picks a random Pokémon dictionary from a list called <code>pokedex</code> (assume <code>random</code> is imported).</strong></p>
 <div class="write-space"></div></div>
 
 <h2>2 · Predict 🔮</h2>
-<p>Read each block. Before you run it, write what you think will happen.</p>
+<p>Read each block. Write what you think it does — no need to run it.</p>
 <pre><code class="language-python">TYPE_ADVANTAGE = {&quot;물&quot;: &quot;불&quot;, &quot;불&quot;: &quot;풀&quot;}
 print(TYPE_ADVANTAGE.get(&quot;물&quot;))
 print(TYPE_ADVANTAGE.get(&quot;전기&quot;))
@@ -141,7 +144,7 @@ else:
 <div class="write-space"></div></div>
 
 <h2>3 · Spot the Bug 🐛</h2>
-<p>Read what each block is <strong>supposed</strong> to do, fix it, then explain the fix.</p>
+<p>Read what each block is <strong>supposed</strong> to do, fix it on paper, then explain the fix.</p>
 <p><strong>Bug A</strong> — This loop should stop once <strong>either</strong> side reaches 2. Right now it stops only when both reach 2, which can loop forever.</p>
 <pre><code class="language-python">wins = 0
 losses = 0
@@ -185,8 +188,8 @@ print(f&quot;{wins}승&quot;)
 <div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
 <div class="write-space"></div></div>
 
-<h2>4 · Modify It ✏️</h2>
-<p>Start from this working tournament:</p>
+<h2>4 · Explain the Code 📖</h2>
+<p>Read this working tournament closely. Then answer the questions below in your own words.</p>
 <pre><code class="language-python">import random
 
 TYPE_ADVANTAGE = {&quot;물&quot;: &quot;불&quot;, &quot;불&quot;: &quot;풀&quot;, &quot;풀&quot;: &quot;전기&quot;, &quot;전기&quot;: &quot;물&quot;}
@@ -238,44 +241,36 @@ pokedex = [
 
 tournament(pokedex[0], pokedex)
 </code></pre>
-<p>Make these changes one at a time and run after each:</p>
-<ol>
-<li>Add one more pair to <code>TYPE_ADVANTAGE</code>.</li>
-<li>Change the bonus from <code>1.2</code> (20%) to a stronger number and see how it changes results.</li>
-<li>Make the tournament best-of-5 (first to 3 wins).</li>
-</ol>
-<div class="qa"><p><strong>Write your changed / added lines here:</strong></p>
+<div class="qa"><p><strong>In <code>calculate_score</code>, what makes <code>base</code> get multiplied by <code>1.2</code>?</strong></p>
 <div class="write-space"></div></div>
 
-<h2>5 · Make It 📸</h2>
-<p>Add a <strong>Tournament</strong> mode to your app: best-of-3 random battles with a type-advantage bonus. Track wins and losses and announce the champion.</p>
-<p>When it works, send a <strong>video</strong> on KakaoTalk showing <strong>one full tournament</strong> from start to result. Then explain what you did. Use these starters — write 4 to 6 sentences.</p>
-<div class="qa"><blockquote>
-<p>First, I tracked wins and losses with …</p>
-<p>My <code>while</code> loop kept going while …</p>
-<p>I gave a type bonus by checking …</p>
-<p>I used <code>.get</code> instead of <code>[...]</code> so that …</p>
-<p>The trickiest part was …</p>
-<p>If I had more time, I would add the rule …</p>
-</blockquote>
-<div class="write-space tall" style="min-height: 340px"></div></div>
+<div class="qa"><p><strong>The <code>while</code> loop says <code>while wins &lt; 2 and losses &lt; 2</code>. When does this loop stop?</strong></p>
+<div class="write-space"></div></div>
 
-<h2>6 · Record Your Walkthrough 🎥</h2>
-<p>Film a full tournament. Teach it like the viewer is new. Try to use: <strong>tournament</strong>, <strong>while loop</strong>, <strong>type advantage</strong>, <strong>get</strong>, <strong>best of three</strong>.</p>
+<div class="qa"><p><strong>Why does <code>calculate_score</code> use <code>TYPE_ADVANTAGE.get(...)</code> instead of <code>TYPE_ADVANTAGE[...]</code>?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Where does the enemy Pokémon come from each round? Which line picks it?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>After the loop ends, how does the code decide whether to print "우승" or "패배"?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>5 · Explain Your Lesson Code 🎥</h2>
+<p>Make a short phone video where you explain the tournament code <strong>you wrote in today's lesson</strong>. You may show it running. Teach it like the viewer is new. Try to use: <strong>tournament</strong>, <strong>while loop</strong>, <strong>type advantage</strong>, <strong>get</strong>, <strong>best of three</strong>.</p>
 <blockquote>
 <ol>
-<li>Run one complete tournament and narrate each round.</li>
+<li>Show the code you wrote and say what it does overall.</li>
 <li>Point to the <code>while wins &lt; 2 and losses &lt; 2</code> line and explain it.</li>
-<li>Show a round where the type bonus kicks in.</li>
+<li>Show or describe a round where the type bonus kicks in.</li>
 <li>Explain why <code>.get</code> keeps the program from crashing.</li>
 </ol>
 </blockquote>
-<div class="qa"><p><strong>Plan what you will say here first:</strong></p>
+<div class="qa"><p><strong>Write what you will say in your video. Plan it here before you record.</strong></p>
 <div class="write-space tall" style="min-height: 340px"></div></div>
 
 <hr />
 <h3>Submit ✅</h3>
-<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.
-</content></p>
+<p>Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.</p>
 </body>
 </html>

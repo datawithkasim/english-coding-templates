@@ -2,7 +2,9 @@
 
 **Topic:** Handling the Player's Choice — Cleaning Input · **Course:** Text Adventure (Python) · **Time:** about 45 minutes
 
-This week you make your game forgiving. Players type messy answers — extra spaces, capital letters. `.strip()` removes spaces from the ends, and `.lower()` makes everything lowercase, so `" Left "`, `"LEFT"`, and `"left"` all match.
+This week is about thinking through how a game becomes forgiving. Players type messy answers — extra spaces, capital letters. `.strip()` removes spaces from the ends, and `.lower()` makes everything lowercase, so `" Left "`, `"LEFT"`, and `"left"` all match. You will read code, fix code on paper, and explain the code you wrote in your live lesson.
+
+> 🧠 Words to know: **strip**, **lower**, **clean**, **spaces**, **lowercase**
 
 ```python
 choice = game.ask("Pick a path (left/right)")
@@ -15,7 +17,7 @@ if choice == "left":
 
 ## 1 · Predict 🔮
 
-Read each piece of code. Before you run it in your head, write what you think happens.
+Read each piece of code. In your head, work out what happens, then write your answer.
 
 ```python
 choice = "  left  "
@@ -53,7 +55,7 @@ else:
 
 ## 2 · Spot the Bug 🐛
 
-Each block was meant to do something, but it is broken. Read what it is **supposed** to do, fix it, then explain why the original was wrong.
+Each block was meant to do something, but it is broken. Read what it is **supposed** to do, fix it on paper, then explain why the original was wrong.
 
 **Bug A** — A player who types `"Left"` should be sent to the cave. Right now only an exact lowercase `"left"` works.
 
@@ -115,38 +117,51 @@ if choice == "right":
 
 ---
 
-## 3 · 🎯 Clean the Player's Choice
+## 3 · Explain the Code 📖
 
-Open your game. At your shop or your first path choice, take the player's answer and clean it with `.strip().lower()` before you compare it. Then react differently depending on what they chose.
+Read this working example. It asks the player for a path, cleans the answer, then reacts differently depending on what they chose.
 
-When it works, send a **photo or video**, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.
+```python
+choice = game.ask("Pick a path (left/right)")
+choice = choice.strip().lower()
+if choice == "left":
+    game.say("You enter the dark cave...")
+else:
+    game.say("You walk into the open field.")
+```
 
-> First, I asked the player to …
->
-> Before comparing, I cleaned the answer by …
->
-> I tested it by typing the answer with extra spaces, and …
->
-> Cleaning input matters because …
->
-> One tricky moment was when …
->
-> If I had more time, I would …
+**What does `game.ask(...)` give back, and where is it stored?**
 
-<div class="write-space tall" style="min-height: 340px"></div>
+<div class="write-space"></div>
+
+**The line `choice = choice.strip().lower()` does two cleaning jobs. What does each part do?**
+
+<div class="write-space"></div>
+
+**Why does the cleaning line come before the `if`, and not after?**
+
+<div class="write-space"></div>
+
+**The player types ` LEFT ` with capitals and spaces. After cleaning, what is stored in `choice`?**
+
+<div class="write-space"></div>
+
+**Which message shows for that player, and why?**
+
+<div class="write-space"></div>
 
 ---
 
-## 4 · Record Your Walkthrough 🎥
+## 4 · Explain Your Lesson Code 🎥
 
-Take a video on your phone (or a parent's phone) while your game runs. Teach it like the viewer has never coded. Try to use these words: **strip**, **lower**, **clean**, **spaces**, **lowercase**.
+In your live lesson you wrote code that cleans the player's choice. Now explain *your own* code in a short video on your phone (or a parent's phone). You may show it running. Teach it like the viewer has never coded, and use these key words: **strip**, **lower**, **clean**, **spaces**, **lowercase**.
 
-> 1. Run your game and answer cleanly first.
-> 2. Run it again and answer messily (CAPS and extra spaces).
-> 3. Show that both answers lead to the same result.
-> 4. Read the cleaning line out loud and explain what each part does.
+> 1. Show the line where you ask the player for their choice.
+> 2. Point to the cleaning step and explain what `.strip()` and `.lower()` each do.
+> 3. Run it once with a clean answer, then once with CAPS and extra spaces, and show both give the same result.
+> 4. Explain in your own words why cleaning the input matters.
 
-**Write what you will say in your video.** Plan it here first.
+**Write what you will say in your video. Plan it here before you record.**
 
 <div class="write-space tall" style="min-height: 340px"></div>
 
@@ -154,4 +169,4 @@ Take a video on your phone (or a parent's phone) while your game runs. Teach it 
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.

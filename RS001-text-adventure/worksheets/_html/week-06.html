@@ -104,14 +104,12 @@ footer b { color: #ff7849; }
 <div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
 <h1>🧼 RS001 Week 6 — English Worksheet</h1>
 <p><strong>Topic:</strong> Clean Every Input Safely · <strong>Course:</strong> Text Adventure (Python) · <strong>Time:</strong> about 45 minutes</p>
-<p>This week you apply <code>.strip().lower()</code> to <strong>every</strong> <code>ask()</code> in your game, and you accept several spellings of the same answer — Korean, English, short forms — so almost any sensible input works.</p>
-<pre><code class="language-python">direction = game.ask(&quot;Which way? (left/right)&quot;)
-direction = direction.strip().lower()
-if direction in [&quot;left&quot;, &quot;l&quot;, &quot;왼쪽&quot;]:
-    direction = &quot;left&quot;
-</code></pre>
+<p>This week you think about how <code>.strip().lower()</code> cleans <strong>every</strong> <code>ask()</code> in your game, and how a game can accept several spellings of the same answer — Korean, English, short forms — so almost any sensible input works. You will read code closely and explain it in your own words.</p>
+<blockquote>
+<p>🧠 Words to know: <strong>clean</strong>, <strong>strip</strong>, <strong>lower</strong>, <strong>in</strong>, <strong>spelling</strong></p>
+</blockquote>
 <h2>1 · Predict 🔮</h2>
-<p>Read each piece of code. Before you run it in your head, write what you think happens.</p>
+<p>Read each piece of code. Run it in your head and write what you think happens.</p>
 <pre><code class="language-python">d = &quot;  RIGHT &quot;
 d = d.strip().lower()
 game.say(f&quot;[{d}]&quot;)
@@ -136,7 +134,7 @@ game.say(f&quot;[{d}]&quot;)
 <div class="write-space"></div></div>
 
 <h2>2 · Spot the Bug 🐛</h2>
-<p>Each block was meant to do something, but it is broken. Read what it is <strong>supposed</strong> to do, fix it, then explain why the original was wrong.</p>
+<p>Each block was meant to do something, but it is broken. Read what it is <strong>supposed</strong> to do, fix it on paper, then explain why the original was wrong.</p>
 <p><strong>Bug A</strong> — This should accept <code>"left"</code>, <code>"l"</code>, or <code>"왼쪽"</code> and turn them all into <code>"left"</code>. Right now it only matches the full word <code>"left"</code>.</p>
 <pre><code class="language-python">d = game.ask(&quot;way?&quot;).strip().lower()
 if d == &quot;left&quot;:
@@ -175,34 +173,43 @@ game.say(d)
 <div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
 <div class="write-space"></div></div>
 
-<h2>3 · 🎯 Clean the Whole Game</h2>
-<p>Open your game. Go through <strong>every</strong> <code>ask()</code> you have written so far and add <code>.strip().lower()</code> to each one. Pick one important choice (a direction, for example) and make it accept several spellings.</p>
-<p>When it works, send a <strong>photo or video</strong>, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.</p>
-<div class="qa"><blockquote>
-<p>First, I found every place I used <code>ask()</code>, and …</p>
-<p>The choice I made accept many spellings was …</p>
-<p>The spellings I allowed were …</p>
-<p>I tested it by typing different versions, and …</p>
-<p>One tricky moment was when …</p>
-<p>If I had more time, I would …</p>
-</blockquote>
-<div class="write-space tall" style="min-height: 340px"></div></div>
+<h2>3 · Explain the Code 📖</h2>
+<p>Read this working example slowly. It cleans the player's answer and accepts several spellings of "left".</p>
+<pre><code class="language-python">direction = game.ask(&quot;Which way? (left/right)&quot;)
+direction = direction.strip().lower()
+if direction in [&quot;left&quot;, &quot;l&quot;, &quot;왼쪽&quot;]:
+    direction = &quot;left&quot;
+</code></pre>
+<div class="qa"><p><strong>What does <code>.strip()</code> remove from the player's answer?</strong></p>
+<div class="write-space"></div></div>
 
-<h2>4 · Record Your Walkthrough 🎥</h2>
-<p>Take a video on your phone (or a parent's phone) while your game runs. Teach it like the viewer has never coded. Try to use these words: <strong>clean</strong>, <strong>strip</strong>, <strong>lower</strong>, <strong>in</strong>, <strong>spelling</strong>.</p>
+<div class="qa"><p><strong>What does <code>.lower()</code> do to a capital letter the player typed?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why must the words in the list <code>["left", "l", "왼쪽"]</code> all be lowercase?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>The player types <code>"  Left "</code>. After line 2, what is the value of <code>direction</code>? Does the <code>if</code> match?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why is it helpful to turn <code>"l"</code> and <code>"왼쪽"</code> both into <code>"left"</code> before the rest of the game runs?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>4 · Explain Your Lesson Code 🎥</h2>
+<p>In today's live lesson you cleaned the inputs in your own game. Now explain that code in a short video on your phone (or a parent's phone). You may show your game running. Teach it like the viewer has never coded. Try to use these words: <strong>clean</strong>, <strong>strip</strong>, <strong>lower</strong>, <strong>in</strong>, <strong>spelling</strong>.</p>
 <blockquote>
 <ol>
-<li>Run your game and type one answer the "normal" way.</li>
-<li>Run it again and type a different spelling of the same answer.</li>
-<li>Show both answers leading to the same path.</li>
-<li>Read your <code>if ... in [ ... ]</code> line out loud and explain it.</li>
+<li>Show one <code>ask()</code> line from your game and read your <code>.strip().lower()</code> out loud.</li>
+<li>Explain what <code>.strip()</code> and <code>.lower()</code> each do to the player's answer.</li>
+<li>Read your <code>if ... in [ ... ]</code> line and say which spellings you allowed.</li>
+<li>Run it once with a "normal" answer and once with a different spelling, and show both reaching the same path.</li>
 </ol>
 </blockquote>
-<div class="qa"><p><strong>Write what you will say in your video.</strong> Plan it here first.</p>
+<div class="qa"><p><strong>Write what you will say in your video. Plan it here before you record.</strong></p>
 <div class="write-space tall" style="min-height: 340px"></div></div>
 
 <hr />
 <h3>Submit ✅</h3>
-<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.</p>
+<p>Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.</p>
 </body>
 </html>

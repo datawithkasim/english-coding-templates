@@ -2,7 +2,9 @@
 
 **Topic:** Best-of-3 Tournament + Type Advantage · **Course:** Pokédex App · **Time:** about 45 minutes
 
-This week one battle becomes a **best-of-3 tournament**. You track wins and losses in a `while` loop, and you add a **type-advantage** bonus using a small dictionary (water beats fire, and so on). Lots of pieces working together — functions, dictionaries, loops, randomness.
+This week you think about a **best-of-3 tournament**. You read how wins and losses are tracked in a `while` loop, and how a **type-advantage** bonus uses a small dictionary (water beats fire, and so on). Your job is to read the code closely, debug it on paper, and explain how it works in your own words.
+
+> 🧠 Words to know: **tournament**, **while loop**, **type advantage**, **get**, **best of three**
 
 ---
 
@@ -18,7 +20,7 @@ From memory:
 
 ## 2 · Predict 🔮
 
-Read each block. Before you run it, write what you think will happen.
+Read each block. Write what you think it does — no need to run it.
 
 ```python
 TYPE_ADVANTAGE = {"물": "불", "불": "풀"}
@@ -61,7 +63,7 @@ else:
 
 ## 3 · Spot the Bug 🐛
 
-Read what each block is **supposed** to do, fix it, then explain the fix.
+Read what each block is **supposed** to do, fix it on paper, then explain the fix.
 
 **Bug A** — This loop should stop once **either** side reaches 2. Right now it stops only when both reach 2, which can loop forever.
 
@@ -126,9 +128,9 @@ print(f"{wins}승")
 
 ---
 
-## 4 · Modify It ✏️
+## 4 · Explain the Code 📖
 
-Start from this working tournament:
+Read this working tournament closely. Then answer the questions below in your own words.
 
 ```python
 import random
@@ -183,50 +185,38 @@ pokedex = [
 tournament(pokedex[0], pokedex)
 ```
 
-Make these changes one at a time and run after each:
+**In `calculate_score`, what makes `base` get multiplied by `1.2`?**
 
-1. Add one more pair to `TYPE_ADVANTAGE`.
-2. Change the bonus from `1.2` (20%) to a stronger number and see how it changes results.
-3. Make the tournament best-of-5 (first to 3 wins).
+<div class="write-space"></div>
 
-**Write your changed / added lines here:**
+**The `while` loop says `while wins < 2 and losses < 2`. When does this loop stop?**
+
+<div class="write-space"></div>
+
+**Why does `calculate_score` use `TYPE_ADVANTAGE.get(...)` instead of `TYPE_ADVANTAGE[...]`?**
+
+<div class="write-space"></div>
+
+**Where does the enemy Pokémon come from each round? Which line picks it?**
+
+<div class="write-space"></div>
+
+**After the loop ends, how does the code decide whether to print "우승" or "패배"?**
 
 <div class="write-space"></div>
 
 ---
 
-## 5 · Make It 📸
+## 5 · Explain Your Lesson Code 🎥
 
-Add a **Tournament** mode to your app: best-of-3 random battles with a type-advantage bonus. Track wins and losses and announce the champion.
+Make a short phone video where you explain the tournament code **you wrote in today's lesson**. You may show it running. Teach it like the viewer is new. Try to use: **tournament**, **while loop**, **type advantage**, **get**, **best of three**.
 
-When it works, send a **video** on KakaoTalk showing **one full tournament** from start to result. Then explain what you did. Use these starters — write 4 to 6 sentences.
-
-> First, I tracked wins and losses with …
->
-> My `while` loop kept going while …
->
-> I gave a type bonus by checking …
->
-> I used `.get` instead of `[...]` so that …
->
-> The trickiest part was …
->
-> If I had more time, I would add the rule …
-
-<div class="write-space tall" style="min-height: 340px"></div>
-
----
-
-## 6 · Record Your Walkthrough 🎥
-
-Film a full tournament. Teach it like the viewer is new. Try to use: **tournament**, **while loop**, **type advantage**, **get**, **best of three**.
-
-> 1. Run one complete tournament and narrate each round.
+> 1. Show the code you wrote and say what it does overall.
 > 2. Point to the `while wins < 2 and losses < 2` line and explain it.
-> 3. Show a round where the type bonus kicks in.
+> 3. Show or describe a round where the type bonus kicks in.
 > 4. Explain why `.get` keeps the program from crashing.
 
-**Plan what you will say here first:**
+**Write what you will say in your video. Plan it here before you record.**
 
 <div class="write-space tall" style="min-height: 340px"></div>
 
@@ -234,5 +224,4 @@ Film a full tournament. Teach it like the viewer is new. Try to use: **tournamen
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
-</content>
+Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.

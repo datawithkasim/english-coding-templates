@@ -2,7 +2,9 @@
 
 **Topic:** Trainer Profile — More Variables · **Course:** Pokédex App · **Time:** about 45 minutes
 
-This week you grow last week's intro into a full **trainer card**. You ask for more details — region and favourite type — clean each answer with `.strip()`, give every answer a default, and print a tidy card. Same pattern as Week 1, just repeated for more fields.
+> 🧠 Words to know: **variable**, **strip**, **default**, **field**, **trainer card**
+
+This week you read and think about a full **trainer card**. It asks for more details — region and favourite type — cleans each answer with `.strip()`, gives every answer a default, and prints a tidy card. You will trace the code on paper, fix some bugs in your head, and then explain the code you wrote in the live lesson.
 
 ---
 
@@ -22,7 +24,7 @@ From memory — no peeking at Week 1:
 
 ## 2 · Predict 🔮
 
-Read each block. Before you run it, write what you think will happen.
+Read each block. Write what you think will happen — no need to run it.
 
 ```python
 region = input("어느 지역에서 오셨나요? ").strip()
@@ -58,7 +60,7 @@ print(f"선호 타입: {fav_type}")
 
 ## 3 · Spot the Bug 🐛
 
-Read what each block is **supposed** to do, fix it, then explain the fix.
+Read what each block is **supposed** to do, fix it on paper, then explain the fix.
 
 **Bug A** — Every answer should have its spaces trimmed. This one forgets `.strip()` on the region.
 
@@ -115,9 +117,9 @@ print(f"선호 타입: {trainer_name}")
 
 ---
 
-## 4 · Modify It ✏️
+## 4 · Explain the Code 📖
 
-Start from this working trainer card:
+Here is a complete, working trainer card. Read it carefully, then answer the questions.
 
 ```python
 trainer_name = input("트레이너 이름: ").strip()
@@ -138,53 +140,38 @@ print(f"지역: {region}")
 print(f"선호 타입: {fav_type}")
 ```
 
-Make these changes one at a time and run after each:
+**What does `.strip()` do to the user's answer, and why do we add it to every `input(...)` line?**
 
-1. Add a friendly closing line that uses both `region` and `trainer_name`.
-2. Change the region default to something fun.
-3. Add a blank line (`\n`) somewhere to make the card easier to read.
+<div class="write-space"></div>
 
-**Write your changed / added lines here:**
+**Look at the line `if trainer_name == "":`. When is this True, and what does the program do when it is?**
+
+<div class="write-space"></div>
+
+**This card has three fields. Name them, and name the variable that holds each one.**
+
+<div class="write-space"></div>
+
+**The first print line has `\n` in it. What does `\n` do to the trainer card on screen?**
+
+<div class="write-space"></div>
+
+**If the user types nothing for all three questions, what does the finished trainer card show?**
 
 <div class="write-space"></div>
 
 ---
 
-## 5 · Make It 📸
+## 5 · Explain Your Lesson Code 🎥
 
-Build your own **trainer card** with **at least four fields** (for example: name, region, favourite type, favourite Pokémon, years of adventuring — your choice). Every field should:
+In today's live lesson you wrote your own trainer card. Now explain **the code you wrote** in a short phone video. You may show it running. Teach it like the viewer has never seen it, and use these key words: **variable**, **strip**, **default**, **field**, **trainer card**.
 
-- be cleaned with `.strip()`,
-- have a sensible default when the user types nothing.
+> 1. Show your code and point to one `input(...).strip()` line — say what the **variable** holds and what `.strip()` does.
+> 2. Point to one `if ... == "":` block and explain the **default** for that **field**.
+> 3. Run your program once and leave a field blank to show the default working.
+> 4. Show your finished **trainer card** on screen and read it out.
 
-When it works, send a **photo or video** on KakaoTalk, then explain what you did. Use these starters — write 4 to 6 sentences.
-
-> First, I asked the trainer for …
->
-> I used `.strip()` so that …
->
-> For empty answers, my program …
->
-> My fourth field was … and I added it by …
->
-> The trickiest part was …
->
-> If I had more time, I would add …
-
-<div class="write-space tall" style="min-height: 340px"></div>
-
----
-
-## 6 · Record Your Walkthrough 🎥
-
-Film your program running. Teach it like the viewer has never seen it. Try to use: **variable**, **strip**, **default**, **field**, **trainer card**.
-
-> 1. Run your program and fill in every field.
-> 2. Read one `input(...).strip()` line out loud and say what `.strip()` does.
-> 3. Run it again and leave a field blank to show the default.
-> 4. Show your finished trainer card on screen.
-
-**Plan what you will say here first:**
+**Write what you will say in your video. Plan it here before you record.**
 
 <div class="write-space tall" style="min-height: 340px"></div>
 
@@ -192,5 +179,4 @@ Film your program running. Teach it like the viewer has never seen it. Try to us
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
-</content>
+Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.

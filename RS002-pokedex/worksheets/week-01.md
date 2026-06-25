@@ -2,7 +2,9 @@
 
 **Topic:** input + Variables — Welcome, Trainer! · **Course:** Pokédex App · **Time:** about 45 minutes
 
-This week your program **asks the user a question** with `input()`, **stores the answer** in a variable, and **prints a welcome screen** with an f-string. This is the very first screen of your Pokédex app — you will build on it for the next 15 weeks.
+This week your program **asks the user a question** with `input()`, **stores the answer** in a variable, and **prints a welcome screen** with an f-string. This worksheet is about *thinking through* and *explaining* that code — the first screen of the Pokédex app you wrote together in your live lesson.
+
+> 🧠 Words to know: **input**, **variable**, **f-string**, **default**, **print**
 
 > Coming from RS001? You used `game.ask()` before. This week we use plain Python `input()`. Same idea — ask, remember, use — but it is the standard Python way.
 
@@ -10,7 +12,7 @@ This week your program **asks the user a question** with `input()`, **stores the
 
 ## 1 · Predict 🔮
 
-Read each block. Before you run it, write what you think will happen.
+Read each block. Without running it, write what you think will happen.
 
 ```python
 trainer_name = input("트레이너님, 이름을 알려주세요: ")
@@ -47,7 +49,7 @@ print(f"환영합니다, {trainer_name} 트레이너님!")
 
 ## 2 · Spot the Bug 🐛
 
-Each block was meant to do something, but it is broken. Read what it is **supposed** to do, rewrite it so it works, then explain why the original was wrong.
+Each block was meant to do something, but it is broken. Read what it is **supposed** to do, write the fixed code on paper, then explain why the original was wrong.
 
 **Bug A** — This should print `환영합니다, 이슬 트레이너님!` when the user types `이슬`. Right now it prints the variable name instead of the value.
 
@@ -102,9 +104,9 @@ print(f"환영합니다, {trainer_name} 트레이너님!")
 
 ---
 
-## 3 · Modify It ✏️
+## 3 · Explain the Code 📖
 
-Start from this working intro:
+Read this working Pokédex intro screen carefully. Answer each question in your own words.
 
 ```python
 trainer_name = input("트레이너님, 이름을 알려주세요: ")
@@ -117,54 +119,41 @@ print(f"환영합니다, {trainer_name} 트레이너님!")
 print(f"오늘도 새로운 포켓몬을 만날 준비가 되셨나요?\n")
 ```
 
-Make these changes one at a time and run after each:
+**What does the first line do, and where does the trainer's answer go?**
 
-1. Change the title line so it reads `=== 나만의 포켓몬 도감 ===`.
-2. Add one more `print` line that says something friendly to the trainer using their name again.
-3. Change the empty-name default to a funny name of your choice.
+<div class="write-space"></div>
 
-**Write your three changed lines here:**
+**What is the `if trainer_name == "":` block checking for, and what happens when it is true?**
+
+<div class="write-space"></div>
+
+**In the welcome line, how do the `{ }` change what gets printed? What would happen if you removed the `f`?**
+
+<div class="write-space"></div>
+
+**What does the `\n` do inside the print lines?**
+
+<div class="write-space"></div>
+
+**Which line is the "default" name, and why is having a default useful?**
 
 <div class="write-space"></div>
 
 ---
 
-## 4 · Make It 📸
+## 4 · Explain Your Lesson Code 🎥
 
-Open your homework world. Build your own **Pokédex intro screen** from scratch. It should:
+Explain the Pokédex intro code **you wrote in today's lesson** in a short phone video. You may show it running. Talk through it like you are teaching someone new, and use these words: **input**, **variable**, **f-string**, **default**, **print**.
 
-- ask the trainer for their name with `input()`,
-- give a default name if they type nothing,
-- print a welcome screen that uses the name in an f-string.
-
-When it works, send a **photo or video** of your screen on KakaoTalk, then explain what you did. Use these sentence starters — write 4 to 6 sentences.
-
-> First, I used `input()` to …
+> Run your program and type your name.
 >
-> I stored the answer in a variable called …
+> Read your `input()` line out loud and say what variable it stores into.
 >
-> My f-string put the name into the message by …
+> Read your f-string out loud and point to the `{ }` part.
 >
-> When the user types nothing, my program …
->
-> The trickiest part was …
->
-> `input()` is different from RS001's `game.ask()` because …
+> Run it again, type nothing, and show the default name appear.
 
-<div class="write-space tall" style="min-height: 340px"></div>
-
----
-
-## 5 · Record Your Walkthrough 🎥
-
-Take a video on your phone while your program runs. Talk through it like you are teaching someone new. Try to use these words: **input**, **variable**, **f-string**, **default**, **print**.
-
-> 1. Run your program and type your name.
-> 2. Read your `input()` line out loud and say what it stores.
-> 3. Read your f-string out loud and point to the `{ }` part.
-> 4. Run it again, type nothing, and show the default name appear.
-
-**Write what you will say in your video.** Plan it here first — you can read from it while filming.
+**Write what you will say in your video. Plan it here before you record.**
 
 <div class="write-space tall" style="min-height: 340px"></div>
 
@@ -172,5 +161,4 @@ Take a video on your phone while your program runs. Talk through it like you are
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
-</content>
+Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.

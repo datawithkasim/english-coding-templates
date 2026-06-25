@@ -104,14 +104,17 @@ footer b { color: #ff7849; }
 <div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
 <h1>🏪 RS001 Week 4 — English Worksheet</h1>
 <p><strong>Topic:</strong> Parallel Lists — A Shop Scene · <strong>Course:</strong> Text Adventure (Python) · <strong>Time:</strong> about 45 minutes</p>
-<p>This week you use <strong>parallel lists</strong> — several lists that line up by index. Item <code>[1]</code>'s name, power, and price all sit at index <code>1</code> in three different lists. Together they build a shop.</p>
+<p>This week is about <strong>parallel lists</strong> — several lists that line up by index. Item <code>[1]</code>'s name, power, and price all sit at index <code>1</code> in three different lists. Together they build a shop. In this worksheet you will read code about parallel lists, think carefully, and then explain the shop code you wrote in today's live lesson.</p>
 <pre><code class="language-python">shop_weapons = [&quot;wooden stick&quot;, &quot;iron sword&quot;, &quot;magic staff&quot;]
 shop_power   = [2, 8, 15]
 shop_price   = [5, 30, 80]
 game.say(f&quot;{shop_weapons[1]} — power {shop_power[1]}, {shop_price[1]} gold&quot;)
 </code></pre>
+<blockquote>
+<p>🧠 Words to know: <strong>parallel list</strong>, <strong>index</strong>, <strong>power</strong>, <strong>price</strong>, <strong>line up</strong></p>
+</blockquote>
 <h2>1 · Predict 🔮</h2>
-<p>Read each piece of code. Before you run it in your head, write what you think the screen will show.</p>
+<p>Read each piece of code. Run it in your head and write what you think the screen will show.</p>
 <pre><code class="language-python">names = [&quot;dagger&quot;, &quot;axe&quot;, &quot;spear&quot;]
 price = [10, 40, 25]
 game.say(f&quot;{names[1]} costs {price[1]} gold&quot;)
@@ -134,7 +137,7 @@ game.say(f&quot;{names[2]} costs {price[2]} gold&quot;)
 <div class="write-space"></div></div>
 
 <h2>2 · Spot the Bug 🐛</h2>
-<p>Each block was meant to do something, but it is broken. Read what it is <strong>supposed</strong> to do, fix it, then explain why the original was wrong.</p>
+<p>Each block was meant to do something, but it is broken. Read what it is <strong>supposed</strong> to do, fix it on paper, then explain why the original was wrong.</p>
 <p><strong>Bug A</strong> — This shop line should show the <strong>axe</strong> with <strong>its own</strong> price. Right now it shows the axe's name but the dagger's price.</p>
 <pre><code class="language-python">names = [&quot;dagger&quot;, &quot;axe&quot;, &quot;spear&quot;]
 price = [10, 40, 25]
@@ -174,34 +177,45 @@ game.say(f&quot;3. {names[2]} — {price[2]} gold&quot;)
 <div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
 <div class="write-space"></div></div>
 
-<h2>3 · 🎯 Build Your Shop</h2>
-<p>Open your game. After your opening and inventory, add a <strong>shop scene</strong> built from parallel lists: weapon names, their power, and their price. Print a clear numbered menu the player could buy from. Put it in your hometown if you like.</p>
-<p>When it works, send a <strong>photo or video</strong>, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.</p>
-<div class="qa"><blockquote>
-<p>First, I made three lists for …</p>
-<p>They line up by index so that …</p>
-<p>The item at index 2 was …</p>
-<p>When I added a new weapon, I remembered to …</p>
-<p>One tricky moment was when …</p>
-<p>If I had more time, I would …</p>
-</blockquote>
-<div class="write-space tall" style="min-height: 340px"></div></div>
+<h2>3 · Explain the Code 📖</h2>
+<p>Here is a working shop menu built from three parallel lists. Read it slowly, then answer the questions below.</p>
+<pre><code class="language-python">names = [&quot;stick&quot;, &quot;sword&quot;, &quot;staff&quot;]
+power = [2, 8, 15]
+price = [5, 30, 80]
+game.say(f&quot;1. {names[0]} — power {power[0]}, {price[0]} gold&quot;)
+game.say(f&quot;2. {names[1]} — power {power[1]}, {price[1]} gold&quot;)
+game.say(f&quot;3. {names[2]} — power {power[2]}, {price[2]} gold&quot;)
+</code></pre>
+<div class="qa"><p><strong>Why are there three separate lists instead of one?</strong></p>
+<div class="write-space"></div></div>
 
-<h2>4 · Record Your Walkthrough 🎥</h2>
-<p>Take a video on your phone (or a parent's phone) while your shop prints. Teach it like the viewer has never coded. Try to use these words: <strong>parallel list</strong>, <strong>index</strong>, <strong>power</strong>, <strong>price</strong>, <strong>line up</strong>.</p>
+<div class="qa"><p><strong>Look at line 5. Which name, power, and price get printed together, and how do you know?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>The index goes 0, then 1, then 2 down the menu. What is that index doing for the player?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>If you changed <code>names[1]</code> to <code>names[2]</code> on line 5, what would go wrong on the screen?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>What would break if the <code>price</code> list had only two numbers in it?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>4 · Explain Your Lesson Code 🎥</h2>
+<p>In today's live lesson you wrote your own shop scene with parallel lists. Take a short video on your phone (or a parent's phone) explaining the code <strong>you</strong> wrote. You may show it running. Teach it like the viewer has never coded, and try to use these words: <strong>parallel list</strong>, <strong>index</strong>, <strong>power</strong>, <strong>price</strong>, <strong>line up</strong>.</p>
 <blockquote>
 <ol>
-<li>Run your game and show the shop menu.</li>
-<li>Pick one weapon and read its name, power, and price.</li>
+<li>Show your three lists and say what each one holds.</li>
+<li>Read one weapon out loud — its name, power, and price.</li>
 <li>Point to where all three sit at the same index.</li>
-<li>Explain what would break if one list were shorter than the others.</li>
+<li>Explain what would break if one of your lists were shorter than the others.</li>
 </ol>
 </blockquote>
-<div class="qa"><p><strong>Write what you will say in your video.</strong> Plan it here first.</p>
+<div class="qa"><p><strong>Write what you will say in your video. Plan it here before you record.</strong></p>
 <div class="write-space tall" style="min-height: 340px"></div></div>
 
 <hr />
 <h3>Submit ✅</h3>
-<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.</p>
+<p>Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.</p>
 </body>
 </html>

@@ -2,7 +2,7 @@
 
 **Topic:** Coins & Score · **Course:** Platformer Game · **Time:** about 45 minutes
 
-This week your level gets **coins** to collect. You keep them in a list, check if the player touches one, **remove** it, and add to the **score**. Then you draw the score on the screen with `pygame.font`.
+This week is about **reading and explaining** the coin code you wrote in your live lesson. You keep coins in a list, check if the player touches one, **remove** it, and add to the **score**. Then you draw the score on screen with `pygame.font`. Here you think about how that code works and explain it in your own words.
 
 > Keep these words handy: **coin**, **collect**, **`remove()`**, **score**, **HUD (on-screen text)**.
 
@@ -10,7 +10,7 @@ This week your level gets **coins** to collect. You keep them in a list, check i
 
 ## 1 · Predict 🔮
 
-Read each snippet. Before you run it, write what you think will happen.
+Read each snippet. Write what you think it does.
 
 ```python
 for coin in coins[:]:
@@ -115,56 +115,56 @@ score_text = font.render(f"점수: {score}", True, (0, 0, 0))
 
 ---
 
-## 4 · Place & Extend 🛠️
+## 4 · Explain the Code 📖
 
-Start from your working coins and score.
+Read this working coins-and-score code, then answer the questions about it.
 
-1. Move one coin so it sits above a platform, reachable only by a jump. Write its position.
+```python
+coins = [pygame.Rect(200, 300, 16, 16), pygame.Rect(420, 180, 16, 16)]
+score = 0
+font = pygame.font.SysFont(None, 36)
+
+for coin in coins[:]:
+    if player.colliderect(coin):
+        coins.remove(coin)
+        score = score + 1
+
+score_text = font.render(f"점수: {score}", True, (0, 0, 0))
+screen.blit(score_text, (10, 10))
+```
+
+**What kind of data structure holds the coins, and what is each coin?**
 
 <div class="write-space"></div>
 
-2. Change the score text colour and position. What did you pick?
+**What does `player.colliderect(coin)` check, and when is it `True`?**
 
 <div class="write-space"></div>
 
-3. **Stretch:** show a message when *all* coins are collected. How do you know the list is empty?
+**What two things happen inside the `if` when a coin is touched?**
+
+<div class="write-space"></div>
+
+**Why does the loop use `coins[:]` instead of `coins`?**
+
+<div class="write-space"></div>
+
+**What is the difference between `font.render(...)` and `screen.blit(...)`?**
 
 <div class="write-space"></div>
 
 ---
 
-## 5 · Build & Show 📸
+## 5 · Explain Your Lesson Code 🎥
 
-Add coins to your own level. Place several around the platforms, and make at least one a jump-only coin.
-
-When it works, send a **photo or video** of collecting coins with the score going up, then explain what you did. Use these starters — write 4 to 6 sentences.
-
-> First, I kept my coins in a list so that …
->
-> When the player touches a coin, I …
->
-> I loop over `coins[:]` because …
->
-> The score shows on screen using …
->
-> One tricky moment was …
->
-> If I had more time, I would …
-
-<div class="write-space tall" style="min-height: 340px"></div>
-
----
-
-## 6 · Record Your Walkthrough 🎥
-
-Take a video of collecting coins. Teach it to someone new. Try to use these words: **coin**, **collect**, **remove**, **score**, **render**.
+Explain the coins-and-score code **you wrote in today's lesson**. Record a short phone video. You may show it running. Try to use these words: **coin**, **collect**, **remove**, **score**, **render**.
 
 > 1. Show your coins placed in the level.
 > 2. Collect a few and show the score climbing.
-> 3. Read the collect-and-remove lines out loud and explain them.
-> 4. Reach and collect the jump-only coin.
+> 3. Read your collect-and-remove lines out loud and explain them.
+> 4. Explain how your score gets drawn on screen.
 
-**Write what you will say in your video.** Plan it here first.
+**Write what you will say in your video. Plan it here before you record.**
 
 <div class="write-space tall" style="min-height: 340px"></div>
 
@@ -172,4 +172,4 @@ Take a video of collecting coins. Teach it to someone new. Try to use these word
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.

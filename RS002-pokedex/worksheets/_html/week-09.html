@@ -104,14 +104,17 @@ footer b { color: #ff7849; }
 <div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
 <h1>🔴 RS002 Week 9 — English Worksheet</h1>
 <p><strong>Topic:</strong> Dictionaries — Real Pokémon Data · <strong>Course:</strong> Pokédex App · <strong>Time:</strong> about 45 minutes</p>
-<p>This week you meet the <strong>dictionary</strong> — a way to keep all of one Pokémon's facts together with <strong>named keys</strong> instead of four loose parallel lists. <code>pikachu["name"]</code> reads the value behind the key <code>"name"</code>. No more lining up indexes!</p>
+<p>This week you think about the <strong>dictionary</strong> — a way to keep all of one Pokémon's facts together with <strong>named keys</strong> instead of four loose parallel lists. <code>pikachu["name"]</code> reads the value behind the key <code>"name"</code>. No more lining up indexes! In this worksheet you read code, debug on paper, and explain the dictionary code you wrote in your live lesson.</p>
+<blockquote>
+<p>🧠 Words to know: dictionary, key, value, KeyError, list of dictionaries</p>
+</blockquote>
 <h2>1 · Recall 🧠</h2>
 <p>From memory:</p>
 <div class="qa"><p><strong>Write four parallel lists holding the name, type, HP, and attack of two Pokémon, then print the first Pokémon's type.</strong></p>
 <div class="write-space"></div></div>
 
 <h2>2 · Predict 🔮</h2>
-<p>Read each block. Before you run it, write what you think will happen.</p>
+<p>Read each block. Write what you think it would print.</p>
 <pre><code class="language-python">pikachu = {&quot;name&quot;: &quot;피카츄&quot;, &quot;type&quot;: &quot;전기&quot;, &quot;hp&quot;: 35}
 print(pikachu[&quot;name&quot;])
 print(pikachu[&quot;hp&quot;])
@@ -122,7 +125,7 @@ print(pikachu[&quot;hp&quot;])
 <pre><code class="language-python">pikachu = {&quot;name&quot;: &quot;피카츄&quot;, &quot;type&quot;: &quot;전기&quot;, &quot;hp&quot;: 35}
 print(pikachu[&quot;attack&quot;])
 </code></pre>
-<div class="qa"><p><strong>There is no <code>"attack"</code> key. What happens when this runs?</strong></p>
+<div class="qa"><p><strong>There is no <code>"attack"</code> key. What happens with this block?</strong></p>
 <div class="write-space"></div></div>
 
 <pre><code class="language-python">pokedex = [
@@ -175,8 +178,8 @@ for pokemon in pokedex:
 <div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
 <div class="write-space"></div></div>
 
-<h2>4 · Modify It ✏️</h2>
-<p>Start from this working dictionary search:</p>
+<h2>4 · Explain the Code 📖</h2>
+<p>Read this working dictionary search carefully.</p>
 <pre><code class="language-python">pokedex = [
     {&quot;name&quot;: &quot;피카츄&quot;, &quot;type&quot;: &quot;전기&quot;, &quot;hp&quot;: 35, &quot;attack&quot;: 55},
     {&quot;name&quot;: &quot;이상해씨&quot;, &quot;type&quot;: &quot;풀&quot;, &quot;hp&quot;: 45, &quot;attack&quot;: 49},
@@ -197,44 +200,36 @@ for pokemon in pokedex:
 if found == False:
     print(&quot;도감에서 찾을 수 없습니다.&quot;)
 </code></pre>
-<p>Make these changes one at a time and run after each:</p>
-<ol>
-<li>Add one more Pokémon dictionary to the list (all four keys).</li>
-<li>Add an <code>"id"</code> key to each Pokémon and print it in the search result.</li>
-<li>Change the exact-match <code>==</code> to a partial match with <code>in</code> (so <code>피카</code> finds 피카츄).</li>
-</ol>
-<div class="qa"><p><strong>Write your changed / added lines here:</strong></p>
+<div class="qa"><p><strong>What is <code>pokedex</code> — and what is each item inside it?</strong></p>
 <div class="write-space"></div></div>
 
-<h2>5 · Make It 📸</h2>
-<p>Rebuild your Week 4 Pokédex (the four parallel lists) as a <strong>list of dictionaries</strong>. Each Pokémon is one dictionary with keys <code>name</code>, <code>type</code>, <code>hp</code>, <code>attack</code>. Keep your search working on the new structure.</p>
-<p>When it works, send a <strong>photo or video</strong> on KakaoTalk, then explain what you did. Use these starters — write 4 to 6 sentences.</p>
-<div class="qa"><blockquote>
-<p>First, I turned each Pokémon into a dictionary with keys …</p>
-<p>I read a value using <code>pokemon[...]</code> where … is the key.</p>
-<p>A dictionary is tidier than parallel lists because …</p>
-<p>My search loop now reads …</p>
-<p>The trickiest part was …</p>
-<p>A <code>KeyError</code> happens when …</p>
-</blockquote>
-<div class="write-space tall" style="min-height: 340px"></div></div>
+<div class="qa"><p><strong>The loop variable is <code>pokemon</code>. What does <code>pokemon["name"]</code> read on each pass?</strong></p>
+<div class="write-space"></div></div>
 
-<h2>6 · Record Your Walkthrough 🎥</h2>
-<p>Film it running. Teach it like the viewer is new. Try to use: <strong>dictionary</strong>, <strong>key</strong>, <strong>value</strong>, <strong>KeyError</strong>, <strong>list of dictionaries</strong>.</p>
+<div class="qa"><p><strong>What is the job of the <code>found</code> variable, and when does it become <code>True</code>?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>If the user types a name that is not in the dex, which line runs and why?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why is this dictionary version clearer than four parallel lists with <code>names[i]</code>, <code>types[i]</code>, and so on?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>5 · Explain Your Lesson Code 🎥</h2>
+<p>In your live lesson you wrote dictionary code. Now explain <strong>that</strong> code in a short phone video. You may show it running. Teach it like the viewer is new, and try to use: <strong>dictionary</strong>, <strong>key</strong>, <strong>value</strong>, <strong>KeyError</strong>, <strong>list of dictionaries</strong>.</p>
 <blockquote>
 <ol>
-<li>Show one Pokémon dictionary and read its keys out loud.</li>
-<li>Run a search and show the matching Pokémon's full info.</li>
+<li>Show one Pokémon dictionary from your lesson and read its keys out loud.</li>
+<li>Run your search and show the matching Pokémon's full info.</li>
 <li>Explain why <code>pokemon["name"]</code> is clearer than <code>names[i]</code>.</li>
 <li>Mention one <code>KeyError</code> you hit (or could hit) and how to avoid it.</li>
 </ol>
 </blockquote>
-<div class="qa"><p><strong>Plan what you will say here first:</strong></p>
+<div class="qa"><p><strong>Write what you will say in your video. Plan it here before you record.</strong></p>
 <div class="write-space tall" style="min-height: 340px"></div></div>
 
 <hr />
 <h3>Submit ✅</h3>
-<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.
-</content></p>
+<p>Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.</p>
 </body>
 </html>

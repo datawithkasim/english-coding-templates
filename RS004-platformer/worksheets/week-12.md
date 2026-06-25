@@ -2,7 +2,7 @@
 
 **Topic:** Coin Types + Spin Animation (Apply) · **Course:** Platformer Game · **Time:** about 45 minutes
 
-This week coins come in **kinds** — gold (1 point), gem (5), secret (10). You store each coin as a **dictionary** with its rect, kind, and value, and you make them **spin** with a `sin` wave that wobbles their width.
+This week coins come in **kinds** — gold (1 point), gem (5), secret (10). Each coin is stored as a **dictionary** with its rect, kind, and value, and they **spin** with a `sin` wave that wobbles their width. On this worksheet you think about and explain that code in English — you don't type or run anything.
 
 > Keep these words handy: **dictionary**, **kind / value**, **`math.sin`**, **wobble (animate)**, **frame**.
 
@@ -10,7 +10,7 @@ This week coins come in **kinds** — gold (1 point), gem (5), secret (10). You 
 
 ## 1 · Predict 🔮
 
-Read each snippet. Before you run it, write what you think will happen.
+Read each snippet and write what you think it does.
 
 ```python
 coins = [
@@ -126,56 +126,64 @@ draw_coin(coin, frame)
 
 ---
 
-## 4 · Add a Kind 🛠️
+## 4 · Explain the Code 📖
 
-Start from your working coin types.
+Read this working coin-types code, then answer the questions.
 
-1. Add a fourth coin kind (for example a time bonus). Write its dictionary entry.
+```python
+coins = [
+    {"rect": pygame.Rect(180, 480, 20, 20), "kind": "gold",   "value": 1},
+    {"rect": pygame.Rect(580, 480, 20, 20), "kind": "gem",    "value": 5},
+    {"rect": pygame.Rect(450, 250, 20, 20), "kind": "secret", "value": 10},
+]
+
+def draw_coin(coin, frame):
+    wave = math.sin(frame * 0.1) * 8
+    w = max(2, int(20 + wave))
+    rect = coin["rect"]
+    pygame.draw.ellipse(screen, (255, 215, 0), (rect.x, rect.y, w, rect.height))
+
+# in the game loop:
+for coin in coins[:]:
+    draw_coin(coin, frame)
+    if player.colliderect(coin["rect"]):
+        score = score + coin["value"]
+        coins.remove(coin)
+frame = frame + 1
+```
+
+**Why is each coin written as a dictionary instead of just a rect?**
 
 <div class="write-space"></div>
 
-2. Reposition the secret coin so it fits *your* level. Where did you place it?
+**What does `coin["value"]` add to the score for a gem, and for a secret coin?**
 
 <div class="write-space"></div>
 
-3. **Stretch:** make the spin faster for gems than for gold. Which number controls the speed?
+**How does `math.sin(frame * 0.1)` make the coin look like it is spinning?**
+
+<div class="write-space"></div>
+
+**Why is `max(2, ...)` used when setting the width `w`?**
+
+<div class="write-space"></div>
+
+**Why does `frame = frame + 1` need to run every loop?**
 
 <div class="write-space"></div>
 
 ---
 
-## 5 · Build & Show 📸
+## 5 · Explain Your Lesson Code 🎥
 
-Put three kinds of spinning coins into your own level — gold, gem, and a secret coin reachable only by a tricky jump.
-
-When it works, send a **photo or video** collecting each kind, then explain what you did. Use these starters — write 4 to 6 sentences.
-
-> First, I stored each coin as a dictionary so that …
->
-> The different kinds add different points because …
->
-> The spin works with `math.sin` by …
->
-> The `max(2, ...)` stops the coin from …
->
-> One tricky moment was …
->
-> If I had more time, I would …
-
-<div class="write-space tall" style="min-height: 340px"></div>
-
----
-
-## 6 · Record Your Walkthrough 🎥
-
-Take a video collecting all three kinds. Teach it to someone new. Try to use these words: **dictionary**, **kind**, **value**, **sin**, **spin**.
+Explain the coin code **you wrote in today's lesson**. Record a short video on your phone. You may show it running. Try to use these words: **dictionary**, **kind**, **value**, **sin**, **spin**.
 
 > 1. Show your gold, gem, and secret coins.
 > 2. Collect each one and show the score jump by different amounts.
 > 3. Read your `math.sin` line out loud and explain the wobble.
 > 4. Show the secret coin and the jump to reach it.
 
-**Write what you will say in your video.** Plan it here first.
+**Write what you will say in your video. Plan it here before you record.**
 
 <div class="write-space tall" style="min-height: 340px"></div>
 
@@ -183,4 +191,4 @@ Take a video collecting all three kinds. Teach it to someone new. Try to use the
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.

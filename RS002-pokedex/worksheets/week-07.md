@@ -2,7 +2,9 @@
 
 **Topic:** Validating Input — `in` / `not in` · **Course:** Pokédex App · **Time:** about 45 minutes
 
-This week you make your program **safe**. When the trainer types a Pokémon that is not in the dex, you do not crash — you check with `in` / `not in`, give them a clear message, and fall back to a safe **default**.
+This week you think about how a program stays **safe**. When a trainer types a Pokémon that is not in the dex, the program should not crash — it checks with `in` / `not in`, gives a clear message, and falls back to a safe **default**. On this worksheet you read code, predict it, fix bugs on paper, and explain the code you wrote in your live lesson.
+
+> 🧠 Words to know: **in**, **not in**, **validate**, **default**, **safe**
 
 ---
 
@@ -18,7 +20,7 @@ From memory:
 
 ## 2 · Predict 🔮
 
-Read each block. Before you run it, write what you think will happen.
+Read each block. Write what you think will happen — no running.
 
 ```python
 pokedex = ["피카츄", "이상해씨", "파이리"]
@@ -60,7 +62,7 @@ print(f"선택: {choice}")
 
 ## 3 · Spot the Bug 🐛
 
-Read what each block is **supposed** to do, fix it, then explain the fix.
+Read what each block is **supposed** to do, fix it on paper, then explain the fix.
 
 **Bug A** — This should warn the user when their choice is **not** in the dex. Right now it warns when the choice **is** in the dex.
 
@@ -132,9 +134,9 @@ else:
 
 ---
 
-## 4 · Modify It ✏️
+## 4 · Explain the Code 📖
 
-Start from this working validation:
+Read this working validation closely.
 
 ```python
 pokedex = ["피카츄", "이상해씨", "파이리", "꼬부기"]
@@ -148,50 +150,38 @@ if choice not in pokedex:
 print(f"\n선택된 포켓몬: {choice}")
 ```
 
-Make these changes one at a time and run after each:
+**What does `.strip()` do to the trainer's input, and why does it help the `not in` check?**
 
-1. Add a second chance: after the warning, re-ask once before falling back.
-2. Change the default Pokémon to a different one in your dex.
-3. Add a friendly success line when the choice **is** valid the first time.
+<div class="write-space"></div>
 
-**Write your changed / added lines here:**
+**When is the `if` block's code run, and when is it skipped?**
+
+<div class="write-space"></div>
+
+**Why does the line `choice = "피카츄"` sit inside the `if`, and what would change if it were outside?**
+
+<div class="write-space"></div>
+
+**If the trainer types `꼬부기`, what does the last line print? Walk through why.**
+
+<div class="write-space"></div>
+
+**Where does this code make the program "safe", and what bad input is it protecting against?**
 
 <div class="write-space"></div>
 
 ---
 
-## 5 · Make It 📸
+## 5 · Explain Your Lesson Code 🎥
 
-Add **validation** to your Week 6 search. If the trainer's choice is not in the dex, warn them and fall back to a safe default. The program should never crash, no matter what they type.
+Explain the validation code **you** wrote in today's live lesson. Record a short phone video — you may show it running. Try to use: **in**, **not in**, **validate**, **default**, **safe**.
 
-When it works, send a **photo or video** on KakaoTalk showing both a **valid** choice and an **invalid** one. Then explain what you did. Use these starters — write 4 to 6 sentences.
-
-> First, I checked the choice with `not in` so that …
->
-> When the Pokémon was missing, my program …
->
-> My safe default was … because …
->
-> I tested it by typing …
->
-> The trickiest part was …
->
-> Validating input matters because …
-
-<div class="write-space tall" style="min-height: 340px"></div>
-
----
-
-## 6 · Record Your Walkthrough 🎥
-
-Film your validation running. Teach it like the viewer is new. Try to use: **in**, **not in**, **validate**, **default**, **safe**.
-
-> 1. Type a valid Pokémon and show it works.
-> 2. Type something fake and show the warning + default.
-> 3. Read your `not in` line out loud and explain it.
+> 1. Show your code and type a valid Pokémon to show it works.
+> 2. Type something fake and show your warning + default.
+> 3. Read your own `not in` line out loud and explain it.
 > 4. Say why a program should never crash on bad input.
 
-**Plan what you will say here first:**
+**Write what you will say in your video. Plan it here before you record.**
 
 <div class="write-space tall" style="min-height: 340px"></div>
 
@@ -199,5 +189,4 @@ Film your validation running. Teach it like the viewer is new. Try to use: **in*
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
-</content>
+Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.

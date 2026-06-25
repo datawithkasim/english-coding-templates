@@ -104,12 +104,12 @@ footer b { color: #ff7849; }
 <div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
 <h1>👀 RS004 Week 4 — English Worksheet</h1>
 <p><strong>Topic:</strong> Player Faces a Direction (Apply) · <strong>Course:</strong> Platformer Game · <strong>Time:</strong> about 45 minutes</p>
-<p>This week your player gets a <strong>face</strong>. A <code>facing</code> variable remembers which way it last moved, and a <code>draw_player()</code> function uses it to put the eyes on the correct side. One function takes charge of <em>all</em> the drawing — that is <strong>separation of concerns</strong>.</p>
+<p>This week your player gets a <strong>face</strong>. A <code>facing</code> variable remembers which way it last moved, and a <code>draw_player()</code> function uses it to put the eyes on the correct side. One function takes charge of <em>all</em> the drawing — that is <strong>separation of concerns</strong>. This worksheet is for thinking about and explaining that code, not for building it here.</p>
 <blockquote>
 <p>Keep these words handy: <strong>facing</strong>, <strong>state variable</strong>, <strong><code>draw_player()</code></strong>, <strong>offset</strong>, <strong>separation of concerns</strong>.</p>
 </blockquote>
 <h2>1 · Predict 🔮</h2>
-<p>Read each snippet. Before you run it, write what you think will happen.</p>
+<p>Read each snippet. Write what you think will happen.</p>
 <pre><code class="language-python">facing = &quot;right&quot;
 if keys[pygame.K_LEFT]:
     player.x -= PLAYER_SPEED
@@ -132,7 +132,7 @@ else:
 <div class="write-space"></div></div>
 
 <h2>2 · Spot the Bug 🐛</h2>
-<p>Each snippet is broken. Rewrite it so it works, then explain why the original was wrong.</p>
+<p>Each snippet is broken. Write the fixed code on paper, then explain why the original was wrong.</p>
 <p><strong>Bug A</strong> — The eyes should follow the player as it moves. Right now the eyes stay frozen in one spot while the body slides away.</p>
 <pre><code class="language-python">def draw_player(rect, facing):
     pygame.draw.rect(screen, (220, 50, 50), rect)
@@ -171,51 +171,50 @@ if keys[pygame.K_RIGHT]:
 <div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
 <div class="write-space"></div></div>
 
-<h2>3 · Extend the Look 🛠️</h2>
-<p>Start from your working <code>draw_player()</code>. Add one idea at a time.</p>
-<ol>
-<li>When the player is standing still (no key held), put the eye in the <strong>middle</strong>. How will you know it is standing still?</li>
-</ol>
-<div class="write-space"></div>
+<h2>3 · Explain the Code 📖</h2>
+<p>Here is a working <code>draw_player()</code> that puts the eye on the correct side and changes colour with direction.</p>
+<pre><code class="language-python">def draw_player(rect, facing):
+    body_color = (220, 50, 50) if facing == &quot;right&quot; else (180, 30, 30)
+    pygame.draw.rect(screen, body_color, rect)
 
-<ol start="2">
-<li>Add a second eye so the player has two. Where do you place the second one?</li>
-</ol>
-<div class="write-space"></div>
+    if facing == &quot;right&quot;:
+        eye_x = rect.x + 35
+    else:
+        eye_x = rect.x + 15
+    eye_y = rect.y + 15
+    pygame.draw.circle(screen, (255, 255, 255), (eye_x, eye_y), 6)
+</code></pre>
+<p>Read it carefully and answer:</p>
+<div class="qa"><p><strong>Why does <code>draw_player()</code> take <code>facing</code> as one of its inputs?</strong></p>
+<div class="write-space"></div></div>
 
-<ol start="3">
-<li><strong>Stretch:</strong> make the body colour go darker while moving fast. What decides "fast"?</li>
-</ol>
-<div class="write-space"></div>
+<div class="qa"><p><strong>The first line uses a one-line <code>if</code>/<code>else</code>. What two colours can <code>body_color</code> become, and what decides which one?</strong></p>
+<div class="write-space"></div></div>
 
-<h2>4 · Build &amp; Show 📸</h2>
-<p>Design <strong>your own</strong> player character. It must clearly show which way it is facing when it moves.</p>
-<p>When it works, send a <strong>photo or video</strong> showing it moving <em>both</em> ways, then explain what you did. Use these starters — write 4 to 6 sentences.</p>
-<div class="qa"><blockquote>
-<p>First, I drew my player with <code>draw_player()</code> which is in charge of …</p>
-<p>The <code>facing</code> variable remembers …</p>
-<p>I made the eyes follow the body by …</p>
-<p>My character shows direction by …</p>
-<p>One tricky moment was …</p>
-<p>If I had more time, I would …</p>
-</blockquote>
-<div class="write-space tall" style="min-height: 340px"></div></div>
+<div class="qa"><p><strong>The eye uses <code>rect.x + 35</code> or <code>rect.x + 15</code>. Why is the eye built from <code>rect.x</code> instead of a fixed number like <code>135</code>?</strong></p>
+<div class="write-space"></div></div>
 
-<h2>5 · Record Your Walkthrough 🎥</h2>
-<p>Take a video showing the player turning left and right. Teach it to someone new. Try to use these words: <strong>facing</strong>, <strong>draw_player</strong>, <strong>offset</strong>, <strong>direction</strong>, <strong>function</strong>.</p>
+<div class="qa"><p><strong><code>eye_y</code> is always <code>rect.y + 15</code>. Why does the up/down position stay the same when the left/right position changes?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>This one function draws the body AND the eye. Why is keeping all the drawing in one place (separation of concerns) helpful?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>4 · Explain Your Lesson Code 🎥</h2>
+<p>Explain the code <strong>you wrote in today's lesson</strong>. Record a short video on your phone — you may show your player turning left and right while it runs. Try to use these words: <strong>facing</strong>, <strong>draw_player</strong>, <strong>offset</strong>, <strong>direction</strong>, <strong>function</strong>.</p>
 <blockquote>
 <ol>
-<li>Show the player facing right, then left.</li>
-<li>Point at the <code>facing</code> variable and say when it changes.</li>
-<li>Read the eye-position line out loud and explain the offset.</li>
-<li>Show one design choice you made and why.</li>
+<li>Show your player facing right, then left.</li>
+<li>Point at your <code>facing</code> variable and say when it changes.</li>
+<li>Read your eye-position line out loud and explain the offset.</li>
+<li>Show one choice you made in your code and why.</li>
 </ol>
 </blockquote>
-<div class="qa"><p><strong>Write what you will say in your video.</strong> Plan it here first.</p>
+<div class="qa"><p><strong>Write what you will say in your video. Plan it here before you record.</strong></p>
 <div class="write-space tall" style="min-height: 340px"></div></div>
 
 <hr />
 <h3>Submit ✅</h3>
-<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.</p>
+<p>Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.</p>
 </body>
 </html>

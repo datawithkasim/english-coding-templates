@@ -2,7 +2,9 @@
 
 **Topic:** Lists and Choices · **Course:** Text Adventure (Python) · **Time:** about 45 minutes
 
-This week you learn the **list** — one box that holds many values. You pull a value out by its **index**: the first item is `[0]`, the second is `[1]`, the third is `[2]`.
+This week you think about the **list** — one box that holds many values. You pull a value out by its **index**: the first item is `[0]`, the second is `[1]`, the third is `[2]`. On this sheet you read code, predict it, fix it on paper, and explain the code you wrote in today's lesson.
+
+> 🧠 Words to know: **list**, **index**, **first**, **inventory**, **value**
 
 ```python
 weapons = ["sword", "bow", "wand"]
@@ -13,7 +15,7 @@ game.say(f"You can choose: {weapons[0]}, {weapons[1]}, {weapons[2]}")
 
 ## 1 · Predict 🔮
 
-Read each piece of code. Before you run it in your head, write what you think the screen will show.
+Read each piece of code. Run it in your head — do not type it. Write what you think the screen will show.
 
 ```python
 paths = ["left", "middle", "right"]
@@ -47,7 +49,7 @@ game.say(items[3])
 
 ## 2 · Spot the Bug 🐛
 
-Each block was meant to do something, but it is broken. Read what it is **supposed** to do, fix it, then explain why the original was wrong.
+Each block was meant to do something, but it is broken. Read what it is **supposed** to do, fix it on paper, then explain why the original was wrong.
 
 **Bug A** — This should print the **first** weapon in the list. Right now it prints the second one.
 
@@ -105,38 +107,44 @@ game.say(f"A {enemy_names[0]} appears! HP: {enemy_hp[2]}")
 
 ---
 
-## 3 · 🎯 Add an Inventory
+## 3 · Explain the Code 📖
 
-Open your game. After your opening, add a **list** for the hero's starting items (an inventory) and show them on screen. Then add a second list — a menu of **paths** the player can read.
+Here is a working inventory. The hero starts with a **list** of items, and the code shows them on screen.
 
-When it works, send a **photo or video**, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.
+```python
+inventory = ["map", "key", "torch"]
+game.say(f"You carry: {inventory[0]}, {inventory[1]}, {inventory[2]}")
+game.say(f"The first item in your inventory is the {inventory[0]}.")
+```
 
-> First, I made a list called …
->
-> The items inside it were …
->
-> To show the second item, I used index …
->
-> I learned that the first item is …
->
-> One tricky moment was when …
->
-> If I had more time, I would …
+**What is the name of the list, and what three values are inside it?**
 
-<div class="write-space tall" style="min-height: 340px"></div>
+<div class="write-space"></div>
+
+**`inventory[0]` gives which item? Why that one and not the second?**
+
+<div class="write-space"></div>
+
+**Which index would you use to show the `torch`?**
+
+<div class="write-space"></div>
+
+**The last line says "the first item." What does the word *index* mean in your own words?**
+
+<div class="write-space"></div>
 
 ---
 
-## 4 · Record Your Walkthrough 🎥
+## 4 · Explain Your Lesson Code 🎥
 
-Take a video on your phone (or a parent's phone) while your inventory prints. Teach it like the viewer has never coded. Try to use these words: **list**, **index**, **first**, **inventory**, **value**.
+Today in your lesson you wrote your own inventory list. Make a short video on your phone (or a parent's phone) that explains the code **you** wrote. You may show it running. Teach it like the viewer has never coded. Try to use these words: **list**, **index**, **first**, **inventory**, **value**.
 
-> 1. Run your game and show the inventory on screen.
-> 2. Point to the list in your code and read the items.
-> 3. Pick one item and say its index out loud.
-> 4. Explain why the first item is index 0, not 1.
+> 1. Point to the list you wrote and read the items out loud.
+> 2. Pick one item and say its index.
+> 3. Explain why the first item is index 0, not 1.
+> 4. Say one thing that was tricky and how you worked it out.
 
-**Write what you will say in your video.** Plan it here first.
+**Write what you will say in your video. Plan it here before you record.**
 
 <div class="write-space tall" style="min-height: 340px"></div>
 
@@ -144,4 +152,4 @@ Take a video on your phone (or a parent's phone) while your inventory prints. Te
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.

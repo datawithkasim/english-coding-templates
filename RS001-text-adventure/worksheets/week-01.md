@@ -2,7 +2,9 @@
 
 **Topic:** Talking to the Computer — Variables · **Course:** Text Adventure (Python) · **Time:** about 45 minutes
 
-This week you start your adventure game. The computer **asks** the player a question with `game.ask()`, **remembers** the answer inside a **variable**, and **shows** it back with `game.say()`. A variable is just a labelled box that holds a value.
+This week you think about how an adventure game talks to the player. The computer **asks** a question with `game.ask()`, **remembers** the answer inside a **variable**, and **shows** it back with `game.say()`. A variable is just a labelled box that holds a value. On this worksheet you read code, predict what it does, fix broken code on paper, and explain the code you wrote in your live lesson.
+
+> 🧠 Words to know: **variable**, **ask**, **say**, **f-string**, **new line**
 
 ```python
 name = game.ask("What is your name?")
@@ -13,7 +15,7 @@ game.say(f"Welcome, {name}! Your adventure begins.")
 
 ## 1 · Predict 🔮
 
-Read each piece of code. Before you run it in your head, write what you think the screen will show.
+Read each piece of code. In your head, work out what the screen will show, then write your prediction.
 
 ```python
 hero = game.ask("Hero name?")
@@ -102,45 +104,49 @@ game.say("Welcome! You enter a dark forest. Two paths lie ahead.")
 
 ---
 
-## 3 · 🎯 Build Your Opening
+## 3 · Explain the Code 📖
 
-Open your game project. Write a short program that:
+Read this working opening program carefully. It asks for a name, uses a default if the player types nothing, and prints a welcome message split across lines.
 
-- asks the player for their **name**,
-- uses a default name if they type nothing,
-- prints a **welcome message** that uses their name,
-- uses `\n` at least once so the intro is easy to read.
+```python
+name = game.ask("What is your name?")
+if name == "":
+    name = "brave traveller"
+game.say(f"Welcome, {name}!\nYou enter a dark forest.\nTwo paths lie ahead.")
+```
 
-Make it your own — the forest, a castle, a spaceship, anything you like.
+**Which line stores the player's answer, and what is the variable called?**
 
-When it works, send a **photo or video** of your screen, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.
+<div class="write-space"></div>
 
-> First, I asked the player for …
->
-> I stored the answer in a variable called …
->
-> If the player typed nothing, I …
->
-> I used `\n` to …
->
-> One tricky moment was when …
->
-> If I had more time, I would …
+**What does the `if name == "":` line do, and when does it run?**
 
-<div class="write-space tall" style="min-height: 340px"></div>
+<div class="write-space"></div>
+
+**In the last line, what gets swapped in where `{name}` is written?**
+
+<div class="write-space"></div>
+
+**There are two `\n` marks in the last line. What do they do to the output?**
+
+<div class="write-space"></div>
+
+**If the player just presses enter without typing, what name appears on screen?**
+
+<div class="write-space"></div>
 
 ---
 
-## 4 · Record Your Walkthrough 🎥
+## 4 · Explain Your Lesson Code 🎥
 
-Take a video on your phone (or a parent's phone) while your program runs. Talk through it like you are teaching someone who has never seen code. Try to use these words: **variable**, **ask**, **say**, **f-string**, **new line**.
+In your live lesson you wrote your own opening for your adventure game. Now explain **the code you wrote** in a short video on your phone (or a parent's phone). You may show it running. Talk through it like you are teaching someone who has never seen code, and try to use these words: **variable**, **ask**, **say**, **f-string**, **new line**.
 
-> 1. Run your program and answer your own question.
-> 2. Point to the line that stores the answer in a variable.
-> 3. Read your `f"..."` line out loud and say how the variable gets swapped in.
-> 4. Show what happens when you type nothing.
+> 1. Read out the line where you used `ask` to get the player's answer.
+> 2. Point to the **variable** that stores the answer and say its name.
+> 3. Read your `f"..."` line and say how the variable gets swapped in.
+> 4. Show or explain what happens when the player types nothing.
 
-**Write what you will say in your video.** Plan it here first — you can read from it while filming.
+**Write what you will say in your video. Plan it here before you record.**
 
 <div class="write-space tall" style="min-height: 340px"></div>
 
@@ -148,4 +154,4 @@ Take a video on your phone (or a parent's phone) while your program runs. Talk t
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.

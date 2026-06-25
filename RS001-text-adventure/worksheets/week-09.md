@@ -2,7 +2,9 @@
 
 **Topic:** Cause and Effect — Enemies Appear · **Course:** Text Adventure (Python) · **Time:** about 45 minutes
 
-This week one choice changes what happens next. `if` / `else` lets you run different code depending on the player's path — so the **left** road meets a goblin and the **right** road meets an orc.
+This week is about thinking through how one choice changes what happens next. `if` / `else` lets different code run depending on the player's path — so the **left** road meets a goblin and the **right** road meets an orc. You will read branching code, fix broken code on paper, and explain in your own words how a choice causes an effect.
+
+> 🧠 Words to know: **if**, **else**, **elif**, **branch**, **cause**, **effect**
 
 ```python
 path = game.ask("Which way? (left/right)").strip().lower()
@@ -17,7 +19,7 @@ game.say(f"A {enemy} appears!")
 
 ## 1 · Predict 🔮
 
-Read each piece of code. Before you run it in your head, write what you think happens.
+Read each piece of code. In your head, work out what happens, then write your answer.
 
 ```python
 path = "left"
@@ -61,7 +63,7 @@ elif path == "right":
 
 ## 2 · Spot the Bug 🐛
 
-Each block was meant to do something, but it is broken. Read what it is **supposed** to do, fix it, then explain why the original was wrong.
+Each block was meant to do something, but it is broken. Read what it is **supposed** to do, fix it on paper, then explain why the original was wrong.
 
 **Bug A** — Left should give a goblin and right should give an orc. Right now **both** paths give a goblin.
 
@@ -127,38 +129,56 @@ if path == paths[0]:
 
 ---
 
-## 3 · 🎯 Branch Your Story
+## 3 · Explain the Code 📖
 
-Open your game. After your validated path choice, make the path **matter**: each direction should meet a different enemy. Use `if` / `else` (or `elif`) and describe each encounter so it feels different.
+Read this working example. The player chooses a path, and the choice decides which enemy appears.
 
-When it works, send a **photo or video**, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.
+```python
+path = game.ask("Which way? (left/right)").strip().lower()
+if path == "left":
+    enemy = "goblin"
+    game.say("A goblin blocks the cave.")
+elif path == "right":
+    enemy = "orc"
+    game.say("An orc roams the field.")
+else:
+    enemy = "shadow"
+    game.say("A shadow waits on an unknown road.")
+game.say(f"A {enemy} appears!")
+```
 
-> First, I asked the player to choose a path, and …
->
-> If they went left, the game …
->
-> If they went right, the game …
->
-> The cause was the choice and the effect was …
->
-> One tricky moment was when …
->
-> If I had more time, I would …
+**What does `.strip().lower()` do to the player's answer, and why is that helpful here?**
 
-<div class="write-space tall" style="min-height: 340px"></div>
+<div class="write-space"></div>
+
+**Which branch runs if the player types `right`? Which line of `enemy =` runs?**
+
+<div class="write-space"></div>
+
+**When does the `else` branch run?**
+
+<div class="write-space"></div>
+
+**The choice is the cause. What is the effect of choosing `left`?**
+
+<div class="write-space"></div>
+
+**Why does the last `game.say(...)` line run no matter which path the player picks?**
+
+<div class="write-space"></div>
 
 ---
 
-## 4 · Record Your Walkthrough 🎥
+## 4 · Explain Your Lesson Code 🎥
 
-Take a video on your phone (or a parent's phone) while your game runs. Teach it like the viewer has never coded. Try to use these words: **if**, **else**, **branch**, **cause**, **effect**.
+In today's live lesson you wrote branching code for your own game. Make a short video on your phone (or a parent's phone) explaining the code you wrote. You may show it running. Teach it like the viewer has never coded, and use these words: **if**, **else**, **branch**, **cause**, **effect**.
 
-> 1. Run your game and take the left path.
-> 2. Run it again and take the right path.
-> 3. Show that each choice leads to a different enemy.
-> 4. Read your `if` / `else` out loud and explain which branch runs when.
+> 1. Show the `if` / `else` code you wrote and read it out loud.
+> 2. Explain which branch runs when the player goes left, and which runs when they go right.
+> 3. Point out the cause (the choice) and the effect (the enemy that appears).
+> 4. Show it running once for each path so the effect is clear.
 
-**Write what you will say in your video.** Plan it here first.
+**Write what you will say in your video. Plan it here before you record.**
 
 <div class="write-space tall" style="min-height: 340px"></div>
 
@@ -166,4 +186,4 @@ Take a video on your phone (or a parent's phone) while your game runs. Teach it 
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.

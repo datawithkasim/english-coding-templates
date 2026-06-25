@@ -104,14 +104,17 @@ footer b { color: #ff7849; }
 <div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
 <h1>🔴 RS002 Week 8 — English Worksheet</h1>
 <p><strong>Topic:</strong> Validation Everywhere + Logging Bad Input · <strong>Course:</strong> Pokédex App · <strong>Time:</strong> about 45 minutes</p>
-<p>This week you apply the validation pattern to <strong>every</strong> input in your app — name, region, search — and you <strong>log</strong> every bad attempt into a list. At the end you print a little session report. You will meet your first <strong>function</strong> here too: a reusable <code>safe_input</code>.</p>
+<p>This week is about thinking through the validation pattern for <strong>every</strong> input in your app — name, region, search — and how each bad attempt gets <strong>logged</strong> into a list for a session report. You also meet your first <strong>function</strong> here: a reusable <code>safe_input</code>. You will read code, trace it, and explain the code you wrote in your live lesson — no typing in the app today.</p>
+<blockquote>
+<p>🧠 Words to know: <strong>function</strong>, <strong>safe_input</strong>, <strong>log</strong>, <strong>append</strong>, <strong>return</strong>, <strong>report</strong></p>
+</blockquote>
 <h2>1 · Recall 🧠</h2>
 <p>From memory:</p>
 <div class="qa"><p><strong>Write an <code>if</code> that warns and falls back to <code>"피카츄"</code> when <code>choice</code> is <code>not in</code> the list <code>pokedex</code>.</strong></p>
 <div class="write-space"></div></div>
 
 <h2>2 · Predict 🔮</h2>
-<p>Read each block. Before you run it, write what you think will happen.</p>
+<p>Read each block. Write what you think will happen — just from reading, without running it.</p>
 <pre><code class="language-python">invalid_attempts = []
 invalid_attempts.append(&quot;리자몽&quot;)
 invalid_attempts.append(&quot;타입null&quot;)
@@ -140,7 +143,7 @@ print(name)
 <div class="write-space"></div></div>
 
 <h2>3 · Spot the Bug 🐛</h2>
-<p>Read what each block is <strong>supposed</strong> to do, fix it, then explain the fix.</p>
+<p>Read what each block is <strong>supposed</strong> to do, fix it on paper, then explain the fix.</p>
 <p><strong>Bug A</strong> — Each bad answer should be <strong>added</strong> to the log. Right now it replaces the whole log every time, so only the last one survives.</p>
 <pre><code class="language-python">invalid_attempts = []
 invalid_attempts = &quot;리자몽&quot;
@@ -182,8 +185,8 @@ print(f&quot;잘못 입력한 내용: {', '.join(invalid_attempts)}&quot;)
 <div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
 <div class="write-space"></div></div>
 
-<h2>4 · Modify It ✏️</h2>
-<p>Start from this working safe-input + log:</p>
+<h2>4 · Explain the Code 📖</h2>
+<p>Here is a working <code>safe_input</code> with a log and a session report. Read it carefully and answer the questions.</p>
 <pre><code class="language-python">invalid_attempts = []
 
 def safe_input(prompt, valid_list=None, default=&quot;&quot;):
@@ -212,44 +215,34 @@ print(f&quot;잘못된 입력 횟수: {len(invalid_attempts)}&quot;)
 if invalid_attempts:
     print(f&quot;잘못 입력한 내용: {', '.join(invalid_attempts)}&quot;)
 </code></pre>
-<p>Make these changes one at a time and run after each:</p>
-<ol>
-<li>Call <code>safe_input</code> a second time for the trainer's <strong>region</strong> (no <code>valid_list</code>, just a default).</li>
-<li>Change the warning emoji or message to your own style.</li>
-<li>Make the report also print a friendly line when there were <strong>zero</strong> bad attempts.</li>
-</ol>
-<div class="qa"><p><strong>Write your changed / added lines here:</strong></p>
+<div class="qa"><p><strong>What does the line <code>invalid_attempts.append(answer)</code> do, and when does it run?</strong></p>
 <div class="write-space"></div></div>
 
-<h2>5 · Make It 📸</h2>
-<p>Apply <code>safe_input</code> to <strong>every</strong> input in your Pokédex (name, region, type, search). Log every bad attempt and print a session report at the end.</p>
-<p>When it works, send a <strong>video</strong> on KakaoTalk where you <strong>deliberately type some bad input</strong> so the report has something to show. Then explain what you did. Use these starters — write 4 to 6 sentences.</p>
-<div class="qa"><blockquote>
+<div class="qa"><p><strong>Why does <code>safe_input</code> end with <code>return answer</code> instead of <code>print(answer)</code>?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>What are the three things you pass into <code>safe_input</code> on the <code>choice = ...</code> line, and what is each one for?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Walk through what happens if the user types a bad name twice in a row. Which lines run?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why is the report wrapped in <code>if invalid_attempts:</code>?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>5 · Explain Your Lesson Code 🎥</h2>
+<p>In today's live lesson you wrote your own <code>safe_input</code> and applied it to your Pokédex. Explain <strong>the code you wrote</strong> in a short phone video. You may show it running with some bad input on purpose. Try to use: <strong>function</strong>, <strong>safe_input</strong>, <strong>log</strong>, <strong>append</strong>, <strong>report</strong>.</p>
+<blockquote>
 <p>First, I wrote a function called <code>safe_input</code> that …</p>
 <p>I logged bad attempts by …</p>
 <p>I used the same function for … different inputs.</p>
 <p>My session report showed …</p>
-<p>The trickiest part was …</p>
-<p>Reusing one function for every input is better than copying code because …</p>
 </blockquote>
-<div class="write-space tall" style="min-height: 340px"></div></div>
-
-<h2>6 · Record Your Walkthrough 🎥</h2>
-<p>Film it running with some bad input on purpose. Try to use: <strong>function</strong>, <strong>safe_input</strong>, <strong>log</strong>, <strong>append</strong>, <strong>report</strong>.</p>
-<blockquote>
-<ol>
-<li>Run the app and type a few bad answers on purpose.</li>
-<li>Show the warnings appear and the defaults kick in.</li>
-<li>Read your <code>safe_input</code> function out loud and explain <code>return</code>.</li>
-<li>Show the session report at the end with the logged attempts.</li>
-</ol>
-</blockquote>
-<div class="qa"><p><strong>Plan what you will say here first:</strong></p>
+<div class="qa"><p><strong>Write what you will say in your video. Plan it here before you record.</strong></p>
 <div class="write-space tall" style="min-height: 340px"></div></div>
 
 <hr />
 <h3>Submit ✅</h3>
-<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.
-</content></p>
+<p>Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.</p>
 </body>
 </html>
