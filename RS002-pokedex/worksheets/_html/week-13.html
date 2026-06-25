@@ -104,14 +104,17 @@ footer b { color: #ff7849; }
 <div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
 <h1>🔴 RS002 Week 13 — English Worksheet</h1>
 <p><strong>Topic:</strong> Random Battles — <code>import random</code> · <strong>Course:</strong> Pokédex App · <strong>Time:</strong> about 45 minutes</p>
-<p>This week your dex becomes a game. You <code>import random</code> to pick wild Pokémon out of nowhere, then compare stats with <code>if</code> / <code>elif</code> / <code>else</code> to decide a winner. Run it twice and you get two different battles — that is <strong>randomness</strong>.</p>
+<blockquote>
+<p>🧠 Words to know: <strong>import</strong>, <strong>random</strong>, <strong>choice</strong>, <strong>score</strong>, <strong>if / elif / else</strong></p>
+</blockquote>
+<p>This week your dex becomes a game. In your live lesson you used <code>import random</code> to pick wild Pokémon out of nowhere, then compared stats with <code>if</code> / <code>elif</code> / <code>else</code> to decide a winner. This worksheet is about reading that code, thinking about what it does, and explaining it in your own words.</p>
 <h2>1 · Recall 🧠</h2>
 <p>From memory:</p>
 <div class="qa"><p><strong>Write a function that takes a dictionary <code>p</code> and prints its name and attack.</strong></p>
 <div class="write-space"></div></div>
 
 <h2>2 · Predict 🔮</h2>
-<p>Read each block. Before you run it, write what you think will happen.</p>
+<p>Read each block. Write what you think will happen.</p>
 <pre><code class="language-python">import random
 
 wild = [&quot;꼬렛&quot;, &quot;구구&quot;, &quot;캐터피&quot;]
@@ -142,7 +145,7 @@ print(mine[&quot;name&quot;])
 <div class="write-space"></div></div>
 
 <h2>3 · Spot the Bug 🐛</h2>
-<p>Read what each block is <strong>supposed</strong> to do, fix it, then explain the fix.</p>
+<p>Read what each block is <strong>supposed</strong> to do, find the problem, then explain the fix on paper.</p>
 <p><strong>Bug A</strong> — This should pick a random Pokémon. Right now <code>random</code> was never imported, so it crashes.</p>
 <pre><code class="language-python">dex = [&quot;피카츄&quot;, &quot;이상해씨&quot;, &quot;파이리&quot;]
 print(random.choice(dex))
@@ -187,8 +190,8 @@ if mine[&quot;attack&quot;] &gt; enemy:
 <div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
 <div class="write-space"></div></div>
 
-<h2>4 · Modify It ✏️</h2>
-<p>Start from this working stat battle:</p>
+<h2>4 · Explain the Code 📖</h2>
+<p>Read this working stat battle. You do not need to run it — read it and answer.</p>
 <pre><code class="language-python">import random
 
 pokedex = [
@@ -213,44 +216,36 @@ elif my_score &lt; enemy_score:
 else:
     print(f&quot;\n⚖️ 무승부!&quot;)
 </code></pre>
-<p>Make these changes one at a time and run after each:</p>
-<ol>
-<li>Print each Pokémon's <code>attack</code> as well as its <code>hp</code> before the result.</li>
-<li>Change the score formula to weight attack more (for example <code>attack * 2 + hp</code>).</li>
-<li>Run the program five times and write down how many times you won.</li>
-</ol>
-<div class="qa"><p><strong>Write your changed / added lines here, and your win count:</strong></p>
+<div class="qa"><p><strong>What does <code>random.choice(pokedex)</code> give back — a name, a number, or a whole dictionary?</strong></p>
 <div class="write-space"></div></div>
 
-<h2>5 · Make It 📸</h2>
-<p>Add a <strong>Battle!</strong> option to your Week 12 menu. When chosen, it picks a random enemy from the dex and battles your Pokémon by comparing stats, printing the winner.</p>
-<p>When it works, send a <strong>video</strong> on KakaoTalk showing the <strong>battle run at least three times</strong> so we can see the random results change. Then explain what you did. Use these starters — write 4 to 6 sentences.</p>
-<div class="qa"><blockquote>
-<p>First, I imported … so I could …</p>
-<p><code>random.choice</code> picked … from my dex.</p>
-<p>I decided the winner by comparing …</p>
-<p>Running it again gave a different result because …</p>
-<p>The trickiest part was …</p>
-<p>If I had more time, I would make the battle …</p>
-</blockquote>
-<div class="write-space tall" style="min-height: 340px"></div></div>
+<div class="qa"><p><strong>How is <code>my_score</code> calculated? Which two stats are added together?</strong></p>
+<div class="write-space"></div></div>
 
-<h2>6 · Record Your Walkthrough 🎥</h2>
-<p>Film several battles. Teach it like the viewer is new. Try to use: <strong>import</strong>, <strong>random</strong>, <strong>choice</strong>, <strong>score</strong>, <strong>if / elif / else</strong>.</p>
+<div class="qa"><p><strong>When does the program reach the <code>elif</code> line instead of the first <code>if</code>?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>When does the <code>else</code> line run, and what does it print?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>If you ran this program twice, why might you see a different match-up each time?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>5 · Explain Your Lesson Code 🎥</h2>
+<p>In your live lesson you wrote a <strong>Battle!</strong> feature. Now explain <em>that</em> code — the one you wrote — in a short phone video. You may show it running. Teach it like the viewer is new, and use these key words: <strong>import</strong>, <strong>random</strong>, <strong>choice</strong>, <strong>score</strong>, <strong>if / elif / else</strong>.</p>
 <blockquote>
 <ol>
-<li>Run the battle three times and point out the different match-ups.</li>
-<li>Read your <code>random.choice</code> line out loud.</li>
-<li>Explain how the winner is decided from the stats.</li>
+<li>Run your battle a few times and point out the different match-ups.</li>
+<li>Read your <code>random.choice</code> line out loud and say what it picks.</li>
+<li>Explain how your code decides the winner from the stats.</li>
 <li>Say why the result changes each run.</li>
 </ol>
 </blockquote>
-<div class="qa"><p><strong>Plan what you will say here first:</strong></p>
+<div class="qa"><p><strong>Write what you will say in your video. Plan it here before you record.</strong></p>
 <div class="write-space tall" style="min-height: 340px"></div></div>
 
 <hr />
 <h3>Submit ✅</h3>
-<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.
-</content></p>
+<p>Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.</p>
 </body>
 </html>

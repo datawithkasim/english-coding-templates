@@ -2,7 +2,9 @@
 
 **Topic:** Final Polish + Presentation · **Course:** Pokédex App · **Time:** about 45 minutes
 
-This is the last week. You bring **everything** — intro, list, search, battle, tournament, two files — together into one menu-driven Pokédex app, polish it, and prepare a **5-minute demo** to present to your friends. Nothing new to learn; everything to combine.
+This is the last week. In the live lesson you brought **everything** together — intro, list, search, battle, tournament, two files — into one menu-driven Pokédex app. This worksheet is about **thinking through** that finished app and **explaining** the code you built. Nothing new to learn; just read, predict, debug on paper, and get ready to present.
+
+> 🧠 Words to know: menu loop, function, return, import, two files, demo
 
 ---
 
@@ -18,7 +20,7 @@ From memory:
 
 ## 2 · Predict 🔮
 
-Read each block. Before you run it, write what you think will happen.
+Read each block. Write what you think it does.
 
 ```python
 def main_menu():
@@ -130,9 +132,9 @@ while True:
 
 ---
 
-## 4 · Modify It ✏️
+## 4 · Explain the Code 📖
 
-Start from this near-final app (`main.py`, using `pokemon_data.py` from last week):
+This is the finished Pokédex app you built in the live lesson (`main.py`, reading data from `pokemon_data.py`). Read it carefully and answer the questions below.
 
 ```python
 import random
@@ -185,56 +187,46 @@ while True:
         print("1~4 중에서 골라주세요.")
 ```
 
-Make these changes one at a time and run after each:
+**The `import` line brings `pokedex` from another file. Why is the data kept in `pokemon_data.py` instead of inside `main.py`?**
 
-1. Add a `5. 토너먼트` option that calls your Week 14 tournament function.
-2. Add an ASCII-art logo that prints once when the app starts.
-3. Make the goodbye line show how many Pokémon were registered.
+<div class="write-space"></div>
 
-**Write your changed / added lines here:**
+**`main_menu` ends with `return input(...)`. What does the value it returns become in the loop below?**
+
+<div class="write-space"></div>
+
+**In `search_pokedex`, what does `kw in p["name"].lower()` check, and why are both sides made lowercase?**
+
+<div class="write-space"></div>
+
+**Trace the `while True` loop: what makes it stop, and what would happen if that line were missing?**
+
+<div class="write-space"></div>
+
+**The last `else` runs when the user types something like `9`. Why is it useful to have it there?**
 
 <div class="write-space"></div>
 
 ---
 
-## 5 · Make It 📸
+## 5 · Explain Your Lesson Code 🎥
 
-Assemble your **final Pokédex app**: a menu loop offering list, search, battle, and tournament, reading data from `pokemon_data.py`. Polish the wording and layout so it feels finished. Then prepare a **5-minute demo**.
+Present the **finished Pokédex app you built across this whole course**. Record a video on your phone: show the app **running** from start to finish, then explain the key parts in your own words. Use the words you know.
 
-When it works, send a **video** on KakaoTalk of the whole app running, **both files**, and your **presentation notes**. Then explain what you did. Use these starters — write 4 to 6 sentences.
-
-> First, I combined … into one menu app.
+> First, I run my Pokédex app and show the menu, then I pick …
 >
 > The function I am most proud of is … because …
 >
-> Splitting into two files helped me …
+> I split the code into two files so that …
 >
 > The hardest problem this term was … and I solved it by …
->
-> The feature I would add next is …
->
-> Two weeks ago I could not … but now I can …
 
-<div class="write-space tall" style="min-height: 360px"></div>
+**Write what you will say in your video. Plan it here before you record.**
 
----
-
-## 6 · Present It 🎤
-
-Prepare a **5-minute demo** for your friends. Use this checklist — tick each before you present:
-
-> ☐ Run the Pokédex app from start to finish once.
-> ☐ Explain one or two functions you are most proud of.
-> ☐ Explain why splitting into two files helped.
-> ☐ Share the hardest problem you hit and how you solved it.
-
-**Write your presentation script here.** You can read from it while presenting and while you record.
-
-<div class="write-space tall" style="min-height: 360px"></div>
+<div class="write-space tall" style="min-height: 340px"></div>
 
 ---
 
 ### Submit ✅
 
-Send your finished app **video**, **both code files**, and your **presentation notes** to teacher on KakaoTalk.
-</content>
+Send this worksheet + your finished-Pokédex presentation video to teacher on KakaoTalk.

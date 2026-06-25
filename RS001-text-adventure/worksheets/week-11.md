@@ -2,7 +2,9 @@
 
 **Topic:** Strategy — Fight or Think? · **Course:** Text Adventure (Python) · **Time:** about 45 minutes
 
-This week the player solves a problem in more than one way. You offer a menu of actions — fight, think, run — and each one leads to a different result. The **order** of your `if` / `elif` / `else` decides which result wins.
+This week you think about code that lets the player solve a problem in more than one way. A menu of actions — fight, think, run — leads to a different result for each choice. The **order** of your `if` / `elif` / `else` decides which result wins. Read the code, predict what it does, and get ready to explain it in your own words.
+
+> 🧠 Words to know: **action**, **menu**, **elif**, **else**, **outcome**
 
 ```python
 action = game.ask("Fight or think?").strip().lower()
@@ -18,7 +20,7 @@ else:
 
 ## 1 · Predict 🔮
 
-Read each piece of code. Before you run it in your head, write what you think happens.
+Read each piece of code. Run it in your head and write what you think happens.
 
 ```python
 action = "think"
@@ -61,7 +63,7 @@ game.say(f"Choose: {actions[0]} / {actions[1]} / {actions[2]}")
 
 ## 2 · Spot the Bug 🐛
 
-Each block was meant to do something, but it is broken. Read what it is **supposed** to do, fix it, then explain why the original was wrong.
+Each block was meant to do something, but it is broken. Read what it is **supposed** to do, fix it on paper, then explain why the original was wrong.
 
 **Bug A** — Each action should give a **different** result. Right now "fight" and "think" print the same thing.
 
@@ -125,38 +127,56 @@ game.say(f"You chose: {action}")
 
 ---
 
-## 3 · 🎯 Add a Battle Menu
+## 3 · Explain the Code 📖
 
-Open your game. When the player meets an enemy, give them a menu: fight, think, run (or your own). Each action should lead to a different outcome. Validate the answer so off-menu input is handled.
+Here is a working battle menu. Read it carefully and answer the questions below.
 
-When it works, send a **photo or video**, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.
+```python
+actions = ["fight", "think", "run"]
+game.say(f"An enemy appears! Choose: {actions[0]} / {actions[1]} / {actions[2]}")
+action = game.ask("What do you do?").strip().lower()
+if action == "fight":
+    game.say("You swing your sword and win the hard way!")
+elif action == "think":
+    game.say("You spot the enemy's weakness and win cleverly!")
+elif action == "run":
+    game.say("You escape, but the enemy keeps your gold.")
+else:
+    game.say("You hesitate and get hit!")
+```
 
-> First, the enemy appeared and I offered the actions …
->
-> Fighting led to …
->
-> Thinking led to …
->
-> Running led to …
->
-> One tricky moment was when …
->
-> If I had more time, I would …
+**What is stored in the `actions` list, and how is it used to print the menu?**
 
-<div class="write-space tall" style="min-height: 340px"></div>
+<div class="write-space"></div>
+
+**Why does this code use `elif` for "think" and "run" instead of three separate `if` statements?**
+
+<div class="write-space"></div>
+
+**Which line runs if the player types "dance"? Why?**
+
+<div class="write-space"></div>
+
+**The `.strip().lower()` runs on the player's answer. What does it do, and why does it help the comparisons work?**
+
+<div class="write-space"></div>
+
+**Each branch prints a different `outcome`. Name the outcome for "fight" and the outcome for "run".**
+
+<div class="write-space"></div>
 
 ---
 
-## 4 · Record Your Walkthrough 🎥
+## 4 · Explain Your Lesson Code 🎥
 
-Take a video on your phone (or a parent's phone) while your battle runs. Teach it like the viewer has never coded. Try to use these words: **action**, **menu**, **elif**, **else**, **outcome**.
+Explain the battle menu code **you** wrote in today's live lesson. Record a short video on your phone (or a parent's phone). You may show it running. Teach it like the viewer has never coded, and try to use these words: **action**, **menu**, **elif**, **else**, **outcome**.
 
-> 1. Run your game and fight the enemy.
-> 2. Run it again and think instead — show the different result.
-> 3. Type something off-menu and show what happens.
-> 4. Read your `if` / `elif` / `else` out loud and explain why order matters.
+> 1. Show the menu your code prints and read out the actions on it.
+> 2. Point to your `if` / `elif` / `else` and explain what each branch does.
+> 3. Show what happens when the player types something off-menu, and explain why.
+> 4. Explain why the order of your branches matters.
 
-**Write what you will say in your video.** Plan it here first.
+**Write what you will say in your video. Plan it here before you record.**
 
 <div class="write-space tall" style="min-height: 340px"></div>
 
@@ -164,4 +184,4 @@ Take a video on your phone (or a parent's phone) while your battle runs. Teach i
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.

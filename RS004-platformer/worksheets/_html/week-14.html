@@ -104,12 +104,12 @@ footer b { color: #ff7849; }
 <div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
 <h1>💥 RS004 Week 14 — English Worksheet</h1>
 <p><strong>Topic:</strong> Vertical Patrol + Death Effect (Apply) · <strong>Course:</strong> Platformer Game · <strong>Time:</strong> about 45 minutes</p>
-<p>This week enemies get <strong>smarter</strong>. A <code>patrol_type</code> lets one enemy walk left–right, another go up–down, and a third <strong>chase</strong> the player. When the player dies, a little <strong>explosion</strong> of particles bursts out.</p>
+<p>This week is about thinking through <strong>smarter enemies</strong> and explaining how they work. A <code>patrol_type</code> lets one enemy walk left–right, another go up–down, and a third <strong>chase</strong> the player. When the player dies, a little <strong>explosion</strong> of particles bursts out. You will read this code closely and explain the code you wrote in your live lesson.</p>
 <blockquote>
-<p>Keep these words handy: <strong>patrol_type</strong>, <strong>vertical</strong>, <strong>chase</strong>, <strong>particle</strong>, <strong>explosion</strong>.</p>
+<p>🧠 Words to know: <strong>patrol_type</strong>, <strong>vertical</strong>, <strong>chase</strong>, <strong>particle</strong>, <strong>explosion</strong>.</p>
 </blockquote>
 <h2>1 · Predict 🔮</h2>
-<p>Read each snippet. Before you run it, write what you think will happen.</p>
+<p>Read each snippet. Write what you think it does.</p>
 <pre><code class="language-python">if self.patrol_type == &quot;vertical&quot;:
     self.rect.y += self.direction * self.speed
     if self.rect.y &gt; self.start_y + self.range_size:
@@ -187,51 +187,59 @@ C. walks left and right between two x positions
 <div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
 <div class="write-space"></div></div>
 
-<h2>4 · Mix the Enemies 🛠️</h2>
-<p>Start from your working enemy types.</p>
-<ol>
-<li>Place one of each kind in your level: horizontal, vertical, chase. Write the three <code>Enemy(...)</code> lines.</li>
-</ol>
-<div class="write-space tall" style="min-height: 160px"></div>
+<h2>4 · Explain the Code 📖</h2>
+<p>Here is a working enemy update that handles all three patrol types and takes the player's position safely.</p>
+<pre><code class="language-python">def update(self, player_rect=None):
+    if self.patrol_type == &quot;horizontal&quot;:
+        self.rect.x += self.direction * self.speed
+        if self.rect.x &gt; self.start_x + self.range_size:
+            self.direction = -1
+        if self.rect.x &lt; self.start_x:
+            self.direction = 1
 
-<ol start="2">
-<li>Give each kind a different colour or shape so the player can tell them apart. What did you choose?</li>
-</ol>
-<div class="write-space"></div>
+    elif self.patrol_type == &quot;vertical&quot;:
+        self.rect.y += self.direction * self.speed
+        if self.rect.y &gt; self.start_y + self.range_size:
+            self.direction = -1
+        if self.rect.y &lt; self.start_y:
+            self.direction = 1
 
-<ol start="3">
-<li><strong>Stretch:</strong> position an enemy so it guards a coin. Which coin, and which enemy?</li>
-</ol>
-<div class="write-space"></div>
+    elif self.patrol_type == &quot;chase&quot; and player_rect is not None:
+        if self.rect.x &lt; player_rect.x:
+            self.rect.x += 1
+        elif self.rect.x &gt; player_rect.x:
+            self.rect.x -= 1
+</code></pre>
+<div class="qa"><p><strong>What does <code>self.direction = -1</code> do, and when does it happen?</strong></p>
+<div class="write-space"></div></div>
 
-<h2>5 · Build &amp; Show 📸</h2>
-<p>Add all three enemy kinds to your own level, each at least once, plus the death explosion.</p>
-<p>When it works, send a <strong>photo or video</strong> showing all three enemies and a death burst, then explain what you did. Use these starters — write 4 to 6 sentences.</p>
-<div class="qa"><blockquote>
-<p>First, the <code>patrol_type</code> decides …</p>
-<p>My chasing enemy follows the player by …</p>
-<p>I gave it a safe default so that …</p>
-<p>The death explosion works by …</p>
-<p>One tricky moment was …</p>
-<p>If I had more time, I would …</p>
-</blockquote>
-<div class="write-space tall" style="min-height: 340px"></div></div>
+<div class="qa"><p><strong>Why does the <code>vertical</code> block change <code>self.rect.y</code> instead of <code>self.rect.x</code>?</strong></p>
+<div class="write-space"></div></div>
 
-<h2>6 · Record Your Walkthrough 🎥</h2>
-<p>Take a video showing all three enemy kinds and a death. Teach it to someone new. Try to use these words: <strong>patrol_type</strong>, <strong>vertical</strong>, <strong>chase</strong>, <strong>particle</strong>, <strong>explosion</strong>.</p>
+<div class="qa"><p><strong>Why does the <code>chase</code> block check <code>player_rect is not None</code> before using it?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>What would break if you deleted the <code>start_x</code> and <code>start_y</code> checks?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Tell the story of one chase frame: the player is to the left, so what happens line by line?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>5 · Explain Your Lesson Code 🎥</h2>
+<p>In your live lesson today you wrote enemy and explosion code. Make a short phone video that explains <strong>the code you wrote</strong>. You may show it running. Try to use these words: <strong>patrol_type</strong>, <strong>vertical</strong>, <strong>chase</strong>, <strong>particle</strong>, <strong>explosion</strong>.</p>
 <blockquote>
 <ol>
-<li>Show the horizontal, vertical, and chasing enemies.</li>
-<li>Walk near the chaser and show it follow you.</li>
-<li>Die on purpose and show the explosion.</li>
-<li>Read the chase code out loud and explain how it picks a direction.</li>
+<li>Point to where <code>patrol_type</code> decides how each enemy moves.</li>
+<li>Read your chase code out loud and explain how it picks a direction.</li>
+<li>Show the death <strong>explosion</strong> and explain how the <strong>particle</strong> loop works.</li>
+<li>Say one part that was tricky and how you understood it.</li>
 </ol>
 </blockquote>
-<div class="qa"><p><strong>Write what you will say in your video.</strong> Plan it here first.</p>
+<div class="qa"><p><strong>Write what you will say in your video. Plan it here before you record.</strong></p>
 <div class="write-space tall" style="min-height: 340px"></div></div>
 
 <hr />
 <h3>Submit ✅</h3>
-<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.</p>
+<p>Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.</p>
 </body>
 </html>

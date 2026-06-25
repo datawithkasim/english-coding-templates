@@ -2,7 +2,7 @@
 
 **Topic:** Paper to Code (Apply) · **Course:** Platformer Game · **Time:** about 45 minutes
 
-This week you design a level **on paper first**, then turn it into coordinates and into code. You will measure how far and how high your player can jump, so every platform is actually reachable.
+This week you think about how a level is designed: how coordinates place each platform, and how jump height and jump distance decide what is reachable. You will read level code, find a design mistake on paper, and explain the code you wrote in your live lesson.
 
 > Keep these words handy: **sketch**, **coordinate (x, y)**, **jump height**, **jump distance**, **reachable**.
 
@@ -10,7 +10,7 @@ This week you design a level **on paper first**, then turn it into coordinates a
 
 ## 1 · Predict 🔮
 
-Read each snippet. Before you run it, write what you think will happen.
+Read each snippet and write what you think it means.
 
 ```python
 # JUMP_STRENGTH = -14, GRAVITY = 0.7
@@ -43,27 +43,7 @@ FINISH_X, FINISH_Y = 450, 220
 
 ---
 
-## 2 · Measure Your Jump 📏
-
-Before you design, find out your player's real limits. Run your week 9 game and test.
-
-```
-1. Stand on the ground and jump straight up.
-   Highest platform you can land on is about ___ pixels above.
-
-2. Run and jump across a flat gap.
-   Widest gap you can clear is about ___ pixels.
-```
-
-<div class="write-space"></div>
-
-**Why must you know these numbers *before* you place platforms?**
-
-<div class="write-space"></div>
-
----
-
-## 3 · Spot the Bug 🐛
+## 2 · Spot the Bug 🐛
 
 Each snippet is a *level design* mistake. Read what's wrong, then rewrite the coordinates so the level works. Explain your fix.
 
@@ -78,7 +58,7 @@ MY_LEVEL = [
 
 **Hint:** max jump height is about 140 pixels. Lower the gap.
 
-**Write the fixed coordinates:**
+**Write the fixed code:**
 
 <div class="write-space"></div>
 
@@ -98,7 +78,7 @@ FINISH = (700, 100, 50, 40)
 
 **Hint:** add a platform near the finish, within jump range of the last one.
 
-**Write the fixed level:**
+**Write the fixed code:**
 
 <div class="write-space"></div>
 
@@ -108,56 +88,55 @@ FINISH = (700, 100, 50, 40)
 
 ---
 
-## 4 · From Sketch to Coordinates 🛠️
+## 3 · Explain the Code 📖
 
-Do this in order.
+This is a working level. Each platform is `(x, y, width, height)`. The player starts low and climbs to the finish at the top.
 
-1. On paper, sketch a level: a start, 5–8 platforms, and a finish at the top. Take a photo when done.
+```python
+START_X, START_Y = 50, 540
+
+MY_LEVEL = [
+    (0, 580, 250, 20),
+    (350, 520, 100, 20),
+    (520, 430, 100, 20),
+    (350, 330, 100, 20),
+]
+
+FINISH = (380, 280, 50, 40)
+```
+
+**What do the first two numbers in each platform tuple mean?**
 
 <div class="write-space"></div>
 
-2. For each platform in your sketch, write its `(x, y, width, height)`. Read coordinates off your drawing.
+**The gap from the first platform (ends at x = 250) to the second (starts at x = 350) is 100 pixels. Is that within jump distance? How do you know?**
 
-<div class="write-space tall" style="min-height: 200px"></div>
+<div class="write-space"></div>
 
-3. **Stretch:** add a secret platform reachable only by a hard jump. Where is it?
+**The player must climb from y = 580 up to the finish at y = 280. Why is a higher platform written with a *smaller* y number?**
+
+<div class="write-space"></div>
+
+**Look at the last platform `(350, 330, 100, 20)` and the finish `(380, 280, 50, 40)`. Why is the finish placed there and not somewhere far away?**
+
+<div class="write-space"></div>
+
+**If you wanted to make this level harder, which one number would you change, and why?**
 
 <div class="write-space"></div>
 
 ---
 
-## 5 · Build & Show 📸
+## 4 · Explain Your Lesson Code 🎥
 
-Turn your paper sketch into a playable level. Tune it so it is challenging but fair — aim for about 1 success in 5 tries.
+Explain the level **you wrote in today's live lesson** in a short phone video. You may show it running. Try to use these words: **sketch**, **coordinate**, **jump height**, **reachable**, **difficulty**.
 
-Send **your paper sketch photo and a full play-through video**, then explain what you did. Use these starters — write 4 to 6 sentences.
+> 1. Show your code and point at your `MY_LEVEL` platforms.
+> 2. Read the coordinates of one platform out loud and say where it sits.
+> 3. Show the hardest jump and explain why it is still reachable.
+> 4. Say one thing you would change to adjust the difficulty.
 
-> First, I sketched my level with …
->
-> I measured my jump and found I can reach about ___ pixels high and ___ wide.
->
-> To turn the sketch into code, I …
->
-> The hardest jump in my level is …
->
-> One tricky moment was …
->
-> If I had more time, I would …
-
-<div class="write-space tall" style="min-height: 340px"></div>
-
----
-
-## 6 · Record Your Walkthrough 🎥
-
-Take a video of a full clear of your hand-designed level. Teach it to someone new. Try to use these words: **sketch**, **coordinate**, **jump height**, **reachable**, **difficulty**.
-
-> 1. Show your paper sketch next to the running game.
-> 2. Point at one platform and read its coordinates.
-> 3. Show the hardest jump and whether you cleared it.
-> 4. Reach the finish.
-
-**Write what you will say in your video.** Plan it here first.
+**Write what you will say in your video. Plan it here before you record.**
 
 <div class="write-space tall" style="min-height: 340px"></div>
 
@@ -165,4 +144,4 @@ Take a video of a full clear of your hand-designed level. Teach it to someone ne
 
 ### Submit ✅
 
-Send this worksheet + your paper sketch + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.

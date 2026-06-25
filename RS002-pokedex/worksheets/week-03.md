@@ -2,7 +2,9 @@
 
 **Topic:** Lists + Indexing — A Menu of Pokémon · **Course:** Pokédex App · **Time:** about 45 minutes
 
-This week you store **many Pokémon in one list** instead of many separate variables. You pull values back out with an **index** (`[0]`, `[1]`, `[2]`), and you learn that the first item lives at index `0`, not `1`.
+This week you think about how to store **many Pokémon in one list** instead of many separate variables, and how to pull values back out with an **index** (`[0]`, `[1]`, `[2]`). You will read code, find bugs on paper, and explain the code you wrote in your live lesson — remember the first item lives at index `0`, not `1`.
+
+> 🧠 Words to know: **list**, **index**, **zero**, **parallel list**, **menu**
 
 ---
 
@@ -18,7 +20,7 @@ From memory:
 
 ## 2 · Predict 🔮
 
-Read each block. Before you run it, write what you think will happen.
+Read each block. Write what you think will happen.
 
 ```python
 starters = ["피카츄", "이상해씨", "파이리"]
@@ -57,7 +59,7 @@ print(f"체력: {hp[1]}")
 
 ## 3 · Spot the Bug 🐛
 
-Read what each block is **supposed** to do, fix it, then explain the fix.
+Read what each block is **supposed** to do, then fix it on paper and explain the fix.
 
 **Bug A** — This should print the **first** Pokémon, `피카츄`. Right now it prints the second one.
 
@@ -115,63 +117,52 @@ print(f"타입: {types[2]}")
 
 ---
 
-## 4 · Modify It ✏️
+## 4 · Explain the Code 📖
 
-Start from this working starter menu:
+Read this working starter menu carefully.
 
 ```python
 starters = ["피카츄", "이상해씨", "파이리"]
+types = ["전기", "풀", "불"]
 
 print("=== 시작 포켓몬을 골라주세요 ===")
-print(f"1. {starters[0]} — 전기 타입")
-print(f"2. {starters[1]} — 풀 타입")
-print(f"3. {starters[2]} — 불 타입")
+print(f"1. {starters[0]} — {types[0]} 타입")
+print(f"2. {starters[1]} — {types[1]} 타입")
+print(f"3. {starters[2]} — {types[2]} 타입")
 ```
 
-Make these changes one at a time and run after each:
+**What does the first line do, and why is `starters` better than three separate name variables?**
 
-1. Add a fourth starter (꼬부기, 물 타입) to the list and add its menu line.
-2. Change the order of the list and watch the menu numbers follow.
-3. Add a `types` list and use `types[0]` instead of writing `전기` by hand.
+<div class="write-space"></div>
 
-**Write your changed / added lines here:**
+**`starters[0]` and `types[0]` both use index `0`. Which Pokémon and which type do they give, and why do they match?**
+
+<div class="write-space"></div>
+
+**Line 2 of the menu uses `[1]`. Which Pokémon is that — the first or the second? Explain.**
+
+<div class="write-space"></div>
+
+**If you wrote `starters[3]`, what would happen and why?**
+
+<div class="write-space"></div>
+
+**Why is using the same index in `starters` and `types` important for keeping each Pokémon's info correct?**
 
 <div class="write-space"></div>
 
 ---
 
-## 5 · Make It 📸
+## 5 · Explain Your Lesson Code 🎥
 
-In your homework world, show your **Week 2 trainer card first**, then below it a **starter menu of at least three Pokémon** pulled from a list by index. Use a matching `types` list so each line shows the right type.
+Explain the code **you** wrote in today's live lesson. Record a short video on your phone (you may show it running) and teach it like the viewer is new. Try to use these words: **list**, **index**, **zero**, **parallel list**, **menu**.
 
-When it works, send a **photo or video** on KakaoTalk, then explain what you did. Use these starters — write 4 to 6 sentences.
+> 1. Show the starter menu code you wrote in the lesson and read your list out loud.
+> 2. Explain why `starters[0]` is the first Pokémon, not the second.
+> 3. Show how the name and type stay matched by using the same index.
+> 4. Say why a list is better than three separate variables.
 
-> First, I made a list called … with …
->
-> I pulled each Pokémon out using …
->
-> Index `0` gave me … because …
->
-> To keep the name and type matched, I …
->
-> The trickiest part was …
->
-> A list is better than three separate variables because …
-
-<div class="write-space tall" style="min-height: 340px"></div>
-
----
-
-## 6 · Record Your Walkthrough 🎥
-
-Film your menu running. Teach it like the viewer is new. Try to use: **list**, **index**, **zero**, **parallel list**, **menu**.
-
-> 1. Run your program and show the starter menu.
-> 2. Point to your list and read it out loud.
-> 3. Explain why `starters[0]` is the first Pokémon, not the second.
-> 4. Show how name and type stay matched by using the same index.
-
-**Plan what you will say here first:**
+**Write what you will say in your video. Plan it here before you record.**
 
 <div class="write-space tall" style="min-height: 340px"></div>
 
@@ -179,5 +170,4 @@ Film your menu running. Teach it like the viewer is new. Try to use: **list**, *
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
-</content>
+Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.

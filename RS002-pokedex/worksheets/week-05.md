@@ -2,7 +2,9 @@
 
 **Topic:** Cleaning Input — `.strip()` and `.lower()` · **Course:** Pokédex App · **Time:** about 45 minutes
 
-This week your Pokédex lets the trainer **search by name**. But people type messily — extra spaces, mixed capitals. You clean their input with `.strip()` and `.lower()` so the search still works, then use `if` / `elif` / `else` to react to the choice.
+This week your Pokédex lets the trainer **search by name**. But people type messily — extra spaces, mixed capitals. In the live lesson you cleaned their input with `.strip()` and `.lower()` so the search still works, then used `if` / `elif` / `else` to react to the choice. This worksheet is for **thinking about and explaining that code** — reading it closely, predicting what it does, and putting it into your own words.
+
+> 🧠 Words to know: **strip**, **lower**, **clean**, **search**, **if / elif / else**
 
 ---
 
@@ -18,7 +20,7 @@ From memory:
 
 ## 2 · Predict 🔮
 
-Read each block. Before you run it, write what you think will happen.
+Read each block. Without running it, write what you think will happen.
 
 ```python
 choice = "  Pikachu  "
@@ -57,7 +59,7 @@ else:
 
 ## 3 · Spot the Bug 🐛
 
-Read what each block is **supposed** to do, fix it, then explain the fix.
+Read what each block is **supposed** to do, fix it on paper, then explain the fix.
 
 **Bug A** — This should match even if the user types extra spaces. Right now `"  pikachu"` does not match.
 
@@ -126,9 +128,9 @@ else:
 
 ---
 
-## 4 · Modify It ✏️
+## 4 · Explain the Code 📖
 
-Start from this working search:
+Read this working search carefully. It is the kind of code you built in the live lesson.
 
 ```python
 pokemon_names = ["pikachu", "bulbasaur", "charmander"]
@@ -144,50 +146,38 @@ else:
     print("그 포켓몬은 도감에 없어요.")
 ```
 
-Make these changes one at a time and run after each:
+**What do `.strip()` and `.lower()` each do to the trainer's input?**
 
-1. Add a fourth branch for `squirtle` (꼬부기).
-2. Change the `else` message to suggest the trainer try again.
-3. Remove the `.lower()` and test typing `PIKACHU` — see what breaks. Then put it back.
+<div class="write-space"></div>
 
-**Write your changed / added lines here:**
+**Why are the names in the `if` checks (like `"pikachu"`) written in lowercase?**
+
+<div class="write-space"></div>
+
+**If the trainer types `  BULBASAUR  `, which line prints, and why?**
+
+<div class="write-space"></div>
+
+**When does the `else` branch run?**
+
+<div class="write-space"></div>
+
+**Why is the second check `elif` and not another `if`?**
 
 <div class="write-space"></div>
 
 ---
 
-## 5 · Make It 📸
+## 5 · Explain Your Lesson Code 🎥
 
-Add a **search feature** to your Week 4 Pokédex. The trainer types a name; you clean it with `.strip().lower()`; then you tell them which Pokémon they picked, or that it is not in the dex.
+Explain the search code **you wrote in today's lesson** in a short phone video. You may show it running. Teach it like the viewer is new, and try to use: **strip**, **lower**, **clean**, **search**, **if / elif / else**.
 
-When it works, send a **photo or video** on KakaoTalk, then explain what you did. Use these starters — write 4 to 6 sentences.
-
-> First, I asked the trainer to type …
->
-> I cleaned their input with … so that …
->
-> `.strip()` handled … and `.lower()` handled …
->
-> I used `if` / `elif` / `else` to …
->
-> The trickiest part was …
->
-> Cleaning input matters because real people type …
-
-<div class="write-space tall" style="min-height: 340px"></div>
-
----
-
-## 6 · Record Your Walkthrough 🎥
-
-Film your search running. Teach it like the viewer is new. Try to use: **strip**, **lower**, **clean**, **if / elif / else**, **search**.
-
-> 1. Run your search and type a name with extra spaces and capitals.
-> 2. Show it still works, then explain which method fixed the spaces and which fixed the capitals.
-> 3. Read your `if / elif / else` out loud.
+> 1. Show your search code and run it with a name that has extra spaces and capitals.
+> 2. Point to where you cleaned the input, and say which method fixed the spaces and which fixed the capitals.
+> 3. Read your `if / elif / else` out loud and explain what each branch does.
 > 4. Type a Pokémon that is not in the dex and show the `else` message.
 
-**Plan what you will say here first:**
+**Write what you will say in your video. Plan it here before you record.**
 
 <div class="write-space tall" style="min-height: 340px"></div>
 
@@ -195,5 +185,4 @@ Film your search running. Teach it like the viewer is new. Try to use: **strip**
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
-</content>
+Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.

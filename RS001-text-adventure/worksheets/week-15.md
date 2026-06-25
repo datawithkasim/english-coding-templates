@@ -2,7 +2,9 @@
 
 **Topic:** Logic, Knowledge, and Multiple Endings · **Course:** Text Adventure (Python) · **Time:** about 45 minutes
 
-This week the ending depends on what the player **knows**, not on luck. You store riddles and answers in parallel lists, keep a **score**, and use the score to pick one of several endings.
+This week the ending depends on what the player **knows**, not on luck. In your live lesson you built code that stores riddles and answers in parallel lists, keeps a **score**, and uses the score to pick one of several endings. This worksheet is about reading and explaining that code in your own words.
+
+> 🧠 Words to know: **score**, **riddle**, **answer**, **ending**, **logic**
 
 ```python
 questions = ["I have four legs but cannot walk. What am I?"]
@@ -16,7 +18,7 @@ if guess == answers[0]:
 
 ## 1 · Predict 🔮
 
-Read each piece of code. Before you run it in your head, write what you think happens.
+Read each piece of code. Work it out in your head and write what you think happens. Do not run it.
 
 ```python
 score = 0
@@ -61,7 +63,7 @@ else:
 
 ## 2 · Spot the Bug 🐛
 
-Each block was meant to do something, but it is broken. Read what it is **supposed** to do, fix it, then explain why the original was wrong.
+Each block was meant to do something, but it is broken. Read what it is **supposed** to do, fix it on paper, then explain why the original was wrong.
 
 **Bug A** — A correct answer should add **one** to the score. Right now the score never goes up, because the result of the addition is thrown away.
 
@@ -131,38 +133,62 @@ game.say(ending)
 
 ---
 
-## 3 · 🎯 Score-Based Endings
+## 3 · Explain the Code 📖
 
-Open your game. Before the final scene, ask the player a few riddles using parallel question/answer lists. Count correct answers into a `score`, then use the score to print one of several different endings.
+This is a working version of the score-based ending code, like the one from your lesson. Read it carefully, then answer the questions below.
 
-When it works, send a **photo or video**, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.
+```python
+questions = ["four legs, cannot walk?", "cold, melts fast?", "opens when it rains?"]
+answers   = ["table", "ice", "umbrella"]
+score = 0
 
-> First, I stored my riddles and answers in …
->
-> Each correct answer added to the score by …
->
-> The endings I built were …
->
-> A knowledge-based ending is different from a random one because …
->
-> One tricky moment was when …
->
-> If I had more time, I would …
+for i in range(len(questions)):
+    guess = game.ask(questions[i]).strip()
+    if guess == answers[i]:
+        score = score + 1
 
-<div class="write-space tall" style="min-height: 340px"></div>
+if score == 3:
+    ending = "wise"
+elif score == 2:
+    ending = "hero"
+else:
+    ending = "beginner"
+
+game.say("Your ending: " + ending)
+```
+
+**Why do `questions` and `answers` need to be the same length?**
+
+<div class="write-space"></div>
+
+**What does `answers[i]` give you on the second loop, when `i` is 1?**
+
+<div class="write-space"></div>
+
+**What is the largest number `score` can reach with this code, and why?**
+
+<div class="write-space"></div>
+
+**A player gets 2 riddles right. Which ending do they see, and which branch is checked first?**
+
+<div class="write-space"></div>
+
+**Why does this game give a fair ending based on knowledge, not luck?**
+
+<div class="write-space"></div>
 
 ---
 
-## 4 · Record Your Walkthrough 🎥
+## 4 · Explain Your Lesson Code 🎥
 
-Take a video on your phone (or a parent's phone). Teach it like the viewer has never coded. Try to use these words: **score**, **riddle**, **answer**, **ending**, **logic**.
+Take a short video on your phone (or a parent's phone) explaining the score-based ending code **you** wrote in today's lesson. You may show it running. Teach it like the viewer has never coded. Try to use these words: **score**, **riddle**, **answer**, **ending**, **logic**.
 
-> 1. Play once answering well and show the high-score ending.
-> 2. Play again answering poorly and show a different ending.
-> 3. Point to where the score goes up.
+> 1. Show your riddle and answer lists, and explain how they line up.
+> 2. Point to the line where the score goes up, and say when it happens.
+> 3. Show the different endings and explain what decides which one appears.
 > 4. Explain why the ending depends on knowledge, not luck.
 
-**Write what you will say in your video.** Plan it here first.
+**Write what you will say in your video. Plan it here before you record.**
 
 <div class="write-space tall" style="min-height: 340px"></div>
 
@@ -170,4 +196,4 @@ Take a video on your phone (or a parent's phone). Teach it like the viewer has n
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.

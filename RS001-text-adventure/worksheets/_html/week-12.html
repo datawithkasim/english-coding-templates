@@ -104,7 +104,10 @@ footer b { color: #ff7849; }
 <div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
 <h1>🗡️ RS001 Week 12 — English Worksheet</h1>
 <p><strong>Topic:</strong> Three Battles, Three Different Choices · <strong>Course:</strong> Text Adventure (Python) · <strong>Time:</strong> about 45 minutes</p>
-<p>This week you wrap a whole battle into one <strong>function</strong> called <code>fight()</code>, then call it three times with different enemies and different action menus. One function, many battles — no copy-paste.</p>
+<p>This week you think about how a whole battle fits inside one <strong>function</strong> called <code>fight()</code>, then how calling it three times gives three different enemies and three different action menus. One function, many battles — you will read it, predict it, and explain it in your own words.</p>
+<blockquote>
+<p>🧠 Words to know: <strong>function</strong>, <strong>call</strong>, <strong>parameter</strong>, <strong>return</strong>, <strong>reuse</strong></p>
+</blockquote>
 <pre><code class="language-python">def fight(enemy_name, actions):
     game.say(f&quot;=== {enemy_name} appears! ===&quot;)
     game.say(f&quot;Choices: {', '.join(actions)}&quot;)
@@ -117,7 +120,7 @@ footer b { color: #ff7849; }
 fight(&quot;forest goblin&quot;, [&quot;fight&quot;, &quot;trap&quot;, &quot;run&quot;])
 </code></pre>
 <h2>1 · Predict 🔮</h2>
-<p>Read each piece of code. Before you run it in your head, write what you think happens.</p>
+<p>Read each piece of code. Run it in your head and write what you think happens.</p>
 <pre><code class="language-python">actions = [&quot;fight&quot;, &quot;trap&quot;, &quot;run&quot;]
 game.say(&quot;, &quot;.join(actions))
 </code></pre>
@@ -186,34 +189,51 @@ fight(&quot;bat&quot;, &quot;fly&quot;)
 <div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
 <div class="write-space"></div></div>
 
-<h2>3 · 🎯 Three Battles</h2>
-<p>Open your game. Write a <code>fight()</code> function, then call it for <strong>three</strong> different enemies, each with its own action menu and its own result. Reuse the function — do not copy-paste the battle code three times.</p>
-<p>When it works, send a <strong>photo or video</strong>, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.</p>
-<div class="qa"><blockquote>
-<p>First, I wrote a <code>fight()</code> function that …</p>
-<p>My three enemies were …</p>
-<p>Each enemy had a different menu, for example …</p>
-<p>Reusing the function meant I only had to fix bugs …</p>
-<p>One tricky moment was when …</p>
-<p>If I had more time, I would …</p>
-</blockquote>
-<div class="write-space tall" style="min-height: 340px"></div></div>
+<h2>3 · Explain the Code 📖</h2>
+<p>Read this working battle carefully. It is one <code>fight()</code> function called three times for three different enemies.</p>
+<pre><code class="language-python">def fight(enemy_name, actions):
+    game.say(f&quot;=== {enemy_name} appears! ===&quot;)
+    game.say(f&quot;Choices: {', '.join(actions)}&quot;)
+    action = game.ask(&quot;Do what? &quot;).strip().lower()
+    if action == actions[0]:
+        game.say(&quot;A hard-fought win!&quot;)
+        return True
+    return False
 
-<h2>4 · Record Your Walkthrough 🎥</h2>
-<p>Take a video on your phone (or a parent's phone) while your three battles run. Teach it like the viewer has never coded. Try to use these words: <strong>function</strong>, <strong>call</strong>, <strong>parameter</strong>, <strong>return</strong>, <strong>reuse</strong>.</p>
+fight(&quot;forest goblin&quot;, [&quot;fight&quot;, &quot;trap&quot;, &quot;run&quot;])
+fight(&quot;cave troll&quot;, [&quot;smash&quot;, &quot;dodge&quot;, &quot;run&quot;])
+fight(&quot;ice wraith&quot;, [&quot;freeze&quot;, &quot;burn&quot;, &quot;run&quot;])
+</code></pre>
+<div class="qa"><p><strong>What are the two parameters of <code>fight()</code>, and what does each one hold?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>The function is written once but the battle happens three times. How does that work?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>When does <code>fight()</code> return <code>True</code>, and when does it return <code>False</code>?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Each call passes a different <code>actions</code> list. Where in the function does that list get used?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why is using one <code>fight()</code> function better than copy-pasting the battle code three times?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>4 · Explain Your Lesson Code 🎥</h2>
+<p>In today's live lesson you wrote your own <code>fight()</code> code. Now explain it. Take a short video on your phone (or a parent's phone) showing your code — you may let it run — and teach it like the viewer has never coded. Try to use these words: <strong>function</strong>, <strong>call</strong>, <strong>parameter</strong>, <strong>return</strong>, <strong>reuse</strong>.</p>
 <blockquote>
 <ol>
-<li>Run your game through all three battles.</li>
-<li>Point to the one <code>fight()</code> function in your code.</li>
-<li>Show the three different calls and their different menus.</li>
-<li>Explain why one function is better than three copies.</li>
+<li>Show the one <code>fight()</code> function you wrote in the lesson.</li>
+<li>Point to its parameters and say what each one holds.</li>
+<li>Show the three different calls and read out their different menus.</li>
+<li>Explain why one function you reuse is better than three copies.</li>
 </ol>
 </blockquote>
-<div class="qa"><p><strong>Write what you will say in your video.</strong> Plan it here first.</p>
+<div class="qa"><p><strong>Write what you will say in your video. Plan it here before you record.</strong></p>
 <div class="write-space tall" style="min-height: 340px"></div></div>
 
 <hr />
 <h3>Submit ✅</h3>
-<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.</p>
+<p>Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.</p>
 </body>
 </html>

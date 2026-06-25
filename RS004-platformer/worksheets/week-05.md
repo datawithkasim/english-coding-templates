@@ -2,7 +2,7 @@
 
 **Topic:** Gravity & Jump · **Course:** Platformer Game · **Time:** about 45 minutes
 
-This week your player learns to **fall** and **jump**. A `velocity_y` value grows every frame (gravity pulls down), and a jump gives it a sudden *negative* push (upward). The player can only jump when it is on the ground.
+This week is about **thinking through** how a player learns to **fall** and **jump**, and **explaining** the code you wrote in the live lesson. A `velocity_y` value grows every frame (gravity pulls down), and a jump gives it a sudden *negative* push (upward). The player can only jump when it is on the ground.
 
 > Keep these words handy: **velocity**, **gravity**, **jump strength**, **on ground**, **accelerate**.
 
@@ -10,7 +10,7 @@ This week your player learns to **fall** and **jump**. A `velocity_y` value grow
 
 ## 1 · Predict 🔮
 
-Read each snippet. Before you run it, write what you think will happen.
+Read each snippet and write what you think it does. Do not run anything — just think.
 
 ```python
 velocity_y = velocity_y + GRAVITY
@@ -64,7 +64,7 @@ frame 3:  velocity_y = ___
 
 ## 3 · Spot the Bug 🐛
 
-Each snippet is broken. Rewrite it so it works, then explain why the original was wrong.
+Each snippet is broken. On paper, write the fixed code, then explain why the original was wrong.
 
 **Bug A** — The player should fall, but it just sits in the air doing nothing.
 
@@ -120,56 +120,63 @@ if player.y >= HEIGHT - 50:
 
 ---
 
-## 4 · Tune the Jump 🛠️
+## 4 · Explain the Code 📖
 
-Start from your working jump. Change values one at a time and write down the feel.
+Here is a working gravity-and-jump player, like the one from your lesson. Read it carefully, then answer the questions.
 
-1. Try `GRAVITY = 0.3`, then `GRAVITY = 1.2`. What changes about the fall?
+```python
+GRAVITY = 0.7
+JUMP_STRENGTH = -14
+velocity_y = 0
+on_ground = True
+
+# inside the event loop
+if event.key == pygame.K_SPACE and on_ground:
+    velocity_y = JUMP_STRENGTH
+    on_ground = False
+
+# every frame
+velocity_y = velocity_y + GRAVITY
+player.y = player.y + velocity_y
+
+if player.y >= HEIGHT - 50:
+    player.y = HEIGHT - 50
+    velocity_y = 0
+    on_ground = True
+```
+
+**What does the line `velocity_y = velocity_y + GRAVITY` do every frame?**
 
 <div class="write-space"></div>
 
-2. Try `JUMP_STRENGTH = -8`, then `-20`. What changes about the jump height?
+**Why does a jump set `velocity_y` to a *negative* number instead of a positive one?**
 
 <div class="write-space"></div>
 
-3. **Stretch:** add a `MAX_FALL` cap so the player never falls faster than a set speed. Why might that help?
+**Right after a jump, `on_ground` becomes `False`. Why is that important?**
+
+<div class="write-space"></div>
+
+**What three things happen when `player.y >= HEIGHT - 50` is true?**
+
+<div class="write-space"></div>
+
+**If you deleted the line `velocity_y = 0` at the bottom, what would go wrong?**
 
 <div class="write-space"></div>
 
 ---
 
-## 5 · Build & Show 📸
+## 5 · Explain Your Lesson Code 🎥
 
-Add gravity and a spacebar jump to last week's player. It must fall, land, and jump again from the ground.
+In the live lesson you wrote your own gravity and jump code. Now explain *your* code in a short phone video. You may show it running. Try to use these words: **gravity**, **velocity**, **jump strength**, **on ground**, **land**.
 
-When it works, send a **photo or video** of a jump, then explain what you did. Use these starters — write 4 to 6 sentences.
+> 1. Show your player falling and landing.
+> 2. Read your gravity line out loud and explain what it does.
+> 3. Show a jump from the ground and explain how the jump works.
+> 4. Try to jump in mid-air, show it doesn't work, and say why.
 
-> First, gravity works by adding `GRAVITY` to …
->
-> A jump is just `velocity_y` becoming a negative number, which means …
->
-> The player can only jump when …
->
-> The `GRAVITY` and `JUMP_STRENGTH` values I liked best were …
->
-> One tricky moment was …
->
-> If I had more time, I would …
-
-<div class="write-space tall" style="min-height: 340px"></div>
-
----
-
-## 6 · Record Your Walkthrough 🎥
-
-Take a video showing a jump and a landing. Teach it to someone new. Try to use these words: **gravity**, **velocity**, **jump strength**, **on ground**, **land**.
-
-> 1. Show the player falling and landing.
-> 2. Show a jump from the ground.
-> 3. Read the gravity line out loud and explain it.
-> 4. Try to jump in mid-air and show that it doesn't work — say why.
-
-**Write what you will say in your video.** Plan it here first.
+**Write what you will say in your video. Plan it here before you record.**
 
 <div class="write-space tall" style="min-height: 340px"></div>
 
@@ -177,4 +184,4 @@ Take a video showing a jump and a landing. Teach it to someone new. Try to use t
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.

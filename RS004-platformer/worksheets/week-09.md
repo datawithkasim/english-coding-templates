@@ -2,7 +2,7 @@
 
 **Topic:** Level Design (Data, Respawn, Finish) · **Course:** Platformer Game · **Time:** about 45 minutes
 
-This week you separate your **level data** from your game code. A `build_level()` function turns a list of numbers into platforms, the player **respawns** at the start if it falls off, and a **finish** marker says "you cleared it!".
+This week you think about how **level data** is kept apart from the game code. A `build_level()` function turns a list of numbers into platforms, the player **respawns** at the start if it falls off, and a **finish** marker says "you cleared it!". You will read this code closely and then explain the code you wrote in today's live lesson.
 
 > Keep these words handy: **level data**, **`build_level()`**, **respawn / start position**, **finish**, **cleared**.
 
@@ -10,7 +10,7 @@ This week you separate your **level data** from your game code. A `build_level()
 
 ## 1 · Predict 🔮
 
-Read each snippet. Before you run it, write what you think will happen.
+Read each snippet. Write what you think it does.
 
 ```python
 LEVEL_1 = [
@@ -59,7 +59,7 @@ We keep the level as a list of numbers (`LEVEL_1`) instead of writing each `pyga
 
 ## 3 · Spot the Bug 🐛
 
-Each snippet is broken. Rewrite it so it works, then explain why the original was wrong.
+Each snippet is broken. Rewrite it on paper so it works, then explain why the original was wrong.
 
 **Bug A** — `build_level` should return real platforms, but the game crashes saying it got tuples, not Rects.
 
@@ -115,56 +115,67 @@ if player.colliderect(player):
 
 ---
 
-## 4 · Shape a Level 🛠️
+## 4 · Explain the Code 📖
 
-Start from your working level loader.
+Read this working level loader closely. It keeps the level as data, builds the platforms, respawns the player, and clears the level at the finish.
 
-1. Move one platform 60 pixels higher. Can the player still reach it with a jump? Note the result.
+```python
+LEVEL_1 = [
+    (0, 550, 800, 50),
+    (150, 450, 120, 20),
+    (400, 350, 120, 20),
+]
+start_x, start_y = 50, 500
+
+def build_level(level_data):
+    return [pygame.Rect(*p) for p in level_data]
+
+platforms = build_level(LEVEL_1)
+finish = pygame.Rect(710, 180, 50, 40)
+cleared = False
+
+# inside the game loop:
+if player.y > HEIGHT:
+    player.x = start_x
+    player.y = start_y
+    velocity_y = 0
+
+if player.colliderect(finish):
+    cleared = True
+```
+
+**What is stored inside `LEVEL_1`, and what does each group of four numbers describe?**
 
 <div class="write-space"></div>
 
-2. Move the finish marker somewhere harder to reach. Where did you put it?
+**What does `build_level(LEVEL_1)` return, and what is now inside `platforms`?**
 
 <div class="write-space"></div>
 
-3. **Stretch:** show a "Level Clear!" message on screen when `cleared` is true. What font size did you use?
+**When does the `if player.y > HEIGHT:` block run, and what does it do to the player?**
+
+<div class="write-space"></div>
+
+**What has to be true for `cleared` to become `True`?**
+
+<div class="write-space"></div>
+
+**Why is `cleared` set to `False` at the start instead of `True`?**
 
 <div class="write-space"></div>
 
 ---
 
-## 5 · Build & Show 📸
+## 5 · Explain Your Lesson Code 🎥
 
-Design **your own** level data. It should have a clear start, a path of platforms, and a finish marker. Make sure the whole level is reachable.
+Explain the code **you wrote in today's lesson**. Record a short video on your phone. You may show your level running. Try to use these words: **level data**, **build_level**, **respawn**, **finish**, **cleared**.
 
-When it works, send a **photo or video** of a full run from start to finish, then explain what you did. Use these starters — write 4 to 6 sentences.
+> 1. Show your level and point out the start and the finish.
+> 2. Point to your level data and your `build_level()` and say what they do.
+> 3. Fall off on purpose and show the respawn, then explain those lines.
+> 4. Reach the finish and show the level clear.
 
-> First, I kept my level as data so that …
->
-> `build_level()` turns the numbers into …
->
-> When the player falls off, it respawns by …
->
-> My finish marker is at … and the player reaches it by …
->
-> One tricky moment was …
->
-> If I had more time, I would …
-
-<div class="write-space tall" style="min-height: 340px"></div>
-
----
-
-## 6 · Record Your Walkthrough 🎥
-
-Take a video of a full clear of your level. Teach it to someone new. Try to use these words: **level data**, **build_level**, **respawn**, **finish**, **cleared**.
-
-> 1. Show your level and point out the start and finish.
-> 2. Fall off on purpose and show the respawn.
-> 3. Read the respawn lines out loud and explain them.
-> 4. Reach the finish and show the clear.
-
-**Write what you will say in your video.** Plan it here first.
+**Write what you will say in your video. Plan it here before you record.**
 
 <div class="write-space tall" style="min-height: 340px"></div>
 
@@ -172,4 +183,4 @@ Take a video of a full clear of your level. Teach it to someone new. Try to use 
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.

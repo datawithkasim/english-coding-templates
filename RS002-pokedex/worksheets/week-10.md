@@ -2,7 +2,9 @@
 
 **Topic:** Expanding the Dex — Evolution + Region Keys · **Course:** Pokédex App · **Time:** about 45 minutes
 
-This week each Pokémon grows from 4 facts to **7**: you add `evolution`, `region`, and `description` keys. Because you are using dictionaries now, adding facts is easy — no new parallel lists to keep in sync. You also write a helper that prints a full Pokémon card, and filter the dex by region.
+This week is about **reading and explaining** the code that grows each Pokémon from 4 facts to **7** — adding the `evolution`, `region`, and `description` keys. You will think through how dictionaries make adding facts easy, trace a full-card helper, and explain the code you wrote in your live lesson out loud.
+
+> 🧠 Words to know: **key**, **dictionary**, **filter**, **region**, **KeyError**
 
 ---
 
@@ -18,7 +20,7 @@ From memory:
 
 ## 2 · Predict 🔮
 
-Read each block. Before you run it, write what you think will happen.
+Read each block. Write what you think will happen.
 
 ```python
 pikachu = {"name": "피카츄", "region": "관동", "evolution": "라이츄"}
@@ -61,7 +63,7 @@ show({"name": "파이리", "type": "불"})
 
 ## 3 · Spot the Bug 🐛
 
-Read what each block is **supposed** to do, fix it, then explain the fix.
+Read what each block is **supposed** to do, fix it on paper, then explain the fix.
 
 **Bug A** — Every Pokémon should have the same keys. This one is missing `region`, so the loop crashes when it reaches it.
 
@@ -129,9 +131,9 @@ show({"name": "피카츄", "description": "전기 쥐 포켓몬"})
 
 ---
 
-## 4 · Modify It ✏️
+## 4 · Explain the Code 📖
 
-Start from this working full-card helper:
+Read this working full-card helper carefully.
 
 ```python
 pokedex = [
@@ -157,50 +159,38 @@ def show_full(pokemon):
 show_full(pokedex[0])
 ```
 
-Make these changes one at a time and run after each:
+**How many keys does each Pokémon dictionary have? Name them.**
 
-1. Call `show_full` on the **second** Pokémon too.
-2. Add a `"weight"` key to both Pokémon and print it inside `show_full`.
-3. Loop over the whole dex and call `show_full` on every Pokémon.
+<div class="write-space"></div>
 
-**Write your changed / added lines here:**
+**The function uses `pokemon['region']`. What is `region` here — a key or a value?**
+
+<div class="write-space"></div>
+
+**`show_full(pokedex[0])` runs once. Which Pokémon's card prints, and why that one?**
+
+<div class="write-space"></div>
+
+**If a Pokémon was missing the `evolution` key, which line would crash, and what error would Python give?**
+
+<div class="write-space"></div>
+
+**Why is adding a new fact (like `weight`) to every Pokémon easier with dictionaries than with separate parallel lists?**
 
 <div class="write-space"></div>
 
 ---
 
-## 5 · Make It 📸
+## 5 · Explain Your Lesson Code 🎥
 
-Grow your Week 9 dex so every Pokémon has all **seven keys** (`name`, `type`, `hp`, `attack`, `evolution`, `region`, `description`). Have **at least eight Pokémon**. Add a "view by region" feature that lists only the Pokémon from a chosen region.
+Explain the code **you wrote in today's lesson** in a short phone video. You may show it running. Teach it like the viewer is new, and use these words: **key**, **dictionary**, **filter**, **region**, **KeyError**.
 
-When it works, send a **photo or video** on KakaoTalk, then explain what you did. Use these starters — write 4 to 6 sentences.
-
-> First, I added the keys … to every Pokémon.
->
-> Adding facts was easy because dictionaries let me …
->
-> My region filter worked by …
->
-> My `show_full` helper printed …
->
-> The trickiest part was …
->
-> If I had more time, I would add the key …
-
-<div class="write-space tall" style="min-height: 340px"></div>
-
----
-
-## 6 · Record Your Walkthrough 🎥
-
-Film it running. Teach it like the viewer is new. Try to use: **key**, **dictionary**, **filter**, **region**, **KeyError**.
-
-> 1. Show one Pokémon with all seven keys and read them out loud.
-> 2. Run the "view by region" feature for one region.
+> 1. Show one Pokémon from your dex with all seven keys and read them out loud.
+> 2. Run your "view by region" feature for one region and explain how the filter chooses which Pokémon to show.
 > 3. Explain why adding a key is easier than adding a fifth parallel list.
 > 4. Show what happens (or could happen) if one Pokémon is missing a key.
 
-**Plan what you will say here first:**
+**Write what you will say in your video. Plan it here before you record.**
 
 <div class="write-space tall" style="min-height: 340px"></div>
 
@@ -208,5 +198,4 @@ Film it running. Teach it like the viewer is new. Try to use: **key**, **diction
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
-</content>
+Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.

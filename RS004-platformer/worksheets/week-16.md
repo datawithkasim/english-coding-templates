@@ -2,7 +2,7 @@
 
 **Topic:** Title · Level Select · Sound · Showcase (Final) · **Course:** Platformer Game · **Time:** about 45 minutes
 
-This is the final week. You polish 15 weeks of work into a finished game: a **title screen**, a **level select** menu, and **sound** for jumps and coins. The whole thing runs on a **game state machine** that moves between title → level select → playing → game over / victory. Then you **present** it.
+This is the final week. You built a finished game over 16 weeks: a **title screen**, a **level select** menu, and **sound** for jumps and coins, all running on a **game state machine** that moves between title → level select → playing → game over / victory. This worksheet is about reading and explaining that code in plain English, then presenting your finished game.
 
 > Keep these words handy: **state machine**, **title screen**, **level select**, **sound**, **showcase**.
 
@@ -10,7 +10,7 @@ This is the final week. You polish 15 weeks of work into a finished game: a **ti
 
 ## 1 · Predict 🔮
 
-Read each snippet. Before you run it, write what you think will happen.
+Read each snippet. Write what you think it does.
 
 ```python
 current_state = "title"
@@ -47,7 +47,7 @@ if event.key == pygame.K_SPACE and on_ground:
 
 ## 2 · Map the States 🗺️
 
-Draw arrows (write them out) showing which state leads to which. Fill in the blanks.
+Write out the arrows showing which state leads to which. Fill in the blanks.
 
 ```
 title  --space-->  ________
@@ -64,7 +64,7 @@ gameover  --R-->  ________
 
 ## 3 · Spot the Bug 🐛
 
-Each snippet is broken. Rewrite it so it works, then explain why the original was wrong.
+Each snippet is broken. On paper, rewrite it so it works, then explain why the original was wrong.
 
 **Bug A** — Pressing space on the title should start the game. Right now space does nothing because the key is only checked while playing.
 
@@ -122,62 +122,77 @@ for coin in coins[:]:
 
 ---
 
-## 4 · Polish Pass 🛠️
+## 4 · Explain the Code 📖
 
-Start from your working state machine. Add polish one piece at a time.
+This is the heart of your finished game — the state machine that decides what screen the player sees and what each key does.
 
-1. Add your own title text and a "press space to start" line. What does your title say?
+```python
+current_state = "title"
+
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.KEYDOWN:
+            if current_state == "title":
+                if event.key == pygame.K_SPACE:
+                    current_state = "playing"
+                elif event.key == pygame.K_l:
+                    current_state = "level_select"
+            elif current_state == "level_select":
+                if event.key == pygame.K_RETURN:
+                    current_state = "playing"
+            elif current_state == "gameover":
+                if event.key == pygame.K_r:
+                    current_state = "title"
+
+    if current_state == "title":
+        draw_title()
+    elif current_state == "level_select":
+        draw_level_select()
+    elif current_state == "playing":
+        update_player()
+        if player_died:
+            current_state = "gameover"
+    elif current_state == "gameover":
+        draw_gameover()
+```
+
+**What value does `current_state` start as, and what screen does the player see first?**
 
 <div class="write-space"></div>
 
-2. Add a jump sound *and* a coin sound. When does each play?
+**On the title screen, what do the SPACE key and the L key each do?**
 
 <div class="write-space"></div>
 
-3. **Stretch:** add a creator screen with your name, or a death sound, or a screen shake on Game Over. What did you add?
+**Inside the `"playing"` state, what makes the game switch to `"gameover"`?**
+
+<div class="write-space"></div>
+
+**From `"gameover"`, which key sends the player back, and back to which state?**
+
+<div class="write-space"></div>
+
+**Why does the code check `current_state` both in the event loop and again lower down when drawing?**
 
 <div class="write-space"></div>
 
 ---
 
-## 5 · Finish & Showcase 📸
+## 5 · Explain Your Lesson Code 🎥
 
-Bring it all together into your finished game: title → level select → at least three of your own levels → victory, with sound.
+This is your final presentation. Record a phone video of the **finished platformer YOU built across the course**. Show it running from title to victory, then explain the key parts of your own code. Try to use these words: **state machine**, **title**, **level select**, **sound**, **function**.
 
-Send a **photo or video** of a full play-through (title to victory), then write your **showcase notes** below. Write 4 to 6 sentences.
+> 1. Show the title screen, then level select, then play through a level with sound.
+> 2. Open your code and point to your state machine — explain how it moves between screens.
+> 3. Show one function or class you are proud of and explain what it does.
+> 4. Reach the victory screen, and say the hardest bug you fixed and how.
 
-> The part of my game I am most proud of is …
->
-> My favourite function or class is ___, and it works by …
->
-> My game state machine moves from … to … to …
->
-> The hardest bug I solved this term was …
->
-> If I kept building, I would add …
->
-> One thing I can do now that I couldn't 16 weeks ago is …
+**Write what you will say in your video. Plan it here before you record.**
 
-<div class="write-space tall" style="min-height: 360px"></div>
-
----
-
-## 6 · Showcase Walkthrough 🎥
-
-Record your final showcase video — this is the one you present. Teach your game to someone who has never seen it. Try to use these words: **state machine**, **title**, **level select**, **sound**, **function**.
-
-> 1. Show the title screen, then level select.
-> 2. Play through a full level with sound.
-> 3. Show one function or class you are proud of and explain it.
-> 4. Reach the victory screen.
-> 5. Say the hardest bug you fixed and how.
-
-**Write what you will say in your showcase.** Plan it here first.
-
-<div class="write-space tall" style="min-height: 360px"></div>
+<div class="write-space tall" style="min-height: 340px"></div>
 
 ---
 
 ### Submit ✅
 
-Send this worksheet + your finished game video + your showcase notes to teacher on KakaoTalk.
+Send this worksheet + your finished-game presentation video to teacher on KakaoTalk.

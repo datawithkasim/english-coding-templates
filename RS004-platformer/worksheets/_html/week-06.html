@@ -103,13 +103,13 @@ footer b { color: #ff7849; }
 <body>
 <div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
 <h1>🦊 RS004 Week 6 — English Worksheet</h1>
-<p><strong>Topic:</strong> Coyote Time + Double Jump (Apply) · <strong>Course:</strong> Platformer Game · <strong>Time:</strong> about 45 minutes</p>
-<p>This week your jump feels like a <em>real</em> game. <strong>Coyote time</strong> lets the player jump for a few frames <em>after</em> leaving the edge. A <strong>double jump</strong> gives one extra jump in the air. You will track how many jumps were used and reset them on landing.</p>
+<p><strong>Topic:</strong> Coyote Time + Double Jump (Explain) · <strong>Course:</strong> Platformer Game · <strong>Time:</strong> about 45 minutes</p>
+<p>This week your jump feels like a <em>real</em> game. <strong>Coyote time</strong> lets the player jump for a few frames <em>after</em> leaving the edge. A <strong>double jump</strong> gives one extra jump in the air. In this worksheet you will think about how the code tracks how many jumps were used and resets them on landing, then explain the code you wrote in the live lesson.</p>
 <blockquote>
 <p>Keep these words handy: <strong>coyote time</strong>, <strong>double jump</strong>, <strong>jumps used</strong>, <strong>was on ground</strong>, <strong>reset</strong>.</p>
 </blockquote>
 <h2>1 · Predict 🔮</h2>
-<p>Read each snippet. Before you run it, write what you think will happen.</p>
+<p>Read each snippet. Write what you think happens.</p>
 <pre><code class="language-python">if was_on_ground and not on_ground:
     coyote_time = COYOTE_FRAMES
 </code></pre>
@@ -181,51 +181,60 @@ if player.y &gt;= HEIGHT - 50:
 <div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
 <div class="write-space"></div></div>
 
-<h2>4 · Tune the Polish 🛠️</h2>
-<p>Start from your working coyote + double jump. Change one thing at a time.</p>
-<ol>
-<li>Set <code>COYOTE_FRAMES</code> to 1, then to 12. What feels too short? Too forgiving?</li>
-</ol>
-<div class="write-space"></div>
+<h2>4 · Explain the Code 📖</h2>
+<p>Here is a working version of coyote time + double jump. Read it carefully, then answer the questions.</p>
+<pre><code class="language-python"># each frame, before checking input
+if was_on_ground and not on_ground:
+    coyote_time = COYOTE_FRAMES
+if coyote_time &gt; 0:
+    coyote_time -= 1
 
-<ol start="2">
-<li>Make <code>DOUBLE_JUMP_STRENGTH</code> weaker, then equal to the first jump. Which feels right?</li>
-</ol>
-<div class="write-space"></div>
+# when the player presses jump
+if event.key == pygame.K_SPACE:
+    if (on_ground or coyote_time &gt; 0) and jumps_used == 0:
+        velocity_y = JUMP_STRENGTH
+        jumps_used = 1
+    elif jumps_used == 1:
+        velocity_y = DOUBLE_JUMP_STRENGTH
+        jumps_used = 2
 
-<ol start="3">
-<li><strong>Stretch:</strong> add a tiny particle burst (a few small circles) when the double jump fires. Where will you create them?</li>
-</ol>
-<div class="write-space"></div>
+# when the player lands
+if player.y &gt;= HEIGHT - 50:
+    player.y = HEIGHT - 50
+    velocity_y = 0
+    on_ground = True
+    jumps_used = 0
+</code></pre>
+<div class="qa"><p><strong>What does <code>coyote_time -= 1</code> do, and why does the player lose coyote time after a few frames?</strong></p>
+<div class="write-space"></div></div>
 
-<h2>5 · Build &amp; Show 📸</h2>
-<p>Tune <strong>your own</strong> jump polish: coyote time + double jump that feel good to you.</p>
-<p>When it works, send a <strong>photo or video</strong> showing a single jump, a double jump, and a coyote jump, then explain what you did. Use these starters — write 4 to 6 sentences.</p>
-<div class="qa"><blockquote>
-<p>First, coyote time lets the player jump after leaving an edge by …</p>
-<p>The double jump works because <code>jumps_used</code> …</p>
-<p>I reset the jumps when …</p>
-<p>The values I tuned were …</p>
-<p>One tricky moment was …</p>
-<p>If I had more time, I would …</p>
-</blockquote>
-<div class="write-space tall" style="min-height: 340px"></div></div>
+<div class="qa"><p><strong>Why does the first jump check <code>jumps_used == 0</code> instead of just <code>on_ground</code>?</strong></p>
+<div class="write-space"></div></div>
 
-<h2>6 · Record Your Walkthrough 🎥</h2>
-<p>Take a video showing all three jumps. Teach it to someone new. Try to use these words: <strong>coyote time</strong>, <strong>double jump</strong>, <strong>jumps used</strong>, <strong>reset</strong>, <strong>air</strong>.</p>
+<div class="qa"><p><strong>When does <code>jumps_used</code> become 2, and what stops a third jump from happening?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Which line gives the player their jumps back, and when does it run?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>How does <code>coyote_time &gt; 0</code> let the player jump just after leaving an edge?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>5 · Explain Your Lesson Code 🎥</h2>
+<p>Explain the coyote time + double jump code <strong>you wrote in today's lesson</strong>. Record a short video on your phone. You may show your game running. Try to use these words: <strong>coyote time</strong>, <strong>double jump</strong>, <strong>jumps used</strong>, <strong>reset</strong>, <strong>air</strong>.</p>
 <blockquote>
 <ol>
-<li>Show a normal jump from the ground.</li>
-<li>Show a double jump in the air.</li>
+<li>Show a normal jump from the ground and point to the line that starts it.</li>
+<li>Show a double jump in the air and read the part that uses <code>jumps_used</code>.</li>
 <li>Run off a ledge and jump late — show coyote time working.</li>
 <li>Read the line that resets jumps on landing and explain it.</li>
 </ol>
 </blockquote>
-<div class="qa"><p><strong>Write what you will say in your video.</strong> Plan it here first.</p>
+<div class="qa"><p><strong>Write what you will say in your video. Plan it here before you record.</strong></p>
 <div class="write-space tall" style="min-height: 340px"></div></div>
 
 <hr />
 <h3>Submit ✅</h3>
-<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.</p>
+<p>Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.</p>
 </body>
 </html>

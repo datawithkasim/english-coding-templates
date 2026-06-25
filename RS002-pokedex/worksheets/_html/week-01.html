@@ -104,12 +104,13 @@ footer b { color: #ff7849; }
 <div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
 <h1>🔴 RS002 Week 1 — English Worksheet</h1>
 <p><strong>Topic:</strong> input + Variables — Welcome, Trainer! · <strong>Course:</strong> Pokédex App · <strong>Time:</strong> about 45 minutes</p>
-<p>This week your program <strong>asks the user a question</strong> with <code>input()</code>, <strong>stores the answer</strong> in a variable, and <strong>prints a welcome screen</strong> with an f-string. This is the very first screen of your Pokédex app — you will build on it for the next 15 weeks.</p>
+<p>This week your program <strong>asks the user a question</strong> with <code>input()</code>, <strong>stores the answer</strong> in a variable, and <strong>prints a welcome screen</strong> with an f-string. This worksheet is about <em>thinking through</em> and <em>explaining</em> that code — the first screen of the Pokédex app you wrote together in your live lesson.</p>
 <blockquote>
+<p>🧠 Words to know: <strong>input</strong>, <strong>variable</strong>, <strong>f-string</strong>, <strong>default</strong>, <strong>print</strong></p>
 <p>Coming from RS001? You used <code>game.ask()</code> before. This week we use plain Python <code>input()</code>. Same idea — ask, remember, use — but it is the standard Python way.</p>
 </blockquote>
 <h2>1 · Predict 🔮</h2>
-<p>Read each block. Before you run it, write what you think will happen.</p>
+<p>Read each block. Without running it, write what you think will happen.</p>
 <pre><code class="language-python">trainer_name = input(&quot;트레이너님, 이름을 알려주세요: &quot;)
 print(f&quot;환영합니다, {trainer_name} 트레이너님!&quot;)
 </code></pre>
@@ -133,7 +134,7 @@ print(f&quot;환영합니다, {trainer_name} 트레이너님!&quot;)
 <div class="write-space"></div></div>
 
 <h2>2 · Spot the Bug 🐛</h2>
-<p>Each block was meant to do something, but it is broken. Read what it is <strong>supposed</strong> to do, rewrite it so it works, then explain why the original was wrong.</p>
+<p>Each block was meant to do something, but it is broken. Read what it is <strong>supposed</strong> to do, write the fixed code on paper, then explain why the original was wrong.</p>
 <p><strong>Bug A</strong> — This should print <code>환영합니다, 이슬 트레이너님!</code> when the user types <code>이슬</code>. Right now it prints the variable name instead of the value.</p>
 <pre><code class="language-python">trainer_name = input(&quot;이름: &quot;)
 print(&quot;환영합니다, trainer_name 트레이너님!&quot;)
@@ -167,8 +168,8 @@ print(f&quot;환영합니다, {trainer_name} 트레이너님!&quot;)
 <div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
 <div class="write-space"></div></div>
 
-<h2>3 · Modify It ✏️</h2>
-<p>Start from this working intro:</p>
+<h2>3 · Explain the Code 📖</h2>
+<p>Read this working Pokédex intro screen carefully. Answer each question in your own words.</p>
 <pre><code class="language-python">trainer_name = input(&quot;트레이너님, 이름을 알려주세요: &quot;)
 
 if trainer_name == &quot;&quot;:
@@ -178,49 +179,34 @@ print(f&quot;\n=== 포켓몬 도감 ===&quot;)
 print(f&quot;환영합니다, {trainer_name} 트레이너님!&quot;)
 print(f&quot;오늘도 새로운 포켓몬을 만날 준비가 되셨나요?\n&quot;)
 </code></pre>
-<p>Make these changes one at a time and run after each:</p>
-<ol>
-<li>Change the title line so it reads <code>=== 나만의 포켓몬 도감 ===</code>.</li>
-<li>Add one more <code>print</code> line that says something friendly to the trainer using their name again.</li>
-<li>Change the empty-name default to a funny name of your choice.</li>
-</ol>
-<div class="qa"><p><strong>Write your three changed lines here:</strong></p>
+<div class="qa"><p><strong>What does the first line do, and where does the trainer's answer go?</strong></p>
 <div class="write-space"></div></div>
 
-<h2>4 · Make It 📸</h2>
-<p>Open your homework world. Build your own <strong>Pokédex intro screen</strong> from scratch. It should:</p>
-<ul>
-<li>ask the trainer for their name with <code>input()</code>,</li>
-<li>give a default name if they type nothing,</li>
-<li>print a welcome screen that uses the name in an f-string.</li>
-</ul>
-<p>When it works, send a <strong>photo or video</strong> of your screen on KakaoTalk, then explain what you did. Use these sentence starters — write 4 to 6 sentences.</p>
-<div class="qa"><blockquote>
-<p>First, I used <code>input()</code> to …</p>
-<p>I stored the answer in a variable called …</p>
-<p>My f-string put the name into the message by …</p>
-<p>When the user types nothing, my program …</p>
-<p>The trickiest part was …</p>
-<p><code>input()</code> is different from RS001's <code>game.ask()</code> because …</p>
-</blockquote>
-<div class="write-space tall" style="min-height: 340px"></div></div>
+<div class="qa"><p><strong>What is the <code>if trainer_name == "":</code> block checking for, and what happens when it is true?</strong></p>
+<div class="write-space"></div></div>
 
-<h2>5 · Record Your Walkthrough 🎥</h2>
-<p>Take a video on your phone while your program runs. Talk through it like you are teaching someone new. Try to use these words: <strong>input</strong>, <strong>variable</strong>, <strong>f-string</strong>, <strong>default</strong>, <strong>print</strong>.</p>
+<div class="qa"><p><strong>In the welcome line, how do the <code>{ }</code> change what gets printed? What would happen if you removed the <code>f</code>?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>What does the <code>\n</code> do inside the print lines?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Which line is the "default" name, and why is having a default useful?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>4 · Explain Your Lesson Code 🎥</h2>
+<p>Explain the Pokédex intro code <strong>you wrote in today's lesson</strong> in a short phone video. You may show it running. Talk through it like you are teaching someone new, and use these words: <strong>input</strong>, <strong>variable</strong>, <strong>f-string</strong>, <strong>default</strong>, <strong>print</strong>.</p>
 <blockquote>
-<ol>
-<li>Run your program and type your name.</li>
-<li>Read your <code>input()</code> line out loud and say what it stores.</li>
-<li>Read your f-string out loud and point to the <code>{ }</code> part.</li>
-<li>Run it again, type nothing, and show the default name appear.</li>
-</ol>
+<p>Run your program and type your name.</p>
+<p>Read your <code>input()</code> line out loud and say what variable it stores into.</p>
+<p>Read your f-string out loud and point to the <code>{ }</code> part.</p>
+<p>Run it again, type nothing, and show the default name appear.</p>
 </blockquote>
-<div class="qa"><p><strong>Write what you will say in your video.</strong> Plan it here first — you can read from it while filming.</p>
+<div class="qa"><p><strong>Write what you will say in your video. Plan it here before you record.</strong></p>
 <div class="write-space tall" style="min-height: 340px"></div></div>
 
 <hr />
 <h3>Submit ✅</h3>
-<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.
-</content></p>
+<p>Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.</p>
 </body>
 </html>

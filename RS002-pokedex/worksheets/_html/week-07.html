@@ -104,14 +104,17 @@ footer b { color: #ff7849; }
 <div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
 <h1>🔴 RS002 Week 7 — English Worksheet</h1>
 <p><strong>Topic:</strong> Validating Input — <code>in</code> / <code>not in</code> · <strong>Course:</strong> Pokédex App · <strong>Time:</strong> about 45 minutes</p>
-<p>This week you make your program <strong>safe</strong>. When the trainer types a Pokémon that is not in the dex, you do not crash — you check with <code>in</code> / <code>not in</code>, give them a clear message, and fall back to a safe <strong>default</strong>.</p>
+<p>This week you think about how a program stays <strong>safe</strong>. When a trainer types a Pokémon that is not in the dex, the program should not crash — it checks with <code>in</code> / <code>not in</code>, gives a clear message, and falls back to a safe <strong>default</strong>. On this worksheet you read code, predict it, fix bugs on paper, and explain the code you wrote in your live lesson.</p>
+<blockquote>
+<p>🧠 Words to know: <strong>in</strong>, <strong>not in</strong>, <strong>validate</strong>, <strong>default</strong>, <strong>safe</strong></p>
+</blockquote>
 <h2>1 · Recall 🧠</h2>
 <p>From memory:</p>
 <div class="qa"><p><strong>Write a loop that prints every name in <code>names</code> that contains the text in <code>search</code>.</strong></p>
 <div class="write-space"></div></div>
 
 <h2>2 · Predict 🔮</h2>
-<p>Read each block. Before you run it, write what you think will happen.</p>
+<p>Read each block. Write what you think will happen — no running.</p>
 <pre><code class="language-python">pokedex = [&quot;피카츄&quot;, &quot;이상해씨&quot;, &quot;파이리&quot;]
 print(&quot;피카츄&quot; in pokedex)
 print(&quot;리자몽&quot; in pokedex)
@@ -140,7 +143,7 @@ print(f&quot;선택: {choice}&quot;)
 <div class="write-space"></div></div>
 
 <h2>3 · Spot the Bug 🐛</h2>
-<p>Read what each block is <strong>supposed</strong> to do, fix it, then explain the fix.</p>
+<p>Read what each block is <strong>supposed</strong> to do, fix it on paper, then explain the fix.</p>
 <p><strong>Bug A</strong> — This should warn the user when their choice is <strong>not</strong> in the dex. Right now it warns when the choice <strong>is</strong> in the dex.</p>
 <pre><code class="language-python">pokedex = [&quot;피카츄&quot;, &quot;이상해씨&quot;, &quot;파이리&quot;]
 choice = input(&quot;이름: &quot;).strip()
@@ -191,8 +194,8 @@ else:
 <div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
 <div class="write-space"></div></div>
 
-<h2>4 · Modify It ✏️</h2>
-<p>Start from this working validation:</p>
+<h2>4 · Explain the Code 📖</h2>
+<p>Read this working validation closely.</p>
 <pre><code class="language-python">pokedex = [&quot;피카츄&quot;, &quot;이상해씨&quot;, &quot;파이리&quot;, &quot;꼬부기&quot;]
 
 choice = input(&quot;포켓몬 이름: &quot;).strip()
@@ -203,44 +206,36 @@ if choice not in pokedex:
 
 print(f&quot;\n선택된 포켓몬: {choice}&quot;)
 </code></pre>
-<p>Make these changes one at a time and run after each:</p>
-<ol>
-<li>Add a second chance: after the warning, re-ask once before falling back.</li>
-<li>Change the default Pokémon to a different one in your dex.</li>
-<li>Add a friendly success line when the choice <strong>is</strong> valid the first time.</li>
-</ol>
-<div class="qa"><p><strong>Write your changed / added lines here:</strong></p>
+<div class="qa"><p><strong>What does <code>.strip()</code> do to the trainer's input, and why does it help the <code>not in</code> check?</strong></p>
 <div class="write-space"></div></div>
 
-<h2>5 · Make It 📸</h2>
-<p>Add <strong>validation</strong> to your Week 6 search. If the trainer's choice is not in the dex, warn them and fall back to a safe default. The program should never crash, no matter what they type.</p>
-<p>When it works, send a <strong>photo or video</strong> on KakaoTalk showing both a <strong>valid</strong> choice and an <strong>invalid</strong> one. Then explain what you did. Use these starters — write 4 to 6 sentences.</p>
-<div class="qa"><blockquote>
-<p>First, I checked the choice with <code>not in</code> so that …</p>
-<p>When the Pokémon was missing, my program …</p>
-<p>My safe default was … because …</p>
-<p>I tested it by typing …</p>
-<p>The trickiest part was …</p>
-<p>Validating input matters because …</p>
-</blockquote>
-<div class="write-space tall" style="min-height: 340px"></div></div>
+<div class="qa"><p><strong>When is the <code>if</code> block's code run, and when is it skipped?</strong></p>
+<div class="write-space"></div></div>
 
-<h2>6 · Record Your Walkthrough 🎥</h2>
-<p>Film your validation running. Teach it like the viewer is new. Try to use: <strong>in</strong>, <strong>not in</strong>, <strong>validate</strong>, <strong>default</strong>, <strong>safe</strong>.</p>
+<div class="qa"><p><strong>Why does the line <code>choice = "피카츄"</code> sit inside the <code>if</code>, and what would change if it were outside?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>If the trainer types <code>꼬부기</code>, what does the last line print? Walk through why.</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Where does this code make the program "safe", and what bad input is it protecting against?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>5 · Explain Your Lesson Code 🎥</h2>
+<p>Explain the validation code <strong>you</strong> wrote in today's live lesson. Record a short phone video — you may show it running. Try to use: <strong>in</strong>, <strong>not in</strong>, <strong>validate</strong>, <strong>default</strong>, <strong>safe</strong>.</p>
 <blockquote>
 <ol>
-<li>Type a valid Pokémon and show it works.</li>
-<li>Type something fake and show the warning + default.</li>
-<li>Read your <code>not in</code> line out loud and explain it.</li>
+<li>Show your code and type a valid Pokémon to show it works.</li>
+<li>Type something fake and show your warning + default.</li>
+<li>Read your own <code>not in</code> line out loud and explain it.</li>
 <li>Say why a program should never crash on bad input.</li>
 </ol>
 </blockquote>
-<div class="qa"><p><strong>Plan what you will say here first:</strong></p>
+<div class="qa"><p><strong>Write what you will say in your video. Plan it here before you record.</strong></p>
 <div class="write-space tall" style="min-height: 340px"></div></div>
 
 <hr />
 <h3>Submit ✅</h3>
-<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.
-</content></p>
+<p>Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.</p>
 </body>
 </html>

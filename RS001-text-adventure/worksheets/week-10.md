@@ -2,7 +2,9 @@
 
 **Topic:** Deeper Branches — Path → Enemy → Reward · **Course:** Text Adventure (Python) · **Time:** about 45 minutes
 
-This week one choice ripples forward. The path you pick decides the enemy, the **reward**, and the **next place** — and the reward then changes what happens after. Choices stack into a chain.
+This week you think about how one choice ripples forward. The path you pick decides the enemy, the **reward**, and the **next place** — and the reward then changes what happens after. Choices stack into a chain. On this worksheet you read code, find bugs on paper, and explain the code you wrote in today's live lesson.
+
+> 🧠 Words to know: **branch**, **reward**, **next**, **chain**, **depends on**
 
 ```python
 if path == "left":
@@ -18,7 +20,7 @@ if reward == "gold coin":
 
 ## 1 · Predict 🔮
 
-Read each piece of code. Before you run it in your head, write what you think happens.
+Read each piece of code. Run it in your head and write what you think happens.
 
 ```python
 path = "left"
@@ -60,7 +62,7 @@ game.say(f"You won a {reward}.")
 
 ## 2 · Spot the Bug 🐛
 
-Each block was meant to do something, but it is broken. Read what it is **supposed** to do, fix it, then explain why the original was wrong.
+Each block was meant to do something, but it is broken. Read what it is **supposed** to do, fix it on paper, then explain why the original was wrong.
 
 **Bug A** — Both paths should set `reward`, so the line after always has a value. Right now only the left path sets it, so the right path crashes.
 
@@ -125,38 +127,64 @@ game.say(f"Reward: {reward}")
 
 ---
 
-## 3 · 🎯 Chain Your Choices
+## 3 · Explain the Code 📖
 
-Open your game. Make the path choice set **three** things — the enemy, the reward, and the next place. Then add a second branch that reads the **reward** and changes the next scene. That is two layers of cause and effect.
+Read this working example. One path choice sets three things, and then a second branch reads the **reward** to change the next scene — two layers of cause and effect.
 
-When it works, send a **photo or video**, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.
+```python
+path = game.ask("Which way? left or right").strip().lower()
 
-> First, the path choice decided …
->
-> The reward from that path was …
->
-> Later, the reward changed the story because …
->
-> I made sure every branch set the variables so that …
->
-> One tricky moment was when …
->
-> If I had more time, I would …
+if path == "left":
+    enemy = "goblin"
+    reward = "gold coin"
+    next_place = "deep cave"
+else:
+    enemy = "spider"
+    reward = "silver ring"
+    next_place = "dark forest"
 
-<div class="write-space tall" style="min-height: 340px"></div>
+game.say(f"A {enemy} blocks the way! You win a {reward}.")
+
+if reward == "gold coin":
+    game.say("A merchant shows you a secret passage.")
+elif reward == "silver ring":
+    game.say("The ring glows and lights up the path ahead.")
+
+game.say(f"You move on to the {next_place}.")
+```
+
+**On the first line, what does `.strip().lower()` do to the player's answer?**
+
+<div class="write-space"></div>
+
+**If the player types "right", which three values get set, and why?**
+
+<div class="write-space"></div>
+
+**Why does the second `if` use `reward` instead of `path` to decide the next scene?**
+
+<div class="write-space"></div>
+
+**Trace the "left" path: list every line `game.say` prints, in order.**
+
+<div class="write-space"></div>
+
+**Where in this code is the **chain** — where does one choice cause the next thing to happen?**
+
+<div class="write-space"></div>
 
 ---
 
-## 4 · Record Your Walkthrough 🎥
+## 4 · Explain Your Lesson Code 🎥
 
-Take a video on your phone (or a parent's phone) while your game runs. Teach it like the viewer has never coded. Try to use these words: **branch**, **reward**, **next**, **chain**, **depends on**.
+Take a short video on your phone (or a parent's phone) and explain the code **you wrote in today's lesson**. You may show your game running. Teach it like the viewer has never coded. Try to use these words: **branch**, **reward**, **next**, **chain**, **depends on**.
 
-> 1. Run your game down one path and show the reward.
-> 2. Show how that reward changes the next scene.
-> 3. Run a different path and show a different chain.
-> 4. Read one branch out loud and explain what depends on what.
+> 1. Show the path choice in your code and say what three things it sets.
+> 2. Read one branch out loud and explain what **depends on** what.
+> 3. Show how the reward changes the **next** scene — point to the chain.
+> 4. Run a different path and explain why a different chain happens.
 
-**Write what you will say in your video.** Plan it here first.
+**Write what you will say in your video. Plan it here before you record.**
 
 <div class="write-space tall" style="min-height: 340px"></div>
 
@@ -164,4 +192,4 @@ Take a video on your phone (or a parent's phone) while your game runs. Teach it 
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.

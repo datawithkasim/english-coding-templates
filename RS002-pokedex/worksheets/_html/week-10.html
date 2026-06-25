@@ -104,14 +104,17 @@ footer b { color: #ff7849; }
 <div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
 <h1>🔴 RS002 Week 10 — English Worksheet</h1>
 <p><strong>Topic:</strong> Expanding the Dex — Evolution + Region Keys · <strong>Course:</strong> Pokédex App · <strong>Time:</strong> about 45 minutes</p>
-<p>This week each Pokémon grows from 4 facts to <strong>7</strong>: you add <code>evolution</code>, <code>region</code>, and <code>description</code> keys. Because you are using dictionaries now, adding facts is easy — no new parallel lists to keep in sync. You also write a helper that prints a full Pokémon card, and filter the dex by region.</p>
+<p>This week is about <strong>reading and explaining</strong> the code that grows each Pokémon from 4 facts to <strong>7</strong> — adding the <code>evolution</code>, <code>region</code>, and <code>description</code> keys. You will think through how dictionaries make adding facts easy, trace a full-card helper, and explain the code you wrote in your live lesson out loud.</p>
+<blockquote>
+<p>🧠 Words to know: <strong>key</strong>, <strong>dictionary</strong>, <strong>filter</strong>, <strong>region</strong>, <strong>KeyError</strong></p>
+</blockquote>
 <h2>1 · Recall 🧠</h2>
 <p>From memory:</p>
 <div class="qa"><p><strong>Write a single Pokémon as a dictionary with keys <code>name</code>, <code>type</code>, <code>hp</code>, and <code>attack</code>, then print its name.</strong></p>
 <div class="write-space"></div></div>
 
 <h2>2 · Predict 🔮</h2>
-<p>Read each block. Before you run it, write what you think will happen.</p>
+<p>Read each block. Write what you think will happen.</p>
 <pre><code class="language-python">pikachu = {&quot;name&quot;: &quot;피카츄&quot;, &quot;region&quot;: &quot;관동&quot;, &quot;evolution&quot;: &quot;라이츄&quot;}
 print(f&quot;{pikachu['name']} → {pikachu['evolution']} ({pikachu['region']})&quot;)
 </code></pre>
@@ -141,7 +144,7 @@ show({&quot;name&quot;: &quot;파이리&quot;, &quot;type&quot;: &quot;불&quot;
 <div class="write-space"></div></div>
 
 <h2>3 · Spot the Bug 🐛</h2>
-<p>Read what each block is <strong>supposed</strong> to do, fix it, then explain the fix.</p>
+<p>Read what each block is <strong>supposed</strong> to do, fix it on paper, then explain the fix.</p>
 <p><strong>Bug A</strong> — Every Pokémon should have the same keys. This one is missing <code>region</code>, so the loop crashes when it reaches it.</p>
 <pre><code class="language-python">pokedex = [
     {&quot;name&quot;: &quot;피카츄&quot;, &quot;region&quot;: &quot;관동&quot;},
@@ -188,8 +191,8 @@ show({&quot;name&quot;: &quot;피카츄&quot;, &quot;description&quot;: &quot;�
 <div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
 <div class="write-space"></div></div>
 
-<h2>4 · Modify It ✏️</h2>
-<p>Start from this working full-card helper:</p>
+<h2>4 · Explain the Code 📖</h2>
+<p>Read this working full-card helper carefully.</p>
 <pre><code class="language-python">pokedex = [
     {
         &quot;name&quot;: &quot;피카츄&quot;, &quot;type&quot;: &quot;전기&quot;, &quot;hp&quot;: 35, &quot;attack&quot;: 55,
@@ -212,44 +215,36 @@ def show_full(pokemon):
 
 show_full(pokedex[0])
 </code></pre>
-<p>Make these changes one at a time and run after each:</p>
-<ol>
-<li>Call <code>show_full</code> on the <strong>second</strong> Pokémon too.</li>
-<li>Add a <code>"weight"</code> key to both Pokémon and print it inside <code>show_full</code>.</li>
-<li>Loop over the whole dex and call <code>show_full</code> on every Pokémon.</li>
-</ol>
-<div class="qa"><p><strong>Write your changed / added lines here:</strong></p>
+<div class="qa"><p><strong>How many keys does each Pokémon dictionary have? Name them.</strong></p>
 <div class="write-space"></div></div>
 
-<h2>5 · Make It 📸</h2>
-<p>Grow your Week 9 dex so every Pokémon has all <strong>seven keys</strong> (<code>name</code>, <code>type</code>, <code>hp</code>, <code>attack</code>, <code>evolution</code>, <code>region</code>, <code>description</code>). Have <strong>at least eight Pokémon</strong>. Add a "view by region" feature that lists only the Pokémon from a chosen region.</p>
-<p>When it works, send a <strong>photo or video</strong> on KakaoTalk, then explain what you did. Use these starters — write 4 to 6 sentences.</p>
-<div class="qa"><blockquote>
-<p>First, I added the keys … to every Pokémon.</p>
-<p>Adding facts was easy because dictionaries let me …</p>
-<p>My region filter worked by …</p>
-<p>My <code>show_full</code> helper printed …</p>
-<p>The trickiest part was …</p>
-<p>If I had more time, I would add the key …</p>
-</blockquote>
-<div class="write-space tall" style="min-height: 340px"></div></div>
+<div class="qa"><p><strong>The function uses <code>pokemon['region']</code>. What is <code>region</code> here — a key or a value?</strong></p>
+<div class="write-space"></div></div>
 
-<h2>6 · Record Your Walkthrough 🎥</h2>
-<p>Film it running. Teach it like the viewer is new. Try to use: <strong>key</strong>, <strong>dictionary</strong>, <strong>filter</strong>, <strong>region</strong>, <strong>KeyError</strong>.</p>
+<div class="qa"><p><strong><code>show_full(pokedex[0])</code> runs once. Which Pokémon's card prints, and why that one?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>If a Pokémon was missing the <code>evolution</code> key, which line would crash, and what error would Python give?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why is adding a new fact (like <code>weight</code>) to every Pokémon easier with dictionaries than with separate parallel lists?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>5 · Explain Your Lesson Code 🎥</h2>
+<p>Explain the code <strong>you wrote in today's lesson</strong> in a short phone video. You may show it running. Teach it like the viewer is new, and use these words: <strong>key</strong>, <strong>dictionary</strong>, <strong>filter</strong>, <strong>region</strong>, <strong>KeyError</strong>.</p>
 <blockquote>
 <ol>
-<li>Show one Pokémon with all seven keys and read them out loud.</li>
-<li>Run the "view by region" feature for one region.</li>
+<li>Show one Pokémon from your dex with all seven keys and read them out loud.</li>
+<li>Run your "view by region" feature for one region and explain how the filter chooses which Pokémon to show.</li>
 <li>Explain why adding a key is easier than adding a fifth parallel list.</li>
 <li>Show what happens (or could happen) if one Pokémon is missing a key.</li>
 </ol>
 </blockquote>
-<div class="qa"><p><strong>Plan what you will say here first:</strong></p>
+<div class="qa"><p><strong>Write what you will say in your video. Plan it here before you record.</strong></p>
 <div class="write-space tall" style="min-height: 340px"></div></div>
 
 <hr />
 <h3>Submit ✅</h3>
-<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.
-</content></p>
+<p>Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.</p>
 </body>
 </html>

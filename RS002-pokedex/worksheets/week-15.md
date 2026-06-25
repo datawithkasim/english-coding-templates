@@ -2,7 +2,9 @@
 
 **Topic:** Multiple Files — `import` Your Own Data · **Course:** Pokédex App · **Time:** about 45 minutes
 
-This week your project grows into **two files**. The Pokémon data moves into `pokemon_data.py`, and your game lives in `main.py`, which pulls the data in with `from pokemon_data import pokedex`. Splitting files is how real programs stay organised.
+> 🧠 Words to know: **import**, **module**, **from import**, **data file**, **main file**
+
+This week your project grows into **two files**. The Pokémon data lives in `pokemon_data.py`, and your game lives in `main.py`, which pulls the data in with `from pokemon_data import pokedex`. This worksheet is all about **reading and thinking about** that code — and then **explaining** the code you wrote in your lesson. Splitting files is how real programs stay organised.
 
 ---
 
@@ -18,7 +20,7 @@ From memory:
 
 ## 2 · Predict 🔮
 
-Read each block. Before you run it, write what you think will happen.
+Read each block. Write what you think will happen — just from reading.
 
 Two files:
 
@@ -37,7 +39,7 @@ print(len(pokedex))
 print(pokedex[0]["name"])
 ```
 
-**When you run `main.py`, what two lines print?**
+**When `main.py` runs, what two lines print?**
 
 <div class="write-space"></div>
 
@@ -67,7 +69,7 @@ print(pokemon_data)
 
 ## 3 · Spot the Bug 🐛
 
-Read what each block is **supposed** to do, fix it, then explain the fix.
+Read what each block is **supposed** to do, fix it on paper, then explain the fix.
 
 **Bug A** — `main.py` should pull in the dex from the data file. Right now nothing is imported, so `pokedex` does not exist.
 
@@ -124,9 +126,9 @@ print(random.choice(pokedex)["name"])
 
 ---
 
-## 4 · Modify It ✏️
+## 4 · Explain the Code 📖
 
-Start from this working two-file setup:
+Read this working two-file Pokédex app. Then answer the questions below — just from reading.
 
 ```python
 # pokemon_data.py — data only
@@ -188,50 +190,38 @@ else:
     print(f"\n⚖️ 무승부!")
 ```
 
-Make these changes one at a time and run after each:
+**The line `from pokemon_data import pokedex` is in `main.py`. Where does `pokedex` actually come from, and why can `main.py` use it?**
 
-1. Add two more Pokémon **in `pokemon_data.py` only** and confirm they appear in `main.py`.
-2. Move your `show_pokemon` style (emojis, layout) to your taste.
-3. Add a second list `wild_pokemon` to the data file and `import` it as well.
+<div class="write-space"></div>
 
-**Write your changed / added lines here:**
+**Why does this program need `import random` as well as the `from ... import` line? What would break without it?**
+
+<div class="write-space"></div>
+
+**What does `enemy = random.choice(pokedex)` do, and why might the enemy be different each time you run the program?**
+
+<div class="write-space"></div>
+
+**Look at the loop that sets `my_pokemon`. What happens if the trainer types a name that is not in the dex?**
+
+<div class="write-space"></div>
+
+**If you added a new Pokémon to `pokemon_data.py` only, would it show up in `main.py`? Explain why.**
 
 <div class="write-space"></div>
 
 ---
 
-## 5 · Make It 📸
+## 5 · Explain Your Lesson Code 🎥
 
-Split your Week 14 app into **two files**: `pokemon_data.py` for the dex, `main.py` for everything else. `main.py` imports the dex and still runs the full app.
+Today in your lesson you split your app into two files: `pokemon_data.py` and `main.py`. Now **explain the code you wrote**. Record a short video on your phone. You can show it running. Try to use these words: **import**, **module**, **from import**, **data file**, **main file**.
 
-When it works, send a **video or screenshots of both files** on KakaoTalk. Then explain what you did. Use these starters — write 4 to 6 sentences.
+> 1. Show `pokemon_data.py` and read out your `pokedex`.
+> 2. Show the `import` line in `main.py` and explain what it brings in.
+> 3. Run `main.py` and walk through one battle, saying what each part does.
+> 4. Explain why splitting the data file and the main file is helpful.
 
-> First, I moved … into `pokemon_data.py`.
->
-> In `main.py` I brought it in with …
->
-> `from pokemon_data import pokedex` means …
->
-> `import X` and `from X import Y` are different because …
->
-> The trickiest part was …
->
-> Splitting files is helpful because …
-
-<div class="write-space tall" style="min-height: 340px"></div>
-
----
-
-## 6 · Record Your Walkthrough 🎥
-
-Film both files and the app running. Try to use: **import**, **module**, **from import**, **data file**, **main file**.
-
-> 1. Show `pokemon_data.py` and read its `pokedex`.
-> 2. Show the `import` line in `main.py` and explain it.
-> 3. Run `main.py` and play through one battle.
-> 4. Add one Pokémon to the data file live and show it appear.
-
-**Plan what you will say here first:**
+**Write what you will say in your video. Plan it here before you record.**
 
 <div class="write-space tall" style="min-height: 340px"></div>
 
@@ -239,5 +229,4 @@ Film both files and the app running. Try to use: **import**, **module**, **from 
 
 ### Submit ✅
 
-Send this worksheet + **both files** + your walkthrough video to teacher on KakaoTalk.
-</content>
+Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.

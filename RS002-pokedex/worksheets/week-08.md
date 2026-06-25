@@ -2,7 +2,9 @@
 
 **Topic:** Validation Everywhere + Logging Bad Input · **Course:** Pokédex App · **Time:** about 45 minutes
 
-This week you apply the validation pattern to **every** input in your app — name, region, search — and you **log** every bad attempt into a list. At the end you print a little session report. You will meet your first **function** here too: a reusable `safe_input`.
+This week is about thinking through the validation pattern for **every** input in your app — name, region, search — and how each bad attempt gets **logged** into a list for a session report. You also meet your first **function** here: a reusable `safe_input`. You will read code, trace it, and explain the code you wrote in your live lesson — no typing in the app today.
+
+> 🧠 Words to know: **function**, **safe_input**, **log**, **append**, **return**, **report**
 
 ---
 
@@ -18,7 +20,7 @@ From memory:
 
 ## 2 · Predict 🔮
 
-Read each block. Before you run it, write what you think will happen.
+Read each block. Write what you think will happen — just from reading, without running it.
 
 ```python
 invalid_attempts = []
@@ -60,7 +62,7 @@ print(name)
 
 ## 3 · Spot the Bug 🐛
 
-Read what each block is **supposed** to do, fix it, then explain the fix.
+Read what each block is **supposed** to do, fix it on paper, then explain the fix.
 
 **Bug A** — Each bad answer should be **added** to the log. Right now it replaces the whole log every time, so only the last one survives.
 
@@ -123,9 +125,9 @@ print(f"잘못 입력한 내용: {', '.join(invalid_attempts)}")
 
 ---
 
-## 4 · Modify It ✏️
+## 4 · Explain the Code 📖
 
-Start from this working safe-input + log:
+Here is a working `safe_input` with a log and a session report. Read it carefully and answer the questions.
 
 ```python
 invalid_attempts = []
@@ -157,23 +159,31 @@ if invalid_attempts:
     print(f"잘못 입력한 내용: {', '.join(invalid_attempts)}")
 ```
 
-Make these changes one at a time and run after each:
+**What does the line `invalid_attempts.append(answer)` do, and when does it run?**
 
-1. Call `safe_input` a second time for the trainer's **region** (no `valid_list`, just a default).
-2. Change the warning emoji or message to your own style.
-3. Make the report also print a friendly line when there were **zero** bad attempts.
+<div class="write-space"></div>
 
-**Write your changed / added lines here:**
+**Why does `safe_input` end with `return answer` instead of `print(answer)`?**
+
+<div class="write-space"></div>
+
+**What are the three things you pass into `safe_input` on the `choice = ...` line, and what is each one for?**
+
+<div class="write-space"></div>
+
+**Walk through what happens if the user types a bad name twice in a row. Which lines run?**
+
+<div class="write-space"></div>
+
+**Why is the report wrapped in `if invalid_attempts:`?**
 
 <div class="write-space"></div>
 
 ---
 
-## 5 · Make It 📸
+## 5 · Explain Your Lesson Code 🎥
 
-Apply `safe_input` to **every** input in your Pokédex (name, region, type, search). Log every bad attempt and print a session report at the end.
-
-When it works, send a **video** on KakaoTalk where you **deliberately type some bad input** so the report has something to show. Then explain what you did. Use these starters — write 4 to 6 sentences.
+In today's live lesson you wrote your own `safe_input` and applied it to your Pokédex. Explain **the code you wrote** in a short phone video. You may show it running with some bad input on purpose. Try to use: **function**, **safe_input**, **log**, **append**, **report**.
 
 > First, I wrote a function called `safe_input` that …
 >
@@ -182,25 +192,8 @@ When it works, send a **video** on KakaoTalk where you **deliberately type some 
 > I used the same function for … different inputs.
 >
 > My session report showed …
->
-> The trickiest part was …
->
-> Reusing one function for every input is better than copying code because …
 
-<div class="write-space tall" style="min-height: 340px"></div>
-
----
-
-## 6 · Record Your Walkthrough 🎥
-
-Film it running with some bad input on purpose. Try to use: **function**, **safe_input**, **log**, **append**, **report**.
-
-> 1. Run the app and type a few bad answers on purpose.
-> 2. Show the warnings appear and the defaults kick in.
-> 3. Read your `safe_input` function out loud and explain `return`.
-> 4. Show the session report at the end with the logged attempts.
-
-**Plan what you will say here first:**
+**Write what you will say in your video. Plan it here before you record.**
 
 <div class="write-space tall" style="min-height: 340px"></div>
 
@@ -208,5 +201,4 @@ Film it running with some bad input on purpose. Try to use: **function**, **safe
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
-</content>
+Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.

@@ -104,12 +104,12 @@ footer b { color: #ff7849; }
 <div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
 <h1>🪟 RS004 Week 1 — English Worksheet</h1>
 <p><strong>Topic:</strong> Game Window &amp; Game Loop · <strong>Course:</strong> Platformer Game · <strong>Time:</strong> about 45 minutes</p>
-<p>This week you open your very first <strong>game window</strong> and start the <strong>game loop</strong> — the heartbeat that runs every frame: read events → update → draw. Everything you build for the next 16 weeks lives inside this loop.</p>
+<p>This week you think about your very first <strong>game window</strong> and the <strong>game loop</strong> — the heartbeat that runs every frame: read events → update → draw. On paper you will read this code, predict it, fix it, and explain it in your own words. Everything you build for the next 16 weeks lives inside this loop.</p>
 <blockquote>
 <p>Keep these words handy: <strong>game loop</strong>, <strong>event</strong>, <strong><code>pygame.QUIT</code></strong>, <strong><code>flip()</code></strong>, <strong>FPS</strong>, <strong>RGB</strong>.</p>
 </blockquote>
 <h2>1 · Predict 🔮</h2>
-<p>Read each snippet. Before you run it, write what you think will happen.</p>
+<p>Read each snippet. Write what you think it will do.</p>
 <pre><code class="language-python">screen.fill((135, 206, 235))
 pygame.display.flip()
 </code></pre>
@@ -145,7 +145,19 @@ E. writes the title on the window bar
 <div class="qa"><p><strong>1 → ___  2 → ___  3 → ___  4 → ___  5 → ___</strong></p>
 <div class="write-space"></div></div>
 
-<h2>3 · Spot the Bug 🐛</h2>
+<h2>3 · Read the Colours 🎨</h2>
+<p>Each colour is <code>(Red, Green, Blue)</code>, where each number is 0–255. Write down what colour you think each one makes.</p>
+<pre><code>(255, 0, 0)      → ___________
+(0, 0, 0)        → ___________
+(255, 255, 255)  → ___________
+(135, 206, 235)  → ___________
+</code></pre>
+<div class="write-space"></div>
+
+<div class="qa"><p><strong>Now invent one.</strong> Write an RGB value for a sunset orange sky, and say what each of the three numbers means.</p>
+<div class="write-space"></div></div>
+
+<h2>4 · Spot the Bug 🐛</h2>
 <p>Each snippet is broken. Read what it should do, then rewrite it so it works. Explain why the original was wrong.</p>
 <p><strong>Bug A</strong> — The window should stay open until the player closes it. Right now it flashes open and shuts instantly.</p>
 <pre><code class="language-python">running = True
@@ -173,51 +185,57 @@ clock.tick(60)
 <div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
 <div class="write-space"></div></div>
 
-<h2>4 · Colour Lab 🎨</h2>
-<p>Each colour is <code>(Red, Green, Blue)</code>, where each number is 0–255. Write down what colour you expect, then check it in code.</p>
-<pre><code>(255, 0, 0)      → ___________
-(0, 0, 0)        → ___________
-(255, 255, 255)  → ___________
-(135, 206, 235)  → ___________
-</code></pre>
-<div class="write-space"></div>
+<h2>5 · Explain the Code 📖</h2>
+<p>Here is a complete working game window — an 800×600 sky-blue screen running at 60 FPS. Read it carefully, then answer the questions.</p>
+<pre><code class="language-python">import pygame
 
-<div class="qa"><p><strong>Now invent one.</strong> Write an RGB value for a sunset orange sky, then test it in <code>screen.fill(...)</code>.</p>
+pygame.init()
+screen = pygame.display.set_mode((800, 600))
+pygame.display.set_caption(&quot;나의 플랫포머&quot;)
+clock = pygame.time.Clock()
+SKY_BLUE = (135, 206, 235)
+
+running = True
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+    screen.fill(SKY_BLUE)
+    pygame.display.flip()
+    clock.tick(60)
+
+pygame.quit()
+</code></pre>
+<div class="qa"><p><strong>Which line creates the window, and how big is it?</strong></p>
 <div class="write-space"></div></div>
 
-<h2>5 · Build &amp; Show 📸</h2>
-<p>Open your starter file. You have a working 800×600 sky-blue window at 60 FPS. Make it yours:</p>
-<ol>
-<li>Change the background to a colour you like, and write down what its RGB numbers mean.</li>
-<li>Change the window size to 1024×768.</li>
-<li>Give the window your own caption (title).</li>
-</ol>
-<p>When it works, send a <strong>photo or video</strong> of your window running, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.</p>
-<div class="qa"><blockquote>
-<p>First, I changed the background to …</p>
-<p>The three numbers in the colour mean …</p>
-<p>I made the window bigger by …</p>
-<p>The game loop keeps the window open because …</p>
-<p>One thing I was unsure about was …</p>
-<p>If I had more time, I would …</p>
-</blockquote>
-<div class="write-space tall" style="min-height: 340px"></div></div>
+<div class="qa"><p><strong>What does the <code>while running:</code> loop do, and when does it stop?</strong></p>
+<div class="write-space"></div></div>
 
-<h2>6 · Record Your Walkthrough 🎥</h2>
-<p>Take a video on your phone while your window runs. Talk through it like you are teaching someone who has never seen Pygame. Try to use these words: <strong>game loop</strong>, <strong>event</strong>, <strong>fill</strong>, <strong>flip</strong>, <strong>FPS</strong>.</p>
+<div class="qa"><p><strong>Inside the loop, what is the job of <code>screen.fill(SKY_BLUE)</code>, and what is the job of <code>pygame.display.flip()</code>?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>What would change on screen if <code>SKY_BLUE</code> was <code>(255, 0, 0)</code> instead?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why is <code>clock.tick(60)</code> inside the loop, and what does the 60 mean?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>6 · Explain Your Lesson Code 🎥</h2>
+<p>Today in the live lesson you wrote your own game window. Take a short video on your phone and explain <strong>the code you wrote</strong> — you can show it running. Teach it like you are talking to someone who has never seen Pygame. Try to use these words: <strong>game loop</strong>, <strong>event</strong>, <strong>fill</strong>, <strong>flip</strong>, <strong>FPS</strong>.</p>
 <blockquote>
 <ol>
 <li>Show your window opening.</li>
-<li>Point at the line that sets the background colour.</li>
-<li>Explain what the game loop does every frame.</li>
+<li>Point at the line that sets the background colour and read it out.</li>
+<li>Explain what your game loop does every frame.</li>
 <li>Click the X and show the window closing — say which line made that work.</li>
 </ol>
 </blockquote>
-<div class="qa"><p><strong>Write what you will say in your video.</strong> Plan it here before you record — you can read from it while filming.</p>
+<div class="qa"><p><strong>Write what you will say in your video. Plan it here before you record.</strong></p>
 <div class="write-space tall" style="min-height: 340px"></div></div>
 
 <hr />
 <h3>Submit ✅</h3>
-<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.</p>
+<p>Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.</p>
 </body>
 </html>

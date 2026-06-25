@@ -1,8 +1,8 @@
 # 🦊 RS004 Week 6 — English Worksheet
 
-**Topic:** Coyote Time + Double Jump (Apply) · **Course:** Platformer Game · **Time:** about 45 minutes
+**Topic:** Coyote Time + Double Jump (Explain) · **Course:** Platformer Game · **Time:** about 45 minutes
 
-This week your jump feels like a *real* game. **Coyote time** lets the player jump for a few frames *after* leaving the edge. A **double jump** gives one extra jump in the air. You will track how many jumps were used and reset them on landing.
+This week your jump feels like a *real* game. **Coyote time** lets the player jump for a few frames *after* leaving the edge. A **double jump** gives one extra jump in the air. In this worksheet you will think about how the code tracks how many jumps were used and resets them on landing, then explain the code you wrote in the live lesson.
 
 > Keep these words handy: **coyote time**, **double jump**, **jumps used**, **was on ground**, **reset**.
 
@@ -10,7 +10,7 @@ This week your jump feels like a *real* game. **Coyote time** lets the player ju
 
 ## 1 · Predict 🔮
 
-Read each snippet. Before you run it, write what you think will happen.
+Read each snippet. Write what you think happens.
 
 ```python
 if was_on_ground and not on_ground:
@@ -122,56 +122,66 @@ if event.key == pygame.K_SPACE:
 
 ---
 
-## 4 · Tune the Polish 🛠️
+## 4 · Explain the Code 📖
 
-Start from your working coyote + double jump. Change one thing at a time.
+Here is a working version of coyote time + double jump. Read it carefully, then answer the questions.
 
-1. Set `COYOTE_FRAMES` to 1, then to 12. What feels too short? Too forgiving?
+```python
+# each frame, before checking input
+if was_on_ground and not on_ground:
+    coyote_time = COYOTE_FRAMES
+if coyote_time > 0:
+    coyote_time -= 1
+
+# when the player presses jump
+if event.key == pygame.K_SPACE:
+    if (on_ground or coyote_time > 0) and jumps_used == 0:
+        velocity_y = JUMP_STRENGTH
+        jumps_used = 1
+    elif jumps_used == 1:
+        velocity_y = DOUBLE_JUMP_STRENGTH
+        jumps_used = 2
+
+# when the player lands
+if player.y >= HEIGHT - 50:
+    player.y = HEIGHT - 50
+    velocity_y = 0
+    on_ground = True
+    jumps_used = 0
+```
+
+**What does `coyote_time -= 1` do, and why does the player lose coyote time after a few frames?**
 
 <div class="write-space"></div>
 
-2. Make `DOUBLE_JUMP_STRENGTH` weaker, then equal to the first jump. Which feels right?
+**Why does the first jump check `jumps_used == 0` instead of just `on_ground`?**
 
 <div class="write-space"></div>
 
-3. **Stretch:** add a tiny particle burst (a few small circles) when the double jump fires. Where will you create them?
+**When does `jumps_used` become 2, and what stops a third jump from happening?**
+
+<div class="write-space"></div>
+
+**Which line gives the player their jumps back, and when does it run?**
+
+<div class="write-space"></div>
+
+**How does `coyote_time > 0` let the player jump just after leaving an edge?**
 
 <div class="write-space"></div>
 
 ---
 
-## 5 · Build & Show 📸
+## 5 · Explain Your Lesson Code 🎥
 
-Tune **your own** jump polish: coyote time + double jump that feel good to you.
+Explain the coyote time + double jump code **you wrote in today's lesson**. Record a short video on your phone. You may show your game running. Try to use these words: **coyote time**, **double jump**, **jumps used**, **reset**, **air**.
 
-When it works, send a **photo or video** showing a single jump, a double jump, and a coyote jump, then explain what you did. Use these starters — write 4 to 6 sentences.
-
-> First, coyote time lets the player jump after leaving an edge by …
->
-> The double jump works because `jumps_used` …
->
-> I reset the jumps when …
->
-> The values I tuned were …
->
-> One tricky moment was …
->
-> If I had more time, I would …
-
-<div class="write-space tall" style="min-height: 340px"></div>
-
----
-
-## 6 · Record Your Walkthrough 🎥
-
-Take a video showing all three jumps. Teach it to someone new. Try to use these words: **coyote time**, **double jump**, **jumps used**, **reset**, **air**.
-
-> 1. Show a normal jump from the ground.
-> 2. Show a double jump in the air.
+> 1. Show a normal jump from the ground and point to the line that starts it.
+> 2. Show a double jump in the air and read the part that uses `jumps_used`.
 > 3. Run off a ledge and jump late — show coyote time working.
 > 4. Read the line that resets jumps on landing and explain it.
 
-**Write what you will say in your video.** Plan it here first.
+**Write what you will say in your video. Plan it here before you record.**
 
 <div class="write-space tall" style="min-height: 340px"></div>
 
@@ -179,4 +189,4 @@ Take a video showing all three jumps. Teach it to someone new. Try to use these 
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.

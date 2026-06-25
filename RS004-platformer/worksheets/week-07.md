@@ -2,7 +2,7 @@
 
 **Topic:** Platform Collision · **Course:** Platformer Game · **Time:** about 45 minutes
 
-This week your player can **land on platforms**. You keep platforms in a **list**, check each one with `colliderect()`, and only land when the player is falling *down* onto the top of a platform.
+This week you think about how a player can **land on platforms**. You read code that keeps platforms in a **list**, checks each one with `colliderect()`, and only lands when the player is falling *down* onto the top of a platform. Then you explain the collision code from today's lesson in your own words.
 
 > Keep these words handy: **platform**, **list**, **`colliderect()`**, **land**, **falling (vy > 0)**.
 
@@ -10,7 +10,7 @@ This week your player can **land on platforms**. You keep platforms in a **list*
 
 ## 1 · Predict 🔮
 
-Read each snippet. Before you run it, write what you think will happen.
+Read each snippet. Write what you think will happen.
 
 ```python
 platforms = [
@@ -61,7 +61,7 @@ The player can touch a platform while moving up *or* down. We only want to land 
 
 ## 3 · Spot the Bug 🐛
 
-Each snippet is broken. Rewrite it so it works, then explain why the original was wrong.
+Each snippet is broken. Read it, write the fixed code on paper, then explain why the original was wrong.
 
 **Bug A** — The player should land on every platform. Right now it only ever lands on the first one.
 
@@ -124,56 +124,56 @@ for plat in platforms:
 
 ---
 
-## 4 · Refactor & Extend 🛠️
+## 4 · Explain the Code 📖
 
-Start from your working collision code.
+Read this working collision code carefully, then answer the questions about it.
 
-1. Move the collision check into a function `handle_collisions(player, vy, platforms)` that returns the new `vy` and `on_ground`. Why is a function cleaner here?
+```python
+platforms = [
+    pygame.Rect(0, 550, 800, 50),
+    pygame.Rect(200, 450, 120, 20),
+]
+
+on_ground = False
+for plat in platforms:
+    if player.colliderect(plat) and velocity_y > 0:
+        player.bottom = plat.top
+        velocity_y = 0
+        on_ground = True
+```
+
+**Why are the platforms kept in a list instead of separate variables?**
 
 <div class="write-space"></div>
 
-2. Add a fifth platform that can only be reached with a jump. Write its `Rect` values.
+**What does `for plat in platforms:` do on each pass through the loop?**
 
 <div class="write-space"></div>
 
-3. **Stretch:** mark the highest platform with a "finish" colour. Which platform did you choose?
+**What does `player.colliderect(plat)` return, and how is it used in the `if`?**
+
+<div class="write-space"></div>
+
+**What does the line `player.bottom = plat.top` do to the player's position?**
+
+<div class="write-space"></div>
+
+**Why is `on_ground = False` written before the loop instead of inside it?**
 
 <div class="write-space"></div>
 
 ---
 
-## 5 · Build & Show 📸
+## 5 · Explain Your Lesson Code 🎥
 
-Add platforms to your jumping player. Place several so the player can hop up from one to the next.
+Today in your live lesson you wrote collision code for your player. Record a short phone video explaining the code **you** wrote. You may show it running. Try to use these words: **platform**, **list**, **colliderect**, **land**, **falling**.
 
-When it works, send a **photo or video** of the player climbing the platforms, then explain what you did. Use these starters — write 4 to 6 sentences.
+> 1. Point to where you keep your platforms in a list.
+> 2. Read your collision check out loud and explain `velocity_y > 0`.
+> 3. Show the player landing on a platform, then walking off and falling.
+> 4. Explain one part of the code that was tricky for you.
 
-> First, I kept my platforms in a list so that …
->
-> `colliderect()` checks whether …
->
-> I only land when `velocity_y > 0` because …
->
-> `player.bottom = plat.top` makes the player …
->
-> One tricky moment was …
->
-> If I had more time, I would …
-
-<div class="write-space tall" style="min-height: 340px"></div>
-
----
-
-## 6 · Record Your Walkthrough 🎥
-
-Take a video of the player jumping across platforms. Teach it to someone new. Try to use these words: **platform**, **list**, **colliderect**, **land**, **falling**.
-
-> 1. Show the player landing on a platform.
-> 2. Jump up to a higher platform.
-> 3. Read your collision check out loud and explain `velocity_y > 0`.
-> 4. Walk off a platform and show the player falls again.
-
-**Write what you will say in your video.** Plan it here first.
+**Write what you will say in your video. Plan it here before you record.**
 
 <div class="write-space tall" style="min-height: 340px"></div>
 
@@ -181,4 +181,4 @@ Take a video of the player jumping across platforms. Teach it to someone new. Tr
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.

@@ -2,7 +2,9 @@
 
 **Topic:** Chance and Randomness · **Course:** Text Adventure (Python) · **Time:** about 45 minutes
 
-This week your game stops being predictable. `random.choice()` picks one item from a list at random, so every play is different — random weapons, random battle results, random rewards. You must `import random` first.
+This week is about thinking through and explaining code that makes a game unpredictable. `random.choice()` picks one item from a list at random, so every play is different — random weapons, random battle results, random rewards. You must `import random` first. Read the code closely and explain in your own words how it works.
+
+> 🧠 Words to know: **random**, **import**, **choice**, **chance**, **different**
 
 ```python
 import random
@@ -15,7 +17,7 @@ game.say(f"You found: {prize}")
 
 ## 1 · Predict 🔮
 
-Read each piece of code. Before you run it in your head, write what you think happens.
+Read each piece of code. In your head, work out what it does, then write what you think happens.
 
 ```python
 import random
@@ -24,7 +26,7 @@ chosen = random.choice(weapons)
 game.say(chosen)
 ```
 
-**Will the same word print every time you run it? Why or why not?**
+**Will the same word print every time? Why or why not?**
 
 <div class="write-space"></div>
 
@@ -38,7 +40,7 @@ else:
     game.say("Defeat...")
 ```
 
-**Roughly how often would each message show if you ran this many times?**
+**Roughly how often would each message show if this ran many times?**
 
 <div class="write-space"></div>
 
@@ -56,7 +58,7 @@ game.say(chosen)
 
 ## 2 · Spot the Bug 🐛
 
-Each block was meant to do something, but it is broken. Read what it is **supposed** to do, fix it, then explain why the original was wrong.
+Each block was meant to do something, but it is broken. Read what it is **supposed** to do, fix it on paper, then explain why the original was wrong.
 
 **Bug A** — This should pick a random reward, but it forgot to bring in the random tool, so it crashes on the first line that uses it.
 
@@ -118,38 +120,49 @@ else:
 
 ---
 
-## 3 · 🎯 Add Some Luck
+## 3 · Explain the Code 📖
 
-Open your game. Add randomness somewhere it makes the game more fun: a random reward after a battle, or a boss fight whose result is decided by chance. Run it a few times to see the difference.
+Read this working example carefully, then answer the questions below in your own words.
 
-When it works, send a **photo or video**, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.
+```python
+import random
+rewards = ["gold", "potion", "magic ring", "old boots"]
+prize = random.choice(rewards)
+game.say(f"You found: {prize}")
+```
 
-> First, I added `import random` and used it to …
->
-> The list I picked from at random was …
->
-> When I ran the game twice, I got …
->
-> Randomness makes the game better because …
->
-> One tricky moment was when …
->
-> If I had more time, I would …
+**What does the first line, `import random`, do for the rest of the code?**
 
-<div class="write-space tall" style="min-height: 340px"></div>
+<div class="write-space"></div>
+
+**What is stored inside `rewards`, and how many items could be picked?**
+
+<div class="write-space"></div>
+
+**In your own words, what does `random.choice(rewards)` give back?**
+
+<div class="write-space"></div>
+
+**Why does `prize` hold a different word each time the code runs?**
+
+<div class="write-space"></div>
+
+**What would the player see if `random.choice` picked `"potion"`?**
+
+<div class="write-space"></div>
 
 ---
 
-## 4 · Record Your Walkthrough 🎥
+## 4 · Explain Your Lesson Code 🎥
 
-Take a video on your phone (or a parent's phone). Run your game **twice** so the random part comes out differently each time. Teach it like the viewer has never coded. Try to use these words: **random**, **import**, **choice**, **chance**, **different**.
+Take a short video on your phone (or a parent's phone) explaining the code **you wrote in today's live lesson**. You can show it running. Teach it like the viewer has never coded. Try to use these words: **random**, **import**, **choice**, **chance**, **different**.
 
-> 1. Run your game once and show the random result.
-> 2. Run it again and show a different random result.
-> 3. Point to your `random.choice(...)` line.
-> 4. Explain why the same code can give different answers.
+> 1. Show the code you wrote in the lesson and read out your `random.choice(...)` line.
+> 2. Explain what list it picks from at random.
+> 3. Show it running, or describe two different results it can give.
+> 4. Explain why the same code can give a different answer by chance.
 
-**Write what you will say in your video.** Plan it here first.
+**Write what you will say in your video. Plan it here before you record.**
 
 <div class="write-space tall" style="min-height: 340px"></div>
 
@@ -157,4 +170,4 @@ Take a video on your phone (or a parent's phone). Run your game **twice** so the
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.

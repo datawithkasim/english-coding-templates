@@ -2,7 +2,9 @@
 
 **Topic:** Functions — Reusing Code · **Course:** Pokédex App · **Time:** about 45 minutes
 
-This week you learn `def` properly. A **function** is a named block of code you can run again and again. You pass it **parameters** (the values it works on) and you get back a result with `return`. Functions are how you stop copying and pasting the same lines.
+This week you think about `def`. A **function** is a named block of code you can run again and again. You pass it **parameters** (the values it works on) and you get back a result with `return`. This worksheet is about reading function code and explaining the code you wrote in your live lesson — no typing in the app.
+
+> 🧠 Words to know: **function**, **def**, **parameter**, **return**, **None**
 
 ---
 
@@ -18,7 +20,7 @@ From memory:
 
 ## 2 · Predict 🔮
 
-Read each block. Before you run it, write what you think will happen.
+Read each block. Write what you think will happen.
 
 ```python
 def greet_trainer(name):
@@ -64,7 +66,7 @@ print(find(dex, "리자몽"))
 
 ## 3 · Spot the Bug 🐛
 
-Read what each block is **supposed** to do, fix it, then explain the fix.
+Read what each block is **supposed** to do, fix it on paper, then explain the fix.
 
 **Bug A** — This function should be **called** so the greeting prints. Right now it is only defined, so nothing happens.
 
@@ -132,9 +134,9 @@ else:
 
 ---
 
-## 4 · Modify It ✏️
+## 4 · Explain the Code 📖
 
-Start from these working functions:
+Read these working functions carefully.
 
 ```python
 def show_pokemon(pokemon):
@@ -161,50 +163,38 @@ else:
     print("도감에 없습니다.")
 ```
 
-Make these changes one at a time and run after each:
+**What parameter does `show_pokemon` take, and what does it print?**
 
-1. Call `find_pokemon` with a name that is **not** in the dex and watch the `else` branch run.
-2. Add a line inside `show_pokemon` that prints a power total (`hp + attack`).
-3. Write a tiny new function `count_dex(pokedex)` that **returns** how many Pokémon there are, then print it.
+<div class="write-space"></div>
 
-**Write your changed / added lines here:**
+**Inside `find_pokemon`, what does the line `return pokemon` do, and when does it run?**
+
+<div class="write-space"></div>
+
+**When does `find_pokemon` reach `return None`?**
+
+<div class="write-space"></div>
+
+**The last block checks `if result != None`. Why does it need to check this before calling `show_pokemon`?**
+
+<div class="write-space"></div>
+
+**Why is it useful that `find_pokemon` returns a value instead of just printing one?**
 
 <div class="write-space"></div>
 
 ---
 
-## 5 · Make It 📸
+## 5 · Explain Your Lesson Code 🎥
 
-Take your Week 10 app and pull its **two core actions** — showing a Pokémon and searching the dex — into **functions**. `find_pokemon` should `return` the match (or `None`); `show_pokemon` should print one Pokémon's card.
+Explain the code **you wrote in today's lesson** in a short phone video. You may show it running. Teach it like the viewer is new, and try to use: **function**, **def**, **parameter**, **return**, **None**.
 
-When it works, send a **photo or video** on KakaoTalk, then explain what you did. Use these starters — write 4 to 6 sentences.
-
-> First, I wrote a function called … that …
->
-> I passed it the parameter(s) …
->
-> My `find_pokemon` returned … when nothing matched.
->
-> A function with `return` is different from one without because …
->
-> The trickiest part was …
->
-> Functions make my code cleaner because …
-
-<div class="write-space tall" style="min-height: 340px"></div>
-
----
-
-## 6 · Record Your Walkthrough 🎥
-
-Film it running. Teach it like the viewer is new. Try to use: **function**, **def**, **parameter**, **return**, **None**.
-
-> 1. Run a search that finds a Pokémon, then one that does not.
-> 2. Read your `find_pokemon` out loud and point to the `return`.
+> 1. Show your `find_pokemon` and read it out loud, pointing to the `return`.
+> 2. Run a search that finds a Pokémon, then one that does not.
 > 3. Explain the difference between a function that returns and one that just prints.
 > 4. Show how calling a function twice saves you from copying code.
 
-**Plan what you will say here first:**
+**Write what you will say in your video. Plan it here before you record.**
 
 <div class="write-space tall" style="min-height: 340px"></div>
 
@@ -212,5 +202,4 @@ Film it running. Teach it like the viewer is new. Try to use: **function**, **de
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
-</content>
+Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.

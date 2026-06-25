@@ -104,14 +104,17 @@ footer b { color: #ff7849; }
 <div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
 <h1>🔴 RS002 Week 5 — English Worksheet</h1>
 <p><strong>Topic:</strong> Cleaning Input — <code>.strip()</code> and <code>.lower()</code> · <strong>Course:</strong> Pokédex App · <strong>Time:</strong> about 45 minutes</p>
-<p>This week your Pokédex lets the trainer <strong>search by name</strong>. But people type messily — extra spaces, mixed capitals. You clean their input with <code>.strip()</code> and <code>.lower()</code> so the search still works, then use <code>if</code> / <code>elif</code> / <code>else</code> to react to the choice.</p>
+<p>This week your Pokédex lets the trainer <strong>search by name</strong>. But people type messily — extra spaces, mixed capitals. In the live lesson you cleaned their input with <code>.strip()</code> and <code>.lower()</code> so the search still works, then used <code>if</code> / <code>elif</code> / <code>else</code> to react to the choice. This worksheet is for <strong>thinking about and explaining that code</strong> — reading it closely, predicting what it does, and putting it into your own words.</p>
+<blockquote>
+<p>🧠 Words to know: <strong>strip</strong>, <strong>lower</strong>, <strong>clean</strong>, <strong>search</strong>, <strong>if / elif / else</strong></p>
+</blockquote>
 <h2>1 · Recall 🧠</h2>
 <p>From memory:</p>
 <div class="qa"><p><strong>Write a <code>for</code> loop that prints every name in a list called <code>names</code>.</strong></p>
 <div class="write-space"></div></div>
 
 <h2>2 · Predict 🔮</h2>
-<p>Read each block. Before you run it, write what you think will happen.</p>
+<p>Read each block. Without running it, write what you think will happen.</p>
 <pre><code class="language-python">choice = &quot;  Pikachu  &quot;
 choice = choice.strip()
 print(f&quot;[{choice}]&quot;)
@@ -137,7 +140,7 @@ else:
 <div class="write-space"></div></div>
 
 <h2>3 · Spot the Bug 🐛</h2>
-<p>Read what each block is <strong>supposed</strong> to do, fix it, then explain the fix.</p>
+<p>Read what each block is <strong>supposed</strong> to do, fix it on paper, then explain the fix.</p>
 <p><strong>Bug A</strong> — This should match even if the user types extra spaces. Right now <code>"  pikachu"</code> does not match.</p>
 <pre><code class="language-python">choice = input(&quot;이름: &quot;).lower()
 
@@ -185,8 +188,8 @@ else:
 <div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
 <div class="write-space"></div></div>
 
-<h2>4 · Modify It ✏️</h2>
-<p>Start from this working search:</p>
+<h2>4 · Explain the Code 📖</h2>
+<p>Read this working search carefully. It is the kind of code you built in the live lesson.</p>
 <pre><code class="language-python">pokemon_names = [&quot;pikachu&quot;, &quot;bulbasaur&quot;, &quot;charmander&quot;]
 choice = input(&quot;Enter Pokémon name: &quot;).strip().lower()
 
@@ -199,44 +202,36 @@ elif choice == &quot;charmander&quot;:
 else:
     print(&quot;그 포켓몬은 도감에 없어요.&quot;)
 </code></pre>
-<p>Make these changes one at a time and run after each:</p>
-<ol>
-<li>Add a fourth branch for <code>squirtle</code> (꼬부기).</li>
-<li>Change the <code>else</code> message to suggest the trainer try again.</li>
-<li>Remove the <code>.lower()</code> and test typing <code>PIKACHU</code> — see what breaks. Then put it back.</li>
-</ol>
-<div class="qa"><p><strong>Write your changed / added lines here:</strong></p>
+<div class="qa"><p><strong>What do <code>.strip()</code> and <code>.lower()</code> each do to the trainer's input?</strong></p>
 <div class="write-space"></div></div>
 
-<h2>5 · Make It 📸</h2>
-<p>Add a <strong>search feature</strong> to your Week 4 Pokédex. The trainer types a name; you clean it with <code>.strip().lower()</code>; then you tell them which Pokémon they picked, or that it is not in the dex.</p>
-<p>When it works, send a <strong>photo or video</strong> on KakaoTalk, then explain what you did. Use these starters — write 4 to 6 sentences.</p>
-<div class="qa"><blockquote>
-<p>First, I asked the trainer to type …</p>
-<p>I cleaned their input with … so that …</p>
-<p><code>.strip()</code> handled … and <code>.lower()</code> handled …</p>
-<p>I used <code>if</code> / <code>elif</code> / <code>else</code> to …</p>
-<p>The trickiest part was …</p>
-<p>Cleaning input matters because real people type …</p>
-</blockquote>
-<div class="write-space tall" style="min-height: 340px"></div></div>
+<div class="qa"><p><strong>Why are the names in the <code>if</code> checks (like <code>"pikachu"</code>) written in lowercase?</strong></p>
+<div class="write-space"></div></div>
 
-<h2>6 · Record Your Walkthrough 🎥</h2>
-<p>Film your search running. Teach it like the viewer is new. Try to use: <strong>strip</strong>, <strong>lower</strong>, <strong>clean</strong>, <strong>if / elif / else</strong>, <strong>search</strong>.</p>
+<div class="qa"><p><strong>If the trainer types <code>BULBASAUR</code>, which line prints, and why?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>When does the <code>else</code> branch run?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why is the second check <code>elif</code> and not another <code>if</code>?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>5 · Explain Your Lesson Code 🎥</h2>
+<p>Explain the search code <strong>you wrote in today's lesson</strong> in a short phone video. You may show it running. Teach it like the viewer is new, and try to use: <strong>strip</strong>, <strong>lower</strong>, <strong>clean</strong>, <strong>search</strong>, <strong>if / elif / else</strong>.</p>
 <blockquote>
 <ol>
-<li>Run your search and type a name with extra spaces and capitals.</li>
-<li>Show it still works, then explain which method fixed the spaces and which fixed the capitals.</li>
-<li>Read your <code>if / elif / else</code> out loud.</li>
+<li>Show your search code and run it with a name that has extra spaces and capitals.</li>
+<li>Point to where you cleaned the input, and say which method fixed the spaces and which fixed the capitals.</li>
+<li>Read your <code>if / elif / else</code> out loud and explain what each branch does.</li>
 <li>Type a Pokémon that is not in the dex and show the <code>else</code> message.</li>
 </ol>
 </blockquote>
-<div class="qa"><p><strong>Plan what you will say here first:</strong></p>
+<div class="qa"><p><strong>Write what you will say in your video. Plan it here before you record.</strong></p>
 <div class="write-space tall" style="min-height: 340px"></div></div>
 
 <hr />
 <h3>Submit ✅</h3>
-<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.
-</content></p>
+<p>Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.</p>
 </body>
 </html>

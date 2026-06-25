@@ -104,14 +104,17 @@ footer b { color: #ff7849; }
 <div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
 <h1>🔴 RS002 Week 11 — English Worksheet</h1>
 <p><strong>Topic:</strong> Functions — Reusing Code · <strong>Course:</strong> Pokédex App · <strong>Time:</strong> about 45 minutes</p>
-<p>This week you learn <code>def</code> properly. A <strong>function</strong> is a named block of code you can run again and again. You pass it <strong>parameters</strong> (the values it works on) and you get back a result with <code>return</code>. Functions are how you stop copying and pasting the same lines.</p>
+<p>This week you think about <code>def</code>. A <strong>function</strong> is a named block of code you can run again and again. You pass it <strong>parameters</strong> (the values it works on) and you get back a result with <code>return</code>. This worksheet is about reading function code and explaining the code you wrote in your live lesson — no typing in the app.</p>
+<blockquote>
+<p>🧠 Words to know: <strong>function</strong>, <strong>def</strong>, <strong>parameter</strong>, <strong>return</strong>, <strong>None</strong></p>
+</blockquote>
 <h2>1 · Recall 🧠</h2>
 <p>From memory:</p>
 <div class="qa"><p><strong>Write a helper that takes a dictionary <code>p</code> and prints <code>p['name']</code> and <code>p['type']</code>.</strong></p>
 <div class="write-space"></div></div>
 
 <h2>2 · Predict 🔮</h2>
-<p>Read each block. Before you run it, write what you think will happen.</p>
+<p>Read each block. Write what you think will happen.</p>
 <pre><code class="language-python">def greet_trainer(name):
     print(f&quot;안녕하세요, {name} 트레이너님!&quot;)
 
@@ -144,7 +147,7 @@ print(find(dex, &quot;리자몽&quot;))
 <div class="write-space"></div></div>
 
 <h2>3 · Spot the Bug 🐛</h2>
-<p>Read what each block is <strong>supposed</strong> to do, fix it, then explain the fix.</p>
+<p>Read what each block is <strong>supposed</strong> to do, fix it on paper, then explain the fix.</p>
 <p><strong>Bug A</strong> — This function should be <strong>called</strong> so the greeting prints. Right now it is only defined, so nothing happens.</p>
 <pre><code class="language-python">def greet_trainer(name):
     print(f&quot;안녕하세요, {name} 트레이너님!&quot;)
@@ -191,8 +194,8 @@ else:
 <div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
 <div class="write-space"></div></div>
 
-<h2>4 · Modify It ✏️</h2>
-<p>Start from these working functions:</p>
+<h2>4 · Explain the Code 📖</h2>
+<p>Read these working functions carefully.</p>
 <pre><code class="language-python">def show_pokemon(pokemon):
     print(f&quot;\n=== {pokemon['name']} ===&quot;)
     print(f&quot;타입: {pokemon['type']}&quot;)
@@ -216,44 +219,36 @@ if result != None:
 else:
     print(&quot;도감에 없습니다.&quot;)
 </code></pre>
-<p>Make these changes one at a time and run after each:</p>
-<ol>
-<li>Call <code>find_pokemon</code> with a name that is <strong>not</strong> in the dex and watch the <code>else</code> branch run.</li>
-<li>Add a line inside <code>show_pokemon</code> that prints a power total (<code>hp + attack</code>).</li>
-<li>Write a tiny new function <code>count_dex(pokedex)</code> that <strong>returns</strong> how many Pokémon there are, then print it.</li>
-</ol>
-<div class="qa"><p><strong>Write your changed / added lines here:</strong></p>
+<div class="qa"><p><strong>What parameter does <code>show_pokemon</code> take, and what does it print?</strong></p>
 <div class="write-space"></div></div>
 
-<h2>5 · Make It 📸</h2>
-<p>Take your Week 10 app and pull its <strong>two core actions</strong> — showing a Pokémon and searching the dex — into <strong>functions</strong>. <code>find_pokemon</code> should <code>return</code> the match (or <code>None</code>); <code>show_pokemon</code> should print one Pokémon's card.</p>
-<p>When it works, send a <strong>photo or video</strong> on KakaoTalk, then explain what you did. Use these starters — write 4 to 6 sentences.</p>
-<div class="qa"><blockquote>
-<p>First, I wrote a function called … that …</p>
-<p>I passed it the parameter(s) …</p>
-<p>My <code>find_pokemon</code> returned … when nothing matched.</p>
-<p>A function with <code>return</code> is different from one without because …</p>
-<p>The trickiest part was …</p>
-<p>Functions make my code cleaner because …</p>
-</blockquote>
-<div class="write-space tall" style="min-height: 340px"></div></div>
+<div class="qa"><p><strong>Inside <code>find_pokemon</code>, what does the line <code>return pokemon</code> do, and when does it run?</strong></p>
+<div class="write-space"></div></div>
 
-<h2>6 · Record Your Walkthrough 🎥</h2>
-<p>Film it running. Teach it like the viewer is new. Try to use: <strong>function</strong>, <strong>def</strong>, <strong>parameter</strong>, <strong>return</strong>, <strong>None</strong>.</p>
+<div class="qa"><p><strong>When does <code>find_pokemon</code> reach <code>return None</code>?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>The last block checks <code>if result != None</code>. Why does it need to check this before calling <code>show_pokemon</code>?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why is it useful that <code>find_pokemon</code> returns a value instead of just printing one?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>5 · Explain Your Lesson Code 🎥</h2>
+<p>Explain the code <strong>you wrote in today's lesson</strong> in a short phone video. You may show it running. Teach it like the viewer is new, and try to use: <strong>function</strong>, <strong>def</strong>, <strong>parameter</strong>, <strong>return</strong>, <strong>None</strong>.</p>
 <blockquote>
 <ol>
+<li>Show your <code>find_pokemon</code> and read it out loud, pointing to the <code>return</code>.</li>
 <li>Run a search that finds a Pokémon, then one that does not.</li>
-<li>Read your <code>find_pokemon</code> out loud and point to the <code>return</code>.</li>
 <li>Explain the difference between a function that returns and one that just prints.</li>
 <li>Show how calling a function twice saves you from copying code.</li>
 </ol>
 </blockquote>
-<div class="qa"><p><strong>Plan what you will say here first:</strong></p>
+<div class="qa"><p><strong>Write what you will say in your video. Plan it here before you record.</strong></p>
 <div class="write-space tall" style="min-height: 340px"></div></div>
 
 <hr />
 <h3>Submit ✅</h3>
-<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.
-</content></p>
+<p>Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.</p>
 </body>
 </html>

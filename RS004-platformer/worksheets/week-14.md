@@ -2,15 +2,15 @@
 
 **Topic:** Vertical Patrol + Death Effect (Apply) · **Course:** Platformer Game · **Time:** about 45 minutes
 
-This week enemies get **smarter**. A `patrol_type` lets one enemy walk left–right, another go up–down, and a third **chase** the player. When the player dies, a little **explosion** of particles bursts out.
+This week is about thinking through **smarter enemies** and explaining how they work. A `patrol_type` lets one enemy walk left–right, another go up–down, and a third **chase** the player. When the player dies, a little **explosion** of particles bursts out. You will read this code closely and explain the code you wrote in your live lesson.
 
-> Keep these words handy: **patrol_type**, **vertical**, **chase**, **particle**, **explosion**.
+> 🧠 Words to know: **patrol_type**, **vertical**, **chase**, **particle**, **explosion**.
 
 ---
 
 ## 1 · Predict 🔮
 
-Read each snippet. Before you run it, write what you think will happen.
+Read each snippet. Write what you think it does.
 
 ```python
 if self.patrol_type == "vertical":
@@ -131,56 +131,65 @@ for exp in explosions:
 
 ---
 
-## 4 · Mix the Enemies 🛠️
+## 4 · Explain the Code 📖
 
-Start from your working enemy types.
+Here is a working enemy update that handles all three patrol types and takes the player's position safely.
 
-1. Place one of each kind in your level: horizontal, vertical, chase. Write the three `Enemy(...)` lines.
+```python
+def update(self, player_rect=None):
+    if self.patrol_type == "horizontal":
+        self.rect.x += self.direction * self.speed
+        if self.rect.x > self.start_x + self.range_size:
+            self.direction = -1
+        if self.rect.x < self.start_x:
+            self.direction = 1
 
-<div class="write-space tall" style="min-height: 160px"></div>
+    elif self.patrol_type == "vertical":
+        self.rect.y += self.direction * self.speed
+        if self.rect.y > self.start_y + self.range_size:
+            self.direction = -1
+        if self.rect.y < self.start_y:
+            self.direction = 1
 
-2. Give each kind a different colour or shape so the player can tell them apart. What did you choose?
+    elif self.patrol_type == "chase" and player_rect is not None:
+        if self.rect.x < player_rect.x:
+            self.rect.x += 1
+        elif self.rect.x > player_rect.x:
+            self.rect.x -= 1
+```
+
+**What does `self.direction = -1` do, and when does it happen?**
 
 <div class="write-space"></div>
 
-3. **Stretch:** position an enemy so it guards a coin. Which coin, and which enemy?
+**Why does the `vertical` block change `self.rect.y` instead of `self.rect.x`?**
+
+<div class="write-space"></div>
+
+**Why does the `chase` block check `player_rect is not None` before using it?**
+
+<div class="write-space"></div>
+
+**What would break if you deleted the `start_x` and `start_y` checks?**
+
+<div class="write-space"></div>
+
+**Tell the story of one chase frame: the player is to the left, so what happens line by line?**
 
 <div class="write-space"></div>
 
 ---
 
-## 5 · Build & Show 📸
+## 5 · Explain Your Lesson Code 🎥
 
-Add all three enemy kinds to your own level, each at least once, plus the death explosion.
+In your live lesson today you wrote enemy and explosion code. Make a short phone video that explains **the code you wrote**. You may show it running. Try to use these words: **patrol_type**, **vertical**, **chase**, **particle**, **explosion**.
 
-When it works, send a **photo or video** showing all three enemies and a death burst, then explain what you did. Use these starters — write 4 to 6 sentences.
+> 1. Point to where `patrol_type` decides how each enemy moves.
+> 2. Read your chase code out loud and explain how it picks a direction.
+> 3. Show the death **explosion** and explain how the **particle** loop works.
+> 4. Say one part that was tricky and how you understood it.
 
-> First, the `patrol_type` decides …
->
-> My chasing enemy follows the player by …
->
-> I gave it a safe default so that …
->
-> The death explosion works by …
->
-> One tricky moment was …
->
-> If I had more time, I would …
-
-<div class="write-space tall" style="min-height: 340px"></div>
-
----
-
-## 6 · Record Your Walkthrough 🎥
-
-Take a video showing all three enemy kinds and a death. Teach it to someone new. Try to use these words: **patrol_type**, **vertical**, **chase**, **particle**, **explosion**.
-
-> 1. Show the horizontal, vertical, and chasing enemies.
-> 2. Walk near the chaser and show it follow you.
-> 3. Die on purpose and show the explosion.
-> 4. Read the chase code out loud and explain how it picks a direction.
-
-**Write what you will say in your video.** Plan it here first.
+**Write what you will say in your video. Plan it here before you record.**
 
 <div class="write-space tall" style="min-height: 340px"></div>
 
@@ -188,4 +197,4 @@ Take a video showing all three enemy kinds and a death. Teach it to someone new.
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.

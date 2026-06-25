@@ -104,12 +104,12 @@ footer b { color: #ff7849; }
 <div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
 <h1>🏆 RS004 Week 16 — English Worksheet</h1>
 <p><strong>Topic:</strong> Title · Level Select · Sound · Showcase (Final) · <strong>Course:</strong> Platformer Game · <strong>Time:</strong> about 45 minutes</p>
-<p>This is the final week. You polish 15 weeks of work into a finished game: a <strong>title screen</strong>, a <strong>level select</strong> menu, and <strong>sound</strong> for jumps and coins. The whole thing runs on a <strong>game state machine</strong> that moves between title → level select → playing → game over / victory. Then you <strong>present</strong> it.</p>
+<p>This is the final week. You built a finished game over 16 weeks: a <strong>title screen</strong>, a <strong>level select</strong> menu, and <strong>sound</strong> for jumps and coins, all running on a <strong>game state machine</strong> that moves between title → level select → playing → game over / victory. This worksheet is about reading and explaining that code in plain English, then presenting your finished game.</p>
 <blockquote>
 <p>Keep these words handy: <strong>state machine</strong>, <strong>title screen</strong>, <strong>level select</strong>, <strong>sound</strong>, <strong>showcase</strong>.</p>
 </blockquote>
 <h2>1 · Predict 🔮</h2>
-<p>Read each snippet. Before you run it, write what you think will happen.</p>
+<p>Read each snippet. Write what you think it does.</p>
 <pre><code class="language-python">current_state = &quot;title&quot;
 # &quot;title&quot; → &quot;level_select&quot; → &quot;playing&quot; → &quot;gameover&quot; / &quot;victory&quot; → &quot;title&quot;
 </code></pre>
@@ -133,7 +133,7 @@ footer b { color: #ff7849; }
 <div class="write-space"></div></div>
 
 <h2>2 · Map the States 🗺️</h2>
-<p>Draw arrows (write them out) showing which state leads to which. Fill in the blanks.</p>
+<p>Write out the arrows showing which state leads to which. Fill in the blanks.</p>
 <pre><code>title  --space--&gt;  ________
 title  --L------&gt;  ________
 level_select  --Enter--&gt;  ________
@@ -144,7 +144,7 @@ gameover  --R--&gt;  ________
 <div class="write-space"></div>
 
 <h2>3 · Spot the Bug 🐛</h2>
-<p>Each snippet is broken. Rewrite it so it works, then explain why the original was wrong.</p>
+<p>Each snippet is broken. On paper, rewrite it so it works, then explain why the original was wrong.</p>
 <p><strong>Bug A</strong> — Pressing space on the title should start the game. Right now space does nothing because the key is only checked while playing.</p>
 <pre><code class="language-python">if current_state == &quot;playing&quot;:
     if event.key == pygame.K_SPACE:
@@ -181,52 +181,66 @@ gameover  --R--&gt;  ________
 <div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
 <div class="write-space"></div></div>
 
-<h2>4 · Polish Pass 🛠️</h2>
-<p>Start from your working state machine. Add polish one piece at a time.</p>
-<ol>
-<li>Add your own title text and a "press space to start" line. What does your title say?</li>
-</ol>
-<div class="write-space"></div>
+<h2>4 · Explain the Code 📖</h2>
+<p>This is the heart of your finished game — the state machine that decides what screen the player sees and what each key does.</p>
+<pre><code class="language-python">current_state = &quot;title&quot;
 
-<ol start="2">
-<li>Add a jump sound <em>and</em> a coin sound. When does each play?</li>
-</ol>
-<div class="write-space"></div>
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.KEYDOWN:
+            if current_state == &quot;title&quot;:
+                if event.key == pygame.K_SPACE:
+                    current_state = &quot;playing&quot;
+                elif event.key == pygame.K_l:
+                    current_state = &quot;level_select&quot;
+            elif current_state == &quot;level_select&quot;:
+                if event.key == pygame.K_RETURN:
+                    current_state = &quot;playing&quot;
+            elif current_state == &quot;gameover&quot;:
+                if event.key == pygame.K_r:
+                    current_state = &quot;title&quot;
 
-<ol start="3">
-<li><strong>Stretch:</strong> add a creator screen with your name, or a death sound, or a screen shake on Game Over. What did you add?</li>
-</ol>
-<div class="write-space"></div>
+    if current_state == &quot;title&quot;:
+        draw_title()
+    elif current_state == &quot;level_select&quot;:
+        draw_level_select()
+    elif current_state == &quot;playing&quot;:
+        update_player()
+        if player_died:
+            current_state = &quot;gameover&quot;
+    elif current_state == &quot;gameover&quot;:
+        draw_gameover()
+</code></pre>
+<div class="qa"><p><strong>What value does <code>current_state</code> start as, and what screen does the player see first?</strong></p>
+<div class="write-space"></div></div>
 
-<h2>5 · Finish &amp; Showcase 📸</h2>
-<p>Bring it all together into your finished game: title → level select → at least three of your own levels → victory, with sound.</p>
-<p>Send a <strong>photo or video</strong> of a full play-through (title to victory), then write your <strong>showcase notes</strong> below. Write 4 to 6 sentences.</p>
-<div class="qa"><blockquote>
-<p>The part of my game I am most proud of is …</p>
-<p>My favourite function or class is ___, and it works by …</p>
-<p>My game state machine moves from … to … to …</p>
-<p>The hardest bug I solved this term was …</p>
-<p>If I kept building, I would add …</p>
-<p>One thing I can do now that I couldn't 16 weeks ago is …</p>
-</blockquote>
-<div class="write-space tall" style="min-height: 360px"></div></div>
+<div class="qa"><p><strong>On the title screen, what do the SPACE key and the L key each do?</strong></p>
+<div class="write-space"></div></div>
 
-<h2>6 · Showcase Walkthrough 🎥</h2>
-<p>Record your final showcase video — this is the one you present. Teach your game to someone who has never seen it. Try to use these words: <strong>state machine</strong>, <strong>title</strong>, <strong>level select</strong>, <strong>sound</strong>, <strong>function</strong>.</p>
+<div class="qa"><p><strong>Inside the <code>"playing"</code> state, what makes the game switch to <code>"gameover"</code>?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>From <code>"gameover"</code>, which key sends the player back, and back to which state?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why does the code check <code>current_state</code> both in the event loop and again lower down when drawing?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>5 · Explain Your Lesson Code 🎥</h2>
+<p>This is your final presentation. Record a phone video of the <strong>finished platformer YOU built across the course</strong>. Show it running from title to victory, then explain the key parts of your own code. Try to use these words: <strong>state machine</strong>, <strong>title</strong>, <strong>level select</strong>, <strong>sound</strong>, <strong>function</strong>.</p>
 <blockquote>
 <ol>
-<li>Show the title screen, then level select.</li>
-<li>Play through a full level with sound.</li>
-<li>Show one function or class you are proud of and explain it.</li>
-<li>Reach the victory screen.</li>
-<li>Say the hardest bug you fixed and how.</li>
+<li>Show the title screen, then level select, then play through a level with sound.</li>
+<li>Open your code and point to your state machine — explain how it moves between screens.</li>
+<li>Show one function or class you are proud of and explain what it does.</li>
+<li>Reach the victory screen, and say the hardest bug you fixed and how.</li>
 </ol>
 </blockquote>
-<div class="qa"><p><strong>Write what you will say in your showcase.</strong> Plan it here first.</p>
-<div class="write-space tall" style="min-height: 360px"></div></div>
+<div class="qa"><p><strong>Write what you will say in your video. Plan it here before you record.</strong></p>
+<div class="write-space tall" style="min-height: 340px"></div></div>
 
 <hr />
 <h3>Submit ✅</h3>
-<p>Send this worksheet + your finished game video + your showcase notes to teacher on KakaoTalk.</p>
+<p>Send this worksheet + your finished-game presentation video to teacher on KakaoTalk.</p>
 </body>
 </html>

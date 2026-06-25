@@ -2,7 +2,9 @@
 
 **Topic:** Refactor the Whole App into Functions · **Course:** Pokédex App · **Time:** about 45 minutes
 
-This week you tidy everything. All those lines you wrote one by one over the last 11 weeks get grouped into **named functions**, and your main code shrinks to a short **menu loop** that just *calls* them. This is called **refactoring** — same behaviour, cleaner shape.
+This week you think about how a whole app gets tidied up. All those lines written one by one over the last 11 weeks get grouped into **named functions**, and the main code shrinks to a short **menu loop** that just *calls* them. This is called **refactoring** — same behaviour, cleaner shape. On this worksheet you read code, predict it, fix it on paper, and explain the code you wrote in the live lesson.
+
+> 🧠 Words to know: **refactor**, **function**, **menu loop**, **call**, **break**
 
 ---
 
@@ -18,7 +20,7 @@ From memory:
 
 ## 2 · Predict 🔮
 
-Read each block. Before you run it, write what you think will happen.
+Read each block. Write what you think will happen — just from reading, no running.
 
 ```python
 def show_menu():
@@ -59,7 +61,7 @@ print(trainer)
 
 ## 3 · Spot the Bug 🐛
 
-Read what each block is **supposed** to do, fix it, then explain the fix.
+Read what each block is **supposed** to do, fix it on paper, then explain the fix.
 
 **Bug A** — A function must be **defined above** where it is called. Right now `show_menu` is called before it exists, so the program crashes.
 
@@ -123,9 +125,9 @@ while True:
 
 ---
 
-## 4 · Modify It ✏️
+## 4 · Explain the Code 📖
 
-Start from this working function-based app:
+Read this working function-based app, then answer the questions below.
 
 ```python
 def show_intro(trainer_name):
@@ -173,50 +175,38 @@ while True:
         print("1~3 중에서 골라주세요.")
 ```
 
-Make these changes one at a time and run after each:
+**What does the `while True:` loop do, and which line stops it?**
 
-1. Add a new menu option `4. 포켓몬 수 보기` that prints `len(pokedex)`.
-2. Move the dex count into its own function and call it from the menu.
-3. Make the intro show how many Pokémon are registered.
+<div class="write-space"></div>
 
-**Write your changed / added lines here:**
+**When the user types `1`, which function gets called, and what does it print?**
+
+<div class="write-space"></div>
+
+**Why is each action (intro, menu, list, search) written as its own function instead of all in the loop?**
+
+<div class="write-space"></div>
+
+**`search_pokemon` builds `matches` with a list comprehension. In your own words, what ends up inside `matches`?**
+
+<div class="write-space"></div>
+
+**What happens if the user types `7`, and which line handles that?**
 
 <div class="write-space"></div>
 
 ---
 
-## 5 · Make It 📸
+## 5 · Explain Your Lesson Code 🎥
 
-Refactor your **whole Week 11 app** so the main code is a short **menu loop** that only calls functions. Aim for a main section under ~10 lines. Every action (list, search, show) lives in its own function.
+In the live lesson you refactored your Pokédex app into functions. Make a short phone video explaining the code **you** wrote today. You may show it running. Try to use: **refactor**, **function**, **menu loop**, **call**, **break**.
 
-When it works, send a **video** on KakaoTalk and tell us **how many functions** you made. Then explain what you did. Use these starters — write 4 to 6 sentences.
-
-> First, I grouped my code into functions called …
->
-> My main loop now only …
->
-> I made … functions in total.
->
-> Functions must be defined before they are called because …
->
-> The trickiest part was …
->
-> Refactoring did not change what the app does, but it …
-
-<div class="write-space tall" style="min-height: 340px"></div>
-
----
-
-## 6 · Record Your Walkthrough 🎥
-
-Film it running. Teach it like the viewer is new. Try to use: **refactor**, **function**, **menu loop**, **call**, **break**.
-
-> 1. Run the menu and try every option, including quit.
+> 1. Run your app and try every menu option, including quit.
 > 2. Scroll to your main loop and show how short it is.
-> 3. Point to one function and explain what the loop *calls*.
-> 4. Say why a short main loop is easier to read and fix.
+> 3. Point to one of your functions and explain what the loop *calls*.
+> 4. Say why grouping code into functions made it easier to read and fix.
 
-**Plan what you will say here first:**
+**Write what you will say in your video. Plan it here before you record.**
 
 <div class="write-space tall" style="min-height: 340px"></div>
 
@@ -224,5 +214,4 @@ Film it running. Teach it like the viewer is new. Try to use: **refactor**, **fu
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
-</content>
+Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.

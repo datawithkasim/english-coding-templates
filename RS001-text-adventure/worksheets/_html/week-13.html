@@ -104,20 +104,23 @@ footer b { color: #ff7849; }
 <div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
 <h1>🎲 RS001 Week 13 — English Worksheet</h1>
 <p><strong>Topic:</strong> Chance and Randomness · <strong>Course:</strong> Text Adventure (Python) · <strong>Time:</strong> about 45 minutes</p>
-<p>This week your game stops being predictable. <code>random.choice()</code> picks one item from a list at random, so every play is different — random weapons, random battle results, random rewards. You must <code>import random</code> first.</p>
+<p>This week is about thinking through and explaining code that makes a game unpredictable. <code>random.choice()</code> picks one item from a list at random, so every play is different — random weapons, random battle results, random rewards. You must <code>import random</code> first. Read the code closely and explain in your own words how it works.</p>
+<blockquote>
+<p>🧠 Words to know: <strong>random</strong>, <strong>import</strong>, <strong>choice</strong>, <strong>chance</strong>, <strong>different</strong></p>
+</blockquote>
 <pre><code class="language-python">import random
 rewards = [&quot;gold&quot;, &quot;potion&quot;, &quot;magic ring&quot;, &quot;old boots&quot;]
 prize = random.choice(rewards)
 game.say(f&quot;You found: {prize}&quot;)
 </code></pre>
 <h2>1 · Predict 🔮</h2>
-<p>Read each piece of code. Before you run it in your head, write what you think happens.</p>
+<p>Read each piece of code. In your head, work out what it does, then write what you think happens.</p>
 <pre><code class="language-python">import random
 weapons = [&quot;sword&quot;, &quot;bow&quot;, &quot;wand&quot;]
 chosen = random.choice(weapons)
 game.say(chosen)
 </code></pre>
-<div class="qa"><p><strong>Will the same word print every time you run it? Why or why not?</strong></p>
+<div class="qa"><p><strong>Will the same word print every time? Why or why not?</strong></p>
 <div class="write-space"></div></div>
 
 <pre><code class="language-python">import random
@@ -128,7 +131,7 @@ if result == &quot;win&quot;:
 else:
     game.say(&quot;Defeat...&quot;)
 </code></pre>
-<div class="qa"><p><strong>Roughly how often would each message show if you ran this many times?</strong></p>
+<div class="qa"><p><strong>Roughly how often would each message show if this ran many times?</strong></p>
 <div class="write-space"></div></div>
 
 <pre><code class="language-python">weapons = [&quot;sword&quot;, &quot;bow&quot;, &quot;wand&quot;]
@@ -139,7 +142,7 @@ game.say(chosen)
 <div class="write-space"></div></div>
 
 <h2>2 · Spot the Bug 🐛</h2>
-<p>Each block was meant to do something, but it is broken. Read what it is <strong>supposed</strong> to do, fix it, then explain why the original was wrong.</p>
+<p>Each block was meant to do something, but it is broken. Read what it is <strong>supposed</strong> to do, fix it on paper, then explain why the original was wrong.</p>
 <p><strong>Bug A</strong> — This should pick a random reward, but it forgot to bring in the random tool, so it crashes on the first line that uses it.</p>
 <pre><code class="language-python">rewards = [&quot;gold&quot;, &quot;potion&quot;, &quot;ring&quot;]
 prize = random.choice(rewards)
@@ -180,34 +183,43 @@ else:
 <div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
 <div class="write-space"></div></div>
 
-<h2>3 · 🎯 Add Some Luck</h2>
-<p>Open your game. Add randomness somewhere it makes the game more fun: a random reward after a battle, or a boss fight whose result is decided by chance. Run it a few times to see the difference.</p>
-<p>When it works, send a <strong>photo or video</strong>, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.</p>
-<div class="qa"><blockquote>
-<p>First, I added <code>import random</code> and used it to …</p>
-<p>The list I picked from at random was …</p>
-<p>When I ran the game twice, I got …</p>
-<p>Randomness makes the game better because …</p>
-<p>One tricky moment was when …</p>
-<p>If I had more time, I would …</p>
-</blockquote>
-<div class="write-space tall" style="min-height: 340px"></div></div>
+<h2>3 · Explain the Code 📖</h2>
+<p>Read this working example carefully, then answer the questions below in your own words.</p>
+<pre><code class="language-python">import random
+rewards = [&quot;gold&quot;, &quot;potion&quot;, &quot;magic ring&quot;, &quot;old boots&quot;]
+prize = random.choice(rewards)
+game.say(f&quot;You found: {prize}&quot;)
+</code></pre>
+<div class="qa"><p><strong>What does the first line, <code>import random</code>, do for the rest of the code?</strong></p>
+<div class="write-space"></div></div>
 
-<h2>4 · Record Your Walkthrough 🎥</h2>
-<p>Take a video on your phone (or a parent's phone). Run your game <strong>twice</strong> so the random part comes out differently each time. Teach it like the viewer has never coded. Try to use these words: <strong>random</strong>, <strong>import</strong>, <strong>choice</strong>, <strong>chance</strong>, <strong>different</strong>.</p>
+<div class="qa"><p><strong>What is stored inside <code>rewards</code>, and how many items could be picked?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>In your own words, what does <code>random.choice(rewards)</code> give back?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why does <code>prize</code> hold a different word each time the code runs?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>What would the player see if <code>random.choice</code> picked <code>"potion"</code>?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>4 · Explain Your Lesson Code 🎥</h2>
+<p>Take a short video on your phone (or a parent's phone) explaining the code <strong>you wrote in today's live lesson</strong>. You can show it running. Teach it like the viewer has never coded. Try to use these words: <strong>random</strong>, <strong>import</strong>, <strong>choice</strong>, <strong>chance</strong>, <strong>different</strong>.</p>
 <blockquote>
 <ol>
-<li>Run your game once and show the random result.</li>
-<li>Run it again and show a different random result.</li>
-<li>Point to your <code>random.choice(...)</code> line.</li>
-<li>Explain why the same code can give different answers.</li>
+<li>Show the code you wrote in the lesson and read out your <code>random.choice(...)</code> line.</li>
+<li>Explain what list it picks from at random.</li>
+<li>Show it running, or describe two different results it can give.</li>
+<li>Explain why the same code can give a different answer by chance.</li>
 </ol>
 </blockquote>
-<div class="qa"><p><strong>Write what you will say in your video.</strong> Plan it here first.</p>
+<div class="qa"><p><strong>Write what you will say in your video. Plan it here before you record.</strong></p>
 <div class="write-space tall" style="min-height: 340px"></div></div>
 
 <hr />
 <h3>Submit ✅</h3>
-<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.</p>
+<p>Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.</p>
 </body>
 </html>

@@ -2,7 +2,7 @@
 
 **Topic:** Game Window & Game Loop · **Course:** Platformer Game · **Time:** about 45 minutes
 
-This week you open your very first **game window** and start the **game loop** — the heartbeat that runs every frame: read events → update → draw. Everything you build for the next 16 weeks lives inside this loop.
+This week you think about your very first **game window** and the **game loop** — the heartbeat that runs every frame: read events → update → draw. On paper you will read this code, predict it, fix it, and explain it in your own words. Everything you build for the next 16 weeks lives inside this loop.
 
 > Keep these words handy: **game loop**, **event**, **`pygame.QUIT`**, **`flip()`**, **FPS**, **RGB**.
 
@@ -10,7 +10,7 @@ This week you open your very first **game window** and start the **game loop** �
 
 ## 1 · Predict 🔮
 
-Read each snippet. Before you run it, write what you think will happen.
+Read each snippet. Write what you think it will do.
 
 ```python
 screen.fill((135, 206, 235))
@@ -67,7 +67,26 @@ E. writes the title on the window bar
 
 ---
 
-## 3 · Spot the Bug 🐛
+## 3 · Read the Colours 🎨
+
+Each colour is `(Red, Green, Blue)`, where each number is 0–255. Write down what colour you think each one makes.
+
+```
+(255, 0, 0)      → ___________
+(0, 0, 0)        → ___________
+(255, 255, 255)  → ___________
+(135, 206, 235)  → ___________
+```
+
+<div class="write-space"></div>
+
+**Now invent one.** Write an RGB value for a sunset orange sky, and say what each of the three numbers means.
+
+<div class="write-space"></div>
+
+---
+
+## 4 · Spot the Bug 🐛
 
 Each snippet is broken. Read what it should do, then rewrite it so it works. Explain why the original was wrong.
 
@@ -111,61 +130,63 @@ clock.tick(60)
 
 ---
 
-## 4 · Colour Lab 🎨
+## 5 · Explain the Code 📖
 
-Each colour is `(Red, Green, Blue)`, where each number is 0–255. Write down what colour you expect, then check it in code.
+Here is a complete working game window — an 800×600 sky-blue screen running at 60 FPS. Read it carefully, then answer the questions.
 
+```python
+import pygame
+
+pygame.init()
+screen = pygame.display.set_mode((800, 600))
+pygame.display.set_caption("나의 플랫포머")
+clock = pygame.time.Clock()
+SKY_BLUE = (135, 206, 235)
+
+running = True
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+    screen.fill(SKY_BLUE)
+    pygame.display.flip()
+    clock.tick(60)
+
+pygame.quit()
 ```
-(255, 0, 0)      → ___________
-(0, 0, 0)        → ___________
-(255, 255, 255)  → ___________
-(135, 206, 235)  → ___________
-```
+
+**Which line creates the window, and how big is it?**
 
 <div class="write-space"></div>
 
-**Now invent one.** Write an RGB value for a sunset orange sky, then test it in `screen.fill(...)`.
+**What does the `while running:` loop do, and when does it stop?**
+
+<div class="write-space"></div>
+
+**Inside the loop, what is the job of `screen.fill(SKY_BLUE)`, and what is the job of `pygame.display.flip()`?**
+
+<div class="write-space"></div>
+
+**What would change on screen if `SKY_BLUE` was `(255, 0, 0)` instead?**
+
+<div class="write-space"></div>
+
+**Why is `clock.tick(60)` inside the loop, and what does the 60 mean?**
 
 <div class="write-space"></div>
 
 ---
 
-## 5 · Build & Show 📸
+## 6 · Explain Your Lesson Code 🎥
 
-Open your starter file. You have a working 800×600 sky-blue window at 60 FPS. Make it yours:
-
-1. Change the background to a colour you like, and write down what its RGB numbers mean.
-2. Change the window size to 1024×768.
-3. Give the window your own caption (title).
-
-When it works, send a **photo or video** of your window running, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.
-
-> First, I changed the background to …
->
-> The three numbers in the colour mean …
->
-> I made the window bigger by …
->
-> The game loop keeps the window open because …
->
-> One thing I was unsure about was …
->
-> If I had more time, I would …
-
-<div class="write-space tall" style="min-height: 340px"></div>
-
----
-
-## 6 · Record Your Walkthrough 🎥
-
-Take a video on your phone while your window runs. Talk through it like you are teaching someone who has never seen Pygame. Try to use these words: **game loop**, **event**, **fill**, **flip**, **FPS**.
+Today in the live lesson you wrote your own game window. Take a short video on your phone and explain **the code you wrote** — you can show it running. Teach it like you are talking to someone who has never seen Pygame. Try to use these words: **game loop**, **event**, **fill**, **flip**, **FPS**.
 
 > 1. Show your window opening.
-> 2. Point at the line that sets the background colour.
-> 3. Explain what the game loop does every frame.
+> 2. Point at the line that sets the background colour and read it out.
+> 3. Explain what your game loop does every frame.
 > 4. Click the X and show the window closing — say which line made that work.
 
-**Write what you will say in your video.** Plan it here before you record — you can read from it while filming.
+**Write what you will say in your video. Plan it here before you record.**
 
 <div class="write-space tall" style="min-height: 340px"></div>
 
@@ -173,4 +194,4 @@ Take a video on your phone while your window runs. Talk through it like you are 
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.

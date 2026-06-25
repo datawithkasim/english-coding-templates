@@ -2,7 +2,7 @@
 
 **Topic:** Parallel Lists — A Shop Scene · **Course:** Text Adventure (Python) · **Time:** about 45 minutes
 
-This week you use **parallel lists** — several lists that line up by index. Item `[1]`'s name, power, and price all sit at index `1` in three different lists. Together they build a shop.
+This week is about **parallel lists** — several lists that line up by index. Item `[1]`'s name, power, and price all sit at index `1` in three different lists. Together they build a shop. In this worksheet you will read code about parallel lists, think carefully, and then explain the shop code you wrote in today's live lesson.
 
 ```python
 shop_weapons = ["wooden stick", "iron sword", "magic staff"]
@@ -11,11 +11,13 @@ shop_price   = [5, 30, 80]
 game.say(f"{shop_weapons[1]} — power {shop_power[1]}, {shop_price[1]} gold")
 ```
 
+> 🧠 Words to know: **parallel list**, **index**, **power**, **price**, **line up**
+
 ---
 
 ## 1 · Predict 🔮
 
-Read each piece of code. Before you run it in your head, write what you think the screen will show.
+Read each piece of code. Run it in your head and write what you think the screen will show.
 
 ```python
 names = ["dagger", "axe", "spear"]
@@ -51,7 +53,7 @@ game.say(f"{names[2]} costs {price[2]} gold")
 
 ## 2 · Spot the Bug 🐛
 
-Each block was meant to do something, but it is broken. Read what it is **supposed** to do, fix it, then explain why the original was wrong.
+Each block was meant to do something, but it is broken. Read what it is **supposed** to do, fix it on paper, then explain why the original was wrong.
 
 **Bug A** — This shop line should show the **axe** with **its own** price. Right now it shows the axe's name but the dagger's price.
 
@@ -112,38 +114,51 @@ game.say(f"3. {names[2]} — {price[2]} gold")
 
 ---
 
-## 3 · 🎯 Build Your Shop
+## 3 · Explain the Code 📖
 
-Open your game. After your opening and inventory, add a **shop scene** built from parallel lists: weapon names, their power, and their price. Print a clear numbered menu the player could buy from. Put it in your hometown if you like.
+Here is a working shop menu built from three parallel lists. Read it slowly, then answer the questions below.
 
-When it works, send a **photo or video**, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.
+```python
+names = ["stick", "sword", "staff"]
+power = [2, 8, 15]
+price = [5, 30, 80]
+game.say(f"1. {names[0]} — power {power[0]}, {price[0]} gold")
+game.say(f"2. {names[1]} — power {power[1]}, {price[1]} gold")
+game.say(f"3. {names[2]} — power {power[2]}, {price[2]} gold")
+```
 
-> First, I made three lists for …
->
-> They line up by index so that …
->
-> The item at index 2 was …
->
-> When I added a new weapon, I remembered to …
->
-> One tricky moment was when …
->
-> If I had more time, I would …
+**Why are there three separate lists instead of one?**
 
-<div class="write-space tall" style="min-height: 340px"></div>
+<div class="write-space"></div>
+
+**Look at line 5. Which name, power, and price get printed together, and how do you know?**
+
+<div class="write-space"></div>
+
+**The index goes 0, then 1, then 2 down the menu. What is that index doing for the player?**
+
+<div class="write-space"></div>
+
+**If you changed `names[1]` to `names[2]` on line 5, what would go wrong on the screen?**
+
+<div class="write-space"></div>
+
+**What would break if the `price` list had only two numbers in it?**
+
+<div class="write-space"></div>
 
 ---
 
-## 4 · Record Your Walkthrough 🎥
+## 4 · Explain Your Lesson Code 🎥
 
-Take a video on your phone (or a parent's phone) while your shop prints. Teach it like the viewer has never coded. Try to use these words: **parallel list**, **index**, **power**, **price**, **line up**.
+In today's live lesson you wrote your own shop scene with parallel lists. Take a short video on your phone (or a parent's phone) explaining the code **you** wrote. You may show it running. Teach it like the viewer has never coded, and try to use these words: **parallel list**, **index**, **power**, **price**, **line up**.
 
-> 1. Run your game and show the shop menu.
-> 2. Pick one weapon and read its name, power, and price.
+> 1. Show your three lists and say what each one holds.
+> 2. Read one weapon out loud — its name, power, and price.
 > 3. Point to where all three sit at the same index.
-> 4. Explain what would break if one list were shorter than the others.
+> 4. Explain what would break if one of your lists were shorter than the others.
 
-**Write what you will say in your video.** Plan it here first.
+**Write what you will say in your video. Plan it here before you record.**
 
 <div class="write-space tall" style="min-height: 340px"></div>
 
@@ -151,4 +166,4 @@ Take a video on your phone (or a parent's phone) while your shop prints. Teach i
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.

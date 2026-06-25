@@ -2,7 +2,9 @@
 
 **Topic:** Parallel Lists + Loops — A Full Pokédex · **Course:** Pokédex App · **Time:** about 45 minutes
 
-This week your three starters grow into a **full Pokédex of 12+ Pokémon** across four parallel lists — name, type, HP, attack. Instead of writing a print line for each one, you use a **`for` loop** to walk through them all by index.
+In the live lesson your three starters grew into a **full Pokédex of 12+ Pokémon** across four parallel lists — name, type, HP, attack. This worksheet is about *thinking through* that code and being able to **explain it in your own words**: how a **`for` loop** walks every Pokémon by index, and why the parallel lists must stay the same length.
+
+> 🧠 Words to know: **parallel list**, **for loop**, **index**, **len**, **same length**
 
 ---
 
@@ -10,7 +12,7 @@ This week your three starters grow into a **full Pokédex of 12+ Pokémon** acro
 
 From memory:
 
-**Write a list called `names` holding three Pokémon, then print the second one.**
+**Write a list called `names` holding three Pokémon, then write the line that prints the second one.**
 
 <div class="write-space"></div>
 
@@ -18,7 +20,7 @@ From memory:
 
 ## 2 · Predict 🔮
 
-Read each block. Before you run it, write what you think will happen.
+Read each block. Write what you think will happen — just from reading, no running.
 
 ```python
 names = ["피카츄", "이상해씨", "파이리"]
@@ -58,7 +60,7 @@ for i in range(len(names)):
 
 ## 3 · Spot the Bug 🐛
 
-Read what each block is **supposed** to do, fix it, then explain the fix.
+Read what each block is **supposed** to do, fix it on paper, then explain the fix.
 
 **Bug A** — This should print **every** name in the list. Right now it only ever prints the first one.
 
@@ -118,9 +120,9 @@ for i in range(len(names)):
 
 ---
 
-## 4 · Modify It ✏️
+## 4 · Explain the Code 📖
 
-Start from this working Pokédex:
+Read this working Pokédex closely. You do not run it — you read it and answer.
 
 ```python
 names = ["피카츄", "이상해씨", "파이리", "꼬부기"]
@@ -135,50 +137,38 @@ for i in range(len(names)):
     print(f"#{i+1}  {names[i]}  타입:{types[i]}  HP:{hp[i]}  공격:{attack[i]}")
 ```
 
-Make these changes one at a time and run after each:
+**There are four lists. What makes them "parallel" — how do they line up with each other?**
 
-1. Add one Pokémon — remember to add to **all four lists**.
-2. Add the word `마리` after the HP so it reads `HP:35` → `HP:35`. (Try it; see how f-strings let you wrap text around values.)
-3. Print only the **name and type** inside the loop, dropping HP and attack.
+<div class="write-space"></div>
 
-**Write your changed / added lines here:**
+**`len(names)` is 4. What does `range(len(names))` give the loop, and how many times does the loop run?**
+
+<div class="write-space"></div>
+
+**Inside the loop, `i` is used in all four lists at once. On the third time through the loop, what is `i`, and which Pokémon's data gets printed?**
+
+<div class="write-space"></div>
+
+**Why does the line use `#{i+1}` instead of `#{i}`?**
+
+<div class="write-space"></div>
+
+**If you added a 5th Pokémon to `names` but forgot the other three lists, what would break, and on which loop?**
 
 <div class="write-space"></div>
 
 ---
 
-## 5 · Make It 📸
+## 5 · Explain Your Lesson Code 🎥
 
-Build your own **full Pokédex of at least 12 Pokémon** across four parallel lists (name, type, HP, attack). Use a `for` loop to print them all as a numbered list. Show your **trainer name from earlier weeks** at the top.
+Explain the Pokédex code **you wrote in today's live lesson** in a short phone video. You may show it running on screen. Teach it like the viewer is new. Try to use: **parallel list**, **for loop**, **index**, **len**, **same length**.
 
-When it works, send a **photo or video** on KakaoTalk, then explain what you did. Use these starters — write 4 to 6 sentences.
+> 1. Show your full numbered Pokédex on screen.
+> 2. Read your `for` loop out loud and say what `i` does each time through.
+> 3. Point to your four lists and explain why they must all be the same length.
+> 4. Show what changes when one Pokémon is added.
 
-> First, I made four lists called …
->
-> My `for` loop walked through them by …
->
-> `len(names)` told me … so the loop ran … times.
->
-> To add a new Pokémon I had to …
->
-> The trickiest part was …
->
-> A loop is better than writing 12 print lines because …
-
-<div class="write-space tall" style="min-height: 340px"></div>
-
----
-
-## 6 · Record Your Walkthrough 🎥
-
-Film your Pokédex printing. Teach it like the viewer is new. Try to use: **parallel list**, **for loop**, **index**, **len**, **same length**.
-
-> 1. Run your program and show the full numbered Pokédex.
-> 2. Read your `for` loop out loud and say what `i` does each time.
-> 3. Explain why all four lists must be the same length.
-> 4. Add one Pokémon live and show it appear at the bottom.
-
-**Plan what you will say here first:**
+**Write what you will say in your video. Plan it here before you record.**
 
 <div class="write-space tall" style="min-height: 340px"></div>
 
@@ -186,5 +176,4 @@ Film your Pokédex printing. Teach it like the viewer is new. Try to use: **para
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
-</content>
+Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.

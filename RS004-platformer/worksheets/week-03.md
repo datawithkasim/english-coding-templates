@@ -2,7 +2,7 @@
 
 **Topic:** Player & Keyboard Movement · **Course:** Platformer Game · **Time:** about 45 minutes
 
-This week a **player** appears — a rectangle you control with the **arrow keys**. You will learn `pygame.Rect` to track position, read held-down keys with `pygame.key.get_pressed()`, and stop the player from sliding off the screen.
+This week a **player** appears — a rectangle you control with the **arrow keys**. In the live lesson you wrote the code for it. On this worksheet you will think about and explain that code: how `pygame.Rect` tracks position, how `pygame.key.get_pressed()` reads held-down keys, and how the player is stopped from sliding off the screen.
 
 > Keep these words handy: **Rect**, **position**, **`get_pressed()`**, **speed**, **boundary (edge)**.
 
@@ -10,7 +10,7 @@ This week a **player** appears — a rectangle you control with the **arrow keys
 
 ## 1 · Predict 🔮
 
-Read each snippet. Before you run it, write what you think will happen.
+Read each snippet. Write what you think it does.
 
 ```python
 player = pygame.Rect(100, 500, 50, 50)
@@ -59,7 +59,7 @@ player.bottom  = ___   (hint: y + height)
 
 ## 3 · Spot the Bug 🐛
 
-Each snippet is broken. Rewrite it so it works, then explain why the original was wrong.
+Each snippet is broken. Write the fixed code, then explain why the original was wrong.
 
 **Bug A** — Arrow keys should move the player smoothly while held. Right now the player only moves on a brand-new key press, one step at a time.
 
@@ -120,56 +120,61 @@ if keys[pygame.K_RIGHT]:
 
 ---
 
-## 4 · Tune the Feel 🛠️
+## 4 · Explain the Code 📖
 
-Start from your working player. Change one thing at a time and note the effect.
+Here is a working player. Read it carefully and answer the questions below.
 
-1. Set `PLAYER_SPEED` to 2, then 10. Which feels best to you, and why?
+```python
+PLAYER_SPEED = 5
+player = pygame.Rect(100, 500, 50, 50)
+
+keys = pygame.key.get_pressed()
+
+if keys[pygame.K_RIGHT]:
+    player.x = player.x + PLAYER_SPEED
+if keys[pygame.K_LEFT]:
+    player.x = player.x - PLAYER_SPEED
+
+if player.x < 0:
+    player.x = 0
+if player.x > WIDTH - player.width:
+    player.x = WIDTH - player.width
+
+pygame.draw.rect(screen, (255, 0, 0), player)
+```
+
+**What does `PLAYER_SPEED` control, and what would happen if you made it bigger?**
 
 <div class="write-space"></div>
 
-2. Change the player's colour and size. Write what you picked.
+**Why are the two arrow-key checks both `if` (not `if`/`elif`)? What does that let the player do?**
 
 <div class="write-space"></div>
 
-3. **Stretch:** make the player start in the middle of the screen instead of the left. Which number did you change?
+**The line `if player.x < 0: player.x = 0` — in your own words, what is it protecting against?**
+
+<div class="write-space"></div>
+
+**What does `WIDTH - player.width` mean, and why not just use `WIDTH`?**
+
+<div class="write-space"></div>
+
+**What is the last line doing, and what would the player look like without it?**
 
 <div class="write-space"></div>
 
 ---
 
-## 5 · Build & Show 📸
+## 5 · Explain Your Lesson Code 🎥
 
-Put your player on top of last week's gradient sky. It should move left and right with the arrow keys and stop at both walls.
+Explain the code **you** wrote in today's lesson. Record a short phone video — you may show it running while you talk. Try to use these words: **Rect**, **arrow keys**, **speed**, **edge**, **boundary**.
 
-When it works, send a **photo or video**, then explain what you did. Use these starters — write 4 to 6 sentences.
-
-> First, I made the player with `pygame.Rect(...)` which means …
->
-> To move it, I used `get_pressed()` because …
->
-> I stopped it leaving the screen by …
->
-> The speed I chose was ___ because …
->
-> One tricky moment was …
->
-> If I had more time, I would …
-
-<div class="write-space tall" style="min-height: 340px"></div>
-
----
-
-## 6 · Record Your Walkthrough 🎥
-
-Take a video while you move the player around. Teach it to someone new. Try to use these words: **Rect**, **arrow keys**, **speed**, **edge**, **boundary**.
-
-> 1. Show the player moving left and right.
+> 1. Show your player moving left and right.
 > 2. Run into a wall and show it stops.
-> 3. Read the boundary check out loud and explain it.
-> 4. Show what happens when you change the speed.
+> 3. Read your boundary check out loud and explain what it does.
+> 4. Point to where you set the speed and say what number you chose and why.
 
-**Write what you will say in your video.** Plan it here first.
+**Write what you will say in your video. Plan it here before you record.**
 
 <div class="write-space tall" style="min-height: 340px"></div>
 
@@ -177,4 +182,4 @@ Take a video while you move the player around. Teach it to someone new. Try to u
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.

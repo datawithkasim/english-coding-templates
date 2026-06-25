@@ -2,7 +2,7 @@
 
 **Topic:** Enemies & Game Over · **Course:** Platformer Game · **Time:** about 45 minutes
 
-This week your game gets **enemies**. You build an `Enemy` **class** that patrols left and right on its own. Touching an enemy triggers **Game Over**, and pressing **R** restarts. A `game_state` variable decides what the game is doing.
+This week is about **enemies**. You will read and think about an `Enemy` **class** that patrols left and right on its own, how touching an enemy triggers **Game Over**, and how pressing **R** restarts. A `game_state` variable decides what the game is doing. Then you will explain the code you wrote in today's live lesson.
 
 > Keep these words handy: **class**, **patrol**, **game_state**, **Game Over**, **restart (R)**.
 
@@ -10,7 +10,7 @@ This week your game gets **enemies**. You build an `Enemy` **class** that patrol
 
 ## 1 · Predict 🔮
 
-Read each snippet. Before you run it, write what you think will happen.
+Read each snippet. Write what you think it does.
 
 ```python
 def update(self):
@@ -136,56 +136,67 @@ if game_state == "gameover":
 
 ---
 
-## 4 · Populate & Polish 🛠️
+## 4 · Explain the Code 📖
 
-Start from your working enemies.
+Here is a working enemy setup, just like the one from class. Read it carefully, then answer the questions.
 
-1. Add a second enemy with a *different* patrol range. Write its `Enemy(...)` line.
+```python
+class Enemy:
+    def __init__(self, start_x, start_y, width, height, range_x):
+        self.rect = pygame.Rect(start_x, start_y, width, height)
+        self.start_x = start_x
+        self.range_x = range_x
+        self.direction = 1
+        self.speed = 2
+
+    def update(self):
+        self.rect.x = self.rect.x + self.direction * self.speed
+        if self.rect.x > self.start_x + self.range_x:
+            self.direction = -1
+        if self.rect.x < self.start_x:
+            self.direction = 1
+
+enemies = [Enemy(300, 530, 40, 40, 200)]
+
+if game_state == "playing":
+    for enemy in enemies:
+        enemy.update()
+        if player.colliderect(enemy.rect):
+            game_state = "gameover"
+```
+
+**Which line saves where the enemy started, and why does the patrol need it?**
 
 <div class="write-space"></div>
 
-2. Change an enemy's speed. Does a faster enemy make the level harder or just annoying?
+**What does `self.direction = 1` mean, and what is happening when it becomes `-1`?**
 
 <div class="write-space"></div>
 
-3. **Stretch:** show the final score on the Game Over screen. Where do you draw it?
+**Why does every enemy go inside the `for enemy in enemies:` loop?**
+
+<div class="write-space"></div>
+
+**What turns the game into Game Over, and on which line does it happen?**
+
+<div class="write-space"></div>
+
+**Why is all of this wrapped inside `if game_state == "playing":`?**
 
 <div class="write-space"></div>
 
 ---
 
-## 5 · Build & Show 📸
+## 5 · Explain Your Lesson Code 🎥
 
-Add patrolling enemies to your own level. Place at least three, and make sure the level is still clearable.
+Explain the code **you** wrote in today's lesson. Make a short phone video walking through your own game. You may show it running. Try to use these words: **class**, **patrol**, **game_state**, **Game Over**, **restart**.
 
-When it works, send a **photo or video** showing you dodging enemies *and* a Game Over, then explain what you did. Use these starters — write 4 to 6 sentences.
+> 1. Show your `Enemy` class and read the `update` out loud.
+> 2. Explain how `direction` flips so the enemy patrols back and forth.
+> 3. Touch an enemy and show `game_state` turn to Game Over.
+> 4. Press R and explain how the restart resets the game.
 
-> First, my `Enemy` class patrols by …
->
-> The `direction` flips when …
->
-> Touching an enemy sets `game_state` to …
->
-> I restart with R by …
->
-> One tricky moment was …
->
-> If I had more time, I would …
-
-<div class="write-space tall" style="min-height: 340px"></div>
-
----
-
-## 6 · Record Your Walkthrough 🎥
-
-Take a video showing dodging, dying, and restarting. Teach it to someone new. Try to use these words: **class**, **patrol**, **game_state**, **Game Over**, **restart**.
-
-> 1. Show an enemy patrolling back and forth.
-> 2. Dodge one, then touch one and trigger Game Over.
-> 3. Read the patrol `update` out loud and explain the direction flip.
-> 4. Press R and show the restart.
-
-**Write what you will say in your video.** Plan it here first.
+**Write what you will say in your video. Plan it here before you record.**
 
 <div class="write-space tall" style="min-height: 340px"></div>
 
@@ -193,4 +204,4 @@ Take a video showing dodging, dying, and restarting. Teach it to someone new. Tr
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.

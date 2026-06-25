@@ -104,7 +104,10 @@ footer b { color: #ff7849; }
 <div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
 <h1>🔀 RS001 Week 9 — English Worksheet</h1>
 <p><strong>Topic:</strong> Cause and Effect — Enemies Appear · <strong>Course:</strong> Text Adventure (Python) · <strong>Time:</strong> about 45 minutes</p>
-<p>This week one choice changes what happens next. <code>if</code> / <code>else</code> lets you run different code depending on the player's path — so the <strong>left</strong> road meets a goblin and the <strong>right</strong> road meets an orc.</p>
+<p>This week is about thinking through how one choice changes what happens next. <code>if</code> / <code>else</code> lets different code run depending on the player's path — so the <strong>left</strong> road meets a goblin and the <strong>right</strong> road meets an orc. You will read branching code, fix broken code on paper, and explain in your own words how a choice causes an effect.</p>
+<blockquote>
+<p>🧠 Words to know: <strong>if</strong>, <strong>else</strong>, <strong>elif</strong>, <strong>branch</strong>, <strong>cause</strong>, <strong>effect</strong></p>
+</blockquote>
 <pre><code class="language-python">path = game.ask(&quot;Which way? (left/right)&quot;).strip().lower()
 if path == &quot;left&quot;:
     enemy = &quot;goblin&quot;
@@ -113,7 +116,7 @@ else:
 game.say(f&quot;A {enemy} appears!&quot;)
 </code></pre>
 <h2>1 · Predict 🔮</h2>
-<p>Read each piece of code. Before you run it in your head, write what you think happens.</p>
+<p>Read each piece of code. In your head, work out what happens, then write your answer.</p>
 <pre><code class="language-python">path = &quot;left&quot;
 if path == &quot;left&quot;:
     game.say(&quot;cave&quot;)
@@ -144,7 +147,7 @@ elif path == &quot;right&quot;:
 <div class="write-space"></div></div>
 
 <h2>2 · Spot the Bug 🐛</h2>
-<p>Each block was meant to do something, but it is broken. Read what it is <strong>supposed</strong> to do, fix it, then explain why the original was wrong.</p>
+<p>Each block was meant to do something, but it is broken. Read what it is <strong>supposed</strong> to do, fix it on paper, then explain why the original was wrong.</p>
 <p><strong>Bug A</strong> — Left should give a goblin and right should give an orc. Right now <strong>both</strong> paths give a goblin.</p>
 <pre><code class="language-python">path = game.ask(&quot;way?&quot;).strip().lower()
 if path == &quot;left&quot;:
@@ -189,34 +192,50 @@ if path == paths[0]:
 <div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
 <div class="write-space"></div></div>
 
-<h2>3 · 🎯 Branch Your Story</h2>
-<p>Open your game. After your validated path choice, make the path <strong>matter</strong>: each direction should meet a different enemy. Use <code>if</code> / <code>else</code> (or <code>elif</code>) and describe each encounter so it feels different.</p>
-<p>When it works, send a <strong>photo or video</strong>, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.</p>
-<div class="qa"><blockquote>
-<p>First, I asked the player to choose a path, and …</p>
-<p>If they went left, the game …</p>
-<p>If they went right, the game …</p>
-<p>The cause was the choice and the effect was …</p>
-<p>One tricky moment was when …</p>
-<p>If I had more time, I would …</p>
-</blockquote>
-<div class="write-space tall" style="min-height: 340px"></div></div>
+<h2>3 · Explain the Code 📖</h2>
+<p>Read this working example. The player chooses a path, and the choice decides which enemy appears.</p>
+<pre><code class="language-python">path = game.ask(&quot;Which way? (left/right)&quot;).strip().lower()
+if path == &quot;left&quot;:
+    enemy = &quot;goblin&quot;
+    game.say(&quot;A goblin blocks the cave.&quot;)
+elif path == &quot;right&quot;:
+    enemy = &quot;orc&quot;
+    game.say(&quot;An orc roams the field.&quot;)
+else:
+    enemy = &quot;shadow&quot;
+    game.say(&quot;A shadow waits on an unknown road.&quot;)
+game.say(f&quot;A {enemy} appears!&quot;)
+</code></pre>
+<div class="qa"><p><strong>What does <code>.strip().lower()</code> do to the player's answer, and why is that helpful here?</strong></p>
+<div class="write-space"></div></div>
 
-<h2>4 · Record Your Walkthrough 🎥</h2>
-<p>Take a video on your phone (or a parent's phone) while your game runs. Teach it like the viewer has never coded. Try to use these words: <strong>if</strong>, <strong>else</strong>, <strong>branch</strong>, <strong>cause</strong>, <strong>effect</strong>.</p>
+<div class="qa"><p><strong>Which branch runs if the player types <code>right</code>? Which line of <code>enemy =</code> runs?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>When does the <code>else</code> branch run?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>The choice is the cause. What is the effect of choosing <code>left</code>?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why does the last <code>game.say(...)</code> line run no matter which path the player picks?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>4 · Explain Your Lesson Code 🎥</h2>
+<p>In today's live lesson you wrote branching code for your own game. Make a short video on your phone (or a parent's phone) explaining the code you wrote. You may show it running. Teach it like the viewer has never coded, and use these words: <strong>if</strong>, <strong>else</strong>, <strong>branch</strong>, <strong>cause</strong>, <strong>effect</strong>.</p>
 <blockquote>
 <ol>
-<li>Run your game and take the left path.</li>
-<li>Run it again and take the right path.</li>
-<li>Show that each choice leads to a different enemy.</li>
-<li>Read your <code>if</code> / <code>else</code> out loud and explain which branch runs when.</li>
+<li>Show the <code>if</code> / <code>else</code> code you wrote and read it out loud.</li>
+<li>Explain which branch runs when the player goes left, and which runs when they go right.</li>
+<li>Point out the cause (the choice) and the effect (the enemy that appears).</li>
+<li>Show it running once for each path so the effect is clear.</li>
 </ol>
 </blockquote>
-<div class="qa"><p><strong>Write what you will say in your video.</strong> Plan it here first.</p>
+<div class="qa"><p><strong>Write what you will say in your video. Plan it here before you record.</strong></p>
 <div class="write-space tall" style="min-height: 340px"></div></div>
 
 <hr />
 <h3>Submit ✅</h3>
-<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.</p>
+<p>Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.</p>
 </body>
 </html>

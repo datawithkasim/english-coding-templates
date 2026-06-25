@@ -104,16 +104,12 @@ footer b { color: #ff7849; }
 <div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
 <h1>🛡️ RS001 Week 7 — English Worksheet</h1>
 <p><strong>Topic:</strong> Stopping Mistakes — Validating Input · <strong>Course:</strong> Text Adventure (Python) · <strong>Time:</strong> about 45 minutes</p>
-<p>This week you check whether an answer is <strong>allowed</strong> before you act on it. <code>in</code> and <code>not in</code> test if a value is inside a list of valid choices. If the answer is wrong, you give a second chance — and if it is still wrong, you fall back to a safe default.</p>
-<pre><code class="language-python">valid = [&quot;left&quot;, &quot;right&quot;, &quot;back&quot;]
-choice = game.ask(&quot;Where to?&quot;).strip().lower()
-if choice in valid:
-    game.say(f&quot;You go {choice}.&quot;)
-else:
-    game.say(&quot;You cannot go that way.&quot;)
-</code></pre>
+<p>This week you think about how to check whether an answer is <strong>allowed</strong> before you act on it. <code>in</code> and <code>not in</code> test if a value is inside a list of valid choices. If the answer is wrong, you give a second chance — and if it is still wrong, you fall back to a safe default. In this worksheet you read code, fix code on paper, and explain the code you wrote in your live lesson.</p>
+<blockquote>
+<p>🧠 Words to know: <strong>valid</strong>, <strong>in</strong>, <strong>not in</strong>, <strong>retry</strong>, <strong>default</strong></p>
+</blockquote>
 <h2>1 · Predict 🔮</h2>
-<p>Read each piece of code. Before you run it in your head, write what you think happens.</p>
+<p>Read each piece of code. Picture what happens in your head, then write your answer.</p>
 <pre><code class="language-python">valid = [&quot;left&quot;, &quot;right&quot;]
 choice = &quot;up&quot;
 game.say(choice in valid)
@@ -141,7 +137,7 @@ game.say(choice)
 <div class="write-space"></div></div>
 
 <h2>2 · Spot the Bug 🐛</h2>
-<p>Each block was meant to do something, but it is broken. Read what it is <strong>supposed</strong> to do, fix it, then explain why the original was wrong.</p>
+<p>Each block was meant to do something, but it is broken. Read what it is <strong>supposed</strong> to do, fix it on paper, then explain why the original was wrong.</p>
 <p><strong>Bug A</strong> — This should warn the player when their choice is <strong>not</strong> valid. Right now the warning shows for valid answers instead.</p>
 <pre><code class="language-python">valid = [&quot;left&quot;, &quot;right&quot;]
 choice = game.ask(&quot;Where?&quot;).strip().lower()
@@ -183,34 +179,45 @@ game.say(f&quot;You move {choice}.&quot;)
 <div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
 <div class="write-space"></div></div>
 
-<h2>3 · 🎯 Validate a Choice</h2>
-<p>Open your game. Take your path choice and validate it against a list of valid directions. If the player gets it wrong, give one extra try, then fall back to a safe default so the game keeps going.</p>
-<p>When it works, send a <strong>photo or video</strong>, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.</p>
-<div class="qa"><blockquote>
-<p>First, I listed the valid choices, which were …</p>
-<p>I used <code>in</code> (or <code>not in</code>) to …</p>
-<p>When the player typed something wrong, the game …</p>
-<p>My safe default was …</p>
-<p>One tricky moment was when …</p>
-<p>If I had more time, I would …</p>
-</blockquote>
-<div class="write-space tall" style="min-height: 340px"></div></div>
+<h2>3 · Explain the Code 📖</h2>
+<p>Read this working example. It validates a choice, gives one retry, then falls back to a safe default.</p>
+<pre><code class="language-python">valid = [&quot;left&quot;, &quot;right&quot;, &quot;back&quot;]
+choice = game.ask(&quot;Where to?&quot;).strip().lower()
+if choice not in valid:
+    game.say(&quot;That is not a real direction.&quot;)
+    choice = game.ask(&quot;Try again — left, right, or back?&quot;).strip().lower()
+if choice not in valid:
+    choice = &quot;left&quot;
+game.say(f&quot;You go {choice}.&quot;)
+</code></pre>
+<div class="qa"><p><strong>What does the list <code>valid</code> hold, and why does the code need it?</strong></p>
+<div class="write-space"></div></div>
 
-<h2>4 · Record Your Walkthrough 🎥</h2>
-<p>Take a video on your phone (or a parent's phone) while your game runs. Teach it like the viewer has never coded. Try to use these words: <strong>valid</strong>, <strong>in</strong>, <strong>not in</strong>, <strong>retry</strong>, <strong>default</strong>.</p>
+<div class="qa"><p><strong>What does <code>not in</code> check on the first <code>if</code> line?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why is the player asked a second time inside the first <code>if</code>?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>The second <code>if</code> runs after the retry. What does it do if the answer is still wrong?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>If the player typed <code>"jump"</code> both times, what value reaches the last <code>game.say</code> line?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>4 · Explain Your Lesson Code 🎥</h2>
+<p>Explain the validation code <strong>you</strong> wrote in today's live lesson. Record a short video on your phone (or a parent's phone). You may show your game running while you talk. Teach it like the viewer has never coded. Try to use these words: <strong>valid</strong>, <strong>in</strong>, <strong>not in</strong>, <strong>retry</strong>, <strong>default</strong>.</p>
 <blockquote>
-<ol>
-<li>Run your game and type a valid answer.</li>
-<li>Run it again and type something silly on purpose.</li>
-<li>Show the retry, then the safe default kicking in.</li>
-<li>Read your validation line out loud and explain what <code>not in</code> checks.</li>
-</ol>
+<p>First, I list my valid choices, which are …</p>
+<p>I use <code>in</code> (or <code>not in</code>) to check whether …</p>
+<p>When the player types something wrong, my game gives a retry by …</p>
+<p>If it is still wrong, my safe default is …</p>
 </blockquote>
-<div class="qa"><p><strong>Write what you will say in your video.</strong> Plan it here first.</p>
+<div class="qa"><p><strong>Write what you will say in your video. Plan it here before you record.</strong></p>
 <div class="write-space tall" style="min-height: 340px"></div></div>
 
 <hr />
 <h3>Submit ✅</h3>
-<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.</p>
+<p>Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.</p>
 </body>
 </html>

@@ -104,14 +104,17 @@ footer b { color: #ff7849; }
 <div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
 <h1>🏆 RS001 Week 16 — English Worksheet</h1>
 <p><strong>Topic:</strong> Everything Together — The Finished Game · <strong>Course:</strong> Text Adventure (Python) · <strong>Time:</strong> about 60 minutes</p>
-<p>This is the final week. You bring together <strong>every</strong> idea from weeks 1–15 into one game: variables, lists, cleaned and validated input, branching, battle functions, randomness, an inventory, and a score-based ending. Then you present it.</p>
+<p>This is the final week. In your live lesson you built one whole game out of <strong>every</strong> idea from weeks 1–15: variables, lists, cleaned and validated input, branching, battle functions, randomness, an inventory, and a score-based ending. This worksheet is for <strong>thinking about</strong> and <strong>explaining</strong> that code — reading it, predicting it, and finding bugs on paper. At the end you will present the finished game you built.</p>
+<blockquote>
+<p>🧠 Words to know: <strong>variable</strong>, <strong>function</strong>, <strong>random</strong>, <strong>inventory</strong>, <strong>ending</strong></p>
+</blockquote>
 <pre><code class="language-python">if score == 3 and &quot;golden key&quot; in backpack and &quot;gem&quot; in backpack:
     ending = &quot;King ending — every secret and treasure is yours!&quot;
 elif score == 3 and (&quot;golden key&quot; in backpack or &quot;map&quot; in backpack):
     ending = &quot;Sage ending — you solved the riddles and found the way.&quot;
 </code></pre>
 <h2>1 · Predict 🔮</h2>
-<p>Read each piece of code. Before you run it in your head, write what you think happens.</p>
+<p>Read each piece of code. In your head, work out what happens, then write your answer.</p>
 <pre><code class="language-python">backpack = [&quot;sword&quot;, &quot;map&quot;]
 if &quot;map&quot; in backpack:
     game.say(&quot;You unfold the map.&quot;)
@@ -140,7 +143,7 @@ if score == 3 and (&quot;golden key&quot; in backpack or &quot;map&quot; in back
 <div class="write-space"></div></div>
 
 <h2>2 · Spot the Bug 🐛</h2>
-<p>Each block was meant to do something, but it is broken. Read what it is <strong>supposed</strong> to do, fix it, then explain why the original was wrong.</p>
+<p>Each block was meant to do something, but it is broken. Read what it is <strong>supposed</strong> to do, fix it on paper, then explain why the original was wrong.</p>
 <p><strong>Bug A</strong> — A reward won in battle should be added to the inventory. Right now the reward is named but never goes into the backpack.</p>
 <pre><code class="language-python">backpack = [&quot;sword&quot;]
 reward = &quot;golden key&quot;
@@ -183,43 +186,52 @@ game.say(ending)
 <div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
 <div class="write-space"></div></div>
 
-<h2>3 · 🎯 Finish Your Game</h2>
-<p>Open your game. Make sure all the pieces are connected into one flow, start to finish:</p>
-<ul>
-<li>a hero built from variables,</li>
-<li>a cleaned, validated path choice,</li>
-<li>at least one battle using your <code>fight()</code> function,</li>
-<li>some randomness (enemy, reward, or encounter),</li>
-<li>an inventory the player fills,</li>
-<li>a score from riddles,</li>
-<li>a final ending chosen with <code>and</code> / <code>or</code> from the score and the inventory.</li>
-</ul>
-<p>Then play it all the way through at least once. When it works, send a <strong>photo or video</strong>, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.</p>
-<div class="qa"><blockquote>
-<p>First, I made sure my game flowed from the opening to …</p>
-<p>The piece I am proudest of is …</p>
-<p>My endings split based on …</p>
-<p>The hardest bug to fix was …</p>
-<p>To fix it, I …</p>
-<p>If I had more time, I would …</p>
-</blockquote>
-<div class="write-space tall" style="min-height: 380px"></div></div>
+<h2>3 · Explain the Code 📖</h2>
+<p>This is how a finished game decides its ending. Read it carefully, then answer the questions.</p>
+<pre><code class="language-python">backpack = [&quot;golden key&quot;, &quot;map&quot;]
+score = 3
 
-<h2>4 · Record Your Presentation 🎥</h2>
-<p>Record a full play-through on your phone (or a parent's phone) and present your game. Teach it like the viewer has never coded. Try to use these words: <strong>variable</strong>, <strong>function</strong>, <strong>random</strong>, <strong>inventory</strong>, <strong>ending</strong>.</p>
+if score == 3 and &quot;golden key&quot; in backpack and &quot;gem&quot; in backpack:
+    ending = &quot;King ending — every secret and treasure is yours!&quot;
+elif score == 3 and (&quot;golden key&quot; in backpack or &quot;map&quot; in backpack):
+    ending = &quot;Sage ending — you solved the riddles and found the way.&quot;
+elif score &gt;= 1:
+    ending = &quot;Adventurer ending — you made it out alive.&quot;
+else:
+    ending = &quot;Lost ending — the dungeon keeps you.&quot;
+
+game.say(ending)
+</code></pre>
+<div class="qa"><p><strong>What two things does the <code>backpack</code> list hold at the start, and what number is in <code>score</code>?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>The King ending needs three things to all be true. Why does this run NOT give the King ending?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Which ending does this code actually choose? Explain how Python reached it.</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why is the King ending checked before the Sage ending and not after?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>What would the last line <code>game.say(ending)</code> print to the player?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>4 · Explain Your Lesson Code 🎥</h2>
+<p>Present the finished game you built across this course. Record a video on your phone (or a parent's phone): show the game <strong>running</strong>, then explain the key parts of the code in your own words. Teach it like the viewer has never coded. Try to use these words: <strong>variable</strong>, <strong>function</strong>, <strong>random</strong>, <strong>inventory</strong>, <strong>ending</strong>.</p>
 <blockquote>
 <ol>
-<li>Play your game from start to finish.</li>
-<li>Show one or two pieces of code you are most proud of and say what they do.</li>
+<li>Play your finished game from start to finish so we can see it run.</li>
+<li>Point to one or two pieces of code you are most proud of and say what they do.</li>
+<li>Explain how your endings are chosen from the score and the inventory.</li>
 <li>Tell us the hardest bug you hit and how you solved it.</li>
-<li>Say one thing you would change if you built it again.</li>
 </ol>
 </blockquote>
-<div class="qa"><p><strong>Write what you will say in your presentation.</strong> Plan it here first — you can read from it while filming.</p>
-<div class="write-space tall" style="min-height: 380px"></div></div>
+<div class="qa"><p><strong>Write what you will say in your video. Plan it here before you record.</strong></p>
+<div class="write-space tall" style="min-height: 340px"></div></div>
 
 <hr />
 <h3>Submit ✅</h3>
-<p>Send this worksheet + your full play-through video (and your code) to teacher on KakaoTalk.</p>
+<p>Send this worksheet + your finished-game presentation video to teacher on KakaoTalk.</p>
 </body>
 </html>

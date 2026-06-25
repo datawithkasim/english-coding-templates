@@ -2,7 +2,9 @@
 
 **Topic:** Partial-Match Search (KR/EN) — `in` inside a Loop · **Course:** Pokédex App · **Time:** about 45 minutes
 
-This week your search gets smart. Typing just `피카` should still find `피카츄`. You use the `in` keyword to check **partial matches**, loop over the whole dex, and support **both Korean and English** names at once.
+> 🧠 Words to know: **in**, **partial match**, **loop**, **bilingual**, **found count**
+
+This week your search gets smart. Typing just `피카` should still find `피카츄`. In the live lesson you wrote code that uses the `in` keyword to check **partial matches**, loops over the whole dex, and supports **both Korean and English** names at once. This worksheet is about reading that code closely and explaining how it works.
 
 ---
 
@@ -18,7 +20,7 @@ From memory:
 
 ## 2 · Predict 🔮
 
-Read each block. Before you run it, write what you think will happen.
+Read each block. Write what you think will happen — no need to run anything.
 
 ```python
 print("피카" in "피카츄")
@@ -60,7 +62,7 @@ for name in names_en:
 
 ## 3 · Spot the Bug 🐛
 
-Read what each block is **supposed** to do, fix it, then explain the fix.
+Read what each block is **supposed** to do, fix it on paper, then explain the fix.
 
 **Bug A** — This should find any name **containing** the search word. Right now it only matches an **exact** full name.
 
@@ -127,9 +129,9 @@ for name in names:
 
 ---
 
-## 4 · Modify It ✏️
+## 4 · Explain the Code 📖
 
-Start from this working bilingual search:
+Read this working bilingual search carefully. It is the same shape as the code you wrote in the live lesson.
 
 ```python
 names_kr = ["피카츄", "이상해씨", "파이리", "꼬부기"]
@@ -151,50 +153,38 @@ else:
     print(f"\n총 {found_count}마리 발견!")
 ```
 
-Make these changes one at a time and run after each:
+**The four lists `names_kr`, `names_en`, `types`, and `hp` are kept in the same order. Why does index `i` give you one full Pokémon across all four lists?**
 
-1. Add one more Pokémon to all four lists and test searching for it in both Korean and English.
-2. Make the search also match the **type** (so typing `전기` lists all electric Pokémon).
-3. Change the "not found" message to suggest checking the spelling.
+<div class="write-space"></div>
 
-**Write your changed / added lines here:**
+**The `if` line uses `or` with two `in` checks. In plain English, when is this `if` line `True`?**
+
+<div class="write-space"></div>
+
+**Why is `.lower()` used on both `search` and `names_en[i]`, but not on `names_kr[i]`?**
+
+<div class="write-space"></div>
+
+**What does `found_count` do, and how does the code use it to decide which final message to print?**
+
+<div class="write-space"></div>
+
+**Why does partial-match search (`in`) feel friendlier to the user than exact-match search (`==`)?**
 
 <div class="write-space"></div>
 
 ---
 
-## 5 · Make It 📸
+## 5 · Explain Your Lesson Code 🎥
 
-Add **partial KR/EN search** to your own Pokédex. Typing part of a name in either language should list every match, with a clear message when nothing matches.
+Explain the code **you wrote in today's lesson**. Film a short video on your phone where you walk through your own bilingual search (you may show it running). Teach it like the viewer is new. Try to use: **in**, **partial match**, **loop**, **bilingual**, **found count**.
 
-When it works, send a **photo or video** on KakaoTalk showing **three different searches** (a Korean partial, an English partial, and one with no match). Then explain what you did. Use these starters — write 4 to 6 sentences.
+> 1. Show your two parallel name lists and say why they stay in the same order.
+> 2. Read your `if` line with `or` out loud and explain why two checks are needed.
+> 3. Search `피카`, then an English partial, and show both find a match.
+> 4. Search something fake and show how `found_count` triggers the "not found" message.
 
-> First, I kept two parallel name lists for …
->
-> The `in` keyword let me match …
->
-> I supported both languages by …
->
-> I knew nothing matched when …
->
-> The trickiest part was …
->
-> Partial search is friendlier than exact search because …
-
-<div class="write-space tall" style="min-height: 340px"></div>
-
----
-
-## 6 · Record Your Walkthrough 🎥
-
-Film your search running. Teach it like the viewer is new. Try to use: **in**, **partial match**, **loop**, **bilingual**, **found count**.
-
-> 1. Search `피카` and show it finds 피카츄.
-> 2. Search an English partial and show it works.
-> 3. Read the line with `or` out loud and explain why two checks are needed.
-> 4. Search something fake and show the "not found" message.
-
-**Plan what you will say here first:**
+**Write what you will say in your video. Plan it here before you record.**
 
 <div class="write-space tall" style="min-height: 340px"></div>
 
@@ -202,5 +192,4 @@ Film your search running. Teach it like the viewer is new. Try to use: **in**, *
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
-</content>
+Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.

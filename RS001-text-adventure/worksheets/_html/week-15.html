@@ -104,7 +104,10 @@ footer b { color: #ff7849; }
 <div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
 <h1>🧠 RS001 Week 15 — English Worksheet</h1>
 <p><strong>Topic:</strong> Logic, Knowledge, and Multiple Endings · <strong>Course:</strong> Text Adventure (Python) · <strong>Time:</strong> about 45 minutes</p>
-<p>This week the ending depends on what the player <strong>knows</strong>, not on luck. You store riddles and answers in parallel lists, keep a <strong>score</strong>, and use the score to pick one of several endings.</p>
+<p>This week the ending depends on what the player <strong>knows</strong>, not on luck. In your live lesson you built code that stores riddles and answers in parallel lists, keeps a <strong>score</strong>, and uses the score to pick one of several endings. This worksheet is about reading and explaining that code in your own words.</p>
+<blockquote>
+<p>🧠 Words to know: <strong>score</strong>, <strong>riddle</strong>, <strong>answer</strong>, <strong>ending</strong>, <strong>logic</strong></p>
+</blockquote>
 <pre><code class="language-python">questions = [&quot;I have four legs but cannot walk. What am I?&quot;]
 answers   = [&quot;table&quot;]
 guess = game.ask(questions[0]).strip()
@@ -112,7 +115,7 @@ if guess == answers[0]:
     score = score + 1
 </code></pre>
 <h2>1 · Predict 🔮</h2>
-<p>Read each piece of code. Before you run it in your head, write what you think happens.</p>
+<p>Read each piece of code. Work it out in your head and write what you think happens. Do not run it.</p>
 <pre><code class="language-python">score = 0
 score = score + 1
 score = score + 1
@@ -144,7 +147,7 @@ else:
 <div class="write-space"></div></div>
 
 <h2>2 · Spot the Bug 🐛</h2>
-<p>Each block was meant to do something, but it is broken. Read what it is <strong>supposed</strong> to do, fix it, then explain why the original was wrong.</p>
+<p>Each block was meant to do something, but it is broken. Read what it is <strong>supposed</strong> to do, fix it on paper, then explain why the original was wrong.</p>
 <p><strong>Bug A</strong> — A correct answer should add <strong>one</strong> to the score. Right now the score never goes up, because the result of the addition is thrown away.</p>
 <pre><code class="language-python">score = 0
 guess = &quot;table&quot;
@@ -193,34 +196,56 @@ game.say(ending)
 <div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
 <div class="write-space"></div></div>
 
-<h2>3 · 🎯 Score-Based Endings</h2>
-<p>Open your game. Before the final scene, ask the player a few riddles using parallel question/answer lists. Count correct answers into a <code>score</code>, then use the score to print one of several different endings.</p>
-<p>When it works, send a <strong>photo or video</strong>, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.</p>
-<div class="qa"><blockquote>
-<p>First, I stored my riddles and answers in …</p>
-<p>Each correct answer added to the score by …</p>
-<p>The endings I built were …</p>
-<p>A knowledge-based ending is different from a random one because …</p>
-<p>One tricky moment was when …</p>
-<p>If I had more time, I would …</p>
-</blockquote>
-<div class="write-space tall" style="min-height: 340px"></div></div>
+<h2>3 · Explain the Code 📖</h2>
+<p>This is a working version of the score-based ending code, like the one from your lesson. Read it carefully, then answer the questions below.</p>
+<pre><code class="language-python">questions = [&quot;four legs, cannot walk?&quot;, &quot;cold, melts fast?&quot;, &quot;opens when it rains?&quot;]
+answers   = [&quot;table&quot;, &quot;ice&quot;, &quot;umbrella&quot;]
+score = 0
 
-<h2>4 · Record Your Walkthrough 🎥</h2>
-<p>Take a video on your phone (or a parent's phone). Teach it like the viewer has never coded. Try to use these words: <strong>score</strong>, <strong>riddle</strong>, <strong>answer</strong>, <strong>ending</strong>, <strong>logic</strong>.</p>
+for i in range(len(questions)):
+    guess = game.ask(questions[i]).strip()
+    if guess == answers[i]:
+        score = score + 1
+
+if score == 3:
+    ending = &quot;wise&quot;
+elif score == 2:
+    ending = &quot;hero&quot;
+else:
+    ending = &quot;beginner&quot;
+
+game.say(&quot;Your ending: &quot; + ending)
+</code></pre>
+<div class="qa"><p><strong>Why do <code>questions</code> and <code>answers</code> need to be the same length?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>What does <code>answers[i]</code> give you on the second loop, when <code>i</code> is 1?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>What is the largest number <code>score</code> can reach with this code, and why?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>A player gets 2 riddles right. Which ending do they see, and which branch is checked first?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why does this game give a fair ending based on knowledge, not luck?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>4 · Explain Your Lesson Code 🎥</h2>
+<p>Take a short video on your phone (or a parent's phone) explaining the score-based ending code <strong>you</strong> wrote in today's lesson. You may show it running. Teach it like the viewer has never coded. Try to use these words: <strong>score</strong>, <strong>riddle</strong>, <strong>answer</strong>, <strong>ending</strong>, <strong>logic</strong>.</p>
 <blockquote>
 <ol>
-<li>Play once answering well and show the high-score ending.</li>
-<li>Play again answering poorly and show a different ending.</li>
-<li>Point to where the score goes up.</li>
+<li>Show your riddle and answer lists, and explain how they line up.</li>
+<li>Point to the line where the score goes up, and say when it happens.</li>
+<li>Show the different endings and explain what decides which one appears.</li>
 <li>Explain why the ending depends on knowledge, not luck.</li>
 </ol>
 </blockquote>
-<div class="qa"><p><strong>Write what you will say in your video.</strong> Plan it here first.</p>
+<div class="qa"><p><strong>Write what you will say in your video. Plan it here before you record.</strong></p>
 <div class="write-space tall" style="min-height: 340px"></div></div>
 
 <hr />
 <h3>Submit ✅</h3>
-<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.</p>
+<p>Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.</p>
 </body>
 </html>

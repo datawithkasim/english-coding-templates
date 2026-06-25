@@ -104,7 +104,10 @@ footer b { color: #ff7849; }
 <div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
 <h1>🌀 RS001 Week 14 — English Worksheet</h1>
 <p><strong>Topic:</strong> Random Encounters + a Bigger Reward Pool · <strong>Course:</strong> Text Adventure (Python) · <strong>Time:</strong> about 45 minutes</p>
-<p>This week randomness spreads through your whole game. Each path draws a random enemy from its own pool, rewards come from a big pool, and a surprise encounter fires only <strong>some</strong> of the time using a weighted <code>True</code>/<code>False</code> pick.</p>
+<p>This week is about thinking through randomness and explaining it in your own words. Each path draws a random enemy from its own pool, rewards come from a big pool, and a surprise encounter fires only <strong>some</strong> of the time using a weighted <code>True</code>/<code>False</code> pick. You will read code, fix a broken version on paper, then explain the game you wrote in your live lesson.</p>
+<blockquote>
+<p>🧠 Words to know: <strong>random</strong>, <strong>pool</strong>, <strong>encounter</strong>, <strong>odds</strong>, <strong>different</strong></p>
+</blockquote>
 <pre><code class="language-python">import random
 left_enemies = [&quot;goblin&quot;, &quot;bat&quot;, &quot;spider&quot;]
 enemy = random.choice(left_enemies)
@@ -113,7 +116,7 @@ if random.choice([True, False, False]):   # about 1 in 3
     game.say(&quot;A bandit jumps out!&quot;)
 </code></pre>
 <h2>1 · Predict 🔮</h2>
-<p>Read each piece of code. Before you run it in your head, write what you think happens.</p>
+<p>Read each piece of code. Run it in your head and write what you think happens.</p>
 <pre><code class="language-python">import random
 left_enemies = [&quot;goblin&quot;, &quot;bat&quot;, &quot;spider&quot;]
 enemy = random.choice(left_enemies)
@@ -139,7 +142,7 @@ if random.choice([True, True, True, False]):
 <div class="write-space"></div></div>
 
 <h2>2 · Spot the Bug 🐛</h2>
-<p>Each block was meant to do something, but it is broken. Read what it is <strong>supposed</strong> to do, fix it, then explain why the original was wrong.</p>
+<p>Each block was meant to do something, but it is broken. Read what it is <strong>supposed</strong> to do, fix it on paper, then explain why the original was wrong.</p>
 <p><strong>Bug A</strong> — Each path should draw from its <strong>own</strong> enemy pool. Right now both paths draw from the same list, so left and right feel identical.</p>
 <pre><code class="language-python">import random
 left_enemies = [&quot;goblin&quot;, &quot;bat&quot;]
@@ -183,34 +186,57 @@ game.say(f&quot;You found {reward}&quot;)
 <div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
 <div class="write-space"></div></div>
 
-<h2>3 · 🎯 Make Every Playthrough Different</h2>
-<p>Open your game. Add at least three kinds of randomness: a random enemy per path, a reward drawn from a bigger pool, and a surprise encounter that fires only some of the time. Tune the odds so the surprise is not too common or too rare.</p>
-<p>When it works, send a <strong>photo or video</strong>, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.</p>
-<div class="qa"><blockquote>
-<p>First, I gave each path its own enemy pool, which were …</p>
-<p>My reward pool had these items …</p>
-<p>My surprise encounter fired about … of the time.</p>
-<p>I tuned the odds by …</p>
-<p>One tricky moment was when …</p>
-<p>If I had more time, I would …</p>
-</blockquote>
-<div class="write-space tall" style="min-height: 340px"></div></div>
+<h2>3 · Explain the Code 📖</h2>
+<p>Read this working example. It picks a random enemy from the path's own pool, draws a reward from a bigger pool, and fires a surprise encounter only some of the time.</p>
+<pre><code class="language-python">import random
 
-<h2>4 · Record Your Walkthrough 🎥</h2>
-<p>Take a video on your phone (or a parent's phone). Play your game at least <strong>twice</strong> so the differences show. Teach it like the viewer has never coded. Try to use these words: <strong>random</strong>, <strong>pool</strong>, <strong>encounter</strong>, <strong>odds</strong>, <strong>different</strong>.</p>
+left_enemies = [&quot;goblin&quot;, &quot;bat&quot;, &quot;spider&quot;]
+right_enemies = [&quot;orc&quot;, &quot;troll&quot;, &quot;wolf&quot;]
+rewards = [&quot;gold&quot;, &quot;potion&quot;, &quot;map&quot;, &quot;gem&quot;, &quot;key&quot;]
+
+path = &quot;left&quot;
+if path == &quot;left&quot;:
+    enemy = random.choice(left_enemies)
+else:
+    enemy = random.choice(right_enemies)
+game.say(f&quot;A {enemy} blocks the path!&quot;)
+
+reward = random.choice(rewards)
+game.say(f&quot;You won a {reward}.&quot;)
+
+if random.choice([True, False, False]):   # about 1 in 3
+    game.say(&quot;A bandit jumps out!&quot;)
+</code></pre>
+<div class="qa"><p><strong>Which list does the enemy come from when <code>path</code> is <code>"left"</code>?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why does the <code>reward</code> line give a different result on different playthroughs?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Look at <code>[True, False, False]</code>. About how often does the bandit appear?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>If you wanted the bandit to appear more often, how would you change that list?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>In your own words, why does this code make every playthrough feel different?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>4 · Explain Your Lesson Code 🎥</h2>
+<p>Take a short video on your phone (or a parent's phone) and explain the game <strong>you</strong> wrote in today's live lesson. You can show it running. Teach it like the viewer has never coded. Try to use these words: <strong>random</strong>, <strong>pool</strong>, <strong>encounter</strong>, <strong>odds</strong>, <strong>different</strong>.</p>
 <blockquote>
 <ol>
-<li>Play once and narrate the enemy, reward, and any surprise.</li>
-<li>Play again and show what came out differently.</li>
-<li>Point to your weighted <code>True/False</code> line and explain the odds.</li>
-<li>Say why every playthrough now feels fresh.</li>
+<li>Point to your enemy pools and say what is in each path's pool.</li>
+<li>Show your reward pool and play once so a random reward appears.</li>
+<li>Point to your weighted <code>True/False</code> line and explain the odds of the surprise encounter.</li>
+<li>Say why every playthrough now feels different.</li>
 </ol>
 </blockquote>
-<div class="qa"><p><strong>Write what you will say in your video.</strong> Plan it here first.</p>
+<div class="qa"><p><strong>Write what you will say in your video. Plan it here before you record.</strong></p>
 <div class="write-space tall" style="min-height: 340px"></div></div>
 
 <hr />
 <h3>Submit ✅</h3>
-<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.</p>
+<p>Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.</p>
 </body>
 </html>

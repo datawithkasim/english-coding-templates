@@ -1,8 +1,8 @@
 # 🧗 RS004 Week 8 — English Worksheet
 
-**Topic:** Side Collision + Varied Platforms (Apply) · **Course:** Platformer Game · **Time:** about 45 minutes
+**Topic:** Side Collision + Varied Platforms (Read & Explain) · **Course:** Platformer Game · **Time:** about 45 minutes
 
-Until now the player only landed from above. This week walls **block from the side**, and bumping your **head** on a platform stops you and drops you back down. The trick: handle the **horizontal** move and the **vertical** move *separately*.
+Until now the player only landed from above. This week walls **block from the side**, and bumping your **head** on a platform stops you and drops you back down. The trick: handle the **horizontal** move and the **vertical** move *separately*. This worksheet is about reading that code closely and explaining it in your own words — including the code you wrote in today's live lesson.
 
 > Keep these words handy: **side collision**, **horizontal / vertical**, **`player.right` / `player.left`**, **head bump**, **wall**.
 
@@ -10,7 +10,7 @@ Until now the player only landed from above. This week walls **block from the si
 
 ## 1 · Predict 🔮
 
-Read each snippet. Before you run it, write what you think will happen.
+Read each snippet. Write what you think it does.
 
 ```python
 player.x = player.x + vx
@@ -135,56 +135,64 @@ for plat in platforms:
 
 ---
 
-## 4 · Design with Walls 🛠️
+## 4 · Explain the Code 📖
 
-Start from your working full collision.
+Here is the full side-and-vertical collision code. Read it carefully, then answer the questions.
 
-1. Add one tall thin platform to act as a **wall**. Walk into it from both sides and confirm it blocks you. Write its `Rect`.
+```python
+# horizontal move, then resolve horizontal collisions
+player.x = player.x + vx
+for plat in platforms:
+    if player.colliderect(plat):
+        if vx > 0:
+            player.right = plat.left
+        elif vx < 0:
+            player.left = plat.right
+
+# vertical move, then resolve vertical collisions
+player.y = player.y + vy
+for plat in platforms:
+    if player.colliderect(plat):
+        if vy > 0:
+            player.bottom = plat.top
+            vy = 0
+        elif vy < 0:
+            player.top = plat.bottom
+            vy = 0
+```
+
+**Why is the horizontal move done first, in its own loop, before the vertical move?**
 
 <div class="write-space"></div>
 
-2. Add a low platform you can bump your **head** on. Where did you place it?
+**When `vx > 0` and the player hits a wall, why do we set `player.right = plat.left` instead of `player.left`?**
 
 <div class="write-space"></div>
 
-3. **Stretch:** build a narrow corridor the player must walk through. Sketch the idea in words.
+**In the vertical loop, what is the difference between the `vy > 0` case and the `vy < 0` case?**
+
+<div class="write-space"></div>
+
+**Both vertical cases set `vy = 0`, but the horizontal cases do not change `vx`. Why is that?**
+
+<div class="write-space"></div>
+
+**What would go wrong if the player never called `player.colliderect(plat)` before snapping the edges?**
 
 <div class="write-space"></div>
 
 ---
 
-## 5 · Build & Show 📸
+## 5 · Explain Your Lesson Code 🎥
 
-Design **your own** level using platforms of different sizes — include at least one wall the player bumps into from the side.
+Explain the collision code **you wrote in today's lesson**. Record a short video on your phone. You may show your game running. Try to use these words: **side collision**, **wall**, **head bump**, **horizontal**, **vertical**.
 
-When it works, send a **photo or video** showing top, side, and head collisions, then explain what you did. Use these starters — write 4 to 6 sentences.
-
-> First, I split movement into horizontal and vertical because …
->
-> When the player hits a wall on the right, I set …
->
-> A head bump is when `vy < 0`, and I handle it by …
->
-> My level has a wall / corridor at …
->
-> One tricky moment was …
->
-> If I had more time, I would …
-
-<div class="write-space tall" style="min-height: 340px"></div>
-
----
-
-## 6 · Record Your Walkthrough 🎥
-
-Take a video showing all three collision types. Teach it to someone new. Try to use these words: **side collision**, **wall**, **head bump**, **horizontal**, **vertical**.
-
-> 1. Walk into a wall from the side and show it blocks you.
-> 2. Jump up under a platform and bump your head.
-> 3. Land on a platform from above.
+> 1. Show your code and point to where you split the move into horizontal and vertical.
+> 2. Run your game: walk into a wall from the side and show it blocks you.
+> 3. Jump up under a platform and show the head bump.
 > 4. Read one collision line out loud and explain which edge it lines up.
 
-**Write what you will say in your video.** Plan it here first.
+**Write what you will say in your video. Plan it here before you record.**
 
 <div class="write-space tall" style="min-height: 340px"></div>
 
@@ -192,4 +200,4 @@ Take a video showing all three collision types. Teach it to someone new. Try to 
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.
