@@ -16,9 +16,7 @@ Open the **Pixel Art** world. A flat wall has red pixel art on it.
 - **Y** = the rows, bottom to top ↑
 - **Z** = the depth. It stays the **same**, so we ignore it here.
 
-The big idea:
-
-> 🟥 To color **one** square, the **start** and the **end** are the **same** square.
+Every red shape has a **START** and an **END**. This worksheet shows you how to count to them.
 
 **Find the smallest red mark on the wall. Circle one — is it 1 square or 2 squares?**   1   ·   2
 
@@ -26,17 +24,25 @@ The big idea:
 
 ---
 
-## 2 · One Square: Start = End 🟥
+## 2 · Find START and END 🧭
 
-**X** runs across the top. **Y** runs up the side. One square is red.
+Two steps find any square's spot:
 
-| Y \ X | 0 | 1 | 2 | 3 | 4 |
-|---|---|---|---|---|---|
-| **2** | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
-| **1** | ⬜ | ⬜ | 🟥 | ⬜ | ⬜ |
-| **0** | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
+> **Step ① — Count across (→) for X.**  0, 1, 2, 3 …
+> **Step ② — Count up (↑) for Y.**  0, 1, 2, 3 …
 
-The red square is at **X = 2, Y = 1**. Here is the command two ways:
+The red square below is **🟪**.
+
+| Y \ X | 0 | 1 | 2 | 3 |
+|---|---|---|---|---|
+| **2** | ⬜ | ⬜ | ⬜ | ⬜ |
+| **1** | ⬜ | ⬜ | 🟪 | ⬜ |
+| **0** | ⬜ | ⬜ | ⬜ | ⬜ |
+
+- **Count across:** 0, 1, **2** → X = 2.
+- **Count up:** 0, **1** → Y = 1.
+- **START = (2, 1).   END = (2, 1).**
+- It is **one** square, so START and END are the **same**. 🟪
 
 **Blocks**
 
@@ -52,29 +58,34 @@ fill  [ 🟥 red wool ]
 blocks.fill(RED_WOOL, world(2, 1, 0), world(2, 1, 0), FillOperation.Replace)
 ```
 
-The **from** and the **to** are the **same**.
-
-**In the python line, the from is `(2, 1, 0)`. What is the to?**
+**This square is 1 wide and 1 tall. Circle one — are START and END the same or different?**   same   ·   different
 
 <div class="write-space short"></div>
 
 ---
 
-## 3 · Count the Squares 🔢
+## 3 · Find START and END of a Line 🧭
 
-This line is flat. It sits on **Y = 1** and goes from **X = 1** to **X = 3**.
+A line lying down has a **START** on the left and an **END** on the right.
+
+In the grid: **🟩 START · 🟥 END · 🟧 in between.**
 
 | Y \ X | 0 | 1 | 2 | 3 | 4 |
 |---|---|---|---|---|---|
 | **2** | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
-| **1** | ⬜ | 🟥 | 🟥 | 🟥 | ⬜ |
+| **1** | ⬜ | 🟩 | 🟧 | 🟥 | ⬜ |
 | **0** | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
 
-**Count the red squares. Circle one:**   2   ·   3   ·   4
+- **Count across:** red begins at X **1** and ends at X **3**.
+- **Count up:** red is in row **1** only → Y = **1** for both.
+- **START = (1, 1).   END = (3, 1).**
+- It is **1 tall**, so the **Y is the same** (1) for START and END.
+
+**Fill the blanks:  START = ( ___ , ___ )    END = ( ___ , ___ )**
 
 <div class="write-space short"></div>
 
-**The line covers X = 1, then which numbers? Fill the gaps:**   1 ,  ___ ,  ___
+**Circle the number that is the SAME for START and END:**   X   ·   Y
 
 <div class="write-space short"></div>
 
@@ -102,11 +113,11 @@ blocks.fill(RED_WOOL, world(2, 2, 0), world(3, 3, 0), FillOperation.Replace)
 
 ## 5 · Fill the Gap ✏️
 
-You want a flat line **3** squares long. It starts at **X = 1** and sits on **Y = 2**. One number is missing.
+You want a line lying down, **3** squares long. It starts at **X = 1** and sits on **Y = 2**. One number is missing.
 
 | Y \ X | 0 | 1 | 2 | 3 | 4 |
 |---|---|---|---|---|---|
-| **2** | ⬜ | 🟥 | 🟥 | 🟥 | ⬜ |
+| **2** | ⬜ | 🟩 | 🟧 | 🟥 | ⬜ |
 | **1** | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
 
 ```python
@@ -115,7 +126,7 @@ blocks.fill(RED_WOOL, world(1, 2, 0), world(__, 2, 0), FillOperation.Replace)
 
 **Word bank:**  `2`  ·  `3`  ·  `4`
 
-**Write the missing number (look at the grid and count):**
+**Write the missing END number (count across to the 🟥):**
 
 <div class="write-space short"></div>
 
@@ -127,11 +138,11 @@ Now switch to your homework world. Color **one single square**, then make **one 
 
 Send a photo or video, then explain what you did. Use these sentence starters — write 2 or 3 sentences.
 
-> First, I colored a square at X … , Y …
+> My square had START at X … , Y …
 >
-> For one square, my start and end were …
+> For one square, my START and END were …
 >
-> Then I made a line that was … squares long.
+> Then I made a line. Its START was … and its END was …
 
 <div class="write-space tall" style="min-height: 240px"></div>
 
@@ -139,11 +150,11 @@ Send a photo or video, then explain what you did. Use these sentence starters �
 
 ## 7 · Record Your Walkthrough 🎥
 
-Take a video on your phone (or a parent's phone) and show your wall. Talk like you are teaching a friend. Try to use these words: **X**, **Y**, **same**, **fill**.
+Take a video on your phone (or a parent's phone) and show your wall. Talk like you are teaching a friend. Try to use these words: **X**, **Y**, **START**, **END**, **same**.
 
 > 1. Show the square you colored.
-> 2. Say why the start and the end are the same.
-> 3. Show your line and count the squares out loud.
+> 2. Count to its START and END out loud and say why they are the same.
+> 3. Show your line and count to its START and END.
 
 **Write what you will say in your video.** You can read from it while filming.
 

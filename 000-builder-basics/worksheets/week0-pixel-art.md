@@ -18,29 +18,38 @@ Think of the wall like graph paper:
 - **Y** counts the rows, bottom to top ↑
 - **Z** is how deep the wall is. It is the **same** for every red square, so we can ignore it here.
 
-The big idea for this whole worksheet:
+Every red shape you build needs two corners: a **START** and an **END**. The rest of this worksheet is one skill — **how to count to those two corners.**
 
-> 🟥 To color **one** square, your **start** and your **end** are the **same** square.
-> A 1-wide, 1-tall block goes **from (X, Y) to the same (X, Y)**.
-
-**Look at the wall and find the smallest red mark — a single square. In your own words, why are its start and its end the same?**
+**Look at the wall and find the smallest red mark — a single square. Do you think its START and its END are the same spot, or two different spots?**
 
 <div class="write-space"></div>
 
 ---
 
-## 2 · One Square: Start = End 🟥
+## 2 · Find START and END — Step by Step 🧭
 
-Here is a grid. **X** runs across the top, **Y** runs up the side. One square is red.
+Here is the recipe. Use it for **every** straight line or square.
 
-| Y \ X | 0 | 1 | 2 | 3 | 4 | 5 |
-|---|---|---|---|---|---|---|
-| **3** | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
-| **2** | ⬜ | ⬜ | ⬜ | 🟥 | ⬜ | ⬜ |
-| **1** | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
-| **0** | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
+> **① Count X across** (left → right): 0, 1, 2, 3 … Find the column where the red **begins** and where it **ends**.
+> **② Count Y up** (bottom → top): 0, 1, 2, 3 … Find the row where the red **begins** and where it **ends**.
+> **③ START = (left X, bottom Y).   END = (right X, top Y).**
+> **④ Same-number check:** 1 square **wide** → START X = END X. 1 square **tall** → START Y = END Y.
 
-The red square is at **X = 3, Y = 2**. Here is the same command two ways — in **blocks** and in **python**:
+In the grids below: **🟩 START · 🟥 END · 🟧 in between · 🟪 START and END are the same square.**
+
+### Case 1 — A single square
+
+| Y \ X | 0 | 1 | 2 | 3 | 4 |
+|---|---|---|---|---|---|
+| **3** | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
+| **2** | ⬜ | ⬜ | ⬜ | 🟪 | ⬜ |
+| **1** | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
+| **0** | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
+
+- **① Count X:** 0, 1, 2, **3** → red begins at X 3 and ends at X 3.
+- **② Count Y:** 0, 1, **2** → red begins at Y 2 and ends at Y 2.
+- **③ START = (3, 2).   END = (3, 2).**
+- **④** 1 wide **and** 1 tall → START and END are the **same square**. 🟪
 
 **Blocks**
 
@@ -56,41 +65,88 @@ fill  [ 🟥 red wool ]
 blocks.fill(RED_WOOL, world(3, 2, 0), world(3, 2, 0), FillOperation.Replace)
 ```
 
-Look closely: the **from** and the **to** are **exactly the same** — `(3, 2, 0)` and `(3, 2, 0)`. One square in, one square colored.
-
 > 💡 For a single block you can also use `blocks.place(RED_WOOL, world(3, 2, 0))` — place needs only **one** spot, because there is nothing to count.
 
-**A single block has the same start and end. So why does `fill` make you write the numbers twice instead of once?**
+### Case 2 — A line lying down (1 tall)
 
-<div class="write-space"></div>
+| Y \ X | 0 | 1 | 2 | 3 | 4 |
+|---|---|---|---|---|---|
+| **3** | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
+| **2** | ⬜ | 🟩 | 🟧 | 🟥 | ⬜ |
+| **1** | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
+| **0** | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
+
+- **① Count X:** red fills columns **1, 2, 3** → begins at X 1, ends at X 3.
+- **② Count Y:** red is only in row **2** → begins at Y 2, ends at Y 2.
+- **③ START = (1, 2).   END = (3, 2).**
+- **④** 1 tall → **START Y = END Y = 2** (same Y!).
+
+**Python**
+
+```python
+blocks.fill(RED_WOOL, world(1, 2, 0), world(3, 2, 0), FillOperation.Replace)
+```
+
+### Case 3 — A line standing up (1 wide)
+
+| Y \ X | 0 | 1 | 2 |
+|---|---|---|---|
+| **3** | ⬜ | 🟥 | ⬜ |
+| **2** | ⬜ | 🟧 | ⬜ |
+| **1** | ⬜ | 🟩 | ⬜ |
+| **0** | ⬜ | ⬜ | ⬜ |
+
+- **① Count X:** red is only in column **1** → begins at X 1, ends at X 1.
+- **② Count Y:** red fills rows **1, 2, 3** → begins at Y 1, ends at Y 3.
+- **③ START = (1, 1).   END = (1, 3).**
+- **④** 1 wide → **START X = END X = 1** (same X!).
+
+**Python**
+
+```python
+blocks.fill(RED_WOOL, world(1, 1, 0), world(1, 3, 0), FillOperation.Replace)
+```
+
+> 🔑 **The big idea:** when a shape is **1 square thick**, one number does **not** change — START and END share it. That is correct, not a mistake.
 
 ---
 
-## 3 · Predict 🔮
+## 3 · Your Turn: Find START and END ✏️
 
-Read each command. Before you picture it, write how many squares turn red and where.
+Use the recipe (count X across, count Y up). For each shape, write START, END, and circle the number that is the **same**.
 
-```python
-blocks.fill(RED_WOOL, world(2, 1, 0), world(2, 1, 0), FillOperation.Replace)
-```
+### Shape A
 
-**How many squares turn red? Where?**
+| Y \ X | 0 | 1 | 2 | 3 |
+|---|---|---|---|---|
+| **2** | ⬜ | ⬜ | ⬜ | ⬜ |
+| **1** | ⬜ | ⬜ | 🟪 | ⬜ |
+| **0** | ⬜ | ⬜ | ⬜ | ⬜ |
 
-<div class="write-space short"></div>
-
-```python
-blocks.fill(RED_WOOL, world(2, 1, 0), world(5, 1, 0), FillOperation.Replace)
-```
-
-**Y stays 1. X goes 2 → 5. How many squares turn red? List every X number it covers.**
+**START = ( ___ , ___ )    END = ( ___ , ___ )    Same number:  X  ·  Y  ·  both**
 
 <div class="write-space short"></div>
 
-```python
-blocks.fill(RED_WOOL, world(4, 0, 0), world(4, 3, 0), FillOperation.Replace)
-```
+### Shape B
 
-**X stays 4. Y goes 0 → 3. Is this line flat or standing up? How tall is it?**
+| Y \ X | 0 | 1 | 2 | 3 |
+|---|---|---|---|---|
+| **3** | 🟩 | 🟧 | 🟥 | ⬜ |
+| **2** | ⬜ | ⬜ | ⬜ | ⬜ |
+
+**START = ( ___ , ___ )    END = ( ___ , ___ )    Same number:  X  ·  Y  ·  both**
+
+<div class="write-space short"></div>
+
+### Shape C
+
+| Y \ X | 0 | 1 | 2 | 3 |
+|---|---|---|---|---|
+| **2** | ⬜ | ⬜ | ⬜ | 🟥 |
+| **1** | ⬜ | ⬜ | ⬜ | 🟧 |
+| **0** | ⬜ | ⬜ | ⬜ | 🟩 |
+
+**START = ( ___ , ___ )    END = ( ___ , ___ )    Same number:  X  ·  Y  ·  both**
 
 <div class="write-space short"></div>
 
@@ -98,12 +154,12 @@ blocks.fill(RED_WOOL, world(4, 0, 0), world(4, 3, 0), FillOperation.Replace)
 
 ## 4 · Count the Length 🔢
 
-Counting squares has a trap. From **X = 2** to **X = 5** is **not** 5 squares — it is **2, 3, 4, 5 = 4 squares**. You count the start square too.
+Counting squares has a trap. From **X = 2** to **X = 5** is **not** 5 squares — it is **2, 3, 4, 5 = 4 squares**. You count the START square too.
 
-> **Length = (end − start) + 1.**
-> So to make a line **N** long starting at X, the end is **X + (N − 1)** — not X + N.
+> **Length = (END − START) + 1.**
+> So to make a line **N** long starting at X, the END is **X + (N − 1)** — not X + N.
 
-**You want a flat red line that is 3 squares long, starting at X = 1 (Y stays 2). What is the end X?**
+**You want a line lying down that is 3 squares long, starting at X = 1 (Y stays 2). What is the END X?**
 
 <div class="write-space short"></div>
 
@@ -111,7 +167,7 @@ Counting squares has a trap. From **X = 2** to **X = 5** is **not** 5 squares �
 
 <div class="write-space short"></div>
 
-**You want a line standing up, 5 squares tall, starting at Y = 0 (X stays 6). What is the end Y?**
+**You want a line standing up, 5 squares tall, starting at Y = 0 (X stays 6). What is the END Y?**
 
 <div class="write-space short"></div>
 
@@ -137,7 +193,7 @@ blocks.fill(RED_WOOL, world(4, 4, 0), world(5, 5, 0), FillOperation.Replace)
 
 <div class="write-space short"></div>
 
-**Bug B** — Meant to make a flat line **3** squares long starting at X 0 (Y stays 1).
+**Bug B** — Meant to make a line lying down **3** squares long starting at X 0 (Y stays 1).
 
 ```python
 blocks.fill(RED_WOOL, world(0, 1, 0), world(3, 1, 0), FillOperation.Replace)
@@ -171,13 +227,13 @@ blocks.fill(RED_WOOL, world(2, 0, 0), world(5, 0, 0), FillOperation.Replace)
 
 ## 6 · Build It 📸
 
-Now switch to your homework world. Recreate the red wall. Start with the single squares (start = end), then the flat lines, then the standing lines. Do as much of the wall as you like.
+Now switch to your homework world. Recreate the red wall. Start with the single squares (START = END), then the lines lying down, then the lines standing up. Do as much of the wall as you like.
 
 Send a photo or video of your wall, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.
 
-> The first square I colored was at X … , Y …
+> My first square had START at X … , Y … and END at the same spot because …
 >
-> For one square, my start and end were the same because …
+> To find START and END I counted …
 >
 > To make a line … long, I counted …
 >
@@ -193,11 +249,11 @@ Send a photo or video of your wall, then explain what you did. Use these sentenc
 
 ## 7 · Record Your Walkthrough 🎥
 
-Take a video on your phone (or a parent's phone) while you build one square and one line. Talk through it like you are teaching someone who has never seen it. Try to use these words: **X**, **Y**, **start**, **end**, **same**, **fill**.
+Take a video on your phone (or a parent's phone) while you build one square and one line. Talk through it like you are teaching someone who has never seen it. Try to use these words: **X**, **Y**, **START**, **END**, **same**, **fill**.
 
 > 1. Show the empty wall and point out X (across) and Y (up).
-> 2. Color one square and say why the start and the end are the same.
-> 3. Make a line and count the squares out loud.
+> 2. Color one square. Count to its START and END out loud and say why they are the same.
+> 3. Make a line. Count to its START and END out loud.
 > 4. Show one counting mistake and how you fixed it.
 
 **Write what you will say in your video.** Plan it below before you record — you can read from it while filming.
