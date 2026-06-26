@@ -227,7 +227,23 @@ blocks.fill(RED_WOOL, world(2, 0, 0), world(5, 0, 0), FillOperation.Replace)
 
 ## 6 · Build It 📸
 
-Now switch to your homework world. Recreate the red wall. Start with the single squares (START = END), then the lines lying down, then the lines standing up. Do as much of the wall as you like.
+Switch to your homework world. **Build this red picture** on the wall — it is the same art you can see in the world. **X** runs across, **Y** runs up.
+
+| Y \ X | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| **10** | 🟥 | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | 🟥 | 🟥 | 🟥 |
+| **9** | ⬜ | ⬜ | ⬜ | ⬜ | 🟥 | 🟥 | 🟥 | ⬜ | ⬜ | ⬜ | 🟥 |
+| **8** | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | 🟥 |
+| **7** | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
+| **6** | ⬜ | 🟥 | ⬜ | ⬜ | ⬜ | ⬜ | 🟥 | ⬜ | ⬜ | 🟥 | ⬜ |
+| **5** | ⬜ | 🟥 | ⬜ | ⬜ | ⬜ | ⬜ | 🟥 | ⬜ | ⬜ | 🟥 | ⬜ |
+| **4** | 🟥 | 🟥 | 🟥 | ⬜ | 🟥 | 🟥 | 🟥 | ⬜ | ⬜ | 🟥 | ⬜ |
+| **3** | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
+| **2** | 🟥 | 🟥 | 🟥 | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
+| **1** | 🟥 | 🟥 | 🟥 | ⬜ | 🟥 | 🟥 | 🟥 | ⬜ | ⬜ | 🟥 | ⬜ |
+| **0** | 🟥 | 🟥 | 🟥 | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
+
+Work **one shape at a time**. For each red shape: **find its START and END** (count X across, then Y up), check if a number is the **same** (1 wide or 1 tall), then `fill` it. Easy ones first — the single squares, then the lines, then the big block.
 
 Send a photo or video of your wall, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.
 
