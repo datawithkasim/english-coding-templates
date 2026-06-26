@@ -1,0 +1,233 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head><meta charset='utf-8'>
+<title>🎨 M000 Week 0 — English Worksheet (Beginner)</title>
+<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
+<style>
+@page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
+div.WordSection1 { page: WordSection1; }
+body { font-family: "Segoe UI", Arial, sans-serif; font-size: 11.5pt; color: #1a1a2e; line-height: 1.5; }
+h1 { font-size: 21pt; color: #6b4ee6; margin: 4px 0 6px; }
+h2 { font-size: 15pt; color: #6b4ee6; border-top: 1px solid #dddddd; padding-top: 8px; margin: 18px 0 10px; }
+h3, h4 { font-size: 11.5pt; margin: 12px 0 6px; }
+p { margin: 7px 0; }
+.brand { font-size: 10.5pt; font-weight: bold; color: #ff7849; letter-spacing: .06em;
+         border-bottom: 2px solid #ff7849; padding-bottom: 6px; margin-bottom: 14px; }
+table { border-collapse: collapse; margin: 10px 0; }
+th, td { border: 1px solid #c8c8c8; padding: 4px 9px; text-align: center; }
+th { background: #f3eefc; color: #6b4ee6; font-weight: bold; }
+pre { font-family: Consolas, "Courier New", monospace; font-size: 10.5pt; background: #f4f4f5;
+      border: 1px solid #dddddd; padding: 8px 10px; white-space: pre-wrap; }
+pre code { background: transparent; color: #1a1a2e; }
+code { font-family: Consolas, "Courier New", monospace; background: #fff1e8; color: #d6531f; padding: 0 3px; }
+blockquote { border-left: 3px solid #ff7849; background: #fff6ef; padding: 8px 12px;
+             color: #6a3a1c; margin: 9px 0; }
+ul, ol { margin: 7px 0 7px 26px; }
+p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
+.footer { color: #999999; font-size: 8.5pt; text-align: center; margin-top: 18px;
+          border-top: 1px solid #eeeeee; padding-top: 6px; }
+.footer b { color: #ff7849; }
+</style></head>
+<body><div class=WordSection1>
+<div class="brand">📚 ENGLISH CODING · 영어코딩</div>
+<h1>🎨 M000 Week 0 — English Worksheet (Beginner)</h1>
+<p><strong>Topic:</strong> Pixel Art — Counting Squares · <strong>Course:</strong> Builder Basics · <strong>Level:</strong> Beginner · <strong>Time:</strong> about 30 minutes</p>
+<p>A block in Minecraft has three numbers: <strong>X</strong> (left ↔ right), <strong>Y</strong> (up ↕ down), and <strong>Z</strong> (depth). On a flat wall, <strong>Z stays the same</strong> — you only change <strong>X</strong> and <strong>Y</strong>.</p>
+<blockquote>
+<p>🌱 This is a warm-up to do <strong>before Week 1</strong>. It helps you count squares.</p>
+</blockquote>
+<hr />
+<h2>1 · Read the Wall 🔍</h2>
+<p>Open the <strong>Pixel Art</strong> world. A flat wall has red pixel art on it.</p>
+<ul>
+<li><strong>X</strong> = the columns, left to right →</li>
+<li><strong>Y</strong> = the rows, bottom to top ↑</li>
+<li><strong>Z</strong> = the depth. It stays the <strong>same</strong>, so we ignore it here.</li>
+</ul>
+<p>The big idea:</p>
+<blockquote>
+<p>🟥 To color <strong>one</strong> square, the <strong>start</strong> and the <strong>end</strong> are the <strong>same</strong> square.</p>
+</blockquote>
+<p><strong>Find the smallest red mark on the wall. Circle one — is it 1 square or 2 squares?</strong>   1   ·   2</p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>2 · One Square: Start = End 🟥</h2>
+<p><strong>X</strong> runs across the top. <strong>Y</strong> runs up the side. One square is red.</p>
+<table>
+<thead>
+<tr>
+<th>Y \ X</th>
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>2</strong></td>
+<td>⬜</td>
+<td>⬜</td>
+<td>⬜</td>
+<td>⬜</td>
+<td>⬜</td>
+</tr>
+<tr>
+<td><strong>1</strong></td>
+<td>⬜</td>
+<td>⬜</td>
+<td>🟥</td>
+<td>⬜</td>
+<td>⬜</td>
+</tr>
+<tr>
+<td><strong>0</strong></td>
+<td>⬜</td>
+<td>⬜</td>
+<td>⬜</td>
+<td>⬜</td>
+<td>⬜</td>
+</tr>
+</tbody>
+</table>
+<p>The red square is at <strong>X = 2, Y = 1</strong>. Here is the command two ways:</p>
+<p><strong>Blocks</strong></p>
+<pre><code>fill  [ 🟥 red wool ]
+  from   world   X 2   Y 1   Z 0
+  to     world   X 2   Y 1   Z 0
+</code></pre>
+<p><strong>Python</strong></p>
+<pre><code class="language-python">blocks.fill(RED_WOOL, world(2, 1, 0), world(2, 1, 0), FillOperation.Replace)
+</code></pre>
+<p>The <strong>from</strong> and the <strong>to</strong> are the <strong>same</strong>.</p>
+<p><strong>In the python line, the from is <code>(2, 1, 0)</code>. What is the to?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>3 · Count the Squares 🔢</h2>
+<p>This line is flat. It sits on <strong>Y = 1</strong> and goes from <strong>X = 1</strong> to <strong>X = 3</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>Y \ X</th>
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>2</strong></td>
+<td>⬜</td>
+<td>⬜</td>
+<td>⬜</td>
+<td>⬜</td>
+<td>⬜</td>
+</tr>
+<tr>
+<td><strong>1</strong></td>
+<td>⬜</td>
+<td>🟥</td>
+<td>🟥</td>
+<td>🟥</td>
+<td>⬜</td>
+</tr>
+<tr>
+<td><strong>0</strong></td>
+<td>⬜</td>
+<td>⬜</td>
+<td>⬜</td>
+<td>⬜</td>
+<td>⬜</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Count the red squares. Circle one:</strong>   2   ·   3   ·   4</p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>The line covers X = 1, then which numbers? Fill the gaps:</strong>   1 ,  ___ ,  ___</p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>4 · Find the Difference 🐛</h2>
+<p>Both lines look almost the same. One colors <strong>one</strong> square. One colors <strong>four</strong>.</p>
+<pre><code class="language-python"># Line A
+blocks.fill(RED_WOOL, world(2, 2, 0), world(2, 2, 0), FillOperation.Replace)
+</code></pre>
+<pre><code class="language-python"># Line B
+blocks.fill(RED_WOOL, world(2, 2, 0), world(3, 3, 0), FillOperation.Replace)
+</code></pre>
+<p><strong>Which line colors only ONE square — A or B? Why?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>5 · Fill the Gap ✏️</h2>
+<p>You want a flat line <strong>3</strong> squares long. It starts at <strong>X = 1</strong> and sits on <strong>Y = 2</strong>. One number is missing.</p>
+<table>
+<thead>
+<tr>
+<th>Y \ X</th>
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>2</strong></td>
+<td>⬜</td>
+<td>🟥</td>
+<td>🟥</td>
+<td>🟥</td>
+<td>⬜</td>
+</tr>
+<tr>
+<td><strong>1</strong></td>
+<td>⬜</td>
+<td>⬜</td>
+<td>⬜</td>
+<td>⬜</td>
+<td>⬜</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-python">blocks.fill(RED_WOOL, world(1, 2, 0), world(__, 2, 0), FillOperation.Replace)
+</code></pre>
+<p><strong>Word bank:</strong>  <code>2</code>  ·  <code>3</code>  ·  <code>4</code></p>
+<p><strong>Write the missing number (look at the grid and count):</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>6 · Tell Me What You Built 📸</h2>
+<p>Now switch to your homework world. Color <strong>one single square</strong>, then make <strong>one short line</strong>. When you finish, come back here.</p>
+<p>Send a photo or video, then explain what you did. Use these sentence starters — write 2 or 3 sentences.</p>
+<blockquote>
+<p>First, I colored a square at X … , Y …</p>
+<p>For one square, my start and end were …</p>
+<p>Then I made a line that was … squares long.</p>
+</blockquote>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>7 · Record Your Walkthrough 🎥</h2>
+<p>Take a video on your phone (or a parent's phone) and show your wall. Talk like you are teaching a friend. Try to use these words: <strong>X</strong>, <strong>Y</strong>, <strong>same</strong>, <strong>fill</strong>.</p>
+<blockquote>
+<ol>
+<li>Show the square you colored.</li>
+<li>Say why the start and the end are the same.</li>
+<li>Show your line and count the squares out loud.</li>
+</ol>
+</blockquote>
+<p><strong>Write what you will say in your video.</strong> You can read from it while filming.</p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.</p>
+<div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>
+</div></body></html>
