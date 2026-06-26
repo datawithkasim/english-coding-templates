@@ -1,0 +1,223 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head><meta charset='utf-8'>
+<title>🎨 M000 Week 0 — English Worksheet</title>
+<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
+<style>
+@page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
+div.WordSection1 { page: WordSection1; }
+body { font-family: "Segoe UI", Arial, sans-serif; font-size: 11.5pt; color: #1a1a2e; line-height: 1.5; }
+h1 { font-size: 21pt; color: #6b4ee6; margin: 4px 0 6px; }
+h2 { font-size: 15pt; color: #6b4ee6; border-top: 1px solid #dddddd; padding-top: 8px; margin: 18px 0 10px; }
+h3, h4 { font-size: 11.5pt; margin: 12px 0 6px; }
+p { margin: 7px 0; }
+.brand { font-size: 10.5pt; font-weight: bold; color: #ff7849; letter-spacing: .06em;
+         border-bottom: 2px solid #ff7849; padding-bottom: 6px; margin-bottom: 14px; }
+table { border-collapse: collapse; margin: 10px 0; }
+th, td { border: 1px solid #c8c8c8; padding: 4px 9px; text-align: center; }
+th { background: #f3eefc; color: #6b4ee6; font-weight: bold; }
+pre { font-family: Consolas, "Courier New", monospace; font-size: 10.5pt; background: #f4f4f5;
+      border: 1px solid #dddddd; padding: 8px 10px; white-space: pre-wrap; }
+pre code { background: transparent; color: #1a1a2e; }
+code { font-family: Consolas, "Courier New", monospace; background: #fff1e8; color: #d6531f; padding: 0 3px; }
+blockquote { border-left: 3px solid #ff7849; background: #fff6ef; padding: 8px 12px;
+             color: #6a3a1c; margin: 9px 0; }
+ul, ol { margin: 7px 0 7px 26px; }
+p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
+.footer { color: #999999; font-size: 8.5pt; text-align: center; margin-top: 18px;
+          border-top: 1px solid #eeeeee; padding-top: 6px; }
+.footer b { color: #ff7849; }
+</style></head>
+<body><div class=WordSection1>
+<div class="brand">📚 ENGLISH CODING · 영어코딩</div>
+<h1>🎨 M000 Week 0 — English Worksheet</h1>
+<p><strong>Topic:</strong> Pixel Art — Counting Squares · <strong>Course:</strong> Builder Basics · <strong>Type:</strong> Warm-Up (before Week 1) · <strong>Time:</strong> about 40 minutes</p>
+<p>Every block in Minecraft has three numbers: <strong>X</strong> (left ↔ right), <strong>Y</strong> (up ↕ down), and <strong>Z</strong> (depth, in ↔ out). Pixel art sits on a flat wall, so <strong>Z stays the same</strong> the whole time — you only change <strong>X</strong> and <strong>Y</strong>.</p>
+<blockquote>
+<p>🌱 This is a quick warm-up to do <strong>before Week 1</strong>. It teaches you to count squares so your builds line up perfectly.</p>
+</blockquote>
+<hr />
+<h2>1 · Read the Wall 🔍</h2>
+<p>Open the <strong>Pixel Art</strong> world. In front of you is a flat wall with red pixel art on it.</p>
+<p>Think of the wall like graph paper:</p>
+<ul>
+<li><strong>X</strong> counts the columns, left to right →</li>
+<li><strong>Y</strong> counts the rows, bottom to top ↑</li>
+<li><strong>Z</strong> is how deep the wall is. It is the <strong>same</strong> for every red square, so we can ignore it here.</li>
+</ul>
+<p>The big idea for this whole worksheet:</p>
+<blockquote>
+<p>🟥 To color <strong>one</strong> square, your <strong>start</strong> and your <strong>end</strong> are the <strong>same</strong> square.
+A 1-wide, 1-tall block goes <strong>from (X, Y) to the same (X, Y)</strong>.</p>
+</blockquote>
+<p><strong>Look at the wall and find the smallest red mark — a single square. In your own words, why are its start and its end the same?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>2 · One Square: Start = End 🟥</h2>
+<p>Here is a grid. <strong>X</strong> runs across the top, <strong>Y</strong> runs up the side. One square is red.</p>
+<table>
+<thead>
+<tr>
+<th>Y \ X</th>
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>3</strong></td>
+<td>⬜</td>
+<td>⬜</td>
+<td>⬜</td>
+<td>⬜</td>
+<td>⬜</td>
+<td>⬜</td>
+</tr>
+<tr>
+<td><strong>2</strong></td>
+<td>⬜</td>
+<td>⬜</td>
+<td>⬜</td>
+<td>🟥</td>
+<td>⬜</td>
+<td>⬜</td>
+</tr>
+<tr>
+<td><strong>1</strong></td>
+<td>⬜</td>
+<td>⬜</td>
+<td>⬜</td>
+<td>⬜</td>
+<td>⬜</td>
+<td>⬜</td>
+</tr>
+<tr>
+<td><strong>0</strong></td>
+<td>⬜</td>
+<td>⬜</td>
+<td>⬜</td>
+<td>⬜</td>
+<td>⬜</td>
+<td>⬜</td>
+</tr>
+</tbody>
+</table>
+<p>The red square is at <strong>X = 3, Y = 2</strong>. Here is the same command two ways — in <strong>blocks</strong> and in <strong>python</strong>:</p>
+<p><strong>Blocks</strong></p>
+<pre><code>fill  [ 🟥 red wool ]
+  from   world   X 3   Y 2   Z 0
+  to     world   X 3   Y 2   Z 0
+</code></pre>
+<p><strong>Python</strong></p>
+<pre><code class="language-python">blocks.fill(RED_WOOL, world(3, 2, 0), world(3, 2, 0), FillOperation.Replace)
+</code></pre>
+<p>Look closely: the <strong>from</strong> and the <strong>to</strong> are <strong>exactly the same</strong> — <code>(3, 2, 0)</code> and <code>(3, 2, 0)</code>. One square in, one square colored.</p>
+<blockquote>
+<p>💡 For a single block you can also use <code>blocks.place(RED_WOOL, world(3, 2, 0))</code> — place needs only <strong>one</strong> spot, because there is nothing to count.</p>
+</blockquote>
+<p><strong>A single block has the same start and end. So why does <code>fill</code> make you write the numbers twice instead of once?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>3 · Predict 🔮</h2>
+<p>Read each command. Before you picture it, write how many squares turn red and where.</p>
+<pre><code class="language-python">blocks.fill(RED_WOOL, world(2, 1, 0), world(2, 1, 0), FillOperation.Replace)
+</code></pre>
+<p><strong>How many squares turn red? Where?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">blocks.fill(RED_WOOL, world(2, 1, 0), world(5, 1, 0), FillOperation.Replace)
+</code></pre>
+<p><strong>Y stays 1. X goes 2 → 5. How many squares turn red? List every X number it covers.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">blocks.fill(RED_WOOL, world(4, 0, 0), world(4, 3, 0), FillOperation.Replace)
+</code></pre>
+<p><strong>X stays 4. Y goes 0 → 3. Is this line flat or standing up? How tall is it?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>4 · Count the Length 🔢</h2>
+<p>Counting squares has a trap. From <strong>X = 2</strong> to <strong>X = 5</strong> is <strong>not</strong> 5 squares — it is <strong>2, 3, 4, 5 = 4 squares</strong>. You count the start square too.</p>
+<blockquote>
+<p><strong>Length = (end − start) + 1.</strong>
+So to make a line <strong>N</strong> long starting at X, the end is <strong>X + (N − 1)</strong> — not X + N.</p>
+</blockquote>
+<p><strong>You want a flat red line that is 3 squares long, starting at X = 1 (Y stays 2). What is the end X?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Now write the fill for it — blocks or python, your choice:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>You want a line standing up, 5 squares tall, starting at Y = 0 (X stays 6). What is the end Y?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>5 · Spot the Bug 🐛</h2>
+<p>Each command was meant to do one thing, but it is wrong. Rewrite it so it works, then explain why the original was wrong.</p>
+<p><strong>Bug A</strong> — Meant to color <strong>one</strong> square at X 4, Y 4.</p>
+<pre><code class="language-python">blocks.fill(RED_WOOL, world(4, 4, 0), world(5, 5, 0), FillOperation.Replace)
+</code></pre>
+<p><strong>Hint:</strong> count how many squares <code>(4,4)</code> to <code>(5,5)</code> really covers.</p>
+<p><strong>Write the fixed command:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug B</strong> — Meant to make a flat line <strong>3</strong> squares long starting at X 0 (Y stays 1).</p>
+<pre><code class="language-python">blocks.fill(RED_WOOL, world(0, 1, 0), world(3, 1, 0), FillOperation.Replace)
+</code></pre>
+<p><strong>Write the fixed command:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug C</strong> — Meant to make a line <strong>standing up</strong>, 4 tall at X 2, starting Y 0.</p>
+<pre><code class="language-python">blocks.fill(RED_WOOL, world(2, 0, 0), world(5, 0, 0), FillOperation.Replace)
+</code></pre>
+<p><strong>Hint:</strong> for a standing line, which number should change — X or Y?</p>
+<p><strong>Write the fixed command:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>6 · Build It 📸</h2>
+<p>Now switch to your homework world. Recreate the red wall. Start with the single squares (start = end), then the flat lines, then the standing lines. Do as much of the wall as you like.</p>
+<p>Send a photo or video of your wall, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.</p>
+<blockquote>
+<p>The first square I colored was at X … , Y …</p>
+<p>For one square, my start and end were the same because …</p>
+<p>To make a line … long, I counted …</p>
+<p>The hardest part was …</p>
+<p>To fix it, I …</p>
+<p>Next time I would …</p>
+</blockquote>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>7 · Record Your Walkthrough 🎥</h2>
+<p>Take a video on your phone (or a parent's phone) while you build one square and one line. Talk through it like you are teaching someone who has never seen it. Try to use these words: <strong>X</strong>, <strong>Y</strong>, <strong>start</strong>, <strong>end</strong>, <strong>same</strong>, <strong>fill</strong>.</p>
+<blockquote>
+<ol>
+<li>Show the empty wall and point out X (across) and Y (up).</li>
+<li>Color one square and say why the start and the end are the same.</li>
+<li>Make a line and count the squares out loud.</li>
+<li>Show one counting mistake and how you fixed it.</li>
+</ol>
+</blockquote>
+<p><strong>Write what you will say in your video.</strong> Plan it below before you record — you can read from it while filming.</p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.</p>
+<div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>
+</div></body></html>

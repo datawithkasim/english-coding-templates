@@ -16,10 +16,16 @@ the rules, update this file too.
         │  Microsoft Edge --headless --print-to-pdf
         ▼
 <course>/worksheets/<name>.pdf         ← the file we ship to parents/students
+        +
+<course>/worksheets/<name>.doc         ← Word-editable companion (same build, no extra tools)
 ```
 
-- **Source of truth is the `.md` file.** Never edit the `_html/*.html` or `*.pdf` by hand —
-  they are overwritten on every build.
+- **Source of truth is the `.md` file.** Never edit the `_html/*.html`, `*.pdf`, or `*.doc`
+  by hand — they are overwritten on every build.
+- **The `.doc`** is an Office-flavoured HTML file Word opens natively (no pandoc/LibreOffice
+  needed). It reuses the exact same Markdown→HTML as the PDF; ruled write-on boxes become
+  blank type-on lines so students can fill it in on a computer. Coordinate grids (Markdown
+  tables) render as bordered graph paper in both the PDF and the `.doc`.
 - One command rebuilds **every** `*/worksheets/*.md` in the repo:
   ```bash
   pip install -r requirements.txt     # first time only (markdown package)
@@ -92,7 +98,7 @@ The build only behaves well if you stick to these shapes:
 1. Copy a template: `cp scripts/templates/week-template.md <course>/worksheets/week-NN.md`.
 2. Fill it in following §3. Delete the `<!-- authoring notes -->` block before shipping.
 3. Build: `python scripts/build-worksheets.py` (or scope to one course — see §5).
-4. Eyeball the PDF (see §6). Commit the `.md`, the generated `_html/*.html`, and the `.pdf`.
+4. Eyeball the PDF (see §6). Commit the `.md`, the generated `_html/*.html`, the `.pdf`, and the `.doc`.
 5. Add the row to the course `README.md` table so parents can download it.
 
 ---

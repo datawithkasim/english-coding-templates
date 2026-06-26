@@ -55,6 +55,11 @@ em { color: #555; }
 ul, ol { margin: 8px 0 8px 24px; }
 li { margin: 3px 0; }
 
+/* Grids (e.g. pixel-art coordinate grids) render as light graph paper. */
+table { border-collapse: collapse; margin: 12px 0; }
+th, td { border: 1px solid #ddd; padding: 4px 9px; text-align: center; font-size: 14px; }
+th { background: #faf7ff; color: #6b4ee6; font-weight: 700; }
+
 pre {
   font-family: "JetBrains Mono", "Consolas", monospace;
   font-size: 13.5px;
@@ -207,6 +212,71 @@ def render_pdf(html_path: Path, pdf_path: Path) -> None:
     subprocess.run(cmd, check=True, capture_output=True)
 
 
+# --- Word (.doc) output ------------------------------------------------------
+# Word opens HTML saved with a .doc extension natively, so the editable Word
+# companion reuses the exact same Markdown -> HTML conversion as the PDF and just
+# wraps it in an Office-flavoured shell. No pandoc/LibreOffice needed. This is the
+# fill-in-on-a-computer version of the print PDF; ruled write-on boxes become
+# blank type-on lines a student can click into.
+WORD_CSS = """
+@page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
+div.WordSection1 { page: WordSection1; }
+body { font-family: "Segoe UI", Arial, sans-serif; font-size: 11.5pt; color: #1a1a2e; line-height: 1.5; }
+h1 { font-size: 21pt; color: #6b4ee6; margin: 4px 0 6px; }
+h2 { font-size: 15pt; color: #6b4ee6; border-top: 1px solid #dddddd; padding-top: 8px; margin: 18px 0 10px; }
+h3, h4 { font-size: 11.5pt; margin: 12px 0 6px; }
+p { margin: 7px 0; }
+.brand { font-size: 10.5pt; font-weight: bold; color: #ff7849; letter-spacing: .06em;
+         border-bottom: 2px solid #ff7849; padding-bottom: 6px; margin-bottom: 14px; }
+table { border-collapse: collapse; margin: 10px 0; }
+th, td { border: 1px solid #c8c8c8; padding: 4px 9px; text-align: center; }
+th { background: #f3eefc; color: #6b4ee6; font-weight: bold; }
+pre { font-family: Consolas, "Courier New", monospace; font-size: 10.5pt; background: #f4f4f5;
+      border: 1px solid #dddddd; padding: 8px 10px; white-space: pre-wrap; }
+pre code { background: transparent; color: #1a1a2e; }
+code { font-family: Consolas, "Courier New", monospace; background: #fff1e8; color: #d6531f; padding: 0 3px; }
+blockquote { border-left: 3px solid #ff7849; background: #fff6ef; padding: 8px 12px;
+             color: #6a3a1c; margin: 9px 0; }
+ul, ol { margin: 7px 0 7px 26px; }
+p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
+.footer { color: #999999; font-size: 8.5pt; text-align: center; margin-top: 18px;
+          border-top: 1px solid #eeeeee; padding-top: 6px; }
+.footer b { color: #ff7849; }
+"""
+
+
+def _write_space_to_lines(html: str) -> str:
+    """Turn ruled CSS write-space boxes into blank type-on lines for Word."""
+    def repl(m: "re.Match") -> str:
+        cls = m.group(1)
+        n = 3 if "short" in cls else (10 if "tall" in cls else 5)
+        return '<p class="ruled">&nbsp;</p>' * n
+    return re.sub(r'<div class="write-space([^"]*)"[^>]*>\s*</div>', repl, html)
+
+
+def wrap_doc(title: str, body_html: str) -> str:
+    body_html = _write_space_to_lines(body_html)
+    return (
+        "<html xmlns:o='urn:schemas-microsoft-com:office:office' "
+        "xmlns:w='urn:schemas-microsoft-com:office:word' "
+        "xmlns='http://www.w3.org/TR/REC-html40'>\n"
+        "<head><meta charset='utf-8'>\n"
+        f"<title>{title}</title>\n"
+        "<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View>"
+        "<w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->\n"
+        f"<style>{WORD_CSS}</style></head>\n"
+        "<body><div class=WordSection1>\n"
+        '<div class="brand">📚 ENGLISH CODING · 영어코딩</div>\n'
+        f"{body_html}\n"
+        '<div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>\n'
+        "</div></body></html>\n"
+    )
+
+
+def render_doc(title: str, body_html: str, doc_path: Path) -> None:
+    doc_path.write_text(wrap_doc(title, body_html), encoding="utf-8")
+
+
 def main() -> int:
     md_files = sorted(ROOT.glob("*/worksheets/*.md"))
     if not md_files:
@@ -221,9 +291,12 @@ def main() -> int:
 
         md_text = md.read_text(encoding="utf-8")
         title = title_from_md(md_text, md.stem)
-        html_path.write_text(wrap_html(title, md_to_html(md_text)), encoding="utf-8")
+        body_html = md_to_html(md_text)
+        html_path.write_text(wrap_html(title, body_html), encoding="utf-8")
         render_pdf(html_path, pdf_path)
-        print(f"[{course}] {md.name} -> {pdf_path.relative_to(ROOT)}")
+        doc_path = md.parent / (md.stem + ".doc")
+        render_doc(title, body_html, doc_path)
+        print(f"[{course}] {md.name} -> {pdf_path.name} + {doc_path.name}")
     return 0
 
 
