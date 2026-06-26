@@ -120,15 +120,17 @@ footer b { color: #ff7849; }
 <li><strong>Y</strong> = the rows, bottom to top ↑</li>
 <li><strong>Z</strong> = the depth. It stays the <strong>same</strong>, so we ignore it here.</li>
 </ul>
-<p>The big idea:</p>
-<blockquote>
-<p>🟥 To color <strong>one</strong> square, the <strong>start</strong> and the <strong>end</strong> are the <strong>same</strong> square.</p>
-</blockquote>
+<p>Every red shape has a <strong>START</strong> and an <strong>END</strong>. This worksheet shows you how to count to them.</p>
 <div class="qa"><p><strong>Find the smallest red mark on the wall. Circle one — is it 1 square or 2 squares?</strong>   1   ·   2</p>
 <div class="write-space short"></div></div>
 
-<h2>2 · One Square: Start = End 🟥</h2>
-<p><strong>X</strong> runs across the top. <strong>Y</strong> runs up the side. One square is red.</p>
+<h2>2 · Find START and END 🧭</h2>
+<p>Two steps find any square's spot:</p>
+<blockquote>
+<p><strong>Step ① — Count across (→) for X.</strong>  0, 1, 2, 3 …
+<strong>Step ② — Count up (↑) for Y.</strong>  0, 1, 2, 3 …</p>
+</blockquote>
+<p>The red square below is <strong>🟪</strong>.</p>
 <table>
 <thead>
 <tr>
@@ -137,7 +139,6 @@ footer b { color: #ff7849; }
 <th>1</th>
 <th>2</th>
 <th>3</th>
-<th>4</th>
 </tr>
 </thead>
 <tbody>
@@ -147,14 +148,12 @@ footer b { color: #ff7849; }
 <td>⬜</td>
 <td>⬜</td>
 <td>⬜</td>
-<td>⬜</td>
 </tr>
 <tr>
 <td><strong>1</strong></td>
 <td>⬜</td>
 <td>⬜</td>
-<td>🟥</td>
-<td>⬜</td>
+<td>🟪</td>
 <td>⬜</td>
 </tr>
 <tr>
@@ -163,11 +162,15 @@ footer b { color: #ff7849; }
 <td>⬜</td>
 <td>⬜</td>
 <td>⬜</td>
-<td>⬜</td>
 </tr>
 </tbody>
 </table>
-<p>The red square is at <strong>X = 2, Y = 1</strong>. Here is the command two ways:</p>
+<ul>
+<li><strong>Count across:</strong> 0, 1, <strong>2</strong> → X = 2.</li>
+<li><strong>Count up:</strong> 0, <strong>1</strong> → Y = 1.</li>
+<li><strong>START = (2, 1).   END = (2, 1).</strong></li>
+<li>It is <strong>one</strong> square, so START and END are the <strong>same</strong>. 🟪</li>
+</ul>
 <p><strong>Blocks</strong></p>
 <pre><code>fill  [ 🟥 red wool ]
   from   world   X 2   Y 1   Z 0
@@ -176,12 +179,12 @@ footer b { color: #ff7849; }
 <p><strong>Python</strong></p>
 <pre><code class="language-python">blocks.fill(RED_WOOL, world(2, 1, 0), world(2, 1, 0), FillOperation.Replace)
 </code></pre>
-<p>The <strong>from</strong> and the <strong>to</strong> are the <strong>same</strong>.</p>
-<div class="qa"><p><strong>In the python line, the from is <code>(2, 1, 0)</code>. What is the to?</strong></p>
+<div class="qa"><p><strong>This square is 1 wide and 1 tall. Circle one — are START and END the same or different?</strong>   same   ·   different</p>
 <div class="write-space short"></div></div>
 
-<h2>3 · Count the Squares 🔢</h2>
-<p>This line is flat. It sits on <strong>Y = 1</strong> and goes from <strong>X = 1</strong> to <strong>X = 3</strong>.</p>
+<h2>3 · Find START and END of a Line 🧭</h2>
+<p>A line lying down has a <strong>START</strong> on the left and an <strong>END</strong> on the right.</p>
+<p>In the grid: <strong>🟩 START · 🟥 END · 🟧 in between.</strong></p>
 <table>
 <thead>
 <tr>
@@ -205,8 +208,8 @@ footer b { color: #ff7849; }
 <tr>
 <td><strong>1</strong></td>
 <td>⬜</td>
-<td>🟥</td>
-<td>🟥</td>
+<td>🟩</td>
+<td>🟧</td>
 <td>🟥</td>
 <td>⬜</td>
 </tr>
@@ -220,10 +223,16 @@ footer b { color: #ff7849; }
 </tr>
 </tbody>
 </table>
-<div class="qa"><p><strong>Count the red squares. Circle one:</strong>   2   ·   3   ·   4</p>
+<ul>
+<li><strong>Count across:</strong> red begins at X <strong>1</strong> and ends at X <strong>3</strong>.</li>
+<li><strong>Count up:</strong> red is in row <strong>1</strong> only → Y = <strong>1</strong> for both.</li>
+<li><strong>START = (1, 1).   END = (3, 1).</strong></li>
+<li>It is <strong>1 tall</strong>, so the <strong>Y is the same</strong> (1) for START and END.</li>
+</ul>
+<div class="qa"><p><strong>Fill the blanks:  START = ( ___ , ___ )    END = ( ___ , ___ )</strong></p>
 <div class="write-space short"></div></div>
 
-<div class="qa"><p><strong>The line covers X = 1, then which numbers? Fill the gaps:</strong>   1 ,  ___ ,  ___</p>
+<div class="qa"><p><strong>Circle the number that is the SAME for START and END:</strong>   X   ·   Y</p>
 <div class="write-space short"></div></div>
 
 <h2>4 · Find the Difference 🐛</h2>
@@ -238,7 +247,7 @@ blocks.fill(RED_WOOL, world(2, 2, 0), world(3, 3, 0), FillOperation.Replace)
 <div class="write-space short"></div></div>
 
 <h2>5 · Fill the Gap ✏️</h2>
-<p>You want a flat line <strong>3</strong> squares long. It starts at <strong>X = 1</strong> and sits on <strong>Y = 2</strong>. One number is missing.</p>
+<p>You want a line lying down, <strong>3</strong> squares long. It starts at <strong>X = 1</strong> and sits on <strong>Y = 2</strong>. One number is missing.</p>
 <table>
 <thead>
 <tr>
@@ -254,8 +263,8 @@ blocks.fill(RED_WOOL, world(2, 2, 0), world(3, 3, 0), FillOperation.Replace)
 <tr>
 <td><strong>2</strong></td>
 <td>⬜</td>
-<td>🟥</td>
-<td>🟥</td>
+<td>🟩</td>
+<td>🟧</td>
 <td>🟥</td>
 <td>⬜</td>
 </tr>
@@ -272,26 +281,26 @@ blocks.fill(RED_WOOL, world(2, 2, 0), world(3, 3, 0), FillOperation.Replace)
 <pre><code class="language-python">blocks.fill(RED_WOOL, world(1, 2, 0), world(__, 2, 0), FillOperation.Replace)
 </code></pre>
 <p><strong>Word bank:</strong>  <code>2</code>  ·  <code>3</code>  ·  <code>4</code></p>
-<div class="qa"><p><strong>Write the missing number (look at the grid and count):</strong></p>
+<div class="qa"><p><strong>Write the missing END number (count across to the 🟥):</strong></p>
 <div class="write-space short"></div></div>
 
 <h2>6 · Tell Me What You Built 📸</h2>
 <p>Now switch to your homework world. Color <strong>one single square</strong>, then make <strong>one short line</strong>. When you finish, come back here.</p>
 <p>Send a photo or video, then explain what you did. Use these sentence starters — write 2 or 3 sentences.</p>
 <div class="qa"><blockquote>
-<p>First, I colored a square at X … , Y …</p>
-<p>For one square, my start and end were …</p>
-<p>Then I made a line that was … squares long.</p>
+<p>My square had START at X … , Y …</p>
+<p>For one square, my START and END were …</p>
+<p>Then I made a line. Its START was … and its END was …</p>
 </blockquote>
 <div class="write-space tall" style="min-height: 240px"></div></div>
 
 <h2>7 · Record Your Walkthrough 🎥</h2>
-<p>Take a video on your phone (or a parent's phone) and show your wall. Talk like you are teaching a friend. Try to use these words: <strong>X</strong>, <strong>Y</strong>, <strong>same</strong>, <strong>fill</strong>.</p>
+<p>Take a video on your phone (or a parent's phone) and show your wall. Talk like you are teaching a friend. Try to use these words: <strong>X</strong>, <strong>Y</strong>, <strong>START</strong>, <strong>END</strong>, <strong>same</strong>.</p>
 <blockquote>
 <ol>
 <li>Show the square you colored.</li>
-<li>Say why the start and the end are the same.</li>
-<li>Show your line and count the squares out loud.</li>
+<li>Count to its START and END out loud and say why they are the same.</li>
+<li>Show your line and count to its START and END.</li>
 </ol>
 </blockquote>
 <div class="qa"><p><strong>Write what you will say in your video.</strong> You can read from it while filming.</p>
