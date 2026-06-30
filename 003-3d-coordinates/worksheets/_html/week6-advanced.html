@@ -109,28 +109,34 @@ footer b { color: #ff7849; }
 <div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
 <h1>🐉 M003 Week 6 — English Worksheet (Advanced)</h1>
 <p><strong>Topic:</strong> Recreate the Ender Dragon (x, y, z) · <strong>Course:</strong> 3D Coordinates · <strong>Level:</strong> Advanced · <strong>Time:</strong> about 45 minutes</p>
-<p>A big blocky <strong>ender dragon</strong> stands in your world — black blocks, purple eyes. A big model is a set of <strong>parts</strong>: a long <strong>body</strong> (a fill box stretched along one axis), a <strong>head</strong> at the front, two <strong>wings</strong> that spread out along x, and a <strong>tail</strong> that steps back and down. Everything uses <strong>(x, y, z)</strong> — x <strong>across</strong>, y <strong>up</strong>, z <strong>forward</strong> (deep). Plan your corners before you build.</p>
+<p>A big blocky <strong>ender dragon</strong> stands in your world — black blocks, purple eyes. A big model is a set of <strong>parts</strong>: a long <strong>body</strong> (a fill box stretched along one axis), a <strong>head</strong> at the front, two <strong>wings</strong> that spread out along x, and a <strong>tail</strong> that steps back and down. Everything uses <strong>(x, y, z)</strong> — x <strong>across</strong>, y <strong>up</strong>, z <strong>forward</strong> (deep). Read each part carefully and plan your corners before you build.</p>
 <blockquote>
 <p>🔴 Stand on your <strong>home spot</strong> (red block) every run. Move your feet, move your head.</p>
 </blockquote>
 <h2>1 · Predict 🔮</h2>
-<p>Read each code. Write your full prediction.</p>
+<p>Read each snippet. Do <strong>not</strong> run it. Write your prediction <strong>and the reason</strong>.</p>
 <pre><code>fill black from (0, 8, 0) to (0, 8, 10)
 </code></pre>
-<div class="qa"><p><strong>One block wide, stretched along z. How long is the body? Which way does it run?</strong></p>
+<div class="qa"><p><strong>How long is the body, and which way does it run? Why?</strong></p>
 <div class="write-space"></div></div>
 
 <pre><code>fill black from (1, 8, 5) to (5, 8, 5)
 fill black from (-5, 8, 5) to (-1, 8, 5)
 </code></pre>
-<div class="qa"><p><strong>Two wings. Both stay at y = 8 and z = 5. How wide is each wing? Are they the same size on both sides?</strong></p>
+<div class="qa"><p><strong>Two wings. How wide is each one? Are they the same size on both sides? Why?</strong></p>
 <div class="write-space"></div></div>
 
 <pre><code>place black block at (0, 7, -1)
 place black block at (0, 6, -2)
 place black block at (0, 5, -3)
 </code></pre>
-<div class="qa"><p><strong>This is the tail behind the body. As z gets smaller (more negative), what happens to the height? Across, up, or down-and-back?</strong></p>
+<div class="qa"><p><strong>This is the tail behind the body. As z gets more negative, what happens to the height? Why does that make it droop?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code>fill black from (0, 8, 0) to (0, 8, 10)
+place black block at (0, 9, 11)
+</code></pre>
+<div class="qa"><p><strong>Body, then head. Is the head in front of or behind the body? Is it higher or lower? Why?</strong></p>
 <div class="write-space"></div></div>
 
 <h2>2 · Spot the Bug 🐛</h2>
@@ -139,19 +145,19 @@ place black block at (0, 5, -3)
 fill black from (-2, 8, 5) to (-1, 8, 5)
 </code></pre>
 <div class="qa"><p><strong>Write the fixed code:</strong></p>
-<div class="write-space"></div></div>
+<div class="write-space short"></div></div>
 
-<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
-<div class="write-space"></div></div>
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work? 2–3 sentences.</strong></p>
+<div class="write-space short"></div></div>
 
 <p><strong>Bug B</strong> — This should be a <strong>long body</strong> stretched <strong>deep along z</strong>, from (0, 8, 0) to (0, 8, 10). Right now it lies flat across the ground along x instead.</p>
 <pre><code>fill black from (0, 8, 0) to (10, 8, 0)
 </code></pre>
 <div class="qa"><p><strong>Write the fixed code:</strong></p>
-<div class="write-space"></div></div>
+<div class="write-space short"></div></div>
 
-<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
-<div class="write-space"></div></div>
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work? 2–3 sentences.</strong></p>
+<div class="write-space short"></div></div>
 
 <p><strong>Bug C</strong> — The <strong>tail</strong> should step <strong>back and down</strong> behind the body: each block goes one deeper and one lower. Right now every tail block sits at the same height, so the tail floats straight out instead of drooping.</p>
 <pre><code>place black block at (0, 8, -1)
@@ -160,13 +166,13 @@ place black block at (0, 8, -3)
 </code></pre>
 <p><strong>Hint:</strong> look at the <strong>y</strong> numbers. A tail that droops must lower y each step, not keep it the same.</p>
 <div class="qa"><p><strong>Write the fixed code:</strong></p>
-<div class="write-space"></div></div>
+<div class="write-space short"></div></div>
 
-<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
-<div class="write-space"></div></div>
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work? 2–3 sentences.</strong></p>
+<div class="write-space short"></div></div>
 
-<h2>3 · Build the Full Dragon 🧱</h2>
-<p>Look at the dragon in your world. Walk around it. Plan your corners, then build it part by part on your home spot:</p>
+<h2>3 · Build It 📸</h2>
+<p>Look at the dragon in your world. Walk around it. <strong>Plan your corners first</strong>, then copy it part by part on your home spot:</p>
 <pre><code>fill black from (0, 8, 0) to (0, 8, 10)
 place black block at (0, 9, 11)
 fill black from (1, 8, 5) to (5, 8, 5)
@@ -176,29 +182,33 @@ place black block at (0, 6, -2)
 place black block at (0, 5, -3)
 </code></pre>
 <p>That is body, head, right wing, left wing, and a stepped tail. Add two <strong>purple</strong> eye blocks on the head. Keep the wings the same length on both sides.</p>
-<p>Send a photo or video. Then finish these — 4 to 6 sentences.</p>
+<p><strong>MODIFY challenge:</strong> change one thing that is your own idea — a new colour, an extra part, or a bigger dragon. Write down what you changed.</p>
+<p>Send a photo or video. Then finish these — 5 to 6 sentences.</p>
 <div class="qa"><blockquote>
 <p>I built the dragon as these parts: …</p>
 <p>My body runs along the … axis, from ( … , … , … ) to ( … , … , … ).</p>
 <p>To make the wings match, I …</p>
 <p>My tail steps back and down by changing the … number and the … number each time.</p>
+<p>For my MODIFY challenge, I changed …</p>
 <p>One tricky moment was when …</p>
-<p>If I had more time, I would …</p>
 </blockquote>
 <div class="write-space tall" style="min-height: 340px"></div></div>
 
-<h2>4 · Record Your Walkthrough 🎥</h2>
-<p>Film yourself showing your dragon. Use these words: <strong>x</strong>, <strong>y</strong>, <strong>z</strong>, <strong>body</strong>, <strong>head</strong>, <strong>wing</strong>, <strong>tail</strong>, <strong>home spot</strong>.</p>
+<h2>4 · Explain It 🎥</h2>
+<p>Film yourself showing your dragon. Use these words: <strong>x</strong>, <strong>y</strong>, <strong>z</strong>, <strong>body</strong>, <strong>head</strong>, <strong>wing</strong>, <strong>tail</strong>.</p>
 <blockquote>
 <ol>
 <li>Show your home spot. Why stand on it every run?</li>
 <li>Point at the body. Say which axis it runs along and why.</li>
-<li>Point at both wings. Show they are the same length, and say in your own words how you kept them matching.</li>
+<li>Point at both wings. Show they match, and <strong>say in your own words</strong> how you kept them the same.</li>
 <li>Point at the tail. Say which numbers change to make it step back and down.</li>
 </ol>
 </blockquote>
-<div class="qa"><p><strong>Plan what you will say:</strong></p>
+<div class="qa"><p><strong>Write a short paragraph (5–6 sentences) explaining how you built your dragon and how the (x, y, z) numbers control each part:</strong></p>
 <div class="write-space tall" style="min-height: 340px"></div></div>
+
+<div class="qa"><p><strong>Last question — what would you teach a friend first if they wanted to build this dragon? Why that part?</strong></p>
+<div class="write-space short"></div></div>
 
 <hr />
 <h3>Submit ✅</h3>

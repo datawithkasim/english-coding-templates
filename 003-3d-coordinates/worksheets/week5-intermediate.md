@@ -2,7 +2,7 @@
 
 **Topic:** Recreate the Statues (x, y, z) · **Course:** 3D Coordinates · **Level:** Intermediate · **Time:** about 40 minutes
 
-A statue is **stacked fill boxes**. One **`fill`** makes a solid box between **two corners**. Stack the boxes higher and higher to make legs, a body, and a head. Every corner is **(x, y, z)** — x **across**, y **up**, z **forward**. To put one box **on top** of another, make its **y** start where the box below stopped.
+A statue is **stacked fill boxes**. One **`fill`** makes a solid box between **two corners**. Stack the boxes higher and higher to make legs, a body, and a head. Every corner is **(x, y, z)** — x **across**, y **up**, z **forward**. To put one box **on top** of another, make its **y** start where the box below stopped. The feet sit on the **ground (y = 0)**.
 
 > 🔴 Stand on your **home spot** (red block) every run. Move your feet, move your head.
 
@@ -10,7 +10,7 @@ A statue is **stacked fill boxes**. One **`fill`** makes a solid box between **t
 
 ## 1 · Predict 🔮
 
-Read each box. Write what you will see.
+Read each box. Write a full sentence about what you will see. Do **not** run it.
 
 ```
 fill GRAY from (3, 0, 3) to (5, 1, 5)
@@ -55,7 +55,7 @@ fill GRAY from (3, 0, 3) to (5, 4, 5)
 
 <div class="write-space"></div>
 
-**Why was it wrong? Why does your fix work?**
+**Why was it wrong? Why does your fix work? (1–2 sentences.)**
 
 <div class="write-space"></div>
 
@@ -71,22 +71,22 @@ fill WHITE from (3, 6, 3) to (5, 6, 5)
 
 <div class="write-space"></div>
 
-**Why was it wrong? Why does your fix work?**
+**Why was it wrong? Why does your fix work? (1–2 sentences.)**
 
 <div class="write-space"></div>
 
 ---
 
-## 3 · Tell Me What You Built 📸
+## 3 · Build It 📸
 
 Walk around a statue in your world. Then build your own on your home spot. It is **3 fill boxes**: a base (legs), a body, and a head.
 
-> 🧱 Recipe (the numbers are **(x, y, z)**):
+> 🧱 Recipe (every corner is **(x, y, z)**, feet on the ground y = 0):
 > - base / legs: gray from (3, 0, 3) to (5, 1, 5)
 > - body: gray from (3, 2, 3) to (5, 5, 5)
 > - head: white from (3, 6, 3) to (5, 7, 5)
 
-Send a **photo or video** of your statue. Then finish these — 4 to 6 sentences.
+Send a **photo or video** of your statue. Then finish these — about 4 sentences.
 
 > First, I built the base by …
 >
@@ -95,16 +95,12 @@ Send a **photo or video** of your statue. Then finish these — 4 to 6 sentences
 > My statue is … tall, from y = 0 up to y = …
 >
 > The number I changed to stack each box higher was **y**, which means …
->
-> One tricky moment was when …
->
-> If I had more time, I would …
 
 <div class="write-space tall" style="min-height: 320px"></div>
 
 ---
 
-## 4 · Record Your Walkthrough 🎥
+## 4 · Explain It 🎥
 
 Film yourself showing your statue. Try to use these words: **fill**, **box**, **x**, **y**, **z**, **stack**, **home spot**.
 
@@ -113,7 +109,7 @@ Film yourself showing your statue. Try to use these words: **fill**, **box**, **
 > 3. Show two boxes and say which one sits higher, and which number makes it higher.
 > 4. Say in your own words what each of **x**, **y**, and **z** does.
 
-**Plan what you will say:**
+**Plan what you will say — about 4 sentences:**
 
 <div class="write-space tall" style="min-height: 320px"></div>
 

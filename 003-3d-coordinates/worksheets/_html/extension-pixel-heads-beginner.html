@@ -108,77 +108,70 @@ footer b { color: #ff7849; }
 <body>
 <div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
 <h1>🧊 M003 Extension 2 — English Worksheet (Beginner)</h1>
-<p><strong>Topic:</strong> 3D Mob Heads (x, y, z) · <strong>Course:</strong> 3D Coordinates · <strong>Level:</strong> Extension (Beginner, after Week 3) · <strong>Time:</strong> about 30 minutes</p>
-<p>Build a mob head in 3D. Now every block needs <strong>three</strong> numbers: <strong>(x, y, z)</strong>. x is <strong>across</strong>, y is <strong>up</strong>, z is <strong>forward</strong> (depth). The heads stand in front of you in the world — look at one as you build.</p>
+<p><strong>Topic:</strong> 3D Mob Heads (x, y, z) · <strong>Course:</strong> 3D Coordinates · <strong>Level:</strong> Beginner (Extension, after Week 3) · <strong>Time:</strong> about 30 minutes</p>
+<p>Build a mob head in 3D. Every block needs <strong>three</strong> numbers: <strong>(x, y, z)</strong>. x is <strong>across</strong>, y is <strong>up</strong>, z is <strong>deeper</strong> (forward). The head stands in front of you. Look at it as you build.</p>
 <blockquote>
 <p>🔴 Stand on your <strong>home spot</strong> (red block) every run. Move, and the head moves too.</p>
 </blockquote>
 <h2>1 · Predict 🔮</h2>
-<p>Read the steps. Circle or write your answer.</p>
+<p>Read the code. Do <strong>not</strong> run it. Circle one word.</p>
 <pre><code>place green block at (3, 5, 1)
 place green block at (3, 5, 2)
 place green block at (3, 5, 3)
 </code></pre>
-<div class="qa"><p><strong>Only z changes. Circle one:</strong> across · up · deeper</p>
+<div class="qa"><p><strong>Only z changes. The line goes:</strong> across · up · deeper</p>
 <div class="write-space short"></div></div>
 
 <pre><code>place green block at (4, 5, 1)
 place green block at (4, 6, 1)
+place green block at (4, 7, 1)
 </code></pre>
-<div class="qa"><p><strong>Only y changes. Circle one:</strong> across · up · deeper</p>
+<div class="qa"><p><strong>Only y changes. The line goes:</strong> across · up · deeper</p>
 <div class="write-space short"></div></div>
 
-<h2>2 · Find the Difference 🐛</h2>
-<p><strong>Correct</strong> first, then <strong>broken</strong>. Write one sentence about the bug.</p>
-<p><strong>Pair A</strong> — This block should be one step deep: (3, 5, 2).</p>
-<pre><code># correct
-place green block at (3, 5, 2)
-</code></pre>
+<h2>2 · Spot the Bug 🐛</h2>
+<p>This eye should be one step <strong>deeper</strong>, at (4, 7, 2). The code below only has <strong>two</strong> numbers, so it lands on the front.</p>
 <pre><code># broken
-place green block at (3, 5, 1)
+place black block at (4, 7)
 </code></pre>
-<div class="qa"><p><strong>What is wrong? Which number is different?</strong></p>
+<p><strong>Fill the blank to fix it:</strong></p>
+<pre><code>place black block at (4, 7, __)
+</code></pre>
+<p><strong>Word bank:</strong> <code>2</code></p>
+<div class="qa"><p><strong>Write one sentence: what was missing?</strong></p>
 <div class="write-space short"></div></div>
 
-<p><strong>Pair B</strong> — The eye should be at (4, 7, 2).</p>
-<pre><code># correct
-place black block at (4, 7, 2)
-</code></pre>
-<pre><code># broken
-place black block at (4, 2, 7)
-</code></pre>
-<div class="qa"><p><strong>What is wrong? Which two numbers got swapped?</strong></p>
-<div class="write-space short"></div></div>
-
-<h2>3 · Fill the Gap ✏️</h2>
-<p>To go <strong>deeper</strong>, the <strong>third</strong> number (z) grows. Fill the blanks to go deeper at (3, 5).</p>
-<pre><code>place green block at (3, 5, 1)
-place green block at (3, 5, __)
-place green block at (3, 5, __)
-</code></pre>
-<p><strong>Word bank:</strong> <code>2</code> · <code>3</code></p>
-<div class="qa"><p><strong>Write the two numbers:</strong></p>
-<div class="write-space short"></div></div>
-
-<h2>4 · Build a Head 🧱</h2>
+<h2>3 · Build It 📸</h2>
 <p>Look at the 🟢 creeper head in the world. Walk around it.</p>
-<p><strong>Build the front face first</strong> (keep z = 1). Read each block's <strong>x</strong> (across) and <strong>y</strong> (up).</p>
-<p><strong>Then add depth</strong> — build the same face again at z = 2, then z = 3.</p>
+<p><strong>Build a small solid head — a cube.</strong> Keep it easy:</p>
 <blockquote>
-<p>💡 Tip: the eyes and mouth only show on the <strong>front</strong>. The sides and back are plain.</p>
+<p>Front face: fill green blocks from (3, 5, 1) up to (5, 7, 1) — a small square.</p>
+<p>Add depth: build the same square again at z = 2, then z = 3.</p>
+<p>Add 2 eyes on the front only: black block at (3, 7, 1) and black block at (5, 7, 1).</p>
+<p>💡 Tip: the eyes only show on the <strong>front</strong>. The sides and back are plain green.</p>
 </blockquote>
-<p>Send a photo. Then finish these — 3 to 5 sentences.</p>
+<p>Send a photo. Then finish these 2 sentences.</p>
 <div class="qa"><blockquote>
-<p>I built the …</p>
-<p>The lowest front block is at (x = …, y = …, z = …).</p>
-<p>To go up I changed the … number; to go deeper I changed the … number.</p>
-<p>My head is … blocks deep.</p>
-<p>Next time I would …</p>
+<p>I built the … head. It is … blocks deep.</p>
+<p>To go deeper I changed the … number.</p>
 </blockquote>
 <div class="write-space tall" style="min-height: 300px"></div></div>
 
+<h2>4 · Explain It 🎥</h2>
+<p>Film a short video. Show these 3 things:</p>
+<blockquote>
+<ol>
+<li>Show your home spot.</li>
+<li>Point at the front face and one eye.</li>
+<li>Show how deep your head is (z = 1, 2, 3).</li>
+</ol>
+</blockquote>
+<div class="qa"><p><strong>Write 2 short sentences about your head:</strong></p>
+<div class="write-space tall" style="min-height: 300px"></div></div>
+
+<p>Words to use: <strong>x</strong> · <strong>y</strong> · <strong>z</strong> · <strong>deeper</strong></p>
 <hr />
 <h3>Submit ✅</h3>
-<p>Send this worksheet + a photo on KakaoTalk.</p>
+<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.</p>
 </body>
 </html>

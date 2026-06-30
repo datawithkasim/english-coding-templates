@@ -2,7 +2,7 @@
 
 **Topic:** Recreate the Ender Dragon (x, y, z) · **Course:** 3D Coordinates · **Level:** Advanced · **Time:** about 45 minutes
 
-A big blocky **ender dragon** stands in your world — black blocks, purple eyes. A big model is a set of **parts**: a long **body** (a fill box stretched along one axis), a **head** at the front, two **wings** that spread out along x, and a **tail** that steps back and down. Everything uses **(x, y, z)** — x **across**, y **up**, z **forward** (deep). Plan your corners before you build.
+A big blocky **ender dragon** stands in your world — black blocks, purple eyes. A big model is a set of **parts**: a long **body** (a fill box stretched along one axis), a **head** at the front, two **wings** that spread out along x, and a **tail** that steps back and down. Everything uses **(x, y, z)** — x **across**, y **up**, z **forward** (deep). Read each part carefully and plan your corners before you build.
 
 > 🔴 Stand on your **home spot** (red block) every run. Move your feet, move your head.
 
@@ -10,13 +10,13 @@ A big blocky **ender dragon** stands in your world — black blocks, purple eyes
 
 ## 1 · Predict 🔮
 
-Read each code. Write your full prediction.
+Read each snippet. Do **not** run it. Write your prediction **and the reason**.
 
 ```
 fill black from (0, 8, 0) to (0, 8, 10)
 ```
 
-**One block wide, stretched along z. How long is the body? Which way does it run?**
+**How long is the body, and which way does it run? Why?**
 
 <div class="write-space"></div>
 
@@ -25,7 +25,7 @@ fill black from (1, 8, 5) to (5, 8, 5)
 fill black from (-5, 8, 5) to (-1, 8, 5)
 ```
 
-**Two wings. Both stay at y = 8 and z = 5. How wide is each wing? Are they the same size on both sides?**
+**Two wings. How wide is each one? Are they the same size on both sides? Why?**
 
 <div class="write-space"></div>
 
@@ -35,7 +35,16 @@ place black block at (0, 6, -2)
 place black block at (0, 5, -3)
 ```
 
-**This is the tail behind the body. As z gets smaller (more negative), what happens to the height? Across, up, or down-and-back?**
+**This is the tail behind the body. As z gets more negative, what happens to the height? Why does that make it droop?**
+
+<div class="write-space"></div>
+
+```
+fill black from (0, 8, 0) to (0, 8, 10)
+place black block at (0, 9, 11)
+```
+
+**Body, then head. Is the head in front of or behind the body? Is it higher or lower? Why?**
 
 <div class="write-space"></div>
 
@@ -52,11 +61,11 @@ fill black from (-2, 8, 5) to (-1, 8, 5)
 
 **Write the fixed code:**
 
-<div class="write-space"></div>
+<div class="write-space short"></div>
 
-**Why was it wrong? Why does your fix work?**
+**Why was it wrong? Why does your fix work? 2–3 sentences.**
 
-<div class="write-space"></div>
+<div class="write-space short"></div>
 
 **Bug B** — This should be a **long body** stretched **deep along z**, from (0, 8, 0) to (0, 8, 10). Right now it lies flat across the ground along x instead.
 
@@ -66,11 +75,11 @@ fill black from (0, 8, 0) to (10, 8, 0)
 
 **Write the fixed code:**
 
-<div class="write-space"></div>
+<div class="write-space short"></div>
 
-**Why was it wrong? Why does your fix work?**
+**Why was it wrong? Why does your fix work? 2–3 sentences.**
 
-<div class="write-space"></div>
+<div class="write-space short"></div>
 
 **Bug C** — The **tail** should step **back and down** behind the body: each block goes one deeper and one lower. Right now every tail block sits at the same height, so the tail floats straight out instead of drooping.
 
@@ -84,17 +93,17 @@ place black block at (0, 8, -3)
 
 **Write the fixed code:**
 
-<div class="write-space"></div>
+<div class="write-space short"></div>
 
-**Why was it wrong? Why does your fix work?**
+**Why was it wrong? Why does your fix work? 2–3 sentences.**
 
-<div class="write-space"></div>
+<div class="write-space short"></div>
 
 ---
 
-## 3 · Build the Full Dragon 🧱
+## 3 · Build It 📸
 
-Look at the dragon in your world. Walk around it. Plan your corners, then build it part by part on your home spot:
+Look at the dragon in your world. Walk around it. **Plan your corners first**, then copy it part by part on your home spot:
 
 ```
 fill black from (0, 8, 0) to (0, 8, 10)
@@ -108,7 +117,9 @@ place black block at (0, 5, -3)
 
 That is body, head, right wing, left wing, and a stepped tail. Add two **purple** eye blocks on the head. Keep the wings the same length on both sides.
 
-Send a photo or video. Then finish these — 4 to 6 sentences.
+**MODIFY challenge:** change one thing that is your own idea — a new colour, an extra part, or a bigger dragon. Write down what you changed.
+
+Send a photo or video. Then finish these — 5 to 6 sentences.
 
 > I built the dragon as these parts: …
 >
@@ -118,26 +129,30 @@ Send a photo or video. Then finish these — 4 to 6 sentences.
 >
 > My tail steps back and down by changing the … number and the … number each time.
 >
-> One tricky moment was when …
+> For my MODIFY challenge, I changed …
 >
-> If I had more time, I would …
+> One tricky moment was when …
 
 <div class="write-space tall" style="min-height: 340px"></div>
 
 ---
 
-## 4 · Record Your Walkthrough 🎥
+## 4 · Explain It 🎥
 
-Film yourself showing your dragon. Use these words: **x**, **y**, **z**, **body**, **head**, **wing**, **tail**, **home spot**.
+Film yourself showing your dragon. Use these words: **x**, **y**, **z**, **body**, **head**, **wing**, **tail**.
 
 > 1. Show your home spot. Why stand on it every run?
 > 2. Point at the body. Say which axis it runs along and why.
-> 3. Point at both wings. Show they are the same length, and say in your own words how you kept them matching.
+> 3. Point at both wings. Show they match, and **say in your own words** how you kept them the same.
 > 4. Point at the tail. Say which numbers change to make it step back and down.
 
-**Plan what you will say:**
+**Write a short paragraph (5–6 sentences) explaining how you built your dragon and how the (x, y, z) numbers control each part:**
 
 <div class="write-space tall" style="min-height: 340px"></div>
+
+**Last question — what would you teach a friend first if they wanted to build this dragon? Why that part?**
+
+<div class="write-space short"></div>
 
 ---
 

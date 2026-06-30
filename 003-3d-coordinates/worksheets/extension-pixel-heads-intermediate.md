@@ -2,7 +2,7 @@
 
 **Topic:** 3D Mob Heads (x, y, z) · **Course:** 3D Coordinates · **Level:** Intermediate (Extension, after Week 3) · **Time:** about 40 minutes
 
-Build a **creeper head** in 3D. Now every block needs **three** numbers: **(x, y, z)**. x is **across**, y is **up**, z is **forward** (depth). The head stands in front of you in the world — walk around it, then copy it block by block.
+Build a **creeper head** in 3D. Every block needs **three** numbers: **(x, y, z)**. x is **across**, y is **up**, z is **deeper** (forward). The head stands in front of you in the world. Walk around it, then copy it block by block. You build the **front face** first, then repeat it to add depth.
 
 > 🔴 Stand on your **home spot** (red block) every run. Move your feet, move your head.
 
@@ -10,7 +10,7 @@ Build a **creeper head** in 3D. Now every block needs **three** numbers: **(x, y
 
 ## 1 · Predict 🔮
 
-Read each set. Write what you will see.
+Read each set. Do **not** run it. Write a full sentence for each.
 
 ```
 place green block at (3, 5, 1)
@@ -57,7 +57,7 @@ place green block at (3, 5)
 
 <div class="write-space"></div>
 
-**Why was it wrong? Why does your fix work?**
+**Why was it wrong? Why does your fix work? (1–2 sentences)**
 
 <div class="write-space"></div>
 
@@ -71,23 +71,25 @@ place black block at (4, 2, 7)
 
 <div class="write-space"></div>
 
-**Why was it wrong? Why does your fix work?**
+**Why was it wrong? Why does your fix work? (1–2 sentences)**
 
 <div class="write-space"></div>
 
 ---
 
-## 3 · Tell Me What You Built 📸
+## 3 · Build It 📸
 
-Look at the 🟢 creeper head in the world. Walk around it. Then build your own on your home spot.
+Look at the 🟢 creeper head in the world. Walk around it. Then build **one full head** on your home spot, with a face.
 
-**Start with the front face** (keep z = 1). Read each block's **x** (across) and **y** (up).
+> **Front face** (keep z = 1): fill the green square, then add the creeper face — black eyes and a black mouth on the front.
+>
+> **Add depth:** build the same front face again at z = 2, then z = 3, until your head is as deep as the real one.
+>
+> **Face on front only:** at z = 2 and z = 3, place plain green where the eyes and mouth were.
 
-**Then add depth.** Build the same face again at z = 2, then z = 3, until your head is as deep as the real one.
+> 💡 Tip: the eyes and mouth only show on the **front**. The sides and back are plain green.
 
-> 💡 Tip: the eyes and mouth only show on the **front**. The sides and back are plain.
-
-Send a photo. Then finish these — 4 to 6 sentences.
+Send a photo or video. Then finish these 4 sentence starters.
 
 > I built the …
 >
@@ -95,26 +97,22 @@ Send a photo. Then finish these — 4 to 6 sentences.
 >
 > To go up I changed the … number; to go deeper I changed the … number.
 >
-> My head is … blocks deep.
->
-> Once my head was wrong because …
->
-> Next time I would …
+> My head is … blocks deep, and the face is on the … side only.
 
 <div class="write-space tall" style="min-height: 320px"></div>
 
 ---
 
-## 4 · Record Your Walkthrough 🎥
+## 4 · Explain It 🎥
 
-Film yourself showing your head. Use these words: **x**, **y**, **z**, **across**, **up**, **forward**, **home spot**.
+Film yourself showing your head. Use these words: **x**, **y**, **z**, **across**, **up**, **deeper**, **home spot**.
 
 > 1. Show your home spot. Why stand on it every time?
 > 2. Walk around your head — show the front, a side, and the back.
 > 3. Point at one block: "this one is at x …, y …, z …".
-> 4. Show one block you fixed.
+> 4. Show where the face is, and explain why it is on the front only.
 
-**Plan what you will say:**
+**Write about your head — around 4 sentences:**
 
 <div class="write-space tall" style="min-height: 320px"></div>
 
@@ -122,4 +120,4 @@ Film yourself showing your head. Use these words: **x**, **y**, **z**, **across*
 
 ### Submit ✅
 
-Send this worksheet + your video on KakaoTalk.
+Send this worksheet + your walkthrough video to teacher on KakaoTalk.

@@ -31,86 +31,66 @@ p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
 <div class="brand">📚 ENGLISH CODING · 영어코딩</div>
 <h1>👾 M003 Week 7 — English Worksheet (Beginner)</h1>
 <p><strong>Topic:</strong> Recreate 2 Mob Heads (x, y, z) · <strong>Course:</strong> 3D Coordinates · <strong>Level:</strong> Beginner · <strong>Time:</strong> about 30 minutes</p>
-<p>Two blocky <strong>mob heads</strong> stand in your world — a <strong>creeper</strong> and a <strong>skeleton</strong>. Each one is a cube with a face on the <strong>front</strong>. Every block needs <strong>three</strong> numbers: <strong>(x, y, z)</strong>. x is <strong>across</strong>, y is <strong>up</strong>, z is <strong>forward</strong> (deep). Look at one head, then build a small cube head of your own.</p>
+<p>Two blocky <strong>mob heads</strong> stand in your world. Each one is a cube with a face on the <strong>front</strong>. Every block needs <strong>three</strong> numbers: <strong>(x, y, z)</strong>. x is <strong>across</strong>, y is <strong>up</strong>, z is <strong>deep</strong> (forward).</p>
 <blockquote>
 <p>🔴 Stand on your <strong>home spot</strong> (red block) every run. Move your feet, move your head.</p>
 </blockquote>
 <hr />
 <h2>1 · Predict 🔮</h2>
-<p>Read the steps. Circle or write your answer.</p>
+<p>Read the code. Circle one word.</p>
 <pre><code>place green block at (0, 4, 1)
 place green block at (0, 4, 2)
 </code></pre>
-<p><strong>Only z changes. Circle one:</strong> across · up · deeper</p>
+<p><strong>Only z changes (1 → 2). Circle one:</strong> across · up · deeper</p>
 <p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
 
 <pre><code>place green block at (0, 4, 1)
 place green block at (0, 5, 1)
 </code></pre>
-<p><strong>Only y changes. Circle one:</strong> across · up · deeper</p>
+<p><strong>Only y changes (4 → 5). Circle one:</strong> across · up · deeper</p>
 <p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
 
 <hr />
-<h2>2 · Find the Difference 🐛</h2>
-<p><strong>Correct</strong> first, then <strong>broken</strong>. Write one short sentence about the bug.</p>
-<p><strong>Pair A</strong> — An eye should be on the <strong>front</strong> at (2, 5, 1).</p>
-<pre><code># correct
-place black block at (2, 5, 1)
-</code></pre>
+<h2>2 · Spot the Bug 🐛</h2>
+<p>An eye should be on the <strong>front</strong> at z = 1. The face only shows on the <strong>front</strong>.</p>
 <pre><code># broken
 place black block at (2, 5, 2)
 </code></pre>
-<p><strong>What is wrong? Which number is different?</strong></p>
-<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
-
-<p><strong>Pair B</strong> — The cube should be <strong>2 blocks deep</strong>: z goes 1 then 2.</p>
-<pre><code># correct
-fill green block from (0, 4, 1) to (2, 6, 2)
-</code></pre>
-<pre><code># broken
-fill green block from (0, 4, 1) to (2, 6, 1)
-</code></pre>
-<p><strong>What is wrong? How deep is the broken one?</strong></p>
-<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
-
-<hr />
-<h2>3 · Fill the Gap ✏️</h2>
-<p>The cube is <strong>2 blocks deep</strong>, but the eyes go on the <strong>front</strong> (z = 1). Fill the blanks.</p>
-<pre><code>fill green block from (0, 4, 1) to (2, 6, __)
-place black block at (0, 5, __)
-place black block at (2, 5, __)
+<p><strong>Fill the blank to put the eye back on the front:</strong></p>
+<pre><code>place black block at (2, 5, __)
 </code></pre>
 <p><strong>Word bank:</strong> <code>1</code> · <code>2</code></p>
-<p><strong>Write the three numbers:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? (one short sentence)</strong></p>
 <p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
 
 <hr />
-<h2>4 · Tell Me What You Built 📸</h2>
-<p>First, build this small green cube and add two eyes on the <strong>front</strong>.</p>
+<h2>3 · Build It 📸</h2>
+<p>Build this small green cube head and add <strong>two eyes</strong> on the front. Stand on your home spot first.</p>
 <pre><code>fill green block from (0, 4, 1) to (2, 6, 2)
 place black block at (0, 5, 1)
 place black block at (2, 5, 1)
 </code></pre>
 <p>This is a <strong>3×3 front, 2 blocks deep</strong>, with two eyes on the front.</p>
-<p>Now pick <strong>one</strong> head in the world (creeper or skeleton). Build a small cube head like it on your home spot. Send a photo. Then finish these — 2 or 3 sentences.</p>
+<p>Send a photo. Then finish these — 2 short sentences.</p>
 <blockquote>
-<p>I built the …</p>
 <p>My cube is … blocks deep.</p>
 <p>The eyes are on the front because their z stays …</p>
 </blockquote>
 <p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
 
 <hr />
-<h2>5 · Record Your Walkthrough 🎥</h2>
-<p>Take a video on your phone (or a parent's phone) while you show your cube head. Try to use these words: <strong>x</strong>, <strong>y</strong>, <strong>z</strong>, <strong>across</strong>, <strong>up</strong>, <strong>deep</strong>.</p>
+<h2>4 · Explain It 🎥</h2>
+<p>Take a video on your phone while you show your cube head. Try to use these words: <strong>x</strong>, <strong>y</strong>, <strong>z</strong>, <strong>across</strong>, <strong>up</strong>, <strong>deep</strong>.</p>
 <blockquote>
 <ol>
 <li>Show your home spot. Why stand on it every run?</li>
-<li>Walk around your cube head — show the front and a side.</li>
+<li>Walk around your cube — show the front and a side.</li>
 <li>Point at one eye and say "x …, y …, z …".</li>
 </ol>
 </blockquote>
-<p><strong>Write what you will say in your video.</strong> You can read from it while filming.</p>
+<p><strong>Write 2 short sentences about your cube head.</strong> You can read them while filming.</p>
 <p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
 
 <hr />
