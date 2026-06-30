@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>🧩 M002 Extension — Worksheet (Beginner)</title>
+<title>🧩 M002 Extension 1 — Redstone Trail Solver</title>
 <style>
 @page { size: A4; margin: 18mm 16mm 22mm; }
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -21,6 +21,11 @@ em { color: #555; }
 
 ul, ol { margin: 8px 0 8px 24px; }
 li { margin: 3px 0; }
+
+/* Grids (e.g. pixel-art coordinate grids) render as light graph paper. */
+table { border-collapse: collapse; margin: 12px 0; }
+th, td { border: 1px solid #ddd; padding: 4px 9px; text-align: center; font-size: 14px; }
+th { background: #faf7ff; color: #6b4ee6; font-weight: 700; }
 
 pre {
   font-family: "JetBrains Mono", "Consolas", monospace;
@@ -102,86 +107,53 @@ footer b { color: #ff7849; }
 </head>
 <body>
 <div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
-<h1>🧩 M002 Extension — Worksheet (Beginner)</h1>
-<p><strong>Topic:</strong> Redstone Trail Solver (3D Cube Maze) · <strong>Course:</strong> Maze Madness · <strong>Level:</strong> Extension (Beginner) · <strong>Time:</strong> about 35 minutes</p>
-<p>This is a <strong>challenge</strong> for students who finished the weekly mazes. The agent follows a <strong>redstone trail</strong> through a maze that goes <strong>up and down</strong>, not just flat. You start it with a chat word: type <code>run</code>.</p>
-<h2>1 · Read the Chat Commands 🎛️</h2>
-<p>A chat command binds a <strong>word</strong> to an action. When you type that word in chat, the agent does it.</p>
-<pre><code>when you type &quot;l&quot;:
-    agent turns left
+<h1>🧩 M002 Extension 1 — Redstone Trail Solver</h1>
+<p><strong>Topic:</strong> Redstone Trail Solver (3D Cube Maze) · <strong>Course:</strong> Maze Madness · <strong>Level:</strong> Extension (Beginner) · <strong>Time:</strong> about 30 minutes</p>
+<p>The agent follows a <strong>redstone trail</strong>. The maze goes <strong>up and down</strong>. Type <code>run</code> to start it.</p>
+<h2>1 · Chat Words 🎛️</h2>
+<p>A chat word makes the agent move.</p>
+<pre><code>type &quot;l&quot;:
+    turn left
 </code></pre>
-<div class="qa"><p><strong>You type <code>l</code>. What does the agent do? Circle one:</strong> turns left · turns right · jumps</p>
+<div class="qa"><p><strong>Type <code>l</code>. Circle one:</strong> left · right · jump</p>
 <div class="write-space short"></div></div>
 
-<pre><code>when you type &quot;rl&quot;:
-    agent teleports back to you
+<pre><code>type &quot;rl&quot;:
+    come back to you
 </code></pre>
-<div class="qa"><p><strong>You type <code>rl</code>. Where does the agent go? Circle one:</strong> to the goal · back to you · nowhere</p>
+<div class="qa"><p><strong>Type <code>rl</code>. Circle one:</strong> to goal · back to you</p>
 <div class="write-space short"></div></div>
 
 <h2>2 · Follow the Trail 🔍</h2>
-<p>The agent reads redstone around it and follows the trail. Read each line and answer.</p>
-<pre><code>if redstone is below me:
+<p>The agent reads redstone and follows it.</p>
+<pre><code>redstone below me:
     move up
 </code></pre>
-<div class="qa"><p><strong>There is redstone under the agent. What does it do? Circle one:</strong> move up · move down · stop</p>
+<div class="qa"><p><strong>Redstone is below. Circle one:</strong> up · down</p>
 <div class="write-space short"></div></div>
 
-<pre><code>if redstone is above me:
+<pre><code>redstone above me:
     move down
 </code></pre>
-<div class="qa"><p><strong>This maze is 3D. Which way does the agent go here? Circle one:</strong> up · down</p>
+<div class="qa"><p><strong>Redstone is above. Circle one:</strong> up · down</p>
 <div class="write-space short"></div></div>
 
-<div class="qa"><p><strong>The agent follows the redstone like a path. In one short sentence, what is the redstone for?</strong></p>
-<div class="write-space short"></div></div>
-
-<h2>3 · Find the Difference 🐛</h2>
-<p>Each pair shows clean steps first, then a broken version. Circle what's different and write one short sentence about the bug.</p>
-<p><strong>Pair A</strong> — The agent should <strong>keep going</strong> until the maze is done.</p>
-<pre><code># clean
-keep doing forever:
-    move forward
-    if redstone is below me:
-        move up
-</code></pre>
-<pre><code># buggy
-move forward
-if redstone is below me:
-    move up
-</code></pre>
-<div class="qa"><p><strong>What is wrong? How many times does the buggy agent check the trail?</strong></p>
-<div class="write-space short"></div></div>
-
-<h2>4 · Fill the Gap ✏️</h2>
-<p>The agent should go <strong>up</strong> when there is redstone below it. One word is missing. Fill it in from the word bank.</p>
-<pre><code>if redstone is below me:
+<h2>3 · Fill the Gap ✏️</h2>
+<p>Redstone below means go <strong>up</strong>. One word is missing.</p>
+<pre><code>redstone below me:
     move ____
 </code></pre>
 <p><strong>Word bank:</strong> <code>up</code> · <code>down</code> · <code>left</code></p>
-<div class="qa"><p><strong>Write the missing word:</strong></p>
+<div class="qa"><p><strong>Write it:</strong></p>
 <div class="write-space short"></div></div>
 
-<h2>5 · Tell Me What You Built 📸</h2>
-<p>Open the extension world. Type <code>run</code> and watch the agent follow the redstone trail to the goal. When it finishes, come back here.</p>
-<p>Send a photo or video of the agent at the goal, then explain what you did. Use these sentence starters — write 2 or 3 sentences.</p>
+<h2>4 · Show Me 📸</h2>
+<p>Open the world. Type <code>run</code>. Watch the agent reach the goal.</p>
+<p>Send a photo OR video of the agent at the goal. Write 2 short lines.</p>
 <div class="qa"><blockquote>
-<p>The maze was 3D, so the agent went …</p>
+<p>The maze went up and …</p>
 <p>The redstone trail told the agent to …</p>
-<p>The hardest part was …</p>
 </blockquote>
-<div class="write-space tall" style="min-height: 240px"></div></div>
-
-<h2>6 · Record Your Walkthrough 🎥</h2>
-<p>Take a video on your phone (or a parent's phone) while the agent solves the maze. Talk like you are teaching a friend. Try to use these words: <strong>redstone</strong>, <strong>trail</strong>, <strong>up</strong>, <strong>down</strong>, <strong>3D</strong>.</p>
-<blockquote>
-<ol>
-<li>Show the maze and the redstone trail.</li>
-<li>Type <code>run</code> and show the agent following it.</li>
-<li>Say one place where the agent went up or down.</li>
-</ol>
-</blockquote>
-<div class="qa"><p><strong>Write what you will say in your video.</strong> You can read from it while filming.</p>
 <div class="write-space tall" style="min-height: 240px"></div></div>
 
 <hr />

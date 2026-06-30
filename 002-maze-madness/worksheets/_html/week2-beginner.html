@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>🌀 M002 Week 2 — English Worksheet (Beginner)</title>
+<title>🧭 M002 Week 2 — Turning (Beginner)</title>
 <style>
 @page { size: A4; margin: 18mm 16mm 22mm; }
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -21,6 +21,11 @@ em { color: #555; }
 
 ul, ol { margin: 8px 0 8px 24px; }
 li { margin: 3px 0; }
+
+/* Grids (e.g. pixel-art coordinate grids) render as light graph paper. */
+table { border-collapse: collapse; margin: 12px 0; }
+th, td { border: 1px solid #ddd; padding: 4px 9px; text-align: center; font-size: 14px; }
+th { background: #faf7ff; color: #6b4ee6; font-weight: 700; }
 
 pre {
   font-family: "JetBrains Mono", "Consolas", monospace;
@@ -102,32 +107,23 @@ footer b { color: #ff7849; }
 </head>
 <body>
 <div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
-<h1>🌀 M002 Week 2 — English Worksheet (Beginner)</h1>
-<p><strong>Topic:</strong> Turning at Walls · <strong>Course:</strong> Maze Madness · <strong>Level:</strong> Beginner · <strong>Time:</strong> about 30 minutes</p>
-<p>This week your agent follows one simple rule: <strong>if</strong> there's a wall in front, turn; <strong>otherwise</strong>, move forward.</p>
-<h2>1 · Predict 🔮</h2>
-<p>Read the steps. Before you imagine the agent doing it, circle or write your answer.</p>
+<h1>🧭 M002 Week 2 — Turning (Beginner)</h1>
+<p><strong>Topic:</strong> Turn at Walls · <strong>Course:</strong> Maze Madness · <strong>Level:</strong> Beginner · <strong>Time:</strong> about 25 minutes</p>
+<p>Wall ahead? Turn. No wall? Move forward.</p>
+<h2>1 · Read It 🔮</h2>
 <pre><code>if wall ahead:
     turn right
 otherwise:
     move forward
 </code></pre>
-<p><strong>There is a wall in front of the agent. What does it do? Circle one:</strong> turn right · move forward · nothing</p>
-<div class="qa"><p><strong>What does it do if the path is clear?</strong></p>
+<div class="qa"><p><strong>Wall is in front. What does the agent do? Circle one:</strong> turn right · move forward · stop</p>
 <div class="write-space short"></div></div>
 
-<pre><code>keep doing forever:
-    if wall ahead:
-        turn right
-    otherwise:
-        move forward
-</code></pre>
-<div class="qa"><p><strong>In plain English, what is the agent doing over and over?</strong></p>
+<div class="qa"><p><strong>No wall. What does it do?</strong></p>
 <div class="write-space short"></div></div>
 
-<h2>2 · Find the Difference 🐛</h2>
-<p>Each pair shows clean steps first, then a broken version of the same idea. Circle what's different and write one short sentence about the bug.</p>
-<p><strong>Pair A</strong> — The agent should turn when there is a <strong>wall</strong> ahead.</p>
+<h2>2 · Spot It 🐛</h2>
+<p>Wall ahead = turn.</p>
 <pre><code># clean
 if wall ahead:
     turn right
@@ -140,47 +136,31 @@ if path is clear:
 otherwise:
     move forward
 </code></pre>
-<div class="qa"><p><strong>What is wrong? When does the buggy agent turn?</strong></p>
+<div class="qa"><p><strong>Circle the line that is wrong.</strong></p>
 <div class="write-space short"></div></div>
 
-<p><strong>Pair B</strong> — Turning and moving should be in <strong>different</strong> branches — one or the other, not both.</p>
-<pre><code># clean
-if wall ahead:
-    turn right
-otherwise:
-    move forward
-</code></pre>
-<pre><code># buggy
-if wall ahead:
-    turn right
-    move forward
-</code></pre>
-<div class="qa"><p><strong>What is wrong? What does the buggy agent do right after turning?</strong></p>
-<div class="write-space short"></div></div>
-
-<h2>3 · Fill the Gap ✏️</h2>
-<p>The agent should move forward when there is <strong>no</strong> wall. One word is missing. Fill it in using the word bank.</p>
+<h2>3 · Fill It ✏️</h2>
+<p>No wall = move forward. One word is missing.</p>
 <pre><code>if wall ahead:
     turn right
 ____________:
     move forward
 </code></pre>
 <p><strong>Word bank:</strong> <code>otherwise</code> · <code>repeat</code> · <code>while</code></p>
-<div class="qa"><p><strong>Write the missing word:</strong></p>
+<div class="qa"><p><strong>Write the word:</strong></p>
 <div class="write-space short"></div></div>
 
-<h2>4 · Tell Me What You Built 📸</h2>
-<p>Now switch to your homework world. Get your agent through this week's maze using <code>if</code> / <code>otherwise</code>. When you finish, come back here.</p>
-<p>Send a photo or video of your agent solving the maze, then explain what you did. Use these sentence starters — write 2 or 3 sentences.</p>
+<h2>4 · Finish the Maze 📸</h2>
+<p>Open your homework world. Turn at walls. Get the agent out.</p>
+<p>Take a photo or video of the agent at the maze end.</p>
 <div class="qa"><blockquote>
-<p>The condition I checked was …</p>
-<p>My agent got stuck when …</p>
-<p>I fixed it by …</p>
+<p>The wall was on my …</p>
+<p>I turned …</p>
 </blockquote>
 <div class="write-space tall" style="min-height: 240px"></div></div>
 
 <hr />
 <h3>Submit ✅</h3>
-<p>Send this worksheet + a photo or video of your agent solving the maze to teacher on KakaoTalk.</p>
+<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.</p>
 </body>
 </html>

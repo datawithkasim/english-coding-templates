@@ -1,14 +1,12 @@
-# 🧱 M002 Week 7 — English Worksheet (Beginner)
+# ⚙️ M002 Week 7 — Pistons
 
-**Topic:** Pistons and Mazes · **Course:** Maze Madness · **Level:** Beginner · **Time:** about 30 minutes
+**Topic:** Pistons and Mazes · **Course:** Maze Madness · **Level:** Beginner · **Time:** about 25 minutes
 
-This week the maze uses a **piston**. When your agent flips a lever, the piston opens a path across a gap. The agent crosses while the path is open.
+A lever powers a piston. The piston opens a path. The agent crosses.
 
 ---
 
-## 1 · Predict 🔮
-
-Read the steps. Before you imagine the agent doing it, circle or write your answer.
+## 1 · Guess 🔮
 
 ```
 move forward
@@ -16,73 +14,29 @@ interact ahead
 move forward
 ```
 
-**The agent flips the lever and the piston opens the path. Can the agent cross now? Circle one:** yes · no
-
-<div class="write-space short"></div>
-
-```
-if gap ahead:
-    interact ahead
-otherwise:
-    move forward
-```
-
-**The agent is on solid ground with no gap. What does it do? Circle one:** interact · move forward
+**The agent flips the lever. The path opens. Can it cross? Circle one:** yes · no
 
 <div class="write-space short"></div>
 
 ---
 
-## 2 · Find the Difference 🐛
+## 2 · Match 🔗
 
-Each pair shows clean steps first, then a broken version of the same idea. Circle what's different and write one short sentence about the bug.
+Draw a line. Match each word to its meaning.
 
-**Pair A** — The agent should power the piston **first**, then cross.
-
-```
-# clean
-interact ahead
-move forward
-move forward
-```
-
-```
-# buggy
-move forward
-move forward
-interact ahead
-```
-
-**What is wrong? What happens at the gap?**
-
-<div class="write-space short"></div>
-
-**Pair B** — The agent should `interact` only when there is a **gap** ahead.
-
-```
-# clean
-if gap ahead:
-    interact ahead
-otherwise:
-    move forward
-```
-
-```
-# buggy
-keep doing forever:
-    interact ahead
-    move forward
-```
-
-**What is wrong? How often does the buggy agent interact?**
+| Word | Meaning |
+| --- | --- |
+| lever | a hole in the floor |
+| piston | you flip it ON or OFF |
+| gap | it pushes a block |
 
 <div class="write-space short"></div>
 
 ---
 
-## 3 · Fill the Gap ✏️
+## 3 · Fill One Blank ✏️
 
-The agent should flip the lever **only** when it sees a gap. One word is missing. Fill it in using the word bank.
+Flip the lever only at a gap. One word is missing.
 
 ```
 if ____ ahead:
@@ -93,37 +47,21 @@ otherwise:
 
 **Word bank:** `gap` · `grass` · `friend`
 
-**Write the missing word:**
+**Write the word:**
 
 <div class="write-space short"></div>
 
 ---
 
-## 4 · Tell Me What You Built 📸
+## 4 · Build It 📸
 
-Now switch to your homework world. The maze has a **gap** and a **piston** that opens it. Walk the agent to the lever, flip it, cross while the path is open, and reach the goal. When you finish, come back here.
+Open your homework world. Walk the agent to the lever. Flip it. Cross while the path is open. Reach the goal.
 
-Send a photo or video of the agent reaching the end, then explain what you did. Use these sentence starters — write 2 or 3 sentences.
+Send a photo or video of the agent at the end. Then finish these lines.
 
-> I powered the piston by …
+> I flipped the lever to …
 >
-> Once the path opened, the agent …
->
-> The hardest part was …
-
-<div class="write-space tall" style="min-height: 240px"></div>
-
----
-
-## 5 · Record Your Walkthrough 🎥
-
-Take a video on your phone (or a parent's phone) while the agent runs the maze. Talk like you are teaching a friend. Try to use these words: **piston**, **lever**, **gap**, **bridge**.
-
-> 1. Show the gap and the piston.
-> 2. Run your code and show the agent crossing.
-> 3. Say which line of your code opens the path.
-
-**Write what you will say in your video.** You can read from it while filming.
+> Then the agent …
 
 <div class="write-space tall" style="min-height: 240px"></div>
 

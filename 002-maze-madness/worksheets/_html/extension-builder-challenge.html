@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>🏗️ M002 Extension 3 — Build Your Own 6-Maze Challenge</title>
+<title>🧩 M002 Extension 3 — Builder Challenge</title>
 <style>
 @page { size: A4; margin: 18mm 16mm 22mm; }
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -21,6 +21,11 @@ em { color: #555; }
 
 ul, ol { margin: 8px 0 8px 24px; }
 li { margin: 3px 0; }
+
+/* Grids (e.g. pixel-art coordinate grids) render as light graph paper. */
+table { border-collapse: collapse; margin: 12px 0; }
+th, td { border: 1px solid #ddd; padding: 4px 9px; text-align: center; font-size: 14px; }
+th { background: #faf7ff; color: #6b4ee6; font-weight: 700; }
 
 pre {
   font-family: "JetBrains Mono", "Consolas", monospace;
@@ -102,87 +107,104 @@ footer b { color: #ff7849; }
 </head>
 <body>
 <div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
-<h1>🏗️ M002 Extension 3 — Build Your Own 6-Maze Challenge</h1>
-<p><strong>Topic:</strong> Design a Maze + Write the Solution · <strong>Course:</strong> Maze Madness · <strong>Level:</strong> Extension (Advanced) · <strong>Time:</strong> about 75 minutes</p>
-<p>This is the big <strong>builder challenge</strong> for students who have finished the weekly mazes. This time you are not solving someone else's maze — <strong>you are the maze maker.</strong> You will design one long maze that <strong>stretches through 6 different sections</strong>, wire it with pistons and doors, and then write the <strong>solution code</strong> that drives the agent all the way to the end.</p>
-<p>Open the <strong>M002 EXT 3 — Cube World</strong> and build inside it. You drive the agent with <strong>chat commands</strong> just like before: <code>l</code> turns left, <code>r</code> turns right, <code>run</code> starts your solver, and <code>rl</code> teleports the agent back to you.</p>
+<h1>🧩 M002 Extension 3 — Builder Challenge</h1>
+<p><strong>Topic:</strong> Design a Maze + Write the Solution · <strong>Course:</strong> Maze Madness · <strong>Level:</strong> Extension (Advanced) · <strong>Time:</strong> about 60 minutes</p>
+<p>This is the big <strong>builder challenge</strong>. This time you are not solving someone else's maze — <strong>you are the maze maker.</strong> Design one maze that <strong>stretches through 6 zones</strong>, wire it with pistons and doors, then write the <strong>solution code</strong> that drives the agent all the way to the end.</p>
+<p>Open <strong>M002 EXT 3 — Cube World</strong> and build inside it. Drive the agent with chat: <code>l</code> turns left, <code>r</code> turns right, <code>run</code> starts your solver, <code>rl</code> teleports the agent back to you.</p>
 <p><strong>Your maze must include at least:</strong></p>
 <ul>
 <li><strong>2 pistons</strong> (each opens a wall or path when powered)</li>
 <li><strong>2 doors</strong> (the agent opens them with <code>agent.interact(...)</code>)</li>
-<li><strong>4 AND conditions</strong> in your solution code (<code>... and ...</code>)</li>
-<li><strong>1 OR condition</strong> in your solution code (<code>... or ...</code>)</li>
+<li><strong>4 AND conditions</strong> in your solution (<code>... and ...</code>)</li>
+<li><strong>1 OR condition</strong> in your solution (<code>... or ...</code>)</li>
 </ul>
-<p>Keep this page beside you while you build — you will check off each part as you go.</p>
-<h2>1 · Plan Your 6 Mazes 🗺️</h2>
-<p>A great maze is <strong>planned before it is built.</strong> Your maze runs through <strong>6 sections</strong> in a row — the agent finishes one and walks straight into the next. Give each section one job.</p>
-<div class="qa"><p><strong>Sketch your 6 sections.</strong> For each one, write the section number and what makes it tricky (a turn, a piston, a door, a junction where the agent must check two things).</p>
-<div class="write-space tall" style="min-height: 260px"></div></div>
+<p>Keep this page beside you — tick off each part as you go.</p>
+<h2>1 · Design Your 6 Zones 🗺️</h2>
+<p>A great maze is <strong>planned before it is built.</strong> Your maze runs through <strong>6 zones</strong> in a row — the agent finishes one and walks straight into the next. Give each zone one job: a turn, a piston, a door, or a junction where the agent must check two things.</p>
+<div class="qa"><p><strong>Sketch your 6 zones.</strong> Write each zone number and what makes it tricky.</p>
+<div class="write-space tall" style="min-height: 240px"></div></div>
 
-<div class="qa"><p><strong>Where will your 2 pistons go? Which sections, and what does each piston open?</strong></p>
+<div class="qa"><p><strong>Where go your 2 pistons? Which zones, and what does each open?</strong></p>
 <div class="write-space"></div></div>
 
-<div class="qa"><p><strong>Where will your 2 doors go? What is behind each one?</strong></p>
+<div class="qa"><p><strong>Where go your 2 doors? What is behind each one?</strong></p>
 <div class="write-space"></div></div>
 
 <h2>2 · Build the Maze 🧱</h2>
-<p>Now build it in the world. Walk the path yourself first (no code) and make sure a person can get from start to end. <strong>Check off each part as you place it.</strong></p>
+<p>Build it in the world. Walk the path yourself first (no code) and make sure a person can get from start to end. Tick each part as you place it.</p>
 <blockquote>
-<p>☐ Section 1 built</p>
-<p>☐ Section 2 built</p>
-<p>☐ Section 3 built</p>
-<p>☐ Section 4 built</p>
-<p>☐ Section 5 built</p>
-<p>☐ Section 6 built</p>
+<p>☐ Zone 1 built</p>
+<p>☐ Zone 2 built</p>
+<p>☐ Zone 3 built</p>
+<p>☐ Zone 4 built</p>
+<p>☐ Zone 5 built</p>
+<p>☐ Zone 6 built</p>
 <p>☐ Piston #1 placed and tested</p>
 <p>☐ Piston #2 placed and tested</p>
 <p>☐ Door #1 placed</p>
 <p>☐ Door #2 placed</p>
 <p>☐ A clear START block and a clear GOAL block</p>
 </blockquote>
-<div class="qa"><p><strong>Did anything break while you built it? What did you have to change?</strong></p>
+<div class="qa"><p><strong>What broke while you built it? What did you change?</strong></p>
 <div class="write-space"></div></div>
 
 <h2>3 · Write the Solution 💻</h2>
-<p>Now write the <strong>solver</strong> — the code that gets the agent through your whole maze. Use a <code>while True</code> loop so it checks on every step.</p>
-<p>Here is the shape to start from. Fill it in for <strong>your</strong> maze. Remember the rule: your solution needs <strong>at least 4 AND conditions and 1 OR condition.</strong></p>
-<pre><code>while True:
+<p>Write the <strong>solver</strong> — the code that gets the agent through your whole maze. Use a <code>while True</code> loop so it checks on every step. Your solution needs <strong>at least 4 AND conditions and 1 OR condition.</strong></p>
+<p>Here is the shape to start from. Fill it in for <strong>your</strong> maze.</p>
+<pre><code class="language-python">while True:
     agent.move(FORWARD, 1)
 
-    # a junction — turn only when BOTH things are true (AND)
+    # a junction — turn only when BOTH things are true  (AND)
     if agent.detect(BLOCK, LEFT) and agent.detect(REDSTONE, AHEAD):
         agent.turn(LEFT_TURN)
 
-    # a door OR a piston gate — handle either one (OR)
+    # a door OR a piston gate — handle either one  (OR)
     elif agent.detect(BLOCK, AHEAD) or agent.detect(REDSTONE, RIGHT):
         agent.interact(AHEAD)
         agent.move(FORWARD, 1)
 </code></pre>
-<div class="qa"><p><strong>Write your full solution here.</strong> Add more <code>if</code> / <code>elif</code> checks until it covers all 6 sections. Mark each AND with <code># AND</code> and your OR with <code># OR</code> in a comment so you can count them.</p>
+<div class="qa"><p><strong>Write your full solution here.</strong> Add more <code>if</code> / <code>elif</code> checks until it covers all 6 zones. Mark each AND with <code># AND</code> and your OR with <code># OR</code> so you can count them.</p>
 <div class="write-space tall" style="min-height: 360px"></div></div>
 
 <h2>4 · Count Your Logic ✅</h2>
-<p>Go back through the solution you just wrote and <strong>count.</strong> Write the number, then copy out one real line from your code as proof.</p>
-<div class="qa"><p><strong>How many AND conditions did you use? (need at least 4)</strong></p>
+<p>Go back through your solution and <strong>count.</strong> Write the number, then copy one real line as proof.</p>
+<div class="qa"><p><strong>How many AND conditions? (need at least 4)</strong></p>
 <div class="write-space short"></div></div>
 
-<div class="qa"><p><strong>Copy one of your AND lines here:</strong></p>
+<div class="qa"><p><strong>Copy one AND line:</strong></p>
 <div class="write-space short"></div></div>
 
-<div class="qa"><p><strong>How many OR conditions did you use? (need at least 1)</strong></p>
+<div class="qa"><p><strong>How many OR conditions? (need at least 1)</strong></p>
 <div class="write-space short"></div></div>
 
-<div class="qa"><p><strong>Copy your OR line here:</strong></p>
+<div class="qa"><p><strong>Copy your OR line:</strong></p>
 <div class="write-space short"></div></div>
 
-<div class="qa"><p><strong>Why did that one spot need an OR instead of an AND? What two different things is it checking for?</strong></p>
+<div class="qa"><p><strong>Why did that spot need OR instead of AND? What two things is it checking for?</strong></p>
 <div class="write-space"></div></div>
 
-<h2>5 · Test It and Finish 📸</h2>
-<p>Type <code>run</code> and watch the agent. It will get stuck somewhere — that is normal. Find where it stops, fix that part of your code or your maze, and run it again. Keep going until the agent reaches the <strong>GOAL</strong> all by itself. Use <code>rl</code> to send it back to the start between tries.</p>
-<p>When the agent finishes your maze on its own, come back here. Send a photo or video of the agent at the goal, then explain what you did. Use these sentence starters — write 5 to 7 sentences total.</p>
+<h2>5 · Spot and Fix the Bugs 🐞</h2>
+<p>These two lines are buggy. Read each, say what goes wrong, then write the fix.</p>
+<pre><code class="language-python"># Should turn left only when a wall is on the left AND redstone is ahead.
+if agent.detect(BLOCK, LEFT) or agent.detect(REDSTONE, AHEAD):
+    agent.turn(LEFT_TURN)
+</code></pre>
+<div class="qa"><p><strong>What is wrong, and what is the fixed line?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-python"># Should open a door ahead, then step through it.
+elif agent.detect(BLOCK, AHEAD):
+    agent.move(FORWARD, 1)
+    agent.interact(AHEAD)
+</code></pre>
+<div class="qa"><p><strong>What is wrong, and what is the fixed code?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>6 · Test It and Finish 📸</h2>
+<p>Type <code>run</code> and watch the agent. It will get stuck somewhere — that is normal. Find where it stops, fix that part of your code or your maze, and run it again. Use <code>rl</code> to send it back between tries. Keep going until the agent reaches the <strong>GOAL</strong> all by itself.</p>
+<p>When the agent finishes your maze on its own, send a photo OR video of the agent at the goal, then explain. Write 5 to 7 sentences with these starters.</p>
 <div class="qa"><blockquote>
-<p>My maze runs through 6 sections. The trickiest section was …</p>
+<p>My maze runs through 6 zones. The trickiest zone was …</p>
 <p>I put my 2 pistons in … because …</p>
 <p>The agent opens my doors with <code>agent.interact(...)</code>, which works because …</p>
 <p>I used an AND condition at … to make the agent …</p>
@@ -192,18 +214,18 @@ footer b { color: #ff7849; }
 </blockquote>
 <div class="write-space tall" style="min-height: 360px"></div></div>
 
-<h2>6 · Present Your Maze 🎥</h2>
-<p>You built this maze, so you are the expert. Take a video on your phone (or a parent's phone) and <strong>present your maze like a designer showing off their game.</strong> Try to use these words: <strong>section</strong>, <strong>piston</strong>, <strong>door</strong>, <strong>detect</strong>, <strong>AND</strong>, <strong>OR</strong>, <strong>loop</strong>.</p>
+<h2>7 · Present Your Maze 🎥</h2>
+<p>You built this maze, so you are the expert. Take a video on your phone (or a parent's phone) and <strong>present your maze like a designer showing off their game.</strong> Try to use these words: <strong>zone</strong>, <strong>piston</strong>, <strong>door</strong>, <strong>detect</strong>, <strong>AND</strong>, <strong>OR</strong>, <strong>loop</strong>.</p>
 <blockquote>
 <ol>
-<li>Show the whole maze from the start and point out the 6 sections.</li>
+<li>Show the whole maze from the start and point out the 6 zones.</li>
 <li>Show each piston and each door, and say what it does.</li>
 <li>Read one AND check from your code out loud and say what decision it makes.</li>
 <li>Read your OR check and say why it needed OR.</li>
 <li>Type <code>run</code> and let the agent solve your maze to the goal.</li>
 </ol>
 </blockquote>
-<div class="qa"><p><strong>Write what you will say in your video.</strong> Plan it here first — you can read from it while filming.</p>
+<div class="qa"><p><strong>Plan your video here first</strong> — you can read from it while filming.</p>
 <div class="write-space tall" style="min-height: 360px"></div></div>
 
 <hr />

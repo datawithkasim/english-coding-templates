@@ -1,147 +1,115 @@
-# 🔁 M002 Week 1 — English Worksheet
+# 🌀 M002 Week 1 — While Loop
 
-**Topic:** While Loops — Move Until You Hit a Wall · **Course:** Maze Madness · **Time:** about 45 minutes
+**Topic:** Repeat Until a Wall · **Course:** Maze Madness · **Level:** Advanced · **Time:** about 55 minutes
 
-This week your agent uses a **while loop** to keep moving forward until it hits a wall.
+A while loop checks, then runs the body, then checks again. It stops when the check is false.
 
 ---
 
-## 1 · Predict 🔮
+## 1 · Trace the Loop 🔮
 
-Read each set of steps. Before you imagine the agent doing it, write what you think will happen.
-
-```
-while no wall ahead:
-    move forward
+```python
+while not agent.detect(BLOCK, FORWARD):
+    agent.move(FORWARD, 1)
 ```
 
-**When does the agent stop? Why?**
-
-<div class="write-space"></div>
-
-```
-move forward
-move forward
-move forward
-```
-
-**How is this different from the while loop above? What if the wall is only 2 steps away?**
-
-<div class="write-space"></div>
-
-```
-while no wall ahead:
-    move forward
-turn right
-while no wall ahead:
-    move forward
-```
-
-**The agent finishes the first while loop. What happens next?**
+**The wall is 5 steps ahead. How many moves? When does the loop end?**
 
 <div class="write-space"></div>
 
 ---
 
-## 2 · Spot the Bug 🐛
+## 2 · Read the API 📖
 
-Each block of code below was meant to do something, but it is broken. Read what the code is **supposed** to do, then rewrite it so it works. After that, explain why the original was wrong and why your fix works.
+| Call | What it does |
+|------|--------------|
+| `agent.detect(BLOCK, FORWARD)` | true if a wall is ahead |
+| `agent.move(FORWARD, 1)` | step forward once |
+| `agent.turn(RIGHT_TURN)` | turn right |
 
-**Bug A** — The agent is supposed to keep moving forward **until** it hits a wall.
+**Why check `not agent.detect(...)` and not `agent.detect(...)`?**
 
-```
-while wall ahead:
-    move forward
-```
+<div class="write-space short"></div>
 
-**Hint:** the condition is backwards.
+---
 
-**Write the fixed code:**
+## 3 · Spot the Bugs 🐛
 
-<div class="write-space"></div>
+**Bug A** — should move until the wall.
 
-**Why was it wrong? Why does your fix work?**
-
-<div class="write-space"></div>
-
-**Bug B** — The agent is supposed to move forward step by step. Right now it only checks the wall **once**, before moving 10 steps no matter what.
-
-```
-if no wall ahead:
-    move forward
-    move forward
-    move forward
-    move forward
-    move forward
-    move forward
-    move forward
-    move forward
-    move forward
-    move forward
+```python
+while agent.detect(BLOCK, FORWARD):
+    agent.move(FORWARD, 1)
 ```
 
-**Write the fixed code using a while loop:**
+**Fix it:**
 
-<div class="write-space"></div>
+<div class="write-space short"></div>
 
-**Why was it wrong? Why does your while loop work better?**
+**Bug B** — should stop right at the wall, not crash.
 
-<div class="write-space"></div>
-
-**Bug C** — The agent is supposed to stop **right in front** of the wall, not crash into it.
-
-```
-while no wall ahead:
-    move forward
-    move forward
+```python
+while not agent.detect(BLOCK, FORWARD):
+    agent.move(FORWARD, 1)
+    agent.move(FORWARD, 1)
 ```
 
-**Hint:** the agent moves twice before checking again.
-
-**Write the fixed code:**
-
-<div class="write-space"></div>
-
-**Why was it wrong? Why does your fix work?**
+**Fix it. Say why it crashed:**
 
 <div class="write-space"></div>
 
 ---
 
-## 3 · Tell Me What You Built 📸
+## 4 · Write a Chat Command ✏️
 
-Now switch to your homework world. Use a **while loop** to move the agent from the start of the straight maze all the way to the wall. When you finish, come back here.
+Make `go` move the agent forward until a wall.
 
-Send a photo or video of the agent reaching the wall, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.
+> Use `player.on_chat`, `while`, `agent.detect`, `agent.move`.
 
-> First, I read the maze and noticed …
+<div class="write-space"></div>
+
+---
+
+## 5 · Loop, Turn, Loop ✏️
+
+Move to the wall, turn right, then move to the next wall.
+
+<div class="write-space tall" style="min-height: 240px"></div>
+
+---
+
+## 6 · Finish the Maze 📸
+
+Open your homework world. Use a while loop to drive the agent down the straight maze to the wall.
+
+Send a photo OR video of the agent at the wall. Then write 4-6 sentences.
+
+> First, I read the maze and saw …
 >
-> My while loop checked …
+> My loop checked …
 >
 > The agent stopped because …
 >
-> The hardest part was …
+> The hard part was …
 >
-> To fix it, I …
->
-> A while loop is useful because …
+> A while loop beats many `move` lines because …
 
-<div class="write-space tall" style="min-height: 340px"></div>
+<div class="write-space tall" style="min-height: 240px"></div>
 
 ---
 
-## 4 · Record Your Walkthrough 🎥
+## 7 · Narrate Your Walkthrough 🎥
 
-Now take a video on your phone (or a parent's phone) while the agent runs the maze. Talk through it like you are teaching someone who has never seen it. Try to use these words: **while**, **loop**, **detect**, **wall**, **forward**.
+Record on a phone while the agent runs. Teach it like the viewer is new. Use: **while**, **loop**, **detect**, **wall**, **forward**.
 
-> 1. Show the start of the maze, then run your code.
-> 2. Read your while loop out loud and say what makes it stop.
-> 3. Show one bug you hit and how you fixed it.
-> 4. Say why a while loop is better than writing `move forward` many times.
+> 1. Show the start. Run your code.
+> 2. Read your loop. Say what makes it stop.
+> 3. Show one bug and your fix.
+> 4. Say why a loop beats many `move` lines.
 
-**Write what you will say in your video.** Use the space below to plan it before you record — you can read from it while filming.
+**Plan your words:**
 
-<div class="write-space tall" style="min-height: 340px"></div>
+<div class="write-space tall" style="min-height: 240px"></div>
 
 ---
 

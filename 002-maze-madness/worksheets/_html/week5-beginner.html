@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>🧊 M002 Week 5 — English Worksheet (Beginner)</title>
+<title>🧊 M002 Week 5 — Mini Cube Puzzle</title>
 <style>
 @page { size: A4; margin: 18mm 16mm 22mm; }
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -21,6 +21,11 @@ em { color: #555; }
 
 ul, ol { margin: 8px 0 8px 24px; }
 li { margin: 3px 0; }
+
+/* Grids (e.g. pixel-art coordinate grids) render as light graph paper. */
+table { border-collapse: collapse; margin: 12px 0; }
+th, td { border: 1px solid #ddd; padding: 4px 9px; text-align: center; font-size: 14px; }
+th { background: #faf7ff; color: #6b4ee6; font-weight: 700; }
 
 pre {
   font-family: "JetBrains Mono", "Consolas", monospace;
@@ -102,30 +107,25 @@ footer b { color: #ff7849; }
 </head>
 <body>
 <div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
-<h1>🧊 M002 Week 5 — English Worksheet (Beginner)</h1>
-<p><strong>Topic:</strong> Mini Cube Puzzle · <strong>Course:</strong> Maze Madness · <strong>Level:</strong> Beginner · <strong>Time:</strong> about 30 minutes</p>
-<p>This week you finish the <strong>mini cube</strong>. You already have starter code that builds part of the cube. Keep the same pattern going until the cube is full — then the agent must <strong>break a hole in the top</strong> and climb out.</p>
+<h1>🧊 M002 Week 5 — Mini Cube Puzzle</h1>
+<p><strong>Topic:</strong> Mini Cube Puzzle · <strong>Course:</strong> Maze Madness · <strong>Level:</strong> Beginner · <strong>Time:</strong> about 25 minutes</p>
+<p>Finish the cube. Fill it, then break the top and climb out.</p>
 <h2>1 · Predict 🔮</h2>
-<p>Read the steps. Before you imagine the agent doing it, circle or write your answer.</p>
 <pre><code>repeat 5 times:
     place block
     move forward
 </code></pre>
-<p><strong>What does the agent leave behind? Circle one:</strong> a line of blocks · a tower · a hole</p>
-<div class="qa"><p><strong>How long is it?</strong></p>
+<div class="qa"><p><strong>Circle one:</strong> a line · a tower · a hole</p>
 <div class="write-space short"></div></div>
 
 <pre><code>break block above
 move up
 </code></pre>
-<div class="qa"><p><strong>What does the agent do here? Circle one:</strong> climbs out through a hole · digs down · builds a wall</p>
+<div class="qa"><p><strong>Circle one:</strong> climbs out · digs down · builds wall</p>
 <div class="write-space short"></div></div>
 
-<h2>2 · Find the Difference 🐛</h2>
-<p>Each pair shows clean steps first, then a broken version of the same idea. Circle what's different and write one short sentence about the bug.</p>
-<p><strong>Pair A</strong> — The agent should finish the layer, <strong>then</strong> move up.</p>
+<h2>2 · Find the Bug 🐛</h2>
 <pre><code># clean
-place block
 place block
 place block
 move up
@@ -133,59 +133,32 @@ move up
 <pre><code># buggy
 place block
 move up
-place block
 place block
 </code></pre>
 <div class="qa"><p><strong>What is wrong?</strong></p>
 <div class="write-space short"></div></div>
 
-<p><strong>Pair B</strong> — To climb out, the agent must make the hole <strong>first</strong>, then move into it.</p>
-<pre><code># clean
-break block above
-move up
-</code></pre>
-<pre><code># buggy
-move up
-break block above
-</code></pre>
-<div class="qa"><p><strong>What is wrong? What does the buggy agent bump into?</strong></p>
-<div class="write-space short"></div></div>
-
 <h2>3 · Fill the Gap ✏️</h2>
-<p>At the top, the agent needs a way out. One line is missing. Fill it in using the word bank.</p>
-<pre><code>[fill the last layer]
+<pre><code>fill the layer
 ____________
 move up
 </code></pre>
 <p><strong>Word bank:</strong> <code>break block above</code> · <code>place block</code> · <code>turn right</code></p>
-<div class="qa"><p><strong>Write the missing line:</strong></p>
+<div class="qa"><p><strong>Missing line:</strong></p>
 <div class="write-space short"></div></div>
 
 <h2>4 · Finish the Cube 📸</h2>
-<p>Open this week's world. You will find the <strong>mini cube starter</strong> — some of the cube is already built.</p>
+<p>Open this week's world. Find the <strong>mini cube starter</strong>.</p>
 <ol>
-<li>Keep the <strong>same pattern</strong> the starter uses.</li>
-<li>Repeat it until the <strong>whole cube is filled</strong>.</li>
-<li>Make sure the agent <strong>breaks a hole in the top</strong> and climbs out.</li>
+<li>Keep the same pattern.</li>
+<li>Fill the whole cube.</li>
+<li>Break a hole in the top and climb out.</li>
 </ol>
-<p>When you finish, come back here. Send a photo or video of the finished cube (and the hole in the top!), then explain what you did. Use these sentence starters — write 2 or 3 sentences.</p>
+<p>Send a photo or video. Then finish:</p>
 <div class="qa"><blockquote>
-<p>To keep building, I …</p>
-<p>I made the hole in the top by …</p>
-<p>One tricky moment was when …</p>
+<p>To build, I …</p>
+<p>I made the hole by …</p>
 </blockquote>
-<div class="write-space tall" style="min-height: 240px"></div></div>
-
-<h2>5 · Record Your Walkthrough 🎥</h2>
-<p>Take a video on your phone (or a parent's phone) while the agent builds the cube. Talk like you are teaching a friend. Try to use these words: <strong>cube</strong>, <strong>layer</strong>, <strong>pattern</strong>, <strong>hole</strong>.</p>
-<blockquote>
-<ol>
-<li>Show the starter cube before you run your code.</li>
-<li>Run your code and watch the cube fill up.</li>
-<li>Show the agent breaking the hole in the top and climbing out.</li>
-</ol>
-</blockquote>
-<div class="qa"><p><strong>Write what you will say in your video.</strong> You can read from it while filming.</p>
 <div class="write-space tall" style="min-height: 240px"></div></div>
 
 <hr />

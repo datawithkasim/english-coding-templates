@@ -1,14 +1,14 @@
-# 🧩 M002 Extension 4 — Worksheet (Beginner)
+# 🧩 M002 Extension 4 — Complete the Maze
 
-**Topic:** Add Two AND Conditions · **Course:** Maze Madness · **Level:** Extension (Beginner) · **Time:** about 35 minutes
+**Topic:** Add Two AND Conditions · **Course:** Maze Madness · **Level:** Extension (Beginner) · **Time:** about 30 minutes
 
-This is a **challenge** for students who finished the weekly mazes. The agent already knows **four rules** for following redstone through a 3D maze. But it is **not finished** — at two spots it gets stuck because one redstone signal is not enough. You will look at each stuck spot, see **which two signals** are on, and add your own **AND** rule (two things true at once). Then get the agent to the goal.
+The agent knows **four rules** to follow redstone. But it gets **stuck** at two spots. There, two signals are on at once. You find the two signals and add your own **AND** rule.
 
 ---
 
-## 1 · The Four Rules the Agent Knows 🎛️
+## 1 · The Four Rules 🎛️
 
-Each rule checks **one** redstone signal and does **one** thing.
+Each rule sees **one** signal and does **one** thing.
 
 ```
 if redstone on the LEFT:
@@ -21,14 +21,14 @@ if redstone ABOVE:
     move DOWN
 ```
 
-**Draw a line to match each signal to its action. You will reuse these actions in your own rules.**
+**Draw a line to match. You will reuse these.**
 
 | Signal | | Action |
 |---|---|---|
-| redstone on the left | → | move up |
+| redstone left | → | move up |
 | redstone below | → | turn right |
 | redstone above | → | turn left |
-| redstone on the right | → | move down |
+| redstone right | → | move down |
 
 <div class="write-space short"></div>
 
@@ -36,23 +36,23 @@ if redstone ABOVE:
 
 ## 2 · AND means BOTH 🧠
 
-**AND** is true only when **both** things are true.
+**AND** is true only when **both** are true.
 
 ```
-if redstone on the LEFT AND redstone BELOW:
+if redstone LEFT AND redstone BELOW:
     turn right
     move up
 ```
 
-**(This is just an example.) There is redstone on the left, but NOT below. Is the AND true? Circle one:** yes · no
+**Left on, but NOT below. Is the AND true?** yes · no
 
 <div class="write-space short"></div>
 
-**There is redstone on the left AND redstone below. Is the AND true? Circle one:** yes · no
+**Left on AND below on. Is the AND true?** yes · no
 
 <div class="write-space short"></div>
 
-**When the AND is true, the agent does the action for _each_ signal — so it does TWO things. How many actions does an AND rule with two signals need?**
+**An AND with two signals needs how many actions?**
 
 <div class="write-space short"></div>
 
@@ -60,9 +60,9 @@ if redstone on the LEFT AND redstone BELOW:
 
 ## 3 · Look at the Stuck Spots 🔍
 
-Open the **M002 Complete the Maze** world. Type `run`. The agent stops at **two** spots because two signals are on at once. Walk to each spot and look around the agent.
+Open the **M002 Complete the Maze** world. Type `run`. The agent stops at **two** spots. Walk to each one and look around the agent.
 
-**Which signals are on at each stuck spot? Tick all you see.**
+**Tick the signals you see.**
 
 | | left | right | below | above |
 |---|---|---|---|---|
@@ -75,93 +75,35 @@ Open the **M002 Complete the Maze** world. Type `run`. The agent stops at **two*
 
 ## 4 · Write Your Two AND Rules ✏️
 
-Use the two signals you ticked for each spot, and the actions from the table in section 1.
+Use the signals you ticked and the actions from section 1.
 
-**Stuck spot 1** — fill in the two signals and the two actions:
+**Stuck spot 1 — fill the blanks:**
 
 ```
-if redstone on the ______ AND redstone ______:
+if redstone ______ AND redstone ______:
     ______________
     ______________
 ```
 
 <div class="write-space short"></div>
 
-**Stuck spot 2** — write the whole rule yourself:
+**Stuck spot 2 — write the whole rule:**
 
 <div class="write-space"></div>
 
 ---
 
-## 5 · Find the Difference 🐛
+## 5 · Finish the Whole Maze 📸
 
-Each pair shows clean steps first, then a broken version. Circle what is different and write one short sentence about the bug.
+Type `run`. The goal is to reach the **very end**. If it sticks, fix your AND rules and run again.
 
-**Pair A** — A rule should fire only when **both** signals are on.
+Send a photo or video of the agent at the goal. Then write 2 or 3 sentences with these starters.
 
-```
-# clean
-if redstone on the LEFT AND redstone BELOW:
-    turn right
-    move up
-```
-
-```
-# buggy
-if redstone on the LEFT OR redstone BELOW:
-    turn right
-    move up
-```
-
-**What is wrong? With OR, how many of the two does the agent need?**
-
-<div class="write-space short"></div>
-
-**Pair B** — A rule with two signals needs **two** actions.
-
-```
-# clean
-turn right
-move up
-```
-
-```
-# buggy
-turn right
-```
-
-**What is wrong? What does the agent forget to do?**
-
-<div class="write-space short"></div>
-
----
-
-## 6 · Finish the Whole Maze 📸
-
-Type `run` and watch the agent. The goal is to reach the **very end**. If it gets stuck, fix your AND rules and run again.
-
-When the agent finishes, come back here. Send a photo or video of the agent at the goal, then explain what you did. Use these sentence starters — write 2 or 3 sentences.
-
-> The agent already knew four rules, like …
+> The agent knew four rules, like …
 >
-> At the first stuck spot the two signals were … and …
+> The two signals at the first stuck spot were … and …
 >
-> An AND rule means the agent needs …
-
-<div class="write-space tall" style="min-height: 240px"></div>
-
----
-
-## 7 · Record Your Walkthrough 🎥
-
-Take a video on your phone (or a parent's phone) while the agent solves the maze. Talk like you are teaching a friend. Try to use these words: **redstone**, **AND**, **both**, **turn**, **move up**.
-
-> 1. Show the maze and the redstone.
-> 2. Type `run` and show the agent following it.
-> 3. Say out loud the two signals your AND rule needs.
-> 4. Show the agent reaching the goal.
-
-**Write what you will say in your video.** You can read from it while filming.
+> An AND rule needs …
 
 <div class="write-space tall" style="min-height: 240px"></div>
 
