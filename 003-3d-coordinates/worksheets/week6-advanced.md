@@ -1,0 +1,146 @@
+# 🐉 M003 Week 6 — English Worksheet (Advanced)
+
+**Topic:** Recreate the Ender Dragon (x, y, z) · **Course:** 3D Coordinates · **Level:** Advanced · **Time:** about 45 minutes
+
+A big blocky **ender dragon** stands in your world — black blocks, purple eyes. A big model is a set of **parts**: a long **body** (a fill box stretched along one axis), a **head** at the front, two **wings** that spread out along x, and a **tail** that steps back and down. Everything uses **(x, y, z)** — x **across**, y **up**, z **forward** (deep). Plan your corners before you build.
+
+> 🔴 Stand on your **home spot** (red block) every run. Move your feet, move your head.
+
+---
+
+## 1 · Predict 🔮
+
+Read each code. Write your full prediction.
+
+```
+fill black from (0, 8, 0) to (0, 8, 10)
+```
+
+**One block wide, stretched along z. How long is the body? Which way does it run?**
+
+<div class="write-space"></div>
+
+```
+fill black from (1, 8, 5) to (5, 8, 5)
+fill black from (-5, 8, 5) to (-1, 8, 5)
+```
+
+**Two wings. Both stay at y = 8 and z = 5. How wide is each wing? Are they the same size on both sides?**
+
+<div class="write-space"></div>
+
+```
+place black block at (0, 7, -1)
+place black block at (0, 6, -2)
+place black block at (0, 5, -3)
+```
+
+**This is the tail behind the body. As z gets smaller (more negative), what happens to the height? Across, up, or down-and-back?**
+
+<div class="write-space"></div>
+
+---
+
+## 2 · Spot the Bug 🐛
+
+**Bug A** — These should be **two matching wings**, spreading the same distance out on each side from the body at x = 0. Right now the left wing is much shorter than the right.
+
+```
+fill black from (1, 8, 5) to (5, 8, 5)
+fill black from (-2, 8, 5) to (-1, 8, 5)
+```
+
+**Write the fixed code:**
+
+<div class="write-space"></div>
+
+**Why was it wrong? Why does your fix work?**
+
+<div class="write-space"></div>
+
+**Bug B** — This should be a **long body** stretched **deep along z**, from (0, 8, 0) to (0, 8, 10). Right now it lies flat across the ground along x instead.
+
+```
+fill black from (0, 8, 0) to (10, 8, 0)
+```
+
+**Write the fixed code:**
+
+<div class="write-space"></div>
+
+**Why was it wrong? Why does your fix work?**
+
+<div class="write-space"></div>
+
+**Bug C** — The **tail** should step **back and down** behind the body: each block goes one deeper and one lower. Right now every tail block sits at the same height, so the tail floats straight out instead of drooping.
+
+```
+place black block at (0, 8, -1)
+place black block at (0, 8, -2)
+place black block at (0, 8, -3)
+```
+
+**Hint:** look at the **y** numbers. A tail that droops must lower y each step, not keep it the same.
+
+**Write the fixed code:**
+
+<div class="write-space"></div>
+
+**Why was it wrong? Why does your fix work?**
+
+<div class="write-space"></div>
+
+---
+
+## 3 · Build the Full Dragon 🧱
+
+Look at the dragon in your world. Walk around it. Plan your corners, then build it part by part on your home spot:
+
+```
+fill black from (0, 8, 0) to (0, 8, 10)
+place black block at (0, 9, 11)
+fill black from (1, 8, 5) to (5, 8, 5)
+fill black from (-5, 8, 5) to (-1, 8, 5)
+place black block at (0, 7, -1)
+place black block at (0, 6, -2)
+place black block at (0, 5, -3)
+```
+
+That is body, head, right wing, left wing, and a stepped tail. Add two **purple** eye blocks on the head. Keep the wings the same length on both sides.
+
+Send a photo or video. Then finish these — 4 to 6 sentences.
+
+> I built the dragon as these parts: …
+>
+> My body runs along the … axis, from ( … , … , … ) to ( … , … , … ).
+>
+> To make the wings match, I …
+>
+> My tail steps back and down by changing the … number and the … number each time.
+>
+> One tricky moment was when …
+>
+> If I had more time, I would …
+
+<div class="write-space tall" style="min-height: 340px"></div>
+
+---
+
+## 4 · Record Your Walkthrough 🎥
+
+Film yourself showing your dragon. Use these words: **x**, **y**, **z**, **body**, **head**, **wing**, **tail**, **home spot**.
+
+> 1. Show your home spot. Why stand on it every run?
+> 2. Point at the body. Say which axis it runs along and why.
+> 3. Point at both wings. Show they are the same length, and say in your own words how you kept them matching.
+> 4. Point at the tail. Say which numbers change to make it step back and down.
+
+**Plan what you will say:**
+
+<div class="write-space tall" style="min-height: 340px"></div>
+
+---
+
+### Submit ✅
+
+Send this worksheet + your walkthrough video to teacher on KakaoTalk.

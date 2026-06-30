@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>🌳 M003 Week 5 — English Worksheet (Beginner)</title>
+<title>🗿 M003 Week 5 — English Worksheet (Beginner)</title>
 <style>
 @page { size: A4; margin: 18mm 16mm 22mm; }
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -21,6 +21,11 @@ em { color: #555; }
 
 ul, ol { margin: 8px 0 8px 24px; }
 li { margin: 3px 0; }
+
+/* Grids (e.g. pixel-art coordinate grids) render as light graph paper. */
+table { border-collapse: collapse; margin: 12px 0; }
+th, td { border: 1px solid #ddd; padding: 4px 9px; text-align: center; font-size: 14px; }
+th { background: #faf7ff; color: #6b4ee6; font-weight: 700; }
 
 pre {
   font-family: "JetBrains Mono", "Consolas", monospace;
@@ -102,87 +107,94 @@ footer b { color: #ff7849; }
 </head>
 <body>
 <div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
-<h1>🌳 M003 Week 5 — English Worksheet (Beginner)</h1>
-<p><strong>Topic:</strong> Layer Up — Trees · <strong>Course:</strong> 3D Coordinates · <strong>Level:</strong> Beginner · <strong>Time:</strong> about 30 minutes</p>
-<p>You know the floor — <strong>(x, z)</strong>. This week you go <strong>up</strong>. One <strong><code>fill</code></strong> makes a solid box between <strong>two corners</strong>. Raise the <strong>middle number (y)</strong> and the box gets <strong>taller</strong>. Stack a wide box, then smaller boxes on top, and you get a <strong>tree</strong>.</p>
-<p><strong>Your mission: build this tree</strong> — a fat brown <strong>trunk</strong>, then a green <strong>cap</strong> of boxes that get <strong>smaller</strong> going up.</p>
-<div style="display:flex; gap:14px; align-items:flex-start; margin:10px 0; page-break-inside:avoid; break-inside:avoid"><div style="flex:0 0 auto"><p style="margin:0 0 4px; font-weight:700">🌳 Build this</p><img src="../assets/week5-tree.png" alt="A Minecraft tree: a brown trunk with a green cap of three stacked boxes that get smaller going up" style="width:100%; max-width:170px; border-radius:8px; display:block"></div><div style="flex:1; min-width:0"><p style="margin:0 0 4px; font-weight:700">🧱 The idea</p><p style="margin:0 0 6px">• A <b>3 × 3</b> brown <b>trunk</b>, stacked up.</p><p style="margin:0 0 6px">• A green <b>cap</b>: bottom box <b>widest</b>, each box above <b>smaller and higher</b>.</p><p style="margin:0">• Each box is one <code>fill</code>.</p></div></div>
-
+<h1>🗿 M003 Week 5 — English Worksheet (Beginner)</h1>
+<p><strong>Topic:</strong> Recreate the Statues (x, y, z) · <strong>Course:</strong> 3D Coordinates · <strong>Level:</strong> Beginner · <strong>Time:</strong> about 30 minutes</p>
+<p>A statue is just blocks <strong>stacked up</strong>. A little body, then a head on top. Every block needs <strong>three</strong> numbers: <strong>(x, y, z)</strong>. x is <strong>across</strong>, y is <strong>up</strong>, z is <strong>forward</strong>. To go higher, change the <strong>2nd number (y)</strong>.</p>
 <h3>🧭 Every coordinate is <strong>(x, y, z)</strong></h3>
 <div style="display:flex; gap:8px; flex-wrap:wrap; margin:6px 0 2px"><div style="flex:1; min-width:120px; background:#fff3ea; border:1px solid #ffd9c2; border-radius:8px; padding:8px 12px"><b style="color:#e0681c">1st = X</b><br>across →</div><div style="flex:1; min-width:120px; background:#f0ecff; border:1px solid #d9cdff; border-radius:8px; padding:8px 12px"><b style="color:#6b4ee6">2nd = Y</b><br>up ↑ (height)</div><div style="flex:1; min-width:120px; background:#e8f7ef; border:1px solid #c4ead6; border-radius:8px; padding:8px 12px"><b style="color:#1a8f5a">3rd = Z</b><br>forward ⤴</div></div>
 
 <blockquote>
-<p>🌱 <strong>Big idea:</strong> the <strong>2nd number (y)</strong> is height. Make it bigger to go <strong>up</strong>.</p>
+<p>🔴 Stand on your <strong>home spot</strong> (red block) every run. Move your feet, move your head.</p>
 </blockquote>
 <h2>1 · Predict 🔮</h2>
-<p>Read the steps. Look at each <strong>column</strong> — <strong>1st = x, 2nd = y, 3rd = z</strong>. Circle or write your answer.</p>
-<pre><code>fill BROWN from (3, 0, 3) to (5, 6, 5)
+<p>Read the steps. Look at the numbers. Then answer.</p>
+<pre><code>place gray block at (3, 0, 3)
+place gray block at (3, 1, 3)
+place gray block at (3, 2, 3)
 </code></pre>
-<p><strong>The 2nd number (y) goes from 0 up to 6. Does this build the trunk going up? Circle one:</strong> yes · no</p>
-<div class="qa"><p><strong>Why?</strong></p>
+<div class="qa"><p><strong>Across, up, or deeper? Circle one. Which number changes?</strong></p>
 <div class="write-space short"></div></div>
 
-<pre><code>fill GREEN from (1, 7, 1) to (7, 8, 7)
+<pre><code>place gray block at (3, 0, 3)
+place gray block at (4, 0, 3)
 </code></pre>
-<div class="qa"><p><strong>The x numbers go 1 → 7 and the z numbers go 1 → 7. Is this a wide box? Circle one:</strong> yes · no</p>
+<div class="qa"><p><strong>Across, up, or deeper? Circle one. Which number changes?</strong></p>
 <div class="write-space short"></div></div>
 
 <h2>2 · Find the Difference 🐛</h2>
-<p>Each pair shows clean steps first, then a broken version. Circle what's different and write one short sentence about the bug.</p>
-<p><strong>Pair A</strong> — The second box should sit <strong>on top</strong>, so its <strong>2nd number (y)</strong> must be bigger.</p>
-<pre><code># clean
-fill GREEN from (1, 7, 1) to (7, 8, 7)
-fill GREEN from (2, 9, 2) to (6, 11, 6)
+<p>One block is good. One is broken. Find what is different.</p>
+<p><strong>Pair A</strong> — The body should <strong>stack up</strong>, so the <strong>2nd number (y)</strong> must grow.</p>
+<pre><code># clean — the body stacks up
+place gray block at (3, 0, 3)
+place gray block at (3, 1, 3)
 </code></pre>
-<pre><code># buggy
-fill GREEN from (1, 7, 1) to (7, 8, 7)
-fill GREEN from (2, 7, 2) to (6, 8, 6)
+<pre><code># buggy — nothing stacks
+place gray block at (3, 0, 3)
+place gray block at (3, 0, 3)
 </code></pre>
-<div class="qa"><p><strong>What is wrong? Do the two boxes stack up, or land on the same level?</strong></p>
+<div class="qa"><p><strong>The buggy one stays low. Which number must change to go up?</strong></p>
 <div class="write-space short"></div></div>
 
-<p><strong>Pair B</strong> — The trunk should go <strong>up</strong>, so the <strong>2nd number (y)</strong> must grow.</p>
-<pre><code># clean
-fill BROWN from (3, 0, 3) to (5, 6, 5)
+<p><strong>Pair B</strong> — The head should sit <strong>on top</strong>, so its <strong>2nd number (y)</strong> must be bigger.</p>
+<pre><code># clean — head on top
+place gray block at (3, 1, 3)
+place white block at (3, 2, 3)
 </code></pre>
-<pre><code># buggy
-fill BROWN from (3, 0, 3) to (5, 0, 5)
+<pre><code># buggy — head inside the body
+place gray block at (3, 1, 3)
+place white block at (3, 1, 3)
 </code></pre>
-<div class="qa"><p><strong>What is wrong? Does the buggy one go up, or stay flat on the ground?</strong></p>
+<div class="qa"><p><strong>Both blocks are at the same spot in the buggy one. Which number is wrong?</strong></p>
 <div class="write-space short"></div></div>
 
 <h2>3 · Fill the Gap ✏️</h2>
-<p>The second cap box should sit <strong>higher</strong> than the first. The missing number is the <strong>2nd one (y)</strong>. Fill it in using the word bank.</p>
-<pre><code>fill GREEN from (1, 7, 1) to (7, 8, 7)
-fill GREEN from (2, ____, 2) to (6, 11, 6)
+<p>This builds a tiny statue: a 3-tall body, then a head on top. Fill the blank <strong>y</strong> so the head sits <strong>above</strong> the body.</p>
+<pre><code>place gray block at (3, 0, 3)
+place gray block at (3, 1, 3)
+place gray block at (3, 2, 3)
+place white block at (3, ____, 3)
 </code></pre>
-<p><strong>Word bank:</strong> <code>9</code> · <code>7</code> · <code>0</code></p>
+<p><strong>Word bank:</strong> <code>3</code> · <code>2</code> · <code>0</code></p>
 <div class="qa"><p><strong>Write the missing number:</strong></p>
 <div class="write-space short"></div></div>
 
-<h2>4 · Build the Tree 📸</h2>
-<p>Switch to your homework world and <strong>build the tree from the top of this sheet</strong>. Drag the blocks to match this exactly. Remember the colours: <b style="color:#e0681c">1st = x</b> · <b style="color:#6b4ee6">2nd = y</b> · <b style="color:#1a8f5a">3rd = z</b>.</p>
-<div style="display:flex; gap:14px; align-items:flex-start; margin:10px 0; page-break-inside:avoid; break-inside:avoid"><div style="flex:0 0 auto; max-width:210px"><p style="margin:0 0 4px; font-weight:700">🧱 Blocks</p><img src="../assets/week5-tree-blocks.png" alt="MakeCode blocks: on chat command run — fill with brown from ~3 ~0 ~3 to ~5 ~6 ~5 replace, then three fill with green: 1,7,1 to 7,8,7; 2,9,2 to 6,11,6; 3,12,3 to 5,14,5; each replace" style="width:100%; max-width:210px; border-radius:8px; display:block; border:1px solid #e2e2e2"></div><div style="flex:1; min-width:0"><p style="margin:0 0 4px; font-weight:700">🔢 The four boxes</p><p style="margin:0 0 6px"><b>Trunk</b> (brown): from (3, 0, 3) to (5, 6, 5)</p><p style="margin:0 0 6px"><b>Cap 1</b> (green): from (1, 7, 1) to (7, 8, 7)</p><p style="margin:0 0 6px"><b>Cap 2</b> (green): from (2, 9, 2) to (6, 11, 6)</p><p style="margin:0"><b>Cap 3</b> (green): from (3, 12, 3) to (5, 14, 5)</p></div></div>
-
-<p>Send a <strong>photo or video</strong> of your tree, then explain what you did. Write 2 or 3 sentences.</p>
-<div class="qa"><blockquote>
-<p>My trunk is … tall (the <strong>y</strong> number went up to …).</p>
-<p>The number that grew for each box was <strong>y</strong>, which means …</p>
-<p>My cap gets smaller because each box's <strong>x</strong> and <strong>z</strong> …</p>
+<h2>4 · Tell Me What You Built 📸</h2>
+<p><strong>Warm-up:</strong> in your world, place 2 gray blocks on top of each other — a little body.</p>
+<p><strong>Now build a small statue.</strong> Stack 3 gray blocks for the body, then 1 white block on top for the head.</p>
+<blockquote>
+<p>🧱 Recipe (stand on your home spot first):
+- body: gray at (3, 0, 3), then (3, 1, 3), then (3, 2, 3)
+- head: white at (3, 3, 3)</p>
 </blockquote>
-<div class="write-space tall" style="min-height: 220px"></div></div>
+<p>Send a <strong>photo or video</strong>, then write 2 or 3 sentences.</p>
+<div class="qa"><blockquote>
+<p>I built a statue with a body and a …</p>
+<p>To go up I changed the … number.</p>
+<p>My head sits at (x = …, y = …, z = …).</p>
+</blockquote>
+<div class="write-space tall" style="min-height: 240px"></div></div>
 
 <h2>5 · Record Your Walkthrough 🎥</h2>
-<p>Take a video on your phone (or a parent's phone) while you show your tree. Talk like you are teaching a friend. Try to use these words: <strong>fill</strong>, <strong>box</strong>, <strong>x</strong>, <strong>y</strong>, <strong>z</strong>, <strong>trunk</strong>, <strong>cap</strong>.</p>
+<p>Take a short video of your statue. Try to use these words: <strong>x</strong>, <strong>y</strong>, <strong>z</strong>, <strong>up</strong>, <strong>head</strong>, <strong>home spot</strong>.</p>
 <blockquote>
 <ol>
-<li>Show your tree from the bottom up to the top.</li>
-<li>Point at one cap box and say its <strong>y</strong> number (how high it is).</li>
-<li>Show two boxes and say which one is <strong>wider</strong>.</li>
+<li>Show your home spot and stand on it.</li>
+<li>Point at the body and read one block: "x …, y …, z …".</li>
+<li>Point at the head and say which number made it go up.</li>
 </ol>
 </blockquote>
 <div class="qa"><p><strong>Write what you will say in your video.</strong> You can read from it while filming.</p>
-<div class="write-space tall" style="min-height: 220px"></div></div>
+<div class="write-space tall" style="min-height: 240px"></div></div>
 
 <hr />
 <h3>Submit ✅</h3>

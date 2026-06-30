@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>🐉 M003 Week 6 — English Worksheet (Intermediate)</title>
+<style>
+@page { size: A4; margin: 18mm 16mm 22mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-family: "Inter", "Segoe UI", system-ui, sans-serif; color: #1a1a2e; }
+body { font-size: 15px; line-height: 1.55; }
+
+.cover { border-bottom: 3px solid #ff7849; padding-bottom: 14px; margin-bottom: 20px; }
+.brand { font-size: 14px; font-weight: 800; color: #ff7849; letter-spacing: .06em; }
+h1 { font-size: 28px; color: #6b4ee6; margin: 8px 0 6px; line-height: 1.25; }
+h2 { font-size: 19px; color: #6b4ee6; margin: 22px 0 12px; padding-top: 10px; border-top: 1px solid #eee; page-break-before: always; }
+section.first h2, h2:first-of-type { border-top: none; padding-top: 0; page-break-before: avoid; }
+h3, h4 { font-size: 15px; margin: 14px 0 8px; color: #1a1a2e; }
+p { margin: 8px 0; }
+strong { color: #1a1a2e; }
+em { color: #555; }
+
+ul, ol { margin: 8px 0 8px 24px; }
+li { margin: 3px 0; }
+
+/* Grids (e.g. pixel-art coordinate grids) render as light graph paper. */
+table { border-collapse: collapse; margin: 12px 0; }
+th, td { border: 1px solid #ddd; padding: 4px 9px; text-align: center; font-size: 14px; }
+th { background: #faf7ff; color: #6b4ee6; font-weight: 700; }
+
+pre {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 13.5px;
+  background: #1e1e2e;
+  color: #b9f6ca;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 10px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  page-break-inside: avoid;
+  line-height: 1.5;
+}
+pre code { background: transparent; padding: 0; color: inherit; }
+code {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  background: #fff1e8;
+  color: #ff7849;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+blockquote {
+  margin: 10px 0;
+  padding: 10px 16px;
+  background: #fff6ef;
+  border-left: 3px solid #ff7849;
+  border-radius: 0 6px 6px 0;
+  color: #6a3a1c;
+}
+
+.write-space {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #ffffff 0,
+    #ffffff 27px,
+    #d4d4d4 27px,
+    #d4d4d4 28px
+  );
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  min-height: 114px;
+  margin: 10px 0 20px;
+  page-break-inside: avoid;
+}
+.write-space.short { min-height: 86px; }
+.write-space.tall { min-height: 170px; }
+
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
+hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
+
+.meta { color: #666; font-size: 13px; margin: 0 0 14px; }
+.answer-lines {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 14px 16px;
+  background: #fafafa;
+  white-space: pre;
+  line-height: 2.2;
+}
+
+footer {
+  position: fixed;
+  bottom: 10mm; left: 16mm; right: 16mm;
+  text-align: center;
+  font-size: 10px;
+  color: #aaa;
+}
+footer b { color: #ff7849; }
+</style>
+</head>
+<body>
+<div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
+<h1>🐉 M003 Week 6 — English Worksheet (Intermediate)</h1>
+<p><strong>Topic:</strong> Recreate the Ender Dragon (x, y, z) · <strong>Course:</strong> 3D Coordinates · <strong>Level:</strong> Intermediate · <strong>Time:</strong> about 40 minutes</p>
+<p>A big blocky <strong>ender dragon</strong> stands in your world — black blocks, purple eyes. A big model is just a set of <strong>parts</strong>: a long <strong>body</strong>, a <strong>head</strong> at the front, and two <strong>wings</strong> that spread out. Today you build the body, the head, and two simple wings. Every block uses <strong>(x, y, z)</strong> — x <strong>across</strong>, y <strong>up</strong>, z <strong>forward</strong> (deep). The body is <strong>long along z</strong>. The wings <strong>spread along x</strong>.</p>
+<blockquote>
+<p>🔴 Stand on your <strong>home spot</strong> (red block) every run. Move your feet, move your head.</p>
+</blockquote>
+<h2>1 · Predict 🔮</h2>
+<p>Read each code. Write your full prediction.</p>
+<pre><code>fill black from (0, 6, 0) to (0, 6, 8)
+</code></pre>
+<div class="qa"><p><strong>One block wide, long along z. Across, up, or deeper? How long?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code>fill black from (1, 6, 4) to (4, 6, 4)
+</code></pre>
+<div class="qa"><p><strong>This is one wing. Which number changes? Does it go left/right (x), up (y), or deep (z)?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code>fill black from (0, 6, 0) to (0, 6, 8)
+place black block at (0, 7, 9)
+</code></pre>
+<div class="qa"><p><strong>The body, then the head. Is the head in front of the body or behind it? Higher or same height?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>2 · Spot the Bug 🐛</h2>
+<p><strong>Bug A</strong> — This should be a <strong>long body</strong> running deep (along z), from (0, 6, 0) to (0, 6, 8). Right now it is only one block.</p>
+<pre><code>fill black from (0, 6, 0) to (0, 6, 0)
+</code></pre>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug B</strong> — This should be a <strong>wing</strong> spreading out to the side (along x), from (1, 6, 4) to (4, 6, 4). Right now it grows <strong>up</strong> instead of out.</p>
+<pre><code>fill black from (1, 6, 4) to (1, 9, 4)
+</code></pre>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>3 · Tell Me What You Built 📸</h2>
+<p>Look at the dragon in your world. Walk around it. Then build your own on your home spot, part by part:</p>
+<pre><code>fill black from (0, 6, 0) to (0, 6, 8)
+place black block at (0, 7, 9)
+fill black from (1, 6, 4) to (4, 6, 4)
+fill black from (-4, 6, 4) to (-1, 6, 4)
+</code></pre>
+<p>That is body, head, right wing, left wing. Add two <strong>purple</strong> eye blocks on the head. Make the wings match — same length on both sides.</p>
+<p>Send a photo or video. Then finish these — 4 to 6 sentences.</p>
+<div class="qa"><blockquote>
+<p>First, I built the body. It runs deep, so I changed the … number.</p>
+<p>My head block is at (x = …, y = …, z = …).</p>
+<p>The right wing goes from ( … , … , … ) to ( … , … , … ).</p>
+<p>To make the left wing match, I …</p>
+<p>One tricky moment was when …</p>
+<p>If I had more time, I would …</p>
+</blockquote>
+<div class="write-space tall" style="min-height: 320px"></div></div>
+
+<h2>4 · Record Your Walkthrough 🎥</h2>
+<p>Film yourself showing your dragon. Use these words: <strong>x</strong>, <strong>y</strong>, <strong>z</strong>, <strong>body</strong>, <strong>head</strong>, <strong>wing</strong>, <strong>home spot</strong>.</p>
+<blockquote>
+<ol>
+<li>Show your home spot. Why stand on it every run?</li>
+<li>Point at the body. Say which number made it long.</li>
+<li>Point at one wing. Say which number made it spread out.</li>
+<li>Show that both wings are the same length.</li>
+</ol>
+</blockquote>
+<div class="qa"><p><strong>Plan what you will say:</strong></p>
+<div class="write-space tall" style="min-height: 320px"></div></div>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.</p>
+</body>
+</html>

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>🧊 M003 Week 6 — English Worksheet (Beginner)</title>
+<title>🐉 M003 Week 6 — English Worksheet (Beginner)</title>
 <style>
 @page { size: A4; margin: 18mm 16mm 22mm; }
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -21,6 +21,11 @@ em { color: #555; }
 
 ul, ol { margin: 8px 0 8px 24px; }
 li { margin: 3px 0; }
+
+/* Grids (e.g. pixel-art coordinate grids) render as light graph paper. */
+table { border-collapse: collapse; margin: 12px 0; }
+th, td { border: 1px solid #ddd; padding: 4px 9px; text-align: center; font-size: 14px; }
+th { background: #faf7ff; color: #6b4ee6; font-weight: 700; }
 
 pre {
   font-family: "JetBrains Mono", "Consolas", monospace;
@@ -102,75 +107,80 @@ footer b { color: #ff7849; }
 </head>
 <body>
 <div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
-<h1>🧊 M003 Week 6 — English Worksheet (Beginner)</h1>
-<p><strong>Topic:</strong> Building Things in 3D — Boxes &amp; Rooms · <strong>Course:</strong> 3D Coordinates · <strong>Level:</strong> Beginner · <strong>Time:</strong> about 30 minutes</p>
-<p>This week one command builds a whole box. <code>fill</code> takes <strong>two corners</strong> — each one a full <code>(x, y, z)</code> — and fills everything between them. Remember: <strong>y is height</strong>. Fill with <strong>air</strong> to hollow out the inside and make a room.</p>
+<h1>🐉 M003 Week 6 — English Worksheet (Beginner)</h1>
+<p><strong>Topic:</strong> Recreate the Ender Dragon (x, y, z) · <strong>Course:</strong> 3D Coordinates · <strong>Level:</strong> Beginner · <strong>Time:</strong> about 30 minutes</p>
+<p>A big blocky <strong>ender dragon</strong> stands in your world. It is made of black blocks with purple eyes. The body is one long box. The head is a block at the front. Today you build a <strong>small</strong> dragon: a short body and a head. Every block needs <strong>three</strong> numbers — <strong>(x, y, z)</strong>. x is <strong>across</strong>, y is <strong>up</strong>, z is <strong>forward</strong> (deep).</p>
+<blockquote>
+<p>🔴 Stand on your <strong>home spot</strong> (red block) every run. Move your feet, move your head.</p>
+</blockquote>
 <h2>1 · Predict 🔮</h2>
-<p>Read the steps. Before you imagine it happening, circle or write your answer.</p>
-<pre><code>fill stone from (0, 0, 0) to (4, 3, 4)
+<p>Read each code. Write what you will see.</p>
+<pre><code>fill black from (0, 4, 0) to (0, 4, 5)
 </code></pre>
-<p><strong>Is the box full of stone all the way through? Circle one:</strong> yes · no</p>
-<div class="qa"><p><strong>Why?</strong></p>
+<div class="qa"><p><strong>Only z changes. Does the body go across, up, or deeper? Circle one. Which number changes?</strong></p>
 <div class="write-space short"></div></div>
 
-<pre><code>fill stone from (0, 0, 0) to (4, 3, 4)
-fill air from (1, 1, 1) to (3, 2, 3)
+<pre><code>place black block at (0, 5, 6)
 </code></pre>
-<div class="qa"><p><strong>The second line fills the inside with air. Can you stand inside now? Circle one:</strong> yes · no</p>
+<div class="qa"><p><strong>This is the head. Which number is the height? Is the head higher or lower than the body?</strong></p>
 <div class="write-space short"></div></div>
 
 <h2>2 · Find the Difference 🐛</h2>
-<p>Each pair shows clean steps first, then a broken version of the same idea. Circle what's different and write one short sentence about the bug.</p>
-<p><strong>Pair A</strong> — This should make a <strong>room</strong> you can stand inside.</p>
-<pre><code># clean
-fill stone from (0, 0, 0) to (4, 3, 4)
-fill air from (1, 1, 1) to (3, 2, 3)
+<p>Look at each pair. One is correct. One is broken.</p>
+<p><strong>Pair 1 — make a long body along z.</strong></p>
+<pre><code># correct
+fill black from (0, 4, 0) to (0, 4, 5)
 </code></pre>
-<pre><code># buggy
-fill stone from (0, 0, 0) to (4, 3, 4)
+<pre><code># broken
+fill black from (0, 4, 0) to (0, 4, 0)
 </code></pre>
-<div class="qa"><p><strong>What is wrong? Why can't you go inside the buggy one?</strong></p>
+<div class="qa"><p><strong>Why is the broken one wrong? One sentence.</strong></p>
 <div class="write-space short"></div></div>
 
-<p><strong>Pair B</strong> — <code>fill</code> wants the <strong>small</strong> corner first, then the big corner.</p>
-<pre><code># clean
-fill stone from (0, 0, 0) to (4, 3, 4)
+<p><strong>Pair 2 — put the head at the front, up high.</strong></p>
+<pre><code># correct
+place black block at (0, 5, 6)
 </code></pre>
-<pre><code># buggy
-fill stone from (4, 3, 4) to (0, 0, 0)
+<pre><code># broken
+place black block at (0, 5)
 </code></pre>
-<div class="qa"><p><strong>What is wrong?</strong></p>
+<div class="qa"><p><strong>Why is the broken one wrong? One sentence.</strong></p>
 <div class="write-space short"></div></div>
 
 <h2>3 · Fill the Gap ✏️</h2>
-<p>The room should be <strong>empty inside</strong>. One word is missing. Fill it in using the word bank.</p>
-<pre><code>fill stone from (0, 0, 0) to (4, 3, 4)
-fill ____ from (1, 1, 1) to (3, 2, 3)
+<p>This code makes a short body, then a head at the front. Fill the blanks.</p>
+<pre><code>fill black from (0, 4, 0) to (0, 4, ___)
+place black block at (0, ___, 6)
 </code></pre>
-<p><strong>Word bank:</strong> <code>air</code> · <code>stone</code> · <code>water</code></p>
-<div class="qa"><p><strong>Write the missing word:</strong></p>
+<blockquote>
+<p><strong>Word bank:</strong> 5 · 5</p>
+</blockquote>
+<div class="qa"><p><strong>Write the two numbers.</strong></p>
 <div class="write-space short"></div></div>
 
 <h2>4 · Tell Me What You Built 📸</h2>
-<p>Now switch to your homework world. Build a <strong>hollow room</strong>: fill a stone box, then fill the inside with air. When you finish, come back here.</p>
-<p>Send a photo or video of you standing inside your room, then explain what you did. Use these sentence starters — write 2 or 3 sentences.</p>
+<p>First, build this tiny body on your home spot:</p>
+<pre><code>fill black from (0, 4, 0) to (0, 4, 3)
+</code></pre>
+<p>Now look at the dragon in your world. Build a <strong>body and a head</strong>: make a short black box for the body, then place a black block at the front for the head. Add two <strong>purple</strong> blocks for eyes if you like.</p>
+<p>Send a photo or video. Then finish these — 2 or 3 sentences.</p>
 <div class="qa"><blockquote>
-<p>My two corners were …</p>
-<p>To make it hollow, I …</p>
-<p>One tricky moment was when …</p>
+<p>I built the dragon's …</p>
+<p>My body goes deeper, so I changed the … number.</p>
+<p>My head block is at (x = …, y = …, z = …).</p>
 </blockquote>
 <div class="write-space tall" style="min-height: 240px"></div></div>
 
 <h2>5 · Record Your Walkthrough 🎥</h2>
-<p>Take a video on your phone (or a parent's phone) while you show your room in the world. Talk like you are teaching a friend. Try to use these words: <strong>fill</strong>, <strong>corner</strong>, <strong>hollow</strong>, <strong>air</strong>.</p>
+<p>Film yourself showing your small dragon. Try to use these words: <strong>x</strong>, <strong>y</strong>, <strong>z</strong>, <strong>body</strong>, <strong>head</strong>, <strong>home spot</strong>.</p>
 <blockquote>
 <ol>
-<li>Show your room from outside, then walk inside it.</li>
-<li>Point at one corner and say its coordinate out loud — all three numbers.</li>
-<li>Say in your own words what <code>fill air</code> does.</li>
+<li>Show your home spot. Why stand on it every time?</li>
+<li>Point at the body. Say which number made it long.</li>
+<li>Point at the head. Say its three numbers out loud.</li>
 </ol>
 </blockquote>
-<div class="qa"><p><strong>Write what you will say in your video.</strong> You can read from it while filming.</p>
+<div class="qa"><p><strong>Plan what you will say:</strong></p>
 <div class="write-space tall" style="min-height: 240px"></div></div>
 
 <hr />
