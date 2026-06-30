@@ -1,0 +1,151 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head><meta charset='utf-8'>
+<title>🏘️ M000 Week 8 — English Worksheet (Intermediate)</title>
+<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
+<style>
+@page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
+div.WordSection1 { page: WordSection1; }
+body { font-family: "Segoe UI", Arial, sans-serif; font-size: 11.5pt; color: #1a1a2e; line-height: 1.5; }
+h1 { font-size: 21pt; color: #6b4ee6; margin: 4px 0 6px; }
+h2 { font-size: 15pt; color: #6b4ee6; border-top: 1px solid #dddddd; padding-top: 8px; margin: 18px 0 10px; }
+h3, h4 { font-size: 11.5pt; margin: 12px 0 6px; }
+p { margin: 7px 0; }
+.brand { font-size: 10.5pt; font-weight: bold; color: #ff7849; letter-spacing: .06em;
+         border-bottom: 2px solid #ff7849; padding-bottom: 6px; margin-bottom: 14px; }
+table { border-collapse: collapse; margin: 10px 0; }
+th, td { border: 1px solid #c8c8c8; padding: 4px 9px; text-align: center; }
+th { background: #f3eefc; color: #6b4ee6; font-weight: bold; }
+pre { font-family: Consolas, "Courier New", monospace; font-size: 10.5pt; background: #f4f4f5;
+      border: 1px solid #dddddd; padding: 8px 10px; white-space: pre-wrap; }
+pre code { background: transparent; color: #1a1a2e; }
+code { font-family: Consolas, "Courier New", monospace; background: #fff1e8; color: #d6531f; padding: 0 3px; }
+blockquote { border-left: 3px solid #ff7849; background: #fff6ef; padding: 8px 12px;
+             color: #6a3a1c; margin: 9px 0; }
+ul, ol { margin: 7px 0 7px 26px; }
+p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
+.footer { color: #999999; font-size: 8.5pt; text-align: center; margin-top: 18px;
+          border-top: 1px solid #eeeeee; padding-top: 6px; }
+.footer b { color: #ff7849; }
+</style></head>
+<body><div class=WordSection1>
+<div class="brand">📚 ENGLISH CODING · 영어코딩</div>
+<h1>🏘️ M000 Week 8 — English Worksheet (Intermediate)</h1>
+<p><strong>Topic:</strong> Build a Village (Final Project) · <strong>Course:</strong> Builder Basics · <strong>Level:</strong> Intermediate · <strong>Time:</strong> about 38 minutes</p>
+<hr />
+<h2>1 · Predict 🔮</h2>
+<p>Read each set of steps. Before you imagine the agent doing it, write what you think it builds and why.</p>
+<pre><code>repeat 4 times:
+    repeat 3 times:
+        place block down
+        move forward
+    turn right
+repeat 3 times:
+    destroy block down
+    move down by 1
+</code></pre>
+<p><strong>Which part of the village is this — a house, a well, or a farm? How do you know?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code># Stage 1
+[house]
+# Stage 2
+move to next spot
+[well]
+# Stage 3
+move to next spot
+[farm]
+</code></pre>
+<p><strong>This is the skeleton for the whole village. What does the agent do between each stage, and why does it matter?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>2 · Spot the Bug 🐛</h2>
+<p>Each block below was meant to do something, but it is broken. Read the goal, then write a fixed version and explain the bug in one or two sentences.</p>
+<p><strong>Bug A</strong> — The village should have a <strong>house and a well</strong>, side by side.</p>
+<p><em>Goal: the agent should end up with two structures, not one.</em></p>
+<pre><code># buggy
+[house]
+move to next spot
+</code></pre>
+<p><strong>Write the fixed skeleton:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>What was missing, and why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug B</strong> — The well must <strong>not</strong> land on top of the house.</p>
+<p><em>Hint: look at what is between the two structures.</em></p>
+<pre><code># buggy
+[house]
+[well]
+</code></pre>
+<p><strong>Write the fixed skeleton:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was the original wrong, and why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug C</strong> — The roof should sit <strong>on top</strong> of the walls, but here the agent stays on the ground after building the walls.</p>
+<p><em>Hint: after the walls finish, the agent is still at ground level. Where does it need to be?</em></p>
+<pre><code>repeat 3 times:
+    repeat 4 times:
+        place block down
+        move forward
+    turn right
+# now place the roof
+repeat 3 times:
+    place block down
+    move forward
+</code></pre>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong, and why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>3 · Fill the Gap ✏️</h2>
+<p>Here is the skeleton of a three-part village. One stage is missing. Fill it in so all three structures end up in a row.</p>
+<pre><code># Stage 1
+[house]
+move to next spot
+# Stage 2
+[well]
+# Stage 3
+move to next spot
+____________
+</code></pre>
+<p><strong>Write the missing stage, and explain why the agent needs the "move to next spot" line above it.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>4 · Tell Me What You Built 📸</h2>
+<p>Now switch to your homework world and build your <strong>final project</strong>: a village with a <strong>house and one more structure</strong> — a well or a farm, your choice. Add a third structure if you have time. When you finish, come back here.</p>
+<p>Send a photo or video of your village, then explain what you did. Use these sentence starters — write 3 or 4 sentences.</p>
+<blockquote>
+<p>First, I built the …</p>
+<p>Then I built the …</p>
+<p>To move between structures, the agent …</p>
+<p>The thing I am most proud of is …</p>
+</blockquote>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>5 · Record Your Walkthrough 🎥</h2>
+<p>Take a video on your phone (or a parent's phone) and walk the camera through your village. Talk like you are teaching a friend who has never seen it. Try to use these words: <strong>village</strong>, <strong>house</strong>, <strong>roof</strong>, <strong>well</strong>, <strong>farm</strong>.</p>
+<blockquote>
+<ol>
+<li>Walk around the village and show each building one by one.</li>
+<li>Say which building you made first and which came next.</li>
+<li>Show one bug you hit and how you fixed it.</li>
+<li>Say what you would add next if you had more time.</li>
+</ol>
+</blockquote>
+<p><strong>Write what you will say in your video.</strong> Plan it here first — you can read from it while filming.</p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk. This is the <strong>last week</strong> of Builder Basics — well done!</p>
+<div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>
+</div></body></html>

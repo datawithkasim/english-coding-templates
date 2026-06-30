@@ -1,0 +1,121 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head><meta charset='utf-8'>
+<title>🏠 Builder Basics — The Sloped Roof (Extension · Intermediate)</title>
+<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
+<style>
+@page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
+div.WordSection1 { page: WordSection1; }
+body { font-family: "Segoe UI", Arial, sans-serif; font-size: 11.5pt; color: #1a1a2e; line-height: 1.5; }
+h1 { font-size: 21pt; color: #6b4ee6; margin: 4px 0 6px; }
+h2 { font-size: 15pt; color: #6b4ee6; border-top: 1px solid #dddddd; padding-top: 8px; margin: 18px 0 10px; }
+h3, h4 { font-size: 11.5pt; margin: 12px 0 6px; }
+p { margin: 7px 0; }
+.brand { font-size: 10.5pt; font-weight: bold; color: #ff7849; letter-spacing: .06em;
+         border-bottom: 2px solid #ff7849; padding-bottom: 6px; margin-bottom: 14px; }
+table { border-collapse: collapse; margin: 10px 0; }
+th, td { border: 1px solid #c8c8c8; padding: 4px 9px; text-align: center; }
+th { background: #f3eefc; color: #6b4ee6; font-weight: bold; }
+pre { font-family: Consolas, "Courier New", monospace; font-size: 10.5pt; background: #f4f4f5;
+      border: 1px solid #dddddd; padding: 8px 10px; white-space: pre-wrap; }
+pre code { background: transparent; color: #1a1a2e; }
+code { font-family: Consolas, "Courier New", monospace; background: #fff1e8; color: #d6531f; padding: 0 3px; }
+blockquote { border-left: 3px solid #ff7849; background: #fff6ef; padding: 8px 12px;
+             color: #6a3a1c; margin: 9px 0; }
+ul, ol { margin: 7px 0 7px 26px; }
+p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
+.footer { color: #999999; font-size: 8.5pt; text-align: center; margin-top: 18px;
+          border-top: 1px solid #eeeeee; padding-top: 6px; }
+.footer b { color: #ff7849; }
+</style></head>
+<body><div class=WordSection1>
+<div class="brand">📚 ENGLISH CODING · 영어코딩</div>
+<h1>🏠 Builder Basics — The Sloped Roof (Extension · Intermediate)</h1>
+<p><strong>Topic:</strong> Variables · <strong>Course:</strong> Builder Basics · <strong>Type:</strong> Extension Activity · <strong>Level:</strong> Intermediate · <strong>Time:</strong> about 38 minutes</p>
+<blockquote>
+<p>🧩 This is a bonus challenge, not a weekly lesson. Try it once you are comfortable building square rings with loops and you want to make a roof that steps up to a point.</p>
+</blockquote>
+<p>A real roof is not one flat row — it is a stack of <strong>square rings</strong> that get smaller as they go up. The Sloped Roof world already has the working program inside it: when you type <code>slope</code> in the chat, it builds the whole roof for you. Your job in this worksheet is to understand the <strong>idea</strong> behind it, not to type any code.</p>
+<p>Here is the idea. The program stores the side length of a ring in a <strong>variable</strong> called <code>roof_len</code>. It starts at <strong>7</strong>, so the bottom ring is a square 7 stairs long on each side. After each ring is finished, the program steps <strong>up and inward</strong>, then shrinks the variable by 2. So the next ring is shorter, the one after that shorter still, until the roof reaches a tiny peak. Four rings get built in total, with side lengths of <strong>7, 5, 3, and 1</strong>. Change the starting number and the whole roof changes shape.</p>
+<hr />
+<h2>1 · Predict 🔮</h2>
+<p>The variable <code>roof_len</code> starts at <strong>7</strong>. Each layer the agent walks a square ring with 4 sides, each side <code>roof_len</code> stairs long, then shrinks <code>roof_len</code> by 2 before stepping up to the next ring. The four rings have sides of <strong>7, 5, 3, 1</strong>.</p>
+<p><strong>What shape do the rings make as they stack up? Describe it in one sentence.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>About how many stairs are placed in total across all four rings? Each ring's edge is about 4 × its side length, and the side lengths are 7, 5, 3, 1. Write the four numbers you got, then add them for the total. Show your working — do not just guess.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>2 · Trace the Variable 🔢</h2>
+<p>Walk through the build one ring at a time. For each layer, write the value of <code>roof_len</code> <strong>for that ring</strong> (the side length the agent uses), then the value <strong>after</strong> the variable loses 2 and gets ready for the next ring. Show the subtraction, not just the answer.</p>
+<table>
+<thead>
+<tr>
+<th>Layer</th>
+<th><code>roof_len</code> for this ring</th>
+<th><code>roof_len</code> after it loses 2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>After the 4th ring, what is the value of <code>roof_len</code>? Why does the roof stop here instead of building one more ring?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>3 · Reason About the Variable 🧠</h2>
+<p>No code here — just think it through.</p>
+<p><strong>The roof comes out FLAT, like a box, instead of sloped. Every ring ended up the same size. Which part of the rule about the variable must have gone wrong for that to happen? Explain in one or two sentences.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Now imagine the variable lost </strong>1<strong> each ring instead of </strong>2<strong>. How would the roof look different — would the sides be steeper or gentler? Would there be more rings or fewer before it reached the peak? Explain why.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>4 · Make It Yours ✏️</h2>
+<p>The starting value of <code>roof_len</code> decides how wide the bottom ring is. Because the variable drops by 2 each ring, a bigger starting number takes more rings to shrink all the way down to 1.</p>
+<p><strong>Choose a starting <code>roof_len</code> so the roof has exactly </strong>5 rings<strong> and still shrinks neatly to a peak of 1. What starting value works? List the 5 ring sizes in order, from the widest bottom ring up to the peak.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>One sentence: how did you pick that starting value?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>5 · Build It 📸</h2>
+<p>Open the <strong>Sloped Roof</strong> world. Type <code>slope</code> in the chat to run the build and watch the rings shrink and step up to the peak. Then try the wider <strong>5-ring</strong> version by changing the starting number to the value you chose in Section 4, and run it again.</p>
+<p>When it looks right, send a photo or video to teacher on KakaoTalk. Then explain what you did. Use these starters — write 4 to 6 sentences total.</p>
+<blockquote>
+<p>I used a <strong>variable</strong> called roof_len to …</p>
+<p>Its starting <strong>value</strong> was … and each ring it …</p>
+<p>The variable had to <strong>update</strong> so that …</p>
+<p>My roof has a <strong>slope</strong> because …</p>
+</blockquote>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + a photo or video of your sloped roof to teacher on KakaoTalk.</p>
+<div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>
+</div></body></html>
