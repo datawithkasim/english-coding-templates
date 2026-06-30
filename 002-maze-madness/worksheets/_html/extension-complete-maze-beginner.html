@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>🧩 M002 Extension 4 — Worksheet (Beginner)</title>
+<style>
+@page { size: A4; margin: 18mm 16mm 22mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-family: "Inter", "Segoe UI", system-ui, sans-serif; color: #1a1a2e; }
+body { font-size: 15px; line-height: 1.55; }
+
+.cover { border-bottom: 3px solid #ff7849; padding-bottom: 14px; margin-bottom: 20px; }
+.brand { font-size: 14px; font-weight: 800; color: #ff7849; letter-spacing: .06em; }
+h1 { font-size: 28px; color: #6b4ee6; margin: 8px 0 6px; line-height: 1.25; }
+h2 { font-size: 19px; color: #6b4ee6; margin: 22px 0 12px; padding-top: 10px; border-top: 1px solid #eee; page-break-before: always; }
+section.first h2, h2:first-of-type { border-top: none; padding-top: 0; page-break-before: avoid; }
+h3, h4 { font-size: 15px; margin: 14px 0 8px; color: #1a1a2e; }
+p { margin: 8px 0; }
+strong { color: #1a1a2e; }
+em { color: #555; }
+
+ul, ol { margin: 8px 0 8px 24px; }
+li { margin: 3px 0; }
+
+/* Grids (e.g. pixel-art coordinate grids) render as light graph paper. */
+table { border-collapse: collapse; margin: 12px 0; }
+th, td { border: 1px solid #ddd; padding: 4px 9px; text-align: center; font-size: 14px; }
+th { background: #faf7ff; color: #6b4ee6; font-weight: 700; }
+
+pre {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 13.5px;
+  background: #1e1e2e;
+  color: #b9f6ca;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 10px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  page-break-inside: avoid;
+  line-height: 1.5;
+}
+pre code { background: transparent; padding: 0; color: inherit; }
+code {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  background: #fff1e8;
+  color: #ff7849;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+blockquote {
+  margin: 10px 0;
+  padding: 10px 16px;
+  background: #fff6ef;
+  border-left: 3px solid #ff7849;
+  border-radius: 0 6px 6px 0;
+  color: #6a3a1c;
+}
+
+.write-space {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #ffffff 0,
+    #ffffff 27px,
+    #d4d4d4 27px,
+    #d4d4d4 28px
+  );
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  min-height: 114px;
+  margin: 10px 0 20px;
+  page-break-inside: avoid;
+}
+.write-space.short { min-height: 86px; }
+.write-space.tall { min-height: 170px; }
+
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
+hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
+
+.meta { color: #666; font-size: 13px; margin: 0 0 14px; }
+.answer-lines {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 14px 16px;
+  background: #fafafa;
+  white-space: pre;
+  line-height: 2.2;
+}
+
+footer {
+  position: fixed;
+  bottom: 10mm; left: 16mm; right: 16mm;
+  text-align: center;
+  font-size: 10px;
+  color: #aaa;
+}
+footer b { color: #ff7849; }
+</style>
+</head>
+<body>
+<div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
+<h1>🧩 M002 Extension 4 — Worksheet (Beginner)</h1>
+<p><strong>Topic:</strong> Add Two AND Conditions · <strong>Course:</strong> Maze Madness · <strong>Level:</strong> Extension (Beginner) · <strong>Time:</strong> about 35 minutes</p>
+<p>This is a <strong>challenge</strong> for students who finished the weekly mazes. The agent already knows <strong>four rules</strong> for following redstone through a 3D maze. But it is <strong>not finished</strong> — at two spots it gets stuck because one redstone signal is not enough. You will look at each stuck spot, see <strong>which two signals</strong> are on, and add your own <strong>AND</strong> rule (two things true at once). Then get the agent to the goal.</p>
+<h2>1 · The Four Rules the Agent Knows 🎛️</h2>
+<p>Each rule checks <strong>one</strong> redstone signal and does <strong>one</strong> thing.</p>
+<pre><code>if redstone on the LEFT:
+    turn RIGHT
+if redstone on the RIGHT:
+    turn LEFT
+if redstone BELOW:
+    move UP
+if redstone ABOVE:
+    move DOWN
+</code></pre>
+<p><strong>Draw a line to match each signal to its action. You will reuse these actions in your own rules.</strong></p>
+<table>
+<thead>
+<tr>
+<th>Signal</th>
+<th></th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>redstone on the left</td>
+<td>→</td>
+<td>move up</td>
+</tr>
+<tr>
+<td>redstone below</td>
+<td>→</td>
+<td>turn right</td>
+</tr>
+<tr>
+<td>redstone above</td>
+<td>→</td>
+<td>turn left</td>
+</tr>
+<tr>
+<td>redstone on the right</td>
+<td>→</td>
+<td>move down</td>
+</tr>
+</tbody>
+</table>
+<div class="write-space short"></div>
+
+<h2>2 · AND means BOTH 🧠</h2>
+<p><strong>AND</strong> is true only when <strong>both</strong> things are true.</p>
+<pre><code>if redstone on the LEFT AND redstone BELOW:
+    turn right
+    move up
+</code></pre>
+<div class="qa"><p><strong>(This is just an example.) There is redstone on the left, but NOT below. Is the AND true? Circle one:</strong> yes · no</p>
+<div class="write-space short"></div></div>
+
+<div class="qa"><p><strong>There is redstone on the left AND redstone below. Is the AND true? Circle one:</strong> yes · no</p>
+<div class="write-space short"></div></div>
+
+<div class="qa"><p><strong>When the AND is true, the agent does the action for <em>each</em> signal — so it does TWO things. How many actions does an AND rule with two signals need?</strong></p>
+<div class="write-space short"></div></div>
+
+<h2>3 · Look at the Stuck Spots 🔍</h2>
+<p>Open the <strong>M002 Complete the Maze</strong> world. Type <code>run</code>. The agent stops at <strong>two</strong> spots because two signals are on at once. Walk to each spot and look around the agent.</p>
+<p><strong>Which signals are on at each stuck spot? Tick all you see.</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>left</th>
+<th>right</th>
+<th>below</th>
+<th>above</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Stuck spot 1</strong></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Stuck spot 2</strong></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="write-space short"></div>
+
+<h2>4 · Write Your Two AND Rules ✏️</h2>
+<p>Use the two signals you ticked for each spot, and the actions from the table in section 1.</p>
+<p><strong>Stuck spot 1</strong> — fill in the two signals and the two actions:</p>
+<pre><code>if redstone on the ______ AND redstone ______:
+    ______________
+    ______________
+</code></pre>
+<div class="write-space short"></div>
+
+<div class="qa"><p><strong>Stuck spot 2</strong> — write the whole rule yourself:</p>
+<div class="write-space"></div></div>
+
+<h2>5 · Find the Difference 🐛</h2>
+<p>Each pair shows clean steps first, then a broken version. Circle what is different and write one short sentence about the bug.</p>
+<p><strong>Pair A</strong> — A rule should fire only when <strong>both</strong> signals are on.</p>
+<pre><code># clean
+if redstone on the LEFT AND redstone BELOW:
+    turn right
+    move up
+</code></pre>
+<pre><code># buggy
+if redstone on the LEFT OR redstone BELOW:
+    turn right
+    move up
+</code></pre>
+<div class="qa"><p><strong>What is wrong? With OR, how many of the two does the agent need?</strong></p>
+<div class="write-space short"></div></div>
+
+<p><strong>Pair B</strong> — A rule with two signals needs <strong>two</strong> actions.</p>
+<pre><code># clean
+turn right
+move up
+</code></pre>
+<pre><code># buggy
+turn right
+</code></pre>
+<div class="qa"><p><strong>What is wrong? What does the agent forget to do?</strong></p>
+<div class="write-space short"></div></div>
+
+<h2>6 · Finish the Whole Maze 📸</h2>
+<p>Type <code>run</code> and watch the agent. The goal is to reach the <strong>very end</strong>. If it gets stuck, fix your AND rules and run again.</p>
+<p>When the agent finishes, come back here. Send a photo or video of the agent at the goal, then explain what you did. Use these sentence starters — write 2 or 3 sentences.</p>
+<div class="qa"><blockquote>
+<p>The agent already knew four rules, like …</p>
+<p>At the first stuck spot the two signals were … and …</p>
+<p>An AND rule means the agent needs …</p>
+</blockquote>
+<div class="write-space tall" style="min-height: 240px"></div></div>
+
+<h2>7 · Record Your Walkthrough 🎥</h2>
+<p>Take a video on your phone (or a parent's phone) while the agent solves the maze. Talk like you are teaching a friend. Try to use these words: <strong>redstone</strong>, <strong>AND</strong>, <strong>both</strong>, <strong>turn</strong>, <strong>move up</strong>.</p>
+<blockquote>
+<ol>
+<li>Show the maze and the redstone.</li>
+<li>Type <code>run</code> and show the agent following it.</li>
+<li>Say out loud the two signals your AND rule needs.</li>
+<li>Show the agent reaching the goal.</li>
+</ol>
+</blockquote>
+<div class="qa"><p><strong>Write what you will say in your video.</strong> You can read from it while filming.</p>
+<div class="write-space tall" style="min-height: 240px"></div></div>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.</p>
+</body>
+</html>
