@@ -1,31 +1,30 @@
-# 🧊 M003 Week 6 — English Worksheet (Beginner)
+# 🐉 M003 Week 6 — English Worksheet (Beginner)
 
-**Topic:** Building Things in 3D — Boxes & Rooms · **Course:** 3D Coordinates · **Level:** Beginner · **Time:** about 30 minutes
+**Topic:** Recreate the Ender Dragon (x, y, z) · **Course:** 3D Coordinates · **Level:** Beginner · **Time:** about 30 minutes
 
-This week one command builds a whole box. `fill` takes **two corners** — each one a full `(x, y, z)` — and fills everything between them. Remember: **y is height**. Fill with **air** to hollow out the inside and make a room.
+A big blocky **ender dragon** stands in your world. It is made of black blocks with purple eyes. The body is one long box. The head is a block at the front. Today you build a **small** dragon: a short body and a head. Every block needs **three** numbers — **(x, y, z)**. x is **across**, y is **up**, z is **forward** (deep).
+
+> 🔴 Stand on your **home spot** (red block) every run. Move your feet, move your head.
 
 ---
 
 ## 1 · Predict 🔮
 
-Read the steps. Before you imagine it happening, circle or write your answer.
+Read each code. Write what you will see.
 
 ```
-fill stone from (0, 0, 0) to (4, 3, 4)
+fill black from (0, 4, 0) to (0, 4, 5)
 ```
 
-**Is the box full of stone all the way through? Circle one:** yes · no
-
-**Why?**
+**Only z changes. Does the body go across, up, or deeper? Circle one. Which number changes?**
 
 <div class="write-space short"></div>
 
 ```
-fill stone from (0, 0, 0) to (4, 3, 4)
-fill air from (1, 1, 1) to (3, 2, 3)
+place black block at (0, 5, 6)
 ```
 
-**The second line fills the inside with air. Can you stand inside now? Circle one:** yes · no
+**This is the head. Which number is the height? Is the head higher or lower than the body?**
 
 <div class="write-space short"></div>
 
@@ -33,38 +32,37 @@ fill air from (1, 1, 1) to (3, 2, 3)
 
 ## 2 · Find the Difference 🐛
 
-Each pair shows clean steps first, then a broken version of the same idea. Circle what's different and write one short sentence about the bug.
+Look at each pair. One is correct. One is broken.
 
-**Pair A** — This should make a **room** you can stand inside.
-
-```
-# clean
-fill stone from (0, 0, 0) to (4, 3, 4)
-fill air from (1, 1, 1) to (3, 2, 3)
-```
+**Pair 1 — make a long body along z.**
 
 ```
-# buggy
-fill stone from (0, 0, 0) to (4, 3, 4)
+# correct
+fill black from (0, 4, 0) to (0, 4, 5)
 ```
 
-**What is wrong? Why can't you go inside the buggy one?**
+```
+# broken
+fill black from (0, 4, 0) to (0, 4, 0)
+```
+
+**Why is the broken one wrong? One sentence.**
 
 <div class="write-space short"></div>
 
-**Pair B** — `fill` wants the **small** corner first, then the big corner.
+**Pair 2 — put the head at the front, up high.**
 
 ```
-# clean
-fill stone from (0, 0, 0) to (4, 3, 4)
+# correct
+place black block at (0, 5, 6)
 ```
 
 ```
-# buggy
-fill stone from (4, 3, 4) to (0, 0, 0)
+# broken
+place black block at (0, 5)
 ```
 
-**What is wrong?**
+**Why is the broken one wrong? One sentence.**
 
 <div class="write-space short"></div>
 
@@ -72,16 +70,16 @@ fill stone from (4, 3, 4) to (0, 0, 0)
 
 ## 3 · Fill the Gap ✏️
 
-The room should be **empty inside**. One word is missing. Fill it in using the word bank.
+This code makes a short body, then a head at the front. Fill the blanks.
 
 ```
-fill stone from (0, 0, 0) to (4, 3, 4)
-fill ____ from (1, 1, 1) to (3, 2, 3)
+fill black from (0, 4, 0) to (0, 4, ___)
+place black block at (0, ___, 6)
 ```
 
-**Word bank:** `air` · `stone` · `water`
+> **Word bank:** 5 · 5
 
-**Write the missing word:**
+**Write the two numbers.**
 
 <div class="write-space short"></div>
 
@@ -89,15 +87,21 @@ fill ____ from (1, 1, 1) to (3, 2, 3)
 
 ## 4 · Tell Me What You Built 📸
 
-Now switch to your homework world. Build a **hollow room**: fill a stone box, then fill the inside with air. When you finish, come back here.
+First, build this tiny body on your home spot:
 
-Send a photo or video of you standing inside your room, then explain what you did. Use these sentence starters — write 2 or 3 sentences.
+```
+fill black from (0, 4, 0) to (0, 4, 3)
+```
 
-> My two corners were …
+Now look at the dragon in your world. Build a **body and a head**: make a short black box for the body, then place a black block at the front for the head. Add two **purple** blocks for eyes if you like.
+
+Send a photo or video. Then finish these — 2 or 3 sentences.
+
+> I built the dragon's …
 >
-> To make it hollow, I …
+> My body goes deeper, so I changed the … number.
 >
-> One tricky moment was when …
+> My head block is at (x = …, y = …, z = …).
 
 <div class="write-space tall" style="min-height: 240px"></div>
 
@@ -105,13 +109,13 @@ Send a photo or video of you standing inside your room, then explain what you di
 
 ## 5 · Record Your Walkthrough 🎥
 
-Take a video on your phone (or a parent's phone) while you show your room in the world. Talk like you are teaching a friend. Try to use these words: **fill**, **corner**, **hollow**, **air**.
+Film yourself showing your small dragon. Try to use these words: **x**, **y**, **z**, **body**, **head**, **home spot**.
 
-> 1. Show your room from outside, then walk inside it.
-> 2. Point at one corner and say its coordinate out loud — all three numbers.
-> 3. Say in your own words what `fill air` does.
+> 1. Show your home spot. Why stand on it every time?
+> 2. Point at the body. Say which number made it long.
+> 3. Point at the head. Say its three numbers out loud.
 
-**Write what you will say in your video.** You can read from it while filming.
+**Plan what you will say:**
 
 <div class="write-space tall" style="min-height: 240px"></div>
 

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>👾 M003 Week 7 — English Worksheet (Advanced)</title>
+<style>
+@page { size: A4; margin: 18mm 16mm 22mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-family: "Inter", "Segoe UI", system-ui, sans-serif; color: #1a1a2e; }
+body { font-size: 15px; line-height: 1.55; }
+
+.cover { border-bottom: 3px solid #ff7849; padding-bottom: 14px; margin-bottom: 20px; }
+.brand { font-size: 14px; font-weight: 800; color: #ff7849; letter-spacing: .06em; }
+h1 { font-size: 28px; color: #6b4ee6; margin: 8px 0 6px; line-height: 1.25; }
+h2 { font-size: 19px; color: #6b4ee6; margin: 22px 0 12px; padding-top: 10px; border-top: 1px solid #eee; page-break-before: always; }
+section.first h2, h2:first-of-type { border-top: none; padding-top: 0; page-break-before: avoid; }
+h3, h4 { font-size: 15px; margin: 14px 0 8px; color: #1a1a2e; }
+p { margin: 8px 0; }
+strong { color: #1a1a2e; }
+em { color: #555; }
+
+ul, ol { margin: 8px 0 8px 24px; }
+li { margin: 3px 0; }
+
+/* Grids (e.g. pixel-art coordinate grids) render as light graph paper. */
+table { border-collapse: collapse; margin: 12px 0; }
+th, td { border: 1px solid #ddd; padding: 4px 9px; text-align: center; font-size: 14px; }
+th { background: #faf7ff; color: #6b4ee6; font-weight: 700; }
+
+pre {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 13.5px;
+  background: #1e1e2e;
+  color: #b9f6ca;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 10px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  page-break-inside: avoid;
+  line-height: 1.5;
+}
+pre code { background: transparent; padding: 0; color: inherit; }
+code {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  background: #fff1e8;
+  color: #ff7849;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+blockquote {
+  margin: 10px 0;
+  padding: 10px 16px;
+  background: #fff6ef;
+  border-left: 3px solid #ff7849;
+  border-radius: 0 6px 6px 0;
+  color: #6a3a1c;
+}
+
+.write-space {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #ffffff 0,
+    #ffffff 27px,
+    #d4d4d4 27px,
+    #d4d4d4 28px
+  );
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  min-height: 114px;
+  margin: 10px 0 20px;
+  page-break-inside: avoid;
+}
+.write-space.short { min-height: 86px; }
+.write-space.tall { min-height: 170px; }
+
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
+hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
+
+.meta { color: #666; font-size: 13px; margin: 0 0 14px; }
+.answer-lines {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 14px 16px;
+  background: #fafafa;
+  white-space: pre;
+  line-height: 2.2;
+}
+
+footer {
+  position: fixed;
+  bottom: 10mm; left: 16mm; right: 16mm;
+  text-align: center;
+  font-size: 10px;
+  color: #aaa;
+}
+footer b { color: #ff7849; }
+</style>
+</head>
+<body>
+<div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
+<h1>👾 M003 Week 7 — English Worksheet (Advanced)</h1>
+<p><strong>Topic:</strong> Recreate 2 Mob Heads (x, y, z) · <strong>Course:</strong> 3D Coordinates · <strong>Level:</strong> Advanced · <strong>Time:</strong> about 45 minutes</p>
+<p>Two blocky <strong>mob heads</strong> stand in your world — a <strong>creeper</strong> and a <strong>skeleton</strong>. Each one is a cube with a face on the <strong>front</strong>. Build the <strong>front face first</strong> (keep z the same, read x across and y up), then <strong>add depth</strong> at z = 2, z = 3. This week you build <strong>both</strong> heads side by side — and keep them from overlapping by giving each its own x range.</p>
+<blockquote>
+<p>🔴 Stand on your <strong>home spot</strong> (red block) every run. Move your feet, move your head.</p>
+</blockquote>
+<h2>1 · Predict 🔮</h2>
+<p>Read each set. Write what you will see.</p>
+<pre><code>fill green block from (0, 4, 1) to (4, 8, 1)
+fill green block from (0, 4, 2) to (4, 8, 3)
+</code></pre>
+<div class="qa"><p><strong>The first line is the front face; the second adds depth. How wide (x), how tall (y), and how deep (z) is the finished cube?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code>fill green block from (0, 4, 1) to (4, 8, 3)
+fill white block from (7, 4, 1) to (11, 8, 3)
+</code></pre>
+<div class="qa"><p><strong>Read the x ranges: 0–4 and 7–11. Do the heads overlap? How big is the gap between them?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code>place black block at (1, 7, 1)
+place black block at (1, 7, 2)
+</code></pre>
+<div class="qa"><p><strong>Both eyes share x = 1. One is at z = 1 (front), one at z = 2 (deeper). Are they both on the front face? Where is the second one?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>2 · Spot the Bug 🐛</h2>
+<p>Fix each one. Then say why it was wrong.</p>
+<p><strong>Bug A</strong> — The creeper head should be <strong>3 blocks deep</strong>. Right now it is only the flat front face — paper thin.</p>
+<pre><code>fill green block from (0, 4, 1) to (4, 8, 1)
+</code></pre>
+<p><strong>Hint:</strong> add the same face again at z = 2 and z = 3.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug B</strong> — The two eyes should sit <strong>side by side on the front face</strong> (z stays 1, x changes). This code put the second eye one step <strong>deeper</strong>, so it landed on the <strong>side</strong> of the head, not the face.</p>
+<pre><code>place black block at (1, 7, 1)
+place black block at (1, 7, 2)
+</code></pre>
+<p><strong>Hint:</strong> the face only shows on the front. To move across the front, change x and keep z = 1.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug C</strong> — The code is correct, but both heads came out one step too far <strong>forward</strong> — every block landed one z too deep. Your friend never changed the code.</p>
+<pre><code>(the code matched the heads)
+</code></pre>
+<p><strong>Hint:</strong> the build always starts from where you stand.</p>
+<div class="qa"><p><strong>What did your friend forget before pressing run? Why does it move the whole head?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>3 · Build Both Heads 📸</h2>
+<p>Now switch to your homework world. Build <strong>both</strong> heads side by side, each on its own x range so they never overlap.</p>
+<pre><code># ---- Creeper (x 0–4) ----
+# front face
+fill green block from (0, 4, 1) to (4, 8, 1)
+# depth
+fill green block from (0, 4, 2) to (4, 8, 3)
+# face (front, z = 1)
+place black block at (1, 7, 1)
+place black block at (3, 7, 1)
+place black block at (2, 6, 1)
+place black block at (2, 5, 1)
+place black block at (1, 4, 1)
+place black block at (3, 4, 1)
+
+# ---- Skeleton (x 7–11) ----
+# front face
+fill white block from (7, 4, 1) to (11, 8, 1)
+# depth
+fill white block from (7, 4, 2) to (11, 8, 3)
+# face (front, z = 1)
+place black block at (8, 7, 1)
+place black block at (10, 7, 1)
+place black block at (9, 6, 1)
+place black block at (8, 5, 1)
+place black block at (9, 5, 1)
+place black block at (10, 5, 1)
+</code></pre>
+<p>The two heads use different x ranges (0–4 and 7–11) with a gap, so they never crash into each other.</p>
+<p>Send a photo. Then explain what you did. Use these sentence starters — write 4 to 6 sentences total.</p>
+<div class="qa"><blockquote>
+<p>I built the front face of each head first by …</p>
+<p>I added depth by changing the … number to 2 and 3.</p>
+<p>My two heads do not overlap because their x ranges are … and …</p>
+<p>The faces stay on the front because their z is …</p>
+<p>One head went wrong when …</p>
+<p>Next time I would …</p>
+</blockquote>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<h2>4 · Record Your Walkthrough 🎥</h2>
+<p>Film yourself showing both heads. Try to use these words: <strong>x</strong>, <strong>y</strong>, <strong>z</strong>, <strong>front face</strong>, <strong>depth</strong>, <strong>overlap</strong>, <strong>home spot</strong>.</p>
+<blockquote>
+<ol>
+<li>Show your home spot. Why stand on it every run?</li>
+<li>Walk around both heads — show a front face and a plain side.</li>
+<li>Say the x range of each head and why they don't overlap.</li>
+<li>Say in your own words how you turned a flat face into a deep cube.</li>
+</ol>
+</blockquote>
+<div class="qa"><p><strong>Plan what you will say:</strong></p>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.</p>
+</body>
+</html>

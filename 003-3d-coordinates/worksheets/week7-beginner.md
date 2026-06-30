@@ -1,30 +1,32 @@
-# 🧊 M003 Week 7 — English Worksheet (Beginner)
+# 👾 M003 Week 7 — English Worksheet (Beginner)
 
-**Topic:** Designing the Museum · **Course:** 3D Coordinates · **Level:** Beginner · **Time:** about 30 minutes
+**Topic:** Recreate 2 Mob Heads (x, y, z) · **Course:** 3D Coordinates · **Level:** Beginner · **Time:** about 30 minutes
 
-A museum needs three things you already know: a **floor** (x, z), **pictures on the walls** (x, y), and **sculptures on pedestals** (x, y, z). This week you design **one corner** of a museum and plan where each piece goes.
+Two blocky **mob heads** stand in your world — a **creeper** and a **skeleton**. Each one is a cube with a face on the **front**. Every block needs **three** numbers: **(x, y, z)**. x is **across**, y is **up**, z is **forward** (deep). Look at one head, then build a small cube head of your own.
+
+> 🔴 Stand on your **home spot** (red block) every run. Move your feet, move your head.
 
 ---
 
 ## 1 · Predict 🔮
 
-Read the steps. Before you imagine it happening, circle or write your answer.
+Read the steps. Circle or write your answer.
 
 ```
-fill stone from (2, 0, 2) to (4, 1, 4)
+place green block at (0, 4, 1)
+place green block at (0, 4, 2)
 ```
 
-**This is a short, solid box — a **pedestal** to stand art on. It fills up to height 1. Is the **top** of the pedestal at height 2? Circle one:** yes · no
-
-**Why?**
+**Only z changes. Circle one:** across · up · deeper
 
 <div class="write-space short"></div>
 
 ```
-place gold block at (3, 2, 3)
+place green block at (0, 4, 1)
+place green block at (0, 5, 1)
 ```
 
-**The pedestal above fills up to height 1, so its top is at height 2. Does this gold block sit right on top of the pedestal? Circle one:** yes · no
+**Only y changes. Circle one:** across · up · deeper
 
 <div class="write-space short"></div>
 
@@ -32,41 +34,37 @@ place gold block at (3, 2, 3)
 
 ## 2 · Find the Difference 🐛
 
-Each pair shows clean steps first, then a broken version of the same idea. Circle what's different and write one short sentence about the bug.
+**Correct** first, then **broken**. Write one short sentence about the bug.
 
-**Pair A** — The sculpture should sit **on top** of the pedestal, at height 2.
-
-```
-# clean
-fill stone from (2, 0, 2) to (4, 1, 4)
-place gold block at (3, 2, 3)
-```
+**Pair A** — An eye should be on the **front** at (2, 5, 1).
 
 ```
-# buggy
-fill stone from (2, 0, 2) to (4, 1, 4)
-place gold block at (3, 0, 3)
+# correct
+place black block at (2, 5, 1)
 ```
 
-**What is wrong? Where does the buggy gold block end up?**
+```
+# broken
+place black block at (2, 5, 2)
+```
+
+**What is wrong? Which number is different?**
 
 <div class="write-space short"></div>
 
-**Pair B** — Two artworks should stand in **different spots** on the floor so they don't crash into each other.
+**Pair B** — The cube should be **2 blocks deep**: z goes 1 then 2.
 
 ```
-# clean
-place gold block at (2, 2, 2)
-place blue block at (6, 2, 6)
+# correct
+fill green block from (0, 4, 1) to (2, 6, 2)
 ```
 
 ```
-# buggy
-place gold block at (2, 2, 2)
-place blue block at (2, 2, 2)
+# broken
+fill green block from (0, 4, 1) to (2, 6, 1)
 ```
 
-**What is wrong?**
+**What is wrong? How deep is the broken one?**
 
 <div class="write-space short"></div>
 
@@ -74,16 +72,17 @@ place blue block at (2, 2, 2)
 
 ## 3 · Fill the Gap ✏️
 
-The pedestal fills up to height 1, so its **top** is at height 2. The sculpture must start there. One number is missing. Fill it in using the word bank.
+The cube is **2 blocks deep**, but the eyes go on the **front** (z = 1). Fill the blanks.
 
 ```
-fill stone from (2, 0, 2) to (4, 1, 4)
-place gold block at (3, ____, 3)
+fill green block from (0, 4, 1) to (2, 6, __)
+place black block at (0, 5, __)
+place black block at (2, 5, __)
 ```
 
-**Word bank:** `2` · `0` · `9`
+**Word bank:** `1` · `2`
 
-**Write the missing number:**
+**Write the three numbers:**
 
 <div class="write-space short"></div>
 
@@ -91,15 +90,23 @@ place gold block at (3, ____, 3)
 
 ## 4 · Tell Me What You Built 📸
 
-Now switch to your homework world. Design **one museum corner**: build a pedestal, put a small sculpture on top of it, and draw a small pixel-art picture on the wall behind it. When you finish, come back here.
+First, build this small green cube and add two eyes on the **front**.
 
-Send a photo or video of your corner, then explain what you did. Use these sentence starters — write 2 or 3 sentences.
+```
+fill green block from (0, 4, 1) to (2, 6, 2)
+place black block at (0, 5, 1)
+place black block at (2, 5, 1)
+```
 
-> My pedestal is at …
+This is a **3×3 front, 2 blocks deep**, with two eyes on the front.
+
+Now pick **one** head in the world (creeper or skeleton). Build a small cube head like it on your home spot. Send a photo. Then finish these — 2 or 3 sentences.
+
+> I built the …
 >
-> My sculpture sits on top because its height starts at …
+> My cube is … blocks deep.
 >
-> My wall picture shows …
+> The eyes are on the front because their z stays …
 
 <div class="write-space tall" style="min-height: 240px"></div>
 
@@ -107,11 +114,11 @@ Send a photo or video of your corner, then explain what you did. Use these sente
 
 ## 5 · Record Your Walkthrough 🎥
 
-Take a video on your phone (or a parent's phone) while you show your museum corner. Talk like you are teaching a friend. Try to use these words: **museum**, **pedestal**, **sculpture**, **picture**.
+Take a video on your phone (or a parent's phone) while you show your cube head. Try to use these words: **x**, **y**, **z**, **across**, **up**, **deep**.
 
-> 1. Show the pedestal and say its coordinates.
-> 2. Show the sculpture on top and say what height it starts at.
-> 3. Point at the wall picture and say what it shows.
+> 1. Show your home spot. Why stand on it every run?
+> 2. Walk around your cube head — show the front and a side.
+> 3. Point at one eye and say "x …, y …, z …".
 
 **Write what you will say in your video.** You can read from it while filming.
 

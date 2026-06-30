@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>🧊 M003 Week 7 — English Worksheet (Beginner)</title>
+<title>👾 M003 Week 7 — English Worksheet (Beginner)</title>
 <style>
 @page { size: A4; margin: 18mm 16mm 22mm; }
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -21,6 +21,11 @@ em { color: #555; }
 
 ul, ol { margin: 8px 0 8px 24px; }
 li { margin: 3px 0; }
+
+/* Grids (e.g. pixel-art coordinate grids) render as light graph paper. */
+table { border-collapse: collapse; margin: 12px 0; }
+th, td { border: 1px solid #ddd; padding: 4px 9px; text-align: center; font-size: 14px; }
+th { background: #faf7ff; color: #6b4ee6; font-weight: 700; }
 
 pre {
   font-family: "JetBrains Mono", "Consolas", monospace;
@@ -102,74 +107,80 @@ footer b { color: #ff7849; }
 </head>
 <body>
 <div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
-<h1>🧊 M003 Week 7 — English Worksheet (Beginner)</h1>
-<p><strong>Topic:</strong> Designing the Museum · <strong>Course:</strong> 3D Coordinates · <strong>Level:</strong> Beginner · <strong>Time:</strong> about 30 minutes</p>
-<p>A museum needs three things you already know: a <strong>floor</strong> (x, z), <strong>pictures on the walls</strong> (x, y), and <strong>sculptures on pedestals</strong> (x, y, z). This week you design <strong>one corner</strong> of a museum and plan where each piece goes.</p>
+<h1>👾 M003 Week 7 — English Worksheet (Beginner)</h1>
+<p><strong>Topic:</strong> Recreate 2 Mob Heads (x, y, z) · <strong>Course:</strong> 3D Coordinates · <strong>Level:</strong> Beginner · <strong>Time:</strong> about 30 minutes</p>
+<p>Two blocky <strong>mob heads</strong> stand in your world — a <strong>creeper</strong> and a <strong>skeleton</strong>. Each one is a cube with a face on the <strong>front</strong>. Every block needs <strong>three</strong> numbers: <strong>(x, y, z)</strong>. x is <strong>across</strong>, y is <strong>up</strong>, z is <strong>forward</strong> (deep). Look at one head, then build a small cube head of your own.</p>
+<blockquote>
+<p>🔴 Stand on your <strong>home spot</strong> (red block) every run. Move your feet, move your head.</p>
+</blockquote>
 <h2>1 · Predict 🔮</h2>
-<p>Read the steps. Before you imagine it happening, circle or write your answer.</p>
-<pre><code>fill stone from (2, 0, 2) to (4, 1, 4)
+<p>Read the steps. Circle or write your answer.</p>
+<pre><code>place green block at (0, 4, 1)
+place green block at (0, 4, 2)
 </code></pre>
-<p><strong>This is a short, solid box — a </strong>pedestal<strong> to stand art on. It fills up to height 1. Is the </strong>top<strong> of the pedestal at height 2? Circle one:</strong> yes · no</p>
-<div class="qa"><p><strong>Why?</strong></p>
+<div class="qa"><p><strong>Only z changes. Circle one:</strong> across · up · deeper</p>
 <div class="write-space short"></div></div>
 
-<pre><code>place gold block at (3, 2, 3)
+<pre><code>place green block at (0, 4, 1)
+place green block at (0, 5, 1)
 </code></pre>
-<div class="qa"><p><strong>The pedestal above fills up to height 1, so its top is at height 2. Does this gold block sit right on top of the pedestal? Circle one:</strong> yes · no</p>
+<div class="qa"><p><strong>Only y changes. Circle one:</strong> across · up · deeper</p>
 <div class="write-space short"></div></div>
 
 <h2>2 · Find the Difference 🐛</h2>
-<p>Each pair shows clean steps first, then a broken version of the same idea. Circle what's different and write one short sentence about the bug.</p>
-<p><strong>Pair A</strong> — The sculpture should sit <strong>on top</strong> of the pedestal, at height 2.</p>
-<pre><code># clean
-fill stone from (2, 0, 2) to (4, 1, 4)
-place gold block at (3, 2, 3)
+<p><strong>Correct</strong> first, then <strong>broken</strong>. Write one short sentence about the bug.</p>
+<p><strong>Pair A</strong> — An eye should be on the <strong>front</strong> at (2, 5, 1).</p>
+<pre><code># correct
+place black block at (2, 5, 1)
 </code></pre>
-<pre><code># buggy
-fill stone from (2, 0, 2) to (4, 1, 4)
-place gold block at (3, 0, 3)
+<pre><code># broken
+place black block at (2, 5, 2)
 </code></pre>
-<div class="qa"><p><strong>What is wrong? Where does the buggy gold block end up?</strong></p>
+<div class="qa"><p><strong>What is wrong? Which number is different?</strong></p>
 <div class="write-space short"></div></div>
 
-<p><strong>Pair B</strong> — Two artworks should stand in <strong>different spots</strong> on the floor so they don't crash into each other.</p>
-<pre><code># clean
-place gold block at (2, 2, 2)
-place blue block at (6, 2, 6)
+<p><strong>Pair B</strong> — The cube should be <strong>2 blocks deep</strong>: z goes 1 then 2.</p>
+<pre><code># correct
+fill green block from (0, 4, 1) to (2, 6, 2)
 </code></pre>
-<pre><code># buggy
-place gold block at (2, 2, 2)
-place blue block at (2, 2, 2)
+<pre><code># broken
+fill green block from (0, 4, 1) to (2, 6, 1)
 </code></pre>
-<div class="qa"><p><strong>What is wrong?</strong></p>
+<div class="qa"><p><strong>What is wrong? How deep is the broken one?</strong></p>
 <div class="write-space short"></div></div>
 
 <h2>3 · Fill the Gap ✏️</h2>
-<p>The pedestal fills up to height 1, so its <strong>top</strong> is at height 2. The sculpture must start there. One number is missing. Fill it in using the word bank.</p>
-<pre><code>fill stone from (2, 0, 2) to (4, 1, 4)
-place gold block at (3, ____, 3)
+<p>The cube is <strong>2 blocks deep</strong>, but the eyes go on the <strong>front</strong> (z = 1). Fill the blanks.</p>
+<pre><code>fill green block from (0, 4, 1) to (2, 6, __)
+place black block at (0, 5, __)
+place black block at (2, 5, __)
 </code></pre>
-<p><strong>Word bank:</strong> <code>2</code> · <code>0</code> · <code>9</code></p>
-<div class="qa"><p><strong>Write the missing number:</strong></p>
+<p><strong>Word bank:</strong> <code>1</code> · <code>2</code></p>
+<div class="qa"><p><strong>Write the three numbers:</strong></p>
 <div class="write-space short"></div></div>
 
 <h2>4 · Tell Me What You Built 📸</h2>
-<p>Now switch to your homework world. Design <strong>one museum corner</strong>: build a pedestal, put a small sculpture on top of it, and draw a small pixel-art picture on the wall behind it. When you finish, come back here.</p>
-<p>Send a photo or video of your corner, then explain what you did. Use these sentence starters — write 2 or 3 sentences.</p>
+<p>First, build this small green cube and add two eyes on the <strong>front</strong>.</p>
+<pre><code>fill green block from (0, 4, 1) to (2, 6, 2)
+place black block at (0, 5, 1)
+place black block at (2, 5, 1)
+</code></pre>
+<p>This is a <strong>3×3 front, 2 blocks deep</strong>, with two eyes on the front.</p>
+<p>Now pick <strong>one</strong> head in the world (creeper or skeleton). Build a small cube head like it on your home spot. Send a photo. Then finish these — 2 or 3 sentences.</p>
 <div class="qa"><blockquote>
-<p>My pedestal is at …</p>
-<p>My sculpture sits on top because its height starts at …</p>
-<p>My wall picture shows …</p>
+<p>I built the …</p>
+<p>My cube is … blocks deep.</p>
+<p>The eyes are on the front because their z stays …</p>
 </blockquote>
 <div class="write-space tall" style="min-height: 240px"></div></div>
 
 <h2>5 · Record Your Walkthrough 🎥</h2>
-<p>Take a video on your phone (or a parent's phone) while you show your museum corner. Talk like you are teaching a friend. Try to use these words: <strong>museum</strong>, <strong>pedestal</strong>, <strong>sculpture</strong>, <strong>picture</strong>.</p>
+<p>Take a video on your phone (or a parent's phone) while you show your cube head. Try to use these words: <strong>x</strong>, <strong>y</strong>, <strong>z</strong>, <strong>across</strong>, <strong>up</strong>, <strong>deep</strong>.</p>
 <blockquote>
 <ol>
-<li>Show the pedestal and say its coordinates.</li>
-<li>Show the sculpture on top and say what height it starts at.</li>
-<li>Point at the wall picture and say what it shows.</li>
+<li>Show your home spot. Why stand on it every run?</li>
+<li>Walk around your cube head — show the front and a side.</li>
+<li>Point at one eye and say "x …, y …, z …".</li>
 </ol>
 </blockquote>
 <div class="qa"><p><strong>Write what you will say in your video.</strong> You can read from it while filming.</p>

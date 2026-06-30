@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>🧊 M003 Extension 2 — English Worksheet (Intermediate)</title>
+<style>
+@page { size: A4; margin: 18mm 16mm 22mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-family: "Inter", "Segoe UI", system-ui, sans-serif; color: #1a1a2e; }
+body { font-size: 15px; line-height: 1.55; }
+
+.cover { border-bottom: 3px solid #ff7849; padding-bottom: 14px; margin-bottom: 20px; }
+.brand { font-size: 14px; font-weight: 800; color: #ff7849; letter-spacing: .06em; }
+h1 { font-size: 28px; color: #6b4ee6; margin: 8px 0 6px; line-height: 1.25; }
+h2 { font-size: 19px; color: #6b4ee6; margin: 22px 0 12px; padding-top: 10px; border-top: 1px solid #eee; page-break-before: always; }
+section.first h2, h2:first-of-type { border-top: none; padding-top: 0; page-break-before: avoid; }
+h3, h4 { font-size: 15px; margin: 14px 0 8px; color: #1a1a2e; }
+p { margin: 8px 0; }
+strong { color: #1a1a2e; }
+em { color: #555; }
+
+ul, ol { margin: 8px 0 8px 24px; }
+li { margin: 3px 0; }
+
+/* Grids (e.g. pixel-art coordinate grids) render as light graph paper. */
+table { border-collapse: collapse; margin: 12px 0; }
+th, td { border: 1px solid #ddd; padding: 4px 9px; text-align: center; font-size: 14px; }
+th { background: #faf7ff; color: #6b4ee6; font-weight: 700; }
+
+pre {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 13.5px;
+  background: #1e1e2e;
+  color: #b9f6ca;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 10px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  page-break-inside: avoid;
+  line-height: 1.5;
+}
+pre code { background: transparent; padding: 0; color: inherit; }
+code {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  background: #fff1e8;
+  color: #ff7849;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+blockquote {
+  margin: 10px 0;
+  padding: 10px 16px;
+  background: #fff6ef;
+  border-left: 3px solid #ff7849;
+  border-radius: 0 6px 6px 0;
+  color: #6a3a1c;
+}
+
+.write-space {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #ffffff 0,
+    #ffffff 27px,
+    #d4d4d4 27px,
+    #d4d4d4 28px
+  );
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  min-height: 114px;
+  margin: 10px 0 20px;
+  page-break-inside: avoid;
+}
+.write-space.short { min-height: 86px; }
+.write-space.tall { min-height: 170px; }
+
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
+hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
+
+.meta { color: #666; font-size: 13px; margin: 0 0 14px; }
+.answer-lines {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 14px 16px;
+  background: #fafafa;
+  white-space: pre;
+  line-height: 2.2;
+}
+
+footer {
+  position: fixed;
+  bottom: 10mm; left: 16mm; right: 16mm;
+  text-align: center;
+  font-size: 10px;
+  color: #aaa;
+}
+footer b { color: #ff7849; }
+</style>
+</head>
+<body>
+<div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
+<h1>🧊 M003 Extension 2 — English Worksheet (Intermediate)</h1>
+<p><strong>Topic:</strong> 3D Mob Heads (x, y, z) · <strong>Course:</strong> 3D Coordinates · <strong>Level:</strong> Intermediate (Extension, after Week 3) · <strong>Time:</strong> about 40 minutes</p>
+<p>Build a <strong>creeper head</strong> in 3D. Now every block needs <strong>three</strong> numbers: <strong>(x, y, z)</strong>. x is <strong>across</strong>, y is <strong>up</strong>, z is <strong>forward</strong> (depth). The head stands in front of you in the world — walk around it, then copy it block by block.</p>
+<blockquote>
+<p>🔴 Stand on your <strong>home spot</strong> (red block) every run. Move your feet, move your head.</p>
+</blockquote>
+<h2>1 · Predict 🔮</h2>
+<p>Read each set. Write what you will see.</p>
+<pre><code>place green block at (3, 5, 1)
+place green block at (3, 5, 2)
+place green block at (3, 5, 3)
+</code></pre>
+<div class="qa"><p><strong>Only z changes. What happens to the line?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code>place green block at (4, 5, 1)
+place green block at (4, 6, 1)
+place green block at (4, 7, 1)
+</code></pre>
+<div class="qa"><p><strong>Only y changes. What happens to the line?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code>place green block at (3, 5, 1)
+place black block at (3, 5, 1)
+</code></pre>
+<div class="qa"><p><strong>Same (x, y, z). What do you see, and why?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>2 · Spot the Bug 🐛</h2>
+<p>Fix each one. Then say why it was wrong.</p>
+<p><strong>Bug A</strong> — This block should sit one step <strong>deeper</strong>, at (3, 5, 2). It only has two numbers, so it lands on the front.</p>
+<pre><code>place green block at (3, 5)
+</code></pre>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug B</strong> — The eye should be <strong>up high and one step deep</strong>: (4, 7, 2). The last two numbers are swapped.</p>
+<pre><code>place black block at (4, 2, 7)
+</code></pre>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>3 · Tell Me What You Built 📸</h2>
+<p>Look at the 🟢 creeper head in the world. Walk around it. Then build your own on your home spot.</p>
+<p><strong>Start with the front face</strong> (keep z = 1). Read each block's <strong>x</strong> (across) and <strong>y</strong> (up).</p>
+<p><strong>Then add depth.</strong> Build the same face again at z = 2, then z = 3, until your head is as deep as the real one.</p>
+<blockquote>
+<p>💡 Tip: the eyes and mouth only show on the <strong>front</strong>. The sides and back are plain.</p>
+</blockquote>
+<p>Send a photo. Then finish these — 4 to 6 sentences.</p>
+<div class="qa"><blockquote>
+<p>I built the …</p>
+<p>The lowest front block is at (x = …, y = …, z = …).</p>
+<p>To go up I changed the … number; to go deeper I changed the … number.</p>
+<p>My head is … blocks deep.</p>
+<p>Once my head was wrong because …</p>
+<p>Next time I would …</p>
+</blockquote>
+<div class="write-space tall" style="min-height: 320px"></div></div>
+
+<h2>4 · Record Your Walkthrough 🎥</h2>
+<p>Film yourself showing your head. Use these words: <strong>x</strong>, <strong>y</strong>, <strong>z</strong>, <strong>across</strong>, <strong>up</strong>, <strong>forward</strong>, <strong>home spot</strong>.</p>
+<blockquote>
+<ol>
+<li>Show your home spot. Why stand on it every time?</li>
+<li>Walk around your head — show the front, a side, and the back.</li>
+<li>Point at one block: "this one is at x …, y …, z …".</li>
+<li>Show one block you fixed.</li>
+</ol>
+</blockquote>
+<div class="qa"><p><strong>Plan what you will say:</strong></p>
+<div class="write-space tall" style="min-height: 320px"></div></div>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your video on KakaoTalk.</p>
+</body>
+</html>
