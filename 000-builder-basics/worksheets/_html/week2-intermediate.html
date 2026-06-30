@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>🧱 M000 Week 2 — English Worksheet (Intermediate)</title>
+<style>
+@page { size: A4; margin: 18mm 16mm 22mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-family: "Inter", "Segoe UI", system-ui, sans-serif; color: #1a1a2e; }
+body { font-size: 15px; line-height: 1.55; }
+
+.cover { border-bottom: 3px solid #ff7849; padding-bottom: 14px; margin-bottom: 20px; }
+.brand { font-size: 14px; font-weight: 800; color: #ff7849; letter-spacing: .06em; }
+h1 { font-size: 28px; color: #6b4ee6; margin: 8px 0 6px; line-height: 1.25; }
+h2 { font-size: 19px; color: #6b4ee6; margin: 22px 0 12px; padding-top: 10px; border-top: 1px solid #eee; page-break-before: always; }
+section.first h2, h2:first-of-type { border-top: none; padding-top: 0; page-break-before: avoid; }
+h3, h4 { font-size: 15px; margin: 14px 0 8px; color: #1a1a2e; }
+p { margin: 8px 0; }
+strong { color: #1a1a2e; }
+em { color: #555; }
+
+ul, ol { margin: 8px 0 8px 24px; }
+li { margin: 3px 0; }
+
+/* Grids (e.g. pixel-art coordinate grids) render as light graph paper. */
+table { border-collapse: collapse; margin: 12px 0; }
+th, td { border: 1px solid #ddd; padding: 4px 9px; text-align: center; font-size: 14px; }
+th { background: #faf7ff; color: #6b4ee6; font-weight: 700; }
+
+pre {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 13.5px;
+  background: #1e1e2e;
+  color: #b9f6ca;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 10px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  page-break-inside: avoid;
+  line-height: 1.5;
+}
+pre code { background: transparent; padding: 0; color: inherit; }
+code {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  background: #fff1e8;
+  color: #ff7849;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+blockquote {
+  margin: 10px 0;
+  padding: 10px 16px;
+  background: #fff6ef;
+  border-left: 3px solid #ff7849;
+  border-radius: 0 6px 6px 0;
+  color: #6a3a1c;
+}
+
+.write-space {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #ffffff 0,
+    #ffffff 27px,
+    #d4d4d4 27px,
+    #d4d4d4 28px
+  );
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  min-height: 114px;
+  margin: 10px 0 20px;
+  page-break-inside: avoid;
+}
+.write-space.short { min-height: 86px; }
+.write-space.tall { min-height: 170px; }
+
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
+hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
+
+.meta { color: #666; font-size: 13px; margin: 0 0 14px; }
+.answer-lines {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 14px 16px;
+  background: #fafafa;
+  white-space: pre;
+  line-height: 2.2;
+}
+
+footer {
+  position: fixed;
+  bottom: 10mm; left: 16mm; right: 16mm;
+  text-align: center;
+  font-size: 10px;
+  color: #aaa;
+}
+footer b { color: #ff7849; }
+</style>
+</head>
+<body>
+<div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
+<h1>🧱 M000 Week 2 — English Worksheet (Intermediate)</h1>
+<p><strong>Topic:</strong> Placing Blocks · <strong>Course:</strong> Builder Basics · <strong>Level:</strong> Intermediate · <strong>Time:</strong> about 38 minutes</p>
+<h2>1 · Predict 🔮</h2>
+<p>Read each set of steps. Before you imagine the agent doing it, write what you think will happen.</p>
+<pre><code>place block down
+move forward
+place block down
+move forward
+place block down
+</code></pre>
+<div class="qa"><p><strong>How many blocks did the agent place, and what shape do they make?</strong></p>
+<div class="write-space short"></div></div>
+
+<pre><code>move up by 1
+place block down
+move up by 1
+place block down
+</code></pre>
+<div class="qa"><p><strong>Are these blocks in a line on the ground, or stacked? Write one sentence saying how you know.</strong></p>
+<div class="write-space short"></div></div>
+
+<pre><code>place block down
+turn right
+move forward
+place block down
+</code></pre>
+<div class="qa"><p><strong>Where is the second block compared to the first one? Explain.</strong></p>
+<div class="write-space"></div></div>
+
+<h2>2 · Spot the Bug 🐛</h2>
+<p>Each block of code below is broken. You are told the goal first, then a hint about where to look. Read the code, then rewrite it so it works. After that, write one sentence explaining what was wrong.</p>
+<p><strong>Bug A</strong> — Goal: place a block, move forward, then place another block.
+Hint: look at the very first line — is the agent placing before it moves?</p>
+<pre><code>move forward
+place block down
+move forward
+</code></pre>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space short"></div></div>
+
+<div class="qa"><p><strong>What was wrong?</strong></p>
+<div class="write-space short"></div></div>
+
+<p><strong>Bug B</strong> — Goal: place a row of 3 blocks in a straight line.
+Hint: the agent never moves, so the blocks all land in the same spot.</p>
+<pre><code>place block down
+place block down
+place block down
+</code></pre>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space short"></div></div>
+
+<div class="qa"><p><strong>What was wrong?</strong></p>
+<div class="write-space short"></div></div>
+
+<p><strong>Bug C</strong> — Goal: place 2 blocks stacked on top of each other.
+Hint: <code>move forward</code> and <code>move up by 1</code> do not do the same thing.</p>
+<pre><code>place block down
+move forward
+place block down
+</code></pre>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space short"></div></div>
+
+<div class="qa"><p><strong>What was wrong?</strong></p>
+<div class="write-space short"></div></div>
+
+<h2>3 · Tell Me What You Built 📸</h2>
+<p>Now switch to your homework world. Place <strong>4 blocks</strong> — make some in a line and some stacked, so your build has more than one shape. When you finish, come back here.</p>
+<p>Send a photo or video of what you placed, then explain what you did. Use these sentence starters — write 3 or 4 sentences total.</p>
+<div class="qa"><blockquote>
+<p>First, I used the command … to place the block.</p>
+<p>Then I moved … so the next block would land …</p>
+<p>To make the blocks stack, I …</p>
+<p>The hardest part was …</p>
+</blockquote>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<h2>4 · Record Your Walkthrough 🎥</h2>
+<p>Now take a video on your phone (or a parent's phone) while you walk the camera through your world. Talk through it like you are teaching someone who has never seen it. Try to use these words: <strong>place</strong>, <strong>block</strong>, <strong>move</strong>, <strong>forward</strong>, <strong>up</strong>.</p>
+<blockquote>
+<ol>
+<li>Show the blocks you placed.</li>
+<li>Read your commands out loud and say what each one does.</li>
+<li>Point out where the blocks are stacked and explain how you did it.</li>
+</ol>
+</blockquote>
+<div class="qa"><p><strong>Write what you will say in your video.</strong> Plan it here before you record — you can read from it while filming.</p>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.</p>
+</body>
+</html>

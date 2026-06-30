@@ -1,0 +1,127 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head><meta charset='utf-8'>
+<title>🚶 M000 Week 1 — English Worksheet (Intermediate)</title>
+<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
+<style>
+@page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
+div.WordSection1 { page: WordSection1; }
+body { font-family: "Segoe UI", Arial, sans-serif; font-size: 11.5pt; color: #1a1a2e; line-height: 1.5; }
+h1 { font-size: 21pt; color: #6b4ee6; margin: 4px 0 6px; }
+h2 { font-size: 15pt; color: #6b4ee6; border-top: 1px solid #dddddd; padding-top: 8px; margin: 18px 0 10px; }
+h3, h4 { font-size: 11.5pt; margin: 12px 0 6px; }
+p { margin: 7px 0; }
+.brand { font-size: 10.5pt; font-weight: bold; color: #ff7849; letter-spacing: .06em;
+         border-bottom: 2px solid #ff7849; padding-bottom: 6px; margin-bottom: 14px; }
+table { border-collapse: collapse; margin: 10px 0; }
+th, td { border: 1px solid #c8c8c8; padding: 4px 9px; text-align: center; }
+th { background: #f3eefc; color: #6b4ee6; font-weight: bold; }
+pre { font-family: Consolas, "Courier New", monospace; font-size: 10.5pt; background: #f4f4f5;
+      border: 1px solid #dddddd; padding: 8px 10px; white-space: pre-wrap; }
+pre code { background: transparent; color: #1a1a2e; }
+code { font-family: Consolas, "Courier New", monospace; background: #fff1e8; color: #d6531f; padding: 0 3px; }
+blockquote { border-left: 3px solid #ff7849; background: #fff6ef; padding: 8px 12px;
+             color: #6a3a1c; margin: 9px 0; }
+ul, ol { margin: 7px 0 7px 26px; }
+p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
+.footer { color: #999999; font-size: 8.5pt; text-align: center; margin-top: 18px;
+          border-top: 1px solid #eeeeee; padding-top: 6px; }
+.footer b { color: #ff7849; }
+</style></head>
+<body><div class=WordSection1>
+<div class="brand">📚 ENGLISH CODING · 영어코딩</div>
+<h1>🚶 M000 Week 1 — English Worksheet (Intermediate)</h1>
+<p><strong>Topic:</strong> Agent Movement · <strong>Course:</strong> Builder Basics · <strong>Level:</strong> Intermediate · <strong>Time:</strong> about 38 minutes</p>
+<hr />
+<h2>1 · Predict 🔮</h2>
+<p>Read each set of steps. Before you imagine the agent doing it, write what you think will happen in your own words.</p>
+<pre><code>move forward
+move forward
+move forward
+</code></pre>
+<p><strong>Where does the agent end up? Write one sentence.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code>move forward
+turn right
+move forward
+</code></pre>
+<p><strong>Does the agent walk in a straight line? Write one sentence to explain why or why not.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code>move forward
+move up by 3
+move forward
+</code></pre>
+<p><strong>Is the agent higher, lower, or the same height as where it started? Explain how you know.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>2 · Spot the Bug 🐛</h2>
+<p>Each block of code below was meant to do something, but it is broken. The goal is written above each one, so you already know what should happen. Read the goal, find the bug, then write one or two sentences about what is wrong.</p>
+<p><strong>Bug A</strong> — Goal: the agent should walk <strong>4 steps forward</strong>.</p>
+<pre><code>move forward
+move forward
+move forward
+</code></pre>
+<p><strong>What is wrong?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug B</strong> — Goal: the agent should walk forward, <strong>then</strong> turn right.</p>
+<pre><code>turn right
+move forward
+</code></pre>
+<p><strong>What is wrong?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug C</strong> — Goal: the agent should go forward 2 steps, then go <strong>up</strong> 2 blocks.</p>
+<pre><code>move forward
+move forward
+move forward
+</code></pre>
+<p><strong>What is wrong? What line should change?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>3 · Fix the Code 🔧</h2>
+<p>Here is the goal: the agent should walk <strong>forward 2 steps</strong>, then <strong>turn right</strong>, then walk <strong>forward 1 step</strong>. The code below does not match the goal.</p>
+<pre><code>move forward
+turn right
+turn right
+move forward
+</code></pre>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Explain in one sentence why your version matches the goal.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>4 · Tell Me What You Built 📸</h2>
+<p>Now switch to your homework world. Move your agent in an <strong>L-shape</strong> path — go forward, turn once, then go forward again (no loops this week). When you finish, come back here.</p>
+<p>Send a photo or video of where the agent ended up, then explain what you did. Use these sentence starters — write 3 or 4 sentences.</p>
+<blockquote>
+<p>First, I told the agent to …</p>
+<p>Then I made it turn …</p>
+<p>One thing I had to fix was …</p>
+<p>The agent ended up at …</p>
+</blockquote>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>5 · Record Your Walkthrough 🎥</h2>
+<p>Take a video on your phone (or a parent's phone) and show your world. Talk like you are teaching a friend who has never seen it. Try to use these words: <strong>move</strong>, <strong>forward</strong>, <strong>turn</strong>, <strong>up</strong>, <strong>agent</strong>.</p>
+<blockquote>
+<ol>
+<li>Show where the agent started.</li>
+<li>Read your commands out loud and say what each one does.</li>
+<li>Show where the agent ended up.</li>
+</ol>
+</blockquote>
+<p><strong>Write what you will say in your video.</strong> Plan it here first — you can read from it while filming.</p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.</p>
+<div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>
+</div></body></html>
