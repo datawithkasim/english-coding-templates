@@ -14,7 +14,7 @@ A statue is just blocks **stacked up**. A little body, then a head on top. Every
 
 ## 1 · Predict 🔮
 
-Read the steps. Look at the numbers. Then answer.
+Read the blocks. Look at the numbers. Do **not** run it.
 
 ```
 place gray block at (3, 0, 3)
@@ -37,35 +37,9 @@ place gray block at (4, 0, 3)
 
 ---
 
-## 2 · Find the Difference 🐛
+## 2 · Spot the Bug 🐛
 
-One block is good. One is broken. Find what is different.
-
-**Pair A** — The body should **stack up**, so the **2nd number (y)** must grow.
-
-```
-# clean — the body stacks up
-place gray block at (3, 0, 3)
-place gray block at (3, 1, 3)
-```
-
-```
-# buggy — nothing stacks
-place gray block at (3, 0, 3)
-place gray block at (3, 0, 3)
-```
-
-**The buggy one stays low. Which number must change to go up?**
-
-<div class="write-space short"></div>
-
-**Pair B** — The head should sit **on top**, so its **2nd number (y)** must be bigger.
-
-```
-# clean — head on top
-place gray block at (3, 1, 3)
-place white block at (3, 2, 3)
-```
+The head should sit **on top** of the body. To go up, the **2nd number (y)** must be **bigger**. Here the head uses the **same y** as the body, so it hides inside.
 
 ```
 # buggy — head inside the body
@@ -73,62 +47,57 @@ place gray block at (3, 1, 3)
 place white block at (3, 1, 3)
 ```
 
-**Both blocks are at the same spot in the buggy one. Which number is wrong?**
-
-<div class="write-space short"></div>
-
----
-
-## 3 · Fill the Gap ✏️
-
-This builds a tiny statue: a 3-tall body, then a head on top. Fill the blank **y** so the head sits **above** the body.
+Fix it. The body is at y = 1, so the head must go one higher.
 
 ```
-place gray block at (3, 0, 3)
+# fixed
 place gray block at (3, 1, 3)
-place gray block at (3, 2, 3)
 place white block at (3, ____, 3)
 ```
 
-**Word bank:** `3` · `2` · `0`
+**Word bank:** `0` · `1` · `2`
 
 **Write the missing number:**
 
 <div class="write-space short"></div>
 
+**Why was the buggy one wrong? One short sentence.**
+
+<div class="write-space short"></div>
+
 ---
 
-## 4 · Tell Me What You Built 📸
+## 3 · Build It 📸
 
 **Warm-up:** in your world, place 2 gray blocks on top of each other — a little body.
 
 **Now build a small statue.** Stack 3 gray blocks for the body, then 1 white block on top for the head.
 
-> 🧱 Recipe (stand on your home spot first):
+> 🧱 Recipe (stand on your home spot first, feet on the ground y = 0):
 > - body: gray at (3, 0, 3), then (3, 1, 3), then (3, 2, 3)
 > - head: white at (3, 3, 3)
 
-Send a **photo or video**, then write 2 or 3 sentences.
+If you finish early, try the big one: make the body taller.
+
+Send a **photo or video**, then write 2 sentences.
 
 > I built a statue with a body and a …
 >
 > To go up I changed the … number.
->
-> My head sits at (x = …, y = …, z = …).
 
 <div class="write-space tall" style="min-height: 240px"></div>
 
 ---
 
-## 5 · Record Your Walkthrough 🎥
+## 4 · Explain It 🎥
 
-Take a short video of your statue. Try to use these words: **x**, **y**, **z**, **up**, **head**, **home spot**.
+Take a short video of your statue. Try to use these words: **x**, **y**, **z**, **up**.
 
-> 1. Show your home spot and stand on it.
+> 1. Stand on your home spot.
 > 2. Point at the body and read one block: "x …, y …, z …".
 > 3. Point at the head and say which number made it go up.
 
-**Write what you will say in your video.** You can read from it while filming.
+**Write the 2 sentences you will say.** You can read them while filming.
 
 <div class="write-space tall" style="min-height: 240px"></div>
 

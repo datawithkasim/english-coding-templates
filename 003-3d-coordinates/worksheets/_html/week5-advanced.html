@@ -109,27 +109,33 @@ footer b { color: #ff7849; }
 <div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
 <h1>🗿 M003 Week 5 — English Worksheet (Advanced)</h1>
 <p><strong>Topic:</strong> Recreate the Statues (x, y, z) · <strong>Course:</strong> 3D Coordinates · <strong>Level:</strong> Advanced · <strong>Time:</strong> about 45 minutes</p>
-<p>A statue is many <strong>stacked fill boxes</strong>: two legs, a torso, a head, and two arms. One <strong><code>fill</code></strong> makes a solid box between <strong>two corners</strong>, each written <strong>(x, y, z)</strong> — x <strong>across</strong>, y <strong>up</strong>, z <strong>forward</strong>. To make a real figure you have to plan: where each part <strong>starts</strong> (its bottom y), how <strong>wide</strong> it is (x and z), and that the feet sit on the <strong>ground (y = 0)</strong>.</p>
+<p>A statue is many <strong>stacked fill boxes</strong>: two legs, a torso, a head, and two arms. One <strong><code>fill</code></strong> makes a solid box between <strong>two corners</strong>, each written <strong>(x, y, z)</strong> — x <strong>across</strong>, y <strong>up</strong>, z <strong>forward</strong>. To make a real figure you have to plan: where each part <strong>starts</strong> (its bottom y), how <strong>wide</strong> it is (x and z), and that the feet sit on the <strong>ground (y = 0)</strong>. Read carefully — a part can hide inside another, or float above the floor.</p>
 <blockquote>
 <p>🔴 Stand on your <strong>home spot</strong> (red block) every run. Move your feet, move your head.</p>
 </blockquote>
 <h2>1 · Predict 🔮</h2>
-<p>Read each box. Write what you will see, and where it sits on the statue.</p>
+<p>Read each box. Write what you will see, <strong>where it sits</strong> on the statue, <strong>and the reason</strong>. Do <strong>not</strong> run it.</p>
 <pre><code>fill GRAY from (3, 0, 4) to (3, 2, 4)
 fill GRAY from (5, 0, 4) to (5, 2, 4)
 </code></pre>
-<div class="qa"><p><strong>Two thin boxes, x = 3 and x = 5, both y = 0–2. What part of the statue is this, and why two of them?</strong></p>
+<div class="qa"><p><strong>Two thin boxes, x = 3 and x = 5, both y = 0–2. What part is this, why two of them, and why y = 0?</strong></p>
 <div class="write-space"></div></div>
 
 <pre><code>fill GRAY from (2, 3, 4) to (2, 5, 4)
 fill GRAY from (6, 3, 4) to (6, 5, 4)
 </code></pre>
-<div class="qa"><p><strong>These start at y = 3 and sit at x = 2 and x = 6 — outside the legs. What part is this?</strong></p>
+<div class="qa"><p><strong>These start at y = 3 and sit at x = 2 and x = 6 — outside the legs. What part is this, and why is the x outside?</strong></p>
 <div class="write-space"></div></div>
 
 <pre><code>fill WHITE from (3, 7, 4) to (5, 8, 4)
 </code></pre>
-<div class="qa"><p><strong>This is the highest box (y = 7–8). What part of the statue is it?</strong></p>
+<div class="qa"><p><strong>This is the highest box (y = 7–8). What part is it, and how do you know from the y?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code>fill GRAY from (3, 3, 4) to (5, 6, 4)
+fill WHITE from (3, 7, 4) to (5, 8, 4)
+</code></pre>
+<div class="qa"><p><strong>Two boxes together. The torso ends at y = 6 but the head starts at y = 7. What sits between them, and what does that gap mean?</strong></p>
 <div class="write-space"></div></div>
 
 <h2>2 · Spot the Bug 🐛</h2>
@@ -141,7 +147,7 @@ fill GRAY from (6, 3, 4) to (6, 5, 4)
 <div class="qa"><p><strong>Write the fixed code:</strong></p>
 <div class="write-space"></div></div>
 
-<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work? (2–3 sentences.)</strong></p>
 <div class="write-space"></div></div>
 
 <p><strong>Bug B</strong> — This should be the <strong>right arm</strong>, hanging on the <strong>side</strong> of the torso at x = 6. The torso fills x = 3–5, so x = 4 is <strong>inside</strong> it — the arm disappears into the body.</p>
@@ -151,7 +157,7 @@ fill GRAY from (6, 3, 4) to (6, 5, 4)
 <div class="qa"><p><strong>Write the fixed code:</strong></p>
 <div class="write-space"></div></div>
 
-<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work? (2–3 sentences.)</strong></p>
 <div class="write-space"></div></div>
 
 <p><strong>Bug C</strong> <em>(the tricky one)</em> — Your friend says their whole statue is <strong>floating</strong> — there is a gap of air under the feet. The legs are built at <strong>y = 1–3</strong> instead of touching the ground. The bottom of the feet must be on the floor.</p>
@@ -162,13 +168,13 @@ fill GRAY from (5, 1, 4) to (5, 3, 4)
 <div class="qa"><p><strong>Write the fixed code:</strong></p>
 <div class="write-space"></div></div>
 
-<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work? (2–3 sentences.)</strong></p>
 <div class="write-space"></div></div>
 
-<h2>3 · Build the Statue 📸</h2>
+<h2>3 · Build It 📸</h2>
 <p>Walk around a statue in your world. Then plan and build a <strong>full golem</strong> on your home spot — <strong>6 fill boxes</strong>: two legs, a torso, two arms, and a head.</p>
 <blockquote>
-<p>🧱 Recipe (every corner is <strong>(x, y, z)</strong>):
+<p>🧱 Recipe (every corner is <strong>(x, y, z)</strong>, feet on the ground y = 0):
 - left leg: gray from (3, 0, 4) to (3, 2, 4)
 - right leg: gray from (5, 0, 4) to (5, 2, 4)
 - torso: gray from (3, 3, 4) to (5, 6, 4)
@@ -176,18 +182,22 @@ fill GRAY from (5, 1, 4) to (5, 3, 4)
 - right arm: gray from (6, 3, 4) to (6, 5, 4)
 - head: white from (3, 7, 4) to (5, 8, 4)</p>
 </blockquote>
-<p>Before you build, <strong>plan the heights</strong> in the space below: which y does each part start and stop at? Then build, and send a <strong>photo or video</strong>. Finish these — 4 to 6 sentences.</p>
+<p>Before you build, <strong>plan the heights</strong> in the space below: which y does each part start and stop at?</p>
+<blockquote>
+<p>✨ <strong>Modify challenge:</strong> after it works, change one thing of your own — a new colour, a different pose, or an extra part (a hat, a tail, longer arms). Write what you changed.</p>
+</blockquote>
+<p>Then build, and send a <strong>photo or video</strong>. Finish these — 5 to 6 sentences.</p>
 <div class="qa"><blockquote>
 <p>I planned the heights like this: legs y = … , torso y = … , head y = …</p>
 <p>The feet touch the ground because the lowest <strong>y</strong> is …</p>
 <p>My arms sit on the outside because their <strong>x</strong> is …</p>
 <p>Each part stacks on the one below because its <strong>y</strong> starts at …</p>
 <p>One part I had to fix was … because …</p>
-<p>If I had more time, I would add …</p>
+<p>The thing I changed for the modify challenge was …</p>
 </blockquote>
 <div class="write-space tall" style="min-height: 340px"></div></div>
 
-<h2>4 · Record Your Walkthrough 🎥</h2>
+<h2>4 · Explain It 🎥</h2>
 <p>Film yourself showing your statue. Try to use these words: <strong>fill</strong>, <strong>box</strong>, <strong>x</strong>, <strong>y</strong>, <strong>z</strong>, <strong>stack</strong>, <strong>ground</strong>, <strong>home spot</strong>.</p>
 <blockquote>
 <ol>
@@ -197,7 +207,7 @@ fill GRAY from (5, 1, 4) to (5, 3, 4)
 <li>Say in your own words how you know the head ends up on top and the feet stay on the ground.</li>
 </ol>
 </blockquote>
-<div class="qa"><p><strong>Plan what you will say:</strong></p>
+<div class="qa"><p><strong>Write a short paragraph (5–6 sentences) explaining how your statue is built. Then answer: if you taught a friend, what would you teach first, and why?</strong></p>
 <div class="write-space tall" style="min-height: 340px"></div></div>
 
 <hr />

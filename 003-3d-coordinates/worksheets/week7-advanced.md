@@ -2,7 +2,7 @@
 
 **Topic:** Recreate 2 Mob Heads (x, y, z) · **Course:** 3D Coordinates · **Level:** Advanced · **Time:** about 45 minutes
 
-Two blocky **mob heads** stand in your world — a **creeper** and a **skeleton**. Each one is a cube with a face on the **front**. Build the **front face first** (keep z the same, read x across and y up), then **add depth** at z = 2, z = 3. This week you build **both** heads side by side — and keep them from overlapping by giving each its own x range.
+Two blocky **mob heads** stand in your world — a **creeper** and a **skeleton**. Each one is a cube with a face on the **front**. Build the **front face first** (keep z the same, read x across and y up), then **add depth** at z = 2 and z = 3. This week you build **both** heads side by side, and keep them from overlapping by giving each its own x range. The faces only ever show on the front — every side and the back stay plain.
 
 > 🔴 Stand on your **home spot** (red block) every run. Move your feet, move your head.
 
@@ -10,14 +10,14 @@ Two blocky **mob heads** stand in your world — a **creeper** and a **skeleton*
 
 ## 1 · Predict 🔮
 
-Read each set. Write what you will see.
+Read each set. Write what you will see **and the reason**.
 
 ```
 fill green block from (0, 4, 1) to (4, 8, 1)
 fill green block from (0, 4, 2) to (4, 8, 3)
 ```
 
-**The first line is the front face; the second adds depth. How wide (x), how tall (y), and how deep (z) is the finished cube?**
+**The first line is the front face; the second adds depth. How wide (x), how tall (y), and how deep (z) is the finished cube? Why is it 3 deep?**
 
 <div class="write-space"></div>
 
@@ -26,7 +26,7 @@ fill green block from (0, 4, 1) to (4, 8, 3)
 fill white block from (7, 4, 1) to (11, 8, 3)
 ```
 
-**Read the x ranges: 0–4 and 7–11. Do the heads overlap? How big is the gap between them?**
+**Read the x ranges: 0–4 and 7–11. Do the heads overlap? How big is the gap, and why does the gap stop a crash?**
 
 <div class="write-space"></div>
 
@@ -35,7 +35,16 @@ place black block at (1, 7, 1)
 place black block at (1, 7, 2)
 ```
 
-**Both eyes share x = 1. One is at z = 1 (front), one at z = 2 (deeper). Are they both on the front face? Where is the second one?**
+**Both eyes share x = 1, but one is z = 1 and one is z = 2. Are they both on the front face? Where is the second one, and why can't you see it from the front?**
+
+<div class="write-space"></div>
+
+```
+fill white block from (7, 4, 1) to (11, 8, 1)
+fill white block from (7, 4, 1) to (11, 8, 3)
+```
+
+**Both lines start at the same corner. The second line covers the first. What is the final shape, and did the first line do anything in the end? Why?**
 
 <div class="write-space"></div>
 
@@ -57,7 +66,7 @@ fill green block from (0, 4, 1) to (4, 8, 1)
 
 <div class="write-space"></div>
 
-**Why was it wrong? Why does your fix work?**
+**Why was it wrong? Why does your fix work? (2–3 sentences)**
 
 <div class="write-space"></div>
 
@@ -74,27 +83,37 @@ place black block at (1, 7, 2)
 
 <div class="write-space"></div>
 
-**Why was it wrong? Why does your fix work?**
+**Why was it wrong? Why does your fix work? (2–3 sentences)**
 
 <div class="write-space"></div>
 
-**Bug C** — The code is correct, but both heads came out one step too far **forward** — every block landed one z too deep. Your friend never changed the code.
+**Bug C** — The code below is correct, but every block in **both** heads came out one step too far **forward** — the whole build landed one z too deep. Your friend never touched the code.
 
 ```
-(the code matched the heads)
+(the code matched the heads exactly)
 ```
 
 **Hint:** the build always starts from where you stand.
 
-**What did your friend forget before pressing run? Why does it move the whole head?**
+**What did your friend forget before pressing run? Why does that move the whole head, not just one block? (2–3 sentences)**
 
 <div class="write-space"></div>
 
 ---
 
-## 3 · Build Both Heads 📸
+## 3 · Build It 📸
 
-Now switch to your homework world. Build **both** heads side by side, each on its own x range so they never overlap.
+First, **plan your coordinates**. Write the x range you will give each head so they do not overlap.
+
+> Creeper x range: … to …
+>
+> Skeleton x range: … to …
+>
+> Gap between them: … blocks
+
+<div class="write-space short"></div>
+
+Now switch to your homework world. Build **both** heads side by side, each on its own x range.
 
 ```
 # ---- Creeper (x 0–4) ----
@@ -126,7 +145,9 @@ place black block at (10, 5, 1)
 
 The two heads use different x ranges (0–4 and 7–11) with a gap, so they never crash into each other.
 
-Send a photo. Then explain what you did. Use these sentence starters — write 4 to 6 sentences total.
+**MODIFY challenge:** change one thing that is your own idea — a new colour, an extra part (nose, ears, antenna), or make a head bigger. Build it, then say what you changed.
+
+Send a photo. Then explain what you did. Use these starters — write 5 to 6 sentences total.
 
 > I built the front face of each head first by …
 >
@@ -136,7 +157,7 @@ Send a photo. Then explain what you did. Use these sentence starters — write 4
 >
 > The faces stay on the front because their z is …
 >
-> One head went wrong when …
+> For my modify challenge I changed …
 >
 > Next time I would …
 
@@ -144,7 +165,7 @@ Send a photo. Then explain what you did. Use these sentence starters — write 4
 
 ---
 
-## 4 · Record Your Walkthrough 🎥
+## 4 · Explain It 🎥
 
 Film yourself showing both heads. Try to use these words: **x**, **y**, **z**, **front face**, **depth**, **overlap**, **home spot**.
 
@@ -153,7 +174,7 @@ Film yourself showing both heads. Try to use these words: **x**, **y**, **z**, *
 > 3. Say the x range of each head and why they don't overlap.
 > 4. Say in your own words how you turned a flat face into a deep cube.
 
-**Plan what you will say:**
+**Write a short paragraph (5–6 sentences) about your build.** Then answer: **what would you teach a friend first?**
 
 <div class="write-space tall" style="min-height: 340px"></div>
 

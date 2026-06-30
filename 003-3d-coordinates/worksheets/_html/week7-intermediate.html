@@ -109,15 +109,15 @@ footer b { color: #ff7849; }
 <div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
 <h1>👾 M003 Week 7 — English Worksheet (Intermediate)</h1>
 <p><strong>Topic:</strong> Recreate 2 Mob Heads (x, y, z) · <strong>Course:</strong> 3D Coordinates · <strong>Level:</strong> Intermediate · <strong>Time:</strong> about 40 minutes</p>
-<p>Two blocky <strong>mob heads</strong> stand in your world — a <strong>creeper</strong> and a <strong>skeleton</strong>. Each one is a cube with a face on the <strong>front</strong>. The trick: build the <strong>front face first</strong> (keep z the same, read x across and y up), then <strong>add depth</strong> by repeating the cube at z = 2, z = 3. Faces only show on the front; the sides and back are plain.</p>
+<p>Two blocky <strong>mob heads</strong> stand in your world — a <strong>creeper</strong> and a <strong>skeleton</strong>. Each one is a cube with a face on the <strong>front</strong>. The trick: build the <strong>front face first</strong> (keep z the same, read x across and y up), then <strong>add depth</strong> by repeating the cube at z = 2 and z = 3. Faces only show on the front; the sides and back stay plain.</p>
 <blockquote>
 <p>🔴 Stand on your <strong>home spot</strong> (red block) every run. Move your feet, move your head.</p>
 </blockquote>
 <h2>1 · Predict 🔮</h2>
-<p>Read each set. Write what you will see.</p>
+<p>Read each set. Write a full sentence about what you will see.</p>
 <pre><code>fill green block from (0, 4, 1) to (4, 8, 1)
 </code></pre>
-<div class="qa"><p><strong>This fills a flat 5×5 wall at z = 1. Is it the front face or the depth? How many blocks deep is it so far?</strong></p>
+<div class="qa"><p><strong>This fills a flat wall at z = 1. Is it the front face or the depth? How many blocks deep is it so far?</strong></p>
 <div class="write-space"></div></div>
 
 <pre><code>fill green block from (0, 4, 1) to (4, 8, 1)
@@ -129,7 +129,7 @@ fill green block from (0, 4, 2) to (4, 8, 3)
 <pre><code>place black block at (1, 7, 1)
 place black block at (3, 7, 1)
 </code></pre>
-<div class="qa"><p><strong>Two eyes. Only x changes (1 then 3). Are they side by side across the front, or one behind the other?</strong></p>
+<div class="qa"><p><strong>Two eyes. Only x changes (1 → 3). Are they side by side across the front, or one behind the other?</strong></p>
 <div class="write-space"></div></div>
 
 <h2>2 · Spot the Bug 🐛</h2>
@@ -141,22 +141,22 @@ place black block at (3, 7, 1)
 <div class="qa"><p><strong>Write the fixed code:</strong></p>
 <div class="write-space"></div></div>
 
-<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work? (1–2 sentences)</strong></p>
 <div class="write-space"></div></div>
 
 <p><strong>Bug B</strong> — The two eyes should sit <strong>side by side on the front</strong> (z stays 1, x changes). Right now the second eye went one step <strong>deeper</strong> and hid on the side.</p>
 <pre><code>place black block at (1, 7, 1)
 place black block at (1, 7, 2)
 </code></pre>
-<p><strong>Hint:</strong> to move across the front, change x, keep z = 1.</p>
+<p><strong>Hint:</strong> to move across the front, change x and keep z = 1.</p>
 <div class="qa"><p><strong>Write the fixed code:</strong></p>
 <div class="write-space"></div></div>
 
-<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work? (1–2 sentences)</strong></p>
 <div class="write-space"></div></div>
 
-<h2>3 · Tell Me What You Built 📸</h2>
-<p>Now switch to your homework world. Build the <strong>creeper head</strong>: front face first, then depth, then the face.</p>
+<h2>3 · Build It 📸</h2>
+<p>Switch to your homework world. Build the <strong>creeper head</strong>: front face first, then depth, then the face.</p>
 <pre><code># front face (z = 1)
 fill green block from (0, 4, 1) to (4, 8, 1)
 
@@ -172,18 +172,16 @@ place black block at (1, 4, 1)
 place black block at (3, 4, 1)
 </code></pre>
 <p>Send a photo. When the creeper is done, start the <strong>skeleton</strong> head the same way (front face, then depth, then face) — but in white.</p>
-<p>Now explain what you did. Use these sentence starters — write 4 to 6 sentences total.</p>
+<p>Now explain what you did. Use these starters — write about 4 sentences.</p>
 <div class="qa"><blockquote>
 <p>I built the front face first by …</p>
 <p>To add depth I changed the … number to 2 and 3.</p>
 <p>My head is … blocks deep.</p>
 <p>The eyes and mouth stay on the front because their z is …</p>
-<p>One tricky moment was …</p>
-<p>For the second head I will …</p>
 </blockquote>
 <div class="write-space tall" style="min-height: 320px"></div></div>
 
-<h2>4 · Record Your Walkthrough 🎥</h2>
+<h2>4 · Explain It 🎥</h2>
 <p>Film yourself showing your head. Try to use these words: <strong>x</strong>, <strong>y</strong>, <strong>z</strong>, <strong>front face</strong>, <strong>depth</strong>, <strong>home spot</strong>.</p>
 <blockquote>
 <ol>
@@ -193,7 +191,7 @@ place black block at (3, 4, 1)
 <li>Say in your own words how you added depth.</li>
 </ol>
 </blockquote>
-<div class="qa"><p><strong>Plan what you will say:</strong></p>
+<div class="qa"><p><strong>Plan what you will say (about 4 sentences):</strong></p>
 <div class="write-space tall" style="min-height: 320px"></div></div>
 
 <hr />
