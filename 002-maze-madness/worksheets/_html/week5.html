@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>🧊 M002 Week 5 — English Worksheet</title>
+<title>🧊 M002 Week 5 — Mini Cube Puzzle</title>
 <style>
 @page { size: A4; margin: 18mm 16mm 22mm; }
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -21,6 +21,11 @@ em { color: #555; }
 
 ul, ol { margin: 8px 0 8px 24px; }
 li { margin: 3px 0; }
+
+/* Grids (e.g. pixel-art coordinate grids) render as light graph paper. */
+table { border-collapse: collapse; margin: 12px 0; }
+th, td { border: 1px solid #ddd; padding: 4px 9px; text-align: center; font-size: 14px; }
+th { background: #faf7ff; color: #6b4ee6; font-weight: 700; }
 
 pre {
   font-family: "JetBrains Mono", "Consolas", monospace;
@@ -102,117 +107,109 @@ footer b { color: #ff7849; }
 </head>
 <body>
 <div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
-<h1>🧊 M002 Week 5 — English Worksheet</h1>
-<p><strong>Topic:</strong> Mini Cube Puzzle · <strong>Course:</strong> Maze Madness · <strong>Time:</strong> about 45 minutes</p>
-<p>This week you finish the <strong>mini cube</strong>. You already have starter code that builds part of the cube. Your job is to <strong>keep it going</strong> — add more decisions with conditionals, and leave a way out through the <strong>top</strong>.</p>
-<blockquote>
-<p>Two ways to finish — pick the one that fits you:</p>
-<ul>
-<li><strong>Challenge:</strong> add <strong>2 more conditionals</strong>, and make <strong>one of them an <code>OR</code></strong>.</li>
-<li><strong>Steady:</strong> keep the same pattern the starter uses and <strong>fill the whole cube</strong>.</li>
-</ul>
-<p>Either way: the agent must <strong>break a hole in the top</strong> and climb out.</p>
-</blockquote>
+<h1>🧊 M002 Week 5 — Mini Cube Puzzle</h1>
+<p><strong>Topic:</strong> Mini Cube Puzzle · <strong>Course:</strong> Maze Madness · <strong>Level:</strong> Advanced · <strong>Time:</strong> about 55 minutes</p>
+<p>Finish the mini cube. The starter builds part of it. Keep it going: add <strong>2 more conditionals</strong> with <strong>one <code>OR</code></strong>, fill the cube, then break a hole in the <strong>top</strong> and climb out.</p>
 <h2>1 · Predict 🔮</h2>
-<p>Read each set of steps. Before you imagine the agent doing it, write what you think will happen.</p>
-<pre><code>repeat 5 times:
-    place block
-    move forward
+<p>Read each block. Write what you think happens.</p>
+<pre><code class="language-python">for i in range(5):
+    agent.place(BLOCK)
+    agent.move(FORWARD, 1)
 </code></pre>
-<div class="qa"><p><strong>What shape does the agent leave behind? How long is it?</strong></p>
+<div class="qa"><p><strong>What shape is left behind? How long is it?</strong></p>
 <div class="write-space"></div></div>
 
-<pre><code>if on the edge OR on the top layer:
-    place block
-otherwise:
-    leave empty
+<pre><code class="language-python">if on_edge or on_top_layer:
+    agent.place(BLOCK)
+else:
+    pass  # leave empty
 </code></pre>
-<div class="qa"><p><strong>Only one condition needs to be true. Which spots get a block? Which stay empty?</strong></p>
+<div class="qa"><p><strong>Only one condition must be true. Which spots get a block? Which stay empty?</strong></p>
 <div class="write-space"></div></div>
 
-<pre><code>repeat for each layer:
-    fill the layer
-move up
-if at the top:
-    break block above
-    climb out
+<h2>2 · Trace 👣</h2>
+<pre><code class="language-python">for layer in range(3):
+    fill_layer()
+    agent.move(UP, 1)
+if agent.detect(BLOCK, UP):
+    # break above, then climb
+    agent.move(UP, 1)
 </code></pre>
-<div class="qa"><p><strong>Describe in plain English what the agent does, from the first layer to climbing out.</strong></p>
+<div class="qa"><p><strong>Walk through it. How many layers fill? Where does the agent end up? Is there still a block above it?</strong></p>
 <div class="write-space"></div></div>
 
-<h2>2 · Spot the Bug 🐛</h2>
-<p>Each block of code below was meant to do something, but it is broken. Read what the code is <strong>supposed</strong> to do, then rewrite it so it works. After that, explain why the original was wrong and why your fix works.</p>
-<p><strong>Bug A</strong> — The agent should place a block on <strong>every edge</strong> of the layer, then move up. Right now it moves up <strong>before</strong> finishing the layer.</p>
-<pre><code>place block
-move up
-place block
-place block
+<h2>3 · Spot + Fix the Bugs 🐛</h2>
+<p><strong>Bug A</strong> — The agent should place blocks across the layer, <strong>then</strong> move up. It moves up too early.</p>
+<pre><code class="language-python">agent.place(BLOCK)
+agent.move(UP, 1)
+agent.place(BLOCK)
+agent.place(BLOCK)
 </code></pre>
-<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="qa"><p><strong>Fixed code:</strong></p>
 <div class="write-space"></div></div>
 
 <div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
 <div class="write-space"></div></div>
 
-<p><strong>Bug B</strong> — The agent should leave a block when it is on the <strong>bottom layer</strong> <code>OR</code> on an <strong>outer wall</strong>. Right now it only fills the bottom layer.</p>
-<pre><code>if on the bottom layer:
-    place block
+<p><strong>Bug B</strong> — Place a block when on the <strong>bottom layer</strong> <code>OR</code> on an <strong>outer wall</strong>. It only checks the bottom.</p>
+<pre><code class="language-python">if on_bottom_layer:
+    agent.place(BLOCK)
 </code></pre>
-<p><strong>Hint:</strong> one condition is missing. Add the wall check with <code>OR</code>.</p>
-<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<p><strong>Hint:</strong> add the wall check with <code>or</code>.</p>
+<div class="qa"><p><strong>Fixed code:</strong></p>
 <div class="write-space"></div></div>
 
 <div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
 <div class="write-space"></div></div>
 
-<p><strong>Bug C</strong> — After the cube is full, the agent should <strong>break the block above</strong> and climb out the top. Right now it tries to climb <strong>before</strong> making the hole, so it gets stuck.</p>
-<pre><code>move up
-break block above
+<p><strong>Bug C</strong> — To climb out, break the block above <strong>first</strong>, then move up. Right now it moves up into solid block and gets stuck.</p>
+<pre><code class="language-python">agent.move(UP, 1)
+agent.destroy(UP)
 </code></pre>
-<p><strong>Hint:</strong> make the hole first, then move into it.</p>
-<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<p><strong>Hint:</strong> make the hole, then move into it.</p>
+<div class="qa"><p><strong>Fixed code:</strong></p>
 <div class="write-space"></div></div>
 
 <div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
 <div class="write-space"></div></div>
 
-<h2>3 · Finish the Cube 📸</h2>
-<p>Open this week's world. You will find the <strong>mini cube starter</strong> — some of the cube is already built. Finish it your way:</p>
-<p><strong>Challenge path</strong></p>
+<h2>4 · Write Code ✍️</h2>
+<div class="qa"><p>Write a loop that fills <strong>one layer</strong>: place a block, move forward, repeat 4 times.</p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p>Write a conditional that uses <code>or</code>: if the agent is on a <strong>corner</strong> <code>OR</code> on the <strong>top</strong>, place a block.</p>
+<div class="write-space"></div></div>
+
+<h2>5 · Finish the Cube 📸</h2>
+<p>Open this week's world. Find the <strong>mini cube starter</strong> — part is built.</p>
 <ol>
 <li>Keep the starter running.</li>
-<li>Add <strong>2 more conditionals</strong> that decide where blocks go (for example: a different block on corners, or skip a spot to leave a pattern).</li>
-<li>Make <strong>one</strong> of them use <code>OR</code> (for example: <code>if on a corner OR on the top → place glass</code>).</li>
-<li>Make sure the agent <strong>breaks a hole in the top</strong> and climbs out.</li>
+<li>Add <strong>2 more conditionals</strong> that decide where blocks go.</li>
+<li>Make <strong>one</strong> use <code>or</code> (e.g. corner <code>OR</code> top → place glass).</li>
+<li>Break a hole in the <strong>top</strong> and climb out.</li>
 </ol>
-<p><strong>Steady path</strong></p>
-<ol>
-<li>Keep the <strong>same pattern</strong> the starter uses.</li>
-<li>Repeat it until the <strong>whole cube is filled</strong>.</li>
-<li>Make sure the agent <strong>breaks a hole in the top</strong> and climbs out.</li>
-</ol>
-<p>When you finish, come back here. Send a <strong>photo or video</strong> of the finished cube (and the hole in the top!), then explain what you did. Use these sentence starters — write 4 to 6 sentences total.</p>
+<p>Send a photo or video of the finished cube and the hole. Then finish — 4 to 6 sentences:</p>
 <div class="qa"><blockquote>
-<p>First, I looked at the starter code and saw …</p>
+<p>First, I looked at the starter and saw …</p>
 <p>To keep building, I …</p>
 <p>I used a conditional when …</p>
 <p>I made the hole in the top by …</p>
-<p>One tricky moment was when …</p>
+<p>One tricky moment was …</p>
 <p>If I had more time, I would …</p>
 </blockquote>
 <div class="write-space tall" style="min-height: 340px"></div></div>
 
-<h2>4 · Record Your Walkthrough 🎥</h2>
-<p>Now take a video on your phone (or a parent's phone) while the agent builds the cube. Talk through it like you are teaching someone who has never seen it. Try to use these words: <strong>cube</strong>, <strong>layer</strong>, <strong>conditional</strong>, <strong>OR</strong>, <strong>hole</strong>.</p>
+<h2>6 · Record Your Walkthrough 🎥</h2>
+<p>Film the agent building on a phone. Teach it like the viewer has never seen it. Use these words: <strong>cube</strong>, <strong>layer</strong>, <strong>conditional</strong>, <strong>OR</strong>, <strong>hole</strong>.</p>
 <blockquote>
 <ol>
-<li>Show the starter cube before you run your code.</li>
-<li>Run your code and watch the cube fill up.</li>
-<li>Read your conditional out loud and say what makes it run.</li>
+<li>Show the starter cube before you run.</li>
+<li>Run your code and watch the cube fill.</li>
+<li>Read your conditional out loud and say what makes it true.</li>
 <li>Show the agent breaking the hole in the top and climbing out.</li>
 </ol>
 </blockquote>
-<div class="qa"><p><strong>Write what you will say in your video.</strong> Use the space below to plan it before you record — you can read from it while filming.</p>
+<div class="qa"><p><strong>Write what you will say. Plan it before you film — you can read from it.</strong></p>
 <div class="write-space tall" style="min-height: 340px"></div></div>
 
 <hr />

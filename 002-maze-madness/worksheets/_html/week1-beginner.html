@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>🔁 M002 Week 1 — English Worksheet (Beginner)</title>
+<title>🌀 M002 Week 1 — While Loop</title>
 <style>
 @page { size: A4; margin: 18mm 16mm 22mm; }
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -21,6 +21,11 @@ em { color: #555; }
 
 ul, ol { margin: 8px 0 8px 24px; }
 li { margin: 3px 0; }
+
+/* Grids (e.g. pixel-art coordinate grids) render as light graph paper. */
+table { border-collapse: collapse; margin: 12px 0; }
+th, td { border: 1px solid #ddd; padding: 4px 9px; text-align: center; font-size: 14px; }
+th { background: #faf7ff; color: #6b4ee6; font-weight: 700; }
 
 pre {
   font-family: "JetBrains Mono", "Consolas", monospace;
@@ -102,81 +107,57 @@ footer b { color: #ff7849; }
 </head>
 <body>
 <div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
-<h1>🔁 M002 Week 1 — English Worksheet (Beginner)</h1>
-<p><strong>Topic:</strong> While Loops — Move Until You Hit a Wall · <strong>Course:</strong> Maze Madness · <strong>Level:</strong> Beginner · <strong>Time:</strong> about 30 minutes</p>
-<p>This week your agent uses a <strong>while loop</strong>: it keeps moving forward <strong>until</strong> it hits a wall.</p>
-<h2>1 · Predict 🔮</h2>
-<p>Read the steps. Before you imagine the agent doing it, circle or write your answer.</p>
+<h1>🌀 M002 Week 1 — While Loop</h1>
+<p><strong>Topic:</strong> Repeat Until a Wall · <strong>Course:</strong> Maze Madness · <strong>Level:</strong> Beginner · <strong>Time:</strong> about 25 minutes</p>
+<p>A while loop repeats. It runs until a wall stops it.</p>
+<h2>1 · Read It 🔮</h2>
 <pre><code>while no wall ahead:
     move forward
 </code></pre>
-<p><strong>When does the agent stop? Circle one:</strong> after 3 steps · when it reaches a wall · never</p>
-<div class="qa"><p><strong>Why?</strong></p>
+<p><strong>When does the agent stop? Circle one:</strong> after 3 steps · at the wall · never</p>
+<div class="qa"><p><strong>Why? One word:</strong></p>
 <div class="write-space short"></div></div>
 
-<pre><code>move forward
-move forward
-move forward
-</code></pre>
-<div class="qa"><p><strong>The wall is only 2 steps away. What happens on the third step?</strong></p>
-<div class="write-space short"></div></div>
-
-<h2>2 · Find the Difference 🐛</h2>
-<p>Each pair shows clean steps first, then a broken version of the same idea. Circle what's different and write one short sentence about the bug.</p>
-<p><strong>Pair A</strong> — The agent should keep moving <strong>until</strong> it hits a wall.</p>
-<pre><code># clean
-while no wall ahead:
-    move forward
-</code></pre>
-<pre><code># buggy
-while wall ahead:
-    move forward
-</code></pre>
-<div class="qa"><p><strong>What is wrong? When does the buggy agent move?</strong></p>
-<div class="write-space short"></div></div>
-
-<p><strong>Pair B</strong> — The agent should check the wall <strong>before every step</strong>.</p>
-<pre><code># clean
-while no wall ahead:
-    move forward
-</code></pre>
-<pre><code># buggy
-while no wall ahead:
-    move forward
-    move forward
-</code></pre>
-<div class="qa"><p><strong>What is wrong? What can happen right in front of the wall?</strong></p>
-<div class="write-space short"></div></div>
-
-<h2>3 · Fill the Gap ✏️</h2>
-<p>The agent should walk forward until it reaches the wall. One word is missing. Fill it in using the word bank.</p>
+<h2>2 · Match It 🔗</h2>
+<p>Draw a line.</p>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Means</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>while</td>
+<td>check the wall</td>
+</tr>
+<tr>
+<td>no wall ahead</td>
+<td>true keeps it going</td>
+</tr>
+<tr>
+<td>move forward</td>
+<td>repeat</td>
+</tr>
+</tbody>
+</table>
+<h2>3 · Fill One Word ✏️</h2>
+<p>The agent walks until the wall.</p>
 <pre><code>while ____ wall ahead:
     move forward
 </code></pre>
 <p><strong>Word bank:</strong> <code>no</code> · <code>big</code> · <code>one</code></p>
-<div class="qa"><p><strong>Write the missing word:</strong></p>
+<div class="qa"><p><strong>Missing word:</strong></p>
 <div class="write-space short"></div></div>
 
-<h2>4 · Tell Me What You Built 📸</h2>
-<p>Now switch to your homework world. Use a <strong>while loop</strong> to move the agent down the straight maze until it reaches the wall. When you finish, come back here.</p>
-<p>Send a photo or video of the agent at the wall, then explain what you did. Use these sentence starters — write 2 or 3 sentences.</p>
+<h2>4 · Finish the Maze 📸</h2>
+<p>Open your homework world. Use a while loop. Move the agent down the straight maze to the wall.</p>
+<p>Send a photo OR video of the agent at the wall. Then write.</p>
 <div class="qa"><blockquote>
-<p>My while loop checked …</p>
+<p>My loop checked …</p>
 <p>The agent stopped because …</p>
-<p>A while loop is useful because …</p>
 </blockquote>
-<div class="write-space tall" style="min-height: 240px"></div></div>
-
-<h2>5 · Record Your Walkthrough 🎥</h2>
-<p>Take a video on your phone (or a parent's phone) while the agent runs the maze. Talk like you are teaching a friend. Try to use these words: <strong>while</strong>, <strong>loop</strong>, <strong>wall</strong>, <strong>forward</strong>.</p>
-<blockquote>
-<ol>
-<li>Show the start of the maze, then run your code.</li>
-<li>Read your while loop out loud and say what makes it stop.</li>
-<li>Say why a while loop is better than writing <code>move forward</code> many times.</li>
-</ol>
-</blockquote>
-<div class="qa"><p><strong>Write what you will say in your video.</strong> You can read from it while filming.</p>
 <div class="write-space tall" style="min-height: 240px"></div></div>
 
 <hr />

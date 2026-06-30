@@ -1,14 +1,12 @@
-# 🌀 M002 Week 2 — English Worksheet (Beginner)
+# 🧭 M002 Week 2 — Turning (Beginner)
 
-**Topic:** Turning at Walls · **Course:** Maze Madness · **Level:** Beginner · **Time:** about 30 minutes
+**Topic:** Turn at Walls · **Course:** Maze Madness · **Level:** Beginner · **Time:** about 25 minutes
 
-This week your agent follows one simple rule: **if** there's a wall in front, turn; **otherwise**, move forward.
+Wall ahead? Turn. No wall? Move forward.
 
 ---
 
-## 1 · Predict 🔮
-
-Read the steps. Before you imagine the agent doing it, circle or write your answer.
+## 1 · Read It 🔮
 
 ```
 if wall ahead:
@@ -17,31 +15,19 @@ otherwise:
     move forward
 ```
 
-**There is a wall in front of the agent. What does it do? Circle one:** turn right · move forward · nothing
-
-**What does it do if the path is clear?**
+**Wall is in front. What does the agent do? Circle one:** turn right · move forward · stop
 
 <div class="write-space short"></div>
 
-```
-keep doing forever:
-    if wall ahead:
-        turn right
-    otherwise:
-        move forward
-```
-
-**In plain English, what is the agent doing over and over?**
+**No wall. What does it do?**
 
 <div class="write-space short"></div>
 
 ---
 
-## 2 · Find the Difference 🐛
+## 2 · Spot It 🐛
 
-Each pair shows clean steps first, then a broken version of the same idea. Circle what's different and write one short sentence about the bug.
-
-**Pair A** — The agent should turn when there is a **wall** ahead.
+Wall ahead = turn.
 
 ```
 # clean
@@ -59,36 +45,15 @@ otherwise:
     move forward
 ```
 
-**What is wrong? When does the buggy agent turn?**
-
-<div class="write-space short"></div>
-
-**Pair B** — Turning and moving should be in **different** branches — one or the other, not both.
-
-```
-# clean
-if wall ahead:
-    turn right
-otherwise:
-    move forward
-```
-
-```
-# buggy
-if wall ahead:
-    turn right
-    move forward
-```
-
-**What is wrong? What does the buggy agent do right after turning?**
+**Circle the line that is wrong.**
 
 <div class="write-space short"></div>
 
 ---
 
-## 3 · Fill the Gap ✏️
+## 3 · Fill It ✏️
 
-The agent should move forward when there is **no** wall. One word is missing. Fill it in using the word bank.
+No wall = move forward. One word is missing.
 
 ```
 if wall ahead:
@@ -99,23 +64,21 @@ ____________:
 
 **Word bank:** `otherwise` · `repeat` · `while`
 
-**Write the missing word:**
+**Write the word:**
 
 <div class="write-space short"></div>
 
 ---
 
-## 4 · Tell Me What You Built 📸
+## 4 · Finish the Maze 📸
 
-Now switch to your homework world. Get your agent through this week's maze using `if` / `otherwise`. When you finish, come back here.
+Open your homework world. Turn at walls. Get the agent out.
 
-Send a photo or video of your agent solving the maze, then explain what you did. Use these sentence starters — write 2 or 3 sentences.
+Take a photo or video of the agent at the maze end.
 
-> The condition I checked was …
+> The wall was on my …
 >
-> My agent got stuck when …
->
-> I fixed it by …
+> I turned …
 
 <div class="write-space tall" style="min-height: 240px"></div>
 
@@ -123,4 +86,4 @@ Send a photo or video of your agent solving the maze, then explain what you did.
 
 ### Submit ✅
 
-Send this worksheet + a photo or video of your agent solving the maze to teacher on KakaoTalk.
+Send this worksheet + your walkthrough video to teacher on KakaoTalk.

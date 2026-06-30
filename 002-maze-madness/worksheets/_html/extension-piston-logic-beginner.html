@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>🧩 M002 Extension 2 — Worksheet (Beginner)</title>
+<title>🧩 M002 Extension 2 — Piston & Logic Maze</title>
 <style>
 @page { size: A4; margin: 18mm 16mm 22mm; }
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -21,6 +21,11 @@ em { color: #555; }
 
 ul, ol { margin: 8px 0 8px 24px; }
 li { margin: 3px 0; }
+
+/* Grids (e.g. pixel-art coordinate grids) render as light graph paper. */
+table { border-collapse: collapse; margin: 12px 0; }
+th, td { border: 1px solid #ddd; padding: 4px 9px; text-align: center; font-size: 14px; }
+th { background: #faf7ff; color: #6b4ee6; font-weight: 700; }
 
 pre {
   font-family: "JetBrains Mono", "Consolas", monospace;
@@ -102,99 +107,50 @@ footer b { color: #ff7849; }
 </head>
 <body>
 <div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
-<h1>🧩 M002 Extension 2 — Worksheet (Beginner)</h1>
-<p><strong>Topic:</strong> Two Pistons + AND Conditions · <strong>Course:</strong> Maze Madness · <strong>Level:</strong> Extension (Beginner) · <strong>Time:</strong> about 35 minutes</p>
-<p>This is a <strong>challenge</strong> for students who finished the weekly mazes. The agent follows a <strong>redstone trail</strong>. Sometimes it must check <strong>two things at once</strong> (this is called <strong>AND</strong>). Twice in the maze it flips a <strong>lever</strong> to power a <strong>piston</strong> that opens the way. Your goal: get the agent through the <strong>whole maze</strong>.</p>
-<h2>1 · Read the Chat Commands 🎛️</h2>
-<p>A chat command binds a <strong>word</strong> to an action. When you type that word in chat, the agent does it.</p>
-<pre><code>when you type &quot;r&quot;:
-    agent turns right
+<h1>🧩 M002 Extension 2 — Piston &amp; Logic Maze</h1>
+<p><strong>Topic:</strong> Two Pistons + AND · <strong>Course:</strong> Maze Madness · <strong>Level:</strong> Extension (Beginner) · <strong>Time:</strong> about 30 minutes</p>
+<p>The agent walks a <strong>redstone trail</strong>. It flips a <strong>lever</strong> to open a <strong>piston</strong> gate. Get it to the end.</p>
+<h2>1 · Chat Words 🎛️</h2>
+<p>A word makes the agent move.</p>
+<pre><code>type &quot;r&quot;:
+    turn right
 </code></pre>
-<div class="qa"><p><strong>You type <code>r</code>. What does the agent do? Circle one:</strong> turns left · turns right · jumps</p>
+<div class="qa"><p><strong>You type <code>r</code>. Circle one:</strong> turn left · turn right · jump</p>
 <div class="write-space short"></div></div>
 
-<pre><code>when you type &quot;rl&quot;:
-    agent teleports back to you
+<pre><code>type &quot;rl&quot;:
+    come back to you
 </code></pre>
-<div class="qa"><p><strong>You type <code>rl</code>. Where does the agent go? Circle one:</strong> to the goal · back to you · nowhere</p>
+<div class="qa"><p><strong>You type <code>rl</code>. Circle one:</strong> to the goal · back to you · nowhere</p>
 <div class="write-space short"></div></div>
 
 <h2>2 · AND means BOTH 🔍</h2>
-<p><strong>AND</strong> is true only when <strong>both</strong> things are true. Read each line and answer.</p>
-<pre><code>if redstone on left AND redstone ahead:
+<p><strong>AND</strong> is true only when <strong>both</strong> are true.</p>
+<pre><code>if redstone left AND redstone ahead:
     turn left
 </code></pre>
-<div class="qa"><p><strong>There is redstone on the left, but NOT ahead. Does the agent turn left? Circle one:</strong> yes · no</p>
+<div class="qa"><p><strong>Redstone is left, but NOT ahead. Turn left? Circle one:</strong> yes · no</p>
 <div class="write-space short"></div></div>
 
-<div class="qa"><p><strong>There is redstone on the left AND redstone ahead. Does the agent turn left? Circle one:</strong> yes · no</p>
+<div class="qa"><p><strong>Redstone is left AND ahead. Turn left? Circle one:</strong> yes · no</p>
 <div class="write-space short"></div></div>
 
-<pre><code>if block ahead:
-    flip the lever
-    move forward
-</code></pre>
-<div class="qa"><p><strong>A block is in the way (a piston gate). What does the agent do first? Circle one:</strong> flip the lever · move back · stop</p>
-<div class="write-space short"></div></div>
-
-<h2>3 · Find the Difference 🐛</h2>
-<p>Each pair shows clean steps first, then a broken version. Circle what's different and write one short sentence about the bug.</p>
-<p><strong>Pair A</strong> — The agent should turn left only when there is redstone on the left <strong>AND</strong> ahead.</p>
-<pre><code># clean
-if redstone on left AND redstone ahead:
+<h2>3 · Fill the Gap ✏️</h2>
+<p>Turn left only when <strong>both</strong> are true. Pick the word.</p>
+<pre><code>if redstone left ____ redstone ahead:
     turn left
 </code></pre>
-<pre><code># buggy
-if redstone on left OR redstone ahead:
-    turn left
-</code></pre>
-<div class="qa"><p><strong>What is wrong? With OR, how many of the two does the agent need?</strong></p>
+<p><strong>Word bank:</strong> <code>AND</code> · <code>OR</code></p>
+<div class="qa"><p><strong>Write it:</strong></p>
 <div class="write-space short"></div></div>
 
-<p><strong>Pair B</strong> — At a piston gate the agent should flip the lever <strong>first</strong>, then cross.</p>
-<pre><code># clean
-flip the lever
-move forward
-move forward
-</code></pre>
-<pre><code># buggy
-move forward
-move forward
-flip the lever
-</code></pre>
-<div class="qa"><p><strong>What is wrong? What does the agent hit if the lever is not flipped yet?</strong></p>
-<div class="write-space short"></div></div>
-
-<h2>4 · Fill the Gap ✏️</h2>
-<p>The agent should turn left only when <strong>both</strong> are true. One word is missing. Fill it in from the word bank.</p>
-<pre><code>if redstone on left ____ redstone ahead:
-    turn left
-</code></pre>
-<p><strong>Word bank:</strong> <code>AND</code> · <code>OR</code> · <code>NOT</code></p>
-<div class="qa"><p><strong>Write the missing word:</strong></p>
-<div class="write-space short"></div></div>
-
-<h2>5 · Finish the Whole Maze 📸</h2>
-<p>Open the <strong>M002 EXT 2</strong> world. Type <code>run</code> and watch the agent. The goal is to reach the <strong>very end</strong> — past both pistons. If it gets stuck, fix it and run again.</p>
-<p>When the agent finishes, come back here. Send a photo or video of the agent at the goal, then explain what you did. Use these sentence starters — write 2 or 3 sentences.</p>
+<h2>4 · Finish the Maze 📸</h2>
+<p>Open <strong>M002 EXT 2</strong>. Type <code>run</code>. Watch the agent. Goal: reach the end, past both pistons. Stuck? Run again.</p>
+<p>Send a photo or video of the agent at the goal. Write 2 short lines.</p>
 <div class="qa"><blockquote>
 <p>The maze had two pistons, so the agent had to …</p>
-<p>An AND check means the agent needs …</p>
-<p>The hardest part was …</p>
+<p>AND means the agent needs …</p>
 </blockquote>
-<div class="write-space tall" style="min-height: 240px"></div></div>
-
-<h2>6 · Record Your Walkthrough 🎥</h2>
-<p>Take a video on your phone (or a parent's phone) while the agent solves the whole maze. Talk like you are teaching a friend. Try to use these words: <strong>redstone</strong>, <strong>AND</strong>, <strong>piston</strong>, <strong>lever</strong>.</p>
-<blockquote>
-<ol>
-<li>Show the maze and the redstone trail.</li>
-<li>Type <code>run</code> and show the agent following it.</li>
-<li>Show the agent flipping a lever to open a piston.</li>
-<li>Show it reaching the goal.</li>
-</ol>
-</blockquote>
-<div class="qa"><p><strong>Write what you will say in your video.</strong> You can read from it while filming.</p>
 <div class="write-space tall" style="min-height: 240px"></div></div>
 
 <hr />

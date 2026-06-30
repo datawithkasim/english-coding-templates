@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>🏆 M002 Week 8 — English Worksheet</title>
+<title>🏆 M002 Week 8 — Final Cube Maze</title>
 <style>
 @page { size: A4; margin: 18mm 16mm 22mm; }
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -21,6 +21,11 @@ em { color: #555; }
 
 ul, ol { margin: 8px 0 8px 24px; }
 li { margin: 3px 0; }
+
+/* Grids (e.g. pixel-art coordinate grids) render as light graph paper. */
+table { border-collapse: collapse; margin: 12px 0; }
+th, td { border: 1px solid #ddd; padding: 4px 9px; text-align: center; font-size: 14px; }
+th { background: #faf7ff; color: #6b4ee6; font-weight: 700; }
 
 pre {
   font-family: "JetBrains Mono", "Consolas", monospace;
@@ -102,117 +107,113 @@ footer b { color: #ff7849; }
 </head>
 <body>
 <div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
-<h1>🏆 M002 Week 8 — English Worksheet</h1>
-<p><strong>Topic:</strong> Capstone — 20×20×20 Cube Maze · <strong>Course:</strong> Maze Madness · <strong>Time:</strong> about 60 minutes</p>
-<p>This is the <strong>final project</strong>. You design a 3D cube maze with redstone doors and levers, then write code that solves it on its own.</p>
+<h1>🏆 M002 Week 8 — Final Cube Maze</h1>
+<p><strong>Topic:</strong> Final Cube Maze · <strong>Course:</strong> Maze Madness · <strong>Level:</strong> Advanced · <strong>Time:</strong> about 55 minutes</p>
+<p>This is the final project. Design a 20×20×20 cube maze with redstone doors and levers, then write Python that solves it on its own. It combines everything: loops, turns, AND/OR, 3D up/down, levers, and pistons.</p>
 <h2>1 · Predict 🔮</h2>
-<p>Read each set of steps. Before you imagine the agent doing it, write what you think will happen.</p>
-<pre><code>A cube maze: 20 wide, 20 deep, 20 tall.
-- multiple floors
-- at least 1 redstone door
-- at least 1 lever
-- a clear start and finish
+<pre><code class="language-python">while not at_goal:
+    if agent.detect(BLOCK, FORWARD) or agent.detect(REDSTONE, FORWARD):
+        agent.turn(RIGHT_TURN)
+    elif agent.detect(REDSTONE, DOWN):
+        agent.interact(DOWN)
+    else:
+        agent.move(FORWARD, 1)
 </code></pre>
-<div class="qa"><p><strong>Sketch (in words) one floor of your maze. Where is the start? Where is the goal?</strong></p>
+<div class="qa"><p><strong>Name one maze shape where this strategy gets stuck.</strong></p>
 <div class="write-space"></div></div>
 
-<pre><code>keep doing until at goal:
-    if wall ahead OR closed door ahead:
-        turn right
-    otherwise if lever ahead:
-        interact ahead
-    otherwise:
-        move forward
+<h2>2 · Trace 🔍</h2>
+<pre><code class="language-python">while not at_goal:
+    if agent.detect(REDSTONE, FORWARD):
+        agent.interact(FORWARD)
+    elif agent.detect(BLOCK, FORWARD):
+        agent.turn(RIGHT_TURN)
+    elif agent.detect(BLOCK, UP):
+        agent.move(UP, 1)
+    else:
+        agent.move(FORWARD, 1)
 </code></pre>
-<div class="qa"><p><strong>This is one strategy. Name one type of maze where this will get stuck.</strong></p>
+<div class="qa"><p><strong>Ahead: a lever, then open path, then a wall, then a block above. Write the action for each step.</strong></p>
 <div class="write-space"></div></div>
 
-<pre><code>function go_to_next_floor:
-    while no stairs ahead:
-        move forward
-    move up by 1
+<h2>3 · Spot + Fix Bugs 🐛</h2>
+<p><strong>Bug A</strong> — Must <code>interact</code> only when a lever is ahead, not every step.</p>
+<pre><code class="language-python">while not at_goal:
+    agent.interact(FORWARD)
+    if agent.detect(BLOCK, FORWARD):
+        agent.turn(RIGHT_TURN)
+    else:
+        agent.move(FORWARD, 1)
 </code></pre>
-<div class="qa"><p><strong>Why is it useful to have a function called <code>go_to_next_floor</code> in a 3D maze?</strong></p>
+<div class="qa"><p><strong>Fixed code:</strong></p>
 <div class="write-space"></div></div>
 
-<h2>2 · Spot the Bug 🐛</h2>
-<p>Each block of code below was meant to do something, but it is broken. Read what the code is <strong>supposed</strong> to do, then rewrite it so it works. After that, explain why the original was wrong and why your fix works.</p>
-<p><strong>Bug A</strong> — The agent must use <code>interact</code> only when there is a <strong>lever</strong> ahead — not on every step.</p>
-<pre><code>keep doing until at goal:
-    interact ahead
-    if wall ahead:
-        turn right
-    otherwise:
-        move forward
+<p><strong>Bug B</strong> — Must stop at the goal. This runs forever.</p>
+<pre><code class="language-python">while True:
+    if agent.detect(BLOCK, FORWARD):
+        agent.turn(RIGHT_TURN)
+    else:
+        agent.move(FORWARD, 1)
 </code></pre>
-<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="qa"><p><strong>Fixed code:</strong></p>
 <div class="write-space"></div></div>
 
-<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
-<div class="write-space"></div></div>
-
-<p><strong>Bug B</strong> — The agent should <strong>stop</strong> when it reaches the goal. Right now it keeps running forever.</p>
-<pre><code>keep doing forever:
-    if wall ahead:
-        turn right
-    otherwise:
-        move forward
+<p><strong>Bug C</strong> — On a 3D maze the agent must climb floors. This only handles left/right/forward.</p>
+<pre><code class="language-python">if agent.detect(BLOCK, FORWARD):
+    agent.turn(RIGHT_TURN)
+else:
+    agent.move(FORWARD, 1)
 </code></pre>
-<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="qa"><p><strong>Fixed code (add a way to go up):</strong></p>
 <div class="write-space"></div></div>
 
-<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
-<div class="write-space"></div></div>
-
-<p><strong>Bug C</strong> — On a 3D maze the agent must also handle <strong>going up to the next floor</strong>. Right now the code only handles left/right/forward.</p>
-<pre><code>if wall ahead:
-    turn right
-otherwise:
-    move forward
+<h2>4 · Write the Function 💻</h2>
+<p>Write a function that climbs to the next floor: move forward until a wall, then move up by 1.</p>
+<pre><code class="language-python">def go_to_next_floor():
 </code></pre>
-<div class="qa"><p><strong>Write the fixed code (add an "if stairs ahead" or similar):</strong></p>
-<div class="write-space"></div></div>
+<div class="write-space"></div>
 
-<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
-<div class="write-space"></div></div>
+<h2>5 · Wire the Chat 💬</h2>
+<div class="qa"><p>Write one line so typing <code>solve</code> in chat runs your <code>solve_maze</code> function.</p>
+<div class="write-space short"></div></div>
 
-<h2>3 · Tell Me What You Built 📸</h2>
-<p>Now build your <strong>final project</strong>. Your maze must include:</p>
+<h2>6 · Build It 📸</h2>
+<p>Build your final project. Your maze must have:</p>
 <ul>
-<li>a <strong>20 × 20 × 20</strong> cube structure</li>
-<li><strong>more than one floor</strong></li>
-<li>at least <strong>1 redstone door</strong></li>
-<li>at least <strong>1 lever</strong> the agent must flip</li>
-<li>a clear <strong>start</strong> and <strong>finish</strong></li>
-<li>agent code that solves it on its own using <code>while</code> + <code>if/else</code> + <code>interact</code></li>
+<li>a <strong>20 × 20 × 20</strong> cube</li>
+<li>more than one floor</li>
+<li>at least 1 redstone door</li>
+<li>at least 1 lever the agent flips</li>
+<li>a clear start and finish</li>
+<li>agent code that solves it with <code>while</code> + <code>if/else</code> + <code>interact</code> + <code>agent.move(UP, 1)</code></li>
 </ul>
-<p>When you finish, come back here. Send a photo or video of the agent solving your maze, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.</p>
+<p>Send a photo or video of the agent reaching the goal. Then write 4-6 sentences.</p>
 <div class="qa"><blockquote>
 <p>My maze has … floors and … levers.</p>
 <p>The agent's strategy is …</p>
-<p>The hardest part of building the maze was …</p>
-<p>The hardest part of writing the code was …</p>
+<p>The hardest part of building was …</p>
+<p>The hardest part of the code was …</p>
 <p>To fix it, I …</p>
-<p>The thing I am most proud of is …</p>
+<p>I am most proud of …</p>
 </blockquote>
 <div class="write-space tall" style="min-height: 340px"></div></div>
 
-<h2>4 · Record Your Walkthrough 🎥</h2>
-<p>Now take a video on your phone (or a parent's phone) while the agent runs your maze. Talk through it like you are teaching someone who has never seen it. Try to use these words: <strong>cube</strong>, <strong>floor</strong>, <strong>lever</strong>, <strong>door</strong>, <strong>strategy</strong>.</p>
+<h2>7 · Record Your Walkthrough 🎥</h2>
+<p>Film on your phone while the agent runs. Teach it like the viewer has never seen it. Use these words: <strong>cube</strong>, <strong>floor</strong>, <strong>lever</strong>, <strong>door</strong>, <strong>strategy</strong>.</p>
 <blockquote>
 <ol>
-<li>Show the cube maze from outside, then from inside.</li>
-<li>Point out the start, the goal, the door, and the lever.</li>
-<li>Run your code and follow the agent all the way to the goal.</li>
-<li>Read the most important loop in your code out loud and say what it does.</li>
-<li>Say what you learned across the 8 weeks of this course.</li>
+<li>Show the cube from outside, then inside.</li>
+<li>Point out the start, goal, door, and lever.</li>
+<li>Run your code and follow the agent to the goal.</li>
+<li>Read your most important loop out loud and say what it does.</li>
+<li>Say what you learned across the 8 weeks.</li>
 </ol>
 </blockquote>
-<div class="qa"><p><strong>Write what you will say in your video.</strong> Use the space below to plan it before you record — you can read from it while filming.</p>
+<div class="qa"><p><strong>Plan what you will say below. Read from it while filming.</strong></p>
 <div class="write-space tall" style="min-height: 340px"></div></div>
 
 <hr />
 <h3>Submit ✅</h3>
-<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk. This is the <strong>last week</strong> of Maze Madness — congratulations on finishing the full Minecraft track!</p>
+<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.</p>
 </body>
 </html>

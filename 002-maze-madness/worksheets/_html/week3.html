@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>🔀 M002 Week 3 — English Worksheet</title>
+<title>🔗 M002 Week 3 — AND Conditions</title>
 <style>
 @page { size: A4; margin: 18mm 16mm 22mm; }
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -21,6 +21,11 @@ em { color: #555; }
 
 ul, ol { margin: 8px 0 8px 24px; }
 li { margin: 3px 0; }
+
+/* Grids (e.g. pixel-art coordinate grids) render as light graph paper. */
+table { border-collapse: collapse; margin: 12px 0; }
+th, td { border: 1px solid #ddd; padding: 4px 9px; text-align: center; font-size: 14px; }
+th { background: #faf7ff; color: #6b4ee6; font-weight: 700; }
 
 pre {
   font-family: "JetBrains Mono", "Consolas", monospace;
@@ -102,90 +107,82 @@ footer b { color: #ff7849; }
 </head>
 <body>
 <div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
-<h1>🔀 M002 Week 3 — English Worksheet</h1>
-<p><strong>Topic:</strong> AND Conditions — Two Things at Once · <strong>Course:</strong> Maze Madness · <strong>Time:</strong> about 45 minutes</p>
-<p>This week your agent checks <strong>two things at the same time</strong> using <code>AND</code>. With <code>AND</code>, the action only happens when <strong>both</strong> conditions are true.</p>
+<h1>🔗 M002 Week 3 — AND Conditions</h1>
+<p><strong>Topic:</strong> AND — two things both true · <strong>Course:</strong> Maze Madness · <strong>Level:</strong> Advanced · <strong>Time:</strong> about 55 minutes</p>
+<p><code>AND</code> checks two things. The action runs only when <strong>both</strong> are true.</p>
 <h2>1 · Predict 🔮</h2>
-<p>Read each set of steps. Before you imagine the agent doing it, write what you think will happen.</p>
-<pre><code>if wall ahead AND wall on right:
-    turn left
+<pre><code class="language-python">if agent.detect(BLOCK, FORWARD) and agent.detect(BLOCK, RIGHT):
+    agent.turn(LEFT_TURN)
 </code></pre>
-<div class="qa"><p><strong>Both conditions must be true. When does the agent turn left? When does it do nothing?</strong></p>
-<div class="write-space"></div></div>
+<div class="qa"><p>Both true. What happens?</p>
+<div class="write-space short"></div></div>
 
-<pre><code>if no wall ahead AND no wall below:
-    move forward
+<pre><code class="language-python">if not agent.detect(BLOCK, FORWARD) and not agent.detect(BLOCK, DOWN):
+    agent.move(FORWARD, 1)
 </code></pre>
-<div class="qa"><p><strong>Both must be true to move. The path ahead is clear but there is a wall below — does the agent move?</strong></p>
+<div class="qa"><p>Path ahead is clear, but a block is below. Does it move? Why?</p>
 <div class="write-space"></div></div>
 
-<pre><code>keep doing forever:
-    if wall ahead AND wall on right:
-        turn left
-    otherwise:
-        move forward
+<h2>2 · Trace 🔍</h2>
+<pre><code class="language-python">while True:
+    if agent.detect(BLOCK, FORWARD) and agent.detect(BLOCK, RIGHT):
+        agent.turn(LEFT_TURN)
+    else:
+        agent.move(FORWARD, 1)
 </code></pre>
-<div class="qa"><p><strong>The agent reaches a corner with walls on the front AND right. What does it do? What happens at an open path?</strong></p>
-<div class="write-space"></div></div>
+<div class="qa"><p>At a corner (block ahead AND block right), what runs?</p>
+<div class="write-space short"></div></div>
 
-<h2>2 · Spot the Bug 🐛</h2>
-<p>Each block of code below was meant to do something, but it is broken. Read what the code is <strong>supposed</strong> to do, then rewrite it so it works. After that, explain why the original was wrong and why your fix works.</p>
-<p><strong>Bug A</strong> — The agent is supposed to turn left <strong>only when</strong> there is a wall ahead AND a wall on the right (a dead-end corner).</p>
-<pre><code>if wall ahead:
-    turn left
+<div class="qa"><p>At an open path, what runs?</p>
+<div class="write-space short"></div></div>
+
+<h2>3 · Spot and Fix Bugs 🐛</h2>
+<p><strong>Bug A</strong> — Turn left only when block ahead AND block on right.</p>
+<pre><code class="language-python">if agent.detect(BLOCK, FORWARD):
+    agent.turn(LEFT_TURN)
 </code></pre>
-<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="qa"><p>Fix:</p>
 <div class="write-space"></div></div>
 
-<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
-<div class="write-space"></div></div>
+<div class="qa"><p>Why wrong?</p>
+<div class="write-space short"></div></div>
 
-<p><strong>Bug B</strong> — The agent should move forward only when the path ahead is clear AND the path on the left is also clear (a wide-open spot).</p>
-<pre><code>if no wall ahead:
-    move forward
+<p><strong>Bug B</strong> — Both checks should be different: front and right.</p>
+<pre><code class="language-python">if agent.detect(BLOCK, FORWARD) and agent.detect(BLOCK, FORWARD):
+    agent.turn(LEFT_TURN)
 </code></pre>
-<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="qa"><p>Fix:</p>
 <div class="write-space"></div></div>
 
-<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="qa"><p>Why wrong?</p>
+<div class="write-space short"></div></div>
+
+<h2>4 · Write Code ✍️</h2>
+<div class="qa"><p>Move forward only when the path ahead is clear AND the path on the left is clear. Write it.</p>
 <div class="write-space"></div></div>
 
-<p><strong>Bug C</strong> — At a dead-end corner (wall ahead AND wall on right), the agent should turn left. Right now it turns left whenever there is <strong>any</strong> wall, so it spins in place too early.</p>
-<pre><code>if wall ahead AND wall ahead:
-    turn left
-</code></pre>
-<p><strong>Hint:</strong> the two checks should be <strong>different</strong> — front <em>and</em> right.</p>
-<div class="qa"><p><strong>Write the fixed code:</strong></p>
-<div class="write-space"></div></div>
-
-<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
-<div class="write-space"></div></div>
-
-<h2>3 · Tell Me What You Built 📸</h2>
-<p>Now switch to your homework world. Solve the maze using at least one <code>AND</code> condition. When you finish, come back here.</p>
-<p>Send a photo or video of the agent reaching the end, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.</p>
+<h2>5 · Finish the Maze 📸</h2>
+<p>Solve your homework maze using one or more <code>AND</code> conditions. Send a photo or video of the agent at the end. Then finish these.</p>
 <div class="qa"><blockquote>
 <p>First, I …</p>
 <p>I used <strong>AND</strong> when …</p>
-<p>Both conditions were true when …</p>
-<p>One tricky moment was when …</p>
+<p>Both were true when …</p>
+<p>One tricky moment was …</p>
 <p>To fix it, I …</p>
-<p>If I had more time, I would …</p>
 </blockquote>
-<div class="write-space tall" style="min-height: 340px"></div></div>
+<div class="write-space tall" style="min-height: 240px"></div></div>
 
-<h2>4 · Record Your Walkthrough 🎥</h2>
-<p>Now take a video on your phone (or a parent's phone) while the agent runs the maze. Talk through it like you are teaching someone who has never seen it. Try to use these words: <strong>AND</strong>, <strong>condition</strong>, <strong>both</strong>, <strong>true</strong>, <strong>turn</strong>.</p>
-<blockquote>
+<h2>6 · Record Your Walkthrough 🎥</h2>
+<p>Plan your phone video, then record. Try these words: <strong>AND</strong>, <strong>condition</strong>, <strong>both</strong>, <strong>true</strong>, <strong>turn</strong>.</p>
+<div class="qa"><blockquote>
 <ol>
-<li>Show the start of the maze, then run your code.</li>
-<li>Read each <code>if … AND …</code> block out loud and say what makes it run.</li>
-<li>Show one spot where the agent did <strong>nothing</strong> because only one condition was true.</li>
-<li>Say in your own words what <strong>AND</strong> means.</li>
+<li>Show the start. Run your code.</li>
+<li>Read each <code>if … and …</code> block out loud. Say what makes it run.</li>
+<li>Show one spot where the agent did nothing because only one check was true.</li>
+<li>Say what <strong>AND</strong> means.</li>
 </ol>
 </blockquote>
-<div class="qa"><p><strong>Write what you will say in your video.</strong> Use the space below to plan it before you record — you can read from it while filming.</p>
-<div class="write-space tall" style="min-height: 340px"></div></div>
+<div class="write-space tall" style="min-height: 240px"></div></div>
 
 <hr />
 <h3>Submit ✅</h3>

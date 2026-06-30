@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>🧊 M002 Week 5 — Mini Cube Puzzle</title>
+<style>
+@page { size: A4; margin: 18mm 16mm 22mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-family: "Inter", "Segoe UI", system-ui, sans-serif; color: #1a1a2e; }
+body { font-size: 15px; line-height: 1.55; }
+
+.cover { border-bottom: 3px solid #ff7849; padding-bottom: 14px; margin-bottom: 20px; }
+.brand { font-size: 14px; font-weight: 800; color: #ff7849; letter-spacing: .06em; }
+h1 { font-size: 28px; color: #6b4ee6; margin: 8px 0 6px; line-height: 1.25; }
+h2 { font-size: 19px; color: #6b4ee6; margin: 22px 0 12px; padding-top: 10px; border-top: 1px solid #eee; page-break-before: always; }
+section.first h2, h2:first-of-type { border-top: none; padding-top: 0; page-break-before: avoid; }
+h3, h4 { font-size: 15px; margin: 14px 0 8px; color: #1a1a2e; }
+p { margin: 8px 0; }
+strong { color: #1a1a2e; }
+em { color: #555; }
+
+ul, ol { margin: 8px 0 8px 24px; }
+li { margin: 3px 0; }
+
+/* Grids (e.g. pixel-art coordinate grids) render as light graph paper. */
+table { border-collapse: collapse; margin: 12px 0; }
+th, td { border: 1px solid #ddd; padding: 4px 9px; text-align: center; font-size: 14px; }
+th { background: #faf7ff; color: #6b4ee6; font-weight: 700; }
+
+pre {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 13.5px;
+  background: #1e1e2e;
+  color: #b9f6ca;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 10px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  page-break-inside: avoid;
+  line-height: 1.5;
+}
+pre code { background: transparent; padding: 0; color: inherit; }
+code {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  background: #fff1e8;
+  color: #ff7849;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+blockquote {
+  margin: 10px 0;
+  padding: 10px 16px;
+  background: #fff6ef;
+  border-left: 3px solid #ff7849;
+  border-radius: 0 6px 6px 0;
+  color: #6a3a1c;
+}
+
+.write-space {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #ffffff 0,
+    #ffffff 27px,
+    #d4d4d4 27px,
+    #d4d4d4 28px
+  );
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  min-height: 114px;
+  margin: 10px 0 20px;
+  page-break-inside: avoid;
+}
+.write-space.short { min-height: 86px; }
+.write-space.tall { min-height: 170px; }
+
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
+hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
+
+.meta { color: #666; font-size: 13px; margin: 0 0 14px; }
+.answer-lines {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 14px 16px;
+  background: #fafafa;
+  white-space: pre;
+  line-height: 2.2;
+}
+
+footer {
+  position: fixed;
+  bottom: 10mm; left: 16mm; right: 16mm;
+  text-align: center;
+  font-size: 10px;
+  color: #aaa;
+}
+footer b { color: #ff7849; }
+</style>
+</head>
+<body>
+<div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
+<h1>🧊 M002 Week 5 — Mini Cube Puzzle</h1>
+<p><strong>Topic:</strong> Mini Cube Puzzle · <strong>Course:</strong> Maze Madness · <strong>Level:</strong> Intermediate · <strong>Time:</strong> about 35 minutes</p>
+<p>Finish the mini cube. Add a conditional, fill every layer, then break the top and climb out.</p>
+<h2>1 · Predict 🔮</h2>
+<p>Read the steps. Write what happens.</p>
+<pre><code>repeat 5 times:
+    place block
+    move forward
+</code></pre>
+<div class="qa"><p><strong>What shape is left? How long?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code>if on the edge OR on the top layer:
+    place block
+otherwise:
+    leave empty
+</code></pre>
+<div class="qa"><p><strong>Only one part must be true. Which spots get a block?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>2 · Plain to Code 🔁</h2>
+<p>The agent should move up one block. Match the plain words to the API.</p>
+<pre><code>move up one block
+</code></pre>
+<p><strong>Word bank:</strong> <code>agent.move(UP, 1)</code> · <code>agent.move(FORWARD, 1)</code> · <code>agent.turn(LEFT_TURN)</code></p>
+<div class="qa"><p><strong>Write the line:</strong></p>
+<div class="write-space short"></div></div>
+
+<h2>3 · Trace 👣</h2>
+<pre><code>agent.place(BLOCK)
+agent.move(FORWARD, 1)
+agent.place(BLOCK)
+agent.move(UP, 1)
+</code></pre>
+<div class="qa"><p><strong>How many blocks placed? Where does the agent end — on the floor or one up?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>4 · Spot the Bug 🐛</h2>
+<p><strong>Bug A</strong> — The agent should fill the layer, <strong>then</strong> move up. It moves up too soon.</p>
+<pre><code>agent.place(BLOCK)
+agent.move(UP, 1)
+agent.place(BLOCK)
+</code></pre>
+<div class="qa"><p><strong>Fix it:</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug B</strong> — To climb out, make the hole <strong>first</strong>, then move up. Fix the order.</p>
+<pre><code>agent.move(UP, 1)
+agent.detect(BLOCK, UP)
+</code></pre>
+<p><strong>Hint:</strong> break the block above first.</p>
+<div class="qa"><p><strong>Fix it:</strong></p>
+<div class="write-space"></div></div>
+
+<h2>5 · Finish the Cube 📸🎥</h2>
+<p>Open this week's world. Find the <strong>mini cube starter</strong> — part is built.</p>
+<ol>
+<li>Keep the starter going.</li>
+<li>Add one conditional that uses <code>OR</code>.</li>
+<li>Fill every layer.</li>
+<li>Break a hole in the top and climb out.</li>
+</ol>
+<p>Send a photo or video of the finished cube and the hole. Then finish:</p>
+<div class="qa"><blockquote>
+<p>To keep building, I …</p>
+<p>I used a conditional when …</p>
+<p>I made the hole by …</p>
+</blockquote>
+<div class="write-space tall" style="min-height: 240px"></div></div>
+
+<p><strong>Phone video plan.</strong> Film the agent building. Use these words: <strong>cube</strong>, <strong>layer</strong>, <strong>conditional</strong>, <strong>OR</strong>, <strong>hole</strong>.</p>
+<blockquote>
+<ol>
+<li>Show the starter cube.</li>
+<li>Run your code and watch it fill.</li>
+<li>Read your conditional out loud.</li>
+<li>Show the hole and the climb out.</li>
+</ol>
+</blockquote>
+<div class="qa"><p><strong>Write what you will say:</strong></p>
+<div class="write-space tall" style="min-height: 240px"></div></div>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.</p>
+</body>
+</html>

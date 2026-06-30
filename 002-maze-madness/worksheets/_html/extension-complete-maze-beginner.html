@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>🧩 M002 Extension 4 — Worksheet (Beginner)</title>
+<title>🧩 M002 Extension 4 — Complete the Maze</title>
 <style>
 @page { size: A4; margin: 18mm 16mm 22mm; }
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -107,11 +107,11 @@ footer b { color: #ff7849; }
 </head>
 <body>
 <div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
-<h1>🧩 M002 Extension 4 — Worksheet (Beginner)</h1>
-<p><strong>Topic:</strong> Add Two AND Conditions · <strong>Course:</strong> Maze Madness · <strong>Level:</strong> Extension (Beginner) · <strong>Time:</strong> about 35 minutes</p>
-<p>This is a <strong>challenge</strong> for students who finished the weekly mazes. The agent already knows <strong>four rules</strong> for following redstone through a 3D maze. But it is <strong>not finished</strong> — at two spots it gets stuck because one redstone signal is not enough. You will look at each stuck spot, see <strong>which two signals</strong> are on, and add your own <strong>AND</strong> rule (two things true at once). Then get the agent to the goal.</p>
-<h2>1 · The Four Rules the Agent Knows 🎛️</h2>
-<p>Each rule checks <strong>one</strong> redstone signal and does <strong>one</strong> thing.</p>
+<h1>🧩 M002 Extension 4 — Complete the Maze</h1>
+<p><strong>Topic:</strong> Add Two AND Conditions · <strong>Course:</strong> Maze Madness · <strong>Level:</strong> Extension (Beginner) · <strong>Time:</strong> about 30 minutes</p>
+<p>The agent knows <strong>four rules</strong> to follow redstone. But it gets <strong>stuck</strong> at two spots. There, two signals are on at once. You find the two signals and add your own <strong>AND</strong> rule.</p>
+<h2>1 · The Four Rules 🎛️</h2>
+<p>Each rule sees <strong>one</strong> signal and does <strong>one</strong> thing.</p>
 <pre><code>if redstone on the LEFT:
     turn RIGHT
 if redstone on the RIGHT:
@@ -121,7 +121,7 @@ if redstone BELOW:
 if redstone ABOVE:
     move DOWN
 </code></pre>
-<p><strong>Draw a line to match each signal to its action. You will reuse these actions in your own rules.</strong></p>
+<p><strong>Draw a line to match. You will reuse these.</strong></p>
 <table>
 <thead>
 <tr>
@@ -132,7 +132,7 @@ if redstone ABOVE:
 </thead>
 <tbody>
 <tr>
-<td>redstone on the left</td>
+<td>redstone left</td>
 <td>→</td>
 <td>move up</td>
 </tr>
@@ -147,7 +147,7 @@ if redstone ABOVE:
 <td>turn left</td>
 </tr>
 <tr>
-<td>redstone on the right</td>
+<td>redstone right</td>
 <td>→</td>
 <td>move down</td>
 </tr>
@@ -156,23 +156,23 @@ if redstone ABOVE:
 <div class="write-space short"></div>
 
 <h2>2 · AND means BOTH 🧠</h2>
-<p><strong>AND</strong> is true only when <strong>both</strong> things are true.</p>
-<pre><code>if redstone on the LEFT AND redstone BELOW:
+<p><strong>AND</strong> is true only when <strong>both</strong> are true.</p>
+<pre><code>if redstone LEFT AND redstone BELOW:
     turn right
     move up
 </code></pre>
-<div class="qa"><p><strong>(This is just an example.) There is redstone on the left, but NOT below. Is the AND true? Circle one:</strong> yes · no</p>
+<div class="qa"><p><strong>Left on, but NOT below. Is the AND true?</strong> yes · no</p>
 <div class="write-space short"></div></div>
 
-<div class="qa"><p><strong>There is redstone on the left AND redstone below. Is the AND true? Circle one:</strong> yes · no</p>
+<div class="qa"><p><strong>Left on AND below on. Is the AND true?</strong> yes · no</p>
 <div class="write-space short"></div></div>
 
-<div class="qa"><p><strong>When the AND is true, the agent does the action for <em>each</em> signal — so it does TWO things. How many actions does an AND rule with two signals need?</strong></p>
+<div class="qa"><p><strong>An AND with two signals needs how many actions?</strong></p>
 <div class="write-space short"></div></div>
 
 <h2>3 · Look at the Stuck Spots 🔍</h2>
-<p>Open the <strong>M002 Complete the Maze</strong> world. Type <code>run</code>. The agent stops at <strong>two</strong> spots because two signals are on at once. Walk to each spot and look around the agent.</p>
-<p><strong>Which signals are on at each stuck spot? Tick all you see.</strong></p>
+<p>Open the <strong>M002 Complete the Maze</strong> world. Type <code>run</code>. The agent stops at <strong>two</strong> spots. Walk to each one and look around the agent.</p>
+<p><strong>Tick the signals you see.</strong></p>
 <table>
 <thead>
 <tr>
@@ -203,65 +203,25 @@ if redstone ABOVE:
 <div class="write-space short"></div>
 
 <h2>4 · Write Your Two AND Rules ✏️</h2>
-<p>Use the two signals you ticked for each spot, and the actions from the table in section 1.</p>
-<p><strong>Stuck spot 1</strong> — fill in the two signals and the two actions:</p>
-<pre><code>if redstone on the ______ AND redstone ______:
+<p>Use the signals you ticked and the actions from section 1.</p>
+<p><strong>Stuck spot 1 — fill the blanks:</strong></p>
+<pre><code>if redstone ______ AND redstone ______:
     ______________
     ______________
 </code></pre>
 <div class="write-space short"></div>
 
-<div class="qa"><p><strong>Stuck spot 2</strong> — write the whole rule yourself:</p>
+<div class="qa"><p><strong>Stuck spot 2 — write the whole rule:</strong></p>
 <div class="write-space"></div></div>
 
-<h2>5 · Find the Difference 🐛</h2>
-<p>Each pair shows clean steps first, then a broken version. Circle what is different and write one short sentence about the bug.</p>
-<p><strong>Pair A</strong> — A rule should fire only when <strong>both</strong> signals are on.</p>
-<pre><code># clean
-if redstone on the LEFT AND redstone BELOW:
-    turn right
-    move up
-</code></pre>
-<pre><code># buggy
-if redstone on the LEFT OR redstone BELOW:
-    turn right
-    move up
-</code></pre>
-<div class="qa"><p><strong>What is wrong? With OR, how many of the two does the agent need?</strong></p>
-<div class="write-space short"></div></div>
-
-<p><strong>Pair B</strong> — A rule with two signals needs <strong>two</strong> actions.</p>
-<pre><code># clean
-turn right
-move up
-</code></pre>
-<pre><code># buggy
-turn right
-</code></pre>
-<div class="qa"><p><strong>What is wrong? What does the agent forget to do?</strong></p>
-<div class="write-space short"></div></div>
-
-<h2>6 · Finish the Whole Maze 📸</h2>
-<p>Type <code>run</code> and watch the agent. The goal is to reach the <strong>very end</strong>. If it gets stuck, fix your AND rules and run again.</p>
-<p>When the agent finishes, come back here. Send a photo or video of the agent at the goal, then explain what you did. Use these sentence starters — write 2 or 3 sentences.</p>
+<h2>5 · Finish the Whole Maze 📸</h2>
+<p>Type <code>run</code>. The goal is to reach the <strong>very end</strong>. If it sticks, fix your AND rules and run again.</p>
+<p>Send a photo or video of the agent at the goal. Then write 2 or 3 sentences with these starters.</p>
 <div class="qa"><blockquote>
-<p>The agent already knew four rules, like …</p>
-<p>At the first stuck spot the two signals were … and …</p>
-<p>An AND rule means the agent needs …</p>
+<p>The agent knew four rules, like …</p>
+<p>The two signals at the first stuck spot were … and …</p>
+<p>An AND rule needs …</p>
 </blockquote>
-<div class="write-space tall" style="min-height: 240px"></div></div>
-
-<h2>7 · Record Your Walkthrough 🎥</h2>
-<p>Take a video on your phone (or a parent's phone) while the agent solves the maze. Talk like you are teaching a friend. Try to use these words: <strong>redstone</strong>, <strong>AND</strong>, <strong>both</strong>, <strong>turn</strong>, <strong>move up</strong>.</p>
-<blockquote>
-<ol>
-<li>Show the maze and the redstone.</li>
-<li>Type <code>run</code> and show the agent following it.</li>
-<li>Say out loud the two signals your AND rule needs.</li>
-<li>Show the agent reaching the goal.</li>
-</ol>
-</blockquote>
-<div class="qa"><p><strong>Write what you will say in your video.</strong> You can read from it while filming.</p>
 <div class="write-space tall" style="min-height: 240px"></div></div>
 
 <hr />

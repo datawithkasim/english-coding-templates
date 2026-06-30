@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>🕹️ M002 Week 6 — English Worksheet</title>
+<title>🔴 M002 Week 6 — Redstone & Levers</title>
 <style>
 @page { size: A4; margin: 18mm 16mm 22mm; }
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -21,6 +21,11 @@ em { color: #555; }
 
 ul, ol { margin: 8px 0 8px 24px; }
 li { margin: 3px 0; }
+
+/* Grids (e.g. pixel-art coordinate grids) render as light graph paper. */
+table { border-collapse: collapse; margin: 12px 0; }
+th, td { border: 1px solid #ddd; padding: 4px 9px; text-align: center; font-size: 14px; }
+th { background: #faf7ff; color: #6b4ee6; font-weight: 700; }
 
 pre {
   font-family: "JetBrains Mono", "Consolas", monospace;
@@ -102,81 +107,119 @@ footer b { color: #ff7849; }
 </head>
 <body>
 <div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
-<h1>🕹️ M002 Week 6 — English Worksheet</h1>
-<p><strong>Topic:</strong> Redstone Levers and Mazes · <strong>Course:</strong> Maze Madness · <strong>Time:</strong> about 45 minutes</p>
-<p>This week the maze has <strong>redstone levers</strong>. Your agent <strong>flips a lever</strong> to open a closed redstone door, then walks through to clear the maze.</p>
-<h2>1 · Predict 🔮</h2>
-<p>Read each set of steps. Before you imagine the agent doing it, write what you think will happen.</p>
-<pre><code>move forward
-interact ahead
-move forward
+<h1>🔴 M002 Week 6 — Redstone &amp; Levers</h1>
+<p><strong>Topic:</strong> Redstone Levers · <strong>Course:</strong> Maze Madness · <strong>Level:</strong> Advanced · <strong>Time:</strong> about 55 minutes</p>
+<p>This week the maze has <strong>redstone levers</strong>. The agent detects redstone, flips a lever with <code>interact</code> to open a closed redstone door, then walks through to clear the maze.</p>
+<h2>1 · The API 📖</h2>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>agent.detect(REDSTONE, FORWARD)</code></td>
+<td>True if redstone is ahead</td>
+</tr>
+<tr>
+<td><code>agent.interact(...)</code></td>
+<td>flip the lever in front</td>
+</tr>
+<tr>
+<td><code>agent.move(FORWARD, 1)</code></td>
+<td>step one block</td>
+</tr>
+<tr>
+<td><code>agent.turn(RIGHT_TURN)</code></td>
+<td>turn right</td>
+</tr>
+<tr>
+<td><code>player.on_chat("go", run)</code></td>
+<td>run code on chat word</td>
+</tr>
+</tbody>
+</table>
+<h2>2 · Predict 🔮</h2>
+<pre><code class="language-python">agent.move(FORWARD, 1)
+agent.interact(...)
+agent.move(FORWARD, 1)
 </code></pre>
-<div class="qa"><p><strong>The agent moves up to a lever, flips it, then moves forward. What happens to the door?</strong></p>
-<div class="write-space"></div></div>
+<div class="qa"><p><strong>The agent reaches a lever and flips it. What happens to the door?</strong></p>
+<div class="write-space short"></div></div>
 
-<pre><code>interact ahead
-move forward
-move forward
+<pre><code class="language-python">agent.interact(...)
+agent.move(FORWARD, 1)
+agent.move(FORWARD, 1)
 </code></pre>
-<div class="qa"><p><strong>There is no lever in front of the agent. What happens?</strong></p>
-<div class="write-space"></div></div>
+<div class="qa"><p><strong>There is no lever in front. What happens?</strong></p>
+<div class="write-space short"></div></div>
 
-<pre><code>while no lever ahead:
-    move forward
-interact ahead
-turn right
-move forward
-move forward
+<h2>3 · Trace the Code 🔍</h2>
+<pre><code class="language-python">while not agent.detect(REDSTONE, FORWARD):
+    agent.move(FORWARD, 1)
+agent.interact(...)
+agent.turn(RIGHT_TURN)
+agent.move(FORWARD, 1)
+agent.move(FORWARD, 1)
 </code></pre>
-<div class="qa"><p><strong>Describe in plain English what the agent is doing, step by step.</strong></p>
+<div class="qa"><p><strong>Describe what the agent does, step by step, in plain English.</strong></p>
 <div class="write-space"></div></div>
 
-<h2>2 · Spot the Bug 🐛</h2>
-<p>Each block of code below was meant to do something, but it is broken. Read what the code is <strong>supposed</strong> to do, then rewrite it so it works. After that, explain why the original was wrong and why your fix works.</p>
-<p><strong>Bug A</strong> — The agent is supposed to <strong>flip the lever first</strong>, then walk through the now-open door.</p>
-<pre><code>move forward
-move forward
-interact ahead
+<h2>4 · Spot and Fix the Bugs 🐛</h2>
+<p>Each block is broken. Write the fixed code, then say why.</p>
+<p><strong>Bug A</strong> — Flip the lever <strong>first</strong>, then walk through the open door. The lever is at the first wall.</p>
+<pre><code class="language-python">agent.move(FORWARD, 1)
+agent.move(FORWARD, 1)
+agent.interact(...)
 </code></pre>
-<p><strong>Hint:</strong> the lever is at the first wall. Flip it before passing.</p>
-<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="qa"><p><strong>Fixed code:</strong></p>
 <div class="write-space"></div></div>
 
-<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
-<div class="write-space"></div></div>
+<div class="qa"><p><strong>Why was it wrong?</strong></p>
+<div class="write-space short"></div></div>
 
-<p><strong>Bug B</strong> — Before flipping a lever, the agent should be <strong>right in front of it</strong>.</p>
-<pre><code>while no lever ahead:
-    move forward
-    interact ahead
+<p><strong>Bug B</strong> — Walk <strong>up to</strong> the lever, then flip it <strong>once</strong>. This flips on every step.</p>
+<pre><code class="language-python">while not agent.detect(REDSTONE, FORWARD):
+    agent.move(FORWARD, 1)
+    agent.interact(...)
 </code></pre>
-<p><strong>Hint:</strong> the agent is interacting on every step, even when there is no lever.</p>
-<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="qa"><p><strong>Fixed code:</strong></p>
 <div class="write-space"></div></div>
 
-<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
-<div class="write-space"></div></div>
+<div class="qa"><p><strong>Why was it wrong?</strong></p>
+<div class="write-space short"></div></div>
 
-<p><strong>Bug C</strong> — After flipping the lever, the agent should <strong>turn around</strong> and go back through the door.</p>
-<pre><code>interact ahead
-move forward
+<p><strong>Bug C</strong> — After flipping, the agent must <strong>turn around</strong> and go back through the door. The door is behind it.</p>
+<pre><code class="language-python">agent.interact(...)
+agent.move(FORWARD, 1)
 </code></pre>
-<p><strong>Hint:</strong> the door is behind the agent, not in front.</p>
-<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="qa"><p><strong>Fixed code:</strong></p>
 <div class="write-space"></div></div>
 
-<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
-<div class="write-space"></div></div>
+<div class="qa"><p><strong>Why was it wrong?</strong></p>
+<div class="write-space short"></div></div>
 
-<h2>3 · Tell Me What You Built 📸</h2>
-<p>Now switch to your homework world. The maze has a <strong>lever</strong> that opens a <strong>closed door</strong>. Write code that:</p>
+<h2>5 · Write the Code ✍️</h2>
+<p>The agent starts in the maze. Somewhere ahead is a lever. Write code that walks to the lever, flips it, and walks through the open door.</p>
+<pre><code class="language-python">def run():
+    # your code here
+
+
+player.on_chat(&quot;go&quot;, run)
+</code></pre>
+<div class="write-space tall" style="min-height: 240px"></div>
+
+<h2>6 · Finish the Maze 📸</h2>
+<p>Open your homework world. The maze has a <strong>lever</strong> that opens a <strong>closed door</strong>. Write code that:</p>
 <ol>
 <li>moves the agent to the lever,</li>
-<li>flips it (<code>interact</code>),</li>
-<li>moves on through the now-open door,</li>
+<li>flips it with <code>interact</code>,</li>
+<li>walks through the open door,</li>
 <li>reaches the goal.</li>
 </ol>
-<p>When you finish, come back here. Send a photo or video of the agent reaching the end, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.</p>
+<p>Send a photo or video of the agent at the end. Then write 4 to 6 sentences.</p>
 <div class="qa"><blockquote>
 <p>First, I walked the agent to …</p>
 <p>I used <code>interact</code> to …</p>
@@ -185,20 +228,20 @@ move forward
 <p>To fix it, I …</p>
 <p>If I had more time, I would …</p>
 </blockquote>
-<div class="write-space tall" style="min-height: 340px"></div></div>
+<div class="write-space tall" style="min-height: 240px"></div></div>
 
-<h2>4 · Record Your Walkthrough 🎥</h2>
-<p>Now take a video on your phone (or a parent's phone) while the agent runs the maze. Talk through it like you are teaching someone who has never seen it. Try to use these words: <strong>lever</strong>, <strong>interact</strong>, <strong>flip</strong>, <strong>door</strong>, <strong>open</strong>.</p>
+<h2>7 · Record Your Walkthrough 🎥</h2>
+<p>Film the agent running the maze on a phone. Teach it like the viewer has never seen it. Use these words: <strong>lever</strong>, <strong>interact</strong>, <strong>flip</strong>, <strong>door</strong>, <strong>open</strong>.</p>
 <blockquote>
 <ol>
-<li>Show the closed door and the lever in the maze.</li>
-<li>Run your code and show the agent flipping the lever.</li>
-<li>Read your code out loud and say which line opens the door.</li>
+<li>Show the closed door and the lever.</li>
+<li>Run your code. Show the agent flip the lever.</li>
+<li>Read your code out loud. Say which line opens the door.</li>
 <li>Show one bug you hit and how you fixed it.</li>
 </ol>
 </blockquote>
-<div class="qa"><p><strong>Write what you will say in your video.</strong> Use the space below to plan it before you record — you can read from it while filming.</p>
-<div class="write-space tall" style="min-height: 340px"></div></div>
+<div class="qa"><p><strong>Plan what you will say before you record. You can read it while filming.</strong></p>
+<div class="write-space tall" style="min-height: 240px"></div></div>
 
 <hr />
 <h3>Submit ✅</h3>

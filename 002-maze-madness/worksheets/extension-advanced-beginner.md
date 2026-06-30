@@ -1,30 +1,30 @@
-# 🧩 M002 Extension — Worksheet (Beginner)
+# 🧩 M002 Extension 1 — Redstone Trail Solver
 
-**Topic:** Redstone Trail Solver (3D Cube Maze) · **Course:** Maze Madness · **Level:** Extension (Beginner) · **Time:** about 35 minutes
+**Topic:** Redstone Trail Solver (3D Cube Maze) · **Course:** Maze Madness · **Level:** Extension (Beginner) · **Time:** about 30 minutes
 
-This is a **challenge** for students who finished the weekly mazes. The agent follows a **redstone trail** through a maze that goes **up and down**, not just flat. You start it with a chat word: type `run`.
+The agent follows a **redstone trail**. The maze goes **up and down**. Type `run` to start it.
 
 ---
 
-## 1 · Read the Chat Commands 🎛️
+## 1 · Chat Words 🎛️
 
-A chat command binds a **word** to an action. When you type that word in chat, the agent does it.
+A chat word makes the agent move.
 
 ```
-when you type "l":
-    agent turns left
+type "l":
+    turn left
 ```
 
-**You type `l`. What does the agent do? Circle one:** turns left · turns right · jumps
+**Type `l`. Circle one:** left · right · jump
 
 <div class="write-space short"></div>
 
 ```
-when you type "rl":
-    agent teleports back to you
+type "rl":
+    come back to you
 ```
 
-**You type `rl`. Where does the agent go? Circle one:** to the goal · back to you · nowhere
+**Type `rl`. Circle one:** to goal · back to you
 
 <div class="write-space short"></div>
 
@@ -32,101 +32,54 @@ when you type "rl":
 
 ## 2 · Follow the Trail 🔍
 
-The agent reads redstone around it and follows the trail. Read each line and answer.
+The agent reads redstone and follows it.
 
 ```
-if redstone is below me:
+redstone below me:
     move up
 ```
 
-**There is redstone under the agent. What does it do? Circle one:** move up · move down · stop
+**Redstone is below. Circle one:** up · down
 
 <div class="write-space short"></div>
 
 ```
-if redstone is above me:
+redstone above me:
     move down
 ```
 
-**This maze is 3D. Which way does the agent go here? Circle one:** up · down
-
-<div class="write-space short"></div>
-
-**The agent follows the redstone like a path. In one short sentence, what is the redstone for?**
+**Redstone is above. Circle one:** up · down
 
 <div class="write-space short"></div>
 
 ---
 
-## 3 · Find the Difference 🐛
+## 3 · Fill the Gap ✏️
 
-Each pair shows clean steps first, then a broken version. Circle what's different and write one short sentence about the bug.
-
-**Pair A** — The agent should **keep going** until the maze is done.
+Redstone below means go **up**. One word is missing.
 
 ```
-# clean
-keep doing forever:
-    move forward
-    if redstone is below me:
-        move up
-```
-
-```
-# buggy
-move forward
-if redstone is below me:
-    move up
-```
-
-**What is wrong? How many times does the buggy agent check the trail?**
-
-<div class="write-space short"></div>
-
----
-
-## 4 · Fill the Gap ✏️
-
-The agent should go **up** when there is redstone below it. One word is missing. Fill it in from the word bank.
-
-```
-if redstone is below me:
+redstone below me:
     move ____
 ```
 
 **Word bank:** `up` · `down` · `left`
 
-**Write the missing word:**
+**Write it:**
 
 <div class="write-space short"></div>
 
 ---
 
-## 5 · Tell Me What You Built 📸
+## 4 · Show Me 📸
 
-Open the extension world. Type `run` and watch the agent follow the redstone trail to the goal. When it finishes, come back here.
+Open the world. Type `run`. Watch the agent reach the goal.
 
-Send a photo or video of the agent at the goal, then explain what you did. Use these sentence starters — write 2 or 3 sentences.
+Send a photo OR video of the agent at the goal. Write 2 short lines.
 
-> The maze was 3D, so the agent went …
+> The maze went up and …
 >
 > The redstone trail told the agent to …
->
-> The hardest part was …
-
-<div class="write-space tall" style="min-height: 240px"></div>
-
----
-
-## 6 · Record Your Walkthrough 🎥
-
-Take a video on your phone (or a parent's phone) while the agent solves the maze. Talk like you are teaching a friend. Try to use these words: **redstone**, **trail**, **up**, **down**, **3D**.
-
-> 1. Show the maze and the redstone trail.
-> 2. Type `run` and show the agent following it.
-> 3. Say one place where the agent went up or down.
-
-**Write what you will say in your video.** You can read from it while filming.
 
 <div class="write-space tall" style="min-height: 240px"></div>
 

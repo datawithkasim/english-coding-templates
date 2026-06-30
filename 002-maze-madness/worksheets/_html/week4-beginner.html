@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>🔂 M002 Week 4 — English Worksheet (Beginner)</title>
+<title>🔀 M002 Week 4 — AND / OR</title>
 <style>
 @page { size: A4; margin: 18mm 16mm 22mm; }
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -21,6 +21,11 @@ em { color: #555; }
 
 ul, ol { margin: 8px 0 8px 24px; }
 li { margin: 3px 0; }
+
+/* Grids (e.g. pixel-art coordinate grids) render as light graph paper. */
+table { border-collapse: collapse; margin: 12px 0; }
+th, td { border: 1px solid #ddd; padding: 4px 9px; text-align: center; font-size: 14px; }
+th { background: #faf7ff; color: #6b4ee6; font-weight: 700; }
 
 pre {
   font-family: "JetBrains Mono", "Consolas", monospace;
@@ -102,83 +107,46 @@ footer b { color: #ff7849; }
 </head>
 <body>
 <div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
-<h1>🔂 M002 Week 4 — English Worksheet (Beginner)</h1>
-<p><strong>Topic:</strong> AND and OR Conditions — Smarter Decisions · <strong>Course:</strong> Maze Madness · <strong>Level:</strong> Beginner · <strong>Time:</strong> about 30 minutes</p>
-<p>Last week your agent used <code>AND</code> (both true). This week you add <code>OR</code>:</p>
-<ul>
-<li><code>AND</code> → the action happens <strong>only when both</strong> are true.</li>
-<li><code>OR</code> → the action happens <strong>when at least one</strong> is true.</li>
-</ul>
-<h2>1 · Predict 🔮</h2>
-<p>Read the steps. Before you imagine the agent doing it, circle or write your answer.</p>
+<h1>🔀 M002 Week 4 — AND / OR</h1>
+<p><strong>Topic:</strong> AND and OR · <strong>Course:</strong> Maze Madness · <strong>Level:</strong> Beginner · <strong>Time:</strong> about 25 minutes</p>
+<p><strong>AND</strong> = both true. <strong>OR</strong> = one is enough.</p>
+<h2>1 · Circle 🔮</h2>
 <pre><code>if wall ahead AND wall on right:
     turn left
 </code></pre>
-<div class="qa"><p><strong>Wall ahead, but the right is open. Does the agent turn? Circle one:</strong> yes · no</p>
+<div class="qa"><p>Wall ahead. Right is open. Turn? <strong>yes · no</strong></p>
 <div class="write-space short"></div></div>
 
 <pre><code>if no wall ahead OR no wall below:
     move forward
 </code></pre>
-<p><strong>The path ahead is blocked, but the path below is open. Does the agent move? Circle one:</strong> yes · no</p>
-<div class="qa"><p><strong>Why?</strong></p>
+<div class="qa"><p>Ahead blocked. Below open. Move? <strong>yes · no</strong></p>
 <div class="write-space short"></div></div>
 
-<h2>2 · Find the Difference 🐛</h2>
-<p>Each pair shows clean steps first, then a broken version of the same idea. Circle what's different and write one short sentence about the bug.</p>
-<p><strong>Pair A</strong> — The agent should turn left <strong>only</strong> at a corner (wall ahead AND wall on right).</p>
-<pre><code># clean
-if wall ahead AND wall on right:
-    turn left
-</code></pre>
+<h2>2 · Spot It 🐛</h2>
+<p>The agent should turn left <strong>only</strong> at a corner: wall ahead AND wall on right.</p>
 <pre><code># buggy
 if wall ahead OR wall on right:
     turn left
 </code></pre>
-<div class="qa"><p><strong>What is wrong? When does the buggy agent turn too often?</strong></p>
+<div class="qa"><p>It turns too often. What word is wrong?</p>
 <div class="write-space short"></div></div>
 
-<p><strong>Pair B</strong> — The agent should move when <strong>either</strong> path is clear.</p>
-<pre><code># clean
-if no wall ahead OR no wall below:
-    move forward
-</code></pre>
-<pre><code># buggy
-if no wall ahead AND no wall below:
-    move forward
-</code></pre>
-<div class="qa"><p><strong>What is wrong? When does the buggy agent get stuck?</strong></p>
-<div class="write-space short"></div></div>
-
-<h2>3 · Fill the Gap ✏️</h2>
-<p>The agent should move when <strong>at least one</strong> path is open. One word is missing. Fill it in using the word bank.</p>
+<h2>3 · Fill One Blank ✏️</h2>
+<p>Move when <strong>one</strong> path is open.</p>
 <pre><code>if no wall ahead ____ no wall below:
     move forward
 </code></pre>
-<p><strong>Word bank:</strong> <code>OR</code> · <code>AND</code> · <code>NOT</code></p>
-<div class="qa"><p><strong>Write the missing word:</strong></p>
+<div class="qa"><p>Word bank: <code>OR</code> · <code>AND</code> · <code>NOT</code></p>
 <div class="write-space short"></div></div>
 
-<h2>4 · Tell Me What You Built 📸</h2>
-<p>Now switch to your homework world. Solve the maze using an <code>OR</code> condition. When you finish, come back here.</p>
-<p>Send a photo or video of the agent reaching the end, then explain what you did. Use these sentence starters — write 2 or 3 sentences.</p>
+<h2>4 · Finish + Show 📸</h2>
+<p>Go to your homework world. Use one <code>OR</code>. Finish the maze.</p>
+<p>Send a photo or video of the agent at the end. Write 2 short lines.</p>
 <div class="qa"><blockquote>
 <p>I used <strong>OR</strong> when …</p>
-<p>One tricky moment was when …</p>
-<p>To fix it, I …</p>
+<p>One hard part was …</p>
 </blockquote>
-<div class="write-space tall" style="min-height: 240px"></div></div>
-
-<h2>5 · Record Your Walkthrough 🎥</h2>
-<p>Take a video on your phone (or a parent's phone) while the agent runs the maze. Talk like you are teaching a friend. Try to use these words: <strong>AND</strong>, <strong>OR</strong>, <strong>both</strong>, <strong>either</strong>.</p>
-<blockquote>
-<ol>
-<li>Show the start of the maze, then run your code.</li>
-<li>Read your <code>if … OR …</code> line out loud.</li>
-<li>Say in your own words how <strong>AND</strong> is different from <strong>OR</strong>.</li>
-</ol>
-</blockquote>
-<div class="qa"><p><strong>Write what you will say in your video.</strong> You can read from it while filming.</p>
 <div class="write-space tall" style="min-height: 240px"></div></div>
 
 <hr />

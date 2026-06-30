@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>🏆 M002 Week 8 — English Worksheet (Beginner)</title>
+<title>🏆 M002 Week 8 — Final Cube Maze</title>
 <style>
 @page { size: A4; margin: 18mm 16mm 22mm; }
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -21,6 +21,11 @@ em { color: #555; }
 
 ul, ol { margin: 8px 0 8px 24px; }
 li { margin: 3px 0; }
+
+/* Grids (e.g. pixel-art coordinate grids) render as light graph paper. */
+table { border-collapse: collapse; margin: 12px 0; }
+th, td { border: 1px solid #ddd; padding: 4px 9px; text-align: center; font-size: 14px; }
+th { background: #faf7ff; color: #6b4ee6; font-weight: 700; }
 
 pre {
   font-family: "JetBrains Mono", "Consolas", monospace;
@@ -102,109 +107,72 @@ footer b { color: #ff7849; }
 </head>
 <body>
 <div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
-<h1>🏆 M002 Week 8 — English Worksheet (Beginner)</h1>
-<p><strong>Topic:</strong> Capstone — 20×20×20 Cube Maze · <strong>Course:</strong> Maze Madness · <strong>Level:</strong> Beginner · <strong>Time:</strong> about 45 minutes</p>
-<p>This is the <strong>final project</strong>. You design your own maze with a redstone door and a lever, then write code that solves it.</p>
-<h2>1 · Predict 🔮</h2>
-<p>Read the steps. Before you imagine the agent doing it, circle or write your answer.</p>
-<pre><code>Your maze needs:
-- walls
-- 1 redstone door
+<h1>🏆 M002 Week 8 — Final Cube Maze</h1>
+<p><strong>Topic:</strong> Final Cube Maze · <strong>Course:</strong> Maze Madness · <strong>Level:</strong> Beginner · <strong>Time:</strong> about 25 minutes</p>
+<p>Last week! Build a cube maze. Code the agent to solve it.</p>
+<h2>1 · Plan 🔮</h2>
+<p>Your maze needs:</p>
+<pre><code>- walls
+- 1 door
 - 1 lever
-- a start and a finish
+- start and finish
 </code></pre>
-<div class="qa"><p><strong>Sketch (in words) your maze. Where is the start? Where is the goal? Where is the lever?</strong></p>
-<div class="write-space"></div></div>
-
-<pre><code>keep doing until at goal:
-    if wall ahead:
-        turn right
-    otherwise if lever ahead:
-        interact ahead
-    otherwise:
-        move forward
-</code></pre>
-<div class="qa"><p><strong>The agent reaches the lever. What does it do? Circle one:</strong> turn right · interact · move forward</p>
+<div class="qa"><p><strong>Where is the lever? One word:</strong></p>
 <div class="write-space short"></div></div>
 
-<h2>2 · Find the Difference 🐛</h2>
-<p>Each pair shows clean steps first, then a broken version of the same idea. Circle what's different and write one short sentence about the bug.</p>
-<p><strong>Pair A</strong> — The agent should <code>interact</code> only when there is a <strong>lever</strong> ahead.</p>
-<pre><code># clean
-if lever ahead:
-    interact ahead
-otherwise:
-    move forward
-</code></pre>
-<pre><code># buggy
-interact ahead
-move forward
-</code></pre>
-<div class="qa"><p><strong>What is wrong?</strong></p>
-<div class="write-space short"></div></div>
-
-<p><strong>Pair B</strong> — The agent should <strong>stop</strong> when it reaches the goal.</p>
-<pre><code># clean
-keep doing until at goal:
+<h2>2 · Circle 🔮</h2>
+<pre><code>keep going until at goal:
     if wall ahead:
         turn right
-    otherwise:
+    else if lever ahead:
+        interact
+    else:
         move forward
 </code></pre>
-<pre><code># buggy
-keep doing forever:
-    if wall ahead:
-        turn right
-    otherwise:
-        move forward
-</code></pre>
-<div class="qa"><p><strong>What is wrong? When does the buggy agent stop?</strong></p>
+<div class="qa"><p><strong>Agent sees a lever. Circle one:</strong> turn right · interact · move forward</p>
 <div class="write-space short"></div></div>
 
-<h2>3 · Fill the Gap ✏️</h2>
-<p>The agent should keep going <strong>until it reaches the goal</strong>. One part is missing. Fill it in using the word bank.</p>
-<pre><code>keep doing until ____________:
+<h2>3 · Fill One Blank ✏️</h2>
+<pre><code>keep going until ________:
     if wall ahead:
         turn right
-    otherwise:
+    else:
         move forward
 </code></pre>
-<p><strong>Word bank:</strong> <code>at goal</code> · <code>forever</code> · <code>wall ahead</code></p>
-<div class="qa"><p><strong>Write the missing part:</strong></p>
+<p><strong>Word bank:</strong> <code>at goal</code> · <code>forever</code></p>
+<div class="qa"><p><strong>Write the blank:</strong></p>
 <div class="write-space short"></div></div>
 
-<h2>4 · Tell Me What You Built 📸</h2>
-<p>Now build your <strong>final project</strong>. Your maze needs:</p>
+<h2>4 · Build It 📸</h2>
+<p>Build your final maze:</p>
 <ul>
-<li>a <strong>20 × 20 × 20</strong> cube shape</li>
-<li>walls and a clear path</li>
-<li><strong>1 redstone door</strong></li>
-<li><strong>1 lever</strong> the agent must flip</li>
-<li>a clear <strong>start</strong> and <strong>finish</strong></li>
-<li>agent code that solves it using <code>if/otherwise</code> and <code>interact</code></li>
+<li><strong>20 × 20 × 20</strong> cube</li>
+<li>1 door</li>
+<li>1 lever</li>
+<li>start and finish</li>
+<li>code that solves it</li>
 </ul>
-<p>When you finish, come back here. Send a photo or video of the agent solving your maze, then explain what you did. Use these sentence starters — write 2 or 3 sentences.</p>
+<p>Send a photo or video of the agent at the goal. Then write 2-3 sentences.</p>
 <div class="qa"><blockquote>
 <p>My maze has …</p>
 <p>The agent's plan is …</p>
-<p>The thing I am most proud of is …</p>
+<p>I am proud of …</p>
 </blockquote>
 <div class="write-space tall" style="min-height: 240px"></div></div>
 
-<h2>5 · Record Your Walkthrough 🎥</h2>
-<p>Take a video on your phone (or a parent's phone) while the agent runs your maze. Talk like you are teaching a friend. Try to use these words: <strong>maze</strong>, <strong>lever</strong>, <strong>door</strong>, <strong>goal</strong>.</p>
-<blockquote>
+<h2>5 · Video 🎥</h2>
+<p>Film your phone while the agent runs. Use these words: <strong>maze</strong>, <strong>lever</strong>, <strong>door</strong>, <strong>goal</strong>.</p>
+<div class="qa"><blockquote>
 <ol>
-<li>Show the maze, the start, the door, and the lever.</li>
-<li>Run your code and follow the agent to the goal.</li>
-<li>Say what you learned in this course.</li>
+<li>Show the maze, door, and lever.</li>
+<li>Run your code to the goal.</li>
+<li>Say what you learned.</li>
 </ol>
 </blockquote>
-<div class="qa"><p><strong>Write what you will say in your video.</strong> You can read from it while filming.</p>
 <div class="write-space tall" style="min-height: 240px"></div></div>
 
 <hr />
 <h3>Submit ✅</h3>
-<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk. This is the <strong>last week</strong> of Maze Madness — congratulations!</p>
+<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.</p>
 </body>
 </html>

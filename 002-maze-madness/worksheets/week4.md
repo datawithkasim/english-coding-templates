@@ -1,120 +1,157 @@
-# 🔂 M002 Week 4 — English Worksheet
+# 🔀 M002 Week 4 — AND / OR
 
-**Topic:** AND and OR Conditions — Smarter Decisions · **Course:** Maze Madness · **Time:** about 45 minutes
+**Topic:** AND and OR Conditions — Smarter Decisions · **Course:** Maze Madness · **Level:** Advanced · **Time:** about 55 minutes
 
-Last week your agent used `AND` (both true). This week you add `OR` (**either** one true) and use them **together** in the same maze.
+Last week your agent used `and` (both true). This week you add `or` (at least one true) and combine them in one maze.
 
-- `AND` → the action happens **only when both** conditions are true.
-- `OR` → the action happens **when at least one** condition is true.
+- `and` → the action runs **only when both** conditions are true.
+- `or` → the action runs **when at least one** condition is true.
+
+Detect walls with `agent.detect(BLOCK, FORWARD)`. It returns `True` when a block is there. Use `not` for an open path.
 
 ---
 
 ## 1 · Predict 🔮
 
-Read each set of steps. Before you imagine the agent doing it, write what you think will happen.
+Read each block. Write what the agent does before you picture it.
 
-```
-if wall ahead AND wall on right:
-    turn left
+```python
+if agent.detect(BLOCK, FORWARD) and agent.detect(BLOCK, RIGHT):
+    agent.turn(LEFT_TURN)
 ```
 
-**Both must be true. The agent has a wall ahead but an open path on the right — does it turn left?**
+Wall ahead, open right. Does it turn left? Why?
 
 <div class="write-space"></div>
 
-```
-if no wall ahead OR no wall below:
-    move forward
+```python
+if not agent.detect(BLOCK, FORWARD) or not agent.detect(BLOCK, DOWN):
+    agent.move(FORWARD, 1)
 ```
 
-**Only one needs to be true. The path ahead is blocked but the path below is open — does the agent move?**
+Ahead blocked, below open. Does it move? Why?
 
 <div class="write-space"></div>
 
-```
-keep doing forever:
-    if wall ahead AND wall on right:
-        turn left
-    otherwise if no wall ahead OR no wall on left:
-        move forward
-    otherwise:
-        turn right
-```
-
-**The agent reaches a corner with walls on the front AND right. What does it do? At an open junction, which branch runs?**
-
-<div class="write-space"></div>
-
----
-
-## 2 · Spot the Bug 🐛
-
-Each block of code below was meant to do something, but it is broken. Read what the code is **supposed** to do, then rewrite it so it works. After that, explain why the original was wrong and why your fix works.
-
-**Bug A** — The agent should turn left **only when** there is a wall ahead AND a wall on the right (a dead-end corner). Right now it turns at *any* wall.
-
-```
-if wall ahead OR wall on right:
-    turn left
+```python
+while True:
+    if agent.detect(BLOCK, FORWARD) and agent.detect(BLOCK, RIGHT):
+        agent.turn(LEFT_TURN)
+    elif not agent.detect(BLOCK, FORWARD) or not agent.detect(BLOCK, LEFT):
+        agent.move(FORWARD, 1)
+    else:
+        agent.turn(RIGHT_TURN)
 ```
 
-**Write the fixed code:**
-
-<div class="write-space"></div>
-
-**Why was it wrong? Why does your fix work?**
-
-<div class="write-space"></div>
-
-**Bug B** — The agent should move forward when **either** the path ahead is clear OR the path below is clear.
-
-```
-if no wall ahead AND no wall below:
-    move forward
-```
-
-**Write the fixed code:**
-
-<div class="write-space"></div>
-
-**Why was it wrong? Why does your fix work?**
-
-<div class="write-space"></div>
-
-**Bug C** — At a fork the agent should **turn right if it can** (path on the right), otherwise turn left. Right now the order is wrong, so it always turns left first.
-
-```
-if no wall on left:
-    turn left
-otherwise if no wall on right:
-    turn right
-```
-
-**Hint:** check the right side first.
-
-**Write the fixed code:**
-
-<div class="write-space"></div>
-
-**Why was it wrong? Why does your fix work?**
+At a front-and-right corner, what runs? At an open junction, which branch runs?
 
 <div class="write-space"></div>
 
 ---
 
-## 3 · Tell Me What You Built 📸
+## 2 · Trace the Truth 🔎
 
-Now switch to your homework world. Solve the maze using **both** an `AND` condition and an `OR` condition. When you finish, come back here.
+Fill the table. Write the branch that runs for each case.
 
-Send a photo or video of the agent reaching the end, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.
+```python
+if agent.detect(BLOCK, FORWARD) and agent.detect(BLOCK, RIGHT):
+    agent.turn(LEFT_TURN)
+elif not agent.detect(BLOCK, FORWARD):
+    agent.move(FORWARD, 1)
+else:
+    agent.turn(RIGHT_TURN)
+```
+
+| Front | Right | What runs? |
+|-------|-------|-----------|
+| wall | wall | |
+| wall | open | |
+| open | wall | |
+
+<div class="write-space short"></div>
+
+---
+
+## 3 · Spot and Fix Bugs 🐛
+
+Read what each block **should** do, then rewrite it. Explain the fix.
+
+**Bug A** — Turn left **only** at a dead-end corner (wall ahead AND wall on right). Right now it turns at any wall.
+
+```python
+if agent.detect(BLOCK, FORWARD) or agent.detect(BLOCK, RIGHT):
+    agent.turn(LEFT_TURN)
+```
+
+Fixed code:
+
+<div class="write-space"></div>
+
+Why was it wrong? Why does your fix work?
+
+<div class="write-space"></div>
+
+**Bug B** — Move forward when **either** the path ahead OR the path below is clear.
+
+```python
+if not agent.detect(BLOCK, FORWARD) and not agent.detect(BLOCK, DOWN):
+    agent.move(FORWARD, 1)
+```
+
+Fixed code:
+
+<div class="write-space"></div>
+
+Why was it wrong? Why does your fix work?
+
+<div class="write-space"></div>
+
+**Bug C** — At a fork, turn right if the right is open, otherwise turn left. The order is wrong, so it always turns left first.
+
+```python
+if not agent.detect(BLOCK, LEFT):
+    agent.turn(LEFT_TURN)
+elif not agent.detect(BLOCK, RIGHT):
+    agent.turn(RIGHT_TURN)
+```
+
+Hint: check the right side first.
+
+Fixed code:
+
+<div class="write-space"></div>
+
+Why was it wrong? Why does your fix work?
+
+<div class="write-space"></div>
+
+---
+
+## 4 · Write the Code ✍️
+
+Write a `while True` loop that:
+
+- turns left when there is a wall ahead **and** a wall on the right,
+- else moves forward when the path ahead **or** the path below is open,
+- else turns right.
+
+<div class="write-space tall" style="min-height: 240px"></div>
+
+---
+
+## 5 · Finish the Maze 📸
+
+Switch to your homework world. Solve the maze using **both** an `and` condition and an `or` condition. Come back when the agent reaches the end.
+
+Send a photo or video of the agent at the end. Write 4 to 6 sentences.
 
 > First, I …
 >
-> I used **AND** when …
+> I used **and** when …
 >
-> I used **OR** when …
+> I used **or** when …
 >
-> One tricky moment was when …
+> One tricky moment was …
 >
 > To fix it, I …
 >
@@ -124,16 +161,16 @@ Send a photo or video of the agent reaching the end, then explain what you did. 
 
 ---
 
-## 4 · Record Your Walkthrough 🎥
+## 6 · Record Your Walkthrough 🎥
 
-Now take a video on your phone (or a parent's phone) while the agent runs the maze. Talk through it like you are teaching someone who has never seen it. Try to use these words: **AND**, **OR**, **condition**, **both**, **either**.
+Film the maze on your phone. Teach someone who has never seen it. Use these words: **and**, **or**, **condition**, **both**, **either**.
 
-> 1. Show the start of the maze, then run your code.
-> 2. Read each `if … AND …` and `if … OR …` block out loud and say what makes it run.
+> 1. Show the start, then run your code.
+> 2. Read each `and` block and `or` block out loud. Say what makes it run.
 > 3. Show one bug you hit and how you fixed it.
-> 4. Say in your own words how **AND** is different from **OR**.
+> 4. Say in your own words how **and** is different from **or**.
 
-**Write what you will say in your video.** Use the space below to plan it before you record — you can read from it while filming.
+Plan your words below before you film. You can read from it while recording.
 
 <div class="write-space tall" style="min-height: 340px"></div>
 

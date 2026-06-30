@@ -1,24 +1,19 @@
-# 🔂 M002 Week 4 — English Worksheet (Beginner)
+# 🔀 M002 Week 4 — AND / OR
 
-**Topic:** AND and OR Conditions — Smarter Decisions · **Course:** Maze Madness · **Level:** Beginner · **Time:** about 30 minutes
+**Topic:** AND and OR · **Course:** Maze Madness · **Level:** Beginner · **Time:** about 25 minutes
 
-Last week your agent used `AND` (both true). This week you add `OR`:
-
-- `AND` → the action happens **only when both** are true.
-- `OR` → the action happens **when at least one** is true.
+**AND** = both true. **OR** = one is enough.
 
 ---
 
-## 1 · Predict 🔮
-
-Read the steps. Before you imagine the agent doing it, circle or write your answer.
+## 1 · Circle 🔮
 
 ```
 if wall ahead AND wall on right:
     turn left
 ```
 
-**Wall ahead, but the right is open. Does the agent turn? Circle one:** yes · no
+Wall ahead. Right is open. Turn? **yes · no**
 
 <div class="write-space short"></div>
 
@@ -27,25 +22,15 @@ if no wall ahead OR no wall below:
     move forward
 ```
 
-**The path ahead is blocked, but the path below is open. Does the agent move? Circle one:** yes · no
-
-**Why?**
+Ahead blocked. Below open. Move? **yes · no**
 
 <div class="write-space short"></div>
 
 ---
 
-## 2 · Find the Difference 🐛
+## 2 · Spot It 🐛
 
-Each pair shows clean steps first, then a broken version of the same idea. Circle what's different and write one short sentence about the bug.
-
-**Pair A** — The agent should turn left **only** at a corner (wall ahead AND wall on right).
-
-```
-# clean
-if wall ahead AND wall on right:
-    turn left
-```
+The agent should turn left **only** at a corner: wall ahead AND wall on right.
 
 ```
 # buggy
@@ -53,72 +38,36 @@ if wall ahead OR wall on right:
     turn left
 ```
 
-**What is wrong? When does the buggy agent turn too often?**
-
-<div class="write-space short"></div>
-
-**Pair B** — The agent should move when **either** path is clear.
-
-```
-# clean
-if no wall ahead OR no wall below:
-    move forward
-```
-
-```
-# buggy
-if no wall ahead AND no wall below:
-    move forward
-```
-
-**What is wrong? When does the buggy agent get stuck?**
+It turns too often. What word is wrong?
 
 <div class="write-space short"></div>
 
 ---
 
-## 3 · Fill the Gap ✏️
+## 3 · Fill One Blank ✏️
 
-The agent should move when **at least one** path is open. One word is missing. Fill it in using the word bank.
+Move when **one** path is open.
 
 ```
 if no wall ahead ____ no wall below:
     move forward
 ```
 
-**Word bank:** `OR` · `AND` · `NOT`
-
-**Write the missing word:**
+Word bank: `OR` · `AND` · `NOT`
 
 <div class="write-space short"></div>
 
 ---
 
-## 4 · Tell Me What You Built 📸
+## 4 · Finish + Show 📸
 
-Now switch to your homework world. Solve the maze using an `OR` condition. When you finish, come back here.
+Go to your homework world. Use one `OR`. Finish the maze.
 
-Send a photo or video of the agent reaching the end, then explain what you did. Use these sentence starters — write 2 or 3 sentences.
+Send a photo or video of the agent at the end. Write 2 short lines.
 
 > I used **OR** when …
 >
-> One tricky moment was when …
->
-> To fix it, I …
-
-<div class="write-space tall" style="min-height: 240px"></div>
-
----
-
-## 5 · Record Your Walkthrough 🎥
-
-Take a video on your phone (or a parent's phone) while the agent runs the maze. Talk like you are teaching a friend. Try to use these words: **AND**, **OR**, **both**, **either**.
-
-> 1. Show the start of the maze, then run your code.
-> 2. Read your `if … OR …` line out loud.
-> 3. Say in your own words how **AND** is different from **OR**.
-
-**Write what you will say in your video.** You can read from it while filming.
+> One hard part was …
 
 <div class="write-space tall" style="min-height: 240px"></div>
 

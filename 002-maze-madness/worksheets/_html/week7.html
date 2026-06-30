@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>🧱 M002 Week 7 — English Worksheet</title>
+<title>⚙️ M002 Week 7 — Pistons</title>
 <style>
 @page { size: A4; margin: 18mm 16mm 22mm; }
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -21,6 +21,11 @@ em { color: #555; }
 
 ul, ol { margin: 8px 0 8px 24px; }
 li { margin: 3px 0; }
+
+/* Grids (e.g. pixel-art coordinate grids) render as light graph paper. */
+table { border-collapse: collapse; margin: 12px 0; }
+th, td { border: 1px solid #ddd; padding: 4px 9px; text-align: center; font-size: 14px; }
+th { background: #faf7ff; color: #6b4ee6; font-weight: 700; }
 
 pre {
   font-family: "JetBrains Mono", "Consolas", monospace;
@@ -102,83 +107,85 @@ footer b { color: #ff7849; }
 </head>
 <body>
 <div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
-<h1>🧱 M002 Week 7 — English Worksheet</h1>
-<p><strong>Topic:</strong> Pistons and Mazes · <strong>Course:</strong> Maze Madness · <strong>Time:</strong> about 45 minutes</p>
-<p>This week the maze uses <strong>pistons</strong>. A piston pushes or pulls a block when it gets a redstone signal. A <strong>sticky piston</strong> can pull a block back, opening a path. Your agent flips a lever to power a piston, then crosses the gap it opens.</p>
+<h1>⚙️ M002 Week 7 — Pistons</h1>
+<p><strong>Topic:</strong> Pistons and Mazes · <strong>Course:</strong> Maze Madness · <strong>Level:</strong> Advanced · <strong>Time:</strong> about 55 minutes</p>
+<p>A piston pushes or pulls a block when it gets a redstone signal. A <strong>sticky piston</strong> can pull a block back, opening a path — but only while the signal is ON. A lever sends that signal. Your agent flips the lever to power the piston, then crosses the gap it opens.</p>
 <h2>1 · Predict 🔮</h2>
-<p>Read each set of steps. Before you imagine the agent doing it, write what you think will happen.</p>
-<pre><code>move forward
-interact ahead
-move forward
+<p>Read each block. Write what happens before you imagine it.</p>
+<pre><code class="language-python">agent.move(FORWARD, 1)
+agent.interact(...)
+agent.move(FORWARD, 1)
 </code></pre>
-<div class="qa"><p><strong>The agent walks up to a lever, flips it, and a sticky piston pulls a block back. What happens to the path? Can the agent move forward now?</strong></p>
+<div class="qa"><p><strong>The agent walks to a lever, flips it, and a sticky piston pulls a block back. Can the agent move forward now?</strong></p>
 <div class="write-space"></div></div>
 
-<pre><code>if gap ahead:
-    interact ahead
-otherwise:
-    move forward
+<pre><code class="language-python">if not agent.detect(BLOCK, FORWARD):
+    agent.interact(...)
+else:
+    agent.move(FORWARD, 1)
 </code></pre>
-<div class="qa"><p><strong>There is a gap in the floor with a piston bridge. What does the agent do at the gap? What does it do on solid ground?</strong></p>
+<div class="qa"><p><strong>What does the agent do at a gap? What does it do on solid ground?</strong></p>
 <div class="write-space"></div></div>
 
-<pre><code>keep doing forever:
-    if gap ahead:
-        interact ahead
-        move forward
-    otherwise:
-        move forward
+<h2>2 · Trace 👣</h2>
+<pre><code class="language-python">while True:
+    if not agent.detect(BLOCK, FORWARD):
+        agent.interact(...)
+        agent.move(FORWARD, 1)
+    else:
+        agent.move(FORWARD, 1)
 </code></pre>
-<div class="qa"><p><strong>Describe in plain English what the agent is doing, step by step.</strong></p>
+<div class="qa"><p><strong>Describe step by step what the agent does as it moves through the maze.</strong></p>
 <div class="write-space"></div></div>
 
-<h2>2 · Spot the Bug 🐛</h2>
-<p>Each block of code below was meant to do something, but it is broken. Read what the code is <strong>supposed</strong> to do, then rewrite it so it works. After that, explain why the original was wrong and why your fix works.</p>
-<p><strong>Bug A</strong> — The agent is supposed to <strong>power the piston first</strong>, then cross the gap it opens.</p>
-<pre><code>move forward
-move forward
-interact ahead
+<h2>3 · Spot and Fix Bugs 🐛</h2>
+<p>Each block is broken. Read the goal, write the fix, then explain it.</p>
+<p><strong>Bug A</strong> — Power the piston <strong>first</strong>, then cross the gap it opens.</p>
+<pre><code class="language-python">agent.move(FORWARD, 1)
+agent.move(FORWARD, 1)
+agent.interact(...)
 </code></pre>
-<p><strong>Hint:</strong> flip the lever <em>before</em> you reach the gap, not after.</p>
-<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="qa"><p><strong>Fixed code:</strong></p>
 <div class="write-space"></div></div>
 
 <div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
-<div class="write-space"></div></div>
+<div class="write-space short"></div></div>
 
-<p><strong>Bug B</strong> — The agent should only <code>interact</code> when there is a <strong>gap</strong> ahead. Right now it tries to flip a lever on every step.</p>
-<pre><code>keep doing forever:
-    interact ahead
-    move forward
+<p><strong>Bug B</strong> — <code>interact</code> should run only when there is a <strong>gap</strong> ahead. This flips a lever on every step.</p>
+<pre><code class="language-python">while True:
+    agent.interact(...)
+    agent.move(FORWARD, 1)
 </code></pre>
-<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="qa"><p><strong>Fixed code:</strong></p>
 <div class="write-space"></div></div>
 
 <div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
-<div class="write-space"></div></div>
+<div class="write-space short"></div></div>
 
-<p><strong>Bug C</strong> — A sticky piston holds the bridge <strong>only while the lever is ON</strong>. The agent must cross <strong>before</strong> turning the lever back off.</p>
-<pre><code>interact ahead
-move forward
-interact ahead
-move forward
+<p><strong>Bug C</strong> — A sticky piston holds the bridge <strong>only while the lever is ON</strong>. The second <code>interact</code> switches it OFF and the bridge vanishes. Cross first.</p>
+<pre><code class="language-python">agent.interact(...)
+agent.move(FORWARD, 1)
+agent.interact(...)
+agent.move(FORWARD, 1)
 </code></pre>
-<p><strong>Hint:</strong> the second <code>interact</code> switches the lever OFF and the bridge disappears. Cross first.</p>
-<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="qa"><p><strong>Fixed code:</strong></p>
 <div class="write-space"></div></div>
 
 <div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
-<div class="write-space"></div></div>
+<div class="write-space short"></div></div>
 
-<h2>3 · Tell Me What You Built 📸</h2>
-<p>Now switch to your homework world. The maze has a <strong>gap</strong> (or a blocked path) and a <strong>piston</strong> that opens it when powered. Write code that:</p>
-<ol>
-<li>moves the agent to the lever,</li>
-<li>flips it (<code>interact</code>) so the piston opens the path,</li>
-<li>crosses while the path is open,</li>
-<li>reaches the goal.</li>
-</ol>
-<p>When you finish, come back here. Send a photo or video of the agent reaching the end, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.</p>
+<h2>4 · Write Full Code ✍️</h2>
+<p>Write code that walks the agent to the lever, flips it so the piston opens the path, crosses while the path is open, and reaches the goal. Use a chat trigger to start it.</p>
+<pre><code class="language-python">def cross_gap(name, message):
+    pass  # your code here
+
+player.on_chat(&quot;go&quot;, cross_gap)
+</code></pre>
+<div class="write-space tall" style="min-height: 240px"></div>
+
+<h2>5 · Build It 📸</h2>
+<p>Open your homework world. The maze has a gap (or blocked path) and a piston that opens it when powered. Run your code so the agent reaches the goal.</p>
+<p>Send a photo or video of the agent at the end. Then finish these lines — 4 to 6 sentences.</p>
 <div class="qa"><blockquote>
 <p>First, I walked the agent to …</p>
 <p>I powered the piston by …</p>
@@ -187,20 +194,20 @@ move forward
 <p>To fix it, I …</p>
 <p>If I had more time, I would …</p>
 </blockquote>
-<div class="write-space tall" style="min-height: 340px"></div></div>
+<div class="write-space tall" style="min-height: 240px"></div></div>
 
-<h2>4 · Record Your Walkthrough 🎥</h2>
-<p>Now take a video on your phone (or a parent's phone) while the agent runs the maze. Talk through it like you are teaching someone who has never seen it. Try to use these words: <strong>piston</strong>, <strong>redstone</strong>, <strong>signal</strong>, <strong>gap</strong>, <strong>bridge</strong>.</p>
+<h2>6 · Plan Your Walkthrough Video 🎥</h2>
+<p>Take a phone video while the agent runs the maze. Talk through it like you are teaching someone new. Use these words: <strong>piston</strong>, <strong>redstone</strong>, <strong>signal</strong>, <strong>gap</strong>, <strong>bridge</strong>.</p>
 <blockquote>
 <ol>
-<li>Show the gap (or blocked path) and the piston in the maze.</li>
+<li>Show the gap and the piston.</li>
 <li>Run your code and show the agent powering the piston and crossing.</li>
 <li>Read your code out loud and say which line opens the path.</li>
 <li>Show one bug you hit and how you fixed it.</li>
 </ol>
 </blockquote>
-<div class="qa"><p><strong>Write what you will say in your video.</strong> Use the space below to plan it before you record — you can read from it while filming.</p>
-<div class="write-space tall" style="min-height: 340px"></div></div>
+<div class="qa"><p><strong>Write what you will say. Plan it here before you record.</strong></p>
+<div class="write-space tall" style="min-height: 240px"></div></div>
 
 <hr />
 <h3>Submit ✅</h3>

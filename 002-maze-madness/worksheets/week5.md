@@ -1,72 +1,67 @@
-# 🧊 M002 Week 5 — English Worksheet
+# 🧊 M002 Week 5 — Mini Cube Puzzle
 
-**Topic:** Mini Cube Puzzle · **Course:** Maze Madness · **Time:** about 45 minutes
+**Topic:** Mini Cube Puzzle · **Course:** Maze Madness · **Level:** Advanced · **Time:** about 55 minutes
 
-This week you finish the **mini cube**. You already have starter code that builds part of the cube. Your job is to **keep it going** — add more decisions with conditionals, and leave a way out through the **top**.
-
-> Two ways to finish — pick the one that fits you:
->
-> - **Challenge:** add **2 more conditionals**, and make **one of them an `OR`**.
-> - **Steady:** keep the same pattern the starter uses and **fill the whole cube**.
->
-> Either way: the agent must **break a hole in the top** and climb out.
+Finish the mini cube. The starter builds part of it. Keep it going: add **2 more conditionals** with **one `OR`**, fill the cube, then break a hole in the **top** and climb out.
 
 ---
 
 ## 1 · Predict 🔮
 
-Read each set of steps. Before you imagine the agent doing it, write what you think will happen.
+Read each block. Write what you think happens.
 
-```
-repeat 5 times:
-    place block
-    move forward
+```python
+for i in range(5):
+    agent.place(BLOCK)
+    agent.move(FORWARD, 1)
 ```
 
-**What shape does the agent leave behind? How long is it?**
+**What shape is left behind? How long is it?**
 
 <div class="write-space"></div>
 
-```
-if on the edge OR on the top layer:
-    place block
-otherwise:
-    leave empty
-```
-
-**Only one condition needs to be true. Which spots get a block? Which stay empty?**
-
-<div class="write-space"></div>
-
-```
-repeat for each layer:
-    fill the layer
-move up
-if at the top:
-    break block above
-    climb out
+```python
+if on_edge or on_top_layer:
+    agent.place(BLOCK)
+else:
+    pass  # leave empty
 ```
 
-**Describe in plain English what the agent does, from the first layer to climbing out.**
+**Only one condition must be true. Which spots get a block? Which stay empty?**
 
 <div class="write-space"></div>
 
 ---
 
-## 2 · Spot the Bug 🐛
+## 2 · Trace 👣
 
-Each block of code below was meant to do something, but it is broken. Read what the code is **supposed** to do, then rewrite it so it works. After that, explain why the original was wrong and why your fix works.
-
-**Bug A** — The agent should place a block on **every edge** of the layer, then move up. Right now it moves up **before** finishing the layer.
-
-```
-place block
-move up
-place block
-place block
+```python
+for layer in range(3):
+    fill_layer()
+    agent.move(UP, 1)
+if agent.detect(BLOCK, UP):
+    # break above, then climb
+    agent.move(UP, 1)
 ```
 
-**Write the fixed code:**
+**Walk through it. How many layers fill? Where does the agent end up? Is there still a block above it?**
+
+<div class="write-space"></div>
+
+---
+
+## 3 · Spot + Fix the Bugs 🐛
+
+**Bug A** — The agent should place blocks across the layer, **then** move up. It moves up too early.
+
+```python
+agent.place(BLOCK)
+agent.move(UP, 1)
+agent.place(BLOCK)
+agent.place(BLOCK)
+```
+
+**Fixed code:**
 
 <div class="write-space"></div>
 
@@ -74,16 +69,16 @@ place block
 
 <div class="write-space"></div>
 
-**Bug B** — The agent should leave a block when it is on the **bottom layer** `OR` on an **outer wall**. Right now it only fills the bottom layer.
+**Bug B** — Place a block when on the **bottom layer** `OR` on an **outer wall**. It only checks the bottom.
 
+```python
+if on_bottom_layer:
+    agent.place(BLOCK)
 ```
-if on the bottom layer:
-    place block
-```
 
-**Hint:** one condition is missing. Add the wall check with `OR`.
+**Hint:** add the wall check with `or`.
 
-**Write the fixed code:**
+**Fixed code:**
 
 <div class="write-space"></div>
 
@@ -91,16 +86,16 @@ if on the bottom layer:
 
 <div class="write-space"></div>
 
-**Bug C** — After the cube is full, the agent should **break the block above** and climb out the top. Right now it tries to climb **before** making the hole, so it gets stuck.
+**Bug C** — To climb out, break the block above **first**, then move up. Right now it moves up into solid block and gets stuck.
 
+```python
+agent.move(UP, 1)
+agent.destroy(UP)
 ```
-move up
-break block above
-```
 
-**Hint:** make the hole first, then move into it.
+**Hint:** make the hole, then move into it.
 
-**Write the fixed code:**
+**Fixed code:**
 
 <div class="write-space"></div>
 
@@ -110,26 +105,30 @@ break block above
 
 ---
 
-## 3 · Finish the Cube 📸
+## 4 · Write Code ✍️
 
-Open this week's world. You will find the **mini cube starter** — some of the cube is already built. Finish it your way:
+Write a loop that fills **one layer**: place a block, move forward, repeat 4 times.
 
-**Challenge path**
+<div class="write-space"></div>
+
+Write a conditional that uses `or`: if the agent is on a **corner** `OR` on the **top**, place a block.
+
+<div class="write-space"></div>
+
+---
+
+## 5 · Finish the Cube 📸
+
+Open this week's world. Find the **mini cube starter** — part is built.
 
 1. Keep the starter running.
-2. Add **2 more conditionals** that decide where blocks go (for example: a different block on corners, or skip a spot to leave a pattern).
-3. Make **one** of them use `OR` (for example: `if on a corner OR on the top → place glass`).
-4. Make sure the agent **breaks a hole in the top** and climbs out.
+2. Add **2 more conditionals** that decide where blocks go.
+3. Make **one** use `or` (e.g. corner `OR` top → place glass).
+4. Break a hole in the **top** and climb out.
 
-**Steady path**
+Send a photo or video of the finished cube and the hole. Then finish — 4 to 6 sentences:
 
-1. Keep the **same pattern** the starter uses.
-2. Repeat it until the **whole cube is filled**.
-3. Make sure the agent **breaks a hole in the top** and climbs out.
-
-When you finish, come back here. Send a **photo or video** of the finished cube (and the hole in the top!), then explain what you did. Use these sentence starters — write 4 to 6 sentences total.
-
-> First, I looked at the starter code and saw …
+> First, I looked at the starter and saw …
 >
 > To keep building, I …
 >
@@ -137,7 +136,7 @@ When you finish, come back here. Send a **photo or video** of the finished cube 
 >
 > I made the hole in the top by …
 >
-> One tricky moment was when …
+> One tricky moment was …
 >
 > If I had more time, I would …
 
@@ -145,16 +144,16 @@ When you finish, come back here. Send a **photo or video** of the finished cube 
 
 ---
 
-## 4 · Record Your Walkthrough 🎥
+## 6 · Record Your Walkthrough 🎥
 
-Now take a video on your phone (or a parent's phone) while the agent builds the cube. Talk through it like you are teaching someone who has never seen it. Try to use these words: **cube**, **layer**, **conditional**, **OR**, **hole**.
+Film the agent building on a phone. Teach it like the viewer has never seen it. Use these words: **cube**, **layer**, **conditional**, **OR**, **hole**.
 
-> 1. Show the starter cube before you run your code.
-> 2. Run your code and watch the cube fill up.
-> 3. Read your conditional out loud and say what makes it run.
+> 1. Show the starter cube before you run.
+> 2. Run your code and watch the cube fill.
+> 3. Read your conditional out loud and say what makes it true.
 > 4. Show the agent breaking the hole in the top and climbing out.
 
-**Write what you will say in your video.** Use the space below to plan it before you record — you can read from it while filming.
+**Write what you will say. Plan it before you film — you can read from it.**
 
 <div class="write-space tall" style="min-height: 340px"></div>
 
