@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>🧩 M002 Extension 4 — Complete the Maze</title>
+<style>
+@page { size: A4; margin: 18mm 16mm 22mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-family: "Inter", "Segoe UI", system-ui, sans-serif; color: #1a1a2e; }
+body { font-size: 15px; line-height: 1.55; }
+
+.cover { border-bottom: 3px solid #ff7849; padding-bottom: 14px; margin-bottom: 20px; }
+.brand { font-size: 14px; font-weight: 800; color: #ff7849; letter-spacing: .06em; }
+h1 { font-size: 28px; color: #6b4ee6; margin: 8px 0 6px; line-height: 1.25; }
+h2 { font-size: 19px; color: #6b4ee6; margin: 22px 0 12px; padding-top: 10px; border-top: 1px solid #eee; page-break-before: always; }
+section.first h2, h2:first-of-type { border-top: none; padding-top: 0; page-break-before: avoid; }
+h3, h4 { font-size: 15px; margin: 14px 0 8px; color: #1a1a2e; }
+p { margin: 8px 0; }
+strong { color: #1a1a2e; }
+em { color: #555; }
+
+ul, ol { margin: 8px 0 8px 24px; }
+li { margin: 3px 0; }
+
+/* Grids (e.g. pixel-art coordinate grids) render as light graph paper. */
+table { border-collapse: collapse; margin: 12px 0; }
+th, td { border: 1px solid #ddd; padding: 4px 9px; text-align: center; font-size: 14px; }
+th { background: #faf7ff; color: #6b4ee6; font-weight: 700; }
+
+pre {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 13.5px;
+  background: #1e1e2e;
+  color: #b9f6ca;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 10px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  page-break-inside: avoid;
+  line-height: 1.5;
+}
+pre code { background: transparent; padding: 0; color: inherit; }
+code {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  background: #fff1e8;
+  color: #ff7849;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+blockquote {
+  margin: 10px 0;
+  padding: 10px 16px;
+  background: #fff6ef;
+  border-left: 3px solid #ff7849;
+  border-radius: 0 6px 6px 0;
+  color: #6a3a1c;
+}
+
+.write-space {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #ffffff 0,
+    #ffffff 27px,
+    #d4d4d4 27px,
+    #d4d4d4 28px
+  );
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  min-height: 114px;
+  margin: 10px 0 20px;
+  page-break-inside: avoid;
+}
+.write-space.short { min-height: 86px; }
+.write-space.tall { min-height: 170px; }
+
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
+hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
+
+.meta { color: #666; font-size: 13px; margin: 0 0 14px; }
+.answer-lines {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 14px 16px;
+  background: #fafafa;
+  white-space: pre;
+  line-height: 2.2;
+}
+
+footer {
+  position: fixed;
+  bottom: 10mm; left: 16mm; right: 16mm;
+  text-align: center;
+  font-size: 10px;
+  color: #aaa;
+}
+footer b { color: #ff7849; }
+</style>
+</head>
+<body>
+<div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
+<h1>🧩 M002 Extension 4 — Complete the Maze</h1>
+<p><strong>Topic:</strong> Add Two AND Conditions · <strong>Course:</strong> Maze Madness · <strong>Level:</strong> Extension (Advanced) · <strong>Time:</strong> about 60 minutes</p>
+<p>This is an <strong>extension challenge</strong> for students who have finished the weekly mazes. The agent already knows <strong>four rules</strong> for following a redstone trail through a 3D maze. But the solver is <strong>not finished</strong> — at two junctions the agent gets stuck because one redstone signal is not enough. Your job is to <strong>add two more rules</strong>, and both of them must be <strong>AND</strong> conditions (two things true at the same time). <strong>You</strong> decide which two signals each junction needs — go look at the maze and figure it out. Then run the solver and get the agent all the way to the goal.</p>
+<p>You drive it with <strong>chat commands</strong>: type <code>l</code> to turn left, <code>r</code> to turn right, <code>run</code> to start the solver, and <code>rl</code> to teleport the agent back to you.</p>
+<h2>1 · Read the Four Rules the Agent Already Knows 🎛️</h2>
+<p>The solver already has these four rules. Each one checks <strong>one</strong> redstone signal and does <strong>one</strong> action.</p>
+<pre><code>if agent.detect(REDSTONE, LEFT):
+    agent.turn(RIGHT_TURN)
+elif agent.detect(REDSTONE, RIGHT):
+    agent.turn(LEFT_TURN)
+elif agent.detect(REDSTONE, DOWN):
+    agent.move(UP, 1)
+elif agent.detect(REDSTONE, UP):
+    agent.move(DOWN, 1)
+</code></pre>
+<p><strong>Fill in this table from the code above. You will reuse these actions in your own rules later.</strong></p>
+<table>
+<thead>
+<tr>
+<th>When the agent sees…</th>
+<th>the agent will…</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>redstone on the <strong>left</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>redstone on the <strong>right</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>redstone <strong>below</strong> (down)</td>
+<td></td>
+</tr>
+<tr>
+<td>redstone <strong>above</strong> (up)</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="qa"><p><strong>Notice the trick: redstone on the <em>left</em> makes the agent turn <em>right</em>, and redstone <em>below</em> makes it move <em>up</em>. In your own words, why might the maze be built this way (signal on one side, action to the other)?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>2 · Find the Two Stuck Junctions 🔍</h2>
+<p>At most junctions only <strong>one</strong> redstone signal is on, so one of the four rules fires. But the maze has <strong>two special junctions</strong> where <strong>two</strong> signals are on <strong>at the same time</strong>. There the four rules are not enough — only the first matching one fires, and the agent stops.</p>
+<p><strong>Run the solver with <code>run</code>. Watch where it stops. Walk over to that spot and look around the agent. Which redstone signals are on there? Tick all you see, then do the same for the second stuck spot.</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>left</th>
+<th>right</th>
+<th>below</th>
+<th>above</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Junction 1</strong> (first place it stops)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Junction 2</strong> (second place it stops)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="qa"><p><strong>At each stuck junction, only the <em>first</em> matching rule fires and the agent freezes. Look at the words <code>if</code> and <code>elif</code> — how many of those branches can run on one pass? Why does that leave the second signal unused?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>3 · AND means BOTH at once 🧠</h2>
+<p>An <strong>AND</strong> condition is true <strong>only when both</strong> halves are true.</p>
+<pre><code>if agent.detect(REDSTONE, LEFT) and agent.detect(REDSTONE, DOWN):
+    ...
+</code></pre>
+<div class="qa"><p><strong>(This is just an example pair — yours may be different.) There is redstone on the left but NOT below. Is this whole condition true? What about redstone below but not on the left?</strong></p>
+<div class="write-space short"></div></div>
+
+<div class="qa"><p><strong>Look at your table from section 2. For Junction 1, which two signals are both on? Write the AND condition that is true only at that spot.</strong></p>
+<div class="write-space short"></div></div>
+
+<div class="qa"><p><strong>At that junction the agent must do the action for <em>each</em> signal (use your table from section 1). Write those action lines in the order you think they should happen.</strong></p>
+<div class="write-space"></div></div>
+
+<h2>4 · Add the Two New Rules 🛠️</h2>
+<p>Open the <strong>M002 Complete the Maze</strong> world. Find the four rules from section 1 in the code. You will add <strong>two more <code>elif</code> branches</strong>, one for each stuck junction, using the signals <strong>you</strong> found.</p>
+<p><strong>Rule for Junction 1</strong> — write the whole branch: the AND condition for the two signals on at that spot, then the action for each signal (from your table in section 1).</p>
+<pre><code>elif agent.detect(REDSTONE, ______) and agent.detect(REDSTONE, ______):
+    agent.________(__________)
+    agent.________(__________)
+</code></pre>
+<div class="write-space"></div>
+
+<div class="qa"><p><strong>Rule for Junction 2</strong> — write the whole branch yourself, from scratch:</p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Both new rules must be checked <em>before</em> the four single-signal rules. Why? What would happen at a stuck junction if one of the plain single-signal rules was checked first?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>5 · Spot the Bug 🐛</h2>
+<p>Each block is broken. Read what it should do, rewrite it so it works, then explain the fix. (The signals here are just examples — the idea is the same for whatever pair you chose.)</p>
+<p><strong>Bug A</strong> — This junction rule should fire <strong>only when both</strong> signals are on. Right now it fires when <strong>either</strong> one is there, so it triggers at the wrong spots too.</p>
+<pre><code>elif agent.detect(REDSTONE, LEFT) or agent.detect(REDSTONE, DOWN):
+    agent.turn(RIGHT_TURN)
+    agent.move(UP, 1)
+</code></pre>
+<p><strong>Hint:</strong> "this signal <strong>and</strong> that signal" — both must be true together.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug B</strong> — A junction needs <strong>two</strong> actions, but this rule only does one, so the agent solves half the junction and gets stuck again.</p>
+<pre><code>elif agent.detect(REDSTONE, RIGHT) and agent.detect(REDSTONE, UP):
+    agent.turn(LEFT_TURN)
+</code></pre>
+<p><strong>Hint:</strong> each signal in the AND has its own action. How many actions should this branch have?</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>6 · Finish the Whole Maze 📸</h2>
+<p>The goal is to get the agent from the <strong>start to the very end</strong> — past both stuck junctions and every plain turn. Type <code>run</code>, watch where it stops, fix your two new rules, and run again until it reaches the goal.</p>
+<p>When the agent finishes, come back here. Send a photo or video of the agent at the goal, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.</p>
+<div class="qa"><blockquote>
+<p>The four rules the agent already had each checked …</p>
+<p>The agent got stuck at a junction because one redstone signal was not …</p>
+<p>The two signals I found at the first stuck junction were … and …</p>
+<p>My AND rule was true only when both of those were …</p>
+<p>I put my two new rules before the old rules because …</p>
+<p>The hardest part of finishing the whole maze was …</p>
+</blockquote>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<h2>7 · Record Your Walkthrough 🎥</h2>
+<p>Take a video on your phone (or a parent's phone) while the agent solves the whole maze. Talk through it like you are teaching someone who has never seen it. Try to use these words: <strong>detect</strong>, <strong>redstone</strong>, <strong>AND</strong>, <strong>both</strong>, <strong>condition</strong>, <strong>turn</strong>, <strong>move up</strong>, <strong>move down</strong>.</p>
+<blockquote>
+<ol>
+<li>Show the maze and point out the redstone signals.</li>
+<li>Type <code>run</code> and show the agent following the trail.</li>
+<li>Read one of your AND rules out loud and say which two signals must be true.</li>
+<li>Show the agent passing one of the two stuck junctions.</li>
+<li>Show it reaching the goal at the end.</li>
+</ol>
+</blockquote>
+<div class="qa"><p><strong>Write what you will say in your video.</strong> Plan it here first — you can read from it while filming.</p>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.</p>
+</body>
+</html>
