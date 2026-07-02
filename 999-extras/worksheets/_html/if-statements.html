@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>🔀 Extra — If Statements: Only Sometimes</title>
+<style>
+@page { size: A4; margin: 18mm 16mm 22mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-family: "Inter", "Segoe UI", system-ui, sans-serif; color: #1a1a2e; }
+body { font-size: 15px; line-height: 1.55; }
+
+.cover { border-bottom: 3px solid #ff7849; padding-bottom: 14px; margin-bottom: 20px; }
+.brand { font-size: 14px; font-weight: 800; color: #ff7849; letter-spacing: .06em; }
+h1 { font-size: 28px; color: #6b4ee6; margin: 8px 0 6px; line-height: 1.25; }
+h2 { font-size: 19px; color: #6b4ee6; margin: 22px 0 12px; padding-top: 10px; border-top: 1px solid #eee; page-break-before: always; }
+section.first h2, h2:first-of-type { border-top: none; padding-top: 0; page-break-before: avoid; }
+h3, h4 { font-size: 15px; margin: 14px 0 8px; color: #1a1a2e; }
+p { margin: 8px 0; }
+strong { color: #1a1a2e; }
+em { color: #555; }
+
+ul, ol { margin: 8px 0 8px 24px; }
+li { margin: 3px 0; }
+
+/* Grids (e.g. pixel-art coordinate grids) render as light graph paper. */
+table { border-collapse: collapse; margin: 12px 0; }
+th, td { border: 1px solid #ddd; padding: 4px 9px; text-align: center; font-size: 14px; }
+th { background: #faf7ff; color: #6b4ee6; font-weight: 700; }
+
+pre {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 13.5px;
+  background: #1e1e2e;
+  color: #b9f6ca;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 10px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  page-break-inside: avoid;
+  line-height: 1.5;
+}
+pre code { background: transparent; padding: 0; color: inherit; }
+code {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  background: #fff1e8;
+  color: #ff7849;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+blockquote {
+  margin: 10px 0;
+  padding: 10px 16px;
+  background: #fff6ef;
+  border-left: 3px solid #ff7849;
+  border-radius: 0 6px 6px 0;
+  color: #6a3a1c;
+}
+
+.write-space {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #ffffff 0,
+    #ffffff 27px,
+    #d4d4d4 27px,
+    #d4d4d4 28px
+  );
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  min-height: 114px;
+  margin: 10px 0 20px;
+  page-break-inside: avoid;
+}
+.write-space.short { min-height: 86px; }
+.write-space.tall { min-height: 170px; }
+
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
+hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
+
+.meta { color: #666; font-size: 13px; margin: 0 0 14px; }
+.answer-lines {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 14px 16px;
+  background: #fafafa;
+  white-space: pre;
+  line-height: 2.2;
+}
+
+footer {
+  position: fixed;
+  bottom: 10mm; left: 16mm; right: 16mm;
+  text-align: center;
+  font-size: 10px;
+  color: #aaa;
+}
+footer b { color: #ff7849; }
+</style>
+</head>
+<body>
+<div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
+<h1>🔀 Extra — If Statements: Only Sometimes</h1>
+<p><strong>Topic:</strong> If / Elif / Else · <strong>Course:</strong> Extra Worksheet · <strong>Time:</strong> about 30 minutes</p>
+<p>Some code runs <strong>every time</strong>. Some code runs <strong>only if</strong> something is true. On paper you will read <code>if</code> code, predict it, fix it, and explain it in your own words.</p>
+<blockquote>
+<p>Keep these words handy: <strong>condition</strong>, <strong><code>==</code></strong>, <strong><code>else</code></strong>, <strong><code>elif</code></strong>, <strong>indent</strong>.</p>
+</blockquote>
+<h2>1 · Predict 🔮</h2>
+<p>Read each snippet. Write what you think it will print.</p>
+<pre><code class="language-python">score = 7
+if score &gt; 5:
+    print(&quot;You win!&quot;)
+</code></pre>
+<div class="qa"><p><strong>Does "You win!" print? Why?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-python">age = 10
+if age == 12:
+    print(&quot;You are 12.&quot;)
+else:
+    print(&quot;You are not 12.&quot;)
+</code></pre>
+<div class="qa"><p><strong>What prints?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-python">weather = &quot;rain&quot;
+if weather == &quot;sun&quot;:
+    print(&quot;Wear sunglasses&quot;)
+elif weather == &quot;rain&quot;:
+    print(&quot;Bring umbrella&quot;)
+else:
+    print(&quot;Just go outside&quot;)
+</code></pre>
+<div class="qa"><p><strong>What prints? Why did it skip the first line?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>2 · Spot the Bug 🐛</h2>
+<p>Each snippet is broken. Read what it should do, then rewrite it so it works. Explain why the original was wrong.</p>
+<p><strong>Bug A</strong> — This should check if <code>score</code> equals <code>10</code>. Instead it always prints "Perfect!", even when <code>score</code> is <code>3</code>.</p>
+<pre><code class="language-python">score = 3
+if score = 10:
+    print(&quot;Perfect!&quot;)
+</code></pre>
+<p><strong>Hint:</strong> checking equal uses two of something.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug B</strong> — This should print "Too cold" only when <code>temp</code> is below <code>0</code>. Right now it prints "Too cold" no matter what <code>temp</code> is.</p>
+<pre><code class="language-python">temp = 15
+if temp &lt; 0:
+print(&quot;Too cold&quot;)
+</code></pre>
+<p><strong>Hint:</strong> the line inside the <code>if</code> needs to be pushed in.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>3 · Explain the Code 📖</h2>
+<p>Here is a complete program that checks a player's score and prints a message.</p>
+<pre><code class="language-python">score = 8
+
+if score &gt;= 9:
+    print(&quot;A+ player!&quot;)
+elif score &gt;= 5:
+    print(&quot;Good job!&quot;)
+else:
+    print(&quot;Keep practicing!&quot;)
+</code></pre>
+<div class="qa"><p><strong>What prints when <code>score</code> is <code>8</code>? Walk through why it picks that branch.</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>What would print if <code>score</code> was <code>9</code>? What about <code>2</code>?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why does the program stop checking once it finds a true condition?</strong></p>
+<div class="write-space"></div></div>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet to teacher on KakaoTalk.</p>
+</body>
+</html>
