@@ -12,7 +12,6 @@
 
 | 주 | 주제 | 📦 월드 | 🎬 영상 (블록) | 🎬 영상 (파이썬) | 📝 워크시트 (초급) | 📝 워크시트 (중급) | 📝 워크시트 (심화) |
 |---|---|---|---|---|---|---|---|
-| 🎨 준비 | **픽셀 아트 — 칸 세기** (1주차 전 준비 운동) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/000-builder-basics/worlds/week0-pixel-art.mcworld) | *준비 중* | *준비 중* | [PDF](https://github.com/datawithkasim/english-coding-templates/raw/master/000-builder-basics/worksheets/week0-pixel-art-beginner.pdf) · [Word](https://github.com/datawithkasim/english-coding-templates/raw/master/000-builder-basics/worksheets/week0-pixel-art-beginner.doc) | *준비 중* | [PDF](https://github.com/datawithkasim/english-coding-templates/raw/master/000-builder-basics/worksheets/week0-pixel-art.pdf) · [Word](https://github.com/datawithkasim/english-coding-templates/raw/master/000-builder-basics/worksheets/week0-pixel-art.doc) |
 | 1 | 에이전트 이동 | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/000-builder-basics/worlds/week1.mcworld) | [보기](https://youtu.be/2BMSL-wjVao) | [보기](https://youtu.be/d-NdSXHsvxU) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/000-builder-basics/worksheets/week1-beginner.pdf) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/000-builder-basics/worksheets/week1-intermediate.pdf) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/000-builder-basics/worksheets/week1.pdf) |
 | 2 | 블록 놓기 | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/000-builder-basics/worlds/week2.mcworld) | [보기](https://youtu.be/xmjKkcSydbA) | [보기](https://youtu.be/W96lOOnPQAo) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/000-builder-basics/worksheets/week2-beginner.pdf) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/000-builder-basics/worksheets/week2-intermediate.pdf) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/000-builder-basics/worksheets/week2.pdf) |
 | ✨ 보너스 | **불가능한 석상** (확장 활동) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/000-builder-basics/worlds/extension-impossible-statue.mcworld) | *준비 중* | *준비 중* | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/000-builder-basics/worksheets/extension-impossible-statue-beginner.pdf) | *준비 중* | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/000-builder-basics/worksheets/extension-impossible-statue.pdf) |
@@ -28,8 +27,6 @@
 > 💡 4–5주는 같은 월드 파일(`week4-5.mcworld`), 6–8주는 같은 월드 파일(`week6-7-8.mcworld`)을 사용합니다. 한 번만 받으시면 됩니다.
 >
 > 📝 워크시트는 세 가지입니다 — **초급**은 처음 배우는 친구용, **중급**은 한 걸음 더 나아가고 싶은 친구용, **심화**는 더 깊이 연습하고 싶은 친구용입니다.
->
-> 🎨 **준비 운동**(픽셀 아트)은 1주차 전에 좌표 **X(좌우)·Y(상하)** 로 칸을 세는 법을 익히는 보너스 워크시트입니다. 블록 코딩과 파이썬을 한 장에 함께 담았고, **PDF**와 워드(**.doc**) 편집본을 모두 받으실 수 있습니다.
 
 ---
 
