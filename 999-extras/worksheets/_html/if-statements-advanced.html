@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>🔀 Extra — If Statements: Advanced</title>
+<style>
+@page { size: A4; margin: 18mm 16mm 22mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-family: "Inter", "Segoe UI", system-ui, sans-serif; color: #1a1a2e; }
+body { font-size: 15px; line-height: 1.55; }
+
+.cover { border-bottom: 3px solid #ff7849; padding-bottom: 14px; margin-bottom: 20px; }
+.brand { font-size: 14px; font-weight: 800; color: #ff7849; letter-spacing: .06em; }
+h1 { font-size: 28px; color: #6b4ee6; margin: 8px 0 6px; line-height: 1.25; }
+h2 { font-size: 19px; color: #6b4ee6; margin: 22px 0 12px; padding-top: 10px; border-top: 1px solid #eee; page-break-before: always; }
+section.first h2, h2:first-of-type { border-top: none; padding-top: 0; page-break-before: avoid; }
+h3, h4 { font-size: 15px; margin: 14px 0 8px; color: #1a1a2e; }
+p { margin: 8px 0; }
+strong { color: #1a1a2e; }
+em { color: #555; }
+
+ul, ol { margin: 8px 0 8px 24px; }
+li { margin: 3px 0; }
+
+/* Grids (e.g. pixel-art coordinate grids) render as light graph paper. */
+table { border-collapse: collapse; margin: 12px 0; }
+th, td { border: 1px solid #ddd; padding: 4px 9px; text-align: center; font-size: 14px; }
+th { background: #faf7ff; color: #6b4ee6; font-weight: 700; }
+
+pre {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 13.5px;
+  background: #1e1e2e;
+  color: #b9f6ca;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 10px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  page-break-inside: avoid;
+  line-height: 1.5;
+}
+pre code { background: transparent; padding: 0; color: inherit; }
+code {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  background: #fff1e8;
+  color: #ff7849;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+blockquote {
+  margin: 10px 0;
+  padding: 10px 16px;
+  background: #fff6ef;
+  border-left: 3px solid #ff7849;
+  border-radius: 0 6px 6px 0;
+  color: #6a3a1c;
+}
+
+.write-space {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #ffffff 0,
+    #ffffff 27px,
+    #d4d4d4 27px,
+    #d4d4d4 28px
+  );
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  min-height: 114px;
+  margin: 10px 0 20px;
+  page-break-inside: avoid;
+}
+.write-space.short { min-height: 86px; }
+.write-space.tall { min-height: 170px; }
+
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
+hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
+
+.meta { color: #666; font-size: 13px; margin: 0 0 14px; }
+.answer-lines {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 14px 16px;
+  background: #fafafa;
+  white-space: pre;
+  line-height: 2.2;
+}
+
+footer {
+  position: fixed;
+  bottom: 10mm; left: 16mm; right: 16mm;
+  text-align: center;
+  font-size: 10px;
+  color: #aaa;
+}
+footer b { color: #ff7849; }
+</style>
+</head>
+<body>
+<div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
+<h1>🔀 Extra — If Statements: Advanced</h1>
+<p><strong>Topic:</strong> Nested If + Boolean Logic · <strong>Course:</strong> Extra Worksheet · <strong>Time:</strong> about 40 minutes</p>
+<p>An <code>if</code> can live <strong>inside</strong> another <code>if</code>. The inner one only runs when the outer one is true. On paper you will read, predict, fix, and explain. Then you will write and run your own code in the IDE.</p>
+<blockquote>
+<p>Keep these words handy: <strong>nested</strong>, <strong>and / or / not</strong>, <strong>return</strong>, <strong>indent level</strong>.</p>
+</blockquote>
+<h2>1 · Predict 🔮</h2>
+<p>Read each snippet. Write what you think it will print.</p>
+<pre><code class="language-python">logged_in = True
+is_admin = False
+
+if logged_in:
+    if is_admin:
+        print(&quot;Welcome, admin!&quot;)
+    else:
+        print(&quot;Welcome, user!&quot;)
+else:
+    print(&quot;Please log in.&quot;)
+</code></pre>
+<div class="qa"><p><strong>What prints? Which <code>if</code> runs first — the outer one or the inner one?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-python">def check_age(age):
+    if age &lt; 0:
+        return &quot;Invalid age&quot;
+    if age &lt; 13:
+        return &quot;Kid&quot;
+    elif age &lt; 20:
+        return &quot;Teen&quot;
+    else:
+        return &quot;Adult&quot;
+
+print(check_age(15))
+</code></pre>
+<div class="qa"><p><strong>What does this print? Why does the function stop at the first <code>return</code> it hits?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-python">health = 30
+shield = True
+
+if health &gt; 0:
+    if health &lt; 50 and shield:
+        print(&quot;Low health, but shielded&quot;)
+    elif health &lt; 50:
+        print(&quot;Low health, no shield!&quot;)
+    else:
+        print(&quot;Healthy&quot;)
+else:
+    print(&quot;Defeated&quot;)
+</code></pre>
+<div class="qa"><p><strong>What prints? What would print if <code>shield</code> was <code>False</code>?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>2 · Spot the Bug 🐛</h2>
+<p>Each snippet is broken. Read what it should do, then rewrite it so it works. Explain why the original was wrong.</p>
+<p><strong>Bug A</strong> — This should only check <code>is_admin</code> when the user is logged in. Right now it crashes / checks <code>is_admin</code> even when logged out, because the inner <code>if</code> isn't nested inside the outer one — it just runs alongside it.</p>
+<pre><code class="language-python">logged_in = False
+is_admin = True
+
+if logged_in:
+    print(&quot;Logged in&quot;)
+if is_admin:
+    print(&quot;Welcome, admin!&quot;)
+</code></pre>
+<p><strong>Hint:</strong> where should the second <code>if</code> be indented?</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug B</strong> — This function should return <code>"Adult"</code> for age <code>20</code> and up. Right now, calling it with <code>age = 20</code> returns <code>"Teen"</code>.</p>
+<pre><code class="language-python">def check_age(age):
+    if age &lt; 13:
+        return &quot;Kid&quot;
+    elif age &lt; 20:
+        return &quot;Teen&quot;
+    elif age &lt;= 20:
+        return &quot;Adult&quot;
+    else:
+        return &quot;Adult&quot;
+</code></pre>
+<p><strong>Hint:</strong> two branches both try to catch <code>20</code> — which one does Python reach first?</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>3 · Explain the Code 📖</h2>
+<pre><code class="language-python">def get_ticket_price(age, is_member):
+    if age &lt; 5:
+        return 0
+    else:
+        if is_member:
+            if age &lt; 18:
+                return 5
+            else:
+                return 8
+        else:
+            if age &lt; 18:
+                return 10
+            else:
+                return 15
+
+print(get_ticket_price(25, True))
+</code></pre>
+<div class="qa"><p><strong>Walk through this step by step for <code>age = 25</code>, <code>is_member = True</code>. Which branch does it take at each nested level?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>What would this return for <code>age = 3</code>, <code>is_member = False</code>? Why does it not even check <code>is_member</code>?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why nest the <code>if</code>s instead of writing one long <code>elif</code> chain? What would happen if you removed one level of indent by mistake?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>4 · Code It 💻</h2>
+<p>Open the IDE at <strong>app.english-coding.co.uk</strong> and write your own program.</p>
+<p>Write a function <code>check_login(username, password, is_banned)</code> that:
+- returns <code>"Banned"</code> if <code>is_banned</code> is <code>True</code>
+- otherwise, if <code>username == "admin"</code> and <code>password == "1234"</code>, returns <code>"Admin login"</code>
+- otherwise, if <code>password == "1234"</code>, returns <code>"User login"</code>
+- otherwise returns <code>"Access denied"</code></p>
+<p>Use <strong>nested if statements</strong> for at least one part of the logic. Test it by calling the function with 3 different sets of values and printing the result.</p>
+<div class="qa"><p>Run it, then write your function code and what each test printed.</p>
+<div class="write-space tall" style="min-height: 280px"></div></div>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + a screenshot of your working code to teacher on KakaoTalk.</p>
+</body>
+</html>

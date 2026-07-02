@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>🔀 Extra — If Statements: Intermediate</title>
+<style>
+@page { size: A4; margin: 18mm 16mm 22mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-family: "Inter", "Segoe UI", system-ui, sans-serif; color: #1a1a2e; }
+body { font-size: 15px; line-height: 1.55; }
+
+.cover { border-bottom: 3px solid #ff7849; padding-bottom: 14px; margin-bottom: 20px; }
+.brand { font-size: 14px; font-weight: 800; color: #ff7849; letter-spacing: .06em; }
+h1 { font-size: 28px; color: #6b4ee6; margin: 8px 0 6px; line-height: 1.25; }
+h2 { font-size: 19px; color: #6b4ee6; margin: 22px 0 12px; padding-top: 10px; border-top: 1px solid #eee; page-break-before: always; }
+section.first h2, h2:first-of-type { border-top: none; padding-top: 0; page-break-before: avoid; }
+h3, h4 { font-size: 15px; margin: 14px 0 8px; color: #1a1a2e; }
+p { margin: 8px 0; }
+strong { color: #1a1a2e; }
+em { color: #555; }
+
+ul, ol { margin: 8px 0 8px 24px; }
+li { margin: 3px 0; }
+
+/* Grids (e.g. pixel-art coordinate grids) render as light graph paper. */
+table { border-collapse: collapse; margin: 12px 0; }
+th, td { border: 1px solid #ddd; padding: 4px 9px; text-align: center; font-size: 14px; }
+th { background: #faf7ff; color: #6b4ee6; font-weight: 700; }
+
+pre {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 13.5px;
+  background: #1e1e2e;
+  color: #b9f6ca;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 10px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  page-break-inside: avoid;
+  line-height: 1.5;
+}
+pre code { background: transparent; padding: 0; color: inherit; }
+code {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  background: #fff1e8;
+  color: #ff7849;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+blockquote {
+  margin: 10px 0;
+  padding: 10px 16px;
+  background: #fff6ef;
+  border-left: 3px solid #ff7849;
+  border-radius: 0 6px 6px 0;
+  color: #6a3a1c;
+}
+
+.write-space {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #ffffff 0,
+    #ffffff 27px,
+    #d4d4d4 27px,
+    #d4d4d4 28px
+  );
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  min-height: 114px;
+  margin: 10px 0 20px;
+  page-break-inside: avoid;
+}
+.write-space.short { min-height: 86px; }
+.write-space.tall { min-height: 170px; }
+
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
+hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
+
+.meta { color: #666; font-size: 13px; margin: 0 0 14px; }
+.answer-lines {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 14px 16px;
+  background: #fafafa;
+  white-space: pre;
+  line-height: 2.2;
+}
+
+footer {
+  position: fixed;
+  bottom: 10mm; left: 16mm; right: 16mm;
+  text-align: center;
+  font-size: 10px;
+  color: #aaa;
+}
+footer b { color: #ff7849; }
+</style>
+</head>
+<body>
+<div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
+<h1>🔀 Extra — If Statements: Intermediate</h1>
+<p><strong>Topic:</strong> If / Elif / Else + and / or · <strong>Course:</strong> Extra Worksheet · <strong>Time:</strong> about 35 minutes</p>
+<p>Conditions can check <strong>more than one thing at once</strong> with <code>and</code> and <code>or</code>. On paper you will read, predict, fix, and explain. Then you will write and run your own code in the IDE.</p>
+<blockquote>
+<p>Keep these words handy: <strong>and</strong>, <strong>or</strong>, <strong>condition</strong>, <strong>elif</strong>, <strong>boolean</strong>.</p>
+</blockquote>
+<h2>1 · Predict 🔮</h2>
+<p>Read each snippet. Write what you think it will print.</p>
+<pre><code class="language-python">age = 13
+has_ticket = True
+
+if age &gt;= 12 and has_ticket:
+    print(&quot;Welcome in!&quot;)
+else:
+    print(&quot;Sorry, can't enter.&quot;)
+</code></pre>
+<div class="qa"><p><strong>What prints? Which part of the condition is checked first — <code>age</code>, <code>has_ticket</code>, or both?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-python">score = 4
+lives = 0
+
+if score &gt; 10 or lives &gt; 0:
+    print(&quot;Still playing&quot;)
+else:
+    print(&quot;Game over&quot;)
+</code></pre>
+<div class="qa"><p><strong>What prints? Why does <code>or</code> only need one side to be true?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-python">name = &quot;Kasim&quot;
+level = 5
+
+if name == &quot;Kasim&quot; and level &gt;= 3:
+    print(&quot;VIP access&quot;)
+elif level &gt;= 3:
+    print(&quot;Regular access&quot;)
+else:
+    print(&quot;No access&quot;)
+</code></pre>
+<div class="qa"><p><strong>What prints? What would print if <code>name</code> was <code>"Dami"</code> instead?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>2 · Spot the Bug 🐛</h2>
+<p>Each snippet is broken. Read what it should do, then rewrite it so it works. Explain why the original was wrong.</p>
+<p><strong>Bug A</strong> — This should let a player in only if they are 12 or older <strong>and</strong> have a ticket. Right now it lets anyone in who is 12 or older, ticket or not.</p>
+<pre><code class="language-python">age = 14
+has_ticket = False
+
+if age &gt;= 12 or has_ticket:
+    print(&quot;Welcome in!&quot;)
+</code></pre>
+<p><strong>Hint:</strong> think about what <code>or</code> needs versus what <code>and</code> needs.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug B</strong> — This should print "Pass" for a score of <code>60</code> or higher, and "Fail" below that. A score of exactly <code>60</code> prints "Fail" — that's wrong.</p>
+<pre><code class="language-python">score = 60
+
+if score &gt; 60:
+    print(&quot;Pass&quot;)
+else:
+    print(&quot;Fail&quot;)
+</code></pre>
+<p><strong>Hint:</strong> should <code>60</code> count as a pass?</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>3 · Explain the Code 📖</h2>
+<pre><code class="language-python">temp = 22
+is_raining = False
+
+if temp &gt;= 25 and not is_raining:
+    print(&quot;Go to the beach&quot;)
+elif temp &gt;= 15 and not is_raining:
+    print(&quot;Go for a walk&quot;)
+else:
+    print(&quot;Stay inside&quot;)
+</code></pre>
+<div class="qa"><p><strong>What prints when <code>temp</code> is <code>22</code> and <code>is_raining</code> is <code>False</code>? Walk through each condition it checks.</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>What would print if <code>is_raining</code> was <code>True</code> instead? What changes?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>What does <code>not is_raining</code> mean in plain English?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>4 · Code It 💻</h2>
+<p>Open the IDE at <strong>app.english-coding.co.uk</strong> and write your own program.</p>
+<p>Write code that:
+- stores a variable <code>score</code>
+- stores a variable <code>is_bonus_round</code> (<code>True</code> or <code>False</code>)
+- prints <code>"Big win!"</code> if <code>score &gt;= 50</code> <strong>and</strong> <code>is_bonus_round</code> is <code>True</code>
+- prints <code>"Nice score"</code> if <code>score &gt;= 50</code> <strong>and</strong> <code>is_bonus_round</code> is <code>False</code>
+- prints <code>"Try again"</code> otherwise</p>
+<div class="qa"><p>Test it with at least 2 different sets of values. Run it, then write what you tested and what printed.</p>
+<div class="write-space tall" style="min-height: 240px"></div></div>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + a screenshot of your working code to teacher on KakaoTalk.</p>
+</body>
+</html>
