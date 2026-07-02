@@ -30,8 +30,6 @@ place gold block at (4, 2, 4)
 
 **This uses x, y, and z. Is this a solid thing you can walk all the way around? Circle one:** yes · no
 
-<div class="write-space short"></div>
-
 ---
 
 ## 2 · Find the Difference 🐛

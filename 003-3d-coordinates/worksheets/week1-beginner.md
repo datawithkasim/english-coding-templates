@@ -27,8 +27,6 @@ place red block at (0, 0)
 
 **Counting starts at 0. Is (0, 0) the bottom corner where the wall begins? Circle one:** yes · no
 
-<div class="write-space short"></div>
-
 ---
 
 ## 2 · Find the Difference 🐛

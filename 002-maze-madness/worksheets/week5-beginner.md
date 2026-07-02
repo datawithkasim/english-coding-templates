@@ -16,16 +16,12 @@ repeat 5 times:
 
 **Circle one:** a line · a tower · a hole
 
-<div class="write-space short"></div>
-
 ```
 break block above
 move up
 ```
 
 **Circle one:** climbs out · digs down · builds wall
-
-<div class="write-space short"></div>
 
 ---
 

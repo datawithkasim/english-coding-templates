@@ -31,8 +31,6 @@ move forward
 
 **The agent is standing over lava. Does it place a safe block before moving? Circle one:** yes · no
 
-<div class="write-space short"></div>
-
 ---
 
 ## 2 · Find the Difference 🐛

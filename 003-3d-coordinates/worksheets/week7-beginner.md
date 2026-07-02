@@ -19,16 +19,12 @@ place green block at (0, 4, 2)
 
 **Only z changes (1 → 2). Circle one:** across · up · deeper
 
-<div class="write-space short"></div>
-
 ```
 place green block at (0, 4, 1)
 place green block at (0, 5, 1)
 ```
 
 **Only y changes (4 → 5). Circle one:** across · up · deeper
-
-<div class="write-space short"></div>
 
 ---
 

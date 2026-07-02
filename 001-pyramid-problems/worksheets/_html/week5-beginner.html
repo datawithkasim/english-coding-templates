@@ -22,6 +22,11 @@ em { color: #555; }
 ul, ol { margin: 8px 0 8px 24px; }
 li { margin: 3px 0; }
 
+/* Grids (e.g. pixel-art coordinate grids) render as light graph paper. */
+table { border-collapse: collapse; margin: 12px 0; }
+th, td { border: 1px solid #ddd; padding: 4px 9px; text-align: center; font-size: 14px; }
+th { background: #faf7ff; color: #6b4ee6; font-weight: 700; }
+
 pre {
   font-family: "JetBrains Mono", "Consolas", monospace;
   font-size: 13.5px;
@@ -114,9 +119,7 @@ repeat 4 times:
     turn left
 </code></pre>
 <p><strong>What shape does the agent draw? Circle one:</strong> line · square · circle</p>
-<div class="qa"><p><strong>How many sides does it draw? Circle one:</strong> 1 · 3 · 4</p>
-<div class="write-space short"></div></div>
-
+<p><strong>How many sides does it draw? Circle one:</strong> 1 · 3 · 4</p>
 <pre><code>set f to 5
 repeat 3 times:
     [draw one square]

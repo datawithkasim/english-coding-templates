@@ -40,8 +40,6 @@ place orange block at (3, 15)
 
 **Across or up? Circle one:** across · up
 
-<div class="write-space short"></div>
-
 ---
 
 ## 2 · Spot the Bug 🐛

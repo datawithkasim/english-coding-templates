@@ -16,8 +16,6 @@ move forward
 
 **The agent flips the lever. The path opens. Can it cross? Circle one:** yes · no
 
-<div class="write-space short"></div>
-
 ---
 
 ## 2 · Match 🔗

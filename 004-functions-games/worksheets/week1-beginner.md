@@ -34,8 +34,6 @@ define build_tower(height):
 
 **There is no call after the definition. Does anything get built? Circle one:** yes · no
 
-<div class="write-space short"></div>
-
 ---
 
 ## 2 · Find the Difference 🐛

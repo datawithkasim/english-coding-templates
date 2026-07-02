@@ -30,8 +30,6 @@ repeat 4 times:
 
 **What shape does this make on the ground? Circle one:** line · square · hole
 
-<div class="write-space short"></div>
-
 ---
 
 ## 2 · Find the Difference 🐛

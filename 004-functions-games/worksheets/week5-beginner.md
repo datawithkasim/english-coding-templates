@@ -34,8 +34,6 @@ function build_tower(height):
 
 **There is no call line at the bottom. Does the tower get built? Circle one:** yes · no
 
-<div class="write-space short"></div>
-
 ---
 
 ## 2 · Find the Difference 🐛

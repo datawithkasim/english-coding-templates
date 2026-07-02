@@ -29,8 +29,6 @@ on player place block:
 
 **The player only walks around and places nothing. Does the message appear? Circle one:** yes · no
 
-<div class="write-space short"></div>
-
 ---
 
 ## 2 · Find the Difference 🐛

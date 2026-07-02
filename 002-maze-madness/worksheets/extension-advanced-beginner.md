@@ -17,16 +17,12 @@ type "l":
 
 **Type `l`. Circle one:** left · right · jump
 
-<div class="write-space short"></div>
-
 ```
 type "rl":
     come back to you
 ```
 
 **Type `rl`. Circle one:** to goal · back to you
-
-<div class="write-space short"></div>
 
 ---
 
@@ -41,16 +37,12 @@ redstone below me:
 
 **Redstone is below. Circle one:** up · down
 
-<div class="write-space short"></div>
-
 ```
 redstone above me:
     move down
 ```
 
 **Redstone is above. Circle one:** up · down
-
-<div class="write-space short"></div>
 
 ---
 

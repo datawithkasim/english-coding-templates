@@ -32,8 +32,6 @@ on chat command "dungeon" with number rooms:
 
 **Now you type `dungeon 1`. Does it build 3 rooms? Circle one:** yes · no
 
-<div class="write-space short"></div>
-
 ---
 
 ## 2 · Find the Difference 🐛

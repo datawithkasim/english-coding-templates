@@ -16,15 +16,11 @@ move forward
 
 **Agent flips the lever. The door does what? Circle one:** opens · closes · nothing
 
-<div class="write-space short"></div>
-
 ```
 interact ahead
 ```
 
 **No lever here. What happens? Circle one:** door opens · nothing
-
-<div class="write-space short"></div>
 
 ---
 

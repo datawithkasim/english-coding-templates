@@ -22,6 +22,11 @@ em { color: #555; }
 ul, ol { margin: 8px 0 8px 24px; }
 li { margin: 3px 0; }
 
+/* Grids (e.g. pixel-art coordinate grids) render as light graph paper. */
+table { border-collapse: collapse; margin: 12px 0; }
+th, td { border: 1px solid #ddd; padding: 4px 9px; text-align: center; font-size: 14px; }
+th { background: #faf7ff; color: #6b4ee6; font-weight: 700; }
+
 pre {
   font-family: "JetBrains Mono", "Consolas", monospace;
   font-size: 13.5px;
@@ -116,9 +121,7 @@ place gold block at (3, 5)
 
 <pre><code>place red block at (0, 0)
 </code></pre>
-<div class="qa"><p><strong>Counting starts at 0. Is (0, 0) the bottom corner where the wall begins? Circle one:</strong> yes · no</p>
-<div class="write-space short"></div></div>
-
+<p><strong>Counting starts at 0. Is (0, 0) the bottom corner where the wall begins? Circle one:</strong> yes · no</p>
 <h2>2 · Find the Difference 🐛</h2>
 <p>Each pair shows clean steps first, then a broken version of the same idea. Circle what's different and write one short sentence about the bug.</p>
 <p><strong>Pair A</strong> — The block should land at <strong>(2, 5)</strong> — x first, then y.</p>
