@@ -32,8 +32,6 @@ on chat command "tower" with number n:
 
 **You type `tower 4`. Is the tower 4 blocks tall? Circle one:** yes · no
 
-<div class="write-space short"></div>
-
 ---
 
 ## 2 · Find the Difference 🐛

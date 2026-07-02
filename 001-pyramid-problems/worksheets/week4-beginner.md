@@ -32,8 +32,6 @@ repeat 3 times:
 
 **This is only the inner loop, on its own. What does it build? Circle one:** one side · a whole square
 
-<div class="write-space short"></div>
-
 ---
 
 ## 2 · Find the Difference 🐛

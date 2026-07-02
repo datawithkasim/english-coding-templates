@@ -30,8 +30,6 @@ repeat size times:
 
 **Same code, new number. How many blocks now? Circle one:** 3 · 6 · 12
 
-<div class="write-space short"></div>
-
 ---
 
 ## 2 · Find the Difference 🐛

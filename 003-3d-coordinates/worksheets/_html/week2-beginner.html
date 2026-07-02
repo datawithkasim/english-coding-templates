@@ -22,6 +22,11 @@ em { color: #555; }
 ul, ol { margin: 8px 0 8px 24px; }
 li { margin: 3px 0; }
 
+/* Grids (e.g. pixel-art coordinate grids) render as light graph paper. */
+table { border-collapse: collapse; margin: 12px 0; }
+th, td { border: 1px solid #ddd; padding: 4px 9px; text-align: center; font-size: 14px; }
+th { background: #faf7ff; color: #6b4ee6; font-weight: 700; }
+
 pre {
   font-family: "JetBrains Mono", "Consolas", monospace;
   font-size: 13.5px;
@@ -121,9 +126,7 @@ repeat 4 times:
     place stone block at (0, y)
     add 1 to y
 </code></pre>
-<div class="qa"><p><strong>This time y grows and x stays 0. Across or up? Circle one:</strong> across · up</p>
-<div class="write-space short"></div></div>
-
+<p><strong>This time y grows and x stays 0. Across or up? Circle one:</strong> across · up</p>
 <h2>2 · Find the Difference 🐛</h2>
 <p>Each pair shows clean steps first, then a broken version of the same idea. Circle what's different and write one short sentence about the bug.</p>
 <p><strong>Pair A</strong> — The line should go <strong>across</strong> the bottom of the wall.</p>

@@ -22,8 +22,6 @@ repeat 4 times:
 
 **How many sides does it draw? Circle one:** 1 · 3 · 4
 
-<div class="write-space short"></div>
-
 ```
 set f to 5
 repeat 3 times:

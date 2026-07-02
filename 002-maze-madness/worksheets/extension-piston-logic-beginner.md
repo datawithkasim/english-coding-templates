@@ -17,16 +17,12 @@ type "r":
 
 **You type `r`. Circle one:** turn left · turn right · jump
 
-<div class="write-space short"></div>
-
 ```
 type "rl":
     come back to you
 ```
 
 **You type `rl`. Circle one:** to the goal · back to you · nowhere
-
-<div class="write-space short"></div>
 
 ---
 
@@ -41,11 +37,7 @@ if redstone left AND redstone ahead:
 
 **Redstone is left, but NOT ahead. Turn left? Circle one:** yes · no
 
-<div class="write-space short"></div>
-
 **Redstone is left AND ahead. Turn left? Circle one:** yes · no
-
-<div class="write-space short"></div>
 
 ---
 

@@ -21,8 +21,6 @@ repeat 3 times:
 
 **Which part of the village is this? Circle one:** house · well · farm
 
-<div class="write-space short"></div>
-
 ```
 # Stage 1
 [house]

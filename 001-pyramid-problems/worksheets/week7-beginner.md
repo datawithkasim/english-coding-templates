@@ -34,8 +34,6 @@ while size > 0:
 
 **A normal pyramid shrinks by 2. This one shrinks by 4. Do the steps look bigger or smaller? Circle one:** bigger · smaller
 
-<div class="write-space short"></div>
-
 ---
 
 ## 2 · Find the Difference 🐛

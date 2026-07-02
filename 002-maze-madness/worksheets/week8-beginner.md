@@ -37,8 +37,6 @@ keep going until at goal:
 
 **Agent sees a lever. Circle one:** turn right · interact · move forward
 
-<div class="write-space short"></div>
-
 ---
 
 ## 3 · Fill One Blank ✏️

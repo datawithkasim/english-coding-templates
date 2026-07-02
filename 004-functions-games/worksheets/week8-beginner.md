@@ -30,8 +30,6 @@ on player walks on gold block:
 
 **The player walks on grass. Do they win? Circle one:** yes · no
 
-<div class="write-space short"></div>
-
 ---
 
 ## 2 · Find the Difference 🐛

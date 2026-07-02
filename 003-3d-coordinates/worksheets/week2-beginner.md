@@ -32,8 +32,6 @@ repeat 4 times:
 
 **This time y grows and x stays 0. Across or up? Circle one:** across · up
 
-<div class="write-space short"></div>
-
 ---
 
 ## 2 · Find the Difference 🐛

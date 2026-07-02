@@ -29,8 +29,6 @@ on player walks on red carpet:
 
 **Now the player steps on red carpet. Does the trap fire? Circle one:** yes · no
 
-<div class="write-space short"></div>
-
 ---
 
 ## 2 · Find the Difference 🐛

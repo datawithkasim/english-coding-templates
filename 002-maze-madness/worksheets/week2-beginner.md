@@ -17,8 +17,6 @@ otherwise:
 
 **Wall is in front. What does the agent do? Circle one:** turn right · move forward · stop
 
-<div class="write-space short"></div>
-
 **No wall. What does it do?**
 
 <div class="write-space short"></div>
@@ -46,8 +44,6 @@ otherwise:
 ```
 
 **Circle the line that is wrong.**
-
-<div class="write-space short"></div>
 
 ---
 

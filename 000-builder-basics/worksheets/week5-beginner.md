@@ -31,8 +31,6 @@ repeat 3 times:
 
 **Do the new blocks land at the same height as before, or higher? Circle one:** same · higher
 
-<div class="write-space short"></div>
-
 ---
 
 ## 2 · Find the Difference 🐛
