@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>🧱 Builder Basics — The Trail Maker (Extension)</title>
+<style>
+@page { size: A4; margin: 18mm 16mm 22mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-family: "Inter", "Segoe UI", system-ui, sans-serif; color: #1a1a2e; }
+body { font-size: 15px; line-height: 1.55; }
+
+.cover { border-bottom: 3px solid #ff7849; padding-bottom: 14px; margin-bottom: 20px; }
+.brand { font-size: 14px; font-weight: 800; color: #ff7849; letter-spacing: .06em; }
+h1 { font-size: 28px; color: #6b4ee6; margin: 8px 0 6px; line-height: 1.25; }
+h2 { font-size: 19px; color: #6b4ee6; margin: 22px 0 12px; padding-top: 10px; border-top: 1px solid #eee; page-break-before: always; }
+section.first h2, h2:first-of-type { border-top: none; padding-top: 0; page-break-before: avoid; }
+h3, h4 { font-size: 15px; margin: 14px 0 8px; color: #1a1a2e; }
+p { margin: 8px 0; }
+strong { color: #1a1a2e; }
+em { color: #555; }
+
+ul, ol { margin: 8px 0 8px 24px; }
+li { margin: 3px 0; }
+
+/* Grids (e.g. pixel-art coordinate grids) render as light graph paper. */
+table { border-collapse: collapse; margin: 12px 0; }
+th, td { border: 1px solid #ddd; padding: 4px 9px; text-align: center; font-size: 14px; }
+th { background: #faf7ff; color: #6b4ee6; font-weight: 700; }
+
+pre {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 13.5px;
+  background: #1e1e2e;
+  color: #b9f6ca;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 10px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  page-break-inside: avoid;
+  line-height: 1.5;
+}
+pre code { background: transparent; padding: 0; color: inherit; }
+code {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  background: #fff1e8;
+  color: #ff7849;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+blockquote {
+  margin: 10px 0;
+  padding: 10px 16px;
+  background: #fff6ef;
+  border-left: 3px solid #ff7849;
+  border-radius: 0 6px 6px 0;
+  color: #6a3a1c;
+}
+
+.write-space {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #ffffff 0,
+    #ffffff 27px,
+    #d4d4d4 27px,
+    #d4d4d4 28px
+  );
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  min-height: 114px;
+  margin: 10px 0 20px;
+  page-break-inside: avoid;
+}
+.write-space.short { min-height: 86px; }
+.write-space.tall { min-height: 170px; }
+
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
+hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
+
+.meta { color: #666; font-size: 13px; margin: 0 0 14px; }
+.answer-lines {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 14px 16px;
+  background: #fafafa;
+  white-space: pre;
+  line-height: 2.2;
+}
+
+footer {
+  position: fixed;
+  bottom: 10mm; left: 16mm; right: 16mm;
+  text-align: center;
+  font-size: 10px;
+  color: #aaa;
+}
+footer b { color: #ff7849; }
+</style>
+</head>
+<body>
+<div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
+<h1>🧱 Builder Basics — The Trail Maker (Extension)</h1>
+<p><strong>Topic:</strong> Place On Move · <strong>Course:</strong> Builder Basics · <strong>Type:</strong> Extension Activity · <strong>Time:</strong> about 45 minutes</p>
+<blockquote>
+<p>🧩 This is a bonus challenge, not a weekly lesson. Try it once you are comfortable placing blocks by hand and you are ready to let the agent place them for you.</p>
+</blockquote>
+<h2>1 · Predict 🔮</h2>
+<p>In the <strong>Trail Maker</strong> world, typing <code>run</code> in the chat starts the agent walking forward in a straight line. But first it flips a switch called <strong>place on move</strong>.</p>
+<p>When <strong>place on move</strong> is <strong>ON</strong>, the agent drops a block on every single step it takes — it leaves a <strong>trail</strong> behind it as it walks. When the switch is <strong>OFF</strong>, the agent still walks the same steps, but it places nothing, so the ground stays empty and a <strong>gap</strong> appears.</p>
+<p>Here is the exact order the program runs:</p>
+<pre><code>place on move ON
+set block to purple concrete
+move forward by 4
+place on move OFF
+move forward by 2
+place on move ON
+move forward by 4
+</code></pre>
+<div class="qa"><p><strong>The switch starts ON and the agent moves forward 4. How many blocks does it drop in this first stretch?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Then the switch turns OFF and the agent moves forward 2. How many blocks does it drop while the switch is OFF?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>The switch turns ON again and the agent moves forward 4. Add up every block from the whole program. How many blocks in total? Show your adding.</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Describe the finished trail. Where is the gap, and how wide is it? Draw or describe the shape.</strong></p>
+<div class="write-space tall"></div></div>
+
+<h2>2 · Trace the Switch 🔢</h2>
+<p>Walk through the program one line at a time. For each move command, write whether the switch is <strong>ON</strong> or <strong>OFF</strong>, how many steps the agent takes, how many blocks that stretch places, and the running total so far.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Move command</th>
+<th style="text-align: center;">Switch (ON / OFF)</th>
+<th style="text-align: center;">Steps</th>
+<th style="text-align: center;">Blocks this stretch</th>
+<th style="text-align: center;">Total so far</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">move forward 4</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">move forward 2</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">move forward 4</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<div class="qa"><p><strong>Which move command placed NO blocks, and why?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>The agent walked forward 10 steps in total but did not place 10 blocks. Explain why the number of blocks is smaller than the number of steps.</strong></p>
+<div class="write-space"></div></div>
+
+<h2>3 · Reason About Bugs 🧠</h2>
+<p>No code to rewrite here — just read what goes wrong and explain it in writing.</p>
+<p><strong>Bug A — The switch never turns OFF.</strong> Imagine the program leaves <strong>place on move</strong> ON the whole time and never flips it OFF in the middle. The agent still walks the same 10 steps forward.</p>
+<div class="qa"><p><strong>What does the trail look like now? What happened to the gap? Explain why.</strong></p>
+<div class="write-space tall"></div></div>
+
+<p><strong>Bug B — The switch never turns ON.</strong> Imagine the program forgets the very first <code>place on move ON</code>, so the switch stays OFF from start to finish. The agent still walks all 10 steps.</p>
+<div class="qa"><p><strong>How many blocks get placed? What do you see on the ground when it finishes? Why?</strong></p>
+<div class="write-space tall"></div></div>
+
+<h2>4 · Design Your Own Trail 🏗️</h2>
+<p>Plan a trail of your own — in words and numbers, not in a code box.</p>
+<p><strong>Choose your block, and decide your ON and OFF pattern. Fill in the blanks:</strong></p>
+<div class="qa"><blockquote>
+<p>My block is …</p>
+<p>Switch ON, move forward … (places … blocks)</p>
+<p>Switch OFF, move forward … (a gap … wide)</p>
+<p>Switch ON, move forward … (places … blocks)</p>
+</blockquote>
+<div class="write-space tall"></div></div>
+
+<div class="qa"><p><strong>How many blocks does your pattern place in total? How many empty steps are in your gap?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Now the big idea. In Week 2 you placed each block by hand — one <code>place</code> command for every block. With </strong>place on move<strong> you write one <code>move</code> command and the agent places a whole line for you. In writing, explain WHY that is easier. To help you think: if you wanted a trail 50 blocks long, which way would you rather build it, and why?</strong></p>
+<div class="write-space tall"></div></div>
+
+<h2>5 · Build It 📸</h2>
+<p>Open the <strong>Trail Maker</strong> world and type <code>run</code> in the chat to watch the agent lay its trail. Then build your <strong>own</strong> version by changing the program — try a longer trail, a wider gap, more than one gap, or a different block.</p>
+<p>Send a photo or video of your trail, then explain what you did. Use these starters — write 4 to 6 sentences total.</p>
+<div class="qa"><blockquote>
+<p>First, I ran <code>run</code> and saw the agent …</p>
+<p>When <strong>place on move</strong> was <strong>ON</strong>, the agent …</p>
+<p>When I turned it <strong>OFF</strong>, the agent …</p>
+<p>The change I made was …</p>
+<p>My trail has a <strong>gap</strong> because …</p>
+<p>Building this way was easier than placing by hand because …</p>
+</blockquote>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<h2>6 · Record Your Walkthrough 🎥</h2>
+<p>Take a video on your phone (or a parent's phone) and teach someone how the Trail Maker works. You are narrating and explaining — not presenting to a class. Try to use these words: <strong>place on move</strong>, <strong>switch</strong>, <strong>ON</strong>, <strong>OFF</strong>, <strong>trail</strong>, <strong>gap</strong>.</p>
+<blockquote>
+<ol>
+<li>Point to the trail and the gap, and say which part was built with the switch <strong>ON</strong>.</li>
+<li>Explain what <strong>place on move</strong> does when it is <strong>ON</strong>.</li>
+<li>Explain what happens to the ground when it is <strong>OFF</strong>, and why that made the <strong>gap</strong>.</li>
+<li>Show the change you made and what it did to the trail.</li>
+<li>Say one reason this is easier than placing every block by hand.</li>
+</ol>
+</blockquote>
+<div class="qa"><p><strong>Write what you will say in your video.</strong> Plan it here first — you can read from it while filming.</p>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.</p>
+</body>
+</html>

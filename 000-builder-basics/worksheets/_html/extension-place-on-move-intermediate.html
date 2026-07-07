@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>🧱 Builder Basics — The Trail Maker (Extension · Intermediate)</title>
+<style>
+@page { size: A4; margin: 18mm 16mm 22mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-family: "Inter", "Segoe UI", system-ui, sans-serif; color: #1a1a2e; }
+body { font-size: 15px; line-height: 1.55; }
+
+.cover { border-bottom: 3px solid #ff7849; padding-bottom: 14px; margin-bottom: 20px; }
+.brand { font-size: 14px; font-weight: 800; color: #ff7849; letter-spacing: .06em; }
+h1 { font-size: 28px; color: #6b4ee6; margin: 8px 0 6px; line-height: 1.25; }
+h2 { font-size: 19px; color: #6b4ee6; margin: 22px 0 12px; padding-top: 10px; border-top: 1px solid #eee; page-break-before: always; }
+section.first h2, h2:first-of-type { border-top: none; padding-top: 0; page-break-before: avoid; }
+h3, h4 { font-size: 15px; margin: 14px 0 8px; color: #1a1a2e; }
+p { margin: 8px 0; }
+strong { color: #1a1a2e; }
+em { color: #555; }
+
+ul, ol { margin: 8px 0 8px 24px; }
+li { margin: 3px 0; }
+
+/* Grids (e.g. pixel-art coordinate grids) render as light graph paper. */
+table { border-collapse: collapse; margin: 12px 0; }
+th, td { border: 1px solid #ddd; padding: 4px 9px; text-align: center; font-size: 14px; }
+th { background: #faf7ff; color: #6b4ee6; font-weight: 700; }
+
+pre {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 13.5px;
+  background: #1e1e2e;
+  color: #b9f6ca;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 10px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  page-break-inside: avoid;
+  line-height: 1.5;
+}
+pre code { background: transparent; padding: 0; color: inherit; }
+code {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  background: #fff1e8;
+  color: #ff7849;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+blockquote {
+  margin: 10px 0;
+  padding: 10px 16px;
+  background: #fff6ef;
+  border-left: 3px solid #ff7849;
+  border-radius: 0 6px 6px 0;
+  color: #6a3a1c;
+}
+
+.write-space {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #ffffff 0,
+    #ffffff 27px,
+    #d4d4d4 27px,
+    #d4d4d4 28px
+  );
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  min-height: 114px;
+  margin: 10px 0 20px;
+  page-break-inside: avoid;
+}
+.write-space.short { min-height: 86px; }
+.write-space.tall { min-height: 170px; }
+
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
+hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
+
+.meta { color: #666; font-size: 13px; margin: 0 0 14px; }
+.answer-lines {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 14px 16px;
+  background: #fafafa;
+  white-space: pre;
+  line-height: 2.2;
+}
+
+footer {
+  position: fixed;
+  bottom: 10mm; left: 16mm; right: 16mm;
+  text-align: center;
+  font-size: 10px;
+  color: #aaa;
+}
+footer b { color: #ff7849; }
+</style>
+</head>
+<body>
+<div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
+<h1>🧱 Builder Basics — The Trail Maker (Extension · Intermediate)</h1>
+<p><strong>Topic:</strong> Place On Move · <strong>Course:</strong> Builder Basics · <strong>Type:</strong> Extension Activity · <strong>Level:</strong> Intermediate · <strong>Time:</strong> about 38 minutes</p>
+<blockquote>
+<p>🧩 This is a bonus challenge, not a weekly lesson. Try it once you are comfortable placing blocks and you want the agent to place a whole line for you.</p>
+</blockquote>
+<p>In Week 2 you placed blocks one at a time. This world has a faster way. When you type <code>run</code> in the chat, the agent flips a switch called <strong>place on move</strong> and then walks forward. Your job in this worksheet is to understand the <strong>idea</strong> behind it, not to type any code.</p>
+<p>Here is the idea. When <strong>place on move</strong> is <strong>ON</strong>, the agent drops a block on every step it walks — it leaves a <strong>trail</strong> behind it. When the switch is <strong>OFF</strong>, the agent walks the same steps but places nothing, so you get a <strong>gap</strong>. The program turns the switch ON, walks a bit, turns it OFF, walks a bit, then turns it ON again — so the trail comes out with a gap in the middle.</p>
+<h2>1 · Predict 🔮</h2>
+<p>Here is the order the program runs:</p>
+<pre><code>place on move ON
+move forward by 4
+place on move OFF
+move forward by 2
+place on move ON
+move forward by 4
+</code></pre>
+<div class="qa"><p><strong>Each move places one block per step while the switch is ON. How many blocks come from the first <code>move forward 4</code>? How many from the <code>move forward 2</code> while OFF? How many from the last <code>move forward 4</code>? Write all three numbers.</strong></p>
+<div class="write-space tall"></div></div>
+
+<div class="qa"><p><strong>Add them up. How many blocks are placed in total, and how wide is the gap in the middle? Show your working.</strong></p>
+<div class="write-space"></div></div>
+
+<h2>2 · Trace the Switch 🔢</h2>
+<p>Walk through the program one move at a time. For each move command, write the switch state and how many blocks that stretch places. Show the count, not just a guess.</p>
+<table>
+<thead>
+<tr>
+<th>Move command</th>
+<th>Switch (ON / OFF)</th>
+<th>Blocks placed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>move forward 4</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>move forward 2</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>move forward 4</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="write-space"></div>
+
+<div class="qa"><p><strong>The agent walked 10 steps but placed fewer than 10 blocks. Why? Which stretch is the reason?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>3 · Reason About the Switch 🧠</h2>
+<p>No code here — just think it through.</p>
+<div class="qa"><p><strong>The trail comes out as one solid line with NO gap. The switch must have been left in the wrong state somewhere. Which line of the program went wrong for that to happen? Explain in one or two sentences.</strong></p>
+<div class="write-space tall"></div></div>
+
+<div class="qa"><p><strong>Now imagine the very first <code>place on move ON</code> was missing, so the switch stayed OFF the whole time. What would be on the ground after the agent finished walking? Explain why.</strong></p>
+<div class="write-space tall"></div></div>
+
+<h2>4 · Make It Yours ✏️</h2>
+<p>The switch decides WHEN the agent places, and the move numbers decide HOW MANY blocks and how wide the gap is.</p>
+<div class="qa"><p><strong>Design a trail that places exactly </strong>10 blocks<strong> with a </strong>3-wide gap<strong> in the middle. Write your ON / OFF / move sequence, line by line.</strong></p>
+<div class="write-space tall"></div></div>
+
+<div class="qa"><p><strong>One sentence: how did you pick your move numbers to get 10 blocks?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>5 · Build It 📸</h2>
+<p>Open the <strong>Trail Maker</strong> world. Type <code>run</code> in the chat to watch the agent lay a trail with a gap. Then try your own version from Section 4 — change the move numbers and the ON / OFF switches, and run it again.</p>
+<p>When it looks right, send a photo or video to teacher on KakaoTalk. Then explain what you did. Use these starters — write 4 to 6 sentences total.</p>
+<div class="qa"><blockquote>
+<p>When <strong>place on move</strong> was <strong>ON</strong>, the agent …</p>
+<p>When it was <strong>OFF</strong>, the agent …</p>
+<p>My gap is … wide because …</p>
+<p>This was faster than Week 2 because …</p>
+</blockquote>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + a photo or video of your trail to teacher on KakaoTalk.</p>
+</body>
+</html>
