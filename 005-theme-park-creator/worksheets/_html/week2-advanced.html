@@ -109,7 +109,8 @@ footer b { color: #ff7849; }
 <div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
 <h1>🎢 005 Week 2 — English Worksheet (Advanced)</h1>
 <p><strong>Topic:</strong> One Function, Many Stalls — Arguments &amp; Parameters · <strong>Course:</strong> Theme Park Creator · <strong>Time:</strong> about 50 minutes</p>
-<p>This week you build a market <strong>stall</strong> with a <strong>function</strong>. A stall has more parts than a plain booth — a stand, posts and a roof — so your function needs <strong>more parameters</strong>: some for <strong>materials</strong> and some for the <strong>corners</strong> that set where the stall goes and how big it is. Change the <strong>arguments</strong> you <strong>call</strong> it with, and one function builds a whole market row of different stalls.</p>
+<p>This week you build a market <strong>stall</strong> with a <strong>function</strong>. A stall has more parts than a booth — a stand, posts and a roof.</p>
+<p>So your function needs <strong>more parameters</strong>: some for <strong>materials</strong>, some for the <strong>corners</strong> that set where it goes and how big it is. Change the <strong>arguments</strong> you <strong>call</strong> it with, and one function builds a whole market row.</p>
 <p>These are the blocks you use this week:</p>
 <pre><code class="language-python">blocks.fill(BRICKS, pos(x1, 0, z1), pos(x2, 0, z2), FillOperation.HOLLOW)
 blocks.fill(AIR, pos(x1, 0, z1), pos(x2, 0, z2), FillOperation.REPLACE)
@@ -124,7 +125,7 @@ blocks.fill(OAK_FENCE, pos(x1, 1, z1), pos(x1, 3, z1), FillOperation.REPLACE)
 <h2>1 · Meet Arguments and Parameters 🎁</h2>
 <p>A <strong>parameter</strong> is a named empty box you create when you <strong>define</strong> the function.
 An <strong>argument</strong> is the real value you send when you <strong>call</strong> it.
-They match <strong>by position</strong> — the order you write the arguments in decides which box each one lands in. Get the order wrong and the values land in the wrong boxes.</p>
+They match <strong>by position</strong>: the order of your arguments decides which box each one lands in.</p>
 <pre><code class="language-text">   DEFINE  →  the names in ( ) are PARAMETERS (empty named boxes):
 
        def build_stall( stand , post , roof , x1 , x2 , z1 , z2 ):
@@ -140,12 +141,12 @@ They match <strong>by position</strong> — the order you write the arguments in
        post  ⟵ OAK_FENCE   x2 ⟵ 10      z2 ⟵ 6
        roof  ⟵ BRICKS
 </code></pre>
-<p>Notice two things: <code>BRICKS</code> was sent in <strong>twice</strong> (same material used for stand and roof — that's fine, boxes don't care), and the <strong>corners</strong> are numbers while the <strong>materials</strong> are words. It is legal — and normal — for one function to mix them.</p>
+<p>Notice two things: <code>BRICKS</code> was sent in <strong>twice</strong> (same material for stand and roof — that's fine), and the <strong>corners</strong> are numbers while the <strong>materials</strong> are words. Mixing them is normal.</p>
 <div class="qa"><p><strong>Why does matching by <em>position</em> mean the order of your arguments matters?</strong></p>
 <div class="write-space"></div></div>
 
 <h2>2 · Predict 🔮</h2>
-<p>Read each function. Before you imagine the build, write what you think happens.</p>
+<p>Read each function. Write what you think happens.</p>
 <pre><code class="language-python">def build_stall(stand, post, roof, x1, x2, z1, z2):
     blocks.fill(stand, pos(x1, 0, z1), pos(x2, 0, z2), FillOperation.HOLLOW)
     blocks.fill(roof, pos(x1, 4, z1), pos(x2, 4, z2), FillOperation.HOLLOW)
@@ -165,7 +166,7 @@ build_stall(BRICKS, OAK_FENCE, BRICKS, 10, 2, 2, 6)
 <div class="write-space"></div></div>
 
 <h2>3 · Spot the Bug 🐛</h2>
-<p>Each block was meant to do something but is broken. Read what it is <strong>supposed</strong> to do, rewrite it so it works, then explain why the original was wrong.</p>
+<p>Each block is broken. Read what it should do, rewrite it so it works, then explain why the original was wrong.</p>
 <p><strong>Bug A</strong> — This should build a <strong>brick stall with fence posts</strong>. But it comes out with fence-material walls and brick posts — swapped.</p>
 <pre><code class="language-python">def build_stall(stand, post, roof, x1, x2, z1, z2):
     blocks.fill(stand, pos(x1, 0, z1), pos(x2, 0, z2), FillOperation.HOLLOW)
@@ -193,7 +194,7 @@ build_stall(BRICKS, OAK_FENCE, BRICKS, 2, 10, 2, 6)
 <div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
 <div class="write-space"></div></div>
 
-<p><strong>Bug C</strong> — The roof should sit at the height you decide. But the roof always builds at the <strong>same height</strong>, no matter what stall you build, because one corner value is ignored.</p>
+<p><strong>Bug C</strong> — The roof should sit at the height you decide. But the roof always builds at the <strong>same height</strong>, because one corner value is ignored.</p>
 <pre><code class="language-python">def build_stall(stand, post, roof, x1, x2, z1, z2):
     blocks.fill(roof, pos(x1, 4, z1), pos(10, 4, 6), FillOperation.HOLLOW)
 
@@ -207,7 +208,7 @@ build_stall(BRICKS, OAK_FENCE, BRICKS, 2, 20, 2, 12)
 <div class="write-space"></div></div>
 
 <h2>4 · Build the Market Stall 🏪</h2>
-<p>Now the real challenge. In your homework world, write <strong>one</strong> function called <code>build_stall</code> that builds a proper market stall. Your function must have <strong>seven parameters</strong> — three materials and four corners:</p>
+<p>In your homework world, write <strong>one</strong> function called <code>build_stall</code> that builds a market stall. Your function must have <strong>seven parameters</strong> — three materials and four corners:</p>
 <pre><code class="language-python">def build_stall(stand, post, roof, x1, x2, z1, z2):
 </code></pre>
 <p>Your stall must include, in total:</p>
@@ -216,7 +217,7 @@ build_stall(BRICKS, OAK_FENCE, BRICKS, 2, 20, 2, 12)
 <li><strong>four posts</strong> — one rising from each of the four corners, made from the <code>post</code> material</li>
 <li>a <strong>roof</strong> — a flat top covering the stand, made from the <code>roof</code> material</li>
 </ul>
-<p>Everything about <strong>where</strong> the stall sits and <strong>how big</strong> it is must come from the four corner parameters — no fixed corner numbers hidden inside.</p>
+<p><strong>Where</strong> the stall sits and <strong>how big</strong> it is must come from the four corner parameters — no fixed corner numbers inside.</p>
 <p>Then <strong>call your function two or three times</strong> with different corners to line up a <strong>market row</strong>, for example:</p>
 <pre><code class="language-python">build_stall(BRICKS, OAK_FENCE, BRICKS, 2, 10, 2, 6)
 build_stall(STONE_BRICKS, DARK_OAK_FENCE, STONE_BRICKS, 12, 20, 2, 6)
@@ -224,33 +225,23 @@ build_stall(STONE_BRICKS, DARK_OAK_FENCE, STONE_BRICKS, 12, 20, 2, 6)
 <div class="qa"><p><strong>Write your finished <code>build_stall</code> function and the lines that call it:</strong></p>
 <div class="write-space tall" style="min-height: 420px"></div></div>
 
-<h2>5 · Tell Me What You Built 📸</h2>
-<p>When your market row is standing, send a photo or video and explain what you did. Use these sentence starters — write 5 to 7 sentences.</p>
-<div class="qa"><blockquote>
-<p>My seven parameters were … and they split into … materials and … corners.</p>
-<p>The four corners control the stall because …</p>
-<p>To make the stand hollow and open I …</p>
-<p>When I changed the corners in my second call, the stall …</p>
-<p>The trickiest part of matching arguments to parameters was …</p>
-<p>One thing I would add to my stall with more time is …</p>
-</blockquote>
-<div class="write-space tall" style="min-height: 360px"></div></div>
-
-<h2>6 · Record Your Walkthrough 🎥</h2>
-<p>Take a video on your phone (or a parent's phone) of your code and your market row. Talk it through like you are teaching someone who has never seen it. Try to use these words: <strong>function</strong>, <strong>parameter</strong>, <strong>argument</strong>, <strong>call</strong>, <strong>position</strong>.</p>
+<h2>5 · Show Your Work 📸🎥</h2>
+<p>Record <strong>one video</strong> (a phone is fine). Show two things:</p>
+<p><strong>1 · Your code.</strong> Scroll through it. Say what each part does.</p>
+<p><strong>2 · Your build.</strong> Point the camera. Name the parts.</p>
+<p>Fill the blanks:</p>
 <blockquote>
-<ol>
-<li>Show your <code>build_stall</code> function and read the seven <strong>parameters</strong> out loud.</li>
-<li>Point at a material parameter and a corner parameter and say what each one controls.</li>
-<li>Run two <strong>calls</strong> with different <strong>arguments</strong> and show the stalls appear in different places.</li>
-<li>Explain in your own words why the <strong>order</strong> of the arguments matters.</li>
-</ol>
+<p>Today I built ______.</p>
+<p>I built it using this code: ______.</p>
+<p>In this code I used ______.</p>
+<p>The hardest part was ______.</p>
+<p>That part was hard because ______.</p>
 </blockquote>
-<div class="qa"><p><strong>Write what you will say in your video.</strong> Plan it here before you record — you can read from it while filming.</p>
-<div class="write-space tall" style="min-height: 360px"></div></div>
+<div class="qa"><p><strong>Write your lines here, then say them in your video.</strong></p>
+<div class="write-space tall" style="min-height: 340px"></div></div>
 
 <hr />
 <h3>Submit ✅</h3>
-<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.</p>
+<p>Send this worksheet + your video to teacher on KakaoTalk.</p>
 </body>
 </html>

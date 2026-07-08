@@ -15,7 +15,7 @@ Finish your village. It must have **all four** of these:
 > 💧 Small pond
 > 🌸 Small flower bed
 
-**One rule: build with _____. Circle one:** code · your hands
+**One rule: build with… Circle one:** code · your hands
 
 **Tick each one when it is done in your world:**
 
@@ -46,17 +46,31 @@ A loop repeats the same step again and again.
 
 ---
 
-## 4 · Build It, Then Show It 📸🎥
+## 4 · Show Your Work 📸🎥
 
 Go to your world. Build all four with code: the **house with a roof**, the **well**, the **small pond**, and the **small flower bed**.
 
-Then take a video on your phone (or a parent's phone). In your video:
+Record **one video** (a phone is fine). Show two things:
 
-> 1. Point to each of the four things and say its name: **house, well, pond, flower bed**.
-> 2. Show the flower bed and say: "I used a **loop** to place the row of flowers."
-> 3. Say which one you like best.
+**1 · Your code.** Scroll through it. Say what each part does.
 
-Send a photo **and** the video to teacher on KakaoTalk.
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
+>
+> I built it using this code: ______.
+>
+> In this code I used ______.
+>
+> The hardest part was ______.
+>
+> That part was hard because ______.
+
+**Write your lines here, then say them in your video.**
+
+<div class="write-space tall" style="min-height: 340px"></div>
 
 ---
 

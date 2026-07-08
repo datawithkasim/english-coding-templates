@@ -6,7 +6,7 @@
 
 ## 1 · Predict 🔮
 
-Read the steps. Before you imagine the agent doing it, circle or write your answer.
+Read the steps. Circle your answer.
 
 ```
 repeat 3 times:
@@ -16,9 +16,7 @@ repeat 3 times:
 
 **How many blocks does the agent place? Circle one:** 1 · 3 · 9
 
-**What does it look like — a line or a tower?**
-
-<div class="write-space short"></div>
+**Line or tower? Circle one:** line · tower
 
 ```
 repeat 4 times:
@@ -26,19 +24,17 @@ repeat 4 times:
     move up by 1
 ```
 
-**Is this a line on the ground or a tower? Circle one:** line · tower
+**Is this a line or a tower? Circle one:** line · tower
 
-**How tall is it?**
-
-<div class="write-space short"></div>
+**How tall is it? Circle one:** 2 · 4 · 8
 
 ---
 
 ## 2 · Find the Difference 🐛
 
-Each pair shows clean steps first, then a broken version of the same idea. Circle what's different and write one short sentence about the bug.
+Clean steps first, then a buggy version. Circle the bug.
 
-**Pair A** — The agent should place a row of 4 blocks. The loop version is much shorter — but one of these places only 1 block.
+**Pair A** — Should place a row of 4 blocks.
 
 ```
 # clean
@@ -53,11 +49,9 @@ repeat 4 times:
     place block down
 ```
 
-**What is wrong? Where do all 4 blocks go in the buggy code?**
+**What is wrong? Circle one:** all 4 blocks land in one spot · they form a line · they form a tower
 
-<div class="write-space short"></div>
-
-**Pair B** — The agent should build a tower 4 blocks tall.
+**Pair B** — Should build a tower 4 blocks tall.
 
 ```
 # clean
@@ -73,15 +67,13 @@ repeat 4 times:
     move forward
 ```
 
-**What is wrong?**
-
-<div class="write-space short"></div>
+**What is wrong? Circle one:** it builds a flat line, not a tower · it builds a taller tower · nothing happens
 
 ---
 
 ## 3 · Fill the Gap ✏️
 
-The agent should build a row of **5 blocks** with a loop. Two parts are missing. Fill them in using the word bank.
+Build a row of **5 blocks** with a loop. Fill the missing number and line.
 
 ```
 repeat ____ times:
@@ -89,44 +81,40 @@ repeat ____ times:
     ____________
 ```
 
-**Word bank:** `5` · `move forward` · `turn right` · `2`
+**Missing number? Circle one:** 5 · 2
 
-**Write the missing number and the missing line:**
-
-<div class="write-space short"></div>
+**Missing line? Circle one:** move forward · turn right
 
 ---
 
-## 4 · Tell Me What You Built 📸
+## 4 · Show Your Work 📸🎥
 
 Now switch to your homework world. Use a loop to build a **10-block straight wall**. When you finish, come back here.
 
-Send a photo or video of your wall, then explain what you did. Use these sentence starters — write 2 or 3 sentences.
+Record **one video** (a phone is fine). Show two things:
 
-> My loop repeated … times.
+**1 · Your code.** Scroll through it. Say what each part does.
+
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
 >
-> Inside the loop, the agent …
+> I built it using this code: ______.
 >
-> A loop is useful because …
+> In this code I used ______.
+>
+> The hardest part was ______.
+>
+> That part was hard because ______.
 
-<div class="write-space tall" style="min-height: 240px"></div>
+**Write your lines here, then say them in your video.**
 
----
-
-## 5 · Record Your Walkthrough 🎥
-
-Take a video on your phone (or a parent's phone) and show your wall. Talk like you are teaching a friend. Try to use these words: **loop**, **repeat**, **times**, **block**.
-
-> 1. Show what your loop built.
-> 2. Read your loop out loud.
-> 3. Say why a loop is better than writing the same lines over and over.
-
-**Write what you will say in your video.** You can read from it while filming.
-
-<div class="write-space tall" style="min-height: 240px"></div>
+<div class="write-space tall" style="min-height: 340px"></div>
 
 ---
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + your video to teacher on KakaoTalk.

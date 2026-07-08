@@ -2,7 +2,7 @@
 
 **Topic:** Redstone Trail Solver (3D Cube Maze) · **Course:** Maze Madness · **Level:** Extension (Intermediate) · **Time:** about 45 minutes
 
-The agent solves a **3D cube maze** on its own. It reads a **redstone trail** above, below, left, right and ahead, then picks a move. You drive it with chat: `l` turns left, `r` turns right, `run` starts it, `rl` brings it back.
+The agent solves a **3D cube maze** on its own by reading a **redstone trail** all around it. Drive it with chat: `l` left, `r` right, `run` starts it, `rl` brings it back.
 
 ---
 
@@ -61,7 +61,7 @@ while True:
 
 ## 3 · Fill the Blanks ✏️
 
-The agent should step forward, then go **up** when there is redstone **below** it. Fill the blanks.
+The agent should step forward, then go **up** when there is redstone **below** it.
 
 ```
 agent.move(________, 1)
@@ -97,34 +97,34 @@ if agent.detect(REDSTONE, DOWN):
 
 ---
 
-## 5 · Finish + Film 📸🎥
+## 5 · Show Your Work 📸🎥
 
 Open the world. Type `run`. Let the agent reach the goal.
 
-Send a photo OR video of the agent at the goal. Write 3 or 4 sentences.
+Record **one video** (a phone is fine). Show two things:
 
-> The maze was 3D, so the agent had to …
+**1 · Your code.** Scroll through it. Say what each part does.
+
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
 >
-> The redstone trail told the agent to …
+> I built it using this code: ______.
 >
-> I used `detect` to …
+> In this code I used ______.
 >
-> The hardest part was …
+> The hardest part was ______.
+>
+> That part was hard because ______.
 
-<div class="write-space tall" style="min-height: 240px"></div>
+**Write your lines here, then say them in your video.**
 
-**Phone video plan.** Film the agent solving the maze. Talk like you teach a friend. Try these words: **detect**, **redstone**, **trail**, **loop**, **3D**.
-
-> 1. Show the maze and the redstone trail.
-> 2. Type `run` and show the agent following it.
-> 3. Say one spot where the agent went up or down.
-
-**Write what you will say:**
-
-<div class="write-space tall" style="min-height: 240px"></div>
+<div class="write-space tall" style="min-height: 340px"></div>
 
 ---
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + your video to teacher on KakaoTalk.

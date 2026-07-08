@@ -2,7 +2,7 @@
 
 **Topic:** Repeat Until a Wall · **Course:** Maze Madness · **Level:** Intermediate · **Time:** about 35 minutes
 
-A while loop repeats. It checks first, then moves. It stops at a wall.
+A while loop checks first, then moves. It stops at a wall.
 
 ---
 
@@ -20,8 +20,6 @@ while no wall ahead:
 ---
 
 ## 2 · Real Code 🤖
-
-This is the real check.
 
 ```
 while not agent.detect(BLOCK, FORWARD):
@@ -66,36 +64,34 @@ Make the agent move forward until a wall, then turn right.
 
 ---
 
-## 5 · Finish the Maze 📸
+## 5 · Show Your Work 📸🎥
 
 Open your homework world. Use a while loop. Move the agent down the straight maze to the wall.
 
-Send a photo OR video of the agent at the wall. Then write 2-3 sentences.
+Record **one video** (a phone is fine). Show two things:
 
-> My loop checked …
+**1 · Your code.** Scroll through it. Say what each part does.
+
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
 >
-> The agent stopped because …
+> I built it using this code: ______.
 >
-> A while loop helps because …
+> In this code I used ______.
+>
+> The hardest part was ______.
+>
+> That part was hard because ______.
 
-<div class="write-space tall" style="min-height: 240px"></div>
+**Write your lines here, then say them in your video.**
 
----
-
-## 6 · Video Plan 🎥
-
-Record on a phone while the agent runs. Use: **while**, **loop**, **detect**, **wall**.
-
-> 1. Run your code.
-> 2. Read your loop. Say what stops it.
-> 3. Say why a loop beats many `move` lines.
-
-**Plan your words:**
-
-<div class="write-space tall" style="min-height: 240px"></div>
+<div class="write-space tall" style="min-height: 340px"></div>
 
 ---
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + your video to teacher on KakaoTalk.

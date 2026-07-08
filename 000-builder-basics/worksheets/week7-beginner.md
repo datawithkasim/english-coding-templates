@@ -6,7 +6,7 @@
 
 ## 1 · Predict 🔮
 
-Read the steps. Before you imagine the agent doing it, circle or write your answer.
+Read the steps. Circle your answer.
 
 ```
 # Stage 1
@@ -19,9 +19,7 @@ walk to the spot beside the house
 
 **How many stages are there? Circle one:** 1 · 2 · 3
 
-**Why does the agent walk to a new spot before building the farm?**
-
-<div class="write-space short"></div>
+**Why does the agent walk to a new spot first? Circle one:** so the farm is not on the house · to dig a hole · to go home
 
 ```
 turn right
@@ -31,15 +29,13 @@ repeat 4 times:
 
 **Does the agent build anything here? Circle one:** yes · no
 
-**What is the agent doing instead?**
-
-<div class="write-space short"></div>
+**What is it doing instead? Circle one:** walking to a new spot · placing blocks · digging down
 
 ---
 
 ## 2 · Find the Difference 🐛
 
-Each pair shows clean steps first, then a broken version of the same idea. Circle what's different and write one short sentence about the bug.
+Clean steps first, then a broken version. Circle the bug.
 
 **Pair A** — The agent should build the house **first**, then the farm.
 
@@ -57,9 +53,7 @@ Each pair shows clean steps first, then a broken version of the same idea. Circl
 [build house]
 ```
 
-**What is wrong?**
-
-<div class="write-space short"></div>
+**What is wrong? Circle one:** the farm is built before the house · the house is missing · nothing is built
 
 **Pair B** — The farm must land on the **ground**, so the agent has to come down from the house first.
 
@@ -77,15 +71,13 @@ move down by 2
 move down by 2
 ```
 
-**What is wrong?**
-
-<div class="write-space short"></div>
+**What is wrong? Circle one:** it comes down after building, not before · it never builds · it digs a hole
 
 ---
 
 ## 3 · Fill the Gap ✏️
 
-After the house, the agent must **walk over** before building the farm. One line is missing. Fill it in using the word bank.
+After the house, the agent must **walk over** before building the farm. One line is missing.
 
 ```
 [build house]
@@ -94,44 +86,38 @@ ____________
 [build farm patch]
 ```
 
-**Word bank:** `repeat 4 times: move forward` · `move up by 4` · `destroy block down`
-
-**Write the missing line:**
-
-<div class="write-space short"></div>
+**Which line is missing? Circle one:** repeat 4 times: move forward · move up by 4 · destroy block down
 
 ---
 
-## 4 · Tell Me What You Built 📸
+## 4 · Show Your Work 📸🎥
 
 Now switch to your homework world. Build a **small house** and a **small farm patch beside it**. When you finish, come back here.
 
-Send a photo or video of your farm house, then explain what you did. Use these sentence starters — write 2 or 3 sentences.
+Record **one video** (a phone is fine). Show two things:
 
-> First, I built the house by …
+**1 · Your code.** Scroll through it. Say what each part does.
+
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
 >
-> To get to the farm spot, the agent had to …
+> I built it using this code: ______.
 >
-> The hardest part was …
+> In this code I used ______.
+>
+> The hardest part was ______.
+>
+> That part was hard because ______.
 
-<div class="write-space tall" style="min-height: 240px"></div>
+**Write your lines here, then say them in your video.**
 
----
-
-## 5 · Record Your Walkthrough 🎥
-
-Take a video on your phone (or a parent's phone) and walk the camera around your farm house. Talk like you are teaching a friend. Try to use these words: **house**, **farm**, **patch**, **stage**.
-
-> 1. Show the house, then walk over to the farm patch.
-> 2. Say what stage 1 and stage 2 were.
-> 3. Show one bug you hit and how you fixed it.
-
-**Write what you will say in your video.** You can read from it while filming.
-
-<div class="write-space tall" style="min-height: 240px"></div>
+<div class="write-space tall" style="min-height: 340px"></div>
 
 ---
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + your video to teacher on KakaoTalk.

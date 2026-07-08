@@ -6,7 +6,7 @@
 
 ## 1 · Predict 🔮
 
-Read each set of steps. Before you imagine the agent doing it, write what you think will happen in your own words.
+Read each set of steps. Write what you think will happen.
 
 ```
 move forward
@@ -42,7 +42,7 @@ move forward
 
 ## 2 · Spot the Bug 🐛
 
-Each block of code below was meant to do something, but it is broken. The goal is written above each one, so you already know what should happen. Read the goal, find the bug, then write one or two sentences about what is wrong.
+Each code block is broken. The goal is written above each one. Find the bug, then write one or two sentences about what is wrong.
 
 **Bug A** — Goal: the agent should walk **4 steps forward**.
 
@@ -83,7 +83,7 @@ move forward
 
 ## 3 · Fix the Code 🔧
 
-Here is the goal: the agent should walk **forward 2 steps**, then **turn right**, then walk **forward 1 step**. The code below does not match the goal.
+Goal: the agent should walk **forward 2 steps**, **turn right**, then **forward 1 step**. The code below does not match.
 
 ```
 move forward
@@ -102,33 +102,29 @@ move forward
 
 ---
 
-## 4 · Tell Me What You Built 📸
+## 4 · Show Your Work 📸🎥
 
 Now switch to your homework world. Move your agent in an **L-shape** path — go forward, turn once, then go forward again (no loops this week). When you finish, come back here.
 
-Send a photo or video of where the agent ended up, then explain what you did. Use these sentence starters — write 3 or 4 sentences.
+Record **one video** (a phone is fine). Show two things:
 
-> First, I told the agent to …
+**1 · Your code.** Scroll through it. Say what each part does.
+
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
 >
-> Then I made it turn …
+> I built it using this code: ______.
 >
-> One thing I had to fix was …
+> In this code I used ______.
 >
-> The agent ended up at …
+> The hardest part was ______.
+>
+> That part was hard because ______.
 
-<div class="write-space tall" style="min-height: 340px"></div>
-
----
-
-## 5 · Record Your Walkthrough 🎥
-
-Take a video on your phone (or a parent's phone) and show your world. Talk like you are teaching a friend who has never seen it. Try to use these words: **move**, **forward**, **turn**, **up**, **agent**.
-
-> 1. Show where the agent started.
-> 2. Read your commands out loud and say what each one does.
-> 3. Show where the agent ended up.
-
-**Write what you will say in your video.** Plan it here first — you can read from it while filming.
+**Write your lines here, then say them in your video.**
 
 <div class="write-space tall" style="min-height: 340px"></div>
 
@@ -136,4 +132,4 @@ Take a video on your phone (or a parent's phone) and show your world. Talk like 
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + your video to teacher on KakaoTalk.

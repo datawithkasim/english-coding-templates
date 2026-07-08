@@ -1,0 +1,186 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head><meta charset='utf-8'>
+<title>🧩 M002 Extension 4 — Complete the Maze</title>
+<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
+<style>
+@page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
+div.WordSection1 { page: WordSection1; }
+body { font-family: "Segoe UI", Arial, sans-serif; font-size: 11.5pt; color: #1a1a2e; line-height: 1.5; }
+h1 { font-size: 21pt; color: #6b4ee6; margin: 4px 0 6px; }
+h2 { font-size: 15pt; color: #6b4ee6; border-top: 1px solid #dddddd; padding-top: 8px; margin: 18px 0 10px; }
+h3, h4 { font-size: 11.5pt; margin: 12px 0 6px; }
+p { margin: 7px 0; }
+.brand { font-size: 10.5pt; font-weight: bold; color: #ff7849; letter-spacing: .06em;
+         border-bottom: 2px solid #ff7849; padding-bottom: 6px; margin-bottom: 14px; }
+table { border-collapse: collapse; margin: 10px 0; }
+th, td { border: 1px solid #c8c8c8; padding: 4px 9px; text-align: center; }
+th { background: #f3eefc; color: #6b4ee6; font-weight: bold; }
+pre { font-family: Consolas, "Courier New", monospace; font-size: 10.5pt; background: #f4f4f5;
+      border: 1px solid #dddddd; padding: 8px 10px; white-space: pre-wrap; }
+pre code { background: transparent; color: #1a1a2e; }
+code { font-family: Consolas, "Courier New", monospace; background: #fff1e8; color: #d6531f; padding: 0 3px; }
+blockquote { border-left: 3px solid #ff7849; background: #fff6ef; padding: 8px 12px;
+             color: #6a3a1c; margin: 9px 0; }
+ul, ol { margin: 7px 0 7px 26px; }
+p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
+.footer { color: #999999; font-size: 8.5pt; text-align: center; margin-top: 18px;
+          border-top: 1px solid #eeeeee; padding-top: 6px; }
+.footer b { color: #ff7849; }
+</style></head>
+<body><div class=WordSection1>
+<div class="brand">📚 ENGLISH CODING · 영어코딩</div>
+<h1>🧩 M002 Extension 4 — Complete the Maze</h1>
+<p><strong>Topic:</strong> Add Two AND Conditions · <strong>Course:</strong> Maze Madness · <strong>Level:</strong> Extension (Advanced) · <strong>Time:</strong> about 55 minutes</p>
+<p>The agent follows a redstone trail through a 3D maze with <strong>four rules</strong>. The solver is <strong>not finished</strong>: at two junctions two signals are on at once, so the agent stops. Add <strong>two AND rules</strong> of your own, then drive the agent to the goal.</p>
+<p>Chat: <code>l</code> turn left, <code>r</code> turn right, <code>run</code> start solver, <code>rl</code> bring agent back.</p>
+<hr />
+<h2>1 · Read the Four Rules 🎛️</h2>
+<p>Each rule checks <strong>one</strong> signal and does <strong>one</strong> action.</p>
+<pre><code class="language-python">if agent.detect(REDSTONE, LEFT):
+    agent.turn(RIGHT_TURN)
+elif agent.detect(REDSTONE, RIGHT):
+    agent.turn(LEFT_TURN)
+elif agent.detect(REDSTONE, DOWN):
+    agent.move(UP, 1)
+elif agent.detect(REDSTONE, UP):
+    agent.move(DOWN, 1)
+</code></pre>
+<p><strong>Fill the table from the code. You will reuse these actions.</strong></p>
+<table>
+<thead>
+<tr>
+<th>Signal</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>redstone <strong>left</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>redstone <strong>right</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>redstone <strong>below</strong> (down)</td>
+<td></td>
+</tr>
+<tr>
+<td>redstone <strong>above</strong> (up)</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>A left signal makes the agent turn <em>right</em>; a signal below makes it move <em>up</em>. Why might the maze pair a signal on one side with an action to the other?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>2 · Find the Two Stuck Junctions 🔍</h2>
+<p>Most junctions have <strong>one</strong> signal on, so one rule fires. Two junctions have <strong>two</strong> signals on at once — there the four rules are not enough and the agent stops.</p>
+<p>Type <code>run</code> and watch where it stops. Look around the agent.</p>
+<p><strong>Tick the signals on at each stuck junction.</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>left</th>
+<th>right</th>
+<th>below</th>
+<th>above</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Junction 1</strong></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Junction 2</strong></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Only the first matching <code>if</code>/<code>elif</code> branch runs on each pass. Why does that leave the second signal unused?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>3 · AND means BOTH 🧠</h2>
+<p>An <strong>AND</strong> is true <strong>only when both</strong> halves are true.</p>
+<pre><code class="language-python">if agent.detect(REDSTONE, LEFT) and agent.detect(REDSTONE, DOWN):
+    ...
+</code></pre>
+<p><strong>(Example only — yours may differ.) Left on but NOT below: is the whole condition true? Below on but not left?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Look at Junction 1 in your table. Write the AND condition true only at that spot, then the action for each signal in the order you want them.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>4 · Add the Two New Rules 🛠️</h2>
+<p>Open the <strong>M002 Complete the Maze</strong> world. Find the four rules. Add <strong>two <code>elif</code> branches</strong>, one per stuck junction, using the signals <strong>you</strong> found.</p>
+<p><strong>Junction 1 — write the whole branch: the AND condition, then the action for each signal.</strong></p>
+<pre><code class="language-python">elif agent.detect(REDSTONE, ______) and agent.detect(REDSTONE, ______):
+    agent.________(__________)
+    agent.________(__________)
+</code></pre>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Junction 2 — write the whole branch from scratch.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Both new rules must be checked <em>before</em> the four single-signal rules. Why? What happens at a stuck junction if a plain single-signal rule is checked first?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>5 · Spot the Bug 🐛</h2>
+<p>Rewrite each block, then explain the fix. (Signals here are examples.)</p>
+<p><strong>Bug A</strong> — should fire <strong>only when both</strong> signals are on, but fires when <strong>either</strong> one is, so it triggers at wrong spots.</p>
+<pre><code class="language-python">elif agent.detect(REDSTONE, LEFT) or agent.detect(REDSTONE, DOWN):
+    agent.turn(RIGHT_TURN)
+    agent.move(UP, 1)
+</code></pre>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug B</strong> — a junction needs <strong>two</strong> actions, but this rule does one, so the agent solves half and sticks again.</p>
+<pre><code class="language-python">elif agent.detect(REDSTONE, RIGHT) and agent.detect(REDSTONE, UP):
+    agent.turn(LEFT_TURN)
+</code></pre>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>6 · Show Your Work 📸🎥</h2>
+<p>The goal is start to the <strong>very end</strong> — past both stuck junctions and every plain turn. Type <code>run</code>, watch where it stops, fix your two rules, run again until it reaches the goal.</p>
+<p>Record <strong>one video</strong> (a phone is fine). Show two things:</p>
+<p><strong>1 · Your code.</strong> Scroll through it. Say what each part does.</p>
+<p><strong>2 · Your build.</strong> Point the camera. Name the parts.</p>
+<p>Fill the blanks:</p>
+<blockquote>
+<p>Today I built ______.</p>
+<p>I built it using this code: ______.</p>
+<p>In this code I used ______.</p>
+<p>The hardest part was ______.</p>
+<p>That part was hard because ______.</p>
+</blockquote>
+<p><strong>Write your lines here, then say them in your video.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your video to teacher on KakaoTalk.</p>
+<div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>
+</div></body></html>

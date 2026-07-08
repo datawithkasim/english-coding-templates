@@ -1,0 +1,100 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head><meta charset='utf-8'>
+<title>🎮 M004 Week 4 — English Worksheet (Beginner)</title>
+<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
+<style>
+@page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
+div.WordSection1 { page: WordSection1; }
+body { font-family: "Segoe UI", Arial, sans-serif; font-size: 11.5pt; color: #1a1a2e; line-height: 1.5; }
+h1 { font-size: 21pt; color: #6b4ee6; margin: 4px 0 6px; }
+h2 { font-size: 15pt; color: #6b4ee6; border-top: 1px solid #dddddd; padding-top: 8px; margin: 18px 0 10px; }
+h3, h4 { font-size: 11.5pt; margin: 12px 0 6px; }
+p { margin: 7px 0; }
+.brand { font-size: 10.5pt; font-weight: bold; color: #ff7849; letter-spacing: .06em;
+         border-bottom: 2px solid #ff7849; padding-bottom: 6px; margin-bottom: 14px; }
+table { border-collapse: collapse; margin: 10px 0; }
+th, td { border: 1px solid #c8c8c8; padding: 4px 9px; text-align: center; }
+th { background: #f3eefc; color: #6b4ee6; font-weight: bold; }
+pre { font-family: Consolas, "Courier New", monospace; font-size: 10.5pt; background: #f4f4f5;
+      border: 1px solid #dddddd; padding: 8px 10px; white-space: pre-wrap; }
+pre code { background: transparent; color: #1a1a2e; }
+code { font-family: Consolas, "Courier New", monospace; background: #fff1e8; color: #d6531f; padding: 0 3px; }
+blockquote { border-left: 3px solid #ff7849; background: #fff6ef; padding: 8px 12px;
+             color: #6a3a1c; margin: 9px 0; }
+ul, ol { margin: 7px 0 7px 26px; }
+p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
+.footer { color: #999999; font-size: 8.5pt; text-align: center; margin-top: 18px;
+          border-top: 1px solid #eeeeee; padding-top: 6px; }
+.footer b { color: #ff7849; }
+</style></head>
+<body><div class=WordSection1>
+<div class="brand">📚 ENGLISH CODING · 영어코딩</div>
+<h1>🎮 M004 Week 4 — English Worksheet (Beginner)</h1>
+<p><strong>Topic:</strong> Player Events · <strong>Course:</strong> Functions &amp; Games · <strong>Level:</strong> Beginner · <strong>Time:</strong> about 30 minutes</p>
+<p>This week your code reacts to <strong>you</strong>, the player. An <strong>event</strong> like <code>on player walk:</code> runs by itself when the player does something.</p>
+<hr />
+<h2>1 · Predict 🔮</h2>
+<pre><code>on player walk:
+    if block below is gold:
+        say &quot;Treasure room!&quot;
+</code></pre>
+<p><strong>The player walks onto a gold block. Does the message appear? Circle one:</strong> yes · no</p>
+<p><strong>Why? Circle one:</strong> the block below is gold · the block below is stone</p>
+<pre><code>on player place block:
+    say &quot;You built something!&quot;
+</code></pre>
+<p><strong>The player walks around and places nothing. Does the message appear? Circle one:</strong> yes · no</p>
+<hr />
+<h2>2 · Find the Difference 🐛</h2>
+<p><strong>Pair A</strong> — The trap should run <strong>by itself</strong> when the player walks, not wait for a chat command.</p>
+<pre><code># clean
+on player walk:
+    if block below is gold:
+        say &quot;Trap!&quot;
+</code></pre>
+<pre><code># buggy
+on chat command &quot;trap&quot;:
+    if block below is gold:
+        say &quot;Trap!&quot;
+</code></pre>
+<p><strong>What is wrong? Circle one:</strong> waits for a chat command · runs by itself</p>
+<p><strong>Pair B</strong> — The message should celebrate <strong>placing a block</strong>, so it needs the right event.</p>
+<pre><code># clean
+on player place block:
+    say &quot;Nice building!&quot;
+</code></pre>
+<pre><code># buggy
+on player walk:
+    say &quot;Nice building!&quot;
+</code></pre>
+<p><strong>What is wrong? Circle one:</strong> wrong event, walk not place · wrong message</p>
+<hr />
+<h2>3 · Fill the Gap ✏️</h2>
+<p>One word is missing.</p>
+<pre><code>on player ____:
+    if block below is gold:
+        say &quot;Treasure room!&quot;
+</code></pre>
+<p><strong>Fill the gap. Circle one:</strong> <code>walk</code> · <code>gold</code> · <code>say</code></p>
+<hr />
+<h2>4 · Show Your Work 📸🎥</h2>
+<p>Now switch to your homework world. Build one trap or one reward that fires with <code>on player walk:</code>. When you finish, come back here.</p>
+<p>Record <strong>one video</strong> (a phone is fine). Show two things:</p>
+<p><strong>1 · Your code.</strong> Scroll through it. Say what each part does.</p>
+<p><strong>2 · Your build.</strong> Point the camera. Name the parts.</p>
+<p>Fill the blanks:</p>
+<blockquote>
+<p>Today I built ______.</p>
+<p>I built it using this code: ______.</p>
+<p>In this code I used ______.</p>
+<p>The hardest part was ______.</p>
+<p>That part was hard because ______.</p>
+</blockquote>
+<p><strong>Write your lines here, then say them in your video.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your video to teacher on KakaoTalk.</p>
+<div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>
+</div></body></html>

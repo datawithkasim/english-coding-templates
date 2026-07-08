@@ -2,13 +2,13 @@
 
 **Topic:** Player Events · **Course:** Functions & Games · **Time:** about 45 minutes
 
-This week your code reacts to **you**, the player. An **event** like `on player walk:` runs by itself when the player does something — no chat command needed. Perfect for traps and rewards.
+This week your code reacts to **you**, the player. An **event** like `on player walk:` runs by itself — no chat command needed.
 
 ---
 
 ## 1 · Predict 🔮
 
-Read each set of steps. Before you imagine it happening, write what you think will happen.
+Before you imagine it happening, write what you think will happen.
 
 ```
 on player walk:
@@ -46,7 +46,7 @@ on player walk:
 
 ## 2 · Spot the Bug 🐛
 
-Each block of code below was meant to do something, but it is broken. Read what the code is **supposed** to do, then rewrite it so it works. After that, explain why the original was wrong and why your fix works.
+Each block below is broken. Rewrite it so it works, then explain why the original was wrong and why your fix works.
 
 **Bug A** — A trap message should appear **by itself** whenever the player walks onto gold. But nothing ever happens unless someone types `trap` in chat.
 
@@ -103,38 +103,29 @@ on player walk:
 
 ---
 
-## 3 · Tell Me What You Built 📸
+## 3 · Show Your Work 📸🎥
 
 Now switch to your homework world. Build a mini game zone with at least **one trap** and **one reward**, each triggered by a player event (`on player walk:` or `on player place block:`). When you finish, come back here.
 
-Send a photo or video of your triggers firing, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.
+Record **one video** (a phone is fine). Show two things:
 
-> First, I …
+**1 · Your code.** Scroll through it. Say what each part does.
+
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
 >
-> My trap fires when the player …
+> I built it using this code: ______.
 >
-> My reward fires when the player …
+> In this code I used ______.
 >
-> One tricky moment was when …
+> The hardest part was ______.
 >
-> To fix it, I …
->
-> If I had more time, I would …
+> That part was hard because ______.
 
-<div class="write-space tall" style="min-height: 340px"></div>
-
----
-
-## 4 · Record Your Walkthrough 🎥
-
-Now take a video on your phone (or a parent's phone) while you walk through your game zone and set off the triggers. Talk through it like you are teaching someone who has never seen it. Try to use these words: **event**, **trigger**, **player**, **trap**, **reward**.
-
-> 1. Show your game zone, then start walking.
-> 2. Set off your **trap** and read its event block out loud.
-> 3. Earn your **reward** and say which event made it fire.
-> 4. Say in your own words how an **event** is different from a chat command.
-
-**Write what you will say in your video.** Use the space below to plan it before you record — you can read from it while filming.
+**Write your lines here, then say them in your video.**
 
 <div class="write-space tall" style="min-height: 340px"></div>
 
@@ -142,4 +133,4 @@ Now take a video on your phone (or a parent's phone) while you walk through your
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + your video to teacher on KakaoTalk.

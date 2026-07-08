@@ -2,13 +2,13 @@
 
 **Topic:** Chat Commands · **Course:** Functions & Games · **Time:** about 45 minutes
 
-This week you type a word in chat and your code runs. A **chat command** can even take a number with it — so `tower 5` builds a 5-block tower using your function from last week.
+This week you type a word in chat and your code runs. A **chat command** can take a number — `tower 5` builds a 5-block tower.
 
 ---
 
 ## 1 · Predict 🔮
 
-Read each set of steps. Before you imagine the agent doing it, write what you think will happen.
+Before you imagine the agent doing it, write what you think will happen.
 
 ```
 on chat command "bridge":
@@ -50,7 +50,7 @@ on chat command "tower" with number n:
 
 ## 2 · Spot the Bug 🐛
 
-Each block of code below was meant to do something, but it is broken. Read what the code is **supposed** to do, then rewrite it so it works. After that, explain why the original was wrong and why your fix works.
+Each block below is broken. Rewrite it so it works, then explain why the original was wrong and why your fix works.
 
 **Bug A** — Typing `bridge` in chat should build a bridge. But when you type `bridge`, **nothing runs**.
 
@@ -117,38 +117,29 @@ on chat command "build":
 
 ---
 
-## 3 · Tell Me What You Built 📸
+## 3 · Show Your Work 📸🎥
 
 Now switch to your homework world. Make at least **two** chat commands: one simple command, and one command with a number that passes the number into a function. When you finish, come back here.
 
-Send a photo or video of your commands running, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.
+Record **one video** (a phone is fine). Show two things:
 
-> First, I …
+**1 · Your code.** Scroll through it. Say what each part does.
+
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
 >
-> When I typed my command in chat, …
+> I built it using this code: ______.
 >
-> My command with a number was …
+> In this code I used ______.
 >
-> One tricky moment was when …
+> The hardest part was ______.
 >
-> To fix it, I …
->
-> If I had more time, I would …
+> That part was hard because ______.
 
-<div class="write-space tall" style="min-height: 340px"></div>
-
----
-
-## 4 · Record Your Walkthrough 🎥
-
-Now take a video on your phone (or a parent's phone) while you type your commands and the code runs. Talk through it like you are teaching someone who has never seen it. Try to use these words: **chat command**, **number**, **pass**, **function**, **call**.
-
-> 1. Show the chat box, type your first command, and show what happens.
-> 2. Type your number command with a **small** number, then a **big** number, and show the difference.
-> 3. Point at the line where the number gets **passed** into the function.
-> 4. Say in your own words what a **chat command** does.
-
-**Write what you will say in your video.** Use the space below to plan it before you record — you can read from it while filming.
+**Write your lines here, then say them in your video.**
 
 <div class="write-space tall" style="min-height: 340px"></div>
 
@@ -156,4 +147,4 @@ Now take a video on your phone (or a parent's phone) while you type your command
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + your video to teacher on KakaoTalk.

@@ -31,7 +31,7 @@ p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
 <div class="brand">📚 ENGLISH CODING · 영어코딩</div>
 <h1>🧊 M003 Extension — Coordinate Pixel Art</h1>
 <p><strong>Topic:</strong> Reading (x, y) · <strong>Course:</strong> 3D Coordinates · <strong>Level:</strong> Extension · <strong>Time:</strong> about 20 minutes</p>
-<p>No computer — just a pencil. Count <strong>x</strong> left → right. Count <strong>y</strong> bottom → up. Every square has an address <strong>(x, y)</strong>. Read the address, colour the square.</p>
+<p>No computer — just a pencil. Count <strong>x</strong> left → right, <strong>y</strong> bottom → up. Every square has an address <strong>(x, y)</strong> — read it, colour the square.</p>
 <hr />
 <h2>1 · Predict 🔮</h2>
 <p>Colour every square in the list. What picture appears?</p>

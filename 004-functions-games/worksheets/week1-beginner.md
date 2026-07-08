@@ -2,13 +2,11 @@
 
 **Topic:** Functions with Parameters & Returns · **Course:** Functions & Games · **Level:** Beginner · **Time:** about 30 minutes
 
-This week you give a function a **parameter** — a number it uses inside. Call it with different numbers and it builds different things.
+This week you give a function a **parameter** — a number it uses inside.
 
 ---
 
 ## 1 · Predict 🔮
-
-Read the steps. Before you imagine the agent doing it, circle or write your answer.
 
 ```
 define build_tower(height):
@@ -19,11 +17,9 @@ define build_tower(height):
 build_tower(3)
 ```
 
-**Does the tower become 3 blocks tall? Circle one:** yes · no
+**Is the tower 3 blocks tall? Circle one:** yes · no
 
-**Why?**
-
-<div class="write-space short"></div>
+**Why? Circle one:** repeat runs 3 times · repeat runs 1 time
 
 ```
 define build_tower(height):
@@ -32,13 +28,11 @@ define build_tower(height):
         move up
 ```
 
-**There is no call after the definition. Does anything get built? Circle one:** yes · no
+**No call after the definition. Does anything build? Circle one:** yes · no
 
 ---
 
 ## 2 · Find the Difference 🐛
-
-Each pair shows clean steps first, then a broken version of the same idea. Circle what's different and write one short sentence about the bug.
 
 **Pair A** — The function should be **called** so the tower gets built.
 
@@ -60,9 +54,7 @@ define build_tower(height):
         move up
 ```
 
-**What is wrong? Why does the buggy code build nothing?**
-
-<div class="write-space short"></div>
+**What is wrong? Circle one:** no call line · wrong block
 
 **Pair B** — The function should use the **parameter** `height`, not a fixed number.
 
@@ -82,15 +74,13 @@ define build_tower(height):
         move up
 ```
 
-**What is wrong?**
-
-<div class="write-space short"></div>
+**What is wrong? Circle one:** uses `3` not `height` · missing call
 
 ---
 
 ## 3 · Fill the Gap ✏️
 
-The call should tell the function how tall to build. One thing is missing. Fill it in using the word bank.
+One word is missing.
 
 ```
 define build_tower(height):
@@ -101,44 +91,38 @@ define build_tower(height):
 build_tower(____)
 ```
 
-**Word bank:** `5` · `repeat` · `define`
-
-**Write the missing word:**
-
-<div class="write-space short"></div>
+**Fill the gap. Circle one:** `5` · `repeat` · `define`
 
 ---
 
-## 4 · Tell Me What You Built 📸
+## 4 · Show Your Work 📸🎥
 
 Now switch to your homework world. Write one tower function with a `height` parameter and call it two times with different numbers. When you finish, come back here.
 
-Send a photo or video of your towers, then explain what you did. Use these sentence starters — write 2 or 3 sentences.
+Record **one video** (a phone is fine). Show two things:
 
-> My function's parameter was …
+**1 · Your code.** Scroll through it. Say what each part does.
+
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
 >
-> When I called it with a different number, …
+> I built it using this code: ______.
 >
-> One tricky moment was when …
+> In this code I used ______.
+>
+> The hardest part was ______.
+>
+> That part was hard because ______.
 
-<div class="write-space tall" style="min-height: 240px"></div>
+**Write your lines here, then say them in your video.**
 
----
-
-## 5 · Record Your Walkthrough 🎥
-
-Take a video on your phone (or a parent's phone) while your code builds the towers. Talk like you are teaching a friend. Try to use these words: **function**, **parameter**, **call**.
-
-> 1. Show your function definition, then run your code.
-> 2. Show two towers built with different numbers.
-> 3. Say in your own words what a **parameter** is.
-
-**Write what you will say in your video.** You can read from it while filming.
-
-<div class="write-space tall" style="min-height: 240px"></div>
+<div class="write-space tall" style="min-height: 340px"></div>
 
 ---
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + your video to teacher on KakaoTalk.

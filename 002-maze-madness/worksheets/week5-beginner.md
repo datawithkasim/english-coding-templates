@@ -41,9 +41,7 @@ move up
 place block
 ```
 
-**What is wrong?**
-
-<div class="write-space short"></div>
+**What is wrong? Circle one:** moves up too soon · places too few · turns wrong
 
 ---
 
@@ -55,15 +53,11 @@ ____________
 move up
 ```
 
-**Word bank:** `break block above` · `place block` · `turn right`
-
-**Missing line:**
-
-<div class="write-space short"></div>
+**Missing line? Circle one:** break block above · place block · turn right
 
 ---
 
-## 4 · Finish the Cube 📸
+## 4 · Show Your Work 📸🎥
 
 Open this week's world. Find the **mini cube starter**.
 
@@ -71,16 +65,30 @@ Open this week's world. Find the **mini cube starter**.
 2. Fill the whole cube.
 3. Break a hole in the top and climb out.
 
-Send a photo or video. Then finish:
+Record **one video** (a phone is fine). Show two things:
 
-> To build, I …
+**1 · Your code.** Scroll through it. Say what each part does.
+
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
 >
-> I made the hole by …
+> I built it using this code: ______.
+>
+> In this code I used ______.
+>
+> The hardest part was ______.
+>
+> That part was hard because ______.
 
-<div class="write-space tall" style="min-height: 240px"></div>
+**Write your lines here, then say them in your video.**
+
+<div class="write-space tall" style="min-height: 340px"></div>
 
 ---
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + your video to teacher on KakaoTalk.

@@ -8,7 +8,7 @@
 
 ## 1 · The Challenge 🎯
 
-Your village has a good start — now finish it. A real village needs more than walls. Your job is to **complete your village** so it feels like a place someone could live.
+Your village has a good start, but a real village needs more than walls. **Complete your village** so it feels like a place someone could live.
 
 By the end, your village must have **all four** of these:
 
@@ -17,9 +17,9 @@ By the end, your village must have **all four** of these:
 > 💧 A **small pond**
 > 🌸 A **small flower bed**
 
-There is no fixed size and no map to copy. **You** decide how big each thing is and where it goes. But there is one rule you must not break:
+There is no fixed size and no map. **You** decide how big each thing is and where it goes. One rule you must not break:
 
-> ⚠️ **Everything must be built with code.** No placing blocks by hand. Every wall, every flower, every drop of water goes down because the agent ran your commands.
+> ⚠️ **Everything must be built with code.** No placing blocks by hand — every wall, flower, and drop of water goes down because the agent ran your commands.
 
 **In your own words, what four things must your village have when you finish?**
 
@@ -33,7 +33,7 @@ There is no fixed size and no map to copy. **You** decide how big each thing is 
 
 ## 2 · Plan Before You Build ✏️
 
-A builder plans first. For **each** of the four structures, decide what it is made of and roughly how big it is. Think about the blocks you will place and whether you need a loop.
+A builder plans first. For **each** of the four structures, decide what it is made of and how big. Think about the blocks and whether you need a loop.
 
 **House with a roof** — What blocks? How wide and how tall? Where does the roof sit?
 
@@ -55,7 +55,7 @@ A builder plans first. For **each** of the four structures, decide what it is ma
 
 ## 3 · Think in Loops 🔁
 
-You built walls with loops in the weekly lessons. Now reuse that thinking. A loop is for anything you do **again and again** — a row of wall blocks, a row of flowers, the four sides of a well.
+You built walls with loops before. A loop is for anything you do **again and again** — a row of wall blocks, a row of flowers, the four sides of a well.
 
 **Which of your four structures will use a loop, and what does the loop repeat each time?**
 
@@ -69,38 +69,29 @@ Between one structure and the next, the agent has to **walk to a new spot** so n
 
 ---
 
-## 4 · Build Your Village 📸
+## 4 · Show Your Work 📸🎥
 
 Now go to your homework world and build. Run your code for each structure, one at a time, and move the agent between them. Keep going until your village has **the house with a roof, the well, the small pond, and the small flower bed** — all placed by code.
 
-When it looks finished, send a photo or video of the whole village. Then explain what you did. Use these starters — write 4 to 6 sentences.
+Record **one video** (a phone is fine). Show two things:
 
-> First, I planned the four parts by …
+**1 · Your code.** Scroll through it. Say what each part does.
+
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
 >
-> I used a loop for … because …
+> I built it using this code: ______.
 >
-> To move the agent between structures, I …
+> In this code I used ______.
 >
-> The hardest part to build with code was …
+> The hardest part was ______.
 >
-> To fix it, I …
->
-> If I had more time, I would add …
+> That part was hard because ______.
 
-<div class="write-space tall" style="min-height: 340px"></div>
-
----
-
-## 5 · Record Your Walkthrough 🎥
-
-Take a video on your phone (or a parent's phone) and walk the camera through your finished village. Teach someone who has never seen it. Try to use these words: **village**, **house**, **roof**, **well**, **pond**, **flower bed**, **loop**.
-
-> 1. Show each of the four structures one by one and name it.
-> 2. For one structure, read your loop out loud and say what it repeats.
-> 3. Show one spot where the agent walked from one build to the next.
-> 4. Say which part you are most proud of and what you would build next.
-
-**Write what you will say in your video.** Plan it here first — you can read from it while filming.
+**Write your lines here, then say them in your video.**
 
 <div class="write-space tall" style="min-height: 340px"></div>
 
@@ -108,4 +99,4 @@ Take a video on your phone (or a parent's phone) and walk the camera through you
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + your video to teacher on KakaoTalk.

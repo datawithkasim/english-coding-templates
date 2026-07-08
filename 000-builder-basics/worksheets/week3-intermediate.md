@@ -6,7 +6,7 @@
 
 ## 1 · Predict 🔮
 
-Read each set of steps. Before you imagine the agent doing it, write what you think will happen.
+Read each set of steps. Write what you think will happen.
 
 ```
 repeat 4 times:
@@ -32,7 +32,7 @@ repeat 6 times:
 
 ## 2 · Find the Bug 🐛
 
-Each code block was meant to do something, but it is broken. The goal is written first, so you know what the agent should do. Read it, then write one or two sentences explaining what is wrong.
+Each code block is broken. The goal is written first. Write one or two sentences on what is wrong.
 
 **Bug A** — The agent should build a bridge that is exactly **5 blocks long**.
 
@@ -76,7 +76,7 @@ repeat 5 times:
 
 ## 3 · Fix the Code ✏️
 
-The agent should build a bridge **6 blocks long** using a loop, with the blocks in a flat line. The code below has two problems. Rewrite it so it works.
+The agent should build a bridge **6 blocks long** with a loop, blocks in a flat line. The code has two problems.
 
 ```
 repeat 4 times:
@@ -94,33 +94,29 @@ repeat 4 times:
 
 ---
 
-## 4 · Tell Me What You Built 📸
+## 4 · Show Your Work 📸🎥
 
 Now switch to your homework world. Build a **bridge across the river or cliff** using a loop. When you finish, come back here.
 
-Send a photo or video of your bridge, then explain what you did. Use these sentence starters — write 3 or 4 sentences.
+Record **one video** (a phone is fine). Show two things:
 
-> First, I …
+**1 · Your code.** Scroll through it. Say what each part does.
+
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
 >
-> I used a loop to …
+> I built it using this code: ______.
 >
-> My bridge is … blocks long.
+> In this code I used ______.
 >
-> The hardest part was …
+> The hardest part was ______.
+>
+> That part was hard because ______.
 
-<div class="write-space tall" style="min-height: 340px"></div>
-
----
-
-## 5 · Record Your Walkthrough 🎥
-
-Take a video on your phone (or a parent's phone) and walk the camera across your bridge. Talk through it like you are teaching someone who has never seen it. Try to use these words: **loop**, **repeat**, **block**, **bridge**.
-
-> 1. Show one end of the bridge and walk across it.
-> 2. Read your loop out loud and say what it does.
-> 3. Say how many blocks long your bridge is.
-
-**Write what you will say in your video.** Plan it here first — you can read from it while filming.
+**Write your lines here, then say them in your video.**
 
 <div class="write-space tall" style="min-height: 340px"></div>
 
@@ -128,4 +124,4 @@ Take a video on your phone (or a parent's phone) and walk the camera across your
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + your video to teacher on KakaoTalk.

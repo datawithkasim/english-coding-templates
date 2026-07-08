@@ -1,0 +1,172 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head><meta charset='utf-8'>
+<title>🎢 005 Week 2 — English Worksheet (Intermediate)</title>
+<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
+<style>
+@page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
+div.WordSection1 { page: WordSection1; }
+body { font-family: "Segoe UI", Arial, sans-serif; font-size: 11.5pt; color: #1a1a2e; line-height: 1.5; }
+h1 { font-size: 21pt; color: #6b4ee6; margin: 4px 0 6px; }
+h2 { font-size: 15pt; color: #6b4ee6; border-top: 1px solid #dddddd; padding-top: 8px; margin: 18px 0 10px; }
+h3, h4 { font-size: 11.5pt; margin: 12px 0 6px; }
+p { margin: 7px 0; }
+.brand { font-size: 10.5pt; font-weight: bold; color: #ff7849; letter-spacing: .06em;
+         border-bottom: 2px solid #ff7849; padding-bottom: 6px; margin-bottom: 14px; }
+table { border-collapse: collapse; margin: 10px 0; }
+th, td { border: 1px solid #c8c8c8; padding: 4px 9px; text-align: center; }
+th { background: #f3eefc; color: #6b4ee6; font-weight: bold; }
+pre { font-family: Consolas, "Courier New", monospace; font-size: 10.5pt; background: #f4f4f5;
+      border: 1px solid #dddddd; padding: 8px 10px; white-space: pre-wrap; }
+pre code { background: transparent; color: #1a1a2e; }
+code { font-family: Consolas, "Courier New", monospace; background: #fff1e8; color: #d6531f; padding: 0 3px; }
+blockquote { border-left: 3px solid #ff7849; background: #fff6ef; padding: 8px 12px;
+             color: #6a3a1c; margin: 9px 0; }
+ul, ol { margin: 7px 0 7px 26px; }
+p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
+.footer { color: #999999; font-size: 8.5pt; text-align: center; margin-top: 18px;
+          border-top: 1px solid #eeeeee; padding-top: 6px; }
+.footer b { color: #ff7849; }
+</style></head>
+<body><div class=WordSection1>
+<div class="brand">📚 ENGLISH CODING · 영어코딩</div>
+<h1>🎢 005 Week 2 — English Worksheet (Intermediate)</h1>
+<p><strong>Topic:</strong> One Function, Many Booths — Arguments &amp; Parameters · <strong>Course:</strong> Theme Park Creator · <strong>Time:</strong> about 45 minutes</p>
+<p>This week you build a park <strong>booth</strong> with a <strong>function</strong>. You give it <strong>parameters</strong> — the materials and size it uses.</p>
+<p>Change the <strong>arguments</strong> you <strong>call</strong> it with, and the <strong>same</strong> function builds a wood booth, a stone booth, a big one or a small one.</p>
+<p>These are the blocks you use this week:</p>
+<pre><code class="language-python">blocks.fill(OAK_PLANKS, pos(0, 0, 0), pos(4, 0, 4), FillOperation.HOLLOW)
+blocks.fill(STONE, pos(0, 0, 0), pos(4, 0, 4), FillOperation.REPLACE)
+blocks.fill(AIR, pos(2, 0, 0), pos(2, 1, 0), FillOperation.REPLACE)
+</code></pre>
+<blockquote>
+<p><code>blocks.fill(material, corner1, corner2, ...)</code> fills a box between two corners.
+<code>pos(x, y, z)</code> is a spot: <code>x</code> = left/right, <code>y</code> = up, <code>z</code> = forward/back.
+<code>FillOperation.HOLLOW</code> = only the outer <strong>walls</strong>. <code>FillOperation.REPLACE</code> = the <strong>whole solid</strong> box.
+<code>AIR</code> = empty space. Fill a slot with <code>AIR</code> to <strong>carve a doorway</strong> out of a wall.</p>
+</blockquote>
+<hr />
+<h2>1 · Meet Arguments and Parameters 🎁</h2>
+<p>A <strong>parameter</strong> is an empty named box — you make it when you <em>define</em> the function.
+An <strong>argument</strong> is the real value you drop in — you send it when you <em>call</em> the function.
+They line up <strong>by position</strong>, left to right.</p>
+<pre><code class="language-text">   MAKE IT  →  the names in ( ) are PARAMETERS (empty named boxes):
+
+       def build_booth( wall , floor , size ):
+
+   CALL IT  →  the values in ( ) are ARGUMENTS (real values sent in):
+
+       build_booth( OAK_PLANKS , STONE , 5 )
+
+   Position matches — 1st→1st, 2nd→2nd, 3rd→3rd:
+
+       wall   ⟵  OAK_PLANKS     (1st box gets the 1st value)
+       floor  ⟵  STONE          (2nd box gets the 2nd value)
+       size   ⟵  5              (3rd box gets the 3rd value)
+</code></pre>
+<p><strong>Why does one function with parameters let you build many different booths?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>2 · Predict 🔮</h2>
+<p>Read each function. Write what you think happens.</p>
+<pre><code class="language-python">def build_booth(wall, floor, size):
+    blocks.fill(floor, pos(0, 0, 0), pos(size, 0, size), FillOperation.REPLACE)
+    blocks.fill(wall, pos(0, 0, 0), pos(size, 3, size), FillOperation.HOLLOW)
+
+build_booth(OAK_PLANKS, STONE, 5)
+</code></pre>
+<p><strong>What material is the floor? What material are the walls? How wide is the booth?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">def build_booth(wall, floor, size):
+    blocks.fill(floor, pos(0, 0, 0), pos(size, 0, size), FillOperation.REPLACE)
+    blocks.fill(wall, pos(0, 0, 0), pos(size, 3, size), FillOperation.HOLLOW)
+
+build_booth(GLASS, STONE, 3)
+build_booth(BRICKS, OAK_PLANKS, 8)
+</code></pre>
+<p><strong>The same function is called twice with different arguments. Are the two booths the same? Which one is bigger?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>3 · Spot the Bug 🐛</h2>
+<p>Each block is broken. Read what it should do, rewrite it so it works, then explain why the original was wrong.</p>
+<p><strong>Bug A</strong> — This should build one booth. But when you run it, <strong>nothing happens at all</strong>.</p>
+<pre><code class="language-python">def build_booth(wall, floor, size):
+    blocks.fill(floor, pos(0, 0, 0), pos(size, 0, size), FillOperation.REPLACE)
+    blocks.fill(wall, pos(0, 0, 0), pos(size, 3, size), FillOperation.HOLLOW)
+</code></pre>
+<p><strong>Hint:</strong> writing <code>def</code> only <strong>teaches</strong> the function. Something is missing after it.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug B</strong> — The booth should be as wide as the number you send in. But <code>build_booth(OAK_PLANKS, STONE, 9)</code> and <code>build_booth(OAK_PLANKS, STONE, 2)</code> build the <strong>same size</strong> every time.</p>
+<pre><code class="language-python">def build_booth(wall, floor, size):
+    blocks.fill(floor, pos(0, 0, 0), pos(4, 0, 4), FillOperation.REPLACE)
+    blocks.fill(wall, pos(0, 0, 0), pos(4, 3, 4), FillOperation.HOLLOW)
+
+build_booth(OAK_PLANKS, STONE, 9)
+</code></pre>
+<p><strong>Hint:</strong> look at the numbers inside. The function never uses <code>size</code>.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug C</strong> — This should build a <strong>stone floor</strong> with <strong>glass walls</strong>. But it comes out with glass on the floor and stone walls — the wrong way around.</p>
+<pre><code class="language-python">def build_booth(wall, floor, size):
+    blocks.fill(floor, pos(0, 0, 0), pos(size, 0, size), FillOperation.REPLACE)
+    blocks.fill(wall, pos(0, 0, 0), pos(size, 3, size), FillOperation.HOLLOW)
+
+build_booth(STONE, GLASS, 5)
+</code></pre>
+<p><strong>Hint:</strong> the arguments line up with the parameters <strong>by position</strong>. Which value landed in which box?</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>4 · Build the Booth 🏪</h2>
+<p>In your homework world, write <strong>one</strong> function called <code>build_booth</code> that builds a booth a visitor can walk into. Your function must have these <strong>three parameters</strong>:</p>
+<pre><code class="language-python">def build_booth(wall, floor, size):
+</code></pre>
+<p>Your booth must include:</p>
+<ul>
+<li>a <strong>floor</strong> made from the <code>floor</code> material, <code>size</code> wide</li>
+<li><strong>walls</strong> made from the <code>wall</code> material (use <code>FillOperation.HOLLOW</code> so the middle stays empty)</li>
+<li>a <strong>doorway</strong> carved out of one wall with <code>AIR</code> so a visitor can walk in</li>
+</ul>
+<p>Then <strong>call your function twice</strong> with different materials and sizes, for example:</p>
+<pre><code class="language-python">build_booth(OAK_PLANKS, STONE, 5)
+build_booth(BRICKS, OAK_PLANKS, 8)
+</code></pre>
+<p><strong>Write your finished <code>build_booth</code> function and the two lines that call it:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>5 · Show Your Work 📸🎥</h2>
+<p>Record <strong>one video</strong> (a phone is fine). Show two things:</p>
+<p><strong>1 · Your code.</strong> Scroll through it. Say what each part does.</p>
+<p><strong>2 · Your build.</strong> Point the camera. Name the parts.</p>
+<p>Fill the blanks:</p>
+<blockquote>
+<p>Today I built ______.</p>
+<p>I built it using this code: ______.</p>
+<p>In this code I used ______.</p>
+<p>The hardest part was ______.</p>
+<p>That part was hard because ______.</p>
+</blockquote>
+<p><strong>Write your lines here, then say them in your video.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your video to teacher on KakaoTalk.</p>
+<div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>
+</div></body></html>

@@ -109,7 +109,7 @@ footer b { color: #ff7849; }
 <div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
 <h1>🧩 M002 Extension 4 — Complete the Maze</h1>
 <p><strong>Topic:</strong> Add Two AND Conditions · <strong>Course:</strong> Maze Madness · <strong>Level:</strong> Extension (Advanced) · <strong>Time:</strong> about 55 minutes</p>
-<p>The agent knows <strong>four rules</strong> to follow a redstone trail through a 3D maze. The solver is <strong>not finished</strong>: at two junctions two signals are on at once, so one signal is not enough and the agent stops. Add <strong>two AND rules</strong> of your own — <strong>you</strong> decide which two signals each junction needs. Then drive the agent to the goal.</p>
+<p>The agent follows a redstone trail through a 3D maze with <strong>four rules</strong>. The solver is <strong>not finished</strong>: at two junctions two signals are on at once, so the agent stops. Add <strong>two AND rules</strong> of your own, then drive the agent to the goal.</p>
 <p>Chat: <code>l</code> turn left, <code>r</code> turn right, <code>run</code> start solver, <code>rl</code> bring agent back.</p>
 <h2>1 · Read the Four Rules 🎛️</h2>
 <p>Each rule checks <strong>one</strong> signal and does <strong>one</strong> action.</p>
@@ -154,7 +154,7 @@ elif agent.detect(REDSTONE, UP):
 
 <h2>2 · Find the Two Stuck Junctions 🔍</h2>
 <p>Most junctions have <strong>one</strong> signal on, so one rule fires. Two junctions have <strong>two</strong> signals on at once — there the four rules are not enough and the agent stops.</p>
-<p>Type <code>run</code>. Watch where it stops. Walk over and look around the agent.</p>
+<p>Type <code>run</code> and watch where it stops. Look around the agent.</p>
 <p><strong>Tick the signals on at each stuck junction.</strong></p>
 <table>
 <thead>
@@ -213,7 +213,7 @@ elif agent.detect(REDSTONE, UP):
 <div class="write-space short"></div></div>
 
 <h2>5 · Spot the Bug 🐛</h2>
-<p>Each block is broken. Rewrite it, then explain the fix. (Signals here are examples.)</p>
+<p>Rewrite each block, then explain the fix. (Signals here are examples.)</p>
 <p><strong>Bug A</strong> — should fire <strong>only when both</strong> signals are on, but fires when <strong>either</strong> one is, so it triggers at wrong spots.</p>
 <pre><code class="language-python">elif agent.detect(REDSTONE, LEFT) or agent.detect(REDSTONE, DOWN):
     agent.turn(RIGHT_TURN)
@@ -235,35 +235,24 @@ elif agent.detect(REDSTONE, UP):
 <div class="qa"><p><strong>Why was it wrong?</strong></p>
 <div class="write-space short"></div></div>
 
-<h2>6 · Finish the Whole Maze 📸</h2>
+<h2>6 · Show Your Work 📸🎥</h2>
 <p>The goal is start to the <strong>very end</strong> — past both stuck junctions and every plain turn. Type <code>run</code>, watch where it stops, fix your two rules, run again until it reaches the goal.</p>
-<p>Send a photo or video of the agent at the goal. Then write 4 to 6 sentences with these starters.</p>
-<div class="qa"><blockquote>
-<p>Each of the four rules checked …</p>
-<p>The agent got stuck because one signal was not …</p>
-<p>The two signals at the first stuck junction were … and …</p>
-<p>My AND rule was true only when both were …</p>
-<p>I put my two new rules before the old rules because …</p>
-<p>The hardest part was …</p>
-</blockquote>
-<div class="write-space tall" style="min-height: 340px"></div></div>
-
-<h2>7 · Plan Your Walkthrough Video 🎥</h2>
-<p>Film on your phone (or a parent's) while the agent solves the whole maze. Teach it like the viewer has never seen it. Try these words: <strong>detect</strong>, <strong>redstone</strong>, <strong>AND</strong>, <strong>both</strong>, <strong>condition</strong>, <strong>turn</strong>, <strong>move up</strong>, <strong>move down</strong>.</p>
+<p>Record <strong>one video</strong> (a phone is fine). Show two things:</p>
+<p><strong>1 · Your code.</strong> Scroll through it. Say what each part does.</p>
+<p><strong>2 · Your build.</strong> Point the camera. Name the parts.</p>
+<p>Fill the blanks:</p>
 <blockquote>
-<ol>
-<li>Show the maze and point out the redstone signals.</li>
-<li>Type <code>run</code> and show the agent following the trail.</li>
-<li>Read one AND rule and say which two signals must be true.</li>
-<li>Show the agent passing a stuck junction.</li>
-<li>Show it reaching the goal.</li>
-</ol>
+<p>Today I built ______.</p>
+<p>I built it using this code: ______.</p>
+<p>In this code I used ______.</p>
+<p>The hardest part was ______.</p>
+<p>That part was hard because ______.</p>
 </blockquote>
-<div class="qa"><p><strong>Write what you will say. Plan it here first — read from it while filming.</strong></p>
+<div class="qa"><p><strong>Write your lines here, then say them in your video.</strong></p>
 <div class="write-space tall" style="min-height: 340px"></div></div>
 
 <hr />
 <h3>Submit ✅</h3>
-<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.</p>
+<p>Send this worksheet + your video to teacher on KakaoTalk.</p>
 </body>
 </html>

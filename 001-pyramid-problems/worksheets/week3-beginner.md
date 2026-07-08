@@ -6,7 +6,7 @@
 
 ## 1 · Predict 🔮
 
-Read the steps. Before you imagine the agent doing it, circle or write your answer.
+Read the steps. Circle your answer.
 
 ```
 set size to 3
@@ -17,9 +17,7 @@ repeat size times:
 
 **How many blocks does the agent place? Circle one:** 1 · 3 · 6
 
-**Where does the number 3 come from?**
-
-<div class="write-space short"></div>
+**Where does the 3 come from? Circle one:** the size variable · the block · the move
 
 ```
 set size to 6
@@ -28,15 +26,15 @@ repeat size times:
     move forward
 ```
 
-**Same code, new number. How many blocks now? Circle one:** 3 · 6 · 12
+**New number. How many blocks now? Circle one:** 3 · 6 · 12
 
 ---
 
 ## 2 · Find the Difference 🐛
 
-Each pair shows clean steps first, then a broken version of the same idea. Circle what's different and write one short sentence about the bug.
+Clean steps first, then a buggy version. Circle the bug.
 
-**Pair A** — The agent should place a row of `size` blocks, where size is 5.
+**Pair A** — Should place a row of `size` blocks (size is 5).
 
 ```
 # clean
@@ -54,11 +52,9 @@ repeat 3 times:
     move forward
 ```
 
-**What is wrong? Which number does the loop really use?**
+**What is wrong? Circle one:** the loop uses 3, not size (5) · the loop uses 5 · the loop never runs
 
-<div class="write-space short"></div>
-
-**Pair B** — The agent should build a **tower** that is `height` blocks tall.
+**Pair B** — Should build a **tower** that is `height` blocks tall.
 
 ```
 # clean
@@ -76,15 +72,13 @@ repeat height times:
     move forward
 ```
 
-**What is wrong?**
-
-<div class="write-space short"></div>
+**What is wrong? Circle one:** it builds a flat row, not a tower · it builds a taller tower · nothing happens
 
 ---
 
 ## 3 · Fill the Gap ✏️
 
-The agent should build a row of 4 blocks using a variable. One line is missing. Fill it in using the word bank.
+Build a row of 4 blocks using a variable. Fill the missing line.
 
 ```
 ____________
@@ -93,44 +87,38 @@ repeat size times:
     move forward
 ```
 
-**Word bank:** `set size to 4` · `move forward` · `repeat 4 times`
-
-**Write the missing line:**
-
-<div class="write-space short"></div>
+**Missing line? Circle one:** set size to 4 · move forward · repeat 4 times
 
 ---
 
-## 4 · Tell Me What You Built 📸
+## 4 · Show Your Work 📸🎥
 
 Now switch to your homework world. Use a `size` variable to build a **size-3 wall**. Then change the variable to **6** and run it again. When you finish, come back here.
 
-Send a photo or video of both walls, then explain what you did. Use these sentence starters — write 2 or 3 sentences.
+Record **one video** (a phone is fine). Show two things:
 
-> I made a variable called …
+**1 · Your code.** Scroll through it. Say what each part does.
+
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
 >
-> When I changed it to 6, the wall …
+> I built it using this code: ______.
 >
-> A variable is useful because …
+> In this code I used ______.
+>
+> The hardest part was ______.
+>
+> That part was hard because ______.
 
-<div class="write-space tall" style="min-height: 240px"></div>
+**Write your lines here, then say them in your video.**
 
----
-
-## 5 · Record Your Walkthrough 🎥
-
-Take a video on your phone (or a parent's phone) and show your walls. Talk like you are teaching a friend. Try to use these words: **variable**, **set**, **loop**, **repeat**.
-
-> 1. Show the small wall and the big wall.
-> 2. Read your variable line out loud.
-> 3. Change the number one more time and show what happens.
-
-**Write what you will say in your video.** You can read from it while filming.
-
-<div class="write-space tall" style="min-height: 240px"></div>
+<div class="write-space tall" style="min-height: 340px"></div>
 
 ---
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + your video to teacher on KakaoTalk.

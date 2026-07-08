@@ -8,7 +8,7 @@ Finish the mini cube. Add a conditional, fill every layer, then break the top an
 
 ## 1 · Predict 🔮
 
-Read the steps. Write what happens.
+Write what happens.
 
 ```
 repeat 5 times:
@@ -35,7 +35,7 @@ otherwise:
 
 ## 2 · Plain to Code 🔁
 
-The agent should move up one block. Match the plain words to the API.
+Match the plain words to the API.
 
 ```
 move up one block
@@ -93,7 +93,7 @@ agent.detect(BLOCK, UP)
 
 ---
 
-## 5 · Finish the Cube 📸🎥
+## 5 · Show Your Work 📸🎥
 
 Open this week's world. Find the **mini cube starter** — part is built.
 
@@ -102,29 +102,30 @@ Open this week's world. Find the **mini cube starter** — part is built.
 3. Fill every layer.
 4. Break a hole in the top and climb out.
 
-Send a photo or video of the finished cube and the hole. Then finish:
+Record **one video** (a phone is fine). Show two things:
 
-> To keep building, I …
+**1 · Your code.** Scroll through it. Say what each part does.
+
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
 >
-> I used a conditional when …
+> I built it using this code: ______.
 >
-> I made the hole by …
+> In this code I used ______.
+>
+> The hardest part was ______.
+>
+> That part was hard because ______.
 
-<div class="write-space tall" style="min-height: 240px"></div>
+**Write your lines here, then say them in your video.**
 
-**Phone video plan.** Film the agent building. Use these words: **cube**, **layer**, **conditional**, **OR**, **hole**.
-
-> 1. Show the starter cube.
-> 2. Run your code and watch it fill.
-> 3. Read your conditional out loud.
-> 4. Show the hole and the climb out.
-
-**Write what you will say:**
-
-<div class="write-space tall" style="min-height: 240px"></div>
+<div class="write-space tall" style="min-height: 340px"></div>
 
 ---
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + your video to teacher on KakaoTalk.

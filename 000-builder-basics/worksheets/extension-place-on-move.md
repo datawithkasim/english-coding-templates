@@ -8,9 +8,9 @@
 
 ## 1 · Predict 🔮
 
-In the **Trail Maker** world, typing `run` in the chat starts the agent walking forward in a straight line. But first it flips a switch called **place on move**.
+In the **Trail Maker** world, typing `run` starts the agent walking forward in a straight line. First it flips a switch called **place on move**.
 
-When **place on move** is **ON**, the agent drops a block on every single step it takes — it leaves a **trail** behind it as it walks. When the switch is **OFF**, the agent still walks the same steps, but it places nothing, so the ground stays empty and a **gap** appears.
+When **place on move** is **ON**, the agent drops a block on every step — it leaves a **trail**. When it is **OFF**, the agent walks the same steps but places nothing, so a **gap** appears.
 
 Here is the exact order the program runs:
 
@@ -44,7 +44,7 @@ move forward by 4
 
 ## 2 · Trace the Switch 🔢
 
-Walk through the program one line at a time. For each move command, write whether the switch is **ON** or **OFF**, how many steps the agent takes, how many blocks that stretch places, and the running total so far.
+Walk through the program one line at a time. For each move command, write the switch state, the steps, the blocks placed, and the running total.
 
 | Move command | Switch (ON / OFF) | Steps | Blocks this stretch | Total so far |
 |:------------:|:-----------------:|:-----:|:-------------------:|:------------:|
@@ -64,15 +64,15 @@ Walk through the program one line at a time. For each move command, write whethe
 
 ## 3 · Reason About Bugs 🧠
 
-No code to rewrite here — just read what goes wrong and explain it in writing.
+No code to rewrite — read what goes wrong and explain it in writing.
 
-**Bug A — The switch never turns OFF.** Imagine the program leaves **place on move** ON the whole time and never flips it OFF in the middle. The agent still walks the same 10 steps forward.
+**Bug A — The switch never turns OFF.** The program leaves **place on move** ON the whole time. The agent still walks the same 10 steps.
 
 **What does the trail look like now? What happened to the gap? Explain why.**
 
 <div class="write-space tall"></div>
 
-**Bug B — The switch never turns ON.** Imagine the program forgets the very first `place on move ON`, so the switch stays OFF from start to finish. The agent still walks all 10 steps.
+**Bug B — The switch never turns ON.** The program forgets the first `place on move ON`, so the switch stays OFF the whole time. The agent still walks all 10 steps.
 
 **How many blocks get placed? What do you see on the ground when it finishes? Why?**
 
@@ -100,45 +100,35 @@ Plan a trail of your own — in words and numbers, not in a code box.
 
 <div class="write-space"></div>
 
-**Now the big idea. In Week 2 you placed each block by hand — one `place` command for every block. With **place on move** you write one `move` command and the agent places a whole line for you. In writing, explain WHY that is easier. To help you think: if you wanted a trail 50 blocks long, which way would you rather build it, and why?**
+**The big idea: in Week 2 you placed each block by hand — one `place` per block. With place on move you write one `move` and the agent places a whole line. Explain WHY that is easier. If you wanted a trail 50 blocks long, which way would you rather build it, and why?**
 
 <div class="write-space tall"></div>
 
 ---
 
-## 5 · Build It 📸
+## 5 · Show Your Work 📸🎥
 
 Open the **Trail Maker** world and type `run` in the chat to watch the agent lay its trail. Then build your **own** version by changing the program — try a longer trail, a wider gap, more than one gap, or a different block.
 
-Send a photo or video of your trail, then explain what you did. Use these starters — write 4 to 6 sentences total.
+Record **one video** (a phone is fine). Show two things:
 
-> First, I ran `run` and saw the agent …
+**1 · Your code.** Scroll through it. Say what each part does.
+
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
 >
-> When **place on move** was **ON**, the agent …
+> I built it using this code: ______.
 >
-> When I turned it **OFF**, the agent …
+> In this code I used ______.
 >
-> The change I made was …
+> The hardest part was ______.
 >
-> My trail has a **gap** because …
->
-> Building this way was easier than placing by hand because …
+> That part was hard because ______.
 
-<div class="write-space tall" style="min-height: 340px"></div>
-
----
-
-## 6 · Record Your Walkthrough 🎥
-
-Take a video on your phone (or a parent's phone) and teach someone how the Trail Maker works. You are narrating and explaining — not presenting to a class. Try to use these words: **place on move**, **switch**, **ON**, **OFF**, **trail**, **gap**.
-
-> 1. Point to the trail and the gap, and say which part was built with the switch **ON**.
-> 2. Explain what **place on move** does when it is **ON**.
-> 3. Explain what happens to the ground when it is **OFF**, and why that made the **gap**.
-> 4. Show the change you made and what it did to the trail.
-> 5. Say one reason this is easier than placing every block by hand.
-
-**Write what you will say in your video.** Plan it here first — you can read from it while filming.
+**Write your lines here, then say them in your video.**
 
 <div class="write-space tall" style="min-height: 340px"></div>
 
@@ -146,4 +136,4 @@ Take a video on your phone (or a parent's phone) and teach someone how the Trail
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + your video to teacher on KakaoTalk.

@@ -6,7 +6,7 @@
 
 ## 1 · Predict 🔮
 
-Read the steps. Before you imagine the agent doing it, circle or write your answer.
+Read the steps. Circle your answer.
 
 ```
 repeat 3 times:
@@ -16,9 +16,7 @@ repeat 3 times:
 
 **How many blocks does the agent place? Circle one:** 1 · 3 · 6
 
-**What does it look like — a line, a tower, or a square?**
-
-<div class="write-space short"></div>
+**What does it look like? Circle one:** a line · a tower · a square
 
 ```
 repeat 5 times:
@@ -28,15 +26,13 @@ repeat 5 times:
 
 **The gap is 5 blocks wide. Does the bridge reach the other side? Circle one:** yes · no
 
-**How do you know?**
-
-<div class="write-space short"></div>
+**How do you know? Circle one:** it places 5 blocks for 5 spaces · it places only 3 blocks · it places nothing
 
 ---
 
 ## 2 · Find the Difference 🐛
 
-Each pair shows clean steps first, then a broken version of the same idea. Circle what's different and write one short sentence about the bug.
+Clean steps first, then a broken version. Circle the bug.
 
 **Pair A** — The agent should build a bridge **4 blocks long**.
 
@@ -54,9 +50,7 @@ repeat 3 times:
     move forward
 ```
 
-**What is wrong?**
-
-<div class="write-space short"></div>
+**What is wrong? Circle one:** only 3 blocks, not 4 · one block too many · a wrong turn
 
 **Pair B** — The blocks should land in a line, next to each other.
 
@@ -74,15 +68,13 @@ repeat 4 times:
     move up by 1
 ```
 
-**What is wrong?**
-
-<div class="write-space short"></div>
+**What is wrong? Circle one:** it moves up, not forward · a block is missing · wrong number
 
 ---
 
 ## 3 · Fill the Gap ✏️
 
-The agent should build a bridge **6 blocks long** using a loop. One part is missing. Fill it in using the word bank.
+The agent should build a bridge **6 blocks long** using a loop. One part is missing.
 
 ```
 repeat ____ times:
@@ -90,44 +82,38 @@ repeat ____ times:
     move forward
 ```
 
-**Word bank:** `3` · `6` · `10`
-
-**Write the missing number:**
-
-<div class="write-space short"></div>
+**Which number is missing? Circle one:** 3 · 6 · 10
 
 ---
 
-## 4 · Tell Me What You Built 📸
+## 4 · Show Your Work 📸🎥
 
 Now switch to your homework world. Build a **bridge across the river** using a loop. When you finish, come back here.
 
-Send a photo or video of your bridge, then explain what you did. Use these sentence starters — write 2 or 3 sentences.
+Record **one video** (a phone is fine). Show two things:
 
-> I used a loop to …
+**1 · Your code.** Scroll through it. Say what each part does.
+
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
 >
-> My bridge is … blocks long.
+> I built it using this code: ______.
 >
-> The hardest part was …
+> In this code I used ______.
+>
+> The hardest part was ______.
+>
+> That part was hard because ______.
 
-<div class="write-space tall" style="min-height: 240px"></div>
+**Write your lines here, then say them in your video.**
 
----
-
-## 5 · Record Your Walkthrough 🎥
-
-Take a video on your phone (or a parent's phone) and walk the camera across your bridge. Talk like you are teaching a friend. Try to use these words: **loop**, **repeat**, **block**, **bridge**.
-
-> 1. Show one end of the bridge and walk across it.
-> 2. Read your loop out loud.
-> 3. Say how many blocks long your bridge is.
-
-**Write what you will say in your video.** You can read from it while filming.
-
-<div class="write-space tall" style="min-height: 240px"></div>
+<div class="write-space tall" style="min-height: 340px"></div>
 
 ---
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + your video to teacher on KakaoTalk.

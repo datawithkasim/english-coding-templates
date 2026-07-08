@@ -8,9 +8,9 @@
 
 ## 1 · Predict 🔮
 
-In the **Sloped Roof** world, typing `slope` in the chat runs a program that builds a stepped roof. It does not build the roof block by block. Instead it stacks four square **rings** of stairs, one on top of the next. The bottom ring is the widest. Each ring above it is a little smaller, so the roof climbs inward and upward until it reaches a point at the top — like a small pyramid made of steps.
+In the **Sloped Roof** world, typing `slope` builds a stepped roof. It does not build block by block — it stacks four square **rings** of stairs, one on the next. The bottom ring is widest; each ring above is smaller, so the roof climbs inward and up to a point — like a small pyramid of steps.
 
-The size of each ring is held in a variable called `roof_len`. This is the length of one side of the ring. It **starts at 7**, and every time a new ring is built it **loses 2**. So the side gets shorter each layer until the roof reaches its peak.
+A variable called `roof_len` holds the side length of each ring. It **starts at 7** and **loses 2** each ring. So the side shrinks each layer until the roof reaches its peak.
 
 **Write the four values of `roof_len`, from the bottom ring to the top ring.**
 
@@ -24,7 +24,7 @@ The size of each ring is held in a variable called `roof_len`. This is the lengt
 
 <div class="write-space"></div>
 
-Now meet a second variable. Imagine there is a variable called `step` that decides **how much the ring shrinks** each layer. Right now `step` is 2, so the side drops 7, 5, 3, 1.
+Meet a second variable, `step` — it decides **how much the ring shrinks** each layer. Right now `step` is 2, so the side drops 7, 5, 3, 1.
 
 **If `step` were 1 instead of 2, would the roof be steeper (rises fast) or gentler (rises slowly)? Would it need MORE rings or FEWER rings to reach the peak? Explain why in a sentence or two.**
 
@@ -34,7 +34,7 @@ Now meet a second variable. Imagine there is a variable called `step` that decid
 
 ## 2 · Trace Two Things 🔢
 
-Each layer changes two things at once. The ring **side** gets smaller, and the **height** goes up by 1 (each ring sits one block higher than the last). Fill in the table. Start `roof_len` at 7 and a height of 1, take 2 off the side each row, and add 1 to the height each row.
+Each layer changes two things: the ring **side** gets smaller and the **height** goes up by 1. Fill in the table. Start `roof_len` at 7 and height at 1; take 2 off the side and add 1 to the height each row.
 
 | Layer | `roof_len` (ring side) | Height |
 |:-----:|:----------------------:|:------:|
@@ -59,9 +59,9 @@ Each layer changes two things at once. The ring **side** gets smaller, and the *
 
 ## 3 · Reason About Bugs 🧠
 
-No code to rewrite here — just read what goes wrong and explain it in writing.
+No code to rewrite — read what goes wrong and explain it in writing.
 
-**Bug A — The shrink happens too early.** Imagine the program takes 2 off `roof_len` **before** it builds the ring, instead of after. So the first ring is built using the already-shrunk number, not 7.
+**Bug A — The shrink happens too early.** The program takes 2 off `roof_len` **before** it builds the ring, not after. So the first ring uses the shrunk number, not 7.
 
 **What goes wrong with the roof? (Think about the bottom ring.) How would you fix the order of the steps?**
 
@@ -91,45 +91,35 @@ Plan a roof of your own — in numbers and words, not in a code box.
 
 <div class="write-space short"></div>
 
-**Now the big idea. The whole roof is built from one variable plus one shrink rule, instead of four rings written out by hand. In writing, explain WHY that is better. To help you think: if you wanted a much bigger roof, what is the smallest thing you would change?**
+**The big idea: the whole roof is built from one variable plus one shrink rule, instead of four rings written by hand. Explain WHY that is better. If you wanted a much bigger roof, what is the smallest thing you would change?**
 
 <div class="write-space tall"></div>
 
 ---
 
-## 5 · Build It 📸
+## 5 · Show Your Work 📸🎥
 
 Open the **Sloped Roof** world and type `slope` in the chat to run the program and watch the roof build. Then build your **own** version by changing the numbers — try a different starting `roof_len` or a different `step` and see how the roof changes shape.
 
-Send a photo or video of your roof, then explain what you did. Use these starters — write 4 to 6 sentences total.
+Record **one video** (a phone is fine). Show two things:
 
-> First, I ran `slope` and saw …
+**1 · Your code.** Scroll through it. Say what each part does.
+
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
 >
-> The **variable** I changed was …
+> I built it using this code: ______.
 >
-> I gave it a new **value** of …
+> In this code I used ______.
 >
-> Each layer the program **updates** the side by …
+> The hardest part was ______.
 >
-> My **slope** turned out steeper / gentler because …
->
-> The **peak** was reached after … rings.
+> That part was hard because ______.
 
-<div class="write-space tall" style="min-height: 340px"></div>
-
----
-
-## 6 · Record Your Walkthrough 🎥
-
-Take a video on your phone (or a parent's phone) and teach someone how the sloped roof works. You are narrating and explaining — not presenting to a class. Try to use these words: **variable**, **value**, **update**, **slope**, **peak**, **ring**.
-
-> 1. Point to the bottom **ring** and the **peak**, and say which is wider.
-> 2. Explain the **variable** `roof_len` and its starting **value**.
-> 3. Show how the program **updates** that value — taking 2 off each layer.
-> 4. Explain how the shrinking makes the **slope**, and why the rings stop at the **peak**.
-> 5. Say one thing you would change to make a bigger or steeper roof.
-
-**Write what you will say in your video.** Plan it here first — you can read from it while filming.
+**Write your lines here, then say them in your video.**
 
 <div class="write-space tall" style="min-height: 340px"></div>
 
@@ -137,4 +127,4 @@ Take a video on your phone (or a parent's phone) and teach someone how the slope
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + your video to teacher on KakaoTalk.

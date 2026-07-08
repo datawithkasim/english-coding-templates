@@ -34,11 +34,11 @@ p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
 <blockquote>
 <p>🧩 This is a bonus challenge, not a weekly lesson. Try it once you are comfortable building square rings with loops and you want to make a roof that steps up to a point.</p>
 </blockquote>
-<p>A real roof is not one flat row — it is a stack of <strong>square rings</strong> that get smaller as they go up. The Sloped Roof world already has the working program inside it: when you type <code>slope</code> in the chat, it builds the whole roof for you. Your job in this worksheet is to understand the <strong>idea</strong> behind it, not to type any code.</p>
-<p>Here is the idea. The program stores the side length of a ring in a <strong>variable</strong> called <code>roof_len</code>. It starts at <strong>7</strong>, so the bottom ring is a square 7 stairs long on each side. After each ring is finished, the program steps <strong>up and inward</strong>, then shrinks the variable by 2. So the next ring is shorter, the one after that shorter still, until the roof reaches a tiny peak. Four rings get built in total, with side lengths of <strong>7, 5, 3, and 1</strong>. Change the starting number and the whole roof changes shape.</p>
+<p>A real roof is not one flat row — it is a stack of <strong>square rings</strong> that shrink as they go up. In the Sloped Roof world, typing <code>slope</code> builds the whole roof for you. This worksheet is about the <strong>idea</strong>, not typing code.</p>
+<p>The program stores the ring's side length in a <strong>variable</strong> called <code>roof_len</code>. It starts at <strong>7</strong>, so the bottom ring is 7 stairs per side. After each ring it steps <strong>up and inward</strong>, then shrinks the variable by 2. Four rings get built, with sides of <strong>7, 5, 3, 1</strong>. Change the starting number and the whole roof changes shape.</p>
 <hr />
 <h2>1 · Predict 🔮</h2>
-<p>The variable <code>roof_len</code> starts at <strong>7</strong>. Each layer the agent walks a square ring with 4 sides, each side <code>roof_len</code> stairs long, then shrinks <code>roof_len</code> by 2 before stepping up to the next ring. The four rings have sides of <strong>7, 5, 3, 1</strong>.</p>
+<p>The variable <code>roof_len</code> starts at <strong>7</strong>. Each layer, the agent walks a square ring (4 sides, each <code>roof_len</code> stairs long), then shrinks <code>roof_len</code> by 2. The four rings have sides of <strong>7, 5, 3, 1</strong>.</p>
 <p><strong>What shape do the rings make as they stack up? Describe it in one sentence.</strong></p>
 <p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
 
@@ -47,7 +47,7 @@ p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
 
 <hr />
 <h2>2 · Trace the Variable 🔢</h2>
-<p>Walk through the build one ring at a time. For each layer, write the value of <code>roof_len</code> <strong>for that ring</strong> (the side length the agent uses), then the value <strong>after</strong> the variable loses 2 and gets ready for the next ring. Show the subtraction, not just the answer.</p>
+<p>Walk through the build one ring at a time. For each layer, write <code>roof_len</code> <strong>for that ring</strong>, then its value <strong>after</strong> it loses 2. Show the subtraction.</p>
 <table>
 <thead>
 <tr>
@@ -86,7 +86,7 @@ p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
 
 <hr />
 <h2>3 · Reason About the Variable 🧠</h2>
-<p>No code here — just think it through.</p>
+<p>No code here — think it through.</p>
 <p><strong>The roof comes out FLAT, like a box, instead of sloped. Every ring ended up the same size. Which part of the rule about the variable must have gone wrong for that to happen? Explain in one or two sentences.</strong></p>
 <p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
 
@@ -103,19 +103,24 @@ p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
 <p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
 
 <hr />
-<h2>5 · Build It 📸</h2>
+<h2>5 · Show Your Work 📸🎥</h2>
 <p>Open the <strong>Sloped Roof</strong> world. Type <code>slope</code> in the chat to run the build and watch the rings shrink and step up to the peak. Then try the wider <strong>5-ring</strong> version by changing the starting number to the value you chose in Section 4, and run it again.</p>
-<p>When it looks right, send a photo or video to teacher on KakaoTalk. Then explain what you did. Use these starters — write 4 to 6 sentences total.</p>
+<p>Record <strong>one video</strong> (a phone is fine). Show two things:</p>
+<p><strong>1 · Your code.</strong> Scroll through it. Say what each part does.</p>
+<p><strong>2 · Your build.</strong> Point the camera. Name the parts.</p>
+<p>Fill the blanks:</p>
 <blockquote>
-<p>I used a <strong>variable</strong> called roof_len to …</p>
-<p>Its starting <strong>value</strong> was … and each ring it …</p>
-<p>The variable had to <strong>update</strong> so that …</p>
-<p>My roof has a <strong>slope</strong> because …</p>
+<p>Today I built ______.</p>
+<p>I built it using this code: ______.</p>
+<p>In this code I used ______.</p>
+<p>The hardest part was ______.</p>
+<p>That part was hard because ______.</p>
 </blockquote>
+<p><strong>Write your lines here, then say them in your video.</strong></p>
 <p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
 
 <hr />
 <h3>Submit ✅</h3>
-<p>Send this worksheet + a photo or video of your sloped roof to teacher on KakaoTalk.</p>
+<p>Send this worksheet + your video to teacher on KakaoTalk.</p>
 <div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>
 </div></body></html>

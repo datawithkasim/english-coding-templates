@@ -6,7 +6,7 @@
 
 ## 1 · Predict 🔮
 
-Read the steps. Before you imagine the agent doing it, circle or write your answer.
+Read the steps. Circle your answer.
 
 ```
 repeat 4 times:
@@ -18,9 +18,7 @@ repeat 4 times:
 
 **What shape does this make on the ground? Circle one:** line · square · tower
 
-**Why does the agent turn right after each side?**
-
-<div class="write-space short"></div>
+**Why does the agent turn right after each side? Circle one:** to start the next side · to go higher · to dig down
 
 ```
 move up by 1
@@ -35,7 +33,7 @@ repeat 3 times:
 
 ## 2 · Find the Difference 🐛
 
-Each pair shows clean steps first, then a broken version of the same idea. Circle what's different and write one short sentence about the bug.
+Clean steps first, then a broken version. Circle the bug.
 
 **Pair A** — The agent should place 5 blocks.
 
@@ -53,9 +51,7 @@ repeat 4 times:
     move forward
 ```
 
-**What is wrong?**
-
-<div class="write-space short"></div>
+**What is wrong? Circle one:** only 4 blocks, not 5 · one block too many · a wrong turn
 
 **Pair B** — The agent should build one straight side, **then** turn.
 
@@ -75,15 +71,13 @@ repeat 4 times:
     turn right
 ```
 
-**What is wrong?**
-
-<div class="write-space short"></div>
+**What is wrong? Circle one:** it turns after every block · it never turns · it goes up
 
 ---
 
 ## 3 · Fill the Gap ✏️
 
-The roof must go **on top** of the walls, so the agent has to go up first. One line is missing. Fill it in using the word bank.
+The roof goes **on top** of the walls, so the agent must go up first. One line is missing.
 
 ```
 ____________
@@ -92,30 +86,38 @@ move forward
 place block down
 ```
 
-**Word bank:** `move up by 1` · `turn right` · `move forward`
-
-**Write the missing line:**
-
-<div class="write-space short"></div>
+**Which line is missing? Circle one:** move up by 1 · turn right · move forward
 
 ---
 
-## 4 · Tell Me What You Built 📸
+## 4 · Show Your Work 📸🎥
 
 Now switch to your homework world. Build a **small house with a roof** — any size you like. When you finish, come back here.
 
-Send a photo or video of your house, then explain what you did. Use these sentence starters — write 2 or 3 sentences.
+Record **one video** (a phone is fine). Show two things:
 
-> I used a loop to …
->
-> My roof works because …
->
-> The hardest part was …
+**1 · Your code.** Scroll through it. Say what each part does.
 
-<div class="write-space tall" style="min-height: 240px"></div>
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
+>
+> I built it using this code: ______.
+>
+> In this code I used ______.
+>
+> The hardest part was ______.
+>
+> That part was hard because ______.
+
+**Write your lines here, then say them in your video.**
+
+<div class="write-space tall" style="min-height: 340px"></div>
 
 ---
 
 ### Submit ✅
 
-Send this worksheet + a photo or video of your finished house to teacher on KakaoTalk.
+Send this worksheet + your video to teacher on KakaoTalk.

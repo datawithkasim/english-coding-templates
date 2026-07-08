@@ -2,7 +2,7 @@
 
 **Topic:** Two Pistons + AND Conditions · **Course:** Maze Madness · **Level:** Extension (Intermediate) · **Time:** about 45 minutes
 
-The agent follows a **redstone trail** through a long maze. At some junctions it checks **two things at once** — an **AND** condition. Twice, a **lever powers a piston** that opens the way. Your job: get the agent through the **whole maze**.
+The agent follows a **redstone trail** through a long maze, checking **two things at once** with **AND** at some junctions. Twice, a **lever powers a piston** to open the way. Get the agent through the **whole maze**.
 
 You drive it with chat words: `l` turn left, `r` turn right, `run` start the solver, `rl` teleport back to you.
 
@@ -102,38 +102,34 @@ if agent.detect(REDSTONE, LEFT) or agent.detect(REDSTONE, AHEAD):
 
 ---
 
-## 5 · Finish the Whole Maze 📸
+## 5 · Show Your Work 📸🎥
 
 Open the **M002 EXT 2** world. Type `run`. Watch where it gets stuck, fix it, run again — until it reaches the goal past both pistons.
 
-Send a photo or video of the agent at the goal. Use these starters — 3 or 4 sentences.
+Record **one video** (a phone is fine). Show two things:
 
-> The maze had two pistons, so the agent had to …
+**1 · Your code.** Scroll through it. Say what each part does.
+
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
 >
-> At a junction the AND check made the agent …
+> I built it using this code: ______.
 >
-> The hardest part was …
+> In this code I used ______.
+>
+> The hardest part was ______.
+>
+> That part was hard because ______.
 
-<div class="write-space tall" style="min-height: 240px"></div>
+**Write your lines here, then say them in your video.**
 
----
-
-## 6 · Record Your Walkthrough 🎥
-
-Film on a phone while the agent solves the maze. Talk like you are teaching a friend. Try to use: **redstone**, **trail**, **AND**, **piston**, **lever**, **loop**.
-
-> 1. Show the maze and the redstone trail.
-> 2. Type `run` and show the agent following it.
-> 3. Read one AND check out loud and say what it decides.
-> 4. Show the agent flipping a lever to open a piston.
-> 5. Show it reaching the goal.
-
-**Write what you will say. Plan it here first.**
-
-<div class="write-space tall" style="min-height: 240px"></div>
+<div class="write-space tall" style="min-height: 340px"></div>
 
 ---
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + your video to teacher on KakaoTalk.

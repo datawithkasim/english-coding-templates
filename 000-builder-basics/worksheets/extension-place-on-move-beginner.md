@@ -47,22 +47,36 @@ At the gap, the switch was… circle one:
 
 ---
 
-## 4 · Build It 📸
+## 4 · Show Your Work 📸🎥
 
 1. Open the **Trail Maker** world.
 2. Type **`run`**. Press enter.
 3. Watch! 🟪🟪🟪 ⬜⬜ 🟪🟪🟪
 
-Take a photo. Fill the blanks:
+Record **one video** (a phone is fine). Show two things:
 
-> ON drops **__________**.
+**1 · Your code.** Scroll through it. Say what each part does.
+
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
 >
-> OFF drops **__________**.
+> I built it using this code: ______.
+>
+> In this code I used ______.
+>
+> The hardest part was ______.
+>
+> That part was hard because ______.
 
-<div class="write-space tall" style="min-height: 200px"></div>
+**Write your lines here, then say them in your video.**
+
+<div class="write-space tall" style="min-height: 340px"></div>
 
 ---
 
 ### Submit ✅
 
-Send your photo to teacher on KakaoTalk.
+Send this worksheet + your video to teacher on KakaoTalk.

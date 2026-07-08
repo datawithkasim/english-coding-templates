@@ -8,7 +8,7 @@ A diamond is two pyramids: the **bottom half grows** (1 → 3 → 5) and the **t
 
 ## 1 · Predict 🔮
 
-Read the steps. Before you imagine the agent doing it, circle or write your answer.
+Read the steps. Circle your answer.
 
 ```
 # Bottom half
@@ -21,9 +21,7 @@ while size <= 5:
 
 **The bottom half grows or shrinks? Circle one:** grows · shrinks
 
-**Write the layer sizes in order:**
-
-<div class="write-space short"></div>
+**Layer sizes in order? Circle one:** 1 · 3 · 5 → 5 · 3 · 1
 
 ```
 # Top half
@@ -36,15 +34,13 @@ while size > 0:
 
 **The top half grows or shrinks? Circle one:** grows · shrinks
 
-**Why does it start at 3 and not 5? (Hint: the size-5 layer is already built.)**
-
-<div class="write-space short"></div>
+**Why start at 3, not 5? Circle one:** the size-5 layer is already built · 5 is too big to build · the agent cannot count to 5
 
 ---
 
 ## 2 · Find the Difference 🐛
 
-Each pair shows clean steps first, then a broken version of the same idea. Circle what's different and write one short sentence about the bug.
+Clean steps first, then a buggy version. Circle the bug.
 
 **Pair A** — The top half should start at **3**, so the widest layer is not built twice.
 
@@ -66,9 +62,7 @@ while size > 0:
     set size to size - 2
 ```
 
-**What is wrong? Which layer appears twice?**
-
-<div class="write-space short"></div>
+**What is wrong? Which layer is built twice? Circle one:** the size-5 layer · the size-3 layer · the size-1 layer
 
 **Pair B** — The bottom half must **move up** after each layer.
 
@@ -87,15 +81,13 @@ while size <= 5:
     set size to size + 2
 ```
 
-**What is wrong?**
-
-<div class="write-space short"></div>
+**What is wrong? Circle one:** it never moves up · it moves up too far · it turns right
 
 ---
 
 ## 3 · Fill the Gap ✏️
 
-Here is the diamond skeleton. One starting number is missing. Fill it in using the word bank.
+Here is the diamond skeleton. Fill the missing number.
 
 ```
 # Bottom half (grows 1 → 3 → 5)
@@ -113,44 +105,38 @@ while size > 0:
     set size to size - 2
 ```
 
-**Word bank:** `3` · `5` · `1`
-
-**Write the missing number:**
-
-<div class="write-space short"></div>
+**Missing number? Circle one:** 3 · 5 · 1
 
 ---
 
-## 4 · Tell Me What You Built 📸
+## 4 · Show Your Work 📸🎥
 
 Now build your **final project**: a diamond with a bottom half that grows **1 → 3 → 5** and a top half that shrinks **3 → 1**. When you finish, come back here.
 
-Send a photo or video of your diamond, then explain what you did. Use these sentence starters — write 2 or 3 sentences.
+Record **one video** (a phone is fine). Show two things:
 
-> First, I built the bottom half by …
+**1 · Your code.** Scroll through it. Say what each part does.
+
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
 >
-> The widest layer is … blocks long.
+> I built it using this code: ______.
 >
-> The hardest part was …
+> In this code I used ______.
+>
+> The hardest part was ______.
+>
+> That part was hard because ______.
 
-<div class="write-space tall" style="min-height: 240px"></div>
+**Write your lines here, then say them in your video.**
 
----
-
-## 5 · Record Your Walkthrough 🎥
-
-Take a video on your phone (or a parent's phone) and walk the camera around your diamond. Talk like you are teaching a friend. Try to use these words: **diamond**, **bottom half**, **top half**, **widest**.
-
-> 1. Walk around the diamond and show all 4 sides.
-> 2. Say the layer sizes from bottom to top.
-> 3. Say what you learned in this course.
-
-**Write what you will say in your video.** You can read from it while filming.
-
-<div class="write-space tall" style="min-height: 240px"></div>
+<div class="write-space tall" style="min-height: 340px"></div>
 
 ---
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk. This is the **last week** of Pyramid Problems — well done!
+Send this worksheet + your video to teacher on KakaoTalk.

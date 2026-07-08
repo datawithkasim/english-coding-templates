@@ -2,7 +2,7 @@
 
 **Topic:** Recreate the Statues (x, y, z) · **Course:** 3D Coordinates · **Level:** Beginner · **Time:** about 30 minutes
 
-A statue is just blocks **stacked up**. A little body, then a head on top. Every block needs **three** numbers: **(x, y, z)**. x is **across**, y is **up**, z is **forward**. To go higher, change the **2nd number (y)**.
+A statue is blocks **stacked up** — a body, then a head on top. Every block needs **three** numbers: **(x, y, z)**. x is **across**, y is **up**, z is **forward**. To go higher, change the **2nd number (y)**.
 
 ### 🧭 Every coordinate is **(x, y, z)**
 
@@ -14,7 +14,7 @@ A statue is just blocks **stacked up**. A little body, then a head on top. Every
 
 ## 1 · Predict 🔮
 
-Read the blocks. Look at the numbers. Do **not** run it.
+Read the blocks. Circle your answer.
 
 ```
 place gray block at (3, 0, 3)
@@ -22,24 +22,24 @@ place gray block at (3, 1, 3)
 place gray block at (3, 2, 3)
 ```
 
-**Across, up, or deeper? Circle one. Which number changes?**
+**Across, up, or deeper? Circle one:** across · up · deeper
 
-<div class="write-space short"></div>
+**Which number changes? Circle one:** x · y · z
 
 ```
 place gray block at (3, 0, 3)
 place gray block at (4, 0, 3)
 ```
 
-**Across, up, or deeper? Circle one. Which number changes?**
+**Across, up, or deeper? Circle one:** across · up · deeper
 
-<div class="write-space short"></div>
+**Which number changes? Circle one:** x · y · z
 
 ---
 
 ## 2 · Spot the Bug 🐛
 
-The head should sit **on top** of the body. To go up, the **2nd number (y)** must be **bigger**. Here the head uses the **same y** as the body, so it hides inside.
+The head should sit **on top** of the body — the **2nd number (y)** must be **bigger**. Here the head uses the **same y** as the body, so it hides inside.
 
 ```
 # buggy — head inside the body
@@ -55,19 +55,13 @@ place gray block at (3, 1, 3)
 place white block at (3, ____, 3)
 ```
 
-**Word bank:** `0` · `1` · `2`
+**Which number is missing? Circle one:** 0 · 1 · 2
 
-**Write the missing number:**
-
-<div class="write-space short"></div>
-
-**Why was the buggy one wrong? One short sentence.**
-
-<div class="write-space short"></div>
+**Why was the buggy one wrong? Circle one:** the head used the same y · the color was wrong
 
 ---
 
-## 3 · Build It 📸
+## 3 · Show Your Work 📸🎥
 
 **Warm-up:** in your world, place 2 gray blocks on top of each other — a little body.
 
@@ -79,30 +73,30 @@ place white block at (3, ____, 3)
 
 If you finish early, try the big one: make the body taller.
 
-Send a **photo or video**, then write 2 sentences.
+Record **one video** (a phone is fine). Show two things:
 
-> I built a statue with a body and a …
+**1 · Your code.** Scroll through it. Say what each part does.
+
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
 >
-> To go up I changed the … number.
+> I built it using this code: ______.
+>
+> In this code I used ______.
+>
+> The hardest part was ______.
+>
+> That part was hard because ______.
 
-<div class="write-space tall" style="min-height: 240px"></div>
+**Write your lines here, then say them in your video.**
 
----
-
-## 4 · Explain It 🎥
-
-Take a short video of your statue. Try to use these words: **x**, **y**, **z**, **up**.
-
-> 1. Stand on your home spot.
-> 2. Point at the body and read one block: "x …, y …, z …".
-> 3. Point at the head and say which number made it go up.
-
-**Write the 2 sentences you will say.** You can read them while filming.
-
-<div class="write-space tall" style="min-height: 240px"></div>
+<div class="write-space tall" style="min-height: 340px"></div>
 
 ---
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + your video to teacher on KakaoTalk.

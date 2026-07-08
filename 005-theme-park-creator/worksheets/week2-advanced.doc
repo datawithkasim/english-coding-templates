@@ -1,0 +1,174 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head><meta charset='utf-8'>
+<title>🎢 005 Week 2 — English Worksheet (Advanced)</title>
+<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
+<style>
+@page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
+div.WordSection1 { page: WordSection1; }
+body { font-family: "Segoe UI", Arial, sans-serif; font-size: 11.5pt; color: #1a1a2e; line-height: 1.5; }
+h1 { font-size: 21pt; color: #6b4ee6; margin: 4px 0 6px; }
+h2 { font-size: 15pt; color: #6b4ee6; border-top: 1px solid #dddddd; padding-top: 8px; margin: 18px 0 10px; }
+h3, h4 { font-size: 11.5pt; margin: 12px 0 6px; }
+p { margin: 7px 0; }
+.brand { font-size: 10.5pt; font-weight: bold; color: #ff7849; letter-spacing: .06em;
+         border-bottom: 2px solid #ff7849; padding-bottom: 6px; margin-bottom: 14px; }
+table { border-collapse: collapse; margin: 10px 0; }
+th, td { border: 1px solid #c8c8c8; padding: 4px 9px; text-align: center; }
+th { background: #f3eefc; color: #6b4ee6; font-weight: bold; }
+pre { font-family: Consolas, "Courier New", monospace; font-size: 10.5pt; background: #f4f4f5;
+      border: 1px solid #dddddd; padding: 8px 10px; white-space: pre-wrap; }
+pre code { background: transparent; color: #1a1a2e; }
+code { font-family: Consolas, "Courier New", monospace; background: #fff1e8; color: #d6531f; padding: 0 3px; }
+blockquote { border-left: 3px solid #ff7849; background: #fff6ef; padding: 8px 12px;
+             color: #6a3a1c; margin: 9px 0; }
+ul, ol { margin: 7px 0 7px 26px; }
+p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
+.footer { color: #999999; font-size: 8.5pt; text-align: center; margin-top: 18px;
+          border-top: 1px solid #eeeeee; padding-top: 6px; }
+.footer b { color: #ff7849; }
+</style></head>
+<body><div class=WordSection1>
+<div class="brand">📚 ENGLISH CODING · 영어코딩</div>
+<h1>🎢 005 Week 2 — English Worksheet (Advanced)</h1>
+<p><strong>Topic:</strong> One Function, Many Stalls — Arguments &amp; Parameters · <strong>Course:</strong> Theme Park Creator · <strong>Time:</strong> about 50 minutes</p>
+<p>This week you build a market <strong>stall</strong> with a <strong>function</strong>. A stall has more parts than a booth — a stand, posts and a roof.</p>
+<p>So your function needs <strong>more parameters</strong>: some for <strong>materials</strong>, some for the <strong>corners</strong> that set where it goes and how big it is. Change the <strong>arguments</strong> you <strong>call</strong> it with, and one function builds a whole market row.</p>
+<p>These are the blocks you use this week:</p>
+<pre><code class="language-python">blocks.fill(BRICKS, pos(x1, 0, z1), pos(x2, 0, z2), FillOperation.HOLLOW)
+blocks.fill(AIR, pos(x1, 0, z1), pos(x2, 0, z2), FillOperation.REPLACE)
+blocks.fill(OAK_FENCE, pos(x1, 1, z1), pos(x1, 3, z1), FillOperation.REPLACE)
+</code></pre>
+<blockquote>
+<p><code>blocks.fill(material, corner1, corner2, ...)</code> fills a box between two corners.
+<code>pos(x, y, z)</code> is a spot: <code>x</code> = left/right, <code>y</code> = up (height), <code>z</code> = forward/back.
+<code>FillOperation.HOLLOW</code> = only the outer <strong>shell</strong>. <code>FillOperation.REPLACE</code> = the <strong>whole solid</strong> box.
+<code>AIR</code> clears blocks — fill the inside of the shell with <code>AIR</code> to hollow it out.</p>
+</blockquote>
+<hr />
+<h2>1 · Meet Arguments and Parameters 🎁</h2>
+<p>A <strong>parameter</strong> is a named empty box you create when you <strong>define</strong> the function.
+An <strong>argument</strong> is the real value you send when you <strong>call</strong> it.
+They match <strong>by position</strong>: the order of your arguments decides which box each one lands in.</p>
+<pre><code class="language-text">   DEFINE  →  the names in ( ) are PARAMETERS (empty named boxes):
+
+       def build_stall( stand , post , roof , x1 , x2 , z1 , z2 ):
+                        └── materials ──┘   └──── corners ────┘
+
+   CALL  →  the values in ( ) are ARGUMENTS (real values sent in):
+
+       build_stall( BRICKS , OAK_FENCE , BRICKS , 2 , 10 , 2 , 6 )
+
+   Matched by POSITION, left to right:
+
+       stand ⟵ BRICKS      x1 ⟵ 2       z1 ⟵ 2
+       post  ⟵ OAK_FENCE   x2 ⟵ 10      z2 ⟵ 6
+       roof  ⟵ BRICKS
+</code></pre>
+<p>Notice two things: <code>BRICKS</code> was sent in <strong>twice</strong> (same material for stand and roof — that's fine), and the <strong>corners</strong> are numbers while the <strong>materials</strong> are words. Mixing them is normal.</p>
+<p><strong>Why does matching by <em>position</em> mean the order of your arguments matters?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>2 · Predict 🔮</h2>
+<p>Read each function. Write what you think happens.</p>
+<pre><code class="language-python">def build_stall(stand, post, roof, x1, x2, z1, z2):
+    blocks.fill(stand, pos(x1, 0, z1), pos(x2, 0, z2), FillOperation.HOLLOW)
+    blocks.fill(roof, pos(x1, 4, z1), pos(x2, 4, z2), FillOperation.HOLLOW)
+
+build_stall(BRICKS, OAK_FENCE, GLASS, 2, 10, 2, 6)
+</code></pre>
+<p><strong>What material is the stand? What material is the roof? Which corners are the far ones?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">def build_stall(stand, post, roof, x1, x2, z1, z2):
+    blocks.fill(stand, pos(x1, 0, z1), pos(x2, 0, z2), FillOperation.HOLLOW)
+    blocks.fill(post, pos(x1, 1, z1), pos(x1, 3, z1), FillOperation.REPLACE)
+
+build_stall(BRICKS, OAK_FENCE, BRICKS, 10, 2, 2, 6)
+</code></pre>
+<p><strong>The <code>x1</code> and <code>x2</code> arguments are <code>10</code> and <code>2</code> — the wide corner comes before the near one. What might go wrong, or look flipped, compared to <code>2, 10</code>?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>3 · Spot the Bug 🐛</h2>
+<p>Each block is broken. Read what it should do, rewrite it so it works, then explain why the original was wrong.</p>
+<p><strong>Bug A</strong> — This should build a <strong>brick stall with fence posts</strong>. But it comes out with fence-material walls and brick posts — swapped.</p>
+<pre><code class="language-python">def build_stall(stand, post, roof, x1, x2, z1, z2):
+    blocks.fill(stand, pos(x1, 0, z1), pos(x2, 0, z2), FillOperation.HOLLOW)
+    blocks.fill(post, pos(x1, 1, z1), pos(x1, 3, z1), FillOperation.REPLACE)
+
+build_stall(OAK_FENCE, BRICKS, BRICKS, 2, 10, 2, 6)
+</code></pre>
+<p><strong>Hint:</strong> arguments land in the boxes <strong>by position</strong>. Which value went into <code>stand</code>?</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug B</strong> — The stand should be <strong>hollow inside</strong> so you can stand a shopkeeper in it. But the whole stand comes out as a <strong>solid block</strong> of bricks you cannot enter.</p>
+<pre><code class="language-python">def build_stall(stand, post, roof, x1, x2, z1, z2):
+    blocks.fill(stand, pos(x1, 0, z1), pos(x2, 0, z2), FillOperation.REPLACE)
+
+build_stall(BRICKS, OAK_FENCE, BRICKS, 2, 10, 2, 6)
+</code></pre>
+<p><strong>Hint:</strong> which <code>FillOperation</code> fills only the shell, and which fills the whole solid box?</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug C</strong> — The roof should sit at the height you decide. But the roof always builds at the <strong>same height</strong>, because one corner value is ignored.</p>
+<pre><code class="language-python">def build_stall(stand, post, roof, x1, x2, z1, z2):
+    blocks.fill(roof, pos(x1, 4, z1), pos(10, 4, 6), FillOperation.HOLLOW)
+
+build_stall(BRICKS, OAK_FENCE, BRICKS, 2, 20, 2, 12)
+</code></pre>
+<p><strong>Hint:</strong> two of the corners are hard-coded numbers instead of the parameters <code>x2</code> and <code>z2</code>.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>4 · Build the Market Stall 🏪</h2>
+<p>In your homework world, write <strong>one</strong> function called <code>build_stall</code> that builds a market stall. Your function must have <strong>seven parameters</strong> — three materials and four corners:</p>
+<pre><code class="language-python">def build_stall(stand, post, roof, x1, x2, z1, z2):
+</code></pre>
+<p>Your stall must include, in total:</p>
+<ul>
+<li>a <strong>stand</strong> — a hollow base between corners <code>(x1, z1)</code> and <code>(x2, z2)</code>, cleared inside with <code>AIR</code> so it is open</li>
+<li><strong>four posts</strong> — one rising from each of the four corners, made from the <code>post</code> material</li>
+<li>a <strong>roof</strong> — a flat top covering the stand, made from the <code>roof</code> material</li>
+</ul>
+<p><strong>Where</strong> the stall sits and <strong>how big</strong> it is must come from the four corner parameters — no fixed corner numbers inside.</p>
+<p>Then <strong>call your function two or three times</strong> with different corners to line up a <strong>market row</strong>, for example:</p>
+<pre><code class="language-python">build_stall(BRICKS, OAK_FENCE, BRICKS, 2, 10, 2, 6)
+build_stall(STONE_BRICKS, DARK_OAK_FENCE, STONE_BRICKS, 12, 20, 2, 6)
+</code></pre>
+<p><strong>Write your finished <code>build_stall</code> function and the lines that call it:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>5 · Show Your Work 📸🎥</h2>
+<p>Record <strong>one video</strong> (a phone is fine). Show two things:</p>
+<p><strong>1 · Your code.</strong> Scroll through it. Say what each part does.</p>
+<p><strong>2 · Your build.</strong> Point the camera. Name the parts.</p>
+<p>Fill the blanks:</p>
+<blockquote>
+<p>Today I built ______.</p>
+<p>I built it using this code: ______.</p>
+<p>In this code I used ______.</p>
+<p>The hardest part was ______.</p>
+<p>That part was hard because ______.</p>
+</blockquote>
+<p><strong>Write your lines here, then say them in your video.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your video to teacher on KakaoTalk.</p>
+<div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>
+</div></body></html>

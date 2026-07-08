@@ -6,7 +6,7 @@
 
 ## 1 · Predict 🔮
 
-Read each set of steps. Before you imagine the agent doing it, write what you think will happen.
+Read each set of steps. Write what you think will happen.
 
 ```
 repeat 3 times:
@@ -45,7 +45,7 @@ repeat 3 times:
 
 ## 2 · Spot the Bug 🐛
 
-Each pair shows clean steps first, then a broken version of the same idea. Circle what's different and explain the bug in one short sentence.
+Clean steps first, then a broken version. Circle what changed and explain the bug in one sentence.
 
 **Pair A**
 
@@ -111,28 +111,34 @@ move up by 1
 
 ---
 
-## 3 · Tell Me What You Built 📸
+## 3 · Show Your Work 📸🎥
 
 Now switch to your homework world. Build your roofed house. When you finish, come back here.
 
-Send a photo or video of your house, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.
+Record **one video** (a phone is fine). Show two things:
 
-> First, I …
->
-> Then I used a loop to …
->
-> The hardest part was …
->
-> To fix it, I …
->
-> My roof works because …
->
-> Next time, I want to try …
+**1 · Your code.** Scroll through it. Say what each part does.
 
-<div class="write-space tall"></div>
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
+>
+> I built it using this code: ______.
+>
+> In this code I used ______.
+>
+> The hardest part was ______.
+>
+> That part was hard because ______.
+
+**Write your lines here, then say them in your video.**
+
+<div class="write-space tall" style="min-height: 340px"></div>
 
 ---
 
 ### Submit ✅
 
-Send this worksheet + a photo or video of your finished house to teacher on KakaoTalk.
+Send this worksheet + your video to teacher on KakaoTalk.

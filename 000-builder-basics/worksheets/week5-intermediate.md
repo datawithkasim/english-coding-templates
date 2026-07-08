@@ -6,7 +6,7 @@
 
 ## 1 · Predict 🔮
 
-Read each set of steps. Before you imagine the agent doing it, write your answer in your own words.
+Read each set of steps. Write your answer.
 
 ```
 repeat 4 times:
@@ -35,7 +35,7 @@ repeat 3 times:
 
 ## 2 · Spot the Bug 🐛
 
-Each pair shows clean steps first, then a broken version of the same idea. The goal is given before each pair. Find what changed and explain the bug in one short sentence.
+Clean steps first, then a broken version. The goal is given before each pair. Find what changed and explain the bug in one sentence.
 
 **Pair A** — *Goal: place exactly 5 blocks in a row.*
 
@@ -103,7 +103,7 @@ move up by 1
 
 ## 3 · Fill the Gap ✏️
 
-The roof must sit **on top** of the walls, so the agent has to rise before it builds the roof line. One line is missing. Write the missing line, then explain in one sentence why it goes there.
+The roof must sit **on top** of the walls, so the agent rises before the roof line. One line is missing.
 
 ```
 ____________
@@ -124,19 +124,29 @@ place block down
 
 ---
 
-## 4 · Tell Me What You Built 📸
+## 4 · Show Your Work 📸🎥
 
 Now switch to your homework world. Build your **roofed house** — any size you like. When you finish, come back here.
 
-Send a photo or video of your house, then explain what you did. Use these sentence starters — write 3 or 4 sentences total.
+Record **one video** (a phone is fine). Show two things:
 
-> First, I …
+**1 · Your code.** Scroll through it. Say what each part does.
+
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
 >
-> Then I used a loop to …
+> I built it using this code: ______.
 >
-> My roof works because …
+> In this code I used ______.
 >
-> The hardest part was …
+> The hardest part was ______.
+>
+> That part was hard because ______.
+
+**Write your lines here, then say them in your video.**
 
 <div class="write-space tall" style="min-height: 340px"></div>
 
@@ -144,4 +154,4 @@ Send a photo or video of your house, then explain what you did. Use these senten
 
 ### Submit ✅
 
-Send this worksheet + a photo or video of your finished house to teacher on KakaoTalk.
+Send this worksheet + your video to teacher on KakaoTalk.

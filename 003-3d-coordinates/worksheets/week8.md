@@ -2,13 +2,13 @@
 
 **Topic:** Final — My Own Museum · **Course:** 3D Coordinates · **Time:** about 60 minutes
 
-This is your big final project. No new commands — every idea from this course working together in one build. Your museum is a **room** visitors walk into, with **flat pictures** on the walls (2D art, drawn with x and y) and **solid sculptures** on pedestals (3D art, placed with x, y, z). Plan it like a real architect: coordinates first, then build.
+This is your big final project — no new commands, every idea from this course in one build. Your museum is a **room** visitors walk into, with **flat pictures** on the walls (2D, x and y) and **solid sculptures** on pedestals (3D, x, y, z). Plan it like an architect: coordinates first, then build.
 
 ---
 
 ## 1 · Predict 🔮
 
-Read each plan. Before you imagine it happening, write what you think you will see.
+Read each plan. Write what you think you will see.
 
 ```
 # 2D art: a picture on the back wall — z stays 0, blocks climb with x and y
@@ -47,7 +47,7 @@ pedestal B:    fill stone from (7, 0, 7) to (8, 1, 8)
 
 ## 2 · Spot the Bug 🐛
 
-Each block of code below was meant to do something, but it is broken. Read what the code is **supposed** to do, then rewrite it so it works. After that, explain why the original was wrong and why your fix works.
+Each code block below is broken. Read what it should do, fix it, then explain why the original was wrong and your fix works.
 
 **Bug A** — The gallery should be a **hollow room** with a doorway. Right now it is a solid block of stone with no inside.
 
@@ -110,7 +110,7 @@ repeat 4 times:
 
 ## 3 · Blueprint Your Museum 🗺️
 
-Plan **before** you build. This is the biggest build of the course, so a clear blueprint matters. Looking down from above, write the coordinates of every piece.
+Plan **before** you build. Looking down from above, write the coordinates of every piece.
 
 Gallery room: from ( … , … , … ) to ( … , … , … ) · doorway at ( … , … , … )
 
@@ -134,7 +134,7 @@ Pedestal 2: from ( … , … , … ) to ( … , … , … ) · sculpture on top 
 
 ---
 
-## 4 · Build Your Museum 📸
+## 4 · Show Your Work 📸🎥
 
 Now switch to your homework world and build your museum from your blueprint. Check your build against this list:
 
@@ -148,43 +148,30 @@ Now switch to your homework world and build your museum from your blueprint. Che
 >
 > ☐ The museum matches the coordinates on your blueprint.
 
-Send a photo or video of your finished museum, then explain what you built. Use these sentence starters — write 6 to 8 sentences total.
+Record **one video** (a phone is fine). Show two things:
 
-> First, I planned …
+**1 · Your code.** Scroll through it. Say what each part does.
+
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
 >
-> My gallery room is … and its doorway is at …
+> I built it using this code: ______.
 >
-> My 2D pictures are flat because …
+> In this code I used ______.
 >
-> My 3D sculptures are solid because …
+> The hardest part was ______.
 >
-> I kept my pedestals from overlapping by …
->
-> Each sculpture rests on its pedestal because its height starts at …
->
-> One tricky moment was when …
->
-> If I had more time, I would …
+> That part was hard because ______.
 
-<div class="write-space tall" style="min-height: 360px"></div>
+**Write your lines here, then say them in your video.**
 
----
-
-## 5 · Record Your Gallery Tour 🎥
-
-Take a video on your phone (or a parent's phone) and give a full **gallery tour** of your museum. Talk like a museum guide showing visitors around. Try to use these words: **museum**, **2D**, **3D**, **pedestal**, **coordinate**.
-
-> 1. Walk in through the doorway and welcome your visitors.
-> 2. Stop at a flat picture and say why it is **2D** — which numbers change and which stays the same.
-> 3. Walk around a sculpture and say why it is **3D** — and which pedestal it stands on.
-> 4. Point out how you planned the whole room with coordinates so nothing overlaps.
-
-**Write what you will say in your video.** Use the space below to plan it before you record — you can read from it while filming.
-
-<div class="write-space tall" style="min-height: 360px"></div>
+<div class="write-space tall" style="min-height: 340px"></div>
 
 ---
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + your video to teacher on KakaoTalk.

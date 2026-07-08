@@ -17,9 +17,7 @@ Your maze needs:
 - start and finish
 ```
 
-**Where is the lever? One word:**
-
-<div class="write-space short"></div>
+**Where is the lever? One word:** ______
 
 ---
 
@@ -49,15 +47,11 @@ keep going until ________:
         move forward
 ```
 
-**Word bank:** `at goal` · `forever`
-
-**Write the blank:**
-
-<div class="write-space short"></div>
+**Which fills the blank? Circle one:** at goal · forever
 
 ---
 
-## 4 · Build It 📸
+## 4 · Show Your Work 📸🎥
 
 Build your final maze:
 
@@ -67,30 +61,30 @@ Build your final maze:
 - start and finish
 - code that solves it
 
-Send a photo or video of the agent at the goal. Then write 2-3 sentences.
+Record **one video** (a phone is fine). Show two things:
 
-> My maze has …
+**1 · Your code.** Scroll through it. Say what each part does.
+
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
 >
-> The agent's plan is …
+> I built it using this code: ______.
 >
-> I am proud of …
+> In this code I used ______.
+>
+> The hardest part was ______.
+>
+> That part was hard because ______.
 
-<div class="write-space tall" style="min-height: 240px"></div>
+**Write your lines here, then say them in your video.**
 
----
-
-## 5 · Video 🎥
-
-Film your phone while the agent runs. Use these words: **maze**, **lever**, **door**, **goal**.
-
-> 1. Show the maze, door, and lever.
-> 2. Run your code to the goal.
-> 3. Say what you learned.
-
-<div class="write-space tall" style="min-height: 240px"></div>
+<div class="write-space tall" style="min-height: 340px"></div>
 
 ---
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + your video to teacher on KakaoTalk.

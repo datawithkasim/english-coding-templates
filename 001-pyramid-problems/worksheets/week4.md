@@ -6,7 +6,7 @@
 
 ## 1 · Predict 🔮
 
-Read each set of steps. Before you imagine the agent doing it, write what you think will happen.
+Read each set of steps. Write what you think will happen.
 
 ```
 repeat 3 times:
@@ -48,7 +48,7 @@ repeat 4 times:
 
 ## 2 · Spot the Bug 🐛
 
-Each block of code below was meant to do something, but it is broken. Read what the code is **supposed** to do, then rewrite it so it works. After that, explain why the original was wrong and why your fix works.
+Each code block below is broken. Read what it should do, rewrite it so it works, then explain why the original was wrong and why your fix works.
 
 **Bug A** — The agent is supposed to build a **5 × 5 square** on the ground using a nested loop.
 
@@ -104,38 +104,29 @@ move forward
 
 ---
 
-## 3 · Tell Me What You Built 📸
+## 3 · Show Your Work 📸🎥
 
 Now switch to your homework world. Build a **7×7 square floor** using a nested loop (just change your `size` variable to 7). Then stand on the floor and check that you can see the center. When you finish, come back here.
 
-Send a photo or video of what you built, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.
+Record **one video** (a phone is fine). Show two things:
 
-> First, I …
+**1 · Your code.** Scroll through it. Say what each part does.
+
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
 >
-> My outer loop repeated … times.
+> I built it using this code: ______.
 >
-> My inner loop repeated … times.
+> In this code I used ______.
 >
-> The total number of blocks was … because …
+> The hardest part was ______.
 >
-> The hardest part was …
->
-> A nested loop is useful when …
+> That part was hard because ______.
 
-<div class="write-space tall" style="min-height: 340px"></div>
-
----
-
-## 4 · Record Your Walkthrough 🎥
-
-Now take a video on your phone (or a parent's phone) while you walk the camera around what you built. Talk through it like you are teaching someone who has never seen it. Try to use these words: **nested loop**, **outer**, **inner**, **repeat**, **block**.
-
-> 1. Show what your nested loop built.
-> 2. Read your outer loop and inner loop out loud and say what each one does.
-> 3. Show one bug you hit and how you fixed it.
-> 4. Say why a nested loop is better than writing many loops one after another.
-
-**Write what you will say in your video.** Use the space below to plan it before you record — you can read from it while filming.
+**Write your lines here, then say them in your video.**
 
 <div class="write-space tall" style="min-height: 340px"></div>
 
@@ -143,4 +134,4 @@ Now take a video on your phone (or a parent's phone) while you walk the camera a
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + your video to teacher on KakaoTalk.

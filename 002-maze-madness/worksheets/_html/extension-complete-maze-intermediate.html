@@ -109,7 +109,7 @@ footer b { color: #ff7849; }
 <div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
 <h1>🧩 M002 Extension 4 — Complete the Maze</h1>
 <p><strong>Topic:</strong> Add Two AND Conditions · <strong>Course:</strong> Maze Madness · <strong>Level:</strong> Extension (Intermediate) · <strong>Time:</strong> about 45 minutes</p>
-<p>The agent knows <strong>four rules</strong> to follow a redstone trail. But the solver is <strong>not finished</strong>. At two junctions two signals are on at once, so one signal is not enough and the agent stops. You find the two signals and add two <strong>AND</strong> rules of your own. Then drive it to the goal.</p>
+<p>The agent follows a redstone trail with <strong>four rules</strong>, but the solver is <strong>not finished</strong>. At two junctions, two signals are on at once and the agent stops. Add two <strong>AND</strong> rules of your own, then drive it to the goal.</p>
 <p>Chat: <code>l</code> turn left, <code>r</code> turn right, <code>run</code> start solver, <code>rl</code> bring agent back.</p>
 <h2>1 · The Four Rules 🎛️</h2>
 <p>Each rule checks <strong>one</strong> signal and does <strong>one</strong> action.</p>
@@ -150,7 +150,7 @@ elif agent.detect(REDSTONE, UP):
 </tbody>
 </table>
 <h2>2 · Find the Two Stuck Junctions 🔍</h2>
-<p>Open the <strong>M002 Complete the Maze</strong> world. Type <code>run</code>. Watch where the agent stops. Walk over and look around it.</p>
+<p>Open the <strong>M002 Complete the Maze</strong> world and type <code>run</code>. Watch where the agent stops, then look around it.</p>
 <p><strong>Tick the signals on at each stuck junction.</strong></p>
 <table>
 <thead>
@@ -194,7 +194,7 @@ elif agent.detect(REDSTONE, UP):
 <div class="write-space short"></div></div>
 
 <h2>4 · Add the Two New Rules 🛠️</h2>
-<p>Find the four rules in the code. Add <strong>two <code>elif</code> branches</strong>, one per stuck junction, using the signals <strong>you</strong> found. Each branch does the action for <strong>each</strong> signal.</p>
+<p>Add <strong>two <code>elif</code> branches</strong>, one per stuck junction, using the signals <strong>you</strong> found. Each branch does the action for <strong>each</strong> signal.</p>
 <p><strong>Junction 1 — fill the blanks:</strong></p>
 <pre><code>elif agent.detect(REDSTONE, ______) and agent.detect(REDSTONE, ______):
     agent.________(__________)
@@ -220,32 +220,24 @@ elif agent.detect(REDSTONE, UP):
 <div class="qa"><p><strong>Why was it wrong?</strong></p>
 <div class="write-space short"></div></div>
 
-<h2>6 · Finish the Whole Maze 📸</h2>
+<h2>6 · Show Your Work 📸🎥</h2>
 <p>Type <code>run</code>. The goal is start to the <strong>very end</strong>, past both stuck junctions. Fix your rules and run again until it reaches the goal.</p>
-<p>Send a photo or video of the agent at the goal. Then write 3 or 4 sentences with these starters.</p>
-<div class="qa"><blockquote>
-<p>Each of the four rules checked …</p>
-<p>The two signals at the first stuck junction were … and …</p>
-<p>My AND rule was true only when both were …</p>
-<p>I put my new rules first because …</p>
-</blockquote>
-<div class="write-space tall" style="min-height: 240px"></div></div>
-
-<h2>7 · Plan Your Walkthrough Video 🎥</h2>
-<p>Film on your phone (or a parent's) while the agent solves the maze. Talk like you are teaching a friend. Try these words: <strong>detect</strong>, <strong>redstone</strong>, <strong>AND</strong>, <strong>both</strong>, <strong>turn</strong>, <strong>move up</strong>.</p>
+<p>Record <strong>one video</strong> (a phone is fine). Show two things:</p>
+<p><strong>1 · Your code.</strong> Scroll through it. Say what each part does.</p>
+<p><strong>2 · Your build.</strong> Point the camera. Name the parts.</p>
+<p>Fill the blanks:</p>
 <blockquote>
-<ol>
-<li>Show the maze and the redstone.</li>
-<li>Type <code>run</code> and show the agent following it.</li>
-<li>Read one AND rule and say the two signals it needs.</li>
-<li>Show the agent reaching the goal.</li>
-</ol>
+<p>Today I built ______.</p>
+<p>I built it using this code: ______.</p>
+<p>In this code I used ______.</p>
+<p>The hardest part was ______.</p>
+<p>That part was hard because ______.</p>
 </blockquote>
-<div class="qa"><p><strong>Write what you will say. You can read it while filming.</strong></p>
-<div class="write-space tall" style="min-height: 240px"></div></div>
+<div class="qa"><p><strong>Write your lines here, then say them in your video.</strong></p>
+<div class="write-space tall" style="min-height: 340px"></div></div>
 
 <hr />
 <h3>Submit ✅</h3>
-<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.</p>
+<p>Send this worksheet + your video to teacher on KakaoTalk.</p>
 </body>
 </html>

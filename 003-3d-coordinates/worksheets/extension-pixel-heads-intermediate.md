@@ -2,7 +2,7 @@
 
 **Topic:** 3D Mob Heads (x, y, z) · **Course:** 3D Coordinates · **Level:** Intermediate (Extension, after Week 3) · **Time:** about 40 minutes
 
-Build a **creeper head** in 3D. Every block needs **three** numbers: **(x, y, z)**. x is **across**, y is **up**, z is **deeper** (forward). The head stands in front of you in the world. Walk around it, then copy it block by block. You build the **front face** first, then repeat it to add depth.
+Build a **creeper head** in 3D. Every block needs **three** numbers: **(x, y, z)**. x is **across**, y is **up**, z is **deeper** (forward). Walk around the head, then copy it block by block — build the **front face** first, then repeat it to add depth.
 
 > 🔴 Stand on your **home spot** (red block) every run. Move your feet, move your head.
 
@@ -10,7 +10,7 @@ Build a **creeper head** in 3D. Every block needs **three** numbers: **(x, y, z)
 
 ## 1 · Predict 🔮
 
-Read each set. Do **not** run it. Write a full sentence for each.
+Read each set. Write a sentence for each.
 
 ```
 place green block at (3, 5, 1)
@@ -77,7 +77,7 @@ place black block at (4, 2, 7)
 
 ---
 
-## 3 · Build It 📸
+## 3 · Show Your Work 📸🎥
 
 Look at the 🟢 creeper head in the world. Walk around it. Then build **one full head** on your home spot, with a face.
 
@@ -89,35 +89,30 @@ Look at the 🟢 creeper head in the world. Walk around it. Then build **one ful
 
 > 💡 Tip: the eyes and mouth only show on the **front**. The sides and back are plain green.
 
-Send a photo or video. Then finish these 4 sentence starters.
+Record **one video** (a phone is fine). Show two things:
 
-> I built the …
+**1 · Your code.** Scroll through it. Say what each part does.
+
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
 >
-> The lowest front block is at (x = …, y = …, z = …).
+> I built it using this code: ______.
 >
-> To go up I changed the … number; to go deeper I changed the … number.
+> In this code I used ______.
 >
-> My head is … blocks deep, and the face is on the … side only.
+> The hardest part was ______.
+>
+> That part was hard because ______.
 
-<div class="write-space tall" style="min-height: 320px"></div>
+**Write your lines here, then say them in your video.**
 
----
-
-## 4 · Explain It 🎥
-
-Film yourself showing your head. Use these words: **x**, **y**, **z**, **across**, **up**, **deeper**, **home spot**.
-
-> 1. Show your home spot. Why stand on it every time?
-> 2. Walk around your head — show the front, a side, and the back.
-> 3. Point at one block: "this one is at x …, y …, z …".
-> 4. Show where the face is, and explain why it is on the front only.
-
-**Write about your head — around 4 sentences:**
-
-<div class="write-space tall" style="min-height: 320px"></div>
+<div class="write-space tall" style="min-height: 340px"></div>
 
 ---
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + your video to teacher on KakaoTalk.

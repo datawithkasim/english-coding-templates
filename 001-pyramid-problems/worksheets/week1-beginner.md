@@ -6,7 +6,7 @@
 
 ## 1 · Predict 🔮
 
-Read the steps. Before you imagine the agent doing it, circle or write your answer.
+Read the steps. Circle your answer.
 
 ```
 move forward
@@ -15,28 +15,24 @@ place block down
 
 **How many blocks does the agent place? Circle one:** 0 · 1 · 2
 
-**Where does the block land?**
-
-<div class="write-space short"></div>
+**Where does the block land? Circle one:** where it started · one step forward · up in the air
 
 ```
 turn right
 move forward
 ```
 
-**Does the agent move in the direction it started facing? Circle one:** yes · no
+**Does the agent move the way it started facing? Circle one:** yes · no
 
-**Why?**
-
-<div class="write-space short"></div>
+**Why? Circle one:** it turned right first · it moved up · it did nothing
 
 ---
 
 ## 2 · Find the Difference 🐛
 
-Each pair shows clean steps first, then a broken version of the same idea. Circle what's different and write one short sentence about the bug.
+Clean steps first, then a buggy version. Circle the bug.
 
-**Pair A** — The agent should place a block, then move forward, then place another block.
+**Pair A** — Should place a block, move forward, then place another block.
 
 ```
 # clean
@@ -52,11 +48,9 @@ place block down
 move forward
 ```
 
-**What is wrong?**
+**What is wrong? Circle one:** both blocks land in one spot · the agent moves too far · the agent turns right
 
-<div class="write-space short"></div>
-
-**Pair B** — The agent should turn right **first**, then walk 2 steps.
+**Pair B** — Should turn right **first**, then walk 2 steps.
 
 ```
 # clean
@@ -72,15 +66,13 @@ move forward
 turn right
 ```
 
-**What is wrong?**
-
-<div class="write-space short"></div>
+**What is wrong? Circle one:** it turns at the end, not the start · it walks 3 steps · it never moves
 
 ---
 
 ## 3 · Fill the Gap ✏️
 
-The agent should place 2 blocks **side by side** in a line. One line is missing. Fill it in using the word bank.
+Place 2 blocks **side by side**. Fill the missing line.
 
 ```
 place block down
@@ -88,44 +80,38 @@ ____________
 place block down
 ```
 
-**Word bank:** `move forward` · `move up by 1` · `turn right`
-
-**Write the missing line:**
-
-<div class="write-space short"></div>
+**Missing line? Circle one:** move forward · move up by 1 · turn right
 
 ---
 
-## 4 · Tell Me What You Built 📸
+## 4 · Show Your Work 📸🎥
 
 Now switch to your homework world. Build a **4-block straight path** by moving and placing one block at a time. When you finish, come back here.
 
-Send a photo or video of your path, then explain what you did. Use these sentence starters — write 2 or 3 sentences.
+Record **one video** (a phone is fine). Show two things:
 
-> First, I told the agent to …
+**1 · Your code.** Scroll through it. Say what each part does.
+
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
 >
-> My favourite command was …
+> I built it using this code: ______.
 >
-> The hardest part was …
+> In this code I used ______.
+>
+> The hardest part was ______.
+>
+> That part was hard because ______.
 
-<div class="write-space tall" style="min-height: 240px"></div>
+**Write your lines here, then say them in your video.**
 
----
-
-## 5 · Record Your Walkthrough 🎥
-
-Take a video on your phone (or a parent's phone) and show your path. Talk like you are teaching a friend. Try to use these words: **agent**, **place**, **move**, **block**.
-
-> 1. Show the agent and the path it built.
-> 2. Read your commands out loud.
-> 3. Say which command you used the most.
-
-**Write what you will say in your video.** You can read from it while filming.
-
-<div class="write-space tall" style="min-height: 240px"></div>
+<div class="write-space tall" style="min-height: 340px"></div>
 
 ---
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + your video to teacher on KakaoTalk.

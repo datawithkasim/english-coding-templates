@@ -2,7 +2,7 @@
 
 **Topic:** Redstone AND Rules + Single Checks · **Course:** Maze Madness · **Level:** Extension (Intermediate) · **Time:** about 45 minutes
 
-Same **Week 3 world**. Find the **hardest maze** — the big one **your teacher will show you a picture of**, packed with redstone. The agent reads **redstone** to move. Some tiles have **two** redstones — those need an **AND**: both must be true.
+Same **Week 3 world**. Find the **hardest maze** your teacher shows a picture of, packed with redstone. The agent reads **redstone** to move; tiles with **two** redstones need an **AND** (both true).
 
 > **The rules you need**
 >
@@ -72,7 +72,7 @@ while True:
 
 ## 3 · Fill the Blanks ✏️
 
-Rule #2: move up 1 and turn left **only when both are true** — redstone right and redstone below. Fill the blanks.
+Rule #2: move up 1 and turn left **only when both are true** — redstone right and redstone below.
 
 ```python
 if agent.detect(REDSTONE, ________) ________ agent.detect(REDSTONE, DOWN):
@@ -109,34 +109,34 @@ agent.move(FORWARD, 1)
 
 ---
 
-## 5 · Finish + Film 📸🎥
+## 5 · Show Your Work 📸🎥
 
 Open the Week 3 world, find the hardest maze from the picture, and run your solver until the agent reaches the **diamond block** goal.
 
-Send a photo OR video of the agent at the goal. Write 3 or 4 sentences.
+Record **one video** (a phone is fine). Show two things:
 
-> The agent read two redstones at once when …
+**1 · Your code.** Scroll through it. Say what each part does.
+
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
 >
-> I used **AND** because …
+> I built it using this code: ______.
 >
-> Both checks were true when …
+> In this code I used ______.
 >
-> The hardest part was …
+> The hardest part was ______.
+>
+> That part was hard because ______.
 
-<div class="write-space tall" style="min-height: 240px"></div>
+**Write your lines here, then say them in your video.**
 
-**Phone video plan.** Film the agent solving the maze. Talk like you teach a friend. Try these words: **detect**, **redstone**, **AND**, **both**, **rule**.
-
-> 1. Show the redstone in the maze.
-> 2. Type `run` and show the agent following the rules.
-> 3. Say one tile where two redstones were both there.
-
-**Write what you will say:**
-
-<div class="write-space tall" style="min-height: 240px"></div>
+<div class="write-space tall" style="min-height: 340px"></div>
 
 ---
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + your video to teacher on KakaoTalk.

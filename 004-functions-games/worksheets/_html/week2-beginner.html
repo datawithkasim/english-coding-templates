@@ -109,18 +109,15 @@ footer b { color: #ff7849; }
 <div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
 <h1>🎮 M004 Week 2 — English Worksheet (Beginner)</h1>
 <p><strong>Topic:</strong> Chat Commands · <strong>Course:</strong> Functions &amp; Games · <strong>Level:</strong> Beginner · <strong>Time:</strong> about 30 minutes</p>
-<p>This week you type a word in chat and your code runs. A <strong>chat command</strong> can take a number with it — <code>tower 5</code> builds a 5-block tower.</p>
+<p>This week you type a word in chat and your code runs. A <strong>chat command</strong> can take a number — <code>tower 5</code> builds a 5-block tower.</p>
 <h2>1 · Predict 🔮</h2>
-<p>Read the steps. Before you imagine the agent doing it, circle or write your answer.</p>
 <pre><code>on chat command &quot;bridge&quot;:
     repeat 6 times:
         place block
         move forward
 </code></pre>
-<p><strong>You type <code>bridge</code> in chat. Does the agent build the bridge? Circle one:</strong> yes · no</p>
-<div class="qa"><p><strong>Why?</strong></p>
-<div class="write-space short"></div></div>
-
+<p><strong>You type <code>bridge</code>. Does the agent build the bridge? Circle one:</strong> yes · no</p>
+<p><strong>Why? Circle one:</strong> the command name matches · the command name is wrong</p>
 <pre><code>on chat command &quot;tower&quot; with number n:
     repeat n times:
         place block
@@ -128,7 +125,6 @@ footer b { color: #ff7849; }
 </code></pre>
 <p><strong>You type <code>tower 4</code>. Is the tower 4 blocks tall? Circle one:</strong> yes · no</p>
 <h2>2 · Find the Difference 🐛</h2>
-<p>Each pair shows clean steps first, then a broken version of the same idea. Circle what's different and write one short sentence about the bug.</p>
 <p><strong>Pair A</strong> — Typing <code>bridge</code> should run the code. The command <strong>name</strong> must match what you type.</p>
 <pre><code># clean
 on chat command &quot;bridge&quot;:
@@ -142,9 +138,7 @@ on chat command &quot;brige&quot;:
         place block
         move forward
 </code></pre>
-<div class="qa"><p><strong>What is wrong? Why does nothing run when you type <code>bridge</code>?</strong></p>
-<div class="write-space short"></div></div>
-
+<p><strong>What is wrong? Circle one:</strong> command name misspelled · wrong number</p>
 <p><strong>Pair B</strong> — The number from chat should go <strong>into</strong> the function.</p>
 <pre><code># clean
 on chat command &quot;tower&quot; with number n:
@@ -154,44 +148,33 @@ on chat command &quot;tower&quot; with number n:
 on chat command &quot;tower&quot; with number n:
     build_tower(3)
 </code></pre>
-<div class="qa"><p><strong>What is wrong?</strong></p>
-<div class="write-space short"></div></div>
-
+<p><strong>What is wrong? Circle one:</strong> uses <code>3</code> not <code>n</code> · uses <code>n</code> not <code>3</code></p>
 <h2>3 · Fill the Gap ✏️</h2>
-<p>Typing <code>tower 5</code> should build a 5-block tower. One word is missing. Fill it in using the word bank.</p>
+<p>One word is missing.</p>
 <pre><code>on chat command &quot;tower&quot; with number n:
     repeat ____ times:
         place block
         move up
 </code></pre>
-<p><strong>Word bank:</strong> <code>n</code> · <code>tower</code> · <code>chat</code></p>
-<div class="qa"><p><strong>Write the missing word:</strong></p>
-<div class="write-space short"></div></div>
-
-<h2>4 · Tell Me What You Built 📸</h2>
+<p><strong>Fill the gap. Circle one:</strong> <code>n</code> · <code>tower</code> · <code>chat</code></p>
+<h2>4 · Show Your Work 📸🎥</h2>
 <p>Now switch to your homework world. Make one chat command with a number that builds something. When you finish, come back here.</p>
-<p>Send a photo or video of your command running, then explain what you did. Use these sentence starters — write 2 or 3 sentences.</p>
-<div class="qa"><blockquote>
-<p>When I typed my command in chat, …</p>
-<p>My command's number was used for …</p>
-<p>One tricky moment was when …</p>
-</blockquote>
-<div class="write-space tall" style="min-height: 240px"></div></div>
-
-<h2>5 · Record Your Walkthrough 🎥</h2>
-<p>Take a video on your phone (or a parent's phone) while you type your command and the code runs. Talk like you are teaching a friend. Try to use these words: <strong>chat command</strong>, <strong>number</strong>, <strong>run</strong>.</p>
+<p>Record <strong>one video</strong> (a phone is fine). Show two things:</p>
+<p><strong>1 · Your code.</strong> Scroll through it. Say what each part does.</p>
+<p><strong>2 · Your build.</strong> Point the camera. Name the parts.</p>
+<p>Fill the blanks:</p>
 <blockquote>
-<ol>
-<li>Show the chat box and type your command.</li>
-<li>Show what the code builds.</li>
-<li>Say in your own words what a <strong>chat command</strong> does.</li>
-</ol>
+<p>Today I built ______.</p>
+<p>I built it using this code: ______.</p>
+<p>In this code I used ______.</p>
+<p>The hardest part was ______.</p>
+<p>That part was hard because ______.</p>
 </blockquote>
-<div class="qa"><p><strong>Write what you will say in your video.</strong> You can read from it while filming.</p>
-<div class="write-space tall" style="min-height: 240px"></div></div>
+<div class="qa"><p><strong>Write your lines here, then say them in your video.</strong></p>
+<div class="write-space tall" style="min-height: 340px"></div></div>
 
 <hr />
 <h3>Submit ✅</h3>
-<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.</p>
+<p>Send this worksheet + your video to teacher on KakaoTalk.</p>
 </body>
 </html>

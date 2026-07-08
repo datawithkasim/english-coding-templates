@@ -109,7 +109,8 @@ footer b { color: #ff7849; }
 <div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
 <h1>🎢 005 Week 2 — English Worksheet (Intermediate)</h1>
 <p><strong>Topic:</strong> One Function, Many Booths — Arguments &amp; Parameters · <strong>Course:</strong> Theme Park Creator · <strong>Time:</strong> about 45 minutes</p>
-<p>This week you build a park <strong>booth</strong> with a <strong>function</strong>. You give it <strong>parameters</strong> — the materials and the size it should use — so the <strong>same</strong> function can build a wood booth, a stone booth, a big one or a small one, just by changing the <strong>arguments</strong> you <strong>call</strong> it with.</p>
+<p>This week you build a park <strong>booth</strong> with a <strong>function</strong>. You give it <strong>parameters</strong> — the materials and size it uses.</p>
+<p>Change the <strong>arguments</strong> you <strong>call</strong> it with, and the <strong>same</strong> function builds a wood booth, a stone booth, a big one or a small one.</p>
 <p>These are the blocks you use this week:</p>
 <pre><code class="language-python">blocks.fill(OAK_PLANKS, pos(0, 0, 0), pos(4, 0, 4), FillOperation.HOLLOW)
 blocks.fill(STONE, pos(0, 0, 0), pos(4, 0, 4), FillOperation.REPLACE)
@@ -122,8 +123,8 @@ blocks.fill(AIR, pos(2, 0, 0), pos(2, 1, 0), FillOperation.REPLACE)
 <code>AIR</code> = empty space. Fill a slot with <code>AIR</code> to <strong>carve a doorway</strong> out of a wall.</p>
 </blockquote>
 <h2>1 · Meet Arguments and Parameters 🎁</h2>
-<p>A <strong>parameter</strong> is an empty box with a name — you make it when you <em>define</em> the function.
-An <strong>argument</strong> is the real value you drop into that box — you send it when you <em>call</em> the function.
+<p>A <strong>parameter</strong> is an empty named box — you make it when you <em>define</em> the function.
+An <strong>argument</strong> is the real value you drop in — you send it when you <em>call</em> the function.
 They line up <strong>by position</strong>, left to right.</p>
 <pre><code class="language-text">   MAKE IT  →  the names in ( ) are PARAMETERS (empty named boxes):
 
@@ -143,7 +144,7 @@ They line up <strong>by position</strong>, left to right.</p>
 <div class="write-space"></div></div>
 
 <h2>2 · Predict 🔮</h2>
-<p>Read each function. Before you imagine the booth, write what you think happens.</p>
+<p>Read each function. Write what you think happens.</p>
 <pre><code class="language-python">def build_booth(wall, floor, size):
     blocks.fill(floor, pos(0, 0, 0), pos(size, 0, size), FillOperation.REPLACE)
     blocks.fill(wall, pos(0, 0, 0), pos(size, 3, size), FillOperation.HOLLOW)
@@ -164,7 +165,7 @@ build_booth(BRICKS, OAK_PLANKS, 8)
 <div class="write-space"></div></div>
 
 <h2>3 · Spot the Bug 🐛</h2>
-<p>Each block was meant to do something but is broken. Read what it is <strong>supposed</strong> to do, rewrite it so it works, then explain why the original was wrong.</p>
+<p>Each block is broken. Read what it should do, rewrite it so it works, then explain why the original was wrong.</p>
 <p><strong>Bug A</strong> — This should build one booth. But when you run it, <strong>nothing happens at all</strong>.</p>
 <pre><code class="language-python">def build_booth(wall, floor, size):
     blocks.fill(floor, pos(0, 0, 0), pos(size, 0, size), FillOperation.REPLACE)
@@ -206,7 +207,7 @@ build_booth(STONE, GLASS, 5)
 <div class="write-space"></div></div>
 
 <h2>4 · Build the Booth 🏪</h2>
-<p>Now the real challenge. In your homework world, write <strong>one</strong> function called <code>build_booth</code> that builds a booth a visitor can walk into. Your function must have these <strong>three parameters</strong>:</p>
+<p>In your homework world, write <strong>one</strong> function called <code>build_booth</code> that builds a booth a visitor can walk into. Your function must have these <strong>three parameters</strong>:</p>
 <pre><code class="language-python">def build_booth(wall, floor, size):
 </code></pre>
 <p>Your booth must include:</p>
@@ -222,33 +223,23 @@ build_booth(BRICKS, OAK_PLANKS, 8)
 <div class="qa"><p><strong>Write your finished <code>build_booth</code> function and the two lines that call it:</strong></p>
 <div class="write-space tall" style="min-height: 360px"></div></div>
 
-<h2>5 · Tell Me What You Built 📸</h2>
-<p>When your two booths stand side by side, send a photo or video and explain what you did. Use these sentence starters — write 4 to 6 sentences.</p>
-<div class="qa"><blockquote>
-<p>My three parameters were …</p>
-<p>The argument that changed the booth the most was …</p>
-<p>To carve the doorway I …</p>
-<p>The same function built two different booths because …</p>
-<p>One tricky moment was when …</p>
-<p>If I had more time, I would …</p>
-</blockquote>
-<div class="write-space tall" style="min-height: 340px"></div></div>
-
-<h2>6 · Record Your Walkthrough 🎥</h2>
-<p>Take a video on your phone (or a parent's phone) of your code and your booths. Talk it through like you are teaching someone who has never seen it. Try to use these words: <strong>function</strong>, <strong>parameter</strong>, <strong>argument</strong>, <strong>call</strong>, <strong>position</strong>.</p>
+<h2>5 · Show Your Work 📸🎥</h2>
+<p>Record <strong>one video</strong> (a phone is fine). Show two things:</p>
+<p><strong>1 · Your code.</strong> Scroll through it. Say what each part does.</p>
+<p><strong>2 · Your build.</strong> Point the camera. Name the parts.</p>
+<p>Fill the blanks:</p>
 <blockquote>
-<ol>
-<li>Show your <code>build_booth</code> function and read the line with the three <strong>parameters</strong> out loud.</li>
-<li>Point at one parameter and say what it controls.</li>
-<li>Run a <strong>call</strong> and show the booth appear, then run another with different <strong>arguments</strong>.</li>
-<li>Say in your own words how parameters and arguments line up by <strong>position</strong>.</li>
-</ol>
+<p>Today I built ______.</p>
+<p>I built it using this code: ______.</p>
+<p>In this code I used ______.</p>
+<p>The hardest part was ______.</p>
+<p>That part was hard because ______.</p>
 </blockquote>
-<div class="qa"><p><strong>Write what you will say in your video.</strong> Plan it here before you record — you can read from it while filming.</p>
+<div class="qa"><p><strong>Write your lines here, then say them in your video.</strong></p>
 <div class="write-space tall" style="min-height: 340px"></div></div>
 
 <hr />
 <h3>Submit ✅</h3>
-<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.</p>
+<p>Send this worksheet + your video to teacher on KakaoTalk.</p>
 </body>
 </html>

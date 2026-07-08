@@ -33,7 +33,7 @@ p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
 <p><strong>Topic:</strong> Placing Blocks · <strong>Course:</strong> Builder Basics · <strong>Level:</strong> Intermediate · <strong>Time:</strong> about 38 minutes</p>
 <hr />
 <h2>1 · Predict 🔮</h2>
-<p>Read each set of steps. Before you imagine the agent doing it, write what you think will happen.</p>
+<p>Read each set of steps. Write what you think will happen.</p>
 <pre><code>place block down
 move forward
 place block down
@@ -61,7 +61,7 @@ place block down
 
 <hr />
 <h2>2 · Spot the Bug 🐛</h2>
-<p>Each block of code below is broken. You are told the goal first, then a hint about where to look. Read the code, then rewrite it so it works. After that, write one sentence explaining what was wrong.</p>
+<p>Each code block is broken. The goal and a hint come first. Rewrite it, then write one sentence on what was wrong.</p>
 <p><strong>Bug A</strong> — Goal: place a block, move forward, then place another block.
 Hint: look at the very first line — is the agent placing before it moves?</p>
 <pre><code>move forward
@@ -99,32 +99,24 @@ place block down
 <p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
 
 <hr />
-<h2>3 · Tell Me What You Built 📸</h2>
+<h2>3 · Show Your Work 📸🎥</h2>
 <p>Now switch to your homework world. Place <strong>4 blocks</strong> — make some in a line and some stacked, so your build has more than one shape. When you finish, come back here.</p>
-<p>Send a photo or video of what you placed, then explain what you did. Use these sentence starters — write 3 or 4 sentences total.</p>
+<p>Record <strong>one video</strong> (a phone is fine). Show two things:</p>
+<p><strong>1 · Your code.</strong> Scroll through it. Say what each part does.</p>
+<p><strong>2 · Your build.</strong> Point the camera. Name the parts.</p>
+<p>Fill the blanks:</p>
 <blockquote>
-<p>First, I used the command … to place the block.</p>
-<p>Then I moved … so the next block would land …</p>
-<p>To make the blocks stack, I …</p>
-<p>The hardest part was …</p>
+<p>Today I built ______.</p>
+<p>I built it using this code: ______.</p>
+<p>In this code I used ______.</p>
+<p>The hardest part was ______.</p>
+<p>That part was hard because ______.</p>
 </blockquote>
-<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
-
-<hr />
-<h2>4 · Record Your Walkthrough 🎥</h2>
-<p>Now take a video on your phone (or a parent's phone) while you walk the camera through your world. Talk through it like you are teaching someone who has never seen it. Try to use these words: <strong>place</strong>, <strong>block</strong>, <strong>move</strong>, <strong>forward</strong>, <strong>up</strong>.</p>
-<blockquote>
-<ol>
-<li>Show the blocks you placed.</li>
-<li>Read your commands out loud and say what each one does.</li>
-<li>Point out where the blocks are stacked and explain how you did it.</li>
-</ol>
-</blockquote>
-<p><strong>Write what you will say in your video.</strong> Plan it here before you record — you can read from it while filming.</p>
+<p><strong>Write your lines here, then say them in your video.</strong></p>
 <p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
 
 <hr />
 <h3>Submit ✅</h3>
-<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.</p>
+<p>Send this worksheet + your video to teacher on KakaoTalk.</p>
 <div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>
 </div></body></html>

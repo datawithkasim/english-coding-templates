@@ -36,8 +36,8 @@ p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
 </blockquote>
 <hr />
 <h2>1 · Predict 🔮</h2>
-<p>In the <strong>Sloped Roof</strong> world, typing <code>slope</code> in the chat runs a program that builds a stepped roof. It does not build the roof block by block. Instead it stacks four square <strong>rings</strong> of stairs, one on top of the next. The bottom ring is the widest. Each ring above it is a little smaller, so the roof climbs inward and upward until it reaches a point at the top — like a small pyramid made of steps.</p>
-<p>The size of each ring is held in a variable called <code>roof_len</code>. This is the length of one side of the ring. It <strong>starts at 7</strong>, and every time a new ring is built it <strong>loses 2</strong>. So the side gets shorter each layer until the roof reaches its peak.</p>
+<p>In the <strong>Sloped Roof</strong> world, typing <code>slope</code> builds a stepped roof. It does not build block by block — it stacks four square <strong>rings</strong> of stairs, one on the next. The bottom ring is widest; each ring above is smaller, so the roof climbs inward and up to a point — like a small pyramid of steps.</p>
+<p>A variable called <code>roof_len</code> holds the side length of each ring. It <strong>starts at 7</strong> and <strong>loses 2</strong> each ring. So the side shrinks each layer until the roof reaches its peak.</p>
 <p><strong>Write the four values of <code>roof_len</code>, from the bottom ring to the top ring.</strong></p>
 <p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
 
@@ -47,13 +47,13 @@ p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
 <p><strong>What is the LAST value of <code>roof_len</code>, the one at the very top? What kind of shape does a ring that small make?</strong></p>
 <p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
 
-<p>Now meet a second variable. Imagine there is a variable called <code>step</code> that decides <strong>how much the ring shrinks</strong> each layer. Right now <code>step</code> is 2, so the side drops 7, 5, 3, 1.</p>
+<p>Meet a second variable, <code>step</code> — it decides <strong>how much the ring shrinks</strong> each layer. Right now <code>step</code> is 2, so the side drops 7, 5, 3, 1.</p>
 <p><strong>If <code>step</code> were 1 instead of 2, would the roof be steeper (rises fast) or gentler (rises slowly)? Would it need MORE rings or FEWER rings to reach the peak? Explain why in a sentence or two.</strong></p>
 <p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
 
 <hr />
 <h2>2 · Trace Two Things 🔢</h2>
-<p>Each layer changes two things at once. The ring <strong>side</strong> gets smaller, and the <strong>height</strong> goes up by 1 (each ring sits one block higher than the last). Fill in the table. Start <code>roof_len</code> at 7 and a height of 1, take 2 off the side each row, and add 1 to the height each row.</p>
+<p>Each layer changes two things: the ring <strong>side</strong> gets smaller and the <strong>height</strong> goes up by 1. Fill in the table. Start <code>roof_len</code> at 7 and height at 1; take 2 off the side and add 1 to the height each row.</p>
 <table>
 <thead>
 <tr>
@@ -96,8 +96,8 @@ p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
 
 <hr />
 <h2>3 · Reason About Bugs 🧠</h2>
-<p>No code to rewrite here — just read what goes wrong and explain it in writing.</p>
-<p><strong>Bug A — The shrink happens too early.</strong> Imagine the program takes 2 off <code>roof_len</code> <strong>before</strong> it builds the ring, instead of after. So the first ring is built using the already-shrunk number, not 7.</p>
+<p>No code to rewrite — read what goes wrong and explain it in writing.</p>
+<p><strong>Bug A — The shrink happens too early.</strong> The program takes 2 off <code>roof_len</code> <strong>before</strong> it builds the ring, not after. So the first ring uses the shrunk number, not 7.</p>
 <p><strong>What goes wrong with the roof? (Think about the bottom ring.) How would you fix the order of the steps?</strong></p>
 <p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
 
@@ -117,40 +117,28 @@ p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
 <p><strong>How many rings does it take to reach the peak?</strong></p>
 <p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
 
-<p><strong>Now the big idea. The whole roof is built from one variable plus one shrink rule, instead of four rings written out by hand. In writing, explain WHY that is better. To help you think: if you wanted a much bigger roof, what is the smallest thing you would change?</strong></p>
+<p><strong>The big idea: the whole roof is built from one variable plus one shrink rule, instead of four rings written by hand. Explain WHY that is better. If you wanted a much bigger roof, what is the smallest thing you would change?</strong></p>
 <p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
 
 <hr />
-<h2>5 · Build It 📸</h2>
+<h2>5 · Show Your Work 📸🎥</h2>
 <p>Open the <strong>Sloped Roof</strong> world and type <code>slope</code> in the chat to run the program and watch the roof build. Then build your <strong>own</strong> version by changing the numbers — try a different starting <code>roof_len</code> or a different <code>step</code> and see how the roof changes shape.</p>
-<p>Send a photo or video of your roof, then explain what you did. Use these starters — write 4 to 6 sentences total.</p>
+<p>Record <strong>one video</strong> (a phone is fine). Show two things:</p>
+<p><strong>1 · Your code.</strong> Scroll through it. Say what each part does.</p>
+<p><strong>2 · Your build.</strong> Point the camera. Name the parts.</p>
+<p>Fill the blanks:</p>
 <blockquote>
-<p>First, I ran <code>slope</code> and saw …</p>
-<p>The <strong>variable</strong> I changed was …</p>
-<p>I gave it a new <strong>value</strong> of …</p>
-<p>Each layer the program <strong>updates</strong> the side by …</p>
-<p>My <strong>slope</strong> turned out steeper / gentler because …</p>
-<p>The <strong>peak</strong> was reached after … rings.</p>
+<p>Today I built ______.</p>
+<p>I built it using this code: ______.</p>
+<p>In this code I used ______.</p>
+<p>The hardest part was ______.</p>
+<p>That part was hard because ______.</p>
 </blockquote>
-<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
-
-<hr />
-<h2>6 · Record Your Walkthrough 🎥</h2>
-<p>Take a video on your phone (or a parent's phone) and teach someone how the sloped roof works. You are narrating and explaining — not presenting to a class. Try to use these words: <strong>variable</strong>, <strong>value</strong>, <strong>update</strong>, <strong>slope</strong>, <strong>peak</strong>, <strong>ring</strong>.</p>
-<blockquote>
-<ol>
-<li>Point to the bottom <strong>ring</strong> and the <strong>peak</strong>, and say which is wider.</li>
-<li>Explain the <strong>variable</strong> <code>roof_len</code> and its starting <strong>value</strong>.</li>
-<li>Show how the program <strong>updates</strong> that value — taking 2 off each layer.</li>
-<li>Explain how the shrinking makes the <strong>slope</strong>, and why the rings stop at the <strong>peak</strong>.</li>
-<li>Say one thing you would change to make a bigger or steeper roof.</li>
-</ol>
-</blockquote>
-<p><strong>Write what you will say in your video.</strong> Plan it here first — you can read from it while filming.</p>
+<p><strong>Write your lines here, then say them in your video.</strong></p>
 <p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
 
 <hr />
 <h3>Submit ✅</h3>
-<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.</p>
+<p>Send this worksheet + your video to teacher on KakaoTalk.</p>
 <div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>
 </div></body></html>

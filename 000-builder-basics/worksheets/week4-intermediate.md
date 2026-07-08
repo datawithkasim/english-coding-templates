@@ -6,7 +6,7 @@
 
 ## 1 · Predict 🔮
 
-Read each set of steps. Before you imagine the agent doing it, write what you think will happen.
+Read each set of steps. Write what you think will happen.
 
 ```
 repeat 8 times:
@@ -44,7 +44,7 @@ repeat 3 times:
 
 ## 2 · Find the Bug 🐛
 
-Each block below is meant to do something, but it is broken. The goal is written first. Read the goal, then find the bug, fix the code, and explain in one short sentence why your fix works.
+Each code block is broken. The goal is written first. Fix the code, then explain in one sentence why your fix works.
 
 **Bug A** — Goal: a single wall that is **8 blocks long** on the ground. *Hint: count how many times the loop runs.*
 
@@ -100,7 +100,7 @@ repeat 8 times:
 
 ## 3 · Fill the Gap ✏️
 
-The agent should build one wall, turn right, then build a second wall. Two lines are missing. Fill them in using the word bank.
+The agent should build one wall, turn right, then a second wall. Two lines are missing.
 
 ```
 repeat 8 times:
@@ -120,33 +120,29 @@ repeat 8 times:
 
 ---
 
-## 4 · Tell Me What You Built 📸
+## 4 · Show Your Work 📸🎥
 
 Now switch to your homework world. Build your house walls with **no roof yet** — about 8 blocks long and 8 blocks tall, using two loops. When you finish, come back here.
 
-Send a photo or video of your house, then explain what you did. Use these sentence starters — write 3 or 4 sentences total.
+Record **one video** (a phone is fine). Show two things:
 
-> First, I …
+**1 · Your code.** Scroll through it. Say what each part does.
+
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
 >
-> My first loop did …
+> I built it using this code: ______.
 >
-> My second loop did …
+> In this code I used ______.
 >
-> The hardest part was …
+> The hardest part was ______.
+>
+> That part was hard because ______.
 
-<div class="write-space tall" style="min-height: 340px"></div>
-
----
-
-## 5 · Record Your Walkthrough 🎥
-
-Take a video on your phone (or a parent's phone) while you walk around your house. Talk through it like you are teaching a friend who has never seen it. Try to use these words: **loop**, **repeat**, **block**, **wall**, **bug**.
-
-> 1. Show the outside and say how long and how tall it is.
-> 2. Read your two loops out loud and say what each one does.
-> 3. Show one bug you hit and how you fixed it.
-
-**Write what you will say in your video.** Plan it here first — you can read from it while filming.
+**Write your lines here, then say them in your video.**
 
 <div class="write-space tall" style="min-height: 340px"></div>
 
@@ -154,4 +150,4 @@ Take a video on your phone (or a parent's phone) while you walk around your hous
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + your video to teacher on KakaoTalk.

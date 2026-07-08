@@ -109,25 +109,21 @@ footer b { color: #ff7849; }
 <div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
 <h1>🎮 M004 Week 3 — English Worksheet (Beginner)</h1>
 <p><strong>Topic:</strong> Sensing the World · <strong>Course:</strong> Functions &amp; Games · <strong>Level:</strong> Beginner · <strong>Time:</strong> about 30 minutes</p>
-<p>This week your agent <strong>senses</strong> the world before it acts. It can detect a block <strong>ahead</strong> and check what is <strong>below</strong> — like stopping before lava.</p>
+<p>This week your agent <strong>senses</strong> the world before it acts. It can detect a block <strong>ahead</strong> and check what is <strong>below</strong>.</p>
 <h2>1 · Predict 🔮</h2>
-<p>Read the steps. Before you imagine the agent doing it, circle or write your answer.</p>
 <pre><code>if agent detects block ahead:
     turn left
 otherwise:
     move forward
 </code></pre>
-<p><strong>There is a wall right in front of the agent. Does the agent turn left? Circle one:</strong> yes · no</p>
-<div class="qa"><p><strong>Why?</strong></p>
-<div class="write-space short"></div></div>
-
+<p><strong>A wall is right in front of the agent. Does it turn left? Circle one:</strong> yes · no</p>
+<p><strong>Why? Circle one:</strong> it detects the block ahead · the path is open</p>
 <pre><code>if block below is lava:
     place block below
 move forward
 </code></pre>
 <p><strong>The agent is standing over lava. Does it place a safe block before moving? Circle one:</strong> yes · no</p>
 <h2>2 · Find the Difference 🐛</h2>
-<p>Each pair shows clean steps first, then a broken version of the same idea. Circle what's different and write one short sentence about the bug.</p>
 <p><strong>Pair A</strong> — The lava is <strong>below</strong> the agent, so the check should look below.</p>
 <pre><code># clean
 if block below is lava:
@@ -137,9 +133,7 @@ if block below is lava:
 if agent detects block ahead:
     place block below
 </code></pre>
-<div class="qa"><p><strong>What is wrong? Where does the buggy agent look?</strong></p>
-<div class="write-space short"></div></div>
-
+<p><strong>What is wrong? Circle one:</strong> looks ahead not below · looks below not ahead</p>
 <p><strong>Pair B</strong> — On safe ground the agent should still <strong>move</strong>. It needs an <code>otherwise</code>.</p>
 <pre><code># clean
 if block below is lava:
@@ -151,44 +145,33 @@ otherwise:
 if block below is lava:
     place block below
 </code></pre>
-<div class="qa"><p><strong>What is wrong?</strong></p>
-<div class="write-space short"></div></div>
-
+<p><strong>What is wrong? Circle one:</strong> no <code>otherwise</code> to move · no <code>if</code> check</p>
 <h2>3 · Fill the Gap ✏️</h2>
-<p>The agent should place a safe block when the block under its feet is lava. One word is missing. Fill it in using the word bank.</p>
+<p>One word is missing.</p>
 <pre><code>if block ____ is lava:
     place block below
 otherwise:
     move forward
 </code></pre>
-<p><strong>Word bank:</strong> <code>below</code> · <code>ahead</code> · <code>repeat</code></p>
-<div class="qa"><p><strong>Write the missing word:</strong></p>
-<div class="write-space short"></div></div>
-
-<h2>4 · Tell Me What You Built 📸</h2>
+<p><strong>Fill the gap. Circle one:</strong> <code>below</code> · <code>ahead</code> · <code>repeat</code></p>
+<h2>4 · Show Your Work 📸🎥</h2>
 <p>Now switch to your homework world. Send your agent across the danger field using at least one <code>if block below is …</code> check. When you finish, come back here.</p>
-<p>Send a photo or video of the agent crossing safely, then explain what you did. Use these sentence starters — write 2 or 3 sentences.</p>
-<div class="qa"><blockquote>
-<p>My agent detected …</p>
-<p>When the block below was lava, my agent …</p>
-<p>One tricky moment was when …</p>
-</blockquote>
-<div class="write-space tall" style="min-height: 240px"></div></div>
-
-<h2>5 · Record Your Walkthrough 🎥</h2>
-<p>Take a video on your phone (or a parent's phone) while the agent crosses the field. Talk like you are teaching a friend. Try to use these words: <strong>detect</strong>, <strong>below</strong>, <strong>ahead</strong>.</p>
+<p>Record <strong>one video</strong> (a phone is fine). Show two things:</p>
+<p><strong>1 · Your code.</strong> Scroll through it. Say what each part does.</p>
+<p><strong>2 · Your build.</strong> Point the camera. Name the parts.</p>
+<p>Fill the blanks:</p>
 <blockquote>
-<ol>
-<li>Show the danger field, then run your code.</li>
-<li>Read your <code>if block below is …</code> line out loud.</li>
-<li>Say in your own words why the agent checks <strong>before</strong> it moves.</li>
-</ol>
+<p>Today I built ______.</p>
+<p>I built it using this code: ______.</p>
+<p>In this code I used ______.</p>
+<p>The hardest part was ______.</p>
+<p>That part was hard because ______.</p>
 </blockquote>
-<div class="qa"><p><strong>Write what you will say in your video.</strong> You can read from it while filming.</p>
-<div class="write-space tall" style="min-height: 240px"></div></div>
+<div class="qa"><p><strong>Write your lines here, then say them in your video.</strong></p>
+<div class="write-space tall" style="min-height: 340px"></div></div>
 
 <hr />
 <h3>Submit ✅</h3>
-<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.</p>
+<p>Send this worksheet + your video to teacher on KakaoTalk.</p>
 </body>
 </html>

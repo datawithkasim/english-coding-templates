@@ -6,7 +6,7 @@
 
 ## 1 · Predict 🔮
 
-Read the steps. Before you imagine the agent doing it, circle or write your answer.
+Read the steps. Circle your answer.
 
 ```
 move forward
@@ -15,9 +15,7 @@ move forward
 
 **How many steps does the agent take? Circle one:** 1 · 2 · 3
 
-**Where is the agent now? Write one short sentence.**
-
-<div class="write-space short"></div>
+**Where is the agent now? Circle one:** 2 steps ahead · back at the start · up high
 
 ```
 move forward
@@ -27,15 +25,13 @@ move forward
 
 **Does the agent walk in a straight line? Circle one:** yes · no
 
-**What does `turn right` change?**
-
-<div class="write-space short"></div>
+**What does `turn right` change? Circle one:** the way it faces · its height · the block it holds
 
 ---
 
 ## 2 · Find the Difference 🐛
 
-Each pair shows clean steps first, then a broken version of the same idea. Circle what's different and write one short sentence about the bug.
+Clean steps first, then a broken version. Circle the bug.
 
 **Pair A** — The agent should walk 3 steps forward.
 
@@ -52,9 +48,7 @@ move forward
 move forward
 ```
 
-**What is wrong?**
-
-<div class="write-space short"></div>
+**What is wrong? Circle one:** one step missing · one step extra · a wrong turn
 
 **Pair B** — The agent should walk forward, then turn right.
 
@@ -70,15 +64,13 @@ turn right
 move forward
 ```
 
-**What is wrong?**
-
-<div class="write-space short"></div>
+**What is wrong? Circle one:** wrong order · a step is missing · an extra turn
 
 ---
 
 ## 3 · Fill the Gap ✏️
 
-The agent should go forward 2 steps, then go **up** 2 blocks. One line is missing. Fill it in using the word bank.
+The agent goes forward 2 steps, then **up** 2 blocks. One line is missing.
 
 ```
 move forward
@@ -86,44 +78,38 @@ move forward
 ____________
 ```
 
-**Word bank:** `move up by 2` · `turn right` · `move forward`
-
-**Write the missing line:**
-
-<div class="write-space short"></div>
+**Which line is missing? Circle one:** move up by 2 · turn right · move forward
 
 ---
 
-## 4 · Tell Me What You Built 📸
+## 4 · Show Your Work 📸🎥
 
 Now switch to your homework world. Move your agent **5 steps forward**, then make it **turn once**. When you finish, come back here.
 
-Send a photo or video of where the agent ended up, then explain what you did. Use these sentence starters — write 2 or 3 sentences.
+Record **one video** (a phone is fine). Show two things:
 
-> First, I told the agent to …
+**1 · Your code.** Scroll through it. Say what each part does.
+
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
 >
-> Then it turned …
+> I built it using this code: ______.
 >
-> The agent ended up at …
+> In this code I used ______.
+>
+> The hardest part was ______.
+>
+> That part was hard because ______.
 
-<div class="write-space tall" style="min-height: 240px"></div>
+**Write your lines here, then say them in your video.**
 
----
-
-## 5 · Record Your Walkthrough 🎥
-
-Take a video on your phone (or a parent's phone) and show your world. Talk like you are teaching a friend. Try to use these words: **move**, **forward**, **turn**, **agent**.
-
-> 1. Show where the agent started.
-> 2. Read your commands out loud.
-> 3. Show where the agent ended up.
-
-**Write what you will say in your video.** You can read from it while filming.
-
-<div class="write-space tall" style="min-height: 240px"></div>
+<div class="write-space tall" style="min-height: 340px"></div>
 
 ---
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + your video to teacher on KakaoTalk.

@@ -2,7 +2,7 @@
 
 **Topic:** One Function, Many Coasters — Parameters · **Course:** Theme Park Creator · **Level:** Beginner · **Time:** about 30 minutes
 
-This week you build a roller coaster with a **function**. You give it **parameters** — numbers it uses inside — so the same function can build a long coaster or a short one, just by changing the numbers you **call** it with.
+This week you build a roller coaster with a **function**. You give it **parameters** — numbers it uses inside. Change the numbers you **call** it with to build a long coaster or a short one.
 
 These are the blocks you use this week:
 
@@ -18,7 +18,7 @@ rollerCoasterBuilder.add_ramp(RcbVerticalDirection.DOWN, 10)
 
 ## 1 · Predict 🔮
 
-Read the code. Before you imagine the cart riding it, circle or write your answer.
+Read the code. Circle your answer.
 
 ```python
 def build_hill(line_len):
@@ -30,9 +30,7 @@ build_hill(6)
 
 **The straight line will be 6 blocks long. Circle one:** yes · no
 
-**Why?**
-
-<div class="write-space short"></div>
+**Why 6? Circle one:** we called `build_hill(6)` · we called `build_hill(10)`
 
 ```python
 def build_hill(line_len):
@@ -46,7 +44,7 @@ def build_hill(line_len):
 
 ## 2 · Find the Difference 🐛
 
-Each pair shows clean code first, then a broken version of the same idea. Circle what's different and write one short sentence about the bug.
+Clean code first, then a broken version. Circle the answer.
 
 **Pair A** — The function should be **called** so the hill gets built.
 
@@ -66,9 +64,7 @@ def build_hill(line_len):
     rollerCoasterBuilder.add_ramp(RcbVerticalDirection.UP, line_len)
 ```
 
-**What is wrong? Why does the buggy code build nothing?**
-
-<div class="write-space short"></div>
+**What is wrong? Circle one:** no call after `def` · wrong number · wrong color
 
 **Pair B** — The function should use the **parameter** `line_len`, not a fixed number.
 
@@ -84,15 +80,13 @@ def build_hill(line_len):
     rollerCoasterBuilder.add_straight_line(10)
 ```
 
-**What is wrong?**
-
-<div class="write-space short"></div>
+**What is wrong? Circle one:** it uses `10`, not `line_len` · it uses `line_len`, not `10` · nothing
 
 ---
 
 ## 3 · Fill the Gap ✏️
 
-This coaster should go **up** and then come back **down** so the cart lands safely. One word is missing. Fill it in using the word bank.
+This coaster goes **up** then **down** so the cart lands safely. One word is missing.
 
 ```python
 def up_and_down(ramp_len):
@@ -102,44 +96,38 @@ def up_and_down(ramp_len):
 up_and_down(10)
 ```
 
-**Word bank:** `DOWN` · `UP` · `LEFT`
-
-**Write the missing word:**
-
-<div class="write-space short"></div>
+**Which word is missing? Circle one:** `DOWN` · `UP` · `LEFT`
 
 ---
 
-## 4 · Tell Me What You Built 📸
+## 4 · Show Your Work 📸🎥
 
 Now switch to your homework world. Write one `build_hill` function with a `line_len` parameter and a ramp up, then call it two times with different numbers. When you finish, come back here.
 
-Send a photo or video of your coaster, then explain what you did. Use these sentence starters — write 2 or 3 sentences.
+Record **one video** (a phone is fine). Show two things:
 
-> My function's parameter was …
+**1 · Your code.** Scroll through it. Say what each part does.
+
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
 >
-> When I called it with a bigger number, …
+> I built it using this code: ______.
 >
-> One tricky moment was when …
+> In this code I used ______.
+>
+> The hardest part was ______.
+>
+> That part was hard because ______.
 
-<div class="write-space tall" style="min-height: 240px"></div>
+**Write your lines here, then say them in your video.**
 
----
-
-## 5 · Record Your Walkthrough 🎥
-
-Take a video on your phone (or a parent's phone) while your code builds the coaster. Talk like you are teaching a friend. Try to use these words: **function**, **parameter**, **call**.
-
-> 1. Show your function and run your code.
-> 2. Show two coasters built with different numbers.
-> 3. Say in your own words what a **parameter** is.
-
-**Write what you will say in your video.** You can read from it while filming.
-
-<div class="write-space tall" style="min-height: 240px"></div>
+<div class="write-space tall" style="min-height: 340px"></div>
 
 ---
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + your video to teacher on KakaoTalk.

@@ -2,13 +2,11 @@
 
 **Topic:** Sensing the World · **Course:** Functions & Games · **Level:** Beginner · **Time:** about 30 minutes
 
-This week your agent **senses** the world before it acts. It can detect a block **ahead** and check what is **below** — like stopping before lava.
+This week your agent **senses** the world before it acts. It can detect a block **ahead** and check what is **below**.
 
 ---
 
 ## 1 · Predict 🔮
-
-Read the steps. Before you imagine the agent doing it, circle or write your answer.
 
 ```
 if agent detects block ahead:
@@ -17,11 +15,9 @@ otherwise:
     move forward
 ```
 
-**There is a wall right in front of the agent. Does the agent turn left? Circle one:** yes · no
+**A wall is right in front of the agent. Does it turn left? Circle one:** yes · no
 
-**Why?**
-
-<div class="write-space short"></div>
+**Why? Circle one:** it detects the block ahead · the path is open
 
 ```
 if block below is lava:
@@ -34,8 +30,6 @@ move forward
 ---
 
 ## 2 · Find the Difference 🐛
-
-Each pair shows clean steps first, then a broken version of the same idea. Circle what's different and write one short sentence about the bug.
 
 **Pair A** — The lava is **below** the agent, so the check should look below.
 
@@ -51,9 +45,7 @@ if agent detects block ahead:
     place block below
 ```
 
-**What is wrong? Where does the buggy agent look?**
-
-<div class="write-space short"></div>
+**What is wrong? Circle one:** looks ahead not below · looks below not ahead
 
 **Pair B** — On safe ground the agent should still **move**. It needs an `otherwise`.
 
@@ -71,15 +63,13 @@ if block below is lava:
     place block below
 ```
 
-**What is wrong?**
-
-<div class="write-space short"></div>
+**What is wrong? Circle one:** no `otherwise` to move · no `if` check
 
 ---
 
 ## 3 · Fill the Gap ✏️
 
-The agent should place a safe block when the block under its feet is lava. One word is missing. Fill it in using the word bank.
+One word is missing.
 
 ```
 if block ____ is lava:
@@ -88,44 +78,38 @@ otherwise:
     move forward
 ```
 
-**Word bank:** `below` · `ahead` · `repeat`
-
-**Write the missing word:**
-
-<div class="write-space short"></div>
+**Fill the gap. Circle one:** `below` · `ahead` · `repeat`
 
 ---
 
-## 4 · Tell Me What You Built 📸
+## 4 · Show Your Work 📸🎥
 
 Now switch to your homework world. Send your agent across the danger field using at least one `if block below is …` check. When you finish, come back here.
 
-Send a photo or video of the agent crossing safely, then explain what you did. Use these sentence starters — write 2 or 3 sentences.
+Record **one video** (a phone is fine). Show two things:
 
-> My agent detected …
+**1 · Your code.** Scroll through it. Say what each part does.
+
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
 >
-> When the block below was lava, my agent …
+> I built it using this code: ______.
 >
-> One tricky moment was when …
+> In this code I used ______.
+>
+> The hardest part was ______.
+>
+> That part was hard because ______.
 
-<div class="write-space tall" style="min-height: 240px"></div>
+**Write your lines here, then say them in your video.**
 
----
-
-## 5 · Record Your Walkthrough 🎥
-
-Take a video on your phone (or a parent's phone) while the agent crosses the field. Talk like you are teaching a friend. Try to use these words: **detect**, **below**, **ahead**.
-
-> 1. Show the danger field, then run your code.
-> 2. Read your `if block below is …` line out loud.
-> 3. Say in your own words why the agent checks **before** it moves.
-
-**Write what you will say in your video.** You can read from it while filming.
-
-<div class="write-space tall" style="min-height: 240px"></div>
+<div class="write-space tall" style="min-height: 340px"></div>
 
 ---
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + your video to teacher on KakaoTalk.

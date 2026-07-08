@@ -1,0 +1,151 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head><meta charset='utf-8'>
+<title>🧩 M002 Extension 3 — Builder Challenge</title>
+<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
+<style>
+@page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
+div.WordSection1 { page: WordSection1; }
+body { font-family: "Segoe UI", Arial, sans-serif; font-size: 11.5pt; color: #1a1a2e; line-height: 1.5; }
+h1 { font-size: 21pt; color: #6b4ee6; margin: 4px 0 6px; }
+h2 { font-size: 15pt; color: #6b4ee6; border-top: 1px solid #dddddd; padding-top: 8px; margin: 18px 0 10px; }
+h3, h4 { font-size: 11.5pt; margin: 12px 0 6px; }
+p { margin: 7px 0; }
+.brand { font-size: 10.5pt; font-weight: bold; color: #ff7849; letter-spacing: .06em;
+         border-bottom: 2px solid #ff7849; padding-bottom: 6px; margin-bottom: 14px; }
+table { border-collapse: collapse; margin: 10px 0; }
+th, td { border: 1px solid #c8c8c8; padding: 4px 9px; text-align: center; }
+th { background: #f3eefc; color: #6b4ee6; font-weight: bold; }
+pre { font-family: Consolas, "Courier New", monospace; font-size: 10.5pt; background: #f4f4f5;
+      border: 1px solid #dddddd; padding: 8px 10px; white-space: pre-wrap; }
+pre code { background: transparent; color: #1a1a2e; }
+code { font-family: Consolas, "Courier New", monospace; background: #fff1e8; color: #d6531f; padding: 0 3px; }
+blockquote { border-left: 3px solid #ff7849; background: #fff6ef; padding: 8px 12px;
+             color: #6a3a1c; margin: 9px 0; }
+ul, ol { margin: 7px 0 7px 26px; }
+p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
+.footer { color: #999999; font-size: 8.5pt; text-align: center; margin-top: 18px;
+          border-top: 1px solid #eeeeee; padding-top: 6px; }
+.footer b { color: #ff7849; }
+</style></head>
+<body><div class=WordSection1>
+<div class="brand">📚 ENGLISH CODING · 영어코딩</div>
+<h1>🧩 M002 Extension 3 — Builder Challenge</h1>
+<p><strong>Topic:</strong> Design a Maze + Write the Solution · <strong>Course:</strong> Maze Madness · <strong>Level:</strong> Extension (Advanced) · <strong>Time:</strong> about 60 minutes</p>
+<p>This time you are the maze maker. Design one maze that <strong>stretches through 6 zones</strong>, wire it with pistons and doors, then write the <strong>solution code</strong> that drives the agent to the end.</p>
+<p>Open <strong>M002 EXT 3 — Cube World</strong> and build inside it. Drive the agent with chat: <code>l</code> turns left, <code>r</code> turns right, <code>run</code> starts your solver, <code>rl</code> teleports the agent back to you.</p>
+<p><strong>Your maze must include at least:</strong></p>
+<ul>
+<li><strong>2 pistons</strong> (each opens a wall or path when powered)</li>
+<li><strong>2 doors</strong> (the agent opens them with <code>agent.interact(...)</code>)</li>
+<li><strong>4 AND conditions</strong> in your solution (<code>... and ...</code>)</li>
+<li><strong>1 OR condition</strong> in your solution (<code>... or ...</code>)</li>
+</ul>
+<p>Tick off each part as you go.</p>
+<hr />
+<h2>1 · Design Your 6 Zones 🗺️</h2>
+<p>Your maze runs through <strong>6 zones</strong> in a row. Give each zone one job: a turn, a piston, a door, or a junction that checks two things.</p>
+<p><strong>Sketch your 6 zones.</strong> Write each zone number and what makes it tricky.</p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Where go your 2 pistons? Which zones, and what does each open?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Where go your 2 doors? What is behind each one?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>2 · Build the Maze 🧱</h2>
+<p>Build it in the world. Walk it yourself first (no code) to check a person can reach the end, then tick each part as you place it.</p>
+<blockquote>
+<p>☐ Zone 1 built</p>
+<p>☐ Zone 2 built</p>
+<p>☐ Zone 3 built</p>
+<p>☐ Zone 4 built</p>
+<p>☐ Zone 5 built</p>
+<p>☐ Zone 6 built</p>
+<p>☐ Piston #1 placed and tested</p>
+<p>☐ Piston #2 placed and tested</p>
+<p>☐ Door #1 placed</p>
+<p>☐ Door #2 placed</p>
+<p>☐ A clear START block and a clear GOAL block</p>
+</blockquote>
+<p><strong>What broke while you built it? What did you change?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>3 · Write the Solution 💻</h2>
+<p>Write the <strong>solver</strong> with a <code>while True</code> loop so it checks every step. It needs <strong>at least 4 AND conditions and 1 OR condition.</strong></p>
+<p>Fill in this shape for <strong>your</strong> maze.</p>
+<pre><code class="language-python">while True:
+    agent.move(FORWARD, 1)
+
+    # a junction — turn only when BOTH things are true  (AND)
+    if agent.detect(BLOCK, LEFT) and agent.detect(REDSTONE, AHEAD):
+        agent.turn(LEFT_TURN)
+
+    # a door OR a piston gate — handle either one  (OR)
+    elif agent.detect(BLOCK, AHEAD) or agent.detect(REDSTONE, RIGHT):
+        agent.interact(AHEAD)
+        agent.move(FORWARD, 1)
+</code></pre>
+<p><strong>Write your full solution here.</strong> Add <code>if</code> / <code>elif</code> until it covers all 6 zones, marking each AND with <code># AND</code> and each OR with <code># OR</code>.</p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>4 · Count Your Logic ✅</h2>
+<p>Go back through your solution and <strong>count.</strong> Write the number, then copy one real line as proof.</p>
+<p><strong>How many AND conditions? (need at least 4)</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Copy one AND line:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>How many OR conditions? (need at least 1)</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Copy your OR line:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why did that spot need OR instead of AND? What two things is it checking for?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>5 · Spot and Fix the Bugs 🐞</h2>
+<p>Read each, say what goes wrong, then write the fix.</p>
+<pre><code class="language-python"># Should turn left only when a wall is on the left AND redstone is ahead.
+if agent.detect(BLOCK, LEFT) or agent.detect(REDSTONE, AHEAD):
+    agent.turn(LEFT_TURN)
+</code></pre>
+<p><strong>What is wrong, and what is the fixed line?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python"># Should open a door ahead, then step through it.
+elif agent.detect(BLOCK, AHEAD):
+    agent.move(FORWARD, 1)
+    agent.interact(AHEAD)
+</code></pre>
+<p><strong>What is wrong, and what is the fixed code?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>6 · Show Your Work 📸🎥</h2>
+<p>Type <code>run</code> and watch the agent. It will get stuck somewhere — that is normal. Find where it stops, fix that part of your code or your maze, and run it again. Use <code>rl</code> to send it back between tries. Keep going until the agent reaches the <strong>GOAL</strong> all by itself.</p>
+<p>Record <strong>one video</strong> (a phone is fine). Show two things:</p>
+<p><strong>1 · Your code.</strong> Scroll through it. Say what each part does.</p>
+<p><strong>2 · Your build.</strong> Point the camera. Name the parts.</p>
+<p>Fill the blanks:</p>
+<blockquote>
+<p>Today I built ______.</p>
+<p>I built it using this code: ______.</p>
+<p>In this code I used ______.</p>
+<p>The hardest part was ______.</p>
+<p>That part was hard because ______.</p>
+</blockquote>
+<p><strong>Write your lines here, then say them in your video.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your video to teacher on KakaoTalk.</p>
+<div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>
+</div></body></html>

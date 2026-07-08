@@ -1,0 +1,167 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head><meta charset='utf-8'>
+<title>🎢 005 Week 1 — English Worksheet</title>
+<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
+<style>
+@page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
+div.WordSection1 { page: WordSection1; }
+body { font-family: "Segoe UI", Arial, sans-serif; font-size: 11.5pt; color: #1a1a2e; line-height: 1.5; }
+h1 { font-size: 21pt; color: #6b4ee6; margin: 4px 0 6px; }
+h2 { font-size: 15pt; color: #6b4ee6; border-top: 1px solid #dddddd; padding-top: 8px; margin: 18px 0 10px; }
+h3, h4 { font-size: 11.5pt; margin: 12px 0 6px; }
+p { margin: 7px 0; }
+.brand { font-size: 10.5pt; font-weight: bold; color: #ff7849; letter-spacing: .06em;
+         border-bottom: 2px solid #ff7849; padding-bottom: 6px; margin-bottom: 14px; }
+table { border-collapse: collapse; margin: 10px 0; }
+th, td { border: 1px solid #c8c8c8; padding: 4px 9px; text-align: center; }
+th { background: #f3eefc; color: #6b4ee6; font-weight: bold; }
+pre { font-family: Consolas, "Courier New", monospace; font-size: 10.5pt; background: #f4f4f5;
+      border: 1px solid #dddddd; padding: 8px 10px; white-space: pre-wrap; }
+pre code { background: transparent; color: #1a1a2e; }
+code { font-family: Consolas, "Courier New", monospace; background: #fff1e8; color: #d6531f; padding: 0 3px; }
+blockquote { border-left: 3px solid #ff7849; background: #fff6ef; padding: 8px 12px;
+             color: #6a3a1c; margin: 9px 0; }
+ul, ol { margin: 7px 0 7px 26px; }
+p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
+.footer { color: #999999; font-size: 8.5pt; text-align: center; margin-top: 18px;
+          border-top: 1px solid #eeeeee; padding-top: 6px; }
+.footer b { color: #ff7849; }
+</style></head>
+<body><div class=WordSection1>
+<div class="brand">📚 ENGLISH CODING · 영어코딩</div>
+<h1>🎢 005 Week 1 — English Worksheet</h1>
+<p><strong>Topic:</strong> One Function, Many Coasters — Parameters · <strong>Course:</strong> Theme Park Creator · <strong>Time:</strong> about 45 minutes</p>
+<p>This week you build a roller coaster with a <strong>function</strong>. You give it <strong>parameters</strong> — numbers it uses inside. Change the numbers you <strong>call</strong> it with to build a long coaster, a short one, a tall spiral, or a wide one.</p>
+<p>These are the blocks you use this week:</p>
+<pre><code class="language-python">rollerCoasterBuilder.add_straight_line(10)
+rollerCoasterBuilder.add_ramp(RcbVerticalDirection.UP, 10)
+rollerCoasterBuilder.add_spiral(RcbVerticalDirection.UP, TurnDirection.LEFT, 10, 3)
+rollerCoasterBuilder.add_turn(TurnDirection.LEFT)
+</code></pre>
+<blockquote>
+<p><code>add_spiral(...)</code>'s last two numbers are the <strong>height</strong> then the <strong>width</strong> of the spiral.
+A direction is <code>UP</code> or <code>DOWN</code>. A turn is <code>LEFT</code> or <code>RIGHT</code>.</p>
+</blockquote>
+<hr />
+<h2>1 · Predict 🔮</h2>
+<p>Read each function. Write what you think will happen.</p>
+<pre><code class="language-python">def build_hill(line_len):
+    rollerCoasterBuilder.add_straight_line(line_len)
+    rollerCoasterBuilder.add_ramp(RcbVerticalDirection.UP, line_len)
+
+build_hill(8)
+</code></pre>
+<p><strong>The parameter <code>line_len</code> is used twice. How long is the straight part, and how tall is the ramp?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">def build_hill(line_len):
+    rollerCoasterBuilder.add_straight_line(line_len)
+    rollerCoasterBuilder.add_ramp(RcbVerticalDirection.UP, line_len)
+
+build_hill(4)
+build_hill(12)
+</code></pre>
+<p><strong>The same function is called twice with different numbers. Are the two hills the same size? Which one is bigger?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">def build_spiral(spiral_height, spiral_width):
+    rollerCoasterBuilder.add_spiral(RcbVerticalDirection.UP, TurnDirection.LEFT, spiral_height, spiral_width)
+
+build_spiral(10, 3)
+</code></pre>
+<p><strong>This function has two parameters. Which number sets how <em>tall</em> the spiral is, and which sets how <em>wide</em>?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>2 · Spot the Bug 🐛</h2>
+<p>Each block is broken. Read what it should do, rewrite it so it works, then explain why the original was wrong.</p>
+<p><strong>Bug A</strong> — The code should build a hill 8 long. But when you run it, <strong>nothing happens at all</strong>.</p>
+<pre><code class="language-python">def build_hill(line_len):
+    rollerCoasterBuilder.add_straight_line(line_len)
+    rollerCoasterBuilder.add_ramp(RcbVerticalDirection.UP, line_len)
+</code></pre>
+<p><strong>Hint:</strong> writing <code>def</code> only <strong>teaches</strong> the function. Something is missing after it.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug B</strong> — The function should build a hill as long as the number you give it. But <code>build_hill(20)</code> and <code>build_hill(3)</code> build the <strong>same</strong> hill every time.</p>
+<pre><code class="language-python">def build_hill(line_len):
+    rollerCoasterBuilder.add_straight_line(10)
+    rollerCoasterBuilder.add_ramp(RcbVerticalDirection.UP, 10)
+
+build_hill(20)
+</code></pre>
+<p><strong>Hint:</strong> look at the numbers inside. The function never actually uses <code>line_len</code>.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug C</strong> — This coaster should go <strong>up</strong> and then come back <strong>down</strong> so the cart returns to ground level. But it just keeps climbing into the sky and never comes down.</p>
+<pre><code class="language-python">def up_and_down(ramp_len):
+    rollerCoasterBuilder.add_ramp(RcbVerticalDirection.UP, ramp_len)
+    rollerCoasterBuilder.add_ramp(RcbVerticalDirection.UP, ramp_len)
+
+up_and_down(10)
+</code></pre>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>3 · Build the Loop Coaster 🎢</h2>
+<p>In your homework world, write <strong>one</strong> function called <code>loop_coaster</code> that builds a coaster which <strong>loops all the way back to the starting area</strong>. Your function must have these <strong>four parameters</strong>:</p>
+<pre><code class="language-python">def loop_coaster(line_len, ramp_len, spiral_height, spiral_width):
+</code></pre>
+<p>Your coaster must include, in total:</p>
+<ul>
+<li><strong>2 ramps</strong> — one going <strong>UP</strong>, one coming back <strong>DOWN</strong></li>
+<li><strong>2 spirals</strong> — one going <strong>UP</strong>, one coming back <strong>DOWN</strong></li>
+<li>enough <strong>turns</strong> that the track curves around and ends back where it started</li>
+</ul>
+<p>Here are the building blocks. They all use <strong>fixed numbers</strong> and point the <strong>same way</strong>. Fix that:</p>
+<pre><code class="language-python">rollerCoasterBuilder.add_straight_line(10)
+rollerCoasterBuilder.add_ramp(RcbVerticalDirection.UP, 10)
+rollerCoasterBuilder.add_spiral(RcbVerticalDirection.UP, TurnDirection.LEFT, 10, 3)
+rollerCoasterBuilder.add_turn(TurnDirection.LEFT)
+</code></pre>
+<p>To finish the challenge you must:</p>
+<ol>
+<li><strong>Swap the numbers for parameters</strong> — replace <code>10</code>, <code>10</code>, <code>10</code>, <code>3</code> with <code>line_len</code>, <code>ramp_len</code>, <code>spiral_height</code>, <code>spiral_width</code> so the size is controlled by the call.</li>
+<li><strong>Flip the directions on the way back</strong> — change the second ramp and the second spiral from <code>UP</code> to <code>DOWN</code> so the cart returns to ground level.</li>
+<li><strong>Add turns</strong> — keep adding <code>add_turn(TurnDirection.LEFT)</code> until the track curves around and meets the start. Add or remove a turn until it closes the loop.</li>
+</ol>
+<p>Finally, <strong>call your function once</strong> with numbers you choose, for example:</p>
+<pre><code class="language-python">loop_coaster(8, 10, 10, 3)
+</code></pre>
+<p><strong>Write your finished <code>loop_coaster</code> function and the line that calls it:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>4 · Show Your Work 📸🎥</h2>
+<p>When your coaster loops back to the start, ride it once in your world.</p>
+<p>Record <strong>one video</strong> (a phone is fine). Show two things:</p>
+<p><strong>1 · Your code.</strong> Scroll through it. Say what each part does.</p>
+<p><strong>2 · Your build.</strong> Point the camera. Name the parts.</p>
+<p>Fill the blanks:</p>
+<blockquote>
+<p>Today I built ______.</p>
+<p>I built it using this code: ______.</p>
+<p>In this code I used ______.</p>
+<p>The hardest part was ______.</p>
+<p>That part was hard because ______.</p>
+</blockquote>
+<p><strong>Write your lines here, then say them in your video.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your video to teacher on KakaoTalk.</p>
+<div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>
+</div></body></html>

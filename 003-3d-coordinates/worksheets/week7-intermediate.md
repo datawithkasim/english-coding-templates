@@ -2,7 +2,7 @@
 
 **Topic:** Recreate 2 Mob Heads (x, y, z) · **Course:** 3D Coordinates · **Level:** Intermediate · **Time:** about 40 minutes
 
-Two blocky **mob heads** stand in your world — a **creeper** and a **skeleton**. Each one is a cube with a face on the **front**. The trick: build the **front face first** (keep z the same, read x across and y up), then **add depth** by repeating the cube at z = 2 and z = 3. Faces only show on the front; the sides and back stay plain.
+Two blocky **mob heads** stand in your world — a **creeper** and a **skeleton**, each a cube with a face on the **front**. Build the **front face first** (keep z the same, read x across and y up), then **add depth** at z = 2 and z = 3. Faces only show on the front; the sides and back stay plain.
 
 > 🔴 Stand on your **home spot** (red block) every run. Move your feet, move your head.
 
@@ -10,7 +10,7 @@ Two blocky **mob heads** stand in your world — a **creeper** and a **skeleton*
 
 ## 1 · Predict 🔮
 
-Read each set. Write a full sentence about what you will see.
+Read each set. Write a sentence about what you will see.
 
 ```
 fill green block from (0, 4, 1) to (4, 8, 1)
@@ -79,7 +79,7 @@ place black block at (1, 7, 2)
 
 ---
 
-## 3 · Build It 📸
+## 3 · Show Your Work 📸🎥
 
 Switch to your homework world. Build the **creeper head**: front face first, then depth, then the face.
 
@@ -99,37 +99,30 @@ place black block at (1, 4, 1)
 place black block at (3, 4, 1)
 ```
 
-Send a photo. When the creeper is done, start the **skeleton** head the same way (front face, then depth, then face) — but in white.
+Record **one video** (a phone is fine). Show two things:
 
-Now explain what you did. Use these starters — write about 4 sentences.
+**1 · Your code.** Scroll through it. Say what each part does.
 
-> I built the front face first by …
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
 >
-> To add depth I changed the … number to 2 and 3.
+> I built it using this code: ______.
 >
-> My head is … blocks deep.
+> In this code I used ______.
 >
-> The eyes and mouth stay on the front because their z is …
+> The hardest part was ______.
+>
+> That part was hard because ______.
 
-<div class="write-space tall" style="min-height: 320px"></div>
+**Write your lines here, then say them in your video.**
 
----
-
-## 4 · Explain It 🎥
-
-Film yourself showing your head. Try to use these words: **x**, **y**, **z**, **front face**, **depth**, **home spot**.
-
-> 1. Show your home spot. Why stand on it every run?
-> 2. Show the front face, then walk to a side — is the face on the side? Why not?
-> 3. Point at one block: "this one is at x …, y …, z …".
-> 4. Say in your own words how you added depth.
-
-**Plan what you will say (about 4 sentences):**
-
-<div class="write-space tall" style="min-height: 320px"></div>
+<div class="write-space tall" style="min-height: 340px"></div>
 
 ---
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + your video to teacher on KakaoTalk.

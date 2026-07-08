@@ -6,7 +6,7 @@
 
 ## 1 · Predict 🔮
 
-Read each set of steps. Before you imagine the agent doing it, write what you think will happen.
+Read each set of steps. Write what you think will happen.
 
 ```
 repeat 3 times:
@@ -34,7 +34,7 @@ repeat 4 times:
 
 ## 2 · Find the Bug 🐛
 
-Each block below was meant to do one thing, but it is broken. The goal is written for you first. Read it, circle the line that causes the problem, then write one sentence about what is wrong.
+Each code block is broken. The goal is written first. Circle the line that causes the problem, then write one sentence on what is wrong.
 
 **Bug A** — Goal: dig **3 blocks straight down** to make the well hole. After each `destroy`, the agent must step down into the hole.
 
@@ -68,7 +68,7 @@ repeat 4 times:
 
 ## 3 · Fix the Code ✏️
 
-The agent is supposed to build the **4 sides** of a 3×3 square wall around the well. Right now it only builds **one side** because the outer loop is missing.
+The agent should build the **4 sides** of a 3×3 square wall around the well. Right now it builds only **one side** — the outer loop is missing.
 
 ```
 repeat 3 times:
@@ -89,33 +89,29 @@ repeat 3 times:
 
 ---
 
-## 4 · Tell Me What You Built 📸
+## 4 · Show Your Work 📸🎥
 
 Now switch to your homework world. Build a **well** — a 3×3 square wall on top, and a hole **3 or 4 blocks deep** inside it. When you finish, come back here.
 
-Send a photo or video of your well, then explain what you did. Use these sentence starters — write 3 or 4 sentences.
+Record **one video** (a phone is fine). Show two things:
 
-> First, I built the square wall by …
+**1 · Your code.** Scroll through it. Say what each part does.
+
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
 >
-> Then I dug down by …
+> I built it using this code: ______.
 >
-> The well is … blocks wide and … blocks deep.
+> In this code I used ______.
 >
-> The hardest part was …
+> The hardest part was ______.
+>
+> That part was hard because ______.
 
-<div class="write-space tall" style="min-height: 340px"></div>
-
----
-
-## 5 · Record Your Walkthrough 🎥
-
-Take a video on your phone (or a parent's phone) while you walk the camera around your well. Talk through it like you are teaching someone who has never seen it. Try to use these words: **square**, **wall**, **dig**, **destroy**, **deep**.
-
-> 1. Show the well from outside, then look down inside it.
-> 2. Read the wall loop and the dig loop out loud and say what each one does.
-> 3. Say how wide the wall is and how deep the well goes.
-
-**Write what you will say in your video.** Plan it here before you record — you can read from it while filming.
+**Write your lines here, then say them in your video.**
 
 <div class="write-space tall" style="min-height: 340px"></div>
 
@@ -123,4 +119,4 @@ Take a video on your phone (or a parent's phone) while you walk the camera aroun
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + your video to teacher on KakaoTalk.

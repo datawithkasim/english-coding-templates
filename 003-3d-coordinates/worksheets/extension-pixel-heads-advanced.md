@@ -2,7 +2,7 @@
 
 **Topic:** 3D Mob Heads (x, y, z) · **Course:** 3D Coordinates · **Level:** Advanced (Extension, after Week 3) · **Time:** about 45 minutes
 
-Build **two mob heads** in 3D — a **creeper** and a **piglin**. Every block needs **three** numbers: **(x, y, z)**. x is **across**, y is **up**, z is **deeper** (forward). Both heads stand in front of you in the world. Walk around them, then copy them block by block. You build the **front face** first, then repeat it at z = 2 and z = 3 to add depth — the face shows on the front only.
+Build **two mob heads** in 3D — a **creeper** and a **piglin**. Every block needs **three** numbers: **(x, y, z)**. x is **across**, y is **up**, z is **deeper** (forward). Copy each head block by block — build the **front face** first, then repeat it at z = 2 and z = 3 to add depth. The face shows on the front only.
 
 > 🔴 Stand on your **home spot** (red block) every run. Move your feet, move your head.
 
@@ -10,7 +10,7 @@ Build **two mob heads** in 3D — a **creeper** and a **piglin**. Every block ne
 
 ## 1 · Predict 🔮
 
-Read each set. Do **not** run it. Write your prediction **and the reason**.
+Read each set. Write your prediction **and the reason**.
 
 ```
 place green block at (3, 5, 1)
@@ -99,7 +99,7 @@ place black block at (4, 7, 2)
 
 ---
 
-## 3 · Build It 📸
+## 3 · Show Your Work 📸🎥
 
 Build **both** heads on your home spot — a **creeper** and a **piglin** — then add one change of your own.
 
@@ -115,38 +115,25 @@ Build **both** heads on your home spot — a **creeper** and a **piglin** — th
 
 > 💡 Tip: the eyes, nose, and mouth only show on the **front**. The sides and back are plain.
 
-Send a photo or video. Then finish these 5–6 sentence starters.
+Record **one video** (a phone is fine). Show two things:
 
-> I built the … and the …
+**1 · Your code.** Scroll through it. Say what each part does.
+
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
 >
-> The lowest front block of my creeper is at (x = …, y = …, z = …).
+> I built it using this code: ______.
 >
-> To go up I changed the … number; to go deeper I changed the … number.
+> In this code I used ______.
 >
-> Each head is … blocks deep, and the face is on the … side only.
+> The hardest part was ______.
 >
-> For my MODIFY challenge I …
->
-> The hardest part was … because …
+> That part was hard because ______.
 
-<div class="write-space tall" style="min-height: 340px"></div>
-
----
-
-## 4 · Explain It 🎥
-
-Film yourself showing both heads. Use these words: **x**, **y**, **z**, **across**, **up**, **deeper**, **front face**, **home spot**.
-
-> 1. Show your home spot. Say why you stand on it every time.
-> 2. Walk around each head — show the front, a side, and the back.
-> 3. Point at one block: "this one is at x …, y …, z …".
-> 4. Say in your own words why the face is on the front only, and show your MODIFY change.
-
-**Write a short paragraph (5–6 sentences) about how you built your heads:**
-
-<div class="write-space tall" style="min-height: 340px"></div>
-
-**If you taught a friend to build a 3D head, what would you teach first, and why?**
+**Write your lines here, then say them in your video.**
 
 <div class="write-space tall" style="min-height: 340px"></div>
 
@@ -154,4 +141,4 @@ Film yourself showing both heads. Use these words: **x**, **y**, **z**, **across
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + your video to teacher on KakaoTalk.

@@ -2,7 +2,7 @@
 
 **Topic:** AND and OR Conditions · **Course:** Maze Madness · **Level:** Intermediate · **Time:** about 35 minutes
 
-Last week you used `AND` (both true). This week you add `OR` (one is enough) and mix them.
+New this week: `OR` (one is enough). Mix it with `AND`.
 
 - `AND` → runs **only when both** are true.
 - `OR` → runs **when at least one** is true.
@@ -91,32 +91,34 @@ Why was it wrong?
 
 ---
 
-## 5 · Finish + Show 📸
+## 5 · Show Your Work 📸🎥
 
 Go to your homework world. Solve the maze using **one AND** and **one OR**. Come back here.
 
-Send a photo or video of the agent at the end. Write 3 or 4 lines.
+Record **one video** (a phone is fine). Show two things:
 
-> I used **AND** when …
+**1 · Your code.** Scroll through it. Say what each part does.
+
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
 >
-> I used **OR** when …
+> I built it using this code: ______.
 >
-> One tricky part was …
+> In this code I used ______.
 >
-> I fixed it by …
+> The hardest part was ______.
+>
+> That part was hard because ______.
 
-<div class="write-space tall" style="min-height: 240px"></div>
+**Write your lines here, then say them in your video.**
 
-**Video plan.** Film the maze on your phone. Plan your words first, then record.
-
-> 1. Run your code from the start.
-> 2. Read your `and` line and your `or` line out loud. Say what makes each run.
-> 3. Say how **AND** is different from **OR**.
-
-<div class="write-space tall" style="min-height: 240px"></div>
+<div class="write-space tall" style="min-height: 340px"></div>
 
 ---
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + your video to teacher on KakaoTalk.

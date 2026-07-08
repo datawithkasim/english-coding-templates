@@ -2,13 +2,11 @@
 
 **Topic:** Chat Commands · **Course:** Functions & Games · **Level:** Beginner · **Time:** about 30 minutes
 
-This week you type a word in chat and your code runs. A **chat command** can take a number with it — `tower 5` builds a 5-block tower.
+This week you type a word in chat and your code runs. A **chat command** can take a number — `tower 5` builds a 5-block tower.
 
 ---
 
 ## 1 · Predict 🔮
-
-Read the steps. Before you imagine the agent doing it, circle or write your answer.
 
 ```
 on chat command "bridge":
@@ -17,11 +15,9 @@ on chat command "bridge":
         move forward
 ```
 
-**You type `bridge` in chat. Does the agent build the bridge? Circle one:** yes · no
+**You type `bridge`. Does the agent build the bridge? Circle one:** yes · no
 
-**Why?**
-
-<div class="write-space short"></div>
+**Why? Circle one:** the command name matches · the command name is wrong
 
 ```
 on chat command "tower" with number n:
@@ -35,8 +31,6 @@ on chat command "tower" with number n:
 ---
 
 ## 2 · Find the Difference 🐛
-
-Each pair shows clean steps first, then a broken version of the same idea. Circle what's different and write one short sentence about the bug.
 
 **Pair A** — Typing `bridge` should run the code. The command **name** must match what you type.
 
@@ -56,9 +50,7 @@ on chat command "brige":
         move forward
 ```
 
-**What is wrong? Why does nothing run when you type `bridge`?**
-
-<div class="write-space short"></div>
+**What is wrong? Circle one:** command name misspelled · wrong number
 
 **Pair B** — The number from chat should go **into** the function.
 
@@ -74,15 +66,13 @@ on chat command "tower" with number n:
     build_tower(3)
 ```
 
-**What is wrong?**
-
-<div class="write-space short"></div>
+**What is wrong? Circle one:** uses `3` not `n` · uses `n` not `3`
 
 ---
 
 ## 3 · Fill the Gap ✏️
 
-Typing `tower 5` should build a 5-block tower. One word is missing. Fill it in using the word bank.
+One word is missing.
 
 ```
 on chat command "tower" with number n:
@@ -91,44 +81,38 @@ on chat command "tower" with number n:
         move up
 ```
 
-**Word bank:** `n` · `tower` · `chat`
-
-**Write the missing word:**
-
-<div class="write-space short"></div>
+**Fill the gap. Circle one:** `n` · `tower` · `chat`
 
 ---
 
-## 4 · Tell Me What You Built 📸
+## 4 · Show Your Work 📸🎥
 
 Now switch to your homework world. Make one chat command with a number that builds something. When you finish, come back here.
 
-Send a photo or video of your command running, then explain what you did. Use these sentence starters — write 2 or 3 sentences.
+Record **one video** (a phone is fine). Show two things:
 
-> When I typed my command in chat, …
+**1 · Your code.** Scroll through it. Say what each part does.
+
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
 >
-> My command's number was used for …
+> I built it using this code: ______.
 >
-> One tricky moment was when …
+> In this code I used ______.
+>
+> The hardest part was ______.
+>
+> That part was hard because ______.
 
-<div class="write-space tall" style="min-height: 240px"></div>
+**Write your lines here, then say them in your video.**
 
----
-
-## 5 · Record Your Walkthrough 🎥
-
-Take a video on your phone (or a parent's phone) while you type your command and the code runs. Talk like you are teaching a friend. Try to use these words: **chat command**, **number**, **run**.
-
-> 1. Show the chat box and type your command.
-> 2. Show what the code builds.
-> 3. Say in your own words what a **chat command** does.
-
-**Write what you will say in your video.** You can read from it while filming.
-
-<div class="write-space tall" style="min-height: 240px"></div>
+<div class="write-space tall" style="min-height: 340px"></div>
 
 ---
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + your video to teacher on KakaoTalk.

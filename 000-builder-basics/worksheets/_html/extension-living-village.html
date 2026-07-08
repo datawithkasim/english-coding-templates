@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>🏰 Builder Basics — The Living Village (Extension)</title>
+<style>
+@page { size: A4; margin: 18mm 16mm 22mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-family: "Inter", "Segoe UI", system-ui, sans-serif; color: #1a1a2e; }
+body { font-size: 15px; line-height: 1.55; }
+
+.cover { border-bottom: 3px solid #ff7849; padding-bottom: 14px; margin-bottom: 20px; }
+.brand { font-size: 14px; font-weight: 800; color: #ff7849; letter-spacing: .06em; }
+h1 { font-size: 28px; color: #6b4ee6; margin: 8px 0 6px; line-height: 1.25; }
+h2 { font-size: 19px; color: #6b4ee6; margin: 22px 0 12px; padding-top: 10px; border-top: 1px solid #eee; page-break-before: always; }
+section.first h2, h2:first-of-type { border-top: none; padding-top: 0; page-break-before: avoid; }
+h3, h4 { font-size: 15px; margin: 14px 0 8px; color: #1a1a2e; }
+p { margin: 8px 0; }
+strong { color: #1a1a2e; }
+em { color: #555; }
+
+ul, ol { margin: 8px 0 8px 24px; }
+li { margin: 3px 0; }
+
+/* Grids (e.g. pixel-art coordinate grids) render as light graph paper. */
+table { border-collapse: collapse; margin: 12px 0; }
+th, td { border: 1px solid #ddd; padding: 4px 9px; text-align: center; font-size: 14px; }
+th { background: #faf7ff; color: #6b4ee6; font-weight: 700; }
+
+pre {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 13.5px;
+  background: #1e1e2e;
+  color: #b9f6ca;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 10px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  page-break-inside: avoid;
+  line-height: 1.5;
+}
+pre code { background: transparent; padding: 0; color: inherit; }
+code {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  background: #fff1e8;
+  color: #ff7849;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+blockquote {
+  margin: 10px 0;
+  padding: 10px 16px;
+  background: #fff6ef;
+  border-left: 3px solid #ff7849;
+  border-radius: 0 6px 6px 0;
+  color: #6a3a1c;
+}
+
+.write-space {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #ffffff 0,
+    #ffffff 27px,
+    #d4d4d4 27px,
+    #d4d4d4 28px
+  );
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  min-height: 114px;
+  margin: 10px 0 20px;
+  page-break-inside: avoid;
+}
+.write-space.short { min-height: 86px; }
+.write-space.tall { min-height: 170px; }
+
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
+hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
+
+.meta { color: #666; font-size: 13px; margin: 0 0 14px; }
+.answer-lines {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 14px 16px;
+  background: #fafafa;
+  white-space: pre;
+  line-height: 2.2;
+}
+
+footer {
+  position: fixed;
+  bottom: 10mm; left: 16mm; right: 16mm;
+  text-align: center;
+  font-size: 10px;
+  color: #aaa;
+}
+footer b { color: #ff7849; }
+</style>
+</head>
+<body>
+<div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
+<h1>🏰 Builder Basics — The Living Village (Extension)</h1>
+<p><strong>Topic:</strong> Bring It All Together · <strong>Course:</strong> Builder Basics · <strong>Type:</strong> Extension Activity · <strong>Time:</strong> about 90 minutes</p>
+<blockquote>
+<p>🧩 This is a bonus challenge, not a weekly lesson. Try it after <strong>Complete Your Village</strong>, once you can build with loops, move the agent between spots, and place water and animals.</p>
+</blockquote>
+<h2>1 · The Challenge 🎯</h2>
+<p>You already finished a small village. Make one that feels <strong>alive</strong> — crops growing, animals wandering, water you can cross.</p>
+<p>By the end, your village must have <strong>all eight</strong> of these:</p>
+<blockquote>
+<p>🌾 A <strong>farm</strong> — rows of crops
+🏠 A <strong>farm house</strong> — where the farmer lives
+🗼 A <strong>house with a watchtower</strong> — a home with a tall tower on top
+🧱 A <strong>fence</strong> — around the farm or the animals
+💧 A <strong>pond with fish</strong> — water with at least one fish in it
+🌉 A <strong>bridge</strong> — one that crosses over the pond
+🪣 A <strong>well</strong> — for water
+🐄 A <strong>few animals</strong> — cows, sheep, pigs, or chickens</p>
+</blockquote>
+<p>There is no fixed size and no map. <strong>You</strong> decide how big each thing is and where it goes. One rule you must not break:</p>
+<blockquote>
+<p>⚠️ <strong>Everything you can build must be built with code.</strong> No placing blocks by hand — every crop, fence post, and bridge plank goes down from your commands. (Animals are spawned — code or a spawn egg is fine.)</p>
+</blockquote>
+<div class="qa"><p><strong>In your own words, list the eight things your village must have when you finish.</strong></p>
+<div class="write-space tall" style="min-height: 200px"></div></div>
+
+<div class="qa"><p><strong>The last village was built with code. Why does building with code get <em>easier</em> the bigger your village gets?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>2 · Plan Before You Build ✏️</h2>
+<p>A builder plans first. For <strong>each</strong> part, decide what it is made of and how big. Think about the blocks and whether a loop can do the repeating.</p>
+<div class="qa"><p><strong>Farm</strong> — What crop? How many rows, and how long is each row?</p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Farm house</strong> — What blocks for the walls and roof? How wide and how tall?</p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>House with a watchtower</strong> — Where does the tower sit — a corner, the middle, the roof? How much taller than the house is it?</p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Fence</strong> — What does it go around? How will the agent turn the corners?</p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Pond with fish</strong> — How will you make the dip in the ground? What fills it, and where do the fish go?</p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Bridge over the pond</strong> — How wide is the pond at its narrowest? How long must the bridge be to reach across?</p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Well</strong> — What shape is the hole? What goes around the top? Is there water inside?</p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Animals</strong> — Which animals, and how many? Will they go inside the fence?</p>
+<div class="write-space"></div></div>
+
+<h2>3 · Think in Loops 🔁</h2>
+<p>Eight structures is a lot to place one block at a time. A loop is for anything you do <strong>again and again</strong> — a row of crops, the four sides of a fence, the planks of a bridge, the levels of a tower.</p>
+<div class="qa"><p><strong>Pick three parts that will use a loop. For each one, say what the loop repeats each time.</strong></p>
+<div class="write-space tall" style="min-height: 200px"></div></div>
+
+<p>Between one structure and the next, the agent has to <strong>walk to a new spot</strong> so nothing lands on top of the last build.</p>
+<div class="qa"><p><strong>After you build the farm house, how does the agent get to a clean spot to start the watchtower house?</strong></p>
+<div class="write-space"></div></div>
+
+<p>The bridge and the fence are special: they change direction. A fence goes across, then <strong>turns</strong>, then goes across again.</p>
+<div class="qa"><p><strong>What has to happen to the agent between one side of the fence and the next?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>4 · Show Your Work 📸🎥</h2>
+<p>Now go to your homework world and build. Run your code for each part, one at a time, and move the agent between them. Build the water first, then put the bridge across it, so you can see it reach.</p>
+<p>Keep going until your village has <strong>all eight</strong> parts — the farm, the farm house, the watchtower house, the fence, the pond with fish, the bridge, the well, and the animals.</p>
+<p>Record <strong>one video</strong> (a phone is fine). Show two things:</p>
+<p><strong>1 · Your code.</strong> Scroll through it. Say what each part does.</p>
+<p><strong>2 · Your build.</strong> Point the camera. Name the parts.</p>
+<p>Fill the blanks:</p>
+<blockquote>
+<p>Today I built ______.</p>
+<p>I built it using this code: ______.</p>
+<p>In this code I used ______.</p>
+<p>The hardest part was ______.</p>
+<p>That part was hard because ______.</p>
+</blockquote>
+<div class="qa"><p><strong>Write your lines here, then say them in your video.</strong></p>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your video to teacher on KakaoTalk.</p>
+</body>
+</html>

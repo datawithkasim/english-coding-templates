@@ -109,24 +109,22 @@ footer b { color: #ff7849; }
 <div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
 <h1>🧊 M003 Week 8 — English Worksheet (Beginner)</h1>
 <p><strong>Topic:</strong> Final — My Own Museum · <strong>Course:</strong> 3D Coordinates · <strong>Level:</strong> Beginner · <strong>Time:</strong> about 40 minutes</p>
-<p>This is your big final build. No new commands — everything from this course working together. Your museum has a <strong>room</strong> to walk into, a <strong>flat picture</strong> on the wall (2D, drawn with x and y), and a <strong>solid sculpture</strong> on a pedestal (3D, placed with x, y, z).</p>
+<p>This is your big final build — no new commands, everything from this course together. Your museum has a <strong>room</strong> to walk into, a <strong>flat picture</strong> on the wall (2D, x and y), and a <strong>solid sculpture</strong> on a pedestal (3D, x, y, z).</p>
 <h2>1 · Predict 🔮</h2>
-<p>Read the steps. Before you imagine it happening, circle or write your answer.</p>
+<p>Read the steps. Circle your answer.</p>
 <pre><code># a picture on the back wall — z stays 0, blocks climb with x and y
 place red block at (1, 1, 0)
 place red block at (2, 1, 0)
 </code></pre>
-<p><strong>These blocks stay at z = 0 and only x and y change. Is this a flat picture, like a painting on a wall? Circle one:</strong> yes · no</p>
-<div class="qa"><p><strong>Why?</strong></p>
-<div class="write-space short"></div></div>
-
+<p><strong>These stay at z = 0 — only x and y change. A flat picture on the wall? Circle one:</strong> yes · no</p>
+<p><strong>Why? Circle one:</strong> z never changes · z keeps growing</p>
 <pre><code># a sculpture — all three numbers used
 fill stone from (4, 0, 4) to (5, 1, 5)
 place gold block at (4, 2, 4)
 </code></pre>
 <p><strong>This uses x, y, and z. Is this a solid thing you can walk all the way around? Circle one:</strong> yes · no</p>
 <h2>2 · Find the Difference 🐛</h2>
-<p>Each pair shows clean steps first, then a broken version of the same idea. Circle what's different and write one short sentence about the bug.</p>
+<p>Each pair shows clean code, then a buggy version. Circle the bug.</p>
 <p><strong>Pair A</strong> — The museum room should be <strong>hollow</strong> so visitors can walk in.</p>
 <pre><code># clean
 fill stone from (0, 0, 0) to (8, 4, 8)
@@ -135,9 +133,7 @@ fill air from (1, 1, 1) to (7, 3, 7)
 <pre><code># buggy
 fill stone from (0, 0, 0) to (8, 4, 8)
 </code></pre>
-<div class="qa"><p><strong>What is wrong? Can a visitor get inside the buggy museum?</strong></p>
-<div class="write-space short"></div></div>
-
+<p><strong>Can a visitor get inside the buggy museum? Circle one:</strong> no, it is solid · yes</p>
 <p><strong>Pair B</strong> — The statue should rest <strong>on top</strong> of its pedestal, at height 2.</p>
 <pre><code># clean
 fill stone from (4, 0, 4) to (5, 1, 5)
@@ -147,11 +143,9 @@ place gold block at (4, 2, 4)
 fill stone from (4, 0, 4) to (5, 1, 5)
 place gold block at (4, 0, 4)
 </code></pre>
-<div class="qa"><p><strong>What is wrong?</strong></p>
-<div class="write-space short"></div></div>
-
+<p><strong>What is wrong? Circle one:</strong> the statue's y should be 2, not 0 · the color is wrong</p>
 <h2>3 · Plan Your Museum 🗺️</h2>
-<p>Plan <strong>before</strong> you build. Looking down from above, write where each piece goes.</p>
+<p>Plan <strong>before</strong> you build. Write where each piece goes.</p>
 <div class="qa"><p>My room: from ( … , … , … ) to ( … , … , … )</p>
 <div class="write-space short"></div></div>
 
@@ -161,7 +155,7 @@ place gold block at (4, 0, 4)
 <div class="qa"><p>My pedestal: from ( … , … , … ) to ( … , … , … ) · my sculpture on top at ( … , … , … )</p>
 <div class="write-space short"></div></div>
 
-<h2>4 · Build Your Museum 📸</h2>
+<h2>4 · Show Your Work 📸🎥</h2>
 <p>Now switch to your homework world and build your museum from your plan. Check your build against this list:</p>
 <blockquote>
 <p>☐ A <strong>room</strong> with a floor and walls that you can stand inside.</p>
@@ -169,28 +163,22 @@ place gold block at (4, 0, 4)
 <p>☐ At least <strong>one flat picture</strong> on a wall (2D — only x and y change).</p>
 <p>☐ At least <strong>one sculpture</strong> on a pedestal (3D — x, y, and z).</p>
 </blockquote>
-<p>Send a photo or video of your museum, then explain what you did. Use these sentence starters — write 2 or 3 sentences.</p>
-<div class="qa"><blockquote>
-<p>My museum has …</p>
-<p>My flat picture is 2D because …</p>
-<p>My sculpture is 3D because …</p>
-</blockquote>
-<div class="write-space tall" style="min-height: 300px"></div></div>
-
-<h2>5 · Record Your Tour 🎥</h2>
-<p>Take a video on your phone (or a parent's phone) and give a <strong>tour</strong> of your museum. Talk like you are showing a visitor around. Try to use these words: <strong>museum</strong>, <strong>2D</strong>, <strong>3D</strong>, <strong>picture</strong>, <strong>sculpture</strong>.</p>
+<p>Record <strong>one video</strong> (a phone is fine). Show two things:</p>
+<p><strong>1 · Your code.</strong> Scroll through it. Say what each part does.</p>
+<p><strong>2 · Your build.</strong> Point the camera. Name the parts.</p>
+<p>Fill the blanks:</p>
 <blockquote>
-<ol>
-<li>Walk in through the doorway.</li>
-<li>Stop at your flat picture and say why it is 2D.</li>
-<li>Walk around your sculpture and say why it is 3D.</li>
-</ol>
+<p>Today I built ______.</p>
+<p>I built it using this code: ______.</p>
+<p>In this code I used ______.</p>
+<p>The hardest part was ______.</p>
+<p>That part was hard because ______.</p>
 </blockquote>
-<div class="qa"><p><strong>Write what you will say in your video.</strong> You can read from it while filming.</p>
-<div class="write-space tall" style="min-height: 240px"></div></div>
+<div class="qa"><p><strong>Write your lines here, then say them in your video.</strong></p>
+<div class="write-space tall" style="min-height: 340px"></div></div>
 
 <hr />
 <h3>Submit ✅</h3>
-<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.</p>
+<p>Send this worksheet + your video to teacher on KakaoTalk.</p>
 </body>
 </html>

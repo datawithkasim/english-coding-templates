@@ -109,14 +109,14 @@ footer b { color: #ff7849; }
 <div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
 <h1>🔀 M002 Week 4 — AND / OR</h1>
 <p><strong>Topic:</strong> AND and OR Conditions — Smarter Decisions · <strong>Course:</strong> Maze Madness · <strong>Level:</strong> Advanced · <strong>Time:</strong> about 55 minutes</p>
-<p>Last week your agent used <code>and</code> (both true). This week you add <code>or</code> (at least one true) and combine them in one maze.</p>
+<p>New this week: <code>or</code> (at least one true). Combine it with <code>and</code> in one maze.</p>
 <ul>
 <li><code>and</code> → the action runs <strong>only when both</strong> conditions are true.</li>
 <li><code>or</code> → the action runs <strong>when at least one</strong> condition is true.</li>
 </ul>
-<p>Detect walls with <code>agent.detect(BLOCK, FORWARD)</code>. It returns <code>True</code> when a block is there. Use <code>not</code> for an open path.</p>
+<p><code>agent.detect(BLOCK, FORWARD)</code> is <code>True</code> when a block is ahead. Use <code>not</code> for an open path.</p>
 <h2>1 · Predict 🔮</h2>
-<p>Read each block. Write what the agent does before you picture it.</p>
+<p>Write what the agent does.</p>
 <pre><code class="language-python">if agent.detect(BLOCK, FORWARD) and agent.detect(BLOCK, RIGHT):
     agent.turn(LEFT_TURN)
 </code></pre>
@@ -141,7 +141,7 @@ footer b { color: #ff7849; }
 <div class="write-space"></div></div>
 
 <h2>2 · Trace the Truth 🔎</h2>
-<p>Fill the table. Write the branch that runs for each case.</p>
+<p>Write the branch that runs for each case.</p>
 <pre><code class="language-python">if agent.detect(BLOCK, FORWARD) and agent.detect(BLOCK, RIGHT):
     agent.turn(LEFT_TURN)
 elif not agent.detect(BLOCK, FORWARD):
@@ -178,7 +178,7 @@ else:
 <div class="write-space short"></div>
 
 <h2>3 · Spot and Fix Bugs 🐛</h2>
-<p>Read what each block <strong>should</strong> do, then rewrite it. Explain the fix.</p>
+<p>Rewrite each block. Explain the fix.</p>
 <p><strong>Bug A</strong> — Turn left <strong>only</strong> at a dead-end corner (wall ahead AND wall on right). Right now it turns at any wall.</p>
 <pre><code class="language-python">if agent.detect(BLOCK, FORWARD) or agent.detect(BLOCK, RIGHT):
     agent.turn(LEFT_TURN)
@@ -221,34 +221,24 @@ elif not agent.detect(BLOCK, RIGHT):
 </ul>
 <div class="write-space tall" style="min-height: 240px"></div>
 
-<h2>5 · Finish the Maze 📸</h2>
+<h2>5 · Show Your Work 📸🎥</h2>
 <p>Switch to your homework world. Solve the maze using <strong>both</strong> an <code>and</code> condition and an <code>or</code> condition. Come back when the agent reaches the end.</p>
-<p>Send a photo or video of the agent at the end. Write 4 to 6 sentences.</p>
-<div class="qa"><blockquote>
-<p>First, I …</p>
-<p>I used <strong>and</strong> when …</p>
-<p>I used <strong>or</strong> when …</p>
-<p>One tricky moment was …</p>
-<p>To fix it, I …</p>
-<p>If I had more time, I would …</p>
-</blockquote>
-<div class="write-space tall" style="min-height: 340px"></div></div>
-
-<h2>6 · Record Your Walkthrough 🎥</h2>
-<p>Film the maze on your phone. Teach someone who has never seen it. Use these words: <strong>and</strong>, <strong>or</strong>, <strong>condition</strong>, <strong>both</strong>, <strong>either</strong>.</p>
+<p>Record <strong>one video</strong> (a phone is fine). Show two things:</p>
+<p><strong>1 · Your code.</strong> Scroll through it. Say what each part does.</p>
+<p><strong>2 · Your build.</strong> Point the camera. Name the parts.</p>
+<p>Fill the blanks:</p>
 <blockquote>
-<ol>
-<li>Show the start, then run your code.</li>
-<li>Read each <code>and</code> block and <code>or</code> block out loud. Say what makes it run.</li>
-<li>Show one bug you hit and how you fixed it.</li>
-<li>Say in your own words how <strong>and</strong> is different from <strong>or</strong>.</li>
-</ol>
+<p>Today I built ______.</p>
+<p>I built it using this code: ______.</p>
+<p>In this code I used ______.</p>
+<p>The hardest part was ______.</p>
+<p>That part was hard because ______.</p>
 </blockquote>
-<div class="qa"><p>Plan your words below before you film. You can read from it while recording.</p>
+<div class="qa"><p><strong>Write your lines here, then say them in your video.</strong></p>
 <div class="write-space tall" style="min-height: 340px"></div></div>
 
 <hr />
 <h3>Submit ✅</h3>
-<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.</p>
+<p>Send this worksheet + your video to teacher on KakaoTalk.</p>
 </body>
 </html>

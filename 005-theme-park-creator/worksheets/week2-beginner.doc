@@ -1,0 +1,130 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head><meta charset='utf-8'>
+<title>🎢 005 Week 2 — English Worksheet (Beginner)</title>
+<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
+<style>
+@page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
+div.WordSection1 { page: WordSection1; }
+body { font-family: "Segoe UI", Arial, sans-serif; font-size: 11.5pt; color: #1a1a2e; line-height: 1.5; }
+h1 { font-size: 21pt; color: #6b4ee6; margin: 4px 0 6px; }
+h2 { font-size: 15pt; color: #6b4ee6; border-top: 1px solid #dddddd; padding-top: 8px; margin: 18px 0 10px; }
+h3, h4 { font-size: 11.5pt; margin: 12px 0 6px; }
+p { margin: 7px 0; }
+.brand { font-size: 10.5pt; font-weight: bold; color: #ff7849; letter-spacing: .06em;
+         border-bottom: 2px solid #ff7849; padding-bottom: 6px; margin-bottom: 14px; }
+table { border-collapse: collapse; margin: 10px 0; }
+th, td { border: 1px solid #c8c8c8; padding: 4px 9px; text-align: center; }
+th { background: #f3eefc; color: #6b4ee6; font-weight: bold; }
+pre { font-family: Consolas, "Courier New", monospace; font-size: 10.5pt; background: #f4f4f5;
+      border: 1px solid #dddddd; padding: 8px 10px; white-space: pre-wrap; }
+pre code { background: transparent; color: #1a1a2e; }
+code { font-family: Consolas, "Courier New", monospace; background: #fff1e8; color: #d6531f; padding: 0 3px; }
+blockquote { border-left: 3px solid #ff7849; background: #fff6ef; padding: 8px 12px;
+             color: #6a3a1c; margin: 9px 0; }
+ul, ol { margin: 7px 0 7px 26px; }
+p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
+.footer { color: #999999; font-size: 8.5pt; text-align: center; margin-top: 18px;
+          border-top: 1px solid #eeeeee; padding-top: 6px; }
+.footer b { color: #ff7849; }
+</style></head>
+<body><div class=WordSection1>
+<div class="brand">📚 ENGLISH CODING · 영어코딩</div>
+<h1>🎢 005 Week 2 — English Worksheet (Beginner)</h1>
+<p><strong>Topic:</strong> One Function, Many Booths — Arguments &amp; Parameters · <strong>Course:</strong> Theme Park Creator · <strong>Level:</strong> Beginner · <strong>Time:</strong> about 30 minutes</p>
+<p>This week you build a park <strong>booth</strong> with a <strong>function</strong>. You give it <strong>parameters</strong> — words and numbers it uses inside. Change what you <strong>call</strong> it with to build wood or stone booths, big or small.</p>
+<p>These are the blocks you use this week:</p>
+<pre><code class="language-python">blocks.fill(OAK_PLANKS, pos(0, 0, 0), pos(4, 0, 4), FillOperation.HOLLOW)
+</code></pre>
+<blockquote>
+<p><code>blocks.fill(...)</code> fills a box between two corners.
+The first word is the <strong>material</strong> (like <code>OAK_PLANKS</code> or <code>STONE_BRICKS</code>).
+<code>pos(x, y, z)</code> is a spot: <code>x</code> = left/right, <code>y</code> = up, <code>z</code> = forward/back.
+<code>FillOperation.HOLLOW</code> builds only the <strong>walls</strong> and leaves the middle empty.</p>
+</blockquote>
+<hr />
+<h2>1 · Meet Arguments and Parameters 🎁</h2>
+<p>A <strong>parameter</strong> is an empty box with a name. An <strong>argument</strong> is what you drop into that box.
+Same boxes, different stuff → <strong>same function, different booths</strong>.</p>
+<pre><code class="language-text">   WHEN YOU MAKE IT — the names in ( ) are PARAMETERS (empty boxes):
+
+       def build_booth( wall , size ):
+
+   WHEN YOU CALL IT — the values in ( ) are ARGUMENTS (real stuff):
+
+       build_booth( OAK_PLANKS , 4 )
+
+   They line up by position, left to right:
+
+       1st box   wall  ⟵  1st value   OAK_PLANKS
+       2nd box   size  ⟵  2nd value   4
+</code></pre>
+<p><strong>Which one is the empty named box? Circle one:</strong> parameter · argument</p>
+<hr />
+<h2>2 · Predict 🔮</h2>
+<p>Read the code. Circle your answer.</p>
+<pre><code class="language-python">def build_booth(wall, size):
+    blocks.fill(wall, pos(0, 0, 0), pos(size, 0, size), FillOperation.HOLLOW)
+
+build_booth(STONE_BRICKS, 4)
+</code></pre>
+<p><strong>What is the booth, and how wide? Circle one:</strong> STONE_BRICKS, 4 · OAK_PLANKS, 4 · STONE_BRICKS, 0</p>
+<pre><code class="language-python">def build_booth(wall, size):
+    blocks.fill(wall, pos(0, 0, 0), pos(size, 0, size), FillOperation.HOLLOW)
+</code></pre>
+<p><strong>There is no call after the definition. Does a booth get built? Circle one:</strong> yes · no</p>
+<hr />
+<h2>3 · Find the Difference 🐛</h2>
+<p>Clean code first, then a broken version. Circle the answer.</p>
+<p><strong>Pair A</strong> — The function should be <strong>called</strong> so a booth appears.</p>
+<pre><code class="language-python"># clean
+def build_booth(wall, size):
+    blocks.fill(wall, pos(0, 0, 0), pos(size, 0, size), FillOperation.HOLLOW)
+
+build_booth(OAK_PLANKS, 4)
+</code></pre>
+<pre><code class="language-python"># buggy
+def build_booth(wall, size):
+    blocks.fill(wall, pos(0, 0, 0), pos(size, 0, size), FillOperation.HOLLOW)
+</code></pre>
+<p><strong>What is wrong? Circle one:</strong> no call after <code>def</code> · wrong material · wrong size</p>
+<p><strong>Pair B</strong> — The booth should be made of whatever material you send in.</p>
+<pre><code class="language-python"># clean
+def build_booth(wall, size):
+    blocks.fill(wall, pos(0, 0, 0), pos(size, 0, size), FillOperation.HOLLOW)
+</code></pre>
+<pre><code class="language-python"># buggy
+def build_booth(wall, size):
+    blocks.fill(STONE_BRICKS, pos(0, 0, 0), pos(size, 0, size), FillOperation.HOLLOW)
+</code></pre>
+<p><strong>What is wrong? Circle one:</strong> it uses <code>STONE_BRICKS</code>, not <code>wall</code> · it uses <code>wall</code>, not <code>STONE_BRICKS</code> · nothing</p>
+<hr />
+<h2>4 · Fill the Gap ✏️</h2>
+<p>This booth should be the size you send in. One word is missing — the <strong>parameter</strong> it forgot to use.</p>
+<pre><code class="language-python">def build_booth(wall, size):
+    blocks.fill(wall, pos(0, 0, 0), pos(____, 0, ____), FillOperation.HOLLOW)
+
+build_booth(OAK_PLANKS, 6)
+</code></pre>
+<p><strong>Which word is missing? Circle one:</strong> <code>size</code> · <code>wall</code> · <code>HOLLOW</code></p>
+<hr />
+<h2>5 · Show Your Work 📸🎥</h2>
+<p>Now switch to your homework world. Write one <code>build_booth</code> function with a <code>wall</code> parameter and a <code>size</code> parameter, then call it two times with different materials or sizes. When you finish, come back here.</p>
+<p>Record <strong>one video</strong> (a phone is fine). Show two things:</p>
+<p><strong>1 · Your code.</strong> Scroll through it. Say what each part does.</p>
+<p><strong>2 · Your build.</strong> Point the camera. Name the parts.</p>
+<p>Fill the blanks:</p>
+<blockquote>
+<p>Today I built ______.</p>
+<p>I built it using this code: ______.</p>
+<p>In this code I used ______.</p>
+<p>The hardest part was ______.</p>
+<p>That part was hard because ______.</p>
+</blockquote>
+<p><strong>Write your lines here, then say them in your video.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your video to teacher on KakaoTalk.</p>
+<div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>
+</div></body></html>

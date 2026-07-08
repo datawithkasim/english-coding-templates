@@ -2,13 +2,13 @@
 
 **Topic:** First Steps with Coordinates (x, y) · **Course:** 3D Coordinates · **Time:** about 45 minutes
 
-This week you draw on a flat **wall**. Every spot on the wall gets a name made of **two numbers: (x, y)**. x tells you how far **across**, y tells you how far **up**. Counting starts at **0**.
+This week you draw on a flat **wall**. Every spot has a name — **two numbers: (x, y)**. x is how far **across**, y is how far **up**. Counting starts at **0**.
 
 ---
 
 ## 1 · Predict 🔮
 
-Read each set of steps. Before you imagine it happening, write what you think you will see.
+Read each set of steps. Write what you think you will see.
 
 ```
 place gold block at (3, 0)
@@ -44,9 +44,9 @@ place gold block at (0, y)
 
 ## 2 · Spot the Bug 🐛
 
-Each block of code below was meant to do something, but it is broken. Read what the code is **supposed** to do, then rewrite it so it works. After that, explain why the original was wrong and why your fix works.
+Each code block below is broken. Read what it should do, fix it, then explain why the original was wrong and your fix works.
 
-**Bug A** — The block should land at **(2, 5)** — 2 across on x, 5 up on y. Right now it lands somewhere else.
+**Bug A** — The block should land at **(2, 5)** — 2 across, 5 up. Right now it lands elsewhere.
 
 ```
 place gold block at (5, 2)
@@ -76,7 +76,7 @@ place gold block at (1, 1)
 
 <div class="write-space"></div>
 
-**Bug C** — The block should sit **5 up** from the ground at x = 0 — that is **(0, 5)**. Right now it goes the wrong way and drops below the wall.
+**Bug C** — The block should sit **5 up** at x = 0 — that is **(0, 5)**. Right now it drops below the wall.
 
 ```
 place gold block at (0, -5)
@@ -92,38 +92,29 @@ place gold block at (0, -5)
 
 ---
 
-## 3 · Tell Me What You Built 📸
+## 3 · Show Your Work 📸🎥
 
 Now switch to your homework world. Place a gold block at **(0, 0)** so you can see where counting starts. Then pick three more coordinates, place a different block at each one, and write down the coordinates you used. When you finish, come back here.
 
-Send a photo or video of your blocks, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.
+Record **one video** (a phone is fine). Show two things:
 
-> First, I …
+**1 · Your code.** Scroll through it. Say what each part does.
+
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
 >
-> The block at **(0, 0)** shows …
+> I built it using this code: ______.
 >
-> I placed a block at ( … , … ) because …
+> In this code I used ______.
 >
-> The y number means …
+> The hardest part was ______.
 >
-> One tricky moment was when …
->
-> If I had more time, I would …
+> That part was hard because ______.
 
-<div class="write-space tall" style="min-height: 340px"></div>
-
----
-
-## 4 · Record Your Walkthrough 🎥
-
-Now take a video on your phone (or a parent's phone) while you show your blocks on the wall. Talk through it like you are teaching someone who has never seen coordinates. Try to use these words: **coordinate**, **position**, **x**, **y**, **zero**.
-
-> 1. Show the gold block at (0, 0) and say why it is there.
-> 2. Point at one of your blocks and say its coordinate out loud.
-> 3. Pick two blocks and say which one is **higher** and how you know from the y number.
-> 4. Say in your own words what **x** and **y** mean.
-
-**Write what you will say in your video.** Use the space below to plan it before you record — you can read from it while filming.
+**Write your lines here, then say them in your video.**
 
 <div class="write-space tall" style="min-height: 340px"></div>
 
@@ -131,4 +122,4 @@ Now take a video on your phone (or a parent's phone) while you show your blocks 
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + your video to teacher on KakaoTalk.

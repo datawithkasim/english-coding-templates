@@ -111,7 +111,7 @@ footer b { color: #ff7849; }
 <p><strong>Topic:</strong> Diamond Structure (Final Project) · <strong>Course:</strong> Pyramid Problems · <strong>Level:</strong> Beginner · <strong>Time:</strong> about 45 minutes</p>
 <p>A diamond is two pyramids: the <strong>bottom half grows</strong> (1 → 3 → 5) and the <strong>top half shrinks</strong> (3 → 1).</p>
 <h2>1 · Predict 🔮</h2>
-<p>Read the steps. Before you imagine the agent doing it, circle or write your answer.</p>
+<p>Read the steps. Circle your answer.</p>
 <pre><code># Bottom half
 set size to 1
 while size &lt;= 5:
@@ -120,9 +120,7 @@ while size &lt;= 5:
     set size to size + 2
 </code></pre>
 <p><strong>The bottom half grows or shrinks? Circle one:</strong> grows · shrinks</p>
-<div class="qa"><p><strong>Write the layer sizes in order:</strong></p>
-<div class="write-space short"></div></div>
-
+<p><strong>Layer sizes in order? Circle one:</strong> 1 · 3 · 5 → 5 · 3 · 1</p>
 <pre><code># Top half
 set size to 3
 while size &gt; 0:
@@ -131,11 +129,9 @@ while size &gt; 0:
     set size to size - 2
 </code></pre>
 <p><strong>The top half grows or shrinks? Circle one:</strong> grows · shrinks</p>
-<div class="qa"><p><strong>Why does it start at 3 and not 5? (Hint: the size-5 layer is already built.)</strong></p>
-<div class="write-space short"></div></div>
-
+<p><strong>Why start at 3, not 5? Circle one:</strong> the size-5 layer is already built · 5 is too big to build · the agent cannot count to 5</p>
 <h2>2 · Find the Difference 🐛</h2>
-<p>Each pair shows clean steps first, then a broken version of the same idea. Circle what's different and write one short sentence about the bug.</p>
+<p>Clean steps first, then a buggy version. Circle the bug.</p>
 <p><strong>Pair A</strong> — The top half should start at <strong>3</strong>, so the widest layer is not built twice.</p>
 <pre><code># clean
 set size to 3
@@ -151,9 +147,7 @@ while size &gt; 0:
     move up by 1
     set size to size - 2
 </code></pre>
-<div class="qa"><p><strong>What is wrong? Which layer appears twice?</strong></p>
-<div class="write-space short"></div></div>
-
+<p><strong>What is wrong? Which layer is built twice? Circle one:</strong> the size-5 layer · the size-3 layer · the size-1 layer</p>
 <p><strong>Pair B</strong> — The bottom half must <strong>move up</strong> after each layer.</p>
 <pre><code># clean
 while size &lt;= 5:
@@ -166,11 +160,9 @@ while size &lt;= 5:
     [build layer]
     set size to size + 2
 </code></pre>
-<div class="qa"><p><strong>What is wrong?</strong></p>
-<div class="write-space short"></div></div>
-
+<p><strong>What is wrong? Circle one:</strong> it never moves up · it moves up too far · it turns right</p>
 <h2>3 · Fill the Gap ✏️</h2>
-<p>Here is the diamond skeleton. One starting number is missing. Fill it in using the word bank.</p>
+<p>Here is the diamond skeleton. Fill the missing number.</p>
 <pre><code># Bottom half (grows 1 → 3 → 5)
 set size to 1
 while size &lt;= 5:
@@ -185,34 +177,25 @@ while size &gt; 0:
     move up by 1
     set size to size - 2
 </code></pre>
-<p><strong>Word bank:</strong> <code>3</code> · <code>5</code> · <code>1</code></p>
-<div class="qa"><p><strong>Write the missing number:</strong></p>
-<div class="write-space short"></div></div>
-
-<h2>4 · Tell Me What You Built 📸</h2>
+<p><strong>Missing number? Circle one:</strong> 3 · 5 · 1</p>
+<h2>4 · Show Your Work 📸🎥</h2>
 <p>Now build your <strong>final project</strong>: a diamond with a bottom half that grows <strong>1 → 3 → 5</strong> and a top half that shrinks <strong>3 → 1</strong>. When you finish, come back here.</p>
-<p>Send a photo or video of your diamond, then explain what you did. Use these sentence starters — write 2 or 3 sentences.</p>
-<div class="qa"><blockquote>
-<p>First, I built the bottom half by …</p>
-<p>The widest layer is … blocks long.</p>
-<p>The hardest part was …</p>
-</blockquote>
-<div class="write-space tall" style="min-height: 240px"></div></div>
-
-<h2>5 · Record Your Walkthrough 🎥</h2>
-<p>Take a video on your phone (or a parent's phone) and walk the camera around your diamond. Talk like you are teaching a friend. Try to use these words: <strong>diamond</strong>, <strong>bottom half</strong>, <strong>top half</strong>, <strong>widest</strong>.</p>
+<p>Record <strong>one video</strong> (a phone is fine). Show two things:</p>
+<p><strong>1 · Your code.</strong> Scroll through it. Say what each part does.</p>
+<p><strong>2 · Your build.</strong> Point the camera. Name the parts.</p>
+<p>Fill the blanks:</p>
 <blockquote>
-<ol>
-<li>Walk around the diamond and show all 4 sides.</li>
-<li>Say the layer sizes from bottom to top.</li>
-<li>Say what you learned in this course.</li>
-</ol>
+<p>Today I built ______.</p>
+<p>I built it using this code: ______.</p>
+<p>In this code I used ______.</p>
+<p>The hardest part was ______.</p>
+<p>That part was hard because ______.</p>
 </blockquote>
-<div class="qa"><p><strong>Write what you will say in your video.</strong> You can read from it while filming.</p>
-<div class="write-space tall" style="min-height: 240px"></div></div>
+<div class="qa"><p><strong>Write your lines here, then say them in your video.</strong></p>
+<div class="write-space tall" style="min-height: 340px"></div></div>
 
 <hr />
 <h3>Submit ✅</h3>
-<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk. This is the <strong>last week</strong> of Pyramid Problems — well done!</p>
+<p>Send this worksheet + your video to teacher on KakaoTalk.</p>
 </body>
 </html>

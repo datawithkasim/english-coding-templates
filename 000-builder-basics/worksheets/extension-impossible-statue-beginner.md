@@ -22,7 +22,7 @@ Open the **Impossible Statue** world. It is a puzzle. Look at the colours first:
 
 ## 2 · Place On, Place Off 💡
 
-The agent moves in a line. On a build spot, you **place**. On a skip spot, you only **move** — no place.
+On a build spot, you **place**. On a skip spot, you only **move** — no place.
 
 ```
 place block down
@@ -33,15 +33,13 @@ place block down
 
 **How many blocks does this place? Circle one:** 1 · 2 · 3
 
-**One step has a move but no place. That is a skip. Write one sentence about why we skip it.**
-
-<div class="write-space short"></div>
+**Why do we skip a step? Circle one:** it is a glass spot · it is a build spot · it is the start
 
 ---
 
 ## 3 · Fill the Gap ✏️
 
-The pattern should be: **build, skip, build** (B S B). One line is missing. Fill it in using the word bank.
+The pattern should be: **build, skip, build** (B S B). One line is missing.
 
 ```
 place block down
@@ -50,17 +48,13 @@ ____________
 place block down
 ```
 
-**Word bank:** `move forward` · `place block down` · `turn right`
-
-**Write the missing line:**
-
-<div class="write-space short"></div>
+**Which line is missing? Circle one:** move forward · place block down · turn right
 
 ---
 
 ## 4 · Find the Mistake 🐛
 
-The pattern should be **build, skip, build** (B S B). This code places a block on the skip spot by mistake. Circle the extra line and write one sentence about the bug.
+The pattern should be **build, skip, build** (B S B). This code places a block on the skip spot by mistake.
 
 ```
 place block down
@@ -70,42 +64,38 @@ move forward
 place block down
 ```
 
-**What is wrong?**
-
-<div class="write-space short"></div>
+**What is wrong? Circle one:** it builds on the skip spot · a build is missing · it turns the wrong way
 
 ---
 
-## 5 · Build the Statue 📸
+## 5 · Show Your Work 📸🎥
 
 Go to the Impossible Statue world. Place blocks on the crying obsidian spots, skip the glass spots, and finish on the red end block.
 
-Send a photo or video of your build, then explain it. Use these starters — write 2 or 3 sentences.
+Record **one video** (a phone is fine). Show two things:
 
-> First, I placed a block on … using the command …
+**1 · Your code.** Scroll through it. Say what each part does.
+
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
 >
-> I skipped the glass spot by …
+> I built it using this code: ______.
 >
-> The hardest part was …
+> In this code I used ______.
+>
+> The hardest part was ______.
+>
+> That part was hard because ______.
 
-<div class="write-space tall" style="min-height: 240px"></div>
+**Write your lines here, then say them in your video.**
 
----
-
-## 6 · Record Your Walkthrough 🎥
-
-Take a video on your phone (or a parent's phone) and show your build. Talk like you are teaching a friend. Try to use these words: **place**, **skip**, **move forward**, **start**, **end**.
-
-> 1. Point to the red start and red end blocks.
-> 2. Show one block you placed.
-> 3. Show one glass spot you skipped and say why you placed nothing there.
-
-**Write what you will say in your video.** You can read from it while filming.
-
-<div class="write-space tall" style="min-height: 240px"></div>
+<div class="write-space tall" style="min-height: 340px"></div>
 
 ---
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + your video to teacher on KakaoTalk.

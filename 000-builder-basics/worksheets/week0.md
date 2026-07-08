@@ -4,7 +4,7 @@
 
 ---
 
-A quick warm-up **before Lesson 1**. No coding. Just get comfortable moving around and building on your tablet. Open your Minecraft world and play.
+A warm-up **before Lesson 1** — no coding. Open your Minecraft world and get comfortable moving and building on your tablet.
 
 ---
 
@@ -32,6 +32,32 @@ Build a small house. Any size is fine. It needs **3 things**:
 
 ---
 
-## 3 · Send It 📸
+## 3 · Show Your Work 📸🎥
 
-Take a photo of your house and send it to your teacher on KakaoTalk.
+Record **one video** (a phone is fine). Show two things:
+
+**1 · Your code.** Scroll through it. Say what each part does.
+
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
+>
+> I built it using this code: ______.
+>
+> In this code I used ______.
+>
+> The hardest part was ______.
+>
+> That part was hard because ______.
+
+**Write your lines here, then say them in your video.**
+
+<div class="write-space tall" style="min-height: 340px"></div>
+
+---
+
+### Submit ✅
+
+Send this worksheet + your video to teacher on KakaoTalk.

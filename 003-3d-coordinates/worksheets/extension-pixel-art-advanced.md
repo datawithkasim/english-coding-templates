@@ -2,9 +2,9 @@
 
 **Topic:** Pixel-Art Mobs (x, y) · **Course:** 3D Coordinates · **Level:** Advanced (Extension, after Week 3) · **Time:** about 45 minutes
 
-This is a **bonus picture challenge** between Week 3 and Week 4. You already copied one small picture using **(x, y)**. Now you copy **two bigger mobs** onto your wall — a **pink axolotl** and a **black ender dragon head**. Same idea: every block sits at a spot named by **two numbers — (x, y)**. x is how far **across**, and y is how far **up**. Read carefully, plan before you build, and you will get both pictures clean on the first try.
+This is a **bonus picture challenge** between Week 3 and Week 4. Now you copy **two bigger mobs** — a **pink axolotl** and a **black ender dragon head**. Every block sits at **(x, y)** — x is how far **across**, y is how far **up**. Plan before you build.
 
-**First, build your canvas.** Run this to make a blank **15 × 15** wall, then put a **red block at your feet** as your **home spot**:
+**Build your canvas.** Run this to make a blank **15 × 15** wall, then put a **red block at your feet** as your **home spot**:
 
 <div style="display:flex; gap:14px; align-items:flex-start; margin:10px 0; page-break-inside:avoid; break-inside:avoid"><div style="flex:1; min-width:0"><p style="margin:0 0 4px; font-weight:700">🧩 Blocks</p><img src="../assets/week3-canvas-blocks.png" alt="MakeCode blocks: on chat command run, fill with white concrete from ~1 ~1 ~0 to ~15 ~15 ~0, replace" style="width:100%; max-width:240px; border-radius:8px; display:block"></div><div style="flex:1; min-width:0"><p style="margin:0 0 4px; font-weight:700">🐍 Python</p><pre style="margin:0; white-space:pre; font-size:12px">def on_run():
     blocks.fill(WHITE_CONCRETE,
@@ -13,13 +13,13 @@ This is a **bonus picture challenge** between Week 3 and Week 4. You already cop
         FillOperation.REPLACE)
 player.on_chat("run", on_run)</pre></div></div>
 
-> 🔴 **Big idea:** (x, y) is counted from your **home spot** — not from the corner of the world. Stand on the red block *every* time you run, or the whole picture shifts. Move your feet, move your picture.
+> 🔴 **Big idea:** (x, y) is counted from your **home spot**, not the world's corner. Stand on the red block *every* time you run, or the whole picture shifts.
 
 ---
 
 ## 1 · Predict 🔮
 
-Read each set of steps. Write what you think you will see **and the reason** for your answer.
+Read each set of steps. Write what you will see **and the reason**.
 
 ```
 place pink block at (4, 13)
@@ -66,7 +66,7 @@ place black block at (6, 10)
 
 ## 2 · Spot the Bug 🐛
 
-Each block of code below was meant to do something, but it is broken. Read what the code is **supposed** to do, then rewrite it so it works. After that, explain in two or three sentences why the original was wrong and why your fix works.
+Each code block below is broken. Read what it should do, fix it, then explain why the original was wrong and your fix works.
 
 **Bug A** — This should make the **axolotl's two eyes**, one at (6, 10) and one at (11, 10). Right now both land in the **same spot**.
 
@@ -101,7 +101,7 @@ place purple block at (10, 8)
 
 <div class="write-space"></div>
 
-**Bug C** — A friend stood on the **wrong block** and ran the code. The axolotl came out fine, but it was **shifted two blocks too high** — every block landed at a y two bigger than the grid says. The code itself is correct.
+**Bug C** — A friend stood on the **wrong block** and ran correct code. The axolotl came out **shifted two blocks too high** — every block landed at a y two bigger than the grid says.
 
 ```
 (the code matched the grid exactly)
@@ -113,7 +113,7 @@ place purple block at (10, 8)
 
 ---
 
-## 3 · Build It 📸
+## 3 · Show Your Work 📸🎥
 
 Stand on your **home spot** (the red block). Pick **one** mob below and copy it onto your wall, block by block, by reading the (x, y) of every colored square. The numbers across the **top** are **x**, the numbers down the **side** are **y**. Finished early? Build the other one too.
 
@@ -129,34 +129,25 @@ Stand on your **home spot** (the red block). Pick **one** mob below and copy it 
 
 <div class="write-space short"></div>
 
-When your picture is finished, send a photo of it, then explain what you did. Use these sentence starters — write 5 to 6 sentences total.
+Record **one video** (a phone is fine). Show two things:
 
-> First, I chose to build the …
+**1 · Your code.** Scroll through it. Say what each part does.
+
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
 >
-> The lowest block in my picture is at (x = …, y = …).
+> I built it using this code: ______.
 >
-> To go across a row I changed the … number; to go up I changed the … number.
+> In this code I used ______.
 >
-> The trickiest part to read off the grid was …
+> The hardest part was ______.
 >
-> For my modify challenge, I changed … at (x = …, y = …).
->
-> One time my picture landed in the wrong place because …
+> That part was hard because ______.
 
-<div class="write-space tall" style="min-height: 340px"></div>
-
----
-
-## 4 · Explain It 🎥
-
-Now take a video on your phone (or a parent's phone) while you show your mob on the wall. Talk through it like you are teaching someone who has never seen it. Try to use these words: **x**, **y**, **coordinate**, **across**, **up**, **home spot**.
-
-> 1. Show your home spot (the red block) and say why you stand on it every time.
-> 2. Show your finished mob from the front, including your modify challenge.
-> 3. Point at one block and read its coordinate out loud: "this one is at x …, y …".
-> 4. Say in your own words why (x, y) only makes sense when you measure from the home spot.
-
-**Write a short paragraph (5 to 6 sentences)** about your picture and what you learned. Then answer: **what would you teach a friend first if they had never used (x, y)?**
+**Write your lines here, then say them in your video.**
 
 <div class="write-space tall" style="min-height: 340px"></div>
 
@@ -164,4 +155,4 @@ Now take a video on your phone (or a parent's phone) while you show your mob on 
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + your video to teacher on KakaoTalk.

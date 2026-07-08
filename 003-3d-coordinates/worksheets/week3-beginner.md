@@ -2,9 +2,9 @@
 
 **Topic:** Pixel Art on the Wall (x, y) · **Course:** 3D Coordinates · **Level:** Beginner · **Time:** about 30 minutes
 
-This week you copy a picture made of blocks onto your wall. Every block sits at a spot named by **two numbers — (x, y)**. x is how far **across**. y is how far **up**.
+This week you copy a picture made of blocks onto your wall. Every block sits at **(x, y)**. x is **across**, y is **up**.
 
-**First, build your canvas.** Run this to make a blank **15 × 15** wall, then put a **red block at your feet** as your **home spot**:
+**Build your canvas.** Run this to make a blank **15 × 15** wall, then put a **red block at your feet** as your **home spot**:
 
 <div style="display:flex; gap:14px; align-items:flex-start; margin:10px 0; page-break-inside:avoid; break-inside:avoid"><div style="flex:1; min-width:0"><p style="margin:0 0 4px; font-weight:700">🧩 Blocks</p><img src="../assets/week3-canvas-blocks.png" alt="MakeCode blocks: on chat command run, fill with white concrete from ~1 ~1 ~0 to ~15 ~15 ~0, replace" style="width:100%; max-width:240px; border-radius:8px; display:block"></div><div style="flex:1; min-width:0"><p style="margin:0 0 4px; font-weight:700">🐍 Python</p><pre style="margin:0; white-space:pre; font-size:12px">def on_run():
     blocks.fill(WHITE_CONCRETE,
@@ -13,13 +13,13 @@ This week you copy a picture made of blocks onto your wall. Every block sits at 
         FillOperation.REPLACE)
 player.on_chat("run", on_run)</pre></div></div>
 
-> 🔴 **Stand on the red block every time you run.** If you move, the picture moves too. Same spot every time = a clean picture.
+> 🔴 **Stand on the red block every time you run.** If you move, the picture moves too.
 
 ---
 
 ## 1 · Predict 🔮
 
-Read the steps. Do not run them. Circle one word, then answer.
+Read the steps. Circle your answer.
 
 ```
 place red block at (6, 1)
@@ -29,9 +29,7 @@ place red block at (8, 1)
 
 **Across or up? Circle one:** across · up
 
-**Which number changes — x or y?**
-
-<div class="write-space short"></div>
+**Which number changes? Circle one:** x · y
 
 ```
 place green block at (8, 13)
@@ -40,9 +38,7 @@ place green block at (8, 14)
 
 **Across or up? Circle one:** across · up
 
-**Which number changes — x or y?**
-
-<div class="write-space short"></div>
+**Which number changes? Circle one:** x · y
 
 ---
 
@@ -64,17 +60,13 @@ place yellow block at (__, 1)
 place yellow block at (__, 1)
 ```
 
-**Write the two missing numbers:**
+**Which two numbers are missing? Circle one:** 7 and 8 · 6 and 6
 
-<div class="write-space short"></div>
-
-**Why was it broken? Write one short sentence.**
-
-<div class="write-space short"></div>
+**Why was it broken? Circle one:** all three had the same x · the color was wrong
 
 ---
 
-## 3 · Build It 📸
+## 3 · Show Your Work 📸🎥
 
 Stand on your **home spot** (the red block).
 
@@ -84,32 +76,30 @@ Stand on your **home spot** (the red block).
 
 **Now try a big one.** Pick the 🍍 pineapple or the 🍎 apple from the main worksheet grid and copy it the same way. Read each colored square and place that color at its (x, y).
 
-When you finish, send a photo. Then write 2 sentences with these starters:
+Record **one video** (a phone is fine). Show two things:
 
-> I built the …
+**1 · Your code.** Scroll through it. Say what each part does.
+
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
 >
-> The lowest block is at (x = …, y = …).
+> I built it using this code: ______.
+>
+> In this code I used ______.
+>
+> The hardest part was ______.
+>
+> That part was hard because ______.
 
-<div class="write-space tall" style="min-height: 240px"></div>
+**Write your lines here, then say them in your video.**
 
----
-
-## 4 · Explain It 🎥
-
-Take a video on your phone. Show your picture and talk like you are teaching a friend.
-
-> 1. Show your home spot (the red block).
-> 2. Show your finished picture.
-> 3. Point at one block and say "this one is at x …, y …".
-
-Try to use these words: **x** · **y** · **across** · **up** · **home spot**.
-
-**Write 2 short sentences to say in your video.**
-
-<div class="write-space tall" style="min-height: 240px"></div>
+<div class="write-space tall" style="min-height: 340px"></div>
 
 ---
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + your video to teacher on KakaoTalk.

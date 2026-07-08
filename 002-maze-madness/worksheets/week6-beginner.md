@@ -42,9 +42,7 @@ move forward
 interact ahead
 ```
 
-**What does the buggy agent hit?**
-
-<div class="write-space short"></div>
+**What does the buggy agent hit? Circle one:** the closed door · the lever · the goal
 
 **Pair B** — Walk up to the lever. Flip once.
 
@@ -62,9 +60,7 @@ while no lever ahead:
     interact ahead
 ```
 
-**How many times does the buggy agent flip?**
-
-<div class="write-space short"></div>
+**How many times does the buggy agent flip? Circle one:** once · many times · never
 
 ---
 
@@ -78,28 +74,38 @@ move forward
 move forward
 ```
 
-**Word bank:** `interact ahead` · `turn right`
-
-**Write the line:**
-
-<div class="write-space short"></div>
+**Missing line? Circle one:** interact ahead · turn right
 
 ---
 
-## 4 · Finish the Maze 📸
+## 4 · Show Your Work 📸🎥
 
 Open your homework world. Walk the agent to the lever. Flip it. Go through the door to the goal.
 
-Send a photo or video of the agent at the end. Then write 2 sentences.
+Record **one video** (a phone is fine). Show two things:
 
-> I used `interact` to …
+**1 · Your code.** Scroll through it. Say what each part does.
+
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
 >
-> The door opened, so the agent …
+> I built it using this code: ______.
+>
+> In this code I used ______.
+>
+> The hardest part was ______.
+>
+> That part was hard because ______.
 
-<div class="write-space tall" style="min-height: 240px"></div>
+**Write your lines here, then say them in your video.**
+
+<div class="write-space tall" style="min-height: 340px"></div>
 
 ---
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + your video to teacher on KakaoTalk.

@@ -1,0 +1,151 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head><meta charset='utf-8'>
+<title>🧊 M003 Week 8 — English Worksheet</title>
+<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
+<style>
+@page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
+div.WordSection1 { page: WordSection1; }
+body { font-family: "Segoe UI", Arial, sans-serif; font-size: 11.5pt; color: #1a1a2e; line-height: 1.5; }
+h1 { font-size: 21pt; color: #6b4ee6; margin: 4px 0 6px; }
+h2 { font-size: 15pt; color: #6b4ee6; border-top: 1px solid #dddddd; padding-top: 8px; margin: 18px 0 10px; }
+h3, h4 { font-size: 11.5pt; margin: 12px 0 6px; }
+p { margin: 7px 0; }
+.brand { font-size: 10.5pt; font-weight: bold; color: #ff7849; letter-spacing: .06em;
+         border-bottom: 2px solid #ff7849; padding-bottom: 6px; margin-bottom: 14px; }
+table { border-collapse: collapse; margin: 10px 0; }
+th, td { border: 1px solid #c8c8c8; padding: 4px 9px; text-align: center; }
+th { background: #f3eefc; color: #6b4ee6; font-weight: bold; }
+pre { font-family: Consolas, "Courier New", monospace; font-size: 10.5pt; background: #f4f4f5;
+      border: 1px solid #dddddd; padding: 8px 10px; white-space: pre-wrap; }
+pre code { background: transparent; color: #1a1a2e; }
+code { font-family: Consolas, "Courier New", monospace; background: #fff1e8; color: #d6531f; padding: 0 3px; }
+blockquote { border-left: 3px solid #ff7849; background: #fff6ef; padding: 8px 12px;
+             color: #6a3a1c; margin: 9px 0; }
+ul, ol { margin: 7px 0 7px 26px; }
+p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
+.footer { color: #999999; font-size: 8.5pt; text-align: center; margin-top: 18px;
+          border-top: 1px solid #eeeeee; padding-top: 6px; }
+.footer b { color: #ff7849; }
+</style></head>
+<body><div class=WordSection1>
+<div class="brand">📚 ENGLISH CODING · 영어코딩</div>
+<h1>🧊 M003 Week 8 — English Worksheet</h1>
+<p><strong>Topic:</strong> Final — My Own Museum · <strong>Course:</strong> 3D Coordinates · <strong>Time:</strong> about 60 minutes</p>
+<p>This is your big final project — no new commands, every idea from this course in one build. Your museum is a <strong>room</strong> visitors walk into, with <strong>flat pictures</strong> on the walls (2D, x and y) and <strong>solid sculptures</strong> on pedestals (3D, x, y, z). Plan it like an architect: coordinates first, then build.</p>
+<hr />
+<h2>1 · Predict 🔮</h2>
+<p>Read each plan. Write what you think you will see.</p>
+<pre><code># 2D art: a picture on the back wall — z stays 0, blocks climb with x and y
+set x to 0
+repeat 5 times:
+    place red block at (x, 1, 0)
+    add 1 to x
+</code></pre>
+<p><strong>Every block stays at z = 0; only x changes. Is this flat like a painting, or solid like a statue? From which direction do you look to see the whole picture?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code># 3D art: a sculpture on a pedestal — all three numbers used
+fill stone from (4, 0, 4) to (5, 1, 5)
+place gold block at (4, 2, 4)
+place gold block at (5, 2, 5)
+</code></pre>
+<p><strong>This uses x, y, and z. Is it flat or solid? Can a visitor walk all the way around it? Where do the gold blocks sit — on top of the pedestal or beside it?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code>gallery floor: fill stone from (0, 0, 0) to (10, 0, 10)
+pedestal A:    fill stone from (2, 0, 2) to (3, 1, 3)
+pedestal B:    fill stone from (7, 0, 7) to (8, 1, 8)
+</code></pre>
+<p><strong>Read the (x, z) footprints. Are the two pedestals far apart? Looking down from above, sketch in words where each one sits on the floor.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>2 · Spot the Bug 🐛</h2>
+<p>Each code block below is broken. Read what it should do, fix it, then explain why the original was wrong and your fix works.</p>
+<p><strong>Bug A</strong> — The gallery should be a <strong>hollow room</strong> with a doorway. Right now it is a solid block of stone with no inside.</p>
+<pre><code>fill stone from (0, 0, 0) to (10, 4, 10)
+fill air from (5, 2, 0) to (6, 3, 0)
+</code></pre>
+<p><strong>Hint:</strong> before you can cut a doorway, the inside has to be hollowed out with air.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug B</strong> — These two sculptures should stand on <strong>two different pedestals</strong>. Right now both pedestals share the same (x, z) footprint, so they pile up in one spot.</p>
+<pre><code>fill stone from (2, 0, 2) to (3, 1, 3)
+place gold block at (2, 2, 2)
+fill stone from (2, 0, 2) to (3, 1, 3)
+place blue block at (2, 2, 2)
+</code></pre>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug C</strong> — This wall picture should be <strong>flat 2D art</strong> that stands up the back wall — z stays 0 while the picture climbs with x and y. Right now the second row steps <strong>forward</strong> onto the floor instead of <strong>up</strong> the wall.</p>
+<pre><code>set x to 0
+repeat 4 times:
+    place red block at (x, 1, 0)
+    add 1 to x
+set x to 0
+repeat 4 times:
+    place red block at (x, 1, 1)
+    add 1 to x
+</code></pre>
+<p><strong>Hint:</strong> to climb the wall, the row above should raise <strong>y</strong>, not raise z.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>3 · Blueprint Your Museum 🗺️</h2>
+<p>Plan <strong>before</strong> you build. Looking down from above, write the coordinates of every piece.</p>
+<p>Gallery room: from ( … , … , … ) to ( … , … , … ) · doorway at ( … , … , … )</p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p>Wall picture 1 — shows … · stands on the wall where … stays 0</p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p>Wall picture 2 — shows … · stands on the wall where … stays 0</p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p>Pedestal 1: from ( … , … , … ) to ( … , … , … ) · sculpture on top at ( … , … , … )</p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p>Pedestal 2: from ( … , … , … ) to ( … , … , … ) · sculpture on top at ( … , … , … )</p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>4 · Show Your Work 📸🎥</h2>
+<p>Now switch to your homework world and build your museum from your blueprint. Check your build against this list:</p>
+<blockquote>
+<p>☐ A <strong>gallery room</strong> with a floor, walls, and a <strong>doorway</strong> to walk through.</p>
+<p>☐ At least <strong>two different flat pictures</strong> on the walls — <strong>2D art</strong>, where only x and y change.</p>
+<p>☐ At least <strong>two sculptures</strong>, each on its <strong>own pedestal</strong> — <strong>3D art</strong>, using x, y, and z.</p>
+<p>☐ The two pedestals <strong>do not overlap</strong>, and each sculpture <strong>rests on top</strong> of its pedestal.</p>
+<p>☐ The museum matches the coordinates on your blueprint.</p>
+</blockquote>
+<p>Record <strong>one video</strong> (a phone is fine). Show two things:</p>
+<p><strong>1 · Your code.</strong> Scroll through it. Say what each part does.</p>
+<p><strong>2 · Your build.</strong> Point the camera. Name the parts.</p>
+<p>Fill the blanks:</p>
+<blockquote>
+<p>Today I built ______.</p>
+<p>I built it using this code: ______.</p>
+<p>In this code I used ______.</p>
+<p>The hardest part was ______.</p>
+<p>That part was hard because ______.</p>
+</blockquote>
+<p><strong>Write your lines here, then say them in your video.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your video to teacher on KakaoTalk.</p>
+<div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>
+</div></body></html>

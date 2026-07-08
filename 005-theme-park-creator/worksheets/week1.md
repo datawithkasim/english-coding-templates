@@ -2,7 +2,7 @@
 
 **Topic:** One Function, Many Coasters — Parameters · **Course:** Theme Park Creator · **Time:** about 45 minutes
 
-This week you build a roller coaster with a **function**. You give the function **parameters** — numbers it uses inside — so the same function can build a long coaster, a short coaster, a tall spiral, or a wide one, just by changing the numbers you **call** it with.
+This week you build a roller coaster with a **function**. You give it **parameters** — numbers it uses inside. Change the numbers you **call** it with to build a long coaster, a short one, a tall spiral, or a wide one.
 
 These are the blocks you use this week:
 
@@ -20,7 +20,7 @@ rollerCoasterBuilder.add_turn(TurnDirection.LEFT)
 
 ## 1 · Predict 🔮
 
-Read each function. Before you imagine the cart riding it, write what you think will happen.
+Read each function. Write what you think will happen.
 
 ```python
 def build_hill(line_len):
@@ -62,7 +62,7 @@ build_spiral(10, 3)
 
 ## 2 · Spot the Bug 🐛
 
-Each block of code was meant to do something, but it is broken. Read what it is **supposed** to do, then rewrite it so it works. After that, explain why the original was wrong and why your fix works.
+Each block is broken. Read what it should do, rewrite it so it works, then explain why the original was wrong.
 
 **Bug A** — The code should build a hill 8 long. But when you run it, **nothing happens at all**.
 
@@ -124,7 +124,7 @@ up_and_down(10)
 
 ## 3 · Build the Loop Coaster 🎢
 
-Now the real challenge. In your homework world, write **one** function called `loop_coaster` that builds a coaster which **loops all the way back to the starting area**. Your function must have these **four parameters**:
+In your homework world, write **one** function called `loop_coaster` that builds a coaster which **loops all the way back to the starting area**. Your function must have these **four parameters**:
 
 ```python
 def loop_coaster(line_len, ramp_len, spiral_height, spiral_width):
@@ -136,7 +136,7 @@ Your coaster must include, in total:
 - **2 spirals** — one going **UP**, one coming back **DOWN**
 - enough **turns** that the track curves around and ends back where it started
 
-Here are the building blocks you need. Right now they all use **fixed numbers** and all point the **same way** — your job is to fix that:
+Here are the building blocks. They all use **fixed numbers** and point the **same way**. Fix that:
 
 ```python
 rollerCoasterBuilder.add_straight_line(10)
@@ -149,7 +149,7 @@ To finish the challenge you must:
 
 1. **Swap the numbers for parameters** — replace `10`, `10`, `10`, `3` with `line_len`, `ramp_len`, `spiral_height`, `spiral_width` so the size is controlled by the call.
 2. **Flip the directions on the way back** — change the second ramp and the second spiral from `UP` to `DOWN` so the cart returns to ground level.
-3. **Add turns** — keep the `add_turn(TurnDirection.LEFT)` blocks coming until the track curves all the way around and meets the start. Test in the world, then add or remove a turn until it closes the loop.
+3. **Add turns** — keep adding `add_turn(TurnDirection.LEFT)` until the track curves around and meets the start. Add or remove a turn until it closes the loop.
 
 Finally, **call your function once** with numbers you choose, for example:
 
@@ -163,36 +163,29 @@ loop_coaster(8, 10, 10, 3)
 
 ---
 
-## 4 · Tell Me What You Built 📸
+## 4 · Show Your Work 📸🎥
 
-When your coaster loops back to the start, ride it once in your world. Then send a photo or video and explain what you did. Use these sentence starters — write 4 to 6 sentences total.
+When your coaster loops back to the start, ride it once in your world.
 
-> My four parameters were …
+Record **one video** (a phone is fine). Show two things:
+
+**1 · Your code.** Scroll through it. Say what each part does.
+
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
 >
-> The number I changed that made the biggest difference was …
+> I built it using this code: ______.
 >
-> To make the cart come back down, I …
+> In this code I used ______.
 >
-> To make the track loop back to the start, I …
+> The hardest part was ______.
 >
-> One tricky moment was when …
->
-> If I had more time, I would …
+> That part was hard because ______.
 
-<div class="write-space tall" style="min-height: 340px"></div>
-
----
-
-## 5 · Record Your Walkthrough 🎥
-
-Take a video on your phone (or a parent's phone) of your code and your coaster. Talk through it like you are teaching someone who has never seen it. Try to use these words: **function**, **parameter**, **call**, **UP / DOWN**, **turn**.
-
-> 1. Show your `loop_coaster` function and read the line with the four **parameters** out loud.
-> 2. Point at one parameter and say what it controls.
-> 3. Run your **call** and show the cart riding the loop all the way back to the start.
-> 4. Say in your own words what a **parameter** is and why one function can build many coasters.
-
-**Write what you will say in your video.** Plan it here before you record — you can read from it while filming.
+**Write your lines here, then say them in your video.**
 
 <div class="write-space tall" style="min-height: 340px"></div>
 
@@ -200,4 +193,4 @@ Take a video on your phone (or a parent's phone) of your code and your coaster. 
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + your video to teacher on KakaoTalk.

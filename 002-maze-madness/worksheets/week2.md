@@ -2,7 +2,7 @@
 
 **Topic:** Turn at Walls · **Course:** Maze Madness · **Level:** Advanced · **Time:** about 55 minutes
 
-The rule: wall ahead, turn. No wall, move forward. This week you write the real code.
+The rule: wall ahead, turn. No wall, move forward.
 
 ---
 
@@ -90,28 +90,34 @@ Loop forever. Wall ahead? Turn right. No wall? Move forward 1.
 
 ---
 
-## 7 · Finish the Maze 📸
+## 7 · Show Your Work 📸🎥
 
 Open your homework world. Get the agent out with your turn code.
 
-Take a photo or video at the maze end.
+Record **one video** (a phone is fine). Show two things:
 
-**Phone narration plan — say each line out loud while you show the run:**
+**1 · Your code.** Scroll through it. Say what each part does.
 
-> The maze turns where …
->
-> I checked `agent.detect(BLOCK, …)` for …
->
-> When a wall was ahead I …
->
-> My agent got stuck when …
->
-> I fixed it by …
+**2 · Your build.** Point the camera. Name the parts.
 
-<div class="write-space tall" style="min-height: 240px"></div>
+Fill the blanks:
+
+> Today I built ______.
+>
+> I built it using this code: ______.
+>
+> In this code I used ______.
+>
+> The hardest part was ______.
+>
+> That part was hard because ______.
+
+**Write your lines here, then say them in your video.**
+
+<div class="write-space tall" style="min-height: 340px"></div>
 
 ---
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + your video to teacher on KakaoTalk.

@@ -2,13 +2,13 @@
 
 **Topic:** Sensing the World · **Course:** Functions & Games · **Time:** about 45 minutes
 
-This week your agent **senses** the world before it acts. It can detect a block **ahead**, check what is **below**, and do something different for each block type — like stopping before lava.
+This week your agent **senses** the world before it acts. It can detect a block **ahead**, check what is **below**, and act differently for each block type.
 
 ---
 
 ## 1 · Predict 🔮
 
-Read each set of steps. Before you imagine the agent doing it, write what you think will happen.
+Before you imagine the agent doing it, write what you think will happen.
 
 ```
 if agent detects block ahead:
@@ -50,7 +50,7 @@ repeat 5 times:
 
 ## 2 · Spot the Bug 🐛
 
-Each block of code below was meant to do something, but it is broken. Read what the code is **supposed** to do, then rewrite it so it works. After that, explain why the original was wrong and why your fix works.
+Each block below is broken. Rewrite it so it works, then explain why the original was wrong and why your fix works.
 
 **Bug A** — The agent should place a safe block when the block **below** is lava. But it never notices the lava under its feet and falls in.
 
@@ -110,38 +110,29 @@ repeat 8 times:
 
 ---
 
-## 3 · Tell Me What You Built 📸
+## 3 · Show Your Work 📸🎥
 
 Now switch to your homework world. Send your agent across the danger field: it must check the block **below** at least once and the block **ahead** at least once, and act differently for at least two block types. When you finish, come back here.
 
-Send a photo or video of the agent crossing safely, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.
+Record **one video** (a phone is fine). Show two things:
 
-> First, I …
+**1 · Your code.** Scroll through it. Say what each part does.
+
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
 >
-> My agent detected …
+> I built it using this code: ______.
 >
-> When the block below was …, my agent …
+> In this code I used ______.
 >
-> One tricky moment was when …
+> The hardest part was ______.
 >
-> To fix it, I …
->
-> If I had more time, I would …
+> That part was hard because ______.
 
-<div class="write-space tall" style="min-height: 340px"></div>
-
----
-
-## 4 · Record Your Walkthrough 🎥
-
-Now take a video on your phone (or a parent's phone) while the agent crosses the field. Talk through it like you are teaching someone who has never seen it. Try to use these words: **detect**, **below**, **ahead**, **condition**, **otherwise**.
-
-> 1. Show the danger field, then run your code.
-> 2. Read each `if … detects …` block out loud and say what makes it run.
-> 3. Show one moment where the agent acted **differently** because of what it sensed.
-> 4. Say in your own words why the agent checks **before** it moves.
-
-**Write what you will say in your video.** Use the space below to plan it before you record — you can read from it while filming.
+**Write your lines here, then say them in your video.**
 
 <div class="write-space tall" style="min-height: 340px"></div>
 
@@ -149,4 +140,4 @@ Now take a video on your phone (or a parent's phone) while the agent crosses the
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + your video to teacher on KakaoTalk.

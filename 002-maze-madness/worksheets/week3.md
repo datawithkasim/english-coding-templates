@@ -84,43 +84,40 @@ Why wrong?
 
 ## 4 · Write Code ✍️
 
-Move forward only when the path ahead is clear AND the path on the left is clear. Write it.
+Move forward only when the path ahead is clear AND the path on the left is clear.
 
 <div class="write-space"></div>
 
 ---
 
-## 5 · Finish the Maze 📸
+## 5 · Show Your Work 📸🎥
 
-Solve your homework maze using one or more `AND` conditions. Send a photo or video of the agent at the end. Then finish these.
+Solve your homework maze using one or more `AND` conditions.
 
-> First, I …
+Record **one video** (a phone is fine). Show two things:
+
+**1 · Your code.** Scroll through it. Say what each part does.
+
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
 >
-> I used **AND** when …
+> I built it using this code: ______.
 >
-> Both were true when …
+> In this code I used ______.
 >
-> One tricky moment was …
+> The hardest part was ______.
 >
-> To fix it, I …
+> That part was hard because ______.
 
-<div class="write-space tall" style="min-height: 240px"></div>
+**Write your lines here, then say them in your video.**
 
----
-
-## 6 · Record Your Walkthrough 🎥
-
-Plan your phone video, then record. Try these words: **AND**, **condition**, **both**, **true**, **turn**.
-
-> 1. Show the start. Run your code.
-> 2. Read each `if … and …` block out loud. Say what makes it run.
-> 3. Show one spot where the agent did nothing because only one check was true.
-> 4. Say what **AND** means.
-
-<div class="write-space tall" style="min-height: 240px"></div>
+<div class="write-space tall" style="min-height: 340px"></div>
 
 ---
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + your video to teacher on KakaoTalk.

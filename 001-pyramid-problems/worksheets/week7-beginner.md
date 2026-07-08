@@ -2,13 +2,13 @@
 
 **Topic:** Pyramid Variations · **Course:** Pyramid Problems · **Level:** Beginner · **Time:** about 30 minutes
 
-This week you change **one thing** about your pyramid to make a new shape. A **hollow** layer only has blocks on the edge. A **stepped** pyramid shrinks faster, so the steps look bigger.
+A **hollow** layer has blocks only on the edge. A **stepped** pyramid shrinks faster, so the steps look bigger.
 
 ---
 
 ## 1 · Predict 🔮
 
-Read the steps. Before you imagine the agent doing it, circle or write your answer.
+Read the steps. Circle your answer.
 
 ```
 set size to 5
@@ -20,9 +20,7 @@ while size > 0:
 
 **Is this pyramid filled inside or empty inside? Circle one:** filled · empty
 
-**Could a person stand inside it?**
-
-<div class="write-space short"></div>
+**Could a person stand inside it? Circle one:** yes · no
 
 ```
 set size to 9
@@ -32,13 +30,13 @@ while size > 0:
     set size to size - 4
 ```
 
-**A normal pyramid shrinks by 2. This one shrinks by 4. Do the steps look bigger or smaller? Circle one:** bigger · smaller
+**This shrinks by 4, not 2. Do the steps look bigger or smaller? Circle one:** bigger · smaller
 
 ---
 
 ## 2 · Find the Difference 🐛
 
-Each pair shows clean steps first, then a broken version of the same idea. Circle what's different and write one short sentence about the bug.
+Clean steps first, then a buggy version. Circle the bug.
 
 **Pair A** — The layer should be **hollow** — blocks only on the edge.
 
@@ -52,9 +50,7 @@ Each pair shows clean steps first, then a broken version of the same idea. Circl
 [build one FULL layer]
 ```
 
-**What is wrong? What does the buggy pyramid look like inside?**
-
-<div class="write-space short"></div>
+**What is wrong? Circle one:** it is solid (filled) inside · it is empty inside · it has no walls
 
 **Pair B** — The stepped pyramid should shrink by **4** each layer.
 
@@ -74,15 +70,13 @@ while size > 0:
     set size to size - 2
 ```
 
-**What is wrong? Which pyramid has more layers?**
-
-<div class="write-space short"></div>
+**What is wrong? Circle one:** it shrinks by 2, not 4 · it shrinks by 4, not 2 · it does not shrink
 
 ---
 
 ## 3 · Fill the Gap ✏️
 
-You want a **stepped** pyramid that shrinks fast. One number is missing. Fill it in using the word bank.
+You want a **stepped** pyramid that shrinks fast. Fill the missing number.
 
 ```
 set size to 9
@@ -92,47 +86,43 @@ while size > 0:
     set size to size - ____
 ```
 
-**Word bank:** `4` · `0` · `100`
-
-**Write the missing number:**
-
-<div class="write-space short"></div>
+**Missing number? Circle one:** 4 · 0 · 100
 
 ---
 
-## 4 · Tell Me What You Built 📸
+## 4 · Show Your Work 📸🎥
 
 Now switch to your homework world. Pick **one** variation and build it:
 
 - **Hollow** — layers with blocks only on the edge, or
 - **Stepped** — shrink by 4 instead of 2.
 
-When you finish, come back here. Send a photo or video of your variation, then explain what you did. Use these sentence starters — write 2 or 3 sentences.
+When you finish, come back here.
 
-> I picked the … variation.
+Record **one video** (a phone is fine). Show two things:
+
+**1 · Your code.** Scroll through it. Say what each part does.
+
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
 >
-> I changed the … part of the code.
+> I built it using this code: ______.
 >
-> The hardest part was …
+> In this code I used ______.
+>
+> The hardest part was ______.
+>
+> That part was hard because ______.
 
-<div class="write-space tall" style="min-height: 240px"></div>
+**Write your lines here, then say them in your video.**
 
----
-
-## 5 · Record Your Walkthrough 🎥
-
-Take a video on your phone (or a parent's phone) and walk the camera around your variation. Talk like you are teaching a friend. Try to use these words: **hollow**, **stepped**, **layer**, **edge**.
-
-> 1. Show what makes your pyramid different from a normal one.
-> 2. Say which part of the code you changed.
-> 3. Show one bug you hit and how you fixed it.
-
-**Write what you will say in your video.** You can read from it while filming.
-
-<div class="write-space tall" style="min-height: 240px"></div>
+<div class="write-space tall" style="min-height: 340px"></div>
 
 ---
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + your video to teacher on KakaoTalk.

@@ -2,7 +2,7 @@
 
 **Topic:** Add Two AND Conditions · **Course:** Maze Madness · **Level:** Extension (Advanced) · **Time:** about 55 minutes
 
-The agent knows **four rules** to follow a redstone trail through a 3D maze. The solver is **not finished**: at two junctions two signals are on at once, so one signal is not enough and the agent stops. Add **two AND rules** of your own — **you** decide which two signals each junction needs. Then drive the agent to the goal.
+The agent follows a redstone trail through a 3D maze with **four rules**. The solver is **not finished**: at two junctions two signals are on at once, so the agent stops. Add **two AND rules** of your own, then drive the agent to the goal.
 
 Chat: `l` turn left, `r` turn right, `run` start solver, `rl` bring agent back.
 
@@ -42,7 +42,7 @@ elif agent.detect(REDSTONE, UP):
 
 Most junctions have **one** signal on, so one rule fires. Two junctions have **two** signals on at once — there the four rules are not enough and the agent stops.
 
-Type `run`. Watch where it stops. Walk over and look around the agent.
+Type `run` and watch where it stops. Look around the agent.
 
 **Tick the signals on at each stuck junction.**
 
@@ -102,7 +102,7 @@ elif agent.detect(REDSTONE, ______) and agent.detect(REDSTONE, ______):
 
 ## 5 · Spot the Bug 🐛
 
-Each block is broken. Rewrite it, then explain the fix. (Signals here are examples.)
+Rewrite each block, then explain the fix. (Signals here are examples.)
 
 **Bug A** — should fire **only when both** signals are on, but fires when **either** one is, so it triggers at wrong spots.
 
@@ -137,39 +137,29 @@ elif agent.detect(REDSTONE, RIGHT) and agent.detect(REDSTONE, UP):
 
 ---
 
-## 6 · Finish the Whole Maze 📸
+## 6 · Show Your Work 📸🎥
 
 The goal is start to the **very end** — past both stuck junctions and every plain turn. Type `run`, watch where it stops, fix your two rules, run again until it reaches the goal.
 
-Send a photo or video of the agent at the goal. Then write 4 to 6 sentences with these starters.
+Record **one video** (a phone is fine). Show two things:
 
-> Each of the four rules checked …
+**1 · Your code.** Scroll through it. Say what each part does.
+
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
 >
-> The agent got stuck because one signal was not …
+> I built it using this code: ______.
 >
-> The two signals at the first stuck junction were … and …
+> In this code I used ______.
 >
-> My AND rule was true only when both were …
+> The hardest part was ______.
 >
-> I put my two new rules before the old rules because …
->
-> The hardest part was …
+> That part was hard because ______.
 
-<div class="write-space tall" style="min-height: 340px"></div>
-
----
-
-## 7 · Plan Your Walkthrough Video 🎥
-
-Film on your phone (or a parent's) while the agent solves the whole maze. Teach it like the viewer has never seen it. Try these words: **detect**, **redstone**, **AND**, **both**, **condition**, **turn**, **move up**, **move down**.
-
-> 1. Show the maze and point out the redstone signals.
-> 2. Type `run` and show the agent following the trail.
-> 3. Read one AND rule and say which two signals must be true.
-> 4. Show the agent passing a stuck junction.
-> 5. Show it reaching the goal.
-
-**Write what you will say. Plan it here first — read from it while filming.**
+**Write your lines here, then say them in your video.**
 
 <div class="write-space tall" style="min-height: 340px"></div>
 
@@ -177,4 +167,4 @@ Film on your phone (or a parent's) while the agent solves the whole maze. Teach 
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + your video to teacher on KakaoTalk.
