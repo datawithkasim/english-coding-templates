@@ -95,11 +95,18 @@ The build only behaves well if you stick to these shapes:
   build instruction, then one video that (1) shows the code + explains it, (2) shows the build +
   explains it, then the fixed fill-in script (`> Today I built ______.` / `> I built it using this
   code: ______.` / `> In this code I used ______.` / `> The hardest part was ______.` / `> That part
-  was hard because ______.`), then one `write-space tall`, then `### Submit`. Keep each blank a
-  single trailing `______` — never two blanks flanking a word (markdown bolds the word between them).
+  was hard because ______.`), then `### Submit`. On INT/ADV/base sheets this script is preceded by
+  a `write-space tall` draft box under "Fill the blanks:". Keep each blank a single trailing `______`
+  — never two blanks flanking a word (markdown bolds the word between them).
 - **Circle-one questions take NO write-space.** A `**… Circle one:** a · b · c` prompt is answered by
   circling — never follow it with a ruled `write-space` box. If the student must also write something,
   make that a separate circle or an explicit written question.
+- **Beginner sheets = ZERO writing.** A `*-beginner.md` has NO `write-space` boxes at all — not even
+  the Show-Your-Work script box. Change "Fill the blanks:" → "Say these out loud, filling in the blanks:"
+  and keep only the `>` script frames (read aloud on video). Every beginner question is Circle-one; any
+  would-be free-write (write-a-rule, "where is the lever? ___", plan lines, "write the (x,y)…") becomes
+  Circle-one or a spoken "say it in your video" prompt. Only blanks inside a ```code``` fence (typed
+  in-game) may remain.
 
 ---
 

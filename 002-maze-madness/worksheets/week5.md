@@ -86,7 +86,7 @@ if on_bottom_layer:
 
 <div class="write-space"></div>
 
-**Bug C** — To climb out, break the block above **first**, then move up. Right now it moves up into solid block and gets stuck.
+**Bug C** — To climb out, break the block above **first**, then move up. It moves up into solid block and gets stuck.
 
 ```python
 agent.move(UP, 1)

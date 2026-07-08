@@ -50,7 +50,7 @@ p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
 
 <hr />
 <h2>2 · Find the Bug 🐛</h2>
-<p>Each code block is broken. The goal is written first. Write one or two sentences on what is wrong.</p>
+<p>Each code block is broken. Write one or two sentences on what is wrong.</p>
 <p><strong>Bug A</strong> — The agent should build a bridge that is exactly <strong>5 blocks long</strong>.</p>
 <pre><code>repeat 4 times:
     place block down
@@ -91,7 +91,7 @@ p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
 
 <hr />
 <h2>4 · Show Your Work 📸🎥</h2>
-<p>Now switch to your homework world. Build a <strong>bridge across the river or cliff</strong> using a loop. When you finish, come back here.</p>
+<p>Switch to your homework world. Build a <strong>bridge across the river or cliff</strong> using a loop.</p>
 <p>Record <strong>one video</strong> (a phone is fine). Show two things:</p>
 <p><strong>1 · Your code.</strong> Scroll through it. Say what each part does.</p>
 <p><strong>2 · Your build.</strong> Point the camera. Name the parts.</p>

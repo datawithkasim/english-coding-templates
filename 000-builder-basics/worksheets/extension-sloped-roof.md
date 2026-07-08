@@ -8,9 +8,9 @@
 
 ## 1 · Predict 🔮
 
-In the **Sloped Roof** world, typing `slope` builds a stepped roof. It does not build block by block — it stacks four square **rings** of stairs, one on the next. The bottom ring is widest; each ring above is smaller, so the roof climbs inward and up to a point — like a small pyramid of steps.
+In the **Sloped Roof** world, typing `slope` builds a stepped roof. It stacks four square **rings** of stairs, each smaller than the one below, so the roof climbs up to a point.
 
-A variable called `roof_len` holds the side length of each ring. It **starts at 7** and **loses 2** each ring. So the side shrinks each layer until the roof reaches its peak.
+A variable called `roof_len` holds the side length of each ring. It **starts at 7** and **loses 2** each ring, shrinking until the roof reaches its peak.
 
 **Write the four values of `roof_len`, from the bottom ring to the top ring.**
 
@@ -24,7 +24,7 @@ A variable called `roof_len` holds the side length of each ring. It **starts at 
 
 <div class="write-space"></div>
 
-Meet a second variable, `step` — it decides **how much the ring shrinks** each layer. Right now `step` is 2, so the side drops 7, 5, 3, 1.
+Meet a second variable, `step` — it decides **how much the ring shrinks** each layer. Here `step` is 2, so the side drops 7, 5, 3, 1.
 
 **If `step` were 1 instead of 2, would the roof be steeper (rises fast) or gentler (rises slowly)? Would it need MORE rings or FEWER rings to reach the peak? Explain why in a sentence or two.**
 
@@ -34,7 +34,7 @@ Meet a second variable, `step` — it decides **how much the ring shrinks** each
 
 ## 2 · Trace Two Things 🔢
 
-Each layer changes two things: the ring **side** gets smaller and the **height** goes up by 1. Fill in the table. Start `roof_len` at 7 and height at 1; take 2 off the side and add 1 to the height each row.
+Each layer changes two things: the **side** gets smaller and the **height** goes up by 1. Start `roof_len` at 7 and height at 1; take 2 off the side and add 1 to the height each row.
 
 | Layer | `roof_len` (ring side) | Height |
 |:-----:|:----------------------:|:------:|

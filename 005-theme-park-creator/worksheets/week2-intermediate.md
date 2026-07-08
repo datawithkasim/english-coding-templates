@@ -23,9 +23,8 @@ blocks.fill(AIR, pos(2, 0, 0), pos(2, 1, 0), FillOperation.REPLACE)
 
 ## 1 · Meet Arguments and Parameters 🎁
 
-A **parameter** is an empty named box — you make it when you *define* the function.
-An **argument** is the real value you drop in — you send it when you *call* the function.
-They line up **by position**, left to right.
+A **parameter** is an empty named box you make when you *define* the function.
+An **argument** is the value you drop in when you *call* it — they line up **by position**, left to right.
 
 ```text
    MAKE IT  →  the names in ( ) are PARAMETERS (empty named boxes):

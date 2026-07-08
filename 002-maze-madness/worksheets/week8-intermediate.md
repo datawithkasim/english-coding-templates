@@ -62,7 +62,7 @@ keep going until at goal:
 
 ## 4 · One Bug 🐛
 
-This must use `interact` **only** when a lever is ahead. Right now it interacts every step.
+This must use `interact` **only** when a lever is ahead. It interacts on every step.
 
 ```
 keep going until at goal:

@@ -109,7 +109,7 @@ footer b { color: #ff7849; }
 <div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
 <h1>🧩 M002 Extension 4 — Complete the Maze</h1>
 <p><strong>Topic:</strong> Add Two AND Conditions · <strong>Course:</strong> Maze Madness · <strong>Level:</strong> Extension (Advanced) · <strong>Time:</strong> about 55 minutes</p>
-<p>The agent follows a redstone trail through a 3D maze with <strong>four rules</strong>. The solver is <strong>not finished</strong>: at two junctions two signals are on at once, so the agent stops. Add <strong>two AND rules</strong> of your own, then drive the agent to the goal.</p>
+<p>The agent follows a redstone trail through a 3D maze with <strong>four rules</strong>, but the solver is <strong>not finished</strong>. At two junctions two signals fire at once and it stops — add <strong>two AND rules</strong>, then drive the agent to the goal.</p>
 <p>Chat: <code>l</code> turn left, <code>r</code> turn right, <code>run</code> start solver, <code>rl</code> bring agent back.</p>
 <h2>1 · Read the Four Rules 🎛️</h2>
 <p>Each rule checks <strong>one</strong> signal and does <strong>one</strong> action.</p>
@@ -198,7 +198,7 @@ elif agent.detect(REDSTONE, UP):
 <div class="write-space"></div></div>
 
 <h2>4 · Add the Two New Rules 🛠️</h2>
-<p>Open the <strong>M002 Complete the Maze</strong> world. Find the four rules. Add <strong>two <code>elif</code> branches</strong>, one per stuck junction, using the signals <strong>you</strong> found.</p>
+<p>Open the <strong>M002 Complete the Maze</strong> world and find the four rules. Add <strong>two <code>elif</code> branches</strong>, one per stuck junction, using the signals <strong>you</strong> found.</p>
 <p><strong>Junction 1 — write the whole branch: the AND condition, then the action for each signal.</strong></p>
 <pre><code class="language-python">elif agent.detect(REDSTONE, ______) and agent.detect(REDSTONE, ______):
     agent.________(__________)

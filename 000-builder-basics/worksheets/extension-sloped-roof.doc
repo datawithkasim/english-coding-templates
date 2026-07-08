@@ -36,8 +36,8 @@ p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
 </blockquote>
 <hr />
 <h2>1 · Predict 🔮</h2>
-<p>In the <strong>Sloped Roof</strong> world, typing <code>slope</code> builds a stepped roof. It does not build block by block — it stacks four square <strong>rings</strong> of stairs, one on the next. The bottom ring is widest; each ring above is smaller, so the roof climbs inward and up to a point — like a small pyramid of steps.</p>
-<p>A variable called <code>roof_len</code> holds the side length of each ring. It <strong>starts at 7</strong> and <strong>loses 2</strong> each ring. So the side shrinks each layer until the roof reaches its peak.</p>
+<p>In the <strong>Sloped Roof</strong> world, typing <code>slope</code> builds a stepped roof. It stacks four square <strong>rings</strong> of stairs, each smaller than the one below, so the roof climbs up to a point.</p>
+<p>A variable called <code>roof_len</code> holds the side length of each ring. It <strong>starts at 7</strong> and <strong>loses 2</strong> each ring, shrinking until the roof reaches its peak.</p>
 <p><strong>Write the four values of <code>roof_len</code>, from the bottom ring to the top ring.</strong></p>
 <p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
 
@@ -47,13 +47,13 @@ p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
 <p><strong>What is the LAST value of <code>roof_len</code>, the one at the very top? What kind of shape does a ring that small make?</strong></p>
 <p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
 
-<p>Meet a second variable, <code>step</code> — it decides <strong>how much the ring shrinks</strong> each layer. Right now <code>step</code> is 2, so the side drops 7, 5, 3, 1.</p>
+<p>Meet a second variable, <code>step</code> — it decides <strong>how much the ring shrinks</strong> each layer. Here <code>step</code> is 2, so the side drops 7, 5, 3, 1.</p>
 <p><strong>If <code>step</code> were 1 instead of 2, would the roof be steeper (rises fast) or gentler (rises slowly)? Would it need MORE rings or FEWER rings to reach the peak? Explain why in a sentence or two.</strong></p>
 <p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
 
 <hr />
 <h2>2 · Trace Two Things 🔢</h2>
-<p>Each layer changes two things: the ring <strong>side</strong> gets smaller and the <strong>height</strong> goes up by 1. Fill in the table. Start <code>roof_len</code> at 7 and height at 1; take 2 off the side and add 1 to the height each row.</p>
+<p>Each layer changes two things: the <strong>side</strong> gets smaller and the <strong>height</strong> goes up by 1. Start <code>roof_len</code> at 7 and height at 1; take 2 off the side and add 1 to the height each row.</p>
 <table>
 <thead>
 <tr>

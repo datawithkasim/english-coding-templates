@@ -31,7 +31,7 @@ p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
 <div class="brand">📚 ENGLISH CODING · 영어코딩</div>
 <h1>🎢 005 Week 2 — English Worksheet (Beginner)</h1>
 <p><strong>Topic:</strong> One Function, Many Booths — Arguments &amp; Parameters · <strong>Course:</strong> Theme Park Creator · <strong>Level:</strong> Beginner · <strong>Time:</strong> about 30 minutes</p>
-<p>This week you build a park <strong>booth</strong> with a <strong>function</strong>. You give it <strong>parameters</strong> — words and numbers it uses inside. Change what you <strong>call</strong> it with to build wood or stone booths, big or small.</p>
+<p>This week you build a park <strong>booth</strong> with a <strong>function</strong>. You give it <strong>parameters</strong> — words and numbers — and change them to build wood or stone booths, big or small.</p>
 <p>These are the blocks you use this week:</p>
 <pre><code class="language-python">blocks.fill(OAK_PLANKS, pos(0, 0, 0), pos(4, 0, 4), FillOperation.HOLLOW)
 </code></pre>
@@ -43,8 +43,7 @@ The first word is the <strong>material</strong> (like <code>OAK_PLANKS</code> or
 </blockquote>
 <hr />
 <h2>1 · Meet Arguments and Parameters 🎁</h2>
-<p>A <strong>parameter</strong> is an empty box with a name. An <strong>argument</strong> is what you drop into that box.
-Same boxes, different stuff → <strong>same function, different booths</strong>.</p>
+<p>A <strong>parameter</strong> is an empty named box. An <strong>argument</strong> is what you drop in — same boxes with different stuff make different booths.</p>
 <pre><code class="language-text">   WHEN YOU MAKE IT — the names in ( ) are PARAMETERS (empty boxes):
 
        def build_booth( wall , size ):
@@ -108,11 +107,11 @@ build_booth(OAK_PLANKS, 6)
 <p><strong>Which word is missing? Circle one:</strong> <code>size</code> · <code>wall</code> · <code>HOLLOW</code></p>
 <hr />
 <h2>5 · Show Your Work 📸🎥</h2>
-<p>Now switch to your homework world. Write one <code>build_booth</code> function with a <code>wall</code> parameter and a <code>size</code> parameter, then call it two times with different materials or sizes. When you finish, come back here.</p>
+<p>Switch to your homework world. Write one <code>build_booth</code> function with a <code>wall</code> parameter and a <code>size</code> parameter, then call it two times with different materials or sizes.</p>
 <p>Record <strong>one video</strong> (a phone is fine). Show two things:</p>
 <p><strong>1 · Your code.</strong> Scroll through it. Say what each part does.</p>
 <p><strong>2 · Your build.</strong> Point the camera. Name the parts.</p>
-<p>Fill the blanks:</p>
+<p>Say these out loud, filling in the blanks:</p>
 <blockquote>
 <p>Today I built ______.</p>
 <p>I built it using this code: ______.</p>
@@ -120,9 +119,6 @@ build_booth(OAK_PLANKS, 6)
 <p>The hardest part was ______.</p>
 <p>That part was hard because ______.</p>
 </blockquote>
-<p><strong>Write your lines here, then say them in your video.</strong></p>
-<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
-
 <hr />
 <h3>Submit ✅</h3>
 <p>Send this worksheet + your video to teacher on KakaoTalk.</p>

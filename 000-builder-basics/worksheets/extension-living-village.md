@@ -16,16 +16,16 @@ By the end, your village must have **all eight** of these:
 > 🏠 A **farm house** — where the farmer lives
 > 🗼 A **house with a watchtower** — a home with a tall tower on top
 > 🧱 A **fence** — around the farm or the animals
-> 💧 A **pond with fish** — water with at least one fish in it
+> 💧 A **pond with fish** — water with a fish in it
 > 🌉 A **bridge** — one that crosses over the pond
 > 🪣 A **well** — for water
 > 🐄 A **few animals** — cows, sheep, pigs, or chickens
 
-There is no fixed size and no map. **You** decide how big each thing is and where it goes. One rule you must not break:
+There is no fixed size and no map — **you** decide how big each thing is and where it goes. One rule you must not break:
 
-> ⚠️ **Everything you can build must be built with code.** No placing blocks by hand — every crop, fence post, and bridge plank goes down from your commands. (Animals are spawned — code or a spawn egg is fine.)
+> ⚠️ **Everything you can build must be built with code.** No placing blocks by hand. (Animals are spawned — code or a spawn egg is fine.)
 
-**In your own words, list the eight things your village must have when you finish.**
+**List the eight things your village must have when you finish.**
 
 <div class="write-space tall" style="min-height: 200px"></div>
 
@@ -37,7 +37,7 @@ There is no fixed size and no map. **You** decide how big each thing is and wher
 
 ## 2 · Plan Before You Build ✏️
 
-A builder plans first. For **each** part, decide what it is made of and how big. Think about the blocks and whether a loop can do the repeating.
+A builder plans first. For **each** part, decide the blocks, the size, and whether a loop can do the repeating.
 
 **Farm** — What crop? How many rows, and how long is each row?
 
@@ -97,7 +97,7 @@ The bridge and the fence are special: they change direction. A fence goes across
 
 ## 4 · Show Your Work 📸🎥
 
-Now go to your homework world and build. Run your code for each part, one at a time, and move the agent between them. Build the water first, then put the bridge across it, so you can see it reach.
+Go to your homework world and build each part one at a time, moving the agent between them. Build the water first, then put the bridge across it so you can see it reach.
 
 Keep going until your village has **all eight** parts — the farm, the farm house, the watchtower house, the fence, the pond with fish, the bridge, the well, and the animals.
 

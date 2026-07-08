@@ -2,7 +2,7 @@
 
 **Topic:** First Steps with Coordinates (x, y) · **Course:** 3D Coordinates · **Level:** Beginner · **Time:** about 30 minutes
 
-This week you draw on a flat **wall**. Every spot has a name — **two numbers: (x, y)**. x is **across**, y is **up**. Counting starts at **0**.
+This week you draw on a flat **wall**. Every spot has a name — **two numbers (x, y)**: x is **across**, y is **up**, counting from **0**.
 
 ---
 
@@ -75,7 +75,7 @@ place gold block at (4, ____)
 
 ## 4 · Show Your Work 📸🎥
 
-Now switch to your homework world. Place a gold block at **(0, 0)**, then pick two more coordinates and place a block at each one. When you finish, come back here.
+Switch to your homework world. Place a gold block at **(0, 0)**, then pick two more coordinates and place a block at each one.
 
 Record **one video** (a phone is fine). Show two things:
 
@@ -83,7 +83,7 @@ Record **one video** (a phone is fine). Show two things:
 
 **2 · Your build.** Point the camera. Name the parts.
 
-Fill the blanks:
+Say these out loud, filling in the blanks:
 
 > Today I built ______.
 >
@@ -94,10 +94,6 @@ Fill the blanks:
 > The hardest part was ______.
 >
 > That part was hard because ______.
-
-**Write your lines here, then say them in your video.**
-
-<div class="write-space tall" style="min-height: 340px"></div>
 
 ---
 

@@ -92,12 +92,10 @@ while size > 0:
 
 ## 4 · Show Your Work 📸🎥
 
-Now switch to your homework world. Pick **one** variation and build it:
+Switch to your homework world. Pick **one** variation and build it:
 
 - **Hollow** — layers with blocks only on the edge, or
 - **Stepped** — shrink by 4 instead of 2.
-
-When you finish, come back here.
 
 Record **one video** (a phone is fine). Show two things:
 
@@ -105,7 +103,7 @@ Record **one video** (a phone is fine). Show two things:
 
 **2 · Your build.** Point the camera. Name the parts.
 
-Fill the blanks:
+Say these out loud, filling in the blanks:
 
 > Today I built ______.
 >
@@ -116,10 +114,6 @@ Fill the blanks:
 > The hardest part was ______.
 >
 > That part was hard because ______.
-
-**Write your lines here, then say them in your video.**
-
-<div class="write-space tall" style="min-height: 340px"></div>
 
 ---
 

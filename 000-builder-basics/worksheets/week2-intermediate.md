@@ -46,7 +46,7 @@ place block down
 
 ## 2 · Spot the Bug 🐛
 
-Each code block is broken. The goal and a hint come first. Rewrite it, then write one sentence on what was wrong.
+Each code block is broken. Rewrite it, then write one sentence on what was wrong.
 
 **Bug A** — Goal: place a block, move forward, then place another block.
 Hint: look at the very first line — is the agent placing before it moves?
@@ -103,7 +103,7 @@ place block down
 
 ## 3 · Show Your Work 📸🎥
 
-Now switch to your homework world. Place **4 blocks** — make some in a line and some stacked, so your build has more than one shape. When you finish, come back here.
+Switch to your homework world. Place **4 blocks** — some in a line, some stacked.
 
 Record **one video** (a phone is fine). Show two things:
 

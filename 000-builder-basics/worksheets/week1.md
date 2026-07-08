@@ -101,7 +101,7 @@ move forward
 
 ## 3 · Show Your Work 📸🎥
 
-Now switch to your homework world. Move your agent in an **L-shape** path — go forward, turn, then go forward again (no loops this week). When you finish, come back here.
+Switch to your homework world. Move your agent in an **L-shape** path — go forward, turn, then go forward again (no loops this week).
 
 Record **one video** (a phone is fine). Show two things:
 

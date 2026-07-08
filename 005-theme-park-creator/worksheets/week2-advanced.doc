@@ -47,8 +47,7 @@ blocks.fill(OAK_FENCE, pos(x1, 1, z1), pos(x1, 3, z1), FillOperation.REPLACE)
 <hr />
 <h2>1 · Meet Arguments and Parameters 🎁</h2>
 <p>A <strong>parameter</strong> is a named empty box you create when you <strong>define</strong> the function.
-An <strong>argument</strong> is the real value you send when you <strong>call</strong> it.
-They match <strong>by position</strong>: the order of your arguments decides which box each one lands in.</p>
+An <strong>argument</strong> is the real value you send when you <strong>call</strong> it, matched <strong>by position</strong> — order decides which box each one lands in.</p>
 <pre><code class="language-text">   DEFINE  →  the names in ( ) are PARAMETERS (empty named boxes):
 
        def build_stall( stand , post , roof , x1 , x2 , z1 , z2 ):
@@ -64,7 +63,7 @@ They match <strong>by position</strong>: the order of your arguments decides whi
        post  ⟵ OAK_FENCE   x2 ⟵ 10      z2 ⟵ 6
        roof  ⟵ BRICKS
 </code></pre>
-<p>Notice two things: <code>BRICKS</code> was sent in <strong>twice</strong> (same material for stand and roof — that's fine), and the <strong>corners</strong> are numbers while the <strong>materials</strong> are words. Mixing them is normal.</p>
+<p>Two things to notice: <code>BRICKS</code> is sent in <strong>twice</strong> (same material for stand and roof — fine), and the <strong>corners</strong> are numbers while the <strong>materials</strong> are words.</p>
 <p><strong>Why does matching by <em>position</em> mean the order of your arguments matters?</strong></p>
 <p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
 

@@ -53,7 +53,7 @@ move forward by 4
 
 ## 2 · Spot the Bug 🐛
 
-Each code block below is broken. Read what it should do, rewrite it so it works, then explain why the original was wrong and why your fix works.
+Each code block below is broken. Rewrite it so it works, then explain the fix.
 
 **Bug A** — The agent is supposed to draw a closed **square** outline.
 
@@ -111,7 +111,7 @@ repeat 4 times:
 
 ## 3 · Show Your Work 📸🎥
 
-Now switch to your homework world. Run your `pyra` command to build a pyramid. Then change the **starting value of `f`** (try a smaller number) and build a shorter one. If the agent ends up facing the wrong way or stuck, use your helper commands to reset it — `1` turns it left, `r` turns it right, and `r1` teleports it back to you.
+Switch to your homework world. Run `pyra`, change the **starting value of `f`** to build a shorter pyramid, then reset a stuck agent with `1` (left), `r` (right), `r1` (back).
 
 Record **one video** (a phone is fine). Show two things:
 

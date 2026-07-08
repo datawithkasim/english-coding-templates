@@ -8,8 +8,6 @@ This week you give a function a **parameter** — a number it uses inside, so ca
 
 ## 1 · Predict 🔮
 
-Before you imagine the agent doing it, write what you think will happen.
-
 ```
 define build_tower(height):
     repeat height times:
@@ -116,7 +114,7 @@ build_tower()
 
 ## 3 · Show Your Work 📸🎥
 
-Now switch to your homework world. Build a tower village: write **one** function with a `height` parameter, then call it at least **three** times with different numbers. When you finish, come back here.
+Switch to your homework world. Build a tower village: write **one** function with a `height` parameter, then call it **three** times with different numbers.
 
 Record **one video** (a phone is fine). Show two things:
 

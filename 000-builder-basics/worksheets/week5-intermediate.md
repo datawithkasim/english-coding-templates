@@ -35,7 +35,7 @@ repeat 3 times:
 
 ## 2 · Spot the Bug 🐛
 
-Clean steps first, then a broken version. The goal is given before each pair. Find what changed and explain the bug in one sentence.
+Clean steps first, then a broken version. Find what changed and explain the bug in one sentence.
 
 **Pair A** — *Goal: place exactly 5 blocks in a row.*
 
@@ -126,7 +126,7 @@ place block down
 
 ## 4 · Show Your Work 📸🎥
 
-Now switch to your homework world. Build your **roofed house** — any size you like. When you finish, come back here.
+Switch to your homework world. Build your **roofed house** — any size you like.
 
 Record **one video** (a phone is fine). Show two things:
 

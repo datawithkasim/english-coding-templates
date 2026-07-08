@@ -8,8 +8,6 @@ This week you type a word in chat and your code runs. A **chat command** can tak
 
 ## 1 · Predict 🔮
 
-Before you imagine the agent doing it, write what you think will happen.
-
 ```
 on chat command "bridge":
     repeat 6 times:
@@ -119,7 +117,7 @@ on chat command "build":
 
 ## 3 · Show Your Work 📸🎥
 
-Now switch to your homework world. Make at least **two** chat commands: one simple command, and one command with a number that passes the number into a function. When you finish, come back here.
+Switch to your homework world. Make **two** chat commands: one simple command, and one command with a number that passes the number into a function.
 
 Record **one video** (a phone is fine). Show two things:
 

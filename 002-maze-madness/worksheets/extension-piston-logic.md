@@ -2,7 +2,7 @@
 
 **Topic:** Two Pistons + AND Conditions · **Course:** Maze Madness · **Level:** Extension (Advanced) · **Time:** about 60 minutes
 
-The agent follows a **redstone trail** through a long maze, checking **two things at once** with **AND** at some junctions. Twice, a **lever powers a piston** to open a gate. Drive the agent through the **whole maze**, start to finish.
+The agent follows a **redstone trail** through a long maze, using **AND** at some junctions. Twice a **lever powers a piston** to open a gate — drive the agent through the **whole maze**.
 
 Chat words: `l` turn left, `r` turn right, `run` start the solver, `rl` teleport the agent back to you.
 

@@ -4,21 +4,21 @@
 
 > 🧩 This is a bonus challenge, not a weekly lesson. Try it once you are comfortable building square rings with loops and you want to make a roof that steps up to a point.
 
-A real roof is not one flat row — it is a stack of **square rings** that shrink as they go up. In the Sloped Roof world, typing `slope` builds the whole roof for you. This worksheet is about the **idea**, not typing code.
+A real roof is a stack of **square rings** that shrink as they go up. In the Sloped Roof world, typing `slope` builds the whole roof — this worksheet is about the **idea**, not code.
 
-The program stores the ring's side length in a **variable** called `roof_len`. It starts at **7**, so the bottom ring is 7 stairs per side. After each ring it steps **up and inward**, then shrinks the variable by 2. Four rings get built, with sides of **7, 5, 3, 1**. Change the starting number and the whole roof changes shape.
+The ring's side length is a **variable** called `roof_len`. Change its starting number and the whole roof changes shape.
 
 ---
 
 ## 1 · Predict 🔮
 
-The variable `roof_len` starts at **7**. Each layer, the agent walks a square ring (4 sides, each `roof_len` stairs long), then shrinks `roof_len` by 2. The four rings have sides of **7, 5, 3, 1**.
+The variable `roof_len` starts at **7** and loses 2 each layer, so the four rings have sides of **7, 5, 3, 1**. Each layer the agent walks a square ring — 4 sides, each `roof_len` stairs long.
 
 **What shape do the rings make as they stack up? Describe it in one sentence.**
 
 <div class="write-space"></div>
 
-**About how many stairs are placed in total across all four rings? Each ring's edge is about 4 × its side length, and the side lengths are 7, 5, 3, 1. Write the four numbers you got, then add them for the total. Show your working — do not just guess.**
+**About how many stairs in total across all four rings? Each ring's edge is about 4 × its side length (sides 7, 5, 3, 1). Write the four numbers, then add them. Show your working.**
 
 <div class="write-space tall"></div>
 
@@ -26,7 +26,7 @@ The variable `roof_len` starts at **7**. Each layer, the agent walks a square ri
 
 ## 2 · Trace the Variable 🔢
 
-Walk through the build one ring at a time. For each layer, write `roof_len` **for that ring**, then its value **after** it loses 2. Show the subtraction.
+Walk through the build one ring at a time. For each layer, write `roof_len` for that ring, then its value **after** it loses 2 — show the subtraction.
 
 | Layer | `roof_len` for this ring | `roof_len` after it loses 2 |
 |-------|--------------------------|------------------------------|
@@ -47,11 +47,11 @@ Walk through the build one ring at a time. For each layer, write `roof_len` **fo
 
 No code here — think it through.
 
-**The roof comes out FLAT, like a box, instead of sloped. Every ring ended up the same size. Which part of the rule about the variable must have gone wrong for that to happen? Explain in one or two sentences.**
+**The roof comes out FLAT, like a box — every ring the same size. Which part of the variable rule went wrong? Explain in one or two sentences.**
 
 <div class="write-space tall"></div>
 
-**Now imagine the variable lost **1** each ring instead of **2**. How would the roof look different — would the sides be steeper or gentler? Would there be more rings or fewer before it reached the peak? Explain why.**
+**Imagine the variable lost **1** each ring instead of **2**. How would the roof look different — would the sides be steeper or gentler? Would there be more rings or fewer before it reached the peak? Explain why.**
 
 <div class="write-space tall"></div>
 

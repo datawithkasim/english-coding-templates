@@ -2,7 +2,7 @@
 
 **Topic:** Pixel-Art Mobs (x, y) · **Course:** 3D Coordinates · **Level:** Advanced (Extension, after Week 3) · **Time:** about 45 minutes
 
-This is a **bonus picture challenge** between Week 3 and Week 4. Now you copy **two bigger mobs** — a **pink axolotl** and a **black ender dragon head**. Every block sits at **(x, y)** — x is how far **across**, y is how far **up**. Plan before you build.
+A bonus picture challenge: copy **two bigger mobs** — a **pink axolotl** and a **black ender dragon head**. Every block sits at **(x, y)** — x is how far **across**, y is how far **up**.
 
 **Build your canvas.** Run this to make a blank **15 × 15** wall, then put a **red block at your feet** as your **home spot**:
 
@@ -68,7 +68,7 @@ place black block at (6, 10)
 
 Each code block below is broken. Read what it should do, fix it, then explain why the original was wrong and your fix works.
 
-**Bug A** — This should make the **axolotl's two eyes**, one at (6, 10) and one at (11, 10). Right now both land in the **same spot**.
+**Bug A** — This should make the **axolotl's two eyes**, one at (6, 10) and one at (11, 10). Both land in the **same spot**.
 
 ```
 place black block at (6, 10)
@@ -85,7 +85,7 @@ place black block at (6, 10)
 
 <div class="write-space"></div>
 
-**Bug B** — The dragon's **eye** should sit at (8, 10). Right now the two numbers are **swapped**, so it lands in the wrong place.
+**Bug B** — The dragon's **eye** should sit at (8, 10). The two numbers are **swapped**, so it lands in the wrong place.
 
 ```
 place purple block at (10, 8)
@@ -115,7 +115,7 @@ place purple block at (10, 8)
 
 ## 3 · Show Your Work 📸🎥
 
-Stand on your **home spot** (the red block). Pick **one** mob below and copy it onto your wall, block by block, by reading the (x, y) of every colored square. The numbers across the **top** are **x**, the numbers down the **side** are **y**. Finished early? Build the other one too.
+Stand on your **home spot** (the red block). Pick **one** mob and copy it block by block, reading each colored square's (x, y) — **x** across the top, **y** down the side.
 
 **Plan first.** Before you place anything, find the **lowest** block and the **left-most** block of your mob and write their (x, y) here. That tells you where the picture starts.
 

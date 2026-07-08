@@ -8,7 +8,7 @@
 
 ## 1 · The Challenge 🎯
 
-Make your village feel like a place someone could live and work. There is no map — **you** choose the sizes and where things go. It must have **all eight**:
+Make your village feel like a place someone could live and work. There is no map — **you** choose the sizes and places, and it must have **all eight**:
 
 > 🌾 A **farm** — rows of crops
 > 🏠 A **farm house**
@@ -70,7 +70,7 @@ A loop is for anything you repeat — a row of crops, the four sides of a fence,
 
 ## 4 · Show Your Work 📸🎥
 
-Go to your homework world and build. Run your code one part at a time and move the agent between them. Build the water first, then span the bridge across it. Keep going until the village has **all eight** parts — all placed by code, plus the animals.
+Go to your homework world and build one part at a time, moving the agent between them. Build the water first, then span the bridge across it — keep going until all **eight** parts are placed by code, plus the animals.
 
 Record **one video** (a phone is fine). Show two things:
 

@@ -55,7 +55,7 @@ set max_size to 9
 
 ## 2 · Spot the Bug 🐛
 
-Each code block below is broken. Read what it should do, rewrite it so it works, then explain why the original was wrong and why your fix works.
+Each code block below is broken. Rewrite it so it works, then explain the fix.
 
 **Bug A** — The agent is supposed to build a diamond: bottom half grows 1 → 9, top half shrinks 7 → 1. The two halves should meet at the widest layer.
 
@@ -144,7 +144,7 @@ while size > 0:
 
 ## 3 · Show Your Work 📸🎥
 
-Now switch to your homework world. Build your diamond using **one `max_size` variable**. Try `max_size = 9` first, then try a different value (e.g. 5 or 11) and see how it changes. When you finish, come back here.
+Switch to your homework world. Build your diamond using **one `max_size` variable**, then try `max_size = 9` and a different value (e.g. 5 or 11) to see how it changes.
 
 Record **one video** (a phone is fine). Show two things:
 

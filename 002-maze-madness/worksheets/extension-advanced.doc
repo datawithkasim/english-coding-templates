@@ -72,7 +72,7 @@ player.on_chat(&quot;rl&quot;, go_back)
 <p><strong><code>while True</code> keeps going. When does it stop on its own?</strong></p>
 <p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
 
-<p><strong>In your own words: what does <code>detect(REDSTONE, DOWN)</code> tell the agent?</strong></p>
+<p><strong>What does <code>detect(REDSTONE, DOWN)</code> tell the agent?</strong></p>
 <p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
 
 <p><strong>The maze is 3D. Which two lines move the agent between floors? What does each do?</strong></p>

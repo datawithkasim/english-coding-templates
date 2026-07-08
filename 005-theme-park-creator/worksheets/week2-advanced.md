@@ -24,8 +24,7 @@ blocks.fill(OAK_FENCE, pos(x1, 1, z1), pos(x1, 3, z1), FillOperation.REPLACE)
 ## 1 · Meet Arguments and Parameters 🎁
 
 A **parameter** is a named empty box you create when you **define** the function.
-An **argument** is the real value you send when you **call** it.
-They match **by position**: the order of your arguments decides which box each one lands in.
+An **argument** is the real value you send when you **call** it, matched **by position** — order decides which box each one lands in.
 
 ```text
    DEFINE  →  the names in ( ) are PARAMETERS (empty named boxes):
@@ -44,7 +43,7 @@ They match **by position**: the order of your arguments decides which box each o
        roof  ⟵ BRICKS
 ```
 
-Notice two things: `BRICKS` was sent in **twice** (same material for stand and roof — that's fine), and the **corners** are numbers while the **materials** are words. Mixing them is normal.
+Two things to notice: `BRICKS` is sent in **twice** (same material for stand and roof — fine), and the **corners** are numbers while the **materials** are words.
 
 **Why does matching by *position* mean the order of your arguments matters?**
 

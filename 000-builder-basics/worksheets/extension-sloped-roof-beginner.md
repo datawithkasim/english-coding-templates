@@ -10,9 +10,7 @@
 
 Open the **Sloped Roof** world. Do not run it yet.
 
-It builds a roof from stairs, one square **ring** at a time. A ring is a square outline. The program stacks 4 rings, each on top of the last.
-
-Each ring is **shorter** than the one below. A number called `roof_len` sets the side length. It starts at 7 and loses 2 each ring. So the rings shrink and rise to a peak.
+It stacks 4 square **rings** of stairs, each on top of the last. Each ring is **shorter** than the one below, so the roof rises to a peak.
 
 **What shape does this make? Circle one:** flat square · stepped pyramid roof · single line
 
@@ -22,20 +20,13 @@ Each ring is **shorter** than the one below. A number called `roof_len` sets the
 
 ## 2 · Watch the Variable Change 🔢
 
-A **variable** is a name that holds a number. The number can **change** while the program runs.
+A **variable** is a name that holds a number. It can **change** while the program runs.
 
-Here it is `roof_len` — the side length of each ring. It starts at 7 and loses 2 each ring.
+Here it is `roof_len`. It starts at 7 and loses 2 each ring.
 
-Fill in the table. The first one is done for you.
+**So the four rings are 7, 5, and then… Circle one:** 3, 1 · 4, 2 · 6, 5
 
-| Layer | `roof_len` = |
-|-------|------------|
-| Layer 1 (bottom) | 7 |
-| Layer 2 | ____ |
-| Layer 3 | ____ |
-| Layer 4 (top) | ____ |
-
-**The widest ring is at the** (circle one)**:** bottom · top
+**The widest ring is at the… Circle one:** bottom · top
 
 ---
 
@@ -49,8 +40,6 @@ Fill in the table. The first one is done for you.
 
 ## 4 · Show Your Work 📸🎥
 
-Now run it for real.
-
 1. Open the **Sloped Roof** world.
 2. Type **`slope`** in the Minecraft chat and press enter to run the program.
 3. Watch the rings build up, getting smaller each time, until they reach the peak.
@@ -63,7 +52,7 @@ Record **one video** (a phone is fine). Show two things:
 
 **2 · Your build.** Point the camera. Name the parts.
 
-Fill the blanks:
+Say these out loud, filling in the blanks:
 
 > Today I built ______.
 >
@@ -74,10 +63,6 @@ Fill the blanks:
 > The hardest part was ______.
 >
 > That part was hard because ______.
-
-**Write your lines here, then say them in your video.**
-
-<div class="write-space tall" style="min-height: 340px"></div>
 
 ---
 

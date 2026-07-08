@@ -51,9 +51,9 @@ turn left
 
 ## 2 · Spot the Bug 🐛
 
-Each code block is broken. Read the goal first, then write one or two sentences on what is wrong and how to fix it. You don't need to rewrite the whole program.
+Read the goal first. Explain in one or two sentences what is wrong and how to fix it.
 
-**Bug A** — The agent should build the **house walls first**, then the **farm patch beside it**. Right now the two stages are in the wrong order.
+**Bug A** — The agent should build the **house walls first**, then the **farm patch beside it**. The two stages are in the wrong order.
 
 ```
 # Stage 1: farm patch
@@ -91,7 +91,7 @@ move down by 2
 
 <div class="write-space"></div>
 
-**Bug C** — The house walls and the farm patch should share the **same `size` number**, so changing one value changes both. Right now the sizes are hard-coded and do not match.
+**Bug C** — The house walls and the farm patch should share the **same `size` number**, so changing one value changes both. The sizes are hard-coded and do not match.
 
 ```
 repeat 4 times:
@@ -115,7 +115,7 @@ repeat 5 times:
 
 ## 3 · Show Your Work 📸🎥
 
-Now switch to your homework world. Build your farm house — a small house with walls, plus a farm patch beside it on the ground. When you finish, come back here.
+Switch to your homework world. Build your farm house — a small house with walls, plus a farm patch beside it on the ground.
 
 Record **one video** (a phone is fine). Show two things:
 

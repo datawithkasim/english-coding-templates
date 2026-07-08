@@ -108,7 +108,7 @@ repeat 4 times:
 
 ## 3 · Show Your Work 📸🎥
 
-Now switch to your homework world. Build a **deeper well** — at least 5 blocks deep, with the 3×3 square wall on top. When you finish, come back here.
+Switch to your homework world. Build a **deeper well** — 5 blocks deep, with the 3×3 square wall on top.
 
 Record **one video** (a phone is fine). Show two things:
 

@@ -118,7 +118,7 @@ on player walks on red carpet:
 
 ## 3 · Show Your Work 📸🎥
 
-Now switch to your homework world and build your own minigame or dungeon. **Plan first**, then build, then playtest.
+Switch to your homework world and build your own minigame or dungeon. **Plan first**, then build, then playtest.
 
 **Plan your game:**
 

@@ -2,7 +2,7 @@
 
 **Topic:** Redstone Trail Solver (3D Cube Maze) · **Course:** Maze Madness · **Level:** Extension (Beginner) · **Time:** about 30 minutes
 
-The agent follows a **redstone trail**. The maze goes **up and down**. Type `run` to start it.
+The agent follows a **redstone trail** that goes up and down. Type `run` to start it.
 
 ---
 
@@ -61,7 +61,7 @@ redstone below me:
 
 ## 4 · Show Your Work 📸🎥
 
-Open the world. Type `run`. Watch the agent reach the goal.
+Open the world and type `run`. Watch the agent reach the goal.
 
 Record **one video** (a phone is fine). Show two things:
 
@@ -69,7 +69,7 @@ Record **one video** (a phone is fine). Show two things:
 
 **2 · Your build.** Point the camera. Name the parts.
 
-Fill the blanks:
+Say these out loud, filling in the blanks:
 
 > Today I built ______.
 >
@@ -80,10 +80,6 @@ Fill the blanks:
 > The hardest part was ______.
 >
 > That part was hard because ______.
-
-**Write your lines here, then say them in your video.**
-
-<div class="write-space tall" style="min-height: 340px"></div>
 
 ---
 

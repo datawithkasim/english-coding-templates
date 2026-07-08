@@ -104,7 +104,7 @@ else:
 <hr />
 <h2>3 · Spot and Fix Bugs 🐛</h2>
 <p>Rewrite each block. Explain the fix.</p>
-<p><strong>Bug A</strong> — Turn left <strong>only</strong> at a dead-end corner (wall ahead AND wall on right). Right now it turns at any wall.</p>
+<p><strong>Bug A</strong> — Turn left <strong>only</strong> at a dead-end corner (wall ahead AND wall on right). It turns at any wall.</p>
 <pre><code class="language-python">if agent.detect(BLOCK, FORWARD) or agent.detect(BLOCK, RIGHT):
     agent.turn(LEFT_TURN)
 </code></pre>
@@ -149,7 +149,7 @@ elif not agent.detect(BLOCK, RIGHT):
 
 <hr />
 <h2>5 · Show Your Work 📸🎥</h2>
-<p>Switch to your homework world. Solve the maze using <strong>both</strong> an <code>and</code> condition and an <code>or</code> condition. Come back when the agent reaches the end.</p>
+<p>Switch to your homework world. Solve the maze using <strong>both</strong> an <code>and</code> condition and an <code>or</code> condition.</p>
 <p>Record <strong>one video</strong> (a phone is fine). Show two things:</p>
 <p><strong>1 · Your code.</strong> Scroll through it. Say what each part does.</p>
 <p><strong>2 · Your build.</strong> Point the camera. Name the parts.</p>

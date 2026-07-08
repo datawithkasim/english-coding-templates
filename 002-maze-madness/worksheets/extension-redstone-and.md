@@ -2,7 +2,7 @@
 
 **Topic:** All 5 Redstone AND Rules + Single Checks · **Course:** Maze Madness · **Level:** Extension (Advanced) · **Time:** about 60 minutes
 
-Same **Week 3 world**. Your target is the **hardest maze** your teacher shows a picture of: tall clear-glass frames packed with redstone and a diamond block at the end. This time you write the **whole solver** — all five **AND** rules plus the single checks. Every choice reads **redstone**.
+Same **Week 3 world**. Your target is the **hardest maze** your teacher shows a picture of — this time you write the **whole solver**: all five **AND** rules plus the single checks.
 
 > **The redstone contract**
 >

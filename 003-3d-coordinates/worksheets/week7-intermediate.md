@@ -2,7 +2,7 @@
 
 **Topic:** Recreate 2 Mob Heads (x, y, z) · **Course:** 3D Coordinates · **Level:** Intermediate · **Time:** about 40 minutes
 
-Two blocky **mob heads** stand in your world — a **creeper** and a **skeleton**, each a cube with a face on the **front**. Build the **front face first** (keep z the same, read x across and y up), then **add depth** at z = 2 and z = 3. Faces only show on the front; the sides and back stay plain.
+Two **mob heads** stand in your world — a **creeper** and a **skeleton**. Build the **front face first** (z stays the same), then **add depth** at z = 2 and z = 3.
 
 > 🔴 Stand on your **home spot** (red block) every run. Move your feet, move your head.
 

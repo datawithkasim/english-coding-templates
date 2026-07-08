@@ -8,8 +8,6 @@ This week you collect your best functions into a **library** — reusable buildi
 
 ## 1 · Predict 🔮
 
-Before you imagine the build happening, write what you think will happen.
-
 ```
 function build_wall(length):
     repeat length times:
@@ -138,7 +136,7 @@ build_tower(10)
 
 ## 3 · Show Your Work 📸🎥
 
-Now switch to your homework world. Build something using your own function library — at least one function should call another function. When you finish, come back here.
+Switch to your homework world. Build something using your own function library — one function should call another function.
 
 Record **one video** (a phone is fine). Show two things:
 

@@ -2,7 +2,7 @@
 
 **Topic:** Add Two AND Conditions · **Course:** Maze Madness · **Level:** Extension (Intermediate) · **Time:** about 45 minutes
 
-The agent follows a redstone trail with **four rules**, but the solver is **not finished**. At two junctions, two signals are on at once and the agent stops. Add two **AND** rules of your own, then drive it to the goal.
+The agent follows a redstone trail with **four rules**, but the solver is **not finished**. At two junctions two signals fire at once and it stops — add two **AND** rules, then drive it to the goal.
 
 Chat: `l` turn left, `r` turn right, `run` start solver, `rl` bring agent back.
 
@@ -96,7 +96,7 @@ elif agent.detect(REDSTONE, ______) and agent.detect(REDSTONE, ______):
 
 ## 5 · Spot the Bug 🐛
 
-This branch should fire **only when both** signals are on. Right now it fires when **either** one is on, so it triggers at wrong spots.
+This branch should fire **only when both** signals are on. It fires when **either** one is on, so it triggers at wrong spots.
 
 ```
 elif agent.detect(REDSTONE, LEFT) or agent.detect(REDSTONE, DOWN):
@@ -116,7 +116,7 @@ elif agent.detect(REDSTONE, LEFT) or agent.detect(REDSTONE, DOWN):
 
 ## 6 · Show Your Work 📸🎥
 
-Type `run`. The goal is start to the **very end**, past both stuck junctions. Fix your rules and run again until it reaches the goal.
+Type `run`. Goal: start to the **very end**, past both stuck junctions — fix your rules and run again until it reaches the goal.
 
 Record **one video** (a phone is fine). Show two things:
 

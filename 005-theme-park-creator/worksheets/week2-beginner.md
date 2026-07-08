@@ -2,7 +2,7 @@
 
 **Topic:** One Function, Many Booths — Arguments & Parameters · **Course:** Theme Park Creator · **Level:** Beginner · **Time:** about 30 minutes
 
-This week you build a park **booth** with a **function**. You give it **parameters** — words and numbers it uses inside. Change what you **call** it with to build wood or stone booths, big or small.
+This week you build a park **booth** with a **function**. You give it **parameters** — words and numbers — and change them to build wood or stone booths, big or small.
 
 These are the blocks you use this week:
 
@@ -19,8 +19,7 @@ blocks.fill(OAK_PLANKS, pos(0, 0, 0), pos(4, 0, 4), FillOperation.HOLLOW)
 
 ## 1 · Meet Arguments and Parameters 🎁
 
-A **parameter** is an empty box with a name. An **argument** is what you drop into that box.
-Same boxes, different stuff → **same function, different booths**.
+A **parameter** is an empty named box. An **argument** is what you drop in — same boxes with different stuff make different booths.
 
 ```text
    WHEN YOU MAKE IT — the names in ( ) are PARAMETERS (empty boxes):
@@ -120,7 +119,7 @@ build_booth(OAK_PLANKS, 6)
 
 ## 5 · Show Your Work 📸🎥
 
-Now switch to your homework world. Write one `build_booth` function with a `wall` parameter and a `size` parameter, then call it two times with different materials or sizes. When you finish, come back here.
+Switch to your homework world. Write one `build_booth` function with a `wall` parameter and a `size` parameter, then call it two times with different materials or sizes.
 
 Record **one video** (a phone is fine). Show two things:
 
@@ -128,7 +127,7 @@ Record **one video** (a phone is fine). Show two things:
 
 **2 · Your build.** Point the camera. Name the parts.
 
-Fill the blanks:
+Say these out loud, filling in the blanks:
 
 > Today I built ______.
 >
@@ -139,10 +138,6 @@ Fill the blanks:
 > The hardest part was ______.
 >
 > That part was hard because ______.
-
-**Write your lines here, then say them in your video.**
-
-<div class="write-space tall" style="min-height: 340px"></div>
 
 ---
 

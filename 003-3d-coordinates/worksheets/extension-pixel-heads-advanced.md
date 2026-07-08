@@ -2,7 +2,7 @@
 
 **Topic:** 3D Mob Heads (x, y, z) · **Course:** 3D Coordinates · **Level:** Advanced (Extension, after Week 3) · **Time:** about 45 minutes
 
-Build **two mob heads** in 3D — a **creeper** and a **piglin**. Every block needs **three** numbers: **(x, y, z)**. x is **across**, y is **up**, z is **deeper** (forward). Copy each head block by block — build the **front face** first, then repeat it at z = 2 and z = 3 to add depth. The face shows on the front only.
+Build **two mob heads** in 3D — a **creeper** and a **piglin**. Every block needs **three** numbers **(x, y, z)**: x **across**, y **up**, z **deeper** (forward).
 
 > 🔴 Stand on your **home spot** (red block) every run. Move your feet, move your head.
 

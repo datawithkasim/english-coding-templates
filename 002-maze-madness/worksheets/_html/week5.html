@@ -162,7 +162,7 @@ agent.place(BLOCK)
 <div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
 <div class="write-space"></div></div>
 
-<p><strong>Bug C</strong> — To climb out, break the block above <strong>first</strong>, then move up. Right now it moves up into solid block and gets stuck.</p>
+<p><strong>Bug C</strong> — To climb out, break the block above <strong>first</strong>, then move up. It moves up into solid block and gets stuck.</p>
 <pre><code class="language-python">agent.move(UP, 1)
 agent.destroy(UP)
 </code></pre>

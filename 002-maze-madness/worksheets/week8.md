@@ -116,8 +116,8 @@ Build your final project. Your maze must have:
 
 - a **20 × 20 × 20** cube
 - more than one floor
-- at least 1 redstone door
-- at least 1 lever the agent flips
+- 1 redstone door
+- 1 lever the agent flips
 - a clear start and finish
 - agent code that solves it with `while` + `if/else` + `interact` + `agent.move(UP, 1)`
 

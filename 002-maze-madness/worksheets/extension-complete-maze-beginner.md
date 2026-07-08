@@ -75,13 +75,13 @@ if redstone ______ AND redstone ______:
     ______________
 ```
 
-**Stuck spot 2 — write the whole rule:**
+**Stuck spot 2 — say your rule out loud in your video.**
 
 ---
 
 ## 5 · Show Your Work 📸🎥
 
-Type `run`. The goal is to reach the **very end**. If it sticks, fix your AND rules and run again.
+Type `run`. Goal: reach the **very end** — if it sticks, fix your AND rules and run again.
 
 Record **one video** (a phone is fine). Show two things:
 
@@ -89,7 +89,7 @@ Record **one video** (a phone is fine). Show two things:
 
 **2 · Your build.** Point the camera. Name the parts.
 
-Fill the blanks:
+Say these out loud, filling in the blanks:
 
 > Today I built ______.
 >
@@ -100,10 +100,6 @@ Fill the blanks:
 > The hardest part was ______.
 >
 > That part was hard because ______.
-
-**Write your lines here, then say them in your video.**
-
-<div class="write-space tall" style="min-height: 340px"></div>
 
 ---
 

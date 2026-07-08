@@ -4,7 +4,7 @@
 
 ---
 
-A warm-up **before Lesson 1** — no coding. Open your Minecraft world and get comfortable moving and building on your tablet.
+A warm-up **before Lesson 1** — no coding. Open your Minecraft world and get comfortable moving and building.
 
 ---
 
@@ -18,7 +18,7 @@ Try each one. Tick the box when you can do it.
 - ☐ Tap to place a block
 - ☐ Hold to break a block
 
-> On a tablet: move with the **left thumb pad**, look by **dragging the right side**, **tap** to place a block, **hold** to break one.
+> On a tablet: **left thumb pad** to move, **drag the right side** to look, **tap** to place a block, **hold** to break one.
 
 ---
 

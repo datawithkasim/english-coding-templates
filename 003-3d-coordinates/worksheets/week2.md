@@ -2,7 +2,7 @@
 
 **Topic:** Lines & Rectangles on the Wall (x, y) · **Course:** 3D Coordinates · **Time:** about 45 minutes
 
-This week you use a **loop** to draw a **line** of blocks. Grow **x** to go across, grow **y** to go up. Four lines together make a **rectangle outline** — a picture frame.
+This week you use a **loop** to draw a **line** of blocks: grow **x** to go across, grow **y** to go up. Four lines make a **rectangle outline** — a picture frame.
 
 ---
 
@@ -108,7 +108,7 @@ repeat 4 times:
 
 ## 3 · Show Your Work 📸🎥
 
-Now switch to your homework world. Build a **rectangle outline** on the wall — like an empty picture frame — using loops for the four edges (bottom, top, left, right). When you finish, come back here.
+Switch to your homework world. Build a **rectangle outline** on the wall — like an empty picture frame — using loops for the four edges (bottom, top, left, right).
 
 Record **one video** (a phone is fine). Show two things:
 

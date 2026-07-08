@@ -2,7 +2,7 @@
 
 **Topic:** Recreate 2 Mob Heads (x, y, z) · **Course:** 3D Coordinates · **Level:** Beginner · **Time:** about 30 minutes
 
-Two blocky **mob heads** stand in your world — each a cube with a face on the **front**. Every block needs **three** numbers: **(x, y, z)**. x is **across**, y is **up**, z is **deep** (forward).
+Two blocky **mob heads** stand in your world — each a cube with a face on the **front**. Every block uses **(x, y, z)** — x **across**, y **up**, z **deep**.
 
 > 🔴 Stand on your **home spot** (red block) every run. Move your feet, move your head.
 
@@ -67,7 +67,7 @@ Record **one video** (a phone is fine). Show two things:
 
 **2 · Your build.** Point the camera. Name the parts.
 
-Fill the blanks:
+Say these out loud, filling in the blanks:
 
 > Today I built ______.
 >
@@ -78,10 +78,6 @@ Fill the blanks:
 > The hardest part was ______.
 >
 > That part was hard because ______.
-
-**Write your lines here, then say them in your video.**
-
-<div class="write-space tall" style="min-height: 340px"></div>
 
 ---
 

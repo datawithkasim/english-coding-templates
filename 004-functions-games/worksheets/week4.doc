@@ -34,7 +34,6 @@ p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
 <p>This week your code reacts to <strong>you</strong>, the player. An <strong>event</strong> like <code>on player walk:</code> runs by itself — no chat command needed.</p>
 <hr />
 <h2>1 · Predict 🔮</h2>
-<p>Before you imagine it happening, write what you think will happen.</p>
 <pre><code>on player walk:
     if block below is gold:
         say &quot;Treasure room!&quot;
@@ -98,7 +97,7 @@ on player walk:
 
 <hr />
 <h2>3 · Show Your Work 📸🎥</h2>
-<p>Now switch to your homework world. Build a mini game zone with at least <strong>one trap</strong> and <strong>one reward</strong>, each triggered by a player event (<code>on player walk:</code> or <code>on player place block:</code>). When you finish, come back here.</p>
+<p>Switch to your homework world. Build a mini game zone with <strong>one trap</strong> and <strong>one reward</strong>, each triggered by a player event (<code>on player walk:</code> or <code>on player place block:</code>).</p>
 <p>Record <strong>one video</strong> (a phone is fine). Show two things:</p>
 <p><strong>1 · Your code.</strong> Scroll through it. Say what each part does.</p>
 <p><strong>2 · Your build.</strong> Point the camera. Name the parts.</p>

@@ -137,7 +137,7 @@ repeat 5 times:
 
 ## 3 · Show Your Work 📸🎥
 
-Now switch to your homework world. Build your farm house — small house with walls and roof, plus a farm patch beside it. Try making the farm bigger (5×5) **or** add a path between the house and farm. When you finish, come back here.
+Switch to your homework world and build your farm house — small house with walls and roof, plus a farm patch beside it. Try making the farm bigger (5×5) **or** add a path between the house and farm.
 
 Record **one video** (a phone is fine). Show two things:
 

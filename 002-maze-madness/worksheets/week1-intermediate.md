@@ -66,7 +66,7 @@ Make the agent move forward until a wall, then turn right.
 
 ## 5 · Show Your Work 📸🎥
 
-Open your homework world. Use a while loop. Move the agent down the straight maze to the wall.
+Open your homework world. Use a while loop to move the agent down the straight maze to the wall.
 
 Record **one video** (a phone is fine). Show two things:
 

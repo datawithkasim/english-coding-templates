@@ -31,7 +31,7 @@ p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
 <div class="brand">📚 ENGLISH CODING · 영어코딩</div>
 <h1>🧩 M002 Extension 2 — Piston &amp; Logic Maze</h1>
 <p><strong>Topic:</strong> Two Pistons + AND Conditions · <strong>Course:</strong> Maze Madness · <strong>Level:</strong> Extension (Intermediate) · <strong>Time:</strong> about 45 minutes</p>
-<p>The agent follows a <strong>redstone trail</strong> through a long maze, checking <strong>two things at once</strong> with <strong>AND</strong> at some junctions. Twice, a <strong>lever powers a piston</strong> to open the way. Get the agent through the <strong>whole maze</strong>.</p>
+<p>The agent follows a <strong>redstone trail</strong> through a long maze, using <strong>AND</strong> at some junctions. Twice a <strong>lever powers a piston</strong> to open the way — get the agent through the <strong>whole maze</strong>.</p>
 <p>You drive it with chat words: <code>l</code> turn left, <code>r</code> turn right, <code>run</code> start the solver, <code>rl</code> teleport back to you.</p>
 <hr />
 <h2>1 · Read the Chat Commands 🎛️</h2>
@@ -83,7 +83,7 @@ player.on_chat(&quot;rl&quot;, on_chat)
 </tr>
 </tbody>
 </table>
-<p><strong>In your own words: what must be true for the agent to turn left?</strong></p>
+<p><strong>What must be true for the agent to turn left?</strong></p>
 <p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
 
 <hr />
@@ -118,7 +118,7 @@ player.on_chat(&quot;rl&quot;, on_chat)
 
 <hr />
 <h2>5 · Show Your Work 📸🎥</h2>
-<p>Open the <strong>M002 EXT 2</strong> world. Type <code>run</code>. Watch where it gets stuck, fix it, run again — until it reaches the goal past both pistons.</p>
+<p>Open the <strong>M002 EXT 2</strong> world and type <code>run</code>. Watch where it sticks, fix it, run again until it reaches the goal past both pistons.</p>
 <p>Record <strong>one video</strong> (a phone is fine). Show two things:</p>
 <p><strong>1 · Your code.</strong> Scroll through it. Say what each part does.</p>
 <p><strong>2 · Your build.</strong> Point the camera. Name the parts.</p>

@@ -8,13 +8,13 @@
 
 ## 1 · Read the World 🔍
 
-Open the **Impossible Statue** world. It is a puzzle. Read the markers:
+Open the **Impossible Statue** world and read the markers:
 
 - 🟥 **Red blocks** — your **start** and **end** points.
 - ⬛ **Crying obsidian** — **build** here. Every dark spot is a block to place.
 - ⬜ **Glass** — a **trap**. Move through these spots but place **nothing**.
 
-**In your own words, what is the puzzle asking you to do?**
+**What is the puzzle asking you to do?**
 
 <div class="write-space"></div>
 
@@ -122,7 +122,7 @@ place block down
 
 ## 5 · Show Your Work 📸🎥
 
-Now go to the Impossible Statue world and run your code. Match the crying obsidian exactly: place where it says build, leave the glass spots empty, and finish on the red end block.
+Go to the Impossible Statue world and run your code. Match the crying obsidian exactly: place where it says build, leave the glass spots empty, and finish on the red end block.
 
 Record **one video** (a phone is fine). Show two things:
 

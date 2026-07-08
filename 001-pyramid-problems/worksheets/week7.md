@@ -50,7 +50,7 @@ while size > 0:
 
 ## 2 · Spot the Bug 🐛
 
-Each code block below is broken. Read what it should do, rewrite it so it works, then explain why the original was wrong and why your fix works.
+Each code block below is broken. Rewrite it so it works, then explain the fix.
 
 **Bug A** — The agent is supposed to build a **hollow layer** — only place a block when it is on the edge of the square (not in the middle).
 
@@ -110,7 +110,7 @@ while size > 0:
 
 ## 3 · Show Your Work 📸🎥
 
-Now switch to your homework world. Build **one pyramid variation** — hollow, stepped, two-block pattern, or your own idea. Give your variation a **name** and a **one-sentence description**. When you finish, come back here.
+Switch to your homework world. Build **one pyramid variation** — hollow, stepped, two-block, or your own — then give it a **name** and a **one-sentence description**.
 
 Record **one video** (a phone is fine). Show two things:
 

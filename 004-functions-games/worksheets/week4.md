@@ -8,8 +8,6 @@ This week your code reacts to **you**, the player. An **event** like `on player 
 
 ## 1 · Predict 🔮
 
-Before you imagine it happening, write what you think will happen.
-
 ```
 on player walk:
     if block below is gold:
@@ -105,7 +103,7 @@ on player walk:
 
 ## 3 · Show Your Work 📸🎥
 
-Now switch to your homework world. Build a mini game zone with at least **one trap** and **one reward**, each triggered by a player event (`on player walk:` or `on player place block:`). When you finish, come back here.
+Switch to your homework world. Build a mini game zone with **one trap** and **one reward**, each triggered by a player event (`on player walk:` or `on player place block:`).
 
 Record **one video** (a phone is fine). Show two things:
 

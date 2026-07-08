@@ -46,9 +46,8 @@ blocks.fill(AIR, pos(2, 0, 0), pos(2, 1, 0), FillOperation.REPLACE)
 </blockquote>
 <hr />
 <h2>1 · Meet Arguments and Parameters 🎁</h2>
-<p>A <strong>parameter</strong> is an empty named box — you make it when you <em>define</em> the function.
-An <strong>argument</strong> is the real value you drop in — you send it when you <em>call</em> the function.
-They line up <strong>by position</strong>, left to right.</p>
+<p>A <strong>parameter</strong> is an empty named box you make when you <em>define</em> the function.
+An <strong>argument</strong> is the value you drop in when you <em>call</em> it — they line up <strong>by position</strong>, left to right.</p>
 <pre><code class="language-text">   MAKE IT  →  the names in ( ) are PARAMETERS (empty named boxes):
 
        def build_booth( wall , floor , size ):

@@ -32,7 +32,7 @@ repeat 6 times:
 
 ## 2 · Find the Bug 🐛
 
-Each code block is broken. The goal is written first. Write one or two sentences on what is wrong.
+Each code block is broken. Write one or two sentences on what is wrong.
 
 **Bug A** — The agent should build a bridge that is exactly **5 blocks long**.
 
@@ -96,7 +96,7 @@ repeat 4 times:
 
 ## 4 · Show Your Work 📸🎥
 
-Now switch to your homework world. Build a **bridge across the river or cliff** using a loop. When you finish, come back here.
+Switch to your homework world. Build a **bridge across the river or cliff** using a loop.
 
 Record **one video** (a phone is fine). Show two things:
 
