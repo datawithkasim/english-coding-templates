@@ -2,9 +2,9 @@
 
 **Topic:** Pixel Art on the Wall (x, y) · **Course:** 3D Coordinates · **Level:** Advanced · **Time:** about 45 minutes
 
-This week you copy a picture made of blocks onto your wall. Every block sits at a spot named by **two numbers — (x, y)**. x is how far **across**, y is how far **up**. You read the picture, work out each block's (x, y), and place it. The harder part is reading several blocks at once and seeing the pattern they make together.
+This week you copy a picture made of blocks onto your wall. Every block sits at **(x, y)** — x is how far **across**, y is how far **up**. The harder part is reading several blocks at once and seeing the pattern they make.
 
-**First, build your canvas.** Run this to make a blank **15 × 15** wall, then put a **red block at your feet** as your **home spot**:
+**Build your canvas.** Run this to make a blank **15 × 15** wall, then put a **red block at your feet** as your **home spot**:
 
 <div style="display:flex; gap:14px; align-items:flex-start; margin:10px 0; page-break-inside:avoid; break-inside:avoid"><div style="flex:1; min-width:0"><p style="margin:0 0 4px; font-weight:700">🧩 Blocks</p><img src="../assets/week3-canvas-blocks.png" alt="MakeCode blocks: on chat command run, fill with white concrete from ~1 ~1 ~0 to ~15 ~15 ~0, replace" style="width:100%; max-width:240px; border-radius:8px; display:block"></div><div style="flex:1; min-width:0"><p style="margin:0 0 4px; font-weight:700">🐍 Python</p><pre style="margin:0; white-space:pre; font-size:12px">def on_run():
     blocks.fill(WHITE_CONCRETE,
@@ -13,13 +13,13 @@ This week you copy a picture made of blocks onto your wall. Every block sits at 
         FillOperation.REPLACE)
 player.on_chat("run", on_run)</pre></div></div>
 
-> 🔴 **Big idea:** (x, y) is counted from your **home spot** — not from the corner of the world. Stand on the red block *every* time you run, or the whole picture shifts. Move your feet, move your picture.
+> 🔴 **Big idea:** (x, y) is counted from your **home spot**, not the world's corner. Stand on the red block *every* time you run, or the whole picture shifts.
 
 ---
 
 ## 1 · Predict 🔮
 
-Read each set of steps. Do not run them. For each one, write **what you think you will see** and **why** you think so.
+Read each set of steps. For each one, write **what you think you will see** and **why**.
 
 ```
 place red block at (5, 1)
@@ -37,7 +37,7 @@ place green block at (8, 14)
 place green block at (8, 15)
 ```
 
-**Near the top or the bottom of the wall? Across or up? Explain how you know.**
+**Near the top or the bottom? Across or up? Explain how you know.**
 
 <div class="write-space"></div>
 
@@ -66,7 +66,7 @@ place yellow block at (6, 2)
 
 ## 2 · Spot the Bug 🐛
 
-Each block of code below was meant to do something, but it is broken. Read what it is **supposed** to do, then rewrite it so it works. After that, explain why the original was wrong and why your fix works.
+Each code block below is broken. Read what it should do, fix it, then explain why the original was wrong and your fix works.
 
 **Bug A** — These should make the **bottom row of the pineapple**: five yellow blocks from (6, 1) to (10, 1). Right now they all land in the **same spot**.
 
@@ -102,7 +102,7 @@ place brown block at (15, 8)
 
 <div class="write-space"></div>
 
-**Bug C** — A friend stood on the **wrong block** and ran code that matched the grid exactly. The picture came out, but every block landed at an x **one bigger** than the grid says — the whole picture shifted across. The code itself is fine.
+**Bug C** — A friend stood on the **wrong block** and ran code that matched the grid exactly. Every block landed at an x **one bigger** than the grid says, so the whole picture shifted across — even though the code is fine.
 
 ```
 (the code matched the grid exactly)
@@ -114,7 +114,7 @@ place brown block at (15, 8)
 
 ---
 
-## 3 · Build It 📸
+## 3 · Show Your Work 📸🎥
 
 Now switch to your homework world and stand on your **home spot** (the red block). The numbers across the **top** are **x**, the numbers down the **side** are **y**.
 
@@ -130,34 +130,25 @@ Now copy a picture below onto your wall, block by block, by reading the (x, y) o
 
 **Modify challenge.** After you finish one fruit, change something of your own — swap a colour, add a leaf, or make the picture one block bigger. Write the (x, y) of the blocks you changed or added.
 
-When your picture is finished, send a photo, then explain what you did. Use these sentence starters — write 5 to 6 sentences total.
+Record **one video** (a phone is fine). Show two things:
 
-> First, I chose to build the …
+**1 · Your code.** Scroll through it. Say what each part does.
+
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
 >
-> The lowest block in my picture is at (x = …, y = …).
+> I built it using this code: ______.
 >
-> To go across a row I changed the … number; to go up I changed the … number.
+> In this code I used ______.
 >
-> The trickiest part to read off the grid was …
+> The hardest part was ______.
 >
-> For my modify challenge, I changed … at (x = …, y = …).
->
-> If I had more time, I would …
+> That part was hard because ______.
 
-<div class="write-space tall" style="min-height: 340px"></div>
-
----
-
-## 4 · Explain It 🎥
-
-Now take a video on your phone while you show your pixel art on the wall. Talk through it like you are teaching someone who has never seen it. Try to use these words: **x**, **y**, **coordinate**, **across**, **up**, **home spot**.
-
-> 1. Show your home spot (the red block) and say why you stand on it every time.
-> 2. Show your finished picture from the front.
-> 3. Point at one block and read its coordinate out loud: "this one is at x …, y …".
-> 4. Say in your own words how (x, y) decides exactly where a block lands.
-
-**Write a short paragraph (5 to 6 sentences) about what you built and what you learned.** Then answer: **if you were teaching a friend who had never done this, what would you show them first, and why?**
+**Write your lines here, then say them in your video.**
 
 <div class="write-space tall" style="min-height: 340px"></div>
 
@@ -165,4 +156,4 @@ Now take a video on your phone while you show your pixel art on the wall. Talk t
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + your video to teacher on KakaoTalk.

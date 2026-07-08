@@ -2,7 +2,7 @@
 
 **Topic:** Design a Maze + Write the Solution · **Course:** Maze Madness · **Level:** Extension (Advanced) · **Time:** about 60 minutes
 
-This is the big **builder challenge**. This time you are not solving someone else's maze — **you are the maze maker.** Design one maze that **stretches through 6 zones**, wire it with pistons and doors, then write the **solution code** that drives the agent all the way to the end.
+This time you are the maze maker. Design one maze that **stretches through 6 zones**, wire it with pistons and doors, then write the **solution code** that drives the agent to the end.
 
 Open **M002 EXT 3 — Cube World** and build inside it. Drive the agent with chat: `l` turns left, `r` turns right, `run` starts your solver, `rl` teleports the agent back to you.
 
@@ -13,13 +13,13 @@ Open **M002 EXT 3 — Cube World** and build inside it. Drive the agent with cha
 - **4 AND conditions** in your solution (`... and ...`)
 - **1 OR condition** in your solution (`... or ...`)
 
-Keep this page beside you — tick off each part as you go.
+Tick off each part as you go.
 
 ---
 
 ## 1 · Design Your 6 Zones 🗺️
 
-A great maze is **planned before it is built.** Your maze runs through **6 zones** in a row — the agent finishes one and walks straight into the next. Give each zone one job: a turn, a piston, a door, or a junction where the agent must check two things.
+Your maze runs through **6 zones** in a row. Give each zone one job: a turn, a piston, a door, or a junction that checks two things.
 
 **Sketch your 6 zones.** Write each zone number and what makes it tricky.
 
@@ -37,7 +37,7 @@ A great maze is **planned before it is built.** Your maze runs through **6 zones
 
 ## 2 · Build the Maze 🧱
 
-Build it in the world. Walk the path yourself first (no code) and make sure a person can get from start to end. Tick each part as you place it.
+Build it in the world. Walk it yourself first (no code) to check a person can reach the end, then tick each part as you place it.
 
 > ☐ Zone 1 built
 >
@@ -69,9 +69,9 @@ Build it in the world. Walk the path yourself first (no code) and make sure a pe
 
 ## 3 · Write the Solution 💻
 
-Write the **solver** — the code that gets the agent through your whole maze. Use a `while True` loop so it checks on every step. Your solution needs **at least 4 AND conditions and 1 OR condition.**
+Write the **solver** with a `while True` loop so it checks every step. It needs **at least 4 AND conditions and 1 OR condition.**
 
-Here is the shape to start from. Fill it in for **your** maze.
+Fill in this shape for **your** maze.
 
 ```python
 while True:
@@ -87,7 +87,7 @@ while True:
         agent.move(FORWARD, 1)
 ```
 
-**Write your full solution here.** Add more `if` / `elif` checks until it covers all 6 zones. Mark each AND with `# AND` and your OR with `# OR` so you can count them.
+**Write your full solution here.** Add `if` / `elif` until it covers all 6 zones, marking each AND with `# AND` and each OR with `# OR`.
 
 <div class="write-space tall" style="min-height: 360px"></div>
 
@@ -121,7 +121,7 @@ Go back through your solution and **count.** Write the number, then copy one rea
 
 ## 5 · Spot and Fix the Bugs 🐞
 
-These two lines are buggy. Read each, say what goes wrong, then write the fix.
+Read each, say what goes wrong, then write the fix.
 
 ```python
 # Should turn left only when a wall is on the left AND redstone is ahead.
@@ -146,46 +146,34 @@ elif agent.detect(BLOCK, AHEAD):
 
 ---
 
-## 6 · Test It and Finish 📸
+## 6 · Show Your Work 📸🎥
 
 Type `run` and watch the agent. It will get stuck somewhere — that is normal. Find where it stops, fix that part of your code or your maze, and run it again. Use `rl` to send it back between tries. Keep going until the agent reaches the **GOAL** all by itself.
 
-When the agent finishes your maze on its own, send a photo OR video of the agent at the goal, then explain. Write 5 to 7 sentences with these starters.
+Record **one video** (a phone is fine). Show two things:
 
-> My maze runs through 6 zones. The trickiest zone was …
+**1 · Your code.** Scroll through it. Say what each part does.
+
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
 >
-> I put my 2 pistons in … because …
+> I built it using this code: ______.
 >
-> The agent opens my doors with `agent.interact(...)`, which works because …
+> In this code I used ______.
 >
-> I used an AND condition at … to make the agent …
+> The hardest part was ______.
 >
-> I needed an OR condition at … because …
->
-> The agent kept getting stuck at … until I …
->
-> If I built a version 2, I would add …
+> That part was hard because ______.
 
-<div class="write-space tall" style="min-height: 360px"></div>
+**Write your lines here, then say them in your video.**
 
----
-
-## 7 · Present Your Maze 🎥
-
-You built this maze, so you are the expert. Take a video on your phone (or a parent's phone) and **present your maze like a designer showing off their game.** Try to use these words: **zone**, **piston**, **door**, **detect**, **AND**, **OR**, **loop**.
-
-> 1. Show the whole maze from the start and point out the 6 zones.
-> 2. Show each piston and each door, and say what it does.
-> 3. Read one AND check from your code out loud and say what decision it makes.
-> 4. Read your OR check and say why it needed OR.
-> 5. Type `run` and let the agent solve your maze to the goal.
-
-**Plan your video here first** — you can read from it while filming.
-
-<div class="write-space tall" style="min-height: 360px"></div>
+<div class="write-space tall" style="min-height: 340px"></div>
 
 ---
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + your video to teacher on KakaoTalk.

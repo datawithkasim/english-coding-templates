@@ -90,6 +90,16 @@ The build only behaves well if you stick to these shapes:
 - **Under-prescribe**: no "at least N", no "Optional:" buckets, no redundant rules.
 - Submission is **online via KakaoTalk only** — never "bring to class". Photo **or** video.
 - No `input()` dependency in expected output examples (the grader/runtime has no stdin).
+- **Closing section is a single `## N · Show Your Work 📸🎥`** (Minecraft courses). Do NOT
+  split "build/show" and "record video" into two sections. Order inside it: the course-specific
+  build instruction, then one video that (1) shows the code + explains it, (2) shows the build +
+  explains it, then the fixed fill-in script (`> Today I built ______.` / `> I built it using this
+  code: ______.` / `> In this code I used ______.` / `> The hardest part was ______.` / `> That part
+  was hard because ______.`), then one `write-space tall`, then `### Submit`. Keep each blank a
+  single trailing `______` — never two blanks flanking a word (markdown bolds the word between them).
+- **Circle-one questions take NO write-space.** A `**… Circle one:** a · b · c` prompt is answered by
+  circling — never follow it with a ruled `write-space` box. If the student must also write something,
+  make that a separate circle or an explicit written question.
 
 ---
 

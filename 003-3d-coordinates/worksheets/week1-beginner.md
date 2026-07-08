@@ -2,36 +2,34 @@
 
 **Topic:** First Steps with Coordinates (x, y) · **Course:** 3D Coordinates · **Level:** Beginner · **Time:** about 30 minutes
 
-This week you draw on a flat **wall**. Every spot on the wall gets a name made of **two numbers: (x, y)**. x is how far **across**, y is how far **up**. Counting starts at **0**.
+This week you draw on a flat **wall**. Every spot has a name — **two numbers: (x, y)**. x is **across**, y is **up**. Counting starts at **0**.
 
 ---
 
 ## 1 · Predict 🔮
 
-Read the steps. Before you imagine it happening, circle or write your answer.
+Read the steps. Circle your answer.
 
 ```
 place gold block at (3, 0)
 place gold block at (3, 5)
 ```
 
-**Both blocks have the same x. Do they land in the same spot? Circle one:** yes · no
+**Same x, different y. Same spot? Circle one:** yes · no
 
-**Why?**
-
-<div class="write-space short"></div>
+**Why? Circle one:** the y is different · the x is different
 
 ```
 place red block at (0, 0)
 ```
 
-**Counting starts at 0. Is (0, 0) the bottom corner where the wall begins? Circle one:** yes · no
+**Is (0, 0) the bottom corner where counting starts? Circle one:** yes · no
 
 ---
 
 ## 2 · Find the Difference 🐛
 
-Each pair shows clean steps first, then a broken version of the same idea. Circle what's different and write one short sentence about the bug.
+Each pair shows clean code, then a buggy version. Circle the bug.
 
 **Pair A** — The block should land at **(2, 5)** — x first, then y.
 
@@ -45,9 +43,7 @@ place gold block at (2, 5)
 place gold block at (5, 2)
 ```
 
-**What is wrong? Which two numbers got mixed up?**
-
-<div class="write-space short"></div>
+**What is wrong? Circle one:** x and y are swapped · the color is wrong
 
 **Pair B** — The block should sit at the **bottom corner**, where counting begins.
 
@@ -61,58 +57,50 @@ place red block at (0, 0)
 place red block at (1, 1)
 ```
 
-**What is wrong?**
-
-<div class="write-space short"></div>
+**What is wrong? Circle one:** it should be (0, 0) · it should be (5, 5)
 
 ---
 
 ## 3 · Fill the Gap ✏️
 
-The gold block should sit on the **bottom row** of the wall, where y is **zero**. One number is missing. Fill it in using the word bank.
+The gold block sits on the **bottom row**, where y is **0**.
 
 ```
 place gold block at (4, ____)
 ```
 
-**Word bank:** `0` · `1` · `4`
-
-**Write the missing number:**
-
-<div class="write-space short"></div>
+**Which number is missing? Circle one:** 0 · 1 · 4
 
 ---
 
-## 4 · Tell Me What You Built 📸
+## 4 · Show Your Work 📸🎥
 
 Now switch to your homework world. Place a gold block at **(0, 0)**, then pick two more coordinates and place a block at each one. When you finish, come back here.
 
-Send a photo or video of your blocks, then explain what you did. Use these sentence starters — write 2 or 3 sentences.
+Record **one video** (a phone is fine). Show two things:
 
-> The block at **(0, 0)** shows …
+**1 · Your code.** Scroll through it. Say what each part does.
+
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
 >
-> I placed a block at ( … , … ) because …
+> I built it using this code: ______.
 >
-> One tricky moment was when …
+> In this code I used ______.
+>
+> The hardest part was ______.
+>
+> That part was hard because ______.
 
-<div class="write-space tall" style="min-height: 240px"></div>
+**Write your lines here, then say them in your video.**
 
----
-
-## 5 · Record Your Walkthrough 🎥
-
-Take a video on your phone (or a parent's phone) while you show your blocks on the wall. Talk like you are teaching a friend. Try to use these words: **coordinate**, **x**, **y**, **zero**.
-
-> 1. Show the gold block at (0, 0).
-> 2. Point at one block and say its coordinate out loud.
-> 3. Say in your own words what **x** and **y** mean.
-
-**Write what you will say in your video.** You can read from it while filming.
-
-<div class="write-space tall" style="min-height: 240px"></div>
+<div class="write-space tall" style="min-height: 340px"></div>
 
 ---
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + your video to teacher on KakaoTalk.

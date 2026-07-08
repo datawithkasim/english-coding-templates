@@ -2,9 +2,9 @@
 
 **Topic:** Pixel Art 2 — Cat & Tree (x, y) · **Course:** 3D Coordinates · **Level:** Advanced · **Time:** about 45 minutes
 
-This week you copy **two pictures** onto your wall — a **cat face** and a **tree**. Same big idea as last week: every block sits at a spot named by **two numbers — (x, y)**. x is how far **across**, y is how far **up**. Read the picture, work out each block's (x, y), and place it. The tricky part this week is reading shapes that lean and spread, so think carefully before you build.
+This week you copy **two pictures** — a **cat face** and a **tree**. Every block sits at **(x, y)** — x is how far **across**, y is how far **up**. The tricky part is reading shapes that lean and spread, so think before you build.
 
-**First, build your canvas.** Run this to make a blank **15 × 15** wall, then put a **red block at your feet** as your **home spot**:
+**Build your canvas.** Run this to make a blank **15 × 15** wall, then put a **red block at your feet** as your **home spot**:
 
 <div style="display:flex; gap:14px; align-items:flex-start; margin:10px 0; page-break-inside:avoid; break-inside:avoid"><div style="flex:1; min-width:0"><p style="margin:0 0 4px; font-weight:700">🧩 Blocks</p><img src="../assets/week3-canvas-blocks.png" alt="MakeCode blocks: on chat command run, fill with white concrete from ~1 ~1 ~0 to ~15 ~15 ~0, replace" style="width:100%; max-width:240px; border-radius:8px; display:block"></div><div style="flex:1; min-width:0"><p style="margin:0 0 4px; font-weight:700">🐍 Python</p><pre style="margin:0; white-space:pre; font-size:12px">def on_run():
     blocks.fill(WHITE_CONCRETE,
@@ -13,13 +13,13 @@ This week you copy **two pictures** onto your wall — a **cat face** and a **tr
         FillOperation.REPLACE)
 player.on_chat("run", on_run)</pre></div></div>
 
-> 🔴 **Big idea:** (x, y) is counted from your **home spot** — not from the corner of the world. Stand on the red block *every* time you run, or the whole picture shifts. Move your feet, move your picture.
+> 🔴 **Big idea:** (x, y) is counted from your **home spot**, not the world's corner. Stand on the red block *every* time you run, or the whole picture shifts.
 
 ---
 
 ## 1 · Predict 🔮
 
-Read each set of steps. For each one, write what you think you will see **and the reason** you think so. Do not run it yet.
+Read each set of steps. For each one, write what you think you will see **and the reason**.
 
 ```
 place brown block at (8, 1)
@@ -68,7 +68,7 @@ place brown block at (8, 2)
 
 ## 2 · Spot the Bug 🐛
 
-Each block of code below is broken. Read what it is **supposed** to do, rewrite it so it works, then explain in 2 or 3 sentences why the original was wrong and why your fix works.
+Each code block below is broken. Read what it should do, fix it, then explain why the original was wrong and your fix works.
 
 **Bug A** — This should make the **tree trunk**: four brown blocks going **up** at x = 8, from (8, 1) to (8, 4). Right now they all land in the **same spot**.
 
@@ -103,7 +103,7 @@ place brown block at (4, 8)
 
 <div class="write-space"></div>
 
-**Bug C (think hard — the numbers are not the problem).** A student typed every coordinate of the cat correctly, but the whole cat came out **one block too far to the right and one block too low** every single time. The code is fine. Something about *how* they ran it was wrong.
+**Bug C (think hard — the numbers are not the problem).** A student typed every coordinate correctly, but the whole cat came out **one block too far right and one too low** every time. The code is fine — something about *how* they ran it was wrong.
 
 ```
 place orange block at (2, 15)
@@ -118,7 +118,7 @@ place orange block at (14, 15)
 
 ---
 
-## 3 · Build It 📸
+## 3 · Show Your Work 📸🎥
 
 Switch to your homework world and stand on your **home spot** (the red block). Plan first, then build. The numbers across the **top** are **x**, the numbers down the **side** are **y**.
 
@@ -134,34 +134,25 @@ Now build the 🐱 cat **and** the 🌳 tree below by reading the (x, y) of ever
 
 **Modify challenge.** Once both pictures are built, change one thing with your own idea — give the cat a different eye colour, add an apple to the tree, or make the trunk taller. Build your change, and be ready to say which coordinates you added or swapped.
 
-When everything is finished, send a photo (or a short video). Then explain what you did with these sentence starters — write 5 or 6 sentences total.
+Record **one video** (a phone is fine). Show two things:
 
-> First, I planned the coordinates by …
+**1 · Your code.** Scroll through it. Say what each part does.
+
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
 >
-> The lowest block in my picture is at (x = …, y = …) and the highest is at (x = …, y = …).
+> I built it using this code: ______.
 >
-> To go across a row I changed the … number; to go up I changed the … number.
+> In this code I used ______.
 >
-> The trickiest part to read off the grid was … because …
+> The hardest part was ______.
 >
-> For my modify challenge, I changed … by placing blocks at …
->
-> If I built this again, I would …
+> That part was hard because ______.
 
-<div class="write-space tall" style="min-height: 340px"></div>
-
----
-
-## 4 · Explain It 🎥
-
-Take a video on a phone while you show both pictures on the wall. Talk through it like you are teaching someone who has never seen it. Try to use these words: **x**, **y**, **coordinate**, **across**, **up**, **home spot**.
-
-> 1. Show your home spot (the red block) and say in your own words why standing on it matters.
-> 2. Show your finished cat and tree from the front.
-> 3. Point at one block and read its coordinate out loud: "this one is at x …, y …".
-> 4. Show your modify change and explain which coordinates you added or swapped.
-
-**Write a short paragraph (5 or 6 sentences) saying what you will say in your video. Then answer: if you were teaching a friend who has never done this, what would you teach them first, and why?**
+**Write your lines here, then say them in your video.**
 
 <div class="write-space tall" style="min-height: 340px"></div>
 
@@ -169,4 +160,4 @@ Take a video on a phone while you show both pictures on the wall. Talk through i
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + your video to teacher on KakaoTalk.

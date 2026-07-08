@@ -8,25 +8,23 @@
 
 ## 1 · Predict 🔮
 
-Open the **Sloped Roof** world but do not run it yet. Here is what the program does.
+Open the **Sloped Roof** world. Do not run it yet.
 
-It builds a roof out of stairs, one square **ring** at a time. A ring is a square outline — like the edge of a picture frame. The program builds the first ring, then builds another ring **on top** of it, then another, then another. Four rings in total, stacked up.
+It builds a roof from stairs, one square **ring** at a time. A ring is a square outline. The program stacks 4 rings, each on top of the last.
 
-Here is the clever part: each ring is **shorter** than the one below it. A number called `roof_len` decides how long each side of a ring is. It starts at 7. After every ring it loses 2. So the rings get smaller and higher as they go up, and they step up toward a single block at the very top — the peak.
+Each ring is **shorter** than the one below. A number called `roof_len` sets the side length. It starts at 7 and loses 2 each ring. So the rings shrink and rise to a peak.
 
 **What shape does this make? Circle one:** flat square · stepped pyramid roof · single line
 
-**Why is each ring smaller than the ring below it?**
-
-<div class="write-space short"></div>
+**Why is each ring smaller than the one below? Circle one:** to step up to a peak · to get wider · to dig down
 
 ---
 
 ## 2 · Watch the Variable Change 🔢
 
-A **variable** is a name that holds a number. The special thing about a variable is that the number can **change** while the program runs.
+A **variable** is a name that holds a number. The number can **change** while the program runs.
 
-In this program the variable is called `roof_len`. It holds how long each side of the ring is. It starts at 7, and after each ring it loses 2.
+Here it is `roof_len` — the side length of each ring. It starts at 7 and loses 2 each ring.
 
 Fill in the table. The first one is done for you.
 
@@ -43,19 +41,13 @@ Fill in the table. The first one is done for you.
 
 ## 3 · Think It Through ✏️
 
-No building yet — just thinking.
+**If `roof_len` stayed 7, what would the roof look like? Circle one:** a flat box, all rings the same size · a pointed peak · a deep hole
 
-**The variable `roof_len` loses 2 after each ring. Imagine it did NOT change and stayed 7 the whole time. What would the roof look like then?**
-
-<div class="write-space short"></div>
-
-**Which number would you change to make the roof start out wider at the bottom?**
-
-<div class="write-space short"></div>
+**Which number makes the roof start wider at the bottom? Circle one:** the starting 7 · the peak block · the world name
 
 ---
 
-## 4 · Build It 📸
+## 4 · Show Your Work 📸🎥
 
 Now run it for real.
 
@@ -65,13 +57,25 @@ Now run it for real.
 
 Then change the starting number. Make `roof_len` start at **9** instead of 7, run it again, and see how the roof changes.
 
-Send a photo or video of your roof, then explain it. Use these starters — write 2 or 3 sentences.
+Record **one video** (a phone is fine). Show two things:
 
-> My variable `roof_len` started at … and lost 2 each time, so …
+**1 · Your code.** Scroll through it. Say what each part does.
+
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
 >
-> The roof steps up to a point because the variable …
+> I built it using this code: ______.
 >
-> When I changed the starting number to 9, the roof …
+> In this code I used ______.
+>
+> The hardest part was ______.
+>
+> That part was hard because ______.
+
+**Write your lines here, then say them in your video.**
 
 <div class="write-space tall" style="min-height: 340px"></div>
 
@@ -79,4 +83,4 @@ Send a photo or video of your roof, then explain it. Use these starters — writ
 
 ### Submit ✅
 
-Send this worksheet + a photo or video of your sloped roof to teacher on KakaoTalk.
+Send this worksheet + your video to teacher on KakaoTalk.

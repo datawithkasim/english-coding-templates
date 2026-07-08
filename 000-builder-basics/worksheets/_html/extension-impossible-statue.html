@@ -113,11 +113,11 @@ footer b { color: #ff7849; }
 <p>🧩 This is a bonus challenge, not a weekly lesson. Try it once you are comfortable placing blocks and moving the agent.</p>
 </blockquote>
 <h2>1 · Read the World 🔍</h2>
-<p>Open the <strong>Impossible Statue</strong> world. Someone left you a puzzle. Before you write any code, read the markers:</p>
+<p>Open the <strong>Impossible Statue</strong> world. It is a puzzle. Read the markers:</p>
 <ul>
-<li>🟥 <strong>Red blocks</strong> — your <strong>start</strong> point and your <strong>end</strong> point. The agent begins on one and must finish on the other.</li>
-<li>⬛ <strong>Crying obsidian</strong> — this is the shape you must <strong>build</strong>. Every crying obsidian spot is a block you need to place.</li>
-<li>⬜ <strong>Glass</strong> — a <strong>trap</strong>. You must move through these spots but place <strong>nothing</strong> here. Leave them empty.</li>
+<li>🟥 <strong>Red blocks</strong> — your <strong>start</strong> and <strong>end</strong> points.</li>
+<li>⬛ <strong>Crying obsidian</strong> — <strong>build</strong> here. Every dark spot is a block to place.</li>
+<li>⬜ <strong>Glass</strong> — a <strong>trap</strong>. Move through these spots but place <strong>nothing</strong>.</li>
 </ul>
 <div class="qa"><p><strong>In your own words, what is the puzzle asking you to do?</strong></p>
 <div class="write-space"></div></div>
@@ -126,8 +126,8 @@ footer b { color: #ff7849; }
 <div class="write-space"></div></div>
 
 <h2>2 · The Big Idea: Place On / Place Off 💡</h2>
-<p>The agent moves in a straight line, but it should <strong>not</strong> place a block on every step. On the obsidian spots, placing is <strong>on</strong>. On the glass spots, placing is <strong>off</strong>.</p>
-<p>So your code is a mix: <code>move forward</code>, and sometimes <code>place block down</code>, and sometimes just <code>move forward</code> with no place.</p>
+<p>The agent moves in a straight line, but should <strong>not</strong> place a block on every step. Placing is <strong>on</strong> at obsidian spots and <strong>off</strong> at glass spots.</p>
+<p>So your code mixes <code>move forward</code> with <code>place block down</code>, and sometimes <code>move forward</code> alone.</p>
 <div class="answer-lines">place block down
 move forward
 place block down
@@ -142,14 +142,14 @@ place block down
 <div class="write-space"></div></div>
 
 <h2>3 · Plan Your Path ✏️</h2>
-<p>Before you build in the world, write the plan on paper first. Imagine the row of spots from start to end. Mark each spot with <strong>B</strong> (build — place a block) or <strong>S</strong> (skip — move past, no block).</p>
+<p>Plan on paper first. Mark each spot in the row <strong>B</strong> (build — place a block) or <strong>S</strong> (skip — move past, no block).</p>
 <blockquote>
 <p>Example: B B S B S S B</p>
 </blockquote>
 <div class="qa"><p><strong>Write your row of B and S, in order from the red start to the red end:</strong></p>
 <div class="write-space"></div></div>
 
-<p>Now turn that plan into agent commands. Remember: a <strong>B</strong> spot needs a place <strong>and</strong> a move; an <strong>S</strong> spot needs only a move.</p>
+<p>Turn your plan into agent commands. A <strong>B</strong> spot needs a place <strong>and</strong> a move; an <strong>S</strong> spot needs only a move.</p>
 <p><strong>Write your commands:</strong></p>
 <pre><code>1.
 2.
@@ -161,7 +161,7 @@ place block down
 8.
 </div>
 <h2>4 · Spot the Bug 🐛</h2>
-<p>Each code block was meant to copy the statue, but it is broken. Read the goal, then rewrite it so it works. Then explain the fix.</p>
+<p>Each code block should copy the statue, but is broken. Rewrite it, then explain the fix.</p>
 <p><strong>Bug A</strong> — The pattern should be: build, skip, build. (B S B)</p>
 <pre><code>place block down
 place block down
@@ -190,34 +190,24 @@ place block down
 <div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
 <div class="write-space"></div></div>
 
-<h2>5 · Build the Statue 📸</h2>
+<h2>5 · Show Your Work 📸🎥</h2>
 <p>Now go to the Impossible Statue world and run your code. Match the crying obsidian exactly: place where it says build, leave the glass spots empty, and finish on the red end block.</p>
-<p>When it looks right, send a photo or video. Then explain what you did. Use these starters — write 4 to 6 sentences.</p>
-<div class="qa"><blockquote>
-<p>First, I read the markers and saw …</p>
-<p>My plan was … (B and S)</p>
-<p>I used the command … to place, and I left the skip spots empty by …</p>
-<p>The hardest part was …</p>
-<p>To fix it, I …</p>
-<p>If I had more time, I would …</p>
-</blockquote>
-<div class="write-space tall" style="min-height: 340px"></div></div>
-
-<h2>6 · Record Your Walkthrough 🎥</h2>
-<p>Take a video on your phone (or a parent's phone) and teach someone how you solved the puzzle. Try to use these words: <strong>place</strong>, <strong>skip</strong>, <strong>move forward</strong>, <strong>start</strong>, <strong>end</strong>, <strong>pattern</strong>.</p>
+<p>Record <strong>one video</strong> (a phone is fine). Show two things:</p>
+<p><strong>1 · Your code.</strong> Scroll through it. Say what each part does.</p>
+<p><strong>2 · Your build.</strong> Point the camera. Name the parts.</p>
+<p>Fill the blanks:</p>
 <blockquote>
-<ol>
-<li>Point to the red start and red end blocks.</li>
-<li>Show the crying obsidian shape you copied.</li>
-<li>Show one glass spot you skipped and explain why you placed nothing there.</li>
-<li>Read your commands out loud and say which ones are "place on" and which are "skip".</li>
-</ol>
+<p>Today I built ______.</p>
+<p>I built it using this code: ______.</p>
+<p>In this code I used ______.</p>
+<p>The hardest part was ______.</p>
+<p>That part was hard because ______.</p>
 </blockquote>
-<div class="qa"><p><strong>Write what you will say in your video.</strong> Plan it here first — you can read from it while filming.</p>
+<div class="qa"><p><strong>Write your lines here, then say them in your video.</strong></p>
 <div class="write-space tall" style="min-height: 340px"></div></div>
 
 <hr />
 <h3>Submit ✅</h3>
-<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.</p>
+<p>Send this worksheet + your video to teacher on KakaoTalk.</p>
 </body>
 </html>

@@ -55,28 +55,38 @@ redstone below me:
     move ____
 ```
 
-**Word bank:** `up` · `down` · `left`
-
-**Write it:**
-
-<div class="write-space short"></div>
+**Missing word? Circle one:** up · down · left
 
 ---
 
-## 4 · Show Me 📸
+## 4 · Show Your Work 📸🎥
 
 Open the world. Type `run`. Watch the agent reach the goal.
 
-Send a photo OR video of the agent at the goal. Write 2 short lines.
+Record **one video** (a phone is fine). Show two things:
 
-> The maze went up and …
+**1 · Your code.** Scroll through it. Say what each part does.
+
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
 >
-> The redstone trail told the agent to …
+> I built it using this code: ______.
+>
+> In this code I used ______.
+>
+> The hardest part was ______.
+>
+> That part was hard because ______.
 
-<div class="write-space tall" style="min-height: 240px"></div>
+**Write your lines here, then say them in your video.**
+
+<div class="write-space tall" style="min-height: 340px"></div>
 
 ---
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + your video to teacher on KakaoTalk.

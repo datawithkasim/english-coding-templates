@@ -8,11 +8,11 @@
 
 ## 1 · Read the World 🔍
 
-Open the **Impossible Statue** world. Someone left you a puzzle. Before you write any code, read the markers:
+Open the **Impossible Statue** world. It is a puzzle. Read the markers:
 
-- 🟥 **Red blocks** — your **start** point and your **end** point. The agent begins on one and must finish on the other.
-- ⬛ **Crying obsidian** — this is the shape you must **build**. Every crying obsidian spot is a block you need to place.
-- ⬜ **Glass** — a **trap**. You must move through these spots but place **nothing** here. Leave them empty.
+- 🟥 **Red blocks** — your **start** and **end** points.
+- ⬛ **Crying obsidian** — **build** here. Every dark spot is a block to place.
+- ⬜ **Glass** — a **trap**. Move through these spots but place **nothing**.
 
 **In your own words, what is the puzzle asking you to do?**
 
@@ -26,9 +26,9 @@ Open the **Impossible Statue** world. Someone left you a puzzle. Before you writ
 
 ## 2 · The Big Idea: Place On / Place Off 💡
 
-The agent moves in a straight line, but it should **not** place a block on every step. On the obsidian spots, placing is **on**. On the glass spots, placing is **off**.
+The agent moves in a straight line, but should **not** place a block on every step. Placing is **on** at obsidian spots and **off** at glass spots.
 
-So your code is a mix: `move forward`, and sometimes `place block down`, and sometimes just `move forward` with no place.
+So your code mixes `move forward` with `place block down`, and sometimes `move forward` alone.
 
 ```
 place block down
@@ -51,7 +51,7 @@ place block down
 
 ## 3 · Plan Your Path ✏️
 
-Before you build in the world, write the plan on paper first. Imagine the row of spots from start to end. Mark each spot with **B** (build — place a block) or **S** (skip — move past, no block).
+Plan on paper first. Mark each spot in the row **B** (build — place a block) or **S** (skip — move past, no block).
 
 > Example: B B S B S S B
 
@@ -59,7 +59,7 @@ Before you build in the world, write the plan on paper first. Imagine the row of
 
 <div class="write-space"></div>
 
-Now turn that plan into agent commands. Remember: a **B** spot needs a place **and** a move; an **S** spot needs only a move.
+Turn your plan into agent commands. A **B** spot needs a place **and** a move; an **S** spot needs only a move.
 
 **Write your commands:**
 
@@ -78,7 +78,7 @@ Now turn that plan into agent commands. Remember: a **B** spot needs a place **a
 
 ## 4 · Spot the Bug 🐛
 
-Each code block was meant to copy the statue, but it is broken. Read the goal, then rewrite it so it works. Then explain the fix.
+Each code block should copy the statue, but is broken. Rewrite it, then explain the fix.
 
 **Bug A** — The pattern should be: build, skip, build. (B S B)
 
@@ -120,38 +120,29 @@ place block down
 
 ---
 
-## 5 · Build the Statue 📸
+## 5 · Show Your Work 📸🎥
 
 Now go to the Impossible Statue world and run your code. Match the crying obsidian exactly: place where it says build, leave the glass spots empty, and finish on the red end block.
 
-When it looks right, send a photo or video. Then explain what you did. Use these starters — write 4 to 6 sentences.
+Record **one video** (a phone is fine). Show two things:
 
-> First, I read the markers and saw …
+**1 · Your code.** Scroll through it. Say what each part does.
+
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
 >
-> My plan was … (B and S)
+> I built it using this code: ______.
 >
-> I used the command … to place, and I left the skip spots empty by …
+> In this code I used ______.
 >
-> The hardest part was …
+> The hardest part was ______.
 >
-> To fix it, I …
->
-> If I had more time, I would …
+> That part was hard because ______.
 
-<div class="write-space tall" style="min-height: 340px"></div>
-
----
-
-## 6 · Record Your Walkthrough 🎥
-
-Take a video on your phone (or a parent's phone) and teach someone how you solved the puzzle. Try to use these words: **place**, **skip**, **move forward**, **start**, **end**, **pattern**.
-
-> 1. Point to the red start and red end blocks.
-> 2. Show the crying obsidian shape you copied.
-> 3. Show one glass spot you skipped and explain why you placed nothing there.
-> 4. Read your commands out loud and say which ones are "place on" and which are "skip".
-
-**Write what you will say in your video.** Plan it here first — you can read from it while filming.
+**Write your lines here, then say them in your video.**
 
 <div class="write-space tall" style="min-height: 340px"></div>
 
@@ -159,4 +150,4 @@ Take a video on your phone (or a parent's phone) and teach someone how you solve
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + your video to teacher on KakaoTalk.

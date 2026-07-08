@@ -2,13 +2,13 @@
 
 **Topic:** Mini Cube Puzzle · **Course:** Maze Madness · **Level:** Advanced · **Time:** about 55 minutes
 
-Finish the mini cube. The starter builds part of it. Keep it going: add **2 more conditionals** with **one `OR`**, fill the cube, then break a hole in the **top** and climb out.
+Finish the mini cube. Keep the starter going: add **2 more conditionals** with **one `OR`**, fill the cube, then break a hole in the **top** and climb out.
 
 ---
 
 ## 1 · Predict 🔮
 
-Read each block. Write what you think happens.
+Write what happens.
 
 ```python
 for i in range(5):
@@ -44,7 +44,7 @@ if agent.detect(BLOCK, UP):
     agent.move(UP, 1)
 ```
 
-**Walk through it. How many layers fill? Where does the agent end up? Is there still a block above it?**
+**How many layers fill? Where does the agent end up? Is there still a block above it?**
 
 <div class="write-space"></div>
 
@@ -117,7 +117,7 @@ Write a conditional that uses `or`: if the agent is on a **corner** `OR` on the 
 
 ---
 
-## 5 · Finish the Cube 📸
+## 5 · Show Your Work 📸🎥
 
 Open this week's world. Find the **mini cube starter** — part is built.
 
@@ -126,34 +126,25 @@ Open this week's world. Find the **mini cube starter** — part is built.
 3. Make **one** use `or` (e.g. corner `OR` top → place glass).
 4. Break a hole in the **top** and climb out.
 
-Send a photo or video of the finished cube and the hole. Then finish — 4 to 6 sentences:
+Record **one video** (a phone is fine). Show two things:
 
-> First, I looked at the starter and saw …
+**1 · Your code.** Scroll through it. Say what each part does.
+
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
 >
-> To keep building, I …
+> I built it using this code: ______.
 >
-> I used a conditional when …
+> In this code I used ______.
 >
-> I made the hole in the top by …
+> The hardest part was ______.
 >
-> One tricky moment was …
->
-> If I had more time, I would …
+> That part was hard because ______.
 
-<div class="write-space tall" style="min-height: 340px"></div>
-
----
-
-## 6 · Record Your Walkthrough 🎥
-
-Film the agent building on a phone. Teach it like the viewer has never seen it. Use these words: **cube**, **layer**, **conditional**, **OR**, **hole**.
-
-> 1. Show the starter cube before you run.
-> 2. Run your code and watch the cube fill.
-> 3. Read your conditional out loud and say what makes it true.
-> 4. Show the agent breaking the hole in the top and climbing out.
-
-**Write what you will say. Plan it before you film — you can read from it.**
+**Write your lines here, then say them in your video.**
 
 <div class="write-space tall" style="min-height: 340px"></div>
 
@@ -161,4 +152,4 @@ Film the agent building on a phone. Teach it like the viewer has never seen it. 
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + your video to teacher on KakaoTalk.

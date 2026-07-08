@@ -1,0 +1,153 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head><meta charset='utf-8'>
+<title>👾 M003 Week 7 — English Worksheet (Advanced)</title>
+<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
+<style>
+@page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
+div.WordSection1 { page: WordSection1; }
+body { font-family: "Segoe UI", Arial, sans-serif; font-size: 11.5pt; color: #1a1a2e; line-height: 1.5; }
+h1 { font-size: 21pt; color: #6b4ee6; margin: 4px 0 6px; }
+h2 { font-size: 15pt; color: #6b4ee6; border-top: 1px solid #dddddd; padding-top: 8px; margin: 18px 0 10px; }
+h3, h4 { font-size: 11.5pt; margin: 12px 0 6px; }
+p { margin: 7px 0; }
+.brand { font-size: 10.5pt; font-weight: bold; color: #ff7849; letter-spacing: .06em;
+         border-bottom: 2px solid #ff7849; padding-bottom: 6px; margin-bottom: 14px; }
+table { border-collapse: collapse; margin: 10px 0; }
+th, td { border: 1px solid #c8c8c8; padding: 4px 9px; text-align: center; }
+th { background: #f3eefc; color: #6b4ee6; font-weight: bold; }
+pre { font-family: Consolas, "Courier New", monospace; font-size: 10.5pt; background: #f4f4f5;
+      border: 1px solid #dddddd; padding: 8px 10px; white-space: pre-wrap; }
+pre code { background: transparent; color: #1a1a2e; }
+code { font-family: Consolas, "Courier New", monospace; background: #fff1e8; color: #d6531f; padding: 0 3px; }
+blockquote { border-left: 3px solid #ff7849; background: #fff6ef; padding: 8px 12px;
+             color: #6a3a1c; margin: 9px 0; }
+ul, ol { margin: 7px 0 7px 26px; }
+p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
+.footer { color: #999999; font-size: 8.5pt; text-align: center; margin-top: 18px;
+          border-top: 1px solid #eeeeee; padding-top: 6px; }
+.footer b { color: #ff7849; }
+</style></head>
+<body><div class=WordSection1>
+<div class="brand">📚 ENGLISH CODING · 영어코딩</div>
+<h1>👾 M003 Week 7 — English Worksheet (Advanced)</h1>
+<p><strong>Topic:</strong> Recreate 2 Mob Heads (x, y, z) · <strong>Course:</strong> 3D Coordinates · <strong>Level:</strong> Advanced · <strong>Time:</strong> about 45 minutes</p>
+<p>Two blocky <strong>mob heads</strong> stand in your world — a <strong>creeper</strong> and a <strong>skeleton</strong>, each a cube with a face on the <strong>front</strong>. Build the <strong>front face first</strong> (keep z the same, read x across and y up), then <strong>add depth</strong> at z = 2 and z = 3. You build <strong>both</strong> heads side by side, giving each its own x range so they don't overlap. Faces only show on the front — every side and the back stay plain.</p>
+<blockquote>
+<p>🔴 Stand on your <strong>home spot</strong> (red block) every run. Move your feet, move your head.</p>
+</blockquote>
+<hr />
+<h2>1 · Predict 🔮</h2>
+<p>Read each set. Write what you will see <strong>and the reason</strong>.</p>
+<pre><code>fill green block from (0, 4, 1) to (4, 8, 1)
+fill green block from (0, 4, 2) to (4, 8, 3)
+</code></pre>
+<p><strong>The first line is the front face; the second adds depth. How wide (x), how tall (y), and how deep (z) is the finished cube? Why is it 3 deep?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code>fill green block from (0, 4, 1) to (4, 8, 3)
+fill white block from (7, 4, 1) to (11, 8, 3)
+</code></pre>
+<p><strong>Read the x ranges: 0–4 and 7–11. Do the heads overlap? How big is the gap, and why does the gap stop a crash?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code>place black block at (1, 7, 1)
+place black block at (1, 7, 2)
+</code></pre>
+<p><strong>Both eyes share x = 1, but one is z = 1 and one is z = 2. Are they both on the front face? Where is the second one, and why can't you see it from the front?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code>fill white block from (7, 4, 1) to (11, 8, 1)
+fill white block from (7, 4, 1) to (11, 8, 3)
+</code></pre>
+<p><strong>Both lines start at the same corner. The second line covers the first. What is the final shape, and did the first line do anything in the end? Why?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>2 · Spot the Bug 🐛</h2>
+<p>Fix each one. Then say why it was wrong.</p>
+<p><strong>Bug A</strong> — The creeper head should be <strong>3 blocks deep</strong>. Right now it is only the flat front face — paper thin.</p>
+<pre><code>fill green block from (0, 4, 1) to (4, 8, 1)
+</code></pre>
+<p><strong>Hint:</strong> add the same face again at z = 2 and z = 3.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work? (2–3 sentences)</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug B</strong> — The two eyes should sit <strong>side by side on the front face</strong> (z stays 1, x changes). This code put the second eye one step <strong>deeper</strong>, so it landed on the <strong>side</strong> of the head, not the face.</p>
+<pre><code>place black block at (1, 7, 1)
+place black block at (1, 7, 2)
+</code></pre>
+<p><strong>Hint:</strong> the face only shows on the front. To move across the front, change x and keep z = 1.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work? (2–3 sentences)</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug C</strong> — The code below is correct, but every block in <strong>both</strong> heads came out one step too far <strong>forward</strong> — the whole build landed one z too deep. Your friend never touched the code.</p>
+<pre><code>(the code matched the heads exactly)
+</code></pre>
+<p><strong>Hint:</strong> the build always starts from where you stand.</p>
+<p><strong>What did your friend forget before pressing run? Why does that move the whole head, not just one block? (2–3 sentences)</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>3 · Show Your Work 📸🎥</h2>
+<p>First, <strong>plan your coordinates</strong>. Write the x range you will give each head so they do not overlap.</p>
+<blockquote>
+<p>Creeper x range: … to …</p>
+<p>Skeleton x range: … to …</p>
+<p>Gap between them: … blocks</p>
+</blockquote>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p>Now switch to your homework world. Build <strong>both</strong> heads side by side, each on its own x range.</p>
+<pre><code># ---- Creeper (x 0–4) ----
+# front face
+fill green block from (0, 4, 1) to (4, 8, 1)
+# depth
+fill green block from (0, 4, 2) to (4, 8, 3)
+# face (front, z = 1)
+place black block at (1, 7, 1)
+place black block at (3, 7, 1)
+place black block at (2, 6, 1)
+place black block at (2, 5, 1)
+place black block at (1, 4, 1)
+place black block at (3, 4, 1)
+
+# ---- Skeleton (x 7–11) ----
+# front face
+fill white block from (7, 4, 1) to (11, 8, 1)
+# depth
+fill white block from (7, 4, 2) to (11, 8, 3)
+# face (front, z = 1)
+place black block at (8, 7, 1)
+place black block at (10, 7, 1)
+place black block at (9, 6, 1)
+place black block at (8, 5, 1)
+place black block at (9, 5, 1)
+place black block at (10, 5, 1)
+</code></pre>
+<p>The two heads use different x ranges (0–4 and 7–11) with a gap, so they never crash into each other.</p>
+<p><strong>MODIFY challenge:</strong> change one thing that is your own idea — a new colour, an extra part (nose, ears, antenna), or make a head bigger. Build it, then say what you changed.</p>
+<p>Record <strong>one video</strong> (a phone is fine). Show two things:</p>
+<p><strong>1 · Your code.</strong> Scroll through it. Say what each part does.</p>
+<p><strong>2 · Your build.</strong> Point the camera. Name the parts.</p>
+<p>Fill the blanks:</p>
+<blockquote>
+<p>Today I built ______.</p>
+<p>I built it using this code: ______.</p>
+<p>In this code I used ______.</p>
+<p>The hardest part was ______.</p>
+<p>That part was hard because ______.</p>
+</blockquote>
+<p><strong>Write your lines here, then say them in your video.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your video to teacher on KakaoTalk.</p>
+<div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>
+</div></body></html>

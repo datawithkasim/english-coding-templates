@@ -2,7 +2,9 @@
 
 **Topic:** One Function, Many Stalls — Arguments & Parameters · **Course:** Theme Park Creator · **Time:** about 50 minutes
 
-This week you build a market **stall** with a **function**. A stall has more parts than a plain booth — a stand, posts and a roof — so your function needs **more parameters**: some for **materials** and some for the **corners** that set where the stall goes and how big it is. Change the **arguments** you **call** it with, and one function builds a whole market row of different stalls.
+This week you build a market **stall** with a **function**. A stall has more parts than a booth — a stand, posts and a roof.
+
+So your function needs **more parameters**: some for **materials**, some for the **corners** that set where it goes and how big it is. Change the **arguments** you **call** it with, and one function builds a whole market row.
 
 These are the blocks you use this week:
 
@@ -23,7 +25,7 @@ blocks.fill(OAK_FENCE, pos(x1, 1, z1), pos(x1, 3, z1), FillOperation.REPLACE)
 
 A **parameter** is a named empty box you create when you **define** the function.
 An **argument** is the real value you send when you **call** it.
-They match **by position** — the order you write the arguments in decides which box each one lands in. Get the order wrong and the values land in the wrong boxes.
+They match **by position**: the order of your arguments decides which box each one lands in.
 
 ```text
    DEFINE  →  the names in ( ) are PARAMETERS (empty named boxes):
@@ -42,7 +44,7 @@ They match **by position** — the order you write the arguments in decides whic
        roof  ⟵ BRICKS
 ```
 
-Notice two things: `BRICKS` was sent in **twice** (same material used for stand and roof — that's fine, boxes don't care), and the **corners** are numbers while the **materials** are words. It is legal — and normal — for one function to mix them.
+Notice two things: `BRICKS` was sent in **twice** (same material for stand and roof — that's fine), and the **corners** are numbers while the **materials** are words. Mixing them is normal.
 
 **Why does matching by *position* mean the order of your arguments matters?**
 
@@ -52,7 +54,7 @@ Notice two things: `BRICKS` was sent in **twice** (same material used for stand 
 
 ## 2 · Predict 🔮
 
-Read each function. Before you imagine the build, write what you think happens.
+Read each function. Write what you think happens.
 
 ```python
 def build_stall(stand, post, roof, x1, x2, z1, z2):
@@ -82,7 +84,7 @@ build_stall(BRICKS, OAK_FENCE, BRICKS, 10, 2, 2, 6)
 
 ## 3 · Spot the Bug 🐛
 
-Each block was meant to do something but is broken. Read what it is **supposed** to do, rewrite it so it works, then explain why the original was wrong.
+Each block is broken. Read what it should do, rewrite it so it works, then explain why the original was wrong.
 
 **Bug A** — This should build a **brick stall with fence posts**. But it comes out with fence-material walls and brick posts — swapped.
 
@@ -123,7 +125,7 @@ build_stall(BRICKS, OAK_FENCE, BRICKS, 2, 10, 2, 6)
 
 <div class="write-space"></div>
 
-**Bug C** — The roof should sit at the height you decide. But the roof always builds at the **same height**, no matter what stall you build, because one corner value is ignored.
+**Bug C** — The roof should sit at the height you decide. But the roof always builds at the **same height**, because one corner value is ignored.
 
 ```python
 def build_stall(stand, post, roof, x1, x2, z1, z2):
@@ -146,7 +148,7 @@ build_stall(BRICKS, OAK_FENCE, BRICKS, 2, 20, 2, 12)
 
 ## 4 · Build the Market Stall 🏪
 
-Now the real challenge. In your homework world, write **one** function called `build_stall` that builds a proper market stall. Your function must have **seven parameters** — three materials and four corners:
+In your homework world, write **one** function called `build_stall` that builds a market stall. Your function must have **seven parameters** — three materials and four corners:
 
 ```python
 def build_stall(stand, post, roof, x1, x2, z1, z2):
@@ -158,7 +160,7 @@ Your stall must include, in total:
 - **four posts** — one rising from each of the four corners, made from the `post` material
 - a **roof** — a flat top covering the stand, made from the `roof` material
 
-Everything about **where** the stall sits and **how big** it is must come from the four corner parameters — no fixed corner numbers hidden inside.
+**Where** the stall sits and **how big** it is must come from the four corner parameters — no fixed corner numbers inside.
 
 Then **call your function two or three times** with different corners to line up a **market row**, for example:
 
@@ -173,41 +175,32 @@ build_stall(STONE_BRICKS, DARK_OAK_FENCE, STONE_BRICKS, 12, 20, 2, 6)
 
 ---
 
-## 5 · Tell Me What You Built 📸
+## 5 · Show Your Work 📸🎥
 
-When your market row is standing, send a photo or video and explain what you did. Use these sentence starters — write 5 to 7 sentences.
+Record **one video** (a phone is fine). Show two things:
 
-> My seven parameters were … and they split into … materials and … corners.
+**1 · Your code.** Scroll through it. Say what each part does.
+
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
 >
-> The four corners control the stall because …
+> I built it using this code: ______.
 >
-> To make the stand hollow and open I …
+> In this code I used ______.
 >
-> When I changed the corners in my second call, the stall …
+> The hardest part was ______.
 >
-> The trickiest part of matching arguments to parameters was …
->
-> One thing I would add to my stall with more time is …
+> That part was hard because ______.
 
-<div class="write-space tall" style="min-height: 360px"></div>
+**Write your lines here, then say them in your video.**
 
----
-
-## 6 · Record Your Walkthrough 🎥
-
-Take a video on your phone (or a parent's phone) of your code and your market row. Talk it through like you are teaching someone who has never seen it. Try to use these words: **function**, **parameter**, **argument**, **call**, **position**.
-
-> 1. Show your `build_stall` function and read the seven **parameters** out loud.
-> 2. Point at a material parameter and a corner parameter and say what each one controls.
-> 3. Run two **calls** with different **arguments** and show the stalls appear in different places.
-> 4. Explain in your own words why the **order** of the arguments matters.
-
-**Write what you will say in your video.** Plan it here before you record — you can read from it while filming.
-
-<div class="write-space tall" style="min-height: 360px"></div>
+<div class="write-space tall" style="min-height: 340px"></div>
 
 ---
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + your video to teacher on KakaoTalk.

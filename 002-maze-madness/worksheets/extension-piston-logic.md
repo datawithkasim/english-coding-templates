@@ -2,7 +2,7 @@
 
 **Topic:** Two Pistons + AND Conditions · **Course:** Maze Madness · **Level:** Extension (Advanced) · **Time:** about 60 minutes
 
-This is an **extension challenge** for students who finished the weekly mazes. The agent follows a **redstone trail** through a long maze. At some junctions it must check **two things at once** — an **AND** condition — to pick the right way. Twice along the path, a **lever powers a piston** that pulls a block back and opens the gate. Your job: drive the agent through the **whole maze**, start to finish.
+The agent follows a **redstone trail** through a long maze, checking **two things at once** with **AND** at some junctions. Twice, a **lever powers a piston** to open a gate. Drive the agent through the **whole maze**, start to finish.
 
 Chat words: `l` turn left, `r` turn right, `run` start the solver, `rl` teleport the agent back to you.
 
@@ -76,7 +76,7 @@ while True:
 
 ## 3 · Spot the Bug 🐛
 
-Each block is broken. Read its goal, rewrite it, then explain the fix.
+Read each block's goal, rewrite it, then explain the fix.
 
 **Bug A** — Turn left **only when redstone is left AND ahead**. This turns on either one.
 
@@ -131,7 +131,7 @@ agent.interact(AHEAD)
 
 ## 4 · Make It Your Own 🛠️
 
-Open the **M002 EXT 2** world and run `run`. Now **change one thing** and predict before you test.
+Open the **M002 EXT 2** world and run `run`. **Change one thing** and predict before you test.
 
 Pick **one** (or your own):
 
@@ -153,39 +153,29 @@ Pick **one** (or your own):
 
 ---
 
-## 5 · Finish the Whole Maze 📸
+## 5 · Show Your Work 📸🎥
 
 Get the agent from **start to the very end** — past both piston gates and every junction. Run `run`, see where it sticks, fix, run again until it reaches the goal.
 
-Send a photo or video of the agent at the goal, then explain. Use these starters — 4 to 6 sentences.
+Record **one video** (a phone is fine). Show two things:
 
-> The maze had two pistons, so the agent had to …
+**1 · Your code.** Scroll through it. Say what each part does.
+
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
 >
-> At a junction I used an AND condition to …
+> I built it using this code: ______.
 >
-> At a piston gate, the agent flipped the lever first because …
+> In this code I used ______.
 >
-> The change I made in section 4 was …
+> The hardest part was ______.
 >
-> The hardest part was …
->
-> If I had more time, I would …
+> That part was hard because ______.
 
-<div class="write-space tall" style="min-height: 340px"></div>
-
----
-
-## 6 · Record Your Walkthrough 🎥
-
-Film on a phone while the agent solves the whole maze. Teach it like the viewer has never seen it. Try to use: **detect**, **redstone**, **trail**, **AND**, **piston**, **lever**, **loop**.
-
-> 1. Show the maze and redstone trail before you start.
-> 2. Type `run` and show the agent following the trail.
-> 3. Read one AND check out loud and say what it decides.
-> 4. Show the agent reaching a piston gate and flipping the lever.
-> 5. Show it reaching the goal.
-
-**Write what you will say. Plan it here first — read from it while filming.**
+**Write your lines here, then say them in your video.**
 
 <div class="write-space tall" style="min-height: 340px"></div>
 
@@ -193,4 +183,4 @@ Film on a phone while the agent solves the whole maze. Teach it like the viewer 
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + your video to teacher on KakaoTalk.

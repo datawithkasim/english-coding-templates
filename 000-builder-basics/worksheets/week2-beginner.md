@@ -6,7 +6,7 @@
 
 ## 1 · Predict 🔮
 
-Read the steps. Before you imagine the agent doing it, circle or write your answer.
+Read the steps. Circle your answer.
 
 ```
 place block down
@@ -16,24 +16,20 @@ place block down
 
 **How many blocks did the agent place? Circle one:** 1 · 2 · 3
 
-**Are the blocks next to each other or far apart?**
-
-<div class="write-space short"></div>
+**Are the blocks next to each other or far apart? Circle one:** next to each other · far apart
 
 ```
 move up by 1
 place block down
 ```
 
-**Where does the block land — on the ground, or one block higher? Write one short sentence.**
-
-<div class="write-space short"></div>
+**Where does the block land? Circle one:** one block higher · on the ground
 
 ---
 
 ## 2 · Find the Difference 🐛
 
-Each pair shows clean steps first, then a broken version of the same idea. Circle what's different and write one short sentence about the bug.
+Clean steps first, then a broken version. Circle the bug.
 
 **Pair A** — The agent should place a block, then move, then place another block.
 
@@ -51,9 +47,7 @@ place block down
 move forward
 ```
 
-**What is wrong?**
-
-<div class="write-space short"></div>
+**What is wrong? Circle one:** no move between the blocks · a block is missing · a wrong turn
 
 **Pair B** — The agent should place 2 blocks in a line on the ground.
 
@@ -71,15 +65,13 @@ move up by 1
 place block down
 ```
 
-**What is wrong?**
-
-<div class="write-space short"></div>
+**What is wrong? Circle one:** it moves up, not forward · a block is missing · wrong order
 
 ---
 
 ## 3 · Fill the Gap ✏️
 
-The agent should place 3 blocks in a row. One line is missing. Fill it in using the word bank.
+The agent should place 3 blocks in a row. One line is missing.
 
 ```
 place block down
@@ -89,44 +81,38 @@ ____________
 place block down
 ```
 
-**Word bank:** `move forward` · `turn right` · `move up by 1`
-
-**Write the missing line:**
-
-<div class="write-space short"></div>
+**Which line is missing? Circle one:** move forward · turn right · move up by 1
 
 ---
 
-## 4 · Tell Me What You Built 📸
+## 4 · Show Your Work 📸🎥
 
 Now switch to your homework world. Place **3 blocks in a row** on the ground. When you finish, come back here.
 
-Send a photo or video of your blocks, then explain what you did. Use these sentence starters — write 2 or 3 sentences.
+Record **one video** (a phone is fine). Show two things:
 
-> First, I used the command … to place a block.
+**1 · Your code.** Scroll through it. Say what each part does.
+
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
 >
-> Then I moved … so the next block would land …
+> I built it using this code: ______.
 >
-> The hardest part was …
+> In this code I used ______.
+>
+> The hardest part was ______.
+>
+> That part was hard because ______.
 
-<div class="write-space tall" style="min-height: 240px"></div>
+**Write your lines here, then say them in your video.**
 
----
-
-## 5 · Record Your Walkthrough 🎥
-
-Take a video on your phone (or a parent's phone) and show your blocks. Talk like you are teaching a friend. Try to use these words: **place**, **block**, **move**, **forward**.
-
-> 1. Show the blocks you placed.
-> 2. Read your commands out loud.
-> 3. Point to your favourite block and say why.
-
-**Write what you will say in your video.** You can read from it while filming.
-
-<div class="write-space tall" style="min-height: 240px"></div>
+<div class="write-space tall" style="min-height: 340px"></div>
 
 ---
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + your video to teacher on KakaoTalk.

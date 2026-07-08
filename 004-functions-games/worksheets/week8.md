@@ -2,13 +2,13 @@
 
 **Topic:** Final — Your Minigame / Dungeon · **Course:** Functions & Games · **Time:** about 45 minutes
 
-This is your **final week** — no new ideas. You combine everything you already know: your function library, chat commands, sensing, and events. Together they make a playable **minigame or dungeon**.
+This is your **final week** — no new ideas. You combine everything you know — your function library, chat commands, sensing, events — into a playable **minigame or dungeon**.
 
 ---
 
 ## 1 · Predict 🔮
 
-Below is the plan for a small minigame. Read each part, then write what you think happens step by step.
+Below is a small minigame plan. Write what you think happens, step by step.
 
 ```
 on chat command "start":
@@ -56,7 +56,7 @@ on chat command "start":
 
 ## 2 · Spot the Bug 🐛
 
-Each block of code below was meant to do something, but it is broken. Read what the code is **supposed** to do, then rewrite it so it works. After that, explain why the original was wrong and why your fix works.
+Each block below is broken. Rewrite it so it works, then explain why the original was wrong and why your fix works.
 
 **Bug A** — The gold goal block should be in the **last** room, after the trap. Right now players win in room 1 without ever facing the trap.
 
@@ -116,7 +116,7 @@ on player walks on red carpet:
 
 ---
 
-## 3 · Tell Me What You Built 📸
+## 3 · Show Your Work 📸🎥
 
 Now switch to your homework world and build your own minigame or dungeon. **Plan first**, then build, then playtest.
 
@@ -146,34 +146,25 @@ Now switch to your homework world and build your own minigame or dungeon. **Plan
 >
 > ☐ Can a player actually reach the goal and finish?
 
-Send a photo or video of someone playing your game, then explain what you built. Use these sentence starters — write 4 to 6 sentences total.
+Record **one video** (a phone is fine). Show two things:
 
-> My game starts when …
+**1 · Your code.** Scroll through it. Say what each part does.
+
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
 >
-> The player has to …
+> I built it using this code: ______.
 >
-> I reused functions from week … when …
+> In this code I used ______.
 >
-> One tricky moment was when …
+> The hardest part was ______.
 >
-> During playtesting, I found …
->
-> If I had more time, I would …
+> That part was hard because ______.
 
-<div class="write-space tall" style="min-height: 340px"></div>
-
----
-
-## 4 · Record Your Walkthrough 🎥
-
-Now take a video on your phone (or a parent's phone) while you play your minigame from start to finish. Talk through it like you are teaching someone who has never seen it. Try to use these words: **goal**, **trap**, **reward**, **event**, **function**.
-
-> 1. Type your start command and show what gets built.
-> 2. Walk through each room and say what happens there.
-> 3. Show the trap firing, then show reaching the goal.
-> 4. Say which parts came from your function library and which events make the game react.
-
-**Write what you will say in your video.** Use the space below to plan it before you record — you can read from it while filming.
+**Write your lines here, then say them in your video.**
 
 <div class="write-space tall" style="min-height: 340px"></div>
 
@@ -181,4 +172,4 @@ Now take a video on your phone (or a parent's phone) while you play your minigam
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + your video to teacher on KakaoTalk.

@@ -1,0 +1,185 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head><meta charset='utf-8'>
+<title>🧩 M002 Extension 5 — Redstone AND Solver</title>
+<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
+<style>
+@page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
+div.WordSection1 { page: WordSection1; }
+body { font-family: "Segoe UI", Arial, sans-serif; font-size: 11.5pt; color: #1a1a2e; line-height: 1.5; }
+h1 { font-size: 21pt; color: #6b4ee6; margin: 4px 0 6px; }
+h2 { font-size: 15pt; color: #6b4ee6; border-top: 1px solid #dddddd; padding-top: 8px; margin: 18px 0 10px; }
+h3, h4 { font-size: 11.5pt; margin: 12px 0 6px; }
+p { margin: 7px 0; }
+.brand { font-size: 10.5pt; font-weight: bold; color: #ff7849; letter-spacing: .06em;
+         border-bottom: 2px solid #ff7849; padding-bottom: 6px; margin-bottom: 14px; }
+table { border-collapse: collapse; margin: 10px 0; }
+th, td { border: 1px solid #c8c8c8; padding: 4px 9px; text-align: center; }
+th { background: #f3eefc; color: #6b4ee6; font-weight: bold; }
+pre { font-family: Consolas, "Courier New", monospace; font-size: 10.5pt; background: #f4f4f5;
+      border: 1px solid #dddddd; padding: 8px 10px; white-space: pre-wrap; }
+pre code { background: transparent; color: #1a1a2e; }
+code { font-family: Consolas, "Courier New", monospace; background: #fff1e8; color: #d6531f; padding: 0 3px; }
+blockquote { border-left: 3px solid #ff7849; background: #fff6ef; padding: 8px 12px;
+             color: #6a3a1c; margin: 9px 0; }
+ul, ol { margin: 7px 0 7px 26px; }
+p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
+.footer { color: #999999; font-size: 8.5pt; text-align: center; margin-top: 18px;
+          border-top: 1px solid #eeeeee; padding-top: 6px; }
+.footer b { color: #ff7849; }
+</style></head>
+<body><div class=WordSection1>
+<div class="brand">📚 ENGLISH CODING · 영어코딩</div>
+<h1>🧩 M002 Extension 5 — Redstone AND Solver</h1>
+<p><strong>Topic:</strong> All 5 Redstone AND Rules + Single Checks · <strong>Course:</strong> Maze Madness · <strong>Level:</strong> Extension (Advanced) · <strong>Time:</strong> about 60 minutes</p>
+<p>Same <strong>Week 3 world</strong>. Your target is the <strong>hardest maze</strong> your teacher shows a picture of: tall clear-glass frames packed with redstone and a diamond block at the end. This time you write the <strong>whole solver</strong> — all five <strong>AND</strong> rules plus the single checks. Every choice reads <strong>redstone</strong>.</p>
+<blockquote>
+<p><strong>The redstone contract</strong></p>
+<p>Single checks — one redstone:
+- RS <strong>left</strong> → turn right · RS <strong>right</strong> → turn left
+- RS <strong>below</strong> → move up 1 · RS <strong>above</strong> → move down 1</p>
+<p>AND rules — two redstones, <strong>both</strong> true:
+- <strong>#1</strong> RS left <strong>and</strong> below → up 1, turn right
+- <strong>#2</strong> RS right <strong>and</strong> below → up 1, turn left
+- <strong>#3</strong> RS ahead <strong>and</strong> below → up 1, turn around
+- <strong>#4</strong> RS left <strong>and</strong> right → up 5
+- <strong>#5</strong> RS above <strong>and</strong> below → back 2, turn right, forward 2</p>
+</blockquote>
+<p>Chat words: <code>l</code> turn left · <code>r</code> turn right · <code>run</code> start the solver · <code>rl</code> teleport the agent back to you.</p>
+<hr />
+<h2>1 · Read the Chat Commands 🎛️</h2>
+<p>Each block binds a <strong>chat word</strong> to an action. Type the word, the agent runs the code.</p>
+<pre><code class="language-python">def turn_left():
+    agent.turn(LEFT_TURN)
+player.on_chat(&quot;l&quot;, turn_left)
+</code></pre>
+<p><strong>What does the agent do when you type <code>l</code>?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">def go_back():
+    agent.teleport_to_player()
+player.on_chat(&quot;rl&quot;, go_back)
+</code></pre>
+<p><strong>You type <code>rl</code>. Where does the agent go? When does that help in a long maze?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>2 · Trace the Solver 🔍</h2>
+<p>This loop runs when you type <code>run</code>. It checks the <strong>AND</strong> rules first, then moves forward.</p>
+<pre><code class="language-python">while True:
+    if agent.detect(REDSTONE, LEFT) and agent.detect(REDSTONE, RIGHT):
+        agent.move(UP, 5)
+    elif agent.detect(REDSTONE, UP) and agent.detect(REDSTONE, DOWN):
+        agent.move(BACK, 2)
+        agent.turn(RIGHT_TURN)
+        agent.move(FORWARD, 2)
+    elif agent.detect(REDSTONE, FORWARD) and agent.detect(REDSTONE, DOWN):
+        agent.move(UP, 1)
+        agent.turn(RIGHT_TURN)
+        agent.turn(RIGHT_TURN)
+    elif agent.detect(REDSTONE, LEFT) and agent.detect(REDSTONE, DOWN):
+        agent.move(UP, 1)
+        agent.turn(RIGHT_TURN)
+    agent.move(FORWARD, 1)
+</code></pre>
+<p><strong>Which AND rule number is each <code>if</code> / <code>elif</code> — #1 to #5? One is missing. Which?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Rule #4 is <code>RS LEFT and RS RIGHT</code>. What single move does it run, and why is no turn needed?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Rule #1 is <code>RS LEFT and RS DOWN</code>. A tile has redstone on the left only — no redstone below. Walk it through the code. Does #1 run? What happens instead?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why are all the AND checks first, before any single check? What would rule #1 lose if <code>if agent.detect(REDSTONE, DOWN): agent.move(UP, 1)</code> was checked first?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>3 · Spot the Bug 🐛</h2>
+<p>Read each block's goal, rewrite it, then explain the fix.</p>
+<p><strong>Bug A</strong> — Rule #1: turn right <strong>only when redstone is left AND below</strong>. This checks redstone left only, so it turns on a plain left marker that has no redstone below it.</p>
+<pre><code class="language-python">if agent.detect(REDSTONE, LEFT):
+    agent.move(UP, 1)
+    agent.turn(RIGHT_TURN)
+agent.move(FORWARD, 1)
+</code></pre>
+<p><strong>Fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug B</strong> — Rule #5 needs redstone <strong>above AND below</strong> — both. This uses <code>or</code>, so redstone below alone fires it and the agent jumps backward at the wrong tile.</p>
+<pre><code class="language-python">if agent.detect(REDSTONE, UP) or agent.detect(REDSTONE, DOWN):
+    agent.move(BACK, 2)
+    agent.turn(RIGHT_TURN)
+    agent.move(FORWARD, 2)
+agent.move(FORWARD, 1)
+</code></pre>
+<p><strong>Fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug C</strong> — Rule #4 is <code>RS LEFT and RS RIGHT → up 5</code>. This has the AND right but the wrong move — it turns instead of climbing.</p>
+<pre><code class="language-python">if agent.detect(REDSTONE, LEFT) and agent.detect(REDSTONE, RIGHT):
+    agent.turn(RIGHT_TURN)
+agent.move(FORWARD, 1)
+</code></pre>
+<p><strong>Fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>4 · Write the Missing Rules ✍️</h2>
+<p><strong>Rule #2</strong> is <code>RS RIGHT and RS DOWN → move up 1, turn left</code>. Write the full <code>elif</code> branch.</p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Rule #5</strong> is <code>RS UP and RS DOWN → move back 2, turn right, move forward 2</code>. Write the full <code>elif</code> branch.</p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Add the single checks too. Write the <code>elif</code> for a lone <code>RS LEFT</code> (turn right) and a lone <code>RS RIGHT</code> (turn left). One line: why do these go <em>after</em> all the AND checks?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>5 · Make It Your Own 🛠️</h2>
+<p>Open the <strong>Week 3</strong> world and find the hardest maze from the picture. Run your solver, then change <strong>one thing</strong>, predict, and test.</p>
+<p>Pick <strong>one</strong> (or your own):</p>
+<ul>
+<li>Add a <code>back</code> command that turns the agent around (two right turns).</li>
+<li>Make the agent <code>agent.place(...)</code> a block each time an AND rule fires, so you can see every rule it hit.</li>
+<li>Change rule #4 from <code>UP, 5</code> to a new number and watch where it lands.</li>
+</ul>
+<p><strong>Which change? Write the code.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Predict: what will happen?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Test it. What actually happened? If it surprised you, why?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>6 · Show Your Work 📸🎥</h2>
+<p>Run your solver and get the agent to the <strong>diamond block</strong> goal. See where it sticks, fix a rule, run again.</p>
+<p>Record <strong>one video</strong> (a phone is fine). Show two things:</p>
+<p><strong>1 · Your code.</strong> Scroll through it. Say what each part does.</p>
+<p><strong>2 · Your build.</strong> Point the camera. Name the parts.</p>
+<p>Fill the blanks:</p>
+<blockquote>
+<p>Today I built ______.</p>
+<p>I built it using this code: ______.</p>
+<p>In this code I used ______.</p>
+<p>The hardest part was ______.</p>
+<p>That part was hard because ______.</p>
+</blockquote>
+<p><strong>Write your lines here, then say them in your video.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your video to teacher on KakaoTalk.</p>
+<div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>
+</div></body></html>

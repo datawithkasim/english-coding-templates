@@ -1,0 +1,159 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head><meta charset='utf-8'>
+<title>🧩 M002 Extension 2 — Piston & Logic Maze</title>
+<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
+<style>
+@page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
+div.WordSection1 { page: WordSection1; }
+body { font-family: "Segoe UI", Arial, sans-serif; font-size: 11.5pt; color: #1a1a2e; line-height: 1.5; }
+h1 { font-size: 21pt; color: #6b4ee6; margin: 4px 0 6px; }
+h2 { font-size: 15pt; color: #6b4ee6; border-top: 1px solid #dddddd; padding-top: 8px; margin: 18px 0 10px; }
+h3, h4 { font-size: 11.5pt; margin: 12px 0 6px; }
+p { margin: 7px 0; }
+.brand { font-size: 10.5pt; font-weight: bold; color: #ff7849; letter-spacing: .06em;
+         border-bottom: 2px solid #ff7849; padding-bottom: 6px; margin-bottom: 14px; }
+table { border-collapse: collapse; margin: 10px 0; }
+th, td { border: 1px solid #c8c8c8; padding: 4px 9px; text-align: center; }
+th { background: #f3eefc; color: #6b4ee6; font-weight: bold; }
+pre { font-family: Consolas, "Courier New", monospace; font-size: 10.5pt; background: #f4f4f5;
+      border: 1px solid #dddddd; padding: 8px 10px; white-space: pre-wrap; }
+pre code { background: transparent; color: #1a1a2e; }
+code { font-family: Consolas, "Courier New", monospace; background: #fff1e8; color: #d6531f; padding: 0 3px; }
+blockquote { border-left: 3px solid #ff7849; background: #fff6ef; padding: 8px 12px;
+             color: #6a3a1c; margin: 9px 0; }
+ul, ol { margin: 7px 0 7px 26px; }
+p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
+.footer { color: #999999; font-size: 8.5pt; text-align: center; margin-top: 18px;
+          border-top: 1px solid #eeeeee; padding-top: 6px; }
+.footer b { color: #ff7849; }
+</style></head>
+<body><div class=WordSection1>
+<div class="brand">📚 ENGLISH CODING · 영어코딩</div>
+<h1>🧩 M002 Extension 2 — Piston &amp; Logic Maze</h1>
+<p><strong>Topic:</strong> Two Pistons + AND Conditions · <strong>Course:</strong> Maze Madness · <strong>Level:</strong> Extension (Advanced) · <strong>Time:</strong> about 60 minutes</p>
+<p>The agent follows a <strong>redstone trail</strong> through a long maze, checking <strong>two things at once</strong> with <strong>AND</strong> at some junctions. Twice, a <strong>lever powers a piston</strong> to open a gate. Drive the agent through the <strong>whole maze</strong>, start to finish.</p>
+<p>Chat words: <code>l</code> turn left, <code>r</code> turn right, <code>run</code> start the solver, <code>rl</code> teleport the agent back to you.</p>
+<hr />
+<h2>1 · Read the Chat Commands 🎛️</h2>
+<p>Each block binds a <strong>chat word</strong> to an action.</p>
+<pre><code class="language-python">def on_chat():
+    agent.turn(RIGHT_TURN)
+player.on_chat(&quot;r&quot;, on_chat)
+</code></pre>
+<p><strong>What does the agent do when you type <code>r</code>?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">def on_chat():
+    agent.teleport_to_player()
+player.on_chat(&quot;rl&quot;, on_chat)
+</code></pre>
+<p><strong>You type <code>rl</code>. Where does the agent go, and when does that help in a long maze?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>This maze has two pistons far apart. Why test the first half with <code>l</code> and <code>r</code> before you type <code>run</code>?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>2 · Trace the Solver 🔍</h2>
+<p>This loop runs when you type <code>run</code>. It follows the trail, makes AND decisions, and flips a lever at each piston gate.</p>
+<pre><code class="language-python">while True:
+    agent.move(FORWARD, 1)
+    if agent.detect(REDSTONE, LEFT) and agent.detect(REDSTONE, AHEAD):
+        agent.turn(LEFT_TURN)
+        agent.move(FORWARD, 1)
+    elif agent.detect(BLOCK, AHEAD) and agent.detect(REDSTONE, RIGHT):
+        agent.turn(RIGHT_TURN)
+        agent.move(FORWARD, 1)
+    elif agent.detect(BLOCK, AHEAD):
+        agent.interact(AHEAD)
+        agent.move(FORWARD, 1)
+</code></pre>
+<p><strong>The loop is <code>while True</code>. When does it stop on its own?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>First check: <code>detect(REDSTONE, LEFT) and detect(REDSTONE, AHEAD)</code>. Describe a spot in the maze where both are true.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>The last <code>elif</code> is a piston gate: a block ahead, no redstone beside it. What does <code>agent.interact(AHEAD)</code> do, and why can the agent move forward right after?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why does check order matter? What breaks if <code>elif agent.detect(BLOCK, AHEAD)</code> ran first, before the two AND checks?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>3 · Spot the Bug 🐛</h2>
+<p>Read each block's goal, rewrite it, then explain the fix.</p>
+<p><strong>Bug A</strong> — Turn left <strong>only when redstone is left AND ahead</strong>. This turns on either one.</p>
+<pre><code class="language-python">if agent.detect(REDSTONE, LEFT) or agent.detect(REDSTONE, AHEAD):
+    agent.turn(LEFT_TURN)
+    agent.move(FORWARD, 1)
+</code></pre>
+<p><strong>Fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug B</strong> — The solver should check on <strong>every step</strong> for the whole maze. This checks once and stops.</p>
+<pre><code class="language-python">agent.move(FORWARD, 1)
+if agent.detect(BLOCK, AHEAD):
+    agent.interact(AHEAD)
+    agent.move(FORWARD, 1)
+</code></pre>
+<p><strong>Fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug C</strong> — At a piston gate, <strong>flip the lever first</strong>, then cross the gap. This walks forward before powering the piston, so it hits a closed wall.</p>
+<pre><code class="language-python">agent.move(FORWARD, 1)
+agent.move(FORWARD, 1)
+agent.interact(AHEAD)
+</code></pre>
+<p><strong>Fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>4 · Make It Your Own 🛠️</h2>
+<p>Open the <strong>M002 EXT 2</strong> world and run <code>run</code>. <strong>Change one thing</strong> and predict before you test.</p>
+<p>Pick <strong>one</strong> (or your own):</p>
+<ul>
+<li>Add a chat word <code>back</code> that turns the agent around (two right turns).</li>
+<li>Place a block (<code>agent.place(...)</code>) each time it flips a lever, so you can see how far it got.</li>
+<li>Add an <code>elif</code> for a junction where redstone is on the <strong>right and ahead</strong> at once.</li>
+</ul>
+<p><strong>Which did you pick? Write the code.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Predict: what will happen?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Test it. What actually happened?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>5 · Show Your Work 📸🎥</h2>
+<p>Get the agent from <strong>start to the very end</strong> — past both piston gates and every junction. Run <code>run</code>, see where it sticks, fix, run again until it reaches the goal.</p>
+<p>Record <strong>one video</strong> (a phone is fine). Show two things:</p>
+<p><strong>1 · Your code.</strong> Scroll through it. Say what each part does.</p>
+<p><strong>2 · Your build.</strong> Point the camera. Name the parts.</p>
+<p>Fill the blanks:</p>
+<blockquote>
+<p>Today I built ______.</p>
+<p>I built it using this code: ______.</p>
+<p>In this code I used ______.</p>
+<p>The hardest part was ______.</p>
+<p>That part was hard because ______.</p>
+</blockquote>
+<p><strong>Write your lines here, then say them in your video.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your video to teacher on KakaoTalk.</p>
+<div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>
+</div></body></html>

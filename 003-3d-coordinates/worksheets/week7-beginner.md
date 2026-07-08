@@ -2,7 +2,7 @@
 
 **Topic:** Recreate 2 Mob Heads (x, y, z) · **Course:** 3D Coordinates · **Level:** Beginner · **Time:** about 30 minutes
 
-Two blocky **mob heads** stand in your world. Each one is a cube with a face on the **front**. Every block needs **three** numbers: **(x, y, z)**. x is **across**, y is **up**, z is **deep** (forward).
+Two blocky **mob heads** stand in your world — each a cube with a face on the **front**. Every block needs **three** numbers: **(x, y, z)**. x is **across**, y is **up**, z is **deep** (forward).
 
 > 🔴 Stand on your **home spot** (red block) every run. Move your feet, move your head.
 
@@ -30,7 +30,7 @@ place green block at (0, 5, 1)
 
 ## 2 · Spot the Bug 🐛
 
-An eye should be on the **front** at z = 1. The face only shows on the **front**.
+An eye should be on the **front** at z = 1 — the face only shows there.
 
 ```
 # broken
@@ -43,17 +43,13 @@ place black block at (2, 5, 2)
 place black block at (2, 5, __)
 ```
 
-**Word bank:** `1` · `2`
+**Which number fills the blank? Circle one:** 1 · 2
 
-<div class="write-space short"></div>
-
-**Why was it wrong? (one short sentence)**
-
-<div class="write-space short"></div>
+**Why was it wrong? Circle one:** z was 2, so the eye went to the side · the color was wrong
 
 ---
 
-## 3 · Build It 📸
+## 3 · Show Your Work 📸🎥
 
 Build this small green cube head and add **two eyes** on the front. Stand on your home spot first.
 
@@ -65,30 +61,30 @@ place black block at (2, 5, 1)
 
 This is a **3×3 front, 2 blocks deep**, with two eyes on the front.
 
-Send a photo. Then finish these — 2 short sentences.
+Record **one video** (a phone is fine). Show two things:
 
-> My cube is … blocks deep.
+**1 · Your code.** Scroll through it. Say what each part does.
+
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
 >
-> The eyes are on the front because their z stays …
+> I built it using this code: ______.
+>
+> In this code I used ______.
+>
+> The hardest part was ______.
+>
+> That part was hard because ______.
 
-<div class="write-space tall" style="min-height: 240px"></div>
+**Write your lines here, then say them in your video.**
 
----
-
-## 4 · Explain It 🎥
-
-Take a video on your phone while you show your cube head. Try to use these words: **x**, **y**, **z**, **across**, **up**, **deep**.
-
-> 1. Show your home spot. Why stand on it every run?
-> 2. Walk around your cube — show the front and a side.
-> 3. Point at one eye and say "x …, y …, z …".
-
-**Write 2 short sentences about your cube head.** You can read them while filming.
-
-<div class="write-space tall" style="min-height: 240px"></div>
+<div class="write-space tall" style="min-height: 340px"></div>
 
 ---
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + your video to teacher on KakaoTalk.

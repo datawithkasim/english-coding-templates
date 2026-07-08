@@ -2,13 +2,13 @@
 
 **Topic:** Lines & Rectangles on the Wall (x, y) · **Course:** 3D Coordinates · **Time:** about 45 minutes
 
-This week you use a **loop** to draw a whole **line** of blocks on the wall. Grow **x** to go across, grow **y** to go up. Put four lines together and you get a **rectangle outline** — a picture frame.
+This week you use a **loop** to draw a **line** of blocks. Grow **x** to go across, grow **y** to go up. Four lines together make a **rectangle outline** — a picture frame.
 
 ---
 
 ## 1 · Predict 🔮
 
-Read each set of steps. Before you imagine it happening, write what you think you will see.
+Read each set of steps. Write what you think you will see.
 
 ```
 set x to 0
@@ -48,9 +48,9 @@ repeat 6 times:
 
 ## 2 · Spot the Bug 🐛
 
-Each block of code below was meant to do something, but it is broken. Read what the code is **supposed** to do, then rewrite it so it works. After that, explain why the original was wrong and why your fix works.
+Each code block below is broken. Read what it should do, fix it, then explain why the original was wrong and your fix works.
 
-**Bug A** — The line should grow **up** at x = 2, from (2, 0) to (2, 4). x should stay 2. Right now the line grows the wrong way.
+**Bug A** — The line should grow **up** at x = 2, from (2, 0) to (2, 4). Right now it grows the wrong way.
 
 ```
 set n to 0
@@ -106,38 +106,29 @@ repeat 4 times:
 
 ---
 
-## 3 · Tell Me What You Built 📸
+## 3 · Show Your Work 📸🎥
 
 Now switch to your homework world. Build a **rectangle outline** on the wall — like an empty picture frame — using loops for the four edges (bottom, top, left, right). When you finish, come back here.
 
-Send a photo or video of your frame, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.
+Record **one video** (a phone is fine). Show two things:
 
-> First, I …
+**1 · Your code.** Scroll through it. Say what each part does.
+
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
 >
-> My bottom edge grew the number … and stayed at y = …
+> I built it using this code: ______.
 >
-> My left edge grew the number … and stayed at x = …
+> In this code I used ______.
 >
-> My frame is … wide and … tall.
+> The hardest part was ______.
 >
-> One tricky moment was when …
->
-> If I had more time, I would …
+> That part was hard because ______.
 
-<div class="write-space tall" style="min-height: 340px"></div>
-
----
-
-## 4 · Record Your Walkthrough 🎥
-
-Now take a video on your phone (or a parent's phone) while you show your frame on the wall. Talk through it like you are teaching someone who has never seen a loop. Try to use these words: **loop**, **line**, **edge**, **across**, **up**.
-
-> 1. Show your rectangle frame, then show the code that built it.
-> 2. Read one loop out loud and say which number grows and which stays the same.
-> 3. Point at the start and the end of one edge and say their coordinates.
-> 4. Say in your own words why a loop is better than placing every block by hand.
-
-**Write what you will say in your video.** Use the space below to plan it before you record — you can read from it while filming.
+**Write your lines here, then say them in your video.**
 
 <div class="write-space tall" style="min-height: 340px"></div>
 
@@ -145,4 +136,4 @@ Now take a video on your phone (or a parent's phone) while you show your frame o
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + your video to teacher on KakaoTalk.

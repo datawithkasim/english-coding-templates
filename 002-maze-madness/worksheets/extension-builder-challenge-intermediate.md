@@ -2,7 +2,7 @@
 
 **Topic:** Build a Maze + Write the Solution · **Course:** Maze Madness · **Level:** Extension (Intermediate) · **Time:** about 45 minutes
 
-This time **you** make the maze. Build one maze that runs through **6 zones**. Wire it with pistons and doors. Then write the code that drives the agent to the end.
+This time **you** make the maze. Build one that runs through **6 zones**, wired with pistons and doors, then write the code that drives the agent to the end.
 
 Open **M002 EXT 3 — Cube World** and build inside it. Chat: `l` turns left, `r` turns right, `run` starts your solver, `rl` sends the agent back to start.
 
@@ -17,7 +17,7 @@ Open **M002 EXT 3 — Cube World** and build inside it. Chat: `l` turns left, `r
 
 ## 1 · Plan Your 6 Zones 🗺️
 
-Your maze runs through **6 zones** in a row. The agent finishes one and walks into the next. Give each zone one job: a turn, a piston, or a door.
+Your maze runs through **6 zones** in a row. Give each zone one job: a turn, a piston, or a door.
 
 > Zone 1: …
 >
@@ -41,7 +41,7 @@ Which 2 zones get a piston, and what does each open? Which 2 get a door?
 
 ## 2 · Build the Maze 🧱
 
-Build it in the world. Walk the path yourself first — make sure a person can reach the end. Tick each part.
+Build it in the world. Walk it yourself first to check a person can reach the end, then tick each part.
 
 > ☐ Zone 1   ☐ Zone 2   ☐ Zone 3   ☐ Zone 4   ☐ Zone 5   ☐ Zone 6
 >
@@ -59,7 +59,7 @@ What broke while you built it? What did you change?
 
 ## 3 · Write the Solution 💻
 
-Write the solver. Use a `while True` loop so it checks every step. Your code needs **4 AND** and **1 OR**.
+Write the solver with a `while True` loop so it checks every step. Your code needs **4 AND** and **1 OR**.
 
 ```python
 while True:
@@ -75,7 +75,7 @@ while True:
         agent.move(FORWARD, 1)
 ```
 
-Write your own checks for your maze. Add more `if` / `elif` until all 6 zones are covered. Mark each one `# AND` or `# OR`.
+Add more `if` / `elif` until all 6 zones are covered. Mark each one `# AND` or `# OR`.
 
 <div class="write-space tall" style="min-height: 280px"></div>
 
@@ -100,33 +100,34 @@ The agent should turn only when **both** are true. Write the fixed line.
 
 ---
 
-## 5 · Test, Finish, and Show 📸
+## 5 · Show Your Work 📸🎥
 
 Type `run` and watch. It will get stuck — that is normal. Find where it stops, fix the code or the maze, run again. Use `rl` to send it back. Keep going until the agent reaches the **GOAL** on its own.
 
-Send a photo OR video of the agent at the goal. Then write 3 or 4 sentences with these starters.
+Record **one video** (a phone is fine). Show two things:
 
-> My maze runs through 6 zones. The trickiest zone was …
+**1 · Your code.** Scroll through it. Say what each part does.
+
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
 >
-> I put my pistons in … and my doors in …
+> I built it using this code: ______.
 >
-> I used an AND at … to make the agent …
+> In this code I used ______.
 >
-> I needed an OR at … because …
+> The hardest part was ______.
+>
+> That part was hard because ______.
 
-<div class="write-space tall" style="min-height: 240px"></div>
+**Write your lines here, then say them in your video.**
 
-**Plan your phone video.** Take a video on your phone (or a parent's phone). Show off your maze like a game designer. Write what you will say — you can read from it while filming.
-
-> 1. Show the whole maze and point out the 6 zones.
-> 2. Show each piston and each door, and say what it does.
-> 3. Read one AND check out loud and say what it decides.
-> 4. Type `run` and let the agent reach the goal.
-
-<div class="write-space tall" style="min-height: 240px"></div>
+<div class="write-space tall" style="min-height: 340px"></div>
 
 ---
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + your video to teacher on KakaoTalk.

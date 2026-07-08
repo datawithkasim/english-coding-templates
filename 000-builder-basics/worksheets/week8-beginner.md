@@ -6,7 +6,7 @@
 
 ## 1 · Predict 🔮
 
-Read the steps. Before you imagine the agent doing it, circle or write your answer.
+Read the steps. Circle your answer.
 
 ```
 repeat 4 times:
@@ -31,15 +31,13 @@ walk to next spot
 
 **What must the agent do between the house and the well? Circle one:** walk to a new spot · dig down · turn around
 
-**Why?**
-
-<div class="write-space short"></div>
+**Why? Circle one:** so the well is not on the house · to dig faster · to turn around
 
 ---
 
 ## 2 · Find the Difference 🐛
 
-Each pair shows clean steps first, then a broken version of the same idea. Circle what's different and write one short sentence about the bug.
+Clean steps first, then a broken version. Circle the bug.
 
 **Pair A** — The village should have a house **and** a well.
 
@@ -56,9 +54,7 @@ walk to next spot
 walk to next spot
 ```
 
-**What is wrong?**
-
-<div class="write-space short"></div>
+**What is wrong? Circle one:** the well is missing · the house is missing · nothing moves
 
 **Pair B** — The well must not land on top of the house.
 
@@ -75,15 +71,13 @@ walk to next spot
 [well]
 ```
 
-**What is wrong?**
-
-<div class="write-space short"></div>
+**What is wrong? Circle one:** no walk, so the well lands on the house · the well is missing · it digs too deep
 
 ---
 
 ## 3 · Fill the Gap ✏️
 
-Here is the skeleton of a small village. One stage is missing. Fill it in using the word bank.
+Here is the skeleton of a small village. One stage is missing.
 
 ```
 # Stage 1
@@ -93,44 +87,38 @@ walk to next spot
 ____________
 ```
 
-**Word bank:** `[well]` · `[another house on top]` · `walk back to the house`
-
-**Write the missing stage:**
-
-<div class="write-space short"></div>
+**Which stage is missing? Circle one:** [well] · [another house on top] · walk back to the house
 
 ---
 
-## 4 · Tell Me What You Built 📸
+## 4 · Show Your Work 📸🎥
 
 Now build your **final project**: a small village with a **house** and **one more structure** — a well or a farm, your choice. When you finish, come back here.
 
-Send a photo or video of your village, then explain what you did. Use these sentence starters — write 2 or 3 sentences.
+Record **one video** (a phone is fine). Show two things:
 
-> First, I built the …
+**1 · Your code.** Scroll through it. Say what each part does.
+
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
 >
-> Then I built the …
+> I built it using this code: ______.
 >
-> The thing I am most proud of is …
+> In this code I used ______.
+>
+> The hardest part was ______.
+>
+> That part was hard because ______.
 
-<div class="write-space tall" style="min-height: 240px"></div>
+**Write your lines here, then say them in your video.**
 
----
-
-## 5 · Record Your Walkthrough 🎥
-
-Take a video on your phone (or a parent's phone) and walk the camera through your village. Talk like you are teaching a friend. Try to use these words: **village**, **house**, **well**, **farm**.
-
-> 1. Walk around the village and show each building.
-> 2. Say which building you made first and which came next.
-> 3. Say what you would add next if you had more time.
-
-**Write what you will say in your video.** You can read from it while filming.
-
-<div class="write-space tall" style="min-height: 240px"></div>
+<div class="write-space tall" style="min-height: 340px"></div>
 
 ---
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk. This is the **last week** of Builder Basics — well done!
+Send this worksheet + your video to teacher on KakaoTalk.

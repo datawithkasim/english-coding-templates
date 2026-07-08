@@ -2,7 +2,9 @@
 
 **Topic:** One Function, Many Booths — Arguments & Parameters · **Course:** Theme Park Creator · **Time:** about 45 minutes
 
-This week you build a park **booth** with a **function**. You give it **parameters** — the materials and the size it should use — so the **same** function can build a wood booth, a stone booth, a big one or a small one, just by changing the **arguments** you **call** it with.
+This week you build a park **booth** with a **function**. You give it **parameters** — the materials and size it uses.
+
+Change the **arguments** you **call** it with, and the **same** function builds a wood booth, a stone booth, a big one or a small one.
 
 These are the blocks you use this week:
 
@@ -21,8 +23,8 @@ blocks.fill(AIR, pos(2, 0, 0), pos(2, 1, 0), FillOperation.REPLACE)
 
 ## 1 · Meet Arguments and Parameters 🎁
 
-A **parameter** is an empty box with a name — you make it when you *define* the function.
-An **argument** is the real value you drop into that box — you send it when you *call* the function.
+A **parameter** is an empty named box — you make it when you *define* the function.
+An **argument** is the real value you drop in — you send it when you *call* the function.
 They line up **by position**, left to right.
 
 ```text
@@ -49,7 +51,7 @@ They line up **by position**, left to right.
 
 ## 2 · Predict 🔮
 
-Read each function. Before you imagine the booth, write what you think happens.
+Read each function. Write what you think happens.
 
 ```python
 def build_booth(wall, floor, size):
@@ -80,7 +82,7 @@ build_booth(BRICKS, OAK_PLANKS, 8)
 
 ## 3 · Spot the Bug 🐛
 
-Each block was meant to do something but is broken. Read what it is **supposed** to do, rewrite it so it works, then explain why the original was wrong.
+Each block is broken. Read what it should do, rewrite it so it works, then explain why the original was wrong.
 
 **Bug A** — This should build one booth. But when you run it, **nothing happens at all**.
 
@@ -144,7 +146,7 @@ build_booth(STONE, GLASS, 5)
 
 ## 4 · Build the Booth 🏪
 
-Now the real challenge. In your homework world, write **one** function called `build_booth` that builds a booth a visitor can walk into. Your function must have these **three parameters**:
+In your homework world, write **one** function called `build_booth` that builds a booth a visitor can walk into. Your function must have these **three parameters**:
 
 ```python
 def build_booth(wall, floor, size):
@@ -169,36 +171,27 @@ build_booth(BRICKS, OAK_PLANKS, 8)
 
 ---
 
-## 5 · Tell Me What You Built 📸
+## 5 · Show Your Work 📸🎥
 
-When your two booths stand side by side, send a photo or video and explain what you did. Use these sentence starters — write 4 to 6 sentences.
+Record **one video** (a phone is fine). Show two things:
 
-> My three parameters were …
+**1 · Your code.** Scroll through it. Say what each part does.
+
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
 >
-> The argument that changed the booth the most was …
+> I built it using this code: ______.
 >
-> To carve the doorway I …
+> In this code I used ______.
 >
-> The same function built two different booths because …
+> The hardest part was ______.
 >
-> One tricky moment was when …
->
-> If I had more time, I would …
+> That part was hard because ______.
 
-<div class="write-space tall" style="min-height: 340px"></div>
-
----
-
-## 6 · Record Your Walkthrough 🎥
-
-Take a video on your phone (or a parent's phone) of your code and your booths. Talk it through like you are teaching someone who has never seen it. Try to use these words: **function**, **parameter**, **argument**, **call**, **position**.
-
-> 1. Show your `build_booth` function and read the line with the three **parameters** out loud.
-> 2. Point at one parameter and say what it controls.
-> 3. Run a **call** and show the booth appear, then run another with different **arguments**.
-> 4. Say in your own words how parameters and arguments line up by **position**.
-
-**Write what you will say in your video.** Plan it here before you record — you can read from it while filming.
+**Write your lines here, then say them in your video.**
 
 <div class="write-space tall" style="min-height: 340px"></div>
 
@@ -206,4 +199,4 @@ Take a video on your phone (or a parent's phone) of your code and your booths. T
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + your video to teacher on KakaoTalk.

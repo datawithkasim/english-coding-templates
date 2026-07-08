@@ -24,7 +24,7 @@ keep doing forever:
 
 ## 2 · Fill the Code ✏️
 
-This checks for a wall and turns. Fill the two blanks.
+Checks a wall, then turns. Fill the two blanks.
 
 ```
 if agent.detect(BLOCK, ________):
@@ -66,26 +66,34 @@ Write 2 lines.
 
 ---
 
-## 5 · Finish the Maze 📸
+## 5 · Show Your Work 📸🎥
 
 Open your homework world. Use `if` / `else` to turn at walls. Get the agent out.
 
-Take a photo or video at the maze end.
+Record **one video** (a phone is fine). Show two things:
 
-**Phone video plan — say each line out loud:**
+**1 · Your code.** Scroll through it. Say what each part does.
 
-> The wall was on my …
->
-> I used `agent.turn(…)` to …
->
-> My agent got stuck when …
->
-> I fixed it by …
+**2 · Your build.** Point the camera. Name the parts.
 
-<div class="write-space tall" style="min-height: 240px"></div>
+Fill the blanks:
+
+> Today I built ______.
+>
+> I built it using this code: ______.
+>
+> In this code I used ______.
+>
+> The hardest part was ______.
+>
+> That part was hard because ______.
+
+**Write your lines here, then say them in your video.**
+
+<div class="write-space tall" style="min-height: 340px"></div>
 
 ---
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + your video to teacher on KakaoTalk.

@@ -1,0 +1,130 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head><meta charset='utf-8'>
+<title>🎮 M004 Week 7 — English Worksheet</title>
+<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
+<style>
+@page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
+div.WordSection1 { page: WordSection1; }
+body { font-family: "Segoe UI", Arial, sans-serif; font-size: 11.5pt; color: #1a1a2e; line-height: 1.5; }
+h1 { font-size: 21pt; color: #6b4ee6; margin: 4px 0 6px; }
+h2 { font-size: 15pt; color: #6b4ee6; border-top: 1px solid #dddddd; padding-top: 8px; margin: 18px 0 10px; }
+h3, h4 { font-size: 11.5pt; margin: 12px 0 6px; }
+p { margin: 7px 0; }
+.brand { font-size: 10.5pt; font-weight: bold; color: #ff7849; letter-spacing: .06em;
+         border-bottom: 2px solid #ff7849; padding-bottom: 6px; margin-bottom: 14px; }
+table { border-collapse: collapse; margin: 10px 0; }
+th, td { border: 1px solid #c8c8c8; padding: 4px 9px; text-align: center; }
+th { background: #f3eefc; color: #6b4ee6; font-weight: bold; }
+pre { font-family: Consolas, "Courier New", monospace; font-size: 10.5pt; background: #f4f4f5;
+      border: 1px solid #dddddd; padding: 8px 10px; white-space: pre-wrap; }
+pre code { background: transparent; color: #1a1a2e; }
+code { font-family: Consolas, "Courier New", monospace; background: #fff1e8; color: #d6531f; padding: 0 3px; }
+blockquote { border-left: 3px solid #ff7849; background: #fff6ef; padding: 8px 12px;
+             color: #6a3a1c; margin: 9px 0; }
+ul, ol { margin: 7px 0 7px 26px; }
+p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
+.footer { color: #999999; font-size: 8.5pt; text-align: center; margin-top: 18px;
+          border-top: 1px solid #eeeeee; padding-top: 6px; }
+.footer b { color: #ff7849; }
+</style></head>
+<body><div class=WordSection1>
+<div class="brand">📚 ENGLISH CODING · 영어코딩</div>
+<h1>🎮 M004 Week 7 — English Worksheet</h1>
+<p><strong>Topic:</strong> Auto-Building Spaces — Loops + Functions + Chat Commands · <strong>Course:</strong> Functions &amp; Games · <strong>Time:</strong> about 45 minutes</p>
+<p>This week one chat command builds a <strong>whole space by itself</strong>. A loop repeats a room piece, a function builds each piece, and the <strong>number argument</strong> decides how big it grows.</p>
+<hr />
+<h2>1 · Predict 🔮</h2>
+<p>Before you imagine the build happening, write what you think will happen.</p>
+<pre><code>on chat command &quot;dungeon&quot; with number rooms:
+    repeat rooms times:
+        build_room()
+        move forward 6
+</code></pre>
+<p><strong>You type <code>dungeon 3</code> in chat. How many rooms get built? What does <code>move forward 6</code> do between rooms?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code>function build_room():
+    build_wall(5)
+    build_wall(5)
+    build_wall(5)
+    build_wall(5)
+
+on chat command &quot;dungeon&quot; with number rooms:
+    repeat rooms times:
+        build_room()
+        move forward 6
+</code></pre>
+<p><strong><code>build_room</code> reuses <code>build_wall</code> four times. You type <code>dungeon 2</code> — how many walls get built in total?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code>on chat command &quot;towers&quot; with number count:
+    repeat count times:
+        build_tower(random number from 3 to 8)
+        move forward 4
+</code></pre>
+<p><strong>You type <code>towers 5</code>. Are all five towers the same height? Why does the row of towers feel random?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>2 · Spot the Bug 🐛</h2>
+<p>Each block below is broken. Rewrite it so it works, then explain why the original was wrong and why your fix works.</p>
+<p><strong>Bug A</strong> — <code>dungeon 4</code> should build four rooms in a row. Right now all four rooms get built <strong>in the same spot</strong>, so it looks like only one room.</p>
+<pre><code>on chat command &quot;dungeon&quot; with number rooms:
+    repeat rooms times:
+        build_room()
+</code></pre>
+<p><strong>Hint:</strong> after each room, the builder needs to move before building the next one.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug B</strong> — The number you type should decide how many rooms get built. But <code>dungeon 5</code> and <code>dungeon 1</code> both build just <strong>one</strong> room.</p>
+<pre><code>on chat command &quot;dungeon&quot; with number rooms:
+    repeat 1 times:
+        build_room()
+        move forward 6
+</code></pre>
+<p><strong>Hint:</strong> the argument <code>rooms</code> is never used.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug C</strong> — Each room is <strong>6 blocks long</strong>. The rooms should sit side by side, but every new room breaks the back wall of the room before it.</p>
+<pre><code>on chat command &quot;dungeon&quot; with number rooms:
+    repeat rooms times:
+        build_room()
+        move forward 5
+</code></pre>
+<p><strong>Hint:</strong> compare the room length with the move distance.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>3 · Show Your Work 📸🎥</h2>
+<p>Now switch to your homework world. Make a chat command with a number argument that auto-builds a space — a loop should repeat a room piece. When you finish, come back here.</p>
+<p>Record <strong>one video</strong> (a phone is fine). Show two things:</p>
+<p><strong>1 · Your code.</strong> Scroll through it. Say what each part does.</p>
+<p><strong>2 · Your build.</strong> Point the camera. Name the parts.</p>
+<p>Fill the blanks:</p>
+<blockquote>
+<p>Today I built ______.</p>
+<p>I built it using this code: ______.</p>
+<p>In this code I used ______.</p>
+<p>The hardest part was ______.</p>
+<p>That part was hard because ______.</p>
+</blockquote>
+<p><strong>Write your lines here, then say them in your video.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your video to teacher on KakaoTalk.</p>
+<div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>
+</div></body></html>

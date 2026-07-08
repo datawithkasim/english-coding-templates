@@ -2,7 +2,7 @@
 
 **Topic:** Redstone Levers · **Course:** Maze Madness · **Level:** Advanced · **Time:** about 55 minutes
 
-This week the maze has **redstone levers**. The agent detects redstone, flips a lever with `interact` to open a closed redstone door, then walks through to clear the maze.
+The maze has **redstone levers**. The agent detects redstone, flips a lever with `interact` to open the door, then walks through to clear the maze.
 
 ---
 
@@ -61,7 +61,7 @@ agent.move(FORWARD, 1)
 
 ## 4 · Spot and Fix the Bugs 🐛
 
-Each block is broken. Write the fixed code, then say why.
+Write the fixed code, then say why.
 
 **Bug A** — Flip the lever **first**, then walk through the open door. The lever is at the first wall.
 
@@ -114,7 +114,7 @@ agent.move(FORWARD, 1)
 
 ## 5 · Write the Code ✍️
 
-The agent starts in the maze. Somewhere ahead is a lever. Write code that walks to the lever, flips it, and walks through the open door.
+Somewhere ahead is a lever. Write code that walks to it, flips it, and walks through the open door.
 
 ```python
 def run():
@@ -128,7 +128,7 @@ player.on_chat("go", run)
 
 ---
 
-## 6 · Finish the Maze 📸
+## 6 · Show Your Work 📸🎥
 
 Open your homework world. The maze has a **lever** that opens a **closed door**. Write code that:
 
@@ -137,39 +137,30 @@ Open your homework world. The maze has a **lever** that opens a **closed door**.
 3. walks through the open door,
 4. reaches the goal.
 
-Send a photo or video of the agent at the end. Then write 4 to 6 sentences.
+Record **one video** (a phone is fine). Show two things:
 
-> First, I walked the agent to …
+**1 · Your code.** Scroll through it. Say what each part does.
+
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
 >
-> I used `interact` to …
+> I built it using this code: ______.
 >
-> Once the door opened, the agent …
+> In this code I used ______.
 >
-> The hardest part was …
+> The hardest part was ______.
 >
-> To fix it, I …
->
-> If I had more time, I would …
+> That part was hard because ______.
 
-<div class="write-space tall" style="min-height: 240px"></div>
+**Write your lines here, then say them in your video.**
 
----
-
-## 7 · Record Your Walkthrough 🎥
-
-Film the agent running the maze on a phone. Teach it like the viewer has never seen it. Use these words: **lever**, **interact**, **flip**, **door**, **open**.
-
-> 1. Show the closed door and the lever.
-> 2. Run your code. Show the agent flip the lever.
-> 3. Read your code out loud. Say which line opens the door.
-> 4. Show one bug you hit and how you fixed it.
-
-**Plan what you will say before you record. You can read it while filming.**
-
-<div class="write-space tall" style="min-height: 240px"></div>
+<div class="write-space tall" style="min-height: 340px"></div>
 
 ---
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + your video to teacher on KakaoTalk.

@@ -2,13 +2,11 @@
 
 **Topic:** A Space that Reacts — Event → Check → Action · **Course:** Functions & Games · **Level:** Beginner · **Time:** about 30 minutes
 
-This week your world **reacts to the player**. The pattern is: an **event** happens (the player walks somewhere) → the code **checks** something → an **action** runs (a message, a door, a trap).
+This week your world **reacts to the player**: an **event** happens → the code **checks** something → an **action** runs.
 
 ---
 
 ## 1 · Predict 🔮
-
-Read the steps. Before you imagine the player doing it, circle or write your answer.
 
 ```
 on player walks on gold block:
@@ -17,9 +15,7 @@ on player walks on gold block:
 
 **The player walks on grass. Does the message appear? Circle one:** yes · no
 
-**Why?**
-
-<div class="write-space short"></div>
+**Why? Circle one:** grass is not gold · grass is gold
 
 ```
 on player walks on red carpet:
@@ -27,13 +23,11 @@ on player walks on red carpet:
     say "You fell in my trap!"
 ```
 
-**Now the player steps on red carpet. Does the trap fire? Circle one:** yes · no
+**The player steps on red carpet. Does the trap fire? Circle one:** yes · no
 
 ---
 
 ## 2 · Find the Difference 🐛
-
-Each pair shows clean steps first, then a broken version of the same idea. Circle what's different and write one short sentence about the bug.
 
 **Pair A** — The secret message should appear **only** on the gold block.
 
@@ -49,9 +43,7 @@ on player walks:
     say "You found the secret room!"
 ```
 
-**What is wrong? Where does the buggy message appear?**
-
-<div class="write-space short"></div>
+**What is wrong? Circle one:** fires on every block · fires only on gold
 
 **Pair B** — The trap should fire on **red** carpet, not the safe blue path.
 
@@ -67,59 +59,51 @@ on player walks on blue carpet:
     spring_trap()
 ```
 
-**What is wrong?**
-
-<div class="write-space short"></div>
+**What is wrong? Circle one:** wrong carpet, blue not red · wrong message
 
 ---
 
 ## 3 · Fill the Gap ✏️
 
-The message should appear only on the gold block. One word is missing. Fill it in using the word bank.
+One word is missing.
 
 ```
 on player walks on ____ block:
     say "You found the secret room!"
 ```
 
-**Word bank:** `gold` · `say` · `walk`
-
-**Write the missing word:**
-
-<div class="write-space short"></div>
+**Fill the gap. Circle one:** `gold` · `say` · `walk`
 
 ---
 
-## 4 · Tell Me What You Built 📸
+## 4 · Show Your Work 📸🎥
 
 Now switch to your homework world. Build one spot that reacts when the player walks on it. When you finish, come back here.
 
-Send a photo or video of your space reacting, then explain what you did. Use these sentence starters — write 2 or 3 sentences.
+Record **one video** (a phone is fine). Show two things:
 
-> My space reacts when the player …
+**1 · Your code.** Scroll through it. Say what each part does.
+
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
 >
-> The action that runs is …
+> I built it using this code: ______.
 >
-> One tricky moment was when …
+> In this code I used ______.
+>
+> The hardest part was ______.
+>
+> That part was hard because ______.
 
-<div class="write-space tall" style="min-height: 240px"></div>
+**Write your lines here, then say them in your video.**
 
----
-
-## 5 · Record Your Walkthrough 🎥
-
-Take a video on your phone (or a parent's phone) while you walk through your reacting space. Talk like you are teaching a friend. Try to use these words: **event**, **check**, **action**.
-
-> 1. Show your space, then walk into the spot that reacts.
-> 2. Say which **event** made it happen.
-> 3. Say in your own words what event → check → action means.
-
-**Write what you will say in your video.** You can read from it while filming.
-
-<div class="write-space tall" style="min-height: 240px"></div>
+<div class="write-space tall" style="min-height: 340px"></div>
 
 ---
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + your video to teacher on KakaoTalk.

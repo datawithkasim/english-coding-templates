@@ -4,15 +4,15 @@
 
 > 🧩 This is a bonus challenge, not a weekly lesson. Try it once you are comfortable building square rings with loops and you want to make a roof that steps up to a point.
 
-A real roof is not one flat row — it is a stack of **square rings** that get smaller as they go up. The Sloped Roof world already has the working program inside it: when you type `slope` in the chat, it builds the whole roof for you. Your job in this worksheet is to understand the **idea** behind it, not to type any code.
+A real roof is not one flat row — it is a stack of **square rings** that shrink as they go up. In the Sloped Roof world, typing `slope` builds the whole roof for you. This worksheet is about the **idea**, not typing code.
 
-Here is the idea. The program stores the side length of a ring in a **variable** called `roof_len`. It starts at **7**, so the bottom ring is a square 7 stairs long on each side. After each ring is finished, the program steps **up and inward**, then shrinks the variable by 2. So the next ring is shorter, the one after that shorter still, until the roof reaches a tiny peak. Four rings get built in total, with side lengths of **7, 5, 3, and 1**. Change the starting number and the whole roof changes shape.
+The program stores the ring's side length in a **variable** called `roof_len`. It starts at **7**, so the bottom ring is 7 stairs per side. After each ring it steps **up and inward**, then shrinks the variable by 2. Four rings get built, with sides of **7, 5, 3, 1**. Change the starting number and the whole roof changes shape.
 
 ---
 
 ## 1 · Predict 🔮
 
-The variable `roof_len` starts at **7**. Each layer the agent walks a square ring with 4 sides, each side `roof_len` stairs long, then shrinks `roof_len` by 2 before stepping up to the next ring. The four rings have sides of **7, 5, 3, 1**.
+The variable `roof_len` starts at **7**. Each layer, the agent walks a square ring (4 sides, each `roof_len` stairs long), then shrinks `roof_len` by 2. The four rings have sides of **7, 5, 3, 1**.
 
 **What shape do the rings make as they stack up? Describe it in one sentence.**
 
@@ -26,7 +26,7 @@ The variable `roof_len` starts at **7**. Each layer the agent walks a square rin
 
 ## 2 · Trace the Variable 🔢
 
-Walk through the build one ring at a time. For each layer, write the value of `roof_len` **for that ring** (the side length the agent uses), then the value **after** the variable loses 2 and gets ready for the next ring. Show the subtraction, not just the answer.
+Walk through the build one ring at a time. For each layer, write `roof_len` **for that ring**, then its value **after** it loses 2. Show the subtraction.
 
 | Layer | `roof_len` for this ring | `roof_len` after it loses 2 |
 |-------|--------------------------|------------------------------|
@@ -45,7 +45,7 @@ Walk through the build one ring at a time. For each layer, write the value of `r
 
 ## 3 · Reason About the Variable 🧠
 
-No code here — just think it through.
+No code here — think it through.
 
 **The roof comes out FLAT, like a box, instead of sloped. Every ring ended up the same size. Which part of the rule about the variable must have gone wrong for that to happen? Explain in one or two sentences.**
 
@@ -71,19 +71,29 @@ The starting value of `roof_len` decides how wide the bottom ring is. Because th
 
 ---
 
-## 5 · Build It 📸
+## 5 · Show Your Work 📸🎥
 
 Open the **Sloped Roof** world. Type `slope` in the chat to run the build and watch the rings shrink and step up to the peak. Then try the wider **5-ring** version by changing the starting number to the value you chose in Section 4, and run it again.
 
-When it looks right, send a photo or video to teacher on KakaoTalk. Then explain what you did. Use these starters — write 4 to 6 sentences total.
+Record **one video** (a phone is fine). Show two things:
 
-> I used a **variable** called roof_len to …
+**1 · Your code.** Scroll through it. Say what each part does.
+
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
 >
-> Its starting **value** was … and each ring it …
+> I built it using this code: ______.
 >
-> The variable had to **update** so that …
+> In this code I used ______.
 >
-> My roof has a **slope** because …
+> The hardest part was ______.
+>
+> That part was hard because ______.
+
+**Write your lines here, then say them in your video.**
 
 <div class="write-space tall" style="min-height: 340px"></div>
 
@@ -91,4 +101,4 @@ When it looks right, send a photo or video to teacher on KakaoTalk. Then explain
 
 ### Submit ✅
 
-Send this worksheet + a photo or video of your sloped roof to teacher on KakaoTalk.
+Send this worksheet + your video to teacher on KakaoTalk.

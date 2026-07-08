@@ -1,0 +1,126 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head><meta charset='utf-8'>
+<title>🏰 Builder Basics — The Living Village (Extension · Advanced)</title>
+<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
+<style>
+@page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
+div.WordSection1 { page: WordSection1; }
+body { font-family: "Segoe UI", Arial, sans-serif; font-size: 11.5pt; color: #1a1a2e; line-height: 1.5; }
+h1 { font-size: 21pt; color: #6b4ee6; margin: 4px 0 6px; }
+h2 { font-size: 15pt; color: #6b4ee6; border-top: 1px solid #dddddd; padding-top: 8px; margin: 18px 0 10px; }
+h3, h4 { font-size: 11.5pt; margin: 12px 0 6px; }
+p { margin: 7px 0; }
+.brand { font-size: 10.5pt; font-weight: bold; color: #ff7849; letter-spacing: .06em;
+         border-bottom: 2px solid #ff7849; padding-bottom: 6px; margin-bottom: 14px; }
+table { border-collapse: collapse; margin: 10px 0; }
+th, td { border: 1px solid #c8c8c8; padding: 4px 9px; text-align: center; }
+th { background: #f3eefc; color: #6b4ee6; font-weight: bold; }
+pre { font-family: Consolas, "Courier New", monospace; font-size: 10.5pt; background: #f4f4f5;
+      border: 1px solid #dddddd; padding: 8px 10px; white-space: pre-wrap; }
+pre code { background: transparent; color: #1a1a2e; }
+code { font-family: Consolas, "Courier New", monospace; background: #fff1e8; color: #d6531f; padding: 0 3px; }
+blockquote { border-left: 3px solid #ff7849; background: #fff6ef; padding: 8px 12px;
+             color: #6a3a1c; margin: 9px 0; }
+ul, ol { margin: 7px 0 7px 26px; }
+p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
+.footer { color: #999999; font-size: 8.5pt; text-align: center; margin-top: 18px;
+          border-top: 1px solid #eeeeee; padding-top: 6px; }
+.footer b { color: #ff7849; }
+</style></head>
+<body><div class=WordSection1>
+<div class="brand">📚 ENGLISH CODING · 영어코딩</div>
+<h1>🏰 Builder Basics — The Living Village (Extension · Advanced)</h1>
+<p><strong>Topic:</strong> Bring It All Together · <strong>Course:</strong> Builder Basics · <strong>Level:</strong> Advanced · <strong>Time:</strong> about 90 minutes</p>
+<blockquote>
+<p>🧩 Bonus challenge, after <strong>Complete Your Village</strong>. Here you use <strong>loops</strong>, <strong>variables</strong> for sizes, and <strong>one function you call more than once</strong>.</p>
+</blockquote>
+<hr />
+<h2>1 · The Build 🎯</h2>
+<p>Two houses already stand: the <strong>farm house</strong> 🟨 and a tall house 🟪. Add a <strong>watchtower</strong> on the tall house, then build the other six parts with code.</p>
+<p>Every part must meet its spec:</p>
+<table>
+<thead>
+<tr>
+<th>Part</th>
+<th>Spec</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🗼 Watchtower</td>
+<td>on the tall house, <strong>≥ 4 blocks taller</strong> than it</td>
+</tr>
+<tr>
+<td>🌾 Farm</td>
+<td><strong>2 crop types</strong>, planted in <strong>rows by a loop</strong></td>
+</tr>
+<tr>
+<td>🧱 Fence</td>
+<td><strong>fully encloses</strong> the farm or the animals — no gaps</td>
+</tr>
+<tr>
+<td>💧 Pond</td>
+<td>a dug dip filled with water — measure its width <strong>W</strong></td>
+</tr>
+<tr>
+<td>🐟 Fish</td>
+<td><strong>≥ 3 fish</strong> in the pond</td>
+</tr>
+<tr>
+<td>🌉 Bridge</td>
+<td>spans the pond: <strong>length = W</strong></td>
+</tr>
+<tr>
+<td>🪣 Well</td>
+<td>square rim, water inside</td>
+</tr>
+<tr>
+<td>🐄 Animals</td>
+<td><strong>≥ 4</strong>, inside the fence</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>⚠️ <strong>Rules:</strong> loops for anything repeated · <strong>variables</strong> for sizes · <strong>one function</strong> you call for <strong>2 or more</strong> parts · only animals are spawned, everything else is code.</p>
+</blockquote>
+<hr />
+<h2>2 · Plan the Map 🗺️</h2>
+<p>This is your village from above. 🟨 = farm house, 🟪 = tall house. <strong>x</strong> goes across, <strong>z</strong> goes forward.</p>
+<div style="page-break-inside:avoid;margin:14px 0"><table style="border-collapse:collapse"><tr><th style="font-size:11px;color:#999;text-align:center;height:18px;width:44px"></th><th style="font-size:11px;color:#999;text-align:center;height:18px;width:44px">1</th><th style="font-size:11px;color:#999;text-align:center;height:18px;width:44px">2</th><th style="font-size:11px;color:#999;text-align:center;height:18px;width:44px">3</th><th style="font-size:11px;color:#999;text-align:center;height:18px;width:44px">4</th><th style="font-size:11px;color:#999;text-align:center;height:18px;width:44px">5</th><th style="font-size:11px;color:#999;text-align:center;height:18px;width:44px">6</th></tr><tr><th style="font-size:11px;color:#999;text-align:center;width:44px">6</th><td style="width:44px;height:44px;border:1px solid #ccc"></td><td style="width:44px;height:44px;border:1px solid #ccc"></td><td style="width:44px;height:44px;border:1px solid #ccc"></td><td style="width:44px;height:44px;border:1px solid #ccc"></td><td style="width:44px;height:44px;border:1px solid #ccc"></td><td style="width:44px;height:44px;border:1px solid #ccc"></td></tr><tr><th style="font-size:11px;color:#999;text-align:center;width:44px">5</th><td style="width:44px;height:44px;border:1px solid #ccc"></td><td style="width:44px;height:44px;border:1px solid #ccc;text-align:center;font-size:22px">🟪</td><td style="width:44px;height:44px;border:1px solid #ccc"></td><td style="width:44px;height:44px;border:1px solid #ccc"></td><td style="width:44px;height:44px;border:1px solid #ccc"></td><td style="width:44px;height:44px;border:1px solid #ccc"></td></tr><tr><th style="font-size:11px;color:#999;text-align:center;width:44px">4</th><td style="width:44px;height:44px;border:1px solid #ccc"></td><td style="width:44px;height:44px;border:1px solid #ccc"></td><td style="width:44px;height:44px;border:1px solid #ccc"></td><td style="width:44px;height:44px;border:1px solid #ccc"></td><td style="width:44px;height:44px;border:1px solid #ccc"></td><td style="width:44px;height:44px;border:1px solid #ccc"></td></tr><tr><th style="font-size:11px;color:#999;text-align:center;width:44px">3</th><td style="width:44px;height:44px;border:1px solid #ccc"></td><td style="width:44px;height:44px;border:1px solid #ccc"></td><td style="width:44px;height:44px;border:1px solid #ccc"></td><td style="width:44px;height:44px;border:1px solid #ccc"></td><td style="width:44px;height:44px;border:1px solid #ccc;text-align:center;font-size:22px">🟨</td><td style="width:44px;height:44px;border:1px solid #ccc"></td></tr><tr><th style="font-size:11px;color:#999;text-align:center;width:44px">2</th><td style="width:44px;height:44px;border:1px solid #ccc"></td><td style="width:44px;height:44px;border:1px solid #ccc"></td><td style="width:44px;height:44px;border:1px solid #ccc"></td><td style="width:44px;height:44px;border:1px solid #ccc"></td><td style="width:44px;height:44px;border:1px solid #ccc"></td><td style="width:44px;height:44px;border:1px solid #ccc"></td></tr><tr><th style="font-size:11px;color:#999;text-align:center;width:44px">1</th><td style="width:44px;height:44px;border:1px solid #ccc"></td><td style="width:44px;height:44px;border:1px solid #ccc"></td><td style="width:44px;height:44px;border:1px solid #ccc"></td><td style="width:44px;height:44px;border:1px solid #ccc"></td><td style="width:44px;height:44px;border:1px solid #ccc"></td><td style="width:44px;height:44px;border:1px solid #ccc"></td></tr></table></div>
+
+<p><strong>Draw the other six parts on the map. Write the (x, z) corner where each one starts.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bridge length = pond width W. What is your W, and how did you measure it?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>3 · Loops, Variables, Functions 🔁</h2>
+<p><strong>The one function you call twice or more — what does it build, and what does it take in?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Which sizes are variables? Name two and why.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>4 · Show Your Work 📸🎥</h2>
+<p>Build all eight parts to spec, then move the agent between them so nothing overlaps.</p>
+<p>Record <strong>one video</strong> (a phone is fine). Show two things:</p>
+<p><strong>1 · Your code.</strong> Scroll through it. Say what each part does.</p>
+<p><strong>2 · Your build.</strong> Point the camera. Name the parts.</p>
+<p>Fill the blanks:</p>
+<blockquote>
+<p>Today I built ______.</p>
+<p>I built it using this code: ______.</p>
+<p>In this code I used ______.</p>
+<p>The hardest part was ______.</p>
+<p>That part was hard because ______.</p>
+</blockquote>
+<p><strong>Write your lines here, then say them in your video.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your video to teacher on KakaoTalk.</p>
+<div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>
+</div></body></html>

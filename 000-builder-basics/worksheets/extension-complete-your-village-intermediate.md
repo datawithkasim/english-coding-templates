@@ -8,7 +8,7 @@
 
 ## 1 · The Challenge 🎯
 
-Finish your village so it feels like a place someone could live. There is no map to copy — **you** choose the sizes and where things go. When you finish, your village must have **all four**:
+Finish your village so it feels like a place someone could live. There is no map — **you** choose the sizes and where things go. It must have **all four**:
 
 > 🏠 A **house with a roof**
 > 🪣 A **well**
@@ -56,40 +56,34 @@ A loop is for anything you repeat — a row of wall blocks, a row of flowers, th
 
 ---
 
-## 4 · Build Your Village 📸
+## 4 · Show Your Work 📸🎥
 
 Go to your homework world and build. Run your code one structure at a time and move the agent between them. Keep going until the village has **the house with a roof, the well, the small pond, and the small flower bed** — all placed by code.
 
-Send a photo or video of the whole village, then explain what you did. Use these starters — write 3 to 5 sentences.
+Record **one video** (a phone is fine). Show two things:
 
-> First, I planned the four parts by …
+**1 · Your code.** Scroll through it. Say what each part does.
+
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
 >
-> I used a loop for … because …
+> I built it using this code: ______.
 >
-> To move the agent between structures, I …
+> In this code I used ______.
 >
-> The hardest part to build with code was …
+> The hardest part was ______.
 >
-> To fix it, I …
+> That part was hard because ______.
 
-<div class="write-space tall" style="min-height: 300px"></div>
+**Write your lines here, then say them in your video.**
 
----
-
-## 5 · Record Your Walkthrough 🎥
-
-Take a video on your phone (or a parent's phone) and walk the camera through your finished village. Try to use these words: **village**, **house**, **roof**, **well**, **pond**, **flower bed**, **loop**.
-
-> 1. Show each of the four structures and name it.
-> 2. For one structure, read your loop out loud and say what it repeats.
-> 3. Show one spot where the agent walked from one build to the next.
-
-**Write what you will say in your video.** Plan it here first.
-
-<div class="write-space tall" style="min-height: 300px"></div>
+<div class="write-space tall" style="min-height: 340px"></div>
 
 ---
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + your video to teacher on KakaoTalk.

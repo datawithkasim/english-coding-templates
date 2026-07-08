@@ -8,7 +8,7 @@ An **inverted** pyramid is upside down: the **smallest** layer is at the bottom 
 
 ## 1 · Predict 🔮
 
-Read the steps. Before you imagine the agent doing it, circle or write your answer.
+Read the steps. Circle your answer.
 
 ```
 set size to 1
@@ -20,9 +20,7 @@ while size <= 5:
 
 **Each new layer gets … Circle one:** bigger · smaller
 
-**Where is the widest layer — bottom or top?**
-
-<div class="write-space short"></div>
+**Where is the widest layer? Circle one:** bottom · top
 
 ```
 set size to 1
@@ -32,15 +30,13 @@ while size <= 5:
     set size to size + 2
 ```
 
-**The layers go 1, then …, then … Write the three sizes from bottom to top.**
-
-<div class="write-space short"></div>
+**The sizes go 1, then …, then … Circle one:** 1 · 3 · 5 → 1 · 2 · 3
 
 ---
 
 ## 2 · Find the Difference 🐛
 
-Each pair shows clean steps first, then a broken version of the same idea. Circle what's different and write one short sentence about the bug.
+Clean steps first, then a buggy version. Circle the bug.
 
 **Pair A** — The pyramid should be **inverted**: it starts small and grows.
 
@@ -62,9 +58,7 @@ while size > 0:
     set size to size - 2
 ```
 
-**What is wrong? What shape does the buggy code build instead?**
-
-<div class="write-space short"></div>
+**What is wrong? Circle one:** it builds a normal pyramid (wide bottom) · it builds an inverted pyramid · it builds a flat floor
 
 **Pair B** — Each layer must sit **on top** of the one below.
 
@@ -83,15 +77,13 @@ while size <= 5:
     set size to size + 2
 ```
 
-**What is wrong?**
-
-<div class="write-space short"></div>
+**What is wrong? Circle one:** it never moves up · it moves up too far · it turns the wrong way
 
 ---
 
 ## 3 · Fill the Gap ✏️
 
-The inverted pyramid should **grow** by 2 each layer. One line is missing. Fill it in using the word bank.
+The inverted pyramid should **grow** by 2 each layer. Fill the missing line.
 
 ```
 set size to 1
@@ -101,44 +93,38 @@ while size <= 5:
     ____________
 ```
 
-**Word bank:** `set size to size + 2` · `set size to size - 2` · `turn right`
-
-**Write the missing line:**
-
-<div class="write-space short"></div>
+**Missing line? Circle one:** set size to size + 2 · set size to size - 2 · turn right
 
 ---
 
-## 4 · Tell Me What You Built 📸
+## 4 · Show Your Work 📸🎥
 
 Now switch to your homework world. Build an inverted pyramid that grows from **size 1 up to size 5**. Look at it from the side to check the shape. When you finish, come back here.
 
-Send a photo or video of your pyramid, then explain what you did. Use these sentence starters — write 2 or 3 sentences.
+Record **one video** (a phone is fine). Show two things:
 
-> The top layer is … blocks long.
+**1 · Your code.** Scroll through it. Say what each part does.
+
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
 >
-> Each new layer grows by …
+> I built it using this code: ______.
 >
-> Compared to last week's pyramid, this one is …
+> In this code I used ______.
+>
+> The hardest part was ______.
+>
+> That part was hard because ______.
 
-<div class="write-space tall" style="min-height: 240px"></div>
+**Write your lines here, then say them in your video.**
 
----
-
-## 5 · Record Your Walkthrough 🎥
-
-Take a video on your phone (or a parent's phone) and walk the camera around your inverted pyramid. Talk like you are teaching a friend. Try to use these words: **inverted**, **layer**, **size**, **grow**.
-
-> 1. Show that the top is the widest part.
-> 2. Say the sizes of the layers from bottom to top.
-> 3. Compare it to last week's normal pyramid.
-
-**Write what you will say in your video.** You can read from it while filming.
-
-<div class="write-space tall" style="min-height: 240px"></div>
+<div class="write-space tall" style="min-height: 340px"></div>
 
 ---
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + your video to teacher on KakaoTalk.

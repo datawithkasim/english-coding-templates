@@ -2,7 +2,7 @@
 
 **Topic:** Build a Maze + Solve It · **Course:** Maze Madness · **Level:** Extension (Beginner) · **Time:** about 30 minutes
 
-You make the maze now. Build a small maze with **6 parts**. Then write code to reach the end.
+You make the maze. Build **6 parts**, then write code to reach the end.
 
 Open **M002 EXT 3 — Cube World**. Chat: `l` = left, `r` = right, `run` = go, `rl` = back to start.
 
@@ -26,11 +26,7 @@ Write one thing for each part. A turn, a door, or a piston.
 >
 > Part 6: …
 
-<div class="write-space"></div>
-
-Which 2 parts get a piston? Which 2 get a door?
-
-<div class="write-space short"></div>
+**Which 2 parts get a piston? Which 2 get a door?** ______
 
 ---
 
@@ -59,24 +55,37 @@ if block on left AND redstone ahead:
 
 Block on left, but NO redstone ahead. Does it turn? Circle: yes · no
 
-<div class="write-space short"></div>
 
 ---
 
-## 4 · Test and Show 📸
+## 4 · Show Your Work 📸🎥
 
 Type `run`. If it stops, fix it, run again. Use `rl` to go back. Keep going until the agent hits the **GOAL**.
 
-Send a photo OR video of the agent at the goal. Write 2 sentences with these starters.
+Record **one video** (a phone is fine). Show two things:
 
-> My maze has 6 parts. The hardest part was …
+**1 · Your code.** Scroll through it. Say what each part does.
+
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
 >
-> I used AND to … and OR to …
+> I built it using this code: ______.
+>
+> In this code I used ______.
+>
+> The hardest part was ______.
+>
+> That part was hard because ______.
 
-<div class="write-space tall" style="min-height: 240px"></div>
+**Write your lines here, then say them in your video.**
+
+<div class="write-space tall" style="min-height: 340px"></div>
 
 ---
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + your video to teacher on KakaoTalk.

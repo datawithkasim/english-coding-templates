@@ -6,7 +6,7 @@
 
 ## 1 · Predict 🔮
 
-Read each set of steps. Before you imagine the agent doing it, write what you think it builds and why.
+Read each set of steps. Write what you think it builds and why.
 
 ```
 repeat 4 times:
@@ -42,7 +42,7 @@ move to next spot
 
 ## 2 · Spot the Bug 🐛
 
-Each block below was meant to do something, but it is broken. Read the goal, then write a fixed version and explain the bug in one or two sentences.
+Each code block is broken. Read the goal, then write a fixed version and explain the bug in one or two sentences.
 
 **Bug A** — The village should have a **house and a well**, side by side.
 
@@ -108,7 +108,7 @@ repeat 3 times:
 
 ## 3 · Fill the Gap ✏️
 
-Here is the skeleton of a three-part village. One stage is missing. Fill it in so all three structures end up in a row.
+Here is the skeleton of a three-part village. One stage is missing — fill it in so all three structures line up.
 
 ```
 # Stage 1
@@ -127,34 +127,29 @@ ____________
 
 ---
 
-## 4 · Tell Me What You Built 📸
+## 4 · Show Your Work 📸🎥
 
 Now switch to your homework world and build your **final project**: a village with a **house and one more structure** — a well or a farm, your choice. Add a third structure if you have time. When you finish, come back here.
 
-Send a photo or video of your village, then explain what you did. Use these sentence starters — write 3 or 4 sentences.
+Record **one video** (a phone is fine). Show two things:
 
-> First, I built the …
+**1 · Your code.** Scroll through it. Say what each part does.
+
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
 >
-> Then I built the …
+> I built it using this code: ______.
 >
-> To move between structures, the agent …
+> In this code I used ______.
 >
-> The thing I am most proud of is …
+> The hardest part was ______.
+>
+> That part was hard because ______.
 
-<div class="write-space tall" style="min-height: 340px"></div>
-
----
-
-## 5 · Record Your Walkthrough 🎥
-
-Take a video on your phone (or a parent's phone) and walk the camera through your village. Talk like you are teaching a friend who has never seen it. Try to use these words: **village**, **house**, **roof**, **well**, **farm**.
-
-> 1. Walk around the village and show each building one by one.
-> 2. Say which building you made first and which came next.
-> 3. Show one bug you hit and how you fixed it.
-> 4. Say what you would add next if you had more time.
-
-**Write what you will say in your video.** Plan it here first — you can read from it while filming.
+**Write your lines here, then say them in your video.**
 
 <div class="write-space tall" style="min-height: 340px"></div>
 
@@ -162,4 +157,4 @@ Take a video on your phone (or a parent's phone) and walk the camera through you
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk. This is the **last week** of Builder Basics — well done!
+Send this worksheet + your video to teacher on KakaoTalk.

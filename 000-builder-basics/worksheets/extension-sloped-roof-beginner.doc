@@ -36,17 +36,15 @@ p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
 </blockquote>
 <hr />
 <h2>1 · Predict 🔮</h2>
-<p>Open the <strong>Sloped Roof</strong> world but do not run it yet. Here is what the program does.</p>
-<p>It builds a roof out of stairs, one square <strong>ring</strong> at a time. A ring is a square outline — like the edge of a picture frame. The program builds the first ring, then builds another ring <strong>on top</strong> of it, then another, then another. Four rings in total, stacked up.</p>
-<p>Here is the clever part: each ring is <strong>shorter</strong> than the one below it. A number called <code>roof_len</code> decides how long each side of a ring is. It starts at 7. After every ring it loses 2. So the rings get smaller and higher as they go up, and they step up toward a single block at the very top — the peak.</p>
+<p>Open the <strong>Sloped Roof</strong> world. Do not run it yet.</p>
+<p>It builds a roof from stairs, one square <strong>ring</strong> at a time. A ring is a square outline. The program stacks 4 rings, each on top of the last.</p>
+<p>Each ring is <strong>shorter</strong> than the one below. A number called <code>roof_len</code> sets the side length. It starts at 7 and loses 2 each ring. So the rings shrink and rise to a peak.</p>
 <p><strong>What shape does this make? Circle one:</strong> flat square · stepped pyramid roof · single line</p>
-<p><strong>Why is each ring smaller than the ring below it?</strong></p>
-<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
-
+<p><strong>Why is each ring smaller than the one below? Circle one:</strong> to step up to a peak · to get wider · to dig down</p>
 <hr />
 <h2>2 · Watch the Variable Change 🔢</h2>
-<p>A <strong>variable</strong> is a name that holds a number. The special thing about a variable is that the number can <strong>change</strong> while the program runs.</p>
-<p>In this program the variable is called <code>roof_len</code>. It holds how long each side of the ring is. It starts at 7, and after each ring it loses 2.</p>
+<p>A <strong>variable</strong> is a name that holds a number. The number can <strong>change</strong> while the program runs.</p>
+<p>Here it is <code>roof_len</code> — the side length of each ring. It starts at 7 and loses 2 each ring.</p>
 <p>Fill in the table. The first one is done for you.</p>
 <table>
 <thead>
@@ -77,15 +75,10 @@ p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
 <p><strong>The widest ring is at the</strong> (circle one)<strong>:</strong> bottom · top</p>
 <hr />
 <h2>3 · Think It Through ✏️</h2>
-<p>No building yet — just thinking.</p>
-<p><strong>The variable <code>roof_len</code> loses 2 after each ring. Imagine it did NOT change and stayed 7 the whole time. What would the roof look like then?</strong></p>
-<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
-
-<p><strong>Which number would you change to make the roof start out wider at the bottom?</strong></p>
-<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
-
+<p><strong>If <code>roof_len</code> stayed 7, what would the roof look like? Circle one:</strong> a flat box, all rings the same size · a pointed peak · a deep hole</p>
+<p><strong>Which number makes the roof start wider at the bottom? Circle one:</strong> the starting 7 · the peak block · the world name</p>
 <hr />
-<h2>4 · Build It 📸</h2>
+<h2>4 · Show Your Work 📸🎥</h2>
 <p>Now run it for real.</p>
 <ol>
 <li>Open the <strong>Sloped Roof</strong> world.</li>
@@ -93,16 +86,22 @@ p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
 <li>Watch the rings build up, getting smaller each time, until they reach the peak.</li>
 </ol>
 <p>Then change the starting number. Make <code>roof_len</code> start at <strong>9</strong> instead of 7, run it again, and see how the roof changes.</p>
-<p>Send a photo or video of your roof, then explain it. Use these starters — write 2 or 3 sentences.</p>
+<p>Record <strong>one video</strong> (a phone is fine). Show two things:</p>
+<p><strong>1 · Your code.</strong> Scroll through it. Say what each part does.</p>
+<p><strong>2 · Your build.</strong> Point the camera. Name the parts.</p>
+<p>Fill the blanks:</p>
 <blockquote>
-<p>My variable <code>roof_len</code> started at … and lost 2 each time, so …</p>
-<p>The roof steps up to a point because the variable …</p>
-<p>When I changed the starting number to 9, the roof …</p>
+<p>Today I built ______.</p>
+<p>I built it using this code: ______.</p>
+<p>In this code I used ______.</p>
+<p>The hardest part was ______.</p>
+<p>That part was hard because ______.</p>
 </blockquote>
+<p><strong>Write your lines here, then say them in your video.</strong></p>
 <p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
 
 <hr />
 <h3>Submit ✅</h3>
-<p>Send this worksheet + a photo or video of your sloped roof to teacher on KakaoTalk.</p>
+<p>Send this worksheet + your video to teacher on KakaoTalk.</p>
 <div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>
 </div></body></html>

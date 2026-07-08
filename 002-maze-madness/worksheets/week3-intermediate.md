@@ -50,7 +50,7 @@ At an open path, what happens?
 
 ## 3 · Fill the Code ✏️
 
-Turn left only when both walls are there. Fill the blanks.
+Turn left only when both walls are there.
 
 ```
 if agent.detect(BLOCK, FORWARD) ____ agent.detect(BLOCK, RIGHT):
@@ -80,28 +80,34 @@ Why was it wrong?
 
 ---
 
-## 5 · Show It 📸
+## 5 · Show Your Work 📸🎥
 
-Solve the maze with one `AND`. Send a photo or video of the agent at the end. Then finish these.
+Solve the maze with one `AND`.
 
-> I used **AND** when …
+Record **one video** (a phone is fine). Show two things:
+
+**1 · Your code.** Scroll through it. Say what each part does.
+
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
 >
-> Both were true when …
+> I built it using this code: ______.
 >
-> One tricky part was …
+> In this code I used ______.
+>
+> The hardest part was ______.
+>
+> That part was hard because ______.
 
-<div class="write-space tall" style="min-height: 240px"></div>
+**Write your lines here, then say them in your video.**
 
-**Phone video plan.** Plan what you will say, then record.
-
-> 1. Show the start. Run your code.
-> 2. Read your `if … AND …` line out loud.
-> 3. Say what **AND** means.
-
-<div class="write-space tall" style="min-height: 240px"></div>
+<div class="write-space tall" style="min-height: 340px"></div>
 
 ---
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + your video to teacher on KakaoTalk.

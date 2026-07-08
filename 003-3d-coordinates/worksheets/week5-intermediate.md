@@ -2,7 +2,7 @@
 
 **Topic:** Recreate the Statues (x, y, z) · **Course:** 3D Coordinates · **Level:** Intermediate · **Time:** about 40 minutes
 
-A statue is **stacked fill boxes**. One **`fill`** makes a solid box between **two corners**. Stack the boxes higher and higher to make legs, a body, and a head. Every corner is **(x, y, z)** — x **across**, y **up**, z **forward**. To put one box **on top** of another, make its **y** start where the box below stopped. The feet sit on the **ground (y = 0)**.
+A statue is **stacked fill boxes**. One **`fill`** makes a solid box between **two corners**, each written **(x, y, z)** — x **across**, y **up**, z **forward**. To stack a box **on top**, start its **y** where the box below stopped. The feet sit on the **ground (y = 0)**.
 
 > 🔴 Stand on your **home spot** (red block) every run. Move your feet, move your head.
 
@@ -10,7 +10,7 @@ A statue is **stacked fill boxes**. One **`fill`** makes a solid box between **t
 
 ## 1 · Predict 🔮
 
-Read each box. Write a full sentence about what you will see. Do **not** run it.
+Read each box. Write a sentence about what you will see.
 
 ```
 fill GRAY from (3, 0, 3) to (5, 1, 5)
@@ -42,7 +42,7 @@ fill WHITE from (3, 6, 3) to (5, 7, 5)
 
 Each block is broken. Read what it should do, write the fixed code, then explain.
 
-**Bug A** — The body should sit **on top** of the base. The base stops at y = 1, so the body should start at y = 2. Right now the body uses the **same y** as the base, so it lands inside it and nothing stacks up.
+**Bug A** — The body should sit **on top** of the base. The base stops at y = 1, so the body should start at y = 2. Right now it uses the **same y** as the base, so nothing stacks up.
 
 ```
 fill GRAY from (3, 0, 3) to (5, 1, 5)
@@ -77,7 +77,7 @@ fill WHITE from (3, 6, 3) to (5, 6, 5)
 
 ---
 
-## 3 · Build It 📸
+## 3 · Show Your Work 📸🎥
 
 Walk around a statue in your world. Then build your own on your home spot. It is **3 fill boxes**: a base (legs), a body, and a head.
 
@@ -86,35 +86,30 @@ Walk around a statue in your world. Then build your own on your home spot. It is
 > - body: gray from (3, 2, 3) to (5, 5, 5)
 > - head: white from (3, 6, 3) to (5, 7, 5)
 
-Send a **photo or video** of your statue. Then finish these — about 4 sentences.
+Record **one video** (a phone is fine). Show two things:
 
-> First, I built the base by …
+**1 · Your code.** Scroll through it. Say what each part does.
+
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
 >
-> The body sits on top because its **y** starts at …
+> I built it using this code: ______.
 >
-> My statue is … tall, from y = 0 up to y = …
+> In this code I used ______.
 >
-> The number I changed to stack each box higher was **y**, which means …
+> The hardest part was ______.
+>
+> That part was hard because ______.
 
-<div class="write-space tall" style="min-height: 320px"></div>
+**Write your lines here, then say them in your video.**
 
----
-
-## 4 · Explain It 🎥
-
-Film yourself showing your statue. Try to use these words: **fill**, **box**, **x**, **y**, **z**, **stack**, **home spot**.
-
-> 1. Show your home spot and stand on it. Say why you stand there every run.
-> 2. Point at the base, the body, and the head. Read one corner of each out loud.
-> 3. Show two boxes and say which one sits higher, and which number makes it higher.
-> 4. Say in your own words what each of **x**, **y**, and **z** does.
-
-**Plan what you will say — about 4 sentences:**
-
-<div class="write-space tall" style="min-height: 320px"></div>
+<div class="write-space tall" style="min-height: 340px"></div>
 
 ---
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + your video to teacher on KakaoTalk.

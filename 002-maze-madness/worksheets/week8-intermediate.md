@@ -2,7 +2,7 @@
 
 **Topic:** Final Cube Maze · **Course:** Maze Madness · **Level:** Intermediate · **Time:** about 35 minutes
 
-Last week. Build a 3D cube maze with a door and a lever. Write code that solves it on its own.
+Final week! Build a 3D cube maze with a door and a lever, then write code that solves it.
 
 ---
 
@@ -44,7 +44,7 @@ keep going until at goal:
 
 ## 3 · Fill the Blanks ✏️
 
-This loop should solve the maze. Fill in the two blanks.
+This loop should solve the maze.
 
 ```
 keep going until at goal:
@@ -83,7 +83,7 @@ keep going until at goal:
 
 ---
 
-## 5 · Build It 📸 + Video Plan 🎥
+## 5 · Show Your Work 📸🎥
 
 Build your final maze:
 
@@ -94,29 +94,30 @@ Build your final maze:
 - start and finish
 - code with `while` + `if/else` + `interact` (use `agent.move(UP, 1)` for floors)
 
-Send a photo or video of the agent at the goal. Write 3-4 sentences.
+Record **one video** (a phone is fine). Show two things:
 
-> My maze has … floors and … levers.
+**1 · Your code.** Scroll through it. Say what each part does.
+
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
 >
-> The agent's strategy is …
+> I built it using this code: ______.
 >
-> The hardest part was …
+> In this code I used ______.
 >
-> I am proud of …
+> The hardest part was ______.
+>
+> That part was hard because ______.
 
-<div class="write-space"></div>
+**Write your lines here, then say them in your video.**
 
-**Phone video plan.** Use these words: **cube**, **floor**, **lever**, **door**, **strategy**.
-
-> 1. Show the cube outside, then inside.
-> 2. Point to the start, goal, door, and lever.
-> 3. Run your code to the goal.
-> 4. Read your main loop out loud and say what it does.
-
-<div class="write-space tall" style="min-height: 240px"></div>
+<div class="write-space tall" style="min-height: 340px"></div>
 
 ---
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + your video to teacher on KakaoTalk.

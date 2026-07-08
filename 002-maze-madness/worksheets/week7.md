@@ -2,13 +2,13 @@
 
 **Topic:** Pistons and Mazes · **Course:** Maze Madness · **Level:** Advanced · **Time:** about 55 minutes
 
-A piston pushes or pulls a block when it gets a redstone signal. A **sticky piston** can pull a block back, opening a path — but only while the signal is ON. A lever sends that signal. Your agent flips the lever to power the piston, then crosses the gap it opens.
+A **sticky piston** pulls a block back to open a path, but only while a lever keeps the signal ON. Flip the lever to power it, then cross the gap.
 
 ---
 
 ## 1 · Predict 🔮
 
-Read each block. Write what happens before you imagine it.
+Write what happens.
 
 ```python
 agent.move(FORWARD, 1)
@@ -52,7 +52,7 @@ while True:
 
 ## 3 · Spot and Fix Bugs 🐛
 
-Each block is broken. Read the goal, write the fix, then explain it.
+Read the goal, write the fix, then explain it.
 
 **Bug A** — Power the piston **first**, then cross the gap it opens.
 
@@ -120,43 +120,34 @@ player.on_chat("go", cross_gap)
 
 ---
 
-## 5 · Build It 📸
+## 5 · Show Your Work 📸🎥
 
 Open your homework world. The maze has a gap (or blocked path) and a piston that opens it when powered. Run your code so the agent reaches the goal.
 
-Send a photo or video of the agent at the end. Then finish these lines — 4 to 6 sentences.
+Record **one video** (a phone is fine). Show two things:
 
-> First, I walked the agent to …
+**1 · Your code.** Scroll through it. Say what each part does.
+
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
 >
-> I powered the piston by …
+> I built it using this code: ______.
 >
-> Once the path opened, the agent …
+> In this code I used ______.
 >
-> The hardest part was …
+> The hardest part was ______.
 >
-> To fix it, I …
->
-> If I had more time, I would …
+> That part was hard because ______.
 
-<div class="write-space tall" style="min-height: 240px"></div>
+**Write your lines here, then say them in your video.**
 
----
-
-## 6 · Plan Your Walkthrough Video 🎥
-
-Take a phone video while the agent runs the maze. Talk through it like you are teaching someone new. Use these words: **piston**, **redstone**, **signal**, **gap**, **bridge**.
-
-> 1. Show the gap and the piston.
-> 2. Run your code and show the agent powering the piston and crossing.
-> 3. Read your code out loud and say which line opens the path.
-> 4. Show one bug you hit and how you fixed it.
-
-**Write what you will say. Plan it here before you record.**
-
-<div class="write-space tall" style="min-height: 240px"></div>
+<div class="write-space tall" style="min-height: 340px"></div>
 
 ---
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + your video to teacher on KakaoTalk.

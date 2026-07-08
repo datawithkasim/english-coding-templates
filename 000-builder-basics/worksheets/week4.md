@@ -6,7 +6,7 @@
 
 ## 1 · Predict 🔮
 
-Read each set of steps. Before you imagine the agent doing it, write what you think will happen.
+Read each set of steps. Write what you think will happen.
 
 ```
 repeat 10 times:
@@ -44,7 +44,7 @@ repeat 10 times:
 
 ## 2 · Spot the Bug 🐛
 
-Each block of code below was meant to do something, but it is broken. Read what the code is **supposed** to do, then rewrite it so it works. After that, explain why the original was wrong and why your fix works.
+Each code block is broken. Read what it should do, rewrite it, then explain why the original was wrong.
 
 **Bug A** — The agent is supposed to build a single wall that is **10 blocks long** on the ground.
 
@@ -100,38 +100,29 @@ repeat 10 times:
 
 ---
 
-## 3 · Tell Me What You Built 📸
+## 3 · Show Your Work 📸🎥
 
 Now switch to your homework world. Build your house with walls but **no roof yet** — at least 10 blocks long and 10 blocks tall, using two loops. When you finish, come back here.
 
-Send a photo or video of your house, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.
+Record **one video** (a phone is fine). Show two things:
 
-> First, I …
+**1 · Your code.** Scroll through it. Say what each part does.
+
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
 >
-> My first loop did …
+> I built it using this code: ______.
 >
-> My second loop did …
+> In this code I used ______.
 >
-> The hardest part was …
+> The hardest part was ______.
 >
-> To fix it, I …
->
-> If I had more time, I would add …
+> That part was hard because ______.
 
-<div class="write-space tall" style="min-height: 340px"></div>
-
----
-
-## 4 · Record Your Walkthrough 🎥
-
-Now take a video on your phone (or a parent's phone) while you walk around your house. Talk through it like you are teaching someone who has never seen it. Try to use these words: **loop**, **repeat**, **block**, **wall**, **bug**.
-
-> 1. Show the outside of the house and say how long and how tall it is.
-> 2. Read your two loops out loud and say what each one does.
-> 3. Show one bug you hit and how you fixed it.
-> 4. Show any extension you tried — stairs, a second floor, or both — and say which loop you used for it.
-
-**Write what you will say in your video.** Use the space below to plan it before you record — you can read from it while filming.
+**Write your lines here, then say them in your video.**
 
 <div class="write-space tall" style="min-height: 340px"></div>
 
@@ -139,4 +130,4 @@ Now take a video on your phone (or a parent's phone) while you walk around your 
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + your video to teacher on KakaoTalk.

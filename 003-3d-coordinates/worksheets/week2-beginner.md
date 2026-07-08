@@ -2,13 +2,13 @@
 
 **Topic:** Lines & Rectangles on the Wall (x, y) · **Course:** 3D Coordinates · **Level:** Beginner · **Time:** about 30 minutes
 
-This week you use a **loop** to draw a whole **line** of blocks on the wall instead of placing them one at a time. Grow **x** to go across. Grow **y** to go up.
+This week you use a **loop** to draw a whole **line** of blocks. Grow **x** to go across. Grow **y** to go up.
 
 ---
 
 ## 1 · Predict 🔮
 
-Read the steps. Before you imagine it happening, circle or write your answer.
+Read the steps. Circle your answer.
 
 ```
 set x to 0
@@ -17,11 +17,9 @@ repeat 4 times:
     add 1 to x
 ```
 
-**x grows and y stays 0. Does this draw a line going across, or a line going up? Circle one:** across · up
+**x grows, y stays 0. A line across, or up? Circle one:** across · up
 
-**Why?**
-
-<div class="write-space short"></div>
+**Why? Circle one:** x is the across number · y is the across number
 
 ```
 set y to 0
@@ -30,13 +28,13 @@ repeat 4 times:
     add 1 to y
 ```
 
-**This time y grows and x stays 0. Across or up? Circle one:** across · up
+**This time y grows, x stays 0. Across or up? Circle one:** across · up
 
 ---
 
 ## 2 · Find the Difference 🐛
 
-Each pair shows clean steps first, then a broken version of the same idea. Circle what's different and write one short sentence about the bug.
+Each pair shows clean code, then a buggy version. Circle the bug.
 
 **Pair A** — The line should go **across** the bottom of the wall.
 
@@ -56,9 +54,7 @@ repeat 4 times:
     add 1 to x
 ```
 
-**What is wrong? Which way does the buggy line go?**
-
-<div class="write-space short"></div>
+**Which way does the buggy line go? Circle one:** up · across
 
 **Pair B** — The line should be **4 blocks long**.
 
@@ -78,15 +74,13 @@ repeat 2 times:
     add 1 to x
 ```
 
-**What is wrong? How long is the buggy line?**
-
-<div class="write-space short"></div>
+**How long is the buggy line? Circle one:** 2 blocks · 4 blocks
 
 ---
 
 ## 3 · Fill the Gap ✏️
 
-You want a line going **straight up** the left edge of the wall. x must stay **0** while y grows. One number is missing. Fill it in using the word bank.
+You want a line going **straight up** the left edge. x must stay **0** while y grows.
 
 ```
 set y to 0
@@ -95,44 +89,38 @@ repeat 4 times:
     add 1 to y
 ```
 
-**Word bank:** `0` · `y` · `4`
-
-**Write the missing number:**
-
-<div class="write-space short"></div>
+**Which number is missing? Circle one:** 0 · y · 4
 
 ---
 
-## 4 · Tell Me What You Built 📸
+## 4 · Show Your Work 📸🎥
 
 Now switch to your homework world. Use a loop to draw **one line going across** and another loop for **one line going up**, so they meet at the corner (0, 0) and make an **L** shape. When you finish, come back here.
 
-Send a photo or video of your L, then explain what you did. Use these sentence starters — write 2 or 3 sentences.
+Record **one video** (a phone is fine). Show two things:
 
-> My across line grew the number …
+**1 · Your code.** Scroll through it. Say what each part does.
+
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
 >
-> My up line grew the number …
+> I built it using this code: ______.
 >
-> The two lines meet at …
+> In this code I used ______.
+>
+> The hardest part was ______.
+>
+> That part was hard because ______.
 
-<div class="write-space tall" style="min-height: 240px"></div>
+**Write your lines here, then say them in your video.**
 
----
-
-## 5 · Record Your Walkthrough 🎥
-
-Take a video on your phone (or a parent's phone) while you show your L on the wall. Talk like you are teaching a friend. Try to use these words: **loop**, **line**, **across**, **up**.
-
-> 1. Run the loop that draws the across line.
-> 2. Run the loop that draws the up line.
-> 3. Say which number (x or y) grew in each loop.
-
-**Write what you will say in your video.** You can read from it while filming.
-
-<div class="write-space tall" style="min-height: 240px"></div>
+<div class="write-space tall" style="min-height: 340px"></div>
 
 ---
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + your video to teacher on KakaoTalk.

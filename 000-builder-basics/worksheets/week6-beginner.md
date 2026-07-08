@@ -6,7 +6,7 @@
 
 ## 1 · Predict 🔮
 
-Read the steps. Before you imagine the agent doing it, circle or write your answer.
+Read the steps. Circle your answer.
 
 ```
 repeat 2 times:
@@ -16,9 +16,7 @@ repeat 2 times:
 
 **Does the agent build up or dig down? Circle one:** build up · dig down
 
-**How deep is the hole?**
-
-<div class="write-space short"></div>
+**How deep is the hole? Circle one:** 2 blocks deep · 5 blocks deep · 1 block deep
 
 ```
 repeat 4 times:
@@ -34,7 +32,7 @@ repeat 4 times:
 
 ## 2 · Find the Difference 🐛
 
-Each pair shows clean steps first, then a broken version of the same idea. Circle what's different and write one short sentence about the bug.
+Clean steps first, then a broken version. Circle the bug.
 
 **Pair A** — The agent should dig down 3 blocks. After each `destroy`, it must move down into the hole.
 
@@ -51,9 +49,7 @@ repeat 3 times:
     destroy block down
 ```
 
-**What is wrong?**
-
-<div class="write-space short"></div>
+**What is wrong? Circle one:** the move down is missing · a destroy is missing · it builds up
 
 **Pair B** — The agent should build the square wall **first**, then dig.
 
@@ -69,15 +65,13 @@ repeat 3 times:
 [build square wall]
 ```
 
-**What is wrong? Think: where is the agent after it digs?**
-
-<div class="write-space short"></div>
+**What is wrong? Circle one:** it digs before building the wall · it builds two walls · it never digs
 
 ---
 
 ## 3 · Fill the Gap ✏️
 
-The agent should dig a hole 2 blocks deep. One line is missing. Fill it in using the word bank.
+The agent should dig a hole 2 blocks deep. One line is missing.
 
 ```
 destroy block down
@@ -86,44 +80,38 @@ ____________
 move down by 1
 ```
 
-**Word bank:** `destroy block down` · `place block down` · `move forward`
-
-**Write the missing line:**
-
-<div class="write-space short"></div>
+**Which line is missing? Circle one:** destroy block down · place block down · move forward
 
 ---
 
-## 4 · Tell Me What You Built 📸
+## 4 · Show Your Work 📸🎥
 
 Now switch to your homework world. Build a **small well** — a square wall on top, and a hole **2 or 3 blocks deep** inside it. When you finish, come back here.
 
-Send a photo or video of your well, then explain what you did. Use these sentence starters — write 2 or 3 sentences.
+Record **one video** (a phone is fine). Show two things:
 
-> First, I built the square wall by …
+**1 · Your code.** Scroll through it. Say what each part does.
+
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
 >
-> Then I dug down by …
+> I built it using this code: ______.
 >
-> The hardest part was …
+> In this code I used ______.
+>
+> The hardest part was ______.
+>
+> That part was hard because ______.
 
-<div class="write-space tall" style="min-height: 240px"></div>
+**Write your lines here, then say them in your video.**
 
----
-
-## 5 · Record Your Walkthrough 🎥
-
-Take a video on your phone (or a parent's phone) and show your well. Talk like you are teaching a friend. Try to use these words: **square**, **wall**, **dig**, **deep**.
-
-> 1. Show the well from outside, then look down inside it.
-> 2. Read your dig loop out loud.
-> 3. Say how deep the well goes.
-
-**Write what you will say in your video.** You can read from it while filming.
-
-<div class="write-space tall" style="min-height: 240px"></div>
+<div class="write-space tall" style="min-height: 340px"></div>
 
 ---
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + your video to teacher on KakaoTalk.

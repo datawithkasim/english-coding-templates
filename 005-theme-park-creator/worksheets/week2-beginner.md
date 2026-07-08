@@ -2,7 +2,7 @@
 
 **Topic:** One Function, Many Booths — Arguments & Parameters · **Course:** Theme Park Creator · **Level:** Beginner · **Time:** about 30 minutes
 
-This week you build a small park **booth** with a **function**. You give the function some **parameters** — words and numbers it uses inside — so the same function can build a wood booth, a stone booth, a big one, or a small one, just by changing what you **call** it with.
+This week you build a park **booth** with a **function**. You give it **parameters** — words and numbers it uses inside. Change what you **call** it with to build wood or stone booths, big or small.
 
 These are the blocks you use this week:
 
@@ -37,15 +37,13 @@ Same boxes, different stuff → **same function, different booths**.
        2nd box   size  ⟵  2nd value   4
 ```
 
-**In your own words: what is a parameter? What is an argument?**
-
-<div class="write-space"></div>
+**Which one is the empty named box? Circle one:** parameter · argument
 
 ---
 
 ## 2 · Predict 🔮
 
-Read the code. Before you imagine the booth, write your answer.
+Read the code. Circle your answer.
 
 ```python
 def build_booth(wall, size):
@@ -54,9 +52,7 @@ def build_booth(wall, size):
 build_booth(STONE_BRICKS, 4)
 ```
 
-**What material is the booth made of, and how wide is it?**
-
-<div class="write-space short"></div>
+**What is the booth, and how wide? Circle one:** STONE_BRICKS, 4 · OAK_PLANKS, 4 · STONE_BRICKS, 0
 
 ```python
 def build_booth(wall, size):
@@ -69,7 +65,7 @@ def build_booth(wall, size):
 
 ## 3 · Find the Difference 🐛
 
-Each pair shows clean code first, then a broken version. Circle what's different and write one short sentence about the bug.
+Clean code first, then a broken version. Circle the answer.
 
 **Pair A** — The function should be **called** so a booth appears.
 
@@ -87,9 +83,7 @@ def build_booth(wall, size):
     blocks.fill(wall, pos(0, 0, 0), pos(size, 0, size), FillOperation.HOLLOW)
 ```
 
-**What is wrong? Why does the buggy code build nothing?**
-
-<div class="write-space short"></div>
+**What is wrong? Circle one:** no call after `def` · wrong material · wrong size
 
 **Pair B** — The booth should be made of whatever material you send in.
 
@@ -105,15 +99,13 @@ def build_booth(wall, size):
     blocks.fill(STONE_BRICKS, pos(0, 0, 0), pos(size, 0, size), FillOperation.HOLLOW)
 ```
 
-**What is wrong? Why is every booth stone, even when you send in `OAK_PLANKS`?**
-
-<div class="write-space short"></div>
+**What is wrong? Circle one:** it uses `STONE_BRICKS`, not `wall` · it uses `wall`, not `STONE_BRICKS` · nothing
 
 ---
 
 ## 4 · Fill the Gap ✏️
 
-This function should build a booth the size of the number you send in. One word is missing — the **parameter** the function forgot to use. Fill it in from the word bank.
+This booth should be the size you send in. One word is missing — the **parameter** it forgot to use.
 
 ```python
 def build_booth(wall, size):
@@ -122,44 +114,38 @@ def build_booth(wall, size):
 build_booth(OAK_PLANKS, 6)
 ```
 
-**Word bank:** `size` · `wall` · `HOLLOW`
-
-**Write the missing word:**
-
-<div class="write-space short"></div>
+**Which word is missing? Circle one:** `size` · `wall` · `HOLLOW`
 
 ---
 
-## 5 · Tell Me What You Built 📸
+## 5 · Show Your Work 📸🎥
 
 Now switch to your homework world. Write one `build_booth` function with a `wall` parameter and a `size` parameter, then call it two times with different materials or sizes. When you finish, come back here.
 
-Send a photo or video of your booths, then explain what you did. Use these sentence starters — write 2 or 3 sentences.
+Record **one video** (a phone is fine). Show two things:
 
-> My function's two parameters were …
+**1 · Your code.** Scroll through it. Say what each part does.
+
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
 >
-> When I called it with a different material, …
+> I built it using this code: ______.
 >
-> One tricky moment was when …
+> In this code I used ______.
+>
+> The hardest part was ______.
+>
+> That part was hard because ______.
 
-<div class="write-space tall" style="min-height: 240px"></div>
+**Write your lines here, then say them in your video.**
 
----
-
-## 6 · Record Your Walkthrough 🎥
-
-Take a video on your phone (or a parent's phone) while your code builds the booth. Talk like you are teaching a friend. Try to use these words: **function**, **parameter**, **argument**, **call**.
-
-> 1. Show your function and run your code.
-> 2. Show two booths built with different values.
-> 3. Say in your own words what a **parameter** is and what an **argument** is.
-
-**Write what you will say in your video.** You can read from it while filming.
-
-<div class="write-space tall" style="min-height: 240px"></div>
+<div class="write-space tall" style="min-height: 340px"></div>
 
 ---
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + your video to teacher on KakaoTalk.

@@ -36,7 +36,7 @@ p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
 </blockquote>
 <hr />
 <h2>1 · The Challenge 🎯</h2>
-<p>Your village has a good start — now finish it. A real village needs more than walls. Your job is to <strong>complete your village</strong> so it feels like a place someone could live.</p>
+<p>Your village has a good start, but a real village needs more than walls. <strong>Complete your village</strong> so it feels like a place someone could live.</p>
 <p>By the end, your village must have <strong>all four</strong> of these:</p>
 <blockquote>
 <p>🏠 A <strong>house with a roof</strong>
@@ -44,9 +44,9 @@ p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
 💧 A <strong>small pond</strong>
 🌸 A <strong>small flower bed</strong></p>
 </blockquote>
-<p>There is no fixed size and no map to copy. <strong>You</strong> decide how big each thing is and where it goes. But there is one rule you must not break:</p>
+<p>There is no fixed size and no map. <strong>You</strong> decide how big each thing is and where it goes. One rule you must not break:</p>
 <blockquote>
-<p>⚠️ <strong>Everything must be built with code.</strong> No placing blocks by hand. Every wall, every flower, every drop of water goes down because the agent ran your commands.</p>
+<p>⚠️ <strong>Everything must be built with code.</strong> No placing blocks by hand — every wall, flower, and drop of water goes down because the agent ran your commands.</p>
 </blockquote>
 <p><strong>In your own words, what four things must your village have when you finish?</strong></p>
 <p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
@@ -56,7 +56,7 @@ p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
 
 <hr />
 <h2>2 · Plan Before You Build ✏️</h2>
-<p>A builder plans first. For <strong>each</strong> of the four structures, decide what it is made of and roughly how big it is. Think about the blocks you will place and whether you need a loop.</p>
+<p>A builder plans first. For <strong>each</strong> of the four structures, decide what it is made of and how big. Think about the blocks and whether you need a loop.</p>
 <p><strong>House with a roof</strong> — What blocks? How wide and how tall? Where does the roof sit?</p>
 <p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
 
@@ -71,7 +71,7 @@ p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
 
 <hr />
 <h2>3 · Think in Loops 🔁</h2>
-<p>You built walls with loops in the weekly lessons. Now reuse that thinking. A loop is for anything you do <strong>again and again</strong> — a row of wall blocks, a row of flowers, the four sides of a well.</p>
+<p>You built walls with loops before. A loop is for anything you do <strong>again and again</strong> — a row of wall blocks, a row of flowers, the four sides of a well.</p>
 <p><strong>Which of your four structures will use a loop, and what does the loop repeat each time?</strong></p>
 <p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
 
@@ -80,35 +80,24 @@ p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
 <p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
 
 <hr />
-<h2>4 · Build Your Village 📸</h2>
+<h2>4 · Show Your Work 📸🎥</h2>
 <p>Now go to your homework world and build. Run your code for each structure, one at a time, and move the agent between them. Keep going until your village has <strong>the house with a roof, the well, the small pond, and the small flower bed</strong> — all placed by code.</p>
-<p>When it looks finished, send a photo or video of the whole village. Then explain what you did. Use these starters — write 4 to 6 sentences.</p>
+<p>Record <strong>one video</strong> (a phone is fine). Show two things:</p>
+<p><strong>1 · Your code.</strong> Scroll through it. Say what each part does.</p>
+<p><strong>2 · Your build.</strong> Point the camera. Name the parts.</p>
+<p>Fill the blanks:</p>
 <blockquote>
-<p>First, I planned the four parts by …</p>
-<p>I used a loop for … because …</p>
-<p>To move the agent between structures, I …</p>
-<p>The hardest part to build with code was …</p>
-<p>To fix it, I …</p>
-<p>If I had more time, I would add …</p>
+<p>Today I built ______.</p>
+<p>I built it using this code: ______.</p>
+<p>In this code I used ______.</p>
+<p>The hardest part was ______.</p>
+<p>That part was hard because ______.</p>
 </blockquote>
-<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
-
-<hr />
-<h2>5 · Record Your Walkthrough 🎥</h2>
-<p>Take a video on your phone (or a parent's phone) and walk the camera through your finished village. Teach someone who has never seen it. Try to use these words: <strong>village</strong>, <strong>house</strong>, <strong>roof</strong>, <strong>well</strong>, <strong>pond</strong>, <strong>flower bed</strong>, <strong>loop</strong>.</p>
-<blockquote>
-<ol>
-<li>Show each of the four structures one by one and name it.</li>
-<li>For one structure, read your loop out loud and say what it repeats.</li>
-<li>Show one spot where the agent walked from one build to the next.</li>
-<li>Say which part you are most proud of and what you would build next.</li>
-</ol>
-</blockquote>
-<p><strong>Write what you will say in your video.</strong> Plan it here first — you can read from it while filming.</p>
+<p><strong>Write your lines here, then say them in your video.</strong></p>
 <p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
 
 <hr />
 <h3>Submit ✅</h3>
-<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.</p>
+<p>Send this worksheet + your video to teacher on KakaoTalk.</p>
 <div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>
 </div></body></html>

@@ -2,7 +2,7 @@
 
 **Topic:** Recreate the Ender Dragon (x, y, z) · **Course:** 3D Coordinates · **Level:** Intermediate · **Time:** about 40 minutes
 
-A big blocky **ender dragon** stands in your world — black blocks, purple eyes. A big model is just a set of **parts**: a long **body**, a **head** at the front, and two **wings** that spread out. Today you build the body, the head, and two simple wings. Every block uses **(x, y, z)** — x **across**, y **up**, z **forward** (deep). The body runs **long along z**. The wings **spread along x**.
+A big blocky **ender dragon** stands in your world — black blocks, purple eyes. A model is a set of **parts**: a long **body**, a **head** at the front, and two **wings**. Every block uses **(x, y, z)** — x **across**, y **up**, z **forward** (deep). The body runs **long along z**; the wings **spread along x**.
 
 > 🔴 Stand on your **home spot** (red block) every run. Move your feet, move your head.
 
@@ -10,7 +10,7 @@ A big blocky **ender dragon** stands in your world — black blocks, purple eyes
 
 ## 1 · Predict 🔮
 
-Read each snippet. Do **not** run it. Write a full-sentence prediction.
+Read each snippet. Write a prediction.
 
 ```
 fill black from (0, 6, 0) to (0, 6, 8)
@@ -71,7 +71,7 @@ fill black from (1, 6, 4) to (1, 9, 4)
 
 ---
 
-## 3 · Build It 📸
+## 3 · Show Your Work 📸🎥
 
 Look at the dragon in your world. Walk around it. Then copy it on your home spot, part by part:
 
@@ -84,35 +84,30 @@ fill black from (-4, 6, 4) to (-1, 6, 4)
 
 That is body, head, right wing, left wing. Add two **purple** eye blocks on the head. Make the wings match — the same length on both sides.
 
-Send a photo or video. Then finish these — about 4 sentences.
+Record **one video** (a phone is fine). Show two things:
 
-> First I built the body. It runs deep, so I changed the … number.
+**1 · Your code.** Scroll through it. Say what each part does.
+
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
 >
-> My head block is at (x = …, y = …, z = …).
+> I built it using this code: ______.
 >
-> The right wing goes from ( … , … , … ) to ( … , … , … ).
+> In this code I used ______.
 >
-> To make the left wing match, I …
+> The hardest part was ______.
+>
+> That part was hard because ______.
 
-<div class="write-space tall" style="min-height: 320px"></div>
+**Write your lines here, then say them in your video.**
 
----
-
-## 4 · Explain It 🎥
-
-Film yourself showing your dragon. Use these words: **x**, **y**, **z**, **body**, **head**, **wing**.
-
-> 1. Show your home spot. Why stand on it every run?
-> 2. Point at the body. Say which number made it long.
-> 3. Point at one wing. Say which number made it spread out.
-> 4. Show that both wings are the same length.
-
-**Write about 4 sentences about how you built your dragon:**
-
-<div class="write-space tall" style="min-height: 320px"></div>
+<div class="write-space tall" style="min-height: 340px"></div>
 
 ---
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + your video to teacher on KakaoTalk.

@@ -2,7 +2,7 @@
 
 **Topic:** Redstone Trail Solver (3D Cube Maze) · **Course:** Maze Madness · **Level:** Extension (Advanced) · **Time:** about 60 minutes
 
-This is an **extension challenge** for students who finished the weekly mazes. The agent solves a **3D cube maze** on its own. It reads a **redstone trail** above, below, left, right and ahead, then decides what to do at every step. You drive it with chat: `l` turns left, `r` turns right, `run` starts the solver, `rl` teleports it back to you.
+The agent solves a **3D cube maze** on its own, reading a **redstone trail** all around it to decide each step. Drive it with chat: `l` turns left, `r` turns right, `run` starts the solver, `rl` teleports it back.
 
 ---
 
@@ -76,7 +76,7 @@ while True:
 
 ## 3 · Spot the Bug 🐛
 
-Each block is broken. Read what it should do, rewrite it, then explain the fix.
+Read what each block should do, rewrite it, then explain the fix.
 
 **Bug A** — The solver should keep going until the maze is done, checking the trail every step.
 
@@ -153,36 +153,29 @@ Pick **one** (or your own):
 
 ---
 
-## 6 · Finish the Maze 📸
+## 6 · Show Your Work 📸🎥
 
-When the agent finishes the cube maze, come back. Send a photo OR video of the agent at the goal, then explain. Write 4 to 6 sentences.
+When the agent finishes the cube maze, come back.
 
-> The maze was 3D, so the agent had to …
+Record **one video** (a phone is fine). Show two things:
+
+**1 · Your code.** Scroll through it. Say what each part does.
+
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
 >
-> The redstone trail told the agent to …
+> I built it using this code: ______.
 >
-> I used `detect` to …
+> In this code I used ______.
 >
-> The change I made was …
+> The hardest part was ______.
 >
-> The hardest part was …
->
-> If I had more time, I would …
+> That part was hard because ______.
 
-<div class="write-space tall" style="min-height: 340px"></div>
-
----
-
-## 7 · Record Your Walkthrough 🎥
-
-Film the agent solving the maze on your phone. Talk through it like you are teaching someone new. Try these words: **detect**, **redstone**, **trail**, **loop**, **3D**, **elif**.
-
-> 1. Show the cube maze and the redstone trail before you start.
-> 2. Type `run` and show the agent following the trail.
-> 3. Read one `if` / `elif` line out loud and say what it decides.
-> 4. Show the change you made and what it did.
-
-**Write what you will say.** Plan it here first.
+**Write your lines here, then say them in your video.**
 
 <div class="write-space tall" style="min-height: 340px"></div>
 
@@ -190,4 +183,4 @@ Film the agent solving the maze on your phone. Talk through it like you are teac
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + your video to teacher on KakaoTalk.

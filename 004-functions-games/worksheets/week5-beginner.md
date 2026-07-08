@@ -2,13 +2,11 @@
 
 **Topic:** Your Function Library — Reusable Building Blocks · **Course:** Functions & Games · **Level:** Beginner · **Time:** about 30 minutes
 
-This week you collect your best functions into a **library** — reusable building blocks like `build_wall` and `build_tower`. Big builds become easy when small functions do the work.
+This week you collect your best functions into a **library** — reusable building blocks like `build_wall` and `build_tower`.
 
 ---
 
 ## 1 · Predict 🔮
-
-Read the steps. Before you imagine the build happening, circle or write your answer.
 
 ```
 function build_wall(length):
@@ -21,9 +19,7 @@ build_wall(3)
 
 **Does this build a wall 3 blocks long? Circle one:** yes · no
 
-**Why?**
-
-<div class="write-space short"></div>
+**Why? Circle one:** `build_wall(3)` is called · there is no call
 
 ```
 function build_tower(height):
@@ -32,13 +28,11 @@ function build_tower(height):
         move up 1
 ```
 
-**There is no call line at the bottom. Does the tower get built? Circle one:** yes · no
+**No call line at the bottom. Does the tower get built? Circle one:** yes · no
 
 ---
 
 ## 2 · Find the Difference 🐛
-
-Each pair shows clean steps first, then a broken version of the same idea. Circle what's different and write one short sentence about the bug.
 
 **Pair A** — The library should have **two different** functions with two different names.
 
@@ -60,9 +54,7 @@ function build_wall(length):
     place glass blocks
 ```
 
-**What is wrong? Why does the computer get confused?**
-
-<div class="write-space short"></div>
+**What is wrong? Circle one:** two functions share a name · two different names
 
 **Pair B** — The tower should be **as tall as the number you give it**.
 
@@ -82,15 +74,13 @@ function build_tower(height):
         move up 1
 ```
 
-**What is wrong? What happens when you call `build_tower(10)`?**
-
-<div class="write-space short"></div>
+**What is wrong? Circle one:** uses `3` not `height` · uses `height` not `3`
 
 ---
 
 ## 3 · Fill the Gap ✏️
 
-The tower should be as tall as the number you give it. One word is missing. Fill it in using the word bank.
+One word is missing.
 
 ```
 function build_tower(height):
@@ -99,44 +89,38 @@ function build_tower(height):
         move up 1
 ```
 
-**Word bank:** `height` · `tower` · `block`
-
-**Write the missing word:**
-
-<div class="write-space short"></div>
+**Fill the gap. Circle one:** `height` · `tower` · `block`
 
 ---
 
-## 4 · Tell Me What You Built 📸
+## 4 · Show Your Work 📸🎥
 
 Now switch to your homework world. Build something using your own functions. When you finish, come back here.
 
-Send a photo or video of your build, then explain what you did. Use these sentence starters — write 2 or 3 sentences.
+Record **one video** (a phone is fine). Show two things:
 
-> I made a function called …
+**1 · Your code.** Scroll through it. Say what each part does.
+
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
 >
-> I reused it when …
+> I built it using this code: ______.
 >
-> One tricky moment was when …
+> In this code I used ______.
+>
+> The hardest part was ______.
+>
+> That part was hard because ______.
 
-<div class="write-space tall" style="min-height: 240px"></div>
+**Write your lines here, then say them in your video.**
 
----
-
-## 5 · Record Your Walkthrough 🎥
-
-Take a video on your phone (or a parent's phone) while your code builds. Talk like you are teaching a friend. Try to use these words: **function**, **call**, **reuse**.
-
-> 1. Show your functions before you run anything.
-> 2. Read one function name out loud and say what it builds.
-> 3. Say in your own words why reusing a function is better than copying code.
-
-**Write what you will say in your video.** You can read from it while filming.
-
-<div class="write-space tall" style="min-height: 240px"></div>
+<div class="write-space tall" style="min-height: 340px"></div>
 
 ---
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + your video to teacher on KakaoTalk.

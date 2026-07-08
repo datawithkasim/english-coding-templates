@@ -2,7 +2,7 @@
 
 **Topic:** Recreate the Statues (x, y, z) · **Course:** 3D Coordinates · **Level:** Advanced · **Time:** about 45 minutes
 
-A statue is many **stacked fill boxes**: two legs, a torso, a head, and two arms. One **`fill`** makes a solid box between **two corners**, each written **(x, y, z)** — x **across**, y **up**, z **forward**. To make a real figure you have to plan: where each part **starts** (its bottom y), how **wide** it is (x and z), and that the feet sit on the **ground (y = 0)**. Read carefully — a part can hide inside another, or float above the floor.
+A statue is many **stacked fill boxes**: two legs, a torso, a head, and two arms. One **`fill`** makes a solid box between **two corners**, each written **(x, y, z)** — x **across**, y **up**, z **forward**. Plan where each part **starts** (its bottom y) and how **wide** it is (x and z); the feet sit on the **ground (y = 0)**. A part can hide inside another, or float above the floor.
 
 > 🔴 Stand on your **home spot** (red block) every run. Move your feet, move your head.
 
@@ -10,7 +10,7 @@ A statue is many **stacked fill boxes**: two legs, a torso, a head, and two arms
 
 ## 1 · Predict 🔮
 
-Read each box. Write what you will see, **where it sits** on the statue, **and the reason**. Do **not** run it.
+Read each box. Write what you will see, **where it sits**, **and the reason**.
 
 ```
 fill GRAY from (3, 0, 4) to (3, 2, 4)
@@ -53,7 +53,7 @@ fill WHITE from (3, 7, 4) to (5, 8, 4)
 
 Each block is broken. Read what it should do, write the fixed code, then explain.
 
-**Bug A** — The torso should sit **on top** of the legs. The legs go y = 0–2, so the torso should start at y = 3. Right now the torso starts at **y = 0**, so it builds over the legs and nothing rises.
+**Bug A** — The torso should sit **on top** of the legs. The legs go y = 0–2, so the torso should start at y = 3. Right now it starts at **y = 0**, so nothing rises.
 
 ```
 fill GRAY from (3, 0, 4) to (5, 6, 4)
@@ -85,7 +85,7 @@ fill GRAY from (4, 3, 4) to (4, 5, 4)
 
 <div class="write-space"></div>
 
-**Bug C** *(the tricky one)* — Your friend says their whole statue is **floating** — there is a gap of air under the feet. The legs are built at **y = 1–3** instead of touching the ground. The bottom of the feet must be on the floor.
+**Bug C** *(the tricky one)* — Your friend's whole statue is **floating** — a gap of air under the feet. The legs are built at **y = 1–3** instead of touching the ground. The feet must sit on the floor.
 
 ```
 fill GRAY from (3, 1, 4) to (3, 3, 4)
@@ -104,7 +104,7 @@ fill GRAY from (5, 1, 4) to (5, 3, 4)
 
 ---
 
-## 3 · Build It 📸
+## 3 · Show Your Work 📸🎥
 
 Walk around a statue in your world. Then plan and build a **full golem** on your home spot — **6 fill boxes**: two legs, a torso, two arms, and a head.
 
@@ -120,34 +120,25 @@ Before you build, **plan the heights** in the space below: which y does each par
 
 > ✨ **Modify challenge:** after it works, change one thing of your own — a new colour, a different pose, or an extra part (a hat, a tail, longer arms). Write what you changed.
 
-Then build, and send a **photo or video**. Finish these — 5 to 6 sentences.
+Record **one video** (a phone is fine). Show two things:
 
-> I planned the heights like this: legs y = … , torso y = … , head y = …
+**1 · Your code.** Scroll through it. Say what each part does.
+
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
 >
-> The feet touch the ground because the lowest **y** is …
+> I built it using this code: ______.
 >
-> My arms sit on the outside because their **x** is …
+> In this code I used ______.
 >
-> Each part stacks on the one below because its **y** starts at …
+> The hardest part was ______.
 >
-> One part I had to fix was … because …
->
-> The thing I changed for the modify challenge was …
+> That part was hard because ______.
 
-<div class="write-space tall" style="min-height: 340px"></div>
-
----
-
-## 4 · Explain It 🎥
-
-Film yourself showing your statue. Try to use these words: **fill**, **box**, **x**, **y**, **z**, **stack**, **ground**, **home spot**.
-
-> 1. Show your home spot and stand on it. Say why you stand there every run.
-> 2. Walk around your statue — show the front, a side, and the back.
-> 3. Point at one part and read its corners: "from x …, y …, z … to x …, y …, z …".
-> 4. Say in your own words how you know the head ends up on top and the feet stay on the ground.
-
-**Write a short paragraph (5–6 sentences) explaining how your statue is built. Then answer: if you taught a friend, what would you teach first, and why?**
+**Write your lines here, then say them in your video.**
 
 <div class="write-space tall" style="min-height: 340px"></div>
 
@@ -155,4 +146,4 @@ Film yourself showing your statue. Try to use these words: **fill**, **box**, **
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + your video to teacher on KakaoTalk.

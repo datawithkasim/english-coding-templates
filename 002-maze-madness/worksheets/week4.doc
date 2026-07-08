@@ -1,0 +1,171 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head><meta charset='utf-8'>
+<title>🔀 M002 Week 4 — AND / OR</title>
+<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
+<style>
+@page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
+div.WordSection1 { page: WordSection1; }
+body { font-family: "Segoe UI", Arial, sans-serif; font-size: 11.5pt; color: #1a1a2e; line-height: 1.5; }
+h1 { font-size: 21pt; color: #6b4ee6; margin: 4px 0 6px; }
+h2 { font-size: 15pt; color: #6b4ee6; border-top: 1px solid #dddddd; padding-top: 8px; margin: 18px 0 10px; }
+h3, h4 { font-size: 11.5pt; margin: 12px 0 6px; }
+p { margin: 7px 0; }
+.brand { font-size: 10.5pt; font-weight: bold; color: #ff7849; letter-spacing: .06em;
+         border-bottom: 2px solid #ff7849; padding-bottom: 6px; margin-bottom: 14px; }
+table { border-collapse: collapse; margin: 10px 0; }
+th, td { border: 1px solid #c8c8c8; padding: 4px 9px; text-align: center; }
+th { background: #f3eefc; color: #6b4ee6; font-weight: bold; }
+pre { font-family: Consolas, "Courier New", monospace; font-size: 10.5pt; background: #f4f4f5;
+      border: 1px solid #dddddd; padding: 8px 10px; white-space: pre-wrap; }
+pre code { background: transparent; color: #1a1a2e; }
+code { font-family: Consolas, "Courier New", monospace; background: #fff1e8; color: #d6531f; padding: 0 3px; }
+blockquote { border-left: 3px solid #ff7849; background: #fff6ef; padding: 8px 12px;
+             color: #6a3a1c; margin: 9px 0; }
+ul, ol { margin: 7px 0 7px 26px; }
+p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
+.footer { color: #999999; font-size: 8.5pt; text-align: center; margin-top: 18px;
+          border-top: 1px solid #eeeeee; padding-top: 6px; }
+.footer b { color: #ff7849; }
+</style></head>
+<body><div class=WordSection1>
+<div class="brand">📚 ENGLISH CODING · 영어코딩</div>
+<h1>🔀 M002 Week 4 — AND / OR</h1>
+<p><strong>Topic:</strong> AND and OR Conditions — Smarter Decisions · <strong>Course:</strong> Maze Madness · <strong>Level:</strong> Advanced · <strong>Time:</strong> about 55 minutes</p>
+<p>New this week: <code>or</code> (at least one true). Combine it with <code>and</code> in one maze.</p>
+<ul>
+<li><code>and</code> → the action runs <strong>only when both</strong> conditions are true.</li>
+<li><code>or</code> → the action runs <strong>when at least one</strong> condition is true.</li>
+</ul>
+<p><code>agent.detect(BLOCK, FORWARD)</code> is <code>True</code> when a block is ahead. Use <code>not</code> for an open path.</p>
+<hr />
+<h2>1 · Predict 🔮</h2>
+<p>Write what the agent does.</p>
+<pre><code class="language-python">if agent.detect(BLOCK, FORWARD) and agent.detect(BLOCK, RIGHT):
+    agent.turn(LEFT_TURN)
+</code></pre>
+<p>Wall ahead, open right. Does it turn left? Why?</p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">if not agent.detect(BLOCK, FORWARD) or not agent.detect(BLOCK, DOWN):
+    agent.move(FORWARD, 1)
+</code></pre>
+<p>Ahead blocked, below open. Does it move? Why?</p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">while True:
+    if agent.detect(BLOCK, FORWARD) and agent.detect(BLOCK, RIGHT):
+        agent.turn(LEFT_TURN)
+    elif not agent.detect(BLOCK, FORWARD) or not agent.detect(BLOCK, LEFT):
+        agent.move(FORWARD, 1)
+    else:
+        agent.turn(RIGHT_TURN)
+</code></pre>
+<p>At a front-and-right corner, what runs? At an open junction, which branch runs?</p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>2 · Trace the Truth 🔎</h2>
+<p>Write the branch that runs for each case.</p>
+<pre><code class="language-python">if agent.detect(BLOCK, FORWARD) and agent.detect(BLOCK, RIGHT):
+    agent.turn(LEFT_TURN)
+elif not agent.detect(BLOCK, FORWARD):
+    agent.move(FORWARD, 1)
+else:
+    agent.turn(RIGHT_TURN)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Front</th>
+<th>Right</th>
+<th>What runs?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>wall</td>
+<td>wall</td>
+<td></td>
+</tr>
+<tr>
+<td>wall</td>
+<td>open</td>
+<td></td>
+</tr>
+<tr>
+<td>open</td>
+<td>wall</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>3 · Spot and Fix Bugs 🐛</h2>
+<p>Rewrite each block. Explain the fix.</p>
+<p><strong>Bug A</strong> — Turn left <strong>only</strong> at a dead-end corner (wall ahead AND wall on right). Right now it turns at any wall.</p>
+<pre><code class="language-python">if agent.detect(BLOCK, FORWARD) or agent.detect(BLOCK, RIGHT):
+    agent.turn(LEFT_TURN)
+</code></pre>
+<p>Fixed code:</p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p>Why was it wrong? Why does your fix work?</p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug B</strong> — Move forward when <strong>either</strong> the path ahead OR the path below is clear.</p>
+<pre><code class="language-python">if not agent.detect(BLOCK, FORWARD) and not agent.detect(BLOCK, DOWN):
+    agent.move(FORWARD, 1)
+</code></pre>
+<p>Fixed code:</p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p>Why was it wrong? Why does your fix work?</p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug C</strong> — At a fork, turn right if the right is open, otherwise turn left. The order is wrong, so it always turns left first.</p>
+<pre><code class="language-python">if not agent.detect(BLOCK, LEFT):
+    agent.turn(LEFT_TURN)
+elif not agent.detect(BLOCK, RIGHT):
+    agent.turn(RIGHT_TURN)
+</code></pre>
+<p>Hint: check the right side first.</p>
+<p>Fixed code:</p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p>Why was it wrong? Why does your fix work?</p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>4 · Write the Code ✍️</h2>
+<p>Write a <code>while True</code> loop that:</p>
+<ul>
+<li>turns left when there is a wall ahead <strong>and</strong> a wall on the right,</li>
+<li>else moves forward when the path ahead <strong>or</strong> the path below is open,</li>
+<li>else turns right.</li>
+</ul>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>5 · Show Your Work 📸🎥</h2>
+<p>Switch to your homework world. Solve the maze using <strong>both</strong> an <code>and</code> condition and an <code>or</code> condition. Come back when the agent reaches the end.</p>
+<p>Record <strong>one video</strong> (a phone is fine). Show two things:</p>
+<p><strong>1 · Your code.</strong> Scroll through it. Say what each part does.</p>
+<p><strong>2 · Your build.</strong> Point the camera. Name the parts.</p>
+<p>Fill the blanks:</p>
+<blockquote>
+<p>Today I built ______.</p>
+<p>I built it using this code: ______.</p>
+<p>In this code I used ______.</p>
+<p>The hardest part was ______.</p>
+<p>That part was hard because ______.</p>
+</blockquote>
+<p><strong>Write your lines here, then say them in your video.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your video to teacher on KakaoTalk.</p>
+<div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>
+</div></body></html>

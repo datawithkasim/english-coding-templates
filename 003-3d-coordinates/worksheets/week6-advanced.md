@@ -2,7 +2,7 @@
 
 **Topic:** Recreate the Ender Dragon (x, y, z) · **Course:** 3D Coordinates · **Level:** Advanced · **Time:** about 45 minutes
 
-A big blocky **ender dragon** stands in your world — black blocks, purple eyes. A big model is a set of **parts**: a long **body** (a fill box stretched along one axis), a **head** at the front, two **wings** that spread out along x, and a **tail** that steps back and down. Everything uses **(x, y, z)** — x **across**, y **up**, z **forward** (deep). Read each part carefully and plan your corners before you build.
+A big blocky **ender dragon** stands in your world — black blocks, purple eyes. A model is a set of **parts**: a long **body**, a **head** at the front, two **wings** that spread along x, and a **tail** that steps back and down. Everything uses **(x, y, z)** — x **across**, y **up**, z **forward** (deep). Plan your corners before you build.
 
 > 🔴 Stand on your **home spot** (red block) every run. Move your feet, move your head.
 
@@ -10,7 +10,7 @@ A big blocky **ender dragon** stands in your world — black blocks, purple eyes
 
 ## 1 · Predict 🔮
 
-Read each snippet. Do **not** run it. Write your prediction **and the reason**.
+Read each snippet. Write your prediction **and the reason**.
 
 ```
 fill black from (0, 8, 0) to (0, 8, 10)
@@ -101,7 +101,7 @@ place black block at (0, 8, -3)
 
 ---
 
-## 3 · Build It 📸
+## 3 · Show Your Work 📸🎥
 
 Look at the dragon in your world. Walk around it. **Plan your corners first**, then copy it part by part on your home spot:
 
@@ -119,43 +119,30 @@ That is body, head, right wing, left wing, and a stepped tail. Add two **purple*
 
 **MODIFY challenge:** change one thing that is your own idea — a new colour, an extra part, or a bigger dragon. Write down what you changed.
 
-Send a photo or video. Then finish these — 5 to 6 sentences.
+Record **one video** (a phone is fine). Show two things:
 
-> I built the dragon as these parts: …
+**1 · Your code.** Scroll through it. Say what each part does.
+
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
 >
-> My body runs along the … axis, from ( … , … , … ) to ( … , … , … ).
+> I built it using this code: ______.
 >
-> To make the wings match, I …
+> In this code I used ______.
 >
-> My tail steps back and down by changing the … number and the … number each time.
+> The hardest part was ______.
 >
-> For my MODIFY challenge, I changed …
->
-> One tricky moment was when …
+> That part was hard because ______.
+
+**Write your lines here, then say them in your video.**
 
 <div class="write-space tall" style="min-height: 340px"></div>
-
----
-
-## 4 · Explain It 🎥
-
-Film yourself showing your dragon. Use these words: **x**, **y**, **z**, **body**, **head**, **wing**, **tail**.
-
-> 1. Show your home spot. Why stand on it every run?
-> 2. Point at the body. Say which axis it runs along and why.
-> 3. Point at both wings. Show they match, and **say in your own words** how you kept them the same.
-> 4. Point at the tail. Say which numbers change to make it step back and down.
-
-**Write a short paragraph (5–6 sentences) explaining how you built your dragon and how the (x, y, z) numbers control each part:**
-
-<div class="write-space tall" style="min-height: 340px"></div>
-
-**Last question — what would you teach a friend first if they wanted to build this dragon? Why that part?**
-
-<div class="write-space short"></div>
 
 ---
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + your video to teacher on KakaoTalk.

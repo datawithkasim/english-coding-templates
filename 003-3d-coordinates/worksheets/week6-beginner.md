@@ -2,7 +2,7 @@
 
 **Topic:** Recreate the Ender Dragon (x, y, z) · **Course:** 3D Coordinates · **Level:** Beginner · **Time:** about 30 minutes
 
-A big blocky **ender dragon** is in your world. It is black with purple eyes. The body is one long box. The head is a block at the front. Today you build a **small** dragon: a short body and a head. Every block needs **three** numbers — **(x, y, z)**. x is **across**, y is **up**, z is **forward** (deep).
+A big blocky **ender dragon** is in your world — black with purple eyes. Today you build a **small** one: a short body and a head. Every block needs **three** numbers — **(x, y, z)**. x is **across**, y is **up**, z is **forward** (deep).
 
 > 🔴 Stand on your **home spot** (red block) every run. Move your feet, move your head.
 
@@ -10,27 +10,21 @@ A big blocky **ender dragon** is in your world. It is black with purple eyes. Th
 
 ## 1 · Predict 🔮
 
-Read the code. Do **not** run it. Answer in the box.
+Read the code. Circle your answer.
 
 ```
 fill black from (0, 4, 0) to (0, 4, 5)
 ```
 
-**Does the body go across, up, or deeper? Circle one. Which number changes — x, y, or z?**
+**Does the body go across, up, or deeper? Circle one:** across · up · deeper
 
-> across · up · deeper
-
-<div class="write-space short"></div>
+**Which number changes? Circle one:** x · y · z
 
 ```
 place black block at (0, 5, 6)
 ```
 
-**This is the head. Is the head higher or lower than the body? Circle one.**
-
-> higher · lower
-
-<div class="write-space short"></div>
+**This is the head. Higher or lower than the body? Circle one:** higher · lower
 
 ---
 
@@ -48,17 +42,13 @@ fill black from (0, 4, 0) to (0, 4, 0)
 fill black from (0, 4, 0) to (0, 4, ___)
 ```
 
-> Word bank: **5**
+**Which number fills the blank? Circle one:** 5 · 0
 
-<div class="write-space short"></div>
-
-**Why was it wrong? One short sentence.**
-
-<div class="write-space short"></div>
+**Why was it wrong? Circle one:** both corners had the same z · the color was wrong
 
 ---
 
-## 3 · Build It 📸
+## 3 · Show Your Work 📸🎥
 
 First build this tiny body on your home spot:
 
@@ -73,30 +63,30 @@ fill black from (0, 4, 0) to (0, 4, 5)
 place black block at (0, 5, 6)
 ```
 
-Send a photo or video. Then finish these — 2 sentences.
+Record **one video** (a phone is fine). Show two things:
 
-> I built the dragon's body and …
+**1 · Your code.** Scroll through it. Say what each part does.
+
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
 >
-> My head block is at (x = …, y = …, z = …).
+> I built it using this code: ______.
+>
+> In this code I used ______.
+>
+> The hardest part was ______.
+>
+> That part was hard because ______.
 
-<div class="write-space tall" style="min-height: 240px"></div>
+**Write your lines here, then say them in your video.**
 
----
-
-## 4 · Explain It 🎥
-
-Film yourself showing your small dragon. Try to use these words: **x**, **y**, **z**, **body**, **head**.
-
-> 1. Show your home spot.
-> 2. Point at the body. Say which number made it long.
-> 3. Point at the head. Say its three numbers out loud.
-
-**Write 2 short sentences about your dragon:**
-
-<div class="write-space tall" style="min-height: 240px"></div>
+<div class="write-space tall" style="min-height: 340px"></div>
 
 ---
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + your video to teacher on KakaoTalk.

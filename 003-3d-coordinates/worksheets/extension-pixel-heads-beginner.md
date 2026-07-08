@@ -2,7 +2,7 @@
 
 **Topic:** 3D Mob Heads (x, y, z) · **Course:** 3D Coordinates · **Level:** Beginner (Extension, after Week 3) · **Time:** about 30 minutes
 
-Build a mob head in 3D. Every block needs **three** numbers: **(x, y, z)**. x is **across**, y is **up**, z is **deeper** (forward). The head stands in front of you. Look at it as you build.
+Build a mob head in 3D. Every block needs **three** numbers: **(x, y, z)**. x is **across**, y is **up**, z is **deeper** (forward). The head stands in front — look as you build.
 
 > 🔴 Stand on your **home spot** (red block) every run. Move, and the head moves too.
 
@@ -10,7 +10,7 @@ Build a mob head in 3D. Every block needs **three** numbers: **(x, y, z)**. x is
 
 ## 1 · Predict 🔮
 
-Read the code. Do **not** run it. Circle one word.
+Read the code. Circle one word.
 
 ```
 place green block at (3, 5, 1)
@@ -18,9 +18,7 @@ place green block at (3, 5, 2)
 place green block at (3, 5, 3)
 ```
 
-**Only z changes. The line goes:** across · up · deeper
-
-<div class="write-space short"></div>
+**Only z changes. Circle one:** across · up · deeper
 
 ```
 place green block at (4, 5, 1)
@@ -28,9 +26,7 @@ place green block at (4, 6, 1)
 place green block at (4, 7, 1)
 ```
 
-**Only y changes. The line goes:** across · up · deeper
-
-<div class="write-space short"></div>
+**Only y changes. Circle one:** across · up · deeper
 
 ---
 
@@ -49,15 +45,13 @@ place black block at (4, 7)
 place black block at (4, 7, __)
 ```
 
-**Word bank:** `2`
+**Which number fills the blank? Circle one:** 2 · 1
 
-**Write one sentence: what was missing?**
-
-<div class="write-space short"></div>
+**What was missing? Circle one:** the z number · the color
 
 ---
 
-## 3 · Build It 📸
+## 3 · Show Your Work 📸🎥
 
 Look at the 🟢 creeper head in the world. Walk around it.
 
@@ -71,32 +65,30 @@ Look at the 🟢 creeper head in the world. Walk around it.
 
 > 💡 Tip: the eyes only show on the **front**. The sides and back are plain green.
 
-Send a photo. Then finish these 2 sentences.
+Record **one video** (a phone is fine). Show two things:
 
-> I built the … head. It is … blocks deep.
+**1 · Your code.** Scroll through it. Say what each part does.
+
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
 >
-> To go deeper I changed the … number.
+> I built it using this code: ______.
+>
+> In this code I used ______.
+>
+> The hardest part was ______.
+>
+> That part was hard because ______.
 
-<div class="write-space tall" style="min-height: 300px"></div>
+**Write your lines here, then say them in your video.**
 
----
-
-## 4 · Explain It 🎥
-
-Film a short video. Show these 3 things:
-
-> 1. Show your home spot.
-> 2. Point at the front face and one eye.
-> 3. Show how deep your head is (z = 1, 2, 3).
-
-**Write 2 short sentences about your head:**
-
-<div class="write-space tall" style="min-height: 300px"></div>
-
-Words to use: **x** · **y** · **z** · **deeper**
+<div class="write-space tall" style="min-height: 340px"></div>
 
 ---
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + your video to teacher on KakaoTalk.

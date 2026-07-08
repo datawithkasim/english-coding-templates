@@ -109,7 +109,7 @@ footer b { color: #ff7849; }
 <div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
 <h1>🧩 M002 Extension 1 — Redstone Trail Solver</h1>
 <p><strong>Topic:</strong> Redstone Trail Solver (3D Cube Maze) · <strong>Course:</strong> Maze Madness · <strong>Level:</strong> Extension (Advanced) · <strong>Time:</strong> about 60 minutes</p>
-<p>This is an <strong>extension challenge</strong> for students who finished the weekly mazes. The agent solves a <strong>3D cube maze</strong> on its own. It reads a <strong>redstone trail</strong> above, below, left, right and ahead, then decides what to do at every step. You drive it with chat: <code>l</code> turns left, <code>r</code> turns right, <code>run</code> starts the solver, <code>rl</code> teleports it back to you.</p>
+<p>The agent solves a <strong>3D cube maze</strong> on its own, reading a <strong>redstone trail</strong> all around it to decide each step. Drive it with chat: <code>l</code> turns left, <code>r</code> turns right, <code>run</code> starts the solver, <code>rl</code> teleports it back.</p>
 <h2>1 · Read the Chat Commands 🎛️</h2>
 <p>Each block binds a <strong>chat word</strong> to an action. Type the word, the agent runs the code.</p>
 <pre><code>def turn_left():
@@ -158,7 +158,7 @@ player.on_chat(&quot;rl&quot;, go_back)
 <div class="write-space"></div></div>
 
 <h2>3 · Spot the Bug 🐛</h2>
-<p>Each block is broken. Read what it should do, rewrite it, then explain the fix.</p>
+<p>Read what each block should do, rewrite it, then explain the fix.</p>
 <p><strong>Bug A</strong> — The solver should keep going until the maze is done, checking the trail every step.</p>
 <pre><code>agent.move(FORWARD, 1)
 if agent.detect(REDSTONE, DOWN):
@@ -207,33 +207,24 @@ if agent.detect(REDSTONE, DOWN):
 <div class="qa"><p><strong>Test it.</strong> What actually happened? If it surprised you, why?</p>
 <div class="write-space"></div></div>
 
-<h2>6 · Finish the Maze 📸</h2>
-<p>When the agent finishes the cube maze, come back. Send a photo OR video of the agent at the goal, then explain. Write 4 to 6 sentences.</p>
-<div class="qa"><blockquote>
-<p>The maze was 3D, so the agent had to …</p>
-<p>The redstone trail told the agent to …</p>
-<p>I used <code>detect</code> to …</p>
-<p>The change I made was …</p>
-<p>The hardest part was …</p>
-<p>If I had more time, I would …</p>
-</blockquote>
-<div class="write-space tall" style="min-height: 340px"></div></div>
-
-<h2>7 · Record Your Walkthrough 🎥</h2>
-<p>Film the agent solving the maze on your phone. Talk through it like you are teaching someone new. Try these words: <strong>detect</strong>, <strong>redstone</strong>, <strong>trail</strong>, <strong>loop</strong>, <strong>3D</strong>, <strong>elif</strong>.</p>
+<h2>6 · Show Your Work 📸🎥</h2>
+<p>When the agent finishes the cube maze, come back.</p>
+<p>Record <strong>one video</strong> (a phone is fine). Show two things:</p>
+<p><strong>1 · Your code.</strong> Scroll through it. Say what each part does.</p>
+<p><strong>2 · Your build.</strong> Point the camera. Name the parts.</p>
+<p>Fill the blanks:</p>
 <blockquote>
-<ol>
-<li>Show the cube maze and the redstone trail before you start.</li>
-<li>Type <code>run</code> and show the agent following the trail.</li>
-<li>Read one <code>if</code> / <code>elif</code> line out loud and say what it decides.</li>
-<li>Show the change you made and what it did.</li>
-</ol>
+<p>Today I built ______.</p>
+<p>I built it using this code: ______.</p>
+<p>In this code I used ______.</p>
+<p>The hardest part was ______.</p>
+<p>That part was hard because ______.</p>
 </blockquote>
-<div class="qa"><p><strong>Write what you will say.</strong> Plan it here first.</p>
+<div class="qa"><p><strong>Write your lines here, then say them in your video.</strong></p>
 <div class="write-space tall" style="min-height: 340px"></div></div>
 
 <hr />
 <h3>Submit ✅</h3>
-<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.</p>
+<p>Send this worksheet + your video to teacher on KakaoTalk.</p>
 </body>
 </html>

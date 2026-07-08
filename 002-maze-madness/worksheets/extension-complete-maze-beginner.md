@@ -2,7 +2,7 @@
 
 **Topic:** Add Two AND Conditions · **Course:** Maze Madness · **Level:** Extension (Beginner) · **Time:** about 30 minutes
 
-The agent knows **four rules** to follow redstone. But it gets **stuck** at two spots. There, two signals are on at once. You find the two signals and add your own **AND** rule.
+The agent follows redstone with **four rules**, but gets **stuck** at two spots where two signals are on at once. Add your own **AND** rule there.
 
 ---
 
@@ -30,8 +30,6 @@ if redstone ABOVE:
 | redstone above | → | turn left |
 | redstone right | → | move down |
 
-<div class="write-space short"></div>
-
 ---
 
 ## 2 · AND means BOTH 🧠
@@ -44,23 +42,17 @@ if redstone LEFT AND redstone BELOW:
     move up
 ```
 
-**Left on, but NOT below. Is the AND true?** yes · no
+**Left on, but NOT below. Is the AND true? Circle one:** yes · no
 
-<div class="write-space short"></div>
+**Left on AND below on. Is the AND true? Circle one:** yes · no
 
-**Left on AND below on. Is the AND true?** yes · no
-
-<div class="write-space short"></div>
-
-**An AND with two signals needs how many actions?**
-
-<div class="write-space short"></div>
+**An AND with two signals needs how many actions? Circle one:** one · two · three
 
 ---
 
 ## 3 · Look at the Stuck Spots 🔍
 
-Open the **M002 Complete the Maze** world. Type `run`. The agent stops at **two** spots. Walk to each one and look around the agent.
+Open the **M002 Complete the Maze** world and type `run`. The agent stops at **two** spots. Look around each one.
 
 **Tick the signals you see.**
 
@@ -68,8 +60,6 @@ Open the **M002 Complete the Maze** world. Type `run`. The agent stops at **two*
 |---|---|---|---|---|
 | **Stuck spot 1** | | | | |
 | **Stuck spot 2** | | | | |
-
-<div class="write-space short"></div>
 
 ---
 
@@ -85,30 +75,38 @@ if redstone ______ AND redstone ______:
     ______________
 ```
 
-<div class="write-space short"></div>
-
 **Stuck spot 2 — write the whole rule:**
-
-<div class="write-space"></div>
 
 ---
 
-## 5 · Finish the Whole Maze 📸
+## 5 · Show Your Work 📸🎥
 
 Type `run`. The goal is to reach the **very end**. If it sticks, fix your AND rules and run again.
 
-Send a photo or video of the agent at the goal. Then write 2 or 3 sentences with these starters.
+Record **one video** (a phone is fine). Show two things:
 
-> The agent knew four rules, like …
->
-> The two signals at the first stuck spot were … and …
->
-> An AND rule needs …
+**1 · Your code.** Scroll through it. Say what each part does.
 
-<div class="write-space tall" style="min-height: 240px"></div>
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
+>
+> I built it using this code: ______.
+>
+> In this code I used ______.
+>
+> The hardest part was ______.
+>
+> That part was hard because ______.
+
+**Write your lines here, then say them in your video.**
+
+<div class="write-space tall" style="min-height: 340px"></div>
 
 ---
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + your video to teacher on KakaoTalk.

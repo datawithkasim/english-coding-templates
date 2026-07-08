@@ -2,7 +2,7 @@
 
 **Topic:** Final Cube Maze · **Course:** Maze Madness · **Level:** Advanced · **Time:** about 55 minutes
 
-This is the final project. Design a 20×20×20 cube maze with redstone doors and levers, then write Python that solves it on its own. It combines everything: loops, turns, AND/OR, 3D up/down, levers, and pistons.
+Design a 20×20×20 cube maze with redstone doors and levers, then write Python that solves it. It uses everything: loops, turns, AND/OR, 3D up/down, levers, and pistons.
 
 ---
 
@@ -110,7 +110,7 @@ Write one line so typing `solve` in chat runs your `solve_maze` function.
 
 ---
 
-## 6 · Build It 📸
+## 6 · Show Your Work 📸🎥
 
 Build your final project. Your maze must have:
 
@@ -121,35 +121,25 @@ Build your final project. Your maze must have:
 - a clear start and finish
 - agent code that solves it with `while` + `if/else` + `interact` + `agent.move(UP, 1)`
 
-Send a photo or video of the agent reaching the goal. Then write 4-6 sentences.
+Record **one video** (a phone is fine). Show two things:
 
-> My maze has … floors and … levers.
+**1 · Your code.** Scroll through it. Say what each part does.
+
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
 >
-> The agent's strategy is …
+> I built it using this code: ______.
 >
-> The hardest part of building was …
+> In this code I used ______.
 >
-> The hardest part of the code was …
+> The hardest part was ______.
 >
-> To fix it, I …
->
-> I am most proud of …
+> That part was hard because ______.
 
-<div class="write-space tall" style="min-height: 340px"></div>
-
----
-
-## 7 · Record Your Walkthrough 🎥
-
-Film on your phone while the agent runs. Teach it like the viewer has never seen it. Use these words: **cube**, **floor**, **lever**, **door**, **strategy**.
-
-> 1. Show the cube from outside, then inside.
-> 2. Point out the start, goal, door, and lever.
-> 3. Run your code and follow the agent to the goal.
-> 4. Read your most important loop out loud and say what it does.
-> 5. Say what you learned across the 8 weeks.
-
-**Plan what you will say below. Read from it while filming.**
+**Write your lines here, then say them in your video.**
 
 <div class="write-space tall" style="min-height: 340px"></div>
 
@@ -157,4 +147,4 @@ Film on your phone while the agent runs. Teach it like the viewer has never seen
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + your video to teacher on KakaoTalk.

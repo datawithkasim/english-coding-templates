@@ -2,7 +2,7 @@
 
 **Topic:** Two Pistons + AND · **Course:** Maze Madness · **Level:** Extension (Beginner) · **Time:** about 30 minutes
 
-The agent walks a **redstone trail**. It flips a **lever** to open a **piston** gate. Get it to the end.
+The agent walks a **redstone trail** and flips a **lever** to open a **piston** gate. Get it to the end.
 
 ---
 
@@ -43,35 +43,45 @@ if redstone left AND redstone ahead:
 
 ## 3 · Fill the Gap ✏️
 
-Turn left only when **both** are true. Pick the word.
+Turn left only when **both** are true.
 
 ```
 if redstone left ____ redstone ahead:
     turn left
 ```
 
-**Word bank:** `AND` · `OR`
-
-**Write it:**
-
-<div class="write-space short"></div>
+**Missing word? Circle one:** AND · OR
 
 ---
 
-## 4 · Finish the Maze 📸
+## 4 · Show Your Work 📸🎥
 
 Open **M002 EXT 2**. Type `run`. Watch the agent. Goal: reach the end, past both pistons. Stuck? Run again.
 
-Send a photo or video of the agent at the goal. Write 2 short lines.
+Record **one video** (a phone is fine). Show two things:
 
-> The maze had two pistons, so the agent had to …
+**1 · Your code.** Scroll through it. Say what each part does.
+
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
 >
-> AND means the agent needs …
+> I built it using this code: ______.
+>
+> In this code I used ______.
+>
+> The hardest part was ______.
+>
+> That part was hard because ______.
 
-<div class="write-space tall" style="min-height: 240px"></div>
+**Write your lines here, then say them in your video.**
+
+<div class="write-space tall" style="min-height: 340px"></div>
 
 ---
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + your video to teacher on KakaoTalk.

@@ -8,7 +8,7 @@ A **nested loop** is a loop inside another loop. The inner loop builds one side;
 
 ## 1 · Predict 🔮
 
-Read the steps. Before you imagine the agent doing it, circle or write your answer.
+Read the steps. Circle your answer.
 
 ```
 repeat 4 times:
@@ -20,9 +20,7 @@ repeat 4 times:
 
 **What shape does this make on the ground? Circle one:** line · square · tower
 
-**How many sides does it have?**
-
-<div class="write-space short"></div>
+**How many sides? Circle one:** 3 · 4 · 5
 
 ```
 repeat 3 times:
@@ -30,15 +28,15 @@ repeat 3 times:
     move forward
 ```
 
-**This is only the inner loop, on its own. What does it build? Circle one:** one side · a whole square
+**This is only the inner loop. What does it build? Circle one:** one side · a whole square
 
 ---
 
 ## 2 · Find the Difference 🐛
 
-Each pair shows clean steps first, then a broken version of the same idea. Circle what's different and write one short sentence about the bug.
+Clean steps first, then a buggy version. Circle the bug.
 
-**Pair A** — The agent should build a square: 4 sides, turning after each side.
+**Pair A** — Should build a square: 4 sides, turning after each side.
 
 ```
 # clean
@@ -58,11 +56,9 @@ repeat 4 times:
         turn right
 ```
 
-**What is wrong? Look at where `turn right` sits.**
+**What is wrong? Circle one:** it turns after every block · it never turns · it turns only once
 
-<div class="write-space short"></div>
-
-**Pair B** — The agent should build a square with a nested loop, not just one line.
+**Pair B** — Should build a square with a nested loop, not just one line.
 
 ```
 # clean
@@ -81,15 +77,13 @@ repeat 3 times:
 turn right
 ```
 
-**What is wrong? How much of the square does the buggy code build?**
-
-<div class="write-space short"></div>
+**What is wrong? Circle one:** it builds only one side · it builds the whole square · it builds two squares
 
 ---
 
 ## 3 · Fill the Gap ✏️
 
-The agent should build a square. After each side, it must turn. One line is missing. Fill it in using the word bank.
+Build a square. After each side, it must turn. Fill the missing line.
 
 ```
 repeat 4 times:
@@ -99,44 +93,38 @@ repeat 4 times:
     ____________
 ```
 
-**Word bank:** `turn right` · `move up by 1` · `place block down`
-
-**Write the missing line:**
-
-<div class="write-space short"></div>
+**Missing line? Circle one:** turn right · move up by 1 · place block down
 
 ---
 
-## 4 · Tell Me What You Built 📸
+## 4 · Show Your Work 📸🎥
 
 Now switch to your homework world. Build a **4×4 square floor** using a nested loop. When you finish, come back here.
 
-Send a photo or video of your floor, then explain what you did. Use these sentence starters — write 2 or 3 sentences.
+Record **one video** (a phone is fine). Show two things:
 
-> My outer loop repeated … times.
+**1 · Your code.** Scroll through it. Say what each part does.
+
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
 >
-> My inner loop did …
+> I built it using this code: ______.
 >
-> The hardest part was …
+> In this code I used ______.
+>
+> The hardest part was ______.
+>
+> That part was hard because ______.
 
-<div class="write-space tall" style="min-height: 240px"></div>
+**Write your lines here, then say them in your video.**
 
----
-
-## 5 · Record Your Walkthrough 🎥
-
-Take a video on your phone (or a parent's phone) and show your square. Talk like you are teaching a friend. Try to use these words: **nested loop**, **outer**, **inner**, **repeat**.
-
-> 1. Show what your nested loop built.
-> 2. Read the outer loop and the inner loop out loud.
-> 3. Show one bug you hit and how you fixed it.
-
-**Write what you will say in your video.** You can read from it while filming.
-
-<div class="write-space tall" style="min-height: 240px"></div>
+<div class="write-space tall" style="min-height: 340px"></div>
 
 ---
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + your video to teacher on KakaoTalk.

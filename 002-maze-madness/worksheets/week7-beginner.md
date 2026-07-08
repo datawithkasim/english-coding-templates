@@ -28,8 +28,6 @@ Draw a line. Match each word to its meaning.
 | piston | you flip it ON or OFF |
 | gap | it pushes a block |
 
-<div class="write-space short"></div>
-
 ---
 
 ## 3 · Fill One Blank ✏️
@@ -43,28 +41,38 @@ otherwise:
     move forward
 ```
 
-**Word bank:** `gap` · `grass` · `friend`
-
-**Write the word:**
-
-<div class="write-space short"></div>
+**Missing word? Circle one:** gap · grass · friend
 
 ---
 
-## 4 · Build It 📸
+## 4 · Show Your Work 📸🎥
 
 Open your homework world. Walk the agent to the lever. Flip it. Cross while the path is open. Reach the goal.
 
-Send a photo or video of the agent at the end. Then finish these lines.
+Record **one video** (a phone is fine). Show two things:
 
-> I flipped the lever to …
+**1 · Your code.** Scroll through it. Say what each part does.
+
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
 >
-> Then the agent …
+> I built it using this code: ______.
+>
+> In this code I used ______.
+>
+> The hardest part was ______.
+>
+> That part was hard because ______.
 
-<div class="write-space tall" style="min-height: 240px"></div>
+**Write your lines here, then say them in your video.**
+
+<div class="write-space tall" style="min-height: 340px"></div>
 
 ---
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + your video to teacher on KakaoTalk.

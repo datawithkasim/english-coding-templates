@@ -1,0 +1,140 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head><meta charset='utf-8'>
+<title>🗿 Builder Basics — The Impossible Statue (Extension)</title>
+<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
+<style>
+@page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
+div.WordSection1 { page: WordSection1; }
+body { font-family: "Segoe UI", Arial, sans-serif; font-size: 11.5pt; color: #1a1a2e; line-height: 1.5; }
+h1 { font-size: 21pt; color: #6b4ee6; margin: 4px 0 6px; }
+h2 { font-size: 15pt; color: #6b4ee6; border-top: 1px solid #dddddd; padding-top: 8px; margin: 18px 0 10px; }
+h3, h4 { font-size: 11.5pt; margin: 12px 0 6px; }
+p { margin: 7px 0; }
+.brand { font-size: 10.5pt; font-weight: bold; color: #ff7849; letter-spacing: .06em;
+         border-bottom: 2px solid #ff7849; padding-bottom: 6px; margin-bottom: 14px; }
+table { border-collapse: collapse; margin: 10px 0; }
+th, td { border: 1px solid #c8c8c8; padding: 4px 9px; text-align: center; }
+th { background: #f3eefc; color: #6b4ee6; font-weight: bold; }
+pre { font-family: Consolas, "Courier New", monospace; font-size: 10.5pt; background: #f4f4f5;
+      border: 1px solid #dddddd; padding: 8px 10px; white-space: pre-wrap; }
+pre code { background: transparent; color: #1a1a2e; }
+code { font-family: Consolas, "Courier New", monospace; background: #fff1e8; color: #d6531f; padding: 0 3px; }
+blockquote { border-left: 3px solid #ff7849; background: #fff6ef; padding: 8px 12px;
+             color: #6a3a1c; margin: 9px 0; }
+ul, ol { margin: 7px 0 7px 26px; }
+p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
+.footer { color: #999999; font-size: 8.5pt; text-align: center; margin-top: 18px;
+          border-top: 1px solid #eeeeee; padding-top: 6px; }
+.footer b { color: #ff7849; }
+</style></head>
+<body><div class=WordSection1>
+<div class="brand">📚 ENGLISH CODING · 영어코딩</div>
+<h1>🗿 Builder Basics — The Impossible Statue (Extension)</h1>
+<p><strong>Topic:</strong> Place + Move, On and Off · <strong>Course:</strong> Builder Basics · <strong>Type:</strong> Extension Activity · <strong>Time:</strong> about 45 minutes</p>
+<blockquote>
+<p>🧩 This is a bonus challenge, not a weekly lesson. Try it once you are comfortable placing blocks and moving the agent.</p>
+</blockquote>
+<hr />
+<h2>1 · Read the World 🔍</h2>
+<p>Open the <strong>Impossible Statue</strong> world. It is a puzzle. Read the markers:</p>
+<ul>
+<li>🟥 <strong>Red blocks</strong> — your <strong>start</strong> and <strong>end</strong> points.</li>
+<li>⬛ <strong>Crying obsidian</strong> — <strong>build</strong> here. Every dark spot is a block to place.</li>
+<li>⬜ <strong>Glass</strong> — a <strong>trap</strong>. Move through these spots but place <strong>nothing</strong>.</li>
+</ul>
+<p><strong>In your own words, what is the puzzle asking you to do?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Walk the path with your eyes from the red start block to the red end block. How many blocks should you place, and how many spots should you skip?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>2 · The Big Idea: Place On / Place Off 💡</h2>
+<p>The agent moves in a straight line, but should <strong>not</strong> place a block on every step. Placing is <strong>on</strong> at obsidian spots and <strong>off</strong> at glass spots.</p>
+<p>So your code mixes <code>move forward</code> with <code>place block down</code>, and sometimes <code>move forward</code> alone.</p>
+<pre><code>place block down
+move forward
+place block down
+move forward
+move forward
+place block down
+</code></pre>
+<p><strong>Look at the code above. On which steps is placing ON? On which step is it OFF (a skipped spot)?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why can't you just place a block on every single step?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>3 · Plan Your Path ✏️</h2>
+<p>Plan on paper first. Mark each spot in the row <strong>B</strong> (build — place a block) or <strong>S</strong> (skip — move past, no block).</p>
+<blockquote>
+<p>Example: B B S B S S B</p>
+</blockquote>
+<p><strong>Write your row of B and S, in order from the red start to the red end:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p>Turn your plan into agent commands. A <strong>B</strong> spot needs a place <strong>and</strong> a move; an <strong>S</strong> spot needs only a move.</p>
+<p><strong>Write your commands:</strong></p>
+<pre><code>1.
+2.
+3.
+4.
+5.
+6.
+7.
+8.
+</code></pre>
+<hr />
+<h2>4 · Spot the Bug 🐛</h2>
+<p>Each code block should copy the statue, but is broken. Rewrite it, then explain the fix.</p>
+<p><strong>Bug A</strong> — The pattern should be: build, skip, build. (B S B)</p>
+<pre><code>place block down
+place block down
+move forward
+move forward
+place block down
+</code></pre>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug B</strong> — The agent placed a block on a glass (skip) spot. The pattern should be: build, skip, skip, build. (B S S B)</p>
+<pre><code>place block down
+move forward
+place block down
+move forward
+place block down
+move forward
+place block down
+</code></pre>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>5 · Show Your Work 📸🎥</h2>
+<p>Now go to the Impossible Statue world and run your code. Match the crying obsidian exactly: place where it says build, leave the glass spots empty, and finish on the red end block.</p>
+<p>Record <strong>one video</strong> (a phone is fine). Show two things:</p>
+<p><strong>1 · Your code.</strong> Scroll through it. Say what each part does.</p>
+<p><strong>2 · Your build.</strong> Point the camera. Name the parts.</p>
+<p>Fill the blanks:</p>
+<blockquote>
+<p>Today I built ______.</p>
+<p>I built it using this code: ______.</p>
+<p>In this code I used ______.</p>
+<p>The hardest part was ______.</p>
+<p>That part was hard because ______.</p>
+</blockquote>
+<p><strong>Write your lines here, then say them in your video.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your video to teacher on KakaoTalk.</p>
+<div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>
+</div></body></html>

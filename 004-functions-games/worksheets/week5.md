@@ -2,13 +2,13 @@
 
 **Topic:** Your Function Library — Reusable Building Blocks · **Course:** Functions & Games · **Time:** about 45 minutes
 
-This week you collect your best functions into a **library** — a set of reusable building blocks like `build_wall`, `build_tower`, and `clear_area`. Big builds become easy when small functions do the work.
+This week you collect your best functions into a **library** — reusable building blocks like `build_wall`, `build_tower`, and `clear_area`. Big builds become easy when small functions do the work.
 
 ---
 
 ## 1 · Predict 🔮
 
-Read each set of steps. Before you imagine the build happening, write what you think will happen.
+Before you imagine the build happening, write what you think will happen.
 
 ```
 function build_wall(length):
@@ -61,7 +61,7 @@ build_wall(4)
 
 ## 2 · Spot the Bug 🐛
 
-Each block of code below was meant to do something, but it is broken. Read what the code is **supposed** to do, then rewrite it so it works. After that, explain why the original was wrong and why your fix works.
+Each block below is broken. Rewrite it so it works, then explain why the original was wrong and why your fix works.
 
 **Bug A** — The library should have **two different** functions: a stone wall and a glass wall. Right now both functions have the **same name**, so the computer gets confused about which one to use.
 
@@ -136,38 +136,29 @@ build_tower(10)
 
 ---
 
-## 3 · Tell Me What You Built 📸
+## 3 · Show Your Work 📸🎥
 
 Now switch to your homework world. Build something using your own function library — at least one function should call another function. When you finish, come back here.
 
-Send a photo or video of your build, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.
+Record **one video** (a phone is fine). Show two things:
 
-> First, I made a function called …
+**1 · Your code.** Scroll through it. Say what each part does.
+
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
 >
-> I reused it when …
+> I built it using this code: ______.
 >
-> One function called another function when …
+> In this code I used ______.
 >
-> I chose the name … because …
+> The hardest part was ______.
 >
-> One tricky moment was when …
->
-> If I had more time, I would …
+> That part was hard because ______.
 
-<div class="write-space tall" style="min-height: 340px"></div>
-
----
-
-## 4 · Record Your Walkthrough 🎥
-
-Now take a video on your phone (or a parent's phone) while your code builds. Talk through it like you are teaching someone who has never seen it. Try to use these words: **function**, **parameter**, **call**, **reuse**, **name**.
-
-> 1. Show your function library before you run anything.
-> 2. Read each function name out loud and say what it builds.
-> 3. Show one place where a function **calls another function**.
-> 4. Say in your own words why reusing functions is better than copying code.
-
-**Write what you will say in your video.** Use the space below to plan it before you record — you can read from it while filming.
+**Write your lines here, then say them in your video.**
 
 <div class="write-space tall" style="min-height: 340px"></div>
 
@@ -175,4 +166,4 @@ Now take a video on your phone (or a parent's phone) while your code builds. Tal
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + your video to teacher on KakaoTalk.

@@ -4,9 +4,9 @@
 
 > 🧩 This is a bonus challenge, not a weekly lesson. Try it once you are comfortable placing blocks and you want the agent to place a whole line for you.
 
-In Week 2 you placed blocks one at a time. This world has a faster way. When you type `run` in the chat, the agent flips a switch called **place on move** and then walks forward. Your job in this worksheet is to understand the **idea** behind it, not to type any code.
+In Week 2 you placed blocks one at a time. This world has a faster way: type `run` and the agent flips a switch called **place on move**, then walks forward. Understand the **idea** — you won't type any code.
 
-Here is the idea. When **place on move** is **ON**, the agent drops a block on every step it walks — it leaves a **trail** behind it. When the switch is **OFF**, the agent walks the same steps but places nothing, so you get a **gap**. The program turns the switch ON, walks a bit, turns it OFF, walks a bit, then turns it ON again — so the trail comes out with a gap in the middle.
+When **place on move** is **ON**, the agent drops a block on every step — a **trail**. When it is **OFF**, it walks but places nothing — a **gap**. The program flips ON, OFF, then ON again, so the trail comes out with a gap in the middle.
 
 ---
 
@@ -35,7 +35,7 @@ move forward by 4
 
 ## 2 · Trace the Switch 🔢
 
-Walk through the program one move at a time. For each move command, write the switch state and how many blocks that stretch places. Show the count, not just a guess.
+Walk through the program one move at a time. For each move command, write the switch state and how many blocks that stretch places.
 
 | Move command | Switch (ON / OFF) | Blocks placed |
 |--------------|-------------------|---------------|
@@ -53,7 +53,7 @@ Walk through the program one move at a time. For each move command, write the sw
 
 ## 3 · Reason About the Switch 🧠
 
-No code here — just think it through.
+No code here — think it through.
 
 **The trail comes out as one solid line with NO gap. The switch must have been left in the wrong state somewhere. Which line of the program went wrong for that to happen? Explain in one or two sentences.**
 
@@ -79,19 +79,29 @@ The switch decides WHEN the agent places, and the move numbers decide HOW MANY b
 
 ---
 
-## 5 · Build It 📸
+## 5 · Show Your Work 📸🎥
 
 Open the **Trail Maker** world. Type `run` in the chat to watch the agent lay a trail with a gap. Then try your own version from Section 4 — change the move numbers and the ON / OFF switches, and run it again.
 
-When it looks right, send a photo or video to teacher on KakaoTalk. Then explain what you did. Use these starters — write 4 to 6 sentences total.
+Record **one video** (a phone is fine). Show two things:
 
-> When **place on move** was **ON**, the agent …
+**1 · Your code.** Scroll through it. Say what each part does.
+
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
 >
-> When it was **OFF**, the agent …
+> I built it using this code: ______.
 >
-> My gap is … wide because …
+> In this code I used ______.
 >
-> This was faster than Week 2 because …
+> The hardest part was ______.
+>
+> That part was hard because ______.
+
+**Write your lines here, then say them in your video.**
 
 <div class="write-space tall" style="min-height: 340px"></div>
 
@@ -99,4 +109,4 @@ When it looks right, send a photo or video to teacher on KakaoTalk. Then explain
 
 ### Submit ✅
 
-Send this worksheet + a photo or video of your trail to teacher on KakaoTalk.
+Send this worksheet + your video to teacher on KakaoTalk.

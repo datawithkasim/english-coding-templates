@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>🏰 Builder Basics — The Living Village (Extension · Advanced)</title>
+<style>
+@page { size: A4; margin: 18mm 16mm 22mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-family: "Inter", "Segoe UI", system-ui, sans-serif; color: #1a1a2e; }
+body { font-size: 15px; line-height: 1.55; }
+
+.cover { border-bottom: 3px solid #ff7849; padding-bottom: 14px; margin-bottom: 20px; }
+.brand { font-size: 14px; font-weight: 800; color: #ff7849; letter-spacing: .06em; }
+h1 { font-size: 28px; color: #6b4ee6; margin: 8px 0 6px; line-height: 1.25; }
+h2 { font-size: 19px; color: #6b4ee6; margin: 22px 0 12px; padding-top: 10px; border-top: 1px solid #eee; page-break-before: always; }
+section.first h2, h2:first-of-type { border-top: none; padding-top: 0; page-break-before: avoid; }
+h3, h4 { font-size: 15px; margin: 14px 0 8px; color: #1a1a2e; }
+p { margin: 8px 0; }
+strong { color: #1a1a2e; }
+em { color: #555; }
+
+ul, ol { margin: 8px 0 8px 24px; }
+li { margin: 3px 0; }
+
+/* Grids (e.g. pixel-art coordinate grids) render as light graph paper. */
+table { border-collapse: collapse; margin: 12px 0; }
+th, td { border: 1px solid #ddd; padding: 4px 9px; text-align: center; font-size: 14px; }
+th { background: #faf7ff; color: #6b4ee6; font-weight: 700; }
+
+pre {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 13.5px;
+  background: #1e1e2e;
+  color: #b9f6ca;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 10px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  page-break-inside: avoid;
+  line-height: 1.5;
+}
+pre code { background: transparent; padding: 0; color: inherit; }
+code {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  background: #fff1e8;
+  color: #ff7849;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+blockquote {
+  margin: 10px 0;
+  padding: 10px 16px;
+  background: #fff6ef;
+  border-left: 3px solid #ff7849;
+  border-radius: 0 6px 6px 0;
+  color: #6a3a1c;
+}
+
+.write-space {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #ffffff 0,
+    #ffffff 27px,
+    #d4d4d4 27px,
+    #d4d4d4 28px
+  );
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  min-height: 114px;
+  margin: 10px 0 20px;
+  page-break-inside: avoid;
+}
+.write-space.short { min-height: 86px; }
+.write-space.tall { min-height: 170px; }
+
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
+hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
+
+.meta { color: #666; font-size: 13px; margin: 0 0 14px; }
+.answer-lines {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 14px 16px;
+  background: #fafafa;
+  white-space: pre;
+  line-height: 2.2;
+}
+
+footer {
+  position: fixed;
+  bottom: 10mm; left: 16mm; right: 16mm;
+  text-align: center;
+  font-size: 10px;
+  color: #aaa;
+}
+footer b { color: #ff7849; }
+</style>
+</head>
+<body>
+<div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
+<h1>🏰 Builder Basics — The Living Village (Extension · Advanced)</h1>
+<p><strong>Topic:</strong> Bring It All Together · <strong>Course:</strong> Builder Basics · <strong>Level:</strong> Advanced · <strong>Time:</strong> about 90 minutes</p>
+<blockquote>
+<p>🧩 Bonus challenge, after <strong>Complete Your Village</strong>. Here you use <strong>loops</strong>, <strong>variables</strong> for sizes, and <strong>one function you call more than once</strong>.</p>
+</blockquote>
+<h2>1 · The Build 🎯</h2>
+<p>Two houses already stand: the <strong>farm house</strong> 🟨 and a tall house 🟪. Add a <strong>watchtower</strong> on the tall house, then build the other six parts with code.</p>
+<p>Every part must meet its spec:</p>
+<table>
+<thead>
+<tr>
+<th>Part</th>
+<th>Spec</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🗼 Watchtower</td>
+<td>on the tall house, <strong>≥ 4 blocks taller</strong> than it</td>
+</tr>
+<tr>
+<td>🌾 Farm</td>
+<td><strong>2 crop types</strong>, planted in <strong>rows by a loop</strong></td>
+</tr>
+<tr>
+<td>🧱 Fence</td>
+<td><strong>fully encloses</strong> the farm or the animals — no gaps</td>
+</tr>
+<tr>
+<td>💧 Pond</td>
+<td>a dug dip filled with water — measure its width <strong>W</strong></td>
+</tr>
+<tr>
+<td>🐟 Fish</td>
+<td><strong>≥ 3 fish</strong> in the pond</td>
+</tr>
+<tr>
+<td>🌉 Bridge</td>
+<td>spans the pond: <strong>length = W</strong></td>
+</tr>
+<tr>
+<td>🪣 Well</td>
+<td>square rim, water inside</td>
+</tr>
+<tr>
+<td>🐄 Animals</td>
+<td><strong>≥ 4</strong>, inside the fence</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>⚠️ <strong>Rules:</strong> loops for anything repeated · <strong>variables</strong> for sizes · <strong>one function</strong> you call for <strong>2 or more</strong> parts · only animals are spawned, everything else is code.</p>
+</blockquote>
+<h2>2 · Plan the Map 🗺️</h2>
+<p>This is your village from above. 🟨 = farm house, 🟪 = tall house. <strong>x</strong> goes across, <strong>z</strong> goes forward.</p>
+<div style="page-break-inside:avoid;margin:14px 0"><table style="border-collapse:collapse"><tr><th style="font-size:11px;color:#999;text-align:center;height:18px;width:44px"></th><th style="font-size:11px;color:#999;text-align:center;height:18px;width:44px">1</th><th style="font-size:11px;color:#999;text-align:center;height:18px;width:44px">2</th><th style="font-size:11px;color:#999;text-align:center;height:18px;width:44px">3</th><th style="font-size:11px;color:#999;text-align:center;height:18px;width:44px">4</th><th style="font-size:11px;color:#999;text-align:center;height:18px;width:44px">5</th><th style="font-size:11px;color:#999;text-align:center;height:18px;width:44px">6</th></tr><tr><th style="font-size:11px;color:#999;text-align:center;width:44px">6</th><td style="width:44px;height:44px;border:1px solid #ccc"></td><td style="width:44px;height:44px;border:1px solid #ccc"></td><td style="width:44px;height:44px;border:1px solid #ccc"></td><td style="width:44px;height:44px;border:1px solid #ccc"></td><td style="width:44px;height:44px;border:1px solid #ccc"></td><td style="width:44px;height:44px;border:1px solid #ccc"></td></tr><tr><th style="font-size:11px;color:#999;text-align:center;width:44px">5</th><td style="width:44px;height:44px;border:1px solid #ccc"></td><td style="width:44px;height:44px;border:1px solid #ccc;text-align:center;font-size:22px">🟪</td><td style="width:44px;height:44px;border:1px solid #ccc"></td><td style="width:44px;height:44px;border:1px solid #ccc"></td><td style="width:44px;height:44px;border:1px solid #ccc"></td><td style="width:44px;height:44px;border:1px solid #ccc"></td></tr><tr><th style="font-size:11px;color:#999;text-align:center;width:44px">4</th><td style="width:44px;height:44px;border:1px solid #ccc"></td><td style="width:44px;height:44px;border:1px solid #ccc"></td><td style="width:44px;height:44px;border:1px solid #ccc"></td><td style="width:44px;height:44px;border:1px solid #ccc"></td><td style="width:44px;height:44px;border:1px solid #ccc"></td><td style="width:44px;height:44px;border:1px solid #ccc"></td></tr><tr><th style="font-size:11px;color:#999;text-align:center;width:44px">3</th><td style="width:44px;height:44px;border:1px solid #ccc"></td><td style="width:44px;height:44px;border:1px solid #ccc"></td><td style="width:44px;height:44px;border:1px solid #ccc"></td><td style="width:44px;height:44px;border:1px solid #ccc"></td><td style="width:44px;height:44px;border:1px solid #ccc;text-align:center;font-size:22px">🟨</td><td style="width:44px;height:44px;border:1px solid #ccc"></td></tr><tr><th style="font-size:11px;color:#999;text-align:center;width:44px">2</th><td style="width:44px;height:44px;border:1px solid #ccc"></td><td style="width:44px;height:44px;border:1px solid #ccc"></td><td style="width:44px;height:44px;border:1px solid #ccc"></td><td style="width:44px;height:44px;border:1px solid #ccc"></td><td style="width:44px;height:44px;border:1px solid #ccc"></td><td style="width:44px;height:44px;border:1px solid #ccc"></td></tr><tr><th style="font-size:11px;color:#999;text-align:center;width:44px">1</th><td style="width:44px;height:44px;border:1px solid #ccc"></td><td style="width:44px;height:44px;border:1px solid #ccc"></td><td style="width:44px;height:44px;border:1px solid #ccc"></td><td style="width:44px;height:44px;border:1px solid #ccc"></td><td style="width:44px;height:44px;border:1px solid #ccc"></td><td style="width:44px;height:44px;border:1px solid #ccc"></td></tr></table></div>
+
+<div class="qa"><p><strong>Draw the other six parts on the map. Write the (x, z) corner where each one starts.</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Bridge length = pond width W. What is your W, and how did you measure it?</strong></p>
+<div class="write-space short"></div></div>
+
+<h2>3 · Loops, Variables, Functions 🔁</h2>
+<div class="qa"><p><strong>The one function you call twice or more — what does it build, and what does it take in?</strong></p>
+<div class="write-space short"></div></div>
+
+<div class="qa"><p><strong>Which sizes are variables? Name two and why.</strong></p>
+<div class="write-space short"></div></div>
+
+<h2>4 · Show Your Work 📸🎥</h2>
+<p>Build all eight parts to spec, then move the agent between them so nothing overlaps.</p>
+<p>Record <strong>one video</strong> (a phone is fine). Show two things:</p>
+<p><strong>1 · Your code.</strong> Scroll through it. Say what each part does.</p>
+<p><strong>2 · Your build.</strong> Point the camera. Name the parts.</p>
+<p>Fill the blanks:</p>
+<blockquote>
+<p>Today I built ______.</p>
+<p>I built it using this code: ______.</p>
+<p>In this code I used ______.</p>
+<p>The hardest part was ______.</p>
+<p>That part was hard because ______.</p>
+</blockquote>
+<div class="qa"><p><strong>Write your lines here, then say them in your video.</strong></p>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your video to teacher on KakaoTalk.</p>
+</body>
+</html>

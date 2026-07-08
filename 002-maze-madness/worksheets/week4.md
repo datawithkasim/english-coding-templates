@@ -2,18 +2,18 @@
 
 **Topic:** AND and OR Conditions — Smarter Decisions · **Course:** Maze Madness · **Level:** Advanced · **Time:** about 55 minutes
 
-Last week your agent used `and` (both true). This week you add `or` (at least one true) and combine them in one maze.
+New this week: `or` (at least one true). Combine it with `and` in one maze.
 
 - `and` → the action runs **only when both** conditions are true.
 - `or` → the action runs **when at least one** condition is true.
 
-Detect walls with `agent.detect(BLOCK, FORWARD)`. It returns `True` when a block is there. Use `not` for an open path.
+`agent.detect(BLOCK, FORWARD)` is `True` when a block is ahead. Use `not` for an open path.
 
 ---
 
 ## 1 · Predict 🔮
 
-Read each block. Write what the agent does before you picture it.
+Write what the agent does.
 
 ```python
 if agent.detect(BLOCK, FORWARD) and agent.detect(BLOCK, RIGHT):
@@ -51,7 +51,7 @@ At a front-and-right corner, what runs? At an open junction, which branch runs?
 
 ## 2 · Trace the Truth 🔎
 
-Fill the table. Write the branch that runs for each case.
+Write the branch that runs for each case.
 
 ```python
 if agent.detect(BLOCK, FORWARD) and agent.detect(BLOCK, RIGHT):
@@ -74,7 +74,7 @@ else:
 
 ## 3 · Spot and Fix Bugs 🐛
 
-Read what each block **should** do, then rewrite it. Explain the fix.
+Rewrite each block. Explain the fix.
 
 **Bug A** — Turn left **only** at a dead-end corner (wall ahead AND wall on right). Right now it turns at any wall.
 
@@ -139,38 +139,29 @@ Write a `while True` loop that:
 
 ---
 
-## 5 · Finish the Maze 📸
+## 5 · Show Your Work 📸🎥
 
 Switch to your homework world. Solve the maze using **both** an `and` condition and an `or` condition. Come back when the agent reaches the end.
 
-Send a photo or video of the agent at the end. Write 4 to 6 sentences.
+Record **one video** (a phone is fine). Show two things:
 
-> First, I …
+**1 · Your code.** Scroll through it. Say what each part does.
+
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
 >
-> I used **and** when …
+> I built it using this code: ______.
 >
-> I used **or** when …
+> In this code I used ______.
 >
-> One tricky moment was …
+> The hardest part was ______.
 >
-> To fix it, I …
->
-> If I had more time, I would …
+> That part was hard because ______.
 
-<div class="write-space tall" style="min-height: 340px"></div>
-
----
-
-## 6 · Record Your Walkthrough 🎥
-
-Film the maze on your phone. Teach someone who has never seen it. Use these words: **and**, **or**, **condition**, **both**, **either**.
-
-> 1. Show the start, then run your code.
-> 2. Read each `and` block and `or` block out loud. Say what makes it run.
-> 3. Show one bug you hit and how you fixed it.
-> 4. Say in your own words how **and** is different from **or**.
-
-Plan your words below before you film. You can read from it while recording.
+**Write your lines here, then say them in your video.**
 
 <div class="write-space tall" style="min-height: 340px"></div>
 
@@ -178,4 +169,4 @@ Plan your words below before you film. You can read from it while recording.
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + your video to teacher on KakaoTalk.

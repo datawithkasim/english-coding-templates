@@ -2,7 +2,7 @@
 
 **Topic:** All 5 Redstone AND Rules + Single Checks · **Course:** Maze Madness · **Level:** Extension (Advanced) · **Time:** about 60 minutes
 
-This is an **extension challenge** for students who finished Week 3. It uses the **same Week 3 world**. Your target is the **hardest maze** — the big one **your teacher will show you a picture of**: tall clear-glass frames packed with red redstone and a diamond block at the end. Walk the world and find it. This time you write the **whole solver** — all five **AND** rules at once, plus the single checks. Every choice reads **redstone**.
+Same **Week 3 world**. Your target is the **hardest maze** your teacher shows a picture of: tall clear-glass frames packed with redstone and a diamond block at the end. This time you write the **whole solver** — all five **AND** rules plus the single checks. Every choice reads **redstone**.
 
 > **The redstone contract**
 >
@@ -89,7 +89,7 @@ while True:
 
 ## 3 · Spot the Bug 🐛
 
-Each block is broken. Read its goal, rewrite it, then explain the fix.
+Read each block's goal, rewrite it, then explain the fix.
 
 **Bug A** — Rule #1: turn right **only when redstone is left AND below**. This checks redstone left only, so it turns on a plain left marker that has no redstone below it.
 
@@ -162,7 +162,7 @@ agent.move(FORWARD, 1)
 
 ## 5 · Make It Your Own 🛠️
 
-Open the **Week 3** world and find the hardest maze from the picture. Start your agent at its entrance, then run your solver. Change **one thing**, predict, then test.
+Open the **Week 3** world and find the hardest maze from the picture. Run your solver, then change **one thing**, predict, and test.
 
 Pick **one** (or your own):
 
@@ -184,36 +184,29 @@ Pick **one** (or your own):
 
 ---
 
-## 6 · Finish the Maze 📸
+## 6 · Show Your Work 📸🎥
 
-Run your solver and get the agent to the **diamond block** goal. See where it sticks, fix a rule, run again. Send a photo or video of the agent at the goal, then explain. Write 4 to 6 sentences.
+Run your solver and get the agent to the **diamond block** goal. See where it sticks, fix a rule, run again.
 
-> My solver used **AND** because …
+Record **one video** (a phone is fine). Show two things:
+
+**1 · Your code.** Scroll through it. Say what each part does.
+
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
 >
-> The rule that reads two redstones at once is …
+> I built it using this code: ______.
 >
-> A tile with only one redstone made the agent …
+> In this code I used ______.
 >
-> The change I made in section 5 was …
+> The hardest part was ______.
 >
-> The hardest rule to get right was …
->
-> If I had more time, I would …
+> That part was hard because ______.
 
-<div class="write-space tall" style="min-height: 340px"></div>
-
----
-
-## 7 · Record Your Walkthrough 🎥
-
-Film the agent solving the maze on your phone. Teach it like the viewer has never seen it. Try these words: **detect**, **redstone**, **AND**, **both**, **rule**, **loop**.
-
-> 1. Show the redstone in the maze before you start.
-> 2. Type `run` and show the agent following your rules.
-> 3. Read one `if … and …` rule out loud and say what makes it fire.
-> 4. Show one tile where only one redstone was there, so no AND rule ran.
-
-**Write what you will say. Plan it here first — read from it while filming.**
+**Write your lines here, then say them in your video.**
 
 <div class="write-space tall" style="min-height: 340px"></div>
 
@@ -221,4 +214,4 @@ Film the agent solving the maze on your phone. Teach it like the viewer has neve
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + your video to teacher on KakaoTalk.

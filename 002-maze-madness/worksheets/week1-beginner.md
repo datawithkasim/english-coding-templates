@@ -15,9 +15,7 @@ while no wall ahead:
 
 **When does the agent stop? Circle one:** after 3 steps · at the wall · never
 
-**Why? One word:**
-
-<div class="write-space short"></div>
+**Why? Circle one:** a wall · it is tired · time is up
 
 ---
 
@@ -42,28 +40,38 @@ while ____ wall ahead:
     move forward
 ```
 
-**Word bank:** `no` · `big` · `one`
-
-**Missing word:**
-
-<div class="write-space short"></div>
+**Missing word? Circle one:** no · big · one
 
 ---
 
-## 4 · Finish the Maze 📸
+## 4 · Show Your Work 📸🎥
 
 Open your homework world. Use a while loop. Move the agent down the straight maze to the wall.
 
-Send a photo OR video of the agent at the wall. Then write.
+Record **one video** (a phone is fine). Show two things:
 
-> My loop checked …
+**1 · Your code.** Scroll through it. Say what each part does.
+
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
 >
-> The agent stopped because …
+> I built it using this code: ______.
+>
+> In this code I used ______.
+>
+> The hardest part was ______.
+>
+> That part was hard because ______.
 
-<div class="write-space tall" style="min-height: 240px"></div>
+**Write your lines here, then say them in your video.**
+
+<div class="write-space tall" style="min-height: 340px"></div>
 
 ---
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + your video to teacher on KakaoTalk.

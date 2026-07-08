@@ -1,0 +1,150 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head><meta charset='utf-8'>
+<title>🧩 M002 Extension 4 — Complete the Maze</title>
+<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
+<style>
+@page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
+div.WordSection1 { page: WordSection1; }
+body { font-family: "Segoe UI", Arial, sans-serif; font-size: 11.5pt; color: #1a1a2e; line-height: 1.5; }
+h1 { font-size: 21pt; color: #6b4ee6; margin: 4px 0 6px; }
+h2 { font-size: 15pt; color: #6b4ee6; border-top: 1px solid #dddddd; padding-top: 8px; margin: 18px 0 10px; }
+h3, h4 { font-size: 11.5pt; margin: 12px 0 6px; }
+p { margin: 7px 0; }
+.brand { font-size: 10.5pt; font-weight: bold; color: #ff7849; letter-spacing: .06em;
+         border-bottom: 2px solid #ff7849; padding-bottom: 6px; margin-bottom: 14px; }
+table { border-collapse: collapse; margin: 10px 0; }
+th, td { border: 1px solid #c8c8c8; padding: 4px 9px; text-align: center; }
+th { background: #f3eefc; color: #6b4ee6; font-weight: bold; }
+pre { font-family: Consolas, "Courier New", monospace; font-size: 10.5pt; background: #f4f4f5;
+      border: 1px solid #dddddd; padding: 8px 10px; white-space: pre-wrap; }
+pre code { background: transparent; color: #1a1a2e; }
+code { font-family: Consolas, "Courier New", monospace; background: #fff1e8; color: #d6531f; padding: 0 3px; }
+blockquote { border-left: 3px solid #ff7849; background: #fff6ef; padding: 8px 12px;
+             color: #6a3a1c; margin: 9px 0; }
+ul, ol { margin: 7px 0 7px 26px; }
+p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
+.footer { color: #999999; font-size: 8.5pt; text-align: center; margin-top: 18px;
+          border-top: 1px solid #eeeeee; padding-top: 6px; }
+.footer b { color: #ff7849; }
+</style></head>
+<body><div class=WordSection1>
+<div class="brand">📚 ENGLISH CODING · 영어코딩</div>
+<h1>🧩 M002 Extension 4 — Complete the Maze</h1>
+<p><strong>Topic:</strong> Add Two AND Conditions · <strong>Course:</strong> Maze Madness · <strong>Level:</strong> Extension (Beginner) · <strong>Time:</strong> about 30 minutes</p>
+<p>The agent follows redstone with <strong>four rules</strong>, but gets <strong>stuck</strong> at two spots where two signals are on at once. Add your own <strong>AND</strong> rule there.</p>
+<hr />
+<h2>1 · The Four Rules 🎛️</h2>
+<p>Each rule sees <strong>one</strong> signal and does <strong>one</strong> thing.</p>
+<pre><code>if redstone on the LEFT:
+    turn RIGHT
+if redstone on the RIGHT:
+    turn LEFT
+if redstone BELOW:
+    move UP
+if redstone ABOVE:
+    move DOWN
+</code></pre>
+<p><strong>Draw a line to match. You will reuse these.</strong></p>
+<table>
+<thead>
+<tr>
+<th>Signal</th>
+<th></th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>redstone left</td>
+<td>→</td>
+<td>move up</td>
+</tr>
+<tr>
+<td>redstone below</td>
+<td>→</td>
+<td>turn right</td>
+</tr>
+<tr>
+<td>redstone above</td>
+<td>→</td>
+<td>turn left</td>
+</tr>
+<tr>
+<td>redstone right</td>
+<td>→</td>
+<td>move down</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>2 · AND means BOTH 🧠</h2>
+<p><strong>AND</strong> is true only when <strong>both</strong> are true.</p>
+<pre><code>if redstone LEFT AND redstone BELOW:
+    turn right
+    move up
+</code></pre>
+<p><strong>Left on, but NOT below. Is the AND true? Circle one:</strong> yes · no</p>
+<p><strong>Left on AND below on. Is the AND true? Circle one:</strong> yes · no</p>
+<p><strong>An AND with two signals needs how many actions? Circle one:</strong> one · two · three</p>
+<hr />
+<h2>3 · Look at the Stuck Spots 🔍</h2>
+<p>Open the <strong>M002 Complete the Maze</strong> world and type <code>run</code>. The agent stops at <strong>two</strong> spots. Look around each one.</p>
+<p><strong>Tick the signals you see.</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>left</th>
+<th>right</th>
+<th>below</th>
+<th>above</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Stuck spot 1</strong></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Stuck spot 2</strong></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>4 · Write Your Two AND Rules ✏️</h2>
+<p>Use the signals you ticked and the actions from section 1.</p>
+<p><strong>Stuck spot 1 — fill the blanks:</strong></p>
+<pre><code>if redstone ______ AND redstone ______:
+    ______________
+    ______________
+</code></pre>
+<p><strong>Stuck spot 2 — write the whole rule:</strong></p>
+<hr />
+<h2>5 · Show Your Work 📸🎥</h2>
+<p>Type <code>run</code>. The goal is to reach the <strong>very end</strong>. If it sticks, fix your AND rules and run again.</p>
+<p>Record <strong>one video</strong> (a phone is fine). Show two things:</p>
+<p><strong>1 · Your code.</strong> Scroll through it. Say what each part does.</p>
+<p><strong>2 · Your build.</strong> Point the camera. Name the parts.</p>
+<p>Fill the blanks:</p>
+<blockquote>
+<p>Today I built ______.</p>
+<p>I built it using this code: ______.</p>
+<p>In this code I used ______.</p>
+<p>The hardest part was ______.</p>
+<p>That part was hard because ______.</p>
+</blockquote>
+<p><strong>Write your lines here, then say them in your video.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your video to teacher on KakaoTalk.</p>
+<div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>
+</div></body></html>

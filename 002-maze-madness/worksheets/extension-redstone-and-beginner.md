@@ -2,7 +2,7 @@
 
 **Topic:** AND — two redstones both true · **Course:** Maze Madness · **Level:** Extension (Beginner) · **Time:** about 30 minutes
 
-Same **Week 3 world**. Find the **hardest maze** — the big one **your teacher will show you a picture of**, packed with redstone. The agent reads **redstone**. Some tiles have **two** redstones. Then the agent needs **both** to be true — an **AND**. Type `run` to start it.
+Same **Week 3 world**. Find the **hardest maze**, the big one **your teacher shows a picture of**, packed with redstone. Some tiles have **two** redstones, so the agent needs **both** true: an **AND**. Type `run` to start.
 
 ---
 
@@ -37,11 +37,9 @@ redstone on left AND redstone below:
 
 Redstone on left. Nothing below. **Does it run? Circle one:** yes · no
 
-<div class="write-space short"></div>
 
 Redstone on left AND redstone below. **Does it run? Circle one:** yes · no
 
-<div class="write-space short"></div>
 
 ---
 
@@ -61,9 +59,7 @@ redstone on left:
     move up 1, turn right
 ```
 
-The buggy one runs even when there is **no** redstone below. **Why is that wrong?**
-
-<div class="write-space short"></div>
+The buggy one runs even when there is **no** redstone below. **Why is that wrong? Circle one:** it needs both redstones · it needs no redstone · it turns twice
 
 ---
 
@@ -76,28 +72,38 @@ redstone on left ____ redstone below:
     move up 1, turn right
 ```
 
-**Word bank:** `AND` · `IF` · `OR`
-
-**Write it:**
-
-<div class="write-space short"></div>
+**Missing word? Circle one:** AND · IF · OR
 
 ---
 
-## 5 · Show Me 📸
+## 5 · Show Your Work 📸🎥
 
 Open the Week 3 world. Find the maze from the picture. Type `run`. Watch the agent reach the **diamond** goal.
 
-Send a photo OR video of the agent at the goal. Write 2 short lines.
+Record **one video** (a phone is fine). Show two things:
 
-> The agent moved when there were two redstones: left AND …
+**1 · Your code.** Scroll through it. Say what each part does.
+
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
 >
-> One tricky tile was …
+> I built it using this code: ______.
+>
+> In this code I used ______.
+>
+> The hardest part was ______.
+>
+> That part was hard because ______.
 
-<div class="write-space tall" style="min-height: 240px"></div>
+**Write your lines here, then say them in your video.**
+
+<div class="write-space tall" style="min-height: 340px"></div>
 
 ---
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + your video to teacher on KakaoTalk.

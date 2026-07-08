@@ -13,18 +13,14 @@ if wall ahead AND wall on right:
     turn left
 ```
 
-Wall ahead. Right is open. Turn? **yes · no**
-
-<div class="write-space short"></div>
+**Wall ahead. Right is open. Turn? Circle one:** yes · no
 
 ```
 if no wall ahead OR no wall below:
     move forward
 ```
 
-Ahead blocked. Below open. Move? **yes · no**
-
-<div class="write-space short"></div>
+**Ahead blocked. Below open. Move? Circle one:** yes · no
 
 ---
 
@@ -38,9 +34,7 @@ if wall ahead OR wall on right:
     turn left
 ```
 
-It turns too often. What word is wrong?
-
-<div class="write-space short"></div>
+**It turns too often. Which word is wrong? Circle one:** OR · left · turn
 
 ---
 
@@ -53,26 +47,38 @@ if no wall ahead ____ no wall below:
     move forward
 ```
 
-Word bank: `OR` · `AND` · `NOT`
-
-<div class="write-space short"></div>
+**Missing word? Circle one:** OR · AND · NOT
 
 ---
 
-## 4 · Finish + Show 📸
+## 4 · Show Your Work 📸🎥
 
 Go to your homework world. Use one `OR`. Finish the maze.
 
-Send a photo or video of the agent at the end. Write 2 short lines.
+Record **one video** (a phone is fine). Show two things:
 
-> I used **OR** when …
+**1 · Your code.** Scroll through it. Say what each part does.
+
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
 >
-> One hard part was …
+> I built it using this code: ______.
+>
+> In this code I used ______.
+>
+> The hardest part was ______.
+>
+> That part was hard because ______.
 
-<div class="write-space tall" style="min-height: 240px"></div>
+**Write your lines here, then say them in your video.**
+
+<div class="write-space tall" style="min-height: 340px"></div>
 
 ---
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + your video to teacher on KakaoTalk.

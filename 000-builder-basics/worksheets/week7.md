@@ -6,7 +6,7 @@
 
 ## 1 · Predict 🔮
 
-Read each set of steps. Before you imagine the agent doing it, write what you think will happen.
+Read each set of steps. Write what you think will happen.
 
 ```
 set size to 3
@@ -61,7 +61,7 @@ turn left
 
 ## 2 · Spot the Bug 🐛
 
-Each block of code below was meant to do something, but it is broken. Read what the code is **supposed** to do, then rewrite it so it works. After that, explain why the original was wrong and why your fix works.
+Each code block is broken. Read what it should do, rewrite it, then explain why the original was wrong.
 
 **Bug A** — The agent is supposed to build the **house walls first**, then the **farm patch beside it** (two clear stages).
 
@@ -135,38 +135,29 @@ repeat 5 times:
 
 ---
 
-## 3 · Tell Me What You Built 📸
+## 3 · Show Your Work 📸🎥
 
 Now switch to your homework world. Build your farm house — small house with walls and roof, plus a farm patch beside it. Try making the farm bigger (5×5) **or** add a path between the house and farm. When you finish, come back here.
 
-Send a photo or video of your farm house, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.
+Record **one video** (a phone is fine). Show two things:
 
-> First, I built the house walls by …
+**1 · Your code.** Scroll through it. Say what each part does.
+
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
 >
-> Then I built the roof by …
+> I built it using this code: ______.
 >
-> To get to the farm spot, the agent had to …
+> In this code I used ______.
 >
-> The farm patch is … blocks wide.
+> The hardest part was ______.
 >
-> The hardest part was …
->
-> If I had more time, I would …
+> That part was hard because ______.
 
-<div class="write-space tall" style="min-height: 340px"></div>
-
----
-
-## 4 · Record Your Walkthrough 🎥
-
-Now take a video on your phone (or a parent's phone) while you walk the camera around your farm house. Talk through it like you are teaching someone who has never seen it. Try to use these words: **walls**, **roof**, **farm**, **patch**, **stage**.
-
-> 1. Show the house, then walk over to the farm patch.
-> 2. Read your house loops and farm loops out loud and say what each stage does.
-> 3. Show one bug you hit and how you fixed it.
-> 4. Say how big the house is and how big the farm is.
-
-**Write what you will say in your video.** Use the space below to plan it before you record — you can read from it while filming.
+**Write your lines here, then say them in your video.**
 
 <div class="write-space tall" style="min-height: 340px"></div>
 
@@ -174,4 +165,4 @@ Now take a video on your phone (or a parent's phone) while you walk the camera a
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + your video to teacher on KakaoTalk.

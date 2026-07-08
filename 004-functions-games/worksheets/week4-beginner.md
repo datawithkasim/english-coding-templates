@@ -2,13 +2,11 @@
 
 **Topic:** Player Events · **Course:** Functions & Games · **Level:** Beginner · **Time:** about 30 minutes
 
-This week your code reacts to **you**, the player. An **event** like `on player walk:` runs by itself when the player does something — perfect for traps and rewards.
+This week your code reacts to **you**, the player. An **event** like `on player walk:` runs by itself when the player does something.
 
 ---
 
 ## 1 · Predict 🔮
-
-Read the steps. Before you imagine it happening, circle or write your answer.
 
 ```
 on player walk:
@@ -18,22 +16,18 @@ on player walk:
 
 **The player walks onto a gold block. Does the message appear? Circle one:** yes · no
 
-**Why?**
-
-<div class="write-space short"></div>
+**Why? Circle one:** the block below is gold · the block below is stone
 
 ```
 on player place block:
     say "You built something!"
 ```
 
-**The player only walks around and places nothing. Does the message appear? Circle one:** yes · no
+**The player walks around and places nothing. Does the message appear? Circle one:** yes · no
 
 ---
 
 ## 2 · Find the Difference 🐛
-
-Each pair shows clean steps first, then a broken version of the same idea. Circle what's different and write one short sentence about the bug.
 
 **Pair A** — The trap should run **by itself** when the player walks, not wait for a chat command.
 
@@ -51,9 +45,7 @@ on chat command "trap":
         say "Trap!"
 ```
 
-**What is wrong? When does the buggy trap run?**
-
-<div class="write-space short"></div>
+**What is wrong? Circle one:** waits for a chat command · runs by itself
 
 **Pair B** — The message should celebrate **placing a block**, so it needs the right event.
 
@@ -69,15 +61,13 @@ on player walk:
     say "Nice building!"
 ```
 
-**What is wrong?**
-
-<div class="write-space short"></div>
+**What is wrong? Circle one:** wrong event, walk not place · wrong message
 
 ---
 
 ## 3 · Fill the Gap ✏️
 
-The message should appear when the player walks onto gold. One word is missing. Fill it in using the word bank.
+One word is missing.
 
 ```
 on player ____:
@@ -85,44 +75,38 @@ on player ____:
         say "Treasure room!"
 ```
 
-**Word bank:** `walk` · `gold` · `say`
-
-**Write the missing word:**
-
-<div class="write-space short"></div>
+**Fill the gap. Circle one:** `walk` · `gold` · `say`
 
 ---
 
-## 4 · Tell Me What You Built 📸
+## 4 · Show Your Work 📸🎥
 
 Now switch to your homework world. Build one trap or one reward that fires with `on player walk:`. When you finish, come back here.
 
-Send a photo or video of your trigger firing, then explain what you did. Use these sentence starters — write 2 or 3 sentences.
+Record **one video** (a phone is fine). Show two things:
 
-> My trigger fires when the player …
+**1 · Your code.** Scroll through it. Say what each part does.
+
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
 >
-> When I stepped on …, my code …
+> I built it using this code: ______.
 >
-> One tricky moment was when …
+> In this code I used ______.
+>
+> The hardest part was ______.
+>
+> That part was hard because ______.
 
-<div class="write-space tall" style="min-height: 240px"></div>
+**Write your lines here, then say them in your video.**
 
----
-
-## 5 · Record Your Walkthrough 🎥
-
-Take a video on your phone (or a parent's phone) while you walk through your world and set off your trigger. Talk like you are teaching a friend. Try to use these words: **event**, **trigger**, **player**.
-
-> 1. Show your world, then start walking.
-> 2. Set off your trigger and read its event line out loud.
-> 3. Say in your own words what an **event** is.
-
-**Write what you will say in your video.** You can read from it while filming.
-
-<div class="write-space tall" style="min-height: 240px"></div>
+<div class="write-space tall" style="min-height: 340px"></div>
 
 ---
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + your video to teacher on KakaoTalk.

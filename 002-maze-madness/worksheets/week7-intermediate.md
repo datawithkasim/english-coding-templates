@@ -2,13 +2,13 @@
 
 **Topic:** Pistons and Mazes · **Course:** Maze Madness · **Level:** Intermediate · **Time:** about 35 minutes
 
-A piston pushes or pulls a block when it gets a redstone signal. A lever sends that signal. Flip the lever, the piston opens a path across a gap, and the agent crosses while the path is open.
+A piston opens a path when a lever powers it. Flip the lever, then cross the gap while the path is open.
 
 ---
 
 ## 1 · Predict 🔮
 
-Read the steps. Write what happens.
+Write what happens.
 
 ```
 move forward
@@ -52,7 +52,7 @@ keep doing forever:
 
 ## 3 · Fill the Code Blank 🧩
 
-Now in real Python. The agent flips the lever only when it sees a gap ahead. Fill the blank.
+The agent flips the lever only when it sees a gap ahead.
 
 ```python
 if not agent.detect(BLOCK, FORWARD):
@@ -90,32 +90,34 @@ agent.interact(...)
 
 ---
 
-## 5 · Build It + Plan Your Video 📸🎥
+## 5 · Show Your Work 📸🎥
 
 Open your homework world. The maze has a gap and a piston that opens it. Walk the agent to the lever, flip it, cross while the path is open, and reach the goal.
 
-Send a photo or video of the agent at the end. Then finish these lines.
+Record **one video** (a phone is fine). Show two things:
 
-> I powered the piston by …
+**1 · Your code.** Scroll through it. Say what each part does.
+
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
 >
-> Once the path opened, the agent …
+> I built it using this code: ______.
 >
-> The hardest part was …
+> In this code I used ______.
+>
+> The hardest part was ______.
+>
+> That part was hard because ______.
 
-<div class="write-space"></div>
+**Write your lines here, then say them in your video.**
 
-Take a phone video while the agent runs. Talk like you are teaching a friend. Use these words: **piston**, **redstone**, **signal**, **gap**.
-
-> 1. Show the gap and the piston.
-> 2. Run your code and show the agent crossing.
-> 3. Say which line opens the path.
-
-**Write what you will say:**
-
-<div class="write-space tall" style="min-height: 240px"></div>
+<div class="write-space tall" style="min-height: 340px"></div>
 
 ---
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + your video to teacher on KakaoTalk.

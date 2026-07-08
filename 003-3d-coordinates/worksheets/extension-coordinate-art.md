@@ -2,7 +2,7 @@
 
 **Topic:** Reading (x, y) · **Course:** 3D Coordinates · **Level:** Extension · **Time:** about 20 minutes
 
-No computer — just a pencil. Count **x** left → right. Count **y** bottom → up. Every square has an address **(x, y)**. Read the address, colour the square.
+No computer — just a pencil. Count **x** left → right, **y** bottom → up. Every square has an address **(x, y)** — read it, colour the square.
 
 ---
 

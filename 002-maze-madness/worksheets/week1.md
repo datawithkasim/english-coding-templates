@@ -2,7 +2,7 @@
 
 **Topic:** Repeat Until a Wall · **Course:** Maze Madness · **Level:** Advanced · **Time:** about 55 minutes
 
-A while loop checks, then runs the body, then checks again. It stops when the check is false.
+A while loop checks, runs the body, then checks again. It stops when the check is false.
 
 ---
 
@@ -78,41 +78,34 @@ Move to the wall, turn right, then move to the next wall.
 
 ---
 
-## 6 · Finish the Maze 📸
+## 6 · Show Your Work 📸🎥
 
 Open your homework world. Use a while loop to drive the agent down the straight maze to the wall.
 
-Send a photo OR video of the agent at the wall. Then write 4-6 sentences.
+Record **one video** (a phone is fine). Show two things:
 
-> First, I read the maze and saw …
+**1 · Your code.** Scroll through it. Say what each part does.
+
+**2 · Your build.** Point the camera. Name the parts.
+
+Fill the blanks:
+
+> Today I built ______.
 >
-> My loop checked …
+> I built it using this code: ______.
 >
-> The agent stopped because …
+> In this code I used ______.
 >
-> The hard part was …
+> The hardest part was ______.
 >
-> A while loop beats many `move` lines because …
+> That part was hard because ______.
 
-<div class="write-space tall" style="min-height: 240px"></div>
+**Write your lines here, then say them in your video.**
 
----
-
-## 7 · Narrate Your Walkthrough 🎥
-
-Record on a phone while the agent runs. Teach it like the viewer is new. Use: **while**, **loop**, **detect**, **wall**, **forward**.
-
-> 1. Show the start. Run your code.
-> 2. Read your loop. Say what makes it stop.
-> 3. Show one bug and your fix.
-> 4. Say why a loop beats many `move` lines.
-
-**Plan your words:**
-
-<div class="write-space tall" style="min-height: 240px"></div>
+<div class="write-space tall" style="min-height: 340px"></div>
 
 ---
 
 ### Submit ✅
 
-Send this worksheet + your walkthrough video to teacher on KakaoTalk.
+Send this worksheet + your video to teacher on KakaoTalk.
