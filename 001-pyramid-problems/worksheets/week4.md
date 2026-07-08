@@ -48,7 +48,7 @@ repeat 4 times:
 
 ## 2 · Spot the Bug 🐛
 
-Each code block below is broken. Read what it should do, rewrite it so it works, then explain why the original was wrong and why your fix works.
+Each code block below is broken. Rewrite it so it works, then explain the fix.
 
 **Bug A** — The agent is supposed to build a **5 × 5 square** on the ground using a nested loop.
 
@@ -106,7 +106,7 @@ move forward
 
 ## 3 · Show Your Work 📸🎥
 
-Now switch to your homework world. Build a **7×7 square floor** using a nested loop (just change your `size` variable to 7). Then stand on the floor and check that you can see the center. When you finish, come back here.
+Switch to your homework world. Build a **7×7 square floor** using a nested loop, then stand on it and check you can see the center.
 
 Record **one video** (a phone is fine). Show two things:
 

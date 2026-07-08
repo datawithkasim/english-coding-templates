@@ -31,7 +31,7 @@ p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
 <div class="brand">📚 ENGLISH CODING · 영어코딩</div>
 <h1>🧊 M003 Week 8 — English Worksheet</h1>
 <p><strong>Topic:</strong> Final — My Own Museum · <strong>Course:</strong> 3D Coordinates · <strong>Time:</strong> about 60 minutes</p>
-<p>This is your big final project — no new commands, every idea from this course in one build. Your museum is a <strong>room</strong> visitors walk into, with <strong>flat pictures</strong> on the walls (2D, x and y) and <strong>solid sculptures</strong> on pedestals (3D, x, y, z). Plan it like an architect: coordinates first, then build.</p>
+<p>This is your big final project — every idea from this course in one build. Your museum is a <strong>room</strong> with <strong>flat pictures</strong> on the walls (2D, x and y) and <strong>solid sculptures</strong> on pedestals (3D, x, y, z).</p>
 <hr />
 <h2>1 · Predict 🔮</h2>
 <p>Read each plan. Write what you think you will see.</p>
@@ -122,11 +122,11 @@ repeat 4 times:
 
 <hr />
 <h2>4 · Show Your Work 📸🎥</h2>
-<p>Now switch to your homework world and build your museum from your blueprint. Check your build against this list:</p>
+<p>Switch to your homework world and build your museum from your blueprint. Check your build against this list:</p>
 <blockquote>
 <p>☐ A <strong>gallery room</strong> with a floor, walls, and a <strong>doorway</strong> to walk through.</p>
-<p>☐ At least <strong>two different flat pictures</strong> on the walls — <strong>2D art</strong>, where only x and y change.</p>
-<p>☐ At least <strong>two sculptures</strong>, each on its <strong>own pedestal</strong> — <strong>3D art</strong>, using x, y, and z.</p>
+<p>☐ <strong>Two different flat pictures</strong> on the walls — <strong>2D art</strong>, where only x and y change.</p>
+<p>☐ <strong>Two sculptures</strong>, each on its <strong>own pedestal</strong> — <strong>3D art</strong>, using x, y, and z.</p>
 <p>☐ The two pedestals <strong>do not overlap</strong>, and each sculpture <strong>rests on top</strong> of its pedestal.</p>
 <p>☐ The museum matches the coordinates on your blueprint.</p>
 </blockquote>

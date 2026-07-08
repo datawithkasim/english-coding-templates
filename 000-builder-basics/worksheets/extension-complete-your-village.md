@@ -17,11 +17,11 @@ By the end, your village must have **all four** of these:
 > 💧 A **small pond**
 > 🌸 A **small flower bed**
 
-There is no fixed size and no map. **You** decide how big each thing is and where it goes. One rule you must not break:
+There is no fixed size and no map — **you** decide how big each thing is and where it goes. One rule you must not break:
 
-> ⚠️ **Everything must be built with code.** No placing blocks by hand — every wall, flower, and drop of water goes down because the agent ran your commands.
+> ⚠️ **Everything must be built with code.** No placing blocks by hand.
 
-**In your own words, what four things must your village have when you finish?**
+**What four things must your village have when you finish?**
 
 <div class="write-space"></div>
 
@@ -33,7 +33,7 @@ There is no fixed size and no map. **You** decide how big each thing is and wher
 
 ## 2 · Plan Before You Build ✏️
 
-A builder plans first. For **each** of the four structures, decide what it is made of and how big. Think about the blocks and whether you need a loop.
+A builder plans first. For **each** of the four structures, decide the blocks, the size, and whether you need a loop.
 
 **House with a roof** — What blocks? How wide and how tall? Where does the roof sit?
 
@@ -71,7 +71,7 @@ Between one structure and the next, the agent has to **walk to a new spot** so n
 
 ## 4 · Show Your Work 📸🎥
 
-Now go to your homework world and build. Run your code for each structure, one at a time, and move the agent between them. Keep going until your village has **the house with a roof, the well, the small pond, and the small flower bed** — all placed by code.
+Go to your homework world and build each structure one at a time, moving the agent between them. Keep going until your village has **the house with a roof, the well, the small pond, and the small flower bed** — all placed by code.
 
 Record **one video** (a phone is fine). Show two things:
 

@@ -44,7 +44,7 @@ repeat 3 times:
 
 ## 2 · Find the Bug 🐛
 
-Each code block is broken. The goal is written first. Fix the code, then explain in one sentence why your fix works.
+Each code block is broken. Fix it, then explain in one sentence why your fix works.
 
 **Bug A** — Goal: a single wall that is **8 blocks long** on the ground. *Hint: count how many times the loop runs.*
 
@@ -122,7 +122,7 @@ repeat 8 times:
 
 ## 4 · Show Your Work 📸🎥
 
-Now switch to your homework world. Build your house walls with **no roof yet** — about 8 blocks long and 8 blocks tall, using two loops. When you finish, come back here.
+Switch to your homework world. Build your house walls with **no roof yet** — about 8 blocks long and 8 blocks tall, using two loops.
 
 Record **one video** (a phone is fine). Show two things:
 

@@ -111,7 +111,7 @@ while size > 0:
 
 ## 4 · Show Your Work 📸🎥
 
-Now build your **final project**: a diamond with a bottom half that grows **1 → 3 → 5** and a top half that shrinks **3 → 1**. When you finish, come back here.
+Build your **final project**: a diamond with a bottom half that grows **1 → 3 → 5** and a top half that shrinks **3 → 1**.
 
 Record **one video** (a phone is fine). Show two things:
 
@@ -119,7 +119,7 @@ Record **one video** (a phone is fine). Show two things:
 
 **2 · Your build.** Point the camera. Name the parts.
 
-Fill the blanks:
+Say these out loud, filling in the blanks:
 
 > Today I built ______.
 >
@@ -130,10 +130,6 @@ Fill the blanks:
 > The hardest part was ______.
 >
 > That part was hard because ______.
-
-**Write your lines here, then say them in your video.**
-
-<div class="write-space tall" style="min-height: 340px"></div>
 
 ---
 

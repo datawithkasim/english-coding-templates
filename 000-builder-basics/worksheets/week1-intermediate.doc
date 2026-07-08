@@ -57,7 +57,7 @@ move forward
 
 <hr />
 <h2>2 · Spot the Bug 🐛</h2>
-<p>Each code block is broken. The goal is written above each one. Find the bug, then write one or two sentences about what is wrong.</p>
+<p>Each code block is broken. Find the bug and write one or two sentences about what is wrong.</p>
 <p><strong>Bug A</strong> — Goal: the agent should walk <strong>4 steps forward</strong>.</p>
 <pre><code>move forward
 move forward
@@ -97,7 +97,7 @@ move forward
 
 <hr />
 <h2>4 · Show Your Work 📸🎥</h2>
-<p>Now switch to your homework world. Move your agent in an <strong>L-shape</strong> path — go forward, turn once, then go forward again (no loops this week). When you finish, come back here.</p>
+<p>Switch to your homework world. Move your agent in an <strong>L-shape</strong> path — go forward, turn once, then go forward again (no loops this week).</p>
 <p>Record <strong>one video</strong> (a phone is fine). Show two things:</p>
 <p><strong>1 · Your code.</strong> Scroll through it. Say what each part does.</p>
 <p><strong>2 · Your build.</strong> Point the camera. Name the parts.</p>

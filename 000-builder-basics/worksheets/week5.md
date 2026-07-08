@@ -113,7 +113,7 @@ move up by 1
 
 ## 3 · Show Your Work 📸🎥
 
-Now switch to your homework world. Build your roofed house. When you finish, come back here.
+Switch to your homework world. Build your roofed house.
 
 Record **one video** (a phone is fine). Show two things:
 

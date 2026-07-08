@@ -2,7 +2,7 @@
 
 **Topic:** Add Two AND Conditions · **Course:** Maze Madness · **Level:** Extension (Advanced) · **Time:** about 55 minutes
 
-The agent follows a redstone trail through a 3D maze with **four rules**. The solver is **not finished**: at two junctions two signals are on at once, so the agent stops. Add **two AND rules** of your own, then drive the agent to the goal.
+The agent follows a redstone trail through a 3D maze with **four rules**, but the solver is **not finished**. At two junctions two signals fire at once and it stops — add **two AND rules**, then drive the agent to the goal.
 
 Chat: `l` turn left, `r` turn right, `run` start solver, `rl` bring agent back.
 
@@ -78,7 +78,7 @@ if agent.detect(REDSTONE, LEFT) and agent.detect(REDSTONE, DOWN):
 
 ## 4 · Add the Two New Rules 🛠️
 
-Open the **M002 Complete the Maze** world. Find the four rules. Add **two `elif` branches**, one per stuck junction, using the signals **you** found.
+Open the **M002 Complete the Maze** world and find the four rules. Add **two `elif` branches**, one per stuck junction, using the signals **you** found.
 
 **Junction 1 — write the whole branch: the AND condition, then the action for each signal.**
 

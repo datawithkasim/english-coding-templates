@@ -6,7 +6,7 @@ This time you are the maze maker. Design one maze that **stretches through 6 zon
 
 Open **M002 EXT 3 — Cube World** and build inside it. Drive the agent with chat: `l` turns left, `r` turns right, `run` starts your solver, `rl` teleports the agent back to you.
 
-**Your maze must include at least:**
+**Your maze must include:**
 
 - **2 pistons** (each opens a wall or path when powered)
 - **2 doors** (the agent opens them with `agent.interact(...)`)
@@ -69,7 +69,7 @@ Build it in the world. Walk it yourself first (no code) to check a person can re
 
 ## 3 · Write the Solution 💻
 
-Write the **solver** with a `while True` loop so it checks every step. It needs **at least 4 AND conditions and 1 OR condition.**
+Write the **solver** with a `while True` loop so it checks every step. It needs **4 AND conditions and 1 OR condition.**
 
 Fill in this shape for **your** maze.
 
@@ -97,7 +97,7 @@ while True:
 
 Go back through your solution and **count.** Write the number, then copy one real line as proof.
 
-**How many AND conditions? (need at least 4)**
+**How many AND conditions? (need 4)**
 
 <div class="write-space short"></div>
 
@@ -105,7 +105,7 @@ Go back through your solution and **count.** Write the number, then copy one rea
 
 <div class="write-space short"></div>
 
-**How many OR conditions? (need at least 1)**
+**How many OR conditions? (need 1)**
 
 <div class="write-space short"></div>
 
@@ -148,7 +148,7 @@ elif agent.detect(BLOCK, AHEAD):
 
 ## 6 · Show Your Work 📸🎥
 
-Type `run` and watch the agent. It will get stuck somewhere — that is normal. Find where it stops, fix that part of your code or your maze, and run it again. Use `rl` to send it back between tries. Keep going until the agent reaches the **GOAL** all by itself.
+Type `run` and watch. It sticks — find the spot, fix your code or maze, `rl` to reset, then run until it reaches the **GOAL**.
 
 Record **one video** (a phone is fine). Show two things:
 

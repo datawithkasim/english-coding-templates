@@ -2,7 +2,7 @@
 
 **Topic:** 3D Mob Heads (x, y, z) · **Course:** 3D Coordinates · **Level:** Beginner (Extension, after Week 3) · **Time:** about 30 minutes
 
-Build a mob head in 3D. Every block needs **three** numbers: **(x, y, z)**. x is **across**, y is **up**, z is **deeper** (forward). The head stands in front — look as you build.
+Build a mob head in 3D. Every block needs **three** numbers **(x, y, z)**: x **across**, y **up**, z **deeper** (forward).
 
 > 🔴 Stand on your **home spot** (red block) every run. Move, and the head moves too.
 
@@ -71,7 +71,7 @@ Record **one video** (a phone is fine). Show two things:
 
 **2 · Your build.** Point the camera. Name the parts.
 
-Fill the blanks:
+Say these out loud, filling in the blanks:
 
 > Today I built ______.
 >
@@ -82,10 +82,6 @@ Fill the blanks:
 > The hardest part was ______.
 >
 > That part was hard because ______.
-
-**Write your lines here, then say them in your video.**
-
-<div class="write-space tall" style="min-height: 340px"></div>
 
 ---
 

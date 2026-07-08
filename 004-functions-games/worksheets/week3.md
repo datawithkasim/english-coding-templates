@@ -8,8 +8,6 @@ This week your agent **senses** the world before it acts. It can detect a block 
 
 ## 1 · Predict 🔮
 
-Before you imagine the agent doing it, write what you think will happen.
-
 ```
 if agent detects block ahead:
     turn left
@@ -89,7 +87,7 @@ repeat 5 times:
 
 <div class="write-space"></div>
 
-**Bug C** — The agent should cross the field safely: cover lava when it sees it, and just walk when the ground is safe. But this code **only** handles the lava case — on safe ground the agent does nothing and gets stuck.
+**Bug C** — The agent should cross the field safely: cover lava when it sees it, and walk when the ground is safe. But this code **only** handles the lava case — on safe ground the agent does nothing and gets stuck.
 
 ```
 repeat 8 times:
@@ -112,7 +110,7 @@ repeat 8 times:
 
 ## 3 · Show Your Work 📸🎥
 
-Now switch to your homework world. Send your agent across the danger field: it must check the block **below** at least once and the block **ahead** at least once, and act differently for at least two block types. When you finish, come back here.
+Switch to your homework world. Send your agent across the danger field: check the block **below** and the block **ahead**, and act differently for **two** block types.
 
 Record **one video** (a phone is fine). Show two things:
 

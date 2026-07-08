@@ -103,7 +103,7 @@ repeat 4 times:
 
 ## 3 · Show Your Work 📸🎥
 
-Now switch to your homework world. Build a **15-block bridge** across the river or cliff. When you finish, come back here.
+Switch to your homework world. Build a **15-block bridge** across the river or cliff.
 
 Record **one video** (a phone is fine). Show two things:
 

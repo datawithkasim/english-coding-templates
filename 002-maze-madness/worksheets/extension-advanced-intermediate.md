@@ -53,7 +53,7 @@ while True:
 
 <div class="write-space short"></div>
 
-**In one short sentence: what does `detect(REDSTONE, DOWN)` tell the agent?**
+**What does `detect(REDSTONE, DOWN)` tell the agent?**
 
 <div class="write-space"></div>
 
@@ -99,7 +99,7 @@ if agent.detect(REDSTONE, DOWN):
 
 ## 5 · Show Your Work 📸🎥
 
-Open the world. Type `run`. Let the agent reach the goal.
+Open the world and type `run`. Let the agent reach the goal.
 
 Record **one video** (a phone is fine). Show two things:
 

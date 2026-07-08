@@ -42,7 +42,7 @@ move forward
 
 ## 2 · Spot the Bug 🐛
 
-Each code block is broken. The goal is written above each one. Find the bug, then write one or two sentences about what is wrong.
+Each code block is broken. Find the bug and write one or two sentences about what is wrong.
 
 **Bug A** — Goal: the agent should walk **4 steps forward**.
 
@@ -104,7 +104,7 @@ move forward
 
 ## 4 · Show Your Work 📸🎥
 
-Now switch to your homework world. Move your agent in an **L-shape** path — go forward, turn once, then go forward again (no loops this week). When you finish, come back here.
+Switch to your homework world. Move your agent in an **L-shape** path — go forward, turn once, then go forward again (no loops this week).
 
 Record **one video** (a phone is fine). Show two things:
 

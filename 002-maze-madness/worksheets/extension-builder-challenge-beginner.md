@@ -12,21 +12,7 @@ Your maze needs: **2 pistons**, **2 doors**, **4 AND**, **1 OR**.
 
 ## 1 · Plan 6 Parts 🗺️
 
-Write one thing for each part. A turn, a door, or a piston.
-
-> Part 1: …
->
-> Part 2: …
->
-> Part 3: …
->
-> Part 4: …
->
-> Part 5: …
->
-> Part 6: …
-
-**Which 2 parts get a piston? Which 2 get a door?** ______
+Say your plan out loud in your video: name one thing for each of the 6 parts (a turn, a door, or a piston). Which 2 get a piston, and which 2 get a door?
 
 ---
 
@@ -60,7 +46,7 @@ Block on left, but NO redstone ahead. Does it turn? Circle: yes · no
 
 ## 4 · Show Your Work 📸🎥
 
-Type `run`. If it stops, fix it, run again. Use `rl` to go back. Keep going until the agent hits the **GOAL**.
+Type `run`. If it stops, fix it and run again — use `rl` to go back — until the agent hits the **GOAL**.
 
 Record **one video** (a phone is fine). Show two things:
 
@@ -68,7 +54,7 @@ Record **one video** (a phone is fine). Show two things:
 
 **2 · Your build.** Point the camera. Name the parts.
 
-Fill the blanks:
+Say these out loud, filling in the blanks:
 
 > Today I built ______.
 >
@@ -79,10 +65,6 @@ Fill the blanks:
 > The hardest part was ______.
 >
 > That part was hard because ______.
-
-**Write your lines here, then say them in your video.**
-
-<div class="write-space tall" style="min-height: 340px"></div>
 
 ---
 

@@ -102,7 +102,7 @@ repeat 10 times:
 
 ## 3 · Show Your Work 📸🎥
 
-Now switch to your homework world. Build your house with walls but **no roof yet** — at least 10 blocks long and 10 blocks tall, using two loops. When you finish, come back here.
+Switch to your homework world. Build your house with walls but **no roof yet** — 10 blocks long and 10 blocks tall, using two loops.
 
 Record **one video** (a phone is fine). Show two things:
 

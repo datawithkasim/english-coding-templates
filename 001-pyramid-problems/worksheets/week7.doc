@@ -65,7 +65,7 @@ while size &gt; 0:
 
 <hr />
 <h2>2 · Spot the Bug 🐛</h2>
-<p>Each code block below is broken. Read what it should do, rewrite it so it works, then explain why the original was wrong and why your fix works.</p>
+<p>Each code block below is broken. Rewrite it so it works, then explain the fix.</p>
 <p><strong>Bug A</strong> — The agent is supposed to build a <strong>hollow layer</strong> — only place a block when it is on the edge of the square (not in the middle).</p>
 <pre><code>repeat size times:
     repeat size times:
@@ -107,7 +107,7 @@ while size &gt; 0:
 
 <hr />
 <h2>3 · Show Your Work 📸🎥</h2>
-<p>Now switch to your homework world. Build <strong>one pyramid variation</strong> — hollow, stepped, two-block pattern, or your own idea. Give your variation a <strong>name</strong> and a <strong>one-sentence description</strong>. When you finish, come back here.</p>
+<p>Switch to your homework world. Build <strong>one pyramid variation</strong> — hollow, stepped, two-block, or your own — then give it a <strong>name</strong> and a <strong>one-sentence description</strong>.</p>
 <p>Record <strong>one video</strong> (a phone is fine). Show two things:</p>
 <p><strong>1 · Your code.</strong> Scroll through it. Say what each part does.</p>
 <p><strong>2 · Your build.</strong> Point the camera. Name the parts.</p>

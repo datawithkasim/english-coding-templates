@@ -72,7 +72,7 @@ p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
 
 <hr />
 <h2>4 · One Bug 🐛</h2>
-<p>This must use <code>interact</code> <strong>only</strong> when a lever is ahead. Right now it interacts every step.</p>
+<p>This must use <code>interact</code> <strong>only</strong> when a lever is ahead. It interacts on every step.</p>
 <pre><code>keep going until at goal:
     interact
     if wall ahead:

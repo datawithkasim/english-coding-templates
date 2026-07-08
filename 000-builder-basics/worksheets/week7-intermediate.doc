@@ -66,8 +66,8 @@ turn left
 
 <hr />
 <h2>2 · Spot the Bug 🐛</h2>
-<p>Each code block is broken. Read the goal first, then write one or two sentences on what is wrong and how to fix it. You don't need to rewrite the whole program.</p>
-<p><strong>Bug A</strong> — The agent should build the <strong>house walls first</strong>, then the <strong>farm patch beside it</strong>. Right now the two stages are in the wrong order.</p>
+<p>Read the goal first. Explain in one or two sentences what is wrong and how to fix it.</p>
+<p><strong>Bug A</strong> — The agent should build the <strong>house walls first</strong>, then the <strong>farm patch beside it</strong>. The two stages are in the wrong order.</p>
 <pre><code># Stage 1: farm patch
 repeat 3 times:
     repeat 3 times:
@@ -97,7 +97,7 @@ move down by 2
 <p><strong>What is wrong, and how do you fix it?</strong></p>
 <p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
 
-<p><strong>Bug C</strong> — The house walls and the farm patch should share the <strong>same <code>size</code> number</strong>, so changing one value changes both. Right now the sizes are hard-coded and do not match.</p>
+<p><strong>Bug C</strong> — The house walls and the farm patch should share the <strong>same <code>size</code> number</strong>, so changing one value changes both. The sizes are hard-coded and do not match.</p>
 <pre><code>repeat 4 times:
     repeat 3 times:
         place block down
@@ -115,7 +115,7 @@ repeat 5 times:
 
 <hr />
 <h2>3 · Show Your Work 📸🎥</h2>
-<p>Now switch to your homework world. Build your farm house — a small house with walls, plus a farm patch beside it on the ground. When you finish, come back here.</p>
+<p>Switch to your homework world. Build your farm house — a small house with walls, plus a farm patch beside it on the ground.</p>
 <p>Record <strong>one video</strong> (a phone is fine). Show two things:</p>
 <p><strong>1 · Your code.</strong> Scroll through it. Say what each part does.</p>
 <p><strong>2 · Your build.</strong> Point the camera. Name the parts.</p>

@@ -34,7 +34,6 @@ p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
 <p>This week your agent <strong>senses</strong> the world before it acts. It can detect a block <strong>ahead</strong>, check what is <strong>below</strong>, and act differently for each block type.</p>
 <hr />
 <h2>1 · Predict 🔮</h2>
-<p>Before you imagine the agent doing it, write what you think will happen.</p>
 <pre><code>if agent detects block ahead:
     turn left
 otherwise:
@@ -90,7 +89,7 @@ move forward
 <p><strong>Why was it wrong? Why does your fix work?</strong></p>
 <p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
 
-<p><strong>Bug C</strong> — The agent should cross the field safely: cover lava when it sees it, and just walk when the ground is safe. But this code <strong>only</strong> handles the lava case — on safe ground the agent does nothing and gets stuck.</p>
+<p><strong>Bug C</strong> — The agent should cross the field safely: cover lava when it sees it, and walk when the ground is safe. But this code <strong>only</strong> handles the lava case — on safe ground the agent does nothing and gets stuck.</p>
 <pre><code>repeat 8 times:
     if block below is lava:
         place block below
@@ -105,7 +104,7 @@ move forward
 
 <hr />
 <h2>3 · Show Your Work 📸🎥</h2>
-<p>Now switch to your homework world. Send your agent across the danger field: it must check the block <strong>below</strong> at least once and the block <strong>ahead</strong> at least once, and act differently for at least two block types. When you finish, come back here.</p>
+<p>Switch to your homework world. Send your agent across the danger field: check the block <strong>below</strong> and the block <strong>ahead</strong>, and act differently for <strong>two</strong> block types.</p>
 <p>Record <strong>one video</strong> (a phone is fine). Show two things:</p>
 <p><strong>1 · Your code.</strong> Scroll through it. Say what each part does.</p>
 <p><strong>2 · Your build.</strong> Point the camera. Name the parts.</p>

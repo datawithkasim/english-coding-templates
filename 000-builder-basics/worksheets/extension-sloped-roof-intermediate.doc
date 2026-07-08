@@ -34,20 +34,20 @@ p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
 <blockquote>
 <p>🧩 This is a bonus challenge, not a weekly lesson. Try it once you are comfortable building square rings with loops and you want to make a roof that steps up to a point.</p>
 </blockquote>
-<p>A real roof is not one flat row — it is a stack of <strong>square rings</strong> that shrink as they go up. In the Sloped Roof world, typing <code>slope</code> builds the whole roof for you. This worksheet is about the <strong>idea</strong>, not typing code.</p>
-<p>The program stores the ring's side length in a <strong>variable</strong> called <code>roof_len</code>. It starts at <strong>7</strong>, so the bottom ring is 7 stairs per side. After each ring it steps <strong>up and inward</strong>, then shrinks the variable by 2. Four rings get built, with sides of <strong>7, 5, 3, 1</strong>. Change the starting number and the whole roof changes shape.</p>
+<p>A real roof is a stack of <strong>square rings</strong> that shrink as they go up. In the Sloped Roof world, typing <code>slope</code> builds the whole roof — this worksheet is about the <strong>idea</strong>, not code.</p>
+<p>The ring's side length is a <strong>variable</strong> called <code>roof_len</code>. Change its starting number and the whole roof changes shape.</p>
 <hr />
 <h2>1 · Predict 🔮</h2>
-<p>The variable <code>roof_len</code> starts at <strong>7</strong>. Each layer, the agent walks a square ring (4 sides, each <code>roof_len</code> stairs long), then shrinks <code>roof_len</code> by 2. The four rings have sides of <strong>7, 5, 3, 1</strong>.</p>
+<p>The variable <code>roof_len</code> starts at <strong>7</strong> and loses 2 each layer, so the four rings have sides of <strong>7, 5, 3, 1</strong>. Each layer the agent walks a square ring — 4 sides, each <code>roof_len</code> stairs long.</p>
 <p><strong>What shape do the rings make as they stack up? Describe it in one sentence.</strong></p>
 <p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
 
-<p><strong>About how many stairs are placed in total across all four rings? Each ring's edge is about 4 × its side length, and the side lengths are 7, 5, 3, 1. Write the four numbers you got, then add them for the total. Show your working — do not just guess.</strong></p>
+<p><strong>About how many stairs in total across all four rings? Each ring's edge is about 4 × its side length (sides 7, 5, 3, 1). Write the four numbers, then add them. Show your working.</strong></p>
 <p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
 
 <hr />
 <h2>2 · Trace the Variable 🔢</h2>
-<p>Walk through the build one ring at a time. For each layer, write <code>roof_len</code> <strong>for that ring</strong>, then its value <strong>after</strong> it loses 2. Show the subtraction.</p>
+<p>Walk through the build one ring at a time. For each layer, write <code>roof_len</code> for that ring, then its value <strong>after</strong> it loses 2 — show the subtraction.</p>
 <table>
 <thead>
 <tr>
@@ -87,10 +87,10 @@ p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
 <hr />
 <h2>3 · Reason About the Variable 🧠</h2>
 <p>No code here — think it through.</p>
-<p><strong>The roof comes out FLAT, like a box, instead of sloped. Every ring ended up the same size. Which part of the rule about the variable must have gone wrong for that to happen? Explain in one or two sentences.</strong></p>
+<p><strong>The roof comes out FLAT, like a box — every ring the same size. Which part of the variable rule went wrong? Explain in one or two sentences.</strong></p>
 <p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
 
-<p><strong>Now imagine the variable lost </strong>1<strong> each ring instead of </strong>2<strong>. How would the roof look different — would the sides be steeper or gentler? Would there be more rings or fewer before it reached the peak? Explain why.</strong></p>
+<p><strong>Imagine the variable lost </strong>1<strong> each ring instead of </strong>2<strong>. How would the roof look different — would the sides be steeper or gentler? Would there be more rings or fewer before it reached the peak? Explain why.</strong></p>
 <p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
 
 <hr />

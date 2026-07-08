@@ -2,7 +2,7 @@
 
 **Topic:** Lines & Rectangles on the Wall (x, y) · **Course:** 3D Coordinates · **Level:** Beginner · **Time:** about 30 minutes
 
-This week you use a **loop** to draw a whole **line** of blocks. Grow **x** to go across. Grow **y** to go up.
+This week you use a **loop** to draw a whole **line** of blocks. Grow **x** to go across, or **y** to go up.
 
 ---
 
@@ -95,7 +95,7 @@ repeat 4 times:
 
 ## 4 · Show Your Work 📸🎥
 
-Now switch to your homework world. Use a loop to draw **one line going across** and another loop for **one line going up**, so they meet at the corner (0, 0) and make an **L** shape. When you finish, come back here.
+Switch to your homework world. Use a loop to draw **one line going across** and another for **one line going up**, so they meet at the corner (0, 0) and make an **L** shape.
 
 Record **one video** (a phone is fine). Show two things:
 
@@ -103,7 +103,7 @@ Record **one video** (a phone is fine). Show two things:
 
 **2 · Your build.** Point the camera. Name the parts.
 
-Fill the blanks:
+Say these out loud, filling in the blanks:
 
 > Today I built ______.
 >
@@ -114,10 +114,6 @@ Fill the blanks:
 > The hardest part was ______.
 >
 > That part was hard because ______.
-
-**Write your lines here, then say them in your video.**
-
-<div class="write-space tall" style="min-height: 340px"></div>
 
 ---
 

@@ -8,8 +8,6 @@ This week your world **reacts to the player**. The pattern: an **event** happens
 
 ## 1 · Predict 🔮
 
-Before you imagine the player doing it, write what you think will happen.
-
 ```
 on player walks on gold block:
     say "Welcome to my world!"
@@ -103,7 +101,7 @@ on player walks:
 
 ## 3 · Show Your Work 📸🎥
 
-Now switch to your homework world. Build a space that reacts to the player — use the event → check → action pattern at least once. When you finish, come back here.
+Switch to your homework world. Build a space that reacts to the player — use the event → check → action pattern.
 
 Record **one video** (a phone is fine). Show two things:
 

@@ -8,7 +8,7 @@
 
 ## 1 · The Challenge 🎯
 
-Finish your village so it feels like a place someone could live. There is no map — **you** choose the sizes and where things go. It must have **all four**:
+Finish your village so it feels like a place someone could live. There is no map — **you** choose the sizes and where things go, and it must have **all four**:
 
 > 🏠 A **house with a roof**
 > 🪣 A **well**
@@ -17,7 +17,7 @@ Finish your village so it feels like a place someone could live. There is no map
 
 > ⚠️ One rule: **everything is built with code.** No placing blocks by hand.
 
-**Why does "build it with code" matter more than just how it looks?**
+**Why does "build it with code" matter more than how it looks?**
 
 <div class="write-space"></div>
 
@@ -58,7 +58,7 @@ A loop is for anything you repeat — a row of wall blocks, a row of flowers, th
 
 ## 4 · Show Your Work 📸🎥
 
-Go to your homework world and build. Run your code one structure at a time and move the agent between them. Keep going until the village has **the house with a roof, the well, the small pond, and the small flower bed** — all placed by code.
+Go to your homework world and build one structure at a time, moving the agent between them. Keep going until the village has **the house with a roof, the well, the small pond, and the small flower bed** — all placed by code.
 
 Record **one video** (a phone is fine). Show two things:
 

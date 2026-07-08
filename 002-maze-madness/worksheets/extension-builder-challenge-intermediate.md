@@ -6,7 +6,7 @@ This time **you** make the maze. Build one that runs through **6 zones**, wired 
 
 Open **M002 EXT 3 — Cube World** and build inside it. Chat: `l` turns left, `r` turns right, `run` starts your solver, `rl` sends the agent back to start.
 
-**Your maze needs at least:**
+**Your maze needs:**
 
 - **2 pistons** (each opens a wall when powered)
 - **2 doors** (the agent opens them with `agent.interact(...)`)
@@ -102,7 +102,7 @@ The agent should turn only when **both** are true. Write the fixed line.
 
 ## 5 · Show Your Work 📸🎥
 
-Type `run` and watch. It will get stuck — that is normal. Find where it stops, fix the code or the maze, run again. Use `rl` to send it back. Keep going until the agent reaches the **GOAL** on its own.
+Type `run` and watch. It sticks — find the spot, fix the code or maze, `rl` to reset, then run until it reaches the **GOAL**.
 
 Record **one video** (a phone is fine). Show two things:
 

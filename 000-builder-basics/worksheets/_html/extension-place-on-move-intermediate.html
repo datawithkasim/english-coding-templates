@@ -112,8 +112,8 @@ footer b { color: #ff7849; }
 <blockquote>
 <p>🧩 This is a bonus challenge, not a weekly lesson. Try it once you are comfortable placing blocks and you want the agent to place a whole line for you.</p>
 </blockquote>
-<p>In Week 2 you placed blocks one at a time. This world has a faster way: type <code>run</code> and the agent flips a switch called <strong>place on move</strong>, then walks forward. Understand the <strong>idea</strong> — you won't type any code.</p>
-<p>When <strong>place on move</strong> is <strong>ON</strong>, the agent drops a block on every step — a <strong>trail</strong>. When it is <strong>OFF</strong>, it walks but places nothing — a <strong>gap</strong>. The program flips ON, OFF, then ON again, so the trail comes out with a gap in the middle.</p>
+<p>In Week 2 you placed blocks one at a time. Here, type <code>run</code> and the agent flips a switch called <strong>place on move</strong>, then walks forward — no code to type.</p>
+<p>When <strong>place on move</strong> is <strong>ON</strong>, the agent drops a block on every step — a <strong>trail</strong>. When it is <strong>OFF</strong>, it walks but places nothing — a <strong>gap</strong>.</p>
 <h2>1 · Predict 🔮</h2>
 <p>Here is the order the program runs:</p>
 <pre><code>place on move ON
@@ -123,7 +123,7 @@ move forward by 2
 place on move ON
 move forward by 4
 </code></pre>
-<div class="qa"><p><strong>Each move places one block per step while the switch is ON. How many blocks come from the first <code>move forward 4</code>? How many from the <code>move forward 2</code> while OFF? How many from the last <code>move forward 4</code>? Write all three numbers.</strong></p>
+<div class="qa"><p><strong>One block drops per step while the switch is ON. How many blocks come from each move — <code>forward 4</code>, then <code>forward 2</code> (OFF), then <code>forward 4</code>? Write all three numbers.</strong></p>
 <div class="write-space tall"></div></div>
 
 <div class="qa"><p><strong>Add them up. How many blocks are placed in total, and how wide is the gap in the middle? Show your working.</strong></p>
@@ -164,10 +164,10 @@ move forward by 4
 
 <h2>3 · Reason About the Switch 🧠</h2>
 <p>No code here — think it through.</p>
-<div class="qa"><p><strong>The trail comes out as one solid line with NO gap. The switch must have been left in the wrong state somewhere. Which line of the program went wrong for that to happen? Explain in one or two sentences.</strong></p>
+<div class="qa"><p><strong>The trail comes out as one solid line with NO gap. Which line of the program went wrong? Explain in one or two sentences.</strong></p>
 <div class="write-space tall"></div></div>
 
-<div class="qa"><p><strong>Now imagine the very first <code>place on move ON</code> was missing, so the switch stayed OFF the whole time. What would be on the ground after the agent finished walking? Explain why.</strong></p>
+<div class="qa"><p><strong>Imagine the very first <code>place on move ON</code> was missing, so the switch stayed OFF the whole time. What would be on the ground after the agent finished walking? Explain why.</strong></p>
 <div class="write-space tall"></div></div>
 
 <h2>4 · Make It Yours ✏️</h2>

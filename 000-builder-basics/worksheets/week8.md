@@ -131,7 +131,7 @@ repeat size times:
 
 ## 3 · Show Your Work 📸🎥
 
-Now switch to your homework world. Build your village — **a house with a roof, a well, and a farm house** at minimum. If you have time, add a standalone farm too. When you finish, come back here.
+Switch to your homework world and build your village — **a house with a roof, a well, and a farm house**. If you have time, add a standalone farm too.
 
 Record **one video** (a phone is fine). Show two things:
 

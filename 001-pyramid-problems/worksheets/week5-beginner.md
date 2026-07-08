@@ -97,7 +97,7 @@ repeat 3 times:
 
 ## 4 · Show Your Work 📸🎥
 
-Now switch to your homework world. Run your `pyra` command to build a pyramid. If the agent gets stuck or faces the wrong way, use your helper commands — `1` turns it left, `r` turns it right, `r1` brings it back to you.
+Switch to your homework world. Run `pyra` to build a pyramid — if it gets stuck, `1` turns left, `r` turns right, `r1` brings it back.
 
 Record **one video** (a phone is fine). Show two things:
 
@@ -105,7 +105,7 @@ Record **one video** (a phone is fine). Show two things:
 
 **2 · Your build.** Point the camera. Name the parts.
 
-Fill the blanks:
+Say these out loud, filling in the blanks:
 
 > Today I built ______.
 >
@@ -116,10 +116,6 @@ Fill the blanks:
 > The hardest part was ______.
 >
 > That part was hard because ______.
-
-**Write your lines here, then say them in your video.**
-
-<div class="write-space tall" style="min-height: 340px"></div>
 
 ---
 

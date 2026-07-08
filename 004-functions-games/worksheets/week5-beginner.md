@@ -95,7 +95,7 @@ function build_tower(height):
 
 ## 4 · Show Your Work 📸🎥
 
-Now switch to your homework world. Build something using your own functions. When you finish, come back here.
+Switch to your homework world. Build something using your own functions.
 
 Record **one video** (a phone is fine). Show two things:
 
@@ -103,7 +103,7 @@ Record **one video** (a phone is fine). Show two things:
 
 **2 · Your build.** Point the camera. Name the parts.
 
-Fill the blanks:
+Say these out loud, filling in the blanks:
 
 > Today I built ______.
 >
@@ -114,10 +114,6 @@ Fill the blanks:
 > The hardest part was ______.
 >
 > That part was hard because ______.
-
-**Write your lines here, then say them in your video.**
-
-<div class="write-space tall" style="min-height: 340px"></div>
 
 ---
 

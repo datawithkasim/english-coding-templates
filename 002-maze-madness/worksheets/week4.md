@@ -76,7 +76,7 @@ else:
 
 Rewrite each block. Explain the fix.
 
-**Bug A** — Turn left **only** at a dead-end corner (wall ahead AND wall on right). Right now it turns at any wall.
+**Bug A** — Turn left **only** at a dead-end corner (wall ahead AND wall on right). It turns at any wall.
 
 ```python
 if agent.detect(BLOCK, FORWARD) or agent.detect(BLOCK, RIGHT):
@@ -141,7 +141,7 @@ Write a `while True` loop that:
 
 ## 5 · Show Your Work 📸🎥
 
-Switch to your homework world. Solve the maze using **both** an `and` condition and an `or` condition. Come back when the agent reaches the end.
+Switch to your homework world. Solve the maze using **both** an `and` condition and an `or` condition.
 
 Record **one video** (a phone is fine). Show two things:
 

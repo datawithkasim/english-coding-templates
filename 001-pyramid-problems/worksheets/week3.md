@@ -49,7 +49,7 @@ repeat height times:
 
 ## 2 · Spot the Bug 🐛
 
-Each code block below is broken. Read what it should do, rewrite it so it works, then explain why the original was wrong and why your fix works.
+Each code block below is broken. Rewrite it so it works, then explain the fix.
 
 **Bug A** — The agent is supposed to build a row of 7 blocks using a variable called `size`.
 
@@ -105,7 +105,7 @@ repeat height times:
 
 ## 3 · Show Your Work 📸🎥
 
-Now switch to your homework world. Use a `size` variable to build a **size-5 wall**, then change the variable to **12** and run it again. Compare the two results. When you finish, come back here.
+Switch to your homework world. Build a **size-5 wall** with a `size` variable, then change it to **12** and compare.
 
 Record **one video** (a phone is fine). Show two things:
 

@@ -86,7 +86,7 @@ while True:
 
 <div class="write-space short"></div>
 
-**Bug C** — A sticky piston holds the bridge **only while the lever is ON**. The second `interact` switches it OFF and the bridge vanishes. Cross first.
+**Bug C** — A sticky piston holds the bridge **only while the lever is ON**. The second `interact` turns it OFF and the bridge vanishes, so cross first.
 
 ```python
 agent.interact(...)
@@ -122,7 +122,7 @@ player.on_chat("go", cross_gap)
 
 ## 5 · Show Your Work 📸🎥
 
-Open your homework world. The maze has a gap (or blocked path) and a piston that opens it when powered. Run your code so the agent reaches the goal.
+Open your homework world. Run your code so the agent crosses the piston gap and reaches the goal.
 
 Record **one video** (a phone is fine). Show two things:
 

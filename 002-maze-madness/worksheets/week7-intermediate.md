@@ -92,7 +92,7 @@ agent.interact(...)
 
 ## 5 · Show Your Work 📸🎥
 
-Open your homework world. The maze has a gap and a piston that opens it. Walk the agent to the lever, flip it, cross while the path is open, and reach the goal.
+Open your homework world. Walk the agent to the lever, flip it, cross the open path, and reach the goal.
 
 Record **one video** (a phone is fine). Show two things:
 

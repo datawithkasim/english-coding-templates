@@ -2,7 +2,7 @@
 
 **Topic:** Recreate the Statues (x, y, z) · **Course:** 3D Coordinates · **Level:** Advanced · **Time:** about 45 minutes
 
-A statue is many **stacked fill boxes**: two legs, a torso, a head, and two arms. One **`fill`** makes a solid box between **two corners**, each written **(x, y, z)** — x **across**, y **up**, z **forward**. Plan where each part **starts** (its bottom y) and how **wide** it is (x and z); the feet sit on the **ground (y = 0)**. A part can hide inside another, or float above the floor.
+A statue is many **stacked fill boxes**: legs, a torso, arms, a head. One **`fill`** makes a solid box between **two corners** (x, y, z) — x **across**, y **up**, z **forward**, feet on the **ground (y = 0)**.
 
 > 🔴 Stand on your **home spot** (red block) every run. Move your feet, move your head.
 

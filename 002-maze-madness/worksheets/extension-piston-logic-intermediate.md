@@ -2,7 +2,7 @@
 
 **Topic:** Two Pistons + AND Conditions · **Course:** Maze Madness · **Level:** Extension (Intermediate) · **Time:** about 45 minutes
 
-The agent follows a **redstone trail** through a long maze, checking **two things at once** with **AND** at some junctions. Twice, a **lever powers a piston** to open the way. Get the agent through the **whole maze**.
+The agent follows a **redstone trail** through a long maze, using **AND** at some junctions. Twice a **lever powers a piston** to open the way — get the agent through the **whole maze**.
 
 You drive it with chat words: `l` turn left, `r` turn right, `run` start the solver, `rl` teleport back to you.
 
@@ -51,7 +51,7 @@ if agent.detect(REDSTONE, LEFT) and agent.detect(REDSTONE, AHEAD):
 | no | yes | |
 | yes | yes | |
 
-**In your own words: what must be true for the agent to turn left?**
+**What must be true for the agent to turn left?**
 
 <div class="write-space short"></div>
 
@@ -104,7 +104,7 @@ if agent.detect(REDSTONE, LEFT) or agent.detect(REDSTONE, AHEAD):
 
 ## 5 · Show Your Work 📸🎥
 
-Open the **M002 EXT 2** world. Type `run`. Watch where it gets stuck, fix it, run again — until it reaches the goal past both pistons.
+Open the **M002 EXT 2** world and type `run`. Watch where it sticks, fix it, run again until it reaches the goal past both pistons.
 
 Record **one video** (a phone is fine). Show two things:
 

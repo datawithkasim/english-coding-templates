@@ -2,7 +2,7 @@
 
 **Topic:** First Steps with Coordinates (x, y) · **Course:** 3D Coordinates · **Time:** about 45 minutes
 
-This week you draw on a flat **wall**. Every spot has a name — **two numbers: (x, y)**. x is how far **across**, y is how far **up**. Counting starts at **0**.
+This week you draw on a flat **wall**. Every spot has a name — **two numbers (x, y)**: x is how far **across**, y is how far **up**, counting from **0**.
 
 ---
 
@@ -46,7 +46,7 @@ place gold block at (0, y)
 
 Each code block below is broken. Read what it should do, fix it, then explain why the original was wrong and your fix works.
 
-**Bug A** — The block should land at **(2, 5)** — 2 across, 5 up. Right now it lands elsewhere.
+**Bug A** — The block should land at **(2, 5)** — 2 across, 5 up.
 
 ```
 place gold block at (5, 2)
@@ -76,7 +76,7 @@ place gold block at (1, 1)
 
 <div class="write-space"></div>
 
-**Bug C** — The block should sit **5 up** at x = 0 — that is **(0, 5)**. Right now it drops below the wall.
+**Bug C** — The block should sit **5 up** at x = 0 — that is **(0, 5)**. It drops below the wall instead.
 
 ```
 place gold block at (0, -5)
@@ -94,7 +94,7 @@ place gold block at (0, -5)
 
 ## 3 · Show Your Work 📸🎥
 
-Now switch to your homework world. Place a gold block at **(0, 0)** so you can see where counting starts. Then pick three more coordinates, place a different block at each one, and write down the coordinates you used. When you finish, come back here.
+Switch to your homework world and place a gold block at **(0, 0)** to see where counting starts. Then pick three more coordinates, place a different block at each, and write down the coordinates you used.
 
 Record **one video** (a phone is fine). Show two things:
 

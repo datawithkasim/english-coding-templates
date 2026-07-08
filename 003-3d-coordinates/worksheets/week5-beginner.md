@@ -2,7 +2,7 @@
 
 **Topic:** Recreate the Statues (x, y, z) · **Course:** 3D Coordinates · **Level:** Beginner · **Time:** about 30 minutes
 
-A statue is blocks **stacked up** — a body, then a head on top. Every block needs **three** numbers: **(x, y, z)**. x is **across**, y is **up**, z is **forward**. To go higher, change the **2nd number (y)**.
+A statue is blocks **stacked up** — a body, then a head on top. Every block needs **three** numbers: **(x, y, z)**.
 
 ### 🧭 Every coordinate is **(x, y, z)**
 
@@ -65,7 +65,7 @@ place white block at (3, ____, 3)
 
 **Warm-up:** in your world, place 2 gray blocks on top of each other — a little body.
 
-**Now build a small statue.** Stack 3 gray blocks for the body, then 1 white block on top for the head.
+**Build a small statue.** Stack 3 gray blocks for the body, then 1 white block on top for the head.
 
 > 🧱 Recipe (stand on your home spot first, feet on the ground y = 0):
 > - body: gray at (3, 0, 3), then (3, 1, 3), then (3, 2, 3)
@@ -79,7 +79,7 @@ Record **one video** (a phone is fine). Show two things:
 
 **2 · Your build.** Point the camera. Name the parts.
 
-Fill the blanks:
+Say these out loud, filling in the blanks:
 
 > Today I built ______.
 >
@@ -90,10 +90,6 @@ Fill the blanks:
 > The hardest part was ______.
 >
 > That part was hard because ______.
-
-**Write your lines here, then say them in your video.**
-
-<div class="write-space tall" style="min-height: 340px"></div>
 
 ---
 

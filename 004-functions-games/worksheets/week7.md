@@ -8,8 +8,6 @@ This week one chat command builds a **whole space by itself**. A loop repeats a 
 
 ## 1 · Predict 🔮
 
-Before you imagine the build happening, write what you think will happen.
-
 ```
 on chat command "dungeon" with number rooms:
     repeat rooms times:
@@ -73,7 +71,7 @@ on chat command "dungeon" with number rooms:
 
 <div class="write-space"></div>
 
-**Bug B** — The number you type should decide how many rooms get built. But `dungeon 5` and `dungeon 1` both build just **one** room.
+**Bug B** — The number you type should decide how many rooms get built. But `dungeon 5` and `dungeon 1` both build **one** room.
 
 ```
 on chat command "dungeon" with number rooms:
@@ -115,7 +113,7 @@ on chat command "dungeon" with number rooms:
 
 ## 3 · Show Your Work 📸🎥
 
-Now switch to your homework world. Make a chat command with a number argument that auto-builds a space — a loop should repeat a room piece. When you finish, come back here.
+Switch to your homework world. Make a chat command with a number argument that auto-builds a space — a loop should repeat a room piece.
 
 Record **one video** (a phone is fine). Show two things:
 

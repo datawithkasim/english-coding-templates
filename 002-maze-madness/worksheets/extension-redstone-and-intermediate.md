@@ -2,7 +2,7 @@
 
 **Topic:** Redstone AND Rules + Single Checks · **Course:** Maze Madness · **Level:** Extension (Intermediate) · **Time:** about 45 minutes
 
-Same **Week 3 world**. Find the **hardest maze** your teacher shows a picture of, packed with redstone. The agent reads **redstone** to move; tiles with **two** redstones need an **AND** (both true).
+Same **Week 3 world**. Find the **hardest maze** your teacher shows a picture of — tiles with **two** redstones need an **AND** (both true).
 
 > **The rules you need**
 >
@@ -88,7 +88,7 @@ if agent.detect(REDSTONE, ________) ________ agent.detect(REDSTONE, DOWN):
 
 ## 4 · Spot the Bug 🐛
 
-**Bug A** — Rule #1 should fire **only** when redstone is left **and** below. Right now it checks redstone left only, so it fires on a plain left marker with nothing below it.
+**Bug A** — Rule #1 should fire **only** when redstone is left **and** below. It checks redstone left only, so it fires on a plain left marker with nothing below it.
 
 ```python
 if agent.detect(REDSTONE, LEFT):

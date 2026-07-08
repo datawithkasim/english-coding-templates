@@ -33,7 +33,7 @@ p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
 <p><strong>Topic:</strong> Design a Maze + Write the Solution · <strong>Course:</strong> Maze Madness · <strong>Level:</strong> Extension (Advanced) · <strong>Time:</strong> about 60 minutes</p>
 <p>This time you are the maze maker. Design one maze that <strong>stretches through 6 zones</strong>, wire it with pistons and doors, then write the <strong>solution code</strong> that drives the agent to the end.</p>
 <p>Open <strong>M002 EXT 3 — Cube World</strong> and build inside it. Drive the agent with chat: <code>l</code> turns left, <code>r</code> turns right, <code>run</code> starts your solver, <code>rl</code> teleports the agent back to you.</p>
-<p><strong>Your maze must include at least:</strong></p>
+<p><strong>Your maze must include:</strong></p>
 <ul>
 <li><strong>2 pistons</strong> (each opens a wall or path when powered)</li>
 <li><strong>2 doors</strong> (the agent opens them with <code>agent.interact(...)</code>)</li>
@@ -74,7 +74,7 @@ p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
 
 <hr />
 <h2>3 · Write the Solution 💻</h2>
-<p>Write the <strong>solver</strong> with a <code>while True</code> loop so it checks every step. It needs <strong>at least 4 AND conditions and 1 OR condition.</strong></p>
+<p>Write the <strong>solver</strong> with a <code>while True</code> loop so it checks every step. It needs <strong>4 AND conditions and 1 OR condition.</strong></p>
 <p>Fill in this shape for <strong>your</strong> maze.</p>
 <pre><code class="language-python">while True:
     agent.move(FORWARD, 1)
@@ -94,13 +94,13 @@ p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
 <hr />
 <h2>4 · Count Your Logic ✅</h2>
 <p>Go back through your solution and <strong>count.</strong> Write the number, then copy one real line as proof.</p>
-<p><strong>How many AND conditions? (need at least 4)</strong></p>
+<p><strong>How many AND conditions? (need 4)</strong></p>
 <p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
 
 <p><strong>Copy one AND line:</strong></p>
 <p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
 
-<p><strong>How many OR conditions? (need at least 1)</strong></p>
+<p><strong>How many OR conditions? (need 1)</strong></p>
 <p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
 
 <p><strong>Copy your OR line:</strong></p>
@@ -129,7 +129,7 @@ elif agent.detect(BLOCK, AHEAD):
 
 <hr />
 <h2>6 · Show Your Work 📸🎥</h2>
-<p>Type <code>run</code> and watch the agent. It will get stuck somewhere — that is normal. Find where it stops, fix that part of your code or your maze, and run it again. Use <code>rl</code> to send it back between tries. Keep going until the agent reaches the <strong>GOAL</strong> all by itself.</p>
+<p>Type <code>run</code> and watch. It sticks — find the spot, fix your code or maze, <code>rl</code> to reset, then run until it reaches the <strong>GOAL</strong>.</p>
 <p>Record <strong>one video</strong> (a phone is fine). Show two things:</p>
 <p><strong>1 · Your code.</strong> Scroll through it. Say what each part does.</p>
 <p><strong>2 · Your build.</strong> Point the camera. Name the parts.</p>

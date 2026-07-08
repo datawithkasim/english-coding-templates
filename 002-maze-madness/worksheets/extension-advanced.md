@@ -60,7 +60,7 @@ while True:
 
 <div class="write-space short"></div>
 
-**In your own words: what does `detect(REDSTONE, DOWN)` tell the agent?**
+**What does `detect(REDSTONE, DOWN)` tell the agent?**
 
 <div class="write-space"></div>
 

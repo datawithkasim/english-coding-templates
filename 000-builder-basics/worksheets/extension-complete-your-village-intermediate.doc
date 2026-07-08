@@ -36,7 +36,7 @@ p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
 </blockquote>
 <hr />
 <h2>1 · The Challenge 🎯</h2>
-<p>Finish your village so it feels like a place someone could live. There is no map — <strong>you</strong> choose the sizes and where things go. It must have <strong>all four</strong>:</p>
+<p>Finish your village so it feels like a place someone could live. There is no map — <strong>you</strong> choose the sizes and where things go, and it must have <strong>all four</strong>:</p>
 <blockquote>
 <p>🏠 A <strong>house with a roof</strong>
 🪣 A <strong>well</strong>
@@ -44,7 +44,7 @@ p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
 🌸 A <strong>small flower bed</strong></p>
 <p>⚠️ One rule: <strong>everything is built with code.</strong> No placing blocks by hand.</p>
 </blockquote>
-<p><strong>Why does "build it with code" matter more than just how it looks?</strong></p>
+<p><strong>Why does "build it with code" matter more than how it looks?</strong></p>
 <p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
 
 <hr />
@@ -97,7 +97,7 @@ p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
 
 <hr />
 <h2>4 · Show Your Work 📸🎥</h2>
-<p>Go to your homework world and build. Run your code one structure at a time and move the agent between them. Keep going until the village has <strong>the house with a roof, the well, the small pond, and the small flower bed</strong> — all placed by code.</p>
+<p>Go to your homework world and build one structure at a time, moving the agent between them. Keep going until the village has <strong>the house with a roof, the well, the small pond, and the small flower bed</strong> — all placed by code.</p>
 <p>Record <strong>one video</strong> (a phone is fine). Show two things:</p>
 <p><strong>1 · Your code.</strong> Scroll through it. Say what each part does.</p>
 <p><strong>2 · Your build.</strong> Point the camera. Name the parts.</p>

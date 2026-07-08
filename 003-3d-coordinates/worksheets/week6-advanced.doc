@@ -31,7 +31,7 @@ p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
 <div class="brand">📚 ENGLISH CODING · 영어코딩</div>
 <h1>🐉 M003 Week 6 — English Worksheet (Advanced)</h1>
 <p><strong>Topic:</strong> Recreate the Ender Dragon (x, y, z) · <strong>Course:</strong> 3D Coordinates · <strong>Level:</strong> Advanced · <strong>Time:</strong> about 45 minutes</p>
-<p>A big blocky <strong>ender dragon</strong> stands in your world — black blocks, purple eyes. A model is a set of <strong>parts</strong>: a long <strong>body</strong>, a <strong>head</strong> at the front, two <strong>wings</strong> that spread along x, and a <strong>tail</strong> that steps back and down. Everything uses <strong>(x, y, z)</strong> — x <strong>across</strong>, y <strong>up</strong>, z <strong>forward</strong> (deep). Plan your corners before you build.</p>
+<p>A big blocky <strong>ender dragon</strong> stands in your world. It is a set of <strong>parts</strong> — a long <strong>body</strong>, a front <strong>head</strong>, two <strong>wings</strong> (along x), and a <strong>tail</strong> (stepping back and down) — each block <strong>(x, y, z)</strong>: x <strong>across</strong>, y <strong>up</strong>, z <strong>forward</strong>.</p>
 <blockquote>
 <p>🔴 Stand on your <strong>home spot</strong> (red block) every run. Move your feet, move your head.</p>
 </blockquote>
@@ -97,7 +97,7 @@ place black block at (0, 8, -3)
 
 <hr />
 <h2>3 · Show Your Work 📸🎥</h2>
-<p>Look at the dragon in your world. Walk around it. <strong>Plan your corners first</strong>, then copy it part by part on your home spot:</p>
+<p>Look at the dragon and walk around it. <strong>Plan your corners first</strong>, then copy it part by part on your home spot:</p>
 <pre><code>fill black from (0, 8, 0) to (0, 8, 10)
 place black block at (0, 9, 11)
 fill black from (1, 8, 5) to (5, 8, 5)

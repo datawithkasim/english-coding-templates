@@ -2,7 +2,7 @@
 
 **Topic:** Recreate the Ender Dragon (x, y, z) · **Course:** 3D Coordinates · **Level:** Advanced · **Time:** about 45 minutes
 
-A big blocky **ender dragon** stands in your world — black blocks, purple eyes. A model is a set of **parts**: a long **body**, a **head** at the front, two **wings** that spread along x, and a **tail** that steps back and down. Everything uses **(x, y, z)** — x **across**, y **up**, z **forward** (deep). Plan your corners before you build.
+A big blocky **ender dragon** stands in your world. It is a set of **parts** — a long **body**, a front **head**, two **wings** (along x), and a **tail** (stepping back and down) — each block **(x, y, z)**: x **across**, y **up**, z **forward**.
 
 > 🔴 Stand on your **home spot** (red block) every run. Move your feet, move your head.
 
@@ -103,7 +103,7 @@ place black block at (0, 8, -3)
 
 ## 3 · Show Your Work 📸🎥
 
-Look at the dragon in your world. Walk around it. **Plan your corners first**, then copy it part by part on your home spot:
+Look at the dragon and walk around it. **Plan your corners first**, then copy it part by part on your home spot:
 
 ```
 fill black from (0, 8, 0) to (0, 8, 10)

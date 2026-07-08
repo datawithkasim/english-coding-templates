@@ -100,7 +100,7 @@ place block down
 
 ## 3 · Show Your Work 📸🎥
 
-Now switch to your homework world. Place **5 blocks** in different positions, using **at least 2 different block types** (stone, dirt, wood — your choice). When you finish, come back here.
+Switch to your homework world. Place **5 blocks** in different positions, using **2 different block types** (stone, dirt, wood — your choice).
 
 Record **one video** (a phone is fine). Show two things:
 

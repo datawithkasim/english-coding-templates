@@ -2,7 +2,7 @@
 
 **Topic:** Recreate 2 Mob Heads (x, y, z) · **Course:** 3D Coordinates · **Level:** Advanced · **Time:** about 45 minutes
 
-Two blocky **mob heads** stand in your world — a **creeper** and a **skeleton**, each a cube with a face on the **front**. Build the **front face first** (keep z the same, read x across and y up), then **add depth** at z = 2 and z = 3. You build **both** heads side by side, giving each its own x range so they don't overlap. Faces only show on the front — every side and the back stay plain.
+Two blocky **mob heads** — a **creeper** and a **skeleton** — stand in your world, each a cube with a face on the **front**. Build the **front face first** (z the same, read x across and y up), then **add depth** at z = 2 and z = 3.
 
 > 🔴 Stand on your **home spot** (red block) every run. Move your feet, move your head.
 
@@ -113,7 +113,7 @@ First, **plan your coordinates**. Write the x range you will give each head so t
 
 <div class="write-space short"></div>
 
-Now switch to your homework world. Build **both** heads side by side, each on its own x range.
+Switch to your homework world. Build **both** heads side by side, each on its own x range.
 
 ```
 # ---- Creeper (x 0–4) ----

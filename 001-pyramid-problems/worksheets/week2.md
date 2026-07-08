@@ -41,7 +41,7 @@ repeat 5 times:
 
 ## 2 · Spot the Bug 🐛
 
-Each code block below is broken. Read what it should do, rewrite it so it works, then explain why the original was wrong and why your fix works.
+Each code block is broken. Read what it should do, rewrite it, then explain why the original was wrong.
 
 **Bug A** — The agent is supposed to use a loop to place a row of **5 blocks**.
 
@@ -101,7 +101,7 @@ repeat 6 times:
 
 ## 3 · Show Your Work 📸🎥
 
-Now switch to your homework world. Use a loop to build a **20-block straight wall**. Then build a **U-shaped wall** (three sides). When you finish, come back here.
+Switch to your homework world and use a loop to build a **20-block straight wall**. Then build a **U-shaped wall** (three sides).
 
 Record **one video** (a phone is fine). Show two things:
 

@@ -2,7 +2,7 @@
 
 **Topic:** 3D Mob Heads (x, y, z) · **Course:** 3D Coordinates · **Level:** Intermediate (Extension, after Week 3) · **Time:** about 40 minutes
 
-Build a **creeper head** in 3D. Every block needs **three** numbers: **(x, y, z)**. x is **across**, y is **up**, z is **deeper** (forward). Walk around the head, then copy it block by block — build the **front face** first, then repeat it to add depth.
+Build a **creeper head** in 3D. Every block needs **three** numbers **(x, y, z)**: x **across**, y **up**, z **deeper** (forward).
 
 > 🔴 Stand on your **home spot** (red block) every run. Move your feet, move your head.
 

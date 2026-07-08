@@ -4,9 +4,9 @@
 
 > 🧩 This is a bonus challenge, not a weekly lesson. Try it once you are comfortable placing blocks and you want the agent to place a whole line for you.
 
-In Week 2 you placed blocks one at a time. This world has a faster way: type `run` and the agent flips a switch called **place on move**, then walks forward. Understand the **idea** — you won't type any code.
+In Week 2 you placed blocks one at a time. Here, type `run` and the agent flips a switch called **place on move**, then walks forward — no code to type.
 
-When **place on move** is **ON**, the agent drops a block on every step — a **trail**. When it is **OFF**, it walks but places nothing — a **gap**. The program flips ON, OFF, then ON again, so the trail comes out with a gap in the middle.
+When **place on move** is **ON**, the agent drops a block on every step — a **trail**. When it is **OFF**, it walks but places nothing — a **gap**.
 
 ---
 
@@ -23,7 +23,7 @@ place on move ON
 move forward by 4
 ```
 
-**Each move places one block per step while the switch is ON. How many blocks come from the first `move forward 4`? How many from the `move forward 2` while OFF? How many from the last `move forward 4`? Write all three numbers.**
+**One block drops per step while the switch is ON. How many blocks come from each move — `forward 4`, then `forward 2` (OFF), then `forward 4`? Write all three numbers.**
 
 <div class="write-space tall"></div>
 
@@ -55,11 +55,11 @@ Walk through the program one move at a time. For each move command, write the sw
 
 No code here — think it through.
 
-**The trail comes out as one solid line with NO gap. The switch must have been left in the wrong state somewhere. Which line of the program went wrong for that to happen? Explain in one or two sentences.**
+**The trail comes out as one solid line with NO gap. Which line of the program went wrong? Explain in one or two sentences.**
 
 <div class="write-space tall"></div>
 
-**Now imagine the very first `place on move ON` was missing, so the switch stayed OFF the whole time. What would be on the ground after the agent finished walking? Explain why.**
+**Imagine the very first `place on move ON` was missing, so the switch stayed OFF the whole time. What would be on the ground after the agent finished walking? Explain why.**
 
 <div class="write-space tall"></div>
 

@@ -2,7 +2,7 @@
 
 **Topic:** Pistons and Mazes · **Course:** Maze Madness · **Level:** Beginner · **Time:** about 25 minutes
 
-A lever powers a piston. The piston opens a path. The agent crosses.
+A lever powers a piston. It opens a path to cross.
 
 ---
 
@@ -20,13 +20,11 @@ move forward
 
 ## 2 · Match 🔗
 
-Draw a line. Match each word to its meaning.
+**lever — Circle one:** a hole in the floor · you flip it ON or OFF · it pushes a block
 
-| Word | Meaning |
-| --- | --- |
-| lever | a hole in the floor |
-| piston | you flip it ON or OFF |
-| gap | it pushes a block |
+**piston — Circle one:** a hole in the floor · you flip it ON or OFF · it pushes a block
+
+**gap — Circle one:** a hole in the floor · you flip it ON or OFF · it pushes a block
 
 ---
 
@@ -55,7 +53,7 @@ Record **one video** (a phone is fine). Show two things:
 
 **2 · Your build.** Point the camera. Name the parts.
 
-Fill the blanks:
+Say these out loud, filling in the blanks:
 
 > Today I built ______.
 >
@@ -66,10 +64,6 @@ Fill the blanks:
 > The hardest part was ______.
 >
 > That part was hard because ______.
-
-**Write your lines here, then say them in your video.**
-
-<div class="write-space tall" style="min-height: 340px"></div>
 
 ---
 

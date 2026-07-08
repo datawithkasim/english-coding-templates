@@ -45,7 +45,7 @@ place block down
 
 ## 2 · Spot the Bug 🐛
 
-Each code block below is broken. Read what it should do, rewrite it so it works, then explain why the original was wrong and why your fix works.
+Each code block is broken. Read what it should do, rewrite it, then explain why the original was wrong.
 
 **Bug A** — The agent is supposed to place a block, then move forward, then place another block.
 
@@ -102,7 +102,7 @@ place block down
 
 ## 3 · Show Your Work 📸🎥
 
-Now switch to your homework world. Build a **7-block straight path** by moving and placing one block at a time. Then build it once more with a **different block type** (stone, dirt, or wood — your choice). When you finish, come back here.
+Switch to your homework world and build a **7-block straight path** by moving and placing one block at a time. Then build it once more with a **different block type** (stone, dirt, or wood — your choice).
 
 Record **one video** (a phone is fine). Show two things:
 

@@ -34,7 +34,6 @@ p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
 <p>This week you collect your best functions into a <strong>library</strong> — reusable building blocks like <code>build_wall</code>, <code>build_tower</code>, and <code>clear_area</code>. Big builds become easy when small functions do the work.</p>
 <hr />
 <h2>1 · Predict 🔮</h2>
-<p>Before you imagine the build happening, write what you think will happen.</p>
 <pre><code>function build_wall(length):
     repeat length times:
         place stone block
@@ -132,7 +131,7 @@ build_tower(10)
 
 <hr />
 <h2>3 · Show Your Work 📸🎥</h2>
-<p>Now switch to your homework world. Build something using your own function library — at least one function should call another function. When you finish, come back here.</p>
+<p>Switch to your homework world. Build something using your own function library — one function should call another function.</p>
 <p>Record <strong>one video</strong> (a phone is fine). Show two things:</p>
 <p><strong>1 · Your code.</strong> Scroll through it. Say what each part does.</p>
 <p><strong>2 · Your build.</strong> Point the camera. Name the parts.</p>

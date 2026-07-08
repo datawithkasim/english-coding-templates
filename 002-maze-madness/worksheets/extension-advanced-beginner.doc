@@ -31,7 +31,7 @@ p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
 <div class="brand">📚 ENGLISH CODING · 영어코딩</div>
 <h1>🧩 M002 Extension 1 — Redstone Trail Solver</h1>
 <p><strong>Topic:</strong> Redstone Trail Solver (3D Cube Maze) · <strong>Course:</strong> Maze Madness · <strong>Level:</strong> Extension (Beginner) · <strong>Time:</strong> about 30 minutes</p>
-<p>The agent follows a <strong>redstone trail</strong>. The maze goes <strong>up and down</strong>. Type <code>run</code> to start it.</p>
+<p>The agent follows a <strong>redstone trail</strong> that goes up and down. Type <code>run</code> to start it.</p>
 <hr />
 <h2>1 · Chat Words 🎛️</h2>
 <p>A chat word makes the agent move.</p>
@@ -63,11 +63,11 @@ p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
 <p><strong>Missing word? Circle one:</strong> up · down · left</p>
 <hr />
 <h2>4 · Show Your Work 📸🎥</h2>
-<p>Open the world. Type <code>run</code>. Watch the agent reach the goal.</p>
+<p>Open the world and type <code>run</code>. Watch the agent reach the goal.</p>
 <p>Record <strong>one video</strong> (a phone is fine). Show two things:</p>
 <p><strong>1 · Your code.</strong> Scroll through it. Say what each part does.</p>
 <p><strong>2 · Your build.</strong> Point the camera. Name the parts.</p>
-<p>Fill the blanks:</p>
+<p>Say these out loud, filling in the blanks:</p>
 <blockquote>
 <p>Today I built ______.</p>
 <p>I built it using this code: ______.</p>
@@ -75,9 +75,6 @@ p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
 <p>The hardest part was ______.</p>
 <p>That part was hard because ______.</p>
 </blockquote>
-<p><strong>Write your lines here, then say them in your video.</strong></p>
-<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
-
 <hr />
 <h3>Submit ✅</h3>
 <p>Send this worksheet + your video to teacher on KakaoTalk.</p>

@@ -2,7 +2,7 @@
 
 **Topic:** AND — two redstones both true · **Course:** Maze Madness · **Level:** Extension (Beginner) · **Time:** about 30 minutes
 
-Same **Week 3 world**. Find the **hardest maze**, the big one **your teacher shows a picture of**, packed with redstone. Some tiles have **two** redstones, so the agent needs **both** true: an **AND**. Type `run` to start.
+Same **Week 3 world**. Find the **hardest maze** your teacher shows a picture of — some tiles need **two** redstones true at once (an **AND**), so type `run` to start.
 
 ---
 
@@ -78,7 +78,7 @@ redstone on left ____ redstone below:
 
 ## 5 · Show Your Work 📸🎥
 
-Open the Week 3 world. Find the maze from the picture. Type `run`. Watch the agent reach the **diamond** goal.
+Open the Week 3 world and find the maze from the picture. Type `run` and watch the agent reach the **diamond** goal.
 
 Record **one video** (a phone is fine). Show two things:
 
@@ -86,7 +86,7 @@ Record **one video** (a phone is fine). Show two things:
 
 **2 · Your build.** Point the camera. Name the parts.
 
-Fill the blanks:
+Say these out loud, filling in the blanks:
 
 > Today I built ______.
 >
@@ -97,10 +97,6 @@ Fill the blanks:
 > The hardest part was ______.
 >
 > That part was hard because ______.
-
-**Write your lines here, then say them in your video.**
-
-<div class="write-space tall" style="min-height: 340px"></div>
 
 ---
 

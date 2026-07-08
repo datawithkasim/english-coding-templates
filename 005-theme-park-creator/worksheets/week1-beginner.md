@@ -2,7 +2,7 @@
 
 **Topic:** One Function, Many Coasters — Parameters · **Course:** Theme Park Creator · **Level:** Beginner · **Time:** about 30 minutes
 
-This week you build a roller coaster with a **function**. You give it **parameters** — numbers it uses inside. Change the numbers you **call** it with to build a long coaster or a short one.
+This week you build a roller coaster with a **function**. You give it **parameters** — numbers it uses inside — and change them to build a long or short coaster.
 
 These are the blocks you use this week:
 
@@ -102,7 +102,7 @@ up_and_down(10)
 
 ## 4 · Show Your Work 📸🎥
 
-Now switch to your homework world. Write one `build_hill` function with a `line_len` parameter and a ramp up, then call it two times with different numbers. When you finish, come back here.
+Switch to your homework world. Write one `build_hill` function with a `line_len` parameter and a ramp up, then call it two times with different numbers.
 
 Record **one video** (a phone is fine). Show two things:
 
@@ -110,7 +110,7 @@ Record **one video** (a phone is fine). Show two things:
 
 **2 · Your build.** Point the camera. Name the parts.
 
-Fill the blanks:
+Say these out loud, filling in the blanks:
 
 > Today I built ______.
 >
@@ -121,10 +121,6 @@ Fill the blanks:
 > The hardest part was ______.
 >
 > That part was hard because ______.
-
-**Write your lines here, then say them in your video.**
-
-<div class="write-space tall" style="min-height: 340px"></div>
 
 ---
 

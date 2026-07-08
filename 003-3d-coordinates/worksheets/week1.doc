@@ -31,7 +31,7 @@ p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
 <div class="brand">📚 ENGLISH CODING · 영어코딩</div>
 <h1>🧊 M003 Week 1 — English Worksheet</h1>
 <p><strong>Topic:</strong> First Steps with Coordinates (x, y) · <strong>Course:</strong> 3D Coordinates · <strong>Time:</strong> about 45 minutes</p>
-<p>This week you draw on a flat <strong>wall</strong>. Every spot has a name — <strong>two numbers: (x, y)</strong>. x is how far <strong>across</strong>, y is how far <strong>up</strong>. Counting starts at <strong>0</strong>.</p>
+<p>This week you draw on a flat <strong>wall</strong>. Every spot has a name — <strong>two numbers (x, y)</strong>: x is how far <strong>across</strong>, y is how far <strong>up</strong>, counting from <strong>0</strong>.</p>
 <hr />
 <h2>1 · Predict 🔮</h2>
 <p>Read each set of steps. Write what you think you will see.</p>
@@ -59,7 +59,7 @@ place gold block at (0, y)
 <hr />
 <h2>2 · Spot the Bug 🐛</h2>
 <p>Each code block below is broken. Read what it should do, fix it, then explain why the original was wrong and your fix works.</p>
-<p><strong>Bug A</strong> — The block should land at <strong>(2, 5)</strong> — 2 across, 5 up. Right now it lands elsewhere.</p>
+<p><strong>Bug A</strong> — The block should land at <strong>(2, 5)</strong> — 2 across, 5 up.</p>
 <pre><code>place gold block at (5, 2)
 </code></pre>
 <p><strong>Write the fixed code:</strong></p>
@@ -78,7 +78,7 @@ place gold block at (0, y)
 <p><strong>Why was it wrong? Why does your fix work?</strong></p>
 <p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
 
-<p><strong>Bug C</strong> — The block should sit <strong>5 up</strong> at x = 0 — that is <strong>(0, 5)</strong>. Right now it drops below the wall.</p>
+<p><strong>Bug C</strong> — The block should sit <strong>5 up</strong> at x = 0 — that is <strong>(0, 5)</strong>. It drops below the wall instead.</p>
 <pre><code>place gold block at (0, -5)
 </code></pre>
 <p><strong>Write the fixed code:</strong></p>
@@ -89,7 +89,7 @@ place gold block at (0, y)
 
 <hr />
 <h2>3 · Show Your Work 📸🎥</h2>
-<p>Now switch to your homework world. Place a gold block at <strong>(0, 0)</strong> so you can see where counting starts. Then pick three more coordinates, place a different block at each one, and write down the coordinates you used. When you finish, come back here.</p>
+<p>Switch to your homework world and place a gold block at <strong>(0, 0)</strong> to see where counting starts. Then pick three more coordinates, place a different block at each, and write down the coordinates you used.</p>
 <p>Record <strong>one video</strong> (a phone is fine). Show two things:</p>
 <p><strong>1 · Your code.</strong> Scroll through it. Say what each part does.</p>
 <p><strong>2 · Your build.</strong> Point the camera. Name the parts.</p>

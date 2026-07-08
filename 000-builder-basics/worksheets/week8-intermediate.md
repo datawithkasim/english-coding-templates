@@ -129,7 +129,7 @@ ____________
 
 ## 4 · Show Your Work 📸🎥
 
-Now switch to your homework world and build your **final project**: a village with a **house and one more structure** — a well or a farm, your choice. Add a third structure if you have time. When you finish, come back here.
+Switch to your homework world and build your **final project**: a village with a **house and one more structure** — a well or a farm, your choice. Add a third structure if you have time.
 
 Record **one video** (a phone is fine). Show two things:
 

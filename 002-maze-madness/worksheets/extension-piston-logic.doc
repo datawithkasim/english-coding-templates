@@ -31,7 +31,7 @@ p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
 <div class="brand">📚 ENGLISH CODING · 영어코딩</div>
 <h1>🧩 M002 Extension 2 — Piston &amp; Logic Maze</h1>
 <p><strong>Topic:</strong> Two Pistons + AND Conditions · <strong>Course:</strong> Maze Madness · <strong>Level:</strong> Extension (Advanced) · <strong>Time:</strong> about 60 minutes</p>
-<p>The agent follows a <strong>redstone trail</strong> through a long maze, checking <strong>two things at once</strong> with <strong>AND</strong> at some junctions. Twice, a <strong>lever powers a piston</strong> to open a gate. Drive the agent through the <strong>whole maze</strong>, start to finish.</p>
+<p>The agent follows a <strong>redstone trail</strong> through a long maze, using <strong>AND</strong> at some junctions. Twice a <strong>lever powers a piston</strong> to open a gate — drive the agent through the <strong>whole maze</strong>.</p>
 <p>Chat words: <code>l</code> turn left, <code>r</code> turn right, <code>run</code> start the solver, <code>rl</code> teleport the agent back to you.</p>
 <hr />
 <h2>1 · Read the Chat Commands 🎛️</h2>

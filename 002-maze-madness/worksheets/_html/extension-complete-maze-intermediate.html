@@ -109,7 +109,7 @@ footer b { color: #ff7849; }
 <div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
 <h1>🧩 M002 Extension 4 — Complete the Maze</h1>
 <p><strong>Topic:</strong> Add Two AND Conditions · <strong>Course:</strong> Maze Madness · <strong>Level:</strong> Extension (Intermediate) · <strong>Time:</strong> about 45 minutes</p>
-<p>The agent follows a redstone trail with <strong>four rules</strong>, but the solver is <strong>not finished</strong>. At two junctions, two signals are on at once and the agent stops. Add two <strong>AND</strong> rules of your own, then drive it to the goal.</p>
+<p>The agent follows a redstone trail with <strong>four rules</strong>, but the solver is <strong>not finished</strong>. At two junctions two signals fire at once and it stops — add two <strong>AND</strong> rules, then drive it to the goal.</p>
 <p>Chat: <code>l</code> turn left, <code>r</code> turn right, <code>run</code> start solver, <code>rl</code> bring agent back.</p>
 <h2>1 · The Four Rules 🎛️</h2>
 <p>Each rule checks <strong>one</strong> signal and does <strong>one</strong> action.</p>
@@ -209,7 +209,7 @@ elif agent.detect(REDSTONE, UP):
 <div class="write-space short"></div></div>
 
 <h2>5 · Spot the Bug 🐛</h2>
-<p>This branch should fire <strong>only when both</strong> signals are on. Right now it fires when <strong>either</strong> one is on, so it triggers at wrong spots.</p>
+<p>This branch should fire <strong>only when both</strong> signals are on. It fires when <strong>either</strong> one is on, so it triggers at wrong spots.</p>
 <pre><code>elif agent.detect(REDSTONE, LEFT) or agent.detect(REDSTONE, DOWN):
     agent.turn(RIGHT_TURN)
     agent.move(UP, 1)
@@ -221,7 +221,7 @@ elif agent.detect(REDSTONE, UP):
 <div class="write-space short"></div></div>
 
 <h2>6 · Show Your Work 📸🎥</h2>
-<p>Type <code>run</code>. The goal is start to the <strong>very end</strong>, past both stuck junctions. Fix your rules and run again until it reaches the goal.</p>
+<p>Type <code>run</code>. Goal: start to the <strong>very end</strong>, past both stuck junctions — fix your rules and run again until it reaches the goal.</p>
 <p>Record <strong>one video</strong> (a phone is fine). Show two things:</p>
 <p><strong>1 · Your code.</strong> Scroll through it. Say what each part does.</p>
 <p><strong>2 · Your build.</strong> Point the camera. Name the parts.</p>

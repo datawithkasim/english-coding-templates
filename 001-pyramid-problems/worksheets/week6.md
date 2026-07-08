@@ -48,7 +48,7 @@ while size <= 5:
 
 ## 2 · Spot the Bug 🐛
 
-Each code block below is broken. Read what it should do, rewrite it so it works, then explain why the original was wrong and why your fix works.
+Each code block below is broken. Rewrite it so it works, then explain the fix.
 
 **Bug A** — The agent is supposed to build an **inverted pyramid**: the smallest layer at the bottom, the biggest at the top.
 
@@ -107,7 +107,7 @@ while size <= 9:
 
 ## 3 · Show Your Work 📸🎥
 
-Now switch to your homework world. Build an inverted pyramid that grows from **size 1 up to size 9**. Look from the side and check the shape is right. When you finish, come back here.
+Switch to your homework world. Build an inverted pyramid that grows from **size 1 up to size 9**, then check the shape from the side.
 
 Record **one video** (a phone is fine). Show two things:
 

@@ -2,7 +2,7 @@
 
 **Topic:** Recreate the Ender Dragon (x, y, z) · **Course:** 3D Coordinates · **Level:** Beginner · **Time:** about 30 minutes
 
-A big blocky **ender dragon** is in your world — black with purple eyes. Today you build a **small** one: a short body and a head. Every block needs **three** numbers — **(x, y, z)**. x is **across**, y is **up**, z is **forward** (deep).
+A big blocky **ender dragon** is in your world; today you build a **small** one. Every block uses **(x, y, z)** — x **across**, y **up**, z **forward** (deep).
 
 > 🔴 Stand on your **home spot** (red block) every run. Move your feet, move your head.
 
@@ -56,7 +56,7 @@ First build this tiny body on your home spot:
 fill black from (0, 4, 0) to (0, 4, 3)
 ```
 
-Now look at the dragon in your world. Copy it part by part: build a short black **body**, then place a black **head** block at the front. Add two **purple** eye blocks if you like.
+Look at the dragon in your world. Copy it part by part: build a short black **body**, then place a black **head** block at the front. Add two **purple** eye blocks if you like.
 
 ```
 fill black from (0, 4, 0) to (0, 4, 5)
@@ -69,7 +69,7 @@ Record **one video** (a phone is fine). Show two things:
 
 **2 · Your build.** Point the camera. Name the parts.
 
-Fill the blanks:
+Say these out loud, filling in the blanks:
 
 > Today I built ______.
 >
@@ -80,10 +80,6 @@ Fill the blanks:
 > The hardest part was ______.
 >
 > That part was hard because ______.
-
-**Write your lines here, then say them in your video.**
-
-<div class="write-space tall" style="min-height: 340px"></div>
 
 ---
 

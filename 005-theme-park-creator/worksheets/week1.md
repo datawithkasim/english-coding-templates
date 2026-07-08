@@ -2,7 +2,7 @@
 
 **Topic:** One Function, Many Coasters — Parameters · **Course:** Theme Park Creator · **Time:** about 45 minutes
 
-This week you build a roller coaster with a **function**. You give it **parameters** — numbers it uses inside. Change the numbers you **call** it with to build a long coaster, a short one, a tall spiral, or a wide one.
+This week you build a roller coaster with a **function**. You give it **parameters** — numbers it uses inside — and change them to build a long coaster, a tall spiral, or a wide one.
 
 These are the blocks you use this week:
 
@@ -136,7 +136,7 @@ Your coaster must include, in total:
 - **2 spirals** — one going **UP**, one coming back **DOWN**
 - enough **turns** that the track curves around and ends back where it started
 
-Here are the building blocks. They all use **fixed numbers** and point the **same way**. Fix that:
+Here are the building blocks. They use **fixed numbers** and point the **same way** — fix that:
 
 ```python
 rollerCoasterBuilder.add_straight_line(10)

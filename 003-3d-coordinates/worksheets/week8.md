@@ -2,7 +2,7 @@
 
 **Topic:** Final — My Own Museum · **Course:** 3D Coordinates · **Time:** about 60 minutes
 
-This is your big final project — no new commands, every idea from this course in one build. Your museum is a **room** visitors walk into, with **flat pictures** on the walls (2D, x and y) and **solid sculptures** on pedestals (3D, x, y, z). Plan it like an architect: coordinates first, then build.
+This is your big final project — every idea from this course in one build. Your museum is a **room** with **flat pictures** on the walls (2D, x and y) and **solid sculptures** on pedestals (3D, x, y, z).
 
 ---
 
@@ -136,13 +136,13 @@ Pedestal 2: from ( … , … , … ) to ( … , … , … ) · sculpture on top 
 
 ## 4 · Show Your Work 📸🎥
 
-Now switch to your homework world and build your museum from your blueprint. Check your build against this list:
+Switch to your homework world and build your museum from your blueprint. Check your build against this list:
 
 > ☐ A **gallery room** with a floor, walls, and a **doorway** to walk through.
 >
-> ☐ At least **two different flat pictures** on the walls — **2D art**, where only x and y change.
+> ☐ **Two different flat pictures** on the walls — **2D art**, where only x and y change.
 >
-> ☐ At least **two sculptures**, each on its **own pedestal** — **3D art**, using x, y, and z.
+> ☐ **Two sculptures**, each on its **own pedestal** — **3D art**, using x, y, and z.
 >
 > ☐ The two pedestals **do not overlap**, and each sculpture **rests on top** of its pedestal.
 >

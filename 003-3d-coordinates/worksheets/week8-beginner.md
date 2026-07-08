@@ -69,33 +69,21 @@ place gold block at (4, 0, 4)
 
 ## 3 · Plan Your Museum 🗺️
 
-Plan **before** you build. Write where each piece goes.
-
-My room: from ( … , … , … ) to ( … , … , … )
-
-<div class="write-space short"></div>
-
-My wall picture shows … and stays at z = …
-
-<div class="write-space short"></div>
-
-My pedestal: from ( … , … , … ) to ( … , … , … ) · my sculpture on top at ( … , … , … )
-
-<div class="write-space short"></div>
+Before you build, say your plan out loud: where your room goes, where your flat picture goes (which wall, z stays 0), and where your pedestal and sculpture go.
 
 ---
 
 ## 4 · Show Your Work 📸🎥
 
-Now switch to your homework world and build your museum from your plan. Check your build against this list:
+Switch to your homework world and build your museum from your plan. Check your build against this list:
 
 > ☐ A **room** with a floor and walls that you can stand inside.
 >
 > ☐ A **doorway** to walk in through.
 >
-> ☐ At least **one flat picture** on a wall (2D — only x and y change).
+> ☐ **One flat picture** on a wall (2D — only x and y change).
 >
-> ☐ At least **one sculpture** on a pedestal (3D — x, y, and z).
+> ☐ **One sculpture** on a pedestal (3D — x, y, and z).
 
 Record **one video** (a phone is fine). Show two things:
 
@@ -103,7 +91,7 @@ Record **one video** (a phone is fine). Show two things:
 
 **2 · Your build.** Point the camera. Name the parts.
 
-Fill the blanks:
+Say these out loud, filling in the blanks:
 
 > Today I built ______.
 >
@@ -114,10 +102,6 @@ Fill the blanks:
 > The hardest part was ______.
 >
 > That part was hard because ______.
-
-**Write your lines here, then say them in your video.**
-
-<div class="write-space tall" style="min-height: 340px"></div>
 
 ---
 

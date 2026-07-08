@@ -109,7 +109,7 @@ footer b { color: #ff7849; }
 <div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
 <h1>🧊 M003 Extension — English Worksheet (Advanced)</h1>
 <p><strong>Topic:</strong> Pixel-Art Mobs (x, y) · <strong>Course:</strong> 3D Coordinates · <strong>Level:</strong> Advanced (Extension, after Week 3) · <strong>Time:</strong> about 45 minutes</p>
-<p>This is a <strong>bonus picture challenge</strong> between Week 3 and Week 4. Now you copy <strong>two bigger mobs</strong> — a <strong>pink axolotl</strong> and a <strong>black ender dragon head</strong>. Every block sits at <strong>(x, y)</strong> — x is how far <strong>across</strong>, y is how far <strong>up</strong>. Plan before you build.</p>
+<p>A bonus picture challenge: copy <strong>two bigger mobs</strong> — a <strong>pink axolotl</strong> and a <strong>black ender dragon head</strong>. Every block sits at <strong>(x, y)</strong> — x is how far <strong>across</strong>, y is how far <strong>up</strong>.</p>
 <p><strong>Build your canvas.</strong> Run this to make a blank <strong>15 × 15</strong> wall, then put a <strong>red block at your feet</strong> as your <strong>home spot</strong>:</p>
 <div style="display:flex; gap:14px; align-items:flex-start; margin:10px 0; page-break-inside:avoid; break-inside:avoid"><div style="flex:1; min-width:0"><p style="margin:0 0 4px; font-weight:700">🧩 Blocks</p><img src="../assets/week3-canvas-blocks.png" alt="MakeCode blocks: on chat command run, fill with white concrete from ~1 ~1 ~0 to ~15 ~15 ~0, replace" style="width:100%; max-width:240px; border-radius:8px; display:block"></div><div style="flex:1; min-width:0"><p style="margin:0 0 4px; font-weight:700">🐍 Python</p><pre style="margin:0; white-space:pre; font-size:12px">def on_run():
     blocks.fill(WHITE_CONCRETE,
@@ -154,7 +154,7 @@ place black block at (6, 10)
 
 <h2>2 · Spot the Bug 🐛</h2>
 <p>Each code block below is broken. Read what it should do, fix it, then explain why the original was wrong and your fix works.</p>
-<p><strong>Bug A</strong> — This should make the <strong>axolotl's two eyes</strong>, one at (6, 10) and one at (11, 10). Right now both land in the <strong>same spot</strong>.</p>
+<p><strong>Bug A</strong> — This should make the <strong>axolotl's two eyes</strong>, one at (6, 10) and one at (11, 10). Both land in the <strong>same spot</strong>.</p>
 <pre><code>place black block at (6, 10)
 place black block at (6, 10)
 </code></pre>
@@ -165,7 +165,7 @@ place black block at (6, 10)
 <div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
 <div class="write-space"></div></div>
 
-<p><strong>Bug B</strong> — The dragon's <strong>eye</strong> should sit at (8, 10). Right now the two numbers are <strong>swapped</strong>, so it lands in the wrong place.</p>
+<p><strong>Bug B</strong> — The dragon's <strong>eye</strong> should sit at (8, 10). The two numbers are <strong>swapped</strong>, so it lands in the wrong place.</p>
 <pre><code>place purple block at (10, 8)
 </code></pre>
 <p><strong>Hint:</strong> the <strong>first</strong> number is across (x), the <strong>second</strong> is up (y). Which one should be 8, which should be 10?</p>
@@ -182,7 +182,7 @@ place black block at (6, 10)
 <div class="write-space"></div></div>
 
 <h2>3 · Show Your Work 📸🎥</h2>
-<p>Stand on your <strong>home spot</strong> (the red block). Pick <strong>one</strong> mob below and copy it onto your wall, block by block, by reading the (x, y) of every colored square. The numbers across the <strong>top</strong> are <strong>x</strong>, the numbers down the <strong>side</strong> are <strong>y</strong>. Finished early? Build the other one too.</p>
+<p>Stand on your <strong>home spot</strong> (the red block). Pick <strong>one</strong> mob and copy it block by block, reading each colored square's (x, y) — <strong>x</strong> across the top, <strong>y</strong> down the side.</p>
 <div class="qa"><p><strong>Plan first.</strong> Before you place anything, find the <strong>lowest</strong> block and the <strong>left-most</strong> block of your mob and write their (x, y) here. That tells you where the picture starts.</p>
 <div class="write-space short"></div></div>
 

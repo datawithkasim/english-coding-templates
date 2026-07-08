@@ -93,7 +93,7 @@ Why was it wrong?
 
 ## 5 · Show Your Work 📸🎥
 
-Go to your homework world. Solve the maze using **one AND** and **one OR**. Come back here.
+Go to your homework world. Solve the maze using **one AND** and **one OR**.
 
 Record **one video** (a phone is fine). Show two things:
 

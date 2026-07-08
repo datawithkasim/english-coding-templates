@@ -2,7 +2,7 @@
 
 **Topic:** Recreate the Statues (x, y, z) · **Course:** 3D Coordinates · **Level:** Intermediate · **Time:** about 40 minutes
 
-A statue is **stacked fill boxes**. One **`fill`** makes a solid box between **two corners**, each written **(x, y, z)** — x **across**, y **up**, z **forward**. To stack a box **on top**, start its **y** where the box below stopped. The feet sit on the **ground (y = 0)**.
+A statue is **stacked fill boxes**. One **`fill`** makes a solid box between **two corners** (x, y, z) — to stack one **on top**, start its **y** where the box below stopped; feet sit on the **ground (y = 0)**.
 
 > 🔴 Stand on your **home spot** (red block) every run. Move your feet, move your head.
 
@@ -79,7 +79,7 @@ fill WHITE from (3, 6, 3) to (5, 6, 5)
 
 ## 3 · Show Your Work 📸🎥
 
-Walk around a statue in your world. Then build your own on your home spot. It is **3 fill boxes**: a base (legs), a body, and a head.
+Walk around a statue in your world, then build your own on your home spot. It is **3 fill boxes**: a base (legs), a body, and a head.
 
 > 🧱 Recipe (every corner is **(x, y, z)**, feet on the ground y = 0):
 > - base / legs: gray from (3, 0, 3) to (5, 1, 5)

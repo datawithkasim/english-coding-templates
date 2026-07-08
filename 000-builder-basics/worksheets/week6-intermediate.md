@@ -34,7 +34,7 @@ repeat 4 times:
 
 ## 2 · Find the Bug 🐛
 
-Each code block is broken. The goal is written first. Circle the line that causes the problem, then write one sentence on what is wrong.
+The goal is written first. Circle the line that breaks it, then explain in one sentence.
 
 **Bug A** — Goal: dig **3 blocks straight down** to make the well hole. After each `destroy`, the agent must step down into the hole.
 
@@ -68,7 +68,7 @@ repeat 4 times:
 
 ## 3 · Fix the Code ✏️
 
-The agent should build the **4 sides** of a 3×3 square wall around the well. Right now it builds only **one side** — the outer loop is missing.
+The agent should build the **4 sides** of a 3×3 square wall around the well. It builds only **one side** — the outer loop is missing.
 
 ```
 repeat 3 times:
@@ -91,7 +91,7 @@ repeat 3 times:
 
 ## 4 · Show Your Work 📸🎥
 
-Now switch to your homework world. Build a **well** — a 3×3 square wall on top, and a hole **3 or 4 blocks deep** inside it. When you finish, come back here.
+Switch to your homework world. Build a **well** — a 3×3 square wall on top, and a hole **3 or 4 blocks deep** inside it.
 
 Record **one video** (a phone is fine). Show two things:
 
