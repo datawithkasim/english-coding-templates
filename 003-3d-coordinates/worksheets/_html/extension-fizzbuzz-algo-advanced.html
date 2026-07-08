@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>🧊 M003 Extension — English Worksheet (Advanced)</title>
+<style>
+@page { size: A4; margin: 18mm 16mm 22mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-family: "Inter", "Segoe UI", system-ui, sans-serif; color: #1a1a2e; }
+body { font-size: 15px; line-height: 1.55; }
+
+.cover { border-bottom: 3px solid #ff7849; padding-bottom: 14px; margin-bottom: 20px; }
+.brand { font-size: 14px; font-weight: 800; color: #ff7849; letter-spacing: .06em; }
+h1 { font-size: 28px; color: #6b4ee6; margin: 8px 0 6px; line-height: 1.25; }
+h2 { font-size: 19px; color: #6b4ee6; margin: 22px 0 12px; padding-top: 10px; border-top: 1px solid #eee; page-break-before: always; }
+section.first h2, h2:first-of-type { border-top: none; padding-top: 0; page-break-before: avoid; }
+h3, h4 { font-size: 15px; margin: 14px 0 8px; color: #1a1a2e; }
+p { margin: 8px 0; }
+strong { color: #1a1a2e; }
+em { color: #555; }
+
+ul, ol { margin: 8px 0 8px 24px; }
+li { margin: 3px 0; }
+
+/* Grids (e.g. pixel-art coordinate grids) render as light graph paper. */
+table { border-collapse: collapse; margin: 12px 0; }
+th, td { border: 1px solid #ddd; padding: 4px 9px; text-align: center; font-size: 14px; }
+th { background: #faf7ff; color: #6b4ee6; font-weight: 700; }
+
+pre {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 13.5px;
+  background: #1e1e2e;
+  color: #b9f6ca;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 10px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  page-break-inside: avoid;
+  line-height: 1.5;
+}
+pre code { background: transparent; padding: 0; color: inherit; }
+code {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  background: #fff1e8;
+  color: #ff7849;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+blockquote {
+  margin: 10px 0;
+  padding: 10px 16px;
+  background: #fff6ef;
+  border-left: 3px solid #ff7849;
+  border-radius: 0 6px 6px 0;
+  color: #6a3a1c;
+}
+
+.write-space {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #ffffff 0,
+    #ffffff 27px,
+    #d4d4d4 27px,
+    #d4d4d4 28px
+  );
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  min-height: 114px;
+  margin: 10px 0 20px;
+  page-break-inside: avoid;
+}
+.write-space.short { min-height: 86px; }
+.write-space.tall { min-height: 170px; }
+
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
+hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
+
+.meta { color: #666; font-size: 13px; margin: 0 0 14px; }
+.answer-lines {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 14px 16px;
+  background: #fafafa;
+  white-space: pre;
+  line-height: 2.2;
+}
+
+footer {
+  position: fixed;
+  bottom: 10mm; left: 16mm; right: 16mm;
+  text-align: center;
+  font-size: 10px;
+  color: #aaa;
+}
+footer b { color: #ff7849; }
+</style>
+</head>
+<body>
+<div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
+<h1>🧊 M003 Extension — English Worksheet (Advanced)</h1>
+<p><strong>Topic:</strong> FizzBuzz Pixel Art (remainders &amp; rules) · <strong>Course:</strong> 3D Coordinates · <strong>Level:</strong> Extension (Advanced, after Week 3) · <strong>Time:</strong> about 45 minutes</p>
+<p>You already made pixel art by choosing each block's colour <strong>by hand</strong>. This time the <strong>code</strong> chooses every colour for you — using one rule, the <strong>FizzBuzz rule</strong>. Load the world, type <code>run</code> in the chat, and watch the agent paint a <strong>15 × 15</strong> wall one block at a time, counting from <strong>1 to 225</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>If the block's number…</th>
+<th>it says</th>
+<th>colour</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>divides by <strong>3 and 5</strong></td>
+<td><strong>FIZZ BUZZ</strong></td>
+<td>🟡 gold</td>
+</tr>
+<tr>
+<td>divides by <strong>3</strong></td>
+<td><strong>FIZZ</strong></td>
+<td>⬛ black</td>
+</tr>
+<tr>
+<td>divides by <strong>5</strong></td>
+<td><strong>BUZZ</strong></td>
+<td>🟪 purple</td>
+</tr>
+<tr>
+<td>divides by neither</td>
+<td><em>(nothing)</em></td>
+<td>🟩 green</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>🔢 <strong>Big idea:</strong> a block's colour comes from its <strong>number</strong>, not its place. The code asks <em>"what is the remainder when I divide this number by 3? by 5?"</em> — and the remainder picks the colour.</p>
+</blockquote>
+<p><strong>Remainder</strong> is what is left over after you divide. 6 ÷ 3 = 2 with <strong>remainder 0</strong> — 3 fits exactly. 7 ÷ 3 = 2 with <strong>remainder 1</strong> — one is left over. When the remainder is <strong>0</strong>, the number <strong>divides evenly</strong>.</p>
+<h2>1 · Predict 🔮</h2>
+<p>The wall counts <strong>1 → 225</strong>. Using the rule, write the <strong>colour of each block and the reason</strong>.</p>
+<div class="qa"><p><strong>Block 9 →</strong></p>
+<div class="write-space short"></div></div>
+
+<div class="qa"><p><strong>Block 10 →</strong></p>
+<div class="write-space short"></div></div>
+
+<div class="qa"><p><strong>Block 15 →</strong></p>
+<div class="write-space short"></div></div>
+
+<div class="qa"><p><strong>Block 7 →</strong></p>
+<div class="write-space short"></div></div>
+
+<p>The rule checks <strong>"divides by 3 and 5"</strong> <em>first</em>, before it checks "divides by 3".</p>
+<div class="qa"><p><strong>What colour would block 15 get if the code checked "divides by 3" first instead? Why does the order of the checks change the answer?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>2 · Spot the Bug 🐛</h2>
+<p>Each rule below is broken. Read what it should do, fix it, then explain why the original was wrong and your fix works.</p>
+<p><strong>Bug A — the order is upside down.</strong> This should paint gold when a number divides by 3 <strong>and</strong> 5. But the <strong>÷ 3</strong> check comes first, so it grabs those numbers before the gold check ever runs.</p>
+<pre><code>if remainder of N ÷ 3 = 0:
+    paint BLACK    ← FIZZ
+else if remainder of N ÷ 3 = 0 and remainder of N ÷ 5 = 0:
+    paint GOLD     ← FIZZ BUZZ
+else if remainder of N ÷ 5 = 0:
+    paint PURPLE   ← BUZZ
+else:
+    paint GREEN
+</code></pre>
+<div class="qa"><p><strong>Which blocks (15, 30, 45 …) come out the wrong colour, and what colour do they wrongly get?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Write the fixed rule (which line moves where?):</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug B — wrong divisor.</strong> The purple <strong>BUZZ</strong> stripe should mark blocks that divide by <strong>5</strong>. This line divides by <strong>4</strong>, so the wrong blocks turn purple.</p>
+<pre><code>else if remainder of N ÷ 4 = 0:
+    paint PURPLE   ← BUZZ
+</code></pre>
+<div class="qa"><p><strong>Write the fixed line, then name two blocks that turned purple by mistake:</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug C — wrong wall width.</strong> A friend changed the inner loop from <strong>repeat 15</strong> to <strong>repeat 10</strong>, so each row is only <strong>10</strong> blocks wide. The neat vertical stripes turned into a slanted, messy pattern.</p>
+<div class="qa"><p><strong>Why do the stripes only line up when each row is 15 wide? (Hint: 3 × 5 = 15. What happens to the count at the start of every new row?)</strong></p>
+<div class="write-space"></div></div>
+
+<h2>3 · Show Your Work 📸🎥</h2>
+<p>Load the world. Stand where you can see the empty wall. Type <code>run</code> in the chat and watch the agent count <strong>1 → 225</strong>, painting each block by the rule.</p>
+<div style="page-break-inside:avoid;break-inside:avoid;margin:16px 0"><p style="font-weight:700;margin:0 0 6px">🧱 The finished wall — 15 × 15 (block 1 → 225)</p><table style="border-collapse:collapse;margin:4px 0"><tr><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:28px"></th><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:28px">1</th><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:28px">2</th><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:28px">3</th><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:28px">4</th><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:28px">5</th><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:28px">6</th><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:28px">7</th><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:28px">8</th><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:28px">9</th><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:28px">10</th><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:28px">11</th><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:28px">12</th><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:28px">13</th><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:28px">14</th><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:28px">15</th></tr><tr><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:28px">15</th><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#1a1a1a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#a64dd6;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#1a1a1a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#1a1a1a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#a64dd6;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#1a1a1a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#ffd23f;border:1px solid #0000002a"></td></tr><tr><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:28px">14</th><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#1a1a1a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#a64dd6;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#1a1a1a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#1a1a1a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#a64dd6;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#1a1a1a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#ffd23f;border:1px solid #0000002a"></td></tr><tr><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:28px">13</th><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#1a1a1a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#a64dd6;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#1a1a1a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#1a1a1a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#a64dd6;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#1a1a1a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#ffd23f;border:1px solid #0000002a"></td></tr><tr><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:28px">12</th><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#1a1a1a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#a64dd6;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#1a1a1a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#1a1a1a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#a64dd6;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#1a1a1a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#ffd23f;border:1px solid #0000002a"></td></tr><tr><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:28px">11</th><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#1a1a1a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#a64dd6;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#1a1a1a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#1a1a1a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#a64dd6;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#1a1a1a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#ffd23f;border:1px solid #0000002a"></td></tr><tr><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:28px">10</th><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#1a1a1a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#a64dd6;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#1a1a1a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#1a1a1a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#a64dd6;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#1a1a1a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#ffd23f;border:1px solid #0000002a"></td></tr><tr><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:28px">9</th><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#1a1a1a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#a64dd6;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#1a1a1a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#1a1a1a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#a64dd6;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#1a1a1a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#ffd23f;border:1px solid #0000002a"></td></tr><tr><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:28px">8</th><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#1a1a1a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#a64dd6;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#1a1a1a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#1a1a1a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#a64dd6;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#1a1a1a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#ffd23f;border:1px solid #0000002a"></td></tr><tr><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:28px">7</th><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#1a1a1a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#a64dd6;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#1a1a1a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#1a1a1a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#a64dd6;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#1a1a1a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#ffd23f;border:1px solid #0000002a"></td></tr><tr><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:28px">6</th><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#1a1a1a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#a64dd6;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#1a1a1a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#1a1a1a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#a64dd6;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#1a1a1a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#ffd23f;border:1px solid #0000002a"></td></tr><tr><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:28px">5</th><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#1a1a1a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#a64dd6;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#1a1a1a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#1a1a1a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#a64dd6;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#1a1a1a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#ffd23f;border:1px solid #0000002a"></td></tr><tr><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:28px">4</th><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#1a1a1a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#a64dd6;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#1a1a1a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#1a1a1a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#a64dd6;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#1a1a1a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#ffd23f;border:1px solid #0000002a"></td></tr><tr><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:28px">3</th><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#1a1a1a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#a64dd6;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#1a1a1a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#1a1a1a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#a64dd6;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#1a1a1a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#ffd23f;border:1px solid #0000002a"></td></tr><tr><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:28px">2</th><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#1a1a1a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#a64dd6;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#1a1a1a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#1a1a1a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#a64dd6;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#1a1a1a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#ffd23f;border:1px solid #0000002a"></td></tr><tr><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:28px">1</th><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#1a1a1a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#a64dd6;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#1a1a1a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#1a1a1a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#a64dd6;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#1a1a1a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#57b04a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#ffd23f;border:1px solid #0000002a"></td></tr></table></div>
+
+<p><strong>Look closely.</strong> Every one of the 15 rows is <strong>identical</strong>, so the colours form <strong>vertical stripes</strong>.</p>
+<div class="qa"><p><strong>Explain why every row comes out the same.</strong> (Each row is 15 wide, and 15 divides by both 3 and 5 — so what number does the <em>first block of every new row</em> act like?)</p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Modify challenge.</strong> Change <strong>one rule</strong> and <strong>predict the new wall before you run it</strong>. For example: paint gold for <strong>÷ 2 and ÷ 3</strong>, or make the wall <strong>20</strong> wide. Write which stripes will move, then build it and check.</p>
+<div class="write-space"></div></div>
+
+<p>Record <strong>one video</strong> (a phone is fine). Show two things:</p>
+<p><strong>1 · Your code.</strong> Scroll through it. Say what each part does.</p>
+<p><strong>2 · Your build.</strong> Point the camera. Name the colours and the stripes.</p>
+<p>Fill the blanks:</p>
+<blockquote>
+<p>Today I built ______.</p>
+<p>I built it using this code: ______.</p>
+<p>In this code I used ______.</p>
+<p>The hardest part was ______.</p>
+<p>That part was hard because ______.</p>
+</blockquote>
+<div class="qa"><p><strong>Write your lines here, then say them in your video.</strong></p>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your video to teacher on KakaoTalk.</p>
+</body>
+</html>
