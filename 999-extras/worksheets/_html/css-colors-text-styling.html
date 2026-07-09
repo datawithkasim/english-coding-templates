@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>🎨 Extra — CSS Colors & Text Styling</title>
+<style>
+@page { size: A4; margin: 18mm 16mm 22mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-family: "Inter", "Segoe UI", system-ui, sans-serif; color: #1a1a2e; }
+body { font-size: 15px; line-height: 1.55; }
+
+.cover { border-bottom: 3px solid #ff7849; padding-bottom: 14px; margin-bottom: 20px; }
+.brand { font-size: 14px; font-weight: 800; color: #ff7849; letter-spacing: .06em; }
+h1 { font-size: 28px; color: #6b4ee6; margin: 8px 0 6px; line-height: 1.25; }
+h2 { font-size: 19px; color: #6b4ee6; margin: 22px 0 12px; padding-top: 10px; border-top: 1px solid #eee; page-break-before: always; }
+section.first h2, h2:first-of-type { border-top: none; padding-top: 0; page-break-before: avoid; }
+h3, h4 { font-size: 15px; margin: 14px 0 8px; color: #1a1a2e; }
+p { margin: 8px 0; }
+strong { color: #1a1a2e; }
+em { color: #555; }
+
+ul, ol { margin: 8px 0 8px 24px; }
+li { margin: 3px 0; }
+
+/* Grids (e.g. pixel-art coordinate grids) render as light graph paper. */
+table { border-collapse: collapse; margin: 12px 0; }
+th, td { border: 1px solid #ddd; padding: 4px 9px; text-align: center; font-size: 14px; }
+th { background: #faf7ff; color: #6b4ee6; font-weight: 700; }
+
+pre {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 13.5px;
+  background: #1e1e2e;
+  color: #b9f6ca;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 10px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  page-break-inside: avoid;
+  line-height: 1.5;
+}
+pre code { background: transparent; padding: 0; color: inherit; }
+code {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  background: #fff1e8;
+  color: #ff7849;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+blockquote {
+  margin: 10px 0;
+  padding: 10px 16px;
+  background: #fff6ef;
+  border-left: 3px solid #ff7849;
+  border-radius: 0 6px 6px 0;
+  color: #6a3a1c;
+}
+
+.write-space {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #ffffff 0,
+    #ffffff 27px,
+    #d4d4d4 27px,
+    #d4d4d4 28px
+  );
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  min-height: 114px;
+  margin: 10px 0 20px;
+  page-break-inside: avoid;
+}
+.write-space.short { min-height: 86px; }
+.write-space.tall { min-height: 170px; }
+
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
+hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
+
+.meta { color: #666; font-size: 13px; margin: 0 0 14px; }
+.answer-lines {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 14px 16px;
+  background: #fafafa;
+  white-space: pre;
+  line-height: 2.2;
+}
+
+footer {
+  position: fixed;
+  bottom: 10mm; left: 16mm; right: 16mm;
+  text-align: center;
+  font-size: 10px;
+  color: #aaa;
+}
+footer b { color: #ff7849; }
+</style>
+</head>
+<body>
+<div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
+<h1>🎨 Extra — CSS Colors &amp; Text Styling</h1>
+<p><strong>Topic:</strong> Selectors, Colors &amp; the Box Model · <strong>Course:</strong> Extra Worksheet · <strong>Time:</strong> about 30 minutes</p>
+<p>CSS picks a part of the page with a <strong>selector</strong>, then changes it with a <strong>property</strong> and a <strong>value</strong>. On paper you will read CSS, predict it, fix it, and explain it in your own words.</p>
+<blockquote>
+<p>Keep these words handy: <strong>selector</strong>, <strong>property</strong>, <strong>value</strong>, <strong>padding</strong>, <strong>border</strong>, <strong>margin</strong>.</p>
+</blockquote>
+<h2>1 · Predict 🔮</h2>
+<p>Read each snippet. Write what you think the page will look like.</p>
+<pre><code class="language-html">&lt;style&gt;
+  h1 { color: blue; }
+&lt;/style&gt;
+&lt;h1&gt;My Profile&lt;/h1&gt;
+</code></pre>
+<div class="qa"><p><strong>What color is the heading? What does the <code>h1</code> before the <code>{</code> pick?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-html">&lt;style&gt;
+  .note { background-color: #fef9c3; }
+&lt;/style&gt;
+&lt;div class=&quot;note&quot;&gt;Revise CSS selectors.&lt;/div&gt;
+&lt;div class=&quot;note&quot;&gt;Practice the box model.&lt;/div&gt;
+&lt;div&gt;Feed the cat.&lt;/div&gt;
+</code></pre>
+<div class="qa"><p><strong>How many boxes turn yellow? Why?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-html">&lt;style&gt;
+  h1 {
+    font-size: 36px;
+    text-align: center;
+  }
+&lt;/style&gt;
+&lt;h1&gt;My Study Notes&lt;/h1&gt;
+&lt;p&gt;Today I learned about CSS.&lt;/p&gt;
+</code></pre>
+<div class="qa"><p><strong>Which line moves to the middle of the page, the <code>h1</code> or the <code>p</code>? Why?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>2 · Spot the Bug 🐛</h2>
+<p>Each snippet is broken. Read what it should do, then rewrite it so it works. Explain why the original was wrong.</p>
+<p><strong>Bug A</strong> — This should turn the heading blue. Nothing changes.</p>
+<pre><code class="language-html">h1 { color blue; }
+</code></pre>
+<p><strong>Hint:</strong> every property needs a <code>:</code> between it and its value.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug B</strong> — This should turn <code>&lt;div class="note"&gt;</code> yellow. It stays white.</p>
+<pre><code class="language-html">note { background-color: #fef9c3; }
+</code></pre>
+<p><strong>Hint:</strong> a class selector starts with a dot.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug C</strong> — This should make the title 32 pixels tall. The size does not change.</p>
+<pre><code class="language-html">h1 { font-size: 32; }
+</code></pre>
+<p><strong>Hint:</strong> a size needs a unit.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>3 · Explain the Code 📖</h2>
+<p>This is the finished profile card from your lesson.</p>
+<pre><code class="language-html">&lt;style&gt;
+  #card {
+    width: 300px;
+    background-color: #fff7ed;
+    padding: 24px;
+    border: 3px solid #f97316;
+    margin: 40px auto;
+  }
+&lt;/style&gt;
+&lt;div id=&quot;card&quot;&gt;
+  &lt;h1&gt;Mina&lt;/h1&gt;
+  &lt;p&gt;Loves coding and cats.&lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+<table style="border-collapse:collapse;width:100%;max-width:460px;margin:16px auto;text-align:center;font-size:13px"><tr><td style="background:#fee2e2;padding:16px"><strong>margin</strong> — space outside<div style="border:4px solid #f97316;background:#fed7aa;margin-top:8px;padding:8px"><strong>border</strong> — the line<div style="background:#fff7ed;padding:16px;margin-top:8px"><strong>padding</strong> — space inside<div style="background:#ffffff;border:1px dashed #9ca3af;padding:12px;margin-top:8px"><strong>content</strong> — Mina</div></div></div></td></tr></table>
+
+<div class="qa"><p><strong>What does <code>#card</code> pick? How would <code>.card</code> be different?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong><code>padding: 24px</code> and <code>margin: 40px auto</code> both add space. Which space is inside the border?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>In <code>margin: 40px auto</code>, what does <code>auto</code> do to the card sideways?</strong></p>
+<div class="write-space"></div></div>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet to teacher on KakaoTalk.</p>
+</body>
+</html>
