@@ -110,7 +110,7 @@ footer b { color: #ff7849; }
 <h1>🎢 005 Week 3 — English Worksheet (Intermediate)</h1>
 <p><strong>Topic:</strong> Amenities — Functions Calling Functions · <strong>Course:</strong> Theme Park Creator · <strong>Time:</strong> about 45 minutes</p>
 <p>Your park has stalls. Now it needs <strong>amenities</strong> — a <strong>bathroom</strong>, a <strong>janitor room</strong>.</p>
-<p>Both are rooms. So you write <strong>one</strong> <code>build_room</code> helper, and both amenity functions <strong>call</strong> it. Each one then adds its own fitting.</p>
+<p>Both are rooms. So you write <strong>one</strong> <code>build_room</code> helper. Both amenity functions <strong>call</strong> it, then add their own fitting.</p>
 <p>These are the blocks you use this week:</p>
 <pre><code class="language-python">blocks.fill(QUARTZ_BLOCK, pos(0, 0, 0), pos(4, 3, 4), FillOperation.HOLLOW)
 blocks.fill(AIR, pos(2, 1, 0), pos(2, 2, 0), FillOperation.REPLACE)
@@ -124,50 +124,49 @@ blocks.place(CAULDRON, pos(1, 1, 1))
 <code>CAULDRON</code> = the toilet. <code>BARREL</code> = the janitor's supplies.</p>
 </blockquote>
 <h2>1 · Meet Helper Functions 🧰</h2>
-<p>A <strong>helper function</strong> does one job well. Other functions <strong>call</strong> it instead of writing that job again.</p>
-<pre><code class="language-text">   build_bathroom(0, 5)                build_janitor_room(8, 4)
-        │                                    │
-        ├─ calls ─▶ build_room(...)  ◀─ calls ─┤     ← ONE helper, TWO callers
-        │                                    │
-        └─ places CAULDRON                   └─ places BARREL
+<p>A <strong>helper function</strong> does one job. Other functions <strong>call</strong> it instead of writing that job again.</p>
+<pre><code class="language-text">   build_bathroom(5)            build_janitor_room(4)
+        │                            │
+        ├─▶ build_room(...)          ├─▶ build_room(...)   ← ONE helper
+        │                            │
+        └─▶ place CAULDRON           └─▶ place BARREL
 </code></pre>
-<p>The helper takes an <code>x</code> — where the room starts — so two rooms do not land on top of each other.</p>
-<pre><code class="language-python">def build_room(wall, floor, x, size):
-    blocks.fill(wall, pos(x, 0, 0), pos(x + size, 3, size), FillOperation.HOLLOW)
-    blocks.fill(floor, pos(x, 0, 0), pos(x + size, 0, size), FillOperation.REPLACE)
-    blocks.fill(AIR, pos(x + 2, 1, 0), pos(x + 2, 2, 0), FillOperation.REPLACE)
+<p>Here is the helper. It builds walls, a floor, and a doorway:</p>
+<pre><code class="language-python">def build_room(wall, floor, size):
+    blocks.fill(wall, pos(0, 0, 0), pos(size, 3, size), FillOperation.HOLLOW)
+    blocks.fill(floor, pos(0, 0, 0), pos(size, 0, size), FillOperation.REPLACE)
+    blocks.fill(AIR, pos(2, 1, 0), pos(2, 2, 0), FillOperation.REPLACE)
 </code></pre>
-<div class="qa"><p><strong>Why is writing <code>build_room</code> once better than writing the same three fills inside both amenity functions?</strong></p>
+<div class="qa"><p><strong>Why is writing <code>build_room</code> once better than writing those three fills in both amenity functions?</strong></p>
 <div class="write-space"></div></div>
 
 <h2>2 · Predict 🔮</h2>
 <p>Read each function. Write what you think happens.</p>
-<pre><code class="language-python">def build_bathroom(x, size):
-    build_room(QUARTZ_BLOCK, STONE, x, size)
-    blocks.place(CAULDRON, pos(x + 1, 1, 1))
+<pre><code class="language-python">def build_bathroom(size):
+    build_room(QUARTZ_BLOCK, STONE, size)
+    blocks.place(CAULDRON, pos(1, 1, 1))
 
-build_bathroom(0, 5)
+build_bathroom(5)
 </code></pre>
-<div class="qa"><p><strong>What are the walls made of? What is the floor made of? Where does the cauldron sit?</strong></p>
+<div class="qa"><p><strong>What are the walls made of? What is the floor made of? How wide is the room?</strong></p>
 <div class="write-space"></div></div>
 
-<pre><code class="language-python">def build_janitor_room(x, size):
-    build_room(OAK_PLANKS, STONE, x, size)
-    blocks.place(BARREL, pos(x + 1, 1, 1))
+<pre><code class="language-python">def build_janitor_room(size):
+    build_room(OAK_PLANKS, STONE, size)
+    blocks.place(BARREL, pos(1, 1, 1))
 
-build_bathroom(0, 5)
-build_janitor_room(8, 4)
+build_janitor_room(4)
 </code></pre>
-<div class="qa"><p><strong>Both rooms use the same helper. What is different about them? Why is the janitor room's <code>x</code> an <code>8</code> and not a <code>0</code>?</strong></p>
+<div class="qa"><p><strong>Both amenities call the same helper. What is different about the two rooms?</strong></p>
 <div class="write-space"></div></div>
 
 <h2>3 · Spot the Bug 🐛</h2>
 <p>Each block is broken. Read what it should do, rewrite it so it works, then explain why the original was wrong.</p>
 <p><strong>Bug A</strong> — This should build a bathroom: a room, then a cauldron. But only a <strong>lonely cauldron</strong> appears, with no room around it.</p>
-<pre><code class="language-python">def build_bathroom(x, size):
-    blocks.place(CAULDRON, pos(x + 1, 1, 1))
+<pre><code class="language-python">def build_bathroom(size):
+    blocks.place(CAULDRON, pos(1, 1, 1))
 
-build_bathroom(0, 5)
+build_bathroom(5)
 </code></pre>
 <p><strong>Hint:</strong> the helper exists, but nobody calls it.</p>
 <div class="qa"><p><strong>Write the fixed code:</strong></p>
@@ -177,13 +176,13 @@ build_bathroom(0, 5)
 <div class="write-space"></div></div>
 
 <p><strong>Bug B</strong> — This should give the bathroom <strong>quartz walls</strong> and a <strong>stone floor</strong>. But the walls come out stone and the floor comes out quartz.</p>
-<pre><code class="language-python">def build_bathroom(x, size):
-    build_room(STONE, QUARTZ_BLOCK, x, size)
-    blocks.place(CAULDRON, pos(x + 1, 1, 1))
+<pre><code class="language-python">def build_bathroom(size):
+    build_room(STONE, QUARTZ_BLOCK, size)
+    blocks.place(CAULDRON, pos(1, 1, 1))
 
-build_bathroom(0, 5)
+build_bathroom(5)
 </code></pre>
-<p><strong>Hint:</strong> the helper's parameters are <code>(wall, floor, x, size)</code>. Arguments land in those boxes <strong>by position</strong>.</p>
+<p><strong>Hint:</strong> the helper's parameters are <code>(wall, floor, size)</code>. Arguments land in those boxes <strong>by position</strong>.</p>
 <div class="qa"><p><strong>Write the fixed code:</strong></p>
 <div class="write-space"></div></div>
 
@@ -191,11 +190,11 @@ build_bathroom(0, 5)
 <div class="write-space"></div></div>
 
 <p><strong>Bug C</strong> — This should build a room with a cauldron inside. The room appears, but the <strong>cauldron is gone</strong>.</p>
-<pre><code class="language-python">def build_bathroom(x, size):
-    blocks.place(CAULDRON, pos(x + 1, 1, 1))
-    build_room(QUARTZ_BLOCK, STONE, x, size)
+<pre><code class="language-python">def build_bathroom(size):
+    blocks.place(CAULDRON, pos(1, 1, 1))
+    build_room(QUARTZ_BLOCK, STONE, size)
 
-build_bathroom(0, 5)
+build_bathroom(5)
 </code></pre>
 <p><strong>Hint:</strong> <code>FillOperation.HOLLOW</code> clears the middle of the room to air. The cauldron is in the middle.</p>
 <div class="qa"><p><strong>Write the fixed code:</strong></p>
@@ -206,24 +205,21 @@ build_bathroom(0, 5)
 
 <h2>4 · Build the Amenities 🚻</h2>
 <p>In your homework world, write <strong>one</strong> helper and <strong>two</strong> functions that call it:</p>
-<pre><code class="language-python">def build_room(wall, floor, x, size):
-def build_bathroom(x, size):
-def build_janitor_room(x, size):
+<pre><code class="language-python">def build_room(wall, floor, size):
+def build_bathroom(size):
+def build_janitor_room(size):
 </code></pre>
-<p><code>build_room</code> must build:</p>
+<p><code>build_room</code> builds:</p>
 <ul>
 <li><strong>walls</strong> from the <code>wall</code> material with <code>FillOperation.HOLLOW</code></li>
 <li>a <strong>floor</strong> from the <code>floor</code> material</li>
 <li>a <strong>doorway</strong> carved with <code>AIR</code> so a visitor can walk in</li>
 </ul>
-<p><code>build_bathroom</code> must call <code>build_room</code>, then place a <code>CAULDRON</code> inside.
-<code>build_janitor_room</code> must call <code>build_room</code> with different materials, then place a <code>BARREL</code> inside.</p>
-<p>Neither amenity function may contain a <code>blocks.fill</code> of its own — the walls, floor and doorway all come from the helper.</p>
-<p>Then call them both, at different <code>x</code> values so they stand side by side:</p>
-<pre><code class="language-python">build_bathroom(0, 5)
-build_janitor_room(8, 4)
-</code></pre>
-<div class="qa"><p><strong>Write your helper, your two amenity functions, and the two lines that call them:</strong></p>
+<p><code>build_bathroom</code> calls <code>build_room</code>, then places a <code>CAULDRON</code> inside.
+<code>build_janitor_room</code> calls <code>build_room</code> with different materials, then places a <code>BARREL</code> inside.</p>
+<p>Neither amenity function has a <code>blocks.fill</code> of its own. The walls, floor and doorway all come from the helper.</p>
+<p>Run <code>build_bathroom(5)</code>. Then <strong>walk somewhere new</strong> and run <code>build_janitor_room(4)</code>, so the two rooms stand apart.</p>
+<div class="qa"><p><strong>Write your helper and your two amenity functions:</strong></p>
 <div class="write-space tall" style="min-height: 420px"></div></div>
 
 <h2>5 · Show Your Work 📸🎥</h2>
