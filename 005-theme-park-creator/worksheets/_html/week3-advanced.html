@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>🎢 005 Week 3 — English Worksheet (Advanced)</title>
+<style>
+@page { size: A4; margin: 18mm 16mm 22mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-family: "Inter", "Segoe UI", system-ui, sans-serif; color: #1a1a2e; }
+body { font-size: 15px; line-height: 1.55; }
+
+.cover { border-bottom: 3px solid #ff7849; padding-bottom: 14px; margin-bottom: 20px; }
+.brand { font-size: 14px; font-weight: 800; color: #ff7849; letter-spacing: .06em; }
+h1 { font-size: 28px; color: #6b4ee6; margin: 8px 0 6px; line-height: 1.25; }
+h2 { font-size: 19px; color: #6b4ee6; margin: 22px 0 12px; padding-top: 10px; border-top: 1px solid #eee; page-break-before: always; }
+section.first h2, h2:first-of-type { border-top: none; padding-top: 0; page-break-before: avoid; }
+h3, h4 { font-size: 15px; margin: 14px 0 8px; color: #1a1a2e; }
+p { margin: 8px 0; }
+strong { color: #1a1a2e; }
+em { color: #555; }
+
+ul, ol { margin: 8px 0 8px 24px; }
+li { margin: 3px 0; }
+
+/* Grids (e.g. pixel-art coordinate grids) render as light graph paper. */
+table { border-collapse: collapse; margin: 12px 0; }
+th, td { border: 1px solid #ddd; padding: 4px 9px; text-align: center; font-size: 14px; }
+th { background: #faf7ff; color: #6b4ee6; font-weight: 700; }
+
+pre {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 13.5px;
+  background: #1e1e2e;
+  color: #b9f6ca;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 10px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  page-break-inside: avoid;
+  line-height: 1.5;
+}
+pre code { background: transparent; padding: 0; color: inherit; }
+code {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  background: #fff1e8;
+  color: #ff7849;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+blockquote {
+  margin: 10px 0;
+  padding: 10px 16px;
+  background: #fff6ef;
+  border-left: 3px solid #ff7849;
+  border-radius: 0 6px 6px 0;
+  color: #6a3a1c;
+}
+
+.write-space {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #ffffff 0,
+    #ffffff 27px,
+    #d4d4d4 27px,
+    #d4d4d4 28px
+  );
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  min-height: 114px;
+  margin: 10px 0 20px;
+  page-break-inside: avoid;
+}
+.write-space.short { min-height: 86px; }
+.write-space.tall { min-height: 170px; }
+
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
+hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
+
+.meta { color: #666; font-size: 13px; margin: 0 0 14px; }
+.answer-lines {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 14px 16px;
+  background: #fafafa;
+  white-space: pre;
+  line-height: 2.2;
+}
+
+footer {
+  position: fixed;
+  bottom: 10mm; left: 16mm; right: 16mm;
+  text-align: center;
+  font-size: 10px;
+  color: #aaa;
+}
+footer b { color: #ff7849; }
+</style>
+</head>
+<body>
+<div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
+<h1>🎢 005 Week 3 — English Worksheet (Advanced)</h1>
+<p><strong>Topic:</strong> Amenities — Functions Calling Functions · <strong>Course:</strong> Theme Park Creator · <strong>Time:</strong> about 50 minutes</p>
+<p>Your park has a market row. Now it needs <strong>amenities</strong> — a <strong>bathroom</strong>, a <strong>janitor room</strong>.</p>
+<p>Both are rooms, so <strong>one</strong> <code>build_room</code> helper builds both. Each amenity function calls the helper, then adds its own fitting. Then one more function calls <strong>both amenities</strong> — a chain three levels deep.</p>
+<p>These are the blocks you use this week:</p>
+<pre><code class="language-python">blocks.fill(QUARTZ_BLOCK, pos(x1, 0, z1), pos(x2, 3, z2), FillOperation.HOLLOW)
+blocks.fill(AIR, pos(x1 + 1, 1, z1), pos(x1 + 1, 2, z1), FillOperation.REPLACE)
+blocks.place(CAULDRON, pos(x1 + 1, 1, z1 + 1))
+</code></pre>
+<blockquote>
+<p><code>blocks.fill(material, corner1, corner2, ...)</code> fills a box between two corners.
+<code>FillOperation.HOLLOW</code> = outer <strong>shell</strong> only — the middle is <strong>cleared to air</strong>.
+<code>FillOperation.REPLACE</code> = the <strong>whole solid</strong> box.
+<code>blocks.place(block, pos(x, y, z))</code> puts <strong>one</strong> block in <strong>one</strong> spot.
+<code>CAULDRON</code> = the toilet. <code>BARREL</code> = the janitor's supplies.</p>
+</blockquote>
+<h2>1 · Meet the Call Chain 🧰</h2>
+<p>A <strong>helper function</strong> does one job. Functions above it <strong>call</strong> it. Functions above <em>those</em> call <strong>them</strong>.</p>
+<pre><code class="language-text">   build_amenities(2)
+        │
+        ├─▶ build_bathroom(2, 8, 0, 6)
+        │        ├─▶ build_room(QUARTZ_BLOCK, STONE, 2, 8, 0, 6)
+        │        └─▶ place CAULDRON
+        │
+        └─▶ build_janitor_room(10, 14, 0, 4)
+                 ├─▶ build_room(OAK_PLANKS, STONE, 10, 14, 0, 4)
+                 └─▶ place BARREL
+</code></pre>
+<p>One <code>build_room</code> runs twice — different materials, different corners. The helper takes <strong>four corners</strong>, so the caller decides where each room sits and how big it is.</p>
+<pre><code class="language-python">def build_room(wall, floor, x1, x2, z1, z2):
+    blocks.fill(wall, pos(x1, 0, z1), pos(x2, 3, z2), FillOperation.HOLLOW)
+    blocks.fill(floor, pos(x1, 0, z1), pos(x2, 0, z2), FillOperation.REPLACE)
+    blocks.fill(AIR, pos(x1 + 1, 1, z1), pos(x1 + 1, 2, z1), FillOperation.REPLACE)
+</code></pre>
+<div class="qa"><p><strong>One helper is called by two functions, which are called by a third. What would you have to change if the doorway needed to be two blocks wide?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>2 · Predict 🔮</h2>
+<p>Read each function. Write what you think happens.</p>
+<pre><code class="language-python">def build_bathroom(x1, x2, z1, z2):
+    build_room(QUARTZ_BLOCK, STONE, x1, x2, z1, z2)
+    blocks.place(CAULDRON, pos(x1 + 1, 1, z1 + 1))
+
+def build_janitor_room(x1, x2, z1, z2):
+    build_room(OAK_PLANKS, STONE, x1, x2, z1, z2)
+    blocks.place(BARREL, pos(x1 + 1, 1, z1 + 1))
+
+build_bathroom(2, 8, 0, 6)
+</code></pre>
+<div class="qa"><p><strong>Which lines run, and in what order? Which materials reach <code>build_room</code>, and which never do?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-python">def build_amenities(x):
+    build_bathroom(x, x + 6, 0, 6)
+    build_janitor_room(x + 8, x + 12, 0, 4)
+
+build_amenities(2)
+build_amenities(20)
+</code></pre>
+<div class="qa"><p><strong><code>build_amenities</code> is called twice. How many rooms are built, and how many times does <code>build_room</code> run?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>3 · Spot the Bug 🐛</h2>
+<p>Each block is broken. Read what it should do, rewrite it so it works, then explain why the original was wrong.</p>
+<p><strong>Bug A</strong> — This should build a bathroom <strong>next to</strong> a janitor room. Instead only <strong>one</strong> room is there — wooden, with a barrel. The cauldron is gone.</p>
+<pre><code class="language-python">def build_amenities(x):
+    build_bathroom(x, x + 6, 0, 6)
+    build_janitor_room(x, x + 6, 0, 6)
+
+build_amenities(2)
+</code></pre>
+<p><strong>Hint:</strong> look at the corners each amenity is given.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug B</strong> — The bathroom should hold a cauldron. The room builds fine, but the <strong>cauldron never survives</strong>.</p>
+<pre><code class="language-python">def build_bathroom(x1, x2, z1, z2):
+    blocks.place(CAULDRON, pos(x1 + 1, 1, z1 + 1))
+    build_room(QUARTZ_BLOCK, STONE, x1, x2, z1, z2)
+
+build_bathroom(2, 8, 0, 6)
+</code></pre>
+<p><strong>Hint:</strong> <code>FillOperation.HOLLOW</code> clears the middle of the room to air. The cauldron is in the middle.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug C</strong> — The janitor room should be a wide, shallow box. It comes out the <strong>wrong shape</strong>, and the barrel is not inside it.</p>
+<pre><code class="language-python">def build_janitor_room(x1, x2, z1, z2):
+    build_room(OAK_PLANKS, STONE, x1, z1, x2, z2)
+    blocks.place(BARREL, pos(x1 + 1, 1, z1 + 1))
+
+build_janitor_room(10, 14, 0, 4)
+</code></pre>
+<p><strong>Hint:</strong> the helper's parameters are <code>(wall, floor, x1, x2, z1, z2)</code>. Which value landed in <code>x2</code>?</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>4 · Build the Amenity Block 🚻</h2>
+<p>In your homework world, write <strong>one</strong> helper and <strong>three</strong> functions that call down into it:</p>
+<pre><code class="language-python">def build_room(wall, floor, x1, x2, z1, z2):
+def build_bathroom(x1, x2, z1, z2):
+def build_janitor_room(x1, x2, z1, z2):
+def build_amenities(x):
+</code></pre>
+<p><code>build_room</code> must build:</p>
+<ul>
+<li><strong>walls</strong> from the <code>wall</code> material with <code>FillOperation.HOLLOW</code></li>
+<li>a <strong>floor</strong> from the <code>floor</code> material</li>
+<li>a <strong>doorway</strong> carved with <code>AIR</code> so a visitor can walk in</li>
+</ul>
+<p><code>build_bathroom</code> calls <code>build_room</code>, then places a <code>CAULDRON</code> inside.
+<code>build_janitor_room</code> calls <code>build_room</code> with different materials, then places a <code>BARREL</code> inside.
+<code>build_amenities(x)</code> calls both, giving each its own corners so they stand side by side.</p>
+<p>Only <code>build_room</code> may contain <code>blocks.fill</code>. Where the rooms sit must come from the corner parameters — no fixed corner numbers inside the helper.</p>
+<p>Then build two amenity blocks in different corners of your park:</p>
+<pre><code class="language-python">build_amenities(2)
+build_amenities(20)
+</code></pre>
+<div class="qa"><p><strong>Write your helper, your amenity functions, and the lines that call them:</strong></p>
+<div class="write-space tall" style="min-height: 460px"></div></div>
+
+<h2>5 · Show Your Work 📸🎥</h2>
+<p>Record <strong>one video</strong> (a phone is fine). Show two things:</p>
+<p><strong>1 · Your code.</strong> Scroll through it. Say what each part does.</p>
+<p><strong>2 · Your build.</strong> Point the camera. Name the parts.</p>
+<p>Fill the blanks:</p>
+<blockquote>
+<p>Today I built ______.</p>
+<p>I built it using this code: ______.</p>
+<p>In this code I used ______.</p>
+<p>The hardest part was ______.</p>
+<p>That part was hard because ______.</p>
+</blockquote>
+<div class="qa"><p><strong>Write your lines here, then say them in your video.</strong></p>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your video to teacher on KakaoTalk.</p>
+</body>
+</html>

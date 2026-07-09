@@ -1,8 +1,8 @@
 # 🎢 005 — 테마파크 크리에이터
 
-8주 동안 마인크래프트에 내장된 **명령어(/커맨드)** 와 **함수(.mcfunction)** 로 나만의 테마파크를 만듭니다. 게임 가게(스톨)를 짓고, 방문객에게 반응하는 장치를 달고, 마지막에는 롤러코스터까지 완성해 그랜드 오프닝을 엽니다.
+8주 동안 마인크래프트 에듀케이션의 **파이썬 코드**로 나만의 테마파크를 만듭니다. 롤러코스터를 놓고, 가게(스톨)를 짓고, 화장실과 청소도구실 같은 편의시설을 올린 뒤, 마지막에 그랜드 오프닝을 엽니다.
 
-앞 코스들과 달리 블록 코딩·파이썬이 아니라 **마인크래프트 안에서 직접 명령어를 입력**하며 배우는 **여섯 번째 코스**입니다. 진짜 게임 제작자들이 쓰는 도구를 그대로 사용합니다.
+이 코스의 핵심은 **함수**입니다. 코드에 이름을 붙여 두면 숫자와 재료만 바꿔서 같은 함수를 몇 번이고 다시 쓸 수 있어요. 진짜 프로그래머가 일하는 방식 그대로입니다.
 
 ---
 
@@ -10,27 +10,27 @@
 
 각 주차 자료는 아래 표에서 바로 받으실 수 있습니다 — 따로 페이지에 들어가지 않으셔도 됩니다.
 
-| 주 | 주제 | 📦 월드 | 🎬 영상 | 📝 워크시트 (초급) | 📝 워크시트 (심화) | 📄 워크시트 (초급·DOCX) | 📄 워크시트 (심화·DOCX) |
-|---|---|---|---|---|---|---|---|
-| 1 | 함수와 파라미터 — 숫자 하나로 롤러코스터 크기 바꾸기 (메이크코드 롤러코스터 확장) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/005-theme-park-creator/worlds/week1.mcworld) | *준비 중* | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/005-theme-park-creator/worksheets/week1-beginner.pdf) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/005-theme-park-creator/worksheets/week1.pdf) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/005-theme-park-creator/worksheets/week1-beginner.docx) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/005-theme-park-creator/worksheets/week1.docx) |
-| 2 | `/fill`과 `/clone` — 가게 건물을 한 번에 짓고 통째로 복사하기 | *준비 중* | *준비 중* | *준비 중* | *준비 중* | *준비 중* | *준비 중* |
-| 3 | 반응하는 가게 — `/setblock`, 버튼·레드스톤, 디스펜서, 동물 소환, 소리·파티클 효과까지 작동하는 게임 가게 완성 | *준비 중* | *준비 중* | *준비 중* | *준비 중* | *준비 중* | *준비 중* |
-| 4 | 함수(.mcfunction) — 코드에 이름 붙이기, 채팅 한 줄로 가게 전체 짓기 | *준비 중* | *준비 중* | *준비 중* | *준비 중* | *준비 중* | *준비 중* |
-| 5 | `/execute`와 선택자(`@p`·`@a`·`@e`) — 방문객이 다가오면 반응하는 테마파크 | *준비 중* | *준비 중* | *준비 중* | *준비 중* | *준비 중* | *준비 중* |
-| 6 | 롤러코스터 I — 레일·파워 레일·출발역, 속도의 원리 | *준비 중* | *준비 중* | *준비 중* | *준비 중* | *준비 중* | *준비 중* |
-| 7 | 롤러코스터 II — 타는 동안 펼쳐지는 명령어 연출 (`/title`·`/particle`·`/playsound`) | *준비 중* | *준비 중* | *준비 중* | *준비 중* | *준비 중* | *준비 중* |
-| 8 | **최종: 그랜드 오프닝** — 입구 게이트 + 가게 3곳 + 롤러코스터 + 개장 세리머니 | *준비 중* | *준비 중* | *준비 중* | *준비 중* | *준비 중* | *준비 중* |
+| 주 | 주제 | 📦 월드 | 🎬 영상 | 📝 초급 | 📝 중급 | 📝 심화 | 📄 Word (초급) | 📄 Word (중급) | 📄 Word (심화) |
+|---|---|---|---|---|---|---|---|---|---|
+| 1 | 함수와 파라미터 — 숫자 하나로 롤러코스터 크기 바꾸기 (메이크코드 롤러코스터 확장) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/005-theme-park-creator/worlds/week1.mcworld) | *준비 중* | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/005-theme-park-creator/worksheets/week1-beginner.pdf) | *준비 중* | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/005-theme-park-creator/worksheets/week1.pdf) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/005-theme-park-creator/worksheets/week1-beginner.docx) | *준비 중* | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/005-theme-park-creator/worksheets/week1.docx) |
+| 2 | 아규먼트와 파라미터 — 함수 하나로 여러 가게(스톨) 짓기 | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/005-theme-park-creator/worlds/week2.mcworld) | [보기](https://youtu.be/OGIF4b8-f0E) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/005-theme-park-creator/worksheets/week2-beginner.pdf) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/005-theme-park-creator/worksheets/week2-intermediate.pdf) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/005-theme-park-creator/worksheets/week2-advanced.pdf) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/005-theme-park-creator/worksheets/week2-beginner.docx) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/005-theme-park-creator/worksheets/week2-intermediate.docx) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/005-theme-park-creator/worksheets/week2-advanced.docx) |
+| 3 | 함수가 함수를 부른다 — 화장실·청소도구실 같은 편의시설 짓기 | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/005-theme-park-creator/worlds/week3.mcworld) | *준비 중* | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/005-theme-park-creator/worksheets/week3-beginner.pdf) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/005-theme-park-creator/worksheets/week3-intermediate.pdf) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/005-theme-park-creator/worksheets/week3-advanced.pdf) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/005-theme-park-creator/worksheets/week3-beginner.docx) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/005-theme-park-creator/worksheets/week3-intermediate.docx) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/005-theme-park-creator/worksheets/week3-advanced.docx) |
+| 4 | *준비 중* | *준비 중* | *준비 중* | *준비 중* | *준비 중* | *준비 중* | *준비 중* | *준비 중* | *준비 중* |
+| 5 | *준비 중* | *준비 중* | *준비 중* | *준비 중* | *준비 중* | *준비 중* | *준비 중* | *준비 중* | *준비 중* |
+| 6 | *준비 중* | *준비 중* | *준비 중* | *준비 중* | *준비 중* | *준비 중* | *준비 중* | *준비 중* | *준비 중* |
+| 7 | *준비 중* | *준비 중* | *준비 중* | *준비 중* | *준비 중* | *준비 중* | *준비 중* | *준비 중* | *준비 중* |
+| 8 | **최종: 그랜드 오프닝** | *준비 중* | *준비 중* | *준비 중* | *준비 중* | *준비 중* | *준비 중* | *준비 중* | *준비 중* |
 
-> 💡 명령어 하나하나가 모여 함수가 되고, 함수가 모여 테마파크 전체가 됩니다 — 진짜 프로그래밍이 작동하는 방식 그대로입니다.
+> 💡 코드 한 줄이 모여 함수가 되고, 함수가 모여 테마파크 전체가 됩니다. 진짜 프로그래밍이 작동하는 방식 그대로입니다.
 >
-> 📝 워크시트는 두 가지입니다 — **초급**은 처음 배우는 친구용, **심화**는 더 깊이 연습하고 싶은 친구용입니다.
+> 📝 워크시트는 세 단계입니다 — **초급** · **중급** · **심화**. 아이 수준에 맞는 단계를 골라 주세요.
 
 ---
 
 ## 📂 자료
 
 - 📦 [`worlds/`](./worlds) — 매주 월드 파일
-- 📝 [`worksheets/`](./worksheets) — 매주 영어 워크시트 (초급·심화 PDF)
+- 📝 [`worksheets/`](./worksheets) — 매주 영어 워크시트 (초급·중급·심화 PDF)
 
 각 자료는 매주 **노션 숙제 페이지** 에서도 바로 받으실 수 있습니다. (페이지 링크는 카카오톡으로 안내드립니다.)
 
