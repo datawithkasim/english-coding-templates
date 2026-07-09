@@ -1,0 +1,136 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head><meta charset='utf-8'>
+<title>🎨 Extra — CSS Colors & Text Styling</title>
+<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
+<style>
+@page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
+div.WordSection1 { page: WordSection1; }
+body { font-family: "Segoe UI", Arial, sans-serif; font-size: 11.5pt; color: #1a1a2e; line-height: 1.5; }
+h1 { font-size: 21pt; color: #6b4ee6; margin: 4px 0 6px; }
+h2 { font-size: 15pt; color: #6b4ee6; border-top: 1px solid #dddddd; padding-top: 8px; margin: 18px 0 10px; }
+h3, h4 { font-size: 11.5pt; margin: 12px 0 6px; }
+p { margin: 7px 0; }
+.brand { font-size: 10.5pt; font-weight: bold; color: #ff7849; letter-spacing: .06em;
+         border-bottom: 2px solid #ff7849; padding-bottom: 6px; margin-bottom: 14px; }
+table { border-collapse: collapse; margin: 10px 0; }
+th, td { border: 1px solid #c8c8c8; padding: 4px 9px; text-align: center; }
+th { background: #f3eefc; color: #6b4ee6; font-weight: bold; }
+pre { font-family: Consolas, "Courier New", monospace; font-size: 10.5pt; background: #f4f4f5;
+      border: 1px solid #dddddd; padding: 8px 10px; white-space: pre-wrap; }
+pre code { background: transparent; color: #1a1a2e; }
+code { font-family: Consolas, "Courier New", monospace; background: #fff1e8; color: #d6531f; padding: 0 3px; }
+blockquote { border-left: 3px solid #ff7849; background: #fff6ef; padding: 8px 12px;
+             color: #6a3a1c; margin: 9px 0; }
+ul, ol { margin: 7px 0 7px 26px; }
+p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
+.footer { color: #999999; font-size: 8.5pt; text-align: center; margin-top: 18px;
+          border-top: 1px solid #eeeeee; padding-top: 6px; }
+.footer b { color: #ff7849; }
+</style></head>
+<body><div class=WordSection1>
+<div class="brand">📚 ENGLISH CODING · 영어코딩</div>
+<h1>🎨 Extra — CSS Colors &amp; Text Styling</h1>
+<p><strong>Topic:</strong> Selectors, Colors &amp; the Box Model · <strong>Course:</strong> Extra Worksheet · <strong>Time:</strong> about 30 minutes</p>
+<p>CSS picks a part of the page with a <strong>selector</strong>, then changes it with a <strong>property</strong> and a <strong>value</strong>. On paper you will read CSS, predict it, fix it, and explain it in your own words.</p>
+<blockquote>
+<p>Keep these words handy: <strong>selector</strong>, <strong>property</strong>, <strong>value</strong>, <strong>padding</strong>, <strong>border</strong>, <strong>margin</strong>.</p>
+</blockquote>
+<hr />
+<h2>1 · Predict 🔮</h2>
+<p>Read each snippet. Write what you think the page will look like.</p>
+<pre><code class="language-html">&lt;style&gt;
+  h1 { color: blue; }
+&lt;/style&gt;
+&lt;h1&gt;My Profile&lt;/h1&gt;
+</code></pre>
+<p><strong>What color is the heading? What does the <code>h1</code> before the <code>{</code> pick?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-html">&lt;style&gt;
+  .note { background-color: #fef9c3; }
+&lt;/style&gt;
+&lt;div class=&quot;note&quot;&gt;Revise CSS selectors.&lt;/div&gt;
+&lt;div class=&quot;note&quot;&gt;Practice the box model.&lt;/div&gt;
+&lt;div&gt;Feed the cat.&lt;/div&gt;
+</code></pre>
+<p><strong>How many boxes turn yellow? Why?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-html">&lt;style&gt;
+  h1 {
+    font-size: 36px;
+    text-align: center;
+  }
+&lt;/style&gt;
+&lt;h1&gt;My Study Notes&lt;/h1&gt;
+&lt;p&gt;Today I learned about CSS.&lt;/p&gt;
+</code></pre>
+<p><strong>Which line moves to the middle of the page, the <code>h1</code> or the <code>p</code>? Why?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>2 · Spot the Bug 🐛</h2>
+<p>Each snippet is broken. Read what it should do, then rewrite it so it works. Explain why the original was wrong.</p>
+<p><strong>Bug A</strong> — This should turn the heading blue. Nothing changes.</p>
+<pre><code class="language-html">h1 { color blue; }
+</code></pre>
+<p><strong>Hint:</strong> every property needs a <code>:</code> between it and its value.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug B</strong> — This should turn <code>&lt;div class="note"&gt;</code> yellow. It stays white.</p>
+<pre><code class="language-html">note { background-color: #fef9c3; }
+</code></pre>
+<p><strong>Hint:</strong> a class selector starts with a dot.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug C</strong> — This should make the title 32 pixels tall. The size does not change.</p>
+<pre><code class="language-html">h1 { font-size: 32; }
+</code></pre>
+<p><strong>Hint:</strong> a size needs a unit.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>3 · Explain the Code 📖</h2>
+<p>This is the finished profile card from your lesson.</p>
+<pre><code class="language-html">&lt;style&gt;
+  #card {
+    width: 300px;
+    background-color: #fff7ed;
+    padding: 24px;
+    border: 3px solid #f97316;
+    margin: 40px auto;
+  }
+&lt;/style&gt;
+&lt;div id=&quot;card&quot;&gt;
+  &lt;h1&gt;Mina&lt;/h1&gt;
+  &lt;p&gt;Loves coding and cats.&lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+<table style="border-collapse:collapse;width:100%;max-width:460px;margin:16px auto;text-align:center;font-size:13px"><tr><td style="background:#fee2e2;padding:16px"><strong>margin</strong> — space outside<div style="border:4px solid #f97316;background:#fed7aa;margin-top:8px;padding:8px"><strong>border</strong> — the line<div style="background:#fff7ed;padding:16px;margin-top:8px"><strong>padding</strong> — space inside<div style="background:#ffffff;border:1px dashed #9ca3af;padding:12px;margin-top:8px"><strong>content</strong> — Mina</div></div></div></td></tr></table>
+
+<p><strong>What does <code>#card</code> pick? How would <code>.card</code> be different?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong><code>padding: 24px</code> and <code>margin: 40px auto</code> both add space. Which space is inside the border?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>In <code>margin: 40px auto</code>, what does <code>auto</code> do to the card sideways?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet to teacher on KakaoTalk.</p>
+<div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>
+</div></body></html>

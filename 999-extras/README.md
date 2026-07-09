@@ -11,6 +11,7 @@
 | 워크시트 | 종류 | 개념 | 📝 받기 |
 |---|---|---|---|
 | 중첩 반복문 (Nesting) | 연습 | 반복문 안의 반복문 | [PDF](https://github.com/datawithkasim/english-coding-templates/raw/master/999-extras/worksheets/nesting.pdf) |
+| CSS 색상과 글씨 꾸미기 (CSS Colors & Text Styling) | 연습 · 기초 | 선택자 · 색상 · padding · border · margin | [PDF](https://github.com/datawithkasim/english-coding-templates/raw/master/999-extras/worksheets/css-colors-text-styling.pdf) |
 | 미로 1주차 단어 (Maze Wk1 Words) | 단어 | while · loop · detect · wall · forward | [PDF](https://github.com/datawithkasim/english-coding-templates/raw/master/999-extras/worksheets/vocab-week1-maze.pdf) |
 
 > 단어 워크시트는 매주 코스에서 배우는 핵심 단어를 따로 연습하는 자료입니다. 숙제와 함께 보내드릴 수 있습니다.
