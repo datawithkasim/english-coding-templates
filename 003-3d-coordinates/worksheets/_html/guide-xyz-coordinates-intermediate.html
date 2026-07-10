@@ -110,7 +110,7 @@ footer b { color: #ff7849; }
 <h1>🧭 M003 Guide — Counting (x, y, z) · Intermediate</h1>
 <p><strong>Topic:</strong> Before 3D · <strong>Course:</strong> 3D Coordinates · <strong>Level:</strong> Intermediate · <strong>Time:</strong> about 25 minutes</p>
 <p>Pixel art used <strong>two</strong> numbers. A 3D build needs <strong>three</strong>. They always come in the same order:</p>
-<div style="display:flex; gap:8px; flex-wrap:wrap; margin:6px 0 2px"><div style="flex:1; min-width:120px; background:#fff3ea; border:1px solid #ffd9c2; border-radius:8px; padding:8px 12px"><b style="color:#e0681c">1st = X</b><br>left → right<br><span style="color:#8a8a8a">starts at 0</span></div><div style="flex:1; min-width:120px; background:#f0ecff; border:1px solid #d9cdff; border-radius:8px; padding:8px 12px"><b style="color:#6b4ee6">2nd = Y</b><br>down → up<br><span style="color:#8a8a8a">starts at 0</span></div><div style="flex:1; min-width:120px; background:#e8f7ef; border:1px solid #c4ead6; border-radius:8px; padding:8px 12px"><b style="color:#1a8f5a">3rd = Z</b><br>back → forward<br><span style="color:#8a8a8a">starts at 0</span></div></div>
+<div style="display:flex; gap:8px; flex-wrap:wrap; margin:6px 0 2px"><div style="flex:1; min-width:120px; background:#fff3ea; border:1px solid #ffd9c2; border-radius:8px; padding:8px 12px"><b style="color:#e0681c">1st = X</b><br>right → left<br><span style="color:#8a8a8a">starts at 0</span></div><div style="flex:1; min-width:120px; background:#f0ecff; border:1px solid #d9cdff; border-radius:8px; padding:8px 12px"><b style="color:#6b4ee6">2nd = Y</b><br>down → up<br><span style="color:#8a8a8a">starts at 0</span></div><div style="flex:1; min-width:120px; background:#e8f7ef; border:1px solid #c4ead6; border-radius:8px; padding:8px 12px"><b style="color:#1a8f5a">3rd = Z</b><br>back → forward<br><span style="color:#8a8a8a">starts at 0</span></div></div>
 
 <p>All three rulers meet on <strong>one block</strong> — your home spot. That block is <strong>(0, 0, 0)</strong>, and every count starts there.</p>
 <blockquote>
@@ -119,13 +119,13 @@ footer b { color: #ff7849; }
 <h2>1 · Build Your Grid 🎨</h2>
 <p>Make a striped ruler for each axis, so you can <strong>see</strong> the numbers.</p>
 <p><img src="../assets/guide-grid.png" alt="A white grid floor with yellow lines. A striped line runs sideways, a striped line runs forward, and a striped pillar rises from the corner where they meet" style="width:100%; max-width:420px; border-radius:8px; display:block; margin:10px 0"></p>
-<p>The floor starts at the corner <strong>(0, -1, 0)</strong> — one below your feet — and reaches 15 blocks right and 15 blocks forward. Fill in the missing corners.</p>
+<p>The floor starts at the corner <strong>(0, -1, 0)</strong> — one below your feet — and reaches 15 blocks left and 15 blocks forward. Fill in the missing corners.</p>
 <pre><code class="language-python">def on_run():
     blocks.fill(WHITE_CONCRETE,
         pos(0, -1, 0),
         pos(__, -1, __),
         FillOperation.REPLACE)
-    # yellow line 5 to the right
+    # yellow line 5 to the left
     blocks.fill(YELLOW_CONCRETE,
         pos(5, -1, 0),
         pos(5, -1, 15),
@@ -142,29 +142,29 @@ player.on_chat(&quot;grid&quot;, on_run)
 
 <p>Now place the three rulers by hand — <strong>yellow, black, yellow, black</strong> all the way. All three start on the corner block:</p>
 <ul>
-<li><strong>X ruler</strong> — one block at a time, <strong>to your right</strong>.</li>
+<li><strong>X ruler</strong> — one block at a time, <strong>to your left</strong>.</li>
 <li><strong>Z ruler</strong> — one block at a time, <strong>forward</strong>.</li>
 <li><strong>Y ruler</strong> — a pillar straight <strong>up</strong>.</li>
 </ul>
 <h2>2 · Predict 🔮</h2>
 <p>Read each set of blocks. Circle the direction, then say which number changed.</p>
-<p><img src="../assets/guide-axis-x.png" alt="Striped yellow and black line running sideways across the grid floor, going to the player's right" style="width:100%; max-width:340px; border-radius:8px; display:block; margin:10px 0"></p>
+<p><img src="../assets/guide-axis-x.png" alt="Striped yellow and black line running sideways across the grid floor, going to the player's left" style="width:100%; max-width:340px; border-radius:8px; display:block; margin:10px 0"></p>
 <pre><code>place red block at (1, 0, 0)
 place red block at (2, 0, 0)
 place red block at (3, 0, 0)
 </code></pre>
-<p><strong>Circle one:</strong> right · up · forward</p>
+<p><strong>Circle one:</strong> left · up · forward</p>
 <p><strong>Which number changed? Circle one:</strong> x · y · z</p>
 <pre><code>place red block at (0, 0, 1)
 place red block at (0, 0, 2)
 place red block at (0, 0, 3)
 </code></pre>
-<p><strong>Circle one:</strong> right · up · forward</p>
+<p><strong>Circle one:</strong> left · up · forward</p>
 <p><strong>Which number changed? Circle one:</strong> x · y · z</p>
 <pre><code>place red block at (7, 1, 2)
 place red block at (7, 2, 2)
 </code></pre>
-<p><strong>Circle one:</strong> right · up · forward</p>
+<p><strong>Circle one:</strong> left · up · forward</p>
 <p><strong>Where is the corner block? Write its coordinate:</strong> ( <strong><em>_ , </em></strong>_ , ____ )</p>
 <h2>3 · Spot the Bug 🐛</h2>
 <p>Each one is broken. Write the fixed code, then explain.</p>
@@ -179,7 +179,7 @@ place red block at (0, 1, 0)
 <div class="qa"><p><strong>Why was it wrong? Why does your fix work? (1–2 sentences.)</strong></p>
 <div class="write-space short"></div></div>
 
-<p><strong>Bug B</strong> — Your friend says the corner block is <strong>(1, 1, 1)</strong>, so they start counting there. Their whole build sits one step right, one block up, and one step forward from where it should be.</p>
+<p><strong>Bug B</strong> — Your friend says the corner block is <strong>(1, 1, 1)</strong>, so they start counting there. Their whole build sits one step left, one block up, and one step forward from where it should be.</p>
 <pre><code>place red block at (1, 1, 1)   # they think this is the corner
 </code></pre>
 <div class="qa"><p><strong>Write the corner's real coordinate:</strong></p>
@@ -201,8 +201,8 @@ place red block at (0, 1, 0)
 <tr>
 <td>1</td>
 <td>x = 5</td>
-<td>left → right</td>
-<td>go 5 to your right</td>
+<td>right → left</td>
+<td>go 5 to your left</td>
 </tr>
 <tr>
 <td>2</td>
@@ -219,7 +219,7 @@ place red block at (0, 1, 0)
 </tbody>
 </table>
 <p><strong>Which coordinate is on the ground? Circle one:</strong> (2, 1, 2) · (2, 0, 2)</p>
-<p><strong>A block sits 4 to your right and 6 forward, on the ground. Write it:</strong> ( <strong><em>_ , </em></strong>_ , ____ )</p>
+<p><strong>A block sits 4 to your left and 6 forward, on the ground. Write it:</strong> ( <strong><em>_ , </em></strong>_ , ____ )</p>
 <h2>5 · Show Your Work 📸🎥</h2>
 <p><strong>Warm-up:</strong> stand on your home spot and place one block at <strong>(3, 0, 3)</strong>. Check it against your rulers.</p>
 <p>Open the world. Part of the shape is <strong>already built</strong> for you:</p>

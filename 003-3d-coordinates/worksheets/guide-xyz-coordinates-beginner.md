@@ -4,7 +4,7 @@
 
 Pixel art used **two** numbers. A 3D build needs **three**. They always come in the same order:
 
-<div style="display:flex; gap:8px; flex-wrap:wrap; margin:6px 0 2px"><div style="flex:1; min-width:120px; background:#fff3ea; border:1px solid #ffd9c2; border-radius:8px; padding:8px 12px"><b style="color:#e0681c">1st = X</b><br>left → right<br><span style="color:#8a8a8a">starts at 0</span></div><div style="flex:1; min-width:120px; background:#f0ecff; border:1px solid #d9cdff; border-radius:8px; padding:8px 12px"><b style="color:#6b4ee6">2nd = Y</b><br>down → up<br><span style="color:#8a8a8a">starts at 0</span></div><div style="flex:1; min-width:120px; background:#e8f7ef; border:1px solid #c4ead6; border-radius:8px; padding:8px 12px"><b style="color:#1a8f5a">3rd = Z</b><br>back → forward<br><span style="color:#8a8a8a">starts at 0</span></div></div>
+<div style="display:flex; gap:8px; flex-wrap:wrap; margin:6px 0 2px"><div style="flex:1; min-width:120px; background:#fff3ea; border:1px solid #ffd9c2; border-radius:8px; padding:8px 12px"><b style="color:#e0681c">1st = X</b><br>right → left<br><span style="color:#8a8a8a">starts at 0</span></div><div style="flex:1; min-width:120px; background:#f0ecff; border:1px solid #d9cdff; border-radius:8px; padding:8px 12px"><b style="color:#6b4ee6">2nd = Y</b><br>down → up<br><span style="color:#8a8a8a">starts at 0</span></div><div style="flex:1; min-width:120px; background:#e8f7ef; border:1px solid #c4ead6; border-radius:8px; padding:8px 12px"><b style="color:#1a8f5a">3rd = Z</b><br>back → forward<br><span style="color:#8a8a8a">starts at 0</span></div></div>
 
 **Count x, then y, then z. Always that order.**
 
@@ -47,7 +47,7 @@ player.on_chat("grid", on_run)
 
 Now place the three rulers by hand — **yellow, black, yellow, black** all the way. All three start on the block under your feet:
 
-- **X ruler** — one block at a time, **to your right**.
+- **X ruler** — one block at a time, **to your left**.
 - **Z ruler** — one block at a time, **forward**.
 - **Y ruler** — a pillar straight **up**.
 
@@ -64,7 +64,7 @@ Its coordinate is **(0, 0, 0)**. Every count starts there.
 | From the corner | You get |
 |---|---|
 | stand still | (0, 0, 0) |
-| 1 step **right** | (1, 0, 0) |
+| 1 step **left** | (1, 0, 0) |
 | 1 block **up** | (0, 1, 0) |
 | 1 step **forward** | (0, 0, 1) |
 
@@ -78,15 +78,15 @@ Its coordinate is **(0, 0, 0)**. Every count starts there.
 
 Each ruler starts at the corner and counts **0, 1, 2, 3 …**
 
-<div style="display:flex; gap:10px; flex-wrap:wrap; margin:10px 0"><figure style="flex:1; min-width:150px; margin:0"><img src="../assets/guide-axis-x.png" alt="Striped yellow and black line running sideways across the grid floor, going to the player's right" style="width:100%; border-radius:8px"><figcaption style="font-size:13px; color:#555; text-align:center; margin-top:4px"><b style="color:#e0681c">X</b> — left → right</figcaption></figure><figure style="flex:1; min-width:110px; margin:0"><img src="../assets/guide-axis-y.png" alt="Striped yellow and black pillar going straight up from the corner of the grid floor" style="width:100%; border-radius:8px"><figcaption style="font-size:13px; color:#555; text-align:center; margin-top:4px"><b style="color:#6b4ee6">Y</b> — down → up</figcaption></figure><figure style="flex:1; min-width:140px; margin:0"><img src="../assets/guide-axis-z.png" alt="Striped yellow and black line running forward, away from the player, across the grid floor" style="width:100%; border-radius:8px"><figcaption style="font-size:13px; color:#555; text-align:center; margin-top:4px"><b style="color:#1a8f5a">Z</b> — back → forward</figcaption></figure></div>
+<div style="display:flex; gap:10px; flex-wrap:wrap; margin:10px 0"><figure style="flex:1; min-width:150px; margin:0"><img src="../assets/guide-axis-x.png" alt="Striped yellow and black line running sideways across the grid floor, going to the player's left" style="width:100%; border-radius:8px"><figcaption style="font-size:13px; color:#555; text-align:center; margin-top:4px"><b style="color:#e0681c">X</b> — right → left</figcaption></figure><figure style="flex:1; min-width:110px; margin:0"><img src="../assets/guide-axis-y.png" alt="Striped yellow and black pillar going straight up from the corner of the grid floor" style="width:100%; border-radius:8px"><figcaption style="font-size:13px; color:#555; text-align:center; margin-top:4px"><b style="color:#6b4ee6">Y</b> — down → up</figcaption></figure><figure style="flex:1; min-width:140px; margin:0"><img src="../assets/guide-axis-z.png" alt="Striped yellow and black line running forward, away from the player, across the grid floor" style="width:100%; border-radius:8px"><figcaption style="font-size:13px; color:#555; text-align:center; margin-top:4px"><b style="color:#1a8f5a">Z</b> — back → forward</figcaption></figure></div>
 
 ```
-place red block at (1, 0, 0)   # 1 step right
+place red block at (1, 0, 0)   # 1 step left
 place red block at (0, 1, 0)   # 1 block up
 place red block at (0, 0, 1)   # 1 step forward
 ```
 
-**Which ruler goes to your right? Circle one:** x · y · z
+**Which ruler goes to your left? Circle one:** x · y · z
 
 **A block at y = 3 is …? Circle one:** on the ground · 3 blocks up
 
@@ -100,7 +100,7 @@ Read **(5, 2, 3)** in three steps:
 
 | Step | Number | Ruler | Do this |
 |---|---|---|---|
-| 1 | x = 5 | left → right | go 5 to your right |
+| 1 | x = 5 | right → left | go 5 to your left |
 | 2 | y = 2 | down → up | go 2 up (the ground is 0) |
 | 3 | z = 3 | back → forward | go 3 forward |
 
