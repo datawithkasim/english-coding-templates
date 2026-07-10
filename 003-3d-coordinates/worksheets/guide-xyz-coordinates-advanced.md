@@ -100,7 +100,7 @@ fill WHITE_CONCRETE from (0, 0, 0) to (15, 0, 15)
 
 <div class="write-space"></div>
 
-**Bug B** — Your friend thinks the corner block is **(1, 1, 1)**, so they count every number from there. Their chicken ends up one step left, one block up, and one step forward from where it belongs — and it floats.
+**Bug B** — Your friend thinks the corner block is **(1, 1, 1)**, so they count every number from there. Their whole build ends up one step left, one block up, and one step forward from where it belongs — and it floats.
 
 ```
 place red block at (5, 1, 5)   # they wanted the block 4 left, on the ground, 4 forward
@@ -116,7 +116,7 @@ place red block at (5, 1, 5)   # they wanted the block 4 left, on the ground, 4 
 
 <div class="write-space"></div>
 
-**Bug C** *(the tricky one)* — The beak should sit in **front of** the head, further along the x ruler at x = 8. This code uses **x = -8**, so the beak appears on the wrong side of the player.
+**Bug C** *(the tricky one)* — This yellow block should sit further along the x ruler, at **x = 8**. The code uses **x = -8**, so it lands on the wrong side of the player entirely.
 
 ```
 place yellow block at (-8, 3, 4)
@@ -138,23 +138,27 @@ place yellow block at (-8, 3, 4)
 
 **Warm-up:** stand on your home spot and place one block at **(3, 0, 3)**. Check it against all three rulers.
 
-**Build the chicken with `fill` boxes** — five of them. Count x, then y, then z for every corner.
+Open the world. Part of the shape is **already built** for you:
 
-<img src="../assets/guide-chicken.png" alt="A red nether brick chicken with a yellow beak standing on the white and yellow grid" style="width:100%; max-width:380px; border-radius:8px; display:block; margin:10px 0">
+<img src="../assets/guide-partial-build.png" alt="A half-built shape made of gold ore blocks, standing on the white grid beside the striped ruler" style="width:100%; max-width:330px; border-radius:8px; display:block; margin:10px 0">
 
-> 🧱 Recipe (red nether brick, yellow concrete for the beak; feet on the ground y = 0):
->
-> - legs: (4, 0, 4) to (4, 0, 5)
-> - body: (3, 1, 4) to (6, 2, 5)
-> - tail: (2, 3, 4) to (2, 3, 5)
-> - head: (6, 3, 4) to (7, 4, 5)
-> - beak: yellow from (8, 3, 4) to (8, 3, 5)
+The rest of the blocks are **missing**. Here they are, spread apart so you can see each one:
 
-Before you build, **plan the heights**: which y does each box start and stop at?
+<img src="../assets/guide-missing-blocks.png" alt="The missing blocks laid out apart on the white grid — red blocks and one long yellow block" style="width:100%; max-width:300px; border-radius:8px; display:block; margin:10px 0">
+
+**Finish the shape.** Read every missing block off the model and count from the corner — x, then y, then z.
+
+**Plan before you build.** Write each missing block's coordinate. Where blocks sit in a straight line, use one **`fill`** between the two end corners instead of placing them one by one.
 
 <div class="write-space"></div>
 
-> ✨ **Modify challenge:** after it works, change one thing of your own — a comb, a tail feather, a taller body, a second chicken further along z. Write what you changed.
+**Write the code you ran.**
+
+<div class="write-space"></div>
+
+> 🧱 The corner block is **(0, 0, 0)**. Use the same blocks you see in the world.
+
+> ✨ **Modify challenge:** after it works, change one thing of your own — a new colour, an extra block, a mirrored copy further along z. Write what you changed.
 
 Record **one video** (a phone is fine). Show two things:
 

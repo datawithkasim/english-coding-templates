@@ -108,7 +108,7 @@ place red block at (0, 1, 0)
 
 <div class="write-space short"></div>
 
-**Bug B** — Your friend says the corner block is **(1, 1, 1)**, so they start counting there. Their whole chicken sits one step left, one block up, and one step forward from where it should be.
+**Bug B** — Your friend says the corner block is **(1, 1, 1)**, so they start counting there. Their whole build sits one step left, one block up, and one step forward from where it should be.
 
 ```
 place red block at (1, 1, 1)   # they think this is the corner
@@ -142,19 +142,21 @@ Read **(5, 2, 3)** in three steps:
 
 **Warm-up:** stand on your home spot and place one block at **(3, 0, 3)**. Check it against your rulers.
 
-**Build the chicken.** Count x, then y, then z for every block.
+Open the world. Part of the shape is **already built** for you:
 
-<img src="../assets/guide-chicken.png" alt="A red nether brick chicken with a yellow beak standing on the white and yellow grid" style="width:100%; max-width:380px; border-radius:8px; display:block; margin:10px 0">
+<img src="../assets/guide-partial-build.png" alt="A half-built shape made of gold ore blocks, standing on the white grid beside the striped ruler" style="width:100%; max-width:330px; border-radius:8px; display:block; margin:10px 0">
 
-> 🧱 Recipe (red nether brick, yellow concrete for the beak):
->
-> - legs: (4, 0, 4) and (4, 0, 5)
-> - body: (3, 1, 4) to (6, 2, 5)
-> - tail: (2, 3, 4) and (2, 3, 5)
-> - head: (6, 3, 4) to (7, 4, 5)
-> - beak: yellow at (8, 3, 4) and (8, 3, 5)
+The rest of the blocks are **missing**. Here they are, spread apart so you can see each one:
 
-If you finish early, give it a comb on top of the head.
+<img src="../assets/guide-missing-blocks.png" alt="The missing blocks laid out apart on the white grid — red blocks and one long yellow block" style="width:100%; max-width:300px; border-radius:8px; display:block; margin:10px 0">
+
+**Finish the shape.** Read each missing block off the model and count from the corner — x, then y, then z.
+
+**Write the coordinates you counted, then the code you ran.**
+
+<div class="write-space tall"></div>
+
+> 🧱 The corner block is **(0, 0, 0)**. Use the same blocks you see in the world.
 
 Record **one video** (a phone is fine). Show two things:
 

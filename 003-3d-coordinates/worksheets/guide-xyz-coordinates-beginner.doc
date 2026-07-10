@@ -161,19 +161,17 @@ place red block at (7, 2, 2)
 <hr />
 <h2>5 · Show Your Work 📸🎥</h2>
 <p><strong>Warm-up:</strong> stand on your home spot and place one block at <strong>(3, 0, 3)</strong>. Check it against your rulers.</p>
-<p><strong>Build the chicken.</strong> Count x, then y, then z for every block.</p>
-<p><img src="../assets/guide-chicken.png" alt="A red nether brick chicken with a yellow beak standing on the white and yellow grid" style="width:100%; max-width:380px; border-radius:8px; display:block; margin:10px 0"></p>
+<p>Open the world. Part of the shape is <strong>already built</strong> for you:</p>
+<p><img src="../assets/guide-partial-build.png" alt="A half-built shape made of gold ore blocks, standing on the white grid beside the striped ruler" style="width:100%; max-width:330px; border-radius:8px; display:block; margin:10px 0"></p>
+<p>The rest of the blocks are <strong>missing</strong>. Here they are, spread apart so you can see each one:</p>
+<p><img src="../assets/guide-missing-blocks.png" alt="The missing blocks laid out apart on the white grid — red blocks and one long yellow block" style="width:100%; max-width:300px; border-radius:8px; display:block; margin:10px 0"></p>
+<p><strong>Finish the shape.</strong> Count x, then y, then z for every block you place.</p>
+<p><strong>Write each block's coordinate here before you place it.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
 <blockquote>
-<p>🧱 Recipe (red nether brick, yellow concrete for the beak):</p>
-<ul>
-<li>legs: (4, 0, 4) and (4, 0, 5)</li>
-<li>body: (3, 1, 4) to (6, 2, 5)</li>
-<li>tail: (2, 3, 4) and (2, 3, 5)</li>
-<li>head: (6, 3, 4) to (7, 4, 5)</li>
-<li>beak: yellow at (8, 3, 4) and (8, 3, 5)</li>
-</ul>
+<p>🧱 The corner block is <strong>(0, 0, 0)</strong>. Use the same blocks you see in the world.</p>
 </blockquote>
-<p>If you finish early, give it a comb on top of the head.</p>
 <p>Record <strong>one video</strong> (a phone is fine). Show two things:</p>
 <p><strong>1 · Your code.</strong> Scroll through it. Say what each part does.</p>
 <p><strong>2 · Your build.</strong> Point the camera. Count one block out loud — x, then y, then z.</p>
