@@ -4,9 +4,9 @@
 
 Pixel art used **two** numbers. A 3D build needs **three**. They always come in the same order:
 
-<div style="display:flex; gap:8px; flex-wrap:wrap; margin:6px 0 2px"><div style="flex:1; min-width:120px; background:#fff3ea; border:1px solid #ffd9c2; border-radius:8px; padding:8px 12px"><b style="color:#e0681c">1st = X</b><br>right → left<br><span style="color:#8a8a8a">starts at 0</span></div><div style="flex:1; min-width:120px; background:#f0ecff; border:1px solid #d9cdff; border-radius:8px; padding:8px 12px"><b style="color:#6b4ee6">2nd = Y</b><br>down → up<br><span style="color:#8a8a8a">starts at 0</span></div><div style="flex:1; min-width:120px; background:#e8f7ef; border:1px solid #c4ead6; border-radius:8px; padding:8px 12px"><b style="color:#1a8f5a">3rd = Z</b><br>back → forward<br><span style="color:#8a8a8a">starts at 0</span></div></div>
+<div style="display:flex; gap:8px; flex-wrap:wrap; margin:6px 0 2px"><div style="flex:1; min-width:120px; background:#fff3ea; border:1px solid #ffd9c2; border-radius:8px; padding:8px 12px"><b style="color:#e0681c">1st = X</b><br>left → right<br><span style="color:#8a8a8a">starts at 0</span></div><div style="flex:1; min-width:120px; background:#f0ecff; border:1px solid #d9cdff; border-radius:8px; padding:8px 12px"><b style="color:#6b4ee6">2nd = Y</b><br>down → up<br><span style="color:#8a8a8a">starts at 0</span></div><div style="flex:1; min-width:120px; background:#e8f7ef; border:1px solid #c4ead6; border-radius:8px; padding:8px 12px"><b style="color:#1a8f5a">3rd = Z</b><br>back → forward<br><span style="color:#8a8a8a">starts at 0</span></div></div>
 
-The three rulers meet on **one block** — your home spot. That block is **(0, 0, 0)**. Every number is counted **from there**, so a coordinate is really three instructions: how far left, how far up, how far forward.
+The three rulers meet on **one block** — your home spot. That block is **(0, 0, 0)**. Every number is counted **from there**, so a coordinate is really three instructions: how far right, how far up, how far forward.
 
 > 🔴 Stand on your **home spot** (red block) every run. Move your feet, move your build.
 
@@ -29,7 +29,7 @@ def on_run():
 player.on_chat("grid", on_run)
 ```
 
-**Write the two `fill` lines that draw a yellow line 5 to the left (x = 5) and a yellow line 5 forward (z = 5), both across the whole floor.**
+**Write the two `fill` lines that draw a yellow line 5 to the right (x = 5) and a yellow line 5 forward (z = 5), both across the whole floor.**
 
 <div class="write-space"></div>
 
@@ -37,7 +37,7 @@ player.on_chat("grid", on_run)
 
 <div class="write-space"></div>
 
-Now place the three rulers by hand — **yellow, black, yellow, black** all the way. All three start on the corner block: **x** to your left, **z** forward, **y** straight up.
+Now place the three rulers by hand — **yellow, black, yellow, black** all the way. All three start on the corner block: **x** to your right, **z** forward, **y** straight up.
 
 ---
 
@@ -74,7 +74,7 @@ fill RED from (3, 0, 4) to (3, 0, 4)
 place red block at (-1, 0, 0)
 ```
 
-**x counts to your left, so 1 is one step left. This one is negative. Where does the block land?**
+**x counts to your right, so 1 is one step right. This one is negative. Where does the block land?**
 
 <div class="write-space"></div>
 
@@ -100,10 +100,10 @@ fill WHITE_CONCRETE from (0, 0, 0) to (15, 0, 15)
 
 <div class="write-space"></div>
 
-**Bug B** — Your friend thinks the corner block is **(1, 1, 1)**, so they count every number from there. Their whole build ends up one step left, one block up, and one step forward from where it belongs — and it floats.
+**Bug B** — Your friend thinks the corner block is **(1, 1, 1)**, so they count every number from there. Their whole build ends up one step right, one block up, and one step forward from where it belongs — and it floats.
 
 ```
-place red block at (5, 1, 5)   # they wanted the block 4 left, on the ground, 4 forward
+place red block at (5, 1, 5)   # they wanted the block 4 right, on the ground, 4 forward
 ```
 
 **Hint:** the corner is where the three rulers **meet**.
