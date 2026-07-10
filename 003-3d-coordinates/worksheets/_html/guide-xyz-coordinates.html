@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>🧭 M003 Guide — Counting (x, y, z)</title>
+<style>
+@page { size: A4; margin: 18mm 16mm 22mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-family: "Inter", "Segoe UI", system-ui, sans-serif; color: #1a1a2e; }
+body { font-size: 15px; line-height: 1.55; }
+
+.cover { border-bottom: 3px solid #ff7849; padding-bottom: 14px; margin-bottom: 20px; }
+.brand { font-size: 14px; font-weight: 800; color: #ff7849; letter-spacing: .06em; }
+h1 { font-size: 28px; color: #6b4ee6; margin: 8px 0 6px; line-height: 1.25; }
+h2 { font-size: 19px; color: #6b4ee6; margin: 22px 0 12px; padding-top: 10px; border-top: 1px solid #eee; page-break-before: always; }
+section.first h2, h2:first-of-type { border-top: none; padding-top: 0; page-break-before: avoid; }
+h3, h4 { font-size: 15px; margin: 14px 0 8px; color: #1a1a2e; }
+p { margin: 8px 0; }
+strong { color: #1a1a2e; }
+em { color: #555; }
+
+ul, ol { margin: 8px 0 8px 24px; }
+li { margin: 3px 0; }
+
+/* Grids (e.g. pixel-art coordinate grids) render as light graph paper. */
+table { border-collapse: collapse; margin: 12px 0; }
+th, td { border: 1px solid #ddd; padding: 4px 9px; text-align: center; font-size: 14px; }
+th { background: #faf7ff; color: #6b4ee6; font-weight: 700; }
+
+pre {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 13.5px;
+  background: #1e1e2e;
+  color: #b9f6ca;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 10px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  page-break-inside: avoid;
+  line-height: 1.5;
+}
+pre code { background: transparent; padding: 0; color: inherit; }
+code {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  background: #fff1e8;
+  color: #ff7849;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+blockquote {
+  margin: 10px 0;
+  padding: 10px 16px;
+  background: #fff6ef;
+  border-left: 3px solid #ff7849;
+  border-radius: 0 6px 6px 0;
+  color: #6a3a1c;
+}
+
+.write-space {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #ffffff 0,
+    #ffffff 27px,
+    #d4d4d4 27px,
+    #d4d4d4 28px
+  );
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  min-height: 114px;
+  margin: 10px 0 20px;
+  page-break-inside: avoid;
+}
+.write-space.short { min-height: 86px; }
+.write-space.tall { min-height: 170px; }
+
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
+hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
+
+.meta { color: #666; font-size: 13px; margin: 0 0 14px; }
+.answer-lines {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 14px 16px;
+  background: #fafafa;
+  white-space: pre;
+  line-height: 2.2;
+}
+
+footer {
+  position: fixed;
+  bottom: 10mm; left: 16mm; right: 16mm;
+  text-align: center;
+  font-size: 10px;
+  color: #aaa;
+}
+footer b { color: #ff7849; }
+</style>
+</head>
+<body>
+<div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
+<h1>🧭 M003 Guide — Counting (x, y, z)</h1>
+<p><strong>Topic:</strong> Before 3D · <strong>Course:</strong> 3D Coordinates · <strong>Level:</strong> All · <strong>Time:</strong> about 20 minutes</p>
+<p>Pixel art used <strong>two</strong> numbers. A 3D build needs <strong>three</strong>. They always come in the same order:</p>
+<div style="display:flex; gap:8px; flex-wrap:wrap; margin:6px 0 2px"><div style="flex:1; min-width:120px; background:#fff3ea; border:1px solid #ffd9c2; border-radius:8px; padding:8px 12px"><b style="color:#e0681c">1st = X</b><br>across →<br><span style="color:#8a8a8a">starts at 1</span></div><div style="flex:1; min-width:120px; background:#f0ecff; border:1px solid #d9cdff; border-radius:8px; padding:8px 12px"><b style="color:#6b4ee6">2nd = Y</b><br>up ↑<br><span style="color:#8a8a8a">starts at 0</span></div><div style="flex:1; min-width:120px; background:#e8f7ef; border:1px solid #c4ead6; border-radius:8px; padding:8px 12px"><b style="color:#1a8f5a">3rd = Z</b><br>forward ⤴<br><span style="color:#8a8a8a">starts at 1</span></div></div>
+
+<p><strong>Count X, then Y, then Z. Always that order.</strong></p>
+<blockquote>
+<p>🔴 Stand on your <strong>home spot</strong> (red block) every run. Move your feet, move your build.</p>
+</blockquote>
+<h2>1 · Build Your Grid 🎨</h2>
+<p>Make a striped ruler for each axis, so you can <strong>see</strong> the numbers.</p>
+<p><img src="../assets/guide-grid.png" alt="A white grid floor with yellow lines, a striped line running across (x), a striped line running forward (z), and a striped pillar going up (y)" style="width:100%; max-width:420px; border-radius:8px; display:block; margin:10px 0"></p>
+<p>Stand on your home spot. Run this to lay the white floor and the yellow lines:</p>
+<pre><code class="language-python">def on_run():
+    blocks.fill(WHITE_CONCRETE,
+        pos(1, -1, 1),
+        pos(15, -1, 15),
+        FillOperation.REPLACE)
+    blocks.fill(YELLOW_CONCRETE,
+        pos(5, -1, 1),
+        pos(5, -1, 15),
+        FillOperation.REPLACE)
+    blocks.fill(YELLOW_CONCRETE,
+        pos(10, -1, 1),
+        pos(10, -1, 15),
+        FillOperation.REPLACE)
+    blocks.fill(YELLOW_CONCRETE,
+        pos(1, -1, 5),
+        pos(15, -1, 5),
+        FillOperation.REPLACE)
+    blocks.fill(YELLOW_CONCRETE,
+        pos(1, -1, 10),
+        pos(15, -1, 10),
+        FillOperation.REPLACE)
+player.on_chat(&quot;grid&quot;, on_run)
+</code></pre>
+<p>Now place the three rulers by hand — <strong>yellow, black, yellow, black</strong> all the way:</p>
+<ul>
+<li><strong>X ruler</strong> — walk <strong>right</strong>, one block at a time.</li>
+<li><strong>Z ruler</strong> — walk <strong>forward</strong>, one block at a time.</li>
+<li><strong>Y ruler</strong> — stack a pillar <strong>up</strong> from the corner.</li>
+</ul>
+<blockquote>
+<p>🟨⬛ The stripes are there so you can count without guessing.</p>
+</blockquote>
+<h2>2 · Count X First ➡️</h2>
+<p><strong>X is across.</strong> Follow the striped line going left to right.</p>
+<p><img src="../assets/guide-axis-x.png" alt="Striped yellow and black line running left to right across the grid floor" style="width:100%; max-width:380px; border-radius:8px; display:block; margin:10px 0"></p>
+<p>The block <strong>next to</strong> your home spot is <strong>1</strong>. Then 2, 3, 4 …</p>
+<pre><code>place red block at (1, ?, ?)
+place red block at (2, ?, ?)
+place red block at (3, ?, ?)
+</code></pre>
+<p><strong>Which way do these blocks go? Circle one:</strong> across · up · forward</p>
+<p><strong>X starts at which number? Circle one:</strong> 0 · 1</p>
+<h2>3 · Then Count Y ⬆️</h2>
+<p><strong>Y is up.</strong> Follow the striped pillar.</p>
+<p><img src="../assets/guide-axis-y.png" alt="Striped yellow and black pillar going straight up from the grid floor" style="width:100%; max-width:260px; border-radius:8px; display:block; margin:10px 0"></p>
+<p>⚠️ <strong>Y is different.</strong> The block on the <strong>ground</strong> is <strong>0</strong> — not 1. Then 1, 2, 3 …</p>
+<pre><code>place red block at (?, 0, ?)   # on the ground
+place red block at (?, 1, ?)   # one higher
+place red block at (?, 2, ?)   # one higher again
+</code></pre>
+<p><strong>Y starts at which number? Circle one:</strong> 0 · 1</p>
+<p><strong>A block at y = 3 is …? Circle one:</strong> on the ground · 3 blocks up</p>
+<h2>4 · Last, Count Z ⤴️</h2>
+<p><strong>Z is forward</strong> — away from you, deeper into the grid.</p>
+<p><img src="../assets/guide-axis-z.png" alt="Striped yellow and black line running forward, away from the player, across the grid floor" style="width:100%; max-width:340px; border-radius:8px; display:block; margin:10px 0"></p>
+<p>The block <strong>in front of</strong> your home spot is <strong>1</strong>. Then 2, 3, 4 …</p>
+<pre><code>place red block at (?, ?, 1)
+place red block at (?, ?, 2)
+place red block at (?, ?, 3)
+</code></pre>
+<p><strong>Which number is like x — starts at 1? Circle one:</strong> y · z</p>
+<h2>5 · Put Them Together 🧭</h2>
+<p>Read <strong>(5, 2, 3)</strong> in three steps:</p>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Number</th>
+<th>Ruler</th>
+<th>Do this</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>x = 5</td>
+<td>across</td>
+<td>walk 5 right</td>
+</tr>
+<tr>
+<td>2</td>
+<td>y = 2</td>
+<td>up</td>
+<td>go 2 up (ground is 0)</td>
+</tr>
+<tr>
+<td>3</td>
+<td>z = 3</td>
+<td>forward</td>
+<td>go 3 forward</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Where is (4, 0, 6)? Circle one:</strong> on the ground · 4 blocks up · 6 blocks up</p>
+<p><strong>Which coordinate is on the ground? Circle one:</strong> (2, 1, 2) · (2, 0, 2)</p>
+<p><strong>These two blocks are stacked. Which number grew?</strong></p>
+<pre><code>place red block at (7, 1, 2)
+place red block at (7, 2, 2)
+</code></pre>
+<p><strong>Circle one:</strong> x · y · z</p>
+<h2>6 · Show Your Work 📸🎥</h2>
+<p><strong>Warm-up:</strong> stand on your home spot and place one block at <strong>(3, 0, 3)</strong>. Check it against your rulers.</p>
+<p><strong>Build the chicken.</strong> Count x, then y, then z for every block.</p>
+<p><img src="../assets/guide-chicken.png" alt="A red nether brick chicken with a yellow beak standing on the white and yellow grid" style="width:100%; max-width:380px; border-radius:8px; display:block; margin:10px 0"></p>
+<blockquote>
+<p>🧱 Recipe (red nether brick, yellow concrete for the beak):</p>
+<ul>
+<li>legs: (4, 0, 4) and (4, 0, 5)</li>
+<li>body: (3, 1, 4) to (6, 2, 5)</li>
+<li>tail: (2, 3, 4) and (2, 3, 5)</li>
+<li>head: (6, 3, 4) to (7, 4, 5)</li>
+<li>beak: yellow at (8, 3, 4) and (8, 3, 5)</li>
+</ul>
+</blockquote>
+<p>If you finish early, give it a comb on top of the head.</p>
+<p>Record <strong>one video</strong> (a phone is fine). Show two things:</p>
+<p><strong>1 · Your code.</strong> Scroll through it. Say what each part does.</p>
+<p><strong>2 · Your build.</strong> Point the camera. Count one block out loud — x, then y, then z.</p>
+<p>Say these out loud, filling in the blanks:</p>
+<blockquote>
+<p>Today I built ______.</p>
+<p>I built it using this code: ______.</p>
+<p>In this code I used ______.</p>
+<p>The hardest part was ______.</p>
+<p>That part was hard because ______.</p>
+</blockquote>
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your video to teacher on KakaoTalk.</p>
+</body>
+</html>
