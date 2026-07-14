@@ -73,7 +73,7 @@ Between one structure and the next, the agent has to **walk to a new spot** so n
 
 Go to your homework world and build each structure one at a time, moving the agent between them. Keep going until your village has **the house with a roof, the well, the small pond, and the small flower bed** — all placed by code.
 
-Record **one video** (a phone is fine). Show two things:
+Record **one video** — one take, no stopping (a phone is fine). Show these in order:
 
 **1 · Your code.** Scroll through it. Say what each part does.
 
@@ -90,6 +90,10 @@ Fill the blanks:
 > The hardest part was ______.
 >
 > That part was hard because ______.
+>
+> The most fun part was ______.
+>
+> Something new I learned was ______.
 
 **Write your lines here, then say them in your video.**
 

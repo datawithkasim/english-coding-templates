@@ -1,0 +1,170 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head><meta charset='utf-8'>
+<title>Python: Fixing Common Errors 🐍</title>
+<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
+<style>
+@page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
+div.WordSection1 { page: WordSection1; }
+body { font-family: "Segoe UI", Arial, sans-serif; font-size: 11.5pt; color: #1a1a2e; line-height: 1.5; }
+h1 { font-size: 21pt; color: #6b4ee6; margin: 4px 0 6px; }
+h2 { font-size: 15pt; color: #6b4ee6; border-top: 1px solid #dddddd; padding-top: 8px; margin: 18px 0 10px; }
+h3, h4 { font-size: 11.5pt; margin: 12px 0 6px; }
+p { margin: 7px 0; }
+.brand { font-size: 10.5pt; font-weight: bold; color: #ff7849; letter-spacing: .06em;
+         border-bottom: 2px solid #ff7849; padding-bottom: 6px; margin-bottom: 14px; }
+table { border-collapse: collapse; margin: 10px 0; }
+th, td { border: 1px solid #c8c8c8; padding: 4px 9px; text-align: center; }
+th { background: #f3eefc; color: #6b4ee6; font-weight: bold; }
+pre { font-family: Consolas, "Courier New", monospace; font-size: 10.5pt; background: #f4f4f5;
+      border: 1px solid #dddddd; padding: 8px 10px; white-space: pre-wrap; }
+pre code { background: transparent; color: #1a1a2e; }
+code { font-family: Consolas, "Courier New", monospace; background: #fff1e8; color: #d6531f; padding: 0 3px; }
+blockquote { border-left: 3px solid #ff7849; background: #fff6ef; padding: 8px 12px;
+             color: #6a3a1c; margin: 9px 0; }
+ul, ol { margin: 7px 0 7px 26px; }
+p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
+.footer { color: #999999; font-size: 8.5pt; text-align: center; margin-top: 18px;
+          border-top: 1px solid #eeeeee; padding-top: 6px; }
+.footer b { color: #ff7849; }
+</style></head>
+<body><div class=WordSection1>
+<div class="brand">📚 ENGLISH CODING · 영어코딩</div>
+<h1>Python: Fixing Common Errors 🐍</h1>
+<p>When your code does not run, it is almost always one of these small things.
+Check this list first!</p>
+<hr />
+<h2>✅ Error 1: Indentation (the spaces in front of a line)</h2>
+<p>Python uses <strong>spaces in front of a line</strong> to know what belongs inside a block.</p>
+<p>These three things always need the lines under them to be <strong>indented</strong> (pushed in):</p>
+<ul>
+<li><code>def</code> (a function)</li>
+<li><code>if</code></li>
+<li><code>while</code> / <code>for</code> loops</li>
+</ul>
+<h3>❌ Wrong (not indented)</h3>
+<pre><code class="language-python">def on_chat():
+forward = 5
+</code></pre>
+<h3>✅ Right (indented)</h3>
+<pre><code class="language-python">def on_chat():
+    forward = 5
+</code></pre>
+<p>👉 The line <code>forward = 5</code> is <strong>inside</strong> the function, so it must be pushed in.</p>
+<p><strong>How to indent:</strong>
+- Press <strong>Enter</strong> to make a new line.
+- Press <strong>Tab</strong> to push the line in (indent).
+- Press <strong>Backspace</strong> to pull the line back out.</p>
+<hr />
+<h2>✅ Error 2: Don't forget the <code>:</code> (colon)</h2>
+<p><code>def</code>, <code>if</code>, <code>while</code>, and <code>for</code> lines must <strong>end with a colon <code>:</code></strong></p>
+<h3>❌ Wrong</h3>
+<pre><code class="language-python">while True
+if forward == 5
+</code></pre>
+<h3>✅ Right</h3>
+<pre><code class="language-python">while True:
+if forward == 5:
+</code></pre>
+<p>👉 No colon = error. Always check the end of the line.</p>
+<hr />
+<h2>✅ Error 3: Keep the function name on the same line as <code>def</code></h2>
+<p>The function name goes <strong>right after <code>def</code>, on the same line</strong>, ending with <code>()</code> and <code>:</code></p>
+<h3>❌ Wrong</h3>
+<pre><code class="language-python">def
+on_chat():
+</code></pre>
+<h3>✅ Right</h3>
+<pre><code class="language-python">def on_chat():
+</code></pre>
+<hr />
+<h2>✅ Error 4: Match your indentation</h2>
+<p>Lines inside the <strong>same block</strong> must line up with the same number of spaces.</p>
+<h3>❌ Wrong (lines don't line up)</h3>
+<pre><code class="language-python">def on_chat():
+    forward = 5
+      agent.move(FORWARD, forward)
+</code></pre>
+<h3>✅ Right (lines line up)</h3>
+<pre><code class="language-python">def on_chat():
+    forward = 5
+    agent.move(FORWARD, forward)
+</code></pre>
+<p>👉 A loop inside a function gets indented <strong>again</strong>:</p>
+<pre><code class="language-python">def on_chat():
+    for layer in range(3):
+        agent.move(FORWARD, 5)
+</code></pre>
+<hr />
+<h1>🎯 Practice Exercises</h1>
+<p>Fix each one. The error is written above it.</p>
+<h3>Exercise 1 — Missing colon</h3>
+<pre><code class="language-python">def on_chat()
+    agent.move(FORWARD, 3)
+player.on_chat(&quot;go&quot;, on_chat)
+</code></pre>
+<h3>Exercise 2 — Not indented</h3>
+<pre><code class="language-python">def on_chat():
+agent.move(UP, 1)
+player.on_chat(&quot;up&quot;, on_chat)
+</code></pre>
+<h3>Exercise 3 — Missing colon on the loop</h3>
+<pre><code class="language-python">def on_chat():
+    for i in range(4)
+        agent.move(FORWARD, 1)
+        agent.turn(TurnDirection.LEFT)
+player.on_chat(&quot;square&quot;, on_chat)
+</code></pre>
+<h3>Exercise 4 — Wrong indentation (lines don't line up)</h3>
+<pre><code class="language-python">def on_chat():
+    forward = 5
+      agent.move(FORWARD, forward)
+player.on_chat(&quot;run&quot;, on_chat)
+</code></pre>
+<h3>Exercise 5 — Loop not indented inside the function</h3>
+<pre><code class="language-python">def on_chat():
+for layer in range(3):
+    agent.move(UP, 1)
+player.on_chat(&quot;tower&quot;, on_chat)
+</code></pre>
+<hr />
+<h1>✅ Answer Key</h1>
+<h3>Exercise 1</h3>
+<pre><code class="language-python">def on_chat():
+    agent.move(FORWARD, 3)
+player.on_chat(&quot;go&quot;, on_chat)
+</code></pre>
+<h3>Exercise 2</h3>
+<pre><code class="language-python">def on_chat():
+    agent.move(UP, 1)
+player.on_chat(&quot;up&quot;, on_chat)
+</code></pre>
+<h3>Exercise 3</h3>
+<pre><code class="language-python">def on_chat():
+    for i in range(4):
+        agent.move(FORWARD, 1)
+        agent.turn(TurnDirection.LEFT)
+player.on_chat(&quot;square&quot;, on_chat)
+</code></pre>
+<h3>Exercise 4</h3>
+<pre><code class="language-python">def on_chat():
+    forward = 5
+    agent.move(FORWARD, forward)
+player.on_chat(&quot;run&quot;, on_chat)
+</code></pre>
+<h3>Exercise 5</h3>
+<pre><code class="language-python">def on_chat():
+    for layer in range(3):
+        agent.move(UP, 1)
+player.on_chat(&quot;tower&quot;, on_chat)
+</code></pre>
+<hr />
+<h1>🌟 Remember the 4 checks</h1>
+<ol>
+<li><strong>Indent</strong> the lines inside <code>def</code>, <code>if</code>, <code>while</code>, <code>for</code> (press Tab).</li>
+<li>End <code>def</code> / <code>if</code> / <code>while</code> / <code>for</code> lines with <strong><code>:</code></strong></li>
+<li>Keep the function name <strong>next to <code>def</code></strong>.</li>
+<li>Make lines in the same block <strong>line up</strong>.</li>
+</ol>
+<p>Press <strong>Enter</strong> for a new line, <strong>Tab</strong> to indent, <strong>Backspace</strong> to go back.</p>
+<div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>
+</div></body></html>

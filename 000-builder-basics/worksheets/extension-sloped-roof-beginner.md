@@ -46,7 +46,7 @@ Here it is `roof_len`. It starts at 7 and loses 2 each ring.
 
 Then change the starting number. Make `roof_len` start at **9** instead of 7, run it again, and see how the roof changes.
 
-Record **one video** (a phone is fine). Show two things:
+Record **one video** — one take, no stopping (a phone is fine). Show these in order:
 
 **1 · Your code.** Scroll through it. Say what each part does.
 
@@ -63,6 +63,10 @@ Say these out loud, filling in the blanks:
 > The hardest part was ______.
 >
 > That part was hard because ______.
+>
+> The most fun part was ______.
+>
+> Something new I learned was ______.
 
 ---
 

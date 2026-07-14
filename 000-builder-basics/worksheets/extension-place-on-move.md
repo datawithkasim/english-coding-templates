@@ -110,7 +110,7 @@ Plan a trail of your own — in words and numbers, not in a code box.
 
 Open the **Trail Maker** world and type `run` in the chat to watch the agent lay its trail. Then build your **own** version by changing the program — try a longer trail, a wider gap, more than one gap, or a different block.
 
-Record **one video** (a phone is fine). Show two things:
+Record **one video** — one take, no stopping (a phone is fine). Show these in order:
 
 **1 · Your code.** Scroll through it. Say what each part does.
 
@@ -127,6 +127,10 @@ Fill the blanks:
 > The hardest part was ______.
 >
 > That part was hard because ______.
+>
+> The most fun part was ______.
+>
+> Something new I learned was ______.
 
 **Write your lines here, then say them in your video.**
 

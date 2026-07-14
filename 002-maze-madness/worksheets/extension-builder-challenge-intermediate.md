@@ -104,7 +104,7 @@ The agent should turn only when **both** are true. Write the fixed line.
 
 Type `run` and watch. It sticks — find the spot, fix the code or maze, `rl` to reset, then run until it reaches the **GOAL**.
 
-Record **one video** (a phone is fine). Show two things:
+Record **one video** — one take, no stopping (a phone is fine). Show these in order:
 
 **1 · Your code.** Scroll through it. Say what each part does.
 
@@ -121,6 +121,10 @@ Fill the blanks:
 > The hardest part was ______.
 >
 > That part was hard because ______.
+>
+> The most fun part was ______.
+>
+> Something new I learned was ______.
 
 **Write your lines here, then say them in your video.**
 

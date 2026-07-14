@@ -58,7 +58,7 @@ if redstone left ____ redstone ahead:
 
 Open **M002 EXT 2** and type `run`. Reach the end past both pistons; if it sticks, run again.
 
-Record **one video** (a phone is fine). Show two things:
+Record **one video** — one take, no stopping (a phone is fine). Show these in order:
 
 **1 · Your code.** Scroll through it. Say what each part does.
 
@@ -75,6 +75,10 @@ Say these out loud, filling in the blanks:
 > The hardest part was ______.
 >
 > That part was hard because ______.
+>
+> The most fun part was ______.
+>
+> Something new I learned was ______.
 
 ---
 

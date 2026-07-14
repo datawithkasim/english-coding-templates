@@ -103,7 +103,7 @@ repeat 6 times:
 
 Switch to your homework world and use a loop to build a **20-block straight wall**. Then build a **U-shaped wall** (three sides).
 
-Record **one video** (a phone is fine). Show two things:
+Record **one video** — one take, no stopping (a phone is fine). Show these in order:
 
 **1 · Your code.** Scroll through it. Say what each part does.
 
@@ -120,6 +120,10 @@ Fill the blanks:
 > The hardest part was ______.
 >
 > That part was hard because ______.
+>
+> The most fun part was ______.
+>
+> Something new I learned was ______.
 
 **Write your lines here, then say them in your video.**
 

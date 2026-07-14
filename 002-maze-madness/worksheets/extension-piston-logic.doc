@@ -138,7 +138,7 @@ agent.interact(AHEAD)
 <hr />
 <h2>5 · Show Your Work 📸🎥</h2>
 <p>Get the agent from <strong>start to the very end</strong> — past both piston gates and every junction. Run <code>run</code>, see where it sticks, fix, run again until it reaches the goal.</p>
-<p>Record <strong>one video</strong> (a phone is fine). Show two things:</p>
+<p>Record <strong>one video</strong> — one take, no stopping (a phone is fine). Show these in order:</p>
 <p><strong>1 · Your code.</strong> Scroll through it. Say what each part does.</p>
 <p><strong>2 · Your build.</strong> Point the camera. Name the parts.</p>
 <p>Fill the blanks:</p>
@@ -148,6 +148,8 @@ agent.interact(AHEAD)
 <p>In this code I used ______.</p>
 <p>The hardest part was ______.</p>
 <p>That part was hard because ______.</p>
+<p>The most fun part was ______.</p>
+<p>Something new I learned was ______.</p>
 </blockquote>
 <p><strong>Write your lines here, then say them in your video.</strong></p>
 <p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>

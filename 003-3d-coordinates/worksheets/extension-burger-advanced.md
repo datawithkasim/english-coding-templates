@@ -111,7 +111,7 @@ Stand on your **home spot** (the red block). Finish the burger block by block, r
 
 <div class="write-space short"></div>
 
-Record **one video** (a phone is fine). Show two things:
+Record **one video** — one take, no stopping (a phone is fine). Show these in order:
 
 **1 · Your code.** Scroll through it. Say what each part does.
 
@@ -128,6 +128,10 @@ Fill the blanks:
 > It was hard because \_\_\_\_\_\_.
 >
 > I think the burger looks \_\_\_\_\_\_.
+>
+> The most fun part was \_\_\_\_\_\_.
+>
+> Something new I learned was \_\_\_\_\_\_.
 
 **Write your lines here, then say them in your video.**
 
