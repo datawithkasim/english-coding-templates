@@ -1,0 +1,167 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head><meta charset='utf-8'>
+<title>🔀 Extra — If Statements: Advanced</title>
+<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
+<style>
+@page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
+div.WordSection1 { page: WordSection1; }
+body { font-family: "Segoe UI", Arial, sans-serif; font-size: 11.5pt; color: #1a1a2e; line-height: 1.5; }
+h1 { font-size: 21pt; color: #6b4ee6; margin: 4px 0 6px; }
+h2 { font-size: 15pt; color: #6b4ee6; border-top: 1px solid #dddddd; padding-top: 8px; margin: 18px 0 10px; }
+h3, h4 { font-size: 11.5pt; margin: 12px 0 6px; }
+p { margin: 7px 0; }
+.brand { font-size: 10.5pt; font-weight: bold; color: #ff7849; letter-spacing: .06em;
+         border-bottom: 2px solid #ff7849; padding-bottom: 6px; margin-bottom: 14px; }
+table { border-collapse: collapse; margin: 10px 0; }
+th, td { border: 1px solid #c8c8c8; padding: 4px 9px; text-align: center; }
+th { background: #f3eefc; color: #6b4ee6; font-weight: bold; }
+pre { font-family: Consolas, "Courier New", monospace; font-size: 10.5pt; background: #f4f4f5;
+      border: 1px solid #dddddd; padding: 8px 10px; white-space: pre-wrap; }
+pre code { background: transparent; color: #1a1a2e; }
+code { font-family: Consolas, "Courier New", monospace; background: #fff1e8; color: #d6531f; padding: 0 3px; }
+blockquote { border-left: 3px solid #ff7849; background: #fff6ef; padding: 8px 12px;
+             color: #6a3a1c; margin: 9px 0; }
+ul, ol { margin: 7px 0 7px 26px; }
+p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
+.footer { color: #999999; font-size: 8.5pt; text-align: center; margin-top: 18px;
+          border-top: 1px solid #eeeeee; padding-top: 6px; }
+.footer b { color: #ff7849; }
+</style></head>
+<body><div class=WordSection1>
+<div class="brand">📚 ENGLISH CODING · 영어코딩</div>
+<h1>🔀 Extra — If Statements: Advanced</h1>
+<p><strong>Topic:</strong> Nested If + Boolean Logic · <strong>Course:</strong> Extra Worksheet · <strong>Time:</strong> about 40 minutes</p>
+<p>An <code>if</code> can live <strong>inside</strong> another <code>if</code>. The inner one only runs when the outer one is true. On paper you will read, predict, fix, and explain. Then you will write and run your own code in the IDE.</p>
+<blockquote>
+<p>Keep these words handy: <strong>nested</strong>, <strong>and / or / not</strong>, <strong>return</strong>, <strong>indent level</strong>.</p>
+</blockquote>
+<hr />
+<h2>1 · Predict 🔮</h2>
+<p>Read each snippet. Write what you think it will print.</p>
+<pre><code class="language-python">logged_in = True
+is_admin = False
+
+if logged_in:
+    if is_admin:
+        print(&quot;Welcome, admin!&quot;)
+    else:
+        print(&quot;Welcome, user!&quot;)
+else:
+    print(&quot;Please log in.&quot;)
+</code></pre>
+<p><strong>What prints? Which <code>if</code> runs first — the outer one or the inner one?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">def check_age(age):
+    if age &lt; 0:
+        return &quot;Invalid age&quot;
+    if age &lt; 13:
+        return &quot;Kid&quot;
+    elif age &lt; 20:
+        return &quot;Teen&quot;
+    else:
+        return &quot;Adult&quot;
+
+print(check_age(15))
+</code></pre>
+<p><strong>What does this print? Why does the function stop at the first <code>return</code> it hits?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">health = 30
+shield = True
+
+if health &gt; 0:
+    if health &lt; 50 and shield:
+        print(&quot;Low health, but shielded&quot;)
+    elif health &lt; 50:
+        print(&quot;Low health, no shield!&quot;)
+    else:
+        print(&quot;Healthy&quot;)
+else:
+    print(&quot;Defeated&quot;)
+</code></pre>
+<p><strong>What prints? What would print if <code>shield</code> was <code>False</code>?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>2 · Spot the Bug 🐛</h2>
+<p>Each snippet is broken. Read what it should do, then rewrite it so it works. Explain why the original was wrong.</p>
+<p><strong>Bug A</strong> — This should only check <code>is_admin</code> when the user is logged in. Right now it crashes / checks <code>is_admin</code> even when logged out, because the inner <code>if</code> isn't nested inside the outer one — it just runs alongside it.</p>
+<pre><code class="language-python">logged_in = False
+is_admin = True
+
+if logged_in:
+    print(&quot;Logged in&quot;)
+if is_admin:
+    print(&quot;Welcome, admin!&quot;)
+</code></pre>
+<p><strong>Hint:</strong> where should the second <code>if</code> be indented?</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug B</strong> — This function should return <code>"Adult"</code> for age <code>20</code> and up. Right now, calling it with <code>age = 20</code> returns <code>"Teen"</code>.</p>
+<pre><code class="language-python">def check_age(age):
+    if age &lt; 13:
+        return &quot;Kid&quot;
+    elif age &lt; 20:
+        return &quot;Teen&quot;
+    elif age &lt;= 20:
+        return &quot;Adult&quot;
+    else:
+        return &quot;Adult&quot;
+</code></pre>
+<p><strong>Hint:</strong> two branches both try to catch <code>20</code> — which one does Python reach first?</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>3 · Explain the Code 📖</h2>
+<pre><code class="language-python">def get_ticket_price(age, is_member):
+    if age &lt; 5:
+        return 0
+    else:
+        if is_member:
+            if age &lt; 18:
+                return 5
+            else:
+                return 8
+        else:
+            if age &lt; 18:
+                return 10
+            else:
+                return 15
+
+print(get_ticket_price(25, True))
+</code></pre>
+<p><strong>Walk through this step by step for <code>age = 25</code>, <code>is_member = True</code>. Which branch does it take at each nested level?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>What would this return for <code>age = 3</code>, <code>is_member = False</code>? Why does it not even check <code>is_member</code>?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why nest the <code>if</code>s instead of writing one long <code>elif</code> chain? What would happen if you removed one level of indent by mistake?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>4 · Code It 💻</h2>
+<p>Open the IDE at <strong>app.english-coding.co.uk</strong> and write your own program.</p>
+<p>Write a function <code>check_login(username, password, is_banned)</code> that:
+- returns <code>"Banned"</code> if <code>is_banned</code> is <code>True</code>
+- otherwise, if <code>username == "admin"</code> and <code>password == "1234"</code>, returns <code>"Admin login"</code>
+- otherwise, if <code>password == "1234"</code>, returns <code>"User login"</code>
+- otherwise returns <code>"Access denied"</code></p>
+<p>Use <strong>nested if statements</strong> for at least one part of the logic. Test it by calling the function with 3 different sets of values and printing the result.</p>
+<p>Run it, then write your function code and what each test printed.</p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + a screenshot of your working code to teacher on KakaoTalk.</p>
+<div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>
+</div></body></html>

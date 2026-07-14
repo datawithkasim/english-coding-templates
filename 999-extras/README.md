@@ -11,6 +11,9 @@
 | 워크시트 | 종류 | 개념 | 📝 받기 |
 |---|---|---|---|
 | 중첩 반복문 (Nesting) | 연습 | 반복문 안의 반복문 | [PDF](https://github.com/datawithkasim/english-coding-templates/raw/master/999-extras/worksheets/nesting.pdf) |
+| 딕셔너리 만들기 — 기초 (Creating Dictionaries) | 연습 · 기초 | 딕셔너리 · 키 · 값 · `{ }` | [PDF](https://github.com/datawithkasim/english-coding-templates/raw/master/999-extras/worksheets/creating-dictionaries.pdf) |
+| 딕셔너리 만들기 — 중급 (Add & Update) | 연습 · 중급 | 키 추가 · 값 수정 · `dict[key] = value` | [PDF](https://github.com/datawithkasim/english-coding-templates/raw/master/999-extras/worksheets/creating-dictionaries-intermediate.pdf) |
+| 딕셔너리 만들기 — 심화 (Advanced) | 연습 · 심화 | 딕셔너리 리스트 · 중첩 · `.get()` | [PDF](https://github.com/datawithkasim/english-coding-templates/raw/master/999-extras/worksheets/creating-dictionaries-advanced.pdf) |
 | CSS 색상과 글씨 꾸미기 (CSS Colors & Text Styling) | 연습 · 기초 | 선택자 · 색상 · padding · border · margin | [PDF](https://github.com/datawithkasim/english-coding-templates/raw/master/999-extras/worksheets/css-colors-text-styling.pdf) |
 | 미로 1주차 단어 (Maze Wk1 Words) | 단어 | while · loop · detect · wall · forward | [PDF](https://github.com/datawithkasim/english-coding-templates/raw/master/999-extras/worksheets/vocab-week1-maze.pdf) |
 
