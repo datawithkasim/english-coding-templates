@@ -92,10 +92,13 @@ The build only behaves well if you stick to these shapes:
 - No `input()` dependency in expected output examples (the grader/runtime has no stdin).
 - **Closing section is a single `## N · Show Your Work 📸🎥`** (Minecraft courses). Do NOT
   split "build/show" and "record video" into two sections. Order inside it: the course-specific
-  build instruction, then one video that (1) shows the code + explains it, (2) shows the build +
-  explains it, then the fixed fill-in script (`> Today I built ______.` / `> I built it using this
+  build instruction, then **one continuous-take video** (opener: `Record **one video** — one take, no
+  stopping (a phone is fine). Show these in order:`) that (1) shows the code + explains it, (2) shows the
+  build + explains it, then the fixed fill-in script (`> Today I built ______.` / `> I built it using this
   code: ______.` / `> In this code I used ______.` / `> The hardest part was ______.` / `> That part
-  was hard because ______.`), then `### Submit`. On INT/ADV/base sheets this script is preceded by
+  was hard because ______.` / `> The most fun part was ______.` / `> Something new I learned was ______.`),
+  then `### Submit`. The seven `>` script lines are one blockquote separated by `>` marker lines (blank-`>`,
+  not blank lines). On INT/ADV/base sheets this script is preceded by
   a `write-space tall` draft box under "Fill the blanks:". Keep each blank a single trailing `______`
   — never two blanks flanking a word (markdown bolds the word between them).
 - **Circle-one questions take NO write-space.** A `**… Circle one:** a · b · c` prompt is answered by

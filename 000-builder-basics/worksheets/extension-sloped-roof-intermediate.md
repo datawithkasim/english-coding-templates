@@ -75,7 +75,7 @@ The starting value of `roof_len` decides how wide the bottom ring is. Because th
 
 Open the **Sloped Roof** world. Type `slope` in the chat to run the build and watch the rings shrink and step up to the peak. Then try the wider **5-ring** version by changing the starting number to the value you chose in Section 4, and run it again.
 
-Record **one video** (a phone is fine). Show two things:
+Record **one video** — one take, no stopping (a phone is fine). Show these in order:
 
 **1 · Your code.** Scroll through it. Say what each part does.
 
@@ -92,6 +92,10 @@ Fill the blanks:
 > The hardest part was ______.
 >
 > That part was hard because ______.
+>
+> The most fun part was ______.
+>
+> Something new I learned was ______.
 
 **Write your lines here, then say them in your video.**
 

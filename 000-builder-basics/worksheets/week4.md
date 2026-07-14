@@ -104,7 +104,7 @@ repeat 10 times:
 
 Switch to your homework world. Build your house with walls but **no roof yet** — 10 blocks long and 10 blocks tall, using two loops.
 
-Record **one video** (a phone is fine). Show two things:
+Record **one video** — one take, no stopping (a phone is fine). Show these in order:
 
 **1 · Your code.** Scroll through it. Say what each part does.
 
@@ -121,6 +121,10 @@ Fill the blanks:
 > The hardest part was ______.
 >
 > That part was hard because ______.
+>
+> The most fun part was ______.
+>
+> Something new I learned was ______.
 
 **Write your lines here, then say them in your video.**
 

@@ -124,7 +124,7 @@ build_janitor_room(4)
 <hr />
 <h2>5 · Show Your Work 📸🎥</h2>
 <p>Switch to your homework world. Write a <code>build_room</code> helper, then a <code>build_bathroom</code> function that <strong>calls</strong> it and places a <code>CAULDRON</code>. Call <code>build_bathroom</code> once.</p>
-<p>Record <strong>one video</strong> (a phone is fine). Show two things:</p>
+<p>Record <strong>one video</strong> — one take, no stopping (a phone is fine). Show these in order:</p>
 <p><strong>1 · Your code.</strong> Scroll through it. Say what each part does.</p>
 <p><strong>2 · Your build.</strong> Point the camera. Name the parts.</p>
 <p>Say these out loud, filling in the blanks:</p>
@@ -134,6 +134,8 @@ build_janitor_room(4)
 <p>In this code I used ______.</p>
 <p>The hardest part was ______.</p>
 <p>That part was hard because ______.</p>
+<p>The most fun part was ______.</p>
+<p>Something new I learned was ______.</p>
 </blockquote>
 <hr />
 <h3>Submit ✅</h3>

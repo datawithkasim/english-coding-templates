@@ -141,7 +141,7 @@ elif agent.detect(REDSTONE, RIGHT) and agent.detect(REDSTONE, UP):
 
 The goal is start to the **very end** — past both stuck junctions and every plain turn. Type `run`, watch where it stops, fix your two rules, run again until it reaches the goal.
 
-Record **one video** (a phone is fine). Show two things:
+Record **one video** — one take, no stopping (a phone is fine). Show these in order:
 
 **1 · Your code.** Scroll through it. Say what each part does.
 
@@ -158,6 +158,10 @@ Fill the blanks:
 > The hardest part was ______.
 >
 > That part was hard because ______.
+>
+> The most fun part was ______.
+>
+> Something new I learned was ______.
 
 **Write your lines here, then say them in your video.**
 

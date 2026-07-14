@@ -164,7 +164,7 @@ agent.move(FORWARD, 1)
 <hr />
 <h2>6 · Show Your Work 📸🎥</h2>
 <p>Run your solver and get the agent to the <strong>diamond block</strong> goal. See where it sticks, fix a rule, run again.</p>
-<p>Record <strong>one video</strong> (a phone is fine). Show two things:</p>
+<p>Record <strong>one video</strong> — one take, no stopping (a phone is fine). Show these in order:</p>
 <p><strong>1 · Your code.</strong> Scroll through it. Say what each part does.</p>
 <p><strong>2 · Your build.</strong> Point the camera. Name the parts.</p>
 <p>Fill the blanks:</p>
@@ -174,6 +174,8 @@ agent.move(FORWARD, 1)
 <p>In this code I used ______.</p>
 <p>The hardest part was ______.</p>
 <p>That part was hard because ______.</p>
+<p>The most fun part was ______.</p>
+<p>Something new I learned was ______.</p>
 </blockquote>
 <p><strong>Write your lines here, then say them in your video.</strong></p>
 <p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>

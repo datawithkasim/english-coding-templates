@@ -120,7 +120,7 @@ Before you build, **plan the heights** in the space below: which y does each par
 
 > ✨ **Modify challenge:** after it works, change one thing of your own — a new colour, a different pose, or an extra part (a hat, a tail, longer arms). Write what you changed.
 
-Record **one video** (a phone is fine). Show two things:
+Record **one video** — one take, no stopping (a phone is fine). Show these in order:
 
 **1 · Your code.** Scroll through it. Say what each part does.
 
@@ -137,6 +137,10 @@ Fill the blanks:
 > The hardest part was ______.
 >
 > That part was hard because ______.
+>
+> The most fun part was ______.
+>
+> Something new I learned was ______.
 
 **Write your lines here, then say them in your video.**
 

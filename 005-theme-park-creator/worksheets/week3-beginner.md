@@ -142,7 +142,7 @@ build_janitor_room(4)
 
 Switch to your homework world. Write a `build_room` helper, then a `build_bathroom` function that **calls** it and places a `CAULDRON`. Call `build_bathroom` once.
 
-Record **one video** (a phone is fine). Show two things:
+Record **one video** — one take, no stopping (a phone is fine). Show these in order:
 
 **1 · Your code.** Scroll through it. Say what each part does.
 
@@ -159,6 +159,10 @@ Say these out loud, filling in the blanks:
 > The hardest part was ______.
 >
 > That part was hard because ______.
+>
+> The most fun part was ______.
+>
+> Something new I learned was ______.
 
 ---
 

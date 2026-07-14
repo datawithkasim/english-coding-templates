@@ -96,7 +96,7 @@ place gold block at (0, -5)
 
 Switch to your homework world and place a gold block at **(0, 0)** to see where counting starts. Then pick three more coordinates, place a different block at each, and write down the coordinates you used.
 
-Record **one video** (a phone is fine). Show two things:
+Record **one video** — one take, no stopping (a phone is fine). Show these in order:
 
 **1 · Your code.** Scroll through it. Say what each part does.
 
@@ -113,6 +113,10 @@ Fill the blanks:
 > The hardest part was ______.
 >
 > That part was hard because ______.
+>
+> The most fun part was ______.
+>
+> Something new I learned was ______.
 
 **Write your lines here, then say them in your video.**
 

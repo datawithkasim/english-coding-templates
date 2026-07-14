@@ -80,7 +80,7 @@ on player walks on ____ block:
 
 Switch to your homework world. Build one spot that reacts when the player walks on it.
 
-Record **one video** (a phone is fine). Show two things:
+Record **one video** — one take, no stopping (a phone is fine). Show these in order:
 
 **1 · Your code.** Scroll through it. Say what each part does.
 
@@ -97,6 +97,10 @@ Say these out loud, filling in the blanks:
 > The hardest part was ______.
 >
 > That part was hard because ______.
+>
+> The most fun part was ______.
+>
+> Something new I learned was ______.
 
 ---
 

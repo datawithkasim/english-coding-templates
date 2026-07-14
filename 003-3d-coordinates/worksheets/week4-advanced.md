@@ -134,7 +134,7 @@ Build the 🐱 cat **and** the 🌳 tree below by reading the (x, y) of every co
 
 **Modify challenge.** Once both pictures are built, change one thing with your own idea — give the cat a different eye colour, add an apple to the tree, or make the trunk taller. Build your change, and be ready to say which coordinates you added or swapped.
 
-Record **one video** (a phone is fine). Show two things:
+Record **one video** — one take, no stopping (a phone is fine). Show these in order:
 
 **1 · Your code.** Scroll through it. Say what each part does.
 
@@ -151,6 +151,10 @@ Fill the blanks:
 > The hardest part was ______.
 >
 > That part was hard because ______.
+>
+> The most fun part was ______.
+>
+> Something new I learned was ______.
 
 **Write your lines here, then say them in your video.**
 

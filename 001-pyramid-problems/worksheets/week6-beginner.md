@@ -101,7 +101,7 @@ while size <= 5:
 
 Switch to your homework world. Build an inverted pyramid that grows from **size 1 up to size 5**, then check the shape from the side.
 
-Record **one video** (a phone is fine). Show two things:
+Record **one video** — one take, no stopping (a phone is fine). Show these in order:
 
 **1 · Your code.** Scroll through it. Say what each part does.
 
@@ -118,6 +118,10 @@ Say these out loud, filling in the blanks:
 > The hardest part was ______.
 >
 > That part was hard because ______.
+>
+> The most fun part was ______.
+>
+> Something new I learned was ______.
 
 ---
 

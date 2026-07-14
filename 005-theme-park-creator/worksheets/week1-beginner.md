@@ -104,7 +104,7 @@ up_and_down(10)
 
 Switch to your homework world. Write one `build_hill` function with a `line_len` parameter and a ramp up, then call it two times with different numbers.
 
-Record **one video** (a phone is fine). Show two things:
+Record **one video** — one take, no stopping (a phone is fine). Show these in order:
 
 **1 · Your code.** Scroll through it. Say what each part does.
 
@@ -121,6 +121,10 @@ Say these out loud, filling in the blanks:
 > The hardest part was ______.
 >
 > That part was hard because ______.
+>
+> The most fun part was ______.
+>
+> Something new I learned was ______.
 
 ---
 
