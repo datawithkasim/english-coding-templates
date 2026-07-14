@@ -1,0 +1,125 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head><meta charset='utf-8'>
+<title>📖 Extra — Creating Dictionaries: Add & Update</title>
+<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
+<style>
+@page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
+div.WordSection1 { page: WordSection1; }
+body { font-family: "Segoe UI", Arial, sans-serif; font-size: 11.5pt; color: #1a1a2e; line-height: 1.5; }
+h1 { font-size: 21pt; color: #6b4ee6; margin: 4px 0 6px; }
+h2 { font-size: 15pt; color: #6b4ee6; border-top: 1px solid #dddddd; padding-top: 8px; margin: 18px 0 10px; }
+h3, h4 { font-size: 11.5pt; margin: 12px 0 6px; }
+p { margin: 7px 0; }
+.brand { font-size: 10.5pt; font-weight: bold; color: #ff7849; letter-spacing: .06em;
+         border-bottom: 2px solid #ff7849; padding-bottom: 6px; margin-bottom: 14px; }
+table { border-collapse: collapse; margin: 10px 0; }
+th, td { border: 1px solid #c8c8c8; padding: 4px 9px; text-align: center; }
+th { background: #f3eefc; color: #6b4ee6; font-weight: bold; }
+pre { font-family: Consolas, "Courier New", monospace; font-size: 10.5pt; background: #f4f4f5;
+      border: 1px solid #dddddd; padding: 8px 10px; white-space: pre-wrap; }
+pre code { background: transparent; color: #1a1a2e; }
+code { font-family: Consolas, "Courier New", monospace; background: #fff1e8; color: #d6531f; padding: 0 3px; }
+blockquote { border-left: 3px solid #ff7849; background: #fff6ef; padding: 8px 12px;
+             color: #6a3a1c; margin: 9px 0; }
+ul, ol { margin: 7px 0 7px 26px; }
+p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
+.footer { color: #999999; font-size: 8.5pt; text-align: center; margin-top: 18px;
+          border-top: 1px solid #eeeeee; padding-top: 6px; }
+.footer b { color: #ff7849; }
+</style></head>
+<body><div class=WordSection1>
+<div class="brand">📚 ENGLISH CODING · 영어코딩</div>
+<h1>📖 Extra — Creating Dictionaries: Add &amp; Update</h1>
+<p><strong>Topic:</strong> Building &amp; Changing a Dictionary · <strong>Course:</strong> Extra Worksheet · <strong>Time:</strong> about 35 minutes</p>
+<p>You can start with an empty dictionary and fill it later, and you can change a value after you set it. <code>player["score"] = 10</code> adds a new key, or updates one that already exists. On paper you will read, predict, fix, and explain. Then you will write and run your own code in the IDE.</p>
+<blockquote>
+<p>Keep these words handy: <strong>key</strong>, <strong>value</strong>, <strong>add a key</strong>, <strong>update</strong>, <strong>dict[key] = value</strong>.</p>
+</blockquote>
+<hr />
+<h2>1 · Predict 🔮</h2>
+<p>Read each snippet. Write what you think it will print.</p>
+<pre><code class="language-python">player = {&quot;name&quot;: &quot;Leo&quot;}
+player[&quot;score&quot;] = 0
+player[&quot;score&quot;] = 50
+print(player[&quot;score&quot;])
+</code></pre>
+<p><strong>What prints? The score was set twice — which value wins?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">pet = {}
+pet[&quot;kind&quot;] = &quot;dog&quot;
+pet[&quot;age&quot;] = 4
+print(pet)
+</code></pre>
+<p><strong>What does the whole dictionary look like when it prints?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">car = {&quot;color&quot;: &quot;red&quot;, &quot;speed&quot;: 100}
+car[&quot;speed&quot;] = car[&quot;speed&quot;] + 20
+print(car[&quot;speed&quot;])
+</code></pre>
+<p><strong>What prints? Work out the right side first, then the left.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>2 · Spot the Bug 🐛</h2>
+<p>Each snippet is broken. Read what it should do, then rewrite it so it works. Explain why the original was wrong.</p>
+<p><strong>Bug A</strong> — This should add a <code>"level"</code> key to the player. Instead it rebuilds the whole dictionary and loses the name.</p>
+<pre><code class="language-python">player = {&quot;name&quot;: &quot;Leo&quot;}
+player = {&quot;level&quot;: 1}
+print(player[&quot;name&quot;])
+</code></pre>
+<p><strong>Hint:</strong> to add a key, set <code>player["level"] = 1</code> — don't make a brand-new dictionary.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug B</strong> — This should raise the score by <code>100</code>. Right now it crashes, because it reads a key that was never created.</p>
+<pre><code class="language-python">game = {&quot;lives&quot;: 3}
+game[&quot;score&quot;] = game[&quot;score&quot;] + 100
+</code></pre>
+<p><strong>Hint:</strong> you can't add to a <code>"score"</code> that doesn't exist yet. Give it a starting value first.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>3 · Explain the Code 📖</h2>
+<pre><code class="language-python">profile = {}
+profile[&quot;username&quot;] = &quot;coder_kim&quot;
+profile[&quot;wins&quot;] = 0
+
+profile[&quot;wins&quot;] = profile[&quot;wins&quot;] + 1
+profile[&quot;wins&quot;] = profile[&quot;wins&quot;] + 1
+
+print(f&quot;{profile['username']} has {profile['wins']} wins&quot;)
+</code></pre>
+<p><strong><code>profile</code> starts empty. What is inside it after the first two lines?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>The two <code>wins</code> lines look almost the same. What do they do to <code>wins</code> each time?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>What is the final printout, and why is <code>wins</code> <code>2</code> and not <code>1</code>?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>4 · Code It 💻</h2>
+<p>Open the IDE at <strong>app.english-coding.co.uk</strong> and write your own program.</p>
+<p>Write code that:
+- makes an <strong>empty dictionary</strong> called <code>character</code>
+- adds a <code>"name"</code> key and an <code>"hp"</code> key with values you choose
+- then <strong>updates</strong> <code>"hp"</code> to a new value
+- prints the character's name and final HP</p>
+<p>Run it, then write your code and what it printed.</p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + a screenshot of your working code to teacher on KakaoTalk.</p>
+<div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>
+</div></body></html>

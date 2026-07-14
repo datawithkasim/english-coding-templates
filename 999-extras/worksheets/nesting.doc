@@ -1,0 +1,141 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head><meta charset='utf-8'>
+<title>🪆 Extra — Nesting: Code Inside Code</title>
+<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
+<style>
+@page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
+div.WordSection1 { page: WordSection1; }
+body { font-family: "Segoe UI", Arial, sans-serif; font-size: 11.5pt; color: #1a1a2e; line-height: 1.5; }
+h1 { font-size: 21pt; color: #6b4ee6; margin: 4px 0 6px; }
+h2 { font-size: 15pt; color: #6b4ee6; border-top: 1px solid #dddddd; padding-top: 8px; margin: 18px 0 10px; }
+h3, h4 { font-size: 11.5pt; margin: 12px 0 6px; }
+p { margin: 7px 0; }
+.brand { font-size: 10.5pt; font-weight: bold; color: #ff7849; letter-spacing: .06em;
+         border-bottom: 2px solid #ff7849; padding-bottom: 6px; margin-bottom: 14px; }
+table { border-collapse: collapse; margin: 10px 0; }
+th, td { border: 1px solid #c8c8c8; padding: 4px 9px; text-align: center; }
+th { background: #f3eefc; color: #6b4ee6; font-weight: bold; }
+pre { font-family: Consolas, "Courier New", monospace; font-size: 10.5pt; background: #f4f4f5;
+      border: 1px solid #dddddd; padding: 8px 10px; white-space: pre-wrap; }
+pre code { background: transparent; color: #1a1a2e; }
+code { font-family: Consolas, "Courier New", monospace; background: #fff1e8; color: #d6531f; padding: 0 3px; }
+blockquote { border-left: 3px solid #ff7849; background: #fff6ef; padding: 8px 12px;
+             color: #6a3a1c; margin: 9px 0; }
+ul, ol { margin: 7px 0 7px 26px; }
+p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
+.footer { color: #999999; font-size: 8.5pt; text-align: center; margin-top: 18px;
+          border-top: 1px solid #eeeeee; padding-top: 6px; }
+.footer b { color: #ff7849; }
+</style></head>
+<body><div class=WordSection1>
+<div class="brand">📚 ENGLISH CODING · 영어코딩</div>
+<style>
+.dg { margin: 16px 0; font-family: "JetBrains Mono","Consolas",monospace; font-size: 14.5px; line-height: 1.5; }
+.dg .ln { padding: 3px 10px; }
+.dg .key { color: #6b4ee6; font-weight: 700; }
+.dg .box { border: 2px dashed #ff7849; border-radius: 8px; background: #fff6ef; margin: 4px 0 8px 26px; padding: 26px 10px 10px; position: relative; }
+.dg .box.purple { border-color: #6b4ee6; background: #f3f0ff; }
+.dg .tag { position: absolute; top: -11px; left: 12px; background: #ff7849; color: #fff; font-family: "Inter", sans-serif; font-size: 11px; font-weight: 700; padding: 2px 9px; border-radius: 10px; }
+.dg .box.purple .tag { background: #6b4ee6; }
+.dg .note { font-family: "Inter", sans-serif; font-size: 12.5px; color: #888; }
+.dg .always { color: #2e9e5b; font-weight: 700; }
+.dg .danger { color: #d63b3b; font-weight: 700; }
+</style>
+
+<h1>🪆 Extra — Nesting: Code Inside Code</h1>
+<p><strong>Topic:</strong> Nesting &amp; Indenting · <strong>Course:</strong> Extra Worksheet · <strong>Time:</strong> about 30 minutes</p>
+<hr />
+<h2>1 · Code Lives in Boxes 📦</h2>
+<p>In block code, a loop has an arm. The arm holds the blocks inside.</p>
+<p>Real code has no arm. So we <strong>indent</strong>. We push the inside lines to the right with spaces.</p>
+<blockquote>
+<p>Indenting shows what is <strong>inside</strong>.</p>
+</blockquote>
+<p>The box is the inside:</p>
+<div class="dg">
+  <div class="ln key">while true:</div>
+  <div class="box"><span class="tag">INSIDE the loop</span>
+    <div class="ln">place block</div>
+  </div>
+</div>
+
+<hr />
+<h2>2 · Inside Means "Only If" 🛡️</h2>
+<p>The hero raises a shield only <strong>if</strong> a monster is near.</p>
+<div class="dg">
+  <div class="ln key">if a monster is near:</div>
+  <div class="box"><span class="tag">INSIDE the if — runs ONLY if a monster is near</span>
+    <div class="ln">raise shield</div>
+  </div>
+  <div class="ln"><span class="always">say "phew, I am safe"</span> &nbsp;<span class="note">← OUTSIDE — runs EVERY time</span></div>
+</div>
+
+<p>Inside the box → runs only when a monster is near.</p>
+<p>Outside the box → always runs.</p>
+<p><strong>No monster is near. Which line runs? Which is skipped?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>3 · Why It MUST Be Inside ⚠️</h2>
+<p>The indent tells the computer where the <code>if</code> stops.</p>
+<p>Now we push the last line <strong>inside</strong> too:</p>
+<div class="dg">
+  <div class="ln key">if a monster is near:</div>
+  <div class="box"><span class="tag">Now EVERYTHING is inside the if</span>
+    <div class="ln">raise shield</div>
+    <div class="ln danger">say "phew, I am safe"</div>
+  </div>
+</div>
+
+<p>Now the hero feels safe only when a monster is near. Wrong! 🙈</p>
+<blockquote>
+<p>Inside the box → runs only if true.
+Outside the box → always runs.
+Move a line in or out → the code changes.</p>
+</blockquote>
+<p><strong>Where should <code>say "phew, I am safe"</code> go? Why?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>4 · Predict 🔮</h2>
+<p>Read this code. The agent runs it over and over.</p>
+<pre><code>function go:
+    while true:
+        move forward
+        if there is a flower:
+            pick the flower
+</code></pre>
+<p><code>move forward</code> is inside the <code>while</code>, so it happens every time.</p>
+<p><code>pick the flower</code> is inside the <code>if</code>, so it happens only sometimes.</p>
+<p><strong>What does the agent do every time? When does it pick a flower?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>5 · Debug 🐛</h2>
+<p>This code should pick a flower <strong>only</strong> when there is one. But the agent picks all the time. The indent is wrong.</p>
+<pre><code>function go:
+    while true:
+        if there is a flower:
+        pick the flower
+</code></pre>
+<p><code>pick the flower</code> is not pushed in under the <code>if</code>. So it is <strong>outside</strong> the <code>if</code>, and runs every time.</p>
+<p><strong>Write the code again with the right indent. Then say why your fix works.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>6 · Write 🖊️</h2>
+<p>Now you write one piece of code. Make the agent do this:</p>
+<ul>
+<li>a <strong>function</strong> called <code>patrol</code></li>
+<li>inside it, a <strong>while true</strong></li>
+<li>inside the while, an <strong>if a monster is near</strong></li>
+<li>inside the if, <strong>swing the sword</strong></li>
+</ul>
+<p>Push each box in one more step than the box above it.</p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet to teacher on KakaoTalk.</p>
+<div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>
+</div></body></html>

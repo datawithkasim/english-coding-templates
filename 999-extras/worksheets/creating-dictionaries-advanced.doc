@@ -1,0 +1,132 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head><meta charset='utf-8'>
+<title>📖 Extra — Creating Dictionaries: Advanced</title>
+<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
+<style>
+@page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
+div.WordSection1 { page: WordSection1; }
+body { font-family: "Segoe UI", Arial, sans-serif; font-size: 11.5pt; color: #1a1a2e; line-height: 1.5; }
+h1 { font-size: 21pt; color: #6b4ee6; margin: 4px 0 6px; }
+h2 { font-size: 15pt; color: #6b4ee6; border-top: 1px solid #dddddd; padding-top: 8px; margin: 18px 0 10px; }
+h3, h4 { font-size: 11.5pt; margin: 12px 0 6px; }
+p { margin: 7px 0; }
+.brand { font-size: 10.5pt; font-weight: bold; color: #ff7849; letter-spacing: .06em;
+         border-bottom: 2px solid #ff7849; padding-bottom: 6px; margin-bottom: 14px; }
+table { border-collapse: collapse; margin: 10px 0; }
+th, td { border: 1px solid #c8c8c8; padding: 4px 9px; text-align: center; }
+th { background: #f3eefc; color: #6b4ee6; font-weight: bold; }
+pre { font-family: Consolas, "Courier New", monospace; font-size: 10.5pt; background: #f4f4f5;
+      border: 1px solid #dddddd; padding: 8px 10px; white-space: pre-wrap; }
+pre code { background: transparent; color: #1a1a2e; }
+code { font-family: Consolas, "Courier New", monospace; background: #fff1e8; color: #d6531f; padding: 0 3px; }
+blockquote { border-left: 3px solid #ff7849; background: #fff6ef; padding: 8px 12px;
+             color: #6a3a1c; margin: 9px 0; }
+ul, ol { margin: 7px 0 7px 26px; }
+p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
+.footer { color: #999999; font-size: 8.5pt; text-align: center; margin-top: 18px;
+          border-top: 1px solid #eeeeee; padding-top: 6px; }
+.footer b { color: #ff7849; }
+</style></head>
+<body><div class=WordSection1>
+<div class="brand">📚 ENGLISH CODING · 영어코딩</div>
+<h1>📖 Extra — Creating Dictionaries: Advanced</h1>
+<p><strong>Topic:</strong> Lists of Dictionaries + Nesting · <strong>Course:</strong> Extra Worksheet · <strong>Time:</strong> about 40 minutes</p>
+<p>Real programs hold many records at once — a whole team, not just one hero. You put a <strong>dictionary inside a list</strong>, or even a <strong>dictionary inside a dictionary</strong>. On paper you will read, predict, fix, and explain. Then you will write and run your own code in the IDE.</p>
+<blockquote>
+<p>Keep these words handy: <strong>list of dictionaries</strong>, <strong>nested</strong>, <strong>.get()</strong>, <strong>KeyError</strong>, <strong>update</strong>.</p>
+</blockquote>
+<hr />
+<h2>1 · Predict 🔮</h2>
+<p>Read each snippet. Write what you think it will print.</p>
+<pre><code class="language-python">team = [
+    {&quot;name&quot;: &quot;Aria&quot;, &quot;hp&quot;: 100},
+    {&quot;name&quot;: &quot;Leo&quot;, &quot;hp&quot;: 80},
+]
+print(team[1][&quot;name&quot;])
+</code></pre>
+<p><strong>Two steps: first <code>[1]</code>, then <code>["name"]</code>. What prints?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">player = {
+    &quot;name&quot;: &quot;Mia&quot;,
+    &quot;stats&quot;: {&quot;hp&quot;: 100, &quot;attack&quot;: 30},
+}
+print(player[&quot;stats&quot;][&quot;attack&quot;])
+</code></pre>
+<p><strong>This is a dictionary inside a dictionary. What prints?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">player = {&quot;name&quot;: &quot;Mia&quot;}
+print(player.get(&quot;score&quot;, 0))
+</code></pre>
+<p><strong>There is no <code>"score"</code> key, but this does not crash. What prints, and why?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>2 · Spot the Bug 🐛</h2>
+<p>Each snippet is broken. Read what it should do, then rewrite it so it works. Explain why the original was wrong.</p>
+<p><strong>Bug A</strong> — This should print <strong>every</strong> member's name. Right now it prints the same one three times.</p>
+<pre><code class="language-python">team = [
+    {&quot;name&quot;: &quot;Aria&quot;},
+    {&quot;name&quot;: &quot;Leo&quot;},
+    {&quot;name&quot;: &quot;Mia&quot;},
+]
+
+for member in team:
+    print(team[0][&quot;name&quot;])
+</code></pre>
+<p><strong>Hint:</strong> use the loop variable <code>member</code>, not <code>team[0]</code>.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug B</strong> — This should read the nested attack value. It crashes because it reaches for <code>"attack"</code> at the wrong level.</p>
+<pre><code class="language-python">player = {&quot;name&quot;: &quot;Mia&quot;, &quot;stats&quot;: {&quot;hp&quot;: 100, &quot;attack&quot;: 30}}
+print(player[&quot;attack&quot;])
+</code></pre>
+<p><strong>Hint:</strong> <code>"attack"</code> lives inside <code>"stats"</code>, not directly inside <code>player</code>.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>3 · Explain the Code 📖</h2>
+<pre><code class="language-python">roster = [
+    {&quot;name&quot;: &quot;Aria&quot;, &quot;role&quot;: &quot;healer&quot;},
+    {&quot;name&quot;: &quot;Leo&quot;, &quot;role&quot;: &quot;tank&quot;},
+]
+
+new_hero = {}
+new_hero[&quot;name&quot;] = &quot;Mia&quot;
+new_hero[&quot;role&quot;] = &quot;mage&quot;
+roster.append(new_hero)
+
+for hero in roster:
+    print(f&quot;{hero['name']} — {hero['role']}&quot;)
+</code></pre>
+<p><strong>What is <code>roster</code> — and what is each item inside it?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>How is <code>new_hero</code> built before it joins the roster?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>What does the loop print, and why does it now include Mia?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>4 · Code It 💻</h2>
+<p>Open the IDE at <strong>app.english-coding.co.uk</strong> and write your own program.</p>
+<p>Build a <strong>list of dictionaries</strong> called <code>shop</code>, where each item is a dictionary with a <code>"name"</code> key and a <code>"price"</code> key. Put three items in it.</p>
+<p>Then <strong>loop over</strong> the shop and print each item's name and price on its own line.</p>
+<p>Run it, then write your code and what it printed.</p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + a screenshot of your working code to teacher on KakaoTalk.</p>
+<div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>
+</div></body></html>
