@@ -1,0 +1,152 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head><meta charset='utf-8'>
+<title>🌍 WD003 Extension — Design a Carbon Footprint Tracker</title>
+<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
+<style>
+@page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
+div.WordSection1 { page: WordSection1; }
+body { font-family: "Segoe UI", Arial, sans-serif; font-size: 11.5pt; color: #1a1a2e; line-height: 1.5; }
+h1 { font-size: 21pt; color: #6b4ee6; margin: 4px 0 6px; }
+h2 { font-size: 15pt; color: #6b4ee6; border-top: 1px solid #dddddd; padding-top: 8px; margin: 18px 0 10px; }
+h3, h4 { font-size: 11.5pt; margin: 12px 0 6px; }
+p { margin: 7px 0; }
+.brand { font-size: 10.5pt; font-weight: bold; color: #ff7849; letter-spacing: .06em;
+         border-bottom: 2px solid #ff7849; padding-bottom: 6px; margin-bottom: 14px; }
+table { border-collapse: collapse; margin: 10px 0; }
+th, td { border: 1px solid #c8c8c8; padding: 4px 9px; text-align: center; }
+th { background: #f3eefc; color: #6b4ee6; font-weight: bold; }
+pre { font-family: Consolas, "Courier New", monospace; font-size: 10.5pt; background: #f4f4f5;
+      border: 1px solid #dddddd; padding: 8px 10px; white-space: pre-wrap; }
+pre code { background: transparent; color: #1a1a2e; }
+code { font-family: Consolas, "Courier New", monospace; background: #fff1e8; color: #d6531f; padding: 0 3px; }
+blockquote { border-left: 3px solid #ff7849; background: #fff6ef; padding: 8px 12px;
+             color: #6a3a1c; margin: 9px 0; }
+ul, ol { margin: 7px 0 7px 26px; }
+p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
+.footer { color: #999999; font-size: 8.5pt; text-align: center; margin-top: 18px;
+          border-top: 1px solid #eeeeee; padding-top: 6px; }
+.footer b { color: #ff7849; }
+</style></head>
+<body><div class=WordSection1>
+<div class="brand">📚 ENGLISH CODING · 영어코딩</div>
+<h1>🌍 WD003 Extension — Design a Carbon Footprint Tracker</h1>
+<p><strong>Topic:</strong> Brand Kit + Wireframe for an Environmental Web App · <strong>Course:</strong> Portfolio Site · <strong>Level:</strong> Extension · <strong>Time:</strong> about 60 minutes</p>
+<p>This is an extension mission, and there is <strong>no code</strong> in it. In week 1 you designed a brand kit and a wireframe for a site about <em>you</em>. This time you design for something bigger than you: the <strong>environment</strong>. Everything we do has a <strong>carbon footprint</strong> — the CO₂ released into the air by our travel, our food, and our electricity. Scientists track it because what gets measured can be improved. Your mission: plan a web app called a <strong>carbon footprint tracker</strong> — a page where someone enters their week and sees how big their footprint is, plus one tip to shrink it.</p>
+<blockquote>
+<p>Designers do this for real. Before any app gets built, someone has to decide what it asks, what it shows, and how it feels. That someone is you today.</p>
+</blockquote>
+<hr />
+<h2>1 · Predict 🔮</h2>
+<p>Read each plan below. Before you imagine the page, write what you think a visitor would see and do.</p>
+<pre><code>[ Header: app name + small Earth logo ]
+[ Questions: how far by car? · how far by bus?
+  · hours of screen time? · meals with meat? ]
+[ Button: &quot;Calculate my footprint&quot; ]
+[ Result: big number + message ]
+[ Tips: one idea to shrink it ]
+</code></pre>
+<p><strong>A visitor lands at the top. Walk through what they do, step by step, until they read their tip.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code>[ Header ]
+[ Result: big number + message ]
+[ Questions ]
+[ Button ]
+</code></pre>
+<p><strong>This plan shows the Result <em>before</em> the visitor has answered anything. What would the Result box show when the page first opens? Why is that confusing?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code>[ Header ]
+[ Questions: 40 questions about every part of your life ]
+[ Button ]
+[ Result ]
+</code></pre>
+<p><strong>Forty questions is very thorough. But what do you think most visitors do when they see a form that long? How many questions feels right to you?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>2 · Spot the Bug 🐛</h2>
+<p>Each plan below was meant to do something, but it does not quite work yet. Read what the plan is <strong>supposed</strong> to do, then rewrite it so it makes sense. After that, explain why the original was a problem.</p>
+<p><strong>Bug A</strong> — This tracker is supposed to <em>help</em> people, not scare them away. But the result section only delivers bad news.</p>
+<pre><code>[ Result: &quot;YOUR FOOTPRINT IS TERRIBLE.
+  YOU ARE PART OF THE PROBLEM.&quot; ]
+</code></pre>
+<p><strong>Hint:</strong> people change more when they get a clear number <em>and</em> one doable next step.</p>
+<p><strong>Write a better Result box — what does it show, what tone does it use?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why does your version work better than the original?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug B</strong> — A wireframe is supposed to use <strong>boxes and labels only</strong> — no colors, no finished text, no real pictures. This one has jumped ahead.</p>
+<pre><code>[ Header: forest green #2E7D32 background, font is
+  &quot;Quicksand Bold 48px&quot;, real photo of a melting glacier,
+  full slogan already written out ]
+</code></pre>
+<p><strong>Hint:</strong> a wireframe decides <em>position</em>, not <em>paint</em>. Strip it back.</p>
+<p><strong>Write a proper wireframe label for the Header:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug C</strong> — Every box is supposed to have a clear <strong>label</strong>. This plan has a mystery box, and the button does not say what it does.</p>
+<pre><code>[ Header ]
+[ ??? ]
+[ Button: &quot;Go&quot; ]
+[ Result ]
+</code></pre>
+<p><strong>Hint:</strong> name the mystery box, and give the button words that tell the visitor what will happen.</p>
+<p><strong>Write the fixed plan:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>3 · Design the Brand Kit 🎨</h2>
+<p>In week 1 your brand kit was about <em>you</em>. This brand belongs to a <strong>cause</strong> — so every choice should make a visitor think about the planet, and feel like they <em>can</em> do something, not like they are in trouble.</p>
+<ol>
+<li><strong>Name the app.</strong> Short, friendly, easy to say. Write two or three ideas, then circle the winner.</li>
+<li><strong>Pick three words</strong> the app should feel like (for example: <em>hopeful, clean, honest</em>). A guilt-trip app and a hopeful app look very different — your words decide which one you are making.</li>
+<li><strong>Choose your colors.</strong> One main color and one background color that fit your three words. Think about what colors people already connect with nature — and whether you want to follow that or surprise them.</li>
+<li><strong>Choose your font style.</strong> No font name needed — rounded or sharp? thick or thin? Write the app's name in that style. That is your logo for now.</li>
+</ol>
+<p>Stuck for ideas? Designers share their work on sites like <strong>dribbble.com</strong> and <strong>pinterest.com</strong> — try searching "carbon tracker app" or "eco app design" and notice what the good ones have in common. One caution: these sites are the open internet, and anyone can post anything, so you may run into things that are off-topic or not for kids. Stay on your search, and if something looks wrong, close it and move on. You are there to get <em>inspired</em>, not to copy a design box for box.</p>
+<p><strong>Write your brand kit below too: app name, three words, colors, font style.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>4 · Draw the Wireframe 📐</h2>
+<p>Now decide what goes where. On paper, sketch the tracker as a column of boxes — one box per section, in the order a visitor meets them. Decide which questions <em>your</em> tracker asks (travel? food? electricity? screen time?) and what the Result and Tips sections show.</p>
+<p>The same rules from week 1 apply:</p>
+<blockquote>
+<p><strong>Boxes and labels only.</strong> No colors, no real pictures, no finished sentences — that comes later.</p>
+<p><strong>Name every box.</strong> A box nobody can name is a box nobody needed.</p>
+<p><strong>One short note per box</strong> saying what it shows — "4 questions about my week", "big number + friendly message".</p>
+<p><strong>Neat enough that a stranger could read it.</strong> If someone else picked up your paper, could they tell what this app does? That is the test.</p>
+</blockquote>
+<p>When your sketch is done, explain your plan. Use these sentence starters — write 4 to 6 sentences total.</p>
+<blockquote>
+<p>My app is called … because …</p>
+<p>The three words I picked for it are …</p>
+<p>My tracker asks about … because …</p>
+<p>After the visitor sees their number, my app shows them …</p>
+<p>The hardest design decision was …</p>
+<p>If I had more time, I would add …</p>
+</blockquote>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>5 · Record Your Walkthrough 🎥</h2>
+<p>Take a video on your phone (or a parent's phone) and pitch your app like you are presenting it to a team that might build it. Try to use these words: <strong>carbon footprint</strong>, <strong>brand kit</strong>, <strong>wireframe</strong>, <strong>section</strong>, <strong>layout</strong>.</p>
+<blockquote>
+<ol>
+<li>Say the app's name and what it does in one sentence.</li>
+<li>Hold up your brand kit. Read your three words and say why your colors fit them.</li>
+<li>Hold up your wireframe and point through it from top to bottom, like a visitor scrolling.</li>
+<li>Say one thing about the planet you hope your app would change.</li>
+</ol>
+</blockquote>
+<p><strong>Write what you will say in your video.</strong> Plan it below before you record — you can read from it while filming.</p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + a photo or video of your brand kit and wireframe to teacher on KakaoTalk.</p>
+<div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>
+</div></body></html>

@@ -1,0 +1,137 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head><meta charset='utf-8'>
+<title>📜 RB002 Week 3 — English Worksheet</title>
+<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
+<style>
+@page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
+div.WordSection1 { page: WordSection1; }
+body { font-family: "Segoe UI", Arial, sans-serif; font-size: 11.5pt; color: #1a1a2e; line-height: 1.5; }
+h1 { font-size: 21pt; color: #6b4ee6; margin: 4px 0 6px; }
+h2 { font-size: 15pt; color: #6b4ee6; border-top: 1px solid #dddddd; padding-top: 8px; margin: 18px 0 10px; }
+h3, h4 { font-size: 11.5pt; margin: 12px 0 6px; }
+p { margin: 7px 0; }
+.brand { font-size: 10.5pt; font-weight: bold; color: #ff7849; letter-spacing: .06em;
+         border-bottom: 2px solid #ff7849; padding-bottom: 6px; margin-bottom: 14px; }
+table { border-collapse: collapse; margin: 10px 0; }
+th, td { border: 1px solid #c8c8c8; padding: 4px 9px; text-align: center; }
+th { background: #f3eefc; color: #6b4ee6; font-weight: bold; }
+pre { font-family: Consolas, "Courier New", monospace; font-size: 10.5pt; background: #f4f4f5;
+      border: 1px solid #dddddd; padding: 8px 10px; white-space: pre-wrap; }
+pre code { background: transparent; color: #1a1a2e; }
+code { font-family: Consolas, "Courier New", monospace; background: #fff1e8; color: #d6531f; padding: 0 3px; }
+blockquote { border-left: 3px solid #ff7849; background: #fff6ef; padding: 8px 12px;
+             color: #6a3a1c; margin: 9px 0; }
+ul, ol { margin: 7px 0 7px 26px; }
+p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
+.footer { color: #999999; font-size: 8.5pt; text-align: center; margin-top: 18px;
+          border-top: 1px solid #eeeeee; padding-top: 6px; }
+.footer b { color: #ff7849; }
+</style></head>
+<body><div class=WordSection1>
+<div class="brand">📚 ENGLISH CODING · 영어코딩</div>
+<h1>📜 RB002 Week 3 — English Worksheet</h1>
+<p><strong>Topic:</strong> Press E to Talk — ProximityPrompt · <strong>Course:</strong> Story Quest · <strong>Time:</strong> about 45 minutes</p>
+<p>This week your NPCs come alive. A <strong>ProximityPrompt</strong> shows "Press E" when a player walks close, and the <strong>Triggered</strong> event runs your code when they press it.</p>
+<hr />
+<h2>1 · Predict 🔮</h2>
+<p>Read each script. Before you imagine running it in Roblox Studio, write what you think will happen.</p>
+<pre><code class="language-lua">local prompt = Instance.new(&quot;ProximityPrompt&quot;)
+prompt.ActionText = &quot;Talk&quot;
+prompt.ObjectText = &quot;Old Wizard&quot;
+prompt.Parent = script.Parent
+</code></pre>
+<p><strong>You walk close to the part. What words show on your screen?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-lua">local prompt = script.Parent.ProximityPrompt
+
+prompt.Triggered:Connect(function(player)
+    print(&quot;Hello, &quot; .. player.Name)
+end)
+</code></pre>
+<p><strong>When does the print happen — when you walk near, or when you press E?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-lua">local prompt = script.Parent.ProximityPrompt
+local talkCount = 0
+
+prompt.Triggered:Connect(function(player)
+    talkCount = talkCount + 1
+    print(&quot;You talked &quot; .. talkCount .. &quot; times&quot;)
+end)
+</code></pre>
+<p><strong>You press E three times. What does the Output window say after the last press?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>2 · Spot the Bug 🐛</h2>
+<p>Each script below was meant to do something, but it is broken. Read what the code is <strong>supposed</strong> to do, then rewrite it so it works. After that, explain why the original was wrong and why your fix works.</p>
+<p><strong>Bug A</strong> — The wizard should say hello when the player <strong>presses E</strong>. Right now Studio shows an error, because a ProximityPrompt has no <code>Touched</code> event.</p>
+<pre><code class="language-lua">local prompt = script.Parent.ProximityPrompt
+
+prompt.Touched:Connect(function(player)
+    print(&quot;Hello, &quot; .. player.Name)
+end)
+</code></pre>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug B</strong> — The prompt should show on the wizard part. Right now no "Press E" ever appears in the game.</p>
+<pre><code class="language-lua">local prompt = Instance.new(&quot;ProximityPrompt&quot;)
+prompt.ActionText = &quot;Talk&quot;
+prompt.ObjectText = &quot;Old Wizard&quot;
+</code></pre>
+<p><strong>Hint:</strong> the prompt was made, but it was never put anywhere.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug C</strong> — The screen should show the name <strong>Old Wizard</strong> on top and the action <strong>Talk</strong> next to the E. Right now the two words are in the wrong places.</p>
+<pre><code class="language-lua">local prompt = script.Parent.ProximityPrompt
+prompt.ActionText = &quot;Old Wizard&quot;
+prompt.ObjectText = &quot;Talk&quot;
+</code></pre>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>3 · Tell Me What You Built 📸</h2>
+<p>Now switch to your own quest world. Add an NPC with a ProximityPrompt. Give it an <code>ActionText</code> and an <code>ObjectText</code>, and make <code>Triggered</code> print a message. When you finish, come back here.</p>
+<p>Send a photo or video of you talking to your NPC, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.</p>
+<blockquote>
+<p>My NPC is a …</p>
+<p>When I walk close, the screen shows …</p>
+<p>When I press E, my code …</p>
+<p>I used <code>Triggered</code> because …</p>
+<p>One tricky moment was when …</p>
+<p>If I had more time, I would …</p>
+</blockquote>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>4 · Record Your Walkthrough 🎥</h2>
+<p>Now take a video on your phone (or a parent's phone) while you talk to your NPC. Talk through it like you are teaching someone who has never seen it. Try to use these words: <strong>ProximityPrompt</strong>, <strong>Triggered</strong>, <strong>ActionText</strong>, <strong>NPC</strong>, <strong>press E</strong>.</p>
+<blockquote>
+<ol>
+<li>Walk close to your NPC and show the prompt on the screen.</li>
+<li>Press E and show what happens in the Output window.</li>
+<li>Show your script and read the <code>Triggered:Connect</code> line out loud.</li>
+<li>Say in your own words the difference between <strong>walking near</strong> and <strong>pressing E</strong>.</li>
+</ol>
+</blockquote>
+<p><strong>Write what you will say in your video.</strong> Use the space below to plan it before you record — you can read from it while filming.</p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.</p>
+<div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>
+</div></body></html>

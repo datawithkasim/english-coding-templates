@@ -1,0 +1,182 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head><meta charset='utf-8'>
+<title>⚙️ RS003 Week 2 — English Worksheet</title>
+<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
+<style>
+@page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
+div.WordSection1 { page: WordSection1; }
+body { font-family: "Segoe UI", Arial, sans-serif; font-size: 11.5pt; color: #1a1a2e; line-height: 1.5; }
+h1 { font-size: 21pt; color: #6b4ee6; margin: 4px 0 6px; }
+h2 { font-size: 15pt; color: #6b4ee6; border-top: 1px solid #dddddd; padding-top: 8px; margin: 18px 0 10px; }
+h3, h4 { font-size: 11.5pt; margin: 12px 0 6px; }
+p { margin: 7px 0; }
+.brand { font-size: 10.5pt; font-weight: bold; color: #ff7849; letter-spacing: .06em;
+         border-bottom: 2px solid #ff7849; padding-bottom: 6px; margin-bottom: 14px; }
+table { border-collapse: collapse; margin: 10px 0; }
+th, td { border: 1px solid #c8c8c8; padding: 4px 9px; text-align: center; }
+th { background: #f3eefc; color: #6b4ee6; font-weight: bold; }
+pre { font-family: Consolas, "Courier New", monospace; font-size: 10.5pt; background: #f4f4f5;
+      border: 1px solid #dddddd; padding: 8px 10px; white-space: pre-wrap; }
+pre code { background: transparent; color: #1a1a2e; }
+code { font-family: Consolas, "Courier New", monospace; background: #fff1e8; color: #d6531f; padding: 0 3px; }
+blockquote { border-left: 3px solid #ff7849; background: #fff6ef; padding: 8px 12px;
+             color: #6a3a1c; margin: 9px 0; }
+ul, ol { margin: 7px 0 7px 26px; }
+p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
+.footer { color: #999999; font-size: 8.5pt; text-align: center; margin-top: 18px;
+          border-top: 1px solid #eeeeee; padding-top: 6px; }
+.footer b { color: #ff7849; }
+</style></head>
+<body><div class=WordSection1>
+<div class="brand">📚 ENGLISH CODING · 영어코딩</div>
+<h1>⚙️ RS003 Week 2 — English Worksheet</h1>
+<p><strong>Topic:</strong> FPS, Title, and a Colour-Cycling Nebula · <strong>Course:</strong> Pygame Space Shooter · <strong>Time:</strong> about 45 minutes</p>
+<p>This week you think about the code that makes last week's window feel <strong>alive</strong> — a <strong>clock</strong> that controls the frame rate (FPS), a nicer title bar, and a deep-space background that slowly shifts colour like a glowing nebula. You will read it, predict it, fix it, and explain it in your own words.</p>
+<blockquote>
+<p>🧠 Words to know: <strong>clock</strong>, <strong>FPS (frames per second)</strong>, <strong>frame</strong>, <strong>tick</strong>, <strong>modulo (<code>%</code>)</strong></p>
+</blockquote>
+<hr />
+<h2>1 · Predict 🔮</h2>
+<p>Read each piece of code. Just from reading it, write what you think will happen. Do not run it.</p>
+<pre><code class="language-python">clock = pygame.time.Clock()
+FPS = 60
+clock.tick(FPS)
+</code></pre>
+<p><strong>What does <code>clock.tick(60)</code> do to the speed of the game loop?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">frame_count = 0
+r = (frame_count * 1) % 256
+frame_count = frame_count + 1
+</code></pre>
+<p><strong><code>frame_count</code> goes up by 1 every loop. What does <code>% 256</code> do when it reaches 256?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">r = (frame_count) % 256
+g = 100
+b = (200 - frame_count) % 256
+screen.fill((r, g, b))
+</code></pre>
+<p><strong>Red is climbing and blue is falling, while green stays still. Describe how the nebula colour changes as time passes.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">pygame.display.set_caption(&quot;⚙️ Space Shooter v2 — 60 FPS&quot;)
+</code></pre>
+<p><strong>What part of the window will this line change?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>2 · Spot the Bug 🐛</h2>
+<p>Each block below was meant to do something but is broken. Read it carefully and fix it on paper, then explain why the original was wrong.</p>
+<p><strong>Bug A</strong> — This game runs fine but your computer's fan gets loud and the CPU hits 100%.</p>
+<pre><code class="language-python">running = True
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+    screen.fill((100, 100, 200))
+    pygame.display.flip()
+</code></pre>
+<p><strong>Hint:</strong> without a clock, the loop runs as fast as it possibly can.</p>
+<p><strong>Write the fixed code (show the loop):</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug B</strong> — The nebula should cycle colours, but the program crashes with an error about a colour value being too big.</p>
+<pre><code class="language-python">r = frame_count
+screen.fill((r, 100, 50))
+</code></pre>
+<p><strong>Hint:</strong> colour numbers must stay between 0 and 255. <code>frame_count</code> keeps growing past 255.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug C</strong> — The colour is supposed to keep changing, but it is stuck on one colour forever.</p>
+<pre><code class="language-python">frame_count = 0
+running = True
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+    r = frame_count % 256
+    screen.fill((r, 100, 100))
+    pygame.display.flip()
+    clock.tick(60)
+</code></pre>
+<p><strong>Hint:</strong> the frame counter never goes up.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>3 · Explain the Code 📖</h2>
+<p>Read this working program line by line. Do not run it. Answer the questions using only what you can see.</p>
+<pre><code class="language-python">import pygame
+pygame.init()
+
+WIDTH, HEIGHT = 800, 600
+screen = pygame.display.set_mode((WIDTH, HEIGHT))
+pygame.display.set_caption(&quot;⚙️ Space Shooter v2 — 60 FPS&quot;)
+
+clock = pygame.time.Clock()
+FPS = 60
+frame_count = 0
+
+running = True
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+
+    r = (frame_count) % 256
+    g = 100
+    b = (200 - frame_count) % 256
+
+    screen.fill((r, g, b))
+    pygame.display.flip()
+
+    clock.tick(FPS)
+    frame_count = frame_count + 1
+
+pygame.quit()
+</code></pre>
+<p><strong>Which line decides how many frames happen each second, and what number is it set to?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>The green value <code>g</code> is always 100. The red and blue values change. Explain why green stays the same colour but red and blue do not.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>What does <code>frame_count = frame_count + 1</code> do, and why does the nebula need it?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>What makes the loop stop and the window close?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong><code>clock.tick(FPS)</code> is near the bottom of the loop. In your own words, what would happen to the speed of the colours if you removed it?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>4 · Explain Your Lesson Code 🎥</h2>
+<p>Now explain the code <strong>you</strong> wrote during today's lesson. Record a short phone video where you talk through your own nebula code. You can show it running too. Try to use these words: <strong>clock</strong>, <strong>FPS</strong>, <strong>frame</strong>, <strong>tick</strong>, <strong>modulo</strong>.</p>
+<blockquote>
+<ol>
+<li>Show your background slowly changing colour.</li>
+<li>Read your colour formula out loud and say what makes it change.</li>
+<li>Say what FPS you used and what <code>clock.tick</code> does for your computer.</li>
+<li>Point to the line that makes the colour keep moving.</li>
+</ol>
+</blockquote>
+<p><strong>Write what you will say in your video. Plan it here before you record.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.</p>
+<div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>
+</div></body></html>

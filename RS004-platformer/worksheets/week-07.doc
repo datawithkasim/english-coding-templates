@@ -1,0 +1,165 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head><meta charset='utf-8'>
+<title>🧱 RS004 Week 7 — English Worksheet</title>
+<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
+<style>
+@page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
+div.WordSection1 { page: WordSection1; }
+body { font-family: "Segoe UI", Arial, sans-serif; font-size: 11.5pt; color: #1a1a2e; line-height: 1.5; }
+h1 { font-size: 21pt; color: #6b4ee6; margin: 4px 0 6px; }
+h2 { font-size: 15pt; color: #6b4ee6; border-top: 1px solid #dddddd; padding-top: 8px; margin: 18px 0 10px; }
+h3, h4 { font-size: 11.5pt; margin: 12px 0 6px; }
+p { margin: 7px 0; }
+.brand { font-size: 10.5pt; font-weight: bold; color: #ff7849; letter-spacing: .06em;
+         border-bottom: 2px solid #ff7849; padding-bottom: 6px; margin-bottom: 14px; }
+table { border-collapse: collapse; margin: 10px 0; }
+th, td { border: 1px solid #c8c8c8; padding: 4px 9px; text-align: center; }
+th { background: #f3eefc; color: #6b4ee6; font-weight: bold; }
+pre { font-family: Consolas, "Courier New", monospace; font-size: 10.5pt; background: #f4f4f5;
+      border: 1px solid #dddddd; padding: 8px 10px; white-space: pre-wrap; }
+pre code { background: transparent; color: #1a1a2e; }
+code { font-family: Consolas, "Courier New", monospace; background: #fff1e8; color: #d6531f; padding: 0 3px; }
+blockquote { border-left: 3px solid #ff7849; background: #fff6ef; padding: 8px 12px;
+             color: #6a3a1c; margin: 9px 0; }
+ul, ol { margin: 7px 0 7px 26px; }
+p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
+.footer { color: #999999; font-size: 8.5pt; text-align: center; margin-top: 18px;
+          border-top: 1px solid #eeeeee; padding-top: 6px; }
+.footer b { color: #ff7849; }
+</style></head>
+<body><div class=WordSection1>
+<div class="brand">📚 ENGLISH CODING · 영어코딩</div>
+<h1>🧱 RS004 Week 7 — English Worksheet</h1>
+<p><strong>Topic:</strong> Platform Collision · <strong>Course:</strong> Platformer Game · <strong>Time:</strong> about 45 minutes</p>
+<p>This week you think about how a player can <strong>land on platforms</strong>. You read code that keeps platforms in a <strong>list</strong>, checks each one with <code>colliderect()</code>, and only lands when the player is falling <em>down</em> onto the top of a platform. Then you explain the collision code from today's lesson in your own words.</p>
+<blockquote>
+<p>Keep these words handy: <strong>platform</strong>, <strong>list</strong>, <strong><code>colliderect()</code></strong>, <strong>land</strong>, <strong>falling (vy &gt; 0)</strong>.</p>
+</blockquote>
+<hr />
+<h2>1 · Predict 🔮</h2>
+<p>Read each snippet. Write what you think will happen.</p>
+<pre><code class="language-python">platforms = [
+    pygame.Rect(0, 550, 800, 50),
+    pygame.Rect(200, 450, 120, 20),
+]
+for plat in platforms:
+    pygame.draw.rect(screen, BROWN, plat)
+</code></pre>
+<p><strong>How many platforms get drawn? What does the <code>for</code> loop do here?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">if player.colliderect(plat) and velocity_y &gt; 0:
+    player.bottom = plat.top
+    velocity_y = 0
+    on_ground = True
+</code></pre>
+<p><strong>Why check <code>velocity_y &gt; 0</code>? What does <code>player.bottom = plat.top</code> do?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">on_ground = False
+for plat in platforms:
+    if player.colliderect(plat) and velocity_y &gt; 0:
+        ...
+</code></pre>
+<p><strong>Why is <code>on_ground</code> set to <code>False</code> <em>before</em> the loop, every frame?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>2 · Why <code>velocity_y &gt; 0</code>? 🤔</h2>
+<p>The player can touch a platform while moving up <em>or</em> down. We only want to land when moving <strong>down</strong>.</p>
+<p><strong>What would go wrong if we removed the <code>velocity_y &gt; 0</code> check and the player jumped up through a platform?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>3 · Spot the Bug 🐛</h2>
+<p>Each snippet is broken. Read it, write the fixed code on paper, then explain why the original was wrong.</p>
+<p><strong>Bug A</strong> — The player should land on every platform. Right now it only ever lands on the first one.</p>
+<pre><code class="language-python">plat = platforms[0]
+if player.colliderect(plat) and velocity_y &gt; 0:
+    player.bottom = plat.top
+    velocity_y = 0
+    on_ground = True
+</code></pre>
+<p><strong>Hint:</strong> we check only one platform. How do we check <em>all</em> of them?</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug B</strong> — The player should stand on top of a platform. Right now it sinks halfway into it.</p>
+<pre><code class="language-python">for plat in platforms:
+    if player.colliderect(plat) and velocity_y &gt; 0:
+        velocity_y = 0
+        on_ground = True
+</code></pre>
+<p><strong>Hint:</strong> nothing snaps the player's bottom to the platform top.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug C</strong> — <code>on_ground</code> should be <code>True</code> only when actually standing on something. Right now it gets stuck <code>True</code> even after the player walks off a platform into the air.</p>
+<pre><code class="language-python">on_ground = True
+for plat in platforms:
+    if player.colliderect(plat) and velocity_y &gt; 0:
+        player.bottom = plat.top
+        velocity_y = 0
+</code></pre>
+<p><strong>Hint:</strong> start each frame assuming the player is <em>not</em> on the ground.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>4 · Explain the Code 📖</h2>
+<p>Read this working collision code carefully, then answer the questions about it.</p>
+<pre><code class="language-python">platforms = [
+    pygame.Rect(0, 550, 800, 50),
+    pygame.Rect(200, 450, 120, 20),
+]
+
+on_ground = False
+for plat in platforms:
+    if player.colliderect(plat) and velocity_y &gt; 0:
+        player.bottom = plat.top
+        velocity_y = 0
+        on_ground = True
+</code></pre>
+<p><strong>Why are the platforms kept in a list instead of separate variables?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>What does <code>for plat in platforms:</code> do on each pass through the loop?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>What does <code>player.colliderect(plat)</code> return, and how is it used in the <code>if</code>?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>What does the line <code>player.bottom = plat.top</code> do to the player's position?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why is <code>on_ground = False</code> written before the loop instead of inside it?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>5 · Explain Your Lesson Code 🎥</h2>
+<p>Today in your live lesson you wrote collision code for your player. Record a short phone video explaining the code <strong>you</strong> wrote. You may show it running. Try to use these words: <strong>platform</strong>, <strong>list</strong>, <strong>colliderect</strong>, <strong>land</strong>, <strong>falling</strong>.</p>
+<blockquote>
+<ol>
+<li>Point to where you keep your platforms in a list.</li>
+<li>Read your collision check out loud and explain <code>velocity_y &gt; 0</code>.</li>
+<li>Show the player landing on a platform, then walking off and falling.</li>
+<li>Explain one part of the code that was tricky for you.</li>
+</ol>
+</blockquote>
+<p><strong>Write what you will say in your video. Plan it here before you record.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.</p>
+<div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>
+</div></body></html>

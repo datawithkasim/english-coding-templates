@@ -1,0 +1,176 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head><meta charset='utf-8'>
+<title>🔴 RS002 Week 6 — English Worksheet</title>
+<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
+<style>
+@page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
+div.WordSection1 { page: WordSection1; }
+body { font-family: "Segoe UI", Arial, sans-serif; font-size: 11.5pt; color: #1a1a2e; line-height: 1.5; }
+h1 { font-size: 21pt; color: #6b4ee6; margin: 4px 0 6px; }
+h2 { font-size: 15pt; color: #6b4ee6; border-top: 1px solid #dddddd; padding-top: 8px; margin: 18px 0 10px; }
+h3, h4 { font-size: 11.5pt; margin: 12px 0 6px; }
+p { margin: 7px 0; }
+.brand { font-size: 10.5pt; font-weight: bold; color: #ff7849; letter-spacing: .06em;
+         border-bottom: 2px solid #ff7849; padding-bottom: 6px; margin-bottom: 14px; }
+table { border-collapse: collapse; margin: 10px 0; }
+th, td { border: 1px solid #c8c8c8; padding: 4px 9px; text-align: center; }
+th { background: #f3eefc; color: #6b4ee6; font-weight: bold; }
+pre { font-family: Consolas, "Courier New", monospace; font-size: 10.5pt; background: #f4f4f5;
+      border: 1px solid #dddddd; padding: 8px 10px; white-space: pre-wrap; }
+pre code { background: transparent; color: #1a1a2e; }
+code { font-family: Consolas, "Courier New", monospace; background: #fff1e8; color: #d6531f; padding: 0 3px; }
+blockquote { border-left: 3px solid #ff7849; background: #fff6ef; padding: 8px 12px;
+             color: #6a3a1c; margin: 9px 0; }
+ul, ol { margin: 7px 0 7px 26px; }
+p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
+.footer { color: #999999; font-size: 8.5pt; text-align: center; margin-top: 18px;
+          border-top: 1px solid #eeeeee; padding-top: 6px; }
+.footer b { color: #ff7849; }
+</style></head>
+<body><div class=WordSection1>
+<div class="brand">📚 ENGLISH CODING · 영어코딩</div>
+<h1>🔴 RS002 Week 6 — English Worksheet</h1>
+<p><strong>Topic:</strong> Partial-Match Search (KR/EN) — <code>in</code> inside a Loop · <strong>Course:</strong> Pokédex App · <strong>Time:</strong> about 45 minutes</p>
+<blockquote>
+<p>🧠 Words to know: <strong>in</strong>, <strong>partial match</strong>, <strong>loop</strong>, <strong>bilingual</strong>, <strong>found count</strong></p>
+</blockquote>
+<p>This week your search gets smart. Typing just <code>피카</code> should still find <code>피카츄</code>. In the live lesson you wrote code that uses the <code>in</code> keyword to check <strong>partial matches</strong>, loops over the whole dex, and supports <strong>both Korean and English</strong> names at once. This worksheet is about reading that code closely and explaining how it works.</p>
+<hr />
+<h2>1 · Recall 🧠</h2>
+<p>From memory:</p>
+<p><strong>Write the line that reads a search word from the user and cleans it with both <code>.strip()</code> and <code>.lower()</code>.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>2 · Predict 🔮</h2>
+<p>Read each block. Write what you think will happen — no need to run anything.</p>
+<pre><code class="language-python">print(&quot;피카&quot; in &quot;피카츄&quot;)
+print(&quot;츄&quot; in &quot;피카츄&quot;)
+print(&quot;리자몽&quot; in &quot;피카츄&quot;)
+</code></pre>
+<p><strong><code>in</code> checks if the small text is <em>inside</em> the big text. Write <code>True</code> or <code>False</code> for each line.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">names_kr = [&quot;피카츄&quot;, &quot;이상해씨&quot;, &quot;파이리&quot;]
+search = &quot;이상&quot;
+
+for name in names_kr:
+    if search in name:
+        print(name)
+</code></pre>
+<p><strong>Which names get printed? Why?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">names_en = [&quot;pikachu&quot;, &quot;bulbasaur&quot;, &quot;charmander&quot;]
+search = &quot;CHAR&quot;.lower()
+
+for name in names_en:
+    if search in name.lower():
+        print(name)
+</code></pre>
+<p><strong>The search is lowered, and each name is lowered before checking. Which name matches?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>3 · Spot the Bug 🐛</h2>
+<p>Read what each block is <strong>supposed</strong> to do, fix it on paper, then explain the fix.</p>
+<p><strong>Bug A</strong> — This should find any name <strong>containing</strong> the search word. Right now it only matches an <strong>exact</strong> full name.</p>
+<pre><code class="language-python">names = [&quot;피카츄&quot;, &quot;이상해씨&quot;, &quot;파이리&quot;]
+search = input(&quot;검색: &quot;).strip()
+
+for name in names:
+    if search == name:
+        print(name)
+</code></pre>
+<p><strong>Hint:</strong> swap the exact-match check for a partial-match check.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug B</strong> — This should match English names no matter the capitals. Typing <code>CHAR</code> finds nothing.</p>
+<pre><code class="language-python">names_en = [&quot;pikachu&quot;, &quot;bulbasaur&quot;, &quot;charmander&quot;]
+search = input(&quot;search: &quot;).strip()
+
+for name in names_en:
+    if search in name:
+        print(name)
+</code></pre>
+<p><strong>Hint:</strong> lower <strong>both</strong> the search word and each name before comparing.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug C</strong> — When nothing matches, this should tell the user. Right now it prints nothing at all and looks broken.</p>
+<pre><code class="language-python">names = [&quot;피카츄&quot;, &quot;이상해씨&quot;, &quot;파이리&quot;]
+search = input(&quot;검색: &quot;).strip().lower()
+
+for name in names:
+    if search in name.lower():
+        print(name)
+</code></pre>
+<p><strong>Hint:</strong> count matches with a <code>found_count</code> variable, and print a message if it stays <code>0</code>.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>4 · Explain the Code 📖</h2>
+<p>Read this working bilingual search carefully. It is the same shape as the code you wrote in the live lesson.</p>
+<pre><code class="language-python">names_kr = [&quot;피카츄&quot;, &quot;이상해씨&quot;, &quot;파이리&quot;, &quot;꼬부기&quot;]
+names_en = [&quot;pikachu&quot;, &quot;bulbasaur&quot;, &quot;charmander&quot;, &quot;squirtle&quot;]
+types = [&quot;전기&quot;, &quot;풀&quot;, &quot;불&quot;, &quot;물&quot;]
+hp = [35, 45, 39, 44]
+
+search = input(&quot;\n포켓몬 검색 (한국어/영어, 부분 입력 OK): &quot;).strip().lower()
+
+found_count = 0
+for i in range(len(names_kr)):
+    if search in names_kr[i] or search in names_en[i].lower():
+        print(f&quot;  #{i+1}  {names_kr[i]} ({names_en[i]})  타입:{types[i]}  HP:{hp[i]}&quot;)
+        found_count = found_count + 1
+
+if found_count == 0:
+    print(f&quot;  '{search}' 와 일치하는 포켓몬이 없습니다.&quot;)
+else:
+    print(f&quot;\n총 {found_count}마리 발견!&quot;)
+</code></pre>
+<p><strong>The four lists <code>names_kr</code>, <code>names_en</code>, <code>types</code>, and <code>hp</code> are kept in the same order. Why does index <code>i</code> give you one full Pokémon across all four lists?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>The <code>if</code> line uses <code>or</code> with two <code>in</code> checks. In plain English, when is this <code>if</code> line <code>True</code>?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why is <code>.lower()</code> used on both <code>search</code> and <code>names_en[i]</code>, but not on <code>names_kr[i]</code>?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>What does <code>found_count</code> do, and how does the code use it to decide which final message to print?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why does partial-match search (<code>in</code>) feel friendlier to the user than exact-match search (<code>==</code>)?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>5 · Explain Your Lesson Code 🎥</h2>
+<p>Explain the code <strong>you wrote in today's lesson</strong>. Film a short video on your phone where you walk through your own bilingual search (you may show it running). Teach it like the viewer is new. Try to use: <strong>in</strong>, <strong>partial match</strong>, <strong>loop</strong>, <strong>bilingual</strong>, <strong>found count</strong>.</p>
+<blockquote>
+<ol>
+<li>Show your two parallel name lists and say why they stay in the same order.</li>
+<li>Read your <code>if</code> line with <code>or</code> out loud and explain why two checks are needed.</li>
+<li>Search <code>피카</code>, then an English partial, and show both find a match.</li>
+<li>Search something fake and show how <code>found_count</code> triggers the "not found" message.</li>
+</ol>
+</blockquote>
+<p><strong>Write what you will say in your video. Plan it here before you record.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.</p>
+<div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>
+</div></body></html>

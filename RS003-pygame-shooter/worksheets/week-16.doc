@@ -1,0 +1,180 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head><meta charset='utf-8'>
+<title>🏆 RS003 Week 16 — English Worksheet</title>
+<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
+<style>
+@page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
+div.WordSection1 { page: WordSection1; }
+body { font-family: "Segoe UI", Arial, sans-serif; font-size: 11.5pt; color: #1a1a2e; line-height: 1.5; }
+h1 { font-size: 21pt; color: #6b4ee6; margin: 4px 0 6px; }
+h2 { font-size: 15pt; color: #6b4ee6; border-top: 1px solid #dddddd; padding-top: 8px; margin: 18px 0 10px; }
+h3, h4 { font-size: 11.5pt; margin: 12px 0 6px; }
+p { margin: 7px 0; }
+.brand { font-size: 10.5pt; font-weight: bold; color: #ff7849; letter-spacing: .06em;
+         border-bottom: 2px solid #ff7849; padding-bottom: 6px; margin-bottom: 14px; }
+table { border-collapse: collapse; margin: 10px 0; }
+th, td { border: 1px solid #c8c8c8; padding: 4px 9px; text-align: center; }
+th { background: #f3eefc; color: #6b4ee6; font-weight: bold; }
+pre { font-family: Consolas, "Courier New", monospace; font-size: 10.5pt; background: #f4f4f5;
+      border: 1px solid #dddddd; padding: 8px 10px; white-space: pre-wrap; }
+pre code { background: transparent; color: #1a1a2e; }
+code { font-family: Consolas, "Courier New", monospace; background: #fff1e8; color: #d6531f; padding: 0 3px; }
+blockquote { border-left: 3px solid #ff7849; background: #fff6ef; padding: 8px 12px;
+             color: #6a3a1c; margin: 9px 0; }
+ul, ol { margin: 7px 0 7px 26px; }
+p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
+.footer { color: #999999; font-size: 8.5pt; text-align: center; margin-top: 18px;
+          border-top: 1px solid #eeeeee; padding-top: 6px; }
+.footer b { color: #ff7849; }
+</style></head>
+<body><div class=WordSection1>
+<div class="brand">📚 ENGLISH CODING · 영어코딩</div>
+<h1>🏆 RS003 Week 16 — English Worksheet</h1>
+<p><strong>Topic:</strong> Polish — Missiles, Sprites, High Score, and Show &amp; Tell · <strong>Course:</strong> Pygame Space Shooter · <strong>Time:</strong> about 45 minutes</p>
+<p>This is the final week. In this worksheet you think about and explain the <strong>polish</strong> that makes a game feel finished: a second weapon (<strong>missiles</strong> with the M key) that hits harder, a <strong>high score</strong> that remembers your best, a restart key, and real <strong>PNG sprites</strong> loaded from image files. Then you present and explain the finished game you built across the whole course.</p>
+<blockquote>
+<p>🧠 Words to know: <strong>missile</strong>, <strong>sprite</strong>, <strong>image.load</strong>, <strong>high score</strong>, <strong>restart</strong></p>
+</blockquote>
+<hr />
+<h2>1 · Predict 🔮</h2>
+<p>Read each piece of code. Write what you think it does. You do not need to run anything — just read and think.</p>
+<pre><code class="language-python">ship_img = pygame.image.load(&quot;ship.png&quot;).convert_alpha()
+enemy_img = pygame.image.load(&quot;enemy.png&quot;).convert_alpha()
+screen.blit(ship_img, (ship_x - ship_img.get_width() // 2, ship_y))
+</code></pre>
+<p><strong>These lines load picture files and put them on screen. What replaces your drawn rectangles and triangles?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">if event.key == pygame.K_m:
+    missiles.append([ship_x, ship_y - 20])
+</code></pre>
+<p><strong>Pressing M fires a missile instead of a bullet. Why might a game want a second, stronger weapon?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">high_score = 0
+if event.key == pygame.K_r and game_over:
+    if score &gt; high_score:
+        high_score = score
+    score = 0
+    game_over = False
+</code></pre>
+<p><strong>Pressing R restarts the game. When does the high score update?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">for mi in missiles[:]:
+    if abs(mi[0] - e[&quot;x&quot;]) &lt; 30 and abs(mi[1] - e[&quot;y&quot;]) &lt; 30:
+        score += e[&quot;points&quot;] * 2
+</code></pre>
+<p><strong>A missile gives <code>e["points"] * 2</code>. How many points does a 3-point meteor give when a missile hits it?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>2 · Spot the Bug 🐛</h2>
+<p>Each block below was meant to do something but is broken. Write the fixed code, then explain why the original was wrong.</p>
+<p><strong>Bug A</strong> — The sprite is supposed to show your <code>ship.png</code> picture, but the program crashes saying it cannot find the file.</p>
+<pre><code class="language-python">ship_img = pygame.image.load(&quot;ship.png&quot;)
+</code></pre>
+<p><strong>Hint:</strong> the picture file must be saved in the <strong>same folder</strong> as your code, with the exact name. Also use <code>.convert_alpha()</code> so the see-through background stays see-through.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug B</strong> — The high score should remember your best across rounds, but it resets to 0 every restart.</p>
+<pre><code class="language-python">if event.key == pygame.K_r and game_over:
+    high_score = 0
+    score = 0
+    game_over = False
+</code></pre>
+<p><strong>Hint:</strong> before resetting, compare the score to the best so far.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug C</strong> — After the timer hits 0, the player should not be able to keep flying or firing, but the game keeps playing.</p>
+<pre><code class="language-python">keys = pygame.key.get_pressed()
+if keys[pygame.K_LEFT]:
+    ship_x -= SPEED
+</code></pre>
+<p><strong>Hint:</strong> movement should only run while the game is not over.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>3 · Explain the Code 📖</h2>
+<p>Read the central loop from this week's finished game. The full program is long, so this is the key part — the part that fires both weapons, loads the sprites, and handles restart. Read it carefully and answer the questions below. You do not need to run it.</p>
+<pre><code class="language-python">ship_img = pygame.image.load(&quot;ship.png&quot;).convert_alpha()
+enemy_img = pygame.image.load(&quot;enemy.png&quot;).convert_alpha()
+
+for event in pygame.event.get():
+    if event.type == pygame.KEYDOWN:
+        if event.key == pygame.K_SPACE and not game_over:
+            bullets.append([ship_x, ship_y - 20])
+        if event.key == pygame.K_m and not game_over:
+            missiles.append([ship_x, ship_y - 20])
+        if event.key == pygame.K_r and game_over:
+            if score &gt; high_score:
+                high_score = score
+            score = 0
+            enemies.clear()
+            start_time = pygame.time.get_ticks()
+            game_over = False
+
+for b in bullets: b[1] -= 8
+for mi in missiles: mi[1] -= 4
+
+for e in enemies[:]:
+    for b in bullets[:]:
+        if abs(b[0] - e[&quot;x&quot;]) &lt; 22 and abs(b[1] - e[&quot;y&quot;]) &lt; 22:
+            score += e[&quot;points&quot;]
+            if e in enemies: enemies.remove(e)
+            if b in bullets: bullets.remove(b)
+    for mi in missiles[:]:
+        if abs(mi[0] - e[&quot;x&quot;]) &lt; 30 and abs(mi[1] - e[&quot;y&quot;]) &lt; 30:
+            score += e[&quot;points&quot;] * 2
+            if e in enemies: enemies.remove(e)
+            if mi in missiles: missiles.remove(mi)
+
+screen.blit(enemy_img, (e[&quot;x&quot;] - enemy_img.get_width() // 2, e[&quot;y&quot;] - enemy_img.get_height() // 2))
+screen.blit(ship_img, (ship_x - ship_img.get_width() // 2, ship_y))
+</code></pre>
+<p><strong>Which line loads the ship picture, and what does <code>.convert_alpha()</code> do for it?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>The bullet moves with <code>b[1] -= 8</code> and the missile with <code>mi[1] -= 4</code>. Which one moves faster up the screen, and how do you know?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>A bullet hit gives <code>score += e["points"]</code> but a missile hit gives <code>score += e["points"] * 2</code>. Why is the missile worth more?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>The R key only works <code>if ... game_over</code>. Why should restart only work when the game is over?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong><code>screen.blit(ship_img, ...)</code> puts a picture on screen. How is <code>blit</code> different from <code>pygame.draw.rect</code>?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>4 · Explain Your Lesson Code 🎥</h2>
+<p>This is your <strong>show &amp; tell</strong>. Present the finished game <strong>you</strong> built across this whole course. Make a phone video: show the game running from start to game over to restart, and explain the key parts of your code out loud. Try to use these words: <strong>missile</strong>, <strong>sprite</strong>, <strong>image.load</strong>, <strong>high score</strong>, <strong>restart</strong>.</p>
+<blockquote>
+<ol>
+<li>Play a full round, firing both bullets and missiles, and let the timer run out.</li>
+<li>Show the game-over screen and your high score, then press R and show it restart.</li>
+<li>Point to the line that uses <code>image.load</code> and explain how you loaded your PNG sprites.</li>
+<li>Tell us the part of your code you are most proud of and one bug you fixed.</li>
+</ol>
+</blockquote>
+<p><strong>Write what you will say in your video. Plan it here before you record.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your finished-game presentation video to teacher on KakaoTalk.</p>
+<div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>
+</div></body></html>

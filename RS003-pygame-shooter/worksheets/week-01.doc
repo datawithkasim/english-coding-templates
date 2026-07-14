@@ -1,0 +1,162 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head><meta charset='utf-8'>
+<title>🪟 RS003 Week 1 — English Worksheet</title>
+<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
+<style>
+@page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
+div.WordSection1 { page: WordSection1; }
+body { font-family: "Segoe UI", Arial, sans-serif; font-size: 11.5pt; color: #1a1a2e; line-height: 1.5; }
+h1 { font-size: 21pt; color: #6b4ee6; margin: 4px 0 6px; }
+h2 { font-size: 15pt; color: #6b4ee6; border-top: 1px solid #dddddd; padding-top: 8px; margin: 18px 0 10px; }
+h3, h4 { font-size: 11.5pt; margin: 12px 0 6px; }
+p { margin: 7px 0; }
+.brand { font-size: 10.5pt; font-weight: bold; color: #ff7849; letter-spacing: .06em;
+         border-bottom: 2px solid #ff7849; padding-bottom: 6px; margin-bottom: 14px; }
+table { border-collapse: collapse; margin: 10px 0; }
+th, td { border: 1px solid #c8c8c8; padding: 4px 9px; text-align: center; }
+th { background: #f3eefc; color: #6b4ee6; font-weight: bold; }
+pre { font-family: Consolas, "Courier New", monospace; font-size: 10.5pt; background: #f4f4f5;
+      border: 1px solid #dddddd; padding: 8px 10px; white-space: pre-wrap; }
+pre code { background: transparent; color: #1a1a2e; }
+code { font-family: Consolas, "Courier New", monospace; background: #fff1e8; color: #d6531f; padding: 0 3px; }
+blockquote { border-left: 3px solid #ff7849; background: #fff6ef; padding: 8px 12px;
+             color: #6a3a1c; margin: 9px 0; }
+ul, ol { margin: 7px 0 7px 26px; }
+p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
+.footer { color: #999999; font-size: 8.5pt; text-align: center; margin-top: 18px;
+          border-top: 1px solid #eeeeee; padding-top: 6px; }
+.footer b { color: #ff7849; }
+</style></head>
+<body><div class=WordSection1>
+<div class="brand">📚 ENGLISH CODING · 영어코딩</div>
+<h1>🪟 RS003 Week 1 — English Worksheet</h1>
+<p><strong>Topic:</strong> Open a Pygame Window · <strong>Course:</strong> Pygame Space Shooter · <strong>Time:</strong> about 45 minutes</p>
+<p>This week you think about your very first <strong>Pygame window</strong> — a blank screen your game will live in. On this worksheet you read code, predict it, fix it, and explain it in your own words. The screen is a space measured in <strong>width</strong> and <strong>height</strong>, filled with a deep-space colour, and kept open with a <strong>game loop</strong>.</p>
+<blockquote>
+<p>🧠 Words to know: <strong>import</strong>, <strong>window</strong>, <strong>screen</strong>, <strong>fill</strong>, <strong>flip</strong>, <strong>game loop</strong></p>
+</blockquote>
+<hr />
+<h2>1 · Predict 🔮</h2>
+<p>Read each piece of code. Do <strong>not</strong> run it. Just from reading, write what you think will happen.</p>
+<pre><code class="language-python">screen = pygame.display.set_mode((800, 600))
+</code></pre>
+<p><strong>What does <code>(800, 600)</code> mean? Which number is across, which is down?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">SPACE = (10, 12, 40)
+screen.fill(SPACE)
+</code></pre>
+<p><strong>The screen gets filled with a colour. But will you actually SEE it yet? What is still missing?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">running = True
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+</code></pre>
+<p><strong>What is this loop watching for? What makes the window finally close?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">pygame.display.set_caption(&quot;Space Shooter&quot;)
+</code></pre>
+<p><strong>Where do you think these words will appear on the screen?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>2 · Spot the Bug 🐛</h2>
+<p>Each block below was meant to do something but is broken. Read what it is <strong>supposed</strong> to do, then fix it on paper and explain why the original was wrong.</p>
+<p><strong>Bug A</strong> — This should open a window, but nothing appears. The screen is filled, but it never shows up.</p>
+<pre><code class="language-python">import pygame
+pygame.init()
+screen = pygame.display.set_mode((800, 600))
+screen.fill((10, 12, 40))
+</code></pre>
+<p><strong>Hint:</strong> filling the screen is not enough. One line makes it visible.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug B</strong> — This is supposed to make an <strong>800 wide, 600 tall</strong> window. Right now it is tall and thin instead of wide.</p>
+<pre><code class="language-python">screen = pygame.display.set_mode((600, 800))
+</code></pre>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug C</strong> — The window opens but freezes and you cannot close it with the X button.</p>
+<pre><code class="language-python">import pygame
+pygame.init()
+screen = pygame.display.set_mode((800, 600))
+screen.fill((10, 12, 40))
+pygame.display.flip()
+
+while True:
+    pass
+</code></pre>
+<p><strong>Hint:</strong> the loop never listens for the QUIT event.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>3 · Explain the Code 📖</h2>
+<p>Read this working program carefully. Do <strong>not</strong> run it — answer every question just by reading it line by line.</p>
+<pre><code class="language-python">import pygame
+
+pygame.init()
+screen = pygame.display.set_mode((800, 600))
+pygame.display.set_caption(&quot;Space Shooter&quot;)
+
+SPACE = (10, 12, 40)
+
+running = True
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+    screen.fill(SPACE)
+    pygame.display.flip()
+
+pygame.quit()
+</code></pre>
+<p><strong>What does the line <code>import pygame</code> do, and why must it come first?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>What does <code>set_mode((800, 600))</code> create, and what would change if you swapped the two numbers to <code>(600, 800)</code>?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Which line actually makes the new picture show up on the window?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Trace the variable <code>running</code>. What value does it start as, and which line changes it?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>The <code>screen.fill(SPACE)</code> line is inside the loop, not above it. Why do you think it sits inside the loop?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>4 · Explain Your Lesson Code 🎥</h2>
+<p>In today's live lesson you wrote your own Pygame window code. Now explain <strong>your own code</strong> — the one you made in class. Record a short video on your phone (or a parent's phone) and talk through it like you are teaching someone who has never seen Pygame. You can show your window opening and closing if you like. Try to use these words: <strong>window</strong>, <strong>screen</strong>, <strong>fill</strong>, <strong>flip</strong>, <strong>game loop</strong>.</p>
+<blockquote>
+<ol>
+<li>Read your <code>set_mode</code> line out loud and say what the two numbers mean.</li>
+<li>Point at the line that fills your screen with colour, and say which colour you chose.</li>
+<li>Show or say which line makes the colour actually appear (<strong>flip</strong>).</li>
+<li>Say which line lets the window close when you click the X.</li>
+</ol>
+</blockquote>
+<p><strong>Write what you will say in your video. Plan it here before you record — you can read from it while filming.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.</p>
+<div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>
+</div></body></html>

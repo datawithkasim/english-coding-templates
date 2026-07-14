@@ -1,0 +1,175 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head><meta charset='utf-8'>
+<title>📦 WD001 Week 3 — English Worksheet</title>
+<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
+<style>
+@page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
+div.WordSection1 { page: WordSection1; }
+body { font-family: "Segoe UI", Arial, sans-serif; font-size: 11.5pt; color: #1a1a2e; line-height: 1.5; }
+h1 { font-size: 21pt; color: #6b4ee6; margin: 4px 0 6px; }
+h2 { font-size: 15pt; color: #6b4ee6; border-top: 1px solid #dddddd; padding-top: 8px; margin: 18px 0 10px; }
+h3, h4 { font-size: 11.5pt; margin: 12px 0 6px; }
+p { margin: 7px 0; }
+.brand { font-size: 10.5pt; font-weight: bold; color: #ff7849; letter-spacing: .06em;
+         border-bottom: 2px solid #ff7849; padding-bottom: 6px; margin-bottom: 14px; }
+table { border-collapse: collapse; margin: 10px 0; }
+th, td { border: 1px solid #c8c8c8; padding: 4px 9px; text-align: center; }
+th { background: #f3eefc; color: #6b4ee6; font-weight: bold; }
+pre { font-family: Consolas, "Courier New", monospace; font-size: 10.5pt; background: #f4f4f5;
+      border: 1px solid #dddddd; padding: 8px 10px; white-space: pre-wrap; }
+pre code { background: transparent; color: #1a1a2e; }
+code { font-family: Consolas, "Courier New", monospace; background: #fff1e8; color: #d6531f; padding: 0 3px; }
+blockquote { border-left: 3px solid #ff7849; background: #fff6ef; padding: 8px 12px;
+             color: #6a3a1c; margin: 9px 0; }
+ul, ol { margin: 7px 0 7px 26px; }
+p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
+.footer { color: #999999; font-size: 8.5pt; text-align: center; margin-top: 18px;
+          border-top: 1px solid #eeeeee; padding-top: 6px; }
+.footer b { color: #ff7849; }
+</style></head>
+<body><div class=WordSection1>
+<div class="brand">📚 ENGLISH CODING · 영어코딩</div>
+<h1>📦 WD001 Week 3 — English Worksheet</h1>
+<p><strong>Topic:</strong> The Box Model — Padding, Margin, Border · <strong>Course:</strong> Web Design: CSS · <strong>Time:</strong> about 45 minutes</p>
+<p>This week you learn that <strong>every element is a box</strong>. Around the content there is <code>padding</code> (space <strong>inside</strong> the box), then a <code>border</code> (the line <strong>around</strong> it), then <code>margin</code> (space <strong>outside</strong>, pushing other boxes away). You will also use <code>border-radius</code> to round the corners.</p>
+<hr />
+<h2>1 · Predict 🔮</h2>
+<p>Read each bit of CSS. Before you imagine the browser drawing it, write what you think will happen.</p>
+<pre><code class="language-html">&lt;style&gt;
+  .card {
+    border: 2px solid red;
+    padding: 30px;
+  }
+&lt;/style&gt;
+</code></pre>
+<p><strong>Lots of padding. Is the text close to the border or far from it?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-html">&lt;style&gt;
+  .card {
+    border: 2px solid black;
+    margin: 40px;
+  }
+&lt;/style&gt;
+</code></pre>
+<p><strong>Lots of margin. Does the space go </strong>inside<strong> the box or </strong>outside<strong> it, pushing other things away?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-html">&lt;style&gt;
+  .card {
+    border-radius: 50px;
+    width: 100px;
+    height: 100px;
+  }
+&lt;/style&gt;
+</code></pre>
+<p><strong>A 100×100 box with a 50px corner radius. What shape do you think it becomes?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-html">&lt;style&gt;
+  .card {
+    padding: 0px;
+    border: 1px solid blue;
+  }
+&lt;/style&gt;
+</code></pre>
+<p><strong>No padding at all. Where does the text sit compared to the border line?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>2 · Spot the Bug 🐛</h2>
+<p>Each bit of CSS below was meant to do something, but it is broken. Read what it is <strong>supposed</strong> to do, then rewrite it so it works. After that, explain why the original was wrong and why your fix works.</p>
+<p><strong>Bug A</strong> — The card is supposed to have a visible line around it. There is no line.</p>
+<pre><code class="language-html">&lt;style&gt;
+  .card {
+    border: solid blue;
+  }
+&lt;/style&gt;
+</code></pre>
+<p><strong>Hint:</strong> a border needs a <strong>thickness</strong> too.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug B</strong> — The text inside the card is supposed to have breathing room, but it is squished right up against the border.</p>
+<pre><code class="language-html">&lt;style&gt;
+  .card {
+    border: 2px solid green;
+    margin: 20px;
+  }
+&lt;/style&gt;
+</code></pre>
+<p><strong>Hint:</strong> which property adds space <strong>inside</strong> the box?</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug C</strong> — The card is supposed to have softly rounded corners, but the corners are still sharp.</p>
+<pre><code class="language-html">&lt;style&gt;
+  .card {
+    border: 2px solid #d4380d;
+    radius: 12px;
+  }
+&lt;/style&gt;
+</code></pre>
+<p><strong>Hint:</strong> check the property name.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>3 · Build 3 Cards 📸</h2>
+<p>In Replit, build <strong>3 cards</strong> about you — for example: favourite food, favourite movie, favourite school subject. Each card has a heading and a short line of text. Make each card a little <strong>different</strong> in colour or border so they don't all look the same.</p>
+<p>You can start one card like this and change it to your own:</p>
+<pre><code class="language-html">&lt;div class=&quot;card&quot;&gt;
+  &lt;h2&gt;My Favorite Game&lt;/h2&gt;
+  &lt;p&gt;Minecraft is the best!&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;style&gt;
+  .card {
+    background-color: #ffffff;
+    border: 2px solid #d4380d;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 16px;
+    width: 300px;
+  }
+&lt;/style&gt;
+</code></pre>
+<p>When you finish, send a <strong>photo or video</strong> of your cards (or a picture of your code), then explain what you did. Use these sentence starters — write 4 to 6 sentences total.</p>
+<blockquote>
+<p>My three cards are about …</p>
+<p>I made them look different by …</p>
+<p>I used padding to …</p>
+<p>I used border-radius to …</p>
+<p>One tricky moment was when …</p>
+<p>If I had more time, I would …</p>
+</blockquote>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>4 · Record Your Walkthrough 🎥</h2>
+<p>Now take a video on your phone (or a parent's phone) while you show your cards. Talk through it like you are teaching someone who has never seen the box model. Try to use these words: <strong>box</strong>, <strong>padding</strong>, <strong>margin</strong>, <strong>border</strong>, <strong>rounded</strong>.</p>
+<blockquote>
+<ol>
+<li>Show your three cards in the browser.</li>
+<li>Point to one card and show where the padding is and where the margin is.</li>
+<li>Say what <code>border-radius</code> did to the corners.</li>
+<li>Show one thing you got wrong at first and how you fixed it.</li>
+</ol>
+</blockquote>
+<p><strong>Write what you will say in your video.</strong> Use the space below to plan it before you record — you can read from it while filming.</p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.</p>
+<div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>
+</div></body></html>

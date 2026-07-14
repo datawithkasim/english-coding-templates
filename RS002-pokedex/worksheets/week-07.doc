@@ -1,0 +1,173 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head><meta charset='utf-8'>
+<title>🔴 RS002 Week 7 — English Worksheet</title>
+<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
+<style>
+@page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
+div.WordSection1 { page: WordSection1; }
+body { font-family: "Segoe UI", Arial, sans-serif; font-size: 11.5pt; color: #1a1a2e; line-height: 1.5; }
+h1 { font-size: 21pt; color: #6b4ee6; margin: 4px 0 6px; }
+h2 { font-size: 15pt; color: #6b4ee6; border-top: 1px solid #dddddd; padding-top: 8px; margin: 18px 0 10px; }
+h3, h4 { font-size: 11.5pt; margin: 12px 0 6px; }
+p { margin: 7px 0; }
+.brand { font-size: 10.5pt; font-weight: bold; color: #ff7849; letter-spacing: .06em;
+         border-bottom: 2px solid #ff7849; padding-bottom: 6px; margin-bottom: 14px; }
+table { border-collapse: collapse; margin: 10px 0; }
+th, td { border: 1px solid #c8c8c8; padding: 4px 9px; text-align: center; }
+th { background: #f3eefc; color: #6b4ee6; font-weight: bold; }
+pre { font-family: Consolas, "Courier New", monospace; font-size: 10.5pt; background: #f4f4f5;
+      border: 1px solid #dddddd; padding: 8px 10px; white-space: pre-wrap; }
+pre code { background: transparent; color: #1a1a2e; }
+code { font-family: Consolas, "Courier New", monospace; background: #fff1e8; color: #d6531f; padding: 0 3px; }
+blockquote { border-left: 3px solid #ff7849; background: #fff6ef; padding: 8px 12px;
+             color: #6a3a1c; margin: 9px 0; }
+ul, ol { margin: 7px 0 7px 26px; }
+p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
+.footer { color: #999999; font-size: 8.5pt; text-align: center; margin-top: 18px;
+          border-top: 1px solid #eeeeee; padding-top: 6px; }
+.footer b { color: #ff7849; }
+</style></head>
+<body><div class=WordSection1>
+<div class="brand">📚 ENGLISH CODING · 영어코딩</div>
+<h1>🔴 RS002 Week 7 — English Worksheet</h1>
+<p><strong>Topic:</strong> Validating Input — <code>in</code> / <code>not in</code> · <strong>Course:</strong> Pokédex App · <strong>Time:</strong> about 45 minutes</p>
+<p>This week you think about how a program stays <strong>safe</strong>. When a trainer types a Pokémon that is not in the dex, the program should not crash — it checks with <code>in</code> / <code>not in</code>, gives a clear message, and falls back to a safe <strong>default</strong>. On this worksheet you read code, predict it, fix bugs on paper, and explain the code you wrote in your live lesson.</p>
+<blockquote>
+<p>🧠 Words to know: <strong>in</strong>, <strong>not in</strong>, <strong>validate</strong>, <strong>default</strong>, <strong>safe</strong></p>
+</blockquote>
+<hr />
+<h2>1 · Recall 🧠</h2>
+<p>From memory:</p>
+<p><strong>Write a loop that prints every name in <code>names</code> that contains the text in <code>search</code>.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>2 · Predict 🔮</h2>
+<p>Read each block. Write what you think will happen — no running.</p>
+<pre><code class="language-python">pokedex = [&quot;피카츄&quot;, &quot;이상해씨&quot;, &quot;파이리&quot;]
+print(&quot;피카츄&quot; in pokedex)
+print(&quot;리자몽&quot; in pokedex)
+</code></pre>
+<p><strong>Write <code>True</code> or <code>False</code> for each line.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">pokedex = [&quot;피카츄&quot;, &quot;이상해씨&quot;, &quot;파이리&quot;]
+choice = &quot;리자몽&quot;
+
+if choice not in pokedex:
+    print(&quot;도감에 없어요&quot;)
+</code></pre>
+<p><strong>Does the message print? Why?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">pokedex = [&quot;피카츄&quot;, &quot;이상해씨&quot;]
+choice = input(&quot;이름: &quot;).strip()
+
+if choice not in pokedex:
+    choice = &quot;피카츄&quot;
+
+print(f&quot;선택: {choice}&quot;)
+</code></pre>
+<p><strong>The user types <code>없는포켓몬</code>. What does the last line print? Why?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>3 · Spot the Bug 🐛</h2>
+<p>Read what each block is <strong>supposed</strong> to do, fix it on paper, then explain the fix.</p>
+<p><strong>Bug A</strong> — This should warn the user when their choice is <strong>not</strong> in the dex. Right now it warns when the choice <strong>is</strong> in the dex.</p>
+<pre><code class="language-python">pokedex = [&quot;피카츄&quot;, &quot;이상해씨&quot;, &quot;파이리&quot;]
+choice = input(&quot;이름: &quot;).strip()
+
+if choice in pokedex:
+    print(&quot;도감에 없어요&quot;)
+</code></pre>
+<p><strong>Hint:</strong> the condition is backwards.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug B</strong> — When the choice is missing, this should fall back to a default Pokémon. Right now it sets the default but then the rest of the program still uses the bad choice.</p>
+<pre><code class="language-python">pokedex = [&quot;피카츄&quot;, &quot;이상해씨&quot;, &quot;파이리&quot;]
+choice = input(&quot;이름: &quot;).strip()
+
+if choice not in pokedex:
+    print(&quot;기본값으로 진행합니다.&quot;)
+    default = &quot;피카츄&quot;
+
+print(f&quot;선택된 포켓몬: {choice}&quot;)
+</code></pre>
+<p><strong>Hint:</strong> assign the default back into <code>choice</code>, not a new unused variable.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug C</strong> — This should give the user a second chance, then fall back. Right now it never re-asks; it just keeps the first bad answer.</p>
+<pre><code class="language-python">pokedex = [&quot;피카츄&quot;, &quot;이상해씨&quot;, &quot;파이리&quot;]
+choice = input(&quot;이름: &quot;).strip()
+
+if choice not in pokedex:
+    print(&quot;다시 시도해보세요.&quot;)
+
+if choice in pokedex:
+    print(f&quot;✅ {choice}&quot;)
+else:
+    print(&quot;❌ 못 찾음&quot;)
+</code></pre>
+<p><strong>Hint:</strong> after the warning, ask again with another <code>input(...)</code>.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>4 · Explain the Code 📖</h2>
+<p>Read this working validation closely.</p>
+<pre><code class="language-python">pokedex = [&quot;피카츄&quot;, &quot;이상해씨&quot;, &quot;파이리&quot;, &quot;꼬부기&quot;]
+
+choice = input(&quot;포켓몬 이름: &quot;).strip()
+
+if choice not in pokedex:
+    print(f&quot;'{choice}'을(를) 찾을 수 없어 기본 포켓몬으로 진행합니다.&quot;)
+    choice = &quot;피카츄&quot;
+
+print(f&quot;\n선택된 포켓몬: {choice}&quot;)
+</code></pre>
+<p><strong>What does <code>.strip()</code> do to the trainer's input, and why does it help the <code>not in</code> check?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>When is the <code>if</code> block's code run, and when is it skipped?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why does the line <code>choice = "피카츄"</code> sit inside the <code>if</code>, and what would change if it were outside?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>If the trainer types <code>꼬부기</code>, what does the last line print? Walk through why.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Where does this code make the program "safe", and what bad input is it protecting against?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>5 · Explain Your Lesson Code 🎥</h2>
+<p>Explain the validation code <strong>you</strong> wrote in today's live lesson. Record a short phone video — you may show it running. Try to use: <strong>in</strong>, <strong>not in</strong>, <strong>validate</strong>, <strong>default</strong>, <strong>safe</strong>.</p>
+<blockquote>
+<ol>
+<li>Show your code and type a valid Pokémon to show it works.</li>
+<li>Type something fake and show your warning + default.</li>
+<li>Read your own <code>not in</code> line out loud and explain it.</li>
+<li>Say why a program should never crash on bad input.</li>
+</ol>
+</blockquote>
+<p><strong>Write what you will say in your video. Plan it here before you record.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.</p>
+<div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>
+</div></body></html>

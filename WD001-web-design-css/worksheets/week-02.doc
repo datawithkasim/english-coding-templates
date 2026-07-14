@@ -1,0 +1,180 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head><meta charset='utf-8'>
+<title>🎨 WD001 Week 2 — English Worksheet</title>
+<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
+<style>
+@page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
+div.WordSection1 { page: WordSection1; }
+body { font-family: "Segoe UI", Arial, sans-serif; font-size: 11.5pt; color: #1a1a2e; line-height: 1.5; }
+h1 { font-size: 21pt; color: #6b4ee6; margin: 4px 0 6px; }
+h2 { font-size: 15pt; color: #6b4ee6; border-top: 1px solid #dddddd; padding-top: 8px; margin: 18px 0 10px; }
+h3, h4 { font-size: 11.5pt; margin: 12px 0 6px; }
+p { margin: 7px 0; }
+.brand { font-size: 10.5pt; font-weight: bold; color: #ff7849; letter-spacing: .06em;
+         border-bottom: 2px solid #ff7849; padding-bottom: 6px; margin-bottom: 14px; }
+table { border-collapse: collapse; margin: 10px 0; }
+th, td { border: 1px solid #c8c8c8; padding: 4px 9px; text-align: center; }
+th { background: #f3eefc; color: #6b4ee6; font-weight: bold; }
+pre { font-family: Consolas, "Courier New", monospace; font-size: 10.5pt; background: #f4f4f5;
+      border: 1px solid #dddddd; padding: 8px 10px; white-space: pre-wrap; }
+pre code { background: transparent; color: #1a1a2e; }
+code { font-family: Consolas, "Courier New", monospace; background: #fff1e8; color: #d6531f; padding: 0 3px; }
+blockquote { border-left: 3px solid #ff7849; background: #fff6ef; padding: 8px 12px;
+             color: #6a3a1c; margin: 9px 0; }
+ul, ol { margin: 7px 0 7px 26px; }
+p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
+.footer { color: #999999; font-size: 8.5pt; text-align: center; margin-top: 18px;
+          border-top: 1px solid #eeeeee; padding-top: 6px; }
+.footer b { color: #ff7849; }
+</style></head>
+<body><div class=WordSection1>
+<div class="brand">📚 ENGLISH CODING · 영어코딩</div>
+<h1>🎨 WD001 Week 2 — English Worksheet</h1>
+<p><strong>Topic:</strong> First Steps in CSS — Colors and Text · <strong>Course:</strong> Web Design: CSS · <strong>Time:</strong> about 45 minutes</p>
+<p>This week you give your page <strong>style</strong>. HTML decides <strong>what</strong> is on the page; CSS decides <strong>how it looks</strong>. You write CSS inside a <code>&lt;style&gt;</code> tag, choose a tag with a <strong>selector</strong>, and set properties like <code>color</code>, <code>font-size</code>, and <code>background-color</code>.</p>
+<hr />
+<h2>1 · Predict 🔮</h2>
+<p>Read each bit of CSS. Before you imagine the browser drawing it, write what you think will happen.</p>
+<pre><code class="language-html">&lt;style&gt;
+  h1 {
+    color: blue;
+  }
+&lt;/style&gt;
+</code></pre>
+<p><strong>Every <code>&lt;h1&gt;</code> on the page — what colour does the text become?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-html">&lt;style&gt;
+  body {
+    background-color: black;
+  }
+  p {
+    color: black;
+  }
+&lt;/style&gt;
+</code></pre>
+<p><strong>The background and the paragraph text are both black. What problem do you predict?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-html">&lt;style&gt;
+  h1 {
+    font-size: 60px;
+  }
+  p {
+    font-size: 12px;
+  }
+&lt;/style&gt;
+</code></pre>
+<p><strong>Which text looks bigger on the page, the heading or the paragraph? By a lot or a little?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-html">&lt;style&gt;
+  p {
+    color: red;
+    color: green;
+  }
+&lt;/style&gt;
+</code></pre>
+<p><strong>Two <code>color</code> lines on the same <code>p</code>. Which colour wins? Make a guess, then test it.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>2 · Spot the Bug 🐛</h2>
+<p>Each bit of CSS below was meant to do something, but it is broken. Read what it is <strong>supposed</strong> to do, then rewrite it so it works. After that, explain why the original was wrong and why your fix works.</p>
+<p><strong>Bug A</strong> — The heading is supposed to turn orange. Nothing changes.</p>
+<pre><code class="language-html">&lt;style&gt;
+  h1
+    color: orange;
+  }
+&lt;/style&gt;
+</code></pre>
+<p><strong>Hint:</strong> a curly bracket is missing where the rule starts.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug B</strong> — The paragraph text is supposed to be size 20. Nothing changes.</p>
+<pre><code class="language-html">&lt;style&gt;
+  p {
+    font-size: 20
+  }
+&lt;/style&gt;
+</code></pre>
+<p><strong>Hint:</strong> the value needs a unit, and the line needs to end properly.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug C</strong> — The whole page background is supposed to be light yellow, but the colour shows up on the headings instead.</p>
+<pre><code class="language-html">&lt;style&gt;
+  h1 {
+    background-color: #fff8e7;
+  }
+&lt;/style&gt;
+</code></pre>
+<p><strong>Hint:</strong> which selector means "the whole page"?</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>3 · Restyle Your Page 📸</h2>
+<p>Open last week's About Me page in Replit. Add a <code>&lt;style&gt;</code> tag and make it yours:</p>
+<ol>
+<li>pick a <strong>background colour</strong> for the whole page (<code>body</code>),</li>
+<li>give your heading and your paragraph <strong>different colours</strong>,</li>
+<li>choose a font with <code>font-family</code>.</li>
+</ol>
+<p>You can start from this and change the values to your own taste:</p>
+<pre><code class="language-html">&lt;style&gt;
+  body {
+    background-color: #fff8e7;
+    font-family: Arial, sans-serif;
+  }
+  h1 {
+    color: #d4380d;
+    font-size: 36px;
+  }
+  p {
+    color: #333333;
+    font-size: 18px;
+  }
+&lt;/style&gt;
+</code></pre>
+<p>Then try your <strong>heading size two different ways</strong> (for example <code>36px</code> and <code>48px</code>) and keep the one you like better.</p>
+<p>When you finish, send a <strong>photo or video</strong> of your page (or a picture of your code), then explain what you did. Use these sentence starters — write 4 to 6 sentences total.</p>
+<blockquote>
+<p>The colours I chose were …</p>
+<p>I made my heading and paragraph different by …</p>
+<p>I tried my heading at ___ and at ___ , and I kept …</p>
+<p>The font I picked was …</p>
+<p>One tricky moment was when …</p>
+<p>If I had more time, I would …</p>
+</blockquote>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>4 · Record Your Walkthrough 🎥</h2>
+<p>Now take a video on your phone (or a parent's phone) while you show your styled page. Talk through it like you are teaching someone who has never used CSS. Try to use these words: <strong>style</strong>, <strong>selector</strong>, <strong>colour</strong>, <strong>font</strong>, <strong>background</strong>.</p>
+<blockquote>
+<ol>
+<li>Show your page before and after styling, if you can.</li>
+<li>Read one CSS rule out loud and say which tag it changes.</li>
+<li>Show your two heading sizes and say which one you kept.</li>
+<li>Show one thing you got wrong at first and how you fixed it.</li>
+</ol>
+</blockquote>
+<p><strong>Write what you will say in your video.</strong> Use the space below to plan it before you record — you can read from it while filming.</p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.</p>
+<div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>
+</div></body></html>

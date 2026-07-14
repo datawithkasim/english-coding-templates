@@ -1,0 +1,173 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head><meta charset='utf-8'>
+<title>🏃 RB001 Week 7 — English Worksheet</title>
+<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
+<style>
+@page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
+div.WordSection1 { page: WordSection1; }
+body { font-family: "Segoe UI", Arial, sans-serif; font-size: 11.5pt; color: #1a1a2e; line-height: 1.5; }
+h1 { font-size: 21pt; color: #6b4ee6; margin: 4px 0 6px; }
+h2 { font-size: 15pt; color: #6b4ee6; border-top: 1px solid #dddddd; padding-top: 8px; margin: 18px 0 10px; }
+h3, h4 { font-size: 11.5pt; margin: 12px 0 6px; }
+p { margin: 7px 0; }
+.brand { font-size: 10.5pt; font-weight: bold; color: #ff7849; letter-spacing: .06em;
+         border-bottom: 2px solid #ff7849; padding-bottom: 6px; margin-bottom: 14px; }
+table { border-collapse: collapse; margin: 10px 0; }
+th, td { border: 1px solid #c8c8c8; padding: 4px 9px; text-align: center; }
+th { background: #f3eefc; color: #6b4ee6; font-weight: bold; }
+pre { font-family: Consolas, "Courier New", monospace; font-size: 10.5pt; background: #f4f4f5;
+      border: 1px solid #dddddd; padding: 8px 10px; white-space: pre-wrap; }
+pre code { background: transparent; color: #1a1a2e; }
+code { font-family: Consolas, "Courier New", monospace; background: #fff1e8; color: #d6531f; padding: 0 3px; }
+blockquote { border-left: 3px solid #ff7849; background: #fff6ef; padding: 8px 12px;
+             color: #6a3a1c; margin: 9px 0; }
+ul, ol { margin: 7px 0 7px 26px; }
+p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
+.footer { color: #999999; font-size: 8.5pt; text-align: center; margin-top: 18px;
+          border-top: 1px solid #eeeeee; padding-top: 6px; }
+.footer b { color: #ff7849; }
+</style></head>
+<body><div class=WordSection1>
+<div class="brand">📚 ENGLISH CODING · 영어코딩</div>
+<h1>🏃 RB001 Week 7 — English Worksheet</h1>
+<p><strong>Topic:</strong> Build Week — Your Full Obby · <strong>Course:</strong> Obby Architect · <strong>Time:</strong> about 45 minutes</p>
+<p>No new syntax this week. You already know everything you need: parts, colors, lava, doors, loops, vanishing bridges, coins, and the leaderboard. This week you put it <strong>all together</strong> into one full obby with a start, checkpoints, and a win pad.</p>
+<hr />
+<h2>1 · Predict 🔮</h2>
+<p>Read each script. These mix ideas from past weeks. Write what you think will happen.</p>
+<pre><code class="language-lua">local winPad = script.Parent
+
+winPad.Touched:Connect(function(otherPart)
+    local humanoid = otherPart.Parent:FindFirstChildWhichIsA(&quot;Humanoid&quot;)
+    if humanoid then
+        print(&quot;You win!&quot;)
+        for i = 1, 6 do
+            winPad.Color = Color3.fromRGB(255, 215, 0)
+            task.wait(0.2)
+            winPad.Color = Color3.fromRGB(85, 255, 127)
+            task.wait(0.2)
+        end
+    end
+end)
+</code></pre>
+<p><strong>A player jumps onto the win pad. What prints in the Output? What does the pad look like, and for about how many seconds?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-lua">local lava = script.Parent
+
+lava.Touched:Connect(function(otherPart)
+    local humanoid = otherPart.Parent:FindFirstChildWhichIsA(&quot;Humanoid&quot;)
+    if humanoid then
+        humanoid.Health = 0
+    end
+end)
+</code></pre>
+<p><strong>A player touches the lava — what happens? A loose part falls onto the lava — what happens then?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-lua">local platform = script.Parent
+
+while true do
+    for i = 1, 10 do
+        platform.Transparency = i / 10
+        task.wait(0.1)
+    end
+    platform.CanCollide = false
+    task.wait(2)
+    platform.Transparency = 0
+    platform.CanCollide = true
+    task.wait(3)
+end
+</code></pre>
+<p><strong>This is one platform of your bridge. In each cycle, for how many seconds is it solid and safe? When should a player run across?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>2 · Spot the Bug 🐛</h2>
+<p>Each script below was meant to do something, but it is broken. Read what the script is <strong>supposed</strong> to do, then rewrite it so it works. After that, explain why the original was wrong and why your fix works.</p>
+<p><strong>Bug A</strong> — The win pad should celebrate only when a <strong>player</strong> touches it. But a loose part rolled onto the pad and the game printed "You win!" with nobody there.</p>
+<pre><code class="language-lua">local winPad = script.Parent
+
+winPad.Touched:Connect(function(otherPart)
+    print(&quot;You win!&quot;)
+    for i = 1, 6 do
+        winPad.Color = Color3.fromRGB(255, 215, 0)
+        task.wait(0.2)
+        winPad.Color = Color3.fromRGB(85, 255, 127)
+        task.wait(0.2)
+    end
+end)
+</code></pre>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug B</strong> — The lava should only hurt players. But when a coin fell onto the lava, the Output showed a red error and the lava stopped working.</p>
+<pre><code class="language-lua">local lava = script.Parent
+
+lava.Touched:Connect(function(otherPart)
+    local humanoid = otherPart.Parent:FindFirstChildWhichIsA(&quot;Humanoid&quot;)
+    humanoid.Health = 0
+end)
+</code></pre>
+<p><strong>Hint:</strong> a falling coin has no Humanoid, so <code>humanoid</code> is <code>nil</code>.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug C</strong> — The secret door should <strong>open</strong>: turn invisible and let the player walk through. It turns invisible — but the player still bumps into an invisible wall.</p>
+<pre><code class="language-lua">local door = script.Parent
+
+door.Touched:Connect(function(otherPart)
+    local humanoid = otherPart.Parent:FindFirstChildWhichIsA(&quot;Humanoid&quot;)
+    if humanoid then
+        door.Transparency = 1
+    end
+end)
+</code></pre>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>3 · Tell Me What You Built 📸</h2>
+<p>Plan first, then build. List your obby sections in order, <strong>easy → hard</strong>. Write where the checkpoints (SpawnLocation parts) go, and where you will put lava, doors, vanishing bridges, and coins.</p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p>Now build your full obby in Roblox Studio: a start, at least 3 sections, at least 1 checkpoint, coins, and a win pad at the end. Beat it yourself in Play mode. When you finish, come back here.</p>
+<p>Send a photo or video of your finished obby, then explain what you built. Use these sentence starters — write 4 to 6 sentences total.</p>
+<blockquote>
+<p>My obby has … sections, in this order: …</p>
+<p>The easiest section is … and the hardest is …</p>
+<p>I put a checkpoint at … because …</p>
+<p>One tricky moment was when …</p>
+<p>To fix it, I …</p>
+<p>If I had more time, I would …</p>
+</blockquote>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>4 · Record Your Walkthrough 🎥</h2>
+<p>Now take a video on your phone (or a parent's phone) while you <strong>playtest</strong> your full obby from start to finish. Talk through it like you are teaching someone who has never seen it. Try to use these words: <strong>section</strong>, <strong>checkpoint</strong>, <strong>playtest</strong>, <strong>humanoid</strong>, <strong>win</strong>.</p>
+<blockquote>
+<ol>
+<li>Start at the spawn and play through every section — show that each one <strong>can be beaten</strong>.</li>
+<li>Fall on purpose once and show that the checkpoint works — you respawn there, not at the start.</li>
+<li>Collect a coin and show the leaderboard go up.</li>
+<li>Touch the win pad and read your win-pad script out loud — say what the <code>if humanoid then</code> check stops.</li>
+</ol>
+</blockquote>
+<p><strong>Write what you will say in your video.</strong> Use the space below to plan it before you record — you can read from it while filming.</p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.</p>
+<div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>
+</div></body></html>

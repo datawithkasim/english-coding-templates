@@ -1,0 +1,169 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head><meta charset='utf-8'>
+<title>🔴 RS002 Week 5 — English Worksheet</title>
+<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
+<style>
+@page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
+div.WordSection1 { page: WordSection1; }
+body { font-family: "Segoe UI", Arial, sans-serif; font-size: 11.5pt; color: #1a1a2e; line-height: 1.5; }
+h1 { font-size: 21pt; color: #6b4ee6; margin: 4px 0 6px; }
+h2 { font-size: 15pt; color: #6b4ee6; border-top: 1px solid #dddddd; padding-top: 8px; margin: 18px 0 10px; }
+h3, h4 { font-size: 11.5pt; margin: 12px 0 6px; }
+p { margin: 7px 0; }
+.brand { font-size: 10.5pt; font-weight: bold; color: #ff7849; letter-spacing: .06em;
+         border-bottom: 2px solid #ff7849; padding-bottom: 6px; margin-bottom: 14px; }
+table { border-collapse: collapse; margin: 10px 0; }
+th, td { border: 1px solid #c8c8c8; padding: 4px 9px; text-align: center; }
+th { background: #f3eefc; color: #6b4ee6; font-weight: bold; }
+pre { font-family: Consolas, "Courier New", monospace; font-size: 10.5pt; background: #f4f4f5;
+      border: 1px solid #dddddd; padding: 8px 10px; white-space: pre-wrap; }
+pre code { background: transparent; color: #1a1a2e; }
+code { font-family: Consolas, "Courier New", monospace; background: #fff1e8; color: #d6531f; padding: 0 3px; }
+blockquote { border-left: 3px solid #ff7849; background: #fff6ef; padding: 8px 12px;
+             color: #6a3a1c; margin: 9px 0; }
+ul, ol { margin: 7px 0 7px 26px; }
+p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
+.footer { color: #999999; font-size: 8.5pt; text-align: center; margin-top: 18px;
+          border-top: 1px solid #eeeeee; padding-top: 6px; }
+.footer b { color: #ff7849; }
+</style></head>
+<body><div class=WordSection1>
+<div class="brand">📚 ENGLISH CODING · 영어코딩</div>
+<h1>🔴 RS002 Week 5 — English Worksheet</h1>
+<p><strong>Topic:</strong> Cleaning Input — <code>.strip()</code> and <code>.lower()</code> · <strong>Course:</strong> Pokédex App · <strong>Time:</strong> about 45 minutes</p>
+<p>This week your Pokédex lets the trainer <strong>search by name</strong>. But people type messily — extra spaces, mixed capitals. In the live lesson you cleaned their input with <code>.strip()</code> and <code>.lower()</code> so the search still works, then used <code>if</code> / <code>elif</code> / <code>else</code> to react to the choice. This worksheet is for <strong>thinking about and explaining that code</strong> — reading it closely, predicting what it does, and putting it into your own words.</p>
+<blockquote>
+<p>🧠 Words to know: <strong>strip</strong>, <strong>lower</strong>, <strong>clean</strong>, <strong>search</strong>, <strong>if / elif / else</strong></p>
+</blockquote>
+<hr />
+<h2>1 · Recall 🧠</h2>
+<p>From memory:</p>
+<p><strong>Write a <code>for</code> loop that prints every name in a list called <code>names</code>.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>2 · Predict 🔮</h2>
+<p>Read each block. Without running it, write what you think will happen.</p>
+<pre><code class="language-python">choice = &quot;  Pikachu  &quot;
+choice = choice.strip()
+print(f&quot;[{choice}]&quot;)
+</code></pre>
+<p><strong>What prints between the brackets, exactly?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">choice = &quot;PIKACHU&quot;
+choice = choice.lower()
+print(choice)
+</code></pre>
+<p><strong>What does <code>.lower()</code> turn the text into?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">choice = input(&quot;이름: &quot;).strip().lower()
+
+if choice == &quot;pikachu&quot;:
+    print(&quot;⚡ 피카츄!&quot;)
+else:
+    print(&quot;없는 포켓몬&quot;)
+</code></pre>
+<p><strong>The user types <code>Pikachu</code>. Does the <code>if</code> match? Why or why not?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>3 · Spot the Bug 🐛</h2>
+<p>Read what each block is <strong>supposed</strong> to do, fix it on paper, then explain the fix.</p>
+<p><strong>Bug A</strong> — This should match even if the user types extra spaces. Right now <code>"  pikachu"</code> does not match.</p>
+<pre><code class="language-python">choice = input(&quot;이름: &quot;).lower()
+
+if choice == &quot;pikachu&quot;:
+    print(&quot;찾음!&quot;)
+else:
+    print(&quot;못 찾음&quot;)
+</code></pre>
+<p><strong>Hint:</strong> spaces are still there — clean them too.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug B</strong> — This should match whether the user types <code>Pikachu</code>, <code>PIKACHU</code>, or <code>pikachu</code>. Right now only the exact lowercase word works.</p>
+<pre><code class="language-python">choice = input(&quot;이름: &quot;).strip()
+
+if choice == &quot;pikachu&quot;:
+    print(&quot;찾음!&quot;)
+else:
+    print(&quot;못 찾음&quot;)
+</code></pre>
+<p><strong>Hint:</strong> make both sides lowercase before comparing.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug C</strong> — This should show a different message for each of three Pokémon, and one message for anything else. Right now the last branch runs even for known Pokémon.</p>
+<pre><code class="language-python">choice = input(&quot;이름: &quot;).strip().lower()
+
+if choice == &quot;pikachu&quot;:
+    print(&quot;⚡ 피카츄!&quot;)
+if choice == &quot;bulbasaur&quot;:
+    print(&quot;🌱 이상해씨!&quot;)
+else:
+    print(&quot;없는 포켓몬&quot;)
+</code></pre>
+<p><strong>Hint:</strong> the second check should be <code>elif</code>, not a fresh <code>if</code>.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>4 · Explain the Code 📖</h2>
+<p>Read this working search carefully. It is the kind of code you built in the live lesson.</p>
+<pre><code class="language-python">pokemon_names = [&quot;pikachu&quot;, &quot;bulbasaur&quot;, &quot;charmander&quot;]
+choice = input(&quot;Enter Pokémon name: &quot;).strip().lower()
+
+if choice == &quot;pikachu&quot;:
+    print(&quot;⚡ 피카츄를 골랐어요!&quot;)
+elif choice == &quot;bulbasaur&quot;:
+    print(&quot;🌱 이상해씨를 골랐어요!&quot;)
+elif choice == &quot;charmander&quot;:
+    print(&quot;🔥 파이리를 골랐어요!&quot;)
+else:
+    print(&quot;그 포켓몬은 도감에 없어요.&quot;)
+</code></pre>
+<p><strong>What do <code>.strip()</code> and <code>.lower()</code> each do to the trainer's input?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why are the names in the <code>if</code> checks (like <code>"pikachu"</code>) written in lowercase?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>If the trainer types <code>BULBASAUR</code>, which line prints, and why?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>When does the <code>else</code> branch run?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why is the second check <code>elif</code> and not another <code>if</code>?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>5 · Explain Your Lesson Code 🎥</h2>
+<p>Explain the search code <strong>you wrote in today's lesson</strong> in a short phone video. You may show it running. Teach it like the viewer is new, and try to use: <strong>strip</strong>, <strong>lower</strong>, <strong>clean</strong>, <strong>search</strong>, <strong>if / elif / else</strong>.</p>
+<blockquote>
+<ol>
+<li>Show your search code and run it with a name that has extra spaces and capitals.</li>
+<li>Point to where you cleaned the input, and say which method fixed the spaces and which fixed the capitals.</li>
+<li>Read your <code>if / elif / else</code> out loud and explain what each branch does.</li>
+<li>Type a Pokémon that is not in the dex and show the <code>else</code> message.</li>
+</ol>
+</blockquote>
+<p><strong>Write what you will say in your video. Plan it here before you record.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.</p>
+<div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>
+</div></body></html>

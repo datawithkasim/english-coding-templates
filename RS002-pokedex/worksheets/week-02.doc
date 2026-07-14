@@ -1,0 +1,163 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head><meta charset='utf-8'>
+<title>🔴 RS002 Week 2 — English Worksheet</title>
+<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
+<style>
+@page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
+div.WordSection1 { page: WordSection1; }
+body { font-family: "Segoe UI", Arial, sans-serif; font-size: 11.5pt; color: #1a1a2e; line-height: 1.5; }
+h1 { font-size: 21pt; color: #6b4ee6; margin: 4px 0 6px; }
+h2 { font-size: 15pt; color: #6b4ee6; border-top: 1px solid #dddddd; padding-top: 8px; margin: 18px 0 10px; }
+h3, h4 { font-size: 11.5pt; margin: 12px 0 6px; }
+p { margin: 7px 0; }
+.brand { font-size: 10.5pt; font-weight: bold; color: #ff7849; letter-spacing: .06em;
+         border-bottom: 2px solid #ff7849; padding-bottom: 6px; margin-bottom: 14px; }
+table { border-collapse: collapse; margin: 10px 0; }
+th, td { border: 1px solid #c8c8c8; padding: 4px 9px; text-align: center; }
+th { background: #f3eefc; color: #6b4ee6; font-weight: bold; }
+pre { font-family: Consolas, "Courier New", monospace; font-size: 10.5pt; background: #f4f4f5;
+      border: 1px solid #dddddd; padding: 8px 10px; white-space: pre-wrap; }
+pre code { background: transparent; color: #1a1a2e; }
+code { font-family: Consolas, "Courier New", monospace; background: #fff1e8; color: #d6531f; padding: 0 3px; }
+blockquote { border-left: 3px solid #ff7849; background: #fff6ef; padding: 8px 12px;
+             color: #6a3a1c; margin: 9px 0; }
+ul, ol { margin: 7px 0 7px 26px; }
+p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
+.footer { color: #999999; font-size: 8.5pt; text-align: center; margin-top: 18px;
+          border-top: 1px solid #eeeeee; padding-top: 6px; }
+.footer b { color: #ff7849; }
+</style></head>
+<body><div class=WordSection1>
+<div class="brand">📚 ENGLISH CODING · 영어코딩</div>
+<h1>🔴 RS002 Week 2 — English Worksheet</h1>
+<p><strong>Topic:</strong> Trainer Profile — More Variables · <strong>Course:</strong> Pokédex App · <strong>Time:</strong> about 45 minutes</p>
+<blockquote>
+<p>🧠 Words to know: <strong>variable</strong>, <strong>strip</strong>, <strong>default</strong>, <strong>field</strong>, <strong>trainer card</strong></p>
+</blockquote>
+<p>This week you read and think about a full <strong>trainer card</strong>. It asks for more details — region and favourite type — cleans each answer with <code>.strip()</code>, gives every answer a default, and prints a tidy card. You will trace the code on paper, fix some bugs in your head, and then explain the code you wrote in the live lesson.</p>
+<hr />
+<h2>1 · Recall 🧠</h2>
+<p>From memory — no peeking at Week 1:</p>
+<p><strong>Write the line that asks the user for their name and stores it in <code>trainer_name</code>.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Write the line that prints <code>환영합니다, 지우 트레이너님!</code> using an f-string (the name is in <code>trainer_name</code>).</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>2 · Predict 🔮</h2>
+<p>Read each block. Write what you think will happen — no need to run it.</p>
+<pre><code class="language-python">region = input(&quot;어느 지역에서 오셨나요? &quot;).strip()
+print(f&quot;[{region}]&quot;)
+</code></pre>
+<p><strong>The user types <code>관동</code> (with spaces before and after). What prints between the brackets, exactly?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">fav_type = input(&quot;좋아하는 타입은? &quot;).strip()
+if fav_type == &quot;&quot;:
+    fav_type = &quot;비밀&quot;
+print(f&quot;선호 타입: {fav_type}&quot;)
+</code></pre>
+<p><strong>The user presses Enter without typing. What is printed?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">print(f&quot;이름: {trainer_name}&quot;)
+print(f&quot;지역: {region}&quot;)
+print(f&quot;선호 타입: {fav_type}&quot;)
+</code></pre>
+<p><strong>Three lines, three variables. Describe what kind of screen this makes.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>3 · Spot the Bug 🐛</h2>
+<p>Read what each block is <strong>supposed</strong> to do, fix it on paper, then explain the fix.</p>
+<p><strong>Bug A</strong> — Every answer should have its spaces trimmed. This one forgets <code>.strip()</code> on the region.</p>
+<pre><code class="language-python">trainer_name = input(&quot;이름: &quot;).strip()
+region = input(&quot;지역: &quot;)
+</code></pre>
+<p><strong>Hint:</strong> add the same cleaning step you used for the name.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug B</strong> — When the user leaves the type blank, it should become <code>비밀</code>. Right now the check happens <em>after</em> the card is printed, so it is too late.</p>
+<pre><code class="language-python">fav_type = input(&quot;타입: &quot;).strip()
+print(f&quot;선호 타입: {fav_type}&quot;)
+
+if fav_type == &quot;&quot;:
+    fav_type = &quot;비밀&quot;
+</code></pre>
+<p><strong>Hint:</strong> set the default <em>before</em> you print.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug C</strong> — The card should print three different fields. Right now it prints the name three times by mistake.</p>
+<pre><code class="language-python">print(f&quot;이름: {trainer_name}&quot;)
+print(f&quot;지역: {trainer_name}&quot;)
+print(f&quot;선호 타입: {trainer_name}&quot;)
+</code></pre>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>4 · Explain the Code 📖</h2>
+<p>Here is a complete, working trainer card. Read it carefully, then answer the questions.</p>
+<pre><code class="language-python">trainer_name = input(&quot;트레이너 이름: &quot;).strip()
+if trainer_name == &quot;&quot;:
+    trainer_name = &quot;이름 모를 트레이너&quot;
+
+region = input(&quot;어느 지역에서 오셨나요? &quot;).strip()
+if region == &quot;&quot;:
+    region = &quot;이름 모를 지역&quot;
+
+fav_type = input(&quot;좋아하는 포켓몬 타입은? &quot;).strip()
+if fav_type == &quot;&quot;:
+    fav_type = &quot;비밀&quot;
+
+print(f&quot;\n=== 트레이너 카드 ===&quot;)
+print(f&quot;이름: {trainer_name}&quot;)
+print(f&quot;지역: {region}&quot;)
+print(f&quot;선호 타입: {fav_type}&quot;)
+</code></pre>
+<p><strong>What does <code>.strip()</code> do to the user's answer, and why do we add it to every <code>input(...)</code> line?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Look at the line <code>if trainer_name == "":</code>. When is this True, and what does the program do when it is?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>This card has three fields. Name them, and name the variable that holds each one.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>The first print line has <code>\n</code> in it. What does <code>\n</code> do to the trainer card on screen?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>If the user types nothing for all three questions, what does the finished trainer card show?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>5 · Explain Your Lesson Code 🎥</h2>
+<p>In today's live lesson you wrote your own trainer card. Now explain <strong>the code you wrote</strong> in a short phone video. You may show it running. Teach it like the viewer has never seen it, and use these key words: <strong>variable</strong>, <strong>strip</strong>, <strong>default</strong>, <strong>field</strong>, <strong>trainer card</strong>.</p>
+<blockquote>
+<ol>
+<li>Show your code and point to one <code>input(...).strip()</code> line — say what the <strong>variable</strong> holds and what <code>.strip()</code> does.</li>
+<li>Point to one <code>if ... == "":</code> block and explain the <strong>default</strong> for that <strong>field</strong>.</li>
+<li>Run your program once and leave a field blank to show the default working.</li>
+<li>Show your finished <strong>trainer card</strong> on screen and read it out.</li>
+</ol>
+</blockquote>
+<p><strong>Write what you will say in your video. Plan it here before you record.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.</p>
+<div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>
+</div></body></html>

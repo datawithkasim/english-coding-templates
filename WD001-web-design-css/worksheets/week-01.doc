@@ -1,0 +1,148 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head><meta charset='utf-8'>
+<title>🏗️ WD001 Week 1 — English Worksheet</title>
+<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
+<style>
+@page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
+div.WordSection1 { page: WordSection1; }
+body { font-family: "Segoe UI", Arial, sans-serif; font-size: 11.5pt; color: #1a1a2e; line-height: 1.5; }
+h1 { font-size: 21pt; color: #6b4ee6; margin: 4px 0 6px; }
+h2 { font-size: 15pt; color: #6b4ee6; border-top: 1px solid #dddddd; padding-top: 8px; margin: 18px 0 10px; }
+h3, h4 { font-size: 11.5pt; margin: 12px 0 6px; }
+p { margin: 7px 0; }
+.brand { font-size: 10.5pt; font-weight: bold; color: #ff7849; letter-spacing: .06em;
+         border-bottom: 2px solid #ff7849; padding-bottom: 6px; margin-bottom: 14px; }
+table { border-collapse: collapse; margin: 10px 0; }
+th, td { border: 1px solid #c8c8c8; padding: 4px 9px; text-align: center; }
+th { background: #f3eefc; color: #6b4ee6; font-weight: bold; }
+pre { font-family: Consolas, "Courier New", monospace; font-size: 10.5pt; background: #f4f4f5;
+      border: 1px solid #dddddd; padding: 8px 10px; white-space: pre-wrap; }
+pre code { background: transparent; color: #1a1a2e; }
+code { font-family: Consolas, "Courier New", monospace; background: #fff1e8; color: #d6531f; padding: 0 3px; }
+blockquote { border-left: 3px solid #ff7849; background: #fff6ef; padding: 8px 12px;
+             color: #6a3a1c; margin: 9px 0; }
+ul, ol { margin: 7px 0 7px 26px; }
+p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
+.footer { color: #999999; font-size: 8.5pt; text-align: center; margin-top: 18px;
+          border-top: 1px solid #eeeeee; padding-top: 6px; }
+.footer b { color: #ff7849; }
+</style></head>
+<body><div class=WordSection1>
+<div class="brand">📚 ENGLISH CODING · 영어코딩</div>
+<h1>🏗️ WD001 Week 1 — English Worksheet</h1>
+<p><strong>Topic:</strong> HTML Basics — The Skeleton of a Page · <strong>Course:</strong> Web Design: CSS · <strong>Time:</strong> about 45 minutes</p>
+<p>This week you build the <strong>skeleton</strong> of a web page with HTML. Every page is made of <strong>tags</strong>. Most tags come in pairs — an <strong>opening tag</strong> like <code>&lt;p&gt;</code> and a <strong>closing tag</strong> like <code>&lt;/p&gt;</code> — and your text goes in between.</p>
+<hr />
+<h2>1 · Predict 🔮</h2>
+<p>Read each bit of HTML. Before you imagine the browser drawing it, write what you think will show up on the screen.</p>
+<pre><code class="language-html">&lt;h1&gt;My Pets&lt;/h1&gt;
+&lt;p&gt;I have a cat named Coco.&lt;/p&gt;
+</code></pre>
+<p><strong>What appears on the page? Which line looks bigger, and why?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-html">&lt;p&gt;I love pizza
+&lt;p&gt;I love games
+</code></pre>
+<p><strong>These paragraphs are missing their closing <code>&lt;/p&gt;</code> tags. Do you think the browser still shows the text? What might look messy?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-html">&lt;body&gt;
+  &lt;h1&gt;Welcome&lt;/h1&gt;
+  &lt;img src=&quot;dog.jpg&quot; alt=&quot;my dog&quot;&gt;
+  &lt;p&gt;This is my dog.&lt;/p&gt;
+&lt;/body&gt;
+</code></pre>
+<p><strong>Describe in plain English what shows up, from top to bottom.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-html">&lt;h1&gt;Hello&lt;/h1&gt;
+</code></pre>
+<p><strong><code>&lt;img&gt;</code> does not need a closing tag, but <code>&lt;h1&gt;</code> does. What do you think happens if you forget <code>&lt;/h1&gt;</code>? Write your guess, then test it later.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>2 · Spot the Bug 🐛</h2>
+<p>Each bit of HTML below was meant to do something, but it is broken. Read what it is <strong>supposed</strong> to do, then rewrite it so it works. After that, explain why the original was wrong and why your fix works.</p>
+<p><strong>Bug A</strong> — This is supposed to be one big heading that says <strong>About Me</strong>.</p>
+<pre><code class="language-html">&lt;h1&gt;About Me&lt;/p&gt;
+</code></pre>
+<p><strong>Hint:</strong> the opening and closing tags should match.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug B</strong> — This is supposed to show a photo named <code>me.jpg</code>.</p>
+<pre><code class="language-html">&lt;img scr=&quot;me.jpg&quot;&gt;
+</code></pre>
+<p><strong>Hint:</strong> read the attribute name out loud, letter by letter.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug C</strong> — This is supposed to be a heading <strong>and then</strong> a paragraph. Right now everything ends up inside the heading.</p>
+<pre><code class="language-html">&lt;h1&gt;My Hobbies
+I like drawing and coding.&lt;/h1&gt;
+</code></pre>
+<p><strong>Hint:</strong> the paragraph needs its own tags.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>3 · Build Your About Me Page 📸</h2>
+<p>Open Replit and start a new HTML project. Build an <strong>About Me</strong> page with these parts:</p>
+<ol>
+<li>a big heading with your name (<code>&lt;h1&gt;</code>),</li>
+<li>a paragraph with <strong>3 things you like</strong> (<code>&lt;p&gt;</code>),</li>
+<li>one photo of you or something you like (<code>&lt;img&gt;</code>).</li>
+</ol>
+<p>You can build it like this and change the words to be about you:</p>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;About Me&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Hi, I'm ___&lt;/h1&gt;
+  &lt;p&gt;I like ___, ___, and ___.&lt;/p&gt;
+  &lt;img src=&quot;my-photo.jpg&quot; alt=&quot;my photo&quot;&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>When you finish, send a <strong>photo or video</strong> of your page (or a picture of your code), then explain what you did. Use these sentence starters — write 4 to 6 sentences total.</p>
+<blockquote>
+<p>First, I made the page with …</p>
+<p>My <code>&lt;h1&gt;</code> says …</p>
+<p>The three things I put in my paragraph were …</p>
+<p>I added a photo by …</p>
+<p>One tricky moment was when …</p>
+<p>If I had more time, I would …</p>
+</blockquote>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>4 · Record Your Walkthrough 🎥</h2>
+<p>Now take a video on your phone (or a parent's phone) while you show your page. Talk through it like you are teaching someone who has never seen HTML. Try to use these words: <strong>tag</strong>, <strong>heading</strong>, <strong>paragraph</strong>, <strong>image</strong>, <strong>browser</strong>.</p>
+<blockquote>
+<ol>
+<li>Show your finished page in the browser.</li>
+<li>Point to your <code>&lt;h1&gt;</code> and read it out loud.</li>
+<li>Point to your <code>&lt;p&gt;</code> and say what is inside.</li>
+<li>Show one tag you got wrong at first and how you fixed it.</li>
+</ol>
+</blockquote>
+<p><strong>Write what you will say in your video.</strong> Use the space below to plan it before you record — you can read from it while filming.</p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.</p>
+<div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>
+</div></body></html>

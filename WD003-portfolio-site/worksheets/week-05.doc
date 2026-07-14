@@ -1,0 +1,148 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head><meta charset='utf-8'>
+<title>🖼️ WD003 Week 5 — English Worksheet</title>
+<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
+<style>
+@page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
+div.WordSection1 { page: WordSection1; }
+body { font-family: "Segoe UI", Arial, sans-serif; font-size: 11.5pt; color: #1a1a2e; line-height: 1.5; }
+h1 { font-size: 21pt; color: #6b4ee6; margin: 4px 0 6px; }
+h2 { font-size: 15pt; color: #6b4ee6; border-top: 1px solid #dddddd; padding-top: 8px; margin: 18px 0 10px; }
+h3, h4 { font-size: 11.5pt; margin: 12px 0 6px; }
+p { margin: 7px 0; }
+.brand { font-size: 10.5pt; font-weight: bold; color: #ff7849; letter-spacing: .06em;
+         border-bottom: 2px solid #ff7849; padding-bottom: 6px; margin-bottom: 14px; }
+table { border-collapse: collapse; margin: 10px 0; }
+th, td { border: 1px solid #c8c8c8; padding: 4px 9px; text-align: center; }
+th { background: #f3eefc; color: #6b4ee6; font-weight: bold; }
+pre { font-family: Consolas, "Courier New", monospace; font-size: 10.5pt; background: #f4f4f5;
+      border: 1px solid #dddddd; padding: 8px 10px; white-space: pre-wrap; }
+pre code { background: transparent; color: #1a1a2e; }
+code { font-family: Consolas, "Courier New", monospace; background: #fff1e8; color: #d6531f; padding: 0 3px; }
+blockquote { border-left: 3px solid #ff7849; background: #fff6ef; padding: 8px 12px;
+             color: #6a3a1c; margin: 9px 0; }
+ul, ol { margin: 7px 0 7px 26px; }
+p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
+.footer { color: #999999; font-size: 8.5pt; text-align: center; margin-top: 18px;
+          border-top: 1px solid #eeeeee; padding-top: 6px; }
+.footer b { color: #ff7849; }
+</style></head>
+<body><div class=WordSection1>
+<div class="brand">📚 ENGLISH CODING · 영어코딩</div>
+<h1>🖼️ WD003 Week 5 — English Worksheet</h1>
+<p><strong>Topic:</strong> Projects Gallery — Show What You Made · <strong>Course:</strong> Portfolio Site · <strong>Time:</strong> about 45 minutes</p>
+<p>This week you build your <strong>Projects gallery</strong>. Each project becomes a <strong>card</strong> with an image, a title, and a short description. You line the cards up with <strong>CSS Grid</strong>, and add a small <strong>lift-up animation</strong> when you hover over a card.</p>
+<blockquote>
+<p>Grid lays items out in rows and columns. With <code>grid-template-columns: repeat(auto-fill, minmax(280px, 1fr))</code>, the browser fits as many cards across as it can, then wraps the rest to the next row.</p>
+</blockquote>
+<hr />
+<h2>1 · Predict 🔮</h2>
+<p>Read each block of code. Before you imagine the page, write what you think will happen.</p>
+<pre><code class="language-css">.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+}
+</code></pre>
+<p><strong>There are 4 cards inside <code>.project-grid</code>, and the screen is wide enough for 3 across. How do the cards arrange themselves?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-css">.project-card {
+  transition: transform 0.2s;
+}
+.project-card:hover {
+  transform: translateY(-4px);
+}
+</code></pre>
+<p><strong>What happens when the visitor's mouse moves over a card? What does <code>transition</code> add to it?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-html">&lt;div class=&quot;project-card&quot;&gt;
+  &lt;img src=&quot;quiz.png&quot; alt=&quot;Quiz&quot;&gt;
+  &lt;h3&gt;Quiz App&lt;/h3&gt;
+  &lt;p&gt;A quiz built in JavaScript&lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+<p><strong>Describe what a visitor sees inside this one card, top to bottom.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>2 · Spot the Bug 🐛</h2>
+<p>Each block of code below was meant to do something, but it is broken. Read what the code is <strong>supposed</strong> to do, then rewrite it so it works. After that, explain why the original was wrong and why your fix works.</p>
+<p><strong>Bug A</strong> — The cards are supposed to lay out in a grid, side by side. Right now they are stacked in one tall column.</p>
+<pre><code class="language-css">.project-grid {
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+}
+</code></pre>
+<p><strong>Hint:</strong> one line is missing that turns this element into a grid in the first place.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug B</strong> — The hover lift is supposed to be smooth, but right now the card <em>snaps</em> up instantly with no animation.</p>
+<pre><code class="language-css">.project-card:hover {
+  transform: translateY(-4px);
+}
+</code></pre>
+<p><strong>Hint:</strong> the smoothness comes from a property on the card itself, not the hover.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug C</strong> — Each card is supposed to show an image, a title, and a description. This card is missing its <code>alt</code> text and its description, and the image has no source.</p>
+<pre><code class="language-html">&lt;div class=&quot;project-card&quot;&gt;
+  &lt;img&gt;
+  &lt;h3&gt;My Game&lt;/h3&gt;
+&lt;/div&gt;
+</code></pre>
+<p><strong>Hint:</strong> an <code>&lt;img&gt;</code> needs a <code>src</code> and an <code>alt</code>. Add the missing description too.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why does an image need <code>alt</code> text? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>3 · Build Your Projects Gallery 📸</h2>
+<p>Open your site and fill in the Projects section.</p>
+<ol>
+<li>Build <strong>three or more</strong> project cards. Use projects you have made before (a Minecraft build, a quiz app, a game) — or anything you are proud of.</li>
+<li>Each card needs an <strong>image</strong>, a <strong>title</strong> (<code>&lt;h3&gt;</code>), and a one-line <strong>description</strong>.</li>
+<li>Lay the cards out with <strong>CSS Grid</strong> so they sit side by side and wrap on narrow screens.</li>
+<li>Add a <strong>hover lift</strong> so each card rises a little when you point at it.</li>
+</ol>
+<p>If you do not have real screenshots, an emoji or a placeholder image is fine. When you finish, send a <strong>photo or video</strong> of your gallery (try hovering a card on camera!), then explain what you did. Use these sentence starters — write 4 to 6 sentences total.</p>
+<blockquote>
+<p>The projects I put in my gallery are …</p>
+<p>I used CSS Grid to …</p>
+<p>When I hover over a card, it …</p>
+<p>The hardest part was …</p>
+<p>To fix it, I …</p>
+<p>If I had more time, I would add …</p>
+</blockquote>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>4 · Record Your Walkthrough 🎥</h2>
+<p>Now take a video on your phone (or a parent's phone) while you show your gallery. Talk through it like you are teaching someone who has never used Grid. Try to use these words: <strong>card</strong>, <strong>grid</strong>, <strong>column</strong>, <strong>hover</strong>, <strong>animation</strong>.</p>
+<blockquote>
+<ol>
+<li>Show your gallery with all the cards lined up.</li>
+<li>Hover over a card and show it lift up.</li>
+<li>Make the window narrow and show the cards re-arrange.</li>
+<li>Read one of your card's HTML out loud and name its parts.</li>
+</ol>
+</blockquote>
+<p><strong>Write what you will say in your video.</strong> Use the space below to plan it before you record — you can read from it while filming.</p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.</p>
+<div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>
+</div></body></html>

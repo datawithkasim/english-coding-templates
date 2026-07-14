@@ -1,0 +1,174 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head><meta charset='utf-8'>
+<title>⚡ WD002 Week 7 — English Worksheet</title>
+<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
+<style>
+@page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
+div.WordSection1 { page: WordSection1; }
+body { font-family: "Segoe UI", Arial, sans-serif; font-size: 11.5pt; color: #1a1a2e; line-height: 1.5; }
+h1 { font-size: 21pt; color: #6b4ee6; margin: 4px 0 6px; }
+h2 { font-size: 15pt; color: #6b4ee6; border-top: 1px solid #dddddd; padding-top: 8px; margin: 18px 0 10px; }
+h3, h4 { font-size: 11.5pt; margin: 12px 0 6px; }
+p { margin: 7px 0; }
+.brand { font-size: 10.5pt; font-weight: bold; color: #ff7849; letter-spacing: .06em;
+         border-bottom: 2px solid #ff7849; padding-bottom: 6px; margin-bottom: 14px; }
+table { border-collapse: collapse; margin: 10px 0; }
+th, td { border: 1px solid #c8c8c8; padding: 4px 9px; text-align: center; }
+th { background: #f3eefc; color: #6b4ee6; font-weight: bold; }
+pre { font-family: Consolas, "Courier New", monospace; font-size: 10.5pt; background: #f4f4f5;
+      border: 1px solid #dddddd; padding: 8px 10px; white-space: pre-wrap; }
+pre code { background: transparent; color: #1a1a2e; }
+code { font-family: Consolas, "Courier New", monospace; background: #fff1e8; color: #d6531f; padding: 0 3px; }
+blockquote { border-left: 3px solid #ff7849; background: #fff6ef; padding: 8px 12px;
+             color: #6a3a1c; margin: 9px 0; }
+ul, ol { margin: 7px 0 7px 26px; }
+p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
+.footer { color: #999999; font-size: 8.5pt; text-align: center; margin-top: 18px;
+          border-top: 1px solid #eeeeee; padding-top: 6px; }
+.footer b { color: #ff7849; }
+</style></head>
+<body><div class=WordSection1>
+<div class="brand">📚 ENGLISH CODING · 영어코딩</div>
+<h1>⚡ WD002 Week 7 — English Worksheet</h1>
+<p><strong>Topic:</strong> Functions — Organizing Your Code · <strong>Course:</strong> Web Dev Basics: JavaScript · <strong>Time:</strong> about 45 minutes</p>
+<p>This week you wrap code into reusable chunks. A <em>function</em> is a named block you can run again and again. <strong>Parameters</strong> are the values you hand it; <strong><code>return</code></strong> is the answer it hands back. You will build a calculator that shares one tidy set of functions.</p>
+<hr />
+<h2>1 · Predict 🔮</h2>
+<p>Read each piece of code. Before you run it, write what you think will happen.</p>
+<pre><code class="language-html">&lt;script&gt;
+  function add(a, b) {
+    return a + b;
+  }
+  console.log(add(2, 3));
+&lt;/script&gt;
+</code></pre>
+<p><strong>What number prints?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-html">&lt;script&gt;
+  function greet(name) {
+    return &quot;Hi, &quot; + name + &quot;!&quot;;
+  }
+  console.log(greet(&quot;Dami&quot;));
+&lt;/script&gt;
+</code></pre>
+<p><strong>What sentence prints?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-html">&lt;script&gt;
+  function double(n) {
+    return n * 2;
+  }
+  console.log(double(5));
+  console.log(double(10));
+&lt;/script&gt;
+</code></pre>
+<p><strong>The same function is called twice with different inputs. What two numbers print?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-html">&lt;script&gt;
+  function add(a, b) {
+    let total = a + b;
+  }
+  console.log(add(4, 4));
+&lt;/script&gt;
+</code></pre>
+<p><strong>This function has no <code>return</code>. What does <code>console.log</code> show? (Hint: a function that returns nothing gives back <code>undefined</code>.)</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>2 · Spot the Bug 🐛</h2>
+<p>Each block was meant to do something, but it is broken. Read what it is <strong>supposed</strong> to do, then rewrite it so it works. After that, explain why the original was wrong and why your fix works.</p>
+<p><strong>Bug A</strong> — <code>add(3, 4)</code> should give back <code>7</code>. Right now it prints <code>undefined</code>.</p>
+<pre><code class="language-html">&lt;script&gt;
+  function add(a, b) {
+    a + b;
+  }
+  console.log(add(3, 4));
+&lt;/script&gt;
+</code></pre>
+<p><strong>Hint:</strong> the function adds the numbers but never hands the answer back. One keyword is missing.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug B</strong> — This should multiply two numbers. Right now it always gives the <strong>same</strong> answer no matter what you pass in.</p>
+<pre><code class="language-html">&lt;script&gt;
+  let a = 2;
+  let b = 3;
+  function multiply(a, b) {
+    return 2 * 3;
+  }
+  console.log(multiply(5, 5));
+&lt;/script&gt;
+</code></pre>
+<p><strong>Hint:</strong> the function ignores its parameters and uses fixed numbers instead. Use <code>a</code> and <code>b</code>.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug C</strong> — Clicking should show the sum on the page. Right now you get an error because the function name does not match.</p>
+<pre><code class="language-html">&lt;input id=&quot;n1&quot; type=&quot;number&quot;&gt;
+&lt;input id=&quot;n2&quot; type=&quot;number&quot;&gt;
+&lt;button onclick=&quot;showSum()&quot;&gt;Add&lt;/button&gt;
+&lt;p id=&quot;out&quot;&gt;&lt;/p&gt;
+
+&lt;script&gt;
+  function showsum() {
+    let a = Number(document.querySelector(&quot;#n1&quot;).value);
+    let b = Number(document.querySelector(&quot;#n2&quot;).value);
+    document.querySelector(&quot;#out&quot;).textContent = a + b;
+  }
+&lt;/script&gt;
+</code></pre>
+<p><strong>Hint:</strong> the button calls one name; the function is spelled with different capitals. Match them exactly.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>3 · Make It Yours 📸</h2>
+<p>Build a <strong>calculator</strong> page with three functions: add, subtract, and multiply.</p>
+<ol>
+<li>Make two input boxes for numbers.</li>
+<li>Write three functions — <code>add(a, b)</code>, <code>subtract(a, b)</code>, <code>multiply(a, b)</code> — each one <code>return</code>s its answer.</li>
+<li>Add three buttons. Each button reads both inputs (as <code>Number</code>), calls the right function, and shows the result on the page.</li>
+<li>Notice how all three buttons share the same way of reading inputs — that is what functions are for.</li>
+</ol>
+<p><strong>Stretch:</strong> add a divide button, and show a friendly message if someone tries to divide by 0.</p>
+<p>When you finish, come back here. Send a <strong>photo or video</strong> of all three operations working, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.</p>
+<blockquote>
+<p>First, I wrote a function called …</p>
+<p>Each function takes parameters, which are …</p>
+<p>I used <code>return</code> to …</p>
+<p>The three buttons share code because …</p>
+<p>One tricky moment was when …</p>
+<p>If I had more time, I would …</p>
+</blockquote>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>4 · Record Your Walkthrough 🎥</h2>
+<p>Take a video on your phone (or a parent's phone) while your calculator runs. Talk through it like you are teaching someone who has never seen it. Try to use these words: <strong>function</strong>, <strong>parameter</strong>, <strong>return</strong>, <strong>reuse</strong>, <strong>calculator</strong>.</p>
+<blockquote>
+<ol>
+<li>Type two numbers and click each operation.</li>
+<li>Read one function out loud and point to its parameters.</li>
+<li>Show where <code>return</code> hands the answer back.</li>
+<li>Explain why functions are tidier than repeating the same code.</li>
+</ol>
+</blockquote>
+<p><strong>Write what you will say in your video.</strong> Plan it here before you record — you can read from it while filming.</p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.</p>
+<div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>
+</div></body></html>

@@ -1,0 +1,139 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head><meta charset='utf-8'>
+<title>📋 RS001 Week 3 — English Worksheet</title>
+<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
+<style>
+@page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
+div.WordSection1 { page: WordSection1; }
+body { font-family: "Segoe UI", Arial, sans-serif; font-size: 11.5pt; color: #1a1a2e; line-height: 1.5; }
+h1 { font-size: 21pt; color: #6b4ee6; margin: 4px 0 6px; }
+h2 { font-size: 15pt; color: #6b4ee6; border-top: 1px solid #dddddd; padding-top: 8px; margin: 18px 0 10px; }
+h3, h4 { font-size: 11.5pt; margin: 12px 0 6px; }
+p { margin: 7px 0; }
+.brand { font-size: 10.5pt; font-weight: bold; color: #ff7849; letter-spacing: .06em;
+         border-bottom: 2px solid #ff7849; padding-bottom: 6px; margin-bottom: 14px; }
+table { border-collapse: collapse; margin: 10px 0; }
+th, td { border: 1px solid #c8c8c8; padding: 4px 9px; text-align: center; }
+th { background: #f3eefc; color: #6b4ee6; font-weight: bold; }
+pre { font-family: Consolas, "Courier New", monospace; font-size: 10.5pt; background: #f4f4f5;
+      border: 1px solid #dddddd; padding: 8px 10px; white-space: pre-wrap; }
+pre code { background: transparent; color: #1a1a2e; }
+code { font-family: Consolas, "Courier New", monospace; background: #fff1e8; color: #d6531f; padding: 0 3px; }
+blockquote { border-left: 3px solid #ff7849; background: #fff6ef; padding: 8px 12px;
+             color: #6a3a1c; margin: 9px 0; }
+ul, ol { margin: 7px 0 7px 26px; }
+p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
+.footer { color: #999999; font-size: 8.5pt; text-align: center; margin-top: 18px;
+          border-top: 1px solid #eeeeee; padding-top: 6px; }
+.footer b { color: #ff7849; }
+</style></head>
+<body><div class=WordSection1>
+<div class="brand">📚 ENGLISH CODING · 영어코딩</div>
+<h1>📋 RS001 Week 3 — English Worksheet</h1>
+<p><strong>Topic:</strong> Lists and Choices · <strong>Course:</strong> Text Adventure (Python) · <strong>Time:</strong> about 45 minutes</p>
+<p>This week you think about the <strong>list</strong> — one box that holds many values. You pull a value out by its <strong>index</strong>: the first item is <code>[0]</code>, the second is <code>[1]</code>, the third is <code>[2]</code>. On this sheet you read code, predict it, fix it on paper, and explain the code you wrote in today's lesson.</p>
+<blockquote>
+<p>🧠 Words to know: <strong>list</strong>, <strong>index</strong>, <strong>first</strong>, <strong>inventory</strong>, <strong>value</strong></p>
+</blockquote>
+<pre><code class="language-python">weapons = [&quot;sword&quot;, &quot;bow&quot;, &quot;wand&quot;]
+game.say(f&quot;You can choose: {weapons[0]}, {weapons[1]}, {weapons[2]}&quot;)
+</code></pre>
+<hr />
+<h2>1 · Predict 🔮</h2>
+<p>Read each piece of code. Run it in your head — do not type it. Write what you think the screen will show.</p>
+<pre><code class="language-python">paths = [&quot;left&quot;, &quot;middle&quot;, &quot;right&quot;]
+game.say(paths[1])
+</code></pre>
+<p><strong>Which word appears? (Careful — counting starts at 0.)</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">enemies = [&quot;goblin&quot;, &quot;orc&quot;, &quot;dragon&quot;]
+enemy_hp = [10, 25, 100]
+game.say(f&quot;{enemies[2]} has {enemy_hp[2]} HP&quot;)
+</code></pre>
+<p><strong>The two lists share the same index. What sentence is printed?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">items = [&quot;map&quot;, &quot;key&quot;, &quot;torch&quot;]
+game.say(items[3])
+</code></pre>
+<p><strong>The list has 3 items but the code asks for <code>[3]</code>. What goes wrong?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>2 · Spot the Bug 🐛</h2>
+<p>Each block was meant to do something, but it is broken. Read what it is <strong>supposed</strong> to do, fix it on paper, then explain why the original was wrong.</p>
+<p><strong>Bug A</strong> — This should print the <strong>first</strong> weapon in the list. Right now it prints the second one.</p>
+<pre><code class="language-python">weapons = [&quot;sword&quot;, &quot;bow&quot;, &quot;wand&quot;]
+game.say(f&quot;Your first weapon: {weapons[1]}&quot;)
+</code></pre>
+<p><strong>Hint:</strong> the first item is not <code>[1]</code>.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug B</strong> — This should show all three paths as a numbered menu. Right now every line shows the <strong>same</strong> path.</p>
+<pre><code class="language-python">paths = [&quot;cave&quot;, &quot;river&quot;, &quot;field&quot;]
+game.say(f&quot;1: {paths[0]}&quot;)
+game.say(f&quot;2: {paths[0]}&quot;)
+game.say(f&quot;3: {paths[0]}&quot;)
+</code></pre>
+<p><strong>Hint:</strong> lines 2 and 3 should use a different index.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug C</strong> — The enemy name and its HP should belong to the <strong>same</strong> enemy. Right now the name is the goblin but the HP is the dragon's.</p>
+<pre><code class="language-python">enemy_names = [&quot;goblin&quot;, &quot;orc&quot;, &quot;dragon&quot;]
+enemy_hp = [10, 25, 100]
+game.say(f&quot;A {enemy_names[0]} appears! HP: {enemy_hp[2]}&quot;)
+</code></pre>
+<p><strong>Hint:</strong> the same enemy lives at the same index in both lists.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>3 · Explain the Code 📖</h2>
+<p>Here is a working inventory. The hero starts with a <strong>list</strong> of items, and the code shows them on screen.</p>
+<pre><code class="language-python">inventory = [&quot;map&quot;, &quot;key&quot;, &quot;torch&quot;]
+game.say(f&quot;You carry: {inventory[0]}, {inventory[1]}, {inventory[2]}&quot;)
+game.say(f&quot;The first item in your inventory is the {inventory[0]}.&quot;)
+</code></pre>
+<p><strong>What is the name of the list, and what three values are inside it?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong><code>inventory[0]</code> gives which item? Why that one and not the second?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Which index would you use to show the <code>torch</code>?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>The last line says "the first item." What does the word <em>index</em> mean in your own words?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>4 · Explain Your Lesson Code 🎥</h2>
+<p>Today in your lesson you wrote your own inventory list. Make a short video on your phone (or a parent's phone) that explains the code <strong>you</strong> wrote. You may show it running. Teach it like the viewer has never coded. Try to use these words: <strong>list</strong>, <strong>index</strong>, <strong>first</strong>, <strong>inventory</strong>, <strong>value</strong>.</p>
+<blockquote>
+<ol>
+<li>Point to the list you wrote and read the items out loud.</li>
+<li>Pick one item and say its index.</li>
+<li>Explain why the first item is index 0, not 1.</li>
+<li>Say one thing that was tricky and how you worked it out.</li>
+</ol>
+</blockquote>
+<p><strong>Write what you will say in your video. Plan it here before you record.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.</p>
+<div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>
+</div></body></html>

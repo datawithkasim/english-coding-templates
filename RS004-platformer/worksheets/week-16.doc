@@ -1,0 +1,178 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head><meta charset='utf-8'>
+<title>🏆 RS004 Week 16 — English Worksheet</title>
+<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
+<style>
+@page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
+div.WordSection1 { page: WordSection1; }
+body { font-family: "Segoe UI", Arial, sans-serif; font-size: 11.5pt; color: #1a1a2e; line-height: 1.5; }
+h1 { font-size: 21pt; color: #6b4ee6; margin: 4px 0 6px; }
+h2 { font-size: 15pt; color: #6b4ee6; border-top: 1px solid #dddddd; padding-top: 8px; margin: 18px 0 10px; }
+h3, h4 { font-size: 11.5pt; margin: 12px 0 6px; }
+p { margin: 7px 0; }
+.brand { font-size: 10.5pt; font-weight: bold; color: #ff7849; letter-spacing: .06em;
+         border-bottom: 2px solid #ff7849; padding-bottom: 6px; margin-bottom: 14px; }
+table { border-collapse: collapse; margin: 10px 0; }
+th, td { border: 1px solid #c8c8c8; padding: 4px 9px; text-align: center; }
+th { background: #f3eefc; color: #6b4ee6; font-weight: bold; }
+pre { font-family: Consolas, "Courier New", monospace; font-size: 10.5pt; background: #f4f4f5;
+      border: 1px solid #dddddd; padding: 8px 10px; white-space: pre-wrap; }
+pre code { background: transparent; color: #1a1a2e; }
+code { font-family: Consolas, "Courier New", monospace; background: #fff1e8; color: #d6531f; padding: 0 3px; }
+blockquote { border-left: 3px solid #ff7849; background: #fff6ef; padding: 8px 12px;
+             color: #6a3a1c; margin: 9px 0; }
+ul, ol { margin: 7px 0 7px 26px; }
+p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
+.footer { color: #999999; font-size: 8.5pt; text-align: center; margin-top: 18px;
+          border-top: 1px solid #eeeeee; padding-top: 6px; }
+.footer b { color: #ff7849; }
+</style></head>
+<body><div class=WordSection1>
+<div class="brand">📚 ENGLISH CODING · 영어코딩</div>
+<h1>🏆 RS004 Week 16 — English Worksheet</h1>
+<p><strong>Topic:</strong> Title · Level Select · Sound · Showcase (Final) · <strong>Course:</strong> Platformer Game · <strong>Time:</strong> about 45 minutes</p>
+<p>This is the final week. You built a finished game over 16 weeks: a <strong>title screen</strong>, a <strong>level select</strong> menu, and <strong>sound</strong> for jumps and coins, all running on a <strong>game state machine</strong> that moves between title → level select → playing → game over / victory. This worksheet is about reading and explaining that code in plain English, then presenting your finished game.</p>
+<blockquote>
+<p>Keep these words handy: <strong>state machine</strong>, <strong>title screen</strong>, <strong>level select</strong>, <strong>sound</strong>, <strong>showcase</strong>.</p>
+</blockquote>
+<hr />
+<h2>1 · Predict 🔮</h2>
+<p>Read each snippet. Write what you think it does.</p>
+<pre><code class="language-python">current_state = &quot;title&quot;
+# &quot;title&quot; → &quot;level_select&quot; → &quot;playing&quot; → &quot;gameover&quot; / &quot;victory&quot; → &quot;title&quot;
+</code></pre>
+<p><strong>The game starts in <code>"title"</code>. List one path it can take through the states to a win.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">if current_state == &quot;title&quot;:
+    if event.key == pygame.K_SPACE:
+        current_state = &quot;playing&quot;
+    elif event.key == pygame.K_l:
+        current_state = &quot;level_select&quot;
+</code></pre>
+<p><strong>On the title screen the player presses L. What screen comes next?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">if event.key == pygame.K_SPACE and on_ground:
+    velocity_y = JUMP_STRENGTH
+    jump_sound.play()
+</code></pre>
+<p><strong>When does the jump sound play? Could it play in the air? Why or why not?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>2 · Map the States 🗺️</h2>
+<p>Write out the arrows showing which state leads to which. Fill in the blanks.</p>
+<pre><code>title  --space--&gt;  ________
+title  --L------&gt;  ________
+level_select  --Enter--&gt;  ________
+playing  --hit enemy--&gt;  ________
+playing  --clear last level--&gt;  ________
+gameover  --R--&gt;  ________
+</code></pre>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>3 · Spot the Bug 🐛</h2>
+<p>Each snippet is broken. On paper, rewrite it so it works, then explain why the original was wrong.</p>
+<p><strong>Bug A</strong> — Pressing space on the title should start the game. Right now space does nothing because the key is only checked while playing.</p>
+<pre><code class="language-python">if current_state == &quot;playing&quot;:
+    if event.key == pygame.K_SPACE:
+        velocity_y = JUMP_STRENGTH
+</code></pre>
+<p><strong>Hint:</strong> the title screen also needs to react to space. Handle each state's keys.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug B</strong> — In the level select menu, ↑/↓ should move the highlight and wrap around the ends. Right now going past the last item crashes with an index error.</p>
+<pre><code class="language-python">if event.key == pygame.K_DOWN:
+    selected_level = selected_level + 1
+</code></pre>
+<p><strong>Hint:</strong> use <code>% len(LEVELS)</code> so the choice wraps back to the start.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug C</strong> — A coin pickup should play a sound, but the game is silent even though <code>coin_sound</code> exists.</p>
+<pre><code class="language-python">for coin in coins[:]:
+    if player.colliderect(coin):
+        coins.remove(coin)
+        score += 1
+</code></pre>
+<p><strong>Hint:</strong> the sound is created but never played on pickup.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>4 · Explain the Code 📖</h2>
+<p>This is the heart of your finished game — the state machine that decides what screen the player sees and what each key does.</p>
+<pre><code class="language-python">current_state = &quot;title&quot;
+
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.KEYDOWN:
+            if current_state == &quot;title&quot;:
+                if event.key == pygame.K_SPACE:
+                    current_state = &quot;playing&quot;
+                elif event.key == pygame.K_l:
+                    current_state = &quot;level_select&quot;
+            elif current_state == &quot;level_select&quot;:
+                if event.key == pygame.K_RETURN:
+                    current_state = &quot;playing&quot;
+            elif current_state == &quot;gameover&quot;:
+                if event.key == pygame.K_r:
+                    current_state = &quot;title&quot;
+
+    if current_state == &quot;title&quot;:
+        draw_title()
+    elif current_state == &quot;level_select&quot;:
+        draw_level_select()
+    elif current_state == &quot;playing&quot;:
+        update_player()
+        if player_died:
+            current_state = &quot;gameover&quot;
+    elif current_state == &quot;gameover&quot;:
+        draw_gameover()
+</code></pre>
+<p><strong>What value does <code>current_state</code> start as, and what screen does the player see first?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>On the title screen, what do the SPACE key and the L key each do?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Inside the <code>"playing"</code> state, what makes the game switch to <code>"gameover"</code>?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>From <code>"gameover"</code>, which key sends the player back, and back to which state?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why does the code check <code>current_state</code> both in the event loop and again lower down when drawing?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>5 · Explain Your Lesson Code 🎥</h2>
+<p>This is your final presentation. Record a phone video of the <strong>finished platformer YOU built across the course</strong>. Show it running from title to victory, then explain the key parts of your own code. Try to use these words: <strong>state machine</strong>, <strong>title</strong>, <strong>level select</strong>, <strong>sound</strong>, <strong>function</strong>.</p>
+<blockquote>
+<ol>
+<li>Show the title screen, then level select, then play through a level with sound.</li>
+<li>Open your code and point to your state machine — explain how it moves between screens.</li>
+<li>Show one function or class you are proud of and explain what it does.</li>
+<li>Reach the victory screen, and say the hardest bug you fixed and how.</li>
+</ol>
+</blockquote>
+<p><strong>Write what you will say in your video. Plan it here before you record.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your finished-game presentation video to teacher on KakaoTalk.</p>
+<div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>
+</div></body></html>

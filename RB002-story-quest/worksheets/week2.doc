@@ -1,0 +1,129 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head><meta charset='utf-8'>
+<title>📜 RB002 Week 2 — English Worksheet</title>
+<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
+<style>
+@page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
+div.WordSection1 { page: WordSection1; }
+body { font-family: "Segoe UI", Arial, sans-serif; font-size: 11.5pt; color: #1a1a2e; line-height: 1.5; }
+h1 { font-size: 21pt; color: #6b4ee6; margin: 4px 0 6px; }
+h2 { font-size: 15pt; color: #6b4ee6; border-top: 1px solid #dddddd; padding-top: 8px; margin: 18px 0 10px; }
+h3, h4 { font-size: 11.5pt; margin: 12px 0 6px; }
+p { margin: 7px 0; }
+.brand { font-size: 10.5pt; font-weight: bold; color: #ff7849; letter-spacing: .06em;
+         border-bottom: 2px solid #ff7849; padding-bottom: 6px; margin-bottom: 14px; }
+table { border-collapse: collapse; margin: 10px 0; }
+th, td { border: 1px solid #c8c8c8; padding: 4px 9px; text-align: center; }
+th { background: #f3eefc; color: #6b4ee6; font-weight: bold; }
+pre { font-family: Consolas, "Courier New", monospace; font-size: 10.5pt; background: #f4f4f5;
+      border: 1px solid #dddddd; padding: 8px 10px; white-space: pre-wrap; }
+pre code { background: transparent; color: #1a1a2e; }
+code { font-family: Consolas, "Courier New", monospace; background: #fff1e8; color: #d6531f; padding: 0 3px; }
+blockquote { border-left: 3px solid #ff7849; background: #fff6ef; padding: 8px 12px;
+             color: #6a3a1c; margin: 9px 0; }
+ul, ol { margin: 7px 0 7px 26px; }
+p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
+.footer { color: #999999; font-size: 8.5pt; text-align: center; margin-top: 18px;
+          border-top: 1px solid #eeeeee; padding-top: 6px; }
+.footer b { color: #ff7849; }
+</style></head>
+<body><div class=WordSection1>
+<div class="brand">📚 ENGLISH CODING · 영어코딩</div>
+<h1>📜 RB002 Week 2 — English Worksheet</h1>
+<p><strong>Topic:</strong> Strings — Talking Code · <strong>Course:</strong> Story Quest · <strong>Time:</strong> about 45 minutes</p>
+<p>This week your code starts <strong>talking</strong>. You join strings together with <code>..</code> to build messages, and you greet every player by name when they join your world.</p>
+<hr />
+<h2>1 · Predict 🔮</h2>
+<p>Read each script. Before you imagine running it in Roblox Studio, write what you think will happen.</p>
+<pre><code class="language-lua">local name = &quot;Mina&quot;
+print(&quot;Welcome, &quot; .. name .. &quot;!&quot;)
+</code></pre>
+<p><strong>What exactly prints in the Output window? Where does the name go?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-lua">local first = &quot;Story&quot;
+local second = &quot;Quest&quot;
+print(first .. second)
+</code></pre>
+<p><strong>Is there a space between the two words? What exactly prints?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-lua">local Players = game:GetService(&quot;Players&quot;)
+
+Players.PlayerAdded:Connect(function(player)
+    print(&quot;Welcome, &quot; .. player.Name .. &quot;!&quot;)
+end)
+</code></pre>
+<p><strong>When does this print — right away, or when something happens? If a player named Jiho joins, what prints?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>2 · Spot the Bug 🐛</h2>
+<p>Each script below was meant to do something, but it is broken. Read what the code is <strong>supposed</strong> to do, then rewrite it so it works. After that, explain why the original was wrong and why your fix works.</p>
+<p><strong>Bug A</strong> — The script should print <code>Hello, Mina!</code>. Right now Studio shows a red error and nothing prints.</p>
+<pre><code class="language-lua">local name = &quot;Mina&quot;
+print(&quot;Hello, &quot; name &quot;!&quot;)
+</code></pre>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug B</strong> — The script should print <code>Welcome to the Dark Forest</code>. Right now two words stick together: <code>Welcome tothe Dark Forest</code>.</p>
+<pre><code class="language-lua">local placeName = &quot;the Dark Forest&quot;
+print(&quot;Welcome to&quot; .. placeName)
+</code></pre>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug C</strong> — The script should greet every player by name when they join. Right now Studio shows an error instead.</p>
+<pre><code class="language-lua">local Players = game:GetService(&quot;Players&quot;)
+
+Players.PlayerAdded:Connect(function(player)
+    print(&quot;Welcome, &quot; + player.Name + &quot;!&quot;)
+end)
+</code></pre>
+<p><strong>Hint:</strong> in Luau, <code>+</code> is only for numbers.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>3 · Tell Me What You Built 📸</h2>
+<p>Now switch to your own quest world. Add a script that greets every player by name when they join, and at least one more message built with <code>..</code>. When you finish, come back here.</p>
+<p>Send a photo or video of your messages in the Output window, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.</p>
+<blockquote>
+<p>My world says … when a player joins.</p>
+<p>I used <code>..</code> to join …</p>
+<p><code>player.Name</code> gives me …</p>
+<p>One tricky moment was when …</p>
+<p>To fix it, I …</p>
+<p>If I had more time, I would …</p>
+</blockquote>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>4 · Record Your Walkthrough 🎥</h2>
+<p>Now take a video on your phone (or a parent's phone) while you test your world. Talk through it like you are teaching someone who has never seen it. Try to use these words: <strong>string</strong>, <strong>join</strong>, <strong>variable</strong>, <strong>player</strong>, <strong>message</strong>.</p>
+<blockquote>
+<ol>
+<li>Show your script, then press Play and show the welcome message in the Output window.</li>
+<li>Read your <code>print</code> line out loud and point at each <code>..</code>.</li>
+<li>Say what <code>player.Name</code> is and where your name appears in the message.</li>
+<li>Say in your own words what <code>..</code> does to two strings.</li>
+</ol>
+</blockquote>
+<p><strong>Write what you will say in your video.</strong> Use the space below to plan it before you record — you can read from it while filming.</p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.</p>
+<div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>
+</div></body></html>

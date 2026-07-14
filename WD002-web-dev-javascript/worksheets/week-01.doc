@@ -1,0 +1,164 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head><meta charset='utf-8'>
+<title>⚡ WD002 Week 1 — English Worksheet</title>
+<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
+<style>
+@page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
+div.WordSection1 { page: WordSection1; }
+body { font-family: "Segoe UI", Arial, sans-serif; font-size: 11.5pt; color: #1a1a2e; line-height: 1.5; }
+h1 { font-size: 21pt; color: #6b4ee6; margin: 4px 0 6px; }
+h2 { font-size: 15pt; color: #6b4ee6; border-top: 1px solid #dddddd; padding-top: 8px; margin: 18px 0 10px; }
+h3, h4 { font-size: 11.5pt; margin: 12px 0 6px; }
+p { margin: 7px 0; }
+.brand { font-size: 10.5pt; font-weight: bold; color: #ff7849; letter-spacing: .06em;
+         border-bottom: 2px solid #ff7849; padding-bottom: 6px; margin-bottom: 14px; }
+table { border-collapse: collapse; margin: 10px 0; }
+th, td { border: 1px solid #c8c8c8; padding: 4px 9px; text-align: center; }
+th { background: #f3eefc; color: #6b4ee6; font-weight: bold; }
+pre { font-family: Consolas, "Courier New", monospace; font-size: 10.5pt; background: #f4f4f5;
+      border: 1px solid #dddddd; padding: 8px 10px; white-space: pre-wrap; }
+pre code { background: transparent; color: #1a1a2e; }
+code { font-family: Consolas, "Courier New", monospace; background: #fff1e8; color: #d6531f; padding: 0 3px; }
+blockquote { border-left: 3px solid #ff7849; background: #fff6ef; padding: 8px 12px;
+             color: #6a3a1c; margin: 9px 0; }
+ul, ol { margin: 7px 0 7px 26px; }
+p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
+.footer { color: #999999; font-size: 8.5pt; text-align: center; margin-top: 18px;
+          border-top: 1px solid #eeeeee; padding-top: 6px; }
+.footer b { color: #ff7849; }
+</style></head>
+<body><div class=WordSection1>
+<div class="brand">📚 ENGLISH CODING · 영어코딩</div>
+<h1>⚡ WD002 Week 1 — English Worksheet</h1>
+<p><strong>Topic:</strong> Meeting JavaScript — <code>console.log</code> and <code>alert</code> · <strong>Course:</strong> Web Dev Basics: JavaScript · <strong>Time:</strong> about 45 minutes</p>
+<p>This week you make a page <strong>move</strong> for the first time. HTML is the structure, CSS is the look, and <strong>JavaScript is the motion</strong>. You will use <code>console.log()</code> to send a message to the console, <code>alert()</code> to pop a message at the user, and a button to run your code when it is clicked.</p>
+<hr />
+<h2>1 · Predict 🔮</h2>
+<p>Read each piece of code. Before you run it, write what you think will happen.</p>
+<pre><code class="language-html">&lt;script&gt;
+  console.log(&quot;Hello console&quot;);
+  alert(&quot;Hello user&quot;);
+&lt;/script&gt;
+</code></pre>
+<p><strong>Two messages appear in two different places. Where does each one show up?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-html">&lt;button onclick=&quot;sayHi()&quot;&gt;Click Me&lt;/button&gt;
+
+&lt;script&gt;
+  function sayHi() {
+    alert(&quot;Hi there!&quot;);
+  }
+&lt;/script&gt;
+</code></pre>
+<p><strong>When does the alert pop up — the moment the page loads, or later? What makes it run?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-html">&lt;script&gt;
+  console.log(&quot;one&quot;);
+  console.log(&quot;two&quot;);
+  console.log(&quot;three&quot;);
+&lt;/script&gt;
+</code></pre>
+<p><strong>In what order do the three messages reach the console?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-html">&lt;button onclick=&quot;greet()&quot;&gt;Greet&lt;/button&gt;
+
+&lt;script&gt;
+  function greet() {
+    console.log(&quot;greeting...&quot;);
+    alert(&quot;Welcome!&quot;);
+  }
+&lt;/script&gt;
+</code></pre>
+<p><strong>The button is clicked once. How many things happen, and in what order?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>2 · Spot the Bug 🐛</h2>
+<p>Each block was meant to do something, but it is broken. Read what it is <strong>supposed</strong> to do, then rewrite it so it works. After that, explain why the original was wrong and why your fix works.</p>
+<p><strong>Bug A</strong> — Clicking the button should pop an alert that says <code>Hello!</code>. Right now nothing happens when you click.</p>
+<pre><code class="language-html">&lt;button onclick=&quot;sayHello()&quot;&gt;Click&lt;/button&gt;
+
+&lt;script&gt;
+  function sayhello() {
+    alert(&quot;Hello!&quot;);
+  }
+&lt;/script&gt;
+</code></pre>
+<p><strong>Hint:</strong> the button calls one name; the function is spelled another way. JavaScript is picky about capital letters.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug B</strong> — This should show a popup that says <code>Good job</code>. Right now the page shows an error.</p>
+<pre><code class="language-html">&lt;script&gt;
+  alert(Good job);
+&lt;/script&gt;
+</code></pre>
+<p><strong>Hint:</strong> text inside <code>alert()</code> needs something around it.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug C</strong> — Clicking should print <code>clicked</code> to the console. Right now the button does nothing.</p>
+<pre><code class="language-html">&lt;button&gt;Press&lt;/button&gt;
+
+&lt;script&gt;
+  function reportClick() {
+    console.log(&quot;clicked&quot;);
+  }
+&lt;/script&gt;
+</code></pre>
+<p><strong>Hint:</strong> the function exists, but nothing ever calls it. How does the button know which function to run?</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>3 · Make It Yours 📸</h2>
+<p>Open a new HTML project on Replit and add a <code>&lt;script&gt;</code> tag. Build a button that pops a greeting <strong>with your own name</strong> in it.</p>
+<ol>
+<li>Make a button on the page.</li>
+<li>Write a function that runs when the button is clicked.</li>
+<li>Inside the function, use <code>alert()</code> to say hello using your name.</li>
+<li>Also send a message to the console with <code>console.log()</code> so you can see your code ran.</li>
+</ol>
+<p><strong>Stretch:</strong> add a second button with a <em>different</em> message — maybe your favorite food, or a fact about you.</p>
+<p>When you finish, come back here. Send a <strong>photo or video</strong> of your page working, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.</p>
+<blockquote>
+<p>First, I added a button that …</p>
+<p>When the button is clicked, my function …</p>
+<p>I used <code>alert()</code> to …</p>
+<p>I used <code>console.log()</code> to …</p>
+<p>One tricky moment was when …</p>
+<p>If I had more time, I would …</p>
+</blockquote>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>4 · Record Your Walkthrough 🎥</h2>
+<p>Take a video on your phone (or a parent's phone) while your page runs. Talk through it like you are teaching someone who has never seen it. Try to use these words: <strong>button</strong>, <strong>function</strong>, <strong>click</strong>, <strong>alert</strong>, <strong>console</strong>.</p>
+<blockquote>
+<ol>
+<li>Show your page before clicking anything.</li>
+<li>Click the button and show the alert popping up.</li>
+<li>Read your function out loud and say what makes it run.</li>
+<li>Open the console and show your <code>console.log</code> message.</li>
+</ol>
+</blockquote>
+<p><strong>Write what you will say in your video.</strong> Plan it here before you record — you can read from it while filming.</p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.</p>
+<div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>
+</div></body></html>

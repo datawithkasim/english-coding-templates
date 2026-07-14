@@ -1,0 +1,198 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head><meta charset='utf-8'>
+<title>🔴 RS002 Week 12 — English Worksheet</title>
+<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
+<style>
+@page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
+div.WordSection1 { page: WordSection1; }
+body { font-family: "Segoe UI", Arial, sans-serif; font-size: 11.5pt; color: #1a1a2e; line-height: 1.5; }
+h1 { font-size: 21pt; color: #6b4ee6; margin: 4px 0 6px; }
+h2 { font-size: 15pt; color: #6b4ee6; border-top: 1px solid #dddddd; padding-top: 8px; margin: 18px 0 10px; }
+h3, h4 { font-size: 11.5pt; margin: 12px 0 6px; }
+p { margin: 7px 0; }
+.brand { font-size: 10.5pt; font-weight: bold; color: #ff7849; letter-spacing: .06em;
+         border-bottom: 2px solid #ff7849; padding-bottom: 6px; margin-bottom: 14px; }
+table { border-collapse: collapse; margin: 10px 0; }
+th, td { border: 1px solid #c8c8c8; padding: 4px 9px; text-align: center; }
+th { background: #f3eefc; color: #6b4ee6; font-weight: bold; }
+pre { font-family: Consolas, "Courier New", monospace; font-size: 10.5pt; background: #f4f4f5;
+      border: 1px solid #dddddd; padding: 8px 10px; white-space: pre-wrap; }
+pre code { background: transparent; color: #1a1a2e; }
+code { font-family: Consolas, "Courier New", monospace; background: #fff1e8; color: #d6531f; padding: 0 3px; }
+blockquote { border-left: 3px solid #ff7849; background: #fff6ef; padding: 8px 12px;
+             color: #6a3a1c; margin: 9px 0; }
+ul, ol { margin: 7px 0 7px 26px; }
+p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
+.footer { color: #999999; font-size: 8.5pt; text-align: center; margin-top: 18px;
+          border-top: 1px solid #eeeeee; padding-top: 6px; }
+.footer b { color: #ff7849; }
+</style></head>
+<body><div class=WordSection1>
+<div class="brand">📚 ENGLISH CODING · 영어코딩</div>
+<h1>🔴 RS002 Week 12 — English Worksheet</h1>
+<p><strong>Topic:</strong> Refactor the Whole App into Functions · <strong>Course:</strong> Pokédex App · <strong>Time:</strong> about 45 minutes</p>
+<p>This week you think about how a whole app gets tidied up. All those lines written one by one over the last 11 weeks get grouped into <strong>named functions</strong>, and the main code shrinks to a short <strong>menu loop</strong> that just <em>calls</em> them. This is called <strong>refactoring</strong> — same behaviour, cleaner shape. On this worksheet you read code, predict it, fix it on paper, and explain the code you wrote in the live lesson.</p>
+<blockquote>
+<p>🧠 Words to know: <strong>refactor</strong>, <strong>function</strong>, <strong>menu loop</strong>, <strong>call</strong>, <strong>break</strong></p>
+</blockquote>
+<hr />
+<h2>1 · Recall 🧠</h2>
+<p>From memory:</p>
+<p><strong>Write a function <code>count_dex(pokedex)</code> that returns how many Pokémon are in the list.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>2 · Predict 🔮</h2>
+<p>Read each block. Write what you think will happen — just from reading, no running.</p>
+<pre><code class="language-python">def show_menu():
+    print(&quot;1. 도감 보기&quot;)
+    print(&quot;2. 종료&quot;)
+
+show_menu()
+choice = input(&quot;선택: &quot;).strip()
+print(f&quot;고른 메뉴: {choice}&quot;)
+</code></pre>
+<p><strong>The user types <code>1</code>. What is printed in total?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">while True:
+    cmd = input(&quot;명령 (q로 종료): &quot;).strip()
+    if cmd == &quot;q&quot;:
+        break
+    print(f&quot;입력: {cmd}&quot;)
+</code></pre>
+<p><strong>The user types <code>a</code>, then <code>b</code>, then <code>q</code>. What does each round do, and when does it stop?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">trainer = input(&quot;이름: &quot;).strip() or &quot;이름 모를 트레이너&quot;
+print(trainer)
+</code></pre>
+<p><strong>The user presses Enter without typing. What prints? What does <code>or</code> do here?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>3 · Spot the Bug 🐛</h2>
+<p>Read what each block is <strong>supposed</strong> to do, fix it on paper, then explain the fix.</p>
+<p><strong>Bug A</strong> — A function must be <strong>defined above</strong> where it is called. Right now <code>show_menu</code> is called before it exists, so the program crashes.</p>
+<pre><code class="language-python">show_menu()
+
+def show_menu():
+    print(&quot;=== 메뉴 ===&quot;)
+</code></pre>
+<p><strong>Hint:</strong> move the definition above the call.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug B</strong> — This menu loop should keep running until the user picks <code>3</code>. Right now it runs once and stops.</p>
+<pre><code class="language-python">choice = input(&quot;선택: &quot;).strip()
+if choice == &quot;1&quot;:
+    print(&quot;도감 보기&quot;)
+elif choice == &quot;3&quot;:
+    print(&quot;종료&quot;)
+</code></pre>
+<p><strong>Hint:</strong> wrap it in <code>while True:</code> and <code>break</code> on <code>3</code>.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug C</strong> — When the user types something that is not a menu number, the app should say so. Right now an unknown choice silently does nothing.</p>
+<pre><code class="language-python">while True:
+    choice = input(&quot;선택: &quot;).strip()
+    if choice == &quot;1&quot;:
+        print(&quot;도감 보기&quot;)
+    elif choice == &quot;2&quot;:
+        break
+</code></pre>
+<p><strong>Hint:</strong> add an <code>else</code> for unknown input.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>4 · Explain the Code 📖</h2>
+<p>Read this working function-based app, then answer the questions below.</p>
+<pre><code class="language-python">def show_intro(trainer_name):
+    print(f&quot;\n=== 포켓몬 도감 ===&quot;)
+    print(f&quot;환영합니다, {trainer_name} 트레이너님!\n&quot;)
+
+def show_menu():
+    print(&quot;\n--- 메뉴 ---&quot;)
+    print(&quot;1. 도감 보기&quot;)
+    print(&quot;2. 포켓몬 검색&quot;)
+    print(&quot;3. 종료&quot;)
+
+def list_all(pokedex):
+    for p in pokedex:
+        print(f&quot;  {p['name']}  타입:{p['type']}  HP:{p['hp']}&quot;)
+
+def search_pokemon(pokedex):
+    keyword = input(&quot;검색어: &quot;).strip().lower()
+    matches = [p for p in pokedex if keyword in p[&quot;name&quot;].lower()]
+    if matches:
+        for p in matches:
+            print(f&quot;  {p['name']} ({p['type']})&quot;)
+    else:
+        print(&quot;검색 결과 없음&quot;)
+
+pokedex = [
+    {&quot;name&quot;: &quot;피카츄&quot;, &quot;type&quot;: &quot;전기&quot;, &quot;hp&quot;: 35},
+    {&quot;name&quot;: &quot;이상해씨&quot;, &quot;type&quot;: &quot;풀&quot;, &quot;hp&quot;: 45},
+]
+
+trainer = input(&quot;트레이너 이름: &quot;).strip() or &quot;이름 모를 트레이너&quot;
+show_intro(trainer)
+
+while True:
+    show_menu()
+    choice = input(&quot;선택: &quot;).strip()
+    if choice == &quot;1&quot;:
+        list_all(pokedex)
+    elif choice == &quot;2&quot;:
+        search_pokemon(pokedex)
+    elif choice == &quot;3&quot;:
+        print(&quot;또 만나요!&quot;)
+        break
+    else:
+        print(&quot;1~3 중에서 골라주세요.&quot;)
+</code></pre>
+<p><strong>What does the <code>while True:</code> loop do, and which line stops it?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>When the user types <code>1</code>, which function gets called, and what does it print?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why is each action (intro, menu, list, search) written as its own function instead of all in the loop?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong><code>search_pokemon</code> builds <code>matches</code> with a list comprehension. In your own words, what ends up inside <code>matches</code>?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>What happens if the user types <code>7</code>, and which line handles that?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>5 · Explain Your Lesson Code 🎥</h2>
+<p>In the live lesson you refactored your Pokédex app into functions. Make a short phone video explaining the code <strong>you</strong> wrote today. You may show it running. Try to use: <strong>refactor</strong>, <strong>function</strong>, <strong>menu loop</strong>, <strong>call</strong>, <strong>break</strong>.</p>
+<blockquote>
+<ol>
+<li>Run your app and try every menu option, including quit.</li>
+<li>Scroll to your main loop and show how short it is.</li>
+<li>Point to one of your functions and explain what the loop <em>calls</em>.</li>
+<li>Say why grouping code into functions made it easier to read and fix.</li>
+</ol>
+</blockquote>
+<p><strong>Write what you will say in your video. Plan it here before you record.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.</p>
+<div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>
+</div></body></html>
