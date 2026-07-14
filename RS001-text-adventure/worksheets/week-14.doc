@@ -1,0 +1,173 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head><meta charset='utf-8'>
+<title>🌀 RS001 Week 14 — English Worksheet</title>
+<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
+<style>
+@page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
+div.WordSection1 { page: WordSection1; }
+body { font-family: "Segoe UI", Arial, sans-serif; font-size: 11.5pt; color: #1a1a2e; line-height: 1.5; }
+h1 { font-size: 21pt; color: #6b4ee6; margin: 4px 0 6px; }
+h2 { font-size: 15pt; color: #6b4ee6; border-top: 1px solid #dddddd; padding-top: 8px; margin: 18px 0 10px; }
+h3, h4 { font-size: 11.5pt; margin: 12px 0 6px; }
+p { margin: 7px 0; }
+.brand { font-size: 10.5pt; font-weight: bold; color: #ff7849; letter-spacing: .06em;
+         border-bottom: 2px solid #ff7849; padding-bottom: 6px; margin-bottom: 14px; }
+table { border-collapse: collapse; margin: 10px 0; }
+th, td { border: 1px solid #c8c8c8; padding: 4px 9px; text-align: center; }
+th { background: #f3eefc; color: #6b4ee6; font-weight: bold; }
+pre { font-family: Consolas, "Courier New", monospace; font-size: 10.5pt; background: #f4f4f5;
+      border: 1px solid #dddddd; padding: 8px 10px; white-space: pre-wrap; }
+pre code { background: transparent; color: #1a1a2e; }
+code { font-family: Consolas, "Courier New", monospace; background: #fff1e8; color: #d6531f; padding: 0 3px; }
+blockquote { border-left: 3px solid #ff7849; background: #fff6ef; padding: 8px 12px;
+             color: #6a3a1c; margin: 9px 0; }
+ul, ol { margin: 7px 0 7px 26px; }
+p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
+.footer { color: #999999; font-size: 8.5pt; text-align: center; margin-top: 18px;
+          border-top: 1px solid #eeeeee; padding-top: 6px; }
+.footer b { color: #ff7849; }
+</style></head>
+<body><div class=WordSection1>
+<div class="brand">📚 ENGLISH CODING · 영어코딩</div>
+<h1>🌀 RS001 Week 14 — English Worksheet</h1>
+<p><strong>Topic:</strong> Random Encounters + a Bigger Reward Pool · <strong>Course:</strong> Text Adventure (Python) · <strong>Time:</strong> about 45 minutes</p>
+<p>This week is about thinking through randomness and explaining it in your own words. Each path draws a random enemy from its own pool, rewards come from a big pool, and a surprise encounter fires only <strong>some</strong> of the time using a weighted <code>True</code>/<code>False</code> pick. You will read code, fix a broken version on paper, then explain the game you wrote in your live lesson.</p>
+<blockquote>
+<p>🧠 Words to know: <strong>random</strong>, <strong>pool</strong>, <strong>encounter</strong>, <strong>odds</strong>, <strong>different</strong></p>
+</blockquote>
+<pre><code class="language-python">import random
+left_enemies = [&quot;goblin&quot;, &quot;bat&quot;, &quot;spider&quot;]
+enemy = random.choice(left_enemies)
+
+if random.choice([True, False, False]):   # about 1 in 3
+    game.say(&quot;A bandit jumps out!&quot;)
+</code></pre>
+<hr />
+<h2>1 · Predict 🔮</h2>
+<p>Read each piece of code. Run it in your head and write what you think happens.</p>
+<pre><code class="language-python">import random
+left_enemies = [&quot;goblin&quot;, &quot;bat&quot;, &quot;spider&quot;]
+enemy = random.choice(left_enemies)
+game.say(f&quot;You meet a {enemy}.&quot;)
+</code></pre>
+<p><strong>Can you say for sure which enemy appears? Why or why not?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">import random
+if random.choice([True, False, False]):
+    game.say(&quot;ambush!&quot;)
+else:
+    game.say(&quot;quiet path&quot;)
+</code></pre>
+<p><strong>Out of the three items, how many are <code>True</code>? About how often does "ambush!" show?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">import random
+if random.choice([True, True, True, False]):
+    game.say(&quot;rare event&quot;)
+</code></pre>
+<p><strong>How does changing the mix of True/False change how often the event happens?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>2 · Spot the Bug 🐛</h2>
+<p>Each block was meant to do something, but it is broken. Read what it is <strong>supposed</strong> to do, fix it on paper, then explain why the original was wrong.</p>
+<p><strong>Bug A</strong> — Each path should draw from its <strong>own</strong> enemy pool. Right now both paths draw from the same list, so left and right feel identical.</p>
+<pre><code class="language-python">import random
+left_enemies = [&quot;goblin&quot;, &quot;bat&quot;]
+right_enemies = [&quot;orc&quot;, &quot;troll&quot;]
+path = &quot;right&quot;
+if path == &quot;left&quot;:
+    enemy = random.choice(left_enemies)
+else:
+    enemy = random.choice(left_enemies)
+game.say(enemy)
+</code></pre>
+<p><strong>Hint:</strong> the right path should pull from <code>right_enemies</code>.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug B</strong> — A rare event should fire only about 1 in 3 times. Right now the mix makes it fire almost every time.</p>
+<pre><code class="language-python">import random
+if random.choice([True, True, False]):
+    game.say(&quot;A rare treasure glows nearby!&quot;)
+</code></pre>
+<p><strong>Hint:</strong> to make <code>True</code> rarer, change how many <code>True</code> vs <code>False</code> are in the list.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug C</strong> — The reward pool should hold several rewards so the pick feels varied. Right now the list has only one item, so it is the "same random" every time.</p>
+<pre><code class="language-python">import random
+rewards = [&quot;gold&quot;]
+reward = random.choice(rewards)
+game.say(f&quot;You found {reward}&quot;)
+</code></pre>
+<p><strong>Hint:</strong> a one-item pool always returns that one item — give it more choices.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>3 · Explain the Code 📖</h2>
+<p>Read this working example. It picks a random enemy from the path's own pool, draws a reward from a bigger pool, and fires a surprise encounter only some of the time.</p>
+<pre><code class="language-python">import random
+
+left_enemies = [&quot;goblin&quot;, &quot;bat&quot;, &quot;spider&quot;]
+right_enemies = [&quot;orc&quot;, &quot;troll&quot;, &quot;wolf&quot;]
+rewards = [&quot;gold&quot;, &quot;potion&quot;, &quot;map&quot;, &quot;gem&quot;, &quot;key&quot;]
+
+path = &quot;left&quot;
+if path == &quot;left&quot;:
+    enemy = random.choice(left_enemies)
+else:
+    enemy = random.choice(right_enemies)
+game.say(f&quot;A {enemy} blocks the path!&quot;)
+
+reward = random.choice(rewards)
+game.say(f&quot;You won a {reward}.&quot;)
+
+if random.choice([True, False, False]):   # about 1 in 3
+    game.say(&quot;A bandit jumps out!&quot;)
+</code></pre>
+<p><strong>Which list does the enemy come from when <code>path</code> is <code>"left"</code>?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why does the <code>reward</code> line give a different result on different playthroughs?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Look at <code>[True, False, False]</code>. About how often does the bandit appear?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>If you wanted the bandit to appear more often, how would you change that list?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>In your own words, why does this code make every playthrough feel different?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>4 · Explain Your Lesson Code 🎥</h2>
+<p>Take a short video on your phone (or a parent's phone) and explain the game <strong>you</strong> wrote in today's live lesson. You can show it running. Teach it like the viewer has never coded. Try to use these words: <strong>random</strong>, <strong>pool</strong>, <strong>encounter</strong>, <strong>odds</strong>, <strong>different</strong>.</p>
+<blockquote>
+<ol>
+<li>Point to your enemy pools and say what is in each path's pool.</li>
+<li>Show your reward pool and play once so a random reward appears.</li>
+<li>Point to your weighted <code>True/False</code> line and explain the odds of the surprise encounter.</li>
+<li>Say why every playthrough now feels different.</li>
+</ol>
+</blockquote>
+<p><strong>Write what you will say in your video. Plan it here before you record.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.</p>
+<div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>
+</div></body></html>

@@ -1,0 +1,178 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head><meta charset='utf-8'>
+<title>🌳 RS001 Week 10 — English Worksheet</title>
+<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
+<style>
+@page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
+div.WordSection1 { page: WordSection1; }
+body { font-family: "Segoe UI", Arial, sans-serif; font-size: 11.5pt; color: #1a1a2e; line-height: 1.5; }
+h1 { font-size: 21pt; color: #6b4ee6; margin: 4px 0 6px; }
+h2 { font-size: 15pt; color: #6b4ee6; border-top: 1px solid #dddddd; padding-top: 8px; margin: 18px 0 10px; }
+h3, h4 { font-size: 11.5pt; margin: 12px 0 6px; }
+p { margin: 7px 0; }
+.brand { font-size: 10.5pt; font-weight: bold; color: #ff7849; letter-spacing: .06em;
+         border-bottom: 2px solid #ff7849; padding-bottom: 6px; margin-bottom: 14px; }
+table { border-collapse: collapse; margin: 10px 0; }
+th, td { border: 1px solid #c8c8c8; padding: 4px 9px; text-align: center; }
+th { background: #f3eefc; color: #6b4ee6; font-weight: bold; }
+pre { font-family: Consolas, "Courier New", monospace; font-size: 10.5pt; background: #f4f4f5;
+      border: 1px solid #dddddd; padding: 8px 10px; white-space: pre-wrap; }
+pre code { background: transparent; color: #1a1a2e; }
+code { font-family: Consolas, "Courier New", monospace; background: #fff1e8; color: #d6531f; padding: 0 3px; }
+blockquote { border-left: 3px solid #ff7849; background: #fff6ef; padding: 8px 12px;
+             color: #6a3a1c; margin: 9px 0; }
+ul, ol { margin: 7px 0 7px 26px; }
+p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
+.footer { color: #999999; font-size: 8.5pt; text-align: center; margin-top: 18px;
+          border-top: 1px solid #eeeeee; padding-top: 6px; }
+.footer b { color: #ff7849; }
+</style></head>
+<body><div class=WordSection1>
+<div class="brand">📚 ENGLISH CODING · 영어코딩</div>
+<h1>🌳 RS001 Week 10 — English Worksheet</h1>
+<p><strong>Topic:</strong> Deeper Branches — Path → Enemy → Reward · <strong>Course:</strong> Text Adventure (Python) · <strong>Time:</strong> about 45 minutes</p>
+<p>This week you think about how one choice ripples forward. The path you pick decides the enemy, the <strong>reward</strong>, and the <strong>next place</strong> — and the reward then changes what happens after. Choices stack into a chain. On this worksheet you read code, find bugs on paper, and explain the code you wrote in today's live lesson.</p>
+<blockquote>
+<p>🧠 Words to know: <strong>branch</strong>, <strong>reward</strong>, <strong>next</strong>, <strong>chain</strong>, <strong>depends on</strong></p>
+</blockquote>
+<pre><code class="language-python">if path == &quot;left&quot;:
+    enemy = &quot;goblin&quot;
+    reward = &quot;gold coin&quot;
+    next_place = &quot;deep cave&quot;
+
+if reward == &quot;gold coin&quot;:
+    game.say(&quot;A merchant shows you a secret passage.&quot;)
+</code></pre>
+<hr />
+<h2>1 · Predict 🔮</h2>
+<p>Read each piece of code. Run it in your head and write what you think happens.</p>
+<pre><code class="language-python">path = &quot;left&quot;
+if path == &quot;left&quot;:
+    reward = &quot;map&quot;
+else:
+    reward = &quot;ring&quot;
+game.say(f&quot;You won a {reward}.&quot;)
+</code></pre>
+<p><strong>Which reward is printed?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">reward = &quot;ring&quot;
+if reward == &quot;coin&quot;:
+    game.say(&quot;The merchant helps you.&quot;)
+elif reward == &quot;ring&quot;:
+    game.say(&quot;The ring glows and reveals a hidden path.&quot;)
+</code></pre>
+<p><strong>Which message appears?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">path = &quot;right&quot;
+if path == &quot;left&quot;:
+    reward = &quot;map&quot;
+game.say(f&quot;You won a {reward}.&quot;)
+</code></pre>
+<p><strong>The player went right, but there is no <code>else</code>. What goes wrong on the last line?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>2 · Spot the Bug 🐛</h2>
+<p>Each block was meant to do something, but it is broken. Read what it is <strong>supposed</strong> to do, fix it on paper, then explain why the original was wrong.</p>
+<p><strong>Bug A</strong> — Both paths should set <code>reward</code>, so the line after always has a value. Right now only the left path sets it, so the right path crashes.</p>
+<pre><code class="language-python">path = game.ask(&quot;way?&quot;).strip().lower()
+if path == &quot;left&quot;:
+    reward = &quot;map&quot;
+game.say(f&quot;You found a {reward}.&quot;)
+</code></pre>
+<p><strong>Hint:</strong> add an <code>else</code> (or second branch) that also sets <code>reward</code>.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug B</strong> — The reward should change the <strong>next</strong> scene. Right now the second <code>if</code> checks the wrong reward name, so the special scene never fires.</p>
+<pre><code class="language-python">reward = &quot;golden key&quot;
+game.say(f&quot;You picked up a {reward}.&quot;)
+if reward == &quot;gold key&quot;:
+    game.say(&quot;The key opens a hidden door.&quot;)
+</code></pre>
+<p><strong>Hint:</strong> the name you store and the name you check must match exactly.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug C</strong> — This three-way path should give each route its own enemy, reward, and next place. Right now the middle path reuses the left path's reward.</p>
+<pre><code class="language-python">path = &quot;middle&quot;
+if path == &quot;left&quot;:
+    reward = &quot;map&quot;
+elif path == &quot;middle&quot;:
+    reward = &quot;map&quot;
+elif path == &quot;right&quot;:
+    reward = &quot;ring&quot;
+game.say(f&quot;Reward: {reward}&quot;)
+</code></pre>
+<p><strong>Hint:</strong> the middle path should have a reward of its own.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>3 · Explain the Code 📖</h2>
+<p>Read this working example. One path choice sets three things, and then a second branch reads the <strong>reward</strong> to change the next scene — two layers of cause and effect.</p>
+<pre><code class="language-python">path = game.ask(&quot;Which way? left or right&quot;).strip().lower()
+
+if path == &quot;left&quot;:
+    enemy = &quot;goblin&quot;
+    reward = &quot;gold coin&quot;
+    next_place = &quot;deep cave&quot;
+else:
+    enemy = &quot;spider&quot;
+    reward = &quot;silver ring&quot;
+    next_place = &quot;dark forest&quot;
+
+game.say(f&quot;A {enemy} blocks the way! You win a {reward}.&quot;)
+
+if reward == &quot;gold coin&quot;:
+    game.say(&quot;A merchant shows you a secret passage.&quot;)
+elif reward == &quot;silver ring&quot;:
+    game.say(&quot;The ring glows and lights up the path ahead.&quot;)
+
+game.say(f&quot;You move on to the {next_place}.&quot;)
+</code></pre>
+<p><strong>On the first line, what does <code>.strip().lower()</code> do to the player's answer?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>If the player types "right", which three values get set, and why?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why does the second <code>if</code> use <code>reward</code> instead of <code>path</code> to decide the next scene?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Trace the "left" path: list every line <code>game.say</code> prints, in order.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Where in this code is the </strong>chain<strong> — where does one choice cause the next thing to happen?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>4 · Explain Your Lesson Code 🎥</h2>
+<p>Take a short video on your phone (or a parent's phone) and explain the code <strong>you wrote in today's lesson</strong>. You may show your game running. Teach it like the viewer has never coded. Try to use these words: <strong>branch</strong>, <strong>reward</strong>, <strong>next</strong>, <strong>chain</strong>, <strong>depends on</strong>.</p>
+<blockquote>
+<ol>
+<li>Show the path choice in your code and say what three things it sets.</li>
+<li>Read one branch out loud and explain what <strong>depends on</strong> what.</li>
+<li>Show how the reward changes the <strong>next</strong> scene — point to the chain.</li>
+<li>Run a different path and explain why a different chain happens.</li>
+</ol>
+</blockquote>
+<p><strong>Write what you will say in your video. Plan it here before you record.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.</p>
+<div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>
+</div></body></html>

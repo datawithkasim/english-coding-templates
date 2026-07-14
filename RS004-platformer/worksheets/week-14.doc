@@ -1,0 +1,177 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head><meta charset='utf-8'>
+<title>💥 RS004 Week 14 — English Worksheet</title>
+<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
+<style>
+@page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
+div.WordSection1 { page: WordSection1; }
+body { font-family: "Segoe UI", Arial, sans-serif; font-size: 11.5pt; color: #1a1a2e; line-height: 1.5; }
+h1 { font-size: 21pt; color: #6b4ee6; margin: 4px 0 6px; }
+h2 { font-size: 15pt; color: #6b4ee6; border-top: 1px solid #dddddd; padding-top: 8px; margin: 18px 0 10px; }
+h3, h4 { font-size: 11.5pt; margin: 12px 0 6px; }
+p { margin: 7px 0; }
+.brand { font-size: 10.5pt; font-weight: bold; color: #ff7849; letter-spacing: .06em;
+         border-bottom: 2px solid #ff7849; padding-bottom: 6px; margin-bottom: 14px; }
+table { border-collapse: collapse; margin: 10px 0; }
+th, td { border: 1px solid #c8c8c8; padding: 4px 9px; text-align: center; }
+th { background: #f3eefc; color: #6b4ee6; font-weight: bold; }
+pre { font-family: Consolas, "Courier New", monospace; font-size: 10.5pt; background: #f4f4f5;
+      border: 1px solid #dddddd; padding: 8px 10px; white-space: pre-wrap; }
+pre code { background: transparent; color: #1a1a2e; }
+code { font-family: Consolas, "Courier New", monospace; background: #fff1e8; color: #d6531f; padding: 0 3px; }
+blockquote { border-left: 3px solid #ff7849; background: #fff6ef; padding: 8px 12px;
+             color: #6a3a1c; margin: 9px 0; }
+ul, ol { margin: 7px 0 7px 26px; }
+p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
+.footer { color: #999999; font-size: 8.5pt; text-align: center; margin-top: 18px;
+          border-top: 1px solid #eeeeee; padding-top: 6px; }
+.footer b { color: #ff7849; }
+</style></head>
+<body><div class=WordSection1>
+<div class="brand">📚 ENGLISH CODING · 영어코딩</div>
+<h1>💥 RS004 Week 14 — English Worksheet</h1>
+<p><strong>Topic:</strong> Vertical Patrol + Death Effect (Apply) · <strong>Course:</strong> Platformer Game · <strong>Time:</strong> about 45 minutes</p>
+<p>This week is about thinking through <strong>smarter enemies</strong> and explaining how they work. A <code>patrol_type</code> lets one enemy walk left–right, another go up–down, and a third <strong>chase</strong> the player. When the player dies, a little <strong>explosion</strong> of particles bursts out. You will read this code closely and explain the code you wrote in your live lesson.</p>
+<blockquote>
+<p>🧠 Words to know: <strong>patrol_type</strong>, <strong>vertical</strong>, <strong>chase</strong>, <strong>particle</strong>, <strong>explosion</strong>.</p>
+</blockquote>
+<hr />
+<h2>1 · Predict 🔮</h2>
+<p>Read each snippet. Write what you think it does.</p>
+<pre><code class="language-python">if self.patrol_type == &quot;vertical&quot;:
+    self.rect.y += self.direction * self.speed
+    if self.rect.y &gt; self.start_y + self.range_size:
+        self.direction = -1
+    if self.rect.y &lt; self.start_y:
+        self.direction = 1
+</code></pre>
+<p><strong>Which way does this enemy move? When does it turn around?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">elif self.patrol_type == &quot;chase&quot; and player_rect is not None:
+    if self.rect.x &lt; player_rect.x:
+        self.rect.x += 1
+    elif self.rect.x &gt; player_rect.x:
+        self.rect.x -= 1
+</code></pre>
+<p><strong>The player is to the <em>right</em> of this enemy. Which way does it move?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">for p in self.particles:
+    p[&quot;x&quot;] += p[&quot;vx&quot;]
+    p[&quot;y&quot;] += p[&quot;vy&quot;]
+    p[&quot;vy&quot;] += 0.3
+    p[&quot;life&quot;] -= 1
+</code></pre>
+<p><strong>Each particle has its own speed. Why does <code>vy</code> keep growing (<code>+= 0.3</code>)?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>2 · Pick the Patrol 🧭</h2>
+<p>Match each <code>patrol_type</code> to its behaviour.</p>
+<pre><code>1. &quot;horizontal&quot;   2. &quot;vertical&quot;   3. &quot;chase&quot;
+</code></pre>
+<pre><code>A. moves up and down between two heights
+B. follows the player when nearby
+C. walks left and right between two x positions
+</code></pre>
+<p><strong>1 → ___  2 → ___  3 → ___</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>3 · Spot the Bug 🐛</h2>
+<p>Each snippet is broken. Rewrite it so it works, then explain why the original was wrong.</p>
+<p><strong>Bug A</strong> — A vertical enemy should bounce between two heights. Right now it floats up forever and leaves the screen.</p>
+<pre><code class="language-python">if self.patrol_type == &quot;vertical&quot;:
+    self.rect.y += self.direction * self.speed
+</code></pre>
+<p><strong>Hint:</strong> there is no turn-around check on the y edges.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug B</strong> — A chasing enemy needs the player's position. Right now it crashes with a <code>NoneType</code> error.</p>
+<pre><code class="language-python">def update(self):
+    if self.patrol_type == &quot;chase&quot;:
+        if self.rect.x &lt; player_rect.x:
+            self.rect.x += 1
+</code></pre>
+<p><strong>Hint:</strong> <code>player_rect</code> must be passed in, with a safe default, and used only when it exists.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug C</strong> — Dead particles should be removed so the explosion fades. Right now they pile up and slow the game down.</p>
+<pre><code class="language-python">for exp in explosions:
+    exp.update()
+    exp.draw(screen)
+</code></pre>
+<p><strong>Hint:</strong> when an explosion <code>is_done()</code>, take it out of the list. Loop over a copy while removing.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>4 · Explain the Code 📖</h2>
+<p>Here is a working enemy update that handles all three patrol types and takes the player's position safely.</p>
+<pre><code class="language-python">def update(self, player_rect=None):
+    if self.patrol_type == &quot;horizontal&quot;:
+        self.rect.x += self.direction * self.speed
+        if self.rect.x &gt; self.start_x + self.range_size:
+            self.direction = -1
+        if self.rect.x &lt; self.start_x:
+            self.direction = 1
+
+    elif self.patrol_type == &quot;vertical&quot;:
+        self.rect.y += self.direction * self.speed
+        if self.rect.y &gt; self.start_y + self.range_size:
+            self.direction = -1
+        if self.rect.y &lt; self.start_y:
+            self.direction = 1
+
+    elif self.patrol_type == &quot;chase&quot; and player_rect is not None:
+        if self.rect.x &lt; player_rect.x:
+            self.rect.x += 1
+        elif self.rect.x &gt; player_rect.x:
+            self.rect.x -= 1
+</code></pre>
+<p><strong>What does <code>self.direction = -1</code> do, and when does it happen?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why does the <code>vertical</code> block change <code>self.rect.y</code> instead of <code>self.rect.x</code>?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why does the <code>chase</code> block check <code>player_rect is not None</code> before using it?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>What would break if you deleted the <code>start_x</code> and <code>start_y</code> checks?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Tell the story of one chase frame: the player is to the left, so what happens line by line?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>5 · Explain Your Lesson Code 🎥</h2>
+<p>In your live lesson today you wrote enemy and explosion code. Make a short phone video that explains <strong>the code you wrote</strong>. You may show it running. Try to use these words: <strong>patrol_type</strong>, <strong>vertical</strong>, <strong>chase</strong>, <strong>particle</strong>, <strong>explosion</strong>.</p>
+<blockquote>
+<ol>
+<li>Point to where <code>patrol_type</code> decides how each enemy moves.</li>
+<li>Read your chase code out loud and explain how it picks a direction.</li>
+<li>Show the death <strong>explosion</strong> and explain how the <strong>particle</strong> loop works.</li>
+<li>Say one part that was tricky and how you understood it.</li>
+</ol>
+</blockquote>
+<p><strong>Write what you will say in your video. Plan it here before you record.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.</p>
+<div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>
+</div></body></html>

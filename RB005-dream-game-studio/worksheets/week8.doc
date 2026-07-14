@@ -1,0 +1,131 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head><meta charset='utf-8'>
+<title>🎮 RB005 Week 8 — English Worksheet</title>
+<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
+<style>
+@page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
+div.WordSection1 { page: WordSection1; }
+body { font-family: "Segoe UI", Arial, sans-serif; font-size: 11.5pt; color: #1a1a2e; line-height: 1.5; }
+h1 { font-size: 21pt; color: #6b4ee6; margin: 4px 0 6px; }
+h2 { font-size: 15pt; color: #6b4ee6; border-top: 1px solid #dddddd; padding-top: 8px; margin: 18px 0 10px; }
+h3, h4 { font-size: 11.5pt; margin: 12px 0 6px; }
+p { margin: 7px 0; }
+.brand { font-size: 10.5pt; font-weight: bold; color: #ff7849; letter-spacing: .06em;
+         border-bottom: 2px solid #ff7849; padding-bottom: 6px; margin-bottom: 14px; }
+table { border-collapse: collapse; margin: 10px 0; }
+th, td { border: 1px solid #c8c8c8; padding: 4px 9px; text-align: center; }
+th { background: #f3eefc; color: #6b4ee6; font-weight: bold; }
+pre { font-family: Consolas, "Courier New", monospace; font-size: 10.5pt; background: #f4f4f5;
+      border: 1px solid #dddddd; padding: 8px 10px; white-space: pre-wrap; }
+pre code { background: transparent; color: #1a1a2e; }
+code { font-family: Consolas, "Courier New", monospace; background: #fff1e8; color: #d6531f; padding: 0 3px; }
+blockquote { border-left: 3px solid #ff7849; background: #fff6ef; padding: 8px 12px;
+             color: #6a3a1c; margin: 9px 0; }
+ul, ol { margin: 7px 0 7px 26px; }
+p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
+.footer { color: #999999; font-size: 8.5pt; text-align: center; margin-top: 18px;
+          border-top: 1px solid #eeeeee; padding-top: 6px; }
+.footer b { color: #ff7849; }
+</style></head>
+<body><div class=WordSection1>
+<div class="brand">📚 ENGLISH CODING · 영어코딩</div>
+<h1>🎮 RB005 Week 8 — English Worksheet</h1>
+<p><strong>Topic:</strong> Launch &amp; Showcase — Publish and Present · <strong>Course:</strong> Dream Game Studio · <strong>Time:</strong> about 45 minutes</p>
+<p>This is it — <strong>launch week</strong>. You publish your game as <strong>Public</strong> and present it like a real game studio: what the game is, your hardest bug story, your favorite script read out loud, and what you would build next.</p>
+<hr />
+<h2>1 · Predict 🔮</h2>
+<p>Read each situation. Before it happens for real, write what you think will happen.</p>
+<blockquote>
+<p>You publish your game and set it to <strong>Public</strong>. Your classmate searches its title on Roblox from their own house.</p>
+</blockquote>
+<p><strong>What can your classmate do now that they could not do yesterday? What can they NOT do (hint: they cannot open your scripts)?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<blockquote>
+<p>Your game is Public, but you only ever tested it <strong>alone in Studio</strong>. A stranger joins and clicks Play.</p>
+</blockquote>
+<p><strong>Predict one thing that might go wrong for the stranger that never went wrong for you. How would you find out about it?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-lua">local door = script.Parent
+
+door.Touched:Connect(function(hit)
+    local player = game.Players:GetPlayerFromCharacter(hit.Parent)
+    if player and player.leaderstats.Coins.Value &gt;= 5 then
+        door.CanCollide = false
+        door.Transparency = 0.7
+    end
+end)
+</code></pre>
+<p><strong>In your showcase you read a script like this out loud. Practice now: what does this script do, in one or two sentences a non-coder could understand?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>2 · Spot the Bug 🐛</h2>
+<p>Launch-day bugs! Read what each one is <strong>supposed</strong> to be, write your fix, then explain why the original was wrong and why your fix works.</p>
+<p><strong>Bug A</strong> — Everyone should be able to find and play the game. You told the whole class it is live, but nobody can join.</p>
+<blockquote>
+<p>In Game Settings → Permissions, the game is still set to <strong>Private</strong>.</p>
+</blockquote>
+<p><strong>Write the fix (what setting do you change, and to what):</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug B</strong> — Players should start with <strong>0 coins</strong> and earn them by playing. But this test script from week 6 is still in <code>ServerScriptService</code>, so everyone wins instantly.</p>
+<pre><code class="language-lua">-- TEST: remove before launch!
+game.Players.PlayerAdded:Connect(function(player)
+    local leaderstats = player:WaitForChild(&quot;leaderstats&quot;)
+    leaderstats.Coins.Value = 999
+end)
+</code></pre>
+<p><strong>Write the fix:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug C</strong> — A showcase presentation should be interesting for the audience. This is a classmate's whole plan:</p>
+<blockquote>
+<p><em>"Hi. This is my game. I show the game now. … OK that's all. The end."</em></p>
+</blockquote>
+<p><strong>Write a fixed plan (list at least 4 things the presentation should include — think: what the game is, the hardest bug story, a script read aloud, what comes next):</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>3 · Tell Me What You Built 📸</h2>
+<p>Publish your game as <strong>Public</strong>, then plan your showcase here. Send a photo or video of your live game page, and write your presentation plan. Use these sentence starters — write 4 to 6 sentences total.</p>
+<blockquote>
+<p>My game is called … and it is a game where …</p>
+<p>The hardest bug I ever had was … and I fixed it by …</p>
+<p>My favorite script is the one that … because …</p>
+<p>In Roblox 1 week 1, I could not … but this week I …</p>
+<p>The next thing I would build is …</p>
+<p>The best moment of these 5 courses was …</p>
+</blockquote>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>4 · Record Your Walkthrough 🎥</h2>
+<p>This week your video <strong>IS</strong> the presentation. Take a video on your phone (or a parent's phone) and present your game from start to finish, like you are on stage at a game studio. Try to use these words: <strong>publish</strong>, <strong>public</strong>, <strong>bug</strong>, <strong>script</strong>, <strong>update</strong>.</p>
+<blockquote>
+<ol>
+<li>Say your game's name and what kind of game it is. Show the title screen.</li>
+<li>Play your game on camera and show the core mechanic.</li>
+<li>Tell your hardest bug story — what happened, and how you fixed it.</li>
+<li>Open your favorite script and read it out loud. Explain it in simple words.</li>
+<li>Finish with what you would build next if the studio kept going.</li>
+</ol>
+</blockquote>
+<p><strong>Write what you will say in your video.</strong> Use the space below to plan it before you record — you can read from it while filming.</p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.</p>
+<div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>
+</div></body></html>

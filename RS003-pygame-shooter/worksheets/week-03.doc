@@ -1,0 +1,160 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head><meta charset='utf-8'>
+<title>🟩 RS003 Week 3 — English Worksheet</title>
+<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
+<style>
+@page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
+div.WordSection1 { page: WordSection1; }
+body { font-family: "Segoe UI", Arial, sans-serif; font-size: 11.5pt; color: #1a1a2e; line-height: 1.5; }
+h1 { font-size: 21pt; color: #6b4ee6; margin: 4px 0 6px; }
+h2 { font-size: 15pt; color: #6b4ee6; border-top: 1px solid #dddddd; padding-top: 8px; margin: 18px 0 10px; }
+h3, h4 { font-size: 11.5pt; margin: 12px 0 6px; }
+p { margin: 7px 0; }
+.brand { font-size: 10.5pt; font-weight: bold; color: #ff7849; letter-spacing: .06em;
+         border-bottom: 2px solid #ff7849; padding-bottom: 6px; margin-bottom: 14px; }
+table { border-collapse: collapse; margin: 10px 0; }
+th, td { border: 1px solid #c8c8c8; padding: 4px 9px; text-align: center; }
+th { background: #f3eefc; color: #6b4ee6; font-weight: bold; }
+pre { font-family: Consolas, "Courier New", monospace; font-size: 10.5pt; background: #f4f4f5;
+      border: 1px solid #dddddd; padding: 8px 10px; white-space: pre-wrap; }
+pre code { background: transparent; color: #1a1a2e; }
+code { font-family: Consolas, "Courier New", monospace; background: #fff1e8; color: #d6531f; padding: 0 3px; }
+blockquote { border-left: 3px solid #ff7849; background: #fff6ef; padding: 8px 12px;
+             color: #6a3a1c; margin: 9px 0; }
+ul, ol { margin: 7px 0 7px 26px; }
+p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
+.footer { color: #999999; font-size: 8.5pt; text-align: center; margin-top: 18px;
+          border-top: 1px solid #eeeeee; padding-top: 6px; }
+.footer b { color: #ff7849; }
+</style></head>
+<body><div class=WordSection1>
+<div class="brand">📚 ENGLISH CODING · 영어코딩</div>
+<h1>🟩 RS003 Week 3 — English Worksheet</h1>
+<p><strong>Topic:</strong> Build the Ship Body · <strong>Course:</strong> Pygame Space Shooter · <strong>Time:</strong> about 45 minutes</p>
+<p>This week you think about the code that draws the first piece of your spaceship: a <strong>body</strong> that sits in the middle-bottom of the screen. You read code that draws shapes, stores important numbers as <strong>constants</strong>, and finds the centre of the screen with <strong>integer division</strong> (<code>//</code>). You will read it, fix it, and explain it.</p>
+<blockquote>
+<p>🧠 Words to know: <strong>constant</strong>, <strong>rectangle</strong>, <strong>circle</strong>, <strong>integer division (<code>//</code>)</strong>, <strong>centre</strong></p>
+</blockquote>
+<hr />
+<h2>1 · Predict 🔮</h2>
+<p>Read each piece of code. Just from reading it, write what you think it does. Do not run it.</p>
+<pre><code class="language-python">WIDTH = 800
+CENTER_X = WIDTH // 2
+</code></pre>
+<p><strong>What number is <code>CENTER_X</code>? Why use <code>//</code> instead of <code>/</code> here?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">pygame.draw.rect(screen, CYAN, (CENTER_X - 20, HEIGHT - 80, 40, 50))
+</code></pre>
+<p><strong>The four numbers are (left, top, width, height). Where on the screen does this rectangle appear, and how big is it?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">pygame.draw.circle(screen, WHITE, (CENTER_X, HEIGHT - 90), 8)
+</code></pre>
+<p><strong>What shape, where, and how big? What does the last number 8 control?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">screen.fill(SPACE)
+pygame.draw.rect(screen, CYAN, (CENTER_X - 20, HEIGHT - 80, 40, 50))
+pygame.display.flip()
+</code></pre>
+<p><strong>In what order do these three lines run? What would you see if <code>screen.fill(SPACE)</code> came AFTER the rectangle instead of before it?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>2 · Spot the Bug 🐛</h2>
+<p>Each block below was meant to do something but is broken. Fix it on paper, then explain why the original was wrong.</p>
+<p><strong>Bug A</strong> — The ship body should sit in the <strong>centre</strong> across the screen. Right now it is glued to the left edge.</p>
+<pre><code class="language-python">pygame.draw.rect(screen, CYAN, (0, HEIGHT - 80, 40, 50))
+</code></pre>
+<p><strong>Hint:</strong> use <code>CENTER_X</code> to place it in the middle.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug B</strong> — <code>CENTER_X</code> is supposed to be the middle of the screen, but it comes out as a number with a decimal point and the drawing looks off.</p>
+<pre><code class="language-python">CENTER_X = WIDTH / 2
+</code></pre>
+<p><strong>Hint:</strong> screen positions must be whole numbers.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug C</strong> — The body is supposed to sit near the <strong>bottom</strong>, where the player ship belongs. Right now it is drawn near the top of the screen.</p>
+<pre><code class="language-python">pygame.draw.rect(screen, CYAN, (CENTER_X - 20, 80, 40, 50))
+</code></pre>
+<p><strong>Hint:</strong> in Pygame, Y = 0 is the <strong>top</strong>. The bottom is near <code>HEIGHT</code>.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>3 · Explain the Code 📖</h2>
+<p>Read this working example line by line. Then answer the questions below by reading only — you do not need to run it.</p>
+<pre><code class="language-python">import pygame
+pygame.init()
+
+WIDTH = 800
+HEIGHT = 600
+CENTER_X = WIDTH // 2
+
+screen = pygame.display.set_mode((WIDTH, HEIGHT))
+pygame.display.set_caption(&quot;Space Shooter&quot;)
+
+SPACE = (10, 12, 40)
+CYAN = (80, 220, 255)
+
+clock = pygame.time.Clock()
+running = True
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+
+    screen.fill(SPACE)
+    pygame.draw.rect(screen, CYAN, (CENTER_X - 20, HEIGHT - 80, 40, 50))
+    pygame.display.flip()
+    clock.tick(60)
+
+pygame.quit()
+</code></pre>
+<p><strong><code>WIDTH</code>, <code>HEIGHT</code>, <code>SPACE</code>, and <code>CYAN</code> are all constants. What is each one used for?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>The rectangle's left value is <code>CENTER_X - 20</code>, not <code>CENTER_X</code>. Why subtract 20? What would happen if you used <code>CENTER_X</code> on its own?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>What does the <code>while running:</code> loop do? What makes the loop stop?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why is the cyan rectangle drawn in the middle across the screen? Point to the exact lines that make this happen.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Is the rectangle near the top or near the bottom of the window? How can you tell from the numbers?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>4 · Explain Your Lesson Code 🎥</h2>
+<p>In today's live lesson you wrote code with your teacher to draw your ship body. Now explain that code in a short phone video. You may show it running on the screen. Try to use these words: <strong>constant</strong>, <strong>rectangle</strong>, <strong>circle</strong>, <strong>integer division</strong>, <strong>centre</strong>.</p>
+<blockquote>
+<ol>
+<li>Show your ship body sitting in the middle-bottom of the screen.</li>
+<li>Read your <code>CENTER_X</code> line out loud and say what <code>//</code> does.</li>
+<li>Point at your rectangle's four numbers and name each one (left, top, width, height).</li>
+<li>Say why Y = 0 is the top, not the bottom.</li>
+</ol>
+</blockquote>
+<p><strong>Write what you will say in your video. Plan it here before you record.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.</p>
+<div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>
+</div></body></html>

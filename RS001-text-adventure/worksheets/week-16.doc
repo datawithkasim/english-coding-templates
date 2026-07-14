@@ -1,0 +1,168 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head><meta charset='utf-8'>
+<title>🏆 RS001 Week 16 — English Worksheet</title>
+<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
+<style>
+@page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
+div.WordSection1 { page: WordSection1; }
+body { font-family: "Segoe UI", Arial, sans-serif; font-size: 11.5pt; color: #1a1a2e; line-height: 1.5; }
+h1 { font-size: 21pt; color: #6b4ee6; margin: 4px 0 6px; }
+h2 { font-size: 15pt; color: #6b4ee6; border-top: 1px solid #dddddd; padding-top: 8px; margin: 18px 0 10px; }
+h3, h4 { font-size: 11.5pt; margin: 12px 0 6px; }
+p { margin: 7px 0; }
+.brand { font-size: 10.5pt; font-weight: bold; color: #ff7849; letter-spacing: .06em;
+         border-bottom: 2px solid #ff7849; padding-bottom: 6px; margin-bottom: 14px; }
+table { border-collapse: collapse; margin: 10px 0; }
+th, td { border: 1px solid #c8c8c8; padding: 4px 9px; text-align: center; }
+th { background: #f3eefc; color: #6b4ee6; font-weight: bold; }
+pre { font-family: Consolas, "Courier New", monospace; font-size: 10.5pt; background: #f4f4f5;
+      border: 1px solid #dddddd; padding: 8px 10px; white-space: pre-wrap; }
+pre code { background: transparent; color: #1a1a2e; }
+code { font-family: Consolas, "Courier New", monospace; background: #fff1e8; color: #d6531f; padding: 0 3px; }
+blockquote { border-left: 3px solid #ff7849; background: #fff6ef; padding: 8px 12px;
+             color: #6a3a1c; margin: 9px 0; }
+ul, ol { margin: 7px 0 7px 26px; }
+p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
+.footer { color: #999999; font-size: 8.5pt; text-align: center; margin-top: 18px;
+          border-top: 1px solid #eeeeee; padding-top: 6px; }
+.footer b { color: #ff7849; }
+</style></head>
+<body><div class=WordSection1>
+<div class="brand">📚 ENGLISH CODING · 영어코딩</div>
+<h1>🏆 RS001 Week 16 — English Worksheet</h1>
+<p><strong>Topic:</strong> Everything Together — The Finished Game · <strong>Course:</strong> Text Adventure (Python) · <strong>Time:</strong> about 60 minutes</p>
+<p>This is the final week. In your live lesson you built one whole game out of <strong>every</strong> idea from weeks 1–15: variables, lists, cleaned and validated input, branching, battle functions, randomness, an inventory, and a score-based ending. This worksheet is for <strong>thinking about</strong> and <strong>explaining</strong> that code — reading it, predicting it, and finding bugs on paper. At the end you will present the finished game you built.</p>
+<blockquote>
+<p>🧠 Words to know: <strong>variable</strong>, <strong>function</strong>, <strong>random</strong>, <strong>inventory</strong>, <strong>ending</strong></p>
+</blockquote>
+<pre><code class="language-python">if score == 3 and &quot;golden key&quot; in backpack and &quot;gem&quot; in backpack:
+    ending = &quot;King ending — every secret and treasure is yours!&quot;
+elif score == 3 and (&quot;golden key&quot; in backpack or &quot;map&quot; in backpack):
+    ending = &quot;Sage ending — you solved the riddles and found the way.&quot;
+</code></pre>
+<hr />
+<h2>1 · Predict 🔮</h2>
+<p>Read each piece of code. In your head, work out what happens, then write your answer.</p>
+<pre><code class="language-python">backpack = [&quot;sword&quot;, &quot;map&quot;]
+if &quot;map&quot; in backpack:
+    game.say(&quot;You unfold the map.&quot;)
+else:
+    game.say(&quot;You are lost.&quot;)
+</code></pre>
+<p><strong>Which message appears?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">score = 3
+backpack = [&quot;golden key&quot;]
+if score == 3 and &quot;golden key&quot; in backpack:
+    game.say(&quot;Best ending!&quot;)
+else:
+    game.say(&quot;Another ending.&quot;)
+</code></pre>
+<p><strong><code>and</code> needs both sides true. Which message appears?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">score = 3
+backpack = [&quot;map&quot;]
+if score == 3 and (&quot;golden key&quot; in backpack or &quot;map&quot; in backpack):
+    game.say(&quot;Sage ending&quot;)
+</code></pre>
+<p><strong><code>or</code> needs only one side true. Does the sage ending print? Why?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>2 · Spot the Bug 🐛</h2>
+<p>Each block was meant to do something, but it is broken. Read what it is <strong>supposed</strong> to do, fix it on paper, then explain why the original was wrong.</p>
+<p><strong>Bug A</strong> — A reward won in battle should be added to the inventory. Right now the reward is named but never goes into the backpack.</p>
+<pre><code class="language-python">backpack = [&quot;sword&quot;]
+reward = &quot;golden key&quot;
+game.say(f&quot;You won a {reward}!&quot;)
+game.say(f&quot;Bag: {backpack}&quot;)
+</code></pre>
+<p><strong>Hint:</strong> use <code>backpack.append(reward)</code> to add it.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug B</strong> — The best ending should need <strong>both</strong> a perfect score <strong>and</strong> the golden key. Right now it uses <code>or</code>, so it fires too easily.</p>
+<pre><code class="language-python">score = 1
+backpack = [&quot;golden key&quot;]
+if score == 3 or &quot;golden key&quot; in backpack:
+    game.say(&quot;King ending — perfect run!&quot;)
+else:
+    game.say(&quot;A smaller ending.&quot;)
+</code></pre>
+<p><strong>Hint:</strong> swap <code>or</code> for <code>and</code> so both conditions must be true.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug C</strong> — The endings should be checked from <strong>best to worst</strong>, so the rarest one is found first. Right now a low-bar ending is checked first and steals every player.</p>
+<pre><code class="language-python">if score &gt;= 1:
+    ending = &quot;Adventurer ending&quot;
+elif score == 3 and &quot;golden key&quot; in backpack:
+    ending = &quot;King ending&quot;
+game.say(ending)
+</code></pre>
+<p><strong>Hint:</strong> put the strictest condition (the King ending) at the top.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>3 · Explain the Code 📖</h2>
+<p>This is how a finished game decides its ending. Read it carefully, then answer the questions.</p>
+<pre><code class="language-python">backpack = [&quot;golden key&quot;, &quot;map&quot;]
+score = 3
+
+if score == 3 and &quot;golden key&quot; in backpack and &quot;gem&quot; in backpack:
+    ending = &quot;King ending — every secret and treasure is yours!&quot;
+elif score == 3 and (&quot;golden key&quot; in backpack or &quot;map&quot; in backpack):
+    ending = &quot;Sage ending — you solved the riddles and found the way.&quot;
+elif score &gt;= 1:
+    ending = &quot;Adventurer ending — you made it out alive.&quot;
+else:
+    ending = &quot;Lost ending — the dungeon keeps you.&quot;
+
+game.say(ending)
+</code></pre>
+<p><strong>What two things does the <code>backpack</code> list hold at the start, and what number is in <code>score</code>?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>The King ending needs three things to all be true. Why does this run NOT give the King ending?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Which ending does this code actually choose? Explain how Python reached it.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why is the King ending checked before the Sage ending and not after?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>What would the last line <code>game.say(ending)</code> print to the player?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>4 · Explain Your Lesson Code 🎥</h2>
+<p>Present the finished game you built across this course. Record a video on your phone (or a parent's phone): show the game <strong>running</strong>, then explain the key parts of the code in your own words. Teach it like the viewer has never coded. Try to use these words: <strong>variable</strong>, <strong>function</strong>, <strong>random</strong>, <strong>inventory</strong>, <strong>ending</strong>.</p>
+<blockquote>
+<ol>
+<li>Play your finished game from start to finish so we can see it run.</li>
+<li>Point to one or two pieces of code you are most proud of and say what they do.</li>
+<li>Explain how your endings are chosen from the score and the inventory.</li>
+<li>Tell us the hardest bug you hit and how you solved it.</li>
+</ol>
+</blockquote>
+<p><strong>Write what you will say in your video. Plan it here before you record.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your finished-game presentation video to teacher on KakaoTalk.</p>
+<div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>
+</div></body></html>

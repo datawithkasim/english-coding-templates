@@ -1,0 +1,156 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head><meta charset='utf-8'>
+<title>📝 WD003 Week 1 — English Worksheet</title>
+<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
+<style>
+@page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
+div.WordSection1 { page: WordSection1; }
+body { font-family: "Segoe UI", Arial, sans-serif; font-size: 11.5pt; color: #1a1a2e; line-height: 1.5; }
+h1 { font-size: 21pt; color: #6b4ee6; margin: 4px 0 6px; }
+h2 { font-size: 15pt; color: #6b4ee6; border-top: 1px solid #dddddd; padding-top: 8px; margin: 18px 0 10px; }
+h3, h4 { font-size: 11.5pt; margin: 12px 0 6px; }
+p { margin: 7px 0; }
+.brand { font-size: 10.5pt; font-weight: bold; color: #ff7849; letter-spacing: .06em;
+         border-bottom: 2px solid #ff7849; padding-bottom: 6px; margin-bottom: 14px; }
+table { border-collapse: collapse; margin: 10px 0; }
+th, td { border: 1px solid #c8c8c8; padding: 4px 9px; text-align: center; }
+th { background: #f3eefc; color: #6b4ee6; font-weight: bold; }
+pre { font-family: Consolas, "Courier New", monospace; font-size: 10.5pt; background: #f4f4f5;
+      border: 1px solid #dddddd; padding: 8px 10px; white-space: pre-wrap; }
+pre code { background: transparent; color: #1a1a2e; }
+code { font-family: Consolas, "Courier New", monospace; background: #fff1e8; color: #d6531f; padding: 0 3px; }
+blockquote { border-left: 3px solid #ff7849; background: #fff6ef; padding: 8px 12px;
+             color: #6a3a1c; margin: 9px 0; }
+ul, ol { margin: 7px 0 7px 26px; }
+p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
+.footer { color: #999999; font-size: 8.5pt; text-align: center; margin-top: 18px;
+          border-top: 1px solid #eeeeee; padding-top: 6px; }
+.footer b { color: #ff7849; }
+</style></head>
+<body><div class=WordSection1>
+<div class="brand">📚 ENGLISH CODING · 영어코딩</div>
+<h1>📝 WD003 Week 1 — English Worksheet</h1>
+<p><strong>Topic:</strong> Brand Kit + Wireframe — Plan Before You Build · <strong>Course:</strong> Portfolio Site · <strong>Time:</strong> about 60 minutes</p>
+<p>This week there is <strong>no code yet</strong>. Real designers do two things before they touch a computer: they decide how the site should <strong>feel</strong> (a <strong>brand kit</strong>) and they decide what goes <strong>where</strong> (a <strong>wireframe</strong>). You will do both, on paper. Planning first means less getting lost later.</p>
+<blockquote>
+<p>A portfolio site usually has these sections: <strong>Hero</strong>, <strong>About</strong>, <strong>Projects</strong>, <strong>Contact</strong>, and a <strong>Footer</strong>. You will arrange them, then decide what <em>yours</em> says about <em>you</em>.</p>
+</blockquote>
+<hr />
+<h2>1 · Predict 🔮</h2>
+<p>Read each plan below. Before you imagine the page, write what you think a visitor would see.</p>
+<pre><code>[ Nav: Home / About / Projects / Contact ]
+[ Hero: my name + one line ]
+[ About: photo + a few sentences ]
+[ Projects: 3 cards ]
+[ Contact: a form ]
+[ Footer ]
+</code></pre>
+<p><strong>A visitor lands at the top and scrolls down. List, in order, what they see.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code>[ Hero ]
+[ Contact ]
+[ About ]
+[ Projects ]
+</code></pre>
+<p><strong>This site puts Contact second, right after the Hero. Is that a good first impression? What would a visitor know about this person before they are asked to send a message?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code>[ Nav: Home / About / Projects / Contact ]
+[ Hero ]
+[ About ]
+</code></pre>
+<p><strong>The nav menu has four links, but the page only has a Hero and an About section. What happens when a visitor clicks "Projects"?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>2 · Spot the Bug 🐛</h2>
+<p>Each plan below was meant to do something, but it does not quite work yet. Read what the plan is <strong>supposed</strong> to do, then rewrite it so it makes sense. After that, explain why the original was a problem.</p>
+<p><strong>Bug A</strong> — This wireframe is supposed to introduce the person <em>before</em> showing their work. Right now the Projects come before anyone knows who made them.</p>
+<pre><code>[ Hero ]
+[ Projects ]
+[ About ]
+[ Contact ]
+</code></pre>
+<p><strong>Write the fixed order:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was the original order a problem? Why does your order work better?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug B</strong> — A wireframe is supposed to use <strong>boxes and labels only</strong> — no colors, no finished text, no real photos. This one has jumped ahead.</p>
+<pre><code>[ Hero: bright orange background, font is &quot;Pretendard Bold 64px&quot;,
+  exact paragraph already written out, real photo placed ]
+</code></pre>
+<p><strong>Hint:</strong> a wireframe decides <em>position</em>, not <em>paint</em>. Strip it back.</p>
+<p><strong>Write a proper wireframe label for the Hero:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why is it better to leave the colors and final text for later?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug C</strong> — Every section is supposed to have a clear <strong>label</strong> so you know what it is for. This plan has a mystery box.</p>
+<pre><code>[ Nav ]
+[ Hero ]
+[ ??? ]
+[ Footer ]
+</code></pre>
+<p><strong>Hint:</strong> name the box, and say what one thing it shows.</p>
+<p><strong>Write the fixed plan:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why does naming every box now save you trouble later?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>3 · Design Your Brand Kit 🎨</h2>
+<p>A <strong>brand kit</strong> is a small set of choices that make everything you build look like <em>you</em> made it. Big companies have one. Now you do too. Work through these steps on one sheet of paper — that page becomes your brand kit.</p>
+<ol>
+<li><strong>Pick three words</strong> that describe you (for example: <em>curious, funny, calm</em>). Every choice after this should match your words.</li>
+<li><strong>Choose your colors.</strong> Pick one main color and one background color that fit your three words. A calm person and a loud person should not end up with the same colors.</li>
+<li><strong>Choose your font style.</strong> You do not need a font name yet — just decide: rounded or sharp? thick or thin? Write a small sample of your name in that style.</li>
+<li><strong>Write your name the way it will appear at the top of your site.</strong> That is your logo for now.</li>
+</ol>
+<p>Stuck for ideas? Designers share their work on sites like <strong>dribbble.com</strong> and <strong>pinterest.com</strong> — searching "portfolio website" there shows you hundreds of real designs, and noticing what you like trains your eye. One caution: these sites are the open internet, and anyone can post anything, so you may run into things that are off-topic or not for kids. Stay on your search, and if something looks wrong, close it and move on. And remember — you are there to get <em>inspired</em>, not to copy someone's design box for box.</p>
+<p><strong>Write your brand kit below too: your three words, your colors, your font style.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>4 · Draw Your Wireframe 📐</h2>
+<p>Now decide what goes where. On paper, sketch your site as a column of boxes — one box per section, in the order a visitor will see them.</p>
+<p>A good wireframe follows these rules:</p>
+<blockquote>
+<p><strong>Boxes and labels only.</strong> No colors, no real photos, no finished sentences — that all comes later.</p>
+<p><strong>Name every box.</strong> A box nobody can name is a box nobody needed.</p>
+<p><strong>One short note per box</strong> saying what it shows — "3 project cards", "photo + intro".</p>
+<p><strong>Neat enough that a stranger could read it.</strong> If someone else picked up your paper, could they tell what each part of your site is? That is the test.</p>
+</blockquote>
+<p>Sketch your Hero, About, Projects, Contact and Footer, then explain your plan. Use these sentence starters — write 4 to 6 sentences total.</p>
+<blockquote>
+<p>The three words I picked for myself are …</p>
+<p>I chose these colors because …</p>
+<p>My Hero section will say …</p>
+<p>In my About section, I want to tell visitors …</p>
+<p>The hardest part of planning was …</p>
+<p>If I had more time, I would add …</p>
+</blockquote>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>5 · Record Your Walkthrough 🎥</h2>
+<p>Now take a video on your phone (or a parent's phone) and walk through your plan. Talk through it like you are showing someone what your finished site <em>will</em> look like. Try to use these words: <strong>brand kit</strong>, <strong>wireframe</strong>, <strong>section</strong>, <strong>Hero</strong>, <strong>layout</strong>.</p>
+<blockquote>
+<ol>
+<li>Hold up your brand kit. Read your three words and say why your colors fit them.</li>
+<li>Hold up your wireframe and point to each section from top to bottom.</li>
+<li>Say which section you are most excited to build.</li>
+</ol>
+</blockquote>
+<p><strong>Write what you will say in your video.</strong> Use the space below to plan it before you record — you can read from it while filming.</p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + a photo or video of your brand kit and wireframe to teacher on KakaoTalk.</p>
+<div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>
+</div></body></html>

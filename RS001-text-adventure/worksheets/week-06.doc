@@ -1,0 +1,146 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head><meta charset='utf-8'>
+<title>🧼 RS001 Week 6 — English Worksheet</title>
+<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
+<style>
+@page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
+div.WordSection1 { page: WordSection1; }
+body { font-family: "Segoe UI", Arial, sans-serif; font-size: 11.5pt; color: #1a1a2e; line-height: 1.5; }
+h1 { font-size: 21pt; color: #6b4ee6; margin: 4px 0 6px; }
+h2 { font-size: 15pt; color: #6b4ee6; border-top: 1px solid #dddddd; padding-top: 8px; margin: 18px 0 10px; }
+h3, h4 { font-size: 11.5pt; margin: 12px 0 6px; }
+p { margin: 7px 0; }
+.brand { font-size: 10.5pt; font-weight: bold; color: #ff7849; letter-spacing: .06em;
+         border-bottom: 2px solid #ff7849; padding-bottom: 6px; margin-bottom: 14px; }
+table { border-collapse: collapse; margin: 10px 0; }
+th, td { border: 1px solid #c8c8c8; padding: 4px 9px; text-align: center; }
+th { background: #f3eefc; color: #6b4ee6; font-weight: bold; }
+pre { font-family: Consolas, "Courier New", monospace; font-size: 10.5pt; background: #f4f4f5;
+      border: 1px solid #dddddd; padding: 8px 10px; white-space: pre-wrap; }
+pre code { background: transparent; color: #1a1a2e; }
+code { font-family: Consolas, "Courier New", monospace; background: #fff1e8; color: #d6531f; padding: 0 3px; }
+blockquote { border-left: 3px solid #ff7849; background: #fff6ef; padding: 8px 12px;
+             color: #6a3a1c; margin: 9px 0; }
+ul, ol { margin: 7px 0 7px 26px; }
+p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
+.footer { color: #999999; font-size: 8.5pt; text-align: center; margin-top: 18px;
+          border-top: 1px solid #eeeeee; padding-top: 6px; }
+.footer b { color: #ff7849; }
+</style></head>
+<body><div class=WordSection1>
+<div class="brand">📚 ENGLISH CODING · 영어코딩</div>
+<h1>🧼 RS001 Week 6 — English Worksheet</h1>
+<p><strong>Topic:</strong> Clean Every Input Safely · <strong>Course:</strong> Text Adventure (Python) · <strong>Time:</strong> about 45 minutes</p>
+<p>This week you think about how <code>.strip().lower()</code> cleans <strong>every</strong> <code>ask()</code> in your game, and how a game can accept several spellings of the same answer — Korean, English, short forms — so almost any sensible input works. You will read code closely and explain it in your own words.</p>
+<blockquote>
+<p>🧠 Words to know: <strong>clean</strong>, <strong>strip</strong>, <strong>lower</strong>, <strong>in</strong>, <strong>spelling</strong></p>
+</blockquote>
+<hr />
+<h2>1 · Predict 🔮</h2>
+<p>Read each piece of code. Run it in your head and write what you think happens.</p>
+<pre><code class="language-python">d = &quot;  RIGHT &quot;
+d = d.strip().lower()
+game.say(f&quot;[{d}]&quot;)
+</code></pre>
+<p><strong>What is printed inside the brackets?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">d = game.ask(&quot;way?&quot;)
+d = d.strip().lower()
+if d in [&quot;left&quot;, &quot;l&quot;, &quot;왼쪽&quot;]:
+    d = &quot;left&quot;
+game.say(d)
+</code></pre>
+<p><strong>The player types <code>L</code>. What single word is printed?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">d = &quot;Left&quot;
+d = d.lower().strip()
+game.say(f&quot;[{d}]&quot;)
+</code></pre>
+<p><strong>Here <code>.lower()</code> runs before <code>.strip()</code>. Does the result change? Why or why not?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>2 · Spot the Bug 🐛</h2>
+<p>Each block was meant to do something, but it is broken. Read what it is <strong>supposed</strong> to do, fix it on paper, then explain why the original was wrong.</p>
+<p><strong>Bug A</strong> — This should accept <code>"left"</code>, <code>"l"</code>, or <code>"왼쪽"</code> and turn them all into <code>"left"</code>. Right now it only matches the full word <code>"left"</code>.</p>
+<pre><code class="language-python">d = game.ask(&quot;way?&quot;).strip().lower()
+if d == &quot;left&quot;:
+    d = &quot;left&quot;
+game.say(d)
+</code></pre>
+<p><strong>Hint:</strong> swap <code>==</code> for <code>in [ ... ]</code> and list the spellings you want to allow.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug B</strong> — Two inputs (a direction and an action) should both be cleaned. Right now only the first one is, so the action still has spaces and capitals.</p>
+<pre><code class="language-python">direction = game.ask(&quot;way?&quot;).strip().lower()
+action = game.ask(&quot;do what?&quot;)
+game.say(f&quot;{direction} / {action}&quot;)
+</code></pre>
+<p><strong>Hint:</strong> the second input needs the same cleaning treatment.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug C</strong> — The match list should be in <strong>lowercase</strong> so the cleaned input can find it. Right now the list has a capital letter, so a cleaned <code>"left"</code> never matches.</p>
+<pre><code class="language-python">d = game.ask(&quot;way?&quot;).strip().lower()
+if d in [&quot;Left&quot;, &quot;l&quot;]:
+    d = &quot;left&quot;
+game.say(d)
+</code></pre>
+<p><strong>Hint:</strong> after <code>.lower()</code>, the input is lowercase — the list must be too.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>3 · Explain the Code 📖</h2>
+<p>Read this working example slowly. It cleans the player's answer and accepts several spellings of "left".</p>
+<pre><code class="language-python">direction = game.ask(&quot;Which way? (left/right)&quot;)
+direction = direction.strip().lower()
+if direction in [&quot;left&quot;, &quot;l&quot;, &quot;왼쪽&quot;]:
+    direction = &quot;left&quot;
+</code></pre>
+<p><strong>What does <code>.strip()</code> remove from the player's answer?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>What does <code>.lower()</code> do to a capital letter the player typed?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why must the words in the list <code>["left", "l", "왼쪽"]</code> all be lowercase?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>The player types <code>"  Left "</code>. After line 2, what is the value of <code>direction</code>? Does the <code>if</code> match?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why is it helpful to turn <code>"l"</code> and <code>"왼쪽"</code> both into <code>"left"</code> before the rest of the game runs?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>4 · Explain Your Lesson Code 🎥</h2>
+<p>In today's live lesson you cleaned the inputs in your own game. Now explain that code in a short video on your phone (or a parent's phone). You may show your game running. Teach it like the viewer has never coded. Try to use these words: <strong>clean</strong>, <strong>strip</strong>, <strong>lower</strong>, <strong>in</strong>, <strong>spelling</strong>.</p>
+<blockquote>
+<ol>
+<li>Show one <code>ask()</code> line from your game and read your <code>.strip().lower()</code> out loud.</li>
+<li>Explain what <code>.strip()</code> and <code>.lower()</code> each do to the player's answer.</li>
+<li>Read your <code>if ... in [ ... ]</code> line and say which spellings you allowed.</li>
+<li>Run it once with a "normal" answer and once with a different spelling, and show both reaching the same path.</li>
+</ol>
+</blockquote>
+<p><strong>Write what you will say in your video. Plan it here before you record.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.</p>
+<div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>
+</div></body></html>

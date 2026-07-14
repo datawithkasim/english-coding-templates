@@ -1,0 +1,184 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head><meta charset='utf-8'>
+<title>↔️ WD001 Week 4 — English Worksheet</title>
+<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
+<style>
+@page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
+div.WordSection1 { page: WordSection1; }
+body { font-family: "Segoe UI", Arial, sans-serif; font-size: 11.5pt; color: #1a1a2e; line-height: 1.5; }
+h1 { font-size: 21pt; color: #6b4ee6; margin: 4px 0 6px; }
+h2 { font-size: 15pt; color: #6b4ee6; border-top: 1px solid #dddddd; padding-top: 8px; margin: 18px 0 10px; }
+h3, h4 { font-size: 11.5pt; margin: 12px 0 6px; }
+p { margin: 7px 0; }
+.brand { font-size: 10.5pt; font-weight: bold; color: #ff7849; letter-spacing: .06em;
+         border-bottom: 2px solid #ff7849; padding-bottom: 6px; margin-bottom: 14px; }
+table { border-collapse: collapse; margin: 10px 0; }
+th, td { border: 1px solid #c8c8c8; padding: 4px 9px; text-align: center; }
+th { background: #f3eefc; color: #6b4ee6; font-weight: bold; }
+pre { font-family: Consolas, "Courier New", monospace; font-size: 10.5pt; background: #f4f4f5;
+      border: 1px solid #dddddd; padding: 8px 10px; white-space: pre-wrap; }
+pre code { background: transparent; color: #1a1a2e; }
+code { font-family: Consolas, "Courier New", monospace; background: #fff1e8; color: #d6531f; padding: 0 3px; }
+blockquote { border-left: 3px solid #ff7849; background: #fff6ef; padding: 8px 12px;
+             color: #6a3a1c; margin: 9px 0; }
+ul, ol { margin: 7px 0 7px 26px; }
+p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
+.footer { color: #999999; font-size: 8.5pt; text-align: center; margin-top: 18px;
+          border-top: 1px solid #eeeeee; padding-top: 6px; }
+.footer b { color: #ff7849; }
+</style></head>
+<body><div class=WordSection1>
+<div class="brand">📚 ENGLISH CODING · 영어코딩</div>
+<h1>↔️ WD001 Week 4 — English Worksheet</h1>
+<p><strong>Topic:</strong> Flexbox — Lining Things Up Horizontally · <strong>Course:</strong> Web Design: CSS · <strong>Time:</strong> about 45 minutes</p>
+<p>This week you put boxes <strong>side by side</strong>. One line — <code>display: flex</code> — makes the children of a box line up in a row. Then <code>justify-content</code> spreads them across, <code>align-items</code> lines them up top-to-bottom, and <code>gap</code> adds space between them.</p>
+<hr />
+<h2>1 · Predict 🔮</h2>
+<p>Read each bit of CSS. Before you imagine the browser drawing it, write what you think will happen.</p>
+<pre><code class="language-html">&lt;style&gt;
+  .row {
+    display: flex;
+    gap: 20px;
+  }
+&lt;/style&gt;
+</code></pre>
+<p><strong>The <code>.row</code> holds three cards. After <code>display: flex</code>, are the cards stacked on top of each other or side by side?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-html">&lt;style&gt;
+  .row {
+    display: flex;
+    justify-content: center;
+  }
+&lt;/style&gt;
+</code></pre>
+<p><strong>Where do the cards sit — on the left, in the middle, or spread out?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-html">&lt;style&gt;
+  .row {
+    display: flex;
+    justify-content: space-between;
+  }
+&lt;/style&gt;
+</code></pre>
+<p><strong><code>space-between</code> with three cards. Where does the empty space go?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-html">&lt;style&gt;
+  .menu {
+    display: flex;
+    gap: 24px;
+  }
+&lt;/style&gt;
+</code></pre>
+<p><strong>The <code>.menu</code> holds three links: Home, About, Contact. What does the menu look like now?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>2 · Spot the Bug 🐛</h2>
+<p>Each bit of CSS below was meant to do something, but it is broken. Read what it is <strong>supposed</strong> to do, then rewrite it so it works. After that, explain why the original was wrong and why your fix works.</p>
+<p><strong>Bug A</strong> — The three cards are supposed to line up in a row, but they are still stacked on top of each other.</p>
+<pre><code class="language-html">&lt;style&gt;
+  .row {
+    flex;
+    gap: 16px;
+  }
+&lt;/style&gt;
+</code></pre>
+<p><strong>Hint:</strong> <code>flex</code> is the <strong>value</strong>. What is the property name?</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug B</strong> — The cards are in a row but jammed together with no space. There should be a gap.</p>
+<pre><code class="language-html">&lt;style&gt;
+  .row {
+    display: flex;
+    gap 16px;
+  }
+&lt;/style&gt;
+</code></pre>
+<p><strong>Hint:</strong> something is missing between the property and the value.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug C</strong> — <code>justify-content</code> is on the wrong box. It was written on a single card instead of on the row that holds the cards.</p>
+<pre><code class="language-html">&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;card&quot; style=&quot;justify-content: center;&quot;&gt;A&lt;/div&gt;
+  &lt;div class=&quot;card&quot;&gt;B&lt;/div&gt;
+  &lt;div class=&quot;card&quot;&gt;C&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<p><strong>Hint:</strong> <code>justify-content</code> belongs on the <strong>flex container</strong> (the <code>.row</code>), not on a child.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>3 · Build a Menu and a Card Row 📸</h2>
+<p>In Replit, work on the page you have been building. Add two things:</p>
+<ol>
+<li>a <strong>navigation menu</strong> with links (Home, About, Contact, and at least one more of your own),</li>
+<li>your <strong>3 cards from last week lined up in a row</strong> using Flexbox.</li>
+</ol>
+<p>You can start your menu like this and change the words and colours:</p>
+<pre><code class="language-html">&lt;div class=&quot;menu&quot;&gt;
+  &lt;a href=&quot;#&quot;&gt;Home&lt;/a&gt;
+  &lt;a href=&quot;#&quot;&gt;About&lt;/a&gt;
+  &lt;a href=&quot;#&quot;&gt;Contact&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;style&gt;
+  .menu {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    background-color: #1a3a52;
+    padding: 16px;
+  }
+  .menu a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 18px;
+  }
+&lt;/style&gt;
+</code></pre>
+<p>Try changing <code>justify-content</code> to <code>center</code>, then <code>space-between</code>, and notice the difference.</p>
+<p>When you finish, send a <strong>photo or video</strong> of your menu and card row (or a picture of your code), then explain what you did. Use these sentence starters — write 4 to 6 sentences total.</p>
+<blockquote>
+<p>The links in my menu are …</p>
+<p>I used <code>display: flex</code> to …</p>
+<p>When I tried <code>space-between</code>, the cards …</p>
+<p>The <code>gap</code> did …</p>
+<p>One tricky moment was when …</p>
+<p>If I had more time, I would …</p>
+</blockquote>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>4 · Record Your Walkthrough 🎥</h2>
+<p>Now take a video on your phone (or a parent's phone) while you show your menu and cards. Talk through it like you are teaching someone who has never seen Flexbox. Try to use these words: <strong>flex</strong>, <strong>row</strong>, <strong>justify-content</strong>, <strong>gap</strong>, <strong>align</strong>.</p>
+<blockquote>
+<ol>
+<li>Show your menu and your row of cards in the browser.</li>
+<li>Read your <code>display: flex</code> line out loud and say what it does.</li>
+<li>Change <code>justify-content</code> live and say what moves.</li>
+<li>Show one thing you got wrong at first and how you fixed it.</li>
+</ol>
+</blockquote>
+<p><strong>Write what you will say in your video.</strong> Use the space below to plan it before you record — you can read from it while filming.</p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.</p>
+<div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>
+</div></body></html>

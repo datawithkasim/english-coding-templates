@@ -1,0 +1,165 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head><meta charset='utf-8'>
+<title>🏃 RB001 Week 5 — English Worksheet</title>
+<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
+<style>
+@page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
+div.WordSection1 { page: WordSection1; }
+body { font-family: "Segoe UI", Arial, sans-serif; font-size: 11.5pt; color: #1a1a2e; line-height: 1.5; }
+h1 { font-size: 21pt; color: #6b4ee6; margin: 4px 0 6px; }
+h2 { font-size: 15pt; color: #6b4ee6; border-top: 1px solid #dddddd; padding-top: 8px; margin: 18px 0 10px; }
+h3, h4 { font-size: 11.5pt; margin: 12px 0 6px; }
+p { margin: 7px 0; }
+.brand { font-size: 10.5pt; font-weight: bold; color: #ff7849; letter-spacing: .06em;
+         border-bottom: 2px solid #ff7849; padding-bottom: 6px; margin-bottom: 14px; }
+table { border-collapse: collapse; margin: 10px 0; }
+th, td { border: 1px solid #c8c8c8; padding: 4px 9px; text-align: center; }
+th { background: #f3eefc; color: #6b4ee6; font-weight: bold; }
+pre { font-family: Consolas, "Courier New", monospace; font-size: 10.5pt; background: #f4f4f5;
+      border: 1px solid #dddddd; padding: 8px 10px; white-space: pre-wrap; }
+pre code { background: transparent; color: #1a1a2e; }
+code { font-family: Consolas, "Courier New", monospace; background: #fff1e8; color: #d6531f; padding: 0 3px; }
+blockquote { border-left: 3px solid #ff7849; background: #fff6ef; padding: 8px 12px;
+             color: #6a3a1c; margin: 9px 0; }
+ul, ol { margin: 7px 0 7px 26px; }
+p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
+.footer { color: #999999; font-size: 8.5pt; text-align: center; margin-top: 18px;
+          border-top: 1px solid #eeeeee; padding-top: 6px; }
+.footer b { color: #ff7849; }
+</style></head>
+<body><div class=WordSection1>
+<div class="brand">📚 ENGLISH CODING · 영어코딩</div>
+<h1>🏃 RB001 Week 5 — English Worksheet</h1>
+<p><strong>Topic:</strong> Loops — Platforms that Vanish · <strong>Course:</strong> Obby Architect · <strong>Time:</strong> about 45 minutes</p>
+<p>This week your scripts <strong>repeat</strong> using loops. A <code>for</code> loop repeats a set number of times. A <code>while true do</code> loop repeats forever. With loops, one platform can fade out, vanish, and come back — again and again.</p>
+<hr />
+<h2>1 · Predict 🔮</h2>
+<p>Read each script. Before you imagine running it in Studio, write what you think will happen.</p>
+<pre><code class="language-lua">local platform = script.Parent
+
+for i = 1, 10 do
+    platform.Transparency = i / 10
+    task.wait(0.1)
+end
+</code></pre>
+<p><strong>The loop runs 10 times. What does the platform look like when the loop ends? About how many seconds does the fade take?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-lua">local platform = script.Parent
+
+while true do
+    task.wait(3)
+    platform.Transparency = 1
+    platform.CanCollide = false
+    task.wait(2)
+    platform.Transparency = 0
+    platform.CanCollide = true
+end
+</code></pre>
+<p><strong>This loop never stops. What does the platform do, over and over? For how many seconds is it safe to stand on?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-lua">local platform = script.Parent
+
+while true do
+    for i = 1, 10 do
+        platform.Transparency = i / 10
+        task.wait(0.1)
+    end
+    platform.CanCollide = false
+    task.wait(2)
+    platform.Transparency = 0
+    platform.CanCollide = true
+    task.wait(3)
+end
+</code></pre>
+<p><strong>You are standing on this platform when the fade finishes. What happens to you? When is it safe to step on again?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>2 · Spot the Bug 🐛</h2>
+<p>Each script below was meant to do something, but it is broken. Read what the script is <strong>supposed</strong> to do, then rewrite it so it works. After that, explain why the original was wrong and why your fix works.</p>
+<p><strong>Bug A</strong> — The platform should blink: vanish, wait 2 seconds, come back, wait 2 seconds, forever. But when you press Play, Studio <strong>freezes</strong>.</p>
+<pre><code class="language-lua">local platform = script.Parent
+
+while true do
+    platform.Transparency = 1
+    platform.CanCollide = false
+    platform.Transparency = 0
+    platform.CanCollide = true
+end
+</code></pre>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug B</strong> — The platform is invisible. This loop should fade it <strong>back in</strong>, from invisible to solid. But nothing happens at all.</p>
+<pre><code class="language-lua">local platform = script.Parent
+
+for i = 10, 1 do
+    platform.Transparency = i / 10
+    task.wait(0.1)
+end
+</code></pre>
+<p><strong>Hint:</strong> counting <strong>down</strong> needs one extra number in the <code>for</code> line.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug C</strong> — The platform should fade out, vanish for 2 seconds, then come back good as new. But after the first cycle, players fall through a platform they <strong>cannot even see</strong> — and it never looks solid again.</p>
+<pre><code class="language-lua">local platform = script.Parent
+
+while true do
+    for i = 1, 10 do
+        platform.Transparency = i / 10
+        task.wait(0.1)
+    end
+    platform.CanCollide = false
+    task.wait(2)
+    platform.CanCollide = true
+    task.wait(3)
+end
+</code></pre>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>3 · Tell Me What You Built 📸</h2>
+<p>Now open your obby in Roblox Studio. Build a <strong>vanishing bridge</strong>: at least 3 platforms that fade out and come back using a loop. Cross it yourself in Play mode. When you finish, come back here.</p>
+<p>Send a photo or video of your bridge while it is fading, then explain what you did. Use these sentence starters — write 4 to 6 sentences total.</p>
+<blockquote>
+<p>First, I …</p>
+<p>I used a <strong>loop</strong> to …</p>
+<p>The platform fades because <code>Transparency = i / 10</code> means …</p>
+<p>One tricky moment was when …</p>
+<p>To fix it, I …</p>
+<p>If I had more time, I would …</p>
+</blockquote>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>4 · Record Your Walkthrough 🎥</h2>
+<p>Now take a video on your phone (or a parent's phone) while you cross your vanishing bridge in Play mode. Talk through it like you are teaching someone who has never seen it. Try to use these words: <strong>loop</strong>, <strong>repeat</strong>, <strong>forever</strong>, <strong>fade</strong>, <strong>wait</strong>.</p>
+<blockquote>
+<ol>
+<li>Show your bridge, then press Play.</li>
+<li>Read your <code>while true do</code> loop out loud and say what repeats.</li>
+<li>Point at <code>task.wait</code> and say what would happen without it.</li>
+<li>Cross the bridge and say when it is safe and when it is not.</li>
+</ol>
+</blockquote>
+<p><strong>Write what you will say in your video.</strong> Use the space below to plan it before you record — you can read from it while filming.</p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.</p>
+<div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>
+</div></body></html>

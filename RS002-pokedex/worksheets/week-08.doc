@@ -1,0 +1,180 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head><meta charset='utf-8'>
+<title>🔴 RS002 Week 8 — English Worksheet</title>
+<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
+<style>
+@page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
+div.WordSection1 { page: WordSection1; }
+body { font-family: "Segoe UI", Arial, sans-serif; font-size: 11.5pt; color: #1a1a2e; line-height: 1.5; }
+h1 { font-size: 21pt; color: #6b4ee6; margin: 4px 0 6px; }
+h2 { font-size: 15pt; color: #6b4ee6; border-top: 1px solid #dddddd; padding-top: 8px; margin: 18px 0 10px; }
+h3, h4 { font-size: 11.5pt; margin: 12px 0 6px; }
+p { margin: 7px 0; }
+.brand { font-size: 10.5pt; font-weight: bold; color: #ff7849; letter-spacing: .06em;
+         border-bottom: 2px solid #ff7849; padding-bottom: 6px; margin-bottom: 14px; }
+table { border-collapse: collapse; margin: 10px 0; }
+th, td { border: 1px solid #c8c8c8; padding: 4px 9px; text-align: center; }
+th { background: #f3eefc; color: #6b4ee6; font-weight: bold; }
+pre { font-family: Consolas, "Courier New", monospace; font-size: 10.5pt; background: #f4f4f5;
+      border: 1px solid #dddddd; padding: 8px 10px; white-space: pre-wrap; }
+pre code { background: transparent; color: #1a1a2e; }
+code { font-family: Consolas, "Courier New", monospace; background: #fff1e8; color: #d6531f; padding: 0 3px; }
+blockquote { border-left: 3px solid #ff7849; background: #fff6ef; padding: 8px 12px;
+             color: #6a3a1c; margin: 9px 0; }
+ul, ol { margin: 7px 0 7px 26px; }
+p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
+.footer { color: #999999; font-size: 8.5pt; text-align: center; margin-top: 18px;
+          border-top: 1px solid #eeeeee; padding-top: 6px; }
+.footer b { color: #ff7849; }
+</style></head>
+<body><div class=WordSection1>
+<div class="brand">📚 ENGLISH CODING · 영어코딩</div>
+<h1>🔴 RS002 Week 8 — English Worksheet</h1>
+<p><strong>Topic:</strong> Validation Everywhere + Logging Bad Input · <strong>Course:</strong> Pokédex App · <strong>Time:</strong> about 45 minutes</p>
+<p>This week is about thinking through the validation pattern for <strong>every</strong> input in your app — name, region, search — and how each bad attempt gets <strong>logged</strong> into a list for a session report. You also meet your first <strong>function</strong> here: a reusable <code>safe_input</code>. You will read code, trace it, and explain the code you wrote in your live lesson — no typing in the app today.</p>
+<blockquote>
+<p>🧠 Words to know: <strong>function</strong>, <strong>safe_input</strong>, <strong>log</strong>, <strong>append</strong>, <strong>return</strong>, <strong>report</strong></p>
+</blockquote>
+<hr />
+<h2>1 · Recall 🧠</h2>
+<p>From memory:</p>
+<p><strong>Write an <code>if</code> that warns and falls back to <code>"피카츄"</code> when <code>choice</code> is <code>not in</code> the list <code>pokedex</code>.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>2 · Predict 🔮</h2>
+<p>Read each block. Write what you think will happen — just from reading, without running it.</p>
+<pre><code class="language-python">invalid_attempts = []
+invalid_attempts.append(&quot;리자몽&quot;)
+invalid_attempts.append(&quot;타입null&quot;)
+print(len(invalid_attempts))
+print(invalid_attempts)
+</code></pre>
+<p><strong>What two lines print?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">invalid_attempts = [&quot;리자몽&quot;, &quot;타입null&quot;]
+print(f&quot;잘못 입력: {', '.join(invalid_attempts)}&quot;)
+</code></pre>
+<p><strong><code>', '.join(...)</code> glues list items with a comma between them. What prints?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">def safe_input(prompt, default=&quot;&quot;):
+    answer = input(prompt).strip()
+    if answer == &quot;&quot;:
+        answer = default
+    return answer
+
+name = safe_input(&quot;이름: &quot;, &quot;이름 모를 트레이너&quot;)
+print(name)
+</code></pre>
+<p><strong>The user presses Enter. What gets printed? Trace the path through the function.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>3 · Spot the Bug 🐛</h2>
+<p>Read what each block is <strong>supposed</strong> to do, fix it on paper, then explain the fix.</p>
+<p><strong>Bug A</strong> — Each bad answer should be <strong>added</strong> to the log. Right now it replaces the whole log every time, so only the last one survives.</p>
+<pre><code class="language-python">invalid_attempts = []
+invalid_attempts = &quot;리자몽&quot;
+invalid_attempts = &quot;타입null&quot;
+print(invalid_attempts)
+</code></pre>
+<p><strong>Hint:</strong> use <code>.append(...)</code> to add to a list.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug B</strong> — This function should <strong>return</strong> the cleaned answer so the caller can use it. Right now it prints inside and returns nothing.</p>
+<pre><code class="language-python">def safe_input(prompt, default=&quot;&quot;):
+    answer = input(prompt).strip()
+    if answer == &quot;&quot;:
+        answer = default
+    print(answer)
+
+name = safe_input(&quot;이름: &quot;, &quot;트레이너&quot;)
+print(f&quot;환영합니다, {name}!&quot;)
+</code></pre>
+<p><strong>Hint:</strong> swap the <code>print</code> for a <code>return</code>.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug C</strong> — The report should only list bad attempts <strong>if there were any</strong>. Right now it prints an empty list and a confusing message even when everything was fine.</p>
+<pre><code class="language-python">invalid_attempts = []
+print(f&quot;잘못 입력한 내용: {', '.join(invalid_attempts)}&quot;)
+</code></pre>
+<p><strong>Hint:</strong> wrap the report in <code>if invalid_attempts:</code>.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>4 · Explain the Code 📖</h2>
+<p>Here is a working <code>safe_input</code> with a log and a session report. Read it carefully and answer the questions.</p>
+<pre><code class="language-python">invalid_attempts = []
+
+def safe_input(prompt, valid_list=None, default=&quot;&quot;):
+    answer = input(prompt).strip()
+
+    if valid_list and answer not in valid_list:
+        invalid_attempts.append(answer)
+        print(f&quot;  ⚠️ '{answer}' 은(는) 인식 못해요. 다시 시도하세요.&quot;)
+        answer = input(prompt).strip()
+        if valid_list and answer not in valid_list:
+            invalid_attempts.append(answer)
+            print(f&quot;  기본값 ({default})으로 진행합니다.&quot;)
+            answer = default
+
+    if answer == &quot;&quot; and default:
+        answer = default
+
+    return answer
+
+pokedex = [&quot;피카츄&quot;, &quot;이상해씨&quot;, &quot;파이리&quot;]
+choice = safe_input(&quot;포켓몬 이름: &quot;, pokedex, &quot;피카츄&quot;)
+print(f&quot;선택: {choice}&quot;)
+
+print(f&quot;\n=== 세션 통계 ===&quot;)
+print(f&quot;잘못된 입력 횟수: {len(invalid_attempts)}&quot;)
+if invalid_attempts:
+    print(f&quot;잘못 입력한 내용: {', '.join(invalid_attempts)}&quot;)
+</code></pre>
+<p><strong>What does the line <code>invalid_attempts.append(answer)</code> do, and when does it run?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why does <code>safe_input</code> end with <code>return answer</code> instead of <code>print(answer)</code>?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>What are the three things you pass into <code>safe_input</code> on the <code>choice = ...</code> line, and what is each one for?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Walk through what happens if the user types a bad name twice in a row. Which lines run?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why is the report wrapped in <code>if invalid_attempts:</code>?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>5 · Explain Your Lesson Code 🎥</h2>
+<p>In today's live lesson you wrote your own <code>safe_input</code> and applied it to your Pokédex. Explain <strong>the code you wrote</strong> in a short phone video. You may show it running with some bad input on purpose. Try to use: <strong>function</strong>, <strong>safe_input</strong>, <strong>log</strong>, <strong>append</strong>, <strong>report</strong>.</p>
+<blockquote>
+<p>First, I wrote a function called <code>safe_input</code> that …</p>
+<p>I logged bad attempts by …</p>
+<p>I used the same function for … different inputs.</p>
+<p>My session report showed …</p>
+</blockquote>
+<p><strong>Write what you will say in your video. Plan it here before you record.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.</p>
+<div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>
+</div></body></html>

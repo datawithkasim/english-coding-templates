@@ -1,0 +1,211 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head><meta charset='utf-8'>
+<title>📊 RS003 Week 14 — English Worksheet</title>
+<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
+<style>
+@page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
+div.WordSection1 { page: WordSection1; }
+body { font-family: "Segoe UI", Arial, sans-serif; font-size: 11.5pt; color: #1a1a2e; line-height: 1.5; }
+h1 { font-size: 21pt; color: #6b4ee6; margin: 4px 0 6px; }
+h2 { font-size: 15pt; color: #6b4ee6; border-top: 1px solid #dddddd; padding-top: 8px; margin: 18px 0 10px; }
+h3, h4 { font-size: 11.5pt; margin: 12px 0 6px; }
+p { margin: 7px 0; }
+.brand { font-size: 10.5pt; font-weight: bold; color: #ff7849; letter-spacing: .06em;
+         border-bottom: 2px solid #ff7849; padding-bottom: 6px; margin-bottom: 14px; }
+table { border-collapse: collapse; margin: 10px 0; }
+th, td { border: 1px solid #c8c8c8; padding: 4px 9px; text-align: center; }
+th { background: #f3eefc; color: #6b4ee6; font-weight: bold; }
+pre { font-family: Consolas, "Courier New", monospace; font-size: 10.5pt; background: #f4f4f5;
+      border: 1px solid #dddddd; padding: 8px 10px; white-space: pre-wrap; }
+pre code { background: transparent; color: #1a1a2e; }
+code { font-family: Consolas, "Courier New", monospace; background: #fff1e8; color: #d6531f; padding: 0 3px; }
+blockquote { border-left: 3px solid #ff7849; background: #fff6ef; padding: 8px 12px;
+             color: #6a3a1c; margin: 9px 0; }
+ul, ol { margin: 7px 0 7px 26px; }
+p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
+.footer { color: #999999; font-size: 8.5pt; text-align: center; margin-top: 18px;
+          border-top: 1px solid #eeeeee; padding-top: 6px; }
+.footer b { color: #ff7849; }
+</style></head>
+<body><div class=WordSection1>
+<div class="brand">📚 ENGLISH CODING · 영어코딩</div>
+<h1>📊 RS003 Week 14 — English Worksheet</h1>
+<p><strong>Topic:</strong> A HUD and Enemy Types · <strong>Course:</strong> Pygame Space Shooter · <strong>Time:</strong> about 45 minutes</p>
+<p>This week is about <strong>thinking about and explaining</strong> the code for a game that shows a <strong>score and timer</strong> on screen (a HUD) and has <strong>several enemies</strong> at once, each a different type. Each enemy is a dictionary with its own position, type, and points — aliens are worth 1 point and meteors are worth 3.</p>
+<blockquote>
+<p>🧠 Words to know: <strong>HUD</strong>, <strong>score</strong>, <strong>timer</strong>, <strong>list of dictionaries</strong>, <strong>enemy type</strong></p>
+</blockquote>
+<hr />
+<h2>1 · Predict 🔮</h2>
+<p>Read each piece of code. Write what you think it does. You do not run anything — just think and explain.</p>
+<pre><code class="language-python">font = pygame.font.SysFont(None, 32)
+score_text = font.render(f&quot;Score: {score}&quot;, True, (255, 255, 255))
+screen.blit(score_text, (10, 10))
+</code></pre>
+<p><strong>These three lines put text on screen. What does the player see in the top-left corner?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">enemies = []
+for i in range(3):
+    kind = random.choice([&quot;alien&quot;, &quot;meteor&quot;])
+    points = 1 if kind == &quot;alien&quot; else 3
+    enemies.append({&quot;x&quot;: random.randint(150, WIDTH - 150), &quot;y&quot;: 120, &quot;type&quot;: kind, &quot;points&quot;: points})
+</code></pre>
+<p><strong>How many enemies are made? What is different about each one?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">enemies = [new_enemy() for i in range(3)]
+</code></pre>
+<p><strong>This is a shorter way to fill a list. How many enemies go into the list, and what does <code>new_enemy()</code> give back each time?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">score = score + hit[&quot;points&quot;]
+</code></pre>
+<p><strong>Score goes up by the enemy's <code>points</code>. An alien is worth 1 and a meteor is worth 3. Which gives more points?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>2 · Spot the Bug 🐛</h2>
+<p>Each block below was meant to do something but is broken. Write the fixed code, then explain why the original was wrong.</p>
+<p><strong>Bug A</strong> — The score is supposed to appear on screen, but the number never shows up.</p>
+<pre><code class="language-python">score_text = font.render(f&quot;Score: {score}&quot;, True, (255, 255, 255))
+</code></pre>
+<p><strong>Hint:</strong> rendering the text is not enough — it must be put on the screen.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug B</strong> — Hitting a meteor should give more points than an alien, but every enemy gives the same score.</p>
+<pre><code class="language-python">score = score + 1
+</code></pre>
+<p><strong>Hint:</strong> the score should depend on the enemy's type.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug C</strong> — Pressing SPACE on empty space should do nothing, but the program crashes when you miss.</p>
+<pre><code class="language-python">hit = get_aimed_enemy(ship_x)
+score = score + hit[&quot;points&quot;]
+</code></pre>
+<p><strong>Hint:</strong> when nothing is lined up, <code>hit</code> is <code>None</code>, and <code>None["points"]</code> is an error.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>3 · Explain the Code 📖</h2>
+<p>Read this working program. Then answer the questions below. You do not run it — just read it carefully and explain.</p>
+<pre><code class="language-python">import pygame
+import random
+pygame.init()
+
+WIDTH, HEIGHT = 800, 600
+CENTER_X = WIDTH // 2
+screen = pygame.display.set_mode((WIDTH, HEIGHT))
+clock = pygame.time.Clock()
+font = pygame.font.SysFont(None, 32)
+
+RED = (230, 60, 60)
+GREY = (120, 120, 140)
+
+def new_enemy():
+    kind = random.choice([&quot;alien&quot;, &quot;meteor&quot;])
+    points = 1 if kind == &quot;alien&quot; else 3
+    return {&quot;x&quot;: random.randint(150, WIDTH - 150), &quot;y&quot;: 120, &quot;type&quot;: kind, &quot;points&quot;: points}
+
+enemies = [new_enemy() for i in range(3)]
+
+def draw_enemy(e):
+    color = RED if e[&quot;type&quot;] == &quot;alien&quot; else GREY
+    pygame.draw.rect(screen, color, (e[&quot;x&quot;] - 18, e[&quot;y&quot;] - 18, 36, 36))
+
+def draw_hud(score, time_left):
+    screen.blit(font.render(f&quot;Score: {score}&quot;, True, (255, 255, 255)), (10, 10))
+    screen.blit(font.render(f&quot;Time: {time_left}&quot;, True, (255, 255, 255)), (WIDTH - 150, 10))
+
+def get_aimed_enemy(ship_x):
+    for e in enemies:
+        if abs(ship_x - e[&quot;x&quot;]) &lt; 22:
+            return e
+    return None
+
+ship_x = CENTER_X
+ship_y = HEIGHT - 100
+score = 0
+start_time = pygame.time.get_ticks()
+GAME_DURATION = 30000
+
+running = True
+while running:
+    elapsed = pygame.time.get_ticks() - start_time
+    time_left = max(0, (GAME_DURATION - elapsed) // 1000)
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+        if event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
+            hit = get_aimed_enemy(ship_x)
+            if hit:
+                score = score + hit[&quot;points&quot;]
+                new = new_enemy()
+                hit[&quot;x&quot;], hit[&quot;type&quot;], hit[&quot;points&quot;] = new[&quot;x&quot;], new[&quot;type&quot;], new[&quot;points&quot;]
+
+    keys = pygame.key.get_pressed()
+    if keys[pygame.K_LEFT] and ship_x &gt; 100:
+        ship_x -= 6
+    if keys[pygame.K_RIGHT] and ship_x &lt; WIDTH - 100:
+        ship_x += 6
+
+    screen.fill((10, 12, 40))
+    for e in enemies:
+        draw_enemy(e)
+    pygame.draw.rect(screen, (80, 220, 255), (ship_x - 20, ship_y, 40, 50))
+    pygame.draw.polygon(screen, (255, 255, 255), [(ship_x, ship_y - 20), (ship_x - 20, ship_y), (ship_x + 20, ship_y)])
+    aimed = get_aimed_enemy(ship_x)
+    laser_color = (255, 210, 40) if aimed else (230, 60, 60)
+    pygame.draw.line(screen, laser_color, (ship_x, ship_y - 20), (ship_x, 120), 4)
+    draw_hud(score, time_left)
+    pygame.display.flip()
+    clock.tick(60)
+
+pygame.quit()
+</code></pre>
+<p><strong>What does <code>new_enemy()</code> return, and which keys does the dictionary have?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>The <code>draw_hud</code> function shows two things. What are they, and where on the screen does each one go?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>What does <code>get_aimed_enemy(ship_x)</code> do, and what does it return when nothing is lined up?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>When you hit an enemy with SPACE, two things happen to it: the score changes and the enemy is replaced. Explain in your own words.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>The laser line changes color. When is it yellow, and when is it red?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>4 · Explain Your Lesson Code 🎥</h2>
+<p>In today's live lesson you wrote your own version of this game. Make a short phone video where you <strong>explain the code you wrote</strong>. You can show the game running while you talk. Try to use these words: <strong>HUD</strong>, <strong>score</strong>, <strong>timer</strong>, <strong>dictionary</strong>, <strong>enemy type</strong>.</p>
+<blockquote>
+<ol>
+<li>Show the HUD with score and time changing.</li>
+<li>Read out loud the line that renders the score, and say what it does.</li>
+<li>Hit an alien and a meteor, and say which gives more points and why.</li>
+<li>Show what happens when you miss, and explain why it does not crash.</li>
+</ol>
+</blockquote>
+<p><strong>Write what you will say in your video. Plan it here before you record.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.</p>
+<div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>
+</div></body></html>

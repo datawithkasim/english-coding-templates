@@ -1,0 +1,181 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head><meta charset='utf-8'>
+<title>🏰 RS004 Week 15 — English Worksheet</title>
+<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
+<style>
+@page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
+div.WordSection1 { page: WordSection1; }
+body { font-family: "Segoe UI", Arial, sans-serif; font-size: 11.5pt; color: #1a1a2e; line-height: 1.5; }
+h1 { font-size: 21pt; color: #6b4ee6; margin: 4px 0 6px; }
+h2 { font-size: 15pt; color: #6b4ee6; border-top: 1px solid #dddddd; padding-top: 8px; margin: 18px 0 10px; }
+h3, h4 { font-size: 11.5pt; margin: 12px 0 6px; }
+p { margin: 7px 0; }
+.brand { font-size: 10.5pt; font-weight: bold; color: #ff7849; letter-spacing: .06em;
+         border-bottom: 2px solid #ff7849; padding-bottom: 6px; margin-bottom: 14px; }
+table { border-collapse: collapse; margin: 10px 0; }
+th, td { border: 1px solid #c8c8c8; padding: 4px 9px; text-align: center; }
+th { background: #f3eefc; color: #6b4ee6; font-weight: bold; }
+pre { font-family: Consolas, "Courier New", monospace; font-size: 10.5pt; background: #f4f4f5;
+      border: 1px solid #dddddd; padding: 8px 10px; white-space: pre-wrap; }
+pre code { background: transparent; color: #1a1a2e; }
+code { font-family: Consolas, "Courier New", monospace; background: #fff1e8; color: #d6531f; padding: 0 3px; }
+blockquote { border-left: 3px solid #ff7849; background: #fff6ef; padding: 8px 12px;
+             color: #6a3a1c; margin: 9px 0; }
+ul, ol { margin: 7px 0 7px 26px; }
+p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
+.footer { color: #999999; font-size: 8.5pt; text-align: center; margin-top: 18px;
+          border-top: 1px solid #eeeeee; padding-top: 6px; }
+.footer b { color: #ff7849; }
+</style></head>
+<body><div class=WordSection1>
+<div class="brand">📚 ENGLISH CODING · 영어코딩</div>
+<h1>🏰 RS004 Week 15 — English Worksheet</h1>
+<p><strong>Topic:</strong> Multi-Level Structure · <strong>Course:</strong> Platformer Game · <strong>Time:</strong> about 45 minutes</p>
+<p>This week your game holds <strong>many levels</strong>. Every level is a dictionary of platforms, coins, enemies, and a finish. A <code>load_level()</code> function sets up the current one, and reaching the finish loads the <strong>next</strong> — until the last one, which means <strong>victory</strong>. In this worksheet you will read, trace, and explain this code in your own words.</p>
+<blockquote>
+<p>Keep these words handy: <strong>levels list</strong>, <strong><code>load_level()</code></strong>, <strong>next level</strong>, <strong>victory</strong>, <strong>game_state</strong>.</p>
+</blockquote>
+<hr />
+<h2>1 · Predict 🔮</h2>
+<p>Read each snippet. Write what you think it does.</p>
+<pre><code class="language-python">LEVELS = [
+    { &quot;platforms&quot;: [...], &quot;coins&quot;: [...], &quot;enemies&quot;: [...], &quot;finish&quot;: (...) },
+    { &quot;platforms&quot;: [...], &quot;coins&quot;: [...], &quot;enemies&quot;: [...], &quot;finish&quot;: (...) },
+]
+</code></pre>
+<p><strong>How many levels are in this list? How would you read the first level's coins?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">def load_level(idx):
+    data = LEVELS[idx]
+    platforms = [pygame.Rect(*p) for p in data[&quot;platforms&quot;]]
+    ...
+    return platforms, coins, enemies, finish
+</code></pre>
+<p><strong>What does <code>load_level(1)</code> set up? Why return four things at once?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">if player.colliderect(finish):
+    current_level += 1
+    if current_level &lt; len(LEVELS):
+        platforms, coins, enemies, finish = load_level(current_level)
+    else:
+        game_state = &quot;victory&quot;
+</code></pre>
+<p><strong>The player clears the last level. Which branch runs — load or victory?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>2 · Trace the Level Flow 🔢</h2>
+<p>There are 3 levels. The player keeps reaching the finish. Fill in <code>current_level</code> and what happens.</p>
+<pre><code>start:           current_level = 0
+clear level:     current_level = ___   →  loads level ___
+clear again:     current_level = ___   →  loads level ___
+clear again:     current_level = ___   →  game_state = ___
+</code></pre>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>3 · Spot the Bug 🐛</h2>
+<p>Each snippet is broken. Rewrite it so it works, then explain why the original was wrong.</p>
+<p><strong>Bug A</strong> — Reaching the finish should load the next level. Right now the player just keeps playing the same level forever.</p>
+<pre><code class="language-python">if player.colliderect(finish):
+    platforms, coins, enemies, finish = load_level(current_level)
+</code></pre>
+<p><strong>Hint:</strong> <code>current_level</code> never advances. Increase it first.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug B</strong> — After the last level the game should show victory. Right now it crashes with an index error when it tries to load a level that doesn't exist.</p>
+<pre><code class="language-python">if player.colliderect(finish):
+    current_level += 1
+    platforms, coins, enemies, finish = load_level(current_level)
+</code></pre>
+<p><strong>Hint:</strong> check whether <code>current_level</code> is still inside the list before loading.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug C</strong> — <code>load_level</code> should turn the data into real game objects. Right now the enemies don't move because they were never made into <code>Enemy</code> objects.</p>
+<pre><code class="language-python">def load_level(idx):
+    data = LEVELS[idx]
+    platforms = [pygame.Rect(*p) for p in data[&quot;platforms&quot;]]
+    coins = [pygame.Rect(c[0], c[1], 20, 20) for c in data[&quot;coins&quot;]]
+    enemies = data[&quot;enemies&quot;]
+    finish = pygame.Rect(*data[&quot;finish&quot;])
+    return platforms, coins, enemies, finish
+</code></pre>
+<p><strong>Hint:</strong> the enemy tuples need to become <code>Enemy(...)</code> objects, like the platforms became <code>Rect</code>s.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>4 · Explain the Code 📖</h2>
+<p>This is a working multi-level loader. Read it carefully, then answer the questions.</p>
+<pre><code class="language-python">LEVELS = [
+    { &quot;platforms&quot;: [...], &quot;coins&quot;: [...], &quot;enemies&quot;: [...], &quot;finish&quot;: (...) },
+    { &quot;platforms&quot;: [...], &quot;coins&quot;: [...], &quot;enemies&quot;: [...], &quot;finish&quot;: (...) },
+    { &quot;platforms&quot;: [...], &quot;coins&quot;: [...], &quot;enemies&quot;: [...], &quot;finish&quot;: (...) },
+]
+
+def load_level(idx):
+    data = LEVELS[idx]
+    platforms = [pygame.Rect(*p) for p in data[&quot;platforms&quot;]]
+    coins = [pygame.Rect(c[0], c[1], 20, 20) for c in data[&quot;coins&quot;]]
+    enemies = [Enemy(*e) for e in data[&quot;enemies&quot;]]
+    finish = pygame.Rect(*data[&quot;finish&quot;])
+    return platforms, coins, enemies, finish
+
+current_level = 0
+platforms, coins, enemies, finish = load_level(current_level)
+
+# inside the game loop:
+if player.colliderect(finish):
+    current_level += 1
+    if current_level &lt; len(LEVELS):
+        platforms, coins, enemies, finish = load_level(current_level)
+    else:
+        game_state = &quot;victory&quot;
+</code></pre>
+<p><strong>What does <code>LEVELS</code> hold, and what does each item in it describe?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Inside <code>load_level</code>, why is each enemy wrapped in <code>Enemy(*e)</code> instead of left as a tuple?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>What does the line <code>current_level += 1</code> do, and when does it run?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Explain the <code>if current_level &lt; len(LEVELS)</code> check. What does each branch do?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>When does <code>game_state</code> become <code>"victory"</code>?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>5 · Explain Your Lesson Code 🎥</h2>
+<p>Explain the multi-level game <strong>you wrote in today's lesson</strong>. Record a short video on your phone (you can show it running) and walk through your own code using these words: <strong>levels list</strong>, <strong>load_level</strong>, <strong>next level</strong>, <strong>victory</strong>, <strong>game_state</strong>.</p>
+<blockquote>
+<ol>
+<li>Show your <code>LEVELS</code> list and point out one level's data.</li>
+<li>Show <code>load_level</code> and explain how it turns data into game objects.</li>
+<li>Clear a level and read the "next level or victory" check out loud.</li>
+<li>Reach the victory screen and explain what <code>game_state</code> became.</li>
+</ol>
+</blockquote>
+<p><strong>Write what you will say in your video. Plan it here before you record.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.</p>
+<div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>
+</div></body></html>

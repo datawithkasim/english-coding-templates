@@ -1,0 +1,173 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head><meta charset='utf-8'>
+<title>🚀 RS003 Week 6 — English Worksheet</title>
+<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
+<style>
+@page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
+div.WordSection1 { page: WordSection1; }
+body { font-family: "Segoe UI", Arial, sans-serif; font-size: 11.5pt; color: #1a1a2e; line-height: 1.5; }
+h1 { font-size: 21pt; color: #6b4ee6; margin: 4px 0 6px; }
+h2 { font-size: 15pt; color: #6b4ee6; border-top: 1px solid #dddddd; padding-top: 8px; margin: 18px 0 10px; }
+h3, h4 { font-size: 11.5pt; margin: 12px 0 6px; }
+p { margin: 7px 0; }
+.brand { font-size: 10.5pt; font-weight: bold; color: #ff7849; letter-spacing: .06em;
+         border-bottom: 2px solid #ff7849; padding-bottom: 6px; margin-bottom: 14px; }
+table { border-collapse: collapse; margin: 10px 0; }
+th, td { border: 1px solid #c8c8c8; padding: 4px 9px; text-align: center; }
+th { background: #f3eefc; color: #6b4ee6; font-weight: bold; }
+pre { font-family: Consolas, "Courier New", monospace; font-size: 10.5pt; background: #f4f4f5;
+      border: 1px solid #dddddd; padding: 8px 10px; white-space: pre-wrap; }
+pre code { background: transparent; color: #1a1a2e; }
+code { font-family: Consolas, "Courier New", monospace; background: #fff1e8; color: #d6531f; padding: 0 3px; }
+blockquote { border-left: 3px solid #ff7849; background: #fff6ef; padding: 8px 12px;
+             color: #6a3a1c; margin: 9px 0; }
+ul, ol { margin: 7px 0 7px 26px; }
+p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
+.footer { color: #999999; font-size: 8.5pt; text-align: center; margin-top: 18px;
+          border-top: 1px solid #eeeeee; padding-top: 6px; }
+.footer b { color: #ff7849; }
+</style></head>
+<body><div class=WordSection1>
+<div class="brand">📚 ENGLISH CODING · 영어코딩</div>
+<h1>🚀 RS003 Week 6 — English Worksheet</h1>
+<p><strong>Topic:</strong> A Fleet of Ships — Many Parameters · <strong>Course:</strong> Pygame Space Shooter · <strong>Time:</strong> about 45 minutes</p>
+<p>This week is about thinking and talking about code, not typing it in the app. One function makes a whole <strong>fleet of different ships</strong>: you give <code>draw_ship</code> more parameters — position, colour, and size — so a single function can draw a small green scout, a big red boss ship, and a blue one, all at once. You will predict, debug, and explain code, then explain the code you wrote in today's lesson.</p>
+<blockquote>
+<p>🧠 Words to know: <strong>parameter</strong>, <strong>argument</strong>, <strong>default value</strong>, <strong>keyword argument</strong>, <strong>scale (size)</strong></p>
+</blockquote>
+<hr />
+<h2>1 · Predict 🔮</h2>
+<p>Read each piece of code. Do not run anything — just write what you think will happen.</p>
+<pre><code class="language-python">def draw_ship(x, body_color, size=1):
+    ...
+</code></pre>
+<p><strong>This function takes three parameters. Which one has a default value, and what does that mean when you call the function?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">draw_ship(200, GREEN, size=0.8)
+draw_ship(400, RED, size=1.2)
+draw_ship(600, BLUE, size=0.8)
+</code></pre>
+<p><strong>Three ships are drawn. Which one is the biggest? Which one is in the middle?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">w = int(40 * size)
+</code></pre>
+<p><strong>If <code>size</code> is 1.2, what does <code>int(40 * size)</code> work out to? Why is <code>int(...)</code> needed?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">draw_ship(400, RED)
+</code></pre>
+<p><strong>Here <code>size</code> is left out. What size will this ship be, and how do you know?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>2 · Spot the Bug 🐛</h2>
+<p>Each block below was meant to do something but is broken.</p>
+<p><strong>Bug A</strong> — This should draw a ship in any colour, but every ship comes out the same colour no matter what you pass in.</p>
+<pre><code class="language-python">def draw_ship(x, body_color, size=1):
+    pygame.draw.rect(screen, GREEN, (x - 20, HEIGHT - 120, 40, 50))
+</code></pre>
+<p><strong>Hint:</strong> the function ignores its own <code>body_color</code> parameter.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug B</strong> — This should make a ship 1.2 times bigger, but Python crashes with an error about needing a whole number.</p>
+<pre><code class="language-python">w = 40 * size
+pygame.draw.rect(screen, body_color, (x, HEIGHT - 120, w, 50))
+</code></pre>
+<p><strong>Hint:</strong> <code>40 * 1.2</code> is a decimal. Pygame sizes must be whole numbers.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug C</strong> — You want most ships to stay normal size without typing <code>size=1</code> every time, but right now leaving size out causes an error.</p>
+<pre><code class="language-python">def draw_ship(x, body_color, size):
+    ...
+
+draw_ship(400, RED)
+</code></pre>
+<p><strong>Hint:</strong> give <code>size</code> a default value so it can be left out.</p>
+<p><strong>Write the fixed code (just the <code>def</code> line):</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>3 · Explain the Code 📖</h2>
+<p>Read this working example carefully. You do not need to run it — just answer the questions about how it works.</p>
+<pre><code class="language-python">import pygame
+pygame.init()
+
+WIDTH, HEIGHT = 800, 600
+screen = pygame.display.set_mode((WIDTH, HEIGHT))
+clock = pygame.time.Clock()
+
+SPACE = (10, 12, 40)
+WHITE = (255, 255, 255)
+GREEN = (60, 200, 120)
+RED = (230, 60, 60)
+BLUE = (80, 140, 255)
+
+def draw_ship(x, body_color, size=1):
+    w = int(40 * size)
+    h = int(50 * size)
+    nose = int(20 * size)
+    y = HEIGHT - 120
+    pygame.draw.rect(screen, body_color, (x - w // 2, y, w, h))
+    pygame.draw.polygon(screen, WHITE, [(x, y - nose), (x - w // 2, y), (x + w // 2, y)])
+
+running = True
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+    screen.fill(SPACE)
+    draw_ship(200, GREEN, size=0.8)
+    draw_ship(400, RED, size=1.2)
+    draw_ship(600, BLUE, size=0.8)
+    pygame.display.flip()
+    clock.tick(60)
+
+pygame.quit()
+</code></pre>
+<p><strong>What are the three parameters of <code>draw_ship</code>, and which one has a default value?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Look at <code>w = int(40 * size)</code>. Why does a bigger <code>size</code> make a wider ship?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>In <code>draw_ship(400, RED, size=1.2)</code>, name each argument and say which parameter it goes to.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why can the same <code>draw_ship</code> function draw three different ships? What changes each time?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>The <code>pygame.draw.polygon</code> line draws the white nose. How does it use <code>size</code> to stay the right shape?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>4 · Explain Your Lesson Code 🎥</h2>
+<p>In today's live lesson you wrote your own ship-fleet code. Record a short video on your phone explaining that code in your own words. You may show your fleet running on screen. Try to use these words: <strong>parameter</strong>, <strong>argument</strong>, <strong>default value</strong>, <strong>keyword argument</strong>, <strong>scale</strong>.</p>
+<blockquote>
+<ol>
+<li>Show your row of ships.</li>
+<li>Read one of your function calls out loud and name each argument.</li>
+<li>Explain what the default value of <code>size</code> does in your code.</li>
+<li>Point at your boss ship and say what makes it bigger.</li>
+</ol>
+</blockquote>
+<p><strong>Write what you will say in your video. Plan it here before you record.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.</p>
+<div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>
+</div></body></html>

@@ -1,0 +1,152 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head><meta charset='utf-8'>
+<title>🏪 RS001 Week 4 — English Worksheet</title>
+<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
+<style>
+@page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
+div.WordSection1 { page: WordSection1; }
+body { font-family: "Segoe UI", Arial, sans-serif; font-size: 11.5pt; color: #1a1a2e; line-height: 1.5; }
+h1 { font-size: 21pt; color: #6b4ee6; margin: 4px 0 6px; }
+h2 { font-size: 15pt; color: #6b4ee6; border-top: 1px solid #dddddd; padding-top: 8px; margin: 18px 0 10px; }
+h3, h4 { font-size: 11.5pt; margin: 12px 0 6px; }
+p { margin: 7px 0; }
+.brand { font-size: 10.5pt; font-weight: bold; color: #ff7849; letter-spacing: .06em;
+         border-bottom: 2px solid #ff7849; padding-bottom: 6px; margin-bottom: 14px; }
+table { border-collapse: collapse; margin: 10px 0; }
+th, td { border: 1px solid #c8c8c8; padding: 4px 9px; text-align: center; }
+th { background: #f3eefc; color: #6b4ee6; font-weight: bold; }
+pre { font-family: Consolas, "Courier New", monospace; font-size: 10.5pt; background: #f4f4f5;
+      border: 1px solid #dddddd; padding: 8px 10px; white-space: pre-wrap; }
+pre code { background: transparent; color: #1a1a2e; }
+code { font-family: Consolas, "Courier New", monospace; background: #fff1e8; color: #d6531f; padding: 0 3px; }
+blockquote { border-left: 3px solid #ff7849; background: #fff6ef; padding: 8px 12px;
+             color: #6a3a1c; margin: 9px 0; }
+ul, ol { margin: 7px 0 7px 26px; }
+p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
+.footer { color: #999999; font-size: 8.5pt; text-align: center; margin-top: 18px;
+          border-top: 1px solid #eeeeee; padding-top: 6px; }
+.footer b { color: #ff7849; }
+</style></head>
+<body><div class=WordSection1>
+<div class="brand">📚 ENGLISH CODING · 영어코딩</div>
+<h1>🏪 RS001 Week 4 — English Worksheet</h1>
+<p><strong>Topic:</strong> Parallel Lists — A Shop Scene · <strong>Course:</strong> Text Adventure (Python) · <strong>Time:</strong> about 45 minutes</p>
+<p>This week is about <strong>parallel lists</strong> — several lists that line up by index. Item <code>[1]</code>'s name, power, and price all sit at index <code>1</code> in three different lists. Together they build a shop. In this worksheet you will read code about parallel lists, think carefully, and then explain the shop code you wrote in today's live lesson.</p>
+<pre><code class="language-python">shop_weapons = [&quot;wooden stick&quot;, &quot;iron sword&quot;, &quot;magic staff&quot;]
+shop_power   = [2, 8, 15]
+shop_price   = [5, 30, 80]
+game.say(f&quot;{shop_weapons[1]} — power {shop_power[1]}, {shop_price[1]} gold&quot;)
+</code></pre>
+<blockquote>
+<p>🧠 Words to know: <strong>parallel list</strong>, <strong>index</strong>, <strong>power</strong>, <strong>price</strong>, <strong>line up</strong></p>
+</blockquote>
+<hr />
+<h2>1 · Predict 🔮</h2>
+<p>Read each piece of code. Run it in your head and write what you think the screen will show.</p>
+<pre><code class="language-python">names = [&quot;dagger&quot;, &quot;axe&quot;, &quot;spear&quot;]
+price = [10, 40, 25]
+game.say(f&quot;{names[1]} costs {price[1]} gold&quot;)
+</code></pre>
+<p><strong>Which item and which price get printed together?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">names = [&quot;dagger&quot;, &quot;axe&quot;, &quot;spear&quot;]
+power = [3, 9, 6]
+game.say(f&quot;{names[0]} — power {power[2]}&quot;)
+</code></pre>
+<p><strong>The indexes do not match. What strange sentence comes out?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">names = [&quot;dagger&quot;, &quot;axe&quot;]
+price = [10, 40]
+game.say(f&quot;{names[2]} costs {price[2]} gold&quot;)
+</code></pre>
+<p><strong>Each list only has 2 items. What happens when the code asks for <code>[2]</code>?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>2 · Spot the Bug 🐛</h2>
+<p>Each block was meant to do something, but it is broken. Read what it is <strong>supposed</strong> to do, fix it on paper, then explain why the original was wrong.</p>
+<p><strong>Bug A</strong> — This shop line should show the <strong>axe</strong> with <strong>its own</strong> price. Right now it shows the axe's name but the dagger's price.</p>
+<pre><code class="language-python">names = [&quot;dagger&quot;, &quot;axe&quot;, &quot;spear&quot;]
+price = [10, 40, 25]
+game.say(f&quot;{names[1]} costs {price[0]} gold&quot;)
+</code></pre>
+<p><strong>Hint:</strong> the name and the price should share the same index.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug B</strong> — A new weapon <code>"hammer"</code> was added to the names list, but the other lists were not updated. Now line 4 crashes when it reaches the hammer.</p>
+<pre><code class="language-python">names = [&quot;stick&quot;, &quot;sword&quot;, &quot;staff&quot;, &quot;hammer&quot;]
+power = [2, 8, 15]
+price = [5, 30, 80]
+game.say(f&quot;{names[3]} — power {power[3]}, {price[3]} gold&quot;)
+</code></pre>
+<p><strong>Hint:</strong> if one list grows, the parallel lists must grow too.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug C</strong> — This should print a full 3-line shop menu. Right now line 2 forgot to change its index, so the same weapon shows up twice.</p>
+<pre><code class="language-python">names = [&quot;stick&quot;, &quot;sword&quot;, &quot;staff&quot;]
+price = [5, 30, 80]
+game.say(f&quot;1. {names[0]} — {price[0]} gold&quot;)
+game.say(f&quot;2. {names[0]} — {price[1]} gold&quot;)
+game.say(f&quot;3. {names[2]} — {price[2]} gold&quot;)
+</code></pre>
+<p><strong>Hint:</strong> look closely at the name index on line 2.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>3 · Explain the Code 📖</h2>
+<p>Here is a working shop menu built from three parallel lists. Read it slowly, then answer the questions below.</p>
+<pre><code class="language-python">names = [&quot;stick&quot;, &quot;sword&quot;, &quot;staff&quot;]
+power = [2, 8, 15]
+price = [5, 30, 80]
+game.say(f&quot;1. {names[0]} — power {power[0]}, {price[0]} gold&quot;)
+game.say(f&quot;2. {names[1]} — power {power[1]}, {price[1]} gold&quot;)
+game.say(f&quot;3. {names[2]} — power {power[2]}, {price[2]} gold&quot;)
+</code></pre>
+<p><strong>Why are there three separate lists instead of one?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Look at line 5. Which name, power, and price get printed together, and how do you know?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>The index goes 0, then 1, then 2 down the menu. What is that index doing for the player?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>If you changed <code>names[1]</code> to <code>names[2]</code> on line 5, what would go wrong on the screen?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>What would break if the <code>price</code> list had only two numbers in it?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>4 · Explain Your Lesson Code 🎥</h2>
+<p>In today's live lesson you wrote your own shop scene with parallel lists. Take a short video on your phone (or a parent's phone) explaining the code <strong>you</strong> wrote. You may show it running. Teach it like the viewer has never coded, and try to use these words: <strong>parallel list</strong>, <strong>index</strong>, <strong>power</strong>, <strong>price</strong>, <strong>line up</strong>.</p>
+<blockquote>
+<ol>
+<li>Show your three lists and say what each one holds.</li>
+<li>Read one weapon out loud — its name, power, and price.</li>
+<li>Point to where all three sit at the same index.</li>
+<li>Explain what would break if one of your lists were shorter than the others.</li>
+</ol>
+</blockquote>
+<p><strong>Write what you will say in your video. Plan it here before you record.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.</p>
+<div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>
+</div></body></html>

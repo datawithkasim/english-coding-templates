@@ -1,0 +1,126 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head><meta charset='utf-8'>
+<title>🏭 RB003 Week 8 — English Worksheet</title>
+<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
+<style>
+@page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
+div.WordSection1 { page: WordSection1; }
+body { font-family: "Segoe UI", Arial, sans-serif; font-size: 11.5pt; color: #1a1a2e; line-height: 1.5; }
+h1 { font-size: 21pt; color: #6b4ee6; margin: 4px 0 6px; }
+h2 { font-size: 15pt; color: #6b4ee6; border-top: 1px solid #dddddd; padding-top: 8px; margin: 18px 0 10px; }
+h3, h4 { font-size: 11.5pt; margin: 12px 0 6px; }
+p { margin: 7px 0; }
+.brand { font-size: 10.5pt; font-weight: bold; color: #ff7849; letter-spacing: .06em;
+         border-bottom: 2px solid #ff7849; padding-bottom: 6px; margin-bottom: 14px; }
+table { border-collapse: collapse; margin: 10px 0; }
+th, td { border: 1px solid #c8c8c8; padding: 4px 9px; text-align: center; }
+th { background: #f3eefc; color: #6b4ee6; font-weight: bold; }
+pre { font-family: Consolas, "Courier New", monospace; font-size: 10.5pt; background: #f4f4f5;
+      border: 1px solid #dddddd; padding: 8px 10px; white-space: pre-wrap; }
+pre code { background: transparent; color: #1a1a2e; }
+code { font-family: Consolas, "Courier New", monospace; background: #fff1e8; color: #d6531f; padding: 0 3px; }
+blockquote { border-left: 3px solid #ff7849; background: #fff6ef; padding: 8px 12px;
+             color: #6a3a1c; margin: 9px 0; }
+ul, ol { margin: 7px 0 7px 26px; }
+p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
+.footer { color: #999999; font-size: 8.5pt; text-align: center; margin-top: 18px;
+          border-top: 1px solid #eeeeee; padding-top: 6px; }
+.footer b { color: #ff7849; }
+</style></head>
+<body><div class=WordSection1>
+<div class="brand">📚 ENGLISH CODING · 영어코딩</div>
+<h1>🏭 RB003 Week 8 — English Worksheet</h1>
+<p><strong>Topic:</strong> Ship It — Publish &amp; Present · <strong>Course:</strong> Tycoon Engineer · <strong>Time:</strong> about 45 minutes</p>
+<p>This week you <strong>publish</strong> your tycoon so anyone can play it, check that saving works in the real published game, and present your work. Light code week — you read <strong>your own</strong> scripts.</p>
+<hr />
+<h2>1 · Predict 🔮</h2>
+<p>This week you read your <strong>own</strong> scripts. Open each one in Roblox Studio, find the line, then answer.</p>
+<pre><code class="language-lua">-- Open YOUR dropper script.
+-- Find this line and write your number:
+task.wait( ? )
+</code></pre>
+<p><strong>How often does your dropper drop? With your payout, how much cash can a player earn from one dropper in one minute?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-lua">-- Open YOUR buy button script.
+-- Find this line and write your number:
+if cash.Value &gt;= ? then
+</code></pre>
+<p><strong>What does your cheapest upgrade cost? How many drops does a player need before they can buy it?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-lua">-- Open YOUR DataStore script.
+-- Find these two lines:
+store:SetAsync(player.UserId, cash.Value)
+local saved = store:GetAsync(player.UserId)
+</code></pre>
+<p><strong>Which line saves and which line loads? What does your script do for a brand-new player who has no save yet?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>2 · Spot the Bug 🐛</h2>
+<p>These are <strong>launch bugs</strong> — the code is fine, but a setting or a step is wrong. Read what is <strong>supposed</strong> to happen, write the fix, then explain why it went wrong.</p>
+<p><strong>Bug A</strong> — You test saving in Studio. The code is perfect, but you see a red DataStore error in the Output window.</p>
+<pre><code>Game Settings → Security
+[ ] Enable Studio Access to API Services   ← OFF
+</code></pre>
+<p><strong>Write the fix:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug B</strong> — You send the game link to a friend. They see <strong>"This experience is unavailable."</strong> They should be able to join and play.</p>
+<pre><code>Game Settings → Permissions
+Playability: Private
+</code></pre>
+<p><strong>Write the fix:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug C</strong> — Your friend plays your game, but they see <strong>yesterday's version</strong> — no gold dropper, old prices. They should see today's version.</p>
+<pre><code>Yesterday:  File → Publish to Roblox   ✅
+Today:      changed prices, added GoldDropper
+Today:      closed Studio without publishing   ← !
+</code></pre>
+<p><strong>Write the fix:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>3 · Tell Me What You Built 📸</h2>
+<p>Now publish your tycoon: give it a <strong>name</strong>, a <strong>description</strong>, and an <strong>icon</strong>, and set it to <strong>Public</strong>. Then play your published game and check the DataStore — earn cash, leave, rejoin. Is your cash still there?</p>
+<p>Send a photo or video of your game's page and your cash after rejoining, then write your <strong>presentation plan</strong>. Use these sentence starters — write 4 to 6 sentences total.</p>
+<blockquote>
+<p>My game is called … and you can play it by …</p>
+<p>My money loop works like this: …</p>
+<p>The hardest bug I fixed was …</p>
+<p>My favorite script is … because …</p>
+<p>I chose my prices so that …</p>
+<p>If I had more time, I would …</p>
+</blockquote>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>4 · Record Your Walkthrough 🎥</h2>
+<p>Now take a video on your phone (or a parent's phone) — this is your <strong>presentation</strong>. Talk through your published game like you are showing it to a new player. Try to use these words: <strong>publish</strong>, <strong>public</strong>, <strong>DataStore</strong>, <strong>money loop</strong>, <strong>upgrade</strong>.</p>
+<blockquote>
+<ol>
+<li>Show your game's page — its name, icon, and that it is Public.</li>
+<li>Play your published game: earn cash and buy an upgrade.</li>
+<li>Leave and rejoin — show your cash is still there.</li>
+<li>Tell the hardest bug you fixed and your favorite script.</li>
+</ol>
+</blockquote>
+<p><strong>Write what you will say in your video.</strong> Use the space below to plan it before you record — you can read from it while filming.</p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.</p>
+<div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>
+</div></body></html>

@@ -1,0 +1,107 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head><meta charset='utf-8'>
+<title>🤖 AI001 Week 8 — English Worksheet</title>
+<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
+<style>
+@page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
+div.WordSection1 { page: WordSection1; }
+body { font-family: "Segoe UI", Arial, sans-serif; font-size: 11.5pt; color: #1a1a2e; line-height: 1.5; }
+h1 { font-size: 21pt; color: #6b4ee6; margin: 4px 0 6px; }
+h2 { font-size: 15pt; color: #6b4ee6; border-top: 1px solid #dddddd; padding-top: 8px; margin: 18px 0 10px; }
+h3, h4 { font-size: 11.5pt; margin: 12px 0 6px; }
+p { margin: 7px 0; }
+.brand { font-size: 10.5pt; font-weight: bold; color: #ff7849; letter-spacing: .06em;
+         border-bottom: 2px solid #ff7849; padding-bottom: 6px; margin-bottom: 14px; }
+table { border-collapse: collapse; margin: 10px 0; }
+th, td { border: 1px solid #c8c8c8; padding: 4px 9px; text-align: center; }
+th { background: #f3eefc; color: #6b4ee6; font-weight: bold; }
+pre { font-family: Consolas, "Courier New", monospace; font-size: 10.5pt; background: #f4f4f5;
+      border: 1px solid #dddddd; padding: 8px 10px; white-space: pre-wrap; }
+pre code { background: transparent; color: #1a1a2e; }
+code { font-family: Consolas, "Courier New", monospace; background: #fff1e8; color: #d6531f; padding: 0 3px; }
+blockquote { border-left: 3px solid #ff7849; background: #fff6ef; padding: 8px 12px;
+             color: #6a3a1c; margin: 9px 0; }
+ul, ol { margin: 7px 0 7px 26px; }
+p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
+.footer { color: #999999; font-size: 8.5pt; text-align: center; margin-top: 18px;
+          border-top: 1px solid #eeeeee; padding-top: 6px; }
+.footer b { color: #ff7849; }
+</style></head>
+<body><div class=WordSection1>
+<div class="brand">📚 ENGLISH CODING · 영어코딩</div>
+<h1>🤖 AI001 Week 8 — English Worksheet</h1>
+<p><strong>Topic:</strong> Final Project — Your Own App · <strong>Course:</strong> AI Coding with Replit Agent · <strong>Time:</strong> about 45 minutes (plus build time)</p>
+<p>This is the big one. You will combine <strong>every</strong> skill from the past 7 weeks — specific prompts, context and examples, step-by-step building, iteration, debugging, and understanding code — to build your <strong>own</strong> app from start to finish. The idea must be yours.</p>
+<p><strong>Your project must include:</strong></p>
+<ul>
+<li>an idea that comes from <strong>you</strong>,</li>
+<li>at least <strong>5 prompt steps</strong> to build it,</li>
+<li>at least <strong>3 iteration prompts</strong> to improve it,</li>
+<li>at least <strong>1 debugging</strong> moment,</li>
+<li>a <strong>note</strong> explaining what the key parts of your code do.</li>
+</ul>
+<hr />
+<h2>1 · Plan Your Idea 🔮</h2>
+<p>Before you touch the keyboard, plan. Saying the plan out loud first makes the building much smoother.</p>
+<p><strong>Write your idea in one sentence.</strong> "I want to build …"</p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Now split that idea into 5 to 7 steps</strong> (remember Week 4 — first, then, finally). Write the step prompts in order.</p>
+<blockquote>
+<p>Step 1:</p>
+<p>Step 2:</p>
+<p>Step 3:</p>
+<p>Step 4:</p>
+<p>Step 5:</p>
+<p>Step 6 (if needed):</p>
+<p>Step 7 (if needed):</p>
+</blockquote>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>2 · Build, Iterate, Debug 🐛</h2>
+<p>Run your steps in Replit one at a time. As you go, you will need to <strong>iterate</strong> (change just one part) and <strong>debug</strong> (explain an error). Keep a record here.</p>
+<p><strong>Iteration prompts you used</strong> (at least 3) — write each one and what it changed:</p>
+<blockquote>
+<p>Change 1: … → it changed …</p>
+<p>Change 2: … → it changed …</p>
+<p>Change 3: … → it changed …</p>
+</blockquote>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>A bug you hit and fixed</strong> — what was broken, what the error said, and how the AI fixed it:</p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>3 · Show Your Finished App 📸</h2>
+<p>When your app works, send the <strong>public link</strong> to it, <strong>or</strong> a <strong>video</strong> of it running. Then explain your project using these sentence starters — write 5 to 7 sentences total.</p>
+<blockquote>
+<p>I built an app that …</p>
+<p>I chose this idea because …</p>
+<p>I split my idea into … steps.</p>
+<p>The hardest problem was … and I solved it by …</p>
+<p>The trickiest part of the code is …</p>
+<p>One thing I am proud of is …</p>
+<p>If I built it without AI, I would have to start by …</p>
+</blockquote>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>4 · Final Presentation 🎥</h2>
+<p>Record a short video (your phone, or a parent's phone) presenting your app, as if showing it to the class. Try to use these words: <strong>prompt</strong>, <strong>step</strong>, <strong>iterate</strong>, <strong>debug</strong>, <strong>understand</strong>.</p>
+<blockquote>
+<ol>
+<li>Show your finished app running.</li>
+<li>Read your one-sentence idea and show how you split it into steps.</li>
+<li>Show one part of the code and explain what it does in your own words.</li>
+<li>Tell the biggest problem you hit and how you solved it.</li>
+</ol>
+</blockquote>
+<p><strong>Write what you will say in your video.</strong> Plan it here before you record — you can read from it while filming.</p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your app link (or a video) + your full prompt list (at least 7–10 prompts) + your code notes to teacher on KakaoTalk.</p>
+<div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>
+</div></body></html>

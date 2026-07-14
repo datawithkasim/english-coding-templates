@@ -1,0 +1,97 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head><meta charset='utf-8'>
+<title>🎮 RB005 Week 2 — English Worksheet</title>
+<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
+<style>
+@page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
+div.WordSection1 { page: WordSection1; }
+body { font-family: "Segoe UI", Arial, sans-serif; font-size: 11.5pt; color: #1a1a2e; line-height: 1.5; }
+h1 { font-size: 21pt; color: #6b4ee6; margin: 4px 0 6px; }
+h2 { font-size: 15pt; color: #6b4ee6; border-top: 1px solid #dddddd; padding-top: 8px; margin: 18px 0 10px; }
+h3, h4 { font-size: 11.5pt; margin: 12px 0 6px; }
+p { margin: 7px 0; }
+.brand { font-size: 10.5pt; font-weight: bold; color: #ff7849; letter-spacing: .06em;
+         border-bottom: 2px solid #ff7849; padding-bottom: 6px; margin-bottom: 14px; }
+table { border-collapse: collapse; margin: 10px 0; }
+th, td { border: 1px solid #c8c8c8; padding: 4px 9px; text-align: center; }
+th { background: #f3eefc; color: #6b4ee6; font-weight: bold; }
+pre { font-family: Consolas, "Courier New", monospace; font-size: 10.5pt; background: #f4f4f5;
+      border: 1px solid #dddddd; padding: 8px 10px; white-space: pre-wrap; }
+pre code { background: transparent; color: #1a1a2e; }
+code { font-family: Consolas, "Courier New", monospace; background: #fff1e8; color: #d6531f; padding: 0 3px; }
+blockquote { border-left: 3px solid #ff7849; background: #fff6ef; padding: 8px 12px;
+             color: #6a3a1c; margin: 9px 0; }
+ul, ol { margin: 7px 0 7px 26px; }
+p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
+.footer { color: #999999; font-size: 8.5pt; text-align: center; margin-top: 18px;
+          border-top: 1px solid #eeeeee; padding-top: 6px; }
+.footer b { color: #ff7849; }
+</style></head>
+<body><div class=WordSection1>
+<div class="brand">📚 ENGLISH CODING · 영어코딩</div>
+<h1>🎮 RB005 Week 2 — English Worksheet</h1>
+<p><strong>Topic:</strong> Greybox It — Find the Fun First · <strong>Course:</strong> Dream Game Studio · <strong>Time:</strong> about 45 minutes</p>
+<p>This week you build your WHOLE map with plain gray parts. No colors, no decorations, no fancy models. This is called <strong>greyboxing</strong> — it lets you find the fun fast, before you spend hours making things pretty.</p>
+<hr />
+<h2>1 · Predict 🔮</h2>
+<p>Read each situation. Write what you think before class.</p>
+<p><strong>A student spends the whole first week decorating a beautiful start area. In week 3 they finally playtest — and the game is boring. What went wrong with their order of work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Your greybox map is ugly, but you can already play it from start to goal in 2 minutes. Why is this MORE useful right now than a beautiful map you cannot play yet?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>During a playtest you find a jump that is too easy, so a whole section is boring. Your parts are plain gray boxes. How hard is it to move them around? What if that section were already fully decorated?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>2 · Spot the Problem 🐛</h2>
+<p>Each layout plan below is broken. Read what the plan is <strong>supposed</strong> to do, then explain what is wrong and how you would fix it.</p>
+<p><strong>Plan A</strong> — The player should play from start to finish.</p>
+<pre><code>START platform → big open field → ???
+</code></pre>
+<p><strong>The player spawns, runs around the field … and then what? What is missing? Where would you put it?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Plan B</strong> — The game should take a few minutes and feel like a challenge.</p>
+<pre><code>START platform → GOAL flag (3 steps away)
+</code></pre>
+<p><strong>A player wins in 3 seconds without doing anything. What is missing in the middle? What would you add?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Now sketch YOUR layout below.</strong> Mark the START, the GOAL, and draw the path the player takes between them.</p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>3 · Tell Me What You Built 📸</h2>
+<p>Now open Roblox Studio and greybox your WHOLE layout from your week 1 design — start, path, goal — all in plain gray parts. Then playtest it for 10 minutes. When you finish, come back here.</p>
+<p>Send a photo or video of your greybox map, then explain what you found. Use these sentence starters — write 4 to 6 sentences total.</p>
+<blockquote>
+<p>My greybox map has …</p>
+<p>The player starts at … and wins by …</p>
+<p>In my playtest, the fun part was …</p>
+<p>The boring part was …</p>
+<p>After playtesting, I changed … because …</p>
+<p>Before I decorate, I still want to fix …</p>
+</blockquote>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>4 · Record Your Walkthrough 🎥</h2>
+<p>Now take a video on your phone (or a parent's phone) while you walk through your greybox map in Studio. Narrate the player's path like a tour guide. Try to use these words: <strong>greybox</strong>, <strong>layout</strong>, <strong>start</strong>, <strong>goal</strong>, <strong>playtest</strong>.</p>
+<blockquote>
+<ol>
+<li>Start at the spawn and walk the path a player would take.</li>
+<li>Point at the goal and say the win condition.</li>
+<li>Show the most fun part and say why it is fun.</li>
+<li>Show one thing you changed after your playtest.</li>
+</ol>
+</blockquote>
+<p><strong>Write what you will say in your video.</strong> Use the space below to plan it before you record — you can read from it while filming.</p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.</p>
+<div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>
+</div></body></html>

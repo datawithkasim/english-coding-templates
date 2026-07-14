@@ -1,0 +1,170 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head><meta charset='utf-8'>
+<title>⚔️ RS001 Week 11 — English Worksheet</title>
+<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
+<style>
+@page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
+div.WordSection1 { page: WordSection1; }
+body { font-family: "Segoe UI", Arial, sans-serif; font-size: 11.5pt; color: #1a1a2e; line-height: 1.5; }
+h1 { font-size: 21pt; color: #6b4ee6; margin: 4px 0 6px; }
+h2 { font-size: 15pt; color: #6b4ee6; border-top: 1px solid #dddddd; padding-top: 8px; margin: 18px 0 10px; }
+h3, h4 { font-size: 11.5pt; margin: 12px 0 6px; }
+p { margin: 7px 0; }
+.brand { font-size: 10.5pt; font-weight: bold; color: #ff7849; letter-spacing: .06em;
+         border-bottom: 2px solid #ff7849; padding-bottom: 6px; margin-bottom: 14px; }
+table { border-collapse: collapse; margin: 10px 0; }
+th, td { border: 1px solid #c8c8c8; padding: 4px 9px; text-align: center; }
+th { background: #f3eefc; color: #6b4ee6; font-weight: bold; }
+pre { font-family: Consolas, "Courier New", monospace; font-size: 10.5pt; background: #f4f4f5;
+      border: 1px solid #dddddd; padding: 8px 10px; white-space: pre-wrap; }
+pre code { background: transparent; color: #1a1a2e; }
+code { font-family: Consolas, "Courier New", monospace; background: #fff1e8; color: #d6531f; padding: 0 3px; }
+blockquote { border-left: 3px solid #ff7849; background: #fff6ef; padding: 8px 12px;
+             color: #6a3a1c; margin: 9px 0; }
+ul, ol { margin: 7px 0 7px 26px; }
+p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
+.footer { color: #999999; font-size: 8.5pt; text-align: center; margin-top: 18px;
+          border-top: 1px solid #eeeeee; padding-top: 6px; }
+.footer b { color: #ff7849; }
+</style></head>
+<body><div class=WordSection1>
+<div class="brand">📚 ENGLISH CODING · 영어코딩</div>
+<h1>⚔️ RS001 Week 11 — English Worksheet</h1>
+<p><strong>Topic:</strong> Strategy — Fight or Think? · <strong>Course:</strong> Text Adventure (Python) · <strong>Time:</strong> about 45 minutes</p>
+<p>This week you think about code that lets the player solve a problem in more than one way. A menu of actions — fight, think, run — leads to a different result for each choice. The <strong>order</strong> of your <code>if</code> / <code>elif</code> / <code>else</code> decides which result wins. Read the code, predict what it does, and get ready to explain it in your own words.</p>
+<blockquote>
+<p>🧠 Words to know: <strong>action</strong>, <strong>menu</strong>, <strong>elif</strong>, <strong>else</strong>, <strong>outcome</strong></p>
+</blockquote>
+<pre><code class="language-python">action = game.ask(&quot;Fight or think?&quot;).strip().lower()
+if action == &quot;fight&quot;:
+    game.say(&quot;You swing your sword!&quot;)
+elif action == &quot;think&quot;:
+    game.say(&quot;You spot the enemy's weakness!&quot;)
+else:
+    game.say(&quot;You hesitate and get hit!&quot;)
+</code></pre>
+<hr />
+<h2>1 · Predict 🔮</h2>
+<p>Read each piece of code. Run it in your head and write what you think happens.</p>
+<pre><code class="language-python">action = &quot;think&quot;
+if action == &quot;fight&quot;:
+    game.say(&quot;attack&quot;)
+elif action == &quot;think&quot;:
+    game.say(&quot;clever&quot;)
+else:
+    game.say(&quot;oops&quot;)
+</code></pre>
+<p><strong>Which word is printed?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">action = &quot;dance&quot;
+if action == &quot;fight&quot;:
+    game.say(&quot;attack&quot;)
+elif action == &quot;think&quot;:
+    game.say(&quot;clever&quot;)
+else:
+    game.say(&quot;You freeze in panic.&quot;)
+</code></pre>
+<p><strong>The player typed something not on the menu. What happens because of the <code>else</code>?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">actions = [&quot;fight&quot;, &quot;think&quot;, &quot;run&quot;]
+game.say(f&quot;Choose: {actions[0]} / {actions[1]} / {actions[2]}&quot;)
+</code></pre>
+<p><strong>What menu line is printed?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>2 · Spot the Bug 🐛</h2>
+<p>Each block was meant to do something, but it is broken. Read what it is <strong>supposed</strong> to do, fix it on paper, then explain why the original was wrong.</p>
+<p><strong>Bug A</strong> — Each action should give a <strong>different</strong> result. Right now "fight" and "think" print the same thing.</p>
+<pre><code class="language-python">action = game.ask(&quot;do?&quot;).strip().lower()
+if action == &quot;fight&quot;:
+    game.say(&quot;You win the hard way!&quot;)
+elif action == &quot;think&quot;:
+    game.say(&quot;You win the hard way!&quot;)
+</code></pre>
+<p><strong>Hint:</strong> the "think" branch should describe a clever win, not a brute-force one.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug B</strong> — There should be a catch-all for answers not on the menu. Right now an off-menu answer prints nothing at all.</p>
+<pre><code class="language-python">action = game.ask(&quot;fight / think&quot;).strip().lower()
+if action == &quot;fight&quot;:
+    game.say(&quot;You attack!&quot;)
+elif action == &quot;think&quot;:
+    game.say(&quot;You outsmart it!&quot;)
+</code></pre>
+<p><strong>Hint:</strong> add an <code>else</code> for everything else.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug C</strong> — A wrong answer should get one retry before the game continues. Right now there is no second chance.</p>
+<pre><code class="language-python">actions = [&quot;fight&quot;, &quot;think&quot;, &quot;run&quot;]
+action = game.ask(&quot;do what?&quot;).strip().lower()
+if action not in actions:
+    game.say(&quot;Pick from the menu.&quot;)
+game.say(f&quot;You chose: {action}&quot;)
+</code></pre>
+<p><strong>Hint:</strong> after the warning, ask again and store the new answer (reuse what you learned in week 7).</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>3 · Explain the Code 📖</h2>
+<p>Here is a working battle menu. Read it carefully and answer the questions below.</p>
+<pre><code class="language-python">actions = [&quot;fight&quot;, &quot;think&quot;, &quot;run&quot;]
+game.say(f&quot;An enemy appears! Choose: {actions[0]} / {actions[1]} / {actions[2]}&quot;)
+action = game.ask(&quot;What do you do?&quot;).strip().lower()
+if action == &quot;fight&quot;:
+    game.say(&quot;You swing your sword and win the hard way!&quot;)
+elif action == &quot;think&quot;:
+    game.say(&quot;You spot the enemy's weakness and win cleverly!&quot;)
+elif action == &quot;run&quot;:
+    game.say(&quot;You escape, but the enemy keeps your gold.&quot;)
+else:
+    game.say(&quot;You hesitate and get hit!&quot;)
+</code></pre>
+<p><strong>What is stored in the <code>actions</code> list, and how is it used to print the menu?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why does this code use <code>elif</code> for "think" and "run" instead of three separate <code>if</code> statements?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Which line runs if the player types "dance"? Why?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>The <code>.strip().lower()</code> runs on the player's answer. What does it do, and why does it help the comparisons work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Each branch prints a different <code>outcome</code>. Name the outcome for "fight" and the outcome for "run".</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>4 · Explain Your Lesson Code 🎥</h2>
+<p>Explain the battle menu code <strong>you</strong> wrote in today's live lesson. Record a short video on your phone (or a parent's phone). You may show it running. Teach it like the viewer has never coded, and try to use these words: <strong>action</strong>, <strong>menu</strong>, <strong>elif</strong>, <strong>else</strong>, <strong>outcome</strong>.</p>
+<blockquote>
+<ol>
+<li>Show the menu your code prints and read out the actions on it.</li>
+<li>Point to your <code>if</code> / <code>elif</code> / <code>else</code> and explain what each branch does.</li>
+<li>Show what happens when the player types something off-menu, and explain why.</li>
+<li>Explain why the order of your branches matters.</li>
+</ol>
+</blockquote>
+<p><strong>Write what you will say in your video. Plan it here before you record.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.</p>
+<div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>
+</div></body></html>

@@ -1,0 +1,193 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head><meta charset='utf-8'>
+<title>🎮 RS003 Week 15 — English Worksheet</title>
+<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
+<style>
+@page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
+div.WordSection1 { page: WordSection1; }
+body { font-family: "Segoe UI", Arial, sans-serif; font-size: 11.5pt; color: #1a1a2e; line-height: 1.5; }
+h1 { font-size: 21pt; color: #6b4ee6; margin: 4px 0 6px; }
+h2 { font-size: 15pt; color: #6b4ee6; border-top: 1px solid #dddddd; padding-top: 8px; margin: 18px 0 10px; }
+h3, h4 { font-size: 11.5pt; margin: 12px 0 6px; }
+p { margin: 7px 0; }
+.brand { font-size: 10.5pt; font-weight: bold; color: #ff7849; letter-spacing: .06em;
+         border-bottom: 2px solid #ff7849; padding-bottom: 6px; margin-bottom: 14px; }
+table { border-collapse: collapse; margin: 10px 0; }
+th, td { border: 1px solid #c8c8c8; padding: 4px 9px; text-align: center; }
+th { background: #f3eefc; color: #6b4ee6; font-weight: bold; }
+pre { font-family: Consolas, "Courier New", monospace; font-size: 10.5pt; background: #f4f4f5;
+      border: 1px solid #dddddd; padding: 8px 10px; white-space: pre-wrap; }
+pre code { background: transparent; color: #1a1a2e; }
+code { font-family: Consolas, "Courier New", monospace; background: #fff1e8; color: #d6531f; padding: 0 3px; }
+blockquote { border-left: 3px solid #ff7849; background: #fff6ef; padding: 8px 12px;
+             color: #6a3a1c; margin: 9px 0; }
+ul, ol { margin: 7px 0 7px 26px; }
+p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
+.footer { color: #999999; font-size: 8.5pt; text-align: center; margin-top: 18px;
+          border-top: 1px solid #eeeeee; padding-top: 6px; }
+.footer b { color: #ff7849; }
+</style></head>
+<body><div class=WordSection1>
+<div class="brand">📚 ENGLISH CODING · 영어코딩</div>
+<h1>🎮 RS003 Week 15 — English Worksheet</h1>
+<p><strong>Topic:</strong> Put It All Together — Fire at Falling Enemies · <strong>Course:</strong> Pygame Space Shooter · <strong>Time:</strong> about 45 minutes</p>
+<p>This week everything you have learned comes together into one <strong>playable mini game</strong>: constants, for loops, functions, ship movement, falling enemies, bullets, and a score. In this worksheet you will think about that code and explain it — no typing in the app.</p>
+<blockquote>
+<p>🧠 Words to know: <strong>integrate</strong>, <strong>hit detection</strong>, <strong>bullet</strong>, <strong>score</strong>, <strong>hit effect</strong></p>
+</blockquote>
+<hr />
+<h2>1 · Predict 🔮</h2>
+<p>Read each piece of code. Write what you think it does. Do not run anything.</p>
+<pre><code class="language-python">if event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
+    bullets.append([ship_x, ship_y - 20])
+</code></pre>
+<p><strong>Pressing SPACE adds a bullet to a list. What two numbers does each bullet remember?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">for e in enemies[:]:
+    for b in bullets[:]:
+        if abs(b[0] - e[&quot;x&quot;]) &lt; 22 and abs(b[1] - e[&quot;y&quot;]) &lt; 22:
+            score += e[&quot;points&quot;]
+            effects.append([e[&quot;x&quot;], e[&quot;y&quot;], 8])
+            enemies.remove(e)
+            bullets.remove(b)
+</code></pre>
+<p><strong>A bullet hits an enemy when it is close in both X and Y. What three things happen on a hit?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">for fx in effects:
+    pygame.draw.circle(screen, YELLOW, (fx[0], fx[1]), fx[2])
+effects = [[x, y, t - 1] for x, y, t in effects if t &gt; 1]
+</code></pre>
+<p><strong>Each effect is a yellow circle with a timer. What does the flash look like as the timer counts down?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">spawn_timer += 1
+if spawn_timer &gt;= 40:
+    spawn_timer = 0
+    kind = random.choice([&quot;alien&quot;, &quot;meteor&quot;])
+    points = 1 if kind == &quot;alien&quot; else 3
+    enemies.append({&quot;x&quot;: random.randint(40, WIDTH - 40), &quot;y&quot;: -20, &quot;type&quot;: kind, &quot;points&quot;: points})
+</code></pre>
+<p><strong>A new enemy appears every 40 frames. Why is a meteor worth more points than an alien?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>2 · Spot the Bug 🐛</h2>
+<p>Each block below was meant to do something but is broken. Write the fixed code, then explain why the original was wrong.</p>
+<p><strong>Bug A</strong> — Pressing SPACE should fire one bullet per press, but right now it fires a huge stream of bullets and the game slows down.</p>
+<pre><code class="language-python">keys = pygame.key.get_pressed()
+if keys[pygame.K_SPACE]:
+    bullets.append([ship_x, ship_y - 20])
+</code></pre>
+<p><strong>Hint:</strong> <code>get_pressed</code> is true every frame the key is down. A <code>KEYDOWN</code> event fires once per press.</p>
+<p><strong>Write the fixed code (use the event instead):</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug B</strong> — When a bullet hits an enemy, the enemy should disappear and you score, but the enemy stays and you can score off it forever.</p>
+<pre><code class="language-python">if abs(b[0] - e[&quot;x&quot;]) &lt; 22 and abs(b[1] - e[&quot;y&quot;]) &lt; 22:
+    score += e[&quot;points&quot;]
+</code></pre>
+<p><strong>Hint:</strong> the enemy and the bullet are never removed after a hit.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug C</strong> — Bullets fly <strong>up</strong> the screen, but right now they move down instead.</p>
+<pre><code class="language-python">for b in bullets:
+    b[1] += 8
+</code></pre>
+<p><strong>Hint:</strong> up means the Y position should get smaller.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>3 · Explain the Code 📖</h2>
+<p>Here is the heart of the final mini game. Read it carefully, then answer the questions. Reading only — do not run it.</p>
+<pre><code class="language-python">ship_x, ship_y = WIDTH // 2, HEIGHT - 100
+SPEED = 5
+bullets = []          # each: [x, y]
+enemies = []          # each: {&quot;x&quot;,&quot;y&quot;,&quot;type&quot;,&quot;points&quot;}
+effects = []          # each: [x, y, timer]   hit flash
+score = 0
+spawn_timer = 0
+
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_SPACE:
+                bullets.append([ship_x, ship_y - 20])
+
+    keys = pygame.key.get_pressed()
+    if keys[pygame.K_LEFT]:  ship_x -= SPEED
+    if keys[pygame.K_RIGHT]: ship_x += SPEED
+
+    spawn_timer += 1
+    if spawn_timer &gt;= 40:
+        spawn_timer = 0
+        kind = random.choice([&quot;alien&quot;, &quot;meteor&quot;])
+        points = 1 if kind == &quot;alien&quot; else 3
+        enemies.append({&quot;x&quot;: random.randint(40, WIDTH - 40), &quot;y&quot;: -20, &quot;type&quot;: kind, &quot;points&quot;: points})
+
+    for e in enemies: e[&quot;y&quot;] += 2
+    for b in bullets: b[1] -= 8
+
+    for e in enemies[:]:
+        for b in bullets[:]:
+            if abs(b[0] - e[&quot;x&quot;]) &lt; 22 and abs(b[1] - e[&quot;y&quot;]) &lt; 22:
+                score += e[&quot;points&quot;]
+                effects.append([e[&quot;x&quot;], e[&quot;y&quot;], 8])
+                if e in enemies: enemies.remove(e)
+                if b in bullets: bullets.remove(b)
+
+    screen.fill(SPACE)
+    for b in bullets:  pygame.draw.rect(screen, YELLOW, (b[0] - 2, b[1] - 8, 4, 12))
+    for e in enemies:  draw_enemy(e)
+    for fx in effects: pygame.draw.circle(screen, YELLOW, (fx[0], fx[1]), fx[2])
+    effects = [[x, y, t - 1] for x, y, t in effects if t &gt; 1]
+    screen.blit(font.render(f&quot;Score: {score}&quot;, True, WHITE), (10, 10))
+</code></pre>
+<p><strong>Why are <code>bullets</code>, <code>enemies</code>, and <code>effects</code> all lists instead of single variables?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>The line <code>for e in enemies: e["y"] += 2</code> runs every frame. What does it make the enemies do?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Look at the two loops <code>for e in enemies[:]</code> and <code>for b in bullets[:]</code>. Why does the code check every bullet against every enemy?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>What does <code>score += e["points"]</code> add to the score, and why is it <code>e["points"]</code> and not just <code>+ 1</code>?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>The score is drawn with <code>font.render(f"Score: {score}", ...)</code>. What part of that line makes the number change on the screen?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>4 · Explain Your Lesson Code 🎥</h2>
+<p>Explain the code <strong>you</strong> wrote in today's lesson. Record a short video on your phone (you can show the game running) and talk through it like you are teaching someone. Try to use these words: <strong>integrate</strong>, <strong>hit detection</strong>, <strong>bullet</strong>, <strong>score</strong>, <strong>hit effect</strong>.</p>
+<blockquote>
+<ol>
+<li>Show where your code fires a <strong>bullet</strong> when you press SPACE.</li>
+<li>Read your <strong>hit detection</strong> line out loud and explain how it knows a bullet touched an enemy.</li>
+<li>Point at where the <strong>score</strong> goes up and where the <strong>hit effect</strong> flash is made.</li>
+<li>Name two earlier-week ideas you had to <strong>integrate</strong> to make the full game.</li>
+</ol>
+</blockquote>
+<p><strong>Write what you will say in your video. Plan it here before you record.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.</p>
+<div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>
+</div></body></html>

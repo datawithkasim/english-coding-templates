@@ -1,0 +1,155 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head><meta charset='utf-8'>
+<title>🔴 RS002 Week 3 — English Worksheet</title>
+<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
+<style>
+@page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
+div.WordSection1 { page: WordSection1; }
+body { font-family: "Segoe UI", Arial, sans-serif; font-size: 11.5pt; color: #1a1a2e; line-height: 1.5; }
+h1 { font-size: 21pt; color: #6b4ee6; margin: 4px 0 6px; }
+h2 { font-size: 15pt; color: #6b4ee6; border-top: 1px solid #dddddd; padding-top: 8px; margin: 18px 0 10px; }
+h3, h4 { font-size: 11.5pt; margin: 12px 0 6px; }
+p { margin: 7px 0; }
+.brand { font-size: 10.5pt; font-weight: bold; color: #ff7849; letter-spacing: .06em;
+         border-bottom: 2px solid #ff7849; padding-bottom: 6px; margin-bottom: 14px; }
+table { border-collapse: collapse; margin: 10px 0; }
+th, td { border: 1px solid #c8c8c8; padding: 4px 9px; text-align: center; }
+th { background: #f3eefc; color: #6b4ee6; font-weight: bold; }
+pre { font-family: Consolas, "Courier New", monospace; font-size: 10.5pt; background: #f4f4f5;
+      border: 1px solid #dddddd; padding: 8px 10px; white-space: pre-wrap; }
+pre code { background: transparent; color: #1a1a2e; }
+code { font-family: Consolas, "Courier New", monospace; background: #fff1e8; color: #d6531f; padding: 0 3px; }
+blockquote { border-left: 3px solid #ff7849; background: #fff6ef; padding: 8px 12px;
+             color: #6a3a1c; margin: 9px 0; }
+ul, ol { margin: 7px 0 7px 26px; }
+p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
+.footer { color: #999999; font-size: 8.5pt; text-align: center; margin-top: 18px;
+          border-top: 1px solid #eeeeee; padding-top: 6px; }
+.footer b { color: #ff7849; }
+</style></head>
+<body><div class=WordSection1>
+<div class="brand">📚 ENGLISH CODING · 영어코딩</div>
+<h1>🔴 RS002 Week 3 — English Worksheet</h1>
+<p><strong>Topic:</strong> Lists + Indexing — A Menu of Pokémon · <strong>Course:</strong> Pokédex App · <strong>Time:</strong> about 45 minutes</p>
+<p>This week you think about how to store <strong>many Pokémon in one list</strong> instead of many separate variables, and how to pull values back out with an <strong>index</strong> (<code>[0]</code>, <code>[1]</code>, <code>[2]</code>). You will read code, find bugs on paper, and explain the code you wrote in your live lesson — remember the first item lives at index <code>0</code>, not <code>1</code>.</p>
+<blockquote>
+<p>🧠 Words to know: <strong>list</strong>, <strong>index</strong>, <strong>zero</strong>, <strong>parallel list</strong>, <strong>menu</strong></p>
+</blockquote>
+<hr />
+<h2>1 · Recall 🧠</h2>
+<p>From memory:</p>
+<p><strong>Write the line that asks the trainer's name and stores it (cleaned) in <code>trainer_name</code>.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>2 · Predict 🔮</h2>
+<p>Read each block. Write what you think will happen.</p>
+<pre><code class="language-python">starters = [&quot;피카츄&quot;, &quot;이상해씨&quot;, &quot;파이리&quot;]
+print(starters[0])
+</code></pre>
+<p><strong>What gets printed? Which Pokémon is at index <code>0</code>?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">starters = [&quot;피카츄&quot;, &quot;이상해씨&quot;, &quot;파이리&quot;]
+print(starters[1])
+print(starters[3])
+</code></pre>
+<p><strong>The first <code>print</code> is fine. What happens on the second one? Why?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">names = [&quot;피카츄&quot;, &quot;이상해씨&quot;, &quot;파이리&quot;]
+types = [&quot;전기&quot;, &quot;풀&quot;, &quot;불&quot;]
+hp = [35, 45, 39]
+
+print(f&quot;이름: {names[1]}&quot;)
+print(f&quot;타입: {types[1]}&quot;)
+print(f&quot;체력: {hp[1]}&quot;)
+</code></pre>
+<p><strong>These three lists line up by position. Which Pokémon's info is printed? Write out the three lines it prints.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>3 · Spot the Bug 🐛</h2>
+<p>Read what each block is <strong>supposed</strong> to do, then fix it on paper and explain the fix.</p>
+<p><strong>Bug A</strong> — This should print the <strong>first</strong> Pokémon, <code>피카츄</code>. Right now it prints the second one.</p>
+<pre><code class="language-python">starters = [&quot;피카츄&quot;, &quot;이상해씨&quot;, &quot;파이리&quot;]
+print(starters[1])
+</code></pre>
+<p><strong>Hint:</strong> the first item is not at index <code>1</code>.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug B</strong> — This should print all three starters as a numbered menu. Right now line 3 reaches for an item that does not exist and crashes.</p>
+<pre><code class="language-python">starters = [&quot;피카츄&quot;, &quot;이상해씨&quot;, &quot;파이리&quot;]
+print(f&quot;1. {starters[0]}&quot;)
+print(f&quot;2. {starters[1]}&quot;)
+print(f&quot;3. {starters[3]}&quot;)
+</code></pre>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug C</strong> — These parallel lists should show 피카츄's matching type. Right now name and type do not line up.</p>
+<pre><code class="language-python">names = [&quot;피카츄&quot;, &quot;이상해씨&quot;, &quot;파이리&quot;]
+types = [&quot;전기&quot;, &quot;풀&quot;, &quot;불&quot;]
+
+print(f&quot;이름: {names[0]}&quot;)
+print(f&quot;타입: {types[2]}&quot;)
+</code></pre>
+<p><strong>Hint:</strong> to keep one Pokémon together, use the <strong>same index</strong> in every list.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>4 · Explain the Code 📖</h2>
+<p>Read this working starter menu carefully.</p>
+<pre><code class="language-python">starters = [&quot;피카츄&quot;, &quot;이상해씨&quot;, &quot;파이리&quot;]
+types = [&quot;전기&quot;, &quot;풀&quot;, &quot;불&quot;]
+
+print(&quot;=== 시작 포켓몬을 골라주세요 ===&quot;)
+print(f&quot;1. {starters[0]} — {types[0]} 타입&quot;)
+print(f&quot;2. {starters[1]} — {types[1]} 타입&quot;)
+print(f&quot;3. {starters[2]} — {types[2]} 타입&quot;)
+</code></pre>
+<p><strong>What does the first line do, and why is <code>starters</code> better than three separate name variables?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong><code>starters[0]</code> and <code>types[0]</code> both use index <code>0</code>. Which Pokémon and which type do they give, and why do they match?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Line 2 of the menu uses <code>[1]</code>. Which Pokémon is that — the first or the second? Explain.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>If you wrote <code>starters[3]</code>, what would happen and why?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why is using the same index in <code>starters</code> and <code>types</code> important for keeping each Pokémon's info correct?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>5 · Explain Your Lesson Code 🎥</h2>
+<p>Explain the code <strong>you</strong> wrote in today's live lesson. Record a short video on your phone (you may show it running) and teach it like the viewer is new. Try to use these words: <strong>list</strong>, <strong>index</strong>, <strong>zero</strong>, <strong>parallel list</strong>, <strong>menu</strong>.</p>
+<blockquote>
+<ol>
+<li>Show the starter menu code you wrote in the lesson and read your list out loud.</li>
+<li>Explain why <code>starters[0]</code> is the first Pokémon, not the second.</li>
+<li>Show how the name and type stay matched by using the same index.</li>
+<li>Say why a list is better than three separate variables.</li>
+</ol>
+</blockquote>
+<p><strong>Write what you will say in your video. Plan it here before you record.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.</p>
+<div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>
+</div></body></html>

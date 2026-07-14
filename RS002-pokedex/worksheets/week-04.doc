@@ -1,0 +1,160 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head><meta charset='utf-8'>
+<title>🔴 RS002 Week 4 — English Worksheet</title>
+<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
+<style>
+@page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
+div.WordSection1 { page: WordSection1; }
+body { font-family: "Segoe UI", Arial, sans-serif; font-size: 11.5pt; color: #1a1a2e; line-height: 1.5; }
+h1 { font-size: 21pt; color: #6b4ee6; margin: 4px 0 6px; }
+h2 { font-size: 15pt; color: #6b4ee6; border-top: 1px solid #dddddd; padding-top: 8px; margin: 18px 0 10px; }
+h3, h4 { font-size: 11.5pt; margin: 12px 0 6px; }
+p { margin: 7px 0; }
+.brand { font-size: 10.5pt; font-weight: bold; color: #ff7849; letter-spacing: .06em;
+         border-bottom: 2px solid #ff7849; padding-bottom: 6px; margin-bottom: 14px; }
+table { border-collapse: collapse; margin: 10px 0; }
+th, td { border: 1px solid #c8c8c8; padding: 4px 9px; text-align: center; }
+th { background: #f3eefc; color: #6b4ee6; font-weight: bold; }
+pre { font-family: Consolas, "Courier New", monospace; font-size: 10.5pt; background: #f4f4f5;
+      border: 1px solid #dddddd; padding: 8px 10px; white-space: pre-wrap; }
+pre code { background: transparent; color: #1a1a2e; }
+code { font-family: Consolas, "Courier New", monospace; background: #fff1e8; color: #d6531f; padding: 0 3px; }
+blockquote { border-left: 3px solid #ff7849; background: #fff6ef; padding: 8px 12px;
+             color: #6a3a1c; margin: 9px 0; }
+ul, ol { margin: 7px 0 7px 26px; }
+p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
+.footer { color: #999999; font-size: 8.5pt; text-align: center; margin-top: 18px;
+          border-top: 1px solid #eeeeee; padding-top: 6px; }
+.footer b { color: #ff7849; }
+</style></head>
+<body><div class=WordSection1>
+<div class="brand">📚 ENGLISH CODING · 영어코딩</div>
+<h1>🔴 RS002 Week 4 — English Worksheet</h1>
+<p><strong>Topic:</strong> Parallel Lists + Loops — A Full Pokédex · <strong>Course:</strong> Pokédex App · <strong>Time:</strong> about 45 minutes</p>
+<p>In the live lesson your three starters grew into a <strong>full Pokédex of 12+ Pokémon</strong> across four parallel lists — name, type, HP, attack. This worksheet is about <em>thinking through</em> that code and being able to <strong>explain it in your own words</strong>: how a <strong><code>for</code> loop</strong> walks every Pokémon by index, and why the parallel lists must stay the same length.</p>
+<blockquote>
+<p>🧠 Words to know: <strong>parallel list</strong>, <strong>for loop</strong>, <strong>index</strong>, <strong>len</strong>, <strong>same length</strong></p>
+</blockquote>
+<hr />
+<h2>1 · Recall 🧠</h2>
+<p>From memory:</p>
+<p><strong>Write a list called <code>names</code> holding three Pokémon, then write the line that prints the second one.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>2 · Predict 🔮</h2>
+<p>Read each block. Write what you think will happen — just from reading, no running.</p>
+<pre><code class="language-python">names = [&quot;피카츄&quot;, &quot;이상해씨&quot;, &quot;파이리&quot;]
+for i in range(len(names)):
+    print(names[i])
+</code></pre>
+<p><strong><code>len(names)</code> is 3, so <code>range(len(names))</code> gives <code>0, 1, 2</code>. What three lines print?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">names = [&quot;피카츄&quot;, &quot;이상해씨&quot;, &quot;파이리&quot;]
+types = [&quot;전기&quot;, &quot;풀&quot;, &quot;불&quot;]
+
+for i in range(len(names)):
+    print(f&quot;{names[i]} — {types[i]}&quot;)
+</code></pre>
+<p><strong>The loop uses <code>i</code> in both lists. Write out every line it prints.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">names = [&quot;피카츄&quot;, &quot;이상해씨&quot;, &quot;파이리&quot;]
+hp = [35, 45]
+
+for i in range(len(names)):
+    print(f&quot;{names[i]}: HP {hp[i]}&quot;)
+</code></pre>
+<p><strong><code>names</code> has 3 items but <code>hp</code> has only 2. What happens on the last loop? Why?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>3 · Spot the Bug 🐛</h2>
+<p>Read what each block is <strong>supposed</strong> to do, fix it on paper, then explain the fix.</p>
+<p><strong>Bug A</strong> — This should print <strong>every</strong> name in the list. Right now it only ever prints the first one.</p>
+<pre><code class="language-python">names = [&quot;피카츄&quot;, &quot;이상해씨&quot;, &quot;파이리&quot;]
+for i in range(len(names)):
+    print(names[0])
+</code></pre>
+<p><strong>Hint:</strong> the loop variable <code>i</code> changes each time — use it.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug B</strong> — A new Pokémon was added to <code>names</code> but not to the other lists. When the loop reaches the new one, the program crashes.</p>
+<pre><code class="language-python">names = [&quot;피카츄&quot;, &quot;이상해씨&quot;, &quot;파이리&quot;, &quot;꼬부기&quot;]
+types = [&quot;전기&quot;, &quot;풀&quot;, &quot;불&quot;]
+
+for i in range(len(names)):
+    print(f&quot;{names[i]} — {types[i]}&quot;)
+</code></pre>
+<p><strong>Hint:</strong> parallel lists must all be the <strong>same length</strong>.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug C</strong> — This should number the Pokédex starting at <code>#1</code>. Right now the first entry shows <code>#0</code>.</p>
+<pre><code class="language-python">names = [&quot;피카츄&quot;, &quot;이상해씨&quot;, &quot;파이리&quot;]
+for i in range(len(names)):
+    print(f&quot;#{i}  {names[i]}&quot;)
+</code></pre>
+<p><strong>Hint:</strong> the index starts at 0, but humans count from 1.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>4 · Explain the Code 📖</h2>
+<p>Read this working Pokédex closely. You do not run it — you read it and answer.</p>
+<pre><code class="language-python">names = [&quot;피카츄&quot;, &quot;이상해씨&quot;, &quot;파이리&quot;, &quot;꼬부기&quot;]
+types = [&quot;전기&quot;, &quot;풀&quot;, &quot;불&quot;, &quot;물&quot;]
+hp = [35, 45, 39, 44]
+attack = [55, 49, 52, 48]
+
+print(f&quot;\n=== 도감 ===&quot;)
+print(f&quot;등록된 포켓몬: {len(names)}마리\n&quot;)
+
+for i in range(len(names)):
+    print(f&quot;#{i+1}  {names[i]}  타입:{types[i]}  HP:{hp[i]}  공격:{attack[i]}&quot;)
+</code></pre>
+<p><strong>There are four lists. What makes them "parallel" — how do they line up with each other?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong><code>len(names)</code> is 4. What does <code>range(len(names))</code> give the loop, and how many times does the loop run?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Inside the loop, <code>i</code> is used in all four lists at once. On the third time through the loop, what is <code>i</code>, and which Pokémon's data gets printed?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why does the line use <code>#{i+1}</code> instead of <code>#{i}</code>?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>If you added a 5th Pokémon to <code>names</code> but forgot the other three lists, what would break, and on which loop?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>5 · Explain Your Lesson Code 🎥</h2>
+<p>Explain the Pokédex code <strong>you wrote in today's live lesson</strong> in a short phone video. You may show it running on screen. Teach it like the viewer is new. Try to use: <strong>parallel list</strong>, <strong>for loop</strong>, <strong>index</strong>, <strong>len</strong>, <strong>same length</strong>.</p>
+<blockquote>
+<ol>
+<li>Show your full numbered Pokédex on screen.</li>
+<li>Read your <code>for</code> loop out loud and say what <code>i</code> does each time through.</li>
+<li>Point to your four lists and explain why they must all be the same length.</li>
+<li>Show what changes when one Pokémon is added.</li>
+</ol>
+</blockquote>
+<p><strong>Write what you will say in your video. Plan it here before you record.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.</p>
+<div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>
+</div></body></html>

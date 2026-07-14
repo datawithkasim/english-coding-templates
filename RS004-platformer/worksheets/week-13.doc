@@ -1,0 +1,184 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head><meta charset='utf-8'>
+<title>👾 RS004 Week 13 — English Worksheet</title>
+<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
+<style>
+@page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
+div.WordSection1 { page: WordSection1; }
+body { font-family: "Segoe UI", Arial, sans-serif; font-size: 11.5pt; color: #1a1a2e; line-height: 1.5; }
+h1 { font-size: 21pt; color: #6b4ee6; margin: 4px 0 6px; }
+h2 { font-size: 15pt; color: #6b4ee6; border-top: 1px solid #dddddd; padding-top: 8px; margin: 18px 0 10px; }
+h3, h4 { font-size: 11.5pt; margin: 12px 0 6px; }
+p { margin: 7px 0; }
+.brand { font-size: 10.5pt; font-weight: bold; color: #ff7849; letter-spacing: .06em;
+         border-bottom: 2px solid #ff7849; padding-bottom: 6px; margin-bottom: 14px; }
+table { border-collapse: collapse; margin: 10px 0; }
+th, td { border: 1px solid #c8c8c8; padding: 4px 9px; text-align: center; }
+th { background: #f3eefc; color: #6b4ee6; font-weight: bold; }
+pre { font-family: Consolas, "Courier New", monospace; font-size: 10.5pt; background: #f4f4f5;
+      border: 1px solid #dddddd; padding: 8px 10px; white-space: pre-wrap; }
+pre code { background: transparent; color: #1a1a2e; }
+code { font-family: Consolas, "Courier New", monospace; background: #fff1e8; color: #d6531f; padding: 0 3px; }
+blockquote { border-left: 3px solid #ff7849; background: #fff6ef; padding: 8px 12px;
+             color: #6a3a1c; margin: 9px 0; }
+ul, ol { margin: 7px 0 7px 26px; }
+p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
+.footer { color: #999999; font-size: 8.5pt; text-align: center; margin-top: 18px;
+          border-top: 1px solid #eeeeee; padding-top: 6px; }
+.footer b { color: #ff7849; }
+</style></head>
+<body><div class=WordSection1>
+<div class="brand">📚 ENGLISH CODING · 영어코딩</div>
+<h1>👾 RS004 Week 13 — English Worksheet</h1>
+<p><strong>Topic:</strong> Enemies &amp; Game Over · <strong>Course:</strong> Platformer Game · <strong>Time:</strong> about 45 minutes</p>
+<p>This week is about <strong>enemies</strong>. You will read and think about an <code>Enemy</code> <strong>class</strong> that patrols left and right on its own, how touching an enemy triggers <strong>Game Over</strong>, and how pressing <strong>R</strong> restarts. A <code>game_state</code> variable decides what the game is doing. Then you will explain the code you wrote in today's live lesson.</p>
+<blockquote>
+<p>Keep these words handy: <strong>class</strong>, <strong>patrol</strong>, <strong>game_state</strong>, <strong>Game Over</strong>, <strong>restart (R)</strong>.</p>
+</blockquote>
+<hr />
+<h2>1 · Predict 🔮</h2>
+<p>Read each snippet. Write what you think it does.</p>
+<pre><code class="language-python">def update(self):
+    self.rect.x = self.rect.x + self.direction * self.speed
+    if self.rect.x &gt; self.start_x + self.range_x:
+        self.direction = -1
+    if self.rect.x &lt; self.start_x:
+        self.direction = 1
+</code></pre>
+<p><strong>The enemy reaches the right end of its range. What happens to <code>direction</code>?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">if player.colliderect(enemy.rect):
+    game_state = &quot;gameover&quot;
+</code></pre>
+<p><strong>The player touches an enemy. What does the game switch to?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">elif game_state == &quot;gameover&quot;:
+    if keys[pygame.K_r]:
+        player.x = start_x
+        player.y = start_y
+        game_state = &quot;playing&quot;
+</code></pre>
+<p><strong>The game is over and R is pressed. What resets, and what does the game become?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>2 · Read the Class 🏷️</h2>
+<p>An <code>Enemy</code> is created with <code>Enemy(300, 530, 40, 40, 200)</code>. Match each value.</p>
+<pre><code>1. 300   2. 530   3. 40   4. 40   5. 200
+</code></pre>
+<pre><code>A. patrol range (how far it walks)
+B. start x
+C. start y
+D. width
+E. height
+</code></pre>
+<p><strong>1 → ___  2 → ___  3 → ___  4 → ___  5 → ___</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>3 · Spot the Bug 🐛</h2>
+<p>Each snippet is broken. Rewrite it so it works, then explain why the original was wrong.</p>
+<p><strong>Bug A</strong> — The enemy should walk back and forth. Right now it walks off the right side and never comes back.</p>
+<pre><code class="language-python">def update(self):
+    self.rect.x = self.rect.x + self.speed
+</code></pre>
+<p><strong>Hint:</strong> there is no <code>direction</code>, so it only ever moves one way. It needs to flip at the edges.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug B</strong> — Movement should stop once the game is over. Right now the player keeps moving on the Game Over screen.</p>
+<pre><code class="language-python">keys = pygame.key.get_pressed()
+if keys[pygame.K_LEFT]:
+    player.x -= PLAYER_SPEED
+if keys[pygame.K_RIGHT]:
+    player.x += PLAYER_SPEED
+for enemy in enemies:
+    enemy.update()
+    if player.colliderect(enemy.rect):
+        game_state = &quot;gameover&quot;
+</code></pre>
+<p><strong>Hint:</strong> wrap the play logic so it only runs when <code>game_state == "playing"</code>.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug C</strong> — R should restart the game, but pressing it does nothing.</p>
+<pre><code class="language-python">if game_state == &quot;gameover&quot;:
+    player.x = start_x
+    player.y = start_y
+    game_state = &quot;playing&quot;
+</code></pre>
+<p><strong>Hint:</strong> this restarts every frame with no key check. Only restart when R is pressed.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>4 · Explain the Code 📖</h2>
+<p>Here is a working enemy setup, just like the one from class. Read it carefully, then answer the questions.</p>
+<pre><code class="language-python">class Enemy:
+    def __init__(self, start_x, start_y, width, height, range_x):
+        self.rect = pygame.Rect(start_x, start_y, width, height)
+        self.start_x = start_x
+        self.range_x = range_x
+        self.direction = 1
+        self.speed = 2
+
+    def update(self):
+        self.rect.x = self.rect.x + self.direction * self.speed
+        if self.rect.x &gt; self.start_x + self.range_x:
+            self.direction = -1
+        if self.rect.x &lt; self.start_x:
+            self.direction = 1
+
+enemies = [Enemy(300, 530, 40, 40, 200)]
+
+if game_state == &quot;playing&quot;:
+    for enemy in enemies:
+        enemy.update()
+        if player.colliderect(enemy.rect):
+            game_state = &quot;gameover&quot;
+</code></pre>
+<p><strong>Which line saves where the enemy started, and why does the patrol need it?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>What does <code>self.direction = 1</code> mean, and what is happening when it becomes <code>-1</code>?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why does every enemy go inside the <code>for enemy in enemies:</code> loop?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>What turns the game into Game Over, and on which line does it happen?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why is all of this wrapped inside <code>if game_state == "playing":</code>?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>5 · Explain Your Lesson Code 🎥</h2>
+<p>Explain the code <strong>you</strong> wrote in today's lesson. Make a short phone video walking through your own game. You may show it running. Try to use these words: <strong>class</strong>, <strong>patrol</strong>, <strong>game_state</strong>, <strong>Game Over</strong>, <strong>restart</strong>.</p>
+<blockquote>
+<ol>
+<li>Show your <code>Enemy</code> class and read the <code>update</code> out loud.</li>
+<li>Explain how <code>direction</code> flips so the enemy patrols back and forth.</li>
+<li>Touch an enemy and show <code>game_state</code> turn to Game Over.</li>
+<li>Press R and explain how the restart resets the game.</li>
+</ol>
+</blockquote>
+<p><strong>Write what you will say in your video. Plan it here before you record.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.</p>
+<div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>
+</div></body></html>

@@ -1,0 +1,182 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head><meta charset='utf-8'>
+<title>🔴 RS002 Week 10 — English Worksheet</title>
+<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
+<style>
+@page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
+div.WordSection1 { page: WordSection1; }
+body { font-family: "Segoe UI", Arial, sans-serif; font-size: 11.5pt; color: #1a1a2e; line-height: 1.5; }
+h1 { font-size: 21pt; color: #6b4ee6; margin: 4px 0 6px; }
+h2 { font-size: 15pt; color: #6b4ee6; border-top: 1px solid #dddddd; padding-top: 8px; margin: 18px 0 10px; }
+h3, h4 { font-size: 11.5pt; margin: 12px 0 6px; }
+p { margin: 7px 0; }
+.brand { font-size: 10.5pt; font-weight: bold; color: #ff7849; letter-spacing: .06em;
+         border-bottom: 2px solid #ff7849; padding-bottom: 6px; margin-bottom: 14px; }
+table { border-collapse: collapse; margin: 10px 0; }
+th, td { border: 1px solid #c8c8c8; padding: 4px 9px; text-align: center; }
+th { background: #f3eefc; color: #6b4ee6; font-weight: bold; }
+pre { font-family: Consolas, "Courier New", monospace; font-size: 10.5pt; background: #f4f4f5;
+      border: 1px solid #dddddd; padding: 8px 10px; white-space: pre-wrap; }
+pre code { background: transparent; color: #1a1a2e; }
+code { font-family: Consolas, "Courier New", monospace; background: #fff1e8; color: #d6531f; padding: 0 3px; }
+blockquote { border-left: 3px solid #ff7849; background: #fff6ef; padding: 8px 12px;
+             color: #6a3a1c; margin: 9px 0; }
+ul, ol { margin: 7px 0 7px 26px; }
+p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
+.footer { color: #999999; font-size: 8.5pt; text-align: center; margin-top: 18px;
+          border-top: 1px solid #eeeeee; padding-top: 6px; }
+.footer b { color: #ff7849; }
+</style></head>
+<body><div class=WordSection1>
+<div class="brand">📚 ENGLISH CODING · 영어코딩</div>
+<h1>🔴 RS002 Week 10 — English Worksheet</h1>
+<p><strong>Topic:</strong> Expanding the Dex — Evolution + Region Keys · <strong>Course:</strong> Pokédex App · <strong>Time:</strong> about 45 minutes</p>
+<p>This week is about <strong>reading and explaining</strong> the code that grows each Pokémon from 4 facts to <strong>7</strong> — adding the <code>evolution</code>, <code>region</code>, and <code>description</code> keys. You will think through how dictionaries make adding facts easy, trace a full-card helper, and explain the code you wrote in your live lesson out loud.</p>
+<blockquote>
+<p>🧠 Words to know: <strong>key</strong>, <strong>dictionary</strong>, <strong>filter</strong>, <strong>region</strong>, <strong>KeyError</strong></p>
+</blockquote>
+<hr />
+<h2>1 · Recall 🧠</h2>
+<p>From memory:</p>
+<p><strong>Write a single Pokémon as a dictionary with keys <code>name</code>, <code>type</code>, <code>hp</code>, and <code>attack</code>, then print its name.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>2 · Predict 🔮</h2>
+<p>Read each block. Write what you think will happen.</p>
+<pre><code class="language-python">pikachu = {&quot;name&quot;: &quot;피카츄&quot;, &quot;region&quot;: &quot;관동&quot;, &quot;evolution&quot;: &quot;라이츄&quot;}
+print(f&quot;{pikachu['name']} → {pikachu['evolution']} ({pikachu['region']})&quot;)
+</code></pre>
+<p><strong>What single line prints?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">pokedex = [
+    {&quot;name&quot;: &quot;피카츄&quot;, &quot;region&quot;: &quot;관동&quot;},
+    {&quot;name&quot;: &quot;롱스톤&quot;, &quot;region&quot;: &quot;성도&quot;},
+    {&quot;name&quot;: &quot;꼬부기&quot;, &quot;region&quot;: &quot;관동&quot;},
+]
+
+for p in pokedex:
+    if p[&quot;region&quot;] == &quot;관동&quot;:
+        print(p[&quot;name&quot;])
+</code></pre>
+<p><strong>Which names print? Why?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">def show(p):
+    print(f&quot;=== {p['name']} ===&quot;)
+    print(f&quot;타입: {p['type']}&quot;)
+
+show({&quot;name&quot;: &quot;파이리&quot;, &quot;type&quot;: &quot;불&quot;})
+</code></pre>
+<p><strong>The function takes a dictionary <code>p</code>. What does it print?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>3 · Spot the Bug 🐛</h2>
+<p>Read what each block is <strong>supposed</strong> to do, fix it on paper, then explain the fix.</p>
+<p><strong>Bug A</strong> — Every Pokémon should have the same keys. This one is missing <code>region</code>, so the loop crashes when it reaches it.</p>
+<pre><code class="language-python">pokedex = [
+    {&quot;name&quot;: &quot;피카츄&quot;, &quot;region&quot;: &quot;관동&quot;},
+    {&quot;name&quot;: &quot;이상해씨&quot;},
+]
+
+for p in pokedex:
+    print(f&quot;{p['name']} — {p['region']}&quot;)
+</code></pre>
+<p><strong>Hint:</strong> add the missing key to the second Pokémon.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug B</strong> — This filter should show only 관동 Pokémon. Right now it shows all of them.</p>
+<pre><code class="language-python">pokedex = [
+    {&quot;name&quot;: &quot;피카츄&quot;, &quot;region&quot;: &quot;관동&quot;},
+    {&quot;name&quot;: &quot;롱스톤&quot;, &quot;region&quot;: &quot;성도&quot;},
+]
+
+for p in pokedex:
+    print(p[&quot;name&quot;])
+</code></pre>
+<p><strong>Hint:</strong> add an <code>if</code> that checks the region before printing.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug C</strong> — The card function should print the <code>description</code>. The key is spelled wrong, causing a <code>KeyError</code>.</p>
+<pre><code class="language-python">def show(p):
+    print(f&quot;=== {p['name']} ===&quot;)
+    print(f&quot;설명: {p['describe']}&quot;)
+
+show({&quot;name&quot;: &quot;피카츄&quot;, &quot;description&quot;: &quot;전기 쥐 포켓몬&quot;})
+</code></pre>
+<p><strong>Hint:</strong> the key in the data is <code>description</code>.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>4 · Explain the Code 📖</h2>
+<p>Read this working full-card helper carefully.</p>
+<pre><code class="language-python">pokedex = [
+    {
+        &quot;name&quot;: &quot;피카츄&quot;, &quot;type&quot;: &quot;전기&quot;, &quot;hp&quot;: 35, &quot;attack&quot;: 55,
+        &quot;evolution&quot;: &quot;라이츄&quot;, &quot;region&quot;: &quot;관동&quot;,
+        &quot;description&quot;: &quot;전기를 모으는 쥐 포켓몬. 볼이 빨개지면 위험!&quot;
+    },
+    {
+        &quot;name&quot;: &quot;이상해씨&quot;, &quot;type&quot;: &quot;풀&quot;, &quot;hp&quot;: 45, &quot;attack&quot;: 49,
+        &quot;evolution&quot;: &quot;이상해풀&quot;, &quot;region&quot;: &quot;관동&quot;,
+        &quot;description&quot;: &quot;등에 식물 씨앗을 지고 다닙니다.&quot;
+    },
+]
+
+def show_full(pokemon):
+    print(f&quot;\n=== {pokemon['name']} ({pokemon['region']}) ===&quot;)
+    print(f&quot;타입: {pokemon['type']}  |  진화: {pokemon['evolution']}&quot;)
+    print(f&quot;체력: {pokemon['hp']}  |  공격력: {pokemon['attack']}&quot;)
+    print(f&quot;설명: {pokemon['description']}&quot;)
+    print(&quot;=&quot; * 40)
+
+show_full(pokedex[0])
+</code></pre>
+<p><strong>How many keys does each Pokémon dictionary have? Name them.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>The function uses <code>pokemon['region']</code>. What is <code>region</code> here — a key or a value?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong><code>show_full(pokedex[0])</code> runs once. Which Pokémon's card prints, and why that one?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>If a Pokémon was missing the <code>evolution</code> key, which line would crash, and what error would Python give?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why is adding a new fact (like <code>weight</code>) to every Pokémon easier with dictionaries than with separate parallel lists?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>5 · Explain Your Lesson Code 🎥</h2>
+<p>Explain the code <strong>you wrote in today's lesson</strong> in a short phone video. You may show it running. Teach it like the viewer is new, and use these words: <strong>key</strong>, <strong>dictionary</strong>, <strong>filter</strong>, <strong>region</strong>, <strong>KeyError</strong>.</p>
+<blockquote>
+<ol>
+<li>Show one Pokémon from your dex with all seven keys and read them out loud.</li>
+<li>Run your "view by region" feature for one region and explain how the filter chooses which Pokémon to show.</li>
+<li>Explain why adding a key is easier than adding a fifth parallel list.</li>
+<li>Show what happens (or could happen) if one Pokémon is missing a key.</li>
+</ol>
+</blockquote>
+<p><strong>Write what you will say in your video. Plan it here before you record.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.</p>
+<div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>
+</div></body></html>

@@ -1,0 +1,190 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head><meta charset='utf-8'>
+<title>🎨 RS003 Extension — Design Your Game Art with AI</title>
+<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
+<style>
+@page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
+div.WordSection1 { page: WordSection1; }
+body { font-family: "Segoe UI", Arial, sans-serif; font-size: 11.5pt; color: #1a1a2e; line-height: 1.5; }
+h1 { font-size: 21pt; color: #6b4ee6; margin: 4px 0 6px; }
+h2 { font-size: 15pt; color: #6b4ee6; border-top: 1px solid #dddddd; padding-top: 8px; margin: 18px 0 10px; }
+h3, h4 { font-size: 11.5pt; margin: 12px 0 6px; }
+p { margin: 7px 0; }
+.brand { font-size: 10.5pt; font-weight: bold; color: #ff7849; letter-spacing: .06em;
+         border-bottom: 2px solid #ff7849; padding-bottom: 6px; margin-bottom: 14px; }
+table { border-collapse: collapse; margin: 10px 0; }
+th, td { border: 1px solid #c8c8c8; padding: 4px 9px; text-align: center; }
+th { background: #f3eefc; color: #6b4ee6; font-weight: bold; }
+pre { font-family: Consolas, "Courier New", monospace; font-size: 10.5pt; background: #f4f4f5;
+      border: 1px solid #dddddd; padding: 8px 10px; white-space: pre-wrap; }
+pre code { background: transparent; color: #1a1a2e; }
+code { font-family: Consolas, "Courier New", monospace; background: #fff1e8; color: #d6531f; padding: 0 3px; }
+blockquote { border-left: 3px solid #ff7849; background: #fff6ef; padding: 8px 12px;
+             color: #6a3a1c; margin: 9px 0; }
+ul, ol { margin: 7px 0 7px 26px; }
+p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
+.footer { color: #999999; font-size: 8.5pt; text-align: center; margin-top: 18px;
+          border-top: 1px solid #eeeeee; padding-top: 6px; }
+.footer b { color: #ff7849; }
+</style></head>
+<body><div class=WordSection1>
+<div class="brand">📚 ENGLISH CODING · 영어코딩</div>
+<h1>🎨 RS003 Extension — Design Your Game Art with AI</h1>
+<p><strong>Topic:</strong> Prompting Google Gemini for 32-bit Game Sprites · <strong>Course:</strong> Pygame Space Shooter · <strong>Time:</strong> about 45 minutes</p>
+<p>This is a bonus mission. Your job this week is <strong>not coding</strong> — it is being the <strong>art director</strong>. So far your game uses shapes you drew with code. Now you write careful instructions (a <strong>prompt</strong>) and Google Gemini draws <strong>32-bit style</strong> sprites for your game — 3 enemy ships, 1 player ship, and 1 background. A good prompt is like a good recipe: the clearer you are, the better the picture.</p>
+<blockquote>
+<p>🧠 Words to know: <strong>prompt</strong>, <strong>sprite</strong>, <strong>32-bit</strong>, <strong>transparent background</strong>, <strong>asset</strong></p>
+<p>⚠️ Open Gemini together with a grown-up or your teacher. Always check the picture before you use it.</p>
+</blockquote>
+<hr />
+<h2>1 · What Makes a Good Prompt? 🔮</h2>
+<p>A computer artist cannot read your mind. It only knows what you <strong>say</strong>. A strong sprite prompt names <strong>six things</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Part</th>
+<th>Question it answers</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Subject</strong></td>
+<td>What is it?</td>
+<td>a tiny alien fighter ship</td>
+</tr>
+<tr>
+<td><strong>Style</strong></td>
+<td>What art look?</td>
+<td>32-bit pixel art, retro arcade</td>
+</tr>
+<tr>
+<td><strong>View</strong></td>
+<td>From what angle?</td>
+<td>top-down view, seen from above</td>
+</tr>
+<tr>
+<td><strong>Colours</strong></td>
+<td>What palette?</td>
+<td>purple and green, glowing</td>
+</tr>
+<tr>
+<td><strong>Background</strong></td>
+<td>What is behind it?</td>
+<td>plain transparent background, no scenery</td>
+</tr>
+<tr>
+<td><strong>Use</strong></td>
+<td>Where will it go?</td>
+<td>a game sprite for a 2D shooter</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Read this prompt. Underline the six parts above inside it:</strong></p>
+<blockquote>
+<p><em>"A tiny alien fighter ship, 32-bit pixel art, retro arcade style, top-down view seen from above, purple and green with glowing lights, on a plain transparent background, as a game sprite for a 2D shooter."</em></p>
+</blockquote>
+<p><strong>Why do we ask for a <em>transparent background</em>? (Hint: think about putting the ship on top of your own sky.)</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>2 · The Prompt Recipe 🧩</h2>
+<p>Here is your fill-in-the-blank recipe. Copy it, swap the blanks for your own ideas, and you have a prompt. The words in <strong>bold</strong> stay the same every time — they are what make it look like a game sprite.</p>
+<pre><code>A ____________ (what it is),
+in 32-bit pixel art, retro arcade style,
+top-down view seen from above,
+____________ colours (your palette),
+on a plain transparent background, no scenery,
+as a single game sprite for a 2D Pygame shooter.
+</code></pre>
+<p><strong>Fill the recipe for ONE idea right now — your player ship:</strong></p>
+<blockquote>
+<p>A <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>_____</p>
+<p>in 32-bit pixel art, retro arcade style, top-down view seen from above,</p>
+<p><strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em></strong>___ colours,</p>
+<p>on a plain transparent background, no scenery, as a single game sprite.</p>
+</blockquote>
+<hr />
+<h2>3 · Spot the Weak Prompt 🐛</h2>
+<p>Each prompt below would give a messy result. Say what is missing and rewrite it using the recipe.</p>
+<p><strong>Prompt A</strong> — <em>"a spaceship"</em></p>
+<p><strong>What is missing?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Your better prompt:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Prompt B</strong> — <em>"a cool enemy ship with an amazing detailed realistic 3D background and explosions and a planet and stars everywhere"</em></p>
+<p><strong>Hint:</strong> you only want the ship by itself. A busy background is hard to drop into your game.</p>
+<p><strong>Your better prompt:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Prompt C</strong> — <em>"make 5 ships"</em></p>
+<p><strong>Hint:</strong> ask for <strong>one</strong> sprite at a time so each picture is clean and the right size.</p>
+<p><strong>Your better prompt:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>4 · Design Your Five Assets 🔧</h2>
+<p>Plan all five <strong>before</strong> you open Gemini. Give each enemy its own personality through colour and shape words (spiky, round, heavy, fast).</p>
+<h3>🎯 Player ship</h3>
+<blockquote>
+<p>A <strong><em>_</em></strong><strong><em>_</em></strong><strong><em>_</em>_, in 32-bit pixel art, top-down view, </strong><strong><em>_</em></strong>_____ colours, transparent background, single game sprite.</p>
+</blockquote>
+<h3>🎯 Enemy ship 1</h3>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<h3>🎯 Enemy ship 2</h3>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<h3>🎯 Enemy ship 3</h3>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<h3>🎯 Background</h3>
+<p>The background is the one asset that should <strong>fill the whole picture</strong> (no transparent part). Name a mood and a few details.</p>
+<p><strong>Hint:</strong> <em>"a deep space night sky background, 32-bit pixel art, dark blue with tiny stars and a far away planet, wide 2D game background, top-down view, no ships."</em></p>
+<blockquote>
+<hr />
+</blockquote>
+<hr />
+<h2>5 · Make It 📸</h2>
+<h3>🎯 Generate and save all five assets</h3>
+<ol>
+<li>Open Google Gemini with your teacher or a grown-up.</li>
+<li>Paste one prompt at a time. If the picture is wrong, <strong>change one word</strong> and try again — that is real prompt engineering.</li>
+<li>Save each finished picture (for example <code>ship.png</code>, <code>enemy1.png</code>, <code>enemy2.png</code>, <code>enemy3.png</code>, <code>background.png</code>).</li>
+<li>You should end with <strong>5 images</strong>: 1 player ship, 3 enemy ships, and 1 background.</li>
+</ol>
+<blockquote>
+<p>💡 No coding this week. Your job is the art only — in Week 16 you swap these pictures into the game with <code>pygame.image.load(...)</code>.</p>
+</blockquote>
+<p>Send all <strong>5 saved pictures</strong>. Then explain what you did — write 4 to 6 sentences. Use these starters:</p>
+<blockquote>
+<p>The prompt I was most proud of was …</p>
+<p>I had to change a word when …</p>
+<p>I asked for a transparent background because …</p>
+<p>The enemy ship I made look the scariest is the one that …</p>
+<p>One thing the AI got wrong was …</p>
+<p>If I had more time, I would …</p>
+</blockquote>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>6 · Record Your Walkthrough 🎥</h2>
+<p>Record a short video of <strong>yourself</strong> talking through your art. You are not showing a game — you are explaining your <strong>prompts</strong> and <strong>why</strong> you chose the words you did. Try to use these words: <strong>prompt</strong>, <strong>sprite</strong>, <strong>32-bit</strong>, <strong>transparent background</strong>, <strong>asset</strong>.</p>
+<blockquote>
+<ol>
+<li>Show your 5 pictures one at a time.</li>
+<li>Read one prompt out loud and point to each of the six parts (subject, style, view, colours, background, use).</li>
+<li>Explain <strong>why</strong> you chose those colours and words for that ship.</li>
+<li>Show one picture the AI got wrong and the word you changed to fix it.</li>
+</ol>
+</blockquote>
+<p><strong>Write what you will say in your video.</strong> Plan it here before you record.</p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send your <strong>5 pictures</strong> + your walkthrough video to teacher on <strong>KakaoTalk</strong>.</p>
+<div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>
+</div></body></html>

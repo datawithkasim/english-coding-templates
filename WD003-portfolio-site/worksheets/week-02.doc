@@ -1,0 +1,160 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head><meta charset='utf-8'>
+<title>🏗️ WD003 Week 2 — English Worksheet</title>
+<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
+<style>
+@page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
+div.WordSection1 { page: WordSection1; }
+body { font-family: "Segoe UI", Arial, sans-serif; font-size: 11.5pt; color: #1a1a2e; line-height: 1.5; }
+h1 { font-size: 21pt; color: #6b4ee6; margin: 4px 0 6px; }
+h2 { font-size: 15pt; color: #6b4ee6; border-top: 1px solid #dddddd; padding-top: 8px; margin: 18px 0 10px; }
+h3, h4 { font-size: 11.5pt; margin: 12px 0 6px; }
+p { margin: 7px 0; }
+.brand { font-size: 10.5pt; font-weight: bold; color: #ff7849; letter-spacing: .06em;
+         border-bottom: 2px solid #ff7849; padding-bottom: 6px; margin-bottom: 14px; }
+table { border-collapse: collapse; margin: 10px 0; }
+th, td { border: 1px solid #c8c8c8; padding: 4px 9px; text-align: center; }
+th { background: #f3eefc; color: #6b4ee6; font-weight: bold; }
+pre { font-family: Consolas, "Courier New", monospace; font-size: 10.5pt; background: #f4f4f5;
+      border: 1px solid #dddddd; padding: 8px 10px; white-space: pre-wrap; }
+pre code { background: transparent; color: #1a1a2e; }
+code { font-family: Consolas, "Courier New", monospace; background: #fff1e8; color: #d6531f; padding: 0 3px; }
+blockquote { border-left: 3px solid #ff7849; background: #fff6ef; padding: 8px 12px;
+             color: #6a3a1c; margin: 9px 0; }
+ul, ol { margin: 7px 0 7px 26px; }
+p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
+.footer { color: #999999; font-size: 8.5pt; text-align: center; margin-top: 18px;
+          border-top: 1px solid #eeeeee; padding-top: 6px; }
+.footer b { color: #ff7849; }
+</style></head>
+<body><div class=WordSection1>
+<div class="brand">📚 ENGLISH CODING · 영어코딩</div>
+<h1>🏗️ WD003 Week 2 — English Worksheet</h1>
+<p><strong>Topic:</strong> Page Structure — HTML Sections · <strong>Course:</strong> Portfolio Site · <strong>Time:</strong> about 45 minutes</p>
+<p>This week you turn last week's paper plan into <strong>real HTML</strong>. You use meaningful tags — <code>&lt;nav&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;footer&gt;</code> — and give each section an <code>id</code> so the nav menu can jump to it. No colors yet. This week is all about <strong>structure</strong>.</p>
+<blockquote>
+<p>Remember: <code>id="about"</code> on a section, and <code>href="#about"</code> on a nav link, work as a pair. The <code>#</code> link finds the matching <code>id</code> and jumps there.</p>
+</blockquote>
+<hr />
+<h2>1 · Predict 🔮</h2>
+<p>Read each block of HTML. Before you imagine the page, write what you think will happen.</p>
+<pre><code class="language-html">&lt;nav&gt;
+  &lt;a href=&quot;#projects&quot;&gt;Projects&lt;/a&gt;
+&lt;/nav&gt;
+
+&lt;section id=&quot;projects&quot;&gt;
+  &lt;h2&gt;Projects&lt;/h2&gt;
+&lt;/section&gt;
+</code></pre>
+<p><strong>A visitor clicks the "Projects" link. What happens, and why?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-html">&lt;section id=&quot;about&quot;&gt;
+  &lt;h2&gt;About&lt;/h2&gt;
+&lt;/section&gt;
+
+&lt;section id=&quot;contact&quot;&gt;
+  &lt;h2&gt;Contact&lt;/h2&gt;
+&lt;/section&gt;
+</code></pre>
+<p><strong>There are two sections here. How does the browser know where one ends and the next begins?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-html">&lt;nav&gt;
+  &lt;a href=&quot;#hero&quot;&gt;Home&lt;/a&gt;
+  &lt;a href=&quot;#contact&quot;&gt;Contact&lt;/a&gt;
+&lt;/nav&gt;
+
+&lt;section id=&quot;hero&quot;&gt;&lt;h1&gt;Minjun&lt;/h1&gt;&lt;/section&gt;
+&lt;section id=&quot;about&quot;&gt;&lt;h2&gt;About&lt;/h2&gt;&lt;/section&gt;
+</code></pre>
+<p><strong>The nav has a "Contact" link, but there is no <code>id="contact"</code> anywhere on the page. What happens when you click it?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>2 · Spot the Bug 🐛</h2>
+<p>Each block of HTML below was meant to do something, but it is broken. Read what the code is <strong>supposed</strong> to do, then rewrite it so it works. After that, explain why the original was wrong and why your fix works.</p>
+<p><strong>Bug A</strong> — The nav link is supposed to jump to the About section, but clicking it does nothing.</p>
+<pre><code class="language-html">&lt;nav&gt;
+  &lt;a href=&quot;about&quot;&gt;About&lt;/a&gt;
+&lt;/nav&gt;
+
+&lt;section id=&quot;about&quot;&gt;
+  &lt;h2&gt;About&lt;/h2&gt;
+&lt;/section&gt;
+</code></pre>
+<p><strong>Hint:</strong> an <code>id</code> link needs one small symbol in front.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug B</strong> — Each section is supposed to have a <em>different</em> <code>id</code> so the nav can tell them apart. Right now two sections share the same one.</p>
+<pre><code class="language-html">&lt;section id=&quot;section&quot;&gt;
+  &lt;h2&gt;About&lt;/h2&gt;
+&lt;/section&gt;
+
+&lt;section id=&quot;section&quot;&gt;
+  &lt;h2&gt;Projects&lt;/h2&gt;
+&lt;/section&gt;
+</code></pre>
+<p><strong>Hint:</strong> an <code>id</code> is a name. Two things should not share the same name.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug C</strong> — This page is supposed to have a navigation bar, but the link is floating loose with no <code>&lt;nav&gt;</code> around it, and the section never closes.</p>
+<pre><code class="language-html">&lt;a href=&quot;#hero&quot;&gt;Home&lt;/a&gt;
+
+&lt;section id=&quot;hero&quot;&gt;
+  &lt;h1&gt;My Name&lt;/h1&gt;
+</code></pre>
+<p><strong>Hint:</strong> wrap the link, and close the tag you opened.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>3 · Build Your Sections 📸</h2>
+<p>Open your editor and build the <strong>five sections</strong> from your Week 1 plan as real HTML. No design yet — placeholder text is fine.</p>
+<ol>
+<li>Add a <code>&lt;nav&gt;</code> with four links: Home, About, Projects, Contact.</li>
+<li>Add five blocks: a Hero <code>&lt;section&gt;</code>, an About <code>&lt;section&gt;</code>, a Projects <code>&lt;section&gt;</code>, a Contact <code>&lt;section&gt;</code>, and a <code>&lt;footer&gt;</code>.</li>
+<li>Give each section a matching <code>id</code> so the nav links jump to them.</li>
+<li>Put a placeholder heading in each section so you can see where you are.</li>
+</ol>
+<p>When you finish, click each nav link and watch the page jump. Send a <strong>photo or video</strong> of your result (the page, or your code), then explain what you did. Use these sentence starters — write 4 to 6 sentences total.</p>
+<blockquote>
+<p>First, I looked at my Week 1 plan and …</p>
+<p>I gave each section an <code>id</code> so that …</p>
+<p>When I clicked a nav link, the page …</p>
+<p>One link did not work at first because …</p>
+<p>To fix it, I …</p>
+<p>Next week I want to start on …</p>
+</blockquote>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>4 · Record Your Walkthrough 🎥</h2>
+<p>Now take a video on your phone (or a parent's phone) while you click through your page. Talk through it like you are teaching someone who has never seen HTML. Try to use these words: <strong>section</strong>, <strong>nav</strong>, <strong>id</strong>, <strong>link</strong>, <strong>footer</strong>.</p>
+<blockquote>
+<ol>
+<li>Show your page from top to bottom.</li>
+<li>Click a nav link and show the page jumping to that section.</li>
+<li>Read one section's <code>id</code> and the matching <code>href</code> out loud, and say how they pair up.</li>
+<li>Show one bug you hit and how you fixed it.</li>
+</ol>
+</blockquote>
+<p><strong>Write what you will say in your video.</strong> Use the space below to plan it before you record — you can read from it while filming.</p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your walkthrough video to teacher on KakaoTalk.</p>
+<div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>
+</div></body></html>

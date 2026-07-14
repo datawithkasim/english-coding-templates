@@ -1,0 +1,167 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head><meta charset='utf-8'>
+<title>🗺️ RS004 Week 9 — English Worksheet</title>
+<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
+<style>
+@page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
+div.WordSection1 { page: WordSection1; }
+body { font-family: "Segoe UI", Arial, sans-serif; font-size: 11.5pt; color: #1a1a2e; line-height: 1.5; }
+h1 { font-size: 21pt; color: #6b4ee6; margin: 4px 0 6px; }
+h2 { font-size: 15pt; color: #6b4ee6; border-top: 1px solid #dddddd; padding-top: 8px; margin: 18px 0 10px; }
+h3, h4 { font-size: 11.5pt; margin: 12px 0 6px; }
+p { margin: 7px 0; }
+.brand { font-size: 10.5pt; font-weight: bold; color: #ff7849; letter-spacing: .06em;
+         border-bottom: 2px solid #ff7849; padding-bottom: 6px; margin-bottom: 14px; }
+table { border-collapse: collapse; margin: 10px 0; }
+th, td { border: 1px solid #c8c8c8; padding: 4px 9px; text-align: center; }
+th { background: #f3eefc; color: #6b4ee6; font-weight: bold; }
+pre { font-family: Consolas, "Courier New", monospace; font-size: 10.5pt; background: #f4f4f5;
+      border: 1px solid #dddddd; padding: 8px 10px; white-space: pre-wrap; }
+pre code { background: transparent; color: #1a1a2e; }
+code { font-family: Consolas, "Courier New", monospace; background: #fff1e8; color: #d6531f; padding: 0 3px; }
+blockquote { border-left: 3px solid #ff7849; background: #fff6ef; padding: 8px 12px;
+             color: #6a3a1c; margin: 9px 0; }
+ul, ol { margin: 7px 0 7px 26px; }
+p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
+.footer { color: #999999; font-size: 8.5pt; text-align: center; margin-top: 18px;
+          border-top: 1px solid #eeeeee; padding-top: 6px; }
+.footer b { color: #ff7849; }
+</style></head>
+<body><div class=WordSection1>
+<div class="brand">📚 ENGLISH CODING · 영어코딩</div>
+<h1>🗺️ RS004 Week 9 — English Worksheet</h1>
+<p><strong>Topic:</strong> Level Design (Data, Respawn, Finish) · <strong>Course:</strong> Platformer Game · <strong>Time:</strong> about 45 minutes</p>
+<p>This week you think about how <strong>level data</strong> is kept apart from the game code. A <code>build_level()</code> function turns a list of numbers into platforms, the player <strong>respawns</strong> at the start if it falls off, and a <strong>finish</strong> marker says "you cleared it!". You will read this code closely and then explain the code you wrote in today's live lesson.</p>
+<blockquote>
+<p>Keep these words handy: <strong>level data</strong>, <strong><code>build_level()</code></strong>, <strong>respawn / start position</strong>, <strong>finish</strong>, <strong>cleared</strong>.</p>
+</blockquote>
+<hr />
+<h2>1 · Predict 🔮</h2>
+<p>Read each snippet. Write what you think it does.</p>
+<pre><code class="language-python">LEVEL_1 = [
+    (0, 550, 800, 50),
+    (150, 450, 120, 20),
+]
+def build_level(level_data):
+    return [pygame.Rect(*p) for p in level_data]
+</code></pre>
+<p><strong>What does <code>build_level(LEVEL_1)</code> give back? What does <code>*p</code> do?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">if player.y &gt; HEIGHT:
+    player.x = start_x
+    player.y = start_y
+    velocity_y = 0
+</code></pre>
+<p><strong>The player falls below the bottom of the screen. What happens to it?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">if player.colliderect(finish):
+    cleared = True
+</code></pre>
+<p><strong>Once <code>cleared</code> is <code>True</code>, what should change about the game?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>2 · Why Separate the Data? 🤔</h2>
+<p>We keep the level as a list of numbers (<code>LEVEL_1</code>) instead of writing each <code>pygame.Rect(...)</code> by hand in the loop.</p>
+<p><strong>Give one reason this makes it easier to build <em>many</em> levels later.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>3 · Spot the Bug 🐛</h2>
+<p>Each snippet is broken. Rewrite it on paper so it works, then explain why the original was wrong.</p>
+<p><strong>Bug A</strong> — <code>build_level</code> should return real platforms, but the game crashes saying it got tuples, not Rects.</p>
+<pre><code class="language-python">def build_level(level_data):
+    return level_data
+</code></pre>
+<p><strong>Hint:</strong> each tuple of numbers must be turned into a <code>pygame.Rect</code>.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug B</strong> — A player who falls off should respawn at the start. Right now it keeps falling forever and never comes back.</p>
+<pre><code class="language-python">if player.y &gt; HEIGHT:
+    velocity_y = 0
+</code></pre>
+<p><strong>Hint:</strong> resetting velocity isn't enough — move the player back to its start spot.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug C</strong> — Touching the finish should clear the level once. Right now the "Level Clear!" text never shows.</p>
+<pre><code class="language-python">finish = pygame.Rect(710, 180, 50, 40)
+if player.colliderect(player):
+    cleared = True
+</code></pre>
+<p><strong>Hint:</strong> the player is being compared with <em>itself</em>, not the finish.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>4 · Explain the Code 📖</h2>
+<p>Read this working level loader closely. It keeps the level as data, builds the platforms, respawns the player, and clears the level at the finish.</p>
+<pre><code class="language-python">LEVEL_1 = [
+    (0, 550, 800, 50),
+    (150, 450, 120, 20),
+    (400, 350, 120, 20),
+]
+start_x, start_y = 50, 500
+
+def build_level(level_data):
+    return [pygame.Rect(*p) for p in level_data]
+
+platforms = build_level(LEVEL_1)
+finish = pygame.Rect(710, 180, 50, 40)
+cleared = False
+
+# inside the game loop:
+if player.y &gt; HEIGHT:
+    player.x = start_x
+    player.y = start_y
+    velocity_y = 0
+
+if player.colliderect(finish):
+    cleared = True
+</code></pre>
+<p><strong>What is stored inside <code>LEVEL_1</code>, and what does each group of four numbers describe?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>What does <code>build_level(LEVEL_1)</code> return, and what is now inside <code>platforms</code>?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>When does the <code>if player.y &gt; HEIGHT:</code> block run, and what does it do to the player?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>What has to be true for <code>cleared</code> to become <code>True</code>?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why is <code>cleared</code> set to <code>False</code> at the start instead of <code>True</code>?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>5 · Explain Your Lesson Code 🎥</h2>
+<p>Explain the code <strong>you wrote in today's lesson</strong>. Record a short video on your phone. You may show your level running. Try to use these words: <strong>level data</strong>, <strong>build_level</strong>, <strong>respawn</strong>, <strong>finish</strong>, <strong>cleared</strong>.</p>
+<blockquote>
+<ol>
+<li>Show your level and point out the start and the finish.</li>
+<li>Point to your level data and your <code>build_level()</code> and say what they do.</li>
+<li>Fall off on purpose and show the respawn, then explain those lines.</li>
+<li>Reach the finish and show the level clear.</li>
+</ol>
+</blockquote>
+<p><strong>Write what you will say in your video. Plan it here before you record.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.</p>
+<div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>
+</div></body></html>

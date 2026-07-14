@@ -1,0 +1,111 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head><meta charset='utf-8'>
+<title>🚀 WD003 Week 8 — English Worksheet</title>
+<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
+<style>
+@page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
+div.WordSection1 { page: WordSection1; }
+body { font-family: "Segoe UI", Arial, sans-serif; font-size: 11.5pt; color: #1a1a2e; line-height: 1.5; }
+h1 { font-size: 21pt; color: #6b4ee6; margin: 4px 0 6px; }
+h2 { font-size: 15pt; color: #6b4ee6; border-top: 1px solid #dddddd; padding-top: 8px; margin: 18px 0 10px; }
+h3, h4 { font-size: 11.5pt; margin: 12px 0 6px; }
+p { margin: 7px 0; }
+.brand { font-size: 10.5pt; font-weight: bold; color: #ff7849; letter-spacing: .06em;
+         border-bottom: 2px solid #ff7849; padding-bottom: 6px; margin-bottom: 14px; }
+table { border-collapse: collapse; margin: 10px 0; }
+th, td { border: 1px solid #c8c8c8; padding: 4px 9px; text-align: center; }
+th { background: #f3eefc; color: #6b4ee6; font-weight: bold; }
+pre { font-family: Consolas, "Courier New", monospace; font-size: 10.5pt; background: #f4f4f5;
+      border: 1px solid #dddddd; padding: 8px 10px; white-space: pre-wrap; }
+pre code { background: transparent; color: #1a1a2e; }
+code { font-family: Consolas, "Courier New", monospace; background: #fff1e8; color: #d6531f; padding: 0 3px; }
+blockquote { border-left: 3px solid #ff7849; background: #fff6ef; padding: 8px 12px;
+             color: #6a3a1c; margin: 9px 0; }
+ul, ol { margin: 7px 0 7px 26px; }
+p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
+.footer { color: #999999; font-size: 8.5pt; text-align: center; margin-top: 18px;
+          border-top: 1px solid #eeeeee; padding-top: 6px; }
+.footer b { color: #ff7849; }
+</style></head>
+<body><div class=WordSection1>
+<div class="brand">📚 ENGLISH CODING · 영어코딩</div>
+<h1>🚀 WD003 Week 8 — English Worksheet</h1>
+<p><strong>Topic:</strong> Final Polish — Publish Your Portfolio · <strong>Course:</strong> Portfolio Site · <strong>Time:</strong> about 45 minutes</p>
+<p>This is the final week. You bring together <strong>every section</strong> from the past seven weeks, fix anything awkward, and <strong>publish</strong> your site so anyone can visit it. This is no longer practice — this is <em>your</em> work, going out into the world.</p>
+<blockquote>
+<p>Publishing means putting your site at a real web address. You can use Replit's Webview share link or GitHub Pages. When you have a link, anyone can open it.</p>
+</blockquote>
+<hr />
+<h2>1 · Predict 🔮</h2>
+<p>Read each situation below. Before you check your own site, write what you expect.</p>
+<pre><code>A visitor opens your site on a phone for the first time.
+</code></pre>
+<p><strong>Walk through what they see, from the Hero to the Footer. Does every section still look right on a small screen?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code>A visitor clicks your dark mode button, then refreshes the page.
+</code></pre>
+<p><strong>If you added the localStorage bonus, what should happen? If you did not, what happens instead?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code>A visitor fills in your contact form and clicks Send.
+</code></pre>
+<p><strong>Describe, in order, what they should see. If any step is missing on your site, note it here so you can fix it.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>2 · Spot the Bug 🐛 (Final Checklist)</h2>
+<p>Go through your own site and find what is broken or unfinished. For each item, write <strong>what is wrong</strong> and <strong>how you will fix it</strong>. A great submission is honest — finding your own bugs is the skill.</p>
+<p><strong>Check A — Sections.</strong> Open your site and confirm all five are present and complete: Hero, About, Projects, Contact, Footer.</p>
+<p><strong>What is missing or unfinished? How will you fix it?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Check B — Design system.</strong> Are your colors, font, and spacing consistent across every section? Or does one section look like it came from a different site?</p>
+<p><strong>Where is it inconsistent? How will you fix it?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Check C — Features.</strong> Does the dark mode toggle work? Does the contact form show a thank-you message? Do the nav links scroll smoothly? Does the page hold up on mobile?</p>
+<p><strong>Which feature is broken or rough? How will you fix it?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>3 · Publish and Present 📸</h2>
+<p>Finish, polish, and <strong>publish</strong> your site.</p>
+<ol>
+<li>Fix everything you found in the checklist above.</li>
+<li>Make sure you have <strong>at least three</strong> project cards.</li>
+<li>Walk through the whole site top to bottom and tidy the spacing, font sizes, and colors.</li>
+<li><strong>Publish</strong> with Replit's Webview link or GitHub Pages, and open the public link to confirm it works.</li>
+<li>Send the link to a friend or family member and ask what they think.</li>
+</ol>
+<p>When you finish, send your <strong>public link</strong> plus <strong>PC and mobile screenshots</strong>, then present your site in writing. Use these sentence starters — write 5 to 7 sentences total.</p>
+<blockquote>
+<p>The public link to my site is …</p>
+<p>The five sections of my site are …</p>
+<p>I set up my design system by …</p>
+<p>My dark mode works by …</p>
+<p>On mobile, my site changes by …</p>
+<p>My favorite part is …</p>
+<p>The hardest part of the whole project was …</p>
+</blockquote>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>4 · Record Your Final Presentation 🎥</h2>
+<p>Now record your final presentation video on your phone (or a parent's phone). This is the big one — you are showing off eight weeks of work. Talk through it like you are presenting <em>your</em> site to an audience. Try to use these words: <strong>portfolio</strong>, <strong>design system</strong>, <strong>dark mode</strong>, <strong>responsive</strong>, <strong>published</strong>.</p>
+<blockquote>
+<ol>
+<li>Open your published link and scroll through every section.</li>
+<li>Explain what each section shows.</li>
+<li>Toggle dark mode and show your site on a narrow screen.</li>
+<li>Say what you are most proud of, and what was hardest.</li>
+</ol>
+</blockquote>
+<p><strong>Write what you will say in your video.</strong> Use the space below to plan it before you record — you can read from it while filming.</p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your published link + PC and mobile screenshots + your final presentation video to teacher on KakaoTalk.</p>
+<div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>
+</div></body></html>

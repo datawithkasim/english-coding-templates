@@ -1,0 +1,138 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head><meta charset='utf-8'>
+<title>✏️ RS004 Week 10 — English Worksheet</title>
+<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
+<style>
+@page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
+div.WordSection1 { page: WordSection1; }
+body { font-family: "Segoe UI", Arial, sans-serif; font-size: 11.5pt; color: #1a1a2e; line-height: 1.5; }
+h1 { font-size: 21pt; color: #6b4ee6; margin: 4px 0 6px; }
+h2 { font-size: 15pt; color: #6b4ee6; border-top: 1px solid #dddddd; padding-top: 8px; margin: 18px 0 10px; }
+h3, h4 { font-size: 11.5pt; margin: 12px 0 6px; }
+p { margin: 7px 0; }
+.brand { font-size: 10.5pt; font-weight: bold; color: #ff7849; letter-spacing: .06em;
+         border-bottom: 2px solid #ff7849; padding-bottom: 6px; margin-bottom: 14px; }
+table { border-collapse: collapse; margin: 10px 0; }
+th, td { border: 1px solid #c8c8c8; padding: 4px 9px; text-align: center; }
+th { background: #f3eefc; color: #6b4ee6; font-weight: bold; }
+pre { font-family: Consolas, "Courier New", monospace; font-size: 10.5pt; background: #f4f4f5;
+      border: 1px solid #dddddd; padding: 8px 10px; white-space: pre-wrap; }
+pre code { background: transparent; color: #1a1a2e; }
+code { font-family: Consolas, "Courier New", monospace; background: #fff1e8; color: #d6531f; padding: 0 3px; }
+blockquote { border-left: 3px solid #ff7849; background: #fff6ef; padding: 8px 12px;
+             color: #6a3a1c; margin: 9px 0; }
+ul, ol { margin: 7px 0 7px 26px; }
+p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
+.footer { color: #999999; font-size: 8.5pt; text-align: center; margin-top: 18px;
+          border-top: 1px solid #eeeeee; padding-top: 6px; }
+.footer b { color: #ff7849; }
+</style></head>
+<body><div class=WordSection1>
+<div class="brand">📚 ENGLISH CODING · 영어코딩</div>
+<h1>✏️ RS004 Week 10 — English Worksheet</h1>
+<p><strong>Topic:</strong> Paper to Code (Apply) · <strong>Course:</strong> Platformer Game · <strong>Time:</strong> about 45 minutes</p>
+<p>This week you think about how a level is designed: how coordinates place each platform, and how jump height and jump distance decide what is reachable. You will read level code, find a design mistake on paper, and explain the code you wrote in your live lesson.</p>
+<blockquote>
+<p>Keep these words handy: <strong>sketch</strong>, <strong>coordinate (x, y)</strong>, <strong>jump height</strong>, <strong>jump distance</strong>, <strong>reachable</strong>.</p>
+</blockquote>
+<hr />
+<h2>1 · Predict 🔮</h2>
+<p>Read each snippet and write what you think it means.</p>
+<pre><code class="language-python"># JUMP_STRENGTH = -14, GRAVITY = 0.7
+# max jump height ≈ 14² / (2 × 0.7) = 140 pixels
+</code></pre>
+<p><strong>If your player is on a platform, roughly how high can the next platform be and still be reachable?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">MY_LEVEL = [
+    (0, 580, 250, 20),
+    (350, 520, 100, 20),
+]
+</code></pre>
+<p><strong>The first platform ends at x = 250. The next starts at x = 350. How wide is the gap to jump?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">START_X, START_Y = 50, 540
+FINISH_X, FINISH_Y = 450, 220
+</code></pre>
+<p><strong>Where does the player begin, and where is the goal? Lower <code>y</code> is higher on screen.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>2 · Spot the Bug 🐛</h2>
+<p>Each snippet is a <em>level design</em> mistake. Read what's wrong, then rewrite the coordinates so the level works. Explain your fix.</p>
+<p><strong>Bug A</strong> — The second platform is meant to be reachable, but it is 300 pixels above the first — too high to jump.</p>
+<pre><code class="language-python">MY_LEVEL = [
+    (0, 580, 250, 20),
+    (300, 280, 100, 20),
+]
+</code></pre>
+<p><strong>Hint:</strong> max jump height is about 140 pixels. Lower the gap.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug B</strong> — The finish marker is floating in empty space with no platform under or near it, so the player can never reach it.</p>
+<pre><code class="language-python">MY_LEVEL = [
+    (0, 580, 250, 20),
+    (350, 520, 100, 20),
+]
+FINISH = (700, 100, 50, 40)
+</code></pre>
+<p><strong>Hint:</strong> add a platform near the finish, within jump range of the last one.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>3 · Explain the Code 📖</h2>
+<p>This is a working level. Each platform is <code>(x, y, width, height)</code>. The player starts low and climbs to the finish at the top.</p>
+<pre><code class="language-python">START_X, START_Y = 50, 540
+
+MY_LEVEL = [
+    (0, 580, 250, 20),
+    (350, 520, 100, 20),
+    (520, 430, 100, 20),
+    (350, 330, 100, 20),
+]
+
+FINISH = (380, 280, 50, 40)
+</code></pre>
+<p><strong>What do the first two numbers in each platform tuple mean?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>The gap from the first platform (ends at x = 250) to the second (starts at x = 350) is 100 pixels. Is that within jump distance? How do you know?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>The player must climb from y = 580 up to the finish at y = 280. Why is a higher platform written with a <em>smaller</em> y number?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Look at the last platform <code>(350, 330, 100, 20)</code> and the finish <code>(380, 280, 50, 40)</code>. Why is the finish placed there and not somewhere far away?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>If you wanted to make this level harder, which one number would you change, and why?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>4 · Explain Your Lesson Code 🎥</h2>
+<p>Explain the level <strong>you wrote in today's live lesson</strong> in a short phone video. You may show it running. Try to use these words: <strong>sketch</strong>, <strong>coordinate</strong>, <strong>jump height</strong>, <strong>reachable</strong>, <strong>difficulty</strong>.</p>
+<blockquote>
+<ol>
+<li>Show your code and point at your <code>MY_LEVEL</code> platforms.</li>
+<li>Read the coordinates of one platform out loud and say where it sits.</li>
+<li>Show the hardest jump and explain why it is still reachable.</li>
+<li>Say one thing you would change to adjust the difficulty.</li>
+</ol>
+</blockquote>
+<p><strong>Write what you will say in your video. Plan it here before you record.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.</p>
+<div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>
+</div></body></html>

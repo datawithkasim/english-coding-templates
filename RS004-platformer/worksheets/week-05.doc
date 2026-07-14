@@ -1,0 +1,166 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head><meta charset='utf-8'>
+<title>🪂 RS004 Week 5 — English Worksheet</title>
+<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
+<style>
+@page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
+div.WordSection1 { page: WordSection1; }
+body { font-family: "Segoe UI", Arial, sans-serif; font-size: 11.5pt; color: #1a1a2e; line-height: 1.5; }
+h1 { font-size: 21pt; color: #6b4ee6; margin: 4px 0 6px; }
+h2 { font-size: 15pt; color: #6b4ee6; border-top: 1px solid #dddddd; padding-top: 8px; margin: 18px 0 10px; }
+h3, h4 { font-size: 11.5pt; margin: 12px 0 6px; }
+p { margin: 7px 0; }
+.brand { font-size: 10.5pt; font-weight: bold; color: #ff7849; letter-spacing: .06em;
+         border-bottom: 2px solid #ff7849; padding-bottom: 6px; margin-bottom: 14px; }
+table { border-collapse: collapse; margin: 10px 0; }
+th, td { border: 1px solid #c8c8c8; padding: 4px 9px; text-align: center; }
+th { background: #f3eefc; color: #6b4ee6; font-weight: bold; }
+pre { font-family: Consolas, "Courier New", monospace; font-size: 10.5pt; background: #f4f4f5;
+      border: 1px solid #dddddd; padding: 8px 10px; white-space: pre-wrap; }
+pre code { background: transparent; color: #1a1a2e; }
+code { font-family: Consolas, "Courier New", monospace; background: #fff1e8; color: #d6531f; padding: 0 3px; }
+blockquote { border-left: 3px solid #ff7849; background: #fff6ef; padding: 8px 12px;
+             color: #6a3a1c; margin: 9px 0; }
+ul, ol { margin: 7px 0 7px 26px; }
+p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
+.footer { color: #999999; font-size: 8.5pt; text-align: center; margin-top: 18px;
+          border-top: 1px solid #eeeeee; padding-top: 6px; }
+.footer b { color: #ff7849; }
+</style></head>
+<body><div class=WordSection1>
+<div class="brand">📚 ENGLISH CODING · 영어코딩</div>
+<h1>🪂 RS004 Week 5 — English Worksheet</h1>
+<p><strong>Topic:</strong> Gravity &amp; Jump · <strong>Course:</strong> Platformer Game · <strong>Time:</strong> about 45 minutes</p>
+<p>This week is about <strong>thinking through</strong> how a player learns to <strong>fall</strong> and <strong>jump</strong>, and <strong>explaining</strong> the code you wrote in the live lesson. A <code>velocity_y</code> value grows every frame (gravity pulls down), and a jump gives it a sudden <em>negative</em> push (upward). The player can only jump when it is on the ground.</p>
+<blockquote>
+<p>Keep these words handy: <strong>velocity</strong>, <strong>gravity</strong>, <strong>jump strength</strong>, <strong>on ground</strong>, <strong>accelerate</strong>.</p>
+</blockquote>
+<hr />
+<h2>1 · Predict 🔮</h2>
+<p>Read each snippet and write what you think it does. Do not run anything — just think.</p>
+<pre><code class="language-python">velocity_y = velocity_y + GRAVITY
+player.y = player.y + velocity_y
+</code></pre>
+<p><strong>Each frame <code>velocity_y</code> grows. Does the player fall faster or slower as time goes on?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">if event.key == pygame.K_SPACE and on_ground:
+    velocity_y = JUMP_STRENGTH   # JUMP_STRENGTH = -14
+</code></pre>
+<p><strong><code>velocity_y</code> becomes -14. In Pygame, smaller <code>y</code> is higher on screen. So the player goes …?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">if player.y &gt;= HEIGHT - 50:
+    player.y = HEIGHT - 50
+    velocity_y = 0
+    on_ground = True
+</code></pre>
+<p><strong>The player hits the floor. Why set <code>velocity_y = 0</code>? Why set <code>on_ground = True</code>?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>2 · Trace the Fall 📉</h2>
+<p><code>GRAVITY = 0.7</code>. The player starts at rest (<code>velocity_y = 0</code>). Fill in <code>velocity_y</code> after each frame.</p>
+<pre><code>start:    velocity_y = 0
+frame 1:  velocity_y = ___
+frame 2:  velocity_y = ___
+frame 3:  velocity_y = ___
+</code></pre>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>In your own words, why does the player speed up as it falls?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>3 · Spot the Bug 🐛</h2>
+<p>Each snippet is broken. On paper, write the fixed code, then explain why the original was wrong.</p>
+<p><strong>Bug A</strong> — The player should fall, but it just sits in the air doing nothing.</p>
+<pre><code class="language-python">velocity_y = 0
+player.y = player.y + velocity_y
+</code></pre>
+<p><strong>Hint:</strong> gravity is never added, so <code>velocity_y</code> stays 0 forever.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug B</strong> — The player should only jump when on the ground. Right now it can jump forever in mid-air ("flying").</p>
+<pre><code class="language-python">if event.key == pygame.K_SPACE:
+    velocity_y = JUMP_STRENGTH
+</code></pre>
+<p><strong>Hint:</strong> add a condition so the jump only happens when <code>on_ground</code> is true.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug C</strong> — When the player lands, it should be able to jump again. Right now it lands but can never jump a second time.</p>
+<pre><code class="language-python">if player.y &gt;= HEIGHT - 50:
+    player.y = HEIGHT - 50
+    velocity_y = 0
+</code></pre>
+<p><strong>Hint:</strong> something needs to flip back to <code>True</code> on landing.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>4 · Explain the Code 📖</h2>
+<p>Here is a working gravity-and-jump player, like the one from your lesson. Read it carefully, then answer the questions.</p>
+<pre><code class="language-python">GRAVITY = 0.7
+JUMP_STRENGTH = -14
+velocity_y = 0
+on_ground = True
+
+# inside the event loop
+if event.key == pygame.K_SPACE and on_ground:
+    velocity_y = JUMP_STRENGTH
+    on_ground = False
+
+# every frame
+velocity_y = velocity_y + GRAVITY
+player.y = player.y + velocity_y
+
+if player.y &gt;= HEIGHT - 50:
+    player.y = HEIGHT - 50
+    velocity_y = 0
+    on_ground = True
+</code></pre>
+<p><strong>What does the line <code>velocity_y = velocity_y + GRAVITY</code> do every frame?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why does a jump set <code>velocity_y</code> to a <em>negative</em> number instead of a positive one?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Right after a jump, <code>on_ground</code> becomes <code>False</code>. Why is that important?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>What three things happen when <code>player.y &gt;= HEIGHT - 50</code> is true?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>If you deleted the line <code>velocity_y = 0</code> at the bottom, what would go wrong?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>5 · Explain Your Lesson Code 🎥</h2>
+<p>In the live lesson you wrote your own gravity and jump code. Now explain <em>your</em> code in a short phone video. You may show it running. Try to use these words: <strong>gravity</strong>, <strong>velocity</strong>, <strong>jump strength</strong>, <strong>on ground</strong>, <strong>land</strong>.</p>
+<blockquote>
+<ol>
+<li>Show your player falling and landing.</li>
+<li>Read your gravity line out loud and explain what it does.</li>
+<li>Show a jump from the ground and explain how the jump works.</li>
+<li>Try to jump in mid-air, show it doesn't work, and say why.</li>
+</ol>
+</blockquote>
+<p><strong>Write what you will say in your video. Plan it here before you record.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + a video explaining your lesson code to teacher on KakaoTalk.</p>
+<div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>
+</div></body></html>
