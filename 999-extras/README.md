@@ -15,6 +15,7 @@
 | 딕셔너리 만들기 — 중급 (Add & Update) | 연습 · 중급 | 키 추가 · 값 수정 · `dict[key] = value` | [PDF](https://github.com/datawithkasim/english-coding-templates/raw/master/999-extras/worksheets/creating-dictionaries-intermediate.pdf) |
 | 딕셔너리 만들기 — 심화 (Advanced) | 연습 · 심화 | 딕셔너리 리스트 · 중첩 · `.get()` | [PDF](https://github.com/datawithkasim/english-coding-templates/raw/master/999-extras/worksheets/creating-dictionaries-advanced.pdf) |
 | CSS 색상과 글씨 꾸미기 (CSS Colors & Text Styling) | 연습 · 기초 | 선택자 · 색상 · padding · border · margin | [PDF](https://github.com/datawithkasim/english-coding-templates/raw/master/999-extras/worksheets/css-colors-text-styling.pdf) |
+| CSS 플렉스박스 레이아웃 (CSS Flexbox Layout) | 연습 · 기초 | display: flex · flex-direction · justify-content · align-items · gap | [PDF](https://github.com/datawithkasim/english-coding-templates/raw/master/999-extras/worksheets/css-layout-flexbox.pdf) |
 | 미로 1주차 단어 (Maze Wk1 Words) | 단어 | while · loop · detect · wall · forward | [PDF](https://github.com/datawithkasim/english-coding-templates/raw/master/999-extras/worksheets/vocab-week1-maze.pdf) |
 
 > 단어 워크시트는 매주 코스에서 배우는 핵심 단어를 따로 연습하는 자료입니다. 숙제와 함께 보내드릴 수 있습니다.
