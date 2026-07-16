@@ -1,0 +1,183 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head><meta charset='utf-8'>
+<title>🎢 005 Week 4 — English Worksheet (Intermediate)</title>
+<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
+<style>
+@page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
+div.WordSection1 { page: WordSection1; }
+body { font-family: "Segoe UI", Arial, sans-serif; font-size: 11.5pt; color: #1a1a2e; line-height: 1.5; }
+h1 { font-size: 21pt; color: #6b4ee6; margin: 4px 0 6px; }
+h2 { font-size: 15pt; color: #6b4ee6; border-top: 1px solid #dddddd; padding-top: 8px; margin: 18px 0 10px; }
+h3, h4 { font-size: 11.5pt; margin: 12px 0 6px; }
+p { margin: 7px 0; }
+.brand { font-size: 10.5pt; font-weight: bold; color: #ff7849; letter-spacing: .06em;
+         border-bottom: 2px solid #ff7849; padding-bottom: 6px; margin-bottom: 14px; }
+table { border-collapse: collapse; margin: 10px 0; }
+th, td { border: 1px solid #c8c8c8; padding: 4px 9px; text-align: center; }
+th { background: #f3eefc; color: #6b4ee6; font-weight: bold; }
+pre { font-family: Consolas, "Courier New", monospace; font-size: 10.5pt; background: #f4f4f5;
+      border: 1px solid #dddddd; padding: 8px 10px; white-space: pre-wrap; }
+pre code { background: transparent; color: #1a1a2e; }
+code { font-family: Consolas, "Courier New", monospace; background: #fff1e8; color: #d6531f; padding: 0 3px; }
+blockquote { border-left: 3px solid #ff7849; background: #fff6ef; padding: 8px 12px;
+             color: #6a3a1c; margin: 9px 0; }
+ul, ol { margin: 7px 0 7px 26px; }
+p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
+.footer { color: #999999; font-size: 8.5pt; text-align: center; margin-top: 18px;
+          border-top: 1px solid #eeeeee; padding-top: 6px; }
+.footer b { color: #ff7849; }
+</style></head>
+<body><div class=WordSection1>
+<div class="brand">📚 ENGLISH CODING · 영어코딩</div>
+<h1>🎢 005 Week 4 — English Worksheet (Intermediate)</h1>
+<p><strong>Topic:</strong> Petting Zoo — Using Helper Functions · <strong>Course:</strong> Theme Park Creator · <strong>Time:</strong> about 45 minutes</p>
+<p>Your park has stalls and amenities. Now it needs a <strong>petting zoo</strong> — a fence around it, six cages inside, and a feeding area.</p>
+<p>The outer fence is a fence box. Every cage is a fence box too. Same job, different size. So <strong>one</strong> <code>build_fence</code> helper builds all seven.</p>
+<p>These are the blocks you use this week:</p>
+<pre><code class="language-python">blocks.fill(OAK_FENCE, corner1, corner2, FillOperation.OUTLINE)
+blocks.place(OAK_FENCE_GATE, pos(9, 0, 0))
+mobs.spawn(CHICKEN, pos(3, 1, 3))
+</code></pre>
+<blockquote>
+<p><code>FillOperation.OUTLINE</code> = the <strong>edge</strong> of the box only — the ground inside is left alone.
+<code>FillOperation.REPLACE</code> = the <strong>whole solid</strong> box.
+<code>blocks.place(block, pos(x, y, z))</code> puts <strong>one</strong> block in <strong>one</strong> spot.
+<code>mobs.spawn(animal, pos(x, y, z))</code> puts <strong>one</strong> animal in <strong>one</strong> spot.</p>
+</blockquote>
+<hr />
+<h2>1 · How to Use a Helper Function 🧰</h2>
+<p>A <strong>helper function</strong> does one job. Other functions <strong>call</strong> it instead of writing that job again.</p>
+<p>Four steps, every time:</p>
+<p><strong>Step 1 — Find the job that repeats.</strong> The zoo fence is a fence box. Each cage is a fence box. That job runs seven times.</p>
+<p><strong>Step 2 — Write the job once</strong>, in its own function, with a name that says the job: <code>build_fence</code>.</p>
+<p><strong>Step 3 — Put the changing parts in the brackets.</strong> The material changes. The spot and the size change. Those become <strong>parameters</strong>.</p>
+<p><strong>Step 4 — Call it</strong> from wherever you need that job, with different arguments each time.</p>
+<pre><code class="language-text">   build_zoo()
+        │
+        ├─▶ build_fence(...)              ← the outer fence
+        │
+        ├─▶ build_cage(CHICKEN, 2, 2)
+        │        ├─▶ build_fence(...)     ← the SAME helper, smaller
+        │        └─▶ spawn CHICKEN
+        │
+        └─▶ build_feeding_area(14, 4)
+</code></pre>
+<p>Here is the helper. It builds one fence box, anywhere, any size:</p>
+<pre><code class="language-python">def build_fence(fence, x, z, size):
+    corner1 = pos(x, 0, z)
+    corner2 = pos(x + size, 0, z + size)
+    blocks.fill(fence, corner1, corner2, FillOperation.OUTLINE)
+</code></pre>
+<p><strong>The zoo fence and the cage fences are all built by this one helper. What has to be different each time it is called?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>2 · Predict 🔮</h2>
+<p>Read each function. Write what you think happens.</p>
+<pre><code class="language-python">def build_cage(animal, x, z):
+    build_fence(OAK_FENCE, x, z, 2)
+    mobs.spawn(animal, pos(x + 1, 1, z + 1))
+
+build_cage(SHEEP, 6, 2)
+</code></pre>
+<p><strong>Which values reach <code>build_fence</code>? Where does the sheep appear, and why is it <code>x + 1</code> and not <code>x</code>?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">build_cage(PIG, 10, 2)
+build_cage(RABBIT, 10, 8)
+</code></pre>
+<p><strong>Both calls send the same <code>x</code>. What is different about the two cages?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>3 · Spot the Bug 🐛</h2>
+<p>Each block is broken. Read what it should do, rewrite it so it works, then explain why the original was wrong.</p>
+<p><strong>Bug A</strong> — This should build a cage with a sheep inside. The sheep appears, but it stands in an <strong>open field</strong> with no fence around it.</p>
+<pre><code class="language-python">def build_cage(animal, x, z):
+    mobs.spawn(animal, pos(x + 1, 1, z + 1))
+
+build_cage(SHEEP, 6, 2)
+</code></pre>
+<p><strong>Hint:</strong> the helper exists, but nobody calls it.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug B</strong> — Six cages should stand in six different spots. Instead all six animals appear in <strong>one</strong> cage, on top of each other.</p>
+<pre><code class="language-python">build_cage(CHICKEN, 2, 2)
+build_cage(COW, 2, 2)
+build_cage(PIG, 2, 2)
+build_cage(SHEEP, 2, 2)
+build_cage(RABBIT, 2, 2)
+build_cage(LLAMA, 2, 2)
+</code></pre>
+<p><strong>Hint:</strong> the helper works. The arguments do not.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug C</strong> — The outer fence should be a ring around the zoo, leaving everything inside it standing. Instead the chicken's cage <strong>disappears</strong> the moment the outer fence goes up, and the chicken is left standing in the open.</p>
+<pre><code class="language-python">def build_fence(fence, x, z, size):
+    corner1 = pos(x, 0, z)
+    corner2 = pos(x + size, 0, z + size)
+    blocks.fill(fence, corner1, corner2, FillOperation.HOLLOW)
+
+def build_zoo():
+    build_cage(CHICKEN, 2, 2)
+    build_fence(OAK_FENCE, 0, 0, 18)
+</code></pre>
+<p><strong>Hint:</strong> <code>HOLLOW</code> clears the middle of the box to air. <code>OUTLINE</code> leaves the middle alone. One word, in one place, fixes all seven fences.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>4 · Build the Petting Zoo 🐑</h2>
+<p>In your homework world, write <strong>one</strong> helper and three functions that call it:</p>
+<pre><code class="language-python">def build_fence(fence, x, z, size):
+def build_cage(animal, x, z):
+def build_feeding_area(x, z):
+def build_zoo():
+</code></pre>
+<p><code>build_fence</code> builds one fence box with <code>FillOperation.OUTLINE</code>.</p>
+<p><code>build_cage</code> calls <code>build_fence</code>, then spawns its animal inside.</p>
+<p><code>build_feeding_area</code> fills <code>HAY_BLOCK</code> for food and places <code>WATER</code> for drink.</p>
+<p><code>build_zoo</code> calls <code>build_fence</code> once for the outer fence, places an <code>OAK_FENCE_GATE</code> so visitors can walk in, calls <code>build_cage</code> <strong>six</strong> times with <strong>six different animals</strong>, and calls <code>build_feeding_area</code> once.</p>
+<p>Only <code>build_fence</code> may contain a fence <code>blocks.fill</code>. The cages and the outer fence all come from the helper.</p>
+<p>Animals: <code>CHICKEN</code> · <code>COW</code> · <code>PIG</code> · <code>SHEEP</code> · <code>RABBIT</code> · <code>LLAMA</code></p>
+<p>Cage spots that fit inside an 18 × 18 zoo — front row and back row:</p>
+<pre><code class="language-text">   (2, 2)    (6, 2)    (10, 2)          feeding area: (14, 4)
+   (2, 8)    (6, 8)    (10, 8)          gate: pos(9, 0, 0)
+</code></pre>
+<p><strong>Write your helper, your three functions, and the call to <code>build_zoo</code>:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>5 · Show Your Work 📸🎥</h2>
+<p>Record <strong>one video</strong> — one take, no stopping (a phone is fine). Show these in order:</p>
+<p><strong>1 · Your code.</strong> Scroll through it. Say what each part does.</p>
+<p><strong>2 · Your build.</strong> Point the camera. Name the parts.</p>
+<p>Fill the blanks:</p>
+<blockquote>
+<p>Today I built ______.</p>
+<p>I built it using this code: ______.</p>
+<p>In this code I used ______.</p>
+<p>The hardest part was ______.</p>
+<p>That part was hard because ______.</p>
+<p>The most fun part was ______.</p>
+<p>Something new I learned was ______.</p>
+</blockquote>
+<p><strong>Write your lines here, then say them in your video.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your video to teacher on KakaoTalk.</p>
+<div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>
+</div></body></html>
