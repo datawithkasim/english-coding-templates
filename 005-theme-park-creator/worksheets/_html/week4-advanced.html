@@ -75,6 +75,8 @@ blockquote {
 }
 .write-space.short { min-height: 86px; }
 .write-space.tall { min-height: 170px; }
+/* Drawing box: same frame, no ruled lines — for "draw the shape" prompts. */
+.write-space.blank { background-image: none; }
 
 /* Keep a question (and any hint/code above it) glued to its answer box so a
    page break never lands between the prompt and the lines you write on. */
@@ -108,150 +110,227 @@ footer b { color: #ff7849; }
 <body>
 <div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
 <h1>🎢 005 Week 4 — English Worksheet (Advanced)</h1>
-<p><strong>Topic:</strong> Petting Zoo — Using Helper Functions · <strong>Course:</strong> Theme Park Creator · <strong>Time:</strong> about 50 minutes</p>
-<p>Your park has a market row and amenities. Now it needs a <strong>petting zoo</strong> — an outer fence, six cages inside, six different animals, and a feeding area.</p>
-<p>The outer fence is a fence box. Every cage is a fence box. Same job, seven times, different sizes. <strong>One</strong> <code>build_fence</code> helper does all seven — and the whole zoo drops anywhere in your park from one number.</p>
-<p>These are the blocks you use this week:</p>
-<pre><code class="language-python">blocks.fill(OAK_FENCE, pos(x1, 0, z1), pos(x2, 0, z2), FillOperation.OUTLINE)
-blocks.fill(HAY_BLOCK, pos(x1, 0, z1), pos(x2, 0, z1 + 1), FillOperation.REPLACE)
-blocks.place(OAK_FENCE_GATE, pos(x1 + 9, 0, z1))
-mobs.spawn(CHICKEN, pos(x1 + 1, 1, z1 + 1))
+<p><strong>Topic:</strong> Petting Zoo — Helper Functions · <strong>Course:</strong> Theme Park Creator · <strong>Level:</strong> Advanced · <strong>Time:</strong> about 50 minutes</p>
+<p>Your park has stalls and amenities. Now it needs a <strong>petting zoo</strong> — a fence around it, six cages inside, an animal in every cage, and somewhere to eat and drink.</p>
+<p>Every cage is the same job. So you write that job <strong>once</strong>, then <strong>call</strong> it for every animal.</p>
+<p>These are the tools you use this week:</p>
+<pre><code class="language-python">corner1 = pos(1, 0, 1)
+corner2 = pos(10, 0, 10)
+blocks.fill(OAK_FENCE, corner1, corner2, FillOperation.REPLACE)
+mobs.spawn(CHICKEN, pos(6, 0, 6))
+
+for i in range(10):
+    mobs.spawn(CHICKEN, pos(6, 0, 6))
 </code></pre>
 <blockquote>
-<p><code>FillOperation.OUTLINE</code> = the <strong>edge</strong> of the box only — the ground inside is left alone.
-<code>FillOperation.REPLACE</code> = the <strong>whole solid</strong> box.
-<code>FillOperation.HOLLOW</code> = the shell, and the middle is <strong>cleared to air</strong>.
-<code>mobs.spawn(animal, pos(x, y, z))</code> puts <strong>one</strong> animal in <strong>one</strong> spot.</p>
+<p><code>corner1</code> and <code>corner2</code> are the <strong>two corners</strong> of the box you fill.
+<code>FillOperation.REPLACE</code> fills the <strong>whole solid</strong> box.
+<code>AIR</code> is a block like any other — filling with <code>AIR</code> <strong>deletes</strong> what was there.
+<code>mobs.spawn(animal, pos(x, y, z))</code> puts <strong>one</strong> animal in <strong>one</strong> spot.
+<code>for i in range(10):</code> runs the line under it <strong>10 times</strong>.
+<code>OAK_FENCE</code> = the fence. <code>HAY_BLOCK</code> = the food. <code>WATER</code> = the drink.</p>
 </blockquote>
-<h2>1 · How to Use a Helper Function 🧰</h2>
-<p>A <strong>helper function</strong> does one job. Functions above it <strong>call</strong> it. Functions above <em>those</em> call <strong>them</strong>.</p>
+<p>These are the tools. <strong>Turning the numbers into parameters is your job.</strong></p>
+<h2>1 · Solid, Then Carve 🧱</h2>
+<p>There is no "hollow box" block. So you build a box in <strong>two moves</strong>:</p>
+<pre><code class="language-text">   move 1 — fill it solid          move 2 — carve the middle out
+      1  2  3  4  5  6                1  2  3  4  5  6
+   6  ## ## ## ## ## ##            6  ## ## ## ## ## ##
+   5  ## ## ## ## ## ##            5  ## .  .  .  .  ##
+   4  ## ## ## ## ## ##     --&gt;    4  ## .  .  .  .  ##
+   3  ## ## ## ## ## ##            3  ## .  .  .  .  ##
+   2  ## ## ## ## ## ##            2  ## .  .  .  .  ##
+   1  ## ## ## ## ## ##            1  ## ## ## ## ## ##
+
+      fill OAK_FENCE                  fill AIR, one block in
+      (1, 1) to (6, 6)                (2, 2) to (5, 5)
+</code></pre>
+<p><strong>Move 2 is one block inside move 1 on every side.</strong> The edge it leaves behind is your fence.</p>
+<h2>2 · Functions 🧩</h2>
+<h3>What a helper function is</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th><strong>Regular function</strong></th>
+<th><strong>Helper function</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Who calls it?</td>
+<td><strong>You</strong> do. You type it and run it.</td>
+<td><strong>Another function</strong> does.</td>
+</tr>
+<tr>
+<td>How big is the job?</td>
+<td>The whole thing.</td>
+<td><strong>One</strong> small job.</td>
+</tr>
+<tr>
+<td>In your zoo</td>
+<td><code>build_zoo</code></td>
+<td><code>fence</code> · <code>feed_area</code></td>
+</tr>
+<tr>
+<td>Written differently?</td>
+<td>No — same <code>def</code>.</td>
+<td>No — same <code>def</code>.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>⚠️ There is <strong>no special keyword</strong> for a helper. A helper is just a function that <strong>other functions use</strong>. The word describes its <strong>job</strong>, not its code.</p>
+</blockquote>
+<p><strong>How to tell them apart:</strong> look at who calls it. If you type it yourself, it's the regular one. If only other functions type it, it's a helper.</p>
+<h3>Functions inside functions 🪆</h3>
+<p>A function can <strong>call</strong> another function. When it does, it <strong>stops and waits</strong> — the second function runs all the way to the end, then the first one carries on from where it stopped.</p>
+<p>Follow the arrows. <code>--&gt;</code> means <em>go into</em>. <code>&lt;--</code> means <em>finished, come back</em>.</p>
+<pre><code class="language-text">   YOU TYPE:  build_zoo(2, 2, 12, 12)
+        |
+        |  line 1 --&gt; fence(OAK_FENCE, 2, 2, 12, 12)         [level 1]
+        |                  |-- fills the outer box
+        |             &lt;-- back to build_zoo
+        |
+        |  line 2 --&gt; build_cage(CHICKEN, 1, 1, 10, 10)      [level 1]
+        |                  |
+        |                  |--&gt; fence(OAK_FENCE, 1, 1, 10, 10)   [level 2]
+        |                  |         |-- the SAME helper, smaller
+        |                  |    &lt;-- back to build_cage
+        |                  |
+        |                  |-- for i in range(10): spawn CHICKEN
+        |                  |
+        |                  |--&gt; feed_area(1, 1)                  [level 2]
+        |                  |         |-- hay, then sunken water
+        |                  |    &lt;-- back to build_cage
+        |             &lt;-- back to build_zoo
+        |
+        |  line 3 --&gt; build_cage(COW, 13, 1, 22, 10)
+        v             &lt;-- ... and so on, six times
+</code></pre>
+<p><strong>The rule: nothing is skipped.</strong> <code>build_zoo</code> cannot get to its next line until the function it called has completely finished.</p>
+<p><strong>Work it out step by step:</strong></p>
+<p><strong>Step 1.</strong> You type <code>build_zoo(2, 2, 12, 12)</code>. One call. Everything else follows from it.</p>
+<p><strong>Step 2.</strong> <code>build_zoo</code> calls <code>fence</code>. <code>build_zoo</code> <strong>pauses</strong> — one function waiting.</p>
+<p><strong>Step 3.</strong> <code>fence</code> ends. <code>build_zoo</code> <strong>resumes</strong> at line 2 and calls <code>build_cage</code>.</p>
+<p><strong>Step 4.</strong> <code>build_cage</code> calls <code>fence</code>. Now <strong>two</strong> are paused: <code>build_zoo</code> <em>and</em> <code>build_cage</code>. This is the chain at its deepest.</p>
+<p><strong>Step 5.</strong> <code>fence</code> ends → control returns to <code>build_cage</code>, <strong>not</strong> to <code>build_zoo</code>. A function always returns to <strong>whoever called it</strong>.</p>
+<p><strong>Step 6.</strong> <code>build_cage</code> spawns, calls <code>feed_area</code>, waits again, gets control back, and ends.</p>
+<p><strong>Step 7.</strong> Only <em>now</em> does <code>build_zoo</code> reach line 3.</p>
+<p><strong>Count it up:</strong> one <code>build_zoo</code>, seven <code>fence</code> runs, six <code>build_cage</code> runs, six <code>feed_area</code> runs. You wrote each function <strong>once</strong>.</p>
+<h3>How to write a helper 🧰</h3>
 <p>Four steps, every time:</p>
-<p><strong>Step 1 — Find the job that repeats.</strong> Outer fence, six cages. One job, seven runs.</p>
-<p><strong>Step 2 — Write the job once</strong>, with a name that says the job: <code>build_fence</code>.</p>
-<p><strong>Step 3 — Put every changing part in the brackets.</strong> Material and four corners. Nothing fixed inside the helper.</p>
-<p><strong>Step 4 — Call it</strong> from wherever the job is needed. <code>build_cage</code> calls it. <code>build_zoo</code> calls it. <code>build_zoo</code> also calls <code>build_cage</code> — a chain three levels deep.</p>
-<pre><code class="language-text">   build_zoo(0)
-        │
-        ├─▶ build_fence(OAK_FENCE, 0, 18, 0, 12)      ← the outer fence
-        │
-        ├─▶ build_cage(CHICKEN, OAK_FENCE, 2, 4, 2, 4)
-        │        ├─▶ build_fence(OAK_FENCE, 2, 4, 2, 4)   ← the SAME helper
-        │        └─▶ spawn CHICKEN
-        │        (× 6 animals)
-        │
-        └─▶ build_feeding_area(14, 17, 4, 8)
+<p><strong>Step 1 — Find the job that repeats.</strong> The zoo fence is a box. Every cage is a box. One job, seven runs.</p>
+<p><strong>Step 2 — Write the job once.</strong> Give it a name that says the job.</p>
+<p><strong>Step 3 — Put the changing parts in the brackets.</strong> Those become <strong>parameters</strong>.</p>
+<p><strong>Step 4 — Call it</strong>, with different arguments each time.</p>
+<p>Here is the <strong>plan</strong> for <code>build_cage</code>. The code is yours to write — this is only the order of the jobs:</p>
+<pre><code class="language-python">def build_cage(animal, x, z, x2, z2):
+    # 1. fill a solid box of fence, corner to corner
+    # 2. carve the middle back to AIR, one block in
+    # 3. put the animal inside
+    # 4. add the feeding area
 </code></pre>
-<p>Here is the helper. It takes <strong>four corners</strong>, so the caller decides where the box sits and how big it is:</p>
-<pre><code class="language-python">def build_fence(fence, x1, x2, z1, z2):
-    blocks.fill(fence, pos(x1, 0, z1), pos(x2, 0, z2), FillOperation.OUTLINE)
+<h2>3 · Predict 🔮</h2>
+<p>Read each one. Write what happens <strong>and the reason</strong>.</p>
+<pre><code class="language-python">blocks.fill(OAK_FENCE, pos(1, 0, 1), pos(10, 0, 10),
+    FillOperation.REPLACE)
+blocks.fill(AIR, pos(2, 0, 2), pos(9, 0, 9), FillOperation.REPLACE)
 </code></pre>
-<div class="qa"><p><strong>One helper runs seven times per zoo, at two different sizes. What would you have to change if every fence in the zoo had to become <code>BIRCH_FENCE</code>?</strong></p>
+<div class="qa"><p><strong>What is left, how thick is it, and why is move 2 inset by exactly one?</strong></p>
 <div class="write-space"></div></div>
 
-<h2>2 · Predict 🔮</h2>
-<p>Read each function. Write what you think happens.</p>
-<pre><code class="language-python">def build_cage(animal, fence, x1, x2, z1, z2):
-    build_fence(fence, x1, x2, z1, z2)
-    mobs.spawn(animal, pos(x1 + 1, 1, z1 + 1))
+<pre><code class="language-python">def fence(fence, x, z, x2, z2):
+    corner1 = pos(x - 5, 0, z - 5)
+    corner2 = pos(x2 + 25, 0, z2 + 25)
+    ...
 
-build_cage(SHEEP, OAK_FENCE, 6, 8, 2, 4)
+fence(OAK_FENCE, 2, 2, 12, 12)
 </code></pre>
-<div class="qa"><p><strong>Which lines run, and in what order? Which value lands in <code>x2</code>, and which never reaches <code>build_fence</code> at all?</strong></p>
+<div class="qa"><p><strong>Which corners does this box actually get? They are not the ones passed in — work them out, and explain what the <code>- 5</code> and <code>+ 25</code> are doing.</strong></p>
 <div class="write-space"></div></div>
 
-<pre><code class="language-python">def build_zoo(x):
-    build_fence(OAK_FENCE, x, x + 18, 0, 12)
-    build_cage(CHICKEN, OAK_FENCE, x + 2, x + 4, 2, 4)
-    build_cage(COW, OAK_FENCE, x + 6, x + 8, 2, 4)
-    build_cage(PIG, OAK_FENCE, x + 10, x + 12, 2, 4)
-    build_feeding_area(x + 14, x + 17, 4, 8)
-
-build_zoo(0)
-build_zoo(40)
+<pre><code class="language-python">for i in range(10):
+    mobs.spawn(animal, pos(6, 0, 6))
 </code></pre>
-<div class="qa"><p><strong><code>build_zoo</code> is called twice. How many zoos are built, how many animals appear, and how many times does <code>build_fence</code> run?</strong></p>
+<div class="qa"><p><strong>How many animals, and where? <code>i</code> is never used inside the loop — does that matter? Why?</strong></p>
 <div class="write-space"></div></div>
 
-<h2>3 · Spot the Bug 🐛</h2>
-<p>Each block is broken. Read what it should do, rewrite it so it works, then explain why the original was wrong.</p>
-<p><strong>Bug A</strong> — The outer fence should ring the zoo and leave everything inside it standing. Instead the cages <strong>vanish</strong> the moment the outer fence goes up, and six animals are left standing in the open.</p>
-<pre><code class="language-python">def build_fence(fence, x1, x2, z1, z2):
-    blocks.fill(fence, pos(x1, 0, z1), pos(x2, 0, z2), FillOperation.HOLLOW)
-
-def build_zoo(x):
-    build_cage(CHICKEN, OAK_FENCE, x + 2, x + 4, 2, 4)
-    build_fence(OAK_FENCE, x, x + 18, 0, 12)
-
-build_zoo(0)
+<h2>4 · Spot the Bug 🐛</h2>
+<p><strong>Bug A</strong> — This should leave a fence ring with a space inside.</p>
+<pre><code class="language-python">blocks.fill(OAK_FENCE, pos(1, 0, 1), pos(10, 0, 10),
+    FillOperation.REPLACE)
+blocks.fill(AIR, pos(1, 0, 1), pos(10, 0, 10),
+    FillOperation.REPLACE)
 </code></pre>
-<p><strong>Hint:</strong> <code>HOLLOW</code> clears the middle to air. <code>OUTLINE</code> leaves the middle alone. One word, in one place, fixes all seven fences.</p>
-<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="qa"><p><strong>What is left, and why?</strong></p>
 <div class="write-space"></div></div>
 
-<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="qa"><p><strong>Write the fixed lines. Explain why your fix works.</strong></p>
 <div class="write-space"></div></div>
 
-<p><strong>Bug B</strong> — Six cages should stand in a row. Instead one cage appears, holding a <strong>llama</strong>, and the other five animals are nowhere.</p>
-<pre><code class="language-python">def build_zoo(x):
-    build_cage(CHICKEN, OAK_FENCE, x + 2, x + 4, 2, 4)
-    build_cage(COW, OAK_FENCE, x + 2, x + 4, 2, 4)
-    build_cage(PIG, OAK_FENCE, x + 2, x + 4, 2, 4)
-    build_cage(LLAMA, OAK_FENCE, x + 2, x + 4, 2, 4)
+<p><strong>Bug B</strong> — Read this one carefully. It runs without an error.</p>
+<pre><code class="language-python">def build_zoo(x, z, x2, z2):
+    fence(OAK_FENCE, x, z, x2, z2)
+    build_cage(CHICKEN, 1, 1, 10, 10)
+    build_cage(COW, 13, 1, 22, 10)
+    build_cage(PIG, 25, 1, 34, 10)
 
-build_zoo(0)
+build_zoo(2, 2, 12, 12)
+build_zoo(40, 2, 50, 12)
 </code></pre>
-<p><strong>Hint:</strong> look at the corners each cage is given.</p>
-<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<p><strong>Work it out step by step:</strong></p>
+<div class="qa"><p><strong>Step 1.</strong> Write down what <code>x</code>, <code>z</code>, <code>x2</code>, <code>z2</code> are on the <strong>second</strong> call.</p>
 <div class="write-space"></div></div>
 
-<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="qa"><p><strong>Step 2.</strong> Which line uses those four values? Which lines do <strong>not</strong>?</p>
 <div class="write-space"></div></div>
 
-<p><strong>Bug C</strong> — The second zoo should stand far away from the first. Instead both zoos are built <strong>on the same spot</strong>, and only one zoo is there.</p>
-<pre><code class="language-python">def build_zoo(x):
-    build_fence(OAK_FENCE, 0, 18, 0, 12)
-    build_cage(CHICKEN, OAK_FENCE, 2, 4, 2, 4)
-
-build_zoo(0)
-build_zoo(40)
-</code></pre>
-<p><strong>Hint:</strong> the parameter <code>x</code> arrives, but nothing inside the function uses it.</p>
-<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="qa"><p><strong>Step 3.</strong> So on the second call — what moves, and what stays exactly where it was?</p>
 <div class="write-space"></div></div>
 
-<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
-<div class="write-space"></div></div>
+<div class="qa"><p><strong>Step 4.</strong> How would you change <code>build_zoo</code> so the whole zoo moves together — fence, cages and animals? Do not write the whole function. Write the idea, and one line to show it.</p>
+<div class="write-space tall" style="min-height: 140px"></div></div>
 
-<h2>4 · Build the Petting Zoo 🐑</h2>
+<h2>5 · Build the Petting Zoo 🐑</h2>
 <p>In your homework world, write <strong>one</strong> helper and three functions that call down into it:</p>
-<pre><code class="language-python">def build_fence(fence, x1, x2, z1, z2):
-def build_cage(animal, fence, x1, x2, z1, z2):
-def build_feeding_area(x1, x2, z1, z2):
-def build_zoo(x):
+<pre><code class="language-python">def fence(fence, x, z, x2, z2):
+def build_cage(animal, x, z, x2, z2):
+def feed_area(x, z):
+def build_zoo(x, z, x2, z2):
 </code></pre>
-<p><code>build_fence</code> builds one fence box with <code>FillOperation.OUTLINE</code>.</p>
-<p><code>build_cage</code> calls <code>build_fence</code>, then spawns its animal inside the box it just built.</p>
-<p><code>build_feeding_area</code> fills <code>HAY_BLOCK</code> for food and <code>WATER</code> for drink.</p>
-<p><code>build_zoo(x)</code> calls <code>build_fence</code> for the outer fence, places an <code>OAK_FENCE_GATE</code> in it, calls <code>build_cage</code> <strong>six</strong> times with <strong>six different animals</strong>, and calls <code>build_feeding_area</code> once.</p>
-<p>Only <code>build_fence</code> may contain a fence <code>blocks.fill</code>. Every corner must come from a parameter — no fixed corner numbers inside the helper, so the whole zoo moves when <code>x</code> moves.</p>
+<p><code>fence</code> builds one box: solid fill, then carve the middle to <code>AIR</code>.</p>
+<p><code>build_cage</code> calls <code>fence</code>, puts its animal inside, then calls <code>feed_area</code>.</p>
+<p><code>feed_area</code> fills <code>HAY_BLOCK</code> for food and <code>WATER</code> for drink. Sink the water one block down.</p>
+<p><code>build_zoo</code> calls <code>fence</code> once for the outer fence, then calls <code>build_cage</code> <strong>six</strong> times with <strong>six different animals</strong>.</p>
+<p>Only <code>fence</code> may contain a fence <code>blocks.fill</code>. Every box in the zoo comes from that one helper.</p>
+<p><strong>Build the chain from the bottom up. Do not write <code>build_zoo</code> first.</strong></p>
+<p><strong>Step 1.</strong> Write <code>fence</code>. Test it alone. It is the bottom of the chain — nothing above it can work until it does.</p>
+<p><strong>Step 2.</strong> Write <code>feed_area</code>. Test it alone.</p>
+<p><strong>Step 3.</strong> Write <code>build_cage</code>. Its first line calls <code>fence</code>. No fence <code>blocks.fill</code> in here.</p>
+<p><strong>Step 4.</strong> Test <code>build_cage</code> with <strong>one</strong> call before you write six.</p>
+<p><strong>Step 5.</strong> Write <code>build_zoo</code> last. It is the only function you call yourself.</p>
+<p><strong>Step 6.</strong> Run it. Walk the whole zoo. Every cage: fence, animal, food, water.</p>
 <p>Animals: <code>CHICKEN</code> · <code>COW</code> · <code>PIG</code> · <code>SHEEP</code> · <code>RABBIT</code> · <code>LLAMA</code></p>
-<p>Cage corners inside an 18 × 12 zoo — front row <code>z 2→4</code>, back row <code>z 8→10</code>:</p>
-<pre><code class="language-text">   cages     x+2 → x+4     x+6 → x+8     x+10 → x+12
-   feeding   x+14 → x+17   z 4 → 8
-   gate      pos(x + 9, 0, 0)
-</code></pre>
-<p>Then build two zoos in different corners of your park:</p>
-<pre><code class="language-python">build_zoo(0)
-build_zoo(40)
-</code></pre>
-<div class="qa"><p><strong>Write your helper, your three functions, and the lines that call them:</strong></p>
-<div class="write-space tall" style="min-height: 460px"></div></div>
+<p>Cage corners that fit — front row and back row:</p>
+<pre><code class="language-text">   z 13-22    [ SHEEP  ]   [ RABBIT ]   [ LLAMA  ]
 
-<h2>5 · Show Your Work 📸🎥</h2>
+   z  1-10    [ CHICKEN]   [  COW   ]   [  PIG   ]
+
+               x 1-10       x 13-22      x 25-34
+</code></pre>
+<div class="qa"><p><strong>Write your helper and your three functions:</strong></p>
+<div class="write-space tall" style="min-height: 440px"></div></div>
+
+<div class="qa"><p><strong>Trace one animal down your chain. Start at <code>build_zoo</code>, end at the block that gets placed. Which values are passed at each step, and which function hands control back to which?</strong></p>
+<div class="write-space tall" style="min-height: 160px"></div></div>
+
+<h2>6 · Show Your Work 📸🎥</h2>
 <p>Record <strong>one video</strong> — one take, no stopping (a phone is fine). Show these in order:</p>
 <p><strong>1 · Your code.</strong> Scroll through it. Say what each part does.</p>
 <p><strong>2 · Your build.</strong> Point the camera. Name the parts.</p>
-<p>Fill the blanks:</p>
+<p><strong>3 · Your chain.</strong> Point at each function and say who calls who, and who is a helper.</p>
+<p>Say these out loud, filling in the blanks:</p>
 <blockquote>
 <p>Today I built ______.</p>
 <p>I built it using this code: ______.</p>
@@ -261,11 +340,10 @@ build_zoo(40)
 <p>The most fun part was ______.</p>
 <p>Something new I learned was ______.</p>
 </blockquote>
-<div class="qa"><p><strong>Write your lines here, then say them in your video.</strong></p>
-<div class="write-space tall" style="min-height: 340px"></div></div>
-
 <hr />
 <h3>Submit ✅</h3>
 <p>Send this worksheet + your video to teacher on KakaoTalk.</p>
+<div class="qa"><p><strong>Write your lines here, then say them in your video.</strong></p>
+<div class="write-space tall" style="min-height: 200px"></div></div>
 </body>
 </html>
