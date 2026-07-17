@@ -1,19 +1,12 @@
-# 🧱 Builder Basics — Block Placement Practice (Extension)
+# 🧱 Builder Basics — Block Placement Practice (Extension · Intermediate)
 
-**Topic:** Move, Turn, Climb With Place On Move · **Course:** Builder Basics · **Type:** Extension Activity · **Time:** about 45 minutes
+**Topic:** Move, Turn, Climb With Place On Move · **Course:** Builder Basics · **Type:** Extension Activity · **Level:** Intermediate · **Time:** about 38 minutes
 
 > 🧩 This is a bonus challenge, not a weekly lesson. Try it once you can move the agent around, before you start placing blocks by hand.
 
 In Week 1 the agent **walked**. Here it walks and **draws** at the same time. You flip one switch — **place on move** — at the very top, and you never touch it again. After that, every step drops a block.
 
-Your four commands:
-
-```
-move forward by 3
-turn left
-turn right
-move up by 2
-```
+Your commands: `move forward`, `turn left`, `turn right`, `move up`.
 
 > 🧱 One step = one block. A turn is not a step.
 
@@ -21,17 +14,7 @@ move up by 2
 
 ## 1 · Predict 🔮
 
-Read each program. The switch is ON at the top and stays ON.
-
-```
-place on move ON
-set block to stone
-move forward by 3
-```
-
-**How many blocks land on the ground?**
-
-<div class="write-space short"></div>
+The switch is ON at the top and stays ON.
 
 ```
 place on move ON
@@ -41,7 +24,7 @@ turn right
 move forward by 2
 ```
 
-**How many blocks in total? Show your adding.**
+**How many blocks land in total? Show your adding.**
 
 <div class="write-space short"></div>
 
@@ -49,32 +32,20 @@ move forward by 2
 
 <div class="write-space blank tall"></div>
 
-```
-place on move ON
-set block to stone
-move forward by 2
-move up by 2
-move forward by 2
-```
-
-**This trail does not stay flat. Describe it in one sentence.**
-
-<div class="write-space"></div>
-
 ---
 
 ## 2 · A Turn Is Not a Step 🧭
 
-`move forward by 2` and `turn right` do very different jobs.
-
 - `move forward by 2` — the agent **travels** two blocks. Two steps, so two blocks drop.
-- `turn right` — the agent **spins** on the spot. It stays where it is. No step, so **no block**.
+- `turn right` — the agent **spins** on the spot. It goes nowhere. No step, so **no block**.
 
-**The switch is ON. The agent runs `turn left`. How many blocks does it place? Why?**
+**The switch is ON. The agent runs `turn left`. How many blocks does it place? Circle one:** 0 · 1 · 2
+
+**Why? Explain in one sentence.**
 
 <div class="write-space"></div>
 
-**Here are two programs. The agent starts in the same spot, facing the same way.**
+**Both of these programs place 4 blocks. Explain what is different about the two trails.**
 
 ```
 Program A            Program B
@@ -82,12 +53,6 @@ move forward by 2    move forward by 2
 move forward by 2    turn right
                      move forward by 2
 ```
-
-**Both programs place 4 blocks. So what is different about the two trails?**
-
-<div class="write-space"></div>
-
-**A turn places no blocks — so why is `turn right` still useful when you are drawing a shape?**
 
 <div class="write-space"></div>
 
@@ -107,19 +72,15 @@ turn right
 move forward by 4
 ```
 
-| Command | Steps | Blocks this line | Total so far |
-|:-------:|:-----:|:----------------:|:------------:|
-| move forward by 4 |   |                  |              |
-| turn right        |   |                  |              |
-| move forward by 3 |   |                  |              |
-| turn right        |   |                  |              |
-| move forward by 4 |   |                  |              |
+| Command | Blocks this line | Total so far |
+|:-------:|:----------------:|:------------:|
+| move forward by 4 |          |              |
+| turn right        |          |              |
+| move forward by 3 |          |              |
+| turn right        |          |              |
+| move forward by 4 |          |              |
 
-**Two lines in this program placed zero blocks. Which ones, and why?**
-
-<div class="write-space"></div>
-
-**This trail draws three sides of a rectangle. Which side is missing, and what would finish it?**
+**Two lines placed zero blocks. Which ones, and why?**
 
 <div class="write-space"></div>
 
@@ -127,9 +88,7 @@ move forward by 4
 
 ## 4 · Going Up 🪜
 
-`move up by 2` is a step too — so it drops blocks as well. Up steps stack blocks on top of each other instead of laying them flat.
-
-Mix `move forward` and `move up` and you get **stairs**:
+`move up` is a step too, so it drops blocks as well. Up steps stack blocks instead of laying them flat. Mix `move forward` and `move up` and you get **stairs**:
 
 ```
 place on move ON
@@ -141,7 +100,7 @@ move up by 1
 move forward by 1
 ```
 
-**How many blocks does this staircase use? Show your adding.**
+**How many blocks does this staircase use?**
 
 <div class="write-space short"></div>
 
@@ -149,15 +108,9 @@ move forward by 1
 
 <div class="write-space blank tall"></div>
 
-**How would you make the staircase climb twice as high without adding more `move up` lines?**
-
-<div class="write-space"></div>
-
 ---
 
 ## 5 · Spot the Bug 🐛
-
-Read what each program **should** do, then explain what really happens.
 
 **Bug A** — This should draw a line 5 blocks long.
 
@@ -166,7 +119,7 @@ set block to stone
 move forward by 5
 ```
 
-**What is on the ground when it finishes? What is missing from the program?**
+**What is missing from the program? What is on the ground when it finishes?**
 
 <div class="write-space"></div>
 
@@ -183,26 +136,13 @@ move forward by 3
 
 **The agent placed 6 blocks, but there is no corner. Explain what those two turns did.**
 
-<div class="write-space tall"></div>
-
-**Bug C** — This should be stairs going up.
-
-```
-place on move ON
-set block to stone
-move forward by 3
-move up by 3
-```
-
-**Why is this a tall pole next to a flat line instead of stairs? What would you change?**
-
-<div class="write-space tall"></div>
+<div class="write-space"></div>
 
 ---
 
 ## 6 · Design Your Own Path 🏗️
 
-Plan a trail before you build it. Use `move forward`, `turn left`, `turn right` and `move up`. The switch goes ON once at the top and stays ON.
+Plan a trail before you build it. Use `move forward`, `turn left`, `turn right` and `move up`. The switch goes ON once and stays ON.
 
 **Choose your block and your path. Fill in the blanks:**
 
@@ -213,22 +153,16 @@ Plan a trail before you build it. Use `move forward`, `turn left`, `turn right` 
 > … (… blocks)
 >
 > … (… blocks)
->
-> … (… blocks)
 
 <div class="write-space tall"></div>
 
-**How many blocks does your whole path place? Remember the turns. Show your adding.**
+**How many blocks does your path place in total?**
 
 <div class="write-space short"></div>
 
 **Draw the shape your path will make. Mark the start with an S and the end with an E.**
 
 <div class="write-space blank tall"></div>
-
-**The big idea: the switch never moved, but your trail still has corners and steps up. Explain what decides the shape of a trail, if it is not the switch.**
-
-<div class="write-space tall"></div>
 
 ---
 
