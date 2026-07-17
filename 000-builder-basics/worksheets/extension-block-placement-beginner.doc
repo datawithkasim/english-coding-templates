@@ -1,0 +1,114 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head><meta charset='utf-8'>
+<title>🧱 Block Placement Practice</title>
+<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
+<style>
+@page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
+div.WordSection1 { page: WordSection1; }
+body { font-family: "Segoe UI", Arial, sans-serif; font-size: 11.5pt; color: #1a1a2e; line-height: 1.5; }
+h1 { font-size: 21pt; color: #6b4ee6; margin: 4px 0 6px; }
+h2 { font-size: 15pt; color: #6b4ee6; border-top: 1px solid #dddddd; padding-top: 8px; margin: 18px 0 10px; }
+h3, h4 { font-size: 11.5pt; margin: 12px 0 6px; }
+p { margin: 7px 0; }
+.brand { font-size: 10.5pt; font-weight: bold; color: #ff7849; letter-spacing: .06em;
+         border-bottom: 2px solid #ff7849; padding-bottom: 6px; margin-bottom: 14px; }
+table { border-collapse: collapse; margin: 10px 0; }
+th, td { border: 1px solid #c8c8c8; padding: 4px 9px; text-align: center; }
+th { background: #f3eefc; color: #6b4ee6; font-weight: bold; }
+pre { font-family: Consolas, "Courier New", monospace; font-size: 10.5pt; background: #f4f4f5;
+      border: 1px solid #dddddd; padding: 8px 10px; white-space: pre-wrap; }
+pre code { background: transparent; color: #1a1a2e; }
+code { font-family: Consolas, "Courier New", monospace; background: #fff1e8; color: #d6531f; padding: 0 3px; }
+blockquote { border-left: 3px solid #ff7849; background: #fff6ef; padding: 8px 12px;
+             color: #6a3a1c; margin: 9px 0; }
+ul, ol { margin: 7px 0 7px 26px; }
+p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
+.footer { color: #999999; font-size: 8.5pt; text-align: center; margin-top: 18px;
+          border-top: 1px solid #eeeeee; padding-top: 6px; }
+.footer b { color: #ff7849; }
+</style></head>
+<body><div class=WordSection1>
+<div class="brand">📚 ENGLISH CODING · 영어코딩</div>
+<h1>🧱 Block Placement Practice</h1>
+<p><strong>Builder Basics · Bonus · about 20 minutes</strong></p>
+<blockquote>
+<p>🧩 The switch is <strong>ON</strong>. The agent draws while it walks!</p>
+</blockquote>
+<hr />
+<h2>1 · Move = Blocks 👀</h2>
+<p>The switch <strong>place on move</strong> is ON. It stays ON.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">The agent…</th>
+<th style="text-align: center;">It drops…</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>moves</strong> 🚶</td>
+<td style="text-align: center;">🟫 🟫 🟫 blocks</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>turns</strong> 🔄</td>
+<td style="text-align: center;">nothing (it stays still)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Move = blocks.  Turn = no blocks.</strong></p>
+<hr />
+<h2>2 · Circle It ✏️</h2>
+<p><code>move forward by 3</code>. Circle one:</p>
+<h1>🟫🟫🟫 3 blocks    ·    ⬜ no blocks</h1>
+<p><code>turn right</code>. Circle one:</p>
+<h1>🟫 1 block    ·    ⬜ no blocks</h1>
+<p><code>move forward by 2</code>. Circle one:</p>
+<h1>🟫 1 block    ·    🟫🟫 2 blocks</h1>
+<hr />
+<h2>3 · Make a Corner 📐</h2>
+<p>The agent walks, turns, then walks again:</p>
+<pre><code>move forward by 3
+turn right
+move forward by 3
+</code></pre>
+<p>The trail looks like this:</p>
+<h1>🟫🟫🟫</h1>
+<h1>⬜⬜🟫</h1>
+<h1>⬜⬜🟫</h1>
+<h1>⬜⬜🟫</h1>
+<p><strong>Count them. How many blocks? Circle one:</strong> 3 · 6 · 9</p>
+<p><strong>What made the trail bend? Circle one:</strong> <code>move forward</code> · <code>turn right</code></p>
+<p><strong>Did <code>turn right</code> drop a block? Circle one:</strong> yes · no</p>
+<hr />
+<h2>4 · Go Up 🪜</h2>
+<p><code>move up</code> is a step too. So it drops blocks too!</p>
+<p>Walk, up, walk, up = <strong>stairs</strong> 🪜</p>
+<pre><code>move forward by 1
+move up by 1
+move forward by 1
+move up by 1
+</code></pre>
+<p><strong>Stairs go… circle one:</strong> up ⬆️ · down ⬇️</p>
+<p><strong>How many blocks do these 4 steps drop? Circle one:</strong> 2 · 4 · 8</p>
+<hr />
+<h2>5 · Show Your Work 📸🎥</h2>
+<ol>
+<li>Open your world.</li>
+<li>Turn the switch <strong>ON</strong>. 🟢</li>
+<li>Make the agent <strong>move</strong>, <strong>turn</strong>, <strong>move</strong>.</li>
+<li>Watch the corner! 📐</li>
+</ol>
+<p>Record <strong>one video</strong>. Show your trail.</p>
+<p>Say these out loud, filling in the blanks:</p>
+<blockquote>
+<p>Today I built ______.</p>
+<p>My block was ______.</p>
+<p>Move means ______.</p>
+<p>Turn means ______.</p>
+<p>The most fun part was ______.</p>
+</blockquote>
+<hr />
+<h3>Submit ✅</h3>
+<p>Send your video to teacher on KakaoTalk.</p>
+<div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>
+</div></body></html>
