@@ -72,7 +72,11 @@ The build only behaves well if you stick to these shapes:
   <div class="write-space"></div>            <!-- standard ~4 lines -->
   <div class="write-space short"></div>      <!-- smaller -->
   <div class="write-space tall" style="min-height: 340px"></div>   <!-- big, for paragraphs -->
+  <div class="write-space blank tall"></div> <!-- drawing frame: same box, NO ruled lines -->
   ```
+  Add `blank` for **"draw the shape"** prompts — ruled lines get in the way of a drawing.
+  It combines with `short`/`tall`. In the `.doc` a `blank` box becomes an empty bordered
+  cell instead of type-on lines.
   Put the **question/prompt directly above** the `write-space` (a `**bold paragraph**`, a
   `>` blockquote of sentence starters, or an `###`/`####` sub-heading). The build glues that
   one preceding block to the box. Don't put two paragraphs of gap between prompt and box, or

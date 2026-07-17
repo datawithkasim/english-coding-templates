@@ -108,6 +108,8 @@ blockquote {
 }
 .write-space.short { min-height: 86px; }
 .write-space.tall { min-height: 170px; }
+/* Drawing box: same frame, no ruled lines — for "draw the shape" prompts. */
+.write-space.blank { background-image: none; }
 
 /* Keep a question (and any hint/code above it) glued to its answer box so a
    page break never lands between the prompt and the lines you write on. */
@@ -246,9 +248,20 @@ p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
 
 
 def _write_space_to_lines(html: str) -> str:
-    """Turn ruled CSS write-space boxes into blank type-on lines for Word."""
+    """Turn ruled CSS write-space boxes into blank type-on lines for Word.
+
+    A `blank` box is a drawing frame, not writing lines — Word gets an empty
+    bordered cell (a table, which Word sizes reliably) instead of ruled lines.
+    """
     def repl(m: "re.Match") -> str:
         cls = m.group(1)
+        if "blank" in cls:
+            h = 90 if "short" in cls else (220 if "tall" in cls else 150)
+            return (
+                "<table style='border-collapse:collapse; width:100%; "
+                "margin:10px 0 20px;'><tr><td style='border:1px solid #cccccc; "
+                f"height:{h}px;'>&nbsp;</td></tr></table>"
+            )
         n = 3 if "short" in cls else (10 if "tall" in cls else 5)
         return '<p class="ruled">&nbsp;</p>' * n
     return re.sub(r'<div class="write-space([^"]*)"[^>]*>\s*</div>', repl, html)
