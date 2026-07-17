@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>🎨 RS003 — Gemini Art Guide: 4 Ships + 1 Background</title>
+<style>
+@page { size: A4; margin: 18mm 16mm 22mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-family: "Inter", "Segoe UI", system-ui, sans-serif; color: #1a1a2e; }
+body { font-size: 15px; line-height: 1.55; }
+
+.cover { border-bottom: 3px solid #ff7849; padding-bottom: 14px; margin-bottom: 20px; }
+.brand { font-size: 14px; font-weight: 800; color: #ff7849; letter-spacing: .06em; }
+h1 { font-size: 28px; color: #6b4ee6; margin: 8px 0 6px; line-height: 1.25; }
+h2 { font-size: 19px; color: #6b4ee6; margin: 22px 0 12px; padding-top: 10px; border-top: 1px solid #eee; page-break-before: always; }
+section.first h2, h2:first-of-type { border-top: none; padding-top: 0; page-break-before: avoid; }
+h3, h4 { font-size: 15px; margin: 14px 0 8px; color: #1a1a2e; }
+p { margin: 8px 0; }
+strong { color: #1a1a2e; }
+em { color: #555; }
+
+ul, ol { margin: 8px 0 8px 24px; }
+li { margin: 3px 0; }
+
+/* Grids (e.g. pixel-art coordinate grids) render as light graph paper. */
+table { border-collapse: collapse; margin: 12px 0; }
+th, td { border: 1px solid #ddd; padding: 4px 9px; text-align: center; font-size: 14px; }
+th { background: #faf7ff; color: #6b4ee6; font-weight: 700; }
+
+pre {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 13.5px;
+  background: #1e1e2e;
+  color: #b9f6ca;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 10px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  page-break-inside: avoid;
+  line-height: 1.5;
+}
+pre code { background: transparent; padding: 0; color: inherit; }
+code {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  background: #fff1e8;
+  color: #ff7849;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+blockquote {
+  margin: 10px 0;
+  padding: 10px 16px;
+  background: #fff6ef;
+  border-left: 3px solid #ff7849;
+  border-radius: 0 6px 6px 0;
+  color: #6a3a1c;
+}
+
+.write-space {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #ffffff 0,
+    #ffffff 27px,
+    #d4d4d4 27px,
+    #d4d4d4 28px
+  );
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  min-height: 114px;
+  margin: 10px 0 20px;
+  page-break-inside: avoid;
+}
+.write-space.short { min-height: 86px; }
+.write-space.tall { min-height: 170px; }
+
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
+hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
+
+.meta { color: #666; font-size: 13px; margin: 0 0 14px; }
+.answer-lines {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 14px 16px;
+  background: #fafafa;
+  white-space: pre;
+  line-height: 2.2;
+}
+
+footer {
+  position: fixed;
+  bottom: 10mm; left: 16mm; right: 16mm;
+  text-align: center;
+  font-size: 10px;
+  color: #aaa;
+}
+footer b { color: #ff7849; }
+</style>
+</head>
+<body>
+<div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
+<h1>🎨 RS003 — Gemini Art Guide: 4 Ships + 1 Background</h1>
+<p><strong>Topic:</strong> Making Your Own Game Art PNGs with Google Gemini · <strong>Course:</strong> Pygame Space Shooter · <strong>Time:</strong> about 45 minutes</p>
+<p>Follow these steps exactly and you finish with <strong>5 PNG files</strong>: 1 player ship, 3 enemy ships, 1 space background. Then your game stops using code-drawn shapes and starts using <strong>your</strong> art.</p>
+<blockquote>
+<p>⚠️ Open Gemini with your teacher or a grown-up. Look at every picture before you use it.</p>
+</blockquote>
+<h2>1 · Set Up 🚀</h2>
+<ol>
+<li>Go to <strong>gemini.google.com</strong> and sign in with a grown-up.</li>
+<li>Start a <strong>new chat</strong>. Click the <strong>image</strong> button (it says <em>Create image</em>, or you pick the image tool from the <code>+</code> menu).</li>
+<li>Find your game folder — the folder holding your <code>.py</code> file.</li>
+<li>Inside it, make a new folder named exactly:</li>
+</ol>
+<pre><code>art
+</code></pre>
+<p>Every picture you make goes in <code>art</code>. Lower case. No spaces.</p>
+<blockquote>
+<p>💡 One prompt = one picture. Never ask for all 4 ships in one go — you get one messy picture you cannot use.</p>
+</blockquote>
+<h2>2 · The Magenta Trick 🎩</h2>
+<p>Your ship must sit on <strong>your</strong> space background, not inside a white box.</p>
+<p>Gemini is not good at making see-through pictures. So you do this instead: ask for a <strong>bright magenta</strong> background, then tell Pygame <em>"magenta means invisible"</em>. Magenta is that shocking pink — <code>#FF00FF</code>. You pick it because <strong>no ship is ever that colour</strong>, so nothing else disappears by accident.</p>
+<p>Every ship prompt below already says magenta. Do not change that line.</p>
+<p>The background picture is the opposite — it fills the whole screen, so it has <strong>no</strong> magenta.</p>
+<h2>3 · Prompt 1 · Player Ship 🛸</h2>
+<p>Paste this into Gemini exactly as written:</p>
+<pre><code>A small player spaceship for a 2D arcade game, 32-bit pixel art,
+retro arcade style, top-down view seen from directly above, nose
+pointing up, blue and white with a glowing engine, hard clean
+edges, no glow spill, no shadow, centred, on a solid bright
+magenta background (#FF00FF), one single sprite, no text.
+</code></pre>
+<p>When the picture appears, check it against §7. If it is good, save it as:</p>
+<pre><code>player.png
+</code></pre>
+<p><strong>Want a different look?</strong> Change <strong>only</strong> the colour words (<code>blue and white</code>) or the ship words (<code>small player spaceship</code>). Everything after <code>hard clean edges</code> stays the same every time.</p>
+<h2>4 · Prompts 2–4 · The Three Enemy Ships 👾</h2>
+<p>Same recipe, three times. Each enemy gets its own <strong>shape word</strong> and <strong>colour</strong> so players can tell them apart in a fast fight.</p>
+<h3>Enemy 1 — the spiky one</h3>
+<pre><code>A small spiky alien enemy fighter for a 2D arcade game, 32-bit
+pixel art, retro arcade style, top-down view seen from directly
+above, nose pointing down, green and yellow, sharp pointed wings,
+hard clean edges, no glow spill, no shadow, centred, on a solid
+bright magenta background (#FF00FF), one single sprite, no text.
+</code></pre>
+<p>Save as <code>enemy1.png</code></p>
+<h3>Enemy 2 — the round one</h3>
+<pre><code>A small round alien enemy saucer for a 2D arcade game, 32-bit
+pixel art, retro arcade style, top-down view seen from directly
+above, purple and pink, smooth circular body with one glowing
+eye, hard clean edges, no glow spill, no shadow, centred, on a
+solid bright magenta background (#FF00FF), one single sprite, no
+text.
+</code></pre>
+<p>Save as <code>enemy2.png</code></p>
+<h3>Enemy 3 — the heavy one</h3>
+<pre><code>A big heavy alien enemy battleship for a 2D arcade game, 32-bit
+pixel art, retro arcade style, top-down view seen from directly
+above, nose pointing down, dark red and grey, thick armour
+plates, hard clean edges, no glow spill, no shadow, centred, on
+a solid bright magenta background (#FF00FF), one single sprite,
+no text.
+</code></pre>
+<p>Save as <code>enemy3.png</code></p>
+<blockquote>
+<p>💡 <strong>Enemies point down, your player points up.</strong> They fly at you. If Gemini draws it the wrong way round, say: <em>"same ship, nose pointing down"</em>.</p>
+</blockquote>
+<h2>5 · Prompt 5 · The Background 🌌</h2>
+<p>This one is different — <strong>no magenta</strong>, and it fills the whole picture.</p>
+<pre><code>A deep space background for a 2D arcade game, 32-bit pixel art,
+retro arcade style, dark navy blue night sky, tiny scattered
+stars, one distant purple planet in the corner, faint nebula
+clouds, seamless flat wide background, top-down view, empty
+middle, no ships, no people, no text.
+</code></pre>
+<p>Save as <code>space.png</code></p>
+<p><strong>Why <code>empty middle</code>?</strong> Your ships fly there. A busy middle makes them impossible to see.</p>
+<p><strong>Why <code>dark</code>?</strong> Bright ships must pop against it. A pale background eats your art.</p>
+<h2>6 · Save the PNGs 💾</h2>
+<p>For each picture:</p>
+<ol>
+<li>Click the picture in Gemini.</li>
+<li>Click the <strong>download</strong> button (the ⬇ arrow).</li>
+<li>It lands in your <strong>Downloads</strong> folder with a long messy name.</li>
+<li><strong>Rename</strong> it and <strong>move</strong> it into your <code>art</code> folder.</li>
+</ol>
+<p>Your <code>art</code> folder must end up looking <strong>exactly</strong> like this — same spelling, same lower case, all <code>.png</code>:</p>
+<pre><code>art/player.png
+art/enemy1.png
+art/enemy2.png
+art/enemy3.png
+art/space.png
+</code></pre>
+<blockquote>
+<p>⚠️ If a file downloads as <code>.jpg</code> or <code>.webp</code>, it will <strong>not</strong> keep magenta clean. Ask Gemini: <em>"give me this as a PNG"</em>, or download it again from the image view.</p>
+</blockquote>
+<h2>7 · Check Every Picture ✅</h2>
+<p>Look at each ship before you keep it. Say yes to all four:</p>
+<ul>
+<li>The background is <strong>flat magenta</strong> — one solid colour, no pattern, no fade.</li>
+<li>There is <strong>one</strong> ship — not two, not a fleet.</li>
+<li>You see it <strong>from above</strong> — not the side, not a 3D angle.</li>
+<li>There is <strong>no text</strong>, no letters, no watermark.</li>
+</ul>
+<p>When it goes wrong, change <strong>one word</strong> and send the prompt again:</p>
+<table>
+<thead>
+<tr>
+<th>What you see</th>
+<th>What to add or change</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>White or grey box behind ship</td>
+<td><em>"solid bright magenta background #FF00FF, nothing else"</em></td>
+</tr>
+<tr>
+<td>Pink fuzzy halo round the ship</td>
+<td><em>"hard pixel edges, no anti-aliasing, no glow, no shadow"</em></td>
+</tr>
+<tr>
+<td>Ship seen from the side</td>
+<td><em>"top-down view, seen from directly above"</em></td>
+</tr>
+<tr>
+<td>Two or more ships</td>
+<td><em>"exactly one ship, centred"</em></td>
+</tr>
+<tr>
+<td>Looks like a photo, not pixels</td>
+<td><em>"32-bit pixel art, retro arcade, flat colours"</em></td>
+</tr>
+<tr>
+<td>Ship too small in the picture</td>
+<td><em>"ship fills the frame"</em></td>
+</tr>
+</tbody>
+</table>
+<p>Changing one word at a time <strong>is</strong> prompt engineering. That is the real skill this week.</p>
+<h2>8 · Load Your Art in Pygame 🎮</h2>
+<p>Put this <strong>after</strong> <code>pygame.display.set_mode(...)</code> and <strong>before</strong> your game loop:</p>
+<pre><code class="language-python"># background — fills the screen, no magenta
+space = pygame.image.load(&quot;art/space.png&quot;).convert()
+space = pygame.transform.scale(space, (WIDTH, HEIGHT))
+
+# ships — magenta becomes invisible
+MAGENTA = (255, 0, 255)
+
+player_img = pygame.image.load(&quot;art/player.png&quot;).convert()
+player_img.set_colorkey(MAGENTA)
+player_img = pygame.transform.scale(player_img, (64, 64))
+
+enemy1_img = pygame.image.load(&quot;art/enemy1.png&quot;).convert()
+enemy1_img.set_colorkey(MAGENTA)
+enemy1_img = pygame.transform.scale(enemy1_img, (48, 48))
+</code></pre>
+<p>Then swap your drawing lines. Old shape code out, picture code in:</p>
+<pre><code class="language-python">screen.blit(space, (0, 0))              # instead of screen.fill(BLACK)
+screen.blit(player_img, (player_x, player_y))
+</code></pre>
+<p><strong>Rules that break your game if you skip them:</strong></p>
+<ul>
+<li><code>.convert()</code> for magenta ships — <strong>not</strong> <code>.convert_alpha()</code>. Alpha ignores the colour key and you keep the pink box.</li>
+<li><code>set_colorkey</code> goes <strong>before</strong> <code>transform.scale</code>.</li>
+<li>If a picture already came out truly see-through (grey checkerboard), use <code>.convert_alpha()</code> and <strong>no</strong> colorkey line.</li>
+<li>Load pictures <strong>once</strong>, at the top. Loading inside the game loop makes the game crawl.</li>
+</ul>
+<h2>9 · Show Your Work 📸🎥</h2>
+<p>Put your 5 pictures into <code>art</code>, load them into your game, and run it.</p>
+<p>Record <strong>one video</strong> — one take, no stopping (a phone is fine). Show these in order:</p>
+<blockquote>
+<ol>
+<li>
+<p>Your 5 pictures, one at a time.</p>
+</li>
+<li>
+<p>One prompt read out loud — point to the magenta line and say what it does.</p>
+</li>
+<li>
+<p>One picture Gemini got wrong, and the word you changed to fix it.</p>
+</li>
+<li>
+<p>Your game running with your own art.</p>
+</li>
+</ol>
+</blockquote>
+<div class="qa"><p><strong>Fill the blanks:</strong></p>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<blockquote>
+<p>Today I made ______.</p>
+<p>I built it using this code: ______.</p>
+<p>In this code I used ______.</p>
+<p>The hardest part was ______.</p>
+<p>That part was hard because ______.</p>
+<p>The most fun part was ______.</p>
+<p>Something new I learned was ______.</p>
+</blockquote>
+<h3>Submit ✅</h3>
+<p>Send your <strong>5 PNG files</strong> + your video to teacher on <strong>KakaoTalk</strong>.</p>
+</body>
+</html>

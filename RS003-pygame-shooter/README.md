@@ -27,6 +27,7 @@
 | 15 | 미니 프로젝트 통합 — 적에게 발사 (학습) | 모든 개념을 한 게임에서 사용 · 결과 영상 또는 코드 사진 | [week-15.md](./worksheets/week-15.md) | [📄 PDF](./worksheets/week-15.pdf) | [최종 미니 게임](https://datawithkasim.github.io/english-coding-slides/python/rs003-pygame-shooter/week-08-final-mini-game.html) |
 | 16 | 폴리시 — 미사일·스프라이트·하이스코어·발표 (응용) | 완성 게임 영상 + 발표 자료 | [week-16.md](./worksheets/week-16.md) | [📄 PDF](./worksheets/week-16.pdf) | [최종 미니 게임](https://datawithkasim.github.io/english-coding-slides/python/rs003-pygame-shooter/week-08-final-mini-game.html) |
 | ✨ | AI로 게임 아트 만들기 (확장) | Gemini 프롬프트로 32-bit 스프라이트(적 3·플레이어 1·배경 1) 제작 · 코딩 없음, 이미지 5장 + 프롬프트 설명 영상 제출 | [extension-ai-art.md](./worksheets/extension-ai-art.md) | [📄 PDF](./worksheets/extension-ai-art.pdf) | — |
+| ✨ | Gemini 게임 아트 따라 만들기 (확장) | 붙여넣기만 하면 되는 완성 프롬프트로 우주선 4대(플레이어 1·적 3)와 우주 배경 PNG 제작 · 만든 그림을 게임에 넣는 코드까지 · 이미지 5장 + 영상 제출 | [extension-gemini-art.md](./worksheets/extension-gemini-art.md) | [📄 PDF](./worksheets/extension-gemini-art.pdf) | — |
 
 > 💡 한 슬라이드 덱은 학습 주 + 응용 주 두 주에 걸쳐 사용합니다. 매주 만든 코드는 마지막 주까지 그대로 이어집니다.
 
