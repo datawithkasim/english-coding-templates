@@ -1,0 +1,255 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head><meta charset='utf-8'>
+<title>🧱 Builder Basics — Block Placement Practice (Extension)</title>
+<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
+<style>
+@page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
+div.WordSection1 { page: WordSection1; }
+body { font-family: "Segoe UI", Arial, sans-serif; font-size: 11.5pt; color: #1a1a2e; line-height: 1.5; }
+h1 { font-size: 21pt; color: #6b4ee6; margin: 4px 0 6px; }
+h2 { font-size: 15pt; color: #6b4ee6; border-top: 1px solid #dddddd; padding-top: 8px; margin: 18px 0 10px; }
+h3, h4 { font-size: 11.5pt; margin: 12px 0 6px; }
+p { margin: 7px 0; }
+.brand { font-size: 10.5pt; font-weight: bold; color: #ff7849; letter-spacing: .06em;
+         border-bottom: 2px solid #ff7849; padding-bottom: 6px; margin-bottom: 14px; }
+table { border-collapse: collapse; margin: 10px 0; }
+th, td { border: 1px solid #c8c8c8; padding: 4px 9px; text-align: center; }
+th { background: #f3eefc; color: #6b4ee6; font-weight: bold; }
+pre { font-family: Consolas, "Courier New", monospace; font-size: 10.5pt; background: #f4f4f5;
+      border: 1px solid #dddddd; padding: 8px 10px; white-space: pre-wrap; }
+pre code { background: transparent; color: #1a1a2e; }
+code { font-family: Consolas, "Courier New", monospace; background: #fff1e8; color: #d6531f; padding: 0 3px; }
+blockquote { border-left: 3px solid #ff7849; background: #fff6ef; padding: 8px 12px;
+             color: #6a3a1c; margin: 9px 0; }
+ul, ol { margin: 7px 0 7px 26px; }
+p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
+.footer { color: #999999; font-size: 8.5pt; text-align: center; margin-top: 18px;
+          border-top: 1px solid #eeeeee; padding-top: 6px; }
+.footer b { color: #ff7849; }
+</style></head>
+<body><div class=WordSection1>
+<div class="brand">📚 ENGLISH CODING · 영어코딩</div>
+<h1>🧱 Builder Basics — Block Placement Practice (Extension)</h1>
+<p><strong>Topic:</strong> Move, Turn, Climb With Place On Move · <strong>Course:</strong> Builder Basics · <strong>Type:</strong> Extension Activity · <strong>Time:</strong> about 45 minutes</p>
+<blockquote>
+<p>🧩 This is a bonus challenge, not a weekly lesson. Try it once you can move the agent around, before you start placing blocks by hand.</p>
+</blockquote>
+<p>In Week 1 the agent <strong>walked</strong>. Here it walks and <strong>draws</strong> at the same time. You flip one switch — <strong>place on move</strong> — at the very top, and you never touch it again. After that, every step drops a block.</p>
+<p>Your four commands:</p>
+<pre><code>move forward by 3
+turn left
+turn right
+move up by 2
+</code></pre>
+<blockquote>
+<p>🧱 One step = one block. A turn is not a step.</p>
+</blockquote>
+<hr />
+<h2>1 · Predict 🔮</h2>
+<p>Read each program. The switch is ON at the top and stays ON.</p>
+<pre><code>place on move ON
+set block to stone
+move forward by 3
+</code></pre>
+<p><strong>How many blocks land on the ground?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code>place on move ON
+set block to stone
+move forward by 3
+turn right
+move forward by 2
+</code></pre>
+<p><strong>How many blocks in total? Show your adding.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Draw the shape those blocks make. Mark where the agent started with an S.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code>place on move ON
+set block to stone
+move forward by 2
+move up by 2
+move forward by 2
+</code></pre>
+<p><strong>This trail does not stay flat. Describe it in one sentence.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>2 · A Turn Is Not a Step 🧭</h2>
+<p><code>move forward by 2</code> and <code>turn right</code> do very different jobs.</p>
+<ul>
+<li><code>move forward by 2</code> — the agent <strong>travels</strong> two blocks. Two steps, so two blocks drop.</li>
+<li><code>turn right</code> — the agent <strong>spins</strong> on the spot. It stays where it is. No step, so <strong>no block</strong>.</li>
+</ul>
+<p><strong>The switch is ON. The agent runs <code>turn left</code>. How many blocks does it place? Why?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Here are two programs. The agent starts in the same spot, facing the same way.</strong></p>
+<pre><code>Program A            Program B
+move forward by 2    move forward by 2
+move forward by 2    turn right
+                     move forward by 2
+</code></pre>
+<p><strong>Both programs place 4 blocks. So what is different about the two trails?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>A turn places no blocks — so why is <code>turn right</code> still useful when you are drawing a shape?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>3 · Count the Blocks 🔢</h2>
+<p>Follow this program one line at a time. Fill in the table. Turns get a row too.</p>
+<pre><code>place on move ON
+set block to stone
+move forward by 4
+turn right
+move forward by 3
+turn right
+move forward by 4
+</code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Command</th>
+<th style="text-align: center;">Steps</th>
+<th style="text-align: center;">Blocks this line</th>
+<th style="text-align: center;">Total so far</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">move forward by 4</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">turn right</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">move forward by 3</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">turn right</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">move forward by 4</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Two lines in this program placed zero blocks. Which ones, and why?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>This trail draws three sides of a rectangle. Which side is missing, and what would finish it?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>4 · Going Up 🪜</h2>
+<p><code>move up by 2</code> is a step too — so it drops blocks as well. Up steps stack blocks on top of each other instead of laying them flat.</p>
+<p>Mix <code>move forward</code> and <code>move up</code> and you get <strong>stairs</strong>:</p>
+<pre><code>place on move ON
+set block to stone
+move forward by 1
+move up by 1
+move forward by 1
+move up by 1
+move forward by 1
+</code></pre>
+<p><strong>How many blocks does this staircase use? Show your adding.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Draw this staircase from the side. Mark the start with an S.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>How would you make the staircase climb twice as high without adding more <code>move up</code> lines?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>5 · Spot the Bug 🐛</h2>
+<p>Read what each program <strong>should</strong> do, then explain what really happens.</p>
+<p><strong>Bug A</strong> — This should draw a line 5 blocks long.</p>
+<pre><code>set block to stone
+move forward by 5
+</code></pre>
+<p><strong>What is on the ground when it finishes? What is missing from the program?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug B</strong> — This should draw a corner: 3 blocks, turn, 3 more blocks.</p>
+<pre><code>place on move ON
+set block to stone
+move forward by 3
+turn right
+turn right
+move forward by 3
+</code></pre>
+<p><strong>The agent placed 6 blocks, but there is no corner. Explain what those two turns did.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug C</strong> — This should be stairs going up.</p>
+<pre><code>place on move ON
+set block to stone
+move forward by 3
+move up by 3
+</code></pre>
+<p><strong>Why is this a tall pole next to a flat line instead of stairs? What would you change?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>6 · Design Your Own Path 🏗️</h2>
+<p>Plan a trail before you build it. Use <code>move forward</code>, <code>turn left</code>, <code>turn right</code> and <code>move up</code>. The switch goes ON once at the top and stays ON.</p>
+<p><strong>Choose your block and your path. Fill in the blanks:</strong></p>
+<blockquote>
+<p>My block is …</p>
+<p>move forward by … (… blocks)</p>
+<p>… (… blocks)</p>
+<p>… (… blocks)</p>
+<p>… (… blocks)</p>
+</blockquote>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>How many blocks does your whole path place? Remember the turns. Show your adding.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Draw the shape your path will make. Mark the start with an S and the end with an E.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>The big idea: the switch never moved, but your trail still has corners and steps up. Explain what decides the shape of a trail, if it is not the switch.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>7 · Show Your Work 📸🎥</h2>
+<p>Open your world and build the path you designed in Section 6. Flip <strong>place on move</strong> ON once at the top, then never touch it again. If the shape comes out wrong, change your numbers and run it again.</p>
+<p>Record <strong>one video</strong> — one take, no stopping (a phone is fine). Show these in order:</p>
+<p><strong>1 · Your code.</strong> Scroll through it. Say what each part does.</p>
+<p><strong>2 · Your build.</strong> Point the camera. Name the parts.</p>
+<p>Fill the blanks:</p>
+<blockquote>
+<p>Today I built ______.</p>
+<p>I built it using this code: ______.</p>
+<p>In this code I used ______.</p>
+<p>The hardest part was ______.</p>
+<p>That part was hard because ______.</p>
+<p>The most fun part was ______.</p>
+<p>Something new I learned was ______.</p>
+</blockquote>
+<p><strong>Write your lines here, then say them in your video.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your video to teacher on KakaoTalk.</p>
+<div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>
+</div></body></html>

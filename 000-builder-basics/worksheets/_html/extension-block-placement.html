@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>🧱 Builder Basics — Block Placement Practice (Extension)</title>
+<style>
+@page { size: A4; margin: 18mm 16mm 22mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-family: "Inter", "Segoe UI", system-ui, sans-serif; color: #1a1a2e; }
+body { font-size: 15px; line-height: 1.55; }
+
+.cover { border-bottom: 3px solid #ff7849; padding-bottom: 14px; margin-bottom: 20px; }
+.brand { font-size: 14px; font-weight: 800; color: #ff7849; letter-spacing: .06em; }
+h1 { font-size: 28px; color: #6b4ee6; margin: 8px 0 6px; line-height: 1.25; }
+h2 { font-size: 19px; color: #6b4ee6; margin: 22px 0 12px; padding-top: 10px; border-top: 1px solid #eee; page-break-before: always; }
+section.first h2, h2:first-of-type { border-top: none; padding-top: 0; page-break-before: avoid; }
+h3, h4 { font-size: 15px; margin: 14px 0 8px; color: #1a1a2e; }
+p { margin: 8px 0; }
+strong { color: #1a1a2e; }
+em { color: #555; }
+
+ul, ol { margin: 8px 0 8px 24px; }
+li { margin: 3px 0; }
+
+/* Grids (e.g. pixel-art coordinate grids) render as light graph paper. */
+table { border-collapse: collapse; margin: 12px 0; }
+th, td { border: 1px solid #ddd; padding: 4px 9px; text-align: center; font-size: 14px; }
+th { background: #faf7ff; color: #6b4ee6; font-weight: 700; }
+
+pre {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 13.5px;
+  background: #1e1e2e;
+  color: #b9f6ca;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 10px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  page-break-inside: avoid;
+  line-height: 1.5;
+}
+pre code { background: transparent; padding: 0; color: inherit; }
+code {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  background: #fff1e8;
+  color: #ff7849;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+blockquote {
+  margin: 10px 0;
+  padding: 10px 16px;
+  background: #fff6ef;
+  border-left: 3px solid #ff7849;
+  border-radius: 0 6px 6px 0;
+  color: #6a3a1c;
+}
+
+.write-space {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #ffffff 0,
+    #ffffff 27px,
+    #d4d4d4 27px,
+    #d4d4d4 28px
+  );
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  min-height: 114px;
+  margin: 10px 0 20px;
+  page-break-inside: avoid;
+}
+.write-space.short { min-height: 86px; }
+.write-space.tall { min-height: 170px; }
+
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
+hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
+
+.meta { color: #666; font-size: 13px; margin: 0 0 14px; }
+.answer-lines {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 14px 16px;
+  background: #fafafa;
+  white-space: pre;
+  line-height: 2.2;
+}
+
+footer {
+  position: fixed;
+  bottom: 10mm; left: 16mm; right: 16mm;
+  text-align: center;
+  font-size: 10px;
+  color: #aaa;
+}
+footer b { color: #ff7849; }
+</style>
+</head>
+<body>
+<div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
+<h1>🧱 Builder Basics — Block Placement Practice (Extension)</h1>
+<p><strong>Topic:</strong> Move, Turn, Climb With Place On Move · <strong>Course:</strong> Builder Basics · <strong>Type:</strong> Extension Activity · <strong>Time:</strong> about 45 minutes</p>
+<blockquote>
+<p>🧩 This is a bonus challenge, not a weekly lesson. Try it once you can move the agent around, before you start placing blocks by hand.</p>
+</blockquote>
+<p>In Week 1 the agent <strong>walked</strong>. Here it walks and <strong>draws</strong> at the same time. You flip one switch — <strong>place on move</strong> — at the very top, and you never touch it again. After that, every step drops a block.</p>
+<p>Your four commands:</p>
+<pre><code>move forward by 3
+turn left
+turn right
+move up by 2
+</code></pre>
+<blockquote>
+<p>🧱 One step = one block. A turn is not a step.</p>
+</blockquote>
+<h2>1 · Predict 🔮</h2>
+<p>Read each program. The switch is ON at the top and stays ON.</p>
+<pre><code>place on move ON
+set block to stone
+move forward by 3
+</code></pre>
+<div class="qa"><p><strong>How many blocks land on the ground?</strong></p>
+<div class="write-space short"></div></div>
+
+<pre><code>place on move ON
+set block to stone
+move forward by 3
+turn right
+move forward by 2
+</code></pre>
+<div class="qa"><p><strong>How many blocks in total? Show your adding.</strong></p>
+<div class="write-space short"></div></div>
+
+<div class="qa"><p><strong>Draw the shape those blocks make. Mark where the agent started with an S.</strong></p>
+<div class="write-space tall"></div></div>
+
+<pre><code>place on move ON
+set block to stone
+move forward by 2
+move up by 2
+move forward by 2
+</code></pre>
+<div class="qa"><p><strong>This trail does not stay flat. Describe it in one sentence.</strong></p>
+<div class="write-space"></div></div>
+
+<h2>2 · A Turn Is Not a Step 🧭</h2>
+<p><code>move forward by 2</code> and <code>turn right</code> do very different jobs.</p>
+<ul>
+<li><code>move forward by 2</code> — the agent <strong>travels</strong> two blocks. Two steps, so two blocks drop.</li>
+<li><code>turn right</code> — the agent <strong>spins</strong> on the spot. It stays where it is. No step, so <strong>no block</strong>.</li>
+</ul>
+<div class="qa"><p><strong>The switch is ON. The agent runs <code>turn left</code>. How many blocks does it place? Why?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Here are two programs. The agent starts in the same spot, facing the same way.</strong></p>
+<pre><code>Program A            Program B
+move forward by 2    move forward by 2
+move forward by 2    turn right
+                     move forward by 2
+</code></pre>
+<div class="qa"><p><strong>Both programs place 4 blocks. So what is different about the two trails?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>A turn places no blocks — so why is <code>turn right</code> still useful when you are drawing a shape?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>3 · Count the Blocks 🔢</h2>
+<p>Follow this program one line at a time. Fill in the table. Turns get a row too.</p>
+<pre><code>place on move ON
+set block to stone
+move forward by 4
+turn right
+move forward by 3
+turn right
+move forward by 4
+</code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Command</th>
+<th style="text-align: center;">Steps</th>
+<th style="text-align: center;">Blocks this line</th>
+<th style="text-align: center;">Total so far</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">move forward by 4</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">turn right</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">move forward by 3</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">turn right</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">move forward by 4</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<div class="qa"><p><strong>Two lines in this program placed zero blocks. Which ones, and why?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>This trail draws three sides of a rectangle. Which side is missing, and what would finish it?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>4 · Going Up 🪜</h2>
+<p><code>move up by 2</code> is a step too — so it drops blocks as well. Up steps stack blocks on top of each other instead of laying them flat.</p>
+<p>Mix <code>move forward</code> and <code>move up</code> and you get <strong>stairs</strong>:</p>
+<pre><code>place on move ON
+set block to stone
+move forward by 1
+move up by 1
+move forward by 1
+move up by 1
+move forward by 1
+</code></pre>
+<div class="qa"><p><strong>How many blocks does this staircase use? Show your adding.</strong></p>
+<div class="write-space short"></div></div>
+
+<div class="qa"><p><strong>Draw this staircase from the side. Mark the start with an S.</strong></p>
+<div class="write-space tall"></div></div>
+
+<div class="qa"><p><strong>How would you make the staircase climb twice as high without adding more <code>move up</code> lines?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>5 · Spot the Bug 🐛</h2>
+<p>Read what each program <strong>should</strong> do, then explain what really happens.</p>
+<p><strong>Bug A</strong> — This should draw a line 5 blocks long.</p>
+<pre><code>set block to stone
+move forward by 5
+</code></pre>
+<div class="qa"><p><strong>What is on the ground when it finishes? What is missing from the program?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug B</strong> — This should draw a corner: 3 blocks, turn, 3 more blocks.</p>
+<pre><code>place on move ON
+set block to stone
+move forward by 3
+turn right
+turn right
+move forward by 3
+</code></pre>
+<div class="qa"><p><strong>The agent placed 6 blocks, but there is no corner. Explain what those two turns did.</strong></p>
+<div class="write-space tall"></div></div>
+
+<p><strong>Bug C</strong> — This should be stairs going up.</p>
+<pre><code>place on move ON
+set block to stone
+move forward by 3
+move up by 3
+</code></pre>
+<div class="qa"><p><strong>Why is this a tall pole next to a flat line instead of stairs? What would you change?</strong></p>
+<div class="write-space tall"></div></div>
+
+<h2>6 · Design Your Own Path 🏗️</h2>
+<p>Plan a trail before you build it. Use <code>move forward</code>, <code>turn left</code>, <code>turn right</code> and <code>move up</code>. The switch goes ON once at the top and stays ON.</p>
+<p><strong>Choose your block and your path. Fill in the blanks:</strong></p>
+<div class="qa"><blockquote>
+<p>My block is …</p>
+<p>move forward by … (… blocks)</p>
+<p>… (… blocks)</p>
+<p>… (… blocks)</p>
+<p>… (… blocks)</p>
+</blockquote>
+<div class="write-space tall"></div></div>
+
+<div class="qa"><p><strong>How many blocks does your whole path place? Remember the turns. Show your adding.</strong></p>
+<div class="write-space short"></div></div>
+
+<div class="qa"><p><strong>Draw the shape your path will make. Mark the start with an S and the end with an E.</strong></p>
+<div class="write-space tall"></div></div>
+
+<div class="qa"><p><strong>The big idea: the switch never moved, but your trail still has corners and steps up. Explain what decides the shape of a trail, if it is not the switch.</strong></p>
+<div class="write-space tall"></div></div>
+
+<h2>7 · Show Your Work 📸🎥</h2>
+<p>Open your world and build the path you designed in Section 6. Flip <strong>place on move</strong> ON once at the top, then never touch it again. If the shape comes out wrong, change your numbers and run it again.</p>
+<p>Record <strong>one video</strong> — one take, no stopping (a phone is fine). Show these in order:</p>
+<p><strong>1 · Your code.</strong> Scroll through it. Say what each part does.</p>
+<p><strong>2 · Your build.</strong> Point the camera. Name the parts.</p>
+<p>Fill the blanks:</p>
+<blockquote>
+<p>Today I built ______.</p>
+<p>I built it using this code: ______.</p>
+<p>In this code I used ______.</p>
+<p>The hardest part was ______.</p>
+<p>That part was hard because ______.</p>
+<p>The most fun part was ______.</p>
+<p>Something new I learned was ______.</p>
+</blockquote>
+<div class="qa"><p><strong>Write your lines here, then say them in your video.</strong></p>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your video to teacher on KakaoTalk.</p>
+</body>
+</html>
