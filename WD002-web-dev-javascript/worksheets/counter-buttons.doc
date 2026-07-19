@@ -1,0 +1,200 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head><meta charset='utf-8'>
+<title>⚡ Daily Planner — Make the Counter Buttons</title>
+<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
+<style>
+@page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
+div.WordSection1 { page: WordSection1; }
+body { font-family: "Segoe UI", Arial, sans-serif; font-size: 11.5pt; color: #1a1a2e; line-height: 1.5; }
+h1 { font-size: 21pt; color: #6b4ee6; margin: 4px 0 6px; }
+h2 { font-size: 15pt; color: #6b4ee6; border-top: 1px solid #dddddd; padding-top: 8px; margin: 18px 0 10px; }
+h3, h4 { font-size: 11.5pt; margin: 12px 0 6px; }
+p { margin: 7px 0; }
+.brand { font-size: 10.5pt; font-weight: bold; color: #ff7849; letter-spacing: .06em;
+         border-bottom: 2px solid #ff7849; padding-bottom: 6px; margin-bottom: 14px; }
+table { border-collapse: collapse; margin: 10px 0; }
+th, td { border: 1px solid #c8c8c8; padding: 4px 9px; text-align: center; }
+th { background: #f3eefc; color: #6b4ee6; font-weight: bold; }
+pre { font-family: Consolas, "Courier New", monospace; font-size: 10.5pt; background: #f4f4f5;
+      border: 1px solid #dddddd; padding: 8px 10px; white-space: pre-wrap; }
+pre code { background: transparent; color: #1a1a2e; }
+code { font-family: Consolas, "Courier New", monospace; background: #fff1e8; color: #d6531f; padding: 0 3px; }
+blockquote { border-left: 3px solid #ff7849; background: #fff6ef; padding: 8px 12px;
+             color: #6a3a1c; margin: 9px 0; }
+ul, ol { margin: 7px 0 7px 26px; }
+p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
+.footer { color: #999999; font-size: 8.5pt; text-align: center; margin-top: 18px;
+          border-top: 1px solid #eeeeee; padding-top: 6px; }
+.footer b { color: #ff7849; }
+</style></head>
+<body><div class=WordSection1>
+<div class="brand">📚 ENGLISH CODING · 영어코딩</div>
+<h1>⚡ Daily Planner — Make the Counter Buttons</h1>
+<p><strong>Topic:</strong> Wire three buttons to change a number and show it on the page — <code>getElementById</code>, <code>addEventListener</code>, <code>count</code>, <code>textContent</code> · <strong>Course:</strong> Web Dev: JavaScript · <strong>Time:</strong> about 50 minutes</p>
+<p>You built a Daily Planner page with three buttons: <strong>increase</strong>, <strong>decrease</strong>, and <strong>square</strong>. Now you make them work. Each button changes a <strong>count</strong>, and a text field shows the new number. First you read code and predict, then you fix broken code, then you wire all three buttons yourself.</p>
+<blockquote>
+<p>🧠 Words to know: <strong>getElementById</strong>, <strong>addEventListener</strong>, <strong>count</strong>, <strong>textContent</strong>, <strong>square</strong></p>
+</blockquote>
+<hr />
+<h2>1 · Predict 🔮</h2>
+<p>Read each piece of code. Work out what happens, then write your prediction.</p>
+<pre><code class="language-javascript">let count = 0;
+count = count + 1;
+count = count + 1;
+console.log(count);
+</code></pre>
+<p><strong>What number prints?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-javascript">let count = 3;
+count = count * count;
+console.log(count);
+</code></pre>
+<p><strong>What does <code>count</code> become? What does "square" mean here?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-html">&lt;p id=&quot;clicksCounter&quot;&gt;&lt;/p&gt;
+
+&lt;script&gt;
+  const clicksCounter = document.getElementById(&quot;clicksCounter&quot;);
+  clicksCounter.textContent = &quot;Clicks: 5&quot;;
+&lt;/script&gt;
+</code></pre>
+<p><strong>The <code>&lt;p&gt;</code> started empty. What text shows on the page now?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-javascript">btnInc.addEventListener(&quot;click&quot;, function () {
+  count = count + 1;
+  clicksCounter.textContent = &quot;Clicks: &quot; + count;
+});
+</code></pre>
+<p><strong>The page shows <code>Clicks: 0</code>. You click the button three times. What does it show?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>2 · Spot the Bug 🐛</h2>
+<p>Each block is broken. Read what it is <strong>supposed</strong> to do, write the fix, then explain why the original was wrong.</p>
+<p><strong>Bug A</strong> — This should grab the increase button, whose id in the HTML is <code>btnInc</code>. Right now <code>btn</code> ends up empty, so nothing works.</p>
+<pre><code class="language-javascript">const btn = document.getElementById(&quot;btn&quot;);
+</code></pre>
+<p><strong>Hint:</strong> the id inside <code>getElementById(" ")</code> must match the id in the HTML exactly.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug B</strong> — Clicking Increase should add <strong>1</strong>. Right now it adds <strong>3</strong> every click.</p>
+<pre><code class="language-javascript">btnInc.addEventListener(&quot;click&quot;, function () {
+  count = count + 1;
+});
+btnInc.addEventListener(&quot;click&quot;, function () {
+  count = count + 1;
+});
+btnInc.addEventListener(&quot;click&quot;, function () {
+  count = count + 1;
+});
+</code></pre>
+<p><strong>Hint:</strong> how many times did you tell the button to listen? Every listener runs on every click.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug C</strong> — The Decrease button should take <strong>1</strong> away from count. Right now clicking it does nothing.</p>
+<pre><code class="language-javascript">const btnDec = document.getElementById(&quot;btnDec&quot;);
+
+// the increase button is wired, but nothing here talks to btnDec
+</code></pre>
+<p><strong>Hint:</strong> a button only reacts if you add an <code>addEventListener</code> to it.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>3 · Explain the Code 📖</h2>
+<p>Read this working <strong>increase</strong> button carefully. It is the pattern you will copy for the other two.</p>
+<pre><code class="language-html">&lt;button id=&quot;btnInc&quot;&gt;increase&lt;/button&gt;
+&lt;p id=&quot;clicksCounter&quot;&gt;Count: 0&lt;/p&gt;
+
+&lt;script&gt;
+  const btnInc = document.getElementById(&quot;btnInc&quot;);
+  const clicksCounter = document.getElementById(&quot;clicksCounter&quot;);
+  let count = 0;
+
+  btnInc.addEventListener(&quot;click&quot;, function () {
+    count = count + 1;
+    clicksCounter.textContent = &quot;Count: &quot; + count;
+  });
+&lt;/script&gt;
+</code></pre>
+<p><strong>Which line makes the starting count, and what number does it start at?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>What does <code>document.getElementById("btnInc")</code> give you?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Inside the click function, two things happen every click. Name both, in order.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>What does <code>textContent</code> change — the code, or the words shown on the page?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>4 · Your Assignment: Three Buttons 🔨</h2>
+<p>Now make all three buttons work on your Daily Planner. Open your <code>scripts.js</code>.</p>
+<p>Your page already has these:</p>
+<pre><code class="language-html">&lt;button id=&quot;btnInc&quot;&gt;increase&lt;/button&gt;
+&lt;button id=&quot;btnDec&quot;&gt;decrease&lt;/button&gt;
+&lt;button id=&quot;btnSqu&quot;&gt;square&lt;/button&gt;
+&lt;p id=&quot;clicksCounter&quot;&gt;&lt;/p&gt;
+</code></pre>
+<p>Make each button change <code>count</code>, then show the new number in <code>clicksCounter</code>:</p>
+<ul>
+<li><strong>Increase</strong> — <code>btnInc</code> adds 1 to count.</li>
+<li><strong>Decrease</strong> — <code>btnDec</code> takes 1 away from count.</li>
+<li><strong>Square</strong> — <code>btnSqu</code> multiplies count by itself: <code>count = count * count</code>.</li>
+</ul>
+<p>Start from this. Finish the two <code>TODO</code> buttons the same way as increase:</p>
+<pre><code class="language-javascript">const btnInc = document.getElementById(&quot;btnInc&quot;);
+const btnDec = document.getElementById(&quot;btnDec&quot;);
+const btnSqu = document.getElementById(&quot;btnSqu&quot;);
+const clicksCounter = document.getElementById(&quot;clicksCounter&quot;);
+let count = 0;
+
+btnInc.addEventListener(&quot;click&quot;, function () {
+  count = count + 1;
+  clicksCounter.textContent = &quot;Count: &quot; + count;
+});
+
+// TODO: btnDec — take 1 away from count, then show it
+// TODO: btnSqu — multiply count by itself, then show it
+</code></pre>
+<p><strong>Write the two listeners you added (decrease and square):</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Test it: set count to 3, then click square. What number shows? Click square again — what shows now?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>5 · Record Your Walkthrough 🎥</h2>
+<p>Take a video on a phone while your page runs. Talk like you are teaching someone new. Try to use these words: <strong>button</strong>, <strong>addEventListener</strong>, <strong>count</strong>, <strong>textContent</strong>, <strong>square</strong>.</p>
+<blockquote>
+<ol>
+<li>Show your page, then click each button and watch the number change.</li>
+<li>Read your <strong>square</strong> button's code out loud and say what it does.</li>
+<li>Point to the line that shows the number on the page.</li>
+<li>Say what happens to the count when you click square twice.</li>
+</ol>
+</blockquote>
+<p><strong>Write what you will say in your video. Plan it here before you record.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your video of the three buttons working to teacher on KakaoTalk.</p>
+<div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>
+</div></body></html>
