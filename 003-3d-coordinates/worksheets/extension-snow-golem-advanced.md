@@ -1,64 +1,56 @@
-# ☃️ M003 Extension — English Worksheet (Advanced)
+# ☃️ M003 Extension — Build the Snow Golem (Advanced)
 
-**Topic:** Pixel-Art Snow Golem (x, y) · **Course:** 3D Coordinates · **Level:** Advanced (Extension, after Week 3) · **Time:** about 45 minutes
+**Topic:** 3D Snow Golem (x, y, z) · **Course:** 3D Coordinates · **Level:** Advanced (Extension, after Week 6) · **Time:** about 45 minutes
 
-A bonus picture challenge: build a whole **snow golem** — snow body, carved-pumpkin head, coal buttons, stick arms — then make it your own. Every block sits at **(x, y)** — x is how far **across**, y is how far **up**.
+Build a **standing snow golem** in 3D — a snow body, a carved-pumpkin head, coal buttons down the front, and two stick arms — then make it your own. Every block needs **three** numbers **(x, y, z)**: x **across**, y **up**, z **deeper** (forward).
 
-**Build your canvas.** Run this to make a blank **15 × 15** wall, then put a **red block at your feet** as your **home spot**:
-
-<div style="display:flex; gap:14px; align-items:flex-start; margin:10px 0; page-break-inside:avoid; break-inside:avoid"><div style="flex:1; min-width:0"><p style="margin:0 0 4px; font-weight:700">🧩 Blocks</p><img src="../assets/week3-canvas-blocks.png" alt="MakeCode blocks: on chat command run, fill with white concrete from ~1 ~1 ~0 to ~15 ~15 ~0, replace" style="width:100%; max-width:240px; border-radius:8px; display:block"></div><div style="flex:1; min-width:0"><p style="margin:0 0 4px; font-weight:700">🐍 Python</p><pre style="margin:0; white-space:pre; font-size:12px">def on_run():
-    blocks.fill(WHITE_CONCRETE,
-        pos(1, 1, 0),
-        pos(15, 15, 0),
-        FillOperation.REPLACE)
-player.on_chat("run", on_run)</pre></div></div>
-
-> 🔴 **Big idea:** (x, y) is counted from your **home spot**, not the world's corner. Stand on the red block *every* time you run, or the whole picture shifts.
+> 🔴 Stand on your **home spot** (red block) every run. Move your feet, move your golem.
+>
+> 🎨 Snow = **snow block**. Head = **carved pumpkin**. Buttons + eyes = **coal block**. Arms = a **brown block** (oak log).
 
 ---
 
 ## 1 · Predict 🔮
 
-Read each set of steps. Write what you will see **and the reason**.
+Read each set. Write your prediction **and the reason**.
 
 ```
-place pumpkin block at (6, 15)
-place pumpkin block at (7, 15)
-place pumpkin block at (8, 15)
+place snow block at (3, 1, 1)
+place snow block at (3, 2, 1)
+place snow block at (3, 3, 1)
 ```
 
-**Three pumpkin blocks share y = 15. Do they make a line going across or up? Which number stays the same, and why?**
+**Does this snow tower go across, up, or deeper? Which number changes, and why?**
 
 <div class="write-space"></div>
 
 ```
-place black block at (8, 3)
-place black block at (8, 5)
-place black block at (8, 7)
-place black block at (8, 9)
+place snow block at (3, 3, 1)
+place snow block at (3, 3, 2)
+place snow block at (3, 3, 3)
 ```
 
-**These four coal buttons share x = 8. Are they a row going across, or a column going up? Which number changes, and why?**
+**Across, up, or deeper? Which number changes, and why?**
 
 <div class="write-space"></div>
 
 ```
-place snow block at (5, 4)
-place snow block at (6, 4)
-place snow block at (5, 5)
-place snow block at (6, 5)
+place snow block at (2, 1, 1)
+place snow block at (4, 1, 1)
+place snow block at (2, 5, 1)
+place snow block at (4, 5, 1)
 ```
 
-**These four blocks change both numbers. What shape do they make on the wall, and why?**
+**Where do these four blocks sit, and what shape do the corners mark? Why?**
 
 <div class="write-space"></div>
 
 ```
-place snow block at (8, 7)
-place black block at (8, 7)
+place snow block at (3, 4, 1)
+place coal block at (3, 4, 1)
 ```
 
-**Two blocks aim for the same (x, y). What happens on the wall — snow, black, or both? Explain the reason.**
+**Same (x, y, z). Snow, coal, or both? Why?**
 
 <div class="write-space"></div>
 
@@ -66,48 +58,44 @@ place black block at (8, 7)
 
 ## 2 · Spot the Bug 🐛
 
-Each code block below is broken. Read what it should do, fix it, then explain why the original was wrong and your fix works.
+Fix each one. Then say why it was wrong.
 
-**Bug A** — This should make the golem's **two eyes**, one at (7, 13) and one at (9, 13). Both land in the **same spot**.
+**Bug A** — A coal button belongs **on the front** of the body at (3, 4, 1). It has only **two** numbers, so it lands flat on the ground.
 
 ```
-place black block at (7, 13)
-place black block at (7, 13)
+place coal block at (3, 4)
 ```
 
-**Hint:** the two eyes are at **different** x values — one is further across than the other.
-
-**Write the fixed code:**
+**Fixed code:**
 
 <div class="write-space"></div>
 
-**Why was it wrong? Why does your fix work?**
+**Why wrong? Why does your fix work? (2–3 sentences)**
 
 <div class="write-space"></div>
 
-**Bug B** — A **coal button** should sit at (8, 7). The two numbers are **swapped**, so it lands in the wrong place.
+**Bug B** — An eye should be **up high on the front** of the head at (4, 7, 1). The last two numbers are swapped.
 
 ```
-place black block at (7, 8)
+place coal block at (4, 1, 7)
 ```
 
-**Hint:** the **first** number is across (x), the **second** is up (y). Which one should be 8, which should be 7?
-
-**Write the fixed code:**
+**Fixed code:**
 
 <div class="write-space"></div>
 
-**Why was it wrong? Why does your fix work?**
+**Why wrong? Why does your fix work? (2–3 sentences)**
 
 <div class="write-space"></div>
 
-**Bug C** — A friend stood on the **wrong block** and ran correct code. The golem came out **shifted two blocks too high** — every block landed at a y two bigger than the grid says.
+**Bug C** *(the tricky one)* — The code runs with no error, but the coal button ended up on the **side** of the body instead of the front. The snow body is built at z = 1, but this button was placed at z = 2 — one block too deep.
 
 ```
-(the code matched the grid exactly)
+place snow block at (3, 4, 1)
+place coal block at (3, 4, 2)
 ```
 
-**What did your friend forget to do before pressing run? Why does standing on the home spot change where every block lands?**
+**Fix it so the button is on the front face, and explain what "one block too deep" means. (2–3 sentences)**
 
 <div class="write-space"></div>
 
@@ -115,23 +103,31 @@ place black block at (7, 8)
 
 ## 3 · Show Your Work 📸🎥
 
-Stand on your **home spot** (the red block). Copy the golem block by block, reading each colored square's (x, y) — **x** across the top, **y** down the side.
+Walk around the ☃️ snow golem in the world. Then plan and build a **full snow golem** on your home spot, then add one change of your own.
 
-**Plan first.** Before you place anything, find the **lowest** block and the **left-most** block of the golem and write their (x, y) here. That tells you where the picture starts.
+**Plan your coordinates first.** The body is a tall tower; the head sits on top; the eyes and buttons show on the front; the arms poke out the sides.
 
-<div class="write-space short"></div>
+> **Snow body** (z = 1): fill snow blocks from (2, 1, 1) to (4, 5, 1).
+>
+> **Pumpkin head** (up, bigger y): fill carved pumpkin from (2, 6, 1) to (4, 7, 1).
+>
+> **Coal eyes** (front): (2, 7, 1) and (4, 7, 1).
+>
+> **Coal buttons** (front, down the middle): (3, 4, 1) and (3, 2, 1).
+>
+> **Arms** (out the sides): a brown block at (1, 4, 1) and (5, 4, 1).
+>
+> **Add depth:** build the snow body and pumpkin head again at z = 2 and z = 3. At z = 2 and z = 3, place plain snow and pumpkin where the eyes and buttons were — the face and buttons show on the **front only**.
 
-<div style="page-break-inside:avoid;break-inside:avoid;margin:16px 0"><p style="font-weight:700;margin:0 0 6px">☃️ Snow Golem (snow · light blue #cfe0ec, pumpkin · #e5772b, face + coal buttons · black, arms · brown #6b4a2b)</p><table style="border-collapse:collapse;margin:4px 0"><tr><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:28px"></th><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:28px">1</th><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:28px">2</th><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:28px">3</th><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:28px">4</th><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:28px">5</th><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:28px">6</th><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:28px">7</th><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:28px">8</th><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:28px">9</th><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:28px">10</th><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:28px">11</th><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:28px">12</th><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:28px">13</th><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:28px">14</th><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:28px">15</th></tr><tr><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:28px">15</th><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:28px;height:28px;padding:0;background:#e5772b;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#e5772b;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#e5772b;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#e5772b;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#e5772b;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td></tr><tr><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:28px">14</th><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:28px;height:28px;padding:0;background:#e5772b;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#e5772b;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#e5772b;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#e5772b;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#e5772b;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td></tr><tr><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:28px">13</th><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:28px;height:28px;padding:0;background:#e5772b;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#1a1a1a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#e5772b;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#1a1a1a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#e5772b;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td></tr><tr><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:28px">12</th><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:28px;height:28px;padding:0;background:#e5772b;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#e5772b;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#e5772b;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#e5772b;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#e5772b;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td></tr><tr><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:28px">11</th><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:28px;height:28px;padding:0;background:#e5772b;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#1a1a1a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#1a1a1a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#1a1a1a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#e5772b;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td></tr><tr><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:28px">10</th><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:28px;height:28px;padding:0;background:#cfe0ec;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#cfe0ec;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#cfe0ec;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#cfe0ec;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#cfe0ec;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td></tr><tr><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:28px">9</th><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:28px;height:28px;padding:0;background:#6b4a2b;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#6b4a2b;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#6b4a2b;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#cfe0ec;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#cfe0ec;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#cfe0ec;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#1a1a1a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#cfe0ec;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#cfe0ec;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#cfe0ec;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#6b4a2b;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#6b4a2b;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#6b4a2b;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td></tr><tr><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:28px">8</th><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:28px;height:28px;padding:0;background:#cfe0ec;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#cfe0ec;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#cfe0ec;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#cfe0ec;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#cfe0ec;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#cfe0ec;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#cfe0ec;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td></tr><tr><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:28px">7</th><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:28px;height:28px;padding:0;background:#cfe0ec;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#cfe0ec;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#cfe0ec;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#1a1a1a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#cfe0ec;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#cfe0ec;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#cfe0ec;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td></tr><tr><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:28px">6</th><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:28px;height:28px;padding:0;background:#cfe0ec;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#cfe0ec;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#cfe0ec;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#cfe0ec;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#cfe0ec;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#cfe0ec;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#cfe0ec;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#cfe0ec;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#cfe0ec;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td></tr><tr><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:28px">5</th><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:28px;height:28px;padding:0;background:#cfe0ec;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#cfe0ec;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#cfe0ec;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#cfe0ec;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#1a1a1a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#cfe0ec;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#cfe0ec;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#cfe0ec;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#cfe0ec;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td></tr><tr><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:28px">4</th><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:28px;height:28px;padding:0;background:#cfe0ec;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#cfe0ec;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#cfe0ec;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#cfe0ec;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#cfe0ec;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#cfe0ec;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#cfe0ec;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#cfe0ec;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#cfe0ec;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td></tr><tr><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:28px">3</th><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:28px;height:28px;padding:0;background:#cfe0ec;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#cfe0ec;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#cfe0ec;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#cfe0ec;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#1a1a1a;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#cfe0ec;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#cfe0ec;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#cfe0ec;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#cfe0ec;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td></tr><tr><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:28px">2</th><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:28px;height:28px;padding:0;background:#cfe0ec;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#cfe0ec;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#cfe0ec;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#cfe0ec;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#cfe0ec;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#cfe0ec;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#cfe0ec;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#cfe0ec;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#cfe0ec;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td></tr><tr><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:28px">1</th><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:28px;height:28px;padding:0;background:#cfe0ec;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#cfe0ec;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#cfe0ec;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#cfe0ec;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#cfe0ec;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#cfe0ec;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#cfe0ec;border:1px solid #0000002a"></td><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td><td style="width:28px;height:28px;padding:0;background:#ffffff;border:1px solid #e6e6e6"></td></tr></table></div>
+**Then a MODIFY challenge:** change one thing your own way — a new colour, a taller body, a longer arm, a scarf, or more buttons.
 
-**Modify challenge.** After you copy the golem exactly, change **one thing** that is your own idea — swap a colour, add a scarf row, give it a longer arm, or add more buttons. Write the (x, y) of the blocks you changed, then build it.
-
-<div class="write-space short"></div>
+> 💡 Tip: the eyes and buttons only show on the **front** (z = 1). The sides and back are plain snow.
 
 Record **one video** — one take, no stopping (a phone is fine). Show these in order:
 
 **1 · Your code.** Scroll through it. Say what each part does.
 
-**2 · Your build.** Point the camera. Name the parts.
+**2 · Your build.** Point the camera at the golem. Name the parts.
 
 Fill the blanks:
 
@@ -157,4 +153,4 @@ Fill the blanks:
 
 ### Submit ✅
 
-Send this worksheet + your video to teacher on KakaoTalk.
+Send this worksheet + your **one** video to teacher on KakaoTalk.
