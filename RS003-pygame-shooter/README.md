@@ -28,6 +28,7 @@
 | 16 | 폴리시 — 미사일·스프라이트·하이스코어·발표 (응용) | 완성 게임 영상 + 발표 자료 | [week-16.md](./worksheets/week-16.md) | [📄 PDF](./worksheets/week-16.pdf) | [최종 미니 게임](https://datawithkasim.github.io/english-coding-slides/python/rs003-pygame-shooter/week-08-final-mini-game.html) |
 | ✨ | AI로 게임 아트 만들기 (확장) | Gemini 프롬프트로 32-bit 스프라이트(적 3·플레이어 1·배경 1) 제작 · 코딩 없음, 이미지 5장 + 프롬프트 설명 영상 제출 | [extension-ai-art.md](./worksheets/extension-ai-art.md) | [📄 PDF](./worksheets/extension-ai-art.pdf) | — |
 | ✨ | Gemini 게임 아트 따라 만들기 (확장) | 붙여넣기만 하면 되는 완성 프롬프트로 우주선 4대(플레이어 1·적 3)와 우주 배경 PNG 제작 · 만든 그림을 게임에 넣는 코드까지 · 이미지 5장 + 영상 제출 | [extension-gemini-art.md](./worksheets/extension-gemini-art.md) | [📄 PDF](./worksheets/extension-gemini-art.pdf) | — |
+| ✨ | 미티어 슈터 복습 — 무기·유도 미사일·콤보 (확장) | 완성한 슈터 게임의 고급 코드(무기 시스템·유도 미사일·콤보 배수·스플래시·쿨다운) 복습 · 코딩 없음, 예측/버그 찾기/코드 설명 · 워크시트 + 설명 영상 제출 | [extension-meteor-shooter-review.md](./worksheets/extension-meteor-shooter-review.md) | [📄 PDF](./worksheets/extension-meteor-shooter-review.pdf) | — |
 
 > 💡 한 슬라이드 덱은 학습 주 + 응용 주 두 주에 걸쳐 사용합니다. 매주 만든 코드는 마지막 주까지 그대로 이어집니다.
 

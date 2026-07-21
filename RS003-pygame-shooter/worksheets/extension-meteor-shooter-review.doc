@@ -1,0 +1,150 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head><meta charset='utf-8'>
+<title>🚀 RS003 Extension — Meteor Shooter Review</title>
+<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
+<style>
+@page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
+div.WordSection1 { page: WordSection1; }
+body { font-family: "Segoe UI", Arial, sans-serif; font-size: 11.5pt; color: #1a1a2e; line-height: 1.5; }
+h1 { font-size: 21pt; color: #6b4ee6; margin: 4px 0 6px; }
+h2 { font-size: 15pt; color: #6b4ee6; border-top: 1px solid #dddddd; padding-top: 8px; margin: 18px 0 10px; }
+h3, h4 { font-size: 11.5pt; margin: 12px 0 6px; }
+p { margin: 7px 0; }
+.brand { font-size: 10.5pt; font-weight: bold; color: #ff7849; letter-spacing: .06em;
+         border-bottom: 2px solid #ff7849; padding-bottom: 6px; margin-bottom: 14px; }
+table { border-collapse: collapse; margin: 10px 0; }
+th, td { border: 1px solid #c8c8c8; padding: 4px 9px; text-align: center; }
+th { background: #f3eefc; color: #6b4ee6; font-weight: bold; }
+pre { font-family: Consolas, "Courier New", monospace; font-size: 10.5pt; background: #f4f4f5;
+      border: 1px solid #dddddd; padding: 8px 10px; white-space: pre-wrap; }
+pre code { background: transparent; color: #1a1a2e; }
+code { font-family: Consolas, "Courier New", monospace; background: #fff1e8; color: #d6531f; padding: 0 3px; }
+blockquote { border-left: 3px solid #ff7849; background: #fff6ef; padding: 8px 12px;
+             color: #6a3a1c; margin: 9px 0; }
+ul, ol { margin: 7px 0 7px 26px; }
+p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
+.footer { color: #999999; font-size: 8.5pt; text-align: center; margin-top: 18px;
+          border-top: 1px solid #eeeeee; padding-top: 6px; }
+.footer b { color: #ff7849; }
+</style></head>
+<body><div class=WordSection1>
+<div class="brand">📚 ENGLISH CODING · 영어코딩</div>
+<h1>🚀 RS003 Extension — Meteor Shooter Review</h1>
+<p><strong>Topic:</strong> Advanced Systems Review — Weapons, Homing Missiles, Combos &amp; Nukes · <strong>Course:</strong> Pygame Space Shooter · <strong>Time:</strong> about 45 minutes</p>
+<p>Your finished <strong>Meteor Shooter</strong> is bigger than the base game: five weapons, homing missiles, combo scoring, splash damage, a nuke, and a boss health bar. This worksheet reviews how those systems work. You only <strong>read and think</strong> — no typing in the app.</p>
+<blockquote>
+<p>🧠 Words to know: <strong>weapon system</strong>, <strong>cooldown</strong>, <strong>homing</strong>, <strong>combo multiplier</strong>, <strong>splash damage</strong></p>
+</blockquote>
+<hr />
+<h2>1 · Predict 🔮</h2>
+<p>Read each piece of code. Write what you think it does. Do not run anything.</p>
+<pre><code class="language-python">weapon_names = {1: &quot;Normal&quot;, 2: &quot;Shotgun&quot;, 3: &quot;Laser&quot;, 4: &quot;Missile&quot;, 5: &quot;Wave Blaster&quot;}
+current_weapon = 3
+print(weapon_names[current_weapon])
+</code></pre>
+<p><strong>The weapon system stores names in a dictionary. What word gets printed?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">b = {&quot;x&quot;: 200, &quot;y&quot;: 100, &quot;color&quot;: MAGENTA, &quot;r&quot;: 3}
+b[&quot;y&quot;] -= b.get(&quot;speed&quot;, BULLET_SPEED)
+</code></pre>
+<p><strong>A normal bullet has no <code>"speed"</code> key. <code>BULLET_SPEED</code> is 12. What is the bullet's new <code>y</code>?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">combo_counter = 12
+multiplier = 1 + (combo_counter // 5)
+score += 2 * multiplier
+</code></pre>
+<p><strong>After a 12-hit combo, an enemy worth 2 points is hit. How much does <code>score</code> go up?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">e[&quot;y&quot;] += 1 + (score // 10)
+</code></pre>
+<p><strong>Enemies fall faster as your score climbs. When <code>score</code> is 30, how many pixels does an enemy drop each frame?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>2 · Spot the Bug 🐛</h2>
+<p>Each block below is broken. Write the fixed code, then explain why the original was wrong.</p>
+<p><strong>Bug A</strong> — Holding SPACE should fire at a steady rate, but the Laser fires <em>every single frame</em> and floods the screen with bullets.</p>
+<pre><code class="language-python">if is_shooting:
+    bullets.append({&quot;x&quot;: spawn_x, &quot;y&quot;: spawn_y, &quot;vx&quot;: 0, &quot;color&quot;: YELLOW, &quot;r&quot;: 2})
+</code></pre>
+<p><strong>Hint:</strong> the real game uses a <strong>cooldown</strong>. It only fires when <code>shoot_timer == 0</code>, then sets <code>shoot_timer</code> back up so a few frames must pass before the next shot.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug B</strong> — Reading a missile's splash radius crashes the game with <code>KeyError: 'splash'</code> whenever a <em>normal</em> bullet (which has no <code>"splash"</code> key) hits an enemy.</p>
+<pre><code class="language-python">splash_radius = b[&quot;splash&quot;]
+</code></pre>
+<p><strong>Hint:</strong> not every bullet carries every key. Ask the dictionary for the key <em>with a fallback</em> so a missing key gives 0 instead of crashing.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug C</strong> — Removing dead enemies while looping over the same list skips enemies, so some survive a hit they should not.</p>
+<pre><code class="language-python">for e in enemies:
+    if bullet_hit(e):
+        enemies.remove(e)
+</code></pre>
+<p><strong>Hint:</strong> the real game never deletes from the list it is walking. It builds a <strong>new list</strong> of survivors and keeps that instead.</p>
+<p><strong>Write the fixed code (build <code>surviving_enemies</code> and reassign):</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>3 · Explain the Code 📖</h2>
+<p>This is the <strong>homing</strong> logic that steers a missile toward the closest target. Read it carefully, then answer the questions. Reading only — do not run it.</p>
+<pre><code class="language-python">for b in bullets:
+    if b.get(&quot;homing&quot;):
+        targets = list(enemies)
+        if boss is not None:
+            targets.append(boss)
+        if targets:
+            nearest = min(targets, key=lambda t: (t[&quot;x&quot;] - b[&quot;x&quot;]) ** 2 + (t[&quot;y&quot;] - b[&quot;y&quot;]) ** 2)
+            if nearest[&quot;x&quot;] &gt; b[&quot;x&quot;]:
+                b[&quot;vx&quot;] = min(b[&quot;vx&quot;] + MISSILE_HOMING_STRENGTH, 5)
+            elif nearest[&quot;x&quot;] &lt; b[&quot;x&quot;]:
+                b[&quot;vx&quot;] = max(b[&quot;vx&quot;] - MISSILE_HOMING_STRENGTH, -5)
+</code></pre>
+<p><strong>Only some bullets steer. Which key on the bullet decides whether this whole block runs?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong><code>min(targets, key=lambda t: ...)</code> returns the <em>closest</em> target. The key measures distance but never takes a square root. Why is skipping the square root safe here?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>If <code>nearest["x"]</code> is bigger than the missile's <code>x</code>, the target is to the right. Which way does <code>b["vx"]</code> change, and which way will the missile drift?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong><code>min(b["vx"] + ..., 5)</code> and <code>max(b["vx"] - ..., -5)</code> clamp the sideways speed to between −5 and 5. What would go wrong if there were no clamp?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why does the code check <code>if boss is not None</code> before adding the boss to <code>targets</code>?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>4 · Explain Your Lesson Code 🎥</h2>
+<p>Explain the Meteor Shooter code <strong>you</strong> built. Record a short phone video (show the game running) and talk through it like you are teaching someone. Try to use these words: <strong>weapon system</strong>, <strong>cooldown</strong>, <strong>homing</strong>, <strong>combo multiplier</strong>, <strong>splash damage</strong>.</p>
+<blockquote>
+<ol>
+<li>Switch weapons with the number keys and show how <code>weapon_names[current_weapon]</code> changes the HUD.</li>
+<li>Read your <strong>cooldown</strong> line out loud and explain why it stops the gun firing every frame.</li>
+<li>Fire a missile and point out the <strong>homing</strong> and <strong>splash damage</strong> parts.</li>
+<li>Build a <strong>combo</strong>, then explain how the <strong>combo multiplier</strong> grows your score.</li>
+</ol>
+</blockquote>
+<p><strong>Write what you will say in your video. Plan it here before you record.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + a video explaining your Meteor Shooter code to teacher on KakaoTalk.</p>
+<div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>
+</div></body></html>
