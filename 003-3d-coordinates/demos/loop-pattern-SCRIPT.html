@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Read-Along Script — The Loop Pattern</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&family=Poppins:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{ --accent:#6b4ee6; --ink:#17131f; --paper:#F5F2FB; --card:#ffffff; --code-bg:#161228; --code-fg:#e9e5f5; --base:19px; }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{font-size:var(--base);}
+  body{background:var(--paper);color:var(--ink);font-family:'Poppins',sans-serif;line-height:1.5;padding-bottom:20vh;}
+  .topbar{position:sticky;top:0;z-index:10;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 20px;box-shadow:0 4px 16px rgba(0,0,0,.2);}
+  .topbar h1{font-size:1.15rem;font-weight:900;letter-spacing:-0.02em;}
+  .topbar h1 span{color:#ffd23f;}
+  .topbar .fs{display:flex;gap:8px;align-items:center;font-size:.8rem;color:#c8c2e6;}
+  .topbar .fs button{font-family:inherit;font-weight:800;border:none;border-radius:8px;width:38px;height:38px;font-size:1rem;cursor:pointer;background:rgba(255,255,255,.14);color:#fff;}
+  .topbar .fs button:hover{background:var(--accent);}
+  .wrap{max-width:860px;margin:0 auto;padding:26px 20px;}
+  .intro{font-size:1.05rem;color:#5b5470;font-weight:600;background:rgba(107,78,230,.09);border-left:5px solid var(--accent);border-radius:8px;padding:14px 18px;margin-bottom:30px;}
+  .beat{background:var(--card);border:1px solid #e5e0f2;border-radius:16px;padding:22px 24px 26px;margin-bottom:26px;box-shadow:0 6px 20px -12px rgba(23,19,31,.4);}
+  .beat .tag{display:inline-block;background:var(--accent);color:#fff;font-weight:800;font-size:.95rem;padding:5px 14px;border-radius:999px;margin-bottom:16px;}
+  .row-label{font-weight:800;font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;margin:14px 0 6px;}
+  .show .row-label{color:var(--accent);}
+  .show p{font-size:1.12rem;font-weight:600;color:#3a3350;}
+  pre.code{background:var(--code-bg);color:var(--code-fg);border-radius:12px;padding:16px 18px;margin:12px 0 4px;font-family:'JetBrains Mono',monospace;font-size:1.02rem;line-height:1.6;overflow-x:auto;white-space:pre;}
+  .say{margin-top:16px;background:#fbfaff;border:2px solid var(--accent);border-radius:12px;padding:16px 20px;}
+  .say .row-label{color:var(--accent);margin-top:0;}
+  .say p{font-size:1.5rem;font-weight:600;line-height:1.42;color:var(--ink);}
+  .say p em{font-style:normal;color:var(--accent);font-weight:800;}
+  .end{text-align:center;color:#8a83a8;font-weight:700;padding:20px;font-size:1rem;}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <h1>🎬 Read-Along Script <span>· The Loop Pattern</span></h1>
+  <div class="fs">text <button onclick="fs(-1)">A−</button><button onclick="fs(1)">A+</button></div>
+</div>
+<div class="wrap" id="wrap">
+  <div class="intro">Scroll as you record. Big purple-bordered text = <b>read it out loud</b>. Grey "SHOW" text = what to do on screen. World: <b>intro to algos</b> · chat command <b>SPIRAL</b>.</div>
+</div>
+
+<script>
+const BEATS=[
+ {t:"1 · Hook", show:"Stand on the home block. Empty ground in front of you.",
+  say:`One line of code is going to build this whole pattern for me — seven walls, each one bigger than the last. And I only write the build line <em>once</em>. Let me show you how.`},
+ {t:"2 · The start values", show:"Show the code. Point at the first three numbers.",
+  code:`x = 14\ny = 0\nz = 2`,
+  say:`Every block in Minecraft has three numbers: <em>x</em>, <em>y</em>, <em>z</em>. x is across, y is up, z is how deep. My pattern starts here — x is 14, y is 0, z is 2. Nothing is built yet. These are just my starting coordinates.`},
+ {t:"3 · Run it once", show:"Type SPIRAL in the chat and run it. Point at the single block that appears.",
+  say:`The loop runs. The first pass fills from (14, 0, 2) to (14, 0, 2) — the same spot — so I get <em>one block</em>. Then look what happens: x goes down 2, y goes up 1, z goes up 2. The numbers changed.`},
+ {t:"4 · Watch the pattern grow", show:"Point along the row of walls, from the front to the back.",
+  say:`Now the same fill line runs again — but with the <em>new</em> numbers. So this wall is a bit wider, a bit taller, a bit deeper. And again. And again. Seven times. Each wall is <em>2 wider, 1 taller, 2 deeper</em> than the one before it. That growing is the pattern.`},
+ {t:"5 · The big idea", show:"Scroll to the fill line. Point at it.",
+  code:`for i in range(7):\n    blocks.fill(OBSIDIAN,\n        pos(x_start, y_start, z),\n        pos(x, y, z),\n        FillOperation.REPLACE)\n    x = x - 2\n    y = y + 1\n    z = z + 2`,
+  say:`Here's the trick. I <em>never</em> changed this build line — it's exactly the same every pass. The walls come out different <em>only</em> because x, y and z change between passes. That's called an <em>algorithm</em>: a short list of steps the computer repeats for you.`},
+ {t:"6 · Change one number  (optional)", show:"Change range(7) to range(10) and run it again.",
+  say:`Watch — I'll change just <em>one</em> number. Predict with me… more walls? Let's see. Yes! Three extra walls, no extra work. Change one number, change the whole pattern.`},
+ {t:"7 · Close", show:"Face the camera.",
+  say:`A loop plus three changing numbers makes a pattern as big as you want. Your worksheet asks you to trace x, y and z for each pass — do that, and you'll know exactly what the computer is thinking. See you in class.`}
+];
+const wrap=document.getElementById('wrap');
+for(const b of BEATS){
+  const el=document.createElement('div'); el.className='beat';
+  el.innerHTML=`<span class="tag">${b.t}</span>
+    <div class="show"><div class="row-label">🎬 Show this</div><p>${b.show}</p></div>
+    ${b.code?`<pre class="code">${b.code.replace(/</g,'&lt;')}</pre>`:''}
+    <div class="say"><div class="row-label">🗣️ Say this</div><p>${b.say}</p></div>`;
+  wrap.appendChild(el);
+}
+const end=document.createElement('div'); end.className='end'; end.textContent='— end of script —'; wrap.appendChild(end);
+let base=19;
+function fs(d){ base=Math.max(15,Math.min(30,base+d)); document.documentElement.style.setProperty('--base',base+'px'); }
+</script>
+</body>
+</html>

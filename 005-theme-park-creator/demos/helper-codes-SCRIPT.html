@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Read-Along Script — Helper Codes</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&family=Poppins:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{ --accent:#FF4500; --ink:#0E0E10; --paper:#F4F1EC; --card:#ffffff; --code-bg:#14161c; --code-fg:#e7e3da; --base:19px; }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{font-size:var(--base);}
+  body{background:var(--paper);color:var(--ink);font-family:'Poppins',sans-serif;line-height:1.5;padding-bottom:20vh;}
+  .topbar{position:sticky;top:0;z-index:10;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 20px;box-shadow:0 4px 16px rgba(0,0,0,.2);}
+  .topbar h1{font-size:1.15rem;font-weight:900;letter-spacing:-0.02em;}
+  .topbar h1 span{color:#FFE94D;}
+  .topbar .fs{display:flex;gap:8px;align-items:center;font-size:.8rem;color:#cfc7bd;}
+  .topbar .fs button{font-family:inherit;font-weight:800;border:none;border-radius:8px;width:38px;height:38px;font-size:1rem;cursor:pointer;background:rgba(255,255,255,.14);color:#fff;}
+  .topbar .fs button:hover{background:var(--accent);}
+  .wrap{max-width:860px;margin:0 auto;padding:26px 20px;}
+  .intro{font-size:1.05rem;color:#6b6258;font-weight:600;background:rgba(255,69,0,.09);border-left:5px solid var(--accent);border-radius:8px;padding:14px 18px;margin-bottom:30px;}
+  .beat{background:var(--card);border:1px solid #e8e2d8;border-radius:16px;padding:22px 24px 26px;margin-bottom:26px;box-shadow:0 6px 20px -12px rgba(14,14,16,.4);}
+  .beat .tag{display:inline-block;background:var(--accent);color:#fff;font-weight:800;font-size:.95rem;padding:5px 14px;border-radius:999px;margin-bottom:16px;}
+  .row-label{font-weight:800;font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;margin:14px 0 6px;}
+  .show .row-label{color:var(--accent);}
+  .show p{font-size:1.12rem;font-weight:600;color:#4a433e;}
+  pre.code{background:var(--code-bg);color:var(--code-fg);border-radius:12px;padding:16px 18px;margin:12px 0 4px;font-family:'JetBrains Mono',monospace;font-size:1.02rem;line-height:1.6;overflow-x:auto;white-space:pre;}
+  .say{margin-top:16px;background:#fffdf6;border:2px solid var(--accent);border-radius:12px;padding:16px 20px;}
+  .say .row-label{color:var(--accent);margin-top:0;}
+  .say p{font-size:1.5rem;font-weight:600;line-height:1.42;color:var(--ink);}
+  .say p em{font-style:normal;color:var(--accent);font-weight:800;}
+  .end{text-align:center;color:#9a8f82;font-weight:700;padding:20px;font-size:1rem;}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <h1>🎬 Read-Along Script <span>· Helper Codes</span></h1>
+  <div class="fs">text <button onclick="fs(-1)">A−</button><button onclick="fs(1)">A+</button></div>
+</div>
+<div class="wrap" id="wrap">
+  <div class="intro">Scroll as you record. Big orange-bordered text = <b>read it out loud</b>. Grey "SHOW" text = what to do on screen. Any prior Theme Park world is fine.</div>
+</div>
+
+<script>
+const BEATS=[
+ {t:"1 · Hook", show:"Stand where the coaster will go. Empty ground.",
+  say:`A roller coaster stands on a row of support pillars. Every pillar is the <em>same job</em>. So instead of writing it over and over, I'll write it <em>once</em>, give it a name, and reuse it. That's a <em>helper code</em>.`},
+ {t:"2 · One pillar, the long way", show:"Show one fill line. Run it — one pillar appears.",
+  code:`blocks.fill(IRON_BLOCK, pos(2, 0, 0),\n    pos(2, 3, 0), FillOperation.REPLACE)`,
+  say:`Here's one pillar — one fill line. Easy. But my coaster needs a <em>whole row</em>. If I copy-paste this for every pillar, it gets long, and one wrong number breaks a pillar. There's a better way.`},
+ {t:"3 · Write the helper", show:"Show def pillar. RUN it — and show that NOTHING builds.",
+  code:`def pillar(x):\n    blocks.fill(IRON_BLOCK, pos(x, 0, 0),\n        pos(x, 3, 0), FillOperation.REPLACE)`,
+  say:`I write the job <em>once</em> and name it: def pillar. Watch — I run this and… <em>nothing</em> builds. That's important. Writing a helper doesn't build anything. It just <em>teaches</em> the computer a new move. It builds when I <em>call</em> it.`},
+ {t:"4 · Call it", show:"Type pillar(2). Run. One pillar appears.",
+  code:`pillar(2)`,
+  say:`Now I <em>call</em> it: pillar(2). One short line — and the whole pillar appears. I taught it the job once; now I just say its name.`},
+ {t:"5 · Reuse it", show:"Add pillar(5) and pillar(8). Run — three pillars.",
+  code:`pillar(2)\npillar(5)\npillar(8)`,
+  say:`Same helper, different spot. I change the number in the brackets and get a pillar right there. <em>Write once, reuse forever.</em>`},
+ {t:"6 · Loop the helper", show:"Replace the calls with a for-loop. Run — a whole row.",
+  code:`for x in range(2, 21, 3):\n    pillar(x)`,
+  say:`Even better — a <em>loop</em> calls my helper again and again. Two lines… and I get a whole row of supports. Imagine typing all of those by hand!`},
+ {t:"7 · Add a parameter", show:"Change to def pillar(x, height) and raise height each loop. Run — the track climbs.",
+  code:`def pillar(x, height):\n    blocks.fill(IRON_BLOCK, pos(x, 0, 0),\n        pos(x, height, 0), FillOperation.REPLACE)\n\nh = 2\nfor x in range(2, 21, 3):\n    pillar(x, h)\n    h += 1`,
+  say:`One more trick. I put the <em>changing number</em> — the height — in the brackets. That's a <em>parameter</em>. Now every pillar can be a different height. I raise it as I go… and my track <em>climbs</em>. There's my coaster ramp.`},
+ {t:"8 · Close", show:"Face the camera.",
+  say:`So a helper code is this: teach one job <em>once</em>, then reuse it — anywhere, any number of times, any size. Less typing, fewer mistakes, bigger builds. Your worksheet gives you a coaster to build with your own helper. Have fun.`}
+];
+const wrap=document.getElementById('wrap');
+for(const b of BEATS){
+  const el=document.createElement('div'); el.className='beat';
+  el.innerHTML=`<span class="tag">${b.t}</span>
+    <div class="show"><div class="row-label">🎬 Show this</div><p>${b.show}</p></div>
+    ${b.code?`<pre class="code">${b.code.replace(/</g,'&lt;')}</pre>`:''}
+    <div class="say"><div class="row-label">🗣️ Say this</div><p>${b.say}</p></div>`;
+  wrap.appendChild(el);
+}
+const end=document.createElement('div'); end.className='end'; end.textContent='— end of script —'; wrap.appendChild(end);
+let base=19;
+function fs(d){ base=Math.max(15,Math.min(30,base+d)); document.documentElement.style.setProperty('--base',base+'px'); }
+</script>
+</body>
+</html>
