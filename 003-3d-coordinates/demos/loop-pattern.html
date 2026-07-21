@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The Loop Pattern — 3D Coordinates · Video Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Poppins:wght@600;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink:#141020; --cream:#F5F2Fb; --accent:#6b4ee6; --accent2:#f2c14e;
+    --code-bg:#161228; --code-fg:#e9e5f5;
+    --kw:#b79bff; --fn:#ffd23f; --num:#8be2c0; --str:#ffd23f; --com:#8a83a8; --op:#c9c2e6; --cst:#7fb0ff;
+    --obs:#2a2140; --obs-l:#453a63; --obs-r:#1c1530; --grass:#7ec850; --dirt:#8a5a34;
+  }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  html,body { height:100%; }
+  body { background:var(--cream); color:var(--ink); font-family:'Poppins',sans-serif; height:100vh; display:flex; flex-direction:column; overflow:hidden; }
+  header { flex:0 0 auto; display:flex; align-items:center; justify-content:space-between; padding:14px 26px; border-bottom:3px solid var(--ink); }
+  header .title { font-weight:900; font-size:clamp(18px,2.4vw,30px); letter-spacing:-0.02em; }
+  header .title .hl { color:var(--accent); }
+  header .sub { font-weight:700; font-size:clamp(11px,1.3vw,15px); color:#6d6690; margin-top:2px; }
+  header .counter { font-weight:800; font-size:clamp(13px,1.5vw,17px); background:var(--ink); color:var(--cream); padding:8px 16px; border-radius:999px; white-space:nowrap; }
+  header .counter b { color:var(--accent2); }
+
+  main { flex:1 1 auto; display:grid; grid-template-columns:1fr 1fr; min-height:0; }
+  @media (max-width:820px){ main { grid-template-columns:1fr; } }
+
+  .code-pane { background:var(--code-bg); color:var(--code-fg); padding:clamp(14px,1.8vw,26px); overflow:auto; display:flex; align-items:center; }
+  pre.code { font-family:'JetBrains Mono',monospace; font-size:clamp(12px,1.28vw,17px); line-height:1.55; width:100%; white-space:pre; }
+  pre.code .line { display:block; padding:1px 10px; border-left:4px solid transparent; border-radius:3px; }
+  pre.code .line.on { border-left-color:var(--accent); background:rgba(107,78,230,0.16); }
+  .kw{color:var(--kw);font-weight:600;} .fn{color:var(--fn);} .num{color:var(--num);} .str{color:var(--str);} .com{color:var(--com);font-style:italic;} .op{color:var(--op);} .cst{color:var(--cst);}
+
+  .viz-pane { background:var(--cream); position:relative; display:flex; flex-direction:column; min-height:0; }
+  #stage { flex:1 1 auto; width:100%; display:block; }
+  .vartrack {
+    position:absolute; top:16px; right:16px; background:var(--ink); color:var(--cream);
+    border-radius:14px; padding:12px 16px; font-family:'JetBrains Mono',monospace; box-shadow:0 8px 24px rgba(0,0,0,.28);
+    min-width:150px;
+  }
+  .vartrack .cst { font-size:clamp(10px,1vw,12px); color:#9c93c9; margin-bottom:6px; }
+  .vartrack .i { font-size:clamp(12px,1.2vw,15px); color:var(--accent2); font-weight:700; margin-bottom:4px; }
+  .vartrack .xyz { display:flex; gap:12px; font-weight:700; font-size:clamp(16px,1.9vw,24px); }
+  .vartrack .xyz span b { color:var(--accent2); }
+  .vartrack .xyz .lab { color:#9c93c9; font-weight:400; font-size:0.6em; }
+  .legend { flex:0 0 auto; text-align:center; padding:6px 10px 10px; font-weight:700; font-size:clamp(10px,1.1vw,13px); color:#6d6690; }
+
+  footer { flex:0 0 auto; border-top:3px solid var(--ink); padding:12px 26px 14px; }
+  .caption { font-weight:700; font-size:clamp(14px,1.75vw,23px); line-height:1.32; }
+  .caption b { color:var(--accent); }
+  .caption code { font-family:'JetBrains Mono',monospace; background:var(--ink); color:var(--accent2); padding:1px 7px; border-radius:5px; font-size:.86em; font-weight:700; }
+  .cue { margin-top:8px; background:rgba(107,78,230,0.12); border-left:5px solid var(--accent); border-radius:6px; padding:8px 14px; font-weight:700; font-size:clamp(12px,1.4vw,17px); }
+  .cue b { color:var(--accent); }
+  .nav { display:flex; align-items:center; gap:14px; margin-top:11px; }
+  .nav button { font-family:inherit; font-weight:800; font-size:clamp(13px,1.5vw,17px); border:none; border-radius:999px; padding:10px 24px; cursor:pointer; background:var(--ink); color:var(--cream); transition:transform .12s,background .12s; }
+  .nav button:hover:not(:disabled){ background:var(--accent); transform:translateY(-1px); }
+  .nav button:disabled{ opacity:.3; cursor:default; }
+  .dots{ display:flex; gap:9px; margin-left:auto; }
+  .dots i{ width:12px; height:12px; border-radius:999px; background:#cfc9e6; cursor:pointer; transition:.15s; }
+  .dots i.on{ background:var(--accent); transform:scale(1.25); }
+  .hint{ font-weight:700; font-size:12px; color:#9c93c9; }
+</style>
+</head>
+<body>
+
+<header>
+  <div>
+    <div class="title">The Loop Pattern <span class="hl">🧱</span></div>
+    <div class="sub">One loop, three counters — x, y, z. (MakeCode Python · type <b>SPIRAL</b> in chat)</div>
+  </div>
+  <div class="counter">Step <b id="cur">1</b> / <span id="total">7</span></div>
+</header>
+
+<main>
+  <div class="code-pane"><pre class="code" id="code"></pre></div>
+  <div class="viz-pane">
+    <canvas id="stage"></canvas>
+    <div class="vartrack">
+      <div class="cst">x_start 14 · y_start 0</div>
+      <div class="i" id="v-i">before the loop</div>
+      <div class="xyz">
+        <span class="lab">x</span><b id="v-x">14</b>
+        <span class="lab">y</span><b id="v-y">0</b>
+        <span class="lab">z</span><b id="v-z">2</b>
+      </div>
+    </div>
+    <div class="legend">■ obsidian wall &nbsp;·&nbsp; the <b>fill</b> line never changes — only x, y, z do</div>
+  </div>
+</main>
+
+<footer>
+  <div class="caption" id="caption"></div>
+  <div class="cue" id="cue"></div>
+  <div class="nav">
+    <button id="prev">← Back</button>
+    <button id="next">Next →</button>
+    <span class="hint">← → arrow keys</span>
+    <div class="dots" id="dots"></div>
+  </div>
+</footer>
+
+<script>
+// Kasim's exact code
+const CODE =
+`def on_chat():
+    x_start = 14
+    y_start = 0
+    z_start = 2
+
+    x = 14
+    y = 0
+    z = 2
+    for i in range(7):
+        blocks.fill(
+            OBSIDIAN,
+            pos(x_start, y_start, z),
+            pos(x, y, z),
+            FillOperation.REPLACE)
+        x = x - 2
+        y = y + 1
+        z = z + 2
+
+player.on_chat("SPIRAL", on_chat)`;
+
+// pass i uses: x = 14-2i, y = i, z = 2+2i ; wall spans x..14, 0..y, at z
+function passVals(i){ return { x:14-2*i, y:i, z:2+2*i }; }
+const SETUP_LINES = [1,2,3,5,6,7];              // start values
+const LOOP_LINES  = [8,9,10,11,12,13,14,15,16]; // loop body
+
+const STEPS = [
+  { hi:SETUP_LINES, i:'before the loop', vals:{x:14,y:0,z:2}, upTo:-1,
+    caption:`Set the start. <code>x</code>, <code>y</code>, <code>z</code> all begin at <b>14, 0, 2</b>. Nothing is built yet — these are just the first coordinates.`,
+    cue:`Empty world. Stand on the home block and read the three start numbers out loud.` },
+  { hi:LOOP_LINES, i:0, vals:passVals(0), upTo:0,
+    caption:`Pass <b>0</b>: fill from (14, 0, <b>2</b>) to (14, 0, 2) — that's <b>one block</b>. Then the three counters update: x−2, y+1, z+2.`,
+    cue:`Run <code>SPIRAL</code>. Point at the single block at the front. Say its coordinate: (14, 0, 2).` },
+  { hi:LOOP_LINES, i:1, vals:passVals(1), upTo:1,
+    caption:`Pass <b>1</b>: x, y, z have changed. Now fill (14, 0, <b>4</b>) → (<b>12</b>, <b>1</b>, 4): a wall <b>3 wide, 2 tall</b>.`,
+    cue:`Point at the second wall. Show it is one deeper (z), one taller (y) and two wider (x) than the first.` },
+  { hi:LOOP_LINES, i:2, vals:passVals(2), upTo:2,
+    caption:`Pass <b>2</b>: (14, 0, <b>6</b>) → (<b>10</b>, <b>2</b>, 6). Same fill line — but a bigger wall, because the numbers grew again.`,
+    cue:`Trace it on camera: read x, y, z, then point to where that wall lands.` },
+  { hi:LOOP_LINES, i:3, vals:passVals(3), upTo:3,
+    caption:`Pass <b>3</b>: (14, 0, <b>8</b>) → (<b>8</b>, <b>3</b>, 8). Notice the <code>fill</code> line was <b>never edited</b> — only x, y, z moved.`,
+    cue:`Pause here. Ask the camera: "the fill line is the same every time — so why is each wall different?"` },
+  { hi:LOOP_LINES, i:'4 → 6', vals:passVals(6), upTo:6,
+    caption:`The loop keeps going. Passes <b>4, 5, 6</b> add three more walls — each <b>2 wider, 1 taller, 2 deeper</b> than the last. Seven walls in total.`,
+    cue:`Let it finish. Walk along the walls, from the 1-block step at the front to the 7-tall wall at the back.` },
+  { hi:LOOP_LINES, i:'done', vals:passVals(6), upTo:6,
+    caption:`One <code>fill</code> line, run <b>seven times</b>. The walls differ only because <b>x, y and z change each pass</b>. That is an <b>algorithm</b>: a short list of steps the computer repeats.`,
+    cue:`Recap on camera: you never touched the fill line — the three counters did all the work.` }
+];
+
+// ---- syntax highlight ----
+const KW=new Set(['def','for','in','range','return','if','else','import','from','while','True','False','None']);
+const CST=new Set(['OBSIDIAN','FillOperation','REPLACE','pos','blocks','player']);
+function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function hl(line){
+  const c=line.indexOf('#'); let cp=line, cm='';
+  if(c>=0){cp=line.slice(0,c);cm=line.slice(c);}
+  let out=cp.replace(/("[^"]*"|'[^']*'|\b\d+\b|[A-Za-z_][A-Za-z0-9_]*|[()+\-*/=,:.]+)/g,t=>{
+    if(/^["']/.test(t))return `<span class="str">${esc(t)}</span>`;
+    if(/^\d+$/.test(t))return `<span class="num">${t}</span>`;
+    if(KW.has(t))return `<span class="kw">${t}</span>`;
+    if(CST.has(t))return `<span class="cst">${t}</span>`;
+    if(/^[()+\-*/=,:.]+$/.test(t))return `<span class="op">${esc(t)}</span>`;
+    return `<span class="fn">${t}</span>`;
+  });
+  if(cm)out+=`<span class="com">${esc(cm)}</span>`;
+  return out;
+}
+const CODE_LINES=CODE.split('\n');
+function renderCode(step){
+  document.getElementById('code').innerHTML=CODE_LINES.map((ln,i)=>
+    `<span class="line${step.hi.includes(i)?' on':''}">${hl(ln)||'&nbsp;'}</span>`).join('');
+}
+
+// ---- isometric build ----
+const cv=document.getElementById('stage'), ctx=cv.getContext('2d');
+let anim=1, req=null;
+function fit(){
+  const r=cv.parentElement.getBoundingClientRect(), dpr=window.devicePixelRatio||1;
+  cv.width=r.width*dpr; cv.height=(r.height-30)*dpr;
+  cv.style.width=r.width+'px'; cv.style.height=(r.height-30)+'px';
+  ctx.setTransform(dpr,0,0,dpr,0,0); draw();
+}
+function wallBlocks(i){ const z=2+2*i,a=[]; for(let x=14-2*i;x<=14;x++) for(let y=0;y<=i;y++) a.push({x,y,z}); return a; }
+function blocksUpTo(k){ let a=[]; for(let i=0;i<=k;i++) a=a.concat(wallBlocks(i)); return a; }
+function isoU(bx,by,bz){ return { X:(bx-bz)*0.62, Y:-(bx+bz)*0.31 - by*0.60 }; }
+function camera(){
+  let mnX=1e9,mxX=-1e9,mnY=1e9,mxY=-1e9;
+  for(const bx of [0,15]) for(const bz of [0,16]) for(const by of [-1,7]){ const u=isoU(bx,by,bz);
+    if(u.X<mnX)mnX=u.X; if(u.X>mxX)mxX=u.X; if(u.Y<mnY)mnY=u.Y; if(u.Y>mxY)mxY=u.Y; }
+  mxY += 1.5; // cube depth extends downward
+  const cw=cv.clientWidth, ch=cv.clientHeight;
+  const s=Math.min(cw*0.9/(mxX-mnX), ch*0.84/(mxY-mnY));
+  return { s, ox:(cw-(mxX+mnX)*s)/2, oy:(ch-(mxY+mnY)*s)/2 };
+}
+function proj(bx,by,bz,c){ const u=isoU(bx,by,bz); return { sx:c.ox+u.X*c.s, sy:c.oy+u.Y*c.s }; }
+function cube(bx,by,bz,c,top,left,right){
+  const {sx,sy}=proj(bx,by,bz,c), half=0.62*c.s, quart=0.31*c.s, cubeH=0.60*c.s;
+  ctx.fillStyle=top; ctx.beginPath(); ctx.moveTo(sx,sy); ctx.lineTo(sx+half,sy+quart); ctx.lineTo(sx,sy+2*quart); ctx.lineTo(sx-half,sy+quart); ctx.closePath(); ctx.fill();
+  if(left!==null){
+    ctx.fillStyle=left; ctx.beginPath(); ctx.moveTo(sx-half,sy+quart); ctx.lineTo(sx,sy+2*quart); ctx.lineTo(sx,sy+2*quart+cubeH); ctx.lineTo(sx-half,sy+quart+cubeH); ctx.closePath(); ctx.fill();
+    ctx.fillStyle=right; ctx.beginPath(); ctx.moveTo(sx+half,sy+quart); ctx.lineTo(sx,sy+2*quart); ctx.lineTo(sx,sy+2*quart+cubeH); ctx.lineTo(sx+half,sy+quart+cubeH); ctx.closePath(); ctx.fill();
+    ctx.strokeStyle='rgba(0,0,0,0.28)'; ctx.lineWidth=1;
+    ctx.beginPath(); ctx.moveTo(sx,sy); ctx.lineTo(sx+half,sy+quart); ctx.lineTo(sx,sy+2*quart); ctx.lineTo(sx-half,sy+quart); ctx.closePath(); ctx.stroke();
+  } else {
+    ctx.strokeStyle='rgba(0,0,0,0.06)'; ctx.lineWidth=1;
+    ctx.beginPath(); ctx.moveTo(sx,sy); ctx.lineTo(sx+half,sy+quart); ctx.lineTo(sx,sy+2*quart); ctx.lineTo(sx-half,sy+quart); ctx.closePath(); ctx.stroke();
+  }
+}
+function draw(){
+  ctx.clearRect(0,0,cv.width,cv.height);
+  const st=STEPS[idx], c=camera();
+  // ground platform (flat grass tiles at y = -1)
+  const g=[]; for(let x=1;x<=15;x++) for(let z=1;z<=15;z++) g.push({x,z});
+  g.sort((a,b)=> isoU(a.x,-1,a.z).Y - isoU(b.x,-1,b.z).Y);
+  g.forEach(t=> cube(t.x,-1,t.z,c, getCSS('--grass'), null, null));
+  // obsidian walls (animated reveal)
+  let bl = st.upTo>=0 ? blocksUpTo(st.upTo) : [];
+  bl.sort((a,b)=> isoU(a.x,a.y,a.z).Y - isoU(b.x,b.y,b.z).Y);
+  const shown = Math.floor(bl.length*anim);
+  bl.slice(0,shown).forEach(b=> cube(b.x,b.y,b.z,c, getCSS('--obs-l'), getCSS('--obs'), getCSS('--obs-r')));
+}
+function getCSS(v){ return getComputedStyle(document.documentElement).getPropertyValue(v).trim(); }
+function animate(){ cancelAnimationFrame(req); anim=0; const t0=performance.now(),d=500;
+  (function tick(now){ const p=Math.min(1,(now-t0)/d); anim=1-Math.pow(1-p,3); draw(); if(p<1)req=requestAnimationFrame(tick); else{anim=1;draw();} })(performance.now());
+}
+
+// ---- nav ----
+let idx=0;
+const dotsEl=document.getElementById('dots');
+STEPS.forEach((_,i)=>{ const d=document.createElement('i'); d.onclick=()=>go(i); dotsEl.appendChild(d); });
+document.getElementById('total').textContent=STEPS.length;
+function go(i){
+  idx=Math.max(0,Math.min(STEPS.length-1,i)); const st=STEPS[idx];
+  renderCode(st);
+  document.getElementById('caption').innerHTML=st.caption;
+  document.getElementById('cue').innerHTML='🎬 <b>In your video:</b> '+st.cue;
+  document.getElementById('v-i').textContent = (typeof st.i==='number')?('pass  i = '+st.i):st.i;
+  document.getElementById('v-x').textContent=st.vals.x;
+  document.getElementById('v-y').textContent=st.vals.y;
+  document.getElementById('v-z').textContent=st.vals.z;
+  document.getElementById('cur').textContent=idx+1;
+  document.getElementById('prev').disabled=idx===0;
+  document.getElementById('next').disabled=idx===STEPS.length-1;
+  [...dotsEl.children].forEach((d,j)=>d.classList.toggle('on',j===idx));
+  fit();          // caption height can change the pane size — re-fit the canvas
+  animate();
+}
+document.getElementById('next').onclick=()=>go(idx+1);
+document.getElementById('prev').onclick=()=>go(idx-1);
+window.addEventListener('keydown',e=>{ if(e.key==='ArrowRight'||e.key===' '){go(idx+1);e.preventDefault();} if(e.key==='ArrowLeft'){go(idx-1);e.preventDefault();} });
+window.addEventListener('resize',fit);
+fit(); go(0);
+</script>
+</body>
+</html>
