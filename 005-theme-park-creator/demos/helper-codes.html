@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Helper Codes in Minecraft Education · Theme Park Creator</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Poppins:wght@600;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0E0E10; --cream: #F4F1EC; --hot: #FF4500; --butter: #FFE94D;
+    --code-bg: #14161c; --code-fg: #e7e3da;
+    --kw: #FF7A45; --fn: #FFD23F; --num: #8BE28B; --str: #FFD23F; --com: #6b7280; --op:#c9c4ba;
+    --iron:#aab0b8; --iron-d:#7f868f; --track:#FF4500; --grass:#6cae3e; --dirt:#8a5a34;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; }
+  body {
+    background: var(--cream); color: var(--ink);
+    font-family: 'Poppins', -apple-system, sans-serif;
+    height: 100vh; display: flex; flex-direction: column; overflow: hidden;
+  }
+  /* top bar */
+  header {
+    flex: 0 0 auto; display: flex; align-items: center; justify-content: space-between;
+    padding: 14px 26px; border-bottom: 3px solid var(--ink);
+  }
+  header .title { font-weight: 900; font-size: clamp(18px, 2.4vw, 30px); letter-spacing: -0.02em; }
+  header .title .hl { color: var(--hot); }
+  header .sub {
+    font-weight: 700; font-size: clamp(11px, 1.3vw, 15px); color: #6b6258;
+    margin-top: 2px;
+  }
+  header .counter {
+    font-weight: 800; font-size: clamp(13px,1.5vw,17px);
+    background: var(--ink); color: var(--cream); padding: 8px 16px; border-radius: 999px;
+    white-space: nowrap;
+  }
+  header .counter b { color: var(--butter); }
+
+  /* main split */
+  main { flex: 1 1 auto; display: grid; grid-template-columns: 1fr 1fr; min-height: 0; }
+  @media (max-width: 820px) { main { grid-template-columns: 1fr; } }
+
+  .code-pane {
+    background: var(--code-bg); color: var(--code-fg);
+    padding: clamp(16px, 2vw, 30px); overflow: auto;
+    display: flex; align-items: center;
+  }
+  pre.code {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: clamp(14px, 1.5vw, 20px); line-height: 1.7; width: 100%;
+    white-space: pre; tab-size: 4;
+  }
+  pre.code .line { display: block; padding: 1px 10px; border-left: 4px solid transparent; border-radius: 3px; }
+  pre.code .line.new { border-left-color: var(--hot); background: rgba(255,69,0,0.10); }
+  .kw { color: var(--kw); font-weight: 600; } .fn { color: var(--fn); }
+  .num { color: var(--num); } .str { color: var(--str); } .com { color: var(--com); font-style: italic; }
+  .op { color: var(--op); } .cst { color: #7fd3ff; }
+
+  .viz-pane { background: var(--cream); display: flex; flex-direction: column; min-height: 0; }
+  #stage { flex: 1 1 auto; width: 100%; display: block; }
+  .legend {
+    flex: 0 0 auto; text-align: center; padding: 6px 10px 10px;
+    font-weight: 700; font-size: clamp(11px,1.2vw,14px); color: #6b6258;
+  }
+  .legend .k { color: var(--hot); }
+
+  /* caption + nav */
+  footer { flex: 0 0 auto; border-top: 3px solid var(--ink); padding: 11px 26px 12px; }
+  .caption { font-weight: 700; font-size: clamp(14px, 1.7vw, 22px); line-height: 1.28; }
+  .caption b { color: var(--hot); }
+  .caption code {
+    font-family: 'JetBrains Mono', monospace; background: var(--ink); color: var(--butter);
+    padding: 1px 7px; border-radius: 5px; font-size: 0.88em; font-weight: 700;
+  }
+  .cue { margin-top: 10px; background: rgba(255,69,0,0.12); border-left: 5px solid var(--hot); border-radius: 6px; padding: 8px 14px; font-weight: 700; font-size: clamp(12px,1.4vw,17px); }
+  .cue b { color: var(--hot); }
+  .cue code { font-family: 'JetBrains Mono', monospace; background: var(--ink); color: var(--butter); padding: 1px 6px; border-radius: 5px; font-size: .86em; font-weight: 700; }
+  .nav { display: flex; align-items: center; gap: 16px; margin-top: 12px; }
+  .nav button {
+    font-family: inherit; font-weight: 800; font-size: clamp(13px,1.5vw,17px);
+    border: none; border-radius: 999px; padding: 11px 26px; cursor: pointer;
+    background: var(--ink); color: var(--cream); transition: transform .12s, background .12s;
+  }
+  .nav button:hover:not(:disabled) { background: var(--hot); transform: translateY(-1px); }
+  .nav button:disabled { opacity: .3; cursor: default; }
+  .dots { display: flex; gap: 9px; margin-left: auto; }
+  .dots i {
+    width: 12px; height: 12px; border-radius: 999px; background: #cdc6bb; cursor: pointer;
+    transition: background .15s, transform .15s;
+  }
+  .dots i.on { background: var(--hot); transform: scale(1.25); }
+  .hint { margin-left: 8px; font-weight:700; font-size: 12px; color:#9a8f82; }
+</style>
+</head>
+<body>
+
+<header>
+  <div>
+    <div class="title">Helper Codes in Minecraft <span class="hl">🎢</span></div>
+    <div class="sub">One job, named once — then reused. (MakeCode Python)</div>
+  </div>
+  <div class="counter">Step <b id="cur">1</b> / <span id="total">8</span></div>
+</header>
+
+<main>
+  <div class="code-pane"><pre class="code" id="code"></pre></div>
+  <div class="viz-pane">
+    <canvas id="stage"></canvas>
+    <div class="legend"><span class="k">■</span> iron support &nbsp;·&nbsp; <span style="color:var(--hot)">■</span> track &nbsp;·&nbsp; a <b>helper</b> = a job you name once, then reuse</div>
+  </div>
+</main>
+
+<footer>
+  <div class="caption" id="caption"></div>
+  <div class="cue" id="cue"></div>
+  <div class="nav">
+    <button id="prev">← Back</button>
+    <button id="next">Next →</button>
+    <span class="hint">use ← → arrow keys</span>
+    <div class="dots" id="dots"></div>
+  </div>
+</footer>
+
+<script>
+// ---------- lesson data ----------
+// pillars: {x, h}  (blocks from y=0..h at column x).  track: draw orange caps + rail.
+const STEPS = [
+  {
+    code:
+`# build one support pillar for the coaster
+blocks.fill(IRON_BLOCK, pos(2, 0, 0),
+    pos(2, 3, 0), FillOperation.REPLACE)`,
+    newFrom: 0,
+    caption: `One support pillar = one <code>fill</code>. Easy. But a roller coaster needs a whole <b>row</b> of them.`,
+    pillars: [{x:2,h:3}], track:false
+  },
+  {
+    code:
+`blocks.fill(IRON_BLOCK, pos(2, 0, 0),
+    pos(2, 3, 0), FillOperation.REPLACE)
+blocks.fill(IRON_BLOCK, pos(5, 0, 0),
+    pos(5, 3, 0), FillOperation.REPLACE)
+blocks.fill(IRON_BLOCK, pos(8, 0, 0),
+    pos(8, 3, 0), FillOperation.REPLACE)`,
+    newFrom: 2,
+    caption: `Copy-paste for <b>every</b> pillar. It works… but it's long, and one wrong number breaks a pillar. There is a better way.`,
+    pillars: [{x:2,h:3},{x:5,h:3},{x:8,h:3}], track:false
+  },
+  {
+    code:
+`# a HELPER: name the job once
+def pillar(x):
+    blocks.fill(IRON_BLOCK, pos(x, 0, 0),
+        pos(x, 3, 0), FillOperation.REPLACE)`,
+    newFrom: 0,
+    caption: `A <b>helper code</b>: write the job <b>once</b> and name it — <code>def pillar(x):</code>. Writing it builds <b>nothing</b> yet. You've just taught the computer a new move.`,
+    pillars: [], track:false
+  },
+  {
+    code:
+`def pillar(x):
+    blocks.fill(IRON_BLOCK, pos(x, 0, 0),
+        pos(x, 3, 0), FillOperation.REPLACE)
+
+pillar(2)`,
+    newFrom: 4,
+    caption: `Now <b>call</b> it: <code>pillar(2)</code>. One short line runs the whole job. One pillar appears.`,
+    pillars: [{x:2,h:3}], track:false
+  },
+  {
+    code:
+`def pillar(x):
+    blocks.fill(IRON_BLOCK, pos(x, 0, 0),
+        pos(x, 3, 0), FillOperation.REPLACE)
+
+pillar(2)
+pillar(5)
+pillar(8)`,
+    newFrom: 5,
+    caption: `Same helper, different spot. <b>Write once, reuse forever.</b> Change the number in the brackets, get a pillar there.`,
+    pillars: [{x:2,h:3},{x:5,h:3},{x:8,h:3}], track:false
+  },
+  {
+    code:
+`def pillar(x):
+    blocks.fill(IRON_BLOCK, pos(x, 0, 0),
+        pos(x, 3, 0), FillOperation.REPLACE)
+
+for x in range(2, 21, 3):
+    pillar(x)`,
+    newFrom: 4,
+    caption: `A <b>loop</b> calls the helper again and again. Seven pillars from two lines — a whole row of supports.`,
+    pillars: [2,5,8,11,14,17,20].map(x=>({x,h:3})), track:false
+  },
+  {
+    code:
+`def pillar(x, height):
+    blocks.fill(IRON_BLOCK, pos(x, 0, 0),
+        pos(x, height, 0), FillOperation.REPLACE)
+
+h = 2
+for x in range(2, 21, 3):
+    pillar(x, h)
+    h += 1`,
+    newFrom: 0,
+    caption: `Put the <b>changing number</b> in the brackets — a <b>parameter</b>. Now each pillar can be a different <code>height</code>. Raise it as you go and the track <b>climbs</b>. 🎢`,
+    pillars: [2,5,8,11,14,17,20].map((x,i)=>({x,h:2+i})), track:true
+  },
+  {
+    code:
+`def pillar(x, height):
+    blocks.fill(IRON_BLOCK, pos(x, 0, 0),
+        pos(x, height, 0), FillOperation.REPLACE)
+
+h = 2
+for x in range(2, 21, 3):
+    pillar(x, h)   # called 7 times
+    h += 1`,
+    newFrom: 999,
+    caption: `That's a <b>helper code</b>: teach one job once → reuse it anywhere, any number of times, any size. <b>Less typing, fewer mistakes, bigger builds.</b>`,
+    pillars: [2,5,8,11,14,17,20].map((x,i)=>({x,h:2+i})), track:true, done:true
+  }
+];
+
+const CUES = [
+  `Stand where the coaster will go — empty ground. Say: every pillar is the <b>same job</b>, so write it once.`,
+  `Show one <code>fill</code> making one pillar. Say copy-pasting for every pillar gets long and breaks easily.`,
+  `Show <code>def pillar</code>, then RUN it and point out <b>nothing builds</b> — writing a helper only teaches the move.`,
+  `Type <code>pillar(2)</code>, run, and point at the single pillar that appears.`,
+  `Add <code>pillar(5)</code> and <code>pillar(8)</code>, run — three pillars. Say: write once, reuse forever.`,
+  `Swap the calls for the <code>for</code> loop, run, and show a whole row appear from two lines.`,
+  `Change to <code>def pillar(x, height)</code>, raise the height each loop, and show the track <b>climb</b>.`,
+  `Recap: teach one job once, reuse it any size, any number of times. Point them to the worksheet.`
+];
+
+// ---------- syntax highlight (tiny) ----------
+const KW = new Set(['def','for','in','range','return','if','else','import','from','while','True','False','None']);
+const CST = new Set(['IRON_BLOCK','FillOperation','REPLACE','AIR','pos','blocks']);
+function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function highlight(line){
+  // comment
+  const c = line.indexOf('#');
+  let codePart = line, comPart = '';
+  if (c >= 0) { codePart = line.slice(0,c); comPart = line.slice(c); }
+  // tokenize codePart
+  let out = codePart.replace(/("[^"]*"|'[^']*'|\b\d+\b|[A-Za-z_][A-Za-z0-9_]*|[()+\-*/=,:.]+)/g, (t)=>{
+    if (/^["']/.test(t)) return `<span class="str">${esc(t)}</span>`;
+    if (/^\d+$/.test(t)) return `<span class="num">${t}</span>`;
+    if (KW.has(t)) return `<span class="kw">${t}</span>`;
+    if (CST.has(t)) return `<span class="cst">${t}</span>`;
+    if (/^[()+\-*/=,:.]+$/.test(t)) return `<span class="op">${esc(t)}</span>`;
+    return `<span class="fn">${t}</span>`;
+  });
+  if (comPart) out += `<span class="com">${esc(comPart)}</span>`;
+  return out;
+}
+function renderCode(step){
+  const lines = step.code.split('\n');
+  const el = document.getElementById('code');
+  el.innerHTML = lines.map((ln,i)=>{
+    const isNew = i >= step.newFrom;
+    return `<span class="line${isNew?' new':''}">${highlight(ln)||'&nbsp;'}</span>`;
+  }).join('');
+}
+
+// ---------- canvas build viz ----------
+const cv = document.getElementById('stage'), ctx = cv.getContext('2d');
+const WX = 24, WY = 11;            // world grid
+let anim = 0, animReq = null;
+function fit(){
+  const p = cv.parentElement, r = p.getBoundingClientRect();
+  const dpr = window.devicePixelRatio || 1;
+  cv.width = r.width * dpr; cv.height = (r.height - 34) * dpr; // minus legend
+  cv.style.width = r.width+'px'; cv.style.height = (r.height-34)+'px';
+  ctx.setTransform(dpr,0,0,dpr,0,0);
+  draw();
+}
+function cell(){
+  const w = cv.clientWidth, h = cv.clientHeight;
+  return Math.min(w/(WX+1), h/(WY+1));
+}
+function block(cx, wy, s, fill, dark){
+  // wy: world y (0 = just above ground). screen bottom = ground.
+  const c = cell();
+  const ox = (cv.clientWidth - WX*c)/2;
+  const groundY = cv.clientHeight - c*1.2;
+  const x = ox + cx*c;
+  const y = groundY - (wy+1)*c;
+  ctx.fillStyle = fill; ctx.fillRect(x, y, c, c);
+  ctx.strokeStyle = dark; ctx.lineWidth = Math.max(1.5, c*0.06); ctx.strokeRect(x+ctx.lineWidth/2, y+ctx.lineWidth/2, c-ctx.lineWidth, c-ctx.lineWidth);
+  ctx.fillStyle = 'rgba(255,255,255,0.10)'; ctx.fillRect(x+c*0.14, y+c*0.14, c*0.34, c*0.34);
+}
+function draw(){
+  const st = STEPS[idx]; ctx.clearRect(0,0,cv.width,cv.height);
+  const c = cell();
+  const ox = (cv.clientWidth - WX*c)/2;
+  const groundY = cv.clientHeight - c*1.2;
+  // sky already cream. ground strip (grass + dirt)
+  ctx.fillStyle = getCSS('--grass'); ctx.fillRect(ox, groundY, WX*c, c*0.35);
+  ctx.fillStyle = getCSS('--dirt');  ctx.fillRect(ox, groundY + c*0.35, WX*c, c*0.85);
+  // pillars (animated grow)
+  const t = anim;
+  st.pillars.forEach(p=>{
+    const grown = p.h * t;
+    for (let y=0; y<=Math.floor(grown); y++){
+      block(p.x, y, getCSS('--iron'), getCSS('--iron-d'));
+    }
+  });
+  // track (after grown)
+  if (st.track && t >= 0.999){
+    // rail line connecting tops
+    ctx.strokeStyle = getCSS('--track'); ctx.lineWidth = Math.max(3, c*0.16); ctx.lineCap='round';
+    ctx.beginPath();
+    st.pillars.forEach((p,i)=>{
+      const px = ox + p.x*c + c/2;
+      const py = groundY - (p.h+1+1)*c + c/2;
+      i===0 ? ctx.moveTo(px,py) : ctx.lineTo(px,py);
+    });
+    ctx.stroke();
+    // track caps
+    st.pillars.forEach(p=> block(p.x, p.h+1, getCSS('--track'), '#c23400'));
+    // little cart on the first pillar
+    if (st.done){
+      const p0 = st.pillars[0];
+      const cx = ox + p0.x*c, cy = groundY - (p0.h+1+2)*c;
+      ctx.fillStyle = getCSS('--ink'); roundRect(cx+c*0.05, cy+c*0.2, c*0.9, c*0.7, c*0.18); ctx.fill();
+      ctx.fillStyle = getCSS('--butter'); ctx.beginPath(); ctx.arc(cx+c*0.3, cy+c*0.95, c*0.14, 0, 7); ctx.arc(cx+c*0.7, cy+c*0.95, c*0.14, 0, 7); ctx.fill();
+    }
+  }
+}
+function roundRect(x,y,w,h,r){ ctx.beginPath(); ctx.moveTo(x+r,y); ctx.arcTo(x+w,y,x+w,y+h,r); ctx.arcTo(x+w,y+h,x,y+h,r); ctx.arcTo(x,y+h,x,y,r); ctx.arcTo(x,y,x+w,y,r); ctx.closePath(); }
+function getCSS(v){ return getComputedStyle(document.documentElement).getPropertyValue(v).trim(); }
+
+function animateGrow(){
+  cancelAnimationFrame(animReq); anim = 0; const start = performance.now(), dur = 480;
+  function tick(now){
+    const p = Math.min(1, (now-start)/dur);
+    anim = 1 - Math.pow(1-p, 3); // easeOutCubic
+    draw();
+    if (p < 1) animReq = requestAnimationFrame(tick); else { anim = 1; draw(); }
+  }
+  animReq = requestAnimationFrame(tick);
+}
+
+// ---------- navigation ----------
+let idx = 0;
+const dotsEl = document.getElementById('dots');
+STEPS.forEach((_,i)=>{ const d=document.createElement('i'); d.onclick=()=>go(i); dotsEl.appendChild(d); });
+document.getElementById('total').textContent = STEPS.length;
+function go(i){
+  idx = Math.max(0, Math.min(STEPS.length-1, i));
+  const st = STEPS[idx];
+  renderCode(st);
+  document.getElementById('caption').innerHTML = st.caption;
+  document.getElementById('cue').innerHTML = '🎬 <b>In your video:</b> ' + CUES[idx];
+  document.getElementById('cur').textContent = idx+1;
+  document.getElementById('prev').disabled = idx===0;
+  document.getElementById('next').disabled = idx===STEPS.length-1;
+  [...dotsEl.children].forEach((d,j)=>d.classList.toggle('on', j===idx));
+  fit();          // caption height can change the pane size — re-fit the canvas
+  animateGrow();
+}
+document.getElementById('next').onclick = ()=>go(idx+1);
+document.getElementById('prev').onclick = ()=>go(idx-1);
+window.addEventListener('keydown', e=>{
+  if (e.key==='ArrowRight'||e.key===' ') { go(idx+1); e.preventDefault(); }
+  if (e.key==='ArrowLeft') { go(idx-1); e.preventDefault(); }
+});
+window.addEventListener('resize', fit);
+fit(); go(0);
+</script>
+</body>
+</html>

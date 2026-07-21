@@ -1,0 +1,91 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head><meta charset='utf-8'>
+<title>🌀 M003 Extension — The Loop Pattern (Beginner)</title>
+<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
+<style>
+@page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
+div.WordSection1 { page: WordSection1; }
+body { font-family: "Segoe UI", Arial, sans-serif; font-size: 11.5pt; color: #1a1a2e; line-height: 1.5; }
+h1 { font-size: 21pt; color: #6b4ee6; margin: 4px 0 6px; }
+h2 { font-size: 15pt; color: #6b4ee6; border-top: 1px solid #dddddd; padding-top: 8px; margin: 18px 0 10px; }
+h3, h4 { font-size: 11.5pt; margin: 12px 0 6px; }
+p { margin: 7px 0; }
+.brand { font-size: 10.5pt; font-weight: bold; color: #ff7849; letter-spacing: .06em;
+         border-bottom: 2px solid #ff7849; padding-bottom: 6px; margin-bottom: 14px; }
+table { border-collapse: collapse; margin: 10px 0; }
+th, td { border: 1px solid #c8c8c8; padding: 4px 9px; text-align: center; }
+th { background: #f3eefc; color: #6b4ee6; font-weight: bold; }
+pre { font-family: Consolas, "Courier New", monospace; font-size: 10.5pt; background: #f4f4f5;
+      border: 1px solid #dddddd; padding: 8px 10px; white-space: pre-wrap; }
+pre code { background: transparent; color: #1a1a2e; }
+code { font-family: Consolas, "Courier New", monospace; background: #fff1e8; color: #d6531f; padding: 0 3px; }
+blockquote { border-left: 3px solid #ff7849; background: #fff6ef; padding: 8px 12px;
+             color: #6a3a1c; margin: 9px 0; }
+ul, ol { margin: 7px 0 7px 26px; }
+p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
+.footer { color: #999999; font-size: 8.5pt; text-align: center; margin-top: 18px;
+          border-top: 1px solid #eeeeee; padding-top: 6px; }
+.footer b { color: #ff7849; }
+</style></head>
+<body><div class=WordSection1>
+<div class="brand">📚 ENGLISH CODING · 영어코딩</div>
+<h1>🌀 M003 Extension — The Loop Pattern (Beginner)</h1>
+<p><strong>Topic:</strong> One loop, three counters (x, y, z) · <strong>Course:</strong> 3D Coordinates · <strong>Level:</strong> Extension (Beginner, after Week 6) · <strong>Time:</strong> about 30 minutes</p>
+<p>Until now you placed blocks by choosing <strong>every</strong> coordinate <strong>by hand</strong>. This time <strong>one loop</strong> builds all <strong>7</strong> obsidian walls for you. The loop keeps three counters — <strong>x</strong>, <strong>y</strong>, <strong>z</strong> — and changes each one a little every pass. That is an <strong>algorithm</strong>: a short list of steps a computer repeats. Load the world, type <code>SPIRAL</code> in the chat, and watch 7 walls grow into a pattern.</p>
+<pre><code class="language-python">x = 14
+y = 0
+z = 2
+for step in range(7):
+    fill OBSIDIAN from (14, 0, z) to (x, y, z)
+    x = x - 2
+    y = y + 1
+    z = z + 2
+</code></pre>
+<blockquote>
+<p>🔁 <strong>Big idea:</strong> the loop does the same three changes every pass — x goes <strong>down 2</strong>, y goes <strong>up 1</strong>, z goes <strong>up 2</strong>. So each new wall is a little <strong>wider</strong>, <strong>taller</strong>, and <strong>deeper</strong> than the last.</p>
+<p>🔴 Stand on your <strong>home spot</strong> (red block) every run.</p>
+<p>🎨 Every wall is <strong>obsidian</strong>.</p>
+</blockquote>
+<hr />
+<h2>1 · Predict 🔮</h2>
+<p>Read the code. Circle one.</p>
+<p><strong><code>for step in range(7)</code> — how many walls does the loop build? Circle one:</strong> 3 · 7 · 10</p>
+<p><strong>Each pass runs <code>y = y + 1</code>. Does that make the next wall...? Circle one:</strong> taller · wider · deeper</p>
+<p><strong>Each pass runs <code>z = z + 2</code>. Does that make the next wall...? Circle one:</strong> taller · wider · deeper</p>
+<p><strong>The loop starts with z = 2. After one pass, <code>z = z + 2</code> runs. What is z now? Circle one:</strong> 3 · 4 · 6</p>
+<hr />
+<h2>2 · Spot the Bug 🐛</h2>
+<p>The <code>z = z + 2</code> line was deleted. Now z stays <strong>2</strong> every pass, so all 7 walls land in the <strong>same spot</strong>, on top of each other — you see one wall, not a pattern.</p>
+<pre><code class="language-python">for step in range(7):
+    fill OBSIDIAN from (14, 0, z) to (x, y, z)
+    x = x - 2
+    y = y + 1
+</code></pre>
+<p><strong>What is missing? Circle one:</strong> the z step · the loop</p>
+<p><strong>Should each wall sit at a new z or the same z? Circle one:</strong> a new z · the same z</p>
+<hr />
+<h2>3 · Show Your Work 📸🎥</h2>
+<p>Load the world. Stand on your home spot. Type <code>SPIRAL</code> in the chat and watch the loop build all 7 walls. Walk around the pattern.</p>
+<div style="page-break-inside:avoid;break-inside:avoid;margin:16px 0"><p style="font-weight:700;margin:0 0 6px">🧱 The finished pattern — side view (y &uarr; up, z &rarr; deeper)</p><table style="border-collapse:collapse;margin:4px 0"><tr><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:30px"></th><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:30px">2</th><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:30px">4</th><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:30px">6</th><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:30px">8</th><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:30px">10</th><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:30px">12</th><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:30px">14</th></tr><tr><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:30px">7</th><td style="width:30px;height:30px;padding:0;background:#ffffff;border:1px solid #0000002a"></td><td style="width:30px;height:30px;padding:0;background:#ffffff;border:1px solid #0000002a"></td><td style="width:30px;height:30px;padding:0;background:#ffffff;border:1px solid #0000002a"></td><td style="width:30px;height:30px;padding:0;background:#ffffff;border:1px solid #0000002a"></td><td style="width:30px;height:30px;padding:0;background:#ffffff;border:1px solid #0000002a"></td><td style="width:30px;height:30px;padding:0;background:#ffffff;border:1px solid #0000002a"></td><td style="width:30px;height:30px;padding:0;background:#241934;border:1px solid #0000002a"></td></tr><tr><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:30px">6</th><td style="width:30px;height:30px;padding:0;background:#ffffff;border:1px solid #0000002a"></td><td style="width:30px;height:30px;padding:0;background:#ffffff;border:1px solid #0000002a"></td><td style="width:30px;height:30px;padding:0;background:#ffffff;border:1px solid #0000002a"></td><td style="width:30px;height:30px;padding:0;background:#ffffff;border:1px solid #0000002a"></td><td style="width:30px;height:30px;padding:0;background:#ffffff;border:1px solid #0000002a"></td><td style="width:30px;height:30px;padding:0;background:#241934;border:1px solid #0000002a"></td><td style="width:30px;height:30px;padding:0;background:#241934;border:1px solid #0000002a"></td></tr><tr><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:30px">5</th><td style="width:30px;height:30px;padding:0;background:#ffffff;border:1px solid #0000002a"></td><td style="width:30px;height:30px;padding:0;background:#ffffff;border:1px solid #0000002a"></td><td style="width:30px;height:30px;padding:0;background:#ffffff;border:1px solid #0000002a"></td><td style="width:30px;height:30px;padding:0;background:#ffffff;border:1px solid #0000002a"></td><td style="width:30px;height:30px;padding:0;background:#241934;border:1px solid #0000002a"></td><td style="width:30px;height:30px;padding:0;background:#241934;border:1px solid #0000002a"></td><td style="width:30px;height:30px;padding:0;background:#241934;border:1px solid #0000002a"></td></tr><tr><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:30px">4</th><td style="width:30px;height:30px;padding:0;background:#ffffff;border:1px solid #0000002a"></td><td style="width:30px;height:30px;padding:0;background:#ffffff;border:1px solid #0000002a"></td><td style="width:30px;height:30px;padding:0;background:#ffffff;border:1px solid #0000002a"></td><td style="width:30px;height:30px;padding:0;background:#241934;border:1px solid #0000002a"></td><td style="width:30px;height:30px;padding:0;background:#241934;border:1px solid #0000002a"></td><td style="width:30px;height:30px;padding:0;background:#241934;border:1px solid #0000002a"></td><td style="width:30px;height:30px;padding:0;background:#241934;border:1px solid #0000002a"></td></tr><tr><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:30px">3</th><td style="width:30px;height:30px;padding:0;background:#ffffff;border:1px solid #0000002a"></td><td style="width:30px;height:30px;padding:0;background:#ffffff;border:1px solid #0000002a"></td><td style="width:30px;height:30px;padding:0;background:#241934;border:1px solid #0000002a"></td><td style="width:30px;height:30px;padding:0;background:#241934;border:1px solid #0000002a"></td><td style="width:30px;height:30px;padding:0;background:#241934;border:1px solid #0000002a"></td><td style="width:30px;height:30px;padding:0;background:#241934;border:1px solid #0000002a"></td><td style="width:30px;height:30px;padding:0;background:#241934;border:1px solid #0000002a"></td></tr><tr><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:30px">2</th><td style="width:30px;height:30px;padding:0;background:#ffffff;border:1px solid #0000002a"></td><td style="width:30px;height:30px;padding:0;background:#241934;border:1px solid #0000002a"></td><td style="width:30px;height:30px;padding:0;background:#241934;border:1px solid #0000002a"></td><td style="width:30px;height:30px;padding:0;background:#241934;border:1px solid #0000002a"></td><td style="width:30px;height:30px;padding:0;background:#241934;border:1px solid #0000002a"></td><td style="width:30px;height:30px;padding:0;background:#241934;border:1px solid #0000002a"></td><td style="width:30px;height:30px;padding:0;background:#241934;border:1px solid #0000002a"></td></tr><tr><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:30px">1</th><td style="width:30px;height:30px;padding:0;background:#241934;border:1px solid #0000002a"></td><td style="width:30px;height:30px;padding:0;background:#241934;border:1px solid #0000002a"></td><td style="width:30px;height:30px;padding:0;background:#241934;border:1px solid #0000002a"></td><td style="width:30px;height:30px;padding:0;background:#241934;border:1px solid #0000002a"></td><td style="width:30px;height:30px;padding:0;background:#241934;border:1px solid #0000002a"></td><td style="width:30px;height:30px;padding:0;background:#241934;border:1px solid #0000002a"></td><td style="width:30px;height:30px;padding:0;background:#241934;border:1px solid #0000002a"></td></tr></table></div>
+
+<p><strong>Reading left to right, the steps get taller: 1, 2, 3, 4, 5, 6, 7.</strong></p>
+<p><strong>How many steps are there? Circle one:</strong> 5 · 7 · 9</p>
+<p><strong>Which step is the tallest? Circle one:</strong> the first (front) · the last (back)</p>
+<p>Record <strong>one video</strong> — one take, no stopping (a phone is fine). Show these in order:</p>
+<p><strong>1 · Your code.</strong> Scroll through it. Say what each part does.</p>
+<p><strong>2 · Your build.</strong> Point the camera at the pattern. Name the smallest and biggest step.</p>
+<p>Say these out loud, filling in the blanks:</p>
+<blockquote>
+<p>Today I built ______.</p>
+<p>I built it using this code: ______.</p>
+<p>In this code I used ______.</p>
+<p>The hardest part was ______.</p>
+<p>That part was hard because ______.</p>
+<p>The most fun part was ______.</p>
+<p>Something new I learned was ______.</p>
+</blockquote>
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your <strong>one</strong> video to teacher on KakaoTalk.</p>
+<div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>
+</div></body></html>
