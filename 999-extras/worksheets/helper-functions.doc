@@ -1,0 +1,132 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head><meta charset='utf-8'>
+<title>🧩 Extra — Helper Functions: Teach It Once, Use It Anywhere</title>
+<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
+<style>
+@page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
+div.WordSection1 { page: WordSection1; }
+body { font-family: "Segoe UI", Arial, sans-serif; font-size: 11.5pt; color: #1a1a2e; line-height: 1.5; }
+h1 { font-size: 21pt; color: #6b4ee6; margin: 4px 0 6px; }
+h2 { font-size: 15pt; color: #6b4ee6; border-top: 1px solid #dddddd; padding-top: 8px; margin: 18px 0 10px; }
+h3, h4 { font-size: 11.5pt; margin: 12px 0 6px; }
+p { margin: 7px 0; }
+.brand { font-size: 10.5pt; font-weight: bold; color: #ff7849; letter-spacing: .06em;
+         border-bottom: 2px solid #ff7849; padding-bottom: 6px; margin-bottom: 14px; }
+table { border-collapse: collapse; margin: 10px 0; }
+th, td { border: 1px solid #c8c8c8; padding: 4px 9px; text-align: center; }
+th { background: #f3eefc; color: #6b4ee6; font-weight: bold; }
+pre { font-family: Consolas, "Courier New", monospace; font-size: 10.5pt; background: #f4f4f5;
+      border: 1px solid #dddddd; padding: 8px 10px; white-space: pre-wrap; }
+pre code { background: transparent; color: #1a1a2e; }
+code { font-family: Consolas, "Courier New", monospace; background: #fff1e8; color: #d6531f; padding: 0 3px; }
+blockquote { border-left: 3px solid #ff7849; background: #fff6ef; padding: 8px 12px;
+             color: #6a3a1c; margin: 9px 0; }
+ul, ol { margin: 7px 0 7px 26px; }
+p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
+.footer { color: #999999; font-size: 8.5pt; text-align: center; margin-top: 18px;
+          border-top: 1px solid #eeeeee; padding-top: 6px; }
+.footer b { color: #ff7849; }
+</style></head>
+<body><div class=WordSection1>
+<div class="brand">📚 ENGLISH CODING · 영어코딩</div>
+<h1>🧩 Extra — Helper Functions: Teach It Once, Use It Anywhere</h1>
+<p><strong>Topic:</strong> Helper Functions · <strong>Course:</strong> Extra Worksheet · <strong>Time:</strong> about 30 minutes</p>
+<p>When you copy the same lines again and again, your code gets long and hard to fix. A <strong>helper function</strong> lets you teach the computer a small job <strong>once</strong>, give it a name, then <strong>call</strong> that name whenever you need it. On paper you will read helper functions, predict them, fix them, and explain them in your own words.</p>
+<blockquote>
+<p>Keep these words handy: <strong>function</strong>, <strong><code>def</code></strong>, <strong>call</strong>, <strong>parameter</strong>, <strong>reuse</strong>.</p>
+</blockquote>
+<hr />
+<h2>1 · Predict 🔮</h2>
+<p>Read each snippet. Write what you think it will print.</p>
+<pre><code class="language-python">def say_hello():
+    print(&quot;Hello!&quot;)
+
+say_hello()
+</code></pre>
+<p><strong>What prints? Does the line inside run when you <em>define</em> the helper, or when you <em>call</em> it?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">def cheer():
+    print(&quot;Go team!&quot;)
+
+cheer()
+cheer()
+cheer()
+</code></pre>
+<p><strong>How many lines print? You only wrote the message once — how did it print more times?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">def greet(name):
+    print(&quot;Hi &quot; + name)
+
+greet(&quot;Mia&quot;)
+greet(&quot;Sam&quot;)
+</code></pre>
+<p><strong>What two lines print? What is different between the two calls?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>2 · Spot the Bug 🐛</h2>
+<p>Each snippet is broken. Read what it should do, then rewrite it so it works. Explain why the original was wrong.</p>
+<p><strong>Bug A</strong> — This should print <code>Hello!</code>. Instead, when you run it, <strong>nothing happens at all</strong>.</p>
+<pre><code class="language-python">def say_hello():
+    print(&quot;Hello!&quot;)
+</code></pre>
+<p><strong>Hint:</strong> writing <code>def</code> only <strong>teaches</strong> the helper. Something is missing after it.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug B</strong> — This should print <code>Go team!</code>. But when you run it, still <strong>nothing prints</strong>.</p>
+<pre><code class="language-python">def cheer():
+    print(&quot;Go team!&quot;)
+
+cheer
+</code></pre>
+<p><strong>Hint:</strong> to <strong>call</strong> a helper you need <code>( )</code> after its name.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug C</strong> — This helper needs a name to say hi to. But the call forgot to give one, so the code crashes.</p>
+<pre><code class="language-python">def greet(name):
+    print(&quot;Hi &quot; + name)
+
+greet()
+</code></pre>
+<p><strong>Hint:</strong> the helper has a <strong>parameter</strong> <code>name</code>. Put a value for it inside the <code>( )</code> when you call.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>3 · Explain the Code 📖</h2>
+<p>Read this working helper carefully.</p>
+<pre><code class="language-python">def welcome(name):
+    print(&quot;Welcome, &quot; + name + &quot;!&quot;)
+    print(&quot;Glad you are here.&quot;)
+
+welcome(&quot;Mia&quot;)
+welcome(&quot;Sam&quot;)
+welcome(&quot;Ava&quot;)
+</code></pre>
+<p><strong><code>welcome</code> is written once but called three times. How many lines print in total?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Both <code>print</code> lines live inside <code>welcome</code>. If you wanted to change <code>"Glad you are here."</code>, how many places do you edit? Why is that better than copying those two lines under every name?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>What job does <code>name</code> do each time <code>welcome</code> is called?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet to teacher on KakaoTalk.</p>
+<div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>
+</div></body></html>
