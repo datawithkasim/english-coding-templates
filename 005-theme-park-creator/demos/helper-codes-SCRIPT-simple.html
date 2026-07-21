@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Read-Along Script — Helper Codes (Petting Zoo)</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&family=Poppins:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{ --accent:#FF4500; --ink:#0E0E10; --paper:#F4F1EC; --card:#ffffff; --code-bg:#14161c; --code-fg:#e7e3da; --base:19px; }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{font-size:var(--base);}
+  body{background:var(--paper);color:var(--ink);font-family:'Poppins',sans-serif;line-height:1.5;padding-bottom:20vh;}
+  .topbar{position:sticky;top:0;z-index:10;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 20px;box-shadow:0 4px 16px rgba(0,0,0,.2);}
+  .topbar h1{font-size:1.15rem;font-weight:900;letter-spacing:-0.02em;}
+  .topbar h1 span{color:#FFE94D;}
+  .topbar .fs{display:flex;gap:8px;align-items:center;font-size:.8rem;color:#cfc7bd;}
+  .topbar .fs button{font-family:inherit;font-weight:800;border:none;border-radius:8px;width:38px;height:38px;font-size:1rem;cursor:pointer;background:rgba(255,255,255,.14);color:#fff;}
+  .topbar .fs button:hover{background:var(--accent);}
+  .wrap{max-width:860px;margin:0 auto;padding:26px 20px;}
+  .intro{font-size:1.05rem;color:#6b6258;font-weight:600;background:rgba(255,69,0,.09);border-left:5px solid var(--accent);border-radius:8px;padding:14px 18px;margin-bottom:30px;}
+  .goal{background:#101318;color:#f4f1ec;border-radius:14px;padding:18px 20px;margin-bottom:30px;}
+  .goal .row-label{color:#FFE94D;font-weight:800;font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px;}
+  .goal p{font-size:1.15rem;font-weight:600;line-height:1.45;}
+  .beat{background:var(--card);border:1px solid #e8e2d8;border-radius:16px;padding:22px 24px 26px;margin-bottom:26px;box-shadow:0 6px 20px -12px rgba(14,14,16,.4);}
+  .beat .tag{display:inline-block;background:var(--accent);color:#fff;font-weight:800;font-size:.95rem;padding:5px 14px;border-radius:999px;margin-bottom:16px;}
+  .row-label{font-weight:800;font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;margin:14px 0 6px;}
+  .show .row-label{color:var(--accent);}
+  .show p{font-size:1.12rem;font-weight:600;color:#4a433e;}
+  .why{margin-top:12px;background:#eef6ee;border-left:5px solid #2e9e4f;border-radius:8px;padding:10px 14px;}
+  .why .row-label{color:#217a3c;margin:0 0 4px;}
+  .why p{font-size:1rem;font-weight:600;color:#2c4a34;}
+  pre.code{background:var(--code-bg);color:var(--code-fg);border-radius:12px;padding:16px 18px;margin:12px 0 4px;font-family:'JetBrains Mono',monospace;font-size:1.02rem;line-height:1.6;overflow-x:auto;white-space:pre;}
+  .say{margin-top:16px;background:#fffdf6;border:2px solid var(--accent);border-radius:12px;padding:16px 20px;}
+  .say .row-label{color:var(--accent);margin-top:0;}
+  .say p{font-size:1.5rem;font-weight:600;line-height:1.42;color:var(--ink);}
+  .say p em{font-style:normal;color:var(--accent);font-weight:800;}
+  .end{text-align:center;color:#9a8f82;font-weight:700;padding:20px;font-size:1rem;}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <h1>🎬 Read-Along Script <span>· Petting-Zoo Pen</span></h1>
+  <div class="fs">text <button onclick="fs(-1)">A−</button><button onclick="fs(1)">A+</button></div>
+</div>
+<div class="wrap" id="wrap">
+  <div class="intro">Scroll as you record. Orange text = <b>read out loud</b>. Grey "SHOW" = do this on screen. Green "WHY" = the reason, say it too — it's the whole point.</div>
+  <div class="goal">
+    <div class="row-label">🎯 What we're building</div>
+    <p>A little <b>petting zoo</b> for the theme park: a <b>fence</b> around a square, a <b>row of trees</b> for shade, and <b>farm animals</b> inside. We build the whole thing out of tiny <b>helper codes</b> — each one a small job we teach once and reuse.</p>
+  </div>
+</div>
+
+<script>
+const BEATS=[
+ {t:"1 · The plan", show:"Stand on an empty flat corner of the park. Point around the square you'll fill.",
+  say:`Let's build a <em>petting zoo</em>. Right here we need a fence all the way around, a row of trees for shade, and some animals inside. That's a lot of blocks. So we won't place them one by one — we'll teach the computer a few small jobs, called <em>helper codes</em>, and let them do the work.`,
+  why:`Kids need to see the finished picture first, so every step after this has a place to go.`},
+
+ {t:"2 · One fence post", show:"Show one place line. Run it — a single fence post appears.",
+  code:`blocks.place(OAK_FENCE, pos(0, 0, 0))`,
+  say:`Here's <em>one</em> fence post. One line, one post. Easy. But our pen needs posts all the way around a square — dozens of them. Placing each by hand would take forever.`,
+  why:`Show the hard way first, so the helper feels like a rescue, not a rule.`},
+
+ {t:"3 · Teach a helper: post", show:"Show def post. RUN it — and show that NOTHING appears yet.",
+  code:`def post(x, z):\n    blocks.place(OAK_FENCE, pos(x, 0, z))`,
+  say:`So I teach the job <em>once</em> and name it: def post. The x and z are blanks — they say <em>where</em>. Watch: I run this and… <em>nothing</em> appears. Writing a helper doesn't build. It just teaches the computer a new move.`,
+  why:`The "nothing happened" moment is the big idea: defining ≠ running. Let it land.`},
+
+ {t:"4 · Call the helper", show:"Type post(3, 3). Run. One post pops up.",
+  code:`post(3, 3)`,
+  say:`Now I <em>call</em> it: post, at 3 and 3. And there's my post. I taught the job once — now I just say its name and tell it where.`,
+  why:`This is the building block for everything: one tiny reusable post.`},
+
+ {t:"5 · Build the whole fence", show:"Show build_fence. Run — a full square pen appears in seconds.",
+  code:`def build_fence():\n    for i in range(0, 6):\n        post(i, 0)\n        post(i, 5)\n        post(0, i)\n        post(5, i)`,
+  say:`Now watch this. A <em>loop</em> counts 0 to 5, and each time it calls my post helper four times — front, back, left, right. Run it… and the <em>whole fence</em> builds itself. That one little helper just placed the entire square.`,
+  why:`Builds toward: the pen walls are done. Shows a loop + helper doing what would be 24 hand-typed lines.`},
+
+ {t:"6 · A helper can hold many steps: tree", show:"Show def tree — three lines. Then call tree(3). A tiny tree appears.",
+  code:`def tree(x):\n    blocks.place(OAK_LOG, pos(x, 0, 4))\n    blocks.place(OAK_LOG, pos(x, 1, 4))\n    blocks.place(OAK_LEAVES, pos(x, 2, 4))`,
+  say:`A helper can hold <em>more than one</em> step. My tree is a trunk, another trunk, and leaves on top — three lines — all under one name: tree. Now the whole tree is just one word.`,
+  why:`Builds toward: shade inside the pen. Teaches that a helper bundles many steps into one simple name.`},
+
+ {t:"7 · Plant a row of trees", show:"Show plant_trees. Run — a neat row of trees along the back.",
+  code:`def plant_trees():\n    for x in range(1, 5):\n        tree(x)`,
+  say:`Same trick as the fence: a loop calls my tree helper again and again. Four little trees, in a row, along the back of the pen — from two short lines.`,
+  why:`Builds toward: the pen now has scenery. Reinforces loop + helper = a whole row.`},
+
+ {t:"8 · Add the animals", show:"Show animal + add_animals. Run — chickens appear inside the pen.",
+  code:`def animal(x):\n    mobs.spawn(CHICKEN, pos(x, 1, 2))\n\ndef add_animals():\n    for x in range(1, 5):\n        animal(x)`,
+  say:`Last part — the animals. My animal helper spawns one chicken. My add_animals loop spawns a whole little flock inside the fence. Now it's a real <em>petting</em> zoo.`,
+  why:`Builds toward: the pen comes alive. Same pattern a third time, so the idea is locked in.`},
+
+ {t:"9 · The whole build, in three words", show:"Scroll to the very bottom of the program. Point at these three lines. Run once.",
+  code:`build_fence()\nplant_trees()\nadd_animals()`,
+  say:`And here's the magic. This is the <em>whole</em> program now — three lines. Read it top to bottom: build the fence, plant the trees, add the animals. It reads like a <em>sentence</em>. All those blocks and animals — hiding neatly inside three helper names.`,
+  why:`This is the payoff: small helpers stack into big builds, and the top level reads like plain English.`},
+
+ {t:"10 · Close", show:"Face the camera. Pan across the finished pen.",
+  say:`That's a helper code: teach one small job <em>once</em>, then reuse it and stack them up. Less typing, fewer mistakes, and a whole petting zoo from a handful of names. Your worksheet gives you a pen to fill with your <em>own</em> helpers. Go build.`,
+  why:`End on the transferable rule, then hand it straight to their own build.`}
+];
+const wrap=document.getElementById('wrap');
+for(const b of BEATS){
+  const el=document.createElement('div'); el.className='beat';
+  el.innerHTML=`<span class="tag">${b.t}</span>
+    <div class="show"><div class="row-label">🎬 Show this</div><p>${b.show}</p></div>
+    ${b.code?`<pre class="code">${b.code.replace(/</g,'&lt;')}</pre>`:''}
+    <div class="say"><div class="row-label">🗣️ Say this</div><p>${b.say}</p></div>
+    ${b.why?`<div class="why"><div class="row-label">💡 Why</div><p>${b.why}</p></div>`:''}`;
+  wrap.appendChild(el);
+}
+const end=document.createElement('div'); end.className='end'; end.textContent='— end of script —'; wrap.appendChild(end);
+let base=19;
+function fs(d){ base=Math.max(15,Math.min(30,base+d)); document.documentElement.style.setProperty('--base',base+'px'); }
+</script>
+</body>
+</html>
