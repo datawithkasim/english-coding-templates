@@ -1,0 +1,153 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head><meta charset='utf-8'>
+<title>🎢 005 Week 4 — Helper Functions 2 (Extension · Intermediate)</title>
+<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
+<style>
+@page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
+div.WordSection1 { page: WordSection1; }
+body { font-family: "Segoe UI", Arial, sans-serif; font-size: 11.5pt; color: #1a1a2e; line-height: 1.5; }
+h1 { font-size: 21pt; color: #6b4ee6; margin: 4px 0 6px; }
+h2 { font-size: 15pt; color: #6b4ee6; border-top: 1px solid #dddddd; padding-top: 8px; margin: 18px 0 10px; }
+h3, h4 { font-size: 11.5pt; margin: 12px 0 6px; }
+p { margin: 7px 0; }
+.brand { font-size: 10.5pt; font-weight: bold; color: #ff7849; letter-spacing: .06em;
+         border-bottom: 2px solid #ff7849; padding-bottom: 6px; margin-bottom: 14px; }
+table { border-collapse: collapse; margin: 10px 0; }
+th, td { border: 1px solid #c8c8c8; padding: 4px 9px; text-align: center; }
+th { background: #f3eefc; color: #6b4ee6; font-weight: bold; }
+pre { font-family: Consolas, "Courier New", monospace; font-size: 10.5pt; background: #f4f4f5;
+      border: 1px solid #dddddd; padding: 8px 10px; white-space: pre-wrap; }
+pre code { background: transparent; color: #1a1a2e; }
+code { font-family: Consolas, "Courier New", monospace; background: #fff1e8; color: #d6531f; padding: 0 3px; }
+blockquote { border-left: 3px solid #ff7849; background: #fff6ef; padding: 8px 12px;
+             color: #6a3a1c; margin: 9px 0; }
+ul, ol { margin: 7px 0 7px 26px; }
+p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
+.footer { color: #999999; font-size: 8.5pt; text-align: center; margin-top: 18px;
+          border-top: 1px solid #eeeeee; padding-top: 6px; }
+.footer b { color: #ff7849; }
+</style></head>
+<body><div class=WordSection1>
+<div class="brand">📚 ENGLISH CODING · 영어코딩</div>
+<h1>🎢 005 Week 4 — Helper Functions 2 (Extension · Intermediate)</h1>
+<p><strong>Topic:</strong> Petting Zoo — Helper Functions · <strong>Course:</strong> Theme Park Creator · <strong>Level:</strong> Intermediate · <strong>Time:</strong> about 50 minutes</p>
+<p>This is your week 4 code. One <strong>boss</strong> function, three <strong>helpers</strong>, and every block placed <strong>relative</strong> to <code>x</code> and <code>z</code>.</p>
+<pre><code class="language-python">def post(x, z):
+    blocks.fill(OAK_FENCE, pos(x, 0, z), pos(x+15, 0, z+15), FillOperation.REPLACE)
+    blocks.fill(AIR, pos(x+1, 0, z+1), pos(x+14, 0, z+14), FillOperation.REPLACE)
+
+def tree(x, z):
+    blocks.place(OAK_SAPLING, pos(x+3, 0, z+3))
+    blocks.place(OAK_SAPLING, pos(x+3, 0, z+7))
+    blocks.place(OAK_SAPLING, pos(x+3, 0, z+11))
+
+def animals(x, z):
+    for i in range(7):
+        mobs.spawn(CHICKEN, pos(x+6, 0, z+3))
+
+def petting_zoo(x, z):
+    post(x, z)
+    tree(x, z)
+    animals(x, z)
+
+petting_zoo(5, 5)
+</code></pre>
+<hr />
+<h2>1 · Run Order 🔢</h2>
+<p>You type <code>petting_zoo(5, 5)</code>. The boss runs its lines <strong>top to bottom</strong>, and each helper finishes <strong>completely</strong> before the next starts.</p>
+<p><strong>a) Number the order these happen: fence built ⬜ · trees placed ⬜ · chickens spawned ⬜.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>b) Could a chicken appear before the fence exists? Why / why not?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>2 · Work Out the Coordinates 📐</h2>
+<p>With <code>petting_zoo(5, 5)</code>, <code>x = 5</code> and <code>z = 5</code>. Add the offsets and fill the real numbers.</p>
+<table>
+<thead>
+<tr>
+<th>Thing</th>
+<th>Code</th>
+<th>Real x</th>
+<th>Real z</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fence far corner</td>
+<td><code>pos(x+15, 0, z+15)</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>First tree</td>
+<td><code>pos(x+3, 0, z+3)</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Third tree</td>
+<td><code>pos(x+3, 0, z+11)</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Chicken spawn</td>
+<td><code>pos(x+6, 0, z+3)</code></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>3 · Predict — Two Zoos 🔮</h2>
+<p>You add a second line: <code>petting_zoo(30, 5)</code>.</p>
+<p><strong>a) What are the two far corners of the second fence?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>b) The first fence reaches x = 20. The second starts at x = 30. Do the two zoos touch, overlap, or leave a gap? Show the numbers.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<blockquote>
+<p>💡 Because every block comes from <code>x</code> and <code>z</code>, moving a whole zoo is <strong>one number</strong>. That is the power of parameters.</p>
+</blockquote>
+<hr />
+<h2>4 · Spot the Bug 🐛</h2>
+<p><strong>Bug A</strong> — All 7 chickens land in the same spot.</p>
+<pre><code class="language-python">def animals(x, z):
+    for i in range(7):
+        mobs.spawn(CHICKEN, pos(x+6, 0, z+3))
+</code></pre>
+<p><strong>Why? Rewrite the spawn line so each chicken is 1 block further along than the last.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Not a bug, but messy</strong> — <code>tree</code> is three copy-paste lines. The saplings sit at <code>z+3</code>, <code>z+7</code>, <code>z+11</code> (step of 4).</p>
+<p><strong>Rewrite <code>tree</code> using a <code>for</code> loop so the three saplings come from <em>one</em> line inside the loop.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>5 · Extend the Zoo 💧</h2>
+<p>Add a <code>pond</code> helper, and call it from the boss. Then add <strong>one more helper of your own</strong> (a gate, a bench, a path) and call that too.</p>
+<pre><code class="language-python">def pond(x, z):
+    blocks.fill(WATER, pos(x+8, 0, z+9), pos(x+11, 0, z+12), FillOperation.REPLACE)
+</code></pre>
+<p><strong>Write your new helper and your updated <code>petting_zoo</code> boss (with all the calls):</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>6 · Show Your Work 🎥</h2>
+<p>Record <strong>one video</strong>, one take, on your phone. Show in order:</p>
+<p><strong>1 · Your code.</strong> Scroll through it. Point at the boss and every helper.</p>
+<p><strong>2 · Your zoo.</strong> Point the camera. Name the fence, trees, animals, pond, and your own helper.</p>
+<p>Then say these out loud, filling the blanks:</p>
+<blockquote>
+<p>The boss function is <strong><em>_</em>_. It calls these helpers: </strong>____.</p>
+<p>I moved / resized the zoo by changing ______.</p>
+<p>The trickiest part was <strong><em>_</em>_ because </strong>____.</p>
+</blockquote>
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your video to teacher on KakaoTalk.</p>
+<div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>
+</div></body></html>

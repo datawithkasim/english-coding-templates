@@ -1,0 +1,147 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head><meta charset='utf-8'>
+<title>🎢 005 Week 4 — Helper Functions 2 (Extension · Advanced)</title>
+<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
+<style>
+@page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
+div.WordSection1 { page: WordSection1; }
+body { font-family: "Segoe UI", Arial, sans-serif; font-size: 11.5pt; color: #1a1a2e; line-height: 1.5; }
+h1 { font-size: 21pt; color: #6b4ee6; margin: 4px 0 6px; }
+h2 { font-size: 15pt; color: #6b4ee6; border-top: 1px solid #dddddd; padding-top: 8px; margin: 18px 0 10px; }
+h3, h4 { font-size: 11.5pt; margin: 12px 0 6px; }
+p { margin: 7px 0; }
+.brand { font-size: 10.5pt; font-weight: bold; color: #ff7849; letter-spacing: .06em;
+         border-bottom: 2px solid #ff7849; padding-bottom: 6px; margin-bottom: 14px; }
+table { border-collapse: collapse; margin: 10px 0; }
+th, td { border: 1px solid #c8c8c8; padding: 4px 9px; text-align: center; }
+th { background: #f3eefc; color: #6b4ee6; font-weight: bold; }
+pre { font-family: Consolas, "Courier New", monospace; font-size: 10.5pt; background: #f4f4f5;
+      border: 1px solid #dddddd; padding: 8px 10px; white-space: pre-wrap; }
+pre code { background: transparent; color: #1a1a2e; }
+code { font-family: Consolas, "Courier New", monospace; background: #fff1e8; color: #d6531f; padding: 0 3px; }
+blockquote { border-left: 3px solid #ff7849; background: #fff6ef; padding: 8px 12px;
+             color: #6a3a1c; margin: 9px 0; }
+ul, ol { margin: 7px 0 7px 26px; }
+p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
+.footer { color: #999999; font-size: 8.5pt; text-align: center; margin-top: 18px;
+          border-top: 1px solid #eeeeee; padding-top: 6px; }
+.footer b { color: #ff7849; }
+</style></head>
+<body><div class=WordSection1>
+<div class="brand">📚 ENGLISH CODING · 영어코딩</div>
+<h1>🎢 005 Week 4 — Helper Functions 2 (Extension · Advanced)</h1>
+<p><strong>Topic:</strong> Petting Zoo — Helper Functions · <strong>Course:</strong> Theme Park Creator · <strong>Level:</strong> Advanced · <strong>Time:</strong> about 55 minutes</p>
+<p>Your week 4 code. A <strong>boss</strong> that calls three <strong>helpers</strong>, every block offset from <code>x, z</code>.</p>
+<pre><code class="language-python">def post(x, z):
+    blocks.fill(OAK_FENCE, pos(x, 0, z), pos(x+15, 0, z+15), FillOperation.REPLACE)
+    blocks.fill(AIR, pos(x+1, 0, z+1), pos(x+14, 0, z+14), FillOperation.REPLACE)
+
+def tree(x, z):
+    blocks.place(OAK_SAPLING, pos(x+3, 0, z+3))
+    blocks.place(OAK_SAPLING, pos(x+3, 0, z+7))
+    blocks.place(OAK_SAPLING, pos(x+3, 0, z+11))
+
+def animals(x, z):
+    for i in range(7):
+        mobs.spawn(CHICKEN, pos(x+6, 0, z+3))
+
+def petting_zoo(x, z):
+    post(x, z)
+    tree(x, z)
+    animals(x, z)
+
+petting_zoo(5, 5)
+</code></pre>
+<hr />
+<h2>1 · Trace the Call Chain 🪆</h2>
+<p>When a function calls another, it <strong>pauses</strong> and waits. The called function runs to the end, then hands control <strong>back to whoever called it</strong>. Follow the arrows.</p>
+<pre><code class="language-text">   YOU TYPE:  petting_zoo(5, 5)
+        |
+        |  line 1 --&gt; post(5, 5)          [boss pauses]
+        |                 |-- 2 fills: solid fence, then carve AIR
+        |            &lt;-- back to petting_zoo
+        |
+        |  line 2 --&gt; tree(5, 5)          [boss pauses]
+        |                 |-- 3 saplings
+        |            &lt;-- back to petting_zoo
+        |
+        |  line 3 --&gt; animals(5, 5)       [boss pauses]
+        |                 |-- for i in range(7): spawn CHICKEN
+        v            &lt;-- back to petting_zoo, done
+</code></pre>
+<p><strong>a) While <code>post</code> is running, is <code>petting_zoo</code> finished, or paused and waiting? Explain.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>b) Count every function <em>run</em> for one <code>petting_zoo(5, 5)</code> — count the boss, each helper, and each <code>mobs.spawn</code> inside the loop.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>2 · Make the Size a Parameter 📐</h2>
+<p>Right now the fence size is hardcoded (<code>+15</code>, <code>+14</code>). Turn it into a <strong>parameter</strong> so one helper can build any size.</p>
+<pre><code class="language-python">def post(x, z, size):
+    blocks.fill(OAK_FENCE, pos(x, 0, z), pos(x+____, 0, z+____), FillOperation.REPLACE)
+    blocks.fill(AIR, pos(x+1, 0, z+1), pos(x+____, 0, z+____), FillOperation.REPLACE)
+</code></pre>
+<p><strong>a) Fill the four blanks in terms of <code>size</code>.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>b) What does <code>post(5, 5, 25)</code> build compared to <code>post(5, 5, 15)</code>? Give the far corner of each.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>3 · Fix and Generalise <code>animals</code> 🐔</h2>
+<p>The chickens pile up (the loop never uses <code>i</code>), and the count 7 is hardcoded. Fix <strong>both</strong>: spread them out <em>and</em> take the number as a parameter.</p>
+<pre><code class="language-python">def animals(x, z, n):
+    for i in range(n):
+        mobs.spawn(CHICKEN, pos(____, 0, ____))
+</code></pre>
+<p><strong>Fill the two blanks so <code>n</code> chickens spawn in a spread-out line.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>4 · A Row of Zoos 🎡</h2>
+<p>Because the boss takes <code>x, z</code>, you can loop the <strong>boss itself</strong>:</p>
+<pre><code class="language-python">for i in range(3):
+    petting_zoo(5 + i*20, 5)
+</code></pre>
+<p><strong>a) Write the starting <code>x</code> of each of the three zoos.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>b) Each fence is 15 wide. The step is 20. Why does 20 work but <code>i*10</code> would break the zoos? Show the numbers.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<blockquote>
+<p>💡 This is the whole reward of helper functions: one boss, written once, becomes a <strong>row of zoos</strong> from a 2-line loop. Nothing is copy-pasted.</p>
+</blockquote>
+<hr />
+<h2>5 · Design and Build 🏗️</h2>
+<p>In your homework world, upgrade the zoo:</p>
+<ul>
+<li><code>post</code> takes a <code>size</code> parameter.</li>
+<li><code>animals</code> takes a <code>count</code> parameter and spreads them out.</li>
+<li>Add <strong>two</strong> new helpers of your own (e.g. <code>pond</code>, <code>gate</code>), called by the boss.</li>
+<li>Build a <strong>row of 3 zoos</strong> with a loop, and make at least one a different size.</li>
+</ul>
+<p><strong>Write your full code — all helpers, the boss, and the loop that builds the row:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Trace one chicken from the very top down to its <code>mobs.spawn</code>. Name every function it passes through, and the <code>x, z</code> (and <code>count</code>) at each level.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>6 · Show Your Work 🎥</h2>
+<p>Record <strong>one video</strong>, one take, on your phone. Show in order:</p>
+<p><strong>1 · Your code.</strong> Scroll through it. Point at the boss, every helper, and your parameters.</p>
+<p><strong>2 · Your row of zoos.</strong> Walk the camera down the row. Name each part.</p>
+<p>Then say these out loud, filling the blanks:</p>
+<blockquote>
+<p>A helper function is <strong><em>_</em>_, and my boss function is </strong>____.</p>
+<p>I turned <strong><em>_</em>_ into a parameter, which let me </strong>____.</p>
+<p>I built a whole row of zoos by ______.</p>
+<p>The hardest idea this week was <strong><em>_</em>_ because </strong>____.</p>
+</blockquote>
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your video to teacher on KakaoTalk.</p>
+<div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>
+</div></body></html>

@@ -22,6 +22,7 @@ em { color: #555; }
 ul, ol { margin: 8px 0 8px 24px; }
 li { margin: 3px 0; }
 
+/* Grids (e.g. pixel-art coordinate grids) render as light graph paper. */
 table { border-collapse: collapse; margin: 12px 0; }
 th, td { border: 1px solid #ddd; padding: 4px 9px; text-align: center; font-size: 14px; }
 th { background: #faf7ff; color: #6b4ee6; font-weight: 700; }
@@ -74,12 +75,27 @@ blockquote {
 }
 .write-space.short { min-height: 86px; }
 .write-space.tall { min-height: 170px; }
+/* Drawing box: same frame, no ruled lines — for "draw the shape" prompts. */
 .write-space.blank { background-image: none; }
 
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
 .qa { page-break-inside: avoid; break-inside: avoid; }
 .qa > :last-child { margin-bottom: 20px; }
 
 hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
+
+.meta { color: #666; font-size: 13px; margin: 0 0 14px; }
+.answer-lines {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 14px 16px;
+  background: #fafafa;
+  white-space: pre;
+  line-height: 2.2;
+}
 
 footer {
   position: fixed;
@@ -93,10 +109,8 @@ footer b { color: #ff7849; }
 </head>
 <body>
 <div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
-<h1>🎢 005 Week 4 — Helper Functions 2 <span>(Extension · Advanced)</span></h1>
+<h1>🎢 005 Week 4 — Helper Functions 2 (Extension · Advanced)</h1>
 <p><strong>Topic:</strong> Petting Zoo — Helper Functions · <strong>Course:</strong> Theme Park Creator · <strong>Level:</strong> Advanced · <strong>Time:</strong> about 55 minutes</p>
-
-<section class="first">
 <p>Your week 4 code. A <strong>boss</strong> that calls three <strong>helpers</strong>, every block offset from <code>x, z</code>.</p>
 <pre><code class="language-python">def post(x, z):
     blocks.fill(OAK_FENCE, pos(x, 0, z), pos(x+15, 0, z+15), FillOperation.REPLACE)
@@ -118,8 +132,6 @@ def petting_zoo(x, z):
 
 petting_zoo(5, 5)
 </code></pre>
-</section>
-
 <h2>1 · Trace the Call Chain 🪆</h2>
 <p>When a function calls another, it <strong>pauses</strong> and waits. The called function runs to the end, then hands control <strong>back to whoever called it</strong>. Follow the arrows.</p>
 <pre><code class="language-text">   YOU TYPE:  petting_zoo(5, 5)
@@ -138,6 +150,7 @@ petting_zoo(5, 5)
 </code></pre>
 <div class="qa"><p><strong>a) While <code>post</code> is running, is <code>petting_zoo</code> finished, or paused and waiting? Explain.</strong></p>
 <div class="write-space short"></div></div>
+
 <div class="qa"><p><strong>b) Count every function <em>run</em> for one <code>petting_zoo(5, 5)</code> — count the boss, each helper, and each <code>mobs.spawn</code> inside the loop.</strong></p>
 <div class="write-space short"></div></div>
 
@@ -149,6 +162,7 @@ petting_zoo(5, 5)
 </code></pre>
 <div class="qa"><p><strong>a) Fill the four blanks in terms of <code>size</code>.</strong></p>
 <div class="write-space short"></div></div>
+
 <div class="qa"><p><strong>b) What does <code>post(5, 5, 25)</code> build compared to <code>post(5, 5, 15)</code>? Give the far corner of each.</strong></p>
 <div class="write-space short"></div></div>
 
@@ -168,10 +182,13 @@ petting_zoo(5, 5)
 </code></pre>
 <div class="qa"><p><strong>a) Write the starting <code>x</code> of each of the three zoos.</strong></p>
 <div class="write-space short"></div></div>
+
 <div class="qa"><p><strong>b) Each fence is 15 wide. The step is 20. Why does 20 work but <code>i*10</code> would break the zoos? Show the numbers.</strong></p>
 <div class="write-space"></div></div>
-<blockquote><p>💡 This is the whole reward of helper functions: one boss, written once, becomes a <strong>row of zoos</strong> from a 2-line loop. Nothing is copy-pasted.</p></blockquote>
 
+<blockquote>
+<p>💡 This is the whole reward of helper functions: one boss, written once, becomes a <strong>row of zoos</strong> from a 2-line loop. Nothing is copy-pasted.</p>
+</blockquote>
 <h2>5 · Design and Build 🏗️</h2>
 <p>In your homework world, upgrade the zoo:</p>
 <ul>
@@ -182,6 +199,7 @@ petting_zoo(5, 5)
 </ul>
 <div class="qa"><p><strong>Write your full code — all helpers, the boss, and the loop that builds the row:</strong></p>
 <div class="write-space tall" style="min-height: 420px"></div></div>
+
 <div class="qa"><p><strong>Trace one chicken from the very top down to its <code>mobs.spawn</code>. Name every function it passes through, and the <code>x, z</code> (and <code>count</code>) at each level.</strong></p>
 <div class="write-space tall" style="min-height: 160px"></div></div>
 
@@ -191,10 +209,10 @@ petting_zoo(5, 5)
 <p><strong>2 · Your row of zoos.</strong> Walk the camera down the row. Name each part.</p>
 <p>Then say these out loud, filling the blanks:</p>
 <blockquote>
-<p>A helper function is ______, and my boss function is ______.</p>
-<p>I turned ______ into a parameter, which let me ______.</p>
+<p>A helper function is <strong><em>_</em>_, and my boss function is </strong>____.</p>
+<p>I turned <strong><em>_</em>_ into a parameter, which let me </strong>____.</p>
 <p>I built a whole row of zoos by ______.</p>
-<p>The hardest idea this week was ______ because ______.</p>
+<p>The hardest idea this week was <strong><em>_</em>_ because </strong>____.</p>
 </blockquote>
 <hr />
 <h3>Submit ✅</h3>
