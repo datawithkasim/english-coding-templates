@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>🎢 005 Week 4 — Helper Functions 2 (Extension · Intermediate)</title>
+<style>
+@page { size: A4; margin: 18mm 16mm 22mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-family: "Inter", "Segoe UI", system-ui, sans-serif; color: #1a1a2e; }
+body { font-size: 15px; line-height: 1.55; }
+
+.cover { border-bottom: 3px solid #ff7849; padding-bottom: 14px; margin-bottom: 20px; }
+.brand { font-size: 14px; font-weight: 800; color: #ff7849; letter-spacing: .06em; }
+h1 { font-size: 28px; color: #6b4ee6; margin: 8px 0 6px; line-height: 1.25; }
+h2 { font-size: 19px; color: #6b4ee6; margin: 22px 0 12px; padding-top: 10px; border-top: 1px solid #eee; page-break-before: always; }
+section.first h2, h2:first-of-type { border-top: none; padding-top: 0; page-break-before: avoid; }
+h3, h4 { font-size: 15px; margin: 14px 0 8px; color: #1a1a2e; }
+p { margin: 8px 0; }
+strong { color: #1a1a2e; }
+em { color: #555; }
+
+ul, ol { margin: 8px 0 8px 24px; }
+li { margin: 3px 0; }
+
+table { border-collapse: collapse; margin: 12px 0; }
+th, td { border: 1px solid #ddd; padding: 4px 9px; text-align: center; font-size: 14px; }
+th { background: #faf7ff; color: #6b4ee6; font-weight: 700; }
+
+pre {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 13.5px;
+  background: #1e1e2e;
+  color: #b9f6ca;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 10px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  page-break-inside: avoid;
+  line-height: 1.5;
+}
+pre code { background: transparent; padding: 0; color: inherit; }
+code {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  background: #fff1e8;
+  color: #ff7849;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+blockquote {
+  margin: 10px 0;
+  padding: 10px 16px;
+  background: #fff6ef;
+  border-left: 3px solid #ff7849;
+  border-radius: 0 6px 6px 0;
+  color: #6a3a1c;
+}
+
+.write-space {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #ffffff 0,
+    #ffffff 27px,
+    #d4d4d4 27px,
+    #d4d4d4 28px
+  );
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  min-height: 114px;
+  margin: 10px 0 20px;
+  page-break-inside: avoid;
+}
+.write-space.short { min-height: 86px; }
+.write-space.tall { min-height: 170px; }
+.write-space.blank { background-image: none; }
+
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
+hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
+
+footer {
+  position: fixed;
+  bottom: 10mm; left: 16mm; right: 16mm;
+  text-align: center;
+  font-size: 10px;
+  color: #aaa;
+}
+footer b { color: #ff7849; }
+</style>
+</head>
+<body>
+<div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
+<h1>🎢 005 Week 4 — Helper Functions 2 <span>(Extension · Intermediate)</span></h1>
+<p><strong>Topic:</strong> Petting Zoo — Helper Functions · <strong>Course:</strong> Theme Park Creator · <strong>Level:</strong> Intermediate · <strong>Time:</strong> about 50 minutes</p>
+
+<section class="first">
+<p>This is your week 4 code. One <strong>boss</strong> function, three <strong>helpers</strong>, and every block placed <strong>relative</strong> to <code>x</code> and <code>z</code>.</p>
+<pre><code class="language-python">def post(x, z):
+    blocks.fill(OAK_FENCE, pos(x, 0, z), pos(x+15, 0, z+15), FillOperation.REPLACE)
+    blocks.fill(AIR, pos(x+1, 0, z+1), pos(x+14, 0, z+14), FillOperation.REPLACE)
+
+def tree(x, z):
+    blocks.place(OAK_SAPLING, pos(x+3, 0, z+3))
+    blocks.place(OAK_SAPLING, pos(x+3, 0, z+7))
+    blocks.place(OAK_SAPLING, pos(x+3, 0, z+11))
+
+def animals(x, z):
+    for i in range(7):
+        mobs.spawn(CHICKEN, pos(x+6, 0, z+3))
+
+def petting_zoo(x, z):
+    post(x, z)
+    tree(x, z)
+    animals(x, z)
+
+petting_zoo(5, 5)
+</code></pre>
+</section>
+
+<h2>1 · Run Order 🔢</h2>
+<p>You type <code>petting_zoo(5, 5)</code>. The boss runs its lines <strong>top to bottom</strong>, and each helper finishes <strong>completely</strong> before the next starts.</p>
+<div class="qa"><p><strong>a) Number the order these happen: fence built ⬜ · trees placed ⬜ · chickens spawned ⬜.</strong></p>
+<div class="write-space short"></div></div>
+<div class="qa"><p><strong>b) Could a chicken appear before the fence exists? Why / why not?</strong></p>
+<div class="write-space short"></div></div>
+
+<h2>2 · Work Out the Coordinates 📐</h2>
+<p>With <code>petting_zoo(5, 5)</code>, <code>x = 5</code> and <code>z = 5</code>. Add the offsets and fill the real numbers.</p>
+<table>
+<thead><tr><th>Thing</th><th>Code</th><th>Real x</th><th>Real z</th></tr></thead>
+<tbody>
+<tr><td>Fence far corner</td><td><code>pos(x+15, 0, z+15)</code></td><td></td><td></td></tr>
+<tr><td>First tree</td><td><code>pos(x+3, 0, z+3)</code></td><td></td><td></td></tr>
+<tr><td>Third tree</td><td><code>pos(x+3, 0, z+11)</code></td><td></td><td></td></tr>
+<tr><td>Chicken spawn</td><td><code>pos(x+6, 0, z+3)</code></td><td></td><td></td></tr>
+</tbody>
+</table>
+
+<h2>3 · Predict — Two Zoos 🔮</h2>
+<p>You add a second line: <code>petting_zoo(30, 5)</code>.</p>
+<div class="qa"><p><strong>a) What are the two far corners of the second fence?</strong></p>
+<div class="write-space short"></div></div>
+<div class="qa"><p><strong>b) The first fence reaches x = 20. The second starts at x = 30. Do the two zoos touch, overlap, or leave a gap? Show the numbers.</strong></p>
+<div class="write-space"></div></div>
+<blockquote><p>💡 Because every block comes from <code>x</code> and <code>z</code>, moving a whole zoo is <strong>one number</strong>. That is the power of parameters.</p></blockquote>
+
+<h2>4 · Spot the Bug 🐛</h2>
+<p><strong>Bug A</strong> — All 7 chickens land in the same spot.</p>
+<pre><code class="language-python">def animals(x, z):
+    for i in range(7):
+        mobs.spawn(CHICKEN, pos(x+6, 0, z+3))
+</code></pre>
+<div class="qa"><p><strong>Why? Rewrite the spawn line so each chicken is 1 block further along than the last.</strong></p>
+<div class="write-space short"></div></div>
+
+<p><strong>Not a bug, but messy</strong> — <code>tree</code> is three copy-paste lines. The saplings sit at <code>z+3</code>, <code>z+7</code>, <code>z+11</code> (step of 4).</p>
+<div class="qa"><p><strong>Rewrite <code>tree</code> using a <code>for</code> loop so the three saplings come from <strong>one</strong> line inside the loop.</strong></p>
+<div class="write-space tall"></div></div>
+
+<h2>5 · Extend the Zoo 💧</h2>
+<p>Add a <code>pond</code> helper, and call it from the boss. Then add <strong>one more helper of your own</strong> (a gate, a bench, a path) and call that too.</p>
+<pre><code class="language-python">def pond(x, z):
+    blocks.fill(WATER, pos(x+8, 0, z+9), pos(x+11, 0, z+12), FillOperation.REPLACE)
+</code></pre>
+<div class="qa"><p><strong>Write your new helper and your updated <code>petting_zoo</code> boss (with all the calls):</strong></p>
+<div class="write-space tall" style="min-height: 240px"></div></div>
+
+<h2>6 · Show Your Work 🎥</h2>
+<p>Record <strong>one video</strong>, one take, on your phone. Show in order:</p>
+<p><strong>1 · Your code.</strong> Scroll through it. Point at the boss and every helper.</p>
+<p><strong>2 · Your zoo.</strong> Point the camera. Name the fence, trees, animals, pond, and your own helper.</p>
+<p>Then say these out loud, filling the blanks:</p>
+<blockquote>
+<p>The boss function is ______. It calls these helpers: ______.</p>
+<p>I moved / resized the zoo by changing ______.</p>
+<p>The trickiest part was ______ because ______.</p>
+</blockquote>
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your video to teacher on KakaoTalk.</p>
+</body>
+</html>

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>🎢 005 Week 4 — Helper Functions 2 (Extension · Easy)</title>
+<title>🎢 005 Week 4 — Helper Functions 2 (Extension)</title>
 <style>
 @page { size: A4; margin: 18mm 16mm 22mm; }
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -93,125 +93,106 @@ footer b { color: #ff7849; }
 </head>
 <body>
 <div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
-<h1>🎢 005 Week 4 — Helper Functions 2 <span>(Extension · Easy)</span></h1>
-<p><strong>Topic:</strong> Petting Zoo — Helper Functions · <strong>Course:</strong> Theme Park Creator · <strong>Level:</strong> Easy · <strong>Time:</strong> about 40 minutes</p>
+<h1>🎢 005 Week 4 — Helper Functions 2 <span>(Extension)</span></h1>
+<p><strong>Topic:</strong> Petting Zoo — Helper Functions · <strong>Course:</strong> Theme Park Creator · <strong>Level:</strong> Extension · <strong>Time:</strong> about 45 minutes</p>
 
 <section class="first">
-<p>You are building a little <strong>petting zoo</strong>: a <strong>fence</strong> around a square, a <strong>row of trees</strong>, and <strong>animals</strong> inside.</p>
-<p>That is a lot of blocks. So you teach the computer a small job <strong>once</strong>, give it a name, then use it again and again. That named job is a <strong>helper function</strong>.</p>
-<blockquote><p>💡 <strong>The whole idea:</strong> write a job <strong>once</strong> → use it <strong>many times</strong>. Less typing. Fewer mistakes. Bigger builds.</p></blockquote>
+<p>This is the code you are learning this week. It builds a whole <strong>petting zoo</strong>: a fence, some trees, and animals inside.</p>
+<pre><code class="language-python">def post(x, z):
+    blocks.fill(OAK_FENCE, pos(x, 0, z), pos(x+15, 0, z+15), FillOperation.REPLACE)
+    blocks.fill(AIR, pos(x+1, 0, z+1), pos(x+14, 0, z+14), FillOperation.REPLACE)
 
-<h4>Your four tools this week</h4>
-<pre><code class="language-python">blocks.place(OAK_FENCE, pos(0, 0, 0))   # put one block somewhere
-mobs.spawn(CHICKEN, pos(3, 1, 3))       # put one animal somewhere
-def post(x, z):                         # teach a job a name
-for i in range(0, 6):                    # do the line below 6 times
+def tree(x, z):
+    blocks.place(OAK_SAPLING, pos(x+3, 0, z+3))
+    blocks.place(OAK_SAPLING, pos(x+3, 0, z+7))
+    blocks.place(OAK_SAPLING, pos(x+3, 0, z+11))
+
+def animals(x, z):
+    for i in range(7):
+        mobs.spawn(CHICKEN, pos(x+6, 0, z+3))
+
+def petting_zoo(x, z):
+    post(x, z)
+    tree(x, z)
+    animals(x, z)
+
+petting_zoo(5, 5)
 </code></pre>
+<blockquote><p>💡 <strong>The big idea:</strong> <code>petting_zoo</code> is the <strong>boss</strong>. It does no building itself — it just <strong>calls</strong> three <strong>helper functions</strong>, and each helper does <strong>one</strong> job. Write each job once, and the boss puts them together.</p></blockquote>
 </section>
 
-<h2>1 · Match the Helper to Its Job 🧩</h2>
-<p>Draw a line from each helper name to what it does. The name is a <strong>clue</strong> to the job.</p>
+<h2>1 · Who Does What? 🧩</h2>
+<p>Read the code above. Fill the table.</p>
 <table>
-<thead><tr><th>Helper</th><th>Its job</th></tr></thead>
+<thead><tr><th>Function</th><th>Its one job (in your words)</th><th>Boss or helper?</th></tr></thead>
 <tbody>
-<tr><td><code>post</code></td><td>puts the animals inside</td></tr>
-<tr><td><code>build_fence</code></td><td>places <strong>one</strong> fence block</td></tr>
-<tr><td><code>tree</code></td><td>makes the <strong>whole</strong> square fence</td></tr>
-<tr><td><code>add_animals</code></td><td>makes <strong>one</strong> little tree</td></tr>
+<tr><td><code>post</code></td><td></td><td></td></tr>
+<tr><td><code>tree</code></td><td></td><td></td></tr>
+<tr><td><code>animals</code></td><td></td><td></td></tr>
+<tr><td><code>petting_zoo</code></td><td></td><td></td></tr>
 </tbody>
 </table>
-<blockquote><p>💡 Two of these do <strong>one</strong> small thing. Two do a <strong>big</strong> thing by <strong>calling</strong> a small one many times. Which is which?</p></blockquote>
+<blockquote><p>💡 A <strong>helper</strong> is just a function that <strong>another</strong> function calls. There is no special keyword — the word describes its <strong>job</strong>, not its code.</p></blockquote>
 
-<h2>2 · Predict 🔮</h2>
-<p>Read the code. Write what appears in the world, <strong>and why</strong>.</p>
-
-<pre><code class="language-python">def post(x, z):
-    blocks.place(OAK_FENCE, pos(x, 0, z))
+<h2>2 · The Hollow Fence 🧱</h2>
+<p>Look at <code>post</code>. It runs <strong>two</strong> fills. A big solid square, then it carves the middle back to <code>AIR</code>.</p>
+<pre><code class="language-text">   fill 1 — solid fence           fill 2 — carve middle to AIR
+      ## ## ## ## ## ##               ## ## ## ## ## ##
+      ## ## ## ## ## ##               ## .  .  .  .  ##
+      ## ## ## ## ## ##      --&gt;      ## .  .  .  .  ##
+      ## ## ## ## ## ##               ## .  .  .  .  ##
+      ## ## ## ## ## ##               ## ## ## ## ## ##
+   (x, z) to (x+15, z+15)         (x+1, z+1) to (x+14, z+14)
 </code></pre>
-<div class="qa"><p><strong>You run only this. What builds?</strong></p>
-<div class="write-space short"></div></div>
-<blockquote><p>💡 Writing <code>def</code> does <strong>not</strong> build anything. It only <strong>teaches</strong> the job. It builds when you <strong>call</strong> the name.</p></blockquote>
-
-<pre><code class="language-python">post(2, 2)
-post(4, 4)
-</code></pre>
-<div class="qa"><p><strong>Now what builds, and where? How many posts?</strong></p>
-<div class="write-space short"></div></div>
-
-<pre><code class="language-python">for i in range(0, 6):
-    post(i, 0)
-</code></pre>
-<div class="qa"><p><strong>How many posts, and in a line or a pile? Why?</strong></p>
-<div class="write-space short"></div></div>
-
-<h2>3 · Fix the Bug 🐛</h2>
-<p>A student wrote this, ran it, and said: <em>"No tree appeared!"</em></p>
-<pre><code class="language-python">def tree(x):
-    blocks.place(OAK_LOG, pos(x, 0, 4))
-    blocks.place(OAK_LOG, pos(x, 1, 4))
-    blocks.place(OAK_LEAVES, pos(x, 2, 4))
-</code></pre>
-<div class="qa"><p><strong>Why did nothing appear? Write the one line that makes a tree at <code>x = 3</code>.</strong></p>
+<div class="qa"><p><strong>What is left after both fills? How thick is the fence wall, and why is fill 2 moved in by exactly 1?</strong></p>
 <div class="write-space"></div></div>
 
-<h2>4 · Build the Petting Zoo 🐑</h2>
-<p>Here is the whole build. Most is written for you. Fill the <strong>blanks</strong> ( <code>____</code> ), then type it and run it.</p>
+<h2>3 · Predict — Everything Comes From x and z 🔮</h2>
+<p>Every block is placed <strong>relative</strong> to <code>x</code> and <code>z</code> (like <code>x+3</code>, <code>z+11</code>). Right now the boss is called with <code>petting_zoo(5, 5)</code>.</p>
 
-<h4>Part A — one fence post, taught once</h4>
-<pre><code class="language-python">def post(x, z):
-    blocks.place(OAK_FENCE, pos(x, 0, z))
-</code></pre>
+<div class="qa"><p><strong>a)</strong> The trees are at <code>x+3</code>. With <code>petting_zoo(5, 5)</code>, what is the real <code>x</code> value of the trees?</p>
+<div class="write-space short"></div></div>
 
-<h4>Part B — the whole fence (calls <code>post</code> four times each loop)</h4>
-<pre><code class="language-python">def build_fence():
-    for i in range(0, 6):
-        post(i, 0)     # front wall
-        post(i, 5)     # back wall
-        post(0, i)     # left wall
-        post(____, i)  # right wall  &lt;-- fill the blank
-</code></pre>
-<blockquote><p>💡 One loop, four posts each time = the whole square. You wrote <code>post</code> <strong>once</strong>; it runs <strong>24</strong> times.</p></blockquote>
-
-<h4>Part C — one tree, then a row of trees</h4>
-<pre><code class="language-python">def tree(x):
-    blocks.place(OAK_LOG, pos(x, 0, 4))
-    blocks.place(OAK_LOG, pos(x, 1, 4))
-    blocks.place(OAK_LEAVES, pos(x, 2, 4))
-
-def plant_trees():
-    for x in range(1, 5):
-        ____(x)        # &lt;-- call your tree helper
-</code></pre>
-
-<h4>Part D — one animal, then a flock</h4>
-<pre><code class="language-python">def animal(x):
-    mobs.spawn(CHICKEN, pos(x, 1, 2))
-
-def add_animals():
-    for x in range(1, 5):
-        animal(x)
-</code></pre>
-
-<h4>Part E — the whole zoo, in three lines</h4>
-<pre><code class="language-python">build_fence()
-plant_trees()
-____()             # &lt;-- add the animals
-</code></pre>
-<blockquote><p>💡 Read Part E top to bottom — it reads like a <strong>sentence</strong>. Three helper names = a whole petting zoo. <strong>That</strong> is the power of helper functions.</p></blockquote>
-
-<div class="qa"><p><strong>Now change one number to make it yours.</strong> Swap <code>CHICKEN</code> for another animal, or change <code>range(1, 5)</code> to add more trees. Write what you changed and what happened:</p>
+<div class="qa"><p><strong>b)</strong> You change the last line to <code>petting_zoo(30, 5)</code>. What moves — the fence, the trees, the animals, or all of them? <strong>Why?</strong></p>
 <div class="write-space"></div></div>
+<blockquote><p>💡 This is the whole point of parameters: the boss hands <code>x, z</code> down to <strong>every</strong> helper, so the <strong>whole zoo</strong> moves together with one number.</p></blockquote>
 
-<h2>5 · Show Your Work 🎥</h2>
+<h2>4 · Spot the Bug 🐛</h2>
+<p>Look closely at <code>animals</code>. It loops 7 times, but all 7 chickens land in the <strong>same spot</strong>.</p>
+<pre><code class="language-python">def animals(x, z):
+    for i in range(7):
+        mobs.spawn(CHICKEN, pos(x+6, 0, z+3))
+</code></pre>
+<div class="qa"><p><strong>a) Why do all 7 chickens spawn on top of each other?</strong> (Hint: look at where <code>i</code> is used… or not used.)</p>
+<div class="write-space short"></div></div>
+<div class="qa"><p><strong>b) Rewrite the <code>mobs.spawn</code> line so each chicken is 2 blocks further along than the last.</strong> Use <code>i</code> in the position.</p>
+<div class="write-space short"></div></div>
+
+<h2>5 · Extend the Zoo 💧</h2>
+<p>Add <strong>one new helper</strong> that digs a little pond, then let the boss call it. Fill the blanks.</p>
+<pre><code class="language-python">def pond(x, z):
+    blocks.fill(WATER, pos(x+8, 0, z+9), pos(x+11, 0, z+12), FillOperation.REPLACE)
+
+def petting_zoo(x, z):
+    post(x, z)
+    tree(x, z)
+    animals(x, z)
+    ____(x, z)          # &lt;-- call your new pond helper
+</code></pre>
+<blockquote><p>💡 See how easy it grows? One new helper + one new line in the boss. The boss stays short and readable no matter how big the zoo gets.</p></blockquote>
+<div class="qa"><p><strong>In your homework world: add the pond, then change one more thing of your own</strong> (a different animal, more trees, a bigger fence). Write what you added and what happened:</p>
+<div class="write-space tall"></div></div>
+
+<h2>6 · Show Your Work 🎥</h2>
 <p>Record <strong>one video</strong>, one take, on your phone. Show in order:</p>
-<p><strong>1 · Your code.</strong> Scroll through it. Point at your four helper names.</p>
-<p><strong>2 · Your zoo.</strong> Point the camera. Name the fence, the trees, the animals.</p>
+<p><strong>1 · Your code.</strong> Scroll through it. Point at the boss and the four helpers.</p>
+<p><strong>2 · Your zoo.</strong> Point the camera. Name the fence, the trees, the animals, your pond.</p>
 <p>Then say these out loud, filling the blanks:</p>
 <blockquote>
 <p>Today I built ______.</p>
+<p>The boss function is ______, and it calls ______, ______, and ______.</p>
 <p>A helper function is ______.</p>
-<p>My favourite helper was ______ because ______.</p>
-<p>The trickiest part was ______.</p>
+<p>My favourite part was ______ because ______.</p>
 </blockquote>
 <hr />
 <h3>Submit ✅</h3>
