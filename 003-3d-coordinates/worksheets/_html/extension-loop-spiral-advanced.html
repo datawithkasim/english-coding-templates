@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>🌀 M003 Extension — The Loop Spiral (Advanced)</title>
+<style>
+@page { size: A4; margin: 18mm 16mm 22mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-family: "Inter", "Segoe UI", system-ui, sans-serif; color: #1a1a2e; }
+body { font-size: 15px; line-height: 1.55; }
+
+.cover { border-bottom: 3px solid #ff7849; padding-bottom: 14px; margin-bottom: 20px; }
+.brand { font-size: 14px; font-weight: 800; color: #ff7849; letter-spacing: .06em; }
+h1 { font-size: 28px; color: #6b4ee6; margin: 8px 0 6px; line-height: 1.25; }
+h2 { font-size: 19px; color: #6b4ee6; margin: 22px 0 12px; padding-top: 10px; border-top: 1px solid #eee; page-break-before: always; }
+section.first h2, h2:first-of-type { border-top: none; padding-top: 0; page-break-before: avoid; }
+h3, h4 { font-size: 15px; margin: 14px 0 8px; color: #1a1a2e; }
+p { margin: 8px 0; }
+strong { color: #1a1a2e; }
+em { color: #555; }
+
+ul, ol { margin: 8px 0 8px 24px; }
+li { margin: 3px 0; }
+
+/* Grids (e.g. pixel-art coordinate grids) render as light graph paper. */
+table { border-collapse: collapse; margin: 12px 0; }
+th, td { border: 1px solid #ddd; padding: 4px 9px; text-align: center; font-size: 14px; }
+th { background: #faf7ff; color: #6b4ee6; font-weight: 700; }
+
+pre {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 13.5px;
+  background: #1e1e2e;
+  color: #b9f6ca;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 10px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  page-break-inside: avoid;
+  line-height: 1.5;
+}
+pre code { background: transparent; padding: 0; color: inherit; }
+code {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  background: #fff1e8;
+  color: #ff7849;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+blockquote {
+  margin: 10px 0;
+  padding: 10px 16px;
+  background: #fff6ef;
+  border-left: 3px solid #ff7849;
+  border-radius: 0 6px 6px 0;
+  color: #6a3a1c;
+}
+
+.write-space {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #ffffff 0,
+    #ffffff 27px,
+    #d4d4d4 27px,
+    #d4d4d4 28px
+  );
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  min-height: 114px;
+  margin: 10px 0 20px;
+  page-break-inside: avoid;
+}
+.write-space.short { min-height: 86px; }
+.write-space.tall { min-height: 170px; }
+/* Drawing box: same frame, no ruled lines — for "draw the shape" prompts. */
+.write-space.blank { background-image: none; }
+
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
+hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
+
+.meta { color: #666; font-size: 13px; margin: 0 0 14px; }
+.answer-lines {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 14px 16px;
+  background: #fafafa;
+  white-space: pre;
+  line-height: 2.2;
+}
+
+footer {
+  position: fixed;
+  bottom: 10mm; left: 16mm; right: 16mm;
+  text-align: center;
+  font-size: 10px;
+  color: #aaa;
+}
+footer b { color: #ff7849; }
+</style>
+</head>
+<body>
+<div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
+<h1>🌀 M003 Extension — The Loop Spiral (Advanced)</h1>
+<p><strong>Topic:</strong> One loop that <strong>turns</strong> (x, y, z) · <strong>Course:</strong> 3D Coordinates · <strong>Level:</strong> Extension (Advanced, after the Loop Staircase) · <strong>Time:</strong> about 45 minutes</p>
+<p>The <strong>staircase</strong> took the <strong>same</strong> step every pass, so it grew in a <strong>straight diagonal</strong>. A <strong>spiral</strong> also <strong>turns</strong> every pass — same loop, but the direction <strong>changes</strong> — so the squares wrap into a tower. <code>step % 4</code> picks the direction; <code>y = y + 1</code> climbs.</p>
+<pre><code class="language-python">x = 8
+y = 0
+z = 8
+for step in range(12):
+    fill GOLD from (x, y, z) to (x + 2, y, z + 2)
+    y = y + 1
+    if step % 4 == 0:
+        x = x + 4
+    elif step % 4 == 1:
+        z = z + 4
+    elif step % 4 == 2:
+        x = x - 4
+    else:
+        z = z - 4
+</code></pre>
+<blockquote>
+<p>🔁 <strong>Big idea:</strong> the <code>fill</code> line <strong>never changes</strong>. The tower spirals only because <strong>x, z change direction</strong> each pass and <strong>y rises</strong>. Same code, new numbers.</p>
+</blockquote>
+<div style="page-break-inside:avoid;break-inside:avoid;margin:14px 0"><table style="border-collapse:collapse;margin:0 auto"><tr><td style="border:none"></td><td style="height:34px;padding:0 8px;text-align:center;font-size:14px;border:1px solid #cfcfd6;background:#f3eefe;color:#6b4ee6;font-weight:700">3 &uarr; back<br>z &minus; 4</td><td style="border:none"></td></tr><tr><td style="height:34px;padding:0 8px;text-align:center;font-size:14px;border:1px solid #cfcfd6;background:#f3eefe;color:#6b4ee6;font-weight:700">2 &larr; left<br>x &minus; 4</td><td style="padding:5px 6px;font-size:12px;background:#faf7ff;color:#6b4ee6;font-weight:700;border:1px solid #cfcfd6;text-align:center" style="font-size:13px">step % 4</td><td style="height:34px;padding:0 8px;text-align:center;font-size:14px;border:1px solid #cfcfd6;background:#f3eefe;color:#6b4ee6;font-weight:700">0 &rarr; right<br>x + 4</td></tr><tr><td style="border:none"></td><td style="height:34px;padding:0 8px;text-align:center;font-size:14px;border:1px solid #cfcfd6;background:#f3eefe;color:#6b4ee6;font-weight:700">1 &darr; forward<br>z + 4</td><td style="border:none"></td></tr></table></div>
+
+<p><strong>Trace</strong> (or <strong>dry-run</strong>) means: be the computer. Walk the code line by line and write what each square uses <strong>before</strong> you run it.</p>
+<h2>1 · Predict 🔮</h2>
+<p><strong>Trace the loop.</strong> For each step write the <strong>turn</strong>, and the <strong>x, z</strong> the <code>fill</code> line uses. <code>step % 4</code> is filled for you. Step 0 is done. The turn changes x or z for the <strong>next</strong> row.</p>
+<div style="page-break-inside:avoid;break-inside:avoid;margin:14px 0"><table style="border-collapse:collapse;margin:0 auto"><tr><th style="padding:5px 6px;font-size:12px;background:#faf7ff;color:#6b4ee6;font-weight:700;border:1px solid #cfcfd6;text-align:center">step</th><th style="padding:5px 6px;font-size:12px;background:#faf7ff;color:#6b4ee6;font-weight:700;border:1px solid #cfcfd6;text-align:center">step % 4</th><th style="padding:5px 6px;font-size:12px;background:#faf7ff;color:#6b4ee6;font-weight:700;border:1px solid #cfcfd6;text-align:center">turn</th><th style="padding:5px 6px;font-size:12px;background:#faf7ff;color:#6b4ee6;font-weight:700;border:1px solid #cfcfd6;text-align:center">x used</th><th style="padding:5px 6px;font-size:12px;background:#faf7ff;color:#6b4ee6;font-weight:700;border:1px solid #cfcfd6;text-align:center">z used</th></tr><tr><td style="height:34px;padding:0 8px;text-align:center;font-size:14px;border:1px solid #cfcfd6;background:#f3eefe;color:#6b4ee6;font-weight:700">0</td><td style="height:34px;padding:0 8px;text-align:center;font-size:14px;border:1px solid #cfcfd6;background:#f3eefe;color:#6b4ee6;font-weight:700">0</td><td style="height:34px;padding:0 8px;text-align:center;font-size:14px;border:1px solid #cfcfd6;background:#f3eefe;color:#6b4ee6;font-weight:700">right</td><td style="height:34px;padding:0 8px;text-align:center;font-size:14px;border:1px solid #cfcfd6;background:#f3eefe;color:#6b4ee6;font-weight:700">8</td><td style="height:34px;padding:0 8px;text-align:center;font-size:14px;border:1px solid #cfcfd6;background:#f3eefe;color:#6b4ee6;font-weight:700">8</td></tr><tr><td style="height:34px;padding:0 8px;text-align:center;font-size:14px;border:1px solid #cfcfd6;background:#f3eefe;color:#6b4ee6;font-weight:700">1</td><td style="height:34px;padding:0 8px;text-align:center;font-size:14px;border:1px solid #cfcfd6;background:#f3eefe;color:#6b4ee6;font-weight:700">1</td><td style="height:34px;padding:0 8px;text-align:center;font-size:14px;border:1px solid #cfcfd6"></td><td style="height:34px;padding:0 8px;text-align:center;font-size:14px;border:1px solid #cfcfd6"></td><td style="height:34px;padding:0 8px;text-align:center;font-size:14px;border:1px solid #cfcfd6"></td></tr><tr><td style="height:34px;padding:0 8px;text-align:center;font-size:14px;border:1px solid #cfcfd6;background:#f3eefe;color:#6b4ee6;font-weight:700">2</td><td style="height:34px;padding:0 8px;text-align:center;font-size:14px;border:1px solid #cfcfd6;background:#f3eefe;color:#6b4ee6;font-weight:700">2</td><td style="height:34px;padding:0 8px;text-align:center;font-size:14px;border:1px solid #cfcfd6"></td><td style="height:34px;padding:0 8px;text-align:center;font-size:14px;border:1px solid #cfcfd6"></td><td style="height:34px;padding:0 8px;text-align:center;font-size:14px;border:1px solid #cfcfd6"></td></tr><tr><td style="height:34px;padding:0 8px;text-align:center;font-size:14px;border:1px solid #cfcfd6;background:#f3eefe;color:#6b4ee6;font-weight:700">3</td><td style="height:34px;padding:0 8px;text-align:center;font-size:14px;border:1px solid #cfcfd6;background:#f3eefe;color:#6b4ee6;font-weight:700">3</td><td style="height:34px;padding:0 8px;text-align:center;font-size:14px;border:1px solid #cfcfd6"></td><td style="height:34px;padding:0 8px;text-align:center;font-size:14px;border:1px solid #cfcfd6"></td><td style="height:34px;padding:0 8px;text-align:center;font-size:14px;border:1px solid #cfcfd6"></td></tr><tr><td style="height:34px;padding:0 8px;text-align:center;font-size:14px;border:1px solid #cfcfd6;background:#f3eefe;color:#6b4ee6;font-weight:700">4</td><td style="height:34px;padding:0 8px;text-align:center;font-size:14px;border:1px solid #cfcfd6;background:#f3eefe;color:#6b4ee6;font-weight:700">0</td><td style="height:34px;padding:0 8px;text-align:center;font-size:14px;border:1px solid #cfcfd6"></td><td style="height:34px;padding:0 8px;text-align:center;font-size:14px;border:1px solid #cfcfd6"></td><td style="height:34px;padding:0 8px;text-align:center;font-size:14px;border:1px solid #cfcfd6"></td></tr><tr><td style="height:34px;padding:0 8px;text-align:center;font-size:14px;border:1px solid #cfcfd6;background:#f3eefe;color:#6b4ee6;font-weight:700">5</td><td style="height:34px;padding:0 8px;text-align:center;font-size:14px;border:1px solid #cfcfd6;background:#f3eefe;color:#6b4ee6;font-weight:700">1</td><td style="height:34px;padding:0 8px;text-align:center;font-size:14px;border:1px solid #cfcfd6"></td><td style="height:34px;padding:0 8px;text-align:center;font-size:14px;border:1px solid #cfcfd6"></td><td style="height:34px;padding:0 8px;text-align:center;font-size:14px;border:1px solid #cfcfd6"></td></tr><tr><td style="height:34px;padding:0 8px;text-align:center;font-size:14px;border:1px solid #cfcfd6;background:#f3eefe;color:#6b4ee6;font-weight:700">6</td><td style="height:34px;padding:0 8px;text-align:center;font-size:14px;border:1px solid #cfcfd6;background:#f3eefe;color:#6b4ee6;font-weight:700">2</td><td style="height:34px;padding:0 8px;text-align:center;font-size:14px;border:1px solid #cfcfd6"></td><td style="height:34px;padding:0 8px;text-align:center;font-size:14px;border:1px solid #cfcfd6"></td><td style="height:34px;padding:0 8px;text-align:center;font-size:14px;border:1px solid #cfcfd6"></td></tr><tr><td style="height:34px;padding:0 8px;text-align:center;font-size:14px;border:1px solid #cfcfd6;background:#f3eefe;color:#6b4ee6;font-weight:700">7</td><td style="height:34px;padding:0 8px;text-align:center;font-size:14px;border:1px solid #cfcfd6;background:#f3eefe;color:#6b4ee6;font-weight:700">3</td><td style="height:34px;padding:0 8px;text-align:center;font-size:14px;border:1px solid #cfcfd6"></td><td style="height:34px;padding:0 8px;text-align:center;font-size:14px;border:1px solid #cfcfd6"></td><td style="height:34px;padding:0 8px;text-align:center;font-size:14px;border:1px solid #cfcfd6"></td></tr></table></div>
+
+<div class="qa"><p><strong>The 12 squares use only </strong>4<strong> different (x, z) spots. Why? Explain using the pattern <code>0, 1, 2, 3</code>.</strong></p>
+<div class="write-space short"></div></div>
+
+<div class="qa"><p><strong>Which line makes each square <em>climb</em>? Which two-part rule makes it <em>turn</em>? Say why for each.</strong></p>
+<div class="write-space"></div></div>
+
+<h2>2 · Spot the Bug 🐛</h2>
+<p>Each loop is broken. Trace it, fix it, and explain <strong>why</strong>.</p>
+<p><strong>Bug A — no turn.</strong> The four <code>if</code>/<code>elif</code> lines were deleted, so the direction never changes.</p>
+<pre><code class="language-python">for step in range(12):
+    fill GOLD from (x, y, z) to (x + 2, y, z + 2)
+    y = y + 1
+    x = x + 4
+</code></pre>
+<div class="qa"><p><strong>What shape do you get instead of a spiral, and why? Write the fix.</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug B — turn too small.</strong> A friend changed each turn to <code>+ 2</code> and <code>- 2</code>. It runs, but the four corners overlap into a blob.</p>
+<div class="qa"><p><strong>Each square is 3 wide. Explain why a turn of <code>+ 4</code> clears the last square but <code>+ 2</code> overlaps it.</strong></p>
+<div class="write-space"></div></div>
+
+<h2>3 · Show Your Work 📸🎥</h2>
+<p>Load the world. Stand on your home spot. Type <code>SPIRAL</code> and watch each square <strong>turn</strong> to a new corner and <strong>climb</strong>.</p>
+<div style="page-break-inside:avoid;break-inside:avoid;margin:14px 0">
+<p style="font-weight:700;margin:0 0 6px">&#128065; Top-down view (looking DOWN): x &rarr; across, z &darr; deeper</p>
+<table style="border-collapse:collapse;margin:4px 0">
+<tr><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:30px"></th><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:30px">8</th><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:30px">9</th><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:30px">10</th><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:30px">11</th><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:30px">12</th><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:30px">13</th><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:30px">14</th></tr>
+<tr><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:30px">8</th><td style="width:30px;height:30px;padding:0;background:#f2c14e;border:1px solid #0000002a"></td><td style="width:30px;height:30px;padding:0;background:#f2c14e;border:1px solid #0000002a"></td><td style="width:30px;height:30px;padding:0;background:#f2c14e;border:1px solid #0000002a"></td><td style="width:30px;height:30px;padding:0;background:#ffffff;border:1px solid #0000002a"></td><td style="width:30px;height:30px;padding:0;background:#f2c14e;border:1px solid #0000002a"></td><td style="width:30px;height:30px;padding:0;background:#f2c14e;border:1px solid #0000002a"></td><td style="width:30px;height:30px;padding:0;background:#f2c14e;border:1px solid #0000002a"></td></tr>
+<tr><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:30px">9</th><td style="width:30px;height:30px;padding:0;background:#f2c14e;border:1px solid #0000002a"></td><td style="width:30px;height:30px;padding:0;background:#f2c14e;border:1px solid #0000002a"></td><td style="width:30px;height:30px;padding:0;background:#f2c14e;border:1px solid #0000002a"></td><td style="width:30px;height:30px;padding:0;background:#ffffff;border:1px solid #0000002a"></td><td style="width:30px;height:30px;padding:0;background:#f2c14e;border:1px solid #0000002a"></td><td style="width:30px;height:30px;padding:0;background:#f2c14e;border:1px solid #0000002a"></td><td style="width:30px;height:30px;padding:0;background:#f2c14e;border:1px solid #0000002a"></td></tr>
+<tr><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:30px">10</th><td style="width:30px;height:30px;padding:0;background:#f2c14e;border:1px solid #0000002a"></td><td style="width:30px;height:30px;padding:0;background:#f2c14e;border:1px solid #0000002a"></td><td style="width:30px;height:30px;padding:0;background:#f2c14e;border:1px solid #0000002a"></td><td style="width:30px;height:30px;padding:0;background:#ffffff;border:1px solid #0000002a"></td><td style="width:30px;height:30px;padding:0;background:#f2c14e;border:1px solid #0000002a"></td><td style="width:30px;height:30px;padding:0;background:#f2c14e;border:1px solid #0000002a"></td><td style="width:30px;height:30px;padding:0;background:#f2c14e;border:1px solid #0000002a"></td></tr>
+<tr><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:30px">11</th><td style="width:30px;height:30px;padding:0;background:#ffffff;border:1px solid #0000002a"></td><td style="width:30px;height:30px;padding:0;background:#ffffff;border:1px solid #0000002a"></td><td style="width:30px;height:30px;padding:0;background:#ffffff;border:1px solid #0000002a"></td><td style="width:30px;height:30px;padding:0;background:#ffffff;border:1px solid #0000002a"></td><td style="width:30px;height:30px;padding:0;background:#ffffff;border:1px solid #0000002a"></td><td style="width:30px;height:30px;padding:0;background:#ffffff;border:1px solid #0000002a"></td><td style="width:30px;height:30px;padding:0;background:#ffffff;border:1px solid #0000002a"></td></tr>
+<tr><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:30px">12</th><td style="width:30px;height:30px;padding:0;background:#f2c14e;border:1px solid #0000002a"></td><td style="width:30px;height:30px;padding:0;background:#f2c14e;border:1px solid #0000002a"></td><td style="width:30px;height:30px;padding:0;background:#f2c14e;border:1px solid #0000002a"></td><td style="width:30px;height:30px;padding:0;background:#ffffff;border:1px solid #0000002a"></td><td style="width:30px;height:30px;padding:0;background:#f2c14e;border:1px solid #0000002a"></td><td style="width:30px;height:30px;padding:0;background:#f2c14e;border:1px solid #0000002a"></td><td style="width:30px;height:30px;padding:0;background:#f2c14e;border:1px solid #0000002a"></td></tr>
+<tr><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:30px">13</th><td style="width:30px;height:30px;padding:0;background:#f2c14e;border:1px solid #0000002a"></td><td style="width:30px;height:30px;padding:0;background:#f2c14e;border:1px solid #0000002a"></td><td style="width:30px;height:30px;padding:0;background:#f2c14e;border:1px solid #0000002a"></td><td style="width:30px;height:30px;padding:0;background:#ffffff;border:1px solid #0000002a"></td><td style="width:30px;height:30px;padding:0;background:#f2c14e;border:1px solid #0000002a"></td><td style="width:30px;height:30px;padding:0;background:#f2c14e;border:1px solid #0000002a"></td><td style="width:30px;height:30px;padding:0;background:#f2c14e;border:1px solid #0000002a"></td></tr>
+<tr><th style="font-size:10px;color:#999;font-weight:600;text-align:center;padding:0;height:16px;width:30px">14</th><td style="width:30px;height:30px;padding:0;background:#f2c14e;border:1px solid #0000002a"></td><td style="width:30px;height:30px;padding:0;background:#f2c14e;border:1px solid #0000002a"></td><td style="width:30px;height:30px;padding:0;background:#f2c14e;border:1px solid #0000002a"></td><td style="width:30px;height:30px;padding:0;background:#ffffff;border:1px solid #0000002a"></td><td style="width:30px;height:30px;padding:0;background:#f2c14e;border:1px solid #0000002a"></td><td style="width:30px;height:30px;padding:0;background:#f2c14e;border:1px solid #0000002a"></td><td style="width:30px;height:30px;padding:0;background:#f2c14e;border:1px solid #0000002a"></td></tr>
+</table></div>
+
+<p><strong>Looking down, the squares sit on 4 corners — the loop turns right, forward, left, back, then repeats, climbing each time.</strong></p>
+<div class="qa"><p><strong>Modify challenge.</strong> Change <strong>one</strong> thing and <strong>predict before you run</strong> — e.g. <code>range(12)</code> → <code>range(20)</code> (taller), or each turn <code>+ 4</code> → <code>+ 6</code> (wider). Write what will change, then build it.</p>
+<div class="write-space short"></div></div>
+
+<p><strong>Level up — the ROUND spiral.</strong> The square spiral turns at <strong>4 sharp corners</strong>. To make a <strong>smooth round</strong> spiral, move around a <strong>circle</strong> with <code>cos</code> and <code>sin</code> instead:</p>
+<pre><code class="language-python">radius = 6
+for step in range(40):
+    angle = step * 0.5
+    x = round(radius * cos(angle))
+    z = round(radius * sin(angle))
+    fill GOLD from (x, step, z) to (x + 2, step, z + 2)
+</code></pre>
+<blockquote>
+<p>🧭 <code>cos</code> and <code>sin</code> trace a <strong>circle</strong>; <code>step</code> as the height makes the circle <strong>climb</strong> — a smooth round spiral (a helix). <code>angle</code> grows every pass, so the direction keeps turning.</p>
+</blockquote>
+<div class="qa"><p><strong>Predict: will the round spiral have corners or a smooth curve? What does a bigger <code>radius</code> change?</strong></p>
+<div class="write-space short"></div></div>
+
+<p>Record <strong>one video</strong> — one take, no stopping (a phone is fine). Show these in order:</p>
+<p><strong>1 · Your code.</strong> Scroll through it. Say what the loop does and how the turn works.</p>
+<p><strong>2 · Your build.</strong> Point the camera at the spiral. Show it climbing and turning.</p>
+<p>Fill the blanks:</p>
+<blockquote>
+<p>Today I built ______.</p>
+<p>I built it using this code: ______.</p>
+<p>In this code I used ______.</p>
+<p>The hardest part was ______.</p>
+<p>That part was hard because ______.</p>
+<p>The most fun part was ______.</p>
+<p>Something new I learned was ______.</p>
+</blockquote>
+<div class="qa"><p><strong>Write your lines here, then say them in your video.</strong></p>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your <strong>one</strong> video to teacher on KakaoTalk.</p>
+</body>
+</html>
