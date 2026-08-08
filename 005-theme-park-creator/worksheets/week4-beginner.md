@@ -1,4 +1,4 @@
-# 🎢 005 Week 4 — English Worksheet (Beginner)
+# 🎢 005 · Petting Zoo — Helper Functions — English Worksheet (Beginner)
 
 **Topic:** Petting Zoo — Helper Functions · **Course:** Theme Park Creator · **Level:** Beginner · **Time:** about 35 minutes
 
@@ -6,7 +6,7 @@ Your park has stalls and amenities. Now it needs a **petting zoo** — a fence a
 
 Every cage is the same job. So you write that job **once**, then **call** it for every animal.
 
-These are the tools you use this week:
+These are the tools you use this lesson:
 
 ```python
 corner1 = pos(1, 0, 1)

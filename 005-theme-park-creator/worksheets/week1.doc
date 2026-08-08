@@ -1,6 +1,6 @@
 <html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
 <head><meta charset='utf-8'>
-<title>🎢 005 Week 1 — English Worksheet</title>
+<title>🎢 005 · One Function, Many Coasters — Parameters — English Worksheet</title>
 <!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
 <style>
 @page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
@@ -29,10 +29,10 @@ p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
 </style></head>
 <body><div class=WordSection1>
 <div class="brand">📚 ENGLISH CODING · 영어코딩</div>
-<h1>🎢 005 Week 1 — English Worksheet</h1>
+<h1>🎢 005 · One Function, Many Coasters — Parameters — English Worksheet</h1>
 <p><strong>Topic:</strong> One Function, Many Coasters — Parameters · <strong>Course:</strong> Theme Park Creator · <strong>Time:</strong> about 45 minutes</p>
-<p>This week you build a roller coaster with a <strong>function</strong>. You give it <strong>parameters</strong> — numbers it uses inside — and change them to build a long coaster, a tall spiral, or a wide one.</p>
-<p>These are the blocks you use this week:</p>
+<p>This lesson you build a roller coaster with a <strong>function</strong>. You give it <strong>parameters</strong> — numbers it uses inside — and change them to build a long coaster, a tall spiral, or a wide one.</p>
+<p>These are the blocks you use this lesson:</p>
 <pre><code class="language-python">rollerCoasterBuilder.add_straight_line(10)
 rollerCoasterBuilder.add_ramp(RcbVerticalDirection.UP, 10)
 rollerCoasterBuilder.add_spiral(RcbVerticalDirection.UP, TurnDirection.LEFT, 10, 3)

@@ -1,6 +1,6 @@
 <html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
 <head><meta charset='utf-8'>
-<title>🎢 005 Week 3 — English Worksheet (Advanced)</title>
+<title>🎢 005 · Amenities — Functions Calling Functions — English Worksheet (Advanced)</title>
 <!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
 <style>
 @page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
@@ -29,11 +29,11 @@ p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
 </style></head>
 <body><div class=WordSection1>
 <div class="brand">📚 ENGLISH CODING · 영어코딩</div>
-<h1>🎢 005 Week 3 — English Worksheet (Advanced)</h1>
+<h1>🎢 005 · Amenities — Functions Calling Functions — English Worksheet (Advanced)</h1>
 <p><strong>Topic:</strong> Amenities — Functions Calling Functions · <strong>Course:</strong> Theme Park Creator · <strong>Time:</strong> about 50 minutes</p>
 <p>Your park has a market row. Now it needs <strong>amenities</strong> — a <strong>bathroom</strong>, a <strong>janitor room</strong>.</p>
 <p>Both are rooms, so <strong>one</strong> <code>build_room</code> helper builds both. Each amenity function calls the helper, then adds its own fitting. Then one more function calls <strong>both amenities</strong> — a chain three levels deep.</p>
-<p>These are the blocks you use this week:</p>
+<p>These are the blocks you use this lesson:</p>
 <pre><code class="language-python">blocks.fill(QUARTZ_BLOCK, pos(x1, 0, z1), pos(x2, 3, z2), FillOperation.HOLLOW)
 blocks.fill(AIR, pos(x1 + 1, 1, z1), pos(x1 + 1, 2, z1), FillOperation.REPLACE)
 blocks.place(CAULDRON, pos(x1 + 1, 1, z1 + 1))

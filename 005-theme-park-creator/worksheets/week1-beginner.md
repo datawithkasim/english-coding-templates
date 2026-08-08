@@ -1,10 +1,10 @@
-# 🎢 005 Week 1 — English Worksheet (Beginner)
+# 🎢 005 · One Function, Many Coasters — Parameters — English Worksheet (Beginner)
 
 **Topic:** One Function, Many Coasters — Parameters · **Course:** Theme Park Creator · **Level:** Beginner · **Time:** about 30 minutes
 
-This week you build a roller coaster with a **function**. You give it **parameters** — numbers it uses inside — and change them to build a long or short coaster.
+This lesson you build a roller coaster with a **function**. You give it **parameters** — numbers it uses inside — and change them to build a long or short coaster.
 
-These are the blocks you use this week:
+These are the blocks you use this lesson:
 
 ```python
 rollerCoasterBuilder.add_straight_line(10)

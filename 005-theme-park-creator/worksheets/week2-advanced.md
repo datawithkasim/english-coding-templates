@@ -1,12 +1,12 @@
-# 🎢 005 Week 2 — English Worksheet (Advanced)
+# 🎢 005 · One Function, Many Stalls — Arguments & Parameters — English Worksheet (Advanced)
 
 **Topic:** One Function, Many Stalls — Arguments & Parameters · **Course:** Theme Park Creator · **Time:** about 50 minutes
 
-This week you build a market **stall** with a **function**. A stall has more parts than a booth — a stand, posts and a roof.
+This lesson you build a market **stall** with a **function**. A stall has more parts than a booth — a stand, posts and a roof.
 
 So your function needs **more parameters**: some for **materials**, some for the **corners** that set where it goes and how big it is. Change the **arguments** you **call** it with, and one function builds a whole market row.
 
-These are the blocks you use this week:
+These are the blocks you use this lesson:
 
 ```python
 blocks.fill(BRICKS, pos(x1, 0, z1), pos(x2, 0, z2), FillOperation.HOLLOW)

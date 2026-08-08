@@ -1,4 +1,4 @@
-# 🎢 005 Week 3 — English Worksheet (Advanced)
+# 🎢 005 · Amenities — Functions Calling Functions — English Worksheet (Advanced)
 
 **Topic:** Amenities — Functions Calling Functions · **Course:** Theme Park Creator · **Time:** about 50 minutes
 
@@ -6,7 +6,7 @@ Your park has a market row. Now it needs **amenities** — a **bathroom**, a **j
 
 Both are rooms, so **one** `build_room` helper builds both. Each amenity function calls the helper, then adds its own fitting. Then one more function calls **both amenities** — a chain three levels deep.
 
-These are the blocks you use this week:
+These are the blocks you use this lesson:
 
 ```python
 blocks.fill(QUARTZ_BLOCK, pos(x1, 0, z1), pos(x2, 3, z2), FillOperation.HOLLOW)

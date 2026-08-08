@@ -1,4 +1,4 @@
-# 🎢 005 Week 4 — Helper Functions 2 (Extension · Intermediate)
+# 🎢 005 · Petting Zoo — Helper Functions — Helper Functions 2 (Extension · Intermediate)
 
 **Topic:** Petting Zoo — Helper Functions · **Course:** Theme Park Creator · **Level:** Intermediate · **Time:** about 50 minutes
 

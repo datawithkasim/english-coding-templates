@@ -1,4 +1,4 @@
-# 🎢 005 Week 4 — Helper Functions 2 (Extension · Advanced)
+# 🎢 005 · Petting Zoo — Helper Functions — Helper Functions 2 (Extension · Advanced)
 
 **Topic:** Petting Zoo — Helper Functions · **Course:** Theme Park Creator · **Level:** Advanced · **Time:** about 55 minutes
 
@@ -150,7 +150,7 @@ Then say these out loud, filling the blanks:
 >
 > I built a whole row of zoos by ______.
 >
-> The hardest idea this week was ______ because ______.
+> The hardest idea this lesson was ______ because ______.
 
 ---
 

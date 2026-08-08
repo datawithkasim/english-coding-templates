@@ -1,6 +1,6 @@
 <html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
 <head><meta charset='utf-8'>
-<title>🎢 005 Week 4 — English Worksheet (Advanced)</title>
+<title>🎢 005 · Petting Zoo — Helper Functions — English Worksheet (Advanced)</title>
 <!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
 <style>
 @page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
@@ -29,11 +29,11 @@ p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
 </style></head>
 <body><div class=WordSection1>
 <div class="brand">📚 ENGLISH CODING · 영어코딩</div>
-<h1>🎢 005 Week 4 — English Worksheet (Advanced)</h1>
+<h1>🎢 005 · Petting Zoo — Helper Functions — English Worksheet (Advanced)</h1>
 <p><strong>Topic:</strong> Petting Zoo — Helper Functions · <strong>Course:</strong> Theme Park Creator · <strong>Level:</strong> Advanced · <strong>Time:</strong> about 50 minutes</p>
 <p>Your park has stalls and amenities. Now it needs a <strong>petting zoo</strong> — a fence around it, six cages inside, an animal in every cage, and somewhere to eat and drink.</p>
 <p>Every cage is the same job. So you write that job <strong>once</strong>, then <strong>call</strong> it for every animal.</p>
-<p>These are the tools you use this week:</p>
+<p>These are the tools you use this lesson:</p>
 <pre><code class="language-python">corner1 = pos(1, 0, 1)
 corner2 = pos(10, 0, 10)
 blocks.fill(OAK_FENCE, corner1, corner2, FillOperation.REPLACE)

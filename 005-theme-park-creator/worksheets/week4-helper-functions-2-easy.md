@@ -1,8 +1,8 @@
-# 🎢 005 Week 4 — Helper Functions 2 (Extension · Easy)
+# 🎢 005 · Petting Zoo — Helper Functions — Helper Functions 2 (Extension · Easy)
 
 **Topic:** Petting Zoo — Helper Functions · **Course:** Theme Park Creator · **Level:** Easy · **Time:** about 45 minutes
 
-This is the code you are learning this week. It builds a whole **petting zoo**: a fence, some trees, and animals inside.
+This is the code you are learning this lesson. It builds a whole **petting zoo**: a fence, some trees, and animals inside.
 
 ```python
 def post(x, z):

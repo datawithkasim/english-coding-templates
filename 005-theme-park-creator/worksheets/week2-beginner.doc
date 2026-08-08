@@ -1,6 +1,6 @@
 <html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
 <head><meta charset='utf-8'>
-<title>🎢 005 Week 2 — English Worksheet (Beginner)</title>
+<title>🎢 005 · One Function, Many Booths — Arguments & Parameters — English Worksheet (Beginner)</title>
 <!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
 <style>
 @page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
@@ -29,10 +29,10 @@ p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
 </style></head>
 <body><div class=WordSection1>
 <div class="brand">📚 ENGLISH CODING · 영어코딩</div>
-<h1>🎢 005 Week 2 — English Worksheet (Beginner)</h1>
+<h1>🎢 005 · One Function, Many Booths — Arguments &amp; Parameters — English Worksheet (Beginner)</h1>
 <p><strong>Topic:</strong> One Function, Many Booths — Arguments &amp; Parameters · <strong>Course:</strong> Theme Park Creator · <strong>Level:</strong> Beginner · <strong>Time:</strong> about 30 minutes</p>
-<p>This week you build a park <strong>booth</strong> with a <strong>function</strong>. You give it <strong>parameters</strong> — words and numbers — and change them to build wood or stone booths, big or small.</p>
-<p>These are the blocks you use this week:</p>
+<p>This lesson you build a park <strong>booth</strong> with a <strong>function</strong>. You give it <strong>parameters</strong> — words and numbers — and change them to build wood or stone booths, big or small.</p>
+<p>These are the blocks you use this lesson:</p>
 <pre><code class="language-python">blocks.fill(OAK_PLANKS, pos(0, 0, 0), pos(4, 0, 4), FillOperation.HOLLOW)
 </code></pre>
 <blockquote>

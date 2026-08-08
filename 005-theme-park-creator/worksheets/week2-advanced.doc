@@ -1,6 +1,6 @@
 <html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
 <head><meta charset='utf-8'>
-<title>🎢 005 Week 2 — English Worksheet (Advanced)</title>
+<title>🎢 005 · One Function, Many Stalls — Arguments & Parameters — English Worksheet (Advanced)</title>
 <!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
 <style>
 @page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
@@ -29,11 +29,11 @@ p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
 </style></head>
 <body><div class=WordSection1>
 <div class="brand">📚 ENGLISH CODING · 영어코딩</div>
-<h1>🎢 005 Week 2 — English Worksheet (Advanced)</h1>
+<h1>🎢 005 · One Function, Many Stalls — Arguments &amp; Parameters — English Worksheet (Advanced)</h1>
 <p><strong>Topic:</strong> One Function, Many Stalls — Arguments &amp; Parameters · <strong>Course:</strong> Theme Park Creator · <strong>Time:</strong> about 50 minutes</p>
-<p>This week you build a market <strong>stall</strong> with a <strong>function</strong>. A stall has more parts than a booth — a stand, posts and a roof.</p>
+<p>This lesson you build a market <strong>stall</strong> with a <strong>function</strong>. A stall has more parts than a booth — a stand, posts and a roof.</p>
 <p>So your function needs <strong>more parameters</strong>: some for <strong>materials</strong>, some for the <strong>corners</strong> that set where it goes and how big it is. Change the <strong>arguments</strong> you <strong>call</strong> it with, and one function builds a whole market row.</p>
-<p>These are the blocks you use this week:</p>
+<p>These are the blocks you use this lesson:</p>
 <pre><code class="language-python">blocks.fill(BRICKS, pos(x1, 0, z1), pos(x2, 0, z2), FillOperation.HOLLOW)
 blocks.fill(AIR, pos(x1, 0, z1), pos(x2, 0, z2), FillOperation.REPLACE)
 blocks.fill(OAK_FENCE, pos(x1, 1, z1), pos(x1, 3, z1), FillOperation.REPLACE)

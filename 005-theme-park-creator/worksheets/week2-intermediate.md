@@ -1,12 +1,12 @@
-# 🎢 005 Week 2 — English Worksheet (Intermediate)
+# 🎢 005 · One Function, Many Booths — Arguments & Parameters — English Worksheet (Intermediate)
 
 **Topic:** One Function, Many Booths — Arguments & Parameters · **Course:** Theme Park Creator · **Time:** about 45 minutes
 
-This week you build a park **booth** with a **function**. You give it **parameters** — the materials and size it uses.
+This lesson you build a park **booth** with a **function**. You give it **parameters** — the materials and size it uses.
 
 Change the **arguments** you **call** it with, and the **same** function builds a wood booth, a stone booth, a big one or a small one.
 
-These are the blocks you use this week:
+These are the blocks you use this lesson:
 
 ```python
 blocks.fill(OAK_PLANKS, pos(0, 0, 0), pos(4, 0, 4), FillOperation.HOLLOW)

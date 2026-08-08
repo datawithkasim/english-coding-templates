@@ -62,10 +62,10 @@
 
 ## 📂 자료
 
-- 🗂️ **전체 파일 저장소**: [github.com/datawithkasim/english-coding-templates](https://github.com/datawithkasim/english-coding-templates/tree/master/000-builder-basics) — 월드·워크시트·코드 템플릿 전부 여기 있습니다
+- 🗂️ **전체 파일 저장소**: [GitHub 코스 폴더](https://github.com/datawithkasim/english-coding-templates/tree/master/000-builder-basics) — 월드·워크시트·코드 전부 여기 있습니다
 - 📦 [`worlds/`](./worlds) — 레슨별 월드 파일
-- 📝 [`worksheets/`](./worksheets) — 레슨별 영어 워크시트 (초급·중급·심화 PDF)
-- ✏️ 추가 연습 워크시트(경사 지붕, 살아있는 마을 등)도 `worksheets/` 폴더에 있습니다. 더 하고 싶은 아이에게 선생님이 골라서 보내 드립니다.
+- 📝 [`worksheets/`](./worksheets) — 레슨별 영어 워크시트 (초급 · 중급 · 심화 PDF)
+- ✏️ 추가 연습 워크시트도 `worksheets/` 폴더에 있습니다. 더 하고 싶은 아이에게 선생님이 골라서 보내 드립니다.
 
 각 자료는 **노션 숙제 페이지** 에서도 바로 받으실 수 있습니다. (페이지 링크는 카카오톡으로 안내드립니다.)
 
@@ -73,4 +73,4 @@
 
 ## 🎯 다음 코스
 
-이 코스를 마치면 [001 — 피라미드 문제](../001-pyramid-problems) 로 이어집니다.
+이 코스를 마치면 [002 — 미로 챌린지](../002-maze-madness) 로 이어집니다.
