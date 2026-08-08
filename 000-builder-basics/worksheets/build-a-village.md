@@ -1,6 +1,6 @@
 # 🏘️ M000 · Build a Village — English Worksheet
 
-**Topic:** Build a Village (Final Project) · **Course:** Builder Basics · **Time:** about 60 minutes
+**Topic:** Build a Village (Mid-Course Project) · **Course:** Builder Basics · **Time:** about 60 minutes
 
 ---
 
