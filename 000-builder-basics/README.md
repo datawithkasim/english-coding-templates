@@ -31,8 +31,15 @@
 | 10 | **마을 만들기** (마무리 작품) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/000-builder-basics/worlds/week6-7-8.mcworld) | *준비 중* | *준비 중* | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/000-builder-basics/worksheets/week8-beginner.pdf) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/000-builder-basics/worksheets/week8-intermediate.pdf) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/000-builder-basics/worksheets/week8.pdf) |
 | 🏘️ 보너스 | **마을 완성하기** (확장 활동) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/000-builder-basics/worlds/extension-complete-your-village.mcworld) | *준비 중* | *준비 중* | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/000-builder-basics/worksheets/extension-complete-your-village-beginner.pdf) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/000-builder-basics/worksheets/extension-complete-your-village-intermediate.pdf) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/000-builder-basics/worksheets/extension-complete-your-village.pdf) |
 | 🏰 보너스 | **살아있는 마을** (확장 활동 · 심화 마을) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/000-builder-basics/worlds/extension-living-village.mcworld) | *준비 중* | *준비 중* | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/000-builder-basics/worksheets/extension-living-village-beginner.pdf) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/000-builder-basics/worksheets/extension-living-village-intermediate.pdf) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/000-builder-basics/worksheets/extension-living-village-advanced.pdf) |
+| 11 | 사각형 바닥 (반복문 속 반복문 2) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/000-builder-basics/worlds/square-floor.mcworld) | *준비 중* | *준비 중* | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/000-builder-basics/worksheets/square-floor-beginner.pdf) | *준비 중* | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/000-builder-basics/worksheets/square-floor.pdf) |
+| 12 | 첫 피라미드 (줄어드는 크기) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/000-builder-basics/worlds/first-pyramid.mcworld) | *준비 중* | *준비 중* | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/000-builder-basics/worksheets/first-pyramid-beginner.pdf) | *준비 중* | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/000-builder-basics/worksheets/first-pyramid.pdf) |
+| 13 | 거꾸로 피라미드 (커지는 크기) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/000-builder-basics/worlds/inverted-pyramid.mcworld) | *준비 중* | *준비 중* | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/000-builder-basics/worksheets/inverted-pyramid-beginner.pdf) | *준비 중* | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/000-builder-basics/worksheets/inverted-pyramid.pdf) |
+| 14 | 피라미드 변형 (속 빈 · 계단식 · 조건문) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/000-builder-basics/worlds/pyramid-variations.mcworld) | *준비 중* | *준비 중* | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/000-builder-basics/worksheets/pyramid-variations-beginner.pdf) | *준비 중* | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/000-builder-basics/worksheets/pyramid-variations.pdf) |
+| 15 | **다이아몬드 구조물** (최종 작품) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/000-builder-basics/worlds/diamond.mcworld) | *준비 중* | *준비 중* | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/000-builder-basics/worksheets/diamond-beginner.pdf) | *준비 중* | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/000-builder-basics/worksheets/diamond.pdf) |
 
-> 💡 월드 파일은 여러 레슨이 함께 씁니다. 레슨 3~5는 `week3.mcworld`, 6~7은 `week4-5.mcworld`, 8~10은 `week6-7-8.mcworld` 입니다. 한 번만 받으시면 됩니다.
+> 💡 월드 파일은 여러 레슨이 함께 씁니다. 레슨 3~5는 `week3.mcworld`, 6~7은 `week4-5.mcworld`, 8~10은 `week6-7-8.mcworld` 입니다. 한 번만 받으시면 됩니다. 레슨 11~15는 각 레슨마다 전용 월드가 있습니다.
+>
+> 🔺 레슨 11~15는 예전 **001 — 피라미드 문제** 코스 내용이 이 코스 안으로 들어온 것입니다. 중급 워크시트는 준비 중입니다.
 >
 > 📝 워크시트는 세 가지입니다 — **초급**은 처음 배우는 친구용, **중급**은 한 걸음 더 나아가고 싶은 친구용, **심화**는 더 깊이 연습하고 싶은 친구용입니다.
 
@@ -47,9 +54,15 @@
 | 4 | **변수** — 숫자에 이름을 붙이고, 그 이름 하나로 크기를 바꾸기 |
 | 5 | **변수 바꾸기** — 만드는 도중에 숫자가 자라거나 줄어들기 (계단) |
 | 6 | **반복문 속 반복문** — 길이와 높이를 함께 (집 벽) |
-| 7–10 | 배운 것을 합쳐서 지붕·우물·농가·마을 |
+| 7–10 | 배운 것을 합쳐서 지붕·우물·농가·마을 (마을 = 중간 작품) |
+| 11 | **사각형 바닥** — 반복문 속 반복문으로 평면 채우기 |
+| 12–13 | **반복하며 변하는 크기** — 층마다 작아지거나 커지는 피라미드 |
+| 14 | **조건문** — 테두리에만 블록을 놓아 속이 빈 피라미드 만들기 |
+| 15 | **다이아몬드** — 숫자 하나로 전체 크기를 정하는 최종 작품 |
 
 변수를 집보다 **먼저** 배우기 때문에, 집 벽을 쌓을 때 아이가 새 개념 두 개를 한꺼번에 만나지 않습니다.
+
+마을(레슨 10)까지가 "만들기" 단계이고, 레슨 11~15는 같은 코드로 크기와 모양을 바꾸는 "생각하기" 단계입니다.
 
 ---
 
