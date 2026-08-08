@@ -1,6 +1,6 @@
 # 🧊 M003 Extension 2 — English Worksheet (Advanced)
 
-**Topic:** 3D Mob Heads (x, y, z) · **Course:** 3D Coordinates · **Level:** Advanced (Extension, after Week 3) · **Time:** about 45 minutes
+**Topic:** 3D Mob Heads (x, y, z) · **Course:** 3D Coordinates · **Level:** Advanced (Extension, after Lesson 3) · **Time:** about 45 minutes
 
 Build **two mob heads** in 3D — a **creeper** and a **piglin**. Every block needs **three** numbers **(x, y, z)**: x **across**, y **up**, z **deeper** (forward).
 

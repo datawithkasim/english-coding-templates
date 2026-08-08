@@ -1,8 +1,8 @@
-# 🧊 M003 Week 1 — English Worksheet (Beginner)
+# 🧊 M003 · First Steps with Coordinates (x, y) — English Worksheet (Beginner)
 
 **Topic:** First Steps with Coordinates (x, y) · **Course:** 3D Coordinates · **Level:** Beginner · **Time:** about 30 minutes
 
-This week you draw on a flat **wall**. Every spot has a name — **two numbers (x, y)**: x is **across**, y is **up**, counting from **0**.
+This lesson you draw on a flat **wall**. Every spot has a name — **two numbers (x, y)**: x is **across**, y is **up**, counting from **0**.
 
 ---
 

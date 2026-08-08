@@ -30,8 +30,8 @@ p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
 <body><div class=WordSection1>
 <div class="brand">📚 ENGLISH CODING · 영어코딩</div>
 <h1>🧊 M003 Extension — English Worksheet (Beginner)</h1>
-<p><strong>Topic:</strong> Design Your Own 3D Build (x, y, z) · <strong>Course:</strong> 3D Coordinates · <strong>Level:</strong> Extension (Beginner, after Week 3) · <strong>Time:</strong> about 35 minutes</p>
-<p>Pixel art was flat — two numbers, one wall. This week your build is <strong>solid</strong>. Three numbers. You draw it from the <strong>front</strong> and from <strong>above</strong>, then read both drawings back into the world.</p>
+<p><strong>Topic:</strong> Design Your Own 3D Build (x, y, z) · <strong>Course:</strong> 3D Coordinates · <strong>Level:</strong> Extension (Beginner, after Lesson 3) · <strong>Time:</strong> about 35 minutes</p>
+<p>Pixel art was flat — two numbers, one wall. This lesson your build is <strong>solid</strong>. Three numbers. You draw it from the <strong>front</strong> and from <strong>above</strong>, then read both drawings back into the world.</p>
 <p><strong>Build your canvas.</strong> Run this to lay a blank <strong>15 × 15</strong> floor, then put a <strong>red block at your feet</strong> as your <strong>home spot</strong>:</p>
 <pre><code class="language-python">def on_run():
     blocks.fill(WHITE_CONCRETE,

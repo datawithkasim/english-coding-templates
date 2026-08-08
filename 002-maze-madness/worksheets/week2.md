@@ -1,4 +1,4 @@
-# 🧭 M002 Week 2 — Turning (Advanced)
+# 🧭 M002 · Turning (Advanced)
 
 **Topic:** Turn at Walls · **Course:** Maze Madness · **Level:** Advanced · **Time:** about 55 minutes
 

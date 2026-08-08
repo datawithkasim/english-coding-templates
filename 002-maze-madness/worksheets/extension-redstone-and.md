@@ -2,7 +2,7 @@
 
 **Topic:** All 5 Redstone AND Rules + Single Checks · **Course:** Maze Madness · **Level:** Extension (Advanced) · **Time:** about 60 minutes
 
-Same **Week 3 world**. Your target is the **hardest maze** your teacher shows a picture of — this time you write the **whole solver**: all five **AND** rules plus the single checks.
+Same **Lesson 3 world**. Your target is the **hardest maze** your teacher shows a picture of — this time you write the **whole solver**: all five **AND** rules plus the single checks.
 
 > **The redstone contract**
 >
@@ -162,7 +162,7 @@ agent.move(FORWARD, 1)
 
 ## 5 · Make It Your Own 🛠️
 
-Open the **Week 3** world and find the hardest maze from the picture. Run your solver, then change **one thing**, predict, and test.
+Open the **Lesson 3** world and find the hardest maze from the picture. Run your solver, then change **one thing**, predict, and test.
 
 Pick **one** (or your own):
 

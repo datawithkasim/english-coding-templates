@@ -1,4 +1,4 @@
-# 🌀 M002 Week 1 — While Loop
+# 🌀 M002 · While Loop
 
 **Topic:** Repeat Until a Wall · **Course:** Maze Madness · **Level:** Beginner · **Time:** about 25 minutes
 

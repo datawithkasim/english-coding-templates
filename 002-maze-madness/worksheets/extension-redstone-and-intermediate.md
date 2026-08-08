@@ -2,7 +2,7 @@
 
 **Topic:** Redstone AND Rules + Single Checks · **Course:** Maze Madness · **Level:** Extension (Intermediate) · **Time:** about 45 minutes
 
-Same **Week 3 world**. Find the **hardest maze** your teacher shows a picture of — tiles with **two** redstones need an **AND** (both true).
+Same **Lesson 3 world**. Find the **hardest maze** your teacher shows a picture of — tiles with **two** redstones need an **AND** (both true).
 
 > **The rules you need**
 >
@@ -111,7 +111,7 @@ agent.move(FORWARD, 1)
 
 ## 5 · Show Your Work 📸🎥
 
-Open the Week 3 world, find the hardest maze from the picture, and run your solver until the agent reaches the **diamond block** goal.
+Open the Lesson 3 world, find the hardest maze from the picture, and run your solver until the agent reaches the **diamond block** goal.
 
 Record **one video** — one take, no stopping (a phone is fine). Show these in order:
 

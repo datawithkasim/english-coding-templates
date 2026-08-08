@@ -1,6 +1,6 @@
 # 🧊 M003 Extension — English Worksheet (Advanced)
 
-**Topic:** Pixel-Art Mobs (x, y) · **Course:** 3D Coordinates · **Level:** Advanced (Extension, after Week 3) · **Time:** about 45 minutes
+**Topic:** Pixel-Art Mobs (x, y) · **Course:** 3D Coordinates · **Level:** Advanced (Extension, after Lesson 3) · **Time:** about 45 minutes
 
 A bonus picture challenge: copy **two bigger mobs** — a **pink axolotl** and a **black ender dragon head**. Every block sits at **(x, y)** — x is how far **across**, y is how far **up**.
 

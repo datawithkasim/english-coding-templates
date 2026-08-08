@@ -1,6 +1,6 @@
 # 🧊 M003 Extension 2 — English Worksheet (Beginner)
 
-**Topic:** 3D Mob Heads (x, y, z) · **Course:** 3D Coordinates · **Level:** Beginner (Extension, after Week 3) · **Time:** about 30 minutes
+**Topic:** 3D Mob Heads (x, y, z) · **Course:** 3D Coordinates · **Level:** Beginner (Extension, after Lesson 3) · **Time:** about 30 minutes
 
 Build a mob head in 3D. Every block needs **three** numbers **(x, y, z)**: x **across**, y **up**, z **deeper** (forward).
 

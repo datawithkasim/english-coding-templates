@@ -1,8 +1,8 @@
-# 🎮 M004 Week 5 — English Worksheet (Beginner)
+# 🎮 M004 · Your Function Library — Reusable Building Blocks — English Worksheet (Beginner)
 
 **Topic:** Your Function Library — Reusable Building Blocks · **Course:** Functions & Games · **Level:** Beginner · **Time:** about 30 minutes
 
-This week you collect your best functions into a **library** — reusable building blocks like `build_wall` and `build_tower`.
+This lesson you collect your best functions into a **library** — reusable building blocks like `build_wall` and `build_tower`.
 
 ---
 

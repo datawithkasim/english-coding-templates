@@ -1,4 +1,4 @@
-# 🔷 M001 Week 7 — English Worksheet (Beginner)
+# 🔷 M001 · Pyramid Variations — English Worksheet (Beginner)
 
 **Topic:** Pyramid Variations · **Course:** Pyramid Problems · **Level:** Beginner · **Time:** about 30 minutes
 

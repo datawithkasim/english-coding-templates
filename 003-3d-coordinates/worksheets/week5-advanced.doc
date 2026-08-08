@@ -1,6 +1,6 @@
 <html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
 <head><meta charset='utf-8'>
-<title>🗿 M003 Week 5 — English Worksheet (Advanced)</title>
+<title>🗿 M003 · Recreate the Statues (x, y, z) — English Worksheet (Advanced)</title>
 <!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
 <style>
 @page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
@@ -29,7 +29,7 @@ p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
 </style></head>
 <body><div class=WordSection1>
 <div class="brand">📚 ENGLISH CODING · 영어코딩</div>
-<h1>🗿 M003 Week 5 — English Worksheet (Advanced)</h1>
+<h1>🗿 M003 · Recreate the Statues (x, y, z) — English Worksheet (Advanced)</h1>
 <p><strong>Topic:</strong> Recreate the Statues (x, y, z) · <strong>Course:</strong> 3D Coordinates · <strong>Level:</strong> Advanced · <strong>Time:</strong> about 45 minutes</p>
 <p>A statue is many <strong>stacked fill boxes</strong>: legs, a torso, arms, a head. One <strong><code>fill</code></strong> makes a solid box between <strong>two corners</strong> (x, y, z) — x <strong>across</strong>, y <strong>up</strong>, z <strong>forward</strong>, feet on the <strong>ground (y = 0)</strong>.</p>
 <blockquote>

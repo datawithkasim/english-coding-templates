@@ -1,4 +1,4 @@
-# 🧭 M002 Week 2 — Turning (Intermediate)
+# 🧭 M002 · Turning (Intermediate)
 
 **Topic:** Turn at Walls · **Course:** Maze Madness · **Level:** Intermediate · **Time:** about 35 minutes
 

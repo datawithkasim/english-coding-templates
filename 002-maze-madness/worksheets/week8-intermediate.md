@@ -1,4 +1,4 @@
-# 🏆 M002 Week 8 — Final Cube Maze
+# 🏆 M002 · Final Cube Maze
 
 **Topic:** Final Cube Maze · **Course:** Maze Madness · **Level:** Intermediate · **Time:** about 35 minutes
 

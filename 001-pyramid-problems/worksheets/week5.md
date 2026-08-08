@@ -1,4 +1,4 @@
-# 🔺 M001 Week 5 — English Worksheet
+# 🔺 M001 · First Pyramid — English Worksheet
 
 **Topic:** First Pyramid · **Course:** Pyramid Problems · **Time:** about 45 minutes
 

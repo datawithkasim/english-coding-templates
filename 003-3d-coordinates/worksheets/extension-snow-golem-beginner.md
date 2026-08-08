@@ -1,6 +1,6 @@
 # ☃️ M003 Extension — Build the Snow Golem (Beginner)
 
-**Topic:** 3D Snow Golem (x, y, z) · **Course:** 3D Coordinates · **Level:** Beginner (Extension, after Week 6) · **Time:** about 30 minutes
+**Topic:** 3D Snow Golem (x, y, z) · **Course:** 3D Coordinates · **Level:** Beginner (Extension, after Lesson 6) · **Time:** about 30 minutes
 
 Build a standing snow golem in 3D — **snow body**, **pumpkin head**, **coal buttons**, **stick arms**. Every block needs **three** numbers **(x, y, z)**: x **across**, y **up**, z **deeper** (forward).
 

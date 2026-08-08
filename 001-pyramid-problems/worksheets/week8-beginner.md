@@ -1,4 +1,4 @@
-# 💎 M001 Week 8 — English Worksheet (Beginner)
+# 💎 M001 · Diamond Structure (Final Project) — English Worksheet (Beginner)
 
 **Topic:** Diamond Structure (Final Project) · **Course:** Pyramid Problems · **Level:** Beginner · **Time:** about 45 minutes
 

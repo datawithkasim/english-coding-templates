@@ -1,8 +1,8 @@
-# 🎮 M004 Week 1 — English Worksheet
+# 🎮 M004 · Functions with Parameters & Returns — English Worksheet
 
 **Topic:** Functions with Parameters & Returns · **Course:** Functions & Games · **Time:** about 45 minutes
 
-This week you give a function a **parameter** — a number it uses inside, so calling it with different numbers builds different things. A function can also **give back** an answer.
+This lesson you give a function a **parameter** — a number it uses inside, so calling it with different numbers builds different things. A function can also **give back** an answer.
 
 ---
 

@@ -1,6 +1,6 @@
 # 🧊 M003 Extension — English Worksheet (Beginner)
 
-**Topic:** Pixel-Art Mobs (x, y) · **Course:** 3D Coordinates · **Level:** Extension (Beginner, after Week 3) · **Time:** about 30 minutes
+**Topic:** Pixel-Art Mobs (x, y) · **Course:** 3D Coordinates · **Level:** Extension (Beginner, after Lesson 3) · **Time:** about 30 minutes
 
 A bonus picture challenge: copy a mob onto your wall using **(x, y)** — x is **across**, y is **up**. Read the picture and place each block at its (x, y).
 

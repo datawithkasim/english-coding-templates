@@ -1,4 +1,4 @@
-# ⚙️ M002 Week 7 — Pistons
+# ⚙️ M002 · Pistons
 
 **Topic:** Pistons and Mazes · **Course:** Maze Madness · **Level:** Advanced · **Time:** about 55 minutes
 

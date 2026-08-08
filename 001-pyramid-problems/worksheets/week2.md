@@ -1,4 +1,4 @@
-# 🔁 M001 Week 2 — English Worksheet
+# 🔁 M001 · Loops — English Worksheet
 
 **Topic:** Loops · **Course:** Pyramid Problems · **Time:** about 45 minutes
 

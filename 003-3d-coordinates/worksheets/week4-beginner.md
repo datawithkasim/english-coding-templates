@@ -1,8 +1,8 @@
-# 🧊 M003 Week 4 — English Worksheet (Beginner)
+# 🧊 M003 · Pixel Art 2 — Cat & Tree (x, y) — English Worksheet (Beginner)
 
 **Topic:** Pixel Art 2 — Cat & Tree (x, y) · **Course:** 3D Coordinates · **Level:** Beginner · **Time:** about 30 minutes
 
-This week you copy a **cat** and a **tree**. Each block sits at **(x, y)** — x is **across**, y is **up**.
+This lesson you copy a **cat** and a **tree**. Each block sits at **(x, y)** — x is **across**, y is **up**.
 
 **Build your canvas.** Run this to make a blank **15 × 15** wall, then put a **red block at your feet** as your **home spot**:
 

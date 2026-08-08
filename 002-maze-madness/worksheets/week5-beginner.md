@@ -1,4 +1,4 @@
-# 🧊 M002 Week 5 — Mini Cube Puzzle
+# 🧊 M002 · Mini Cube Puzzle
 
 **Topic:** Mini Cube Puzzle · **Course:** Maze Madness · **Level:** Beginner · **Time:** about 25 minutes
 
@@ -59,7 +59,7 @@ move up
 
 ## 4 · Show Your Work 📸🎥
 
-Open this week's world. Find the **mini cube starter**.
+Open this lesson's world. Find the **mini cube starter**.
 
 1. Keep the same pattern.
 2. Fill the whole cube.

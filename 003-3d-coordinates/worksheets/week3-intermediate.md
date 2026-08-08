@@ -1,8 +1,8 @@
-# 🧊 M003 Week 3 — English Worksheet (Intermediate)
+# 🧊 M003 · Pixel Art on the Wall (x, y) — English Worksheet (Intermediate)
 
 **Topic:** Pixel Art on the Wall (x, y) · **Course:** 3D Coordinates · **Level:** Intermediate · **Time:** about 40 minutes
 
-This week you copy a picture made of blocks onto your wall. Every block sits at **(x, y)** — x is how far **across**, y is how far **up**.
+This lesson you copy a picture made of blocks onto your wall. Every block sits at **(x, y)** — x is how far **across**, y is how far **up**.
 
 **Build your canvas.** Run this to make a blank **15 × 15** wall, then put a **red block at your feet** as your **home spot**:
 

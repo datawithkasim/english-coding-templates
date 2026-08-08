@@ -1,6 +1,6 @@
 <html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
 <head><meta charset='utf-8'>
-<title>🔀 M002 Week 4 — AND / OR</title>
+<title>🔀 M002 · AND / OR</title>
 <!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
 <style>
 @page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
@@ -29,9 +29,9 @@ p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
 </style></head>
 <body><div class=WordSection1>
 <div class="brand">📚 ENGLISH CODING · 영어코딩</div>
-<h1>🔀 M002 Week 4 — AND / OR</h1>
+<h1>🔀 M002 · AND / OR</h1>
 <p><strong>Topic:</strong> AND and OR Conditions — Smarter Decisions · <strong>Course:</strong> Maze Madness · <strong>Level:</strong> Advanced · <strong>Time:</strong> about 55 minutes</p>
-<p>New this week: <code>or</code> (at least one true). Combine it with <code>and</code> in one maze.</p>
+<p>New this lesson: <code>or</code> (at least one true). Combine it with <code>and</code> in one maze.</p>
 <ul>
 <li><code>and</code> → the action runs <strong>only when both</strong> conditions are true.</li>
 <li><code>or</code> → the action runs <strong>when at least one</strong> condition is true.</li>

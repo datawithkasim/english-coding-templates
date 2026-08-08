@@ -1,4 +1,4 @@
-# 🔗 M002 Week 3 — AND Conditions
+# 🔗 M002 · AND Conditions
 
 **Topic:** AND — two things both true · **Course:** Maze Madness · **Level:** Intermediate · **Time:** about 35 minutes
 

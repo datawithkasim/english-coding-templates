@@ -1,6 +1,6 @@
 <html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
 <head><meta charset='utf-8'>
-<title>🧊 M002 Week 5 — Mini Cube Puzzle</title>
+<title>🧊 M002 · Mini Cube Puzzle</title>
 <!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
 <style>
 @page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
@@ -29,7 +29,7 @@ p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
 </style></head>
 <body><div class=WordSection1>
 <div class="brand">📚 ENGLISH CODING · 영어코딩</div>
-<h1>🧊 M002 Week 5 — Mini Cube Puzzle</h1>
+<h1>🧊 M002 · Mini Cube Puzzle</h1>
 <p><strong>Topic:</strong> Mini Cube Puzzle · <strong>Course:</strong> Maze Madness · <strong>Level:</strong> Advanced · <strong>Time:</strong> about 55 minutes</p>
 <p>Finish the mini cube. Keep the starter going: add <strong>2 more conditionals</strong> with <strong>one <code>OR</code></strong>, fill the cube, then break a hole in the <strong>top</strong> and climb out.</p>
 <hr />
@@ -108,7 +108,7 @@ agent.destroy(UP)
 
 <hr />
 <h2>5 · Show Your Work 📸🎥</h2>
-<p>Open this week's world. Find the <strong>mini cube starter</strong> — part is built.</p>
+<p>Open this lesson's world. Find the <strong>mini cube starter</strong> — part is built.</p>
 <ol>
 <li>Keep the starter running.</li>
 <li>Add <strong>2 more conditionals</strong> that decide where blocks go.</li>

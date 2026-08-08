@@ -2,7 +2,7 @@
 
 **Topic:** AND — two redstones both true · **Course:** Maze Madness · **Level:** Extension (Beginner) · **Time:** about 30 minutes
 
-Same **Week 3 world**. Find the **hardest maze** your teacher shows a picture of — some tiles need **two** redstones true at once (an **AND**), so type `run` to start.
+Same **Lesson 3 world**. Find the **hardest maze** your teacher shows a picture of — some tiles need **two** redstones true at once (an **AND**), so type `run` to start.
 
 ---
 
@@ -78,7 +78,7 @@ redstone on left ____ redstone below:
 
 ## 5 · Show Your Work 📸🎥
 
-Open the Week 3 world and find the maze from the picture. Type `run` and watch the agent reach the **diamond** goal.
+Open the Lesson 3 world and find the maze from the picture. Type `run` and watch the agent reach the **diamond** goal.
 
 Record **one video** — one take, no stopping (a phone is fine). Show these in order:
 

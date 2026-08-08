@@ -1,6 +1,6 @@
 # 🕷️ M003 Extension — Build the Spider (Advanced)
 
-**Topic:** 3D Spider (x, y, z) · **Course:** 3D Coordinates · **Level:** Advanced (Extension, after Week 6) · **Time:** about 45 minutes
+**Topic:** 3D Spider (x, y, z) · **Course:** 3D Coordinates · **Level:** Advanced (Extension, after Lesson 6) · **Time:** about 45 minutes
 
 Build a **red spider** in 3D — a fat body, eight legs spread out, two eyes on the front. Every block needs **three** numbers **(x, y, z)**: x **across**, y **up**, z **deeper** (forward).
 

@@ -30,7 +30,7 @@ p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
 <body><div class=WordSection1>
 <div class="brand">📚 ENGLISH CODING · 영어코딩</div>
 <h1>🍔 M003 Extension — English Worksheet (Advanced)</h1>
-<p><strong>Topic:</strong> Finish the Burger (x, y) · <strong>Course:</strong> 3D Coordinates · <strong>Level:</strong> Advanced (Extension, after Week 3) · <strong>Time:</strong> about 45 minutes</p>
+<p><strong>Topic:</strong> Finish the Burger (x, y) · <strong>Course:</strong> 3D Coordinates · <strong>Level:</strong> Advanced (Extension, after Lesson 3) · <strong>Time:</strong> about 45 minutes</p>
 <p>Open the world. One burger is <strong>finished</strong>. One is only <strong>started</strong> — it has a bottom bun and a tomato, nothing else.</p>
 <p>Your job: <strong>finish it</strong>. Every block sits at <strong>(x, y)</strong> — x is how far <strong>across</strong>, y is how far <strong>up</strong>.</p>
 <blockquote>

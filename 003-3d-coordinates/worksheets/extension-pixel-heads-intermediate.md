@@ -1,6 +1,6 @@
 # 🧊 M003 Extension 2 — English Worksheet (Intermediate)
 
-**Topic:** 3D Mob Heads (x, y, z) · **Course:** 3D Coordinates · **Level:** Intermediate (Extension, after Week 3) · **Time:** about 40 minutes
+**Topic:** 3D Mob Heads (x, y, z) · **Course:** 3D Coordinates · **Level:** Intermediate (Extension, after Lesson 3) · **Time:** about 40 minutes
 
 Build a **creeper head** in 3D. Every block needs **three** numbers **(x, y, z)**: x **across**, y **up**, z **deeper** (forward).
 

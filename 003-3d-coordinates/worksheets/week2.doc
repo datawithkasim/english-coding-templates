@@ -1,6 +1,6 @@
 <html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
 <head><meta charset='utf-8'>
-<title>🧊 M003 Week 2 — English Worksheet</title>
+<title>🧊 M003 · Lines & Rectangles on the Wall (x, y) — English Worksheet</title>
 <!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
 <style>
 @page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
@@ -29,9 +29,9 @@ p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
 </style></head>
 <body><div class=WordSection1>
 <div class="brand">📚 ENGLISH CODING · 영어코딩</div>
-<h1>🧊 M003 Week 2 — English Worksheet</h1>
+<h1>🧊 M003 · Lines &amp; Rectangles on the Wall (x, y) — English Worksheet</h1>
 <p><strong>Topic:</strong> Lines &amp; Rectangles on the Wall (x, y) · <strong>Course:</strong> 3D Coordinates · <strong>Time:</strong> about 45 minutes</p>
-<p>This week you use a <strong>loop</strong> to draw a <strong>line</strong> of blocks: grow <strong>x</strong> to go across, grow <strong>y</strong> to go up. Four lines make a <strong>rectangle outline</strong> — a picture frame.</p>
+<p>This lesson you use a <strong>loop</strong> to draw a <strong>line</strong> of blocks: grow <strong>x</strong> to go across, grow <strong>y</strong> to go up. Four lines make a <strong>rectangle outline</strong> — a picture frame.</p>
 <hr />
 <h2>1 · Predict 🔮</h2>
 <p>Read each set of steps. Write what you think you will see.</p>

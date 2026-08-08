@@ -1,6 +1,6 @@
 # 🧊 M003 Extension — English Worksheet (Intermediate)
 
-**Topic:** Pixel-Art Mobs (x, y) · **Course:** 3D Coordinates · **Level:** Intermediate (Extension, after Week 3) · **Time:** about 40 minutes
+**Topic:** Pixel-Art Mobs (x, y) · **Course:** 3D Coordinates · **Level:** Intermediate (Extension, after Lesson 3) · **Time:** about 40 minutes
 
 A bonus picture challenge: copy a whole mob — a **pink axolotl** — onto your wall. Every block sits at **(x, y)** — x is how far **across**, y is how far **up**.
 

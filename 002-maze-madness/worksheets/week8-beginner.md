@@ -1,8 +1,8 @@
-# 🏆 M002 Week 8 — Final Cube Maze
+# 🏆 M002 · Final Cube Maze
 
 **Topic:** Final Cube Maze · **Course:** Maze Madness · **Level:** Beginner · **Time:** about 25 minutes
 
-Last week! Build a cube maze. Code the agent to solve it.
+Last lesson! Build a cube maze. Code the agent to solve it.
 
 ---
 

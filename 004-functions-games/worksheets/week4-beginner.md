@@ -1,8 +1,8 @@
-# 🎮 M004 Week 4 — English Worksheet (Beginner)
+# 🎮 M004 · Player Events — English Worksheet (Beginner)
 
 **Topic:** Player Events · **Course:** Functions & Games · **Level:** Beginner · **Time:** about 30 minutes
 
-This week your code reacts to **you**, the player. An **event** like `on player walk:` runs by itself when the player does something.
+This lesson your code reacts to **you**, the player. An **event** like `on player walk:` runs by itself when the player does something.
 
 ---
 

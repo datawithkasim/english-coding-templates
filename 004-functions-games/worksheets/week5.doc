@@ -1,6 +1,6 @@
 <html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
 <head><meta charset='utf-8'>
-<title>🎮 M004 Week 5 — English Worksheet</title>
+<title>🎮 M004 · Your Function Library — Reusable Building Blocks — English Worksheet</title>
 <!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
 <style>
 @page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
@@ -29,9 +29,9 @@ p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
 </style></head>
 <body><div class=WordSection1>
 <div class="brand">📚 ENGLISH CODING · 영어코딩</div>
-<h1>🎮 M004 Week 5 — English Worksheet</h1>
+<h1>🎮 M004 · Your Function Library — Reusable Building Blocks — English Worksheet</h1>
 <p><strong>Topic:</strong> Your Function Library — Reusable Building Blocks · <strong>Course:</strong> Functions &amp; Games · <strong>Time:</strong> about 45 minutes</p>
-<p>This week you collect your best functions into a <strong>library</strong> — reusable building blocks like <code>build_wall</code>, <code>build_tower</code>, and <code>clear_area</code>. Big builds become easy when small functions do the work.</p>
+<p>This lesson you collect your best functions into a <strong>library</strong> — reusable building blocks like <code>build_wall</code>, <code>build_tower</code>, and <code>clear_area</code>. Big builds become easy when small functions do the work.</p>
 <hr />
 <h2>1 · Predict 🔮</h2>
 <pre><code>function build_wall(length):

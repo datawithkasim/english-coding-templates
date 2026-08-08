@@ -1,6 +1,6 @@
 <html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
 <head><meta charset='utf-8'>
-<title>🏆 M002 Week 8 — Final Cube Maze</title>
+<title>🏆 M002 · Final Cube Maze</title>
 <!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
 <style>
 @page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
@@ -29,9 +29,9 @@ p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
 </style></head>
 <body><div class=WordSection1>
 <div class="brand">📚 ENGLISH CODING · 영어코딩</div>
-<h1>🏆 M002 Week 8 — Final Cube Maze</h1>
+<h1>🏆 M002 · Final Cube Maze</h1>
 <p><strong>Topic:</strong> Final Cube Maze · <strong>Course:</strong> Maze Madness · <strong>Level:</strong> Beginner · <strong>Time:</strong> about 25 minutes</p>
-<p>Last week! Build a cube maze. Code the agent to solve it.</p>
+<p>Last lesson! Build a cube maze. Code the agent to solve it.</p>
 <hr />
 <h2>1 · Plan 🔮</h2>
 <p>Your maze needs:</p>

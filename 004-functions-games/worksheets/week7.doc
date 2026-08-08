@@ -1,6 +1,6 @@
 <html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
 <head><meta charset='utf-8'>
-<title>🎮 M004 Week 7 — English Worksheet</title>
+<title>🎮 M004 · Auto-Building Spaces — Loops + Functions + Chat Commands — English Worksheet</title>
 <!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
 <style>
 @page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
@@ -29,9 +29,9 @@ p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
 </style></head>
 <body><div class=WordSection1>
 <div class="brand">📚 ENGLISH CODING · 영어코딩</div>
-<h1>🎮 M004 Week 7 — English Worksheet</h1>
+<h1>🎮 M004 · Auto-Building Spaces — Loops + Functions + Chat Commands — English Worksheet</h1>
 <p><strong>Topic:</strong> Auto-Building Spaces — Loops + Functions + Chat Commands · <strong>Course:</strong> Functions &amp; Games · <strong>Time:</strong> about 45 minutes</p>
-<p>This week one chat command builds a <strong>whole space by itself</strong>. A loop repeats a room piece, a function builds each piece, and the <strong>number argument</strong> decides how big it grows.</p>
+<p>This lesson one chat command builds a <strong>whole space by itself</strong>. A loop repeats a room piece, a function builds each piece, and the <strong>number argument</strong> decides how big it grows.</p>
 <hr />
 <h2>1 · Predict 🔮</h2>
 <pre><code>on chat command &quot;dungeon&quot; with number rooms:

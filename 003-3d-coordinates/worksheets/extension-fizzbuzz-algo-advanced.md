@@ -1,6 +1,6 @@
 # 🧊 M003 Extension — English Worksheet (Advanced)
 
-**Topic:** FizzBuzz Pixel Art (remainders & rules) · **Course:** 3D Coordinates · **Level:** Extension (Advanced, after Week 3) · **Time:** about 45 minutes
+**Topic:** FizzBuzz Pixel Art (remainders & rules) · **Course:** 3D Coordinates · **Level:** Extension (Advanced, after Lesson 3) · **Time:** about 45 minutes
 
 You already made pixel art by choosing each block's colour **by hand**. This time the **code** chooses every colour for you — using one rule, the **FizzBuzz rule**. Load the world, type `run` in the chat, and watch the agent paint a **15 × 15** wall one block at a time, counting from **1 to 225**.
 

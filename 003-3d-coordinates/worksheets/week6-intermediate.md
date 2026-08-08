@@ -1,4 +1,4 @@
-# 🐉 M003 Week 6 — English Worksheet (Intermediate)
+# 🐉 M003 · Recreate the Ender Dragon (x, y, z) — English Worksheet (Intermediate)
 
 **Topic:** Recreate the Ender Dragon (x, y, z) · **Course:** 3D Coordinates · **Level:** Intermediate · **Time:** about 40 minutes
 

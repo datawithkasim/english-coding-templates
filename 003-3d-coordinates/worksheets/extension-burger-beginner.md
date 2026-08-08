@@ -1,6 +1,6 @@
 # 🍔 M003 Extension — English Worksheet (Beginner)
 
-**Topic:** Finish the Burger (x, y) · **Course:** 3D Coordinates · **Level:** Extension (Beginner, after Week 3) · **Time:** about 30 minutes
+**Topic:** Finish the Burger (x, y) · **Course:** 3D Coordinates · **Level:** Extension (Beginner, after Lesson 3) · **Time:** about 30 minutes
 
 Open the world. One burger is **finished**. One is only **started** — it has a bottom bun and a tomato, nothing else.
 

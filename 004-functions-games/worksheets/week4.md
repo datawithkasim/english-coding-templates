@@ -1,8 +1,8 @@
-# 🎮 M004 Week 4 — English Worksheet
+# 🎮 M004 · Player Events — English Worksheet
 
 **Topic:** Player Events · **Course:** Functions & Games · **Time:** about 45 minutes
 
-This week your code reacts to **you**, the player. An **event** like `on player walk:` runs by itself — no chat command needed.
+This lesson your code reacts to **you**, the player. An **event** like `on player walk:` runs by itself — no chat command needed.
 
 ---
 

@@ -1,6 +1,6 @@
 # 🌀 M003 Extension — The Loop Pattern (Intermediate)
 
-**Topic:** One loop, three counters (x, y, z) · **Course:** 3D Coordinates · **Level:** Extension (Intermediate, after Week 6) · **Time:** about 40 minutes
+**Topic:** One loop, three counters (x, y, z) · **Course:** 3D Coordinates · **Level:** Extension (Intermediate, after Lesson 6) · **Time:** about 40 minutes
 
 **One loop** builds all **7** obsidian walls. It keeps three counters — **x**, **y**, **z** — and nudges each by a fixed **step** every pass. That's an **algorithm**. Type `SPIRAL` and watch.
 

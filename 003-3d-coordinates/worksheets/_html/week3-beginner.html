@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>🧊 M003 Week 3 — English Worksheet (Beginner)</title>
+<title>🧊 M003 · Pixel Art on the Wall (x, y) — English Worksheet (Beginner)</title>
 <style>
 @page { size: A4; margin: 18mm 16mm 22mm; }
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -75,6 +75,8 @@ blockquote {
 }
 .write-space.short { min-height: 86px; }
 .write-space.tall { min-height: 170px; }
+/* Drawing box: same frame, no ruled lines — for "draw the shape" prompts. */
+.write-space.blank { background-image: none; }
 
 /* Keep a question (and any hint/code above it) glued to its answer box so a
    page break never lands between the prompt and the lines you write on. */
@@ -107,9 +109,9 @@ footer b { color: #ff7849; }
 </head>
 <body>
 <div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
-<h1>🧊 M003 Week 3 — English Worksheet (Beginner)</h1>
+<h1>🧊 M003 · Pixel Art on the Wall (x, y) — English Worksheet (Beginner)</h1>
 <p><strong>Topic:</strong> Pixel Art on the Wall (x, y) · <strong>Course:</strong> 3D Coordinates · <strong>Level:</strong> Beginner · <strong>Time:</strong> about 30 minutes</p>
-<p>This week you copy a picture made of blocks onto your wall. Each block sits at <strong>(x, y)</strong> — x is <strong>across</strong>, y is <strong>up</strong>.</p>
+<p>This lesson you copy a picture made of blocks onto your wall. Each block sits at <strong>(x, y)</strong> — x is <strong>across</strong>, y is <strong>up</strong>.</p>
 <p><strong>Build your canvas.</strong> Run this to make a blank <strong>15 × 15</strong> wall, then put a <strong>red block at your feet</strong> as your <strong>home spot</strong>:</p>
 <div style="display:flex; gap:14px; align-items:flex-start; margin:10px 0; page-break-inside:avoid; break-inside:avoid"><div style="flex:1; min-width:0"><p style="margin:0 0 4px; font-weight:700">🧩 Blocks</p><img src="../assets/week3-canvas-blocks.png" alt="MakeCode blocks: on chat command run, fill with white concrete from ~1 ~1 ~0 to ~15 ~15 ~0, replace" style="width:100%; max-width:240px; border-radius:8px; display:block"></div><div style="flex:1; min-width:0"><p style="margin:0 0 4px; font-weight:700">🐍 Python</p><pre style="margin:0; white-space:pre; font-size:12px">def on_run():
     blocks.fill(WHITE_CONCRETE,

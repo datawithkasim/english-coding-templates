@@ -30,7 +30,7 @@ p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
 <body><div class=WordSection1>
 <div class="brand">📚 ENGLISH CODING · 영어코딩</div>
 <h1>🧊 M003 Extension — English Worksheet (Intermediate)</h1>
-<p><strong>Topic:</strong> FizzBuzz Pixel Art (remainders &amp; rules) · <strong>Course:</strong> 3D Coordinates · <strong>Level:</strong> Extension (Intermediate, after Week 3) · <strong>Time:</strong> about 40 minutes</p>
+<p><strong>Topic:</strong> FizzBuzz Pixel Art (remainders &amp; rules) · <strong>Course:</strong> 3D Coordinates · <strong>Level:</strong> Extension (Intermediate, after Lesson 3) · <strong>Time:</strong> about 40 minutes</p>
 <p>You already made pixel art by choosing each block's colour <strong>by hand</strong>. This time the <strong>code</strong> chooses every colour for you — using one rule, the <strong>FizzBuzz rule</strong>. Load the world, type <code>run</code> in the chat, and watch the agent paint a <strong>15 × 15</strong> wall one block at a time, counting from <strong>1 to 225</strong>.</p>
 <table>
 <thead>

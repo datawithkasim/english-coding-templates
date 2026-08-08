@@ -1,8 +1,8 @@
-# 🎮 M004 Week 1 — English Worksheet (Beginner)
+# 🎮 M004 · Functions with Parameters & Returns — English Worksheet (Beginner)
 
 **Topic:** Functions with Parameters & Returns · **Course:** Functions & Games · **Level:** Beginner · **Time:** about 30 minutes
 
-This week you give a function a **parameter** — a number it uses inside.
+This lesson you give a function a **parameter** — a number it uses inside.
 
 ---
 

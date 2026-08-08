@@ -1,6 +1,6 @@
 # 🐼 M003 Extension — Build the Panda (Beginner)
 
-**Topic:** 3D Panda (x, y, z) · **Course:** 3D Coordinates · **Level:** Beginner (Extension, after Week 6) · **Time:** about 30 minutes
+**Topic:** 3D Panda (x, y, z) · **Course:** 3D Coordinates · **Level:** Beginner (Extension, after Lesson 6) · **Time:** about 30 minutes
 
 Build a standing panda in 3D — **white body**, **black ears**, **black eyes**, **black legs**. Every block needs **three** numbers **(x, y, z)**: x **across**, y **up**, z **deeper** (forward).
 

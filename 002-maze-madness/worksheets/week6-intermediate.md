@@ -1,4 +1,4 @@
-# 🔴 M002 Week 6 — Redstone & Levers
+# 🔴 M002 · Redstone & Levers
 
 **Topic:** Redstone Levers · **Course:** Maze Madness · **Level:** Intermediate · **Time:** about 35 minutes
 

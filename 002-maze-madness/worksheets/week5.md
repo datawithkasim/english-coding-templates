@@ -1,4 +1,4 @@
-# 🧊 M002 Week 5 — Mini Cube Puzzle
+# 🧊 M002 · Mini Cube Puzzle
 
 **Topic:** Mini Cube Puzzle · **Course:** Maze Madness · **Level:** Advanced · **Time:** about 55 minutes
 
@@ -119,7 +119,7 @@ Write a conditional that uses `or`: if the agent is on a **corner** `OR` on the 
 
 ## 5 · Show Your Work 📸🎥
 
-Open this week's world. Find the **mini cube starter** — part is built.
+Open this lesson's world. Find the **mini cube starter** — part is built.
 
 1. Keep the starter running.
 2. Add **2 more conditionals** that decide where blocks go.

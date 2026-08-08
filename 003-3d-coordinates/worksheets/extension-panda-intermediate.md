@@ -1,6 +1,6 @@
 # 🐼 M003 Extension — Build the Panda (Intermediate)
 
-**Topic:** 3D Panda (x, y, z) · **Course:** 3D Coordinates · **Level:** Intermediate (Extension, after Week 6) · **Time:** about 40 minutes
+**Topic:** 3D Panda (x, y, z) · **Course:** 3D Coordinates · **Level:** Intermediate (Extension, after Lesson 6) · **Time:** about 40 minutes
 
 Build a **standing panda** in 3D — white body, black ears, black eye patches, black legs. Every block needs **three** numbers **(x, y, z)**: x **across**, y **up**, z **deeper** (forward).
 

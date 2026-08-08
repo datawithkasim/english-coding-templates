@@ -1,8 +1,8 @@
-# 🎮 M004 Week 6 — English Worksheet (Beginner)
+# 🎮 M004 · A Space that Reacts — Event → Check → Action — English Worksheet (Beginner)
 
 **Topic:** A Space that Reacts — Event → Check → Action · **Course:** Functions & Games · **Level:** Beginner · **Time:** about 30 minutes
 
-This week your world **reacts to the player**: an **event** happens → the code **checks** something → an **action** runs.
+This lesson your world **reacts to the player**: an **event** happens → the code **checks** something → an **action** runs.
 
 ---
 

@@ -1,8 +1,8 @@
-# 🎮 M004 Week 3 — English Worksheet (Beginner)
+# 🎮 M004 · Sensing the World — English Worksheet (Beginner)
 
 **Topic:** Sensing the World · **Course:** Functions & Games · **Level:** Beginner · **Time:** about 30 minutes
 
-This week your agent **senses** the world before it acts. It can detect a block **ahead** and check what is **below**.
+This lesson your agent **senses** the world before it acts. It can detect a block **ahead** and check what is **below**.
 
 ---
 

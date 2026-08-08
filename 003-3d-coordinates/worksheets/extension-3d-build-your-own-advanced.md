@@ -1,8 +1,8 @@
 # 🧊 M003 Extension — English Worksheet (Advanced)
 
-**Topic:** Design Your Own 3D Build (x, y, z) · **Course:** 3D Coordinates · **Level:** Extension (Advanced, after Week 3) · **Time:** about 50 minutes
+**Topic:** Design Your Own 3D Build (x, y, z) · **Course:** 3D Coordinates · **Level:** Extension (Advanced, after Lesson 3) · **Time:** about 50 minutes
 
-Pixel art was flat — two numbers, one wall. This week your build is **solid**. Three numbers. You draw it from the **front** and from **above**, then read both drawings back into the world.
+Pixel art was flat — two numbers, one wall. This lesson your build is **solid**. Three numbers. You draw it from the **front** and from **above**, then read both drawings back into the world.
 
 **Build your canvas.** Run this to lay a blank **15 × 15** floor, then put a **red block at your feet** as your **home spot**:
 

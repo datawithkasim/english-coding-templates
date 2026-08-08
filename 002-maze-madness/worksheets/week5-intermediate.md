@@ -1,4 +1,4 @@
-# 🧊 M002 Week 5 — Mini Cube Puzzle
+# 🧊 M002 · Mini Cube Puzzle
 
 **Topic:** Mini Cube Puzzle · **Course:** Maze Madness · **Level:** Intermediate · **Time:** about 35 minutes
 
@@ -95,7 +95,7 @@ agent.detect(BLOCK, UP)
 
 ## 5 · Show Your Work 📸🎥
 
-Open this week's world. Find the **mini cube starter** — part is built.
+Open this lesson's world. Find the **mini cube starter** — part is built.
 
 1. Keep the starter going.
 2. Add one conditional that uses `OR`.

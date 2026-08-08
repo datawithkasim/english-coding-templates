@@ -1,4 +1,4 @@
-# 🧭 M002 Week 2 — Turning (Beginner)
+# 🧭 M002 · Turning (Beginner)
 
 **Topic:** Turn at Walls · **Course:** Maze Madness · **Level:** Beginner · **Time:** about 25 minutes
 

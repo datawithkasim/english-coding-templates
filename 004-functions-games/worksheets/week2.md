@@ -1,8 +1,8 @@
-# 🎮 M004 Week 2 — English Worksheet
+# 🎮 M004 · Chat Commands — English Worksheet
 
 **Topic:** Chat Commands · **Course:** Functions & Games · **Time:** about 45 minutes
 
-This week you type a word in chat and your code runs. A **chat command** can take a number — `tower 5` builds a 5-block tower.
+This lesson you type a word in chat and your code runs. A **chat command** can take a number — `tower 5` builds a 5-block tower.
 
 ---
 

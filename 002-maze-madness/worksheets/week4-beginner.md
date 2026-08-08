@@ -1,4 +1,4 @@
-# 🔀 M002 Week 4 — AND / OR
+# 🔀 M002 · AND / OR
 
 **Topic:** AND and OR · **Course:** Maze Madness · **Level:** Beginner · **Time:** about 25 minutes
 

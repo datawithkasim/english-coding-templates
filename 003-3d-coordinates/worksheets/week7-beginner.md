@@ -1,4 +1,4 @@
-# 👾 M003 Week 7 — English Worksheet (Beginner)
+# 👾 M003 · Recreate 2 Mob Heads (x, y, z) — English Worksheet (Beginner)
 
 **Topic:** Recreate 2 Mob Heads (x, y, z) · **Course:** 3D Coordinates · **Level:** Beginner · **Time:** about 30 minutes
 

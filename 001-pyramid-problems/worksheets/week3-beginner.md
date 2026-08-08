@@ -1,4 +1,4 @@
-# 🔢 M001 Week 3 — English Worksheet (Beginner)
+# 🔢 M001 · Variables — English Worksheet (Beginner)
 
 **Topic:** Variables · **Course:** Pyramid Problems · **Level:** Beginner · **Time:** about 30 minutes
 

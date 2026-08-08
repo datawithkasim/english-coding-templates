@@ -1,8 +1,8 @@
-# 🔀 M002 Week 4 — AND / OR
+# 🔀 M002 · AND / OR
 
 **Topic:** AND and OR Conditions — Smarter Decisions · **Course:** Maze Madness · **Level:** Advanced · **Time:** about 55 minutes
 
-New this week: `or` (at least one true). Combine it with `and` in one maze.
+New this lesson: `or` (at least one true). Combine it with `and` in one maze.
 
 - `and` → the action runs **only when both** conditions are true.
 - `or` → the action runs **when at least one** condition is true.

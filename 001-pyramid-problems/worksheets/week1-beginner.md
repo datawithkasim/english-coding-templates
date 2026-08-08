@@ -1,4 +1,4 @@
-# 👋 M001 Week 1 — English Worksheet (Beginner)
+# 👋 M001 · First Hello with the Agent — English Worksheet (Beginner)
 
 **Topic:** First Hello with the Agent · **Course:** Pyramid Problems · **Level:** Beginner · **Time:** about 30 minutes
 

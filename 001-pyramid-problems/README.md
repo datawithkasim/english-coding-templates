@@ -1,16 +1,18 @@
 # 🔺 001 — 피라미드 문제
 
-8주 동안 마인크래프트 에이전트로 한 줄짜리 길에서 출발해 다이아몬드 구조물까지 코드로 직접 쌓아 올립니다.
+마인크래프트 에이전트로 한 줄짜리 길에서 출발해 다이아몬드 구조물까지 코드로 직접 쌓아 올립니다.
 
 반복문과 변수, 중첩 반복문을 차근차근 익히고, 마지막에는 함수로 나만의 명령어를 만드는 **두 번째 코스**입니다.
 
+> ⏱️ 정해진 기간은 없습니다. 아래 순서대로, 아이가 준비되면 다음 레슨으로 넘어갑니다.
+
 ---
 
-## 📅 주차별 학습
+## 📚 레슨 순서
 
-각 주차 자료는 아래 표에서 바로 받으실 수 있습니다 — 따로 페이지에 들어가지 않으셔도 됩니다.
+각 레슨 자료는 아래 표에서 바로 받으실 수 있습니다 — 따로 페이지에 들어가지 않으셔도 됩니다.
 
-| 주 | 주제 | 📦 월드 | 🎬 영상 (블록) | 🎬 영상 (파이썬) | 📝 워크시트 (초급) | 📝 워크시트 (심화) |
+| 레슨 | 주제 | 📦 월드 | 🎬 영상 (블록) | 🎬 영상 (파이썬) | 📝 워크시트 (초급) | 📝 워크시트 (심화) |
 |---|---|---|---|---|---|---|
 | 1 | 에이전트와 첫 인사 | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/001-pyramid-problems/worlds/week1.mcworld) | *준비 중* | *준비 중* | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/001-pyramid-problems/worksheets/week1-beginner.pdf) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/001-pyramid-problems/worksheets/week1.pdf) |
 | 2 | 반복문 | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/001-pyramid-problems/worlds/week2.mcworld) | *준비 중* | *준비 중* | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/001-pyramid-problems/worksheets/week2-beginner.pdf) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/001-pyramid-problems/worksheets/week2.pdf) |

@@ -1,8 +1,8 @@
-# 🧊 M003 Week 4 — English Worksheet (Advanced)
+# 🧊 M003 · Pixel Art 2 — Cat & Tree (x, y) — English Worksheet (Advanced)
 
 **Topic:** Pixel Art 2 — Cat & Tree (x, y) · **Course:** 3D Coordinates · **Level:** Advanced · **Time:** about 45 minutes
 
-This week you copy **two pictures** — a **cat face** and a **tree**. Every block sits at **(x, y)** — x is how far **across**, y is how far **up**.
+This lesson you copy **two pictures** — a **cat face** and a **tree**. Every block sits at **(x, y)** — x is how far **across**, y is how far **up**.
 
 **Build your canvas.** Run this to make a blank **15 × 15** wall, then put a **red block at your feet** as your **home spot**:
 

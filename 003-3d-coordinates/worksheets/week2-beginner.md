@@ -1,8 +1,8 @@
-# 🧊 M003 Week 2 — English Worksheet (Beginner)
+# 🧊 M003 · Lines & Rectangles on the Wall (x, y) — English Worksheet (Beginner)
 
 **Topic:** Lines & Rectangles on the Wall (x, y) · **Course:** 3D Coordinates · **Level:** Beginner · **Time:** about 30 minutes
 
-This week you use a **loop** to draw a whole **line** of blocks. Grow **x** to go across, or **y** to go up.
+This lesson you use a **loop** to draw a whole **line** of blocks. Grow **x** to go across, or **y** to go up.
 
 ---
 

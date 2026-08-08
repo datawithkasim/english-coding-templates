@@ -1,8 +1,8 @@
-# 🧊 M003 Week 2 — English Worksheet
+# 🧊 M003 · Lines & Rectangles on the Wall (x, y) — English Worksheet
 
 **Topic:** Lines & Rectangles on the Wall (x, y) · **Course:** 3D Coordinates · **Time:** about 45 minutes
 
-This week you use a **loop** to draw a **line** of blocks: grow **x** to go across, grow **y** to go up. Four lines make a **rectangle outline** — a picture frame.
+This lesson you use a **loop** to draw a **line** of blocks: grow **x** to go across, grow **y** to go up. Four lines make a **rectangle outline** — a picture frame.
 
 ---
 

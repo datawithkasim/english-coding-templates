@@ -1,8 +1,8 @@
 # 🎨 M003 Extension — English Worksheet (Beginner)
 
-**Topic:** Design Your Own Pixel Art (x, y) · **Course:** 3D Coordinates · **Level:** Extension (Beginner, after Week 3) · **Time:** about 30 minutes
+**Topic:** Design Your Own Pixel Art (x, y) · **Course:** 3D Coordinates · **Level:** Extension (Beginner, after Lesson 3) · **Time:** about 30 minutes
 
-Every other week the picture was given to you. This week **you** draw it — then **you** read your own drawing back onto the wall.
+Every other week the picture was given to you. This lesson **you** draw it — then **you** read your own drawing back onto the wall.
 
 **Build your canvas.** Run this to make a blank **15 × 15** wall, then put a **red block at your feet** as your **home spot**:
 

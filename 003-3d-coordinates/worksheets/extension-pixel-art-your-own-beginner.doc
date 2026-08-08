@@ -30,8 +30,8 @@ p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
 <body><div class=WordSection1>
 <div class="brand">📚 ENGLISH CODING · 영어코딩</div>
 <h1>🎨 M003 Extension — English Worksheet (Beginner)</h1>
-<p><strong>Topic:</strong> Design Your Own Pixel Art (x, y) · <strong>Course:</strong> 3D Coordinates · <strong>Level:</strong> Extension (Beginner, after Week 3) · <strong>Time:</strong> about 30 minutes</p>
-<p>Every other week the picture was given to you. This week <strong>you</strong> draw it — then <strong>you</strong> read your own drawing back onto the wall.</p>
+<p><strong>Topic:</strong> Design Your Own Pixel Art (x, y) · <strong>Course:</strong> 3D Coordinates · <strong>Level:</strong> Extension (Beginner, after Lesson 3) · <strong>Time:</strong> about 30 minutes</p>
+<p>Every other week the picture was given to you. This lesson <strong>you</strong> draw it — then <strong>you</strong> read your own drawing back onto the wall.</p>
 <p><strong>Build your canvas.</strong> Run this to make a blank <strong>15 × 15</strong> wall, then put a <strong>red block at your feet</strong> as your <strong>home spot</strong>:</p>
 <div style="display:flex; gap:14px; align-items:flex-start; margin:10px 0; page-break-inside:avoid; break-inside:avoid"><div style="flex:1; min-width:0"><p style="margin:0 0 4px; font-weight:700">🧩 Blocks</p><img src="../assets/week3-canvas-blocks.png" alt="MakeCode blocks: on chat command run, fill with white concrete from ~1 ~1 ~0 to ~15 ~15 ~0, replace" style="width:100%; max-width:240px; border-radius:8px; display:block"></div><div style="flex:1; min-width:0"><p style="margin:0 0 4px; font-weight:700">🐍 Python</p><pre style="margin:0; white-space:pre; font-size:12px">def on_run():
     blocks.fill(WHITE_CONCRETE,

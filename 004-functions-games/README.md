@@ -1,16 +1,18 @@
 # 🎮 004 — 함수와 게임
 
-8주 동안 함수로 코드를 깔끔하게 정리하고, 게임 요소와 상호작용하며, 플레이어가 직접 탐험하는 입체 공간과 미니게임을 만듭니다.
+함수로 코드를 깔끔하게 정리하고, 게임 요소와 상호작용하며, 플레이어가 직접 탐험하는 입체 공간과 미니게임을 만듭니다.
 
 함수(매개변수·반환)와 감지·이벤트를 익혀 "반응하는" 공간을 만드는 **다섯 번째 코스**입니다.
 
+> ⏱️ 정해진 기간은 없습니다. 아래 순서대로, 아이가 준비되면 다음 레슨으로 넘어갑니다.
+
 ---
 
-## 📅 주차별 학습
+## 📚 레슨 순서
 
-각 주차 자료는 아래 표에서 바로 받으실 수 있습니다 — 따로 페이지에 들어가지 않으셔도 됩니다.
+각 레슨 자료는 아래 표에서 바로 받으실 수 있습니다 — 따로 페이지에 들어가지 않으셔도 됩니다.
 
-| 주 | 주제 | 📦 월드 | 🎬 영상 (블록) | 🎬 영상 (파이썬) | 📝 워크시트 (초급) | 📝 워크시트 (심화) |
+| 레슨 | 주제 | 📦 월드 | 🎬 영상 (블록) | 🎬 영상 (파이썬) | 📝 워크시트 (초급) | 📝 워크시트 (심화) |
 |---|---|---|---|---|---|---|
 | 1 | 함수 더 깊이 (매개변수·반환) | *준비 중* | *준비 중* | *준비 중* | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/004-functions-games/worksheets/week1-beginner.pdf) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/004-functions-games/worksheets/week1.pdf) |
 | 2 | 채팅 명령어 | *준비 중* | *준비 중* | [보기](https://www.youtube.com/watch?v=OGIF4b8-f0E) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/004-functions-games/worksheets/week2-beginner.pdf) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/004-functions-games/worksheets/week2.pdf) |

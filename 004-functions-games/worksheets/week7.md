@@ -1,8 +1,8 @@
-# 🎮 M004 Week 7 — English Worksheet
+# 🎮 M004 · Auto-Building Spaces — Loops + Functions + Chat Commands — English Worksheet
 
 **Topic:** Auto-Building Spaces — Loops + Functions + Chat Commands · **Course:** Functions & Games · **Time:** about 45 minutes
 
-This week one chat command builds a **whole space by itself**. A loop repeats a room piece, a function builds each piece, and the **number argument** decides how big it grows.
+This lesson one chat command builds a **whole space by itself**. A loop repeats a room piece, a function builds each piece, and the **number argument** decides how big it grows.
 
 ---
 

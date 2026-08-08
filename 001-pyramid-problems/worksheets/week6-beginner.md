@@ -1,4 +1,4 @@
-# 🔻 M001 Week 6 — English Worksheet (Beginner)
+# 🔻 M001 · Inverted Pyramid — English Worksheet (Beginner)
 
 **Topic:** Inverted Pyramid · **Course:** Pyramid Problems · **Level:** Beginner · **Time:** about 30 minutes
 

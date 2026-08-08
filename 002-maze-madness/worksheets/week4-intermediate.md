@@ -1,8 +1,8 @@
-# 🔀 M002 Week 4 — AND / OR
+# 🔀 M002 · AND / OR
 
 **Topic:** AND and OR Conditions · **Course:** Maze Madness · **Level:** Intermediate · **Time:** about 35 minutes
 
-New this week: `OR` (one is enough). Mix it with `AND`.
+New this lesson: `OR` (one is enough). Mix it with `AND`.
 
 - `AND` → runs **only when both** are true.
 - `OR` → runs **when at least one** is true.
