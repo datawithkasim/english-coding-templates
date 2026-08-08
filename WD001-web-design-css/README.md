@@ -1,6 +1,6 @@
 # 🎨 영어코딩 — 웹 디자인 기초: CSS [WD001]
 
-진짜 HTML/CSS 코드를 직접 써서 8주 동안 자기만의 1페이지 자기소개 사이트를 완성하는 코스입니다. 매주 한 가지 핵심 개념에 집중하고, 그 주에 만든 결과물이 다음 주로 이어져 점점 진짜 사이트가 됩니다.
+진짜 HTML/CSS 코드를 직접 써서 자기만의 1페이지 자기소개 사이트를 완성하는 코스입니다. 매주 한 가지 핵심 개념에 집중하고, 그 주에 만든 결과물이 다음 주로 이어져 점점 진짜 사이트가 됩니다.
 
 | 주차 | 주제 | 숙제 | 워크시트 | PDF | 슬라이드 |
 |---|---|---|---|---|---|
@@ -11,7 +11,7 @@
 | 5 | 이미지와 배경 — 시각적 임팩트 | 좋아하는 사진을 배경으로 한 히어로 섹션 추가 | [week-05.md](./worksheets/week-05.md) | [📄 PDF](./worksheets/week-05.pdf) | [Images + Hero](https://datawithkasim.github.io/english-coding-slides/webdev/web001-css/week-05-images-hero.html) |
 | 6 | 반응형 디자인 — 모바일에서도 잘 보이기 | 휴대폰 화면에서도 잘 보이게 수정 + PC·모바일 화면 둘 다 제출 | [week-06.md](./worksheets/week-06.md) | [📄 PDF](./worksheets/week-06.pdf) | [Responsive](https://datawithkasim.github.io/english-coding-slides/webdev/web001-css/week-06-responsive.html) |
 | 7 | 호버 효과와 애니메이션 | 서로 다른 호버 효과를 가진 카드 3개 만들기 (호버 효과는 영상으로) | [week-07.md](./worksheets/week-07.md) | [📄 PDF](./worksheets/week-07.pdf) | [Hover + Animations](https://datawithkasim.github.io/english-coding-slides/webdev/web001-css/week-07-hover-animations.html) |
-| 8 | **최종 프로젝트 — 1페이지 자기소개 사이트** | 8주 동안 배운 모든 것을 합친 1페이지 사이트 완성 + 발표 | [week-08.md](./worksheets/week-08.md) | [📄 PDF](./worksheets/week-08.pdf) | [Final Site](https://datawithkasim.github.io/english-coding-slides/webdev/web001-css/week-08-final-site.html) |
+| 8 | **최종 프로젝트 — 1페이지 자기소개 사이트** | 배운 모든 것을 합친 1페이지 사이트 완성 + 발표 | [week-08.md](./worksheets/week-08.md) | [📄 PDF](./worksheets/week-08.pdf) | [Final Site](https://datawithkasim.github.io/english-coding-slides/webdev/web001-css/week-08-final-site.html) |
 
 > 💡 이 코스는 드래그 앤 드롭 도구 없이 첫 수업부터 진짜 코드를 씁니다. Replit에서 HTML 파일을 열고 브라우저로 바로 미리볼 수 있습니다.
 
