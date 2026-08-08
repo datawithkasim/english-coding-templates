@@ -1,0 +1,202 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head><meta charset='utf-8'>
+<title>⚡ Daily Planner — Make the Tick Marks Count</title>
+<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
+<style>
+@page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
+div.WordSection1 { page: WordSection1; }
+body { font-family: "Segoe UI", Arial, sans-serif; font-size: 11.5pt; color: #1a1a2e; line-height: 1.5; }
+h1 { font-size: 21pt; color: #6b4ee6; margin: 4px 0 6px; }
+h2 { font-size: 15pt; color: #6b4ee6; border-top: 1px solid #dddddd; padding-top: 8px; margin: 18px 0 10px; }
+h3, h4 { font-size: 11.5pt; margin: 12px 0 6px; }
+p { margin: 7px 0; }
+.brand { font-size: 10.5pt; font-weight: bold; color: #ff7849; letter-spacing: .06em;
+         border-bottom: 2px solid #ff7849; padding-bottom: 6px; margin-bottom: 14px; }
+table { border-collapse: collapse; margin: 10px 0; }
+th, td { border: 1px solid #c8c8c8; padding: 4px 9px; text-align: center; }
+th { background: #f3eefc; color: #6b4ee6; font-weight: bold; }
+pre { font-family: Consolas, "Courier New", monospace; font-size: 10.5pt; background: #f4f4f5;
+      border: 1px solid #dddddd; padding: 8px 10px; white-space: pre-wrap; }
+pre code { background: transparent; color: #1a1a2e; }
+code { font-family: Consolas, "Courier New", monospace; background: #fff1e8; color: #d6531f; padding: 0 3px; }
+blockquote { border-left: 3px solid #ff7849; background: #fff6ef; padding: 8px 12px;
+             color: #6a3a1c; margin: 9px 0; }
+ul, ol { margin: 7px 0 7px 26px; }
+p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
+.footer { color: #999999; font-size: 8.5pt; text-align: center; margin-top: 18px;
+          border-top: 1px solid #eeeeee; padding-top: 6px; }
+.footer b { color: #ff7849; }
+</style></head>
+<body><div class=WordSection1>
+<div class="brand">📚 ENGLISH CODING · 영어코딩</div>
+<h1>⚡ Daily Planner — Make the Tick Marks Count</h1>
+<p><strong>Topic:</strong> Make each checkbox count its own task — <code>checked</code>, <code>change</code>, <code>if / else</code>, <code>classList</code> · <strong>Course:</strong> Web Dev: JavaScript · <strong>Time:</strong> about 50 minutes</p>
+<p>Your Daily Planner has four tasks, each with a checkbox. Right now ticking one does not really count anything. In this worksheet you make the page show <strong>TASKS DONE - 2</strong> when two boxes are ticked, and go back down when you untick. You also fade a finished task using the <code>.done</code> style you already wrote in your CSS.</p>
+<blockquote>
+<p>🧠 Words to know: <strong>checkbox</strong>, <strong>checked</strong>, <strong>change</strong>, <strong>if / else</strong>, <strong>classList</strong></p>
+</blockquote>
+<hr />
+<h2>1 · Predict 🔮</h2>
+<p>Read each piece of code. Work out what happens, then write your prediction.</p>
+<pre><code class="language-javascript">let tasksDone = 0;
+tasksDone = tasksDone + 1;
+tasksDone = tasksDone + 1;
+tasksDone = tasksDone - 1;
+console.log(tasksDone);
+</code></pre>
+<p><strong>What number prints?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-javascript">chk1.addEventListener(&quot;change&quot;, function () {
+  console.log(chk1.checked);
+});
+</code></pre>
+<p><strong>You tick the box, then untick it. What two values print, in order?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-javascript">let tasksDone = 2;
+statusText.textContent = &quot;TASKS DONE - &quot; + tasksDone;
+</code></pre>
+<p><strong>What words show on the page?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-javascript">if (chk1.checked) {
+  tasksDone = tasksDone + 1;
+} else {
+  // nothing here
+}
+</code></pre>
+<p><strong><code>tasksDone</code> is 1. You untick the box. What is <code>tasksDone</code> now — and is that right?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>2 · Spot the Bug 🐛</h2>
+<p>These are from your own To-Do list code. Read what each is <strong>supposed</strong> to do, write the fix, then explain why the original was wrong.</p>
+<p><strong>Bug A</strong> — This is the listener for the <strong>second</strong> checkbox. Tick box 2 and nothing happens, but tick box 1 and box 2's text changes too.</p>
+<pre><code class="language-javascript">chk2.addEventListener(&quot;change&quot;, function () {
+  statusText.textContent = &quot;Checked: &quot; + chk1.checked;
+  if (chk1.checked) {
+    tasksDone = tasksDone + 1;
+  }
+});
+</code></pre>
+<p><strong>Hint:</strong> which checkbox is this listener for? Which checkbox is it reading?</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug B</strong> — The page should show <strong>TASKS DONE - 1</strong>. Instead it shows <strong>Checked: true</strong>.</p>
+<pre><code class="language-javascript">let tasksDone = 0;
+
+chk1.addEventListener(&quot;change&quot;, function () {
+  statusText.textContent = &quot;Checked: &quot; + chk1.checked;
+  if (chk1.checked) {
+    tasksDone = tasksDone + 1;
+  }
+});
+</code></pre>
+<p><strong>Hint:</strong> <code>tasksDone</code> is counted, but is it ever put on the page?</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug C</strong> — Tick a box and the count goes up. Untick it and the count <strong>stays</strong> up. Tick and untick the same box five times and it says 5 tasks done.</p>
+<pre><code class="language-javascript">chk1.addEventListener(&quot;change&quot;, function () {
+  if (chk1.checked) {
+    tasksDone = tasksDone + 1;
+  } else {
+    // not ticked
+  }
+  statusText.textContent = &quot;TASKS DONE - &quot; + tasksDone;
+});
+</code></pre>
+<p><strong>Hint:</strong> the <code>else</code> branch runs when the box is unticked. What should happen to the count there?</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>3 · Explain the Code 📖</h2>
+<p>This is one finished checkbox. It is the pattern you will copy for all four.</p>
+<pre><code class="language-html">&lt;div class=&quot;todo-item&quot;&gt;
+  &lt;input type=&quot;text&quot; class=&quot;content-gen&quot; placeholder=&quot;Add a task...&quot;&gt;
+  &lt;input type=&quot;checkbox&quot; id=&quot;chk1&quot;&gt;
+&lt;/div&gt;
+&lt;p id=&quot;statusText&quot;&gt;TASKS DONE - 0&lt;/p&gt;
+
+&lt;script&gt;
+  const chk1 = document.getElementById(&quot;chk1&quot;);
+  const statusText = document.getElementById(&quot;statusText&quot;);
+  let tasksDone = 0;
+
+  chk1.addEventListener(&quot;change&quot;, function () {
+    if (chk1.checked) {
+      tasksDone = tasksDone + 1;
+      chk1.parentElement.classList.add(&quot;done&quot;);
+    } else {
+      tasksDone = tasksDone - 1;
+      chk1.parentElement.classList.remove(&quot;done&quot;);
+    }
+    statusText.textContent = &quot;TASKS DONE - &quot; + tasksDone;
+  });
+&lt;/script&gt;
+</code></pre>
+<p><strong>You used <code>"click"</code> for your buttons. Why does a checkbox use <code>"change"</code> instead?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong><code>chk1.checked</code> is not a number or words. What kind of value is it, and what are its only two possible values?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Which branch runs when you untick the box — <code>if</code> or <code>else</code>? What does it do to <code>tasksDone</code>?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong><code>chk1.parentElement</code> is the <code>&lt;div class="todo-item"&gt;</code> around the checkbox. So what exactly does <code>classList.add("done")</code> change on the page?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>4 · Your Assignment: Make All Four Count 🔨</h2>
+<p>Open your <code>scripts.js</code> and make the whole To-Do list work.</p>
+<p>Your page already has <code>chk1</code>, <code>chk2</code>, <code>chk3</code>, <code>chk4</code> and <code>&lt;p id="statusText"&gt;</code>. Your <code>main.css</code> already has this style — you wrote it, and nothing uses it yet:</p>
+<pre><code class="language-css">.done { opacity: .4; text-decoration: line-through; }
+</code></pre>
+<p>Every checkbox must do all three:</p>
+<ul>
+<li><strong>Tick</strong> — add 1 to <code>tasksDone</code> and add the <code>done</code> class to that task's row.</li>
+<li><strong>Untick</strong> — take 1 away from <code>tasksDone</code> and remove the <code>done</code> class from that row.</li>
+<li><strong>Always</strong> — show <code>TASKS DONE -</code> and the number in <code>statusText</code>.</li>
+</ul>
+<p>Careful: each listener must read and change <strong>its own</strong> checkbox, not <code>chk1</code>.</p>
+<p><strong>Write the listener you wrote for <code>chk3</code>:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Test it. Tick boxes 1, 2 and 3, then untick box 2. What does the page show?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>When a row gets the <code>done</code> class, what do you see change about that row?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>5 · Record Your Walkthrough 🎥</h2>
+<p>Take a video on a phone while your page runs. Talk like you are teaching someone new. Try to use these words: <strong>checkbox</strong>, <strong>checked</strong>, <strong>change</strong>, <strong>if / else</strong>, <strong>classList</strong>.</p>
+<blockquote>
+<ol>
+<li>Show your page, then tick two boxes and read the count out loud.</li>
+<li>Untick one box and say what the <code>else</code> part of your code just did.</li>
+<li>Read your <code>chk4</code> listener out loud and say what each line does.</li>
+<li>Say what would break if <code>chk4</code> read <code>chk1.checked</code> instead.</li>
+</ol>
+</blockquote>
+<p><strong>Write what you will say in your video. Plan it here before you record.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your video of the four checkboxes counting to teacher on KakaoTalk.</p>
+<div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>
+</div></body></html>
