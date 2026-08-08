@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>🎢 Theme Park · Petting Zoo — Helper Functions — Helper Functions 2 (Extension · Easy)</title>
+<style>
+@page { size: A4; margin: 18mm 16mm 22mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-family: "Inter", "Segoe UI", system-ui, sans-serif; color: #1a1a2e; }
+body { font-size: 15px; line-height: 1.55; }
+
+.cover { border-bottom: 3px solid #ff7849; padding-bottom: 14px; margin-bottom: 20px; }
+.brand { font-size: 14px; font-weight: 800; color: #ff7849; letter-spacing: .06em; }
+h1 { font-size: 28px; color: #6b4ee6; margin: 8px 0 6px; line-height: 1.25; }
+h2 { font-size: 19px; color: #6b4ee6; margin: 22px 0 12px; padding-top: 10px; border-top: 1px solid #eee; page-break-before: always; }
+section.first h2, h2:first-of-type { border-top: none; padding-top: 0; page-break-before: avoid; }
+h3, h4 { font-size: 15px; margin: 14px 0 8px; color: #1a1a2e; }
+p { margin: 8px 0; }
+strong { color: #1a1a2e; }
+em { color: #555; }
+
+ul, ol { margin: 8px 0 8px 24px; }
+li { margin: 3px 0; }
+
+/* Grids (e.g. pixel-art coordinate grids) render as light graph paper. */
+table { border-collapse: collapse; margin: 12px 0; }
+th, td { border: 1px solid #ddd; padding: 4px 9px; text-align: center; font-size: 14px; }
+th { background: #faf7ff; color: #6b4ee6; font-weight: 700; }
+
+pre {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 13.5px;
+  background: #1e1e2e;
+  color: #b9f6ca;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 10px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  page-break-inside: avoid;
+  line-height: 1.5;
+}
+pre code { background: transparent; padding: 0; color: inherit; }
+code {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  background: #fff1e8;
+  color: #ff7849;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+blockquote {
+  margin: 10px 0;
+  padding: 10px 16px;
+  background: #fff6ef;
+  border-left: 3px solid #ff7849;
+  border-radius: 0 6px 6px 0;
+  color: #6a3a1c;
+}
+
+.write-space {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #ffffff 0,
+    #ffffff 27px,
+    #d4d4d4 27px,
+    #d4d4d4 28px
+  );
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  min-height: 114px;
+  margin: 10px 0 20px;
+  page-break-inside: avoid;
+}
+.write-space.short { min-height: 86px; }
+.write-space.tall { min-height: 170px; }
+/* Drawing box: same frame, no ruled lines — for "draw the shape" prompts. */
+.write-space.blank { background-image: none; }
+
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
+hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
+
+.meta { color: #666; font-size: 13px; margin: 0 0 14px; }
+.answer-lines {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 14px 16px;
+  background: #fafafa;
+  white-space: pre;
+  line-height: 2.2;
+}
+
+footer {
+  position: fixed;
+  bottom: 10mm; left: 16mm; right: 16mm;
+  text-align: center;
+  font-size: 10px;
+  color: #aaa;
+}
+footer b { color: #ff7849; }
+</style>
+</head>
+<body>
+<div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
+<h1>🎢 Theme Park · Petting Zoo — Helper Functions — Helper Functions 2 (Extension · Easy)</h1>
+<p><strong>Topic:</strong> Petting Zoo — Helper Functions · <strong>Course:</strong> Theme Park Creator · <strong>Level:</strong> Easy · <strong>Time:</strong> about 45 minutes</p>
+<p>This is the code you are learning this lesson. It builds a whole <strong>petting zoo</strong>: a fence, some trees, and animals inside.</p>
+<pre><code class="language-python">def post(x, z):
+    blocks.fill(OAK_FENCE, pos(x, 0, z), pos(x+15, 0, z+15), FillOperation.REPLACE)
+    blocks.fill(AIR, pos(x+1, 0, z+1), pos(x+14, 0, z+14), FillOperation.REPLACE)
+
+def tree(x, z):
+    blocks.place(OAK_SAPLING, pos(x+3, 0, z+3))
+    blocks.place(OAK_SAPLING, pos(x+3, 0, z+7))
+    blocks.place(OAK_SAPLING, pos(x+3, 0, z+11))
+
+def animals(x, z):
+    for i in range(7):
+        mobs.spawn(CHICKEN, pos(x+6, 0, z+3))
+
+def petting_zoo(x, z):
+    post(x, z)
+    tree(x, z)
+    animals(x, z)
+
+petting_zoo(5, 5)
+</code></pre>
+<blockquote>
+<p>💡 <strong>The big idea:</strong> <code>petting_zoo</code> is the <strong>boss</strong>. It does no building itself — it just <strong>calls</strong> three <strong>helper functions</strong>, and each helper does <strong>one</strong> job. Write each job once, and the boss puts them together.</p>
+</blockquote>
+<h2>1 · Who Does What? 🧩</h2>
+<p>Read the code above. Fill the table.</p>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Its one job (in your words)</th>
+<th>Boss or helper?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>post</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>tree</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>animals</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>petting_zoo</code></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>💡 A <strong>helper</strong> is just a function that <strong>another</strong> function calls. There is no special keyword — the word describes its <strong>job</strong>, not its code.</p>
+</blockquote>
+<h2>2 · The Hollow Fence 🧱</h2>
+<p>Look at <code>post</code>. It runs <strong>two</strong> fills. A big solid square, then it carves the middle back to <code>AIR</code>.</p>
+<pre><code class="language-text">   fill 1 — solid fence           fill 2 — carve middle to AIR
+      ## ## ## ## ## ##               ## ## ## ## ## ##
+      ## ## ## ## ## ##               ## .  .  .  .  ##
+      ## ## ## ## ## ##      --&gt;      ## .  .  .  .  ##
+      ## ## ## ## ## ##               ## .  .  .  .  ##
+      ## ## ## ## ## ##               ## ## ## ## ## ##
+   (x, z) to (x+15, z+15)         (x+1, z+1) to (x+14, z+14)
+</code></pre>
+<div class="qa"><p><strong>What is left after both fills? How thick is the fence wall, and why is fill 2 moved in by exactly 1?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>3 · Predict — Everything Comes From x and z 🔮</h2>
+<p>Every block is placed <strong>relative</strong> to <code>x</code> and <code>z</code> (like <code>x+3</code>, <code>z+11</code>). Right now the boss is called with <code>petting_zoo(5, 5)</code>.</p>
+<div class="qa"><p><strong>a)</strong> The trees are at <code>x+3</code>. With <code>petting_zoo(5, 5)</code>, what is the real <code>x</code> value of the trees?</p>
+<div class="write-space short"></div></div>
+
+<div class="qa"><p><strong>b)</strong> You change the last line to <code>petting_zoo(30, 5)</code>. What moves — the fence, the trees, the animals, or all of them? <strong>Why?</strong></p>
+<div class="write-space"></div></div>
+
+<blockquote>
+<p>💡 This is the whole point of parameters: the boss hands <code>x, z</code> down to <strong>every</strong> helper, so the <strong>whole zoo</strong> moves together with one number.</p>
+</blockquote>
+<h2>4 · Spot the Bug 🐛</h2>
+<p>Look closely at <code>animals</code>. It loops 7 times, but all 7 chickens land in the <strong>same spot</strong>.</p>
+<pre><code class="language-python">def animals(x, z):
+    for i in range(7):
+        mobs.spawn(CHICKEN, pos(x+6, 0, z+3))
+</code></pre>
+<div class="qa"><p><strong>a) Why do all 7 chickens spawn on top of each other?</strong> (Hint: look at where <code>i</code> is used… or not used.)</p>
+<div class="write-space short"></div></div>
+
+<div class="qa"><p><strong>b) Rewrite the <code>mobs.spawn</code> line so each chicken is 2 blocks further along than the last.</strong> Use <code>i</code> in the position.</p>
+<div class="write-space short"></div></div>
+
+<h2>5 · Extend the Zoo 💧</h2>
+<p>Add <strong>one new helper</strong> that digs a little pond, then let the boss call it. Fill the blank.</p>
+<pre><code class="language-python">def pond(x, z):
+    blocks.fill(WATER, pos(x+8, 0, z+9), pos(x+11, 0, z+12), FillOperation.REPLACE)
+
+def petting_zoo(x, z):
+    post(x, z)
+    tree(x, z)
+    animals(x, z)
+    ____(x, z)          # &lt;-- call your new pond helper
+</code></pre>
+<blockquote>
+<p>💡 See how easy it grows? One new helper + one new line in the boss. The boss stays short and readable no matter how big the zoo gets.</p>
+</blockquote>
+<div class="qa"><p><strong>In your homework world: add the pond, then change one more thing of your own</strong> (a different animal, more trees, a bigger fence). Write what you added and what happened:</p>
+<div class="write-space tall"></div></div>
+
+<h2>6 · Show Your Work 🎥</h2>
+<p>Record <strong>one video</strong>, one take, on your phone. Show in order:</p>
+<p><strong>1 · Your code.</strong> Scroll through it. Point at the boss and the four helpers.</p>
+<p><strong>2 · Your zoo.</strong> Point the camera. Name the fence, the trees, the animals.</p>
+<p>Then say these out loud, filling the blanks:</p>
+<blockquote>
+<p>Today I built ______.</p>
+<p>The boss function is <strong><em>_</em>_, and it calls </strong><strong><em>_, </em></strong><strong><em>, and </em></strong>___.</p>
+<p>A helper function is ______.</p>
+<p>My favourite part was <strong><em>_</em>_ because </strong>____.</p>
+</blockquote>
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your video to teacher on KakaoTalk.</p>
+</body>
+</html>

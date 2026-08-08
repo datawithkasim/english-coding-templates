@@ -1,0 +1,173 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head><meta charset='utf-8'>
+<title>🎢 Theme Park · Amenities — Functions Calling Functions — English Worksheet (Intermediate)</title>
+<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
+<style>
+@page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
+div.WordSection1 { page: WordSection1; }
+body { font-family: "Segoe UI", Arial, sans-serif; font-size: 11.5pt; color: #1a1a2e; line-height: 1.5; }
+h1 { font-size: 21pt; color: #6b4ee6; margin: 4px 0 6px; }
+h2 { font-size: 15pt; color: #6b4ee6; border-top: 1px solid #dddddd; padding-top: 8px; margin: 18px 0 10px; }
+h3, h4 { font-size: 11.5pt; margin: 12px 0 6px; }
+p { margin: 7px 0; }
+.brand { font-size: 10.5pt; font-weight: bold; color: #ff7849; letter-spacing: .06em;
+         border-bottom: 2px solid #ff7849; padding-bottom: 6px; margin-bottom: 14px; }
+table { border-collapse: collapse; margin: 10px 0; }
+th, td { border: 1px solid #c8c8c8; padding: 4px 9px; text-align: center; }
+th { background: #f3eefc; color: #6b4ee6; font-weight: bold; }
+pre { font-family: Consolas, "Courier New", monospace; font-size: 10.5pt; background: #f4f4f5;
+      border: 1px solid #dddddd; padding: 8px 10px; white-space: pre-wrap; }
+pre code { background: transparent; color: #1a1a2e; }
+code { font-family: Consolas, "Courier New", monospace; background: #fff1e8; color: #d6531f; padding: 0 3px; }
+blockquote { border-left: 3px solid #ff7849; background: #fff6ef; padding: 8px 12px;
+             color: #6a3a1c; margin: 9px 0; }
+ul, ol { margin: 7px 0 7px 26px; }
+p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
+.footer { color: #999999; font-size: 8.5pt; text-align: center; margin-top: 18px;
+          border-top: 1px solid #eeeeee; padding-top: 6px; }
+.footer b { color: #ff7849; }
+</style></head>
+<body><div class=WordSection1>
+<div class="brand">📚 ENGLISH CODING · 영어코딩</div>
+<h1>🎢 Theme Park · Amenities — Functions Calling Functions — English Worksheet (Intermediate)</h1>
+<p><strong>Topic:</strong> Amenities — Functions Calling Functions · <strong>Course:</strong> Theme Park Creator · <strong>Time:</strong> about 45 minutes</p>
+<p>Your park has stalls. Now it needs <strong>amenities</strong> — a <strong>bathroom</strong>, a <strong>janitor room</strong>.</p>
+<p>Both are rooms. So you write <strong>one</strong> <code>build_room</code> helper. Both amenity functions <strong>call</strong> it, then add their own fitting.</p>
+<p>These are the blocks you use this lesson:</p>
+<pre><code class="language-python">blocks.fill(QUARTZ_BLOCK, pos(0, 0, 0), pos(4, 3, 4), FillOperation.HOLLOW)
+blocks.fill(AIR, pos(2, 1, 0), pos(2, 2, 0), FillOperation.REPLACE)
+blocks.place(CAULDRON, pos(1, 1, 1))
+</code></pre>
+<blockquote>
+<p><code>blocks.fill(material, corner1, corner2, ...)</code> fills a box between two corners.
+<code>FillOperation.HOLLOW</code> = outer <strong>walls</strong> only — the middle is <strong>cleared to air</strong>.
+<code>FillOperation.REPLACE</code> = the <strong>whole solid</strong> box.
+<code>blocks.place(block, pos(x, y, z))</code> puts <strong>one</strong> block in <strong>one</strong> spot.
+<code>CAULDRON</code> = the toilet. <code>BARREL</code> = the janitor's supplies.</p>
+</blockquote>
+<hr />
+<h2>1 · Meet Helper Functions 🧰</h2>
+<p>A <strong>helper function</strong> does one job. Other functions <strong>call</strong> it instead of writing that job again.</p>
+<pre><code class="language-text">   build_bathroom(5)            build_janitor_room(4)
+        │                            │
+        ├─▶ build_room(...)          ├─▶ build_room(...)   ← ONE helper
+        │                            │
+        └─▶ place CAULDRON           └─▶ place BARREL
+</code></pre>
+<p>Here is the helper. It builds walls, a floor, and a doorway:</p>
+<pre><code class="language-python">def build_room(wall, floor, size):
+    blocks.fill(wall, pos(0, 0, 0), pos(size, 3, size), FillOperation.HOLLOW)
+    blocks.fill(floor, pos(0, 0, 0), pos(size, 0, size), FillOperation.REPLACE)
+    blocks.fill(AIR, pos(2, 1, 0), pos(2, 2, 0), FillOperation.REPLACE)
+</code></pre>
+<p><strong>Why is writing <code>build_room</code> once better than writing those three fills in both amenity functions?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>2 · Predict 🔮</h2>
+<p>Read each function. Write what you think happens.</p>
+<pre><code class="language-python">def build_bathroom(size):
+    build_room(QUARTZ_BLOCK, STONE, size)
+    blocks.place(CAULDRON, pos(1, 1, 1))
+
+build_bathroom(5)
+</code></pre>
+<p><strong>What are the walls made of? What is the floor made of? How wide is the room?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">def build_janitor_room(size):
+    build_room(OAK_PLANKS, STONE, size)
+    blocks.place(BARREL, pos(1, 1, 1))
+
+build_janitor_room(4)
+</code></pre>
+<p><strong>Both amenities call the same helper. What is different about the two rooms?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>3 · Spot the Bug 🐛</h2>
+<p>Each block is broken. Read what it should do, rewrite it so it works, then explain why the original was wrong.</p>
+<p><strong>Bug A</strong> — This should build a bathroom: a room, then a cauldron. But only a <strong>lonely cauldron</strong> appears, with no room around it.</p>
+<pre><code class="language-python">def build_bathroom(size):
+    blocks.place(CAULDRON, pos(1, 1, 1))
+
+build_bathroom(5)
+</code></pre>
+<p><strong>Hint:</strong> the helper exists, but nobody calls it.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug B</strong> — This should give the bathroom <strong>quartz walls</strong> and a <strong>stone floor</strong>. But the walls come out stone and the floor comes out quartz.</p>
+<pre><code class="language-python">def build_bathroom(size):
+    build_room(STONE, QUARTZ_BLOCK, size)
+    blocks.place(CAULDRON, pos(1, 1, 1))
+
+build_bathroom(5)
+</code></pre>
+<p><strong>Hint:</strong> the helper's parameters are <code>(wall, floor, size)</code>. Arguments land in those boxes <strong>by position</strong>.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug C</strong> — This should build a room with a cauldron inside. The room appears, but the <strong>cauldron is gone</strong>.</p>
+<pre><code class="language-python">def build_bathroom(size):
+    blocks.place(CAULDRON, pos(1, 1, 1))
+    build_room(QUARTZ_BLOCK, STONE, size)
+
+build_bathroom(5)
+</code></pre>
+<p><strong>Hint:</strong> <code>FillOperation.HOLLOW</code> clears the middle of the room to air. The cauldron is in the middle.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>4 · Build the Amenities 🚻</h2>
+<p>In your homework world, write <strong>one</strong> helper and <strong>two</strong> functions that call it:</p>
+<pre><code class="language-python">def build_room(wall, floor, size):
+def build_bathroom(size):
+def build_janitor_room(size):
+</code></pre>
+<p><code>build_room</code> builds:</p>
+<ul>
+<li><strong>walls</strong> from the <code>wall</code> material with <code>FillOperation.HOLLOW</code></li>
+<li>a <strong>floor</strong> from the <code>floor</code> material</li>
+<li>a <strong>doorway</strong> carved with <code>AIR</code> so a visitor can walk in</li>
+</ul>
+<p><code>build_bathroom</code> calls <code>build_room</code>, then places a <code>CAULDRON</code> inside.
+<code>build_janitor_room</code> calls <code>build_room</code> with different materials, then places a <code>BARREL</code> inside.</p>
+<p>Neither amenity function has a <code>blocks.fill</code> of its own. The walls, floor and doorway all come from the helper.</p>
+<p>Run <code>build_bathroom(5)</code>. Then <strong>walk somewhere new</strong> and run <code>build_janitor_room(4)</code>, so the two rooms stand apart.</p>
+<p><strong>Write your helper and your two amenity functions:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>5 · Show Your Work 📸🎥</h2>
+<p>Record <strong>one video</strong> — one take, no stopping (a phone is fine). Show these in order:</p>
+<p><strong>1 · Your code.</strong> Scroll through it. Say what each part does.</p>
+<p><strong>2 · Your build.</strong> Point the camera. Name the parts.</p>
+<p>Fill the blanks:</p>
+<blockquote>
+<p>Today I built ______.</p>
+<p>I built it using this code: ______.</p>
+<p>In this code I used ______.</p>
+<p>The hardest part was ______.</p>
+<p>That part was hard because ______.</p>
+<p>The most fun part was ______.</p>
+<p>Something new I learned was ______.</p>
+</blockquote>
+<p><strong>Write your lines here, then say them in your video.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your video to teacher on KakaoTalk.</p>
+<div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>
+</div></body></html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>🗿 3D Coordinates · Recreate the Statues (x, y, z) — English Worksheet (Advanced)</title>
+<style>
+@page { size: A4; margin: 18mm 16mm 22mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-family: "Inter", "Segoe UI", system-ui, sans-serif; color: #1a1a2e; }
+body { font-size: 15px; line-height: 1.55; }
+
+.cover { border-bottom: 3px solid #ff7849; padding-bottom: 14px; margin-bottom: 20px; }
+.brand { font-size: 14px; font-weight: 800; color: #ff7849; letter-spacing: .06em; }
+h1 { font-size: 28px; color: #6b4ee6; margin: 8px 0 6px; line-height: 1.25; }
+h2 { font-size: 19px; color: #6b4ee6; margin: 22px 0 12px; padding-top: 10px; border-top: 1px solid #eee; page-break-before: always; }
+section.first h2, h2:first-of-type { border-top: none; padding-top: 0; page-break-before: avoid; }
+h3, h4 { font-size: 15px; margin: 14px 0 8px; color: #1a1a2e; }
+p { margin: 8px 0; }
+strong { color: #1a1a2e; }
+em { color: #555; }
+
+ul, ol { margin: 8px 0 8px 24px; }
+li { margin: 3px 0; }
+
+/* Grids (e.g. pixel-art coordinate grids) render as light graph paper. */
+table { border-collapse: collapse; margin: 12px 0; }
+th, td { border: 1px solid #ddd; padding: 4px 9px; text-align: center; font-size: 14px; }
+th { background: #faf7ff; color: #6b4ee6; font-weight: 700; }
+
+pre {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 13.5px;
+  background: #1e1e2e;
+  color: #b9f6ca;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 10px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  page-break-inside: avoid;
+  line-height: 1.5;
+}
+pre code { background: transparent; padding: 0; color: inherit; }
+code {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  background: #fff1e8;
+  color: #ff7849;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+blockquote {
+  margin: 10px 0;
+  padding: 10px 16px;
+  background: #fff6ef;
+  border-left: 3px solid #ff7849;
+  border-radius: 0 6px 6px 0;
+  color: #6a3a1c;
+}
+
+.write-space {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #ffffff 0,
+    #ffffff 27px,
+    #d4d4d4 27px,
+    #d4d4d4 28px
+  );
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  min-height: 114px;
+  margin: 10px 0 20px;
+  page-break-inside: avoid;
+}
+.write-space.short { min-height: 86px; }
+.write-space.tall { min-height: 170px; }
+/* Drawing box: same frame, no ruled lines — for "draw the shape" prompts. */
+.write-space.blank { background-image: none; }
+
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
+hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
+
+.meta { color: #666; font-size: 13px; margin: 0 0 14px; }
+.answer-lines {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 14px 16px;
+  background: #fafafa;
+  white-space: pre;
+  line-height: 2.2;
+}
+
+footer {
+  position: fixed;
+  bottom: 10mm; left: 16mm; right: 16mm;
+  text-align: center;
+  font-size: 10px;
+  color: #aaa;
+}
+footer b { color: #ff7849; }
+</style>
+</head>
+<body>
+<div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
+<h1>🗿 3D Coordinates · Recreate the Statues (x, y, z) — English Worksheet (Advanced)</h1>
+<p><strong>Topic:</strong> Recreate the Statues (x, y, z) · <strong>Course:</strong> 3D Coordinates · <strong>Level:</strong> Advanced · <strong>Time:</strong> about 45 minutes</p>
+<p>A statue is many <strong>stacked fill boxes</strong>: legs, a torso, arms, a head. One <strong><code>fill</code></strong> makes a solid box between <strong>two corners</strong> (x, y, z) — x <strong>across</strong>, y <strong>up</strong>, z <strong>forward</strong>, feet on the <strong>ground (y = 0)</strong>.</p>
+<blockquote>
+<p>🔴 Stand on your <strong>home spot</strong> (red block) every run. Move your feet, move your head.</p>
+</blockquote>
+<h2>1 · Predict 🔮</h2>
+<p>Read each box. Write what you will see, <strong>where it sits</strong>, <strong>and the reason</strong>.</p>
+<pre><code>fill GRAY from (3, 0, 4) to (3, 2, 4)
+fill GRAY from (5, 0, 4) to (5, 2, 4)
+</code></pre>
+<div class="qa"><p><strong>Two thin boxes, x = 3 and x = 5, both y = 0–2. What part is this, why two of them, and why y = 0?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code>fill GRAY from (2, 3, 4) to (2, 5, 4)
+fill GRAY from (6, 3, 4) to (6, 5, 4)
+</code></pre>
+<div class="qa"><p><strong>These start at y = 3 and sit at x = 2 and x = 6 — outside the legs. What part is this, and why is the x outside?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code>fill WHITE from (3, 7, 4) to (5, 8, 4)
+</code></pre>
+<div class="qa"><p><strong>This is the highest box (y = 7–8). What part is it, and how do you know from the y?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code>fill GRAY from (3, 3, 4) to (5, 6, 4)
+fill WHITE from (3, 7, 4) to (5, 8, 4)
+</code></pre>
+<div class="qa"><p><strong>Two boxes together. The torso ends at y = 6 but the head starts at y = 7. What sits between them, and what does that gap mean?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>2 · Spot the Bug 🐛</h2>
+<p>Each block is broken. Read what it should do, write the fixed code, then explain.</p>
+<p><strong>Bug A</strong> — The torso should sit <strong>on top</strong> of the legs. The legs go y = 0–2, so the torso should start at y = 3. Right now it starts at <strong>y = 0</strong>, so nothing rises.</p>
+<pre><code>fill GRAY from (3, 0, 4) to (5, 6, 4)
+</code></pre>
+<p><strong>Hint:</strong> the <strong>2nd number (y)</strong> is height. Where should the torso's bottom y be?</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work? (2–3 sentences.)</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug B</strong> — This should be the <strong>right arm</strong>, hanging on the <strong>side</strong> of the torso at x = 6. The torso fills x = 3–5, so x = 4 is <strong>inside</strong> it — the arm disappears into the body.</p>
+<pre><code>fill GRAY from (4, 3, 4) to (4, 5, 4)
+</code></pre>
+<p><strong>Hint:</strong> to be on the outside, the arm's <strong>1st number (x)</strong> must be past the torso's x = 3–5.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work? (2–3 sentences.)</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug C</strong> <em>(the tricky one)</em> — Your friend's whole statue is <strong>floating</strong> — a gap of air under the feet. The legs are built at <strong>y = 1–3</strong> instead of touching the ground. The feet must sit on the floor.</p>
+<pre><code>fill GRAY from (3, 1, 4) to (3, 3, 4)
+fill GRAY from (5, 1, 4) to (5, 3, 4)
+</code></pre>
+<p><strong>Hint:</strong> the ground is <strong>y = 0</strong>. What is the lowest y a foot should have?</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work? (2–3 sentences.)</strong></p>
+<div class="write-space"></div></div>
+
+<h2>3 · Show Your Work 📸🎥</h2>
+<p>Walk around a statue in your world. Then plan and build a <strong>full golem</strong> on your home spot — <strong>6 fill boxes</strong>: two legs, a torso, two arms, and a head.</p>
+<blockquote>
+<p>🧱 Recipe (every corner is <strong>(x, y, z)</strong>, feet on the ground y = 0):
+- left leg: gray from (3, 0, 4) to (3, 2, 4)
+- right leg: gray from (5, 0, 4) to (5, 2, 4)
+- torso: gray from (3, 3, 4) to (5, 6, 4)
+- left arm: gray from (2, 3, 4) to (2, 5, 4)
+- right arm: gray from (6, 3, 4) to (6, 5, 4)
+- head: white from (3, 7, 4) to (5, 8, 4)</p>
+</blockquote>
+<p>Before you build, <strong>plan the heights</strong> in the space below: which y does each part start and stop at?</p>
+<blockquote>
+<p>✨ <strong>Modify challenge:</strong> after it works, change one thing of your own — a new colour, a different pose, or an extra part (a hat, a tail, longer arms). Write what you changed.</p>
+</blockquote>
+<p>Record <strong>one video</strong> — one take, no stopping (a phone is fine). Show these in order:</p>
+<p><strong>1 · Your code.</strong> Scroll through it. Say what each part does.</p>
+<p><strong>2 · Your build.</strong> Point the camera. Name the parts.</p>
+<p>Fill the blanks:</p>
+<blockquote>
+<p>Today I built ______.</p>
+<p>I built it using this code: ______.</p>
+<p>In this code I used ______.</p>
+<p>The hardest part was ______.</p>
+<p>That part was hard because ______.</p>
+<p>The most fun part was ______.</p>
+<p>Something new I learned was ______.</p>
+</blockquote>
+<div class="qa"><p><strong>Write your lines here, then say them in your video.</strong></p>
+<div class="write-space tall" style="min-height: 340px"></div></div>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your video to teacher on KakaoTalk.</p>
+</body>
+</html>

@@ -1,4 +1,4 @@
-# 🎮 M000 Pre-Lesson — Get Comfy in Minecraft
+# 🎮 Builder Basics Pre-Lesson — Get Comfy in Minecraft
 
 **Topic:** Moving & Building · **Course:** Builder Basics · **Time:** about 15 minutes
 

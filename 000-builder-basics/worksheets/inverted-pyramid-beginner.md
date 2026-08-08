@@ -1,4 +1,4 @@
-# 🔻 M000 · Inverted Pyramid — English Worksheet (Beginner)
+# 🔻 Builder Basics · Inverted Pyramid — English Worksheet (Beginner)
 
 **Topic:** Inverted Pyramid · **Course:** Builder Basics · **Level:** Beginner · **Time:** about 30 minutes
 

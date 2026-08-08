@@ -1,4 +1,4 @@
-# 🔷 M000 · Pyramid Variations — English Worksheet
+# 🔷 Builder Basics · Pyramid Variations — English Worksheet
 
 **Topic:** Pyramid Variations · **Course:** Builder Basics · **Time:** about 45 minutes
 
