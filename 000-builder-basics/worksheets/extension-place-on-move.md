@@ -2,7 +2,7 @@
 
 **Topic:** Place On Move · **Course:** Builder Basics · **Type:** Extension Activity · **Time:** about 45 minutes
 
-> 🧩 This is a bonus challenge, not a weekly lesson. Try it once you are comfortable placing blocks by hand and you are ready to let the agent place them for you.
+> 🧩 This is a bonus challenge, not a main lesson. Try it once you are comfortable placing blocks by hand and you are ready to let the agent place them for you.
 
 ---
 
@@ -100,7 +100,7 @@ Plan a trail of your own — in words and numbers, not in a code box.
 
 <div class="write-space"></div>
 
-**The big idea: in Week 2 you placed each block by hand — one `place` per block. With place on move you write one `move` and the agent places a whole line. Explain WHY that is easier. If you wanted a trail 50 blocks long, which way would you rather build it, and why?**
+**The big idea: in the Placing Blocks lesson you placed each block by hand — one `place` per block. With place on move you write one `move` and the agent places a whole line. Explain WHY that is easier. If you wanted a trail 50 blocks long, which way would you rather build it, and why?**
 
 <div class="write-space tall"></div>
 

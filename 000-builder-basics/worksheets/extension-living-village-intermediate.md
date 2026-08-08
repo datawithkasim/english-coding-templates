@@ -2,7 +2,7 @@
 
 **Topic:** Bring It All Together · **Course:** Builder Basics · **Level:** Intermediate · **Type:** Extension Activity · **Time:** about 60 minutes
 
-> 🧩 This is a bonus challenge, not a weekly lesson. Try it after **Complete Your Village**, once you can build with loops, move the agent between spots, and place water and animals.
+> 🧩 This is a bonus challenge, not a main lesson. Try it after **Complete Your Village**, once you can build with loops, move the agent between spots, and place water and animals.
 
 ---
 

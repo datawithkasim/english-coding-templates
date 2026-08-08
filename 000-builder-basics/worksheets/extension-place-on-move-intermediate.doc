@@ -32,9 +32,9 @@ p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
 <h1>🧱 Builder Basics — The Trail Maker (Extension · Intermediate)</h1>
 <p><strong>Topic:</strong> Place On Move · <strong>Course:</strong> Builder Basics · <strong>Type:</strong> Extension Activity · <strong>Level:</strong> Intermediate · <strong>Time:</strong> about 38 minutes</p>
 <blockquote>
-<p>🧩 This is a bonus challenge, not a weekly lesson. Try it once you are comfortable placing blocks and you want the agent to place a whole line for you.</p>
+<p>🧩 This is a bonus challenge, not a main lesson. Try it once you are comfortable placing blocks and you want the agent to place a whole line for you.</p>
 </blockquote>
-<p>In Week 2 you placed blocks one at a time. Here, type <code>run</code> and the agent flips a switch called <strong>place on move</strong>, then walks forward — no code to type.</p>
+<p>In the Placing Blocks lesson you placed blocks one at a time. Here, type <code>run</code> and the agent flips a switch called <strong>place on move</strong>, then walks forward — no code to type.</p>
 <p>When <strong>place on move</strong> is <strong>ON</strong>, the agent drops a block on every step — a <strong>trail</strong>. When it is <strong>OFF</strong>, it walks but places nothing — a <strong>gap</strong>.</p>
 <hr />
 <h2>1 · Predict 🔮</h2>

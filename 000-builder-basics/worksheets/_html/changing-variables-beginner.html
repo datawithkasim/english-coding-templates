@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>📈 M000 · Changing a Variable — English Worksheet (Beginner)</title>
+<style>
+@page { size: A4; margin: 18mm 16mm 22mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-family: "Inter", "Segoe UI", system-ui, sans-serif; color: #1a1a2e; }
+body { font-size: 15px; line-height: 1.55; }
+
+.cover { border-bottom: 3px solid #ff7849; padding-bottom: 14px; margin-bottom: 20px; }
+.brand { font-size: 14px; font-weight: 800; color: #ff7849; letter-spacing: .06em; }
+h1 { font-size: 28px; color: #6b4ee6; margin: 8px 0 6px; line-height: 1.25; }
+h2 { font-size: 19px; color: #6b4ee6; margin: 22px 0 12px; padding-top: 10px; border-top: 1px solid #eee; page-break-before: always; }
+section.first h2, h2:first-of-type { border-top: none; padding-top: 0; page-break-before: avoid; }
+h3, h4 { font-size: 15px; margin: 14px 0 8px; color: #1a1a2e; }
+p { margin: 8px 0; }
+strong { color: #1a1a2e; }
+em { color: #555; }
+
+ul, ol { margin: 8px 0 8px 24px; }
+li { margin: 3px 0; }
+
+/* Grids (e.g. pixel-art coordinate grids) render as light graph paper. */
+table { border-collapse: collapse; margin: 12px 0; }
+th, td { border: 1px solid #ddd; padding: 4px 9px; text-align: center; font-size: 14px; }
+th { background: #faf7ff; color: #6b4ee6; font-weight: 700; }
+
+pre {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 13.5px;
+  background: #1e1e2e;
+  color: #b9f6ca;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 10px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  page-break-inside: avoid;
+  line-height: 1.5;
+}
+pre code { background: transparent; padding: 0; color: inherit; }
+code {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  background: #fff1e8;
+  color: #ff7849;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+blockquote {
+  margin: 10px 0;
+  padding: 10px 16px;
+  background: #fff6ef;
+  border-left: 3px solid #ff7849;
+  border-radius: 0 6px 6px 0;
+  color: #6a3a1c;
+}
+
+.write-space {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #ffffff 0,
+    #ffffff 27px,
+    #d4d4d4 27px,
+    #d4d4d4 28px
+  );
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  min-height: 114px;
+  margin: 10px 0 20px;
+  page-break-inside: avoid;
+}
+.write-space.short { min-height: 86px; }
+.write-space.tall { min-height: 170px; }
+/* Drawing box: same frame, no ruled lines — for "draw the shape" prompts. */
+.write-space.blank { background-image: none; }
+
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
+hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
+
+.meta { color: #666; font-size: 13px; margin: 0 0 14px; }
+.answer-lines {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 14px 16px;
+  background: #fafafa;
+  white-space: pre;
+  line-height: 2.2;
+}
+
+footer {
+  position: fixed;
+  bottom: 10mm; left: 16mm; right: 16mm;
+  text-align: center;
+  font-size: 10px;
+  color: #aaa;
+}
+footer b { color: #ff7849; }
+</style>
+</head>
+<body>
+<div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
+<h1>📈 M000 · Changing a Variable — English Worksheet (Beginner)</h1>
+<p><strong>Topic:</strong> Changing a Variable While You Build · <strong>Course:</strong> Builder Basics · <strong>Level:</strong> Beginner · <strong>Time:</strong> about 30 minutes</p>
+<h2>1 · Predict 🔮</h2>
+<p>A variable can <strong>change while the code runs</strong>. <code>height = height + 1</code> means: add 1 to what <code>height</code> holds.</p>
+<p>Read the steps. Circle your answer.</p>
+<pre><code>height = 1
+repeat 3 times:
+    place block down
+    move up by height
+    move forward
+    height = height + 1
+</code></pre>
+<p><strong>What does <code>height</code> hold on the first step? Circle one:</strong> 1 · 2 · 3</p>
+<p><strong>What does <code>height</code> hold on the second step? Circle one:</strong> 2 · 1 · 5</p>
+<p><strong>Does each step climb the same amount or more? Circle one:</strong> more each time · the same</p>
+<h2>2 · Find the Difference 🐛</h2>
+<p>Clean steps first, then a broken version. Circle the bug.</p>
+<p><strong>Pair A</strong> — Each step should climb higher than the one before.</p>
+<pre><code># clean
+height = 1
+repeat 3 times:
+    place block down
+    move up by height
+    move forward
+    height = height + 1
+</code></pre>
+<pre><code># buggy
+height = 1
+repeat 3 times:
+    place block down
+    move up by height
+    move forward
+</code></pre>
+<p><strong>What is wrong? Circle one:</strong> <code>height</code> never changes · the loop is missing · a block is missing</p>
+<p><strong>What shape do you get from the buggy code? Circle one:</strong> every step the same · a staircase · a tower</p>
+<p><strong>Pair B</strong> — <code>height</code> should keep growing.</p>
+<pre><code># clean
+height = 1
+repeat 3 times:
+    place block down
+    move up by height
+    height = height + 1
+</code></pre>
+<pre><code># buggy
+height = 1
+repeat 3 times:
+    height = 1
+    place block down
+    move up by height
+    height = height + 1
+</code></pre>
+<p><strong>What is wrong? Circle one:</strong> <code>height</code> goes back to 1 every time · <code>height</code> grows too fast · the loop runs too many times</p>
+<h2>3 · Fill the Gap ✏️</h2>
+<p>Each step should climb higher than the one before. One line is missing.</p>
+<pre><code>height = 1
+repeat 3 times:
+    place block down
+    move up by height
+    move forward
+    ____________
+</code></pre>
+<p><strong>Which line is missing? Circle one:</strong> height = height + 1 · turn right · height = 1</p>
+<h2>4 · Show Your Work 📸🎥</h2>
+<p>Switch to your homework world. Build a <strong>staircase</strong> where each step climbs higher than the one before. Then change the number you add each time and run it again.</p>
+<p>Record <strong>one video</strong> — one take, no stopping (a phone is fine). Show these in order:</p>
+<p><strong>1 · Your code.</strong> Scroll through it. Say what each part does. Point at the line that changes your variable.</p>
+<p><strong>2 · Your build.</strong> Point the camera. Show both staircases.</p>
+<p>Say these out loud, filling in the blanks:</p>
+<blockquote>
+<p>Today I built ______.</p>
+<p>I built it using this code: ______.</p>
+<p>In this code I used ______.</p>
+<p>The hardest part was ______.</p>
+<p>That part was hard because ______.</p>
+<p>The most fun part was ______.</p>
+<p>Something new I learned was ______.</p>
+</blockquote>
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your video to teacher on KakaoTalk.</p>
+</body>
+</html>

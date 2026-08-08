@@ -2,7 +2,7 @@
 
 **Topic:** Variables · **Course:** Builder Basics · **Type:** Extension Activity · **Level:** Intermediate · **Time:** about 38 minutes
 
-> 🧩 This is a bonus challenge, not a weekly lesson. Try it once you are comfortable building square rings with loops and you want to make a roof that steps up to a point.
+> 🧩 This is a bonus challenge, not a main lesson. Try it once you are comfortable building square rings with loops and you want to make a roof that steps up to a point.
 
 A real roof is a stack of **square rings** that shrink as they go up. In the Sloped Roof world, typing `slope` builds the whole roof — this worksheet is about the **idea**, not code.
 

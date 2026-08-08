@@ -75,6 +75,8 @@ blockquote {
 }
 .write-space.short { min-height: 86px; }
 .write-space.tall { min-height: 170px; }
+/* Drawing box: same frame, no ruled lines — for "draw the shape" prompts. */
+.write-space.blank { background-image: none; }
 
 /* Keep a question (and any hint/code above it) glued to its answer box so a
    page break never lands between the prompt and the lines you write on. */
@@ -110,7 +112,7 @@ footer b { color: #ff7849; }
 <h1>🏠 Builder Basics — The Sloped Roof (Extension · Intermediate)</h1>
 <p><strong>Topic:</strong> Variables · <strong>Course:</strong> Builder Basics · <strong>Type:</strong> Extension Activity · <strong>Level:</strong> Intermediate · <strong>Time:</strong> about 38 minutes</p>
 <blockquote>
-<p>🧩 This is a bonus challenge, not a weekly lesson. Try it once you are comfortable building square rings with loops and you want to make a roof that steps up to a point.</p>
+<p>🧩 This is a bonus challenge, not a main lesson. Try it once you are comfortable building square rings with loops and you want to make a roof that steps up to a point.</p>
 </blockquote>
 <p>A real roof is a stack of <strong>square rings</strong> that shrink as they go up. In the Sloped Roof world, typing <code>slope</code> builds the whole roof — this worksheet is about the <strong>idea</strong>, not code.</p>
 <p>The ring's side length is a <strong>variable</strong> called <code>roof_len</code>. Change its starting number and the whole roof changes shape.</p>

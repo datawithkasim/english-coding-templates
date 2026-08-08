@@ -2,9 +2,9 @@
 
 **Topic:** Move, Turn, Climb With Place On Move · **Course:** Builder Basics · **Type:** Extension Activity · **Time:** about 45 minutes
 
-> 🧩 This is a bonus challenge, not a weekly lesson. Try it once you can move the agent around, before you start placing blocks by hand.
+> 🧩 This is a bonus challenge, not a main lesson. Try it once you can move the agent around, before you start placing blocks by hand.
 
-In Week 1 the agent **walked**. Here it walks and **draws** at the same time. You flip one switch — **place on move** — at the very top, and you never touch it again. After that, every step drops a block.
+In the Agent Movement lesson the agent **walked**. Here it walks and **draws** at the same time. You flip one switch — **place on move** — at the very top, and you never touch it again. After that, every step drops a block.
 
 Your four commands:
 

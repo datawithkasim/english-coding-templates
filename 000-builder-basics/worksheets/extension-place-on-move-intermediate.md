@@ -2,9 +2,9 @@
 
 **Topic:** Place On Move · **Course:** Builder Basics · **Type:** Extension Activity · **Level:** Intermediate · **Time:** about 38 minutes
 
-> 🧩 This is a bonus challenge, not a weekly lesson. Try it once you are comfortable placing blocks and you want the agent to place a whole line for you.
+> 🧩 This is a bonus challenge, not a main lesson. Try it once you are comfortable placing blocks and you want the agent to place a whole line for you.
 
-In Week 2 you placed blocks one at a time. Here, type `run` and the agent flips a switch called **place on move**, then walks forward — no code to type.
+In the Placing Blocks lesson you placed blocks one at a time. Here, type `run` and the agent flips a switch called **place on move**, then walks forward — no code to type.
 
 When **place on move** is **ON**, the agent drops a block on every step — a **trail**. When it is **OFF**, it walks but places nothing — a **gap**.
 

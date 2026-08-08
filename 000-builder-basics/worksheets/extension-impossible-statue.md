@@ -2,7 +2,7 @@
 
 **Topic:** Place + Move, On and Off · **Course:** Builder Basics · **Type:** Extension Activity · **Time:** about 45 minutes
 
-> 🧩 This is a bonus challenge, not a weekly lesson. Try it once you are comfortable placing blocks and moving the agent.
+> 🧩 This is a bonus challenge, not a main lesson. Try it once you are comfortable placing blocks and moving the agent.
 
 ---
 

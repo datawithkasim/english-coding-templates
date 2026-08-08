@@ -1,4 +1,4 @@
-# 🪣 M000 Week 6 — English Worksheet
+# 🪣 M000 · Building a Well — English Worksheet
 
 **Topic:** Building a Well · **Course:** Builder Basics · **Time:** about 45 minutes
 

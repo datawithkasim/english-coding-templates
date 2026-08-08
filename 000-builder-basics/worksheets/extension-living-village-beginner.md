@@ -2,7 +2,7 @@
 
 **Topic:** Bring It All Together · **Course:** Builder Basics · **Level:** Beginner · **Type:** Extension Activity · **Time:** about 40 minutes
 
-> 🧩 A bonus challenge, not a weekly lesson. Try it after **Complete Your Village**.
+> 🧩 A bonus challenge, not a main lesson. Try it after **Complete Your Village**.
 
 ---
 

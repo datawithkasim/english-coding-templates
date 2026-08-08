@@ -2,7 +2,7 @@
 
 **Topic:** Variables · **Course:** Builder Basics · **Type:** Extension Activity · **Level:** Beginner · **Time:** about 30 minutes
 
-> 🧩 This is a bonus challenge, not a weekly lesson. Try it once you are happy building with loops.
+> 🧩 This is a bonus challenge, not a main lesson. Try it once you are happy building with loops.
 
 ---
 
