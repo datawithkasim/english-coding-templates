@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>🔁 Extra — One Loop, Then Two</title>
+<style>
+@page { size: A4; margin: 18mm 16mm 22mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-family: "Inter", "Segoe UI", system-ui, sans-serif; color: #1a1a2e; }
+body { font-size: 15px; line-height: 1.55; }
+
+.cover { border-bottom: 3px solid #ff7849; padding-bottom: 14px; margin-bottom: 20px; }
+.brand { font-size: 14px; font-weight: 800; color: #ff7849; letter-spacing: .06em; }
+h1 { font-size: 28px; color: #6b4ee6; margin: 8px 0 6px; line-height: 1.25; }
+h2 { font-size: 19px; color: #6b4ee6; margin: 22px 0 12px; padding-top: 10px; border-top: 1px solid #eee; page-break-before: always; }
+section.first h2, h2:first-of-type { border-top: none; padding-top: 0; page-break-before: avoid; }
+h3, h4 { font-size: 15px; margin: 14px 0 8px; color: #1a1a2e; }
+p { margin: 8px 0; }
+strong { color: #1a1a2e; }
+em { color: #555; }
+
+ul, ol { margin: 8px 0 8px 24px; }
+li { margin: 3px 0; }
+
+/* Grids (e.g. pixel-art coordinate grids) render as light graph paper. */
+table { border-collapse: collapse; margin: 12px 0; }
+th, td { border: 1px solid #ddd; padding: 4px 9px; text-align: center; font-size: 14px; }
+th { background: #faf7ff; color: #6b4ee6; font-weight: 700; }
+
+pre {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 13.5px;
+  background: #1e1e2e;
+  color: #b9f6ca;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 10px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  page-break-inside: avoid;
+  line-height: 1.5;
+}
+pre code { background: transparent; padding: 0; color: inherit; }
+code {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  background: #fff1e8;
+  color: #ff7849;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+blockquote {
+  margin: 10px 0;
+  padding: 10px 16px;
+  background: #fff6ef;
+  border-left: 3px solid #ff7849;
+  border-radius: 0 6px 6px 0;
+  color: #6a3a1c;
+}
+
+.write-space {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #ffffff 0,
+    #ffffff 27px,
+    #d4d4d4 27px,
+    #d4d4d4 28px
+  );
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  min-height: 114px;
+  margin: 10px 0 20px;
+  page-break-inside: avoid;
+}
+.write-space.short { min-height: 86px; }
+.write-space.tall { min-height: 170px; }
+/* Drawing box: same frame, no ruled lines — for "draw the shape" prompts. */
+.write-space.blank { background-image: none; }
+
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
+hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
+
+.meta { color: #666; font-size: 13px; margin: 0 0 14px; }
+.answer-lines {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 14px 16px;
+  background: #fafafa;
+  white-space: pre;
+  line-height: 2.2;
+}
+
+footer {
+  position: fixed;
+  bottom: 10mm; left: 16mm; right: 16mm;
+  text-align: center;
+  font-size: 10px;
+  color: #aaa;
+}
+footer b { color: #ff7849; }
+</style>
+</head>
+<body>
+<div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
+<style>
+/* turn strip: one card per turn of the loop */
+.strip { display: table; width: 100%; table-layout: fixed; margin: 10px 0; }
+.strip .card { display: table-cell; width: 25%; padding: 6px 4px; vertical-align: top; }
+.strip .inner { border: 2px solid #e2e2e2; border-radius: 10px; background: #fff; padding: 10px 6px 10px; text-align: center; }
+.strip .tturn { display: inline-block; white-space: nowrap; background: #6b4ee6; color: #fff; font-family: "Inter", sans-serif; font-size: 10.5px; font-weight: 700; padding: 2px 10px; border-radius: 10px; margin-bottom: 8px; }
+.strip .mon { font-size: 24px; letter-spacing: 4px; }
+.strip .cap { font-family: "Inter", sans-serif; font-size: 11px; color: #888; margin-top: 5px; }
+
+/* screen: what the computer shows */
+.screen { border: 2px solid #2e2e38; border-radius: 10px; background: #fbfbfd; padding: 24px 12px 12px; margin: 10px 0; position: relative; }
+.screen .stag { position: absolute; top: -11px; left: 12px; background: #2e2e38; color: #fff; font-family: "Inter", sans-serif; font-size: 11px; font-weight: 700; padding: 2px 10px; border-radius: 10px; }
+.screen .row { font-size: 22px; letter-spacing: 7px; line-height: 1.5; }
+
+/* nested boxes */
+.obox { border: 3px dashed #ff7849; border-radius: 12px; background: #fff6ef; padding: 30px 12px 12px; position: relative; margin: 10px 0; }
+.ibox { border: 3px solid #6b4ee6; border-radius: 10px; background: #f3f0ff; padding: 26px 10px 10px; position: relative; }
+.tag { position: absolute; top: -12px; left: 14px; background: #ff7849; color: #fff; font-family: "Inter", sans-serif; font-size: 11.5px; font-weight: 700; padding: 3px 10px; border-radius: 11px; }
+.ibox .tag { background: #6b4ee6; }
+
+/* wave block */
+.wave { border: 2px solid #e2e2e2; border-radius: 10px; padding: 24px 10px 10px; margin: 8px 8px 8px 0; position: relative; background: #fff; display: inline-block; vertical-align: top; }
+.wave .wtag { position: absolute; top: -11px; left: 12px; background: #2e2e38; color: #fff; font-family: "Inter", sans-serif; font-size: 11px; font-weight: 700; padding: 2px 10px; border-radius: 10px; }
+.wave .row { font-size: 21px; letter-spacing: 6px; line-height: 1.45; }
+
+.lenrow { font-size: 22px; letter-spacing: 7px; line-height: 1.7; }
+.lenlab { font-family: "Inter", sans-serif; font-size: 12px; color: #777; font-weight: 700; letter-spacing: normal; }
+.blankline { display: inline-block; border-bottom: 2px solid #999; min-width: 44px; }
+.pick { font-family: "Inter", sans-serif; font-size: 13px; font-weight: 700; color: #6b4ee6; }
+</style>
+
+<h1>🔁 Extra — One Loop, Then Two</h1>
+<p><strong>Topic:</strong> Loops · Counting · <strong>Course:</strong> Extra Worksheet · <strong>Time:</strong> about 30 minutes</p>
+<blockquote>
+<p>Words to use: <strong>loop</strong>, <strong>turn</strong>, <strong>row</strong>, <strong>inside</strong>, <strong>wave</strong></p>
+</blockquote>
+<p>No code today. Only pictures. We start with <strong>one</strong> loop. At the end we put one loop inside another.</p>
+<h2>1 · A Loop Takes Turns 🔁</h2>
+<p>A loop does the same job again and again. Each time is one <strong>turn</strong>.</p>
+<p>Here the job is: print one 🐙.</p>
+<div style="page-break-inside:avoid; break-inside:avoid">
+<div class="strip">
+  <div class="card"><div class="inner"><span class="tturn">TURN 1</span><div class="mon">🐙</div></div></div>
+  <div class="card"><div class="inner"><span class="tturn">TURN 2</span><div class="mon">🐙</div></div></div>
+  <div class="card"><div class="inner"><span class="tturn">TURN 3</span><div class="mon">🐙</div></div></div>
+  <div class="card"><div class="inner"><span class="tturn">TURN 4</span><div class="mon">🐙</div></div></div>
+</div>
+
+<div class="screen"><span class="stag">THE SCREEN</span>
+  <div class="row">🐙</div>
+  <div class="row">🐙</div>
+  <div class="row">🐙</div>
+  <div class="row">🐙</div>
+</div>
+</div>
+
+<div class="qa"><p><strong>How many turns?</strong></p>
+<div class="write-space short"></div></div>
+
+<div class="qa"><p><strong>The loop takes 6 turns. How many 🐙 on the screen?</strong></p>
+<div class="write-space short"></div></div>
+
+<h2>2 · Each Turn Takes One Monster 📦</h2>
+<p>Now the loop has a box of monsters. Each turn takes the <strong>next</strong> one.</p>
+<div style="page-break-inside:avoid; break-inside:avoid">
+<div class="strip">
+  <div class="card"><div class="inner"><span class="tturn">TURN 1</span><div class="mon">🐙</div><div class="cap">first</div></div></div>
+  <div class="card"><div class="inner"><span class="tturn">TURN 2</span><div class="mon">🐍</div><div class="cap">next</div></div></div>
+  <div class="card"><div class="inner"><span class="tturn">TURN 3</span><div class="mon">🦁</div><div class="cap">next</div></div></div>
+  <div class="card"><div class="inner"><span class="tturn">TURN 4</span><div class="mon">🐢</div><div class="cap">last</div></div></div>
+</div>
+
+<div class="screen"><span class="stag">THE SCREEN</span>
+  <div class="row">🐙</div>
+  <div class="row">🐍</div>
+  <div class="row">🦁</div>
+  <div class="row">🐢</div>
+</div>
+</div>
+
+<div class="qa"><p><strong>Which monster comes on turn 3?</strong></p>
+<div class="write-space short"></div></div>
+
+<div class="qa"><p><strong>The box gets one more monster. How many turns now?</strong></p>
+<div class="write-space short"></div></div>
+
+<h2>3 · How Long Is One Row? 📏</h2>
+<p>One turn makes one row. The row can be short or long.</p>
+<div style="page-break-inside:avoid; break-inside:avoid">
+<div class="screen"><span class="stag">ROW LENGTH</span>
+  <div class="lenrow">🐙 <span class="lenlab">← 1 monster</span></div>
+  <div class="lenrow">🐙🐙 <span class="lenlab">← 2 monsters</span></div>
+  <div class="lenrow">🐙🐙🐙 <span class="lenlab">← 3 monsters</span></div>
+  <div class="lenrow">🐙🐙🐙🐙 <span class="lenlab">← 4 monsters</span></div>
+</div>
+</div>
+
+<div class="qa"><p><strong>Draw a row of 5 🐍.</strong></p>
+<div class="write-space blank short"></div></div>
+
+<div class="qa"><p><strong>Every row has 4 monsters. There are 4 rows. How many monsters?</strong></p>
+<div class="write-space short"></div></div>
+
+<h2>4 · One Loop Makes One Wave 🌊</h2>
+<p>Four turns. Four rows. Every row has 4 monsters.</p>
+<p>All of it together is <strong>wave 1</strong>.</p>
+<div style="page-break-inside:avoid; break-inside:avoid">
+<div class="wave"><span class="wtag">WAVE 1</span>
+  <div class="row">🐙🐙🐙🐙</div>
+  <div class="row">🐍🐍🐍🐍</div>
+  <div class="row">🦁🦁🦁🦁</div>
+  <div class="row">🐢🐢🐢🐢</div>
+</div>
+</div>
+
+<div class="qa"><p><strong>How many rows in wave 1?</strong></p>
+<div class="write-space short"></div></div>
+
+<div class="qa"><p><strong>How many monsters in wave 1?</strong></p>
+<div class="write-space short"></div></div>
+
+<h2>5 · A Loop Inside a Loop 🪆</h2>
+<p>One loop makes one wave. You want 4 waves.</p>
+<p>So you put the loop <strong>inside</strong> another loop.</p>
+<div style="page-break-inside:avoid; break-inside:avoid">
+<div class="obox"><span class="tag">BIG LOOP · do the whole wave 4 times</span>
+  <div class="ibox"><span class="tag">SMALL LOOP · 4 turns · one row each</span>
+    <div class="row" style="font-size:22px; letter-spacing:7px">🐙🐙🐙🐙</div>
+    <div class="row" style="font-size:22px; letter-spacing:7px">🐍🐍🐍🐍</div>
+    <div class="row" style="font-size:22px; letter-spacing:7px">🦁🦁🦁🦁</div>
+    <div class="row" style="font-size:22px; letter-spacing:7px">🐢🐢🐢🐢</div>
+  </div>
+</div>
+</div>
+
+<div class="qa"><p><strong>Which loop is inside?</strong></p>
+<div class="write-space short"></div></div>
+
+<div class="qa"><p><strong>The big loop takes 4 turns. The small loop takes 4 turns each time. How many rows in total?</strong></p>
+<div class="write-space short"></div></div>
+
+<h2>6 · Every Wave Gets Smaller 📉</h2>
+<p>Wave 1 rows have 4 monsters. Wave 2 rows have 3.</p>
+<div style="page-break-inside:avoid; break-inside:avoid">
+<div class="wave"><span class="wtag">WAVE 1</span>
+  <div class="row">🐙🐙🐙🐙</div>
+  <div class="row">🐍🐍🐍🐍</div>
+  <div class="row">🦁🦁🦁🦁</div>
+  <div class="row">🐢🐢🐢🐢</div>
+</div>
+<div class="wave"><span class="wtag">WAVE 2</span>
+  <div class="row">🐙🐙🐙</div>
+  <div class="row">🐍🐍🐍</div>
+  <div class="row">🦁🦁🦁</div>
+  <div class="row">🐢🐢🐢</div>
+</div>
+</div>
+
+<p><strong>Wave 3 rows have <span class="blankline"></span> monsters. Wave 4 rows have <span class="blankline"></span> monsters.</strong></p>
+<div class="qa"><p><strong>The wave number goes up. What does the row do?</strong></p>
+<div class="write-space short"></div></div>
+
+<div class="qa"><p><strong>Draw wave 3 here. Keep 4 rows.</strong></p>
+<div class="write-space blank tall" style="min-height: 200px"></div></div>
+
+<h2>7 · Draw and Tell 🎨</h2>
+<p>Pick 3 monsters. Draw wave 1 with rows of 3. Then draw wave 2 with rows of 2.</p>
+<div class="qa"><p>Write the wave number next to each wave.</p>
+<div class="write-space blank tall" style="min-height: 300px"></div></div>
+
+<p>Then make a short video on your phone. Point at your picture and say:</p>
+<blockquote>
+<ol>
+<li>How many rows are in wave 1.</li>
+<li>What is different in wave 2.</li>
+<li>Which loop is inside the other one.</li>
+</ol>
+</blockquote>
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your photo or video to teacher on KakaoTalk.</p>
+</body>
+</html>

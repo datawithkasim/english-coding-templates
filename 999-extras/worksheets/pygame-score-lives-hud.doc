@@ -1,0 +1,406 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head><meta charset='utf-8'>
+<title>🎮 Extra — Score, Lives, and the Game Loop</title>
+<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
+<style>
+@page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
+div.WordSection1 { page: WordSection1; }
+body { font-family: "Segoe UI", Arial, sans-serif; font-size: 11.5pt; color: #1a1a2e; line-height: 1.5; }
+h1 { font-size: 21pt; color: #6b4ee6; margin: 4px 0 6px; }
+h2 { font-size: 15pt; color: #6b4ee6; border-top: 1px solid #dddddd; padding-top: 8px; margin: 18px 0 10px; }
+h3, h4 { font-size: 11.5pt; margin: 12px 0 6px; }
+p { margin: 7px 0; }
+.brand { font-size: 10.5pt; font-weight: bold; color: #ff7849; letter-spacing: .06em;
+         border-bottom: 2px solid #ff7849; padding-bottom: 6px; margin-bottom: 14px; }
+table { border-collapse: collapse; margin: 10px 0; }
+th, td { border: 1px solid #c8c8c8; padding: 4px 9px; text-align: center; }
+th { background: #f3eefc; color: #6b4ee6; font-weight: bold; }
+pre { font-family: Consolas, "Courier New", monospace; font-size: 10.5pt; background: #f4f4f5;
+      border: 1px solid #dddddd; padding: 8px 10px; white-space: pre-wrap; }
+pre code { background: transparent; color: #1a1a2e; }
+code { font-family: Consolas, "Courier New", monospace; background: #fff1e8; color: #d6531f; padding: 0 3px; }
+blockquote { border-left: 3px solid #ff7849; background: #fff6ef; padding: 8px 12px;
+             color: #6a3a1c; margin: 9px 0; }
+ul, ol { margin: 7px 0 7px 26px; }
+p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
+.footer { color: #999999; font-size: 8.5pt; text-align: center; margin-top: 18px;
+          border-top: 1px solid #eeeeee; padding-top: 6px; }
+.footer b { color: #ff7849; }
+</style></head>
+<body><div class=WordSection1>
+<div class="brand">📚 ENGLISH CODING · 영어코딩</div>
+<style>
+.steps { border-left: 4px solid #6b4ee6; background: #f7f5ff; border-radius: 0 8px 8px 0; padding: 10px 14px; margin: 12px 0; }
+.steps .lab { font-family: "Inter", sans-serif; font-size: 11px; font-weight: 700; letter-spacing: .06em; color: #6b4ee6; text-transform: uppercase; }
+.steps ol { margin: 6px 0 0; padding-left: 20px; }
+.steps li { margin: 3px 0; font-size: 14.5px; }
+.stuck { border: 2px dashed #ffc75c; background: #fffdf3; border-radius: 8px; padding: 9px 14px; margin: 12px 0; font-size: 14px; }
+.stuck .lab { font-family: "Inter", sans-serif; font-size: 11px; font-weight: 700; letter-spacing: .06em; color: #c07a00; text-transform: uppercase; display: block; margin-bottom: 3px; }
+.check { border-left: 4px solid #2e9e5b; background: #f2fbf5; border-radius: 0 8px 8px 0; padding: 9px 14px; margin: 12px 0; font-size: 14px; }
+.check .lab { font-family: "Inter", sans-serif; font-size: 11px; font-weight: 700; letter-spacing: .06em; color: #2e9e5b; text-transform: uppercase; display: block; margin-bottom: 3px; }
+.mini-q { font-size: 14px; font-weight: 700; margin: 10px 0 2px; }
+.info { border-left: 4px solid #38a8c8; background: #f1fafd; border-radius: 0 8px 8px 0; padding: 10px 14px; margin: 12px 0; font-size: 14.5px; }
+.info .lab { font-family: "Inter", sans-serif; font-size: 11px; font-weight: 700; letter-spacing: .06em; color: #1f7f9c; text-transform: uppercase; display: block; margin-bottom: 3px; }
+.flipfig { margin-top: 10px; text-align: center; }
+.flipfig .pane { display: inline-block; vertical-align: middle; border: 2px dashed #9fb3bd; border-radius: 8px; background: #fff; padding: 10px 16px; font-family: "Inter", sans-serif; font-size: 12.5px; color: #667; line-height: 1.5; }
+.flipfig .pane.on { border-style: solid; border-color: #2e9e5b; color: #2e6b45; }
+.flipfig .arrow { display: inline-block; vertical-align: middle; padding: 0 12px; font-family: "JetBrains Mono", monospace; font-size: 13px; font-weight: 700; color: #1f7f9c; }
+</style>
+
+<h1>🎮 Extra — Score, Lives, and the Game Loop</h1>
+<p><strong>Topic:</strong> The Frame Loop · Timers · HUD · Debugging · <strong>Course:</strong> Extra Worksheet · <strong>Time:</strong> about 60 minutes</p>
+<blockquote>
+<p>Keep these words handy: <strong>frame</strong>, <strong>game loop</strong>, <strong>modulo</strong>, <strong>timer</strong>, <strong>blit</strong>, <strong>HUD</strong>, <strong>freeze</strong></p>
+</blockquote>
+<p>Your shooter now has lives, invincibility, a game-over screen, and a score. Everything in a game happens <strong>once per frame</strong>: read input, move things, check hits, draw, flip. This worksheet is about what belongs inside that one pass — and what happens when something loops forever inside it.</p>
+<div class="steps"><span class="lab">How to use this sheet</span>
+<ol>
+<li>Read on paper first. Do not open the IDE until section 5.</li>
+<li>Every question has small steps under it. Do them in order.</li>
+<li>If you are stuck, read the yellow box. It tells you where to look — not the answer.</li>
+<li>Write something in every box. A wrong answer you can talk about beats an empty box.</li>
+</ol>
+</div>
+
+<hr />
+<h2>1 · Predict 🔮</h2>
+<p>Read each block. Write what it does — just from reading.</p>
+<div class="steps"><span class="lab">Do this for every block</span>
+<ol>
+<li>Say out loud what the first line sets up.</li>
+<li>Count how many times the loop runs.</li>
+<li>Track the variables that change. Write them down as they change.</li>
+<li>Then write the output.</li>
+</ol>
+</div>
+
+<pre><code class="language-python">frames = 0
+score = 0
+
+for _ in range(31):
+    if frames % 10 == 0:
+        score += 10
+    frames += 1
+
+print(score)
+</code></pre>
+<p class="mini-q">Step 1 — Which values of <code>frames</code> make <code>frames % 10 == 0</code> true? List them.</p>
+
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p class="mini-q">Step 2 — How many are in your list?</p>
+
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p class="mini-q">Step 3 — So what number prints?</p>
+
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<div class="stuck"><span class="lab">Stuck?</span> <code>%</code> gives the remainder after dividing. Try it with small numbers first: what is <code>0 % 10</code>, <code>5 % 10</code>, <code>10 % 10</code>?</div>
+
+<pre><code class="language-python">enemies = [
+    {&quot;color&quot;: &quot;RED&quot;, &quot;speed&quot;: 10},
+    {&quot;color&quot;: &quot;GREEN&quot;, &quot;speed&quot;: 8},
+]
+
+for enemy in enemies:
+    print(enemy[&quot;speed&quot;])
+</code></pre>
+<p class="mini-q">Step 1 — On the first turn, what is the whole value of <code>enemy</code>?</p>
+
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p class="mini-q">Step 2 — What prints, line by line?</p>
+
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">invincible_timer = 8
+
+while invincible_timer &gt; 0:
+    print(invincible_timer % 6 &lt; 3)
+    invincible_timer -= 1
+</code></pre>
+<p class="mini-q">Step 1 — Write the timer values in order, from 8 down.</p>
+
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p class="mini-q">Step 2 — Under each one, write True or False.</p>
+
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p class="mini-q">Step 3 — In your game, that True/False decides whether the player is drawn. So what does the player look like?</p>
+
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">enemy_h = 50
+
+enemy_y = enemy_h
+enemy_y2 = -enemy_h
+</code></pre>
+<p class="mini-q">Step 1 — In pygame, y = 0 is the top of the window. Where is y = 50? Where is y = −50?</p>
+
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p class="mini-q">Step 2 — Which one starts the enemy off-screen, ready to fall in?</p>
+
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>2 · One Frame, In Order 🎞️</h2>
+<p>Your game loop does the same five jobs every frame.</p>
+<div class="steps"><span class="lab">How to fill the table</span>
+<ol>
+<li>Open your <code>main.py</code> and scroll to <code>while running:</code>.</li>
+<li>Read down the loop. Every block belongs to one of the five jobs.</li>
+<li>In each row, write what your game does there, and name one line from your file.</li>
+</ol>
+</div>
+
+<div style="page-break-inside:avoid; break-inside:avoid; margin:14px 0">
+<table style="width:100%">
+<tr><th>order</th><th>job</th><th>what happens in your game</th><th>one line from your file</th></tr>
+<tr><td>1</td><td>read events</td><td style="height:38px">&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>2</td><td>move things</td><td style="height:38px">&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>3</td><td>check hits</td><td style="height:38px">&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>4</td><td>draw</td><td style="height:38px">&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>5</td><td>flip + tick</td><td style="height:38px">&nbsp;</td><td>&nbsp;</td></tr>
+</table>
+</div>
+
+<p><strong><code>clock.tick(60)</code> runs once per frame. How many frames in 5 seconds?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong><code>INVINCIBILITY_FRAMES = 60</code>. Using your answer above, how many seconds is the player safe after a hit?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<div class="info"><span class="lab">What flip() does</span>
+Pygame does not draw straight onto the window. Every <code>draw</code> and <code>blit</code> goes onto a <b>hidden page</b> that nobody can see yet. <code>pygame.display.flip()</code> swaps that hidden page onto the screen in one go — so the player never sees a half-drawn frame.
+<div class="flipfig">
+  <span class="pane">hidden page<br><b>you draw here</b></span>
+  <span class="arrow">— flip() →</span>
+  <span class="pane on">the window<br><b>player sees this</b></span>
+</div>
+</div>
+
+<p><strong>Why must <code>pygame.display.flip()</code> be the last job, not the first?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<div class="stuck"><span class="lab">Stuck?</span> Think about what the screen would show if you flipped it before you drew this frame's enemies.</div>
+
+<hr />
+<h2>3 · Spot the Bug 🐛</h2>
+<p>These four come from your own game. Work through the steps for each one.</p>
+<div class="steps"><span class="lab">Bug method — use it every time</span>
+<ol>
+<li>Say what this code is <b>supposed</b> to do.</li>
+<li>Read it one line at a time and say what it <b>actually</b> does.</li>
+<li>Circle the exact line where those two stop matching.</li>
+<li>Write the fixed code.</li>
+<li>Say why your fix works.</li>
+</ol>
+</div>
+
+<p><strong>Bug A</strong> — The window opens, then freezes. Nothing draws. Nothing responds.</p>
+<pre><code class="language-python">## UPDATE SCORE ##
+while True:
+    if frames % 10 == 0:
+        score += 10
+    frames += 1
+</code></pre>
+<p class="mini-q">Step 1 — What is this block supposed to do, in one sentence?</p>
+
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p class="mini-q">Step 2 — What would end this <code>while</code> loop? Is there anything that can?</p>
+
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p class="mini-q">Step 3 — The lines after it never run. Name two things that stop happening.</p>
+
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p class="mini-q">Step 4 — Write the fixed code.</p>
+
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p class="mini-q">Step 5 — Why does your fix work?</p>
+
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<div class="stuck"><span class="lab">Stuck?</span> The big <code>while running:</code> loop already repeats every frame. Ask yourself what this block still needs, once you are already inside something that repeats.</div>
+
+<p><strong>Bug B</strong> — Lives and score print on top of each other, so both are unreadable.</p>
+<pre><code class="language-python">screen.blit(lives_surf, (10, 10))
+screen.blit(scores_surf, (10, 10))
+</code></pre>
+<p class="mini-q">Step 1 — What do the two numbers in <code>(10, 10)</code> mean?</p>
+
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p class="mini-q">Step 2 — Write the fixed code. Put score on the right side of the window.</p>
+
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p class="mini-q">Step 3 — Why does your fix work?</p>
+
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<div class="stuck"><span class="lab">Stuck?</span> You already have <code>WIDTH</code>. A position can be worked out from it instead of typed by hand.</div>
+
+<p><strong>Bug C</strong> — A bullet kills an enemy, but the enemy pops back near the top of the window instead of falling in from above.</p>
+<pre><code class="language-python">if bullet.colliderect(enemy[&quot;rect&quot;]):
+    enemy[&quot;rect&quot;].y = enemy['h']
+    enemy[&quot;rect&quot;].x = random.randint(0, WIDTH - enemy['w'])
+</code></pre>
+<p class="mini-q">Step 1 — Find the respawn lines in your ENEMY MOVEMENT section. Copy the <code>y</code> line here.</p>
+
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p class="mini-q">Step 2 — Put the two <code>y</code> lines side by side. What is different?</p>
+
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p class="mini-q">Step 3 — Write the fixed code, and say why your fix works.</p>
+
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug D</strong> — After GAME OVER, enemies keep jumping back to the top of the window.</p>
+<pre><code class="language-python">if not game_over:
+    ...
+    player_rect = pygame.Rect(player_x, player_y, PLAYER_WIDTH, PLAYER_HEIGHT)
+    ...
+
+if invincible_timer &gt; 0:
+    invincible_timer -= 1
+else:
+    for enemy in enemies:
+        if player_rect.colliderect(enemy[&quot;rect&quot;]):
+            lives -= 1
+            enemy[&quot;rect&quot;].y = -enemy[&quot;h&quot;]
+</code></pre>
+<p class="mini-q">Step 1 — When <code>game_over</code> is <code>True</code>, which of these blocks still runs?</p>
+
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p class="mini-q">Step 2 — <code>player_rect</code> stops being updated. What value is it still holding?</p>
+
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p class="mini-q">Step 3 — Write the fixed code, and say why your fix works.</p>
+
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<div class="stuck"><span class="lab">Stuck?</span> Ask which jobs should pause on the game-over screen, and which should keep going. Then look at where the <code>if not game_over:</code> block ends.</div>
+
+<hr />
+<h2>4 · Explain the Code 📖</h2>
+<p>Read your own lines. Answer from reading only.</p>
+<pre><code class="language-python">if invincible_timer == 0 or invincible_timer % 6 &lt; 3:
+    pygame.draw.rect(screen, BLUE, (player_x, player_y, PLAYER_WIDTH, PLAYER_HEIGHT))
+</code></pre>
+<p class="mini-q">Step 1 — When the timer is 0, is the player drawn? Say why.</p>
+
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p class="mini-q">Step 2 — For 6 frames in a row, how many frames is the player drawn, and how many not?</p>
+
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p class="mini-q">Step 3 — So what does the player look like right after being hit?</p>
+
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">if player_x &lt; 0:
+    player_x = WIDTH - PLAYER_WIDTH
+
+if player_y &lt; 0:
+    player_y = 0
+</code></pre>
+<p class="mini-q">The player walks off the left edge. Then off the top edge. Describe both, in your own words.</p>
+
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">for bullet in bullets[:]:
+</code></pre>
+<p class="mini-q">Step 1 — What does <code>bullets[:]</code> give you that <code>bullets</code> does not?</p>
+
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p class="mini-q">Step 2 — Inside that loop you call <code>bullets.remove(bullet)</code>. What goes wrong without the colon?</p>
+
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">enemies = [
+    {&quot;rect&quot;: ..., &quot;color&quot;: RED, &quot;speed&quot;: 10, &quot;w&quot;: ENEMY_WIDTH, &quot;h&quot;: ENEMY_HEIGHT},
+]
+</code></pre>
+<p class="mini-q">Step 1 — You could have used six separate variables per enemy. What does the list of dictionaries give you instead?</p>
+
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p class="mini-q">Step 2 — Write the one line that adds a slow, wide, yellow enemy.</p>
+
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>5 · Code It 💻</h2>
+<p>Now open <code>main.py</code> in the IDE at <strong>app.english-coding.co.uk</strong>. Do one task at a time. Run the game after every task.</p>
+<p><strong>Task 1 — Fix the freeze.</strong></p>
+<div class="steps"><span class="lab">Steps</span>
+<ol>
+<li>Find the <code>## UPDATE SCORE ##</code> block.</li>
+<li>Decide which lines must run <b>once per frame</b>, and keep only those.</li>
+<li>Score should stop climbing when <code>game_over</code> is <code>True</code> — put the block where that already happens.</li>
+<li>Run it. Watch the score on screen.</li>
+</ol>
+</div>
+
+<div class="check"><span class="lab">You know it works when</span> the window responds to keys, the score climbs while you play, and it stops climbing on the GAME OVER screen.</div>
+
+<p><strong>Task 2 — Split the HUD.</strong></p>
+<div class="steps"><span class="lab">Steps</span>
+<ol>
+<li>Keep lives at the top left.</li>
+<li>Move score to the top right. Work the x position out from <code>WIDTH</code>, do not type a number.</li>
+<li>Change <code>WIDTH</code> to 700 and run. Then change it back.</li>
+</ol>
+</div>
+
+<div class="check"><span class="lab">You know it works when</span> both are readable, and the score is still on screen after you change <code>WIDTH</code>.</div>
+
+<p><strong>Task 3 — Points for kills.</strong></p>
+<div class="steps"><span class="lab">Steps</span>
+<ol>
+<li>Find the line where a bullet hits an enemy.</li>
+<li>Add points there. Start with a flat number for every enemy.</li>
+<li>Run it and shoot one enemy. Did the score jump by the right amount?</li>
+<li>Now make a faster enemy worth more. Each enemy already carries its own <code>"speed"</code>.</li>
+</ol>
+</div>
+
+<div class="check"><span class="lab">You know it works when</span> shooting the green enemy and the magenta enemy give different points.</div>
+
+<p><strong>Write your plan here before you code.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<div class="stuck"><span class="lab">Stuck on any task?</span> Print the value you are unsure about — <code>print(score)</code>, <code>print(frames)</code> — run the game, and read the console. If a change breaks the game, undo it and make a smaller change.</div>
+
+<hr />
+<h2>6 · Explain Your Code 🎥</h2>
+<p>Record a short video on your phone explaining the code <strong>you</strong> wrote. Try to use these words: <strong>frame</strong>, <strong>game loop</strong>, <strong>modulo</strong>, <strong>timer</strong>, <strong>blit</strong>, <strong>HUD</strong>.</p>
+<blockquote>
+<ol>
+<li>Run the game and lose one life. Point at the flicker and say what causes it.</li>
+<li>Show the score line and explain when it goes up and when it stops.</li>
+<li>Show one enemy dictionary and say what each key is for.</li>
+<li>Show your fix for the freeze and explain what the old code did wrong.</li>
+</ol>
+</blockquote>
+<p><strong>Plan what you will say here before you record.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your video or photo to teacher on KakaoTalk.</p>
+<div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>
+</div></body></html>

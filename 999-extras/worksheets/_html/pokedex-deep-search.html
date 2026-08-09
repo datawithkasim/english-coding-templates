@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>📖 Extra — Nested Data: Searching a Real Pokédex</title>
+<style>
+@page { size: A4; margin: 18mm 16mm 22mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-family: "Inter", "Segoe UI", system-ui, sans-serif; color: #1a1a2e; }
+body { font-size: 15px; line-height: 1.55; }
+
+.cover { border-bottom: 3px solid #ff7849; padding-bottom: 14px; margin-bottom: 20px; }
+.brand { font-size: 14px; font-weight: 800; color: #ff7849; letter-spacing: .06em; }
+h1 { font-size: 28px; color: #6b4ee6; margin: 8px 0 6px; line-height: 1.25; }
+h2 { font-size: 19px; color: #6b4ee6; margin: 22px 0 12px; padding-top: 10px; border-top: 1px solid #eee; page-break-before: always; }
+section.first h2, h2:first-of-type { border-top: none; padding-top: 0; page-break-before: avoid; }
+h3, h4 { font-size: 15px; margin: 14px 0 8px; color: #1a1a2e; }
+p { margin: 8px 0; }
+strong { color: #1a1a2e; }
+em { color: #555; }
+
+ul, ol { margin: 8px 0 8px 24px; }
+li { margin: 3px 0; }
+
+/* Grids (e.g. pixel-art coordinate grids) render as light graph paper. */
+table { border-collapse: collapse; margin: 12px 0; }
+th, td { border: 1px solid #ddd; padding: 4px 9px; text-align: center; font-size: 14px; }
+th { background: #faf7ff; color: #6b4ee6; font-weight: 700; }
+
+pre {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 13.5px;
+  background: #1e1e2e;
+  color: #b9f6ca;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 10px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  page-break-inside: avoid;
+  line-height: 1.5;
+}
+pre code { background: transparent; padding: 0; color: inherit; }
+code {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  background: #fff1e8;
+  color: #ff7849;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+blockquote {
+  margin: 10px 0;
+  padding: 10px 16px;
+  background: #fff6ef;
+  border-left: 3px solid #ff7849;
+  border-radius: 0 6px 6px 0;
+  color: #6a3a1c;
+}
+
+.write-space {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #ffffff 0,
+    #ffffff 27px,
+    #d4d4d4 27px,
+    #d4d4d4 28px
+  );
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  min-height: 114px;
+  margin: 10px 0 20px;
+  page-break-inside: avoid;
+}
+.write-space.short { min-height: 86px; }
+.write-space.tall { min-height: 170px; }
+/* Drawing box: same frame, no ruled lines — for "draw the shape" prompts. */
+.write-space.blank { background-image: none; }
+
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
+hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
+
+.meta { color: #666; font-size: 13px; margin: 0 0 14px; }
+.answer-lines {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 14px 16px;
+  background: #fafafa;
+  white-space: pre;
+  line-height: 2.2;
+}
+
+footer {
+  position: fixed;
+  bottom: 10mm; left: 16mm; right: 16mm;
+  text-align: center;
+  font-size: 10px;
+  color: #aaa;
+}
+footer b { color: #ff7849; }
+</style>
+</head>
+<body>
+<div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
+<h1>📖 Extra — Nested Data: Searching a Real Pokédex</h1>
+<p><strong>Topic:</strong> Nested Dictionaries + Lists of Dictionaries · <strong>Course:</strong> Extra Worksheet · <strong>Time:</strong> about 45 minutes</p>
+<blockquote>
+<p>Keep these words handy: <strong>nested</strong>, <strong>key</strong>, <strong>index</strong>, <strong>unpack</strong>, <strong>.get()</strong>, <strong>KeyError</strong></p>
+</blockquote>
+<p>A real Pokédex file is not flat. A name gives you a dictionary. Inside it, <code>"stats"</code> gives you another dictionary, and <code>"moves"</code> gives you a <strong>list</strong> of dictionaries. Each step down is one more <code>[ ]</code>. This worksheet is about reading those steps on paper, then adding one layer to your own app.</p>
+<p>This is the shape of the data your app imports:</p>
+<pre><code class="language-python"># pokemon_info.py
+pokedex = {
+    &quot;bulbasaur&quot;: {
+        &quot;id&quot;: 1,
+        &quot;types&quot;: [&quot;grass&quot;, &quot;poison&quot;],
+        &quot;description&quot;: &quot;A strange seed was planted on its back at birth.&quot;,
+        &quot;stats&quot;: {&quot;hp&quot;: 45, &quot;attack&quot;: 49, &quot;defense&quot;: 49, &quot;speed&quot;: 45},
+        &quot;habitat&quot;: &quot;grassland&quot;,
+        &quot;moves&quot;: [
+            {&quot;name&quot;: &quot;tackle&quot;, &quot;level_learned&quot;: 1},
+            {&quot;name&quot;: &quot;growl&quot;, &quot;level_learned&quot;: 1},
+            {&quot;name&quot;: &quot;leech seed&quot;, &quot;level_learned&quot;: 7},
+            {&quot;name&quot;: &quot;vine whip&quot;, &quot;level_learned&quot;: 13},
+            {&quot;name&quot;: &quot;poison powder&quot;, &quot;level_learned&quot;: 20},
+            {&quot;name&quot;: &quot;razor leaf&quot;, &quot;level_learned&quot;: 27},
+            {&quot;name&quot;: &quot;growth&quot;, &quot;level_learned&quot;: 34},
+            {&quot;name&quot;: &quot;sleep powder&quot;, &quot;level_learned&quot;: 41},
+            {&quot;name&quot;: &quot;solar beam&quot;, &quot;level_learned&quot;: 48},
+        ],
+    },
+}
+</code></pre>
+<h2>1 · Predict 🔮</h2>
+<p>Read each line. Write what it prints — just from reading.</p>
+<pre><code class="language-python">print(pokedex[&quot;bulbasaur&quot;][&quot;habitat&quot;])
+</code></pre>
+<div class="qa"><p><strong>One key, then one more key. What prints?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-python">print(pokedex[&quot;bulbasaur&quot;][&quot;types&quot;][0])
+</code></pre>
+<div class="qa"><p><strong><code>"types"</code> holds a list. What does <code>[0]</code> pick out?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-python">print(pokedex[&quot;bulbasaur&quot;][&quot;moves&quot;][2][&quot;name&quot;])
+</code></pre>
+<div class="qa"><p><strong>Three steps: key, index, key. What prints?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-python">print(len(pokedex[&quot;bulbasaur&quot;][&quot;moves&quot;]))
+</code></pre>
+<div class="qa"><p><strong>What number prints, and what is it counting?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-python">for k in pokedex[&quot;bulbasaur&quot;].keys():
+    print(k)
+</code></pre>
+<div class="qa"><p><strong>How many lines print? Write them all.</strong></p>
+<div class="write-space"></div></div>
+
+<h2>2 · Find the Path 🧭</h2>
+<p>Write the code that reaches each value. Use the data on page 1.</p>
+<div class="qa"><p><strong>The <code>speed</code> stat of bulbasaur.</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>The level at which bulbasaur learns <code>vine whip</code>.</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>The second type in the <code>types</code> list.</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>The name of the last move in the list — without counting the moves yourself.</strong></p>
+<div class="write-space"></div></div>
+
+<h2>3 · Spot the Bug 🐛</h2>
+<p>Read what each block should do. Fix it on paper, then explain the fix.</p>
+<p><strong>Bug A</strong> — This should show move number 3. The user types <code>3</code>, but the wrong move appears.</p>
+<pre><code class="language-python">number = int(input(&quot;which move? &quot;))
+print(pokedex[&quot;bulbasaur&quot;][&quot;moves&quot;][number][&quot;name&quot;])
+</code></pre>
+<p><strong>Hint:</strong> the user counts from 1. Python counts from 0.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug B</strong> — This should find bulbasaur. The user types <code>Bulbasaur</code> with a capital letter and a space, and the app says it is not a Pokémon.</p>
+<pre><code class="language-python">search = input(&quot;what pokemon? &quot;)
+if search not in pokedex:
+    print(&quot;not a pokemon&quot;)
+</code></pre>
+<p><strong>Hint:</strong> clean the text before you search with it.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug C</strong> — This should print the level of the first move. It crashes.</p>
+<pre><code class="language-python">print(pokedex[&quot;bulbasaur&quot;][&quot;moves&quot;][&quot;level_learned&quot;])
+</code></pre>
+<p><strong>Hint:</strong> <code>"moves"</code> is a list, not a dictionary. Which move do you mean?</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug D</strong> — The user types <code>type</code> instead of <code>types</code>. The app crashes with a <code>KeyError</code> instead of saying something helpful.</p>
+<pre><code class="language-python">more_info = input(&quot;what info? &quot;)
+print(pokedex[&quot;bulbasaur&quot;][more_info])
+</code></pre>
+<p><strong>Hint:</strong> <code>.get(key, default)</code> returns the default instead of crashing.</p>
+<div class="qa"><p><strong>Write the fixed code:</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>4 · Explain the Code 📖</h2>
+<p>This is the search app you built in your lesson. Read it, then answer from reading only.</p>
+<pre><code class="language-python">import pokemon_info
+
+search = input('what pokemon do you like?')
+
+if search not in pokemon_info.pokedex:
+    print(f'you searched {search}')
+    print(&quot;not a pokemon. try again and check your spelling.&quot;)
+else:
+    print(f'you searched {search}')
+
+    for pokemon_key in pokemon_info.pokedex[search].keys():
+        print(pokemon_key)
+
+    more_info = input('what piece of info do you want')
+
+    if more_info == 'moves':
+        print('you have a lot of moves. what info will you unpack?')
+        print(f'The number of things to unpack is ... {len(pokemon_info.pokedex[search][more_info])}')
+
+        moves = int(input('what move do you want to unpack? [1-8]'))
+
+        print(pokemon_info.pokedex[search][more_info][moves-1])
+
+        moves_more_info = input('what are you going to know more about? the levels learned or the name of that move?')
+
+        if moves_more_info == 'name':
+            print(pokemon_info.pokedex[search][more_info][moves-1][moves_more_info])
+        elif moves_more_info == 'levels learned':
+            print(pokemon_info.pokedex[search][more_info][moves-1]['level_learned'])
+
+    else:
+        print(pokemon_info.pokedex[search][more_info])
+</code></pre>
+<div class="qa"><p><strong>What does the <code>if search not in pokemon_info.pokedex:</code> line protect the program from?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>The <code>.keys()</code> loop runs before the second question. Why is that helpful to the user?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Explain <code>moves-1</code> to someone who has never coded. Why not just <code>moves</code>?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>The prompt says <code>[1-8]</code>, but bulbasaur has 9 moves. What can the user never reach?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>If the user answers <code>stats</code>, the last <code>else</code> line runs. What exactly appears on the screen?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Where in this program could a <code>KeyError</code> still happen? Point at the line.</strong></p>
+<div class="write-space"></div></div>
+
+<h2>5 · Code It 💻</h2>
+<p>Open your project in the IDE at <strong>app.english-coding.co.uk</strong> and grow <code>main.py</code>. Plan it on paper first, then type it.</p>
+<p><strong>1. Clean the search.</strong> Make <code>Bulbasaur</code> and <code>BULBASAUR</code> both work.</p>
+<p><strong>2. Number the moves.</strong> Before asking which move, print a numbered list of every move name, so the user can see the real choices instead of guessing <code>[1-8]</code>.</p>
+<p><strong>3. No crashes.</strong> If the user asks for a key that does not exist, print a friendly message instead of letting the program die.</p>
+<p><strong>Stretch:</strong> after showing one Pokémon, ask "search again?" and go back to the top instead of ending.</p>
+<div class="qa"><p><strong>Write your plan here before you code.</strong></p>
+<div class="write-space tall" style="min-height: 300px"></div></div>
+
+<h2>6 · Explain Your Code 🎥</h2>
+<p>Record a short video on your phone explaining the code <strong>you</strong> wrote. Try to use these words: <strong>nested</strong>, <strong>key</strong>, <strong>index</strong>, <strong>unpack</strong>, <strong>.get()</strong>.</p>
+<blockquote>
+<ol>
+<li>Show <code>pokemon_info.py</code> and point at one Pokémon's <code>moves</code> list.</li>
+<li>Run your app and search for a Pokémon.</li>
+<li>Walk through how one value travels from the data file to the screen.</li>
+<li>Show the numbered move list and say why it is better than <code>[1-8]</code>.</li>
+</ol>
+</blockquote>
+<div class="qa"><p><strong>Plan what you will say here before you record.</strong></p>
+<div class="write-space tall" style="min-height: 300px"></div></div>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your video to teacher on KakaoTalk.</p>
+</body>
+</html>

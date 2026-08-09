@@ -1,0 +1,234 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head><meta charset='utf-8'>
+<title>📖 Extra — Nested Data: Searching a Real Pokédex</title>
+<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
+<style>
+@page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
+div.WordSection1 { page: WordSection1; }
+body { font-family: "Segoe UI", Arial, sans-serif; font-size: 11.5pt; color: #1a1a2e; line-height: 1.5; }
+h1 { font-size: 21pt; color: #6b4ee6; margin: 4px 0 6px; }
+h2 { font-size: 15pt; color: #6b4ee6; border-top: 1px solid #dddddd; padding-top: 8px; margin: 18px 0 10px; }
+h3, h4 { font-size: 11.5pt; margin: 12px 0 6px; }
+p { margin: 7px 0; }
+.brand { font-size: 10.5pt; font-weight: bold; color: #ff7849; letter-spacing: .06em;
+         border-bottom: 2px solid #ff7849; padding-bottom: 6px; margin-bottom: 14px; }
+table { border-collapse: collapse; margin: 10px 0; }
+th, td { border: 1px solid #c8c8c8; padding: 4px 9px; text-align: center; }
+th { background: #f3eefc; color: #6b4ee6; font-weight: bold; }
+pre { font-family: Consolas, "Courier New", monospace; font-size: 10.5pt; background: #f4f4f5;
+      border: 1px solid #dddddd; padding: 8px 10px; white-space: pre-wrap; }
+pre code { background: transparent; color: #1a1a2e; }
+code { font-family: Consolas, "Courier New", monospace; background: #fff1e8; color: #d6531f; padding: 0 3px; }
+blockquote { border-left: 3px solid #ff7849; background: #fff6ef; padding: 8px 12px;
+             color: #6a3a1c; margin: 9px 0; }
+ul, ol { margin: 7px 0 7px 26px; }
+p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
+.footer { color: #999999; font-size: 8.5pt; text-align: center; margin-top: 18px;
+          border-top: 1px solid #eeeeee; padding-top: 6px; }
+.footer b { color: #ff7849; }
+</style></head>
+<body><div class=WordSection1>
+<div class="brand">📚 ENGLISH CODING · 영어코딩</div>
+<h1>📖 Extra — Nested Data: Searching a Real Pokédex</h1>
+<p><strong>Topic:</strong> Nested Dictionaries + Lists of Dictionaries · <strong>Course:</strong> Extra Worksheet · <strong>Time:</strong> about 45 minutes</p>
+<blockquote>
+<p>Keep these words handy: <strong>nested</strong>, <strong>key</strong>, <strong>index</strong>, <strong>unpack</strong>, <strong>.get()</strong>, <strong>KeyError</strong></p>
+</blockquote>
+<p>A real Pokédex file is not flat. A name gives you a dictionary. Inside it, <code>"stats"</code> gives you another dictionary, and <code>"moves"</code> gives you a <strong>list</strong> of dictionaries. Each step down is one more <code>[ ]</code>. This worksheet is about reading those steps on paper, then adding one layer to your own app.</p>
+<p>This is the shape of the data your app imports:</p>
+<pre><code class="language-python"># pokemon_info.py
+pokedex = {
+    &quot;bulbasaur&quot;: {
+        &quot;id&quot;: 1,
+        &quot;types&quot;: [&quot;grass&quot;, &quot;poison&quot;],
+        &quot;description&quot;: &quot;A strange seed was planted on its back at birth.&quot;,
+        &quot;stats&quot;: {&quot;hp&quot;: 45, &quot;attack&quot;: 49, &quot;defense&quot;: 49, &quot;speed&quot;: 45},
+        &quot;habitat&quot;: &quot;grassland&quot;,
+        &quot;moves&quot;: [
+            {&quot;name&quot;: &quot;tackle&quot;, &quot;level_learned&quot;: 1},
+            {&quot;name&quot;: &quot;growl&quot;, &quot;level_learned&quot;: 1},
+            {&quot;name&quot;: &quot;leech seed&quot;, &quot;level_learned&quot;: 7},
+            {&quot;name&quot;: &quot;vine whip&quot;, &quot;level_learned&quot;: 13},
+            {&quot;name&quot;: &quot;poison powder&quot;, &quot;level_learned&quot;: 20},
+            {&quot;name&quot;: &quot;razor leaf&quot;, &quot;level_learned&quot;: 27},
+            {&quot;name&quot;: &quot;growth&quot;, &quot;level_learned&quot;: 34},
+            {&quot;name&quot;: &quot;sleep powder&quot;, &quot;level_learned&quot;: 41},
+            {&quot;name&quot;: &quot;solar beam&quot;, &quot;level_learned&quot;: 48},
+        ],
+    },
+}
+</code></pre>
+<hr />
+<h2>1 · Predict 🔮</h2>
+<p>Read each line. Write what it prints — just from reading.</p>
+<pre><code class="language-python">print(pokedex[&quot;bulbasaur&quot;][&quot;habitat&quot;])
+</code></pre>
+<p><strong>One key, then one more key. What prints?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">print(pokedex[&quot;bulbasaur&quot;][&quot;types&quot;][0])
+</code></pre>
+<p><strong><code>"types"</code> holds a list. What does <code>[0]</code> pick out?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">print(pokedex[&quot;bulbasaur&quot;][&quot;moves&quot;][2][&quot;name&quot;])
+</code></pre>
+<p><strong>Three steps: key, index, key. What prints?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">print(len(pokedex[&quot;bulbasaur&quot;][&quot;moves&quot;]))
+</code></pre>
+<p><strong>What number prints, and what is it counting?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">for k in pokedex[&quot;bulbasaur&quot;].keys():
+    print(k)
+</code></pre>
+<p><strong>How many lines print? Write them all.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>2 · Find the Path 🧭</h2>
+<p>Write the code that reaches each value. Use the data on page 1.</p>
+<p><strong>The <code>speed</code> stat of bulbasaur.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>The level at which bulbasaur learns <code>vine whip</code>.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>The second type in the <code>types</code> list.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>The name of the last move in the list — without counting the moves yourself.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>3 · Spot the Bug 🐛</h2>
+<p>Read what each block should do. Fix it on paper, then explain the fix.</p>
+<p><strong>Bug A</strong> — This should show move number 3. The user types <code>3</code>, but the wrong move appears.</p>
+<pre><code class="language-python">number = int(input(&quot;which move? &quot;))
+print(pokedex[&quot;bulbasaur&quot;][&quot;moves&quot;][number][&quot;name&quot;])
+</code></pre>
+<p><strong>Hint:</strong> the user counts from 1. Python counts from 0.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug B</strong> — This should find bulbasaur. The user types <code>Bulbasaur</code> with a capital letter and a space, and the app says it is not a Pokémon.</p>
+<pre><code class="language-python">search = input(&quot;what pokemon? &quot;)
+if search not in pokedex:
+    print(&quot;not a pokemon&quot;)
+</code></pre>
+<p><strong>Hint:</strong> clean the text before you search with it.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug C</strong> — This should print the level of the first move. It crashes.</p>
+<pre><code class="language-python">print(pokedex[&quot;bulbasaur&quot;][&quot;moves&quot;][&quot;level_learned&quot;])
+</code></pre>
+<p><strong>Hint:</strong> <code>"moves"</code> is a list, not a dictionary. Which move do you mean?</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug D</strong> — The user types <code>type</code> instead of <code>types</code>. The app crashes with a <code>KeyError</code> instead of saying something helpful.</p>
+<pre><code class="language-python">more_info = input(&quot;what info? &quot;)
+print(pokedex[&quot;bulbasaur&quot;][more_info])
+</code></pre>
+<p><strong>Hint:</strong> <code>.get(key, default)</code> returns the default instead of crashing.</p>
+<p><strong>Write the fixed code:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong? Why does your fix work?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>4 · Explain the Code 📖</h2>
+<p>This is the search app you built in your lesson. Read it, then answer from reading only.</p>
+<pre><code class="language-python">import pokemon_info
+
+search = input('what pokemon do you like?')
+
+if search not in pokemon_info.pokedex:
+    print(f'you searched {search}')
+    print(&quot;not a pokemon. try again and check your spelling.&quot;)
+else:
+    print(f'you searched {search}')
+
+    for pokemon_key in pokemon_info.pokedex[search].keys():
+        print(pokemon_key)
+
+    more_info = input('what piece of info do you want')
+
+    if more_info == 'moves':
+        print('you have a lot of moves. what info will you unpack?')
+        print(f'The number of things to unpack is ... {len(pokemon_info.pokedex[search][more_info])}')
+
+        moves = int(input('what move do you want to unpack? [1-8]'))
+
+        print(pokemon_info.pokedex[search][more_info][moves-1])
+
+        moves_more_info = input('what are you going to know more about? the levels learned or the name of that move?')
+
+        if moves_more_info == 'name':
+            print(pokemon_info.pokedex[search][more_info][moves-1][moves_more_info])
+        elif moves_more_info == 'levels learned':
+            print(pokemon_info.pokedex[search][more_info][moves-1]['level_learned'])
+
+    else:
+        print(pokemon_info.pokedex[search][more_info])
+</code></pre>
+<p><strong>What does the <code>if search not in pokemon_info.pokedex:</code> line protect the program from?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>The <code>.keys()</code> loop runs before the second question. Why is that helpful to the user?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Explain <code>moves-1</code> to someone who has never coded. Why not just <code>moves</code>?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>The prompt says <code>[1-8]</code>, but bulbasaur has 9 moves. What can the user never reach?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>If the user answers <code>stats</code>, the last <code>else</code> line runs. What exactly appears on the screen?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Where in this program could a <code>KeyError</code> still happen? Point at the line.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>5 · Code It 💻</h2>
+<p>Open your project in the IDE at <strong>app.english-coding.co.uk</strong> and grow <code>main.py</code>. Plan it on paper first, then type it.</p>
+<p><strong>1. Clean the search.</strong> Make <code>Bulbasaur</code> and <code>BULBASAUR</code> both work.</p>
+<p><strong>2. Number the moves.</strong> Before asking which move, print a numbered list of every move name, so the user can see the real choices instead of guessing <code>[1-8]</code>.</p>
+<p><strong>3. No crashes.</strong> If the user asks for a key that does not exist, print a friendly message instead of letting the program die.</p>
+<p><strong>Stretch:</strong> after showing one Pokémon, ask "search again?" and go back to the top instead of ending.</p>
+<p><strong>Write your plan here before you code.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>6 · Explain Your Code 🎥</h2>
+<p>Record a short video on your phone explaining the code <strong>you</strong> wrote. Try to use these words: <strong>nested</strong>, <strong>key</strong>, <strong>index</strong>, <strong>unpack</strong>, <strong>.get()</strong>.</p>
+<blockquote>
+<ol>
+<li>Show <code>pokemon_info.py</code> and point at one Pokémon's <code>moves</code> list.</li>
+<li>Run your app and search for a Pokémon.</li>
+<li>Walk through how one value travels from the data file to the screen.</li>
+<li>Show the numbered move list and say why it is better than <code>[1-8]</code>.</li>
+</ol>
+</blockquote>
+<p><strong>Plan what you will say here before you record.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your video to teacher on KakaoTalk.</p>
+<div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>
+</div></body></html>
