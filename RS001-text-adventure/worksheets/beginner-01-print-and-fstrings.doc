@@ -1,0 +1,132 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head><meta charset='utf-8'>
+<title>🖨️ Beginner 1 — print() and f-strings</title>
+<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
+<style>
+@page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
+div.WordSection1 { page: WordSection1; }
+body { font-family: "Segoe UI", Arial, sans-serif; font-size: 11.5pt; color: #1a1a2e; line-height: 1.5; }
+h1 { font-size: 21pt; color: #6b4ee6; margin: 4px 0 6px; }
+h2 { font-size: 15pt; color: #6b4ee6; border-top: 1px solid #dddddd; padding-top: 8px; margin: 18px 0 10px; }
+h3, h4 { font-size: 11.5pt; margin: 12px 0 6px; }
+p { margin: 7px 0; }
+.brand { font-size: 10.5pt; font-weight: bold; color: #ff7849; letter-spacing: .06em;
+         border-bottom: 2px solid #ff7849; padding-bottom: 6px; margin-bottom: 14px; }
+table { border-collapse: collapse; margin: 10px 0; }
+th, td { border: 1px solid #c8c8c8; padding: 4px 9px; text-align: center; }
+th { background: #f3eefc; color: #6b4ee6; font-weight: bold; }
+pre { font-family: Consolas, "Courier New", monospace; font-size: 10.5pt; background: #f4f4f5;
+      border: 1px solid #dddddd; padding: 8px 10px; white-space: pre-wrap; }
+pre code { background: transparent; color: #1a1a2e; }
+code { font-family: Consolas, "Courier New", monospace; background: #fff1e8; color: #d6531f; padding: 0 3px; }
+blockquote { border-left: 3px solid #ff7849; background: #fff6ef; padding: 8px 12px;
+             color: #6a3a1c; margin: 9px 0; }
+ul, ol { margin: 7px 0 7px 26px; }
+p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
+.footer { color: #999999; font-size: 8.5pt; text-align: center; margin-top: 18px;
+          border-top: 1px solid #eeeeee; padding-top: 6px; }
+.footer b { color: #ff7849; }
+</style></head>
+<body><div class=WordSection1>
+<div class="brand">📚 ENGLISH CODING · 영어코딩</div>
+<h1>🖨️ Beginner 1 — print() and f-strings</h1>
+<p><strong>Topic:</strong> Showing words on the screen · <strong>Course:</strong> Text Adventure (Python) · <strong>Time:</strong> about 40 minutes</p>
+<p>This is your first worksheet. You do not need a computer for most of it. You read code, guess what the screen shows, and fix small mistakes on paper.</p>
+<blockquote>
+<p>🧠 Words to know: <strong>print</strong>, <strong>variable</strong>, <strong>f-string</strong>, <strong>quotes</strong>, <strong>output</strong></p>
+</blockquote>
+<pre><code class="language-python">print(&quot;Hello!&quot;)                 # screen shows:  Hello!
+
+name = &quot;Amy&quot;
+print(f&quot;Hi {name}&quot;)             # screen shows:  Hi Amy
+
+print(&quot;Hi {name}&quot;)              # screen shows:  Hi {name}
+</code></pre>
+<p>The little <strong>f</strong> is what swaps the box for its value.</p>
+<hr />
+<h2>1 · Warm Up ⭕</h2>
+<p><strong>Which line puts words on the screen? Circle one:</strong> <code>name = "Amy"</code> · <code>print("Amy")</code></p>
+<p><strong>Which line makes a variable? Circle one:</strong> <code>print("hp")</code> · <code>hp = 100</code></p>
+<p><strong>Which line needs an <code>f</code>? Circle one:</strong> <code>print("Hello!")</code> · <code>print("Hello {name}")</code></p>
+<hr />
+<h2>2 · Predict 🔮</h2>
+<p>Read the code. Write exactly what the screen shows.</p>
+<pre><code class="language-python">name = &quot;Warrior&quot;
+health = 100
+print(f&quot;{name} has {health} health&quot;)
+</code></pre>
+<p><strong>What appears on screen?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">first = &quot;Dark&quot;
+second = &quot;Knight&quot;
+print(first + second)
+</code></pre>
+<p><strong>What appears on screen? Look carefully at the spaces.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">damage = 20
+bonus = 5
+print(f&quot;Total damage: {damage + bonus}&quot;)
+</code></pre>
+<p><strong>What number appears?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>3 · Spot the Bug 🐛</h2>
+<p>Each one is broken. Write the fixed line.</p>
+<p><strong>Bug A</strong> — This should show <code>Hello, Amy!</code> but it shows <code>Hello, {name}!</code></p>
+<pre><code class="language-python">name = &quot;Amy&quot;
+print(&quot;Hello, {name}!&quot;)
+</code></pre>
+<p><strong>Write the fixed line:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug B</strong> — This should show the word <code>Sword</code> but Python gives an error.</p>
+<pre><code class="language-python">print(Sword)
+</code></pre>
+<p><strong>Write the fixed line:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug C</strong> — This should show <code>Level 5</code> but Python gives an error.</p>
+<pre><code class="language-python">level = 5
+print(f&quot;Level {level}&quot;
+</code></pre>
+<p><strong>Write the fixed line:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>4 · Explain the Code 📖</h2>
+<p>Read this small program.</p>
+<pre><code class="language-python">hero = &quot;Mina&quot;
+potions = 3
+print(f&quot;{hero} the brave&quot;)
+print(f&quot;You carry {potions} potions.&quot;)
+</code></pre>
+<p><strong>Which two lines make a variable? Write their names.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>What does <code>{hero}</code> turn into on the screen?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>How many lines appear on the screen when you run this?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Change <code>potions</code> to <code>7</code>. What is different on the screen?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>5 · Explain Your Lesson Code 🎥</h2>
+<p>Record a short video on your phone (or a parent's phone). Show the code you wrote in your lesson and talk about it. Try to use these words: <strong>print</strong>, <strong>variable</strong>, <strong>f-string</strong>.</p>
+<blockquote>
+<ol>
+<li>Read out one <code>print</code> line from your code.</li>
+<li>Point to a <strong>variable</strong> and say its name.</li>
+<li>Read an <code>f"..."</code> line and say what gets swapped in.</li>
+</ol>
+</blockquote>
+<hr />
+<h3>Submit ✅</h3>
+<p>Send a photo of this worksheet and your video to teacher on KakaoTalk.</p>
+<div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>
+</div></body></html>

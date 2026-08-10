@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>🖨️ Beginner 1 — print() and f-strings</title>
+<style>
+@page { size: A4; margin: 18mm 16mm 22mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-family: "Inter", "Segoe UI", system-ui, sans-serif; color: #1a1a2e; }
+body { font-size: 15px; line-height: 1.55; }
+
+.cover { border-bottom: 3px solid #ff7849; padding-bottom: 14px; margin-bottom: 20px; }
+.brand { font-size: 14px; font-weight: 800; color: #ff7849; letter-spacing: .06em; }
+h1 { font-size: 28px; color: #6b4ee6; margin: 8px 0 6px; line-height: 1.25; }
+h2 { font-size: 19px; color: #6b4ee6; margin: 22px 0 12px; padding-top: 10px; border-top: 1px solid #eee; page-break-before: always; }
+section.first h2, h2:first-of-type { border-top: none; padding-top: 0; page-break-before: avoid; }
+h3, h4 { font-size: 15px; margin: 14px 0 8px; color: #1a1a2e; }
+p { margin: 8px 0; }
+strong { color: #1a1a2e; }
+em { color: #555; }
+
+ul, ol { margin: 8px 0 8px 24px; }
+li { margin: 3px 0; }
+
+/* Grids (e.g. pixel-art coordinate grids) render as light graph paper. */
+table { border-collapse: collapse; margin: 12px 0; }
+th, td { border: 1px solid #ddd; padding: 4px 9px; text-align: center; font-size: 14px; }
+th { background: #faf7ff; color: #6b4ee6; font-weight: 700; }
+
+pre {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 13.5px;
+  background: #1e1e2e;
+  color: #b9f6ca;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 10px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  page-break-inside: avoid;
+  line-height: 1.5;
+}
+pre code { background: transparent; padding: 0; color: inherit; }
+code {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  background: #fff1e8;
+  color: #ff7849;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+blockquote {
+  margin: 10px 0;
+  padding: 10px 16px;
+  background: #fff6ef;
+  border-left: 3px solid #ff7849;
+  border-radius: 0 6px 6px 0;
+  color: #6a3a1c;
+}
+
+.write-space {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #ffffff 0,
+    #ffffff 27px,
+    #d4d4d4 27px,
+    #d4d4d4 28px
+  );
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  min-height: 114px;
+  margin: 10px 0 20px;
+  page-break-inside: avoid;
+}
+.write-space.short { min-height: 86px; }
+.write-space.tall { min-height: 170px; }
+/* Drawing box: same frame, no ruled lines — for "draw the shape" prompts. */
+.write-space.blank { background-image: none; }
+
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
+hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
+
+.meta { color: #666; font-size: 13px; margin: 0 0 14px; }
+.answer-lines {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 14px 16px;
+  background: #fafafa;
+  white-space: pre;
+  line-height: 2.2;
+}
+
+footer {
+  position: fixed;
+  bottom: 10mm; left: 16mm; right: 16mm;
+  text-align: center;
+  font-size: 10px;
+  color: #aaa;
+}
+footer b { color: #ff7849; }
+</style>
+</head>
+<body>
+<div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
+<h1>🖨️ Beginner 1 — print() and f-strings</h1>
+<p><strong>Topic:</strong> Showing words on the screen · <strong>Course:</strong> Text Adventure (Python) · <strong>Time:</strong> about 40 minutes</p>
+<p>This is your first worksheet. You do not need a computer for most of it. You read code, guess what the screen shows, and fix small mistakes on paper.</p>
+<blockquote>
+<p>🧠 Words to know: <strong>print</strong>, <strong>variable</strong>, <strong>f-string</strong>, <strong>quotes</strong>, <strong>output</strong></p>
+</blockquote>
+<pre><code class="language-python">print(&quot;Hello!&quot;)                 # screen shows:  Hello!
+
+name = &quot;Amy&quot;
+print(f&quot;Hi {name}&quot;)             # screen shows:  Hi Amy
+
+print(&quot;Hi {name}&quot;)              # screen shows:  Hi {name}
+</code></pre>
+<p>The little <strong>f</strong> is what swaps the box for its value.</p>
+<h2>1 · Warm Up ⭕</h2>
+<p><strong>Which line puts words on the screen? Circle one:</strong> <code>name = "Amy"</code> · <code>print("Amy")</code></p>
+<p><strong>Which line makes a variable? Circle one:</strong> <code>print("hp")</code> · <code>hp = 100</code></p>
+<p><strong>Which line needs an <code>f</code>? Circle one:</strong> <code>print("Hello!")</code> · <code>print("Hello {name}")</code></p>
+<h2>2 · Predict 🔮</h2>
+<p>Read the code. Write exactly what the screen shows.</p>
+<pre><code class="language-python">name = &quot;Warrior&quot;
+health = 100
+print(f&quot;{name} has {health} health&quot;)
+</code></pre>
+<div class="qa"><p><strong>What appears on screen?</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-python">first = &quot;Dark&quot;
+second = &quot;Knight&quot;
+print(first + second)
+</code></pre>
+<div class="qa"><p><strong>What appears on screen? Look carefully at the spaces.</strong></p>
+<div class="write-space"></div></div>
+
+<pre><code class="language-python">damage = 20
+bonus = 5
+print(f&quot;Total damage: {damage + bonus}&quot;)
+</code></pre>
+<div class="qa"><p><strong>What number appears?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>3 · Spot the Bug 🐛</h2>
+<p>Each one is broken. Write the fixed line.</p>
+<p><strong>Bug A</strong> — This should show <code>Hello, Amy!</code> but it shows <code>Hello, {name}!</code></p>
+<pre><code class="language-python">name = &quot;Amy&quot;
+print(&quot;Hello, {name}!&quot;)
+</code></pre>
+<div class="qa"><p><strong>Write the fixed line:</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug B</strong> — This should show the word <code>Sword</code> but Python gives an error.</p>
+<pre><code class="language-python">print(Sword)
+</code></pre>
+<div class="qa"><p><strong>Write the fixed line:</strong></p>
+<div class="write-space"></div></div>
+
+<p><strong>Bug C</strong> — This should show <code>Level 5</code> but Python gives an error.</p>
+<pre><code class="language-python">level = 5
+print(f&quot;Level {level}&quot;
+</code></pre>
+<div class="qa"><p><strong>Write the fixed line:</strong></p>
+<div class="write-space"></div></div>
+
+<h2>4 · Explain the Code 📖</h2>
+<p>Read this small program.</p>
+<pre><code class="language-python">hero = &quot;Mina&quot;
+potions = 3
+print(f&quot;{hero} the brave&quot;)
+print(f&quot;You carry {potions} potions.&quot;)
+</code></pre>
+<div class="qa"><p><strong>Which two lines make a variable? Write their names.</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>What does <code>{hero}</code> turn into on the screen?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>How many lines appear on the screen when you run this?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="qa"><p><strong>Change <code>potions</code> to <code>7</code>. What is different on the screen?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>5 · Explain Your Lesson Code 🎥</h2>
+<p>Record a short video on your phone (or a parent's phone). Show the code you wrote in your lesson and talk about it. Try to use these words: <strong>print</strong>, <strong>variable</strong>, <strong>f-string</strong>.</p>
+<blockquote>
+<ol>
+<li>Read out one <code>print</code> line from your code.</li>
+<li>Point to a <strong>variable</strong> and say its name.</li>
+<li>Read an <code>f"..."</code> line and say what gets swapped in.</li>
+</ol>
+</blockquote>
+<hr />
+<h3>Submit ✅</h3>
+<p>Send a photo of this worksheet and your video to teacher on KakaoTalk.</p>
+</body>
+</html>

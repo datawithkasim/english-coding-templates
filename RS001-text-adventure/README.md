@@ -34,6 +34,7 @@
 ## 📂 자료
 
 - 📝 [`worksheets/`](./worksheets) — 매주 학생용 영어 워크시트 (연습 문제)
+- 🖨️ [입문 워크시트 1 — print와 f-string](./worksheets/beginner-01-print-and-fstrings.md) · [📄 PDF](./worksheets/beginner-01-print-and-fstrings.pdf) — 파이썬을 처음 시작하는 학생용. 1주차 전에 풀어보는 40분 분량입니다.
 
 각 자료는 매주 **노션 숙제 페이지** 에서도 안내드립니다. (페이지 링크는 카카오톡으로 보내드립니다.)
 
