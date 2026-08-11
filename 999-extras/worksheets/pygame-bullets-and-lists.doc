@@ -1,0 +1,427 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head><meta charset='utf-8'>
+<title>🔫 Extra — Bullets, Lists, and the Frame Loop</title>
+<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
+<style>
+@page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
+div.WordSection1 { page: WordSection1; }
+body { font-family: "Segoe UI", Arial, sans-serif; font-size: 11.5pt; color: #1a1a2e; line-height: 1.5; }
+h1 { font-size: 21pt; color: #6b4ee6; margin: 4px 0 6px; }
+h2 { font-size: 15pt; color: #6b4ee6; border-top: 1px solid #dddddd; padding-top: 8px; margin: 18px 0 10px; }
+h3, h4 { font-size: 11.5pt; margin: 12px 0 6px; }
+p { margin: 7px 0; }
+.brand { font-size: 10.5pt; font-weight: bold; color: #ff7849; letter-spacing: .06em;
+         border-bottom: 2px solid #ff7849; padding-bottom: 6px; margin-bottom: 14px; }
+table { border-collapse: collapse; margin: 10px 0; }
+th, td { border: 1px solid #c8c8c8; padding: 4px 9px; text-align: center; }
+th { background: #f3eefc; color: #6b4ee6; font-weight: bold; }
+pre { font-family: Consolas, "Courier New", monospace; font-size: 10.5pt; background: #f4f4f5;
+      border: 1px solid #dddddd; padding: 8px 10px; white-space: pre-wrap; }
+pre code { background: transparent; color: #1a1a2e; }
+code { font-family: Consolas, "Courier New", monospace; background: #fff1e8; color: #d6531f; padding: 0 3px; }
+blockquote { border-left: 3px solid #ff7849; background: #fff6ef; padding: 8px 12px;
+             color: #6a3a1c; margin: 9px 0; }
+ul, ol { margin: 7px 0 7px 26px; }
+p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
+.footer { color: #999999; font-size: 8.5pt; text-align: center; margin-top: 18px;
+          border-top: 1px solid #eeeeee; padding-top: 6px; }
+.footer b { color: #ff7849; }
+</style></head>
+<body><div class=WordSection1>
+<div class="brand">📚 ENGLISH CODING · 영어코딩</div>
+<style>
+.steps { border-left: 4px solid #6b4ee6; background: #f7f5ff; border-radius: 0 8px 8px 0; padding: 10px 14px; margin: 12px 0; }
+.steps .lab { font-family: "Inter", sans-serif; font-size: 11px; font-weight: 700; letter-spacing: .06em; color: #6b4ee6; text-transform: uppercase; }
+.steps ol { margin: 6px 0 0; padding-left: 20px; }
+.steps li { margin: 3px 0; font-size: 14.5px; }
+.stuck { border: 2px dashed #ffc75c; background: #fffdf3; border-radius: 8px; padding: 9px 14px; margin: 12px 0; font-size: 14px; }
+.stuck .lab { font-family: "Inter", sans-serif; font-size: 11px; font-weight: 700; letter-spacing: .06em; color: #c07a00; text-transform: uppercase; display: block; margin-bottom: 3px; }
+.check { border-left: 4px solid #2e9e5b; background: #f2fbf5; border-radius: 0 8px 8px 0; padding: 9px 14px; margin: 12px 0; font-size: 14px; }
+.check .lab { font-family: "Inter", sans-serif; font-size: 11px; font-weight: 700; letter-spacing: .06em; color: #2e9e5b; text-transform: uppercase; display: block; margin-bottom: 3px; }
+.info { border-left: 4px solid #38a8c8; background: #f1fafd; border-radius: 0 8px 8px 0; padding: 10px 14px; margin: 12px 0; font-size: 14.5px; }
+.info .lab { font-family: "Inter", sans-serif; font-size: 11px; font-weight: 700; letter-spacing: .06em; color: #1f7f9c; text-transform: uppercase; display: block; margin-bottom: 3px; }
+.mini-q { font-size: 14px; font-weight: 700; margin: 10px 0 2px; }
+</style>
+
+<h1>🔫 Extra — Bullets, Lists, and the Frame Loop</h1>
+<p><strong>Topic:</strong> Lists · Deleting Safely · Timers · Collisions · <strong>Course:</strong> Extra Worksheet · <strong>Time:</strong> about 60 minutes</p>
+<blockquote>
+<p>Keep these words handy: <strong>frame</strong>, <strong>list</strong>, <strong>copy</strong>, <strong>index</strong>, <strong>cooldown</strong>, <strong>collide</strong>, <strong>remove</strong></p>
+</blockquote>
+<p>Today you gave your ship bullets. A bullet is a small list <code>[x, y]</code> living inside a bigger list <code>bullets</code>. Everything hard about bullets is really about lists: adding to them, walking them, and deleting from them safely. This sheet is reading and tracing on paper first, then two builds in your own game.</p>
+<div class="steps"><span class="lab">How to use this sheet</span>
+<ol>
+<li>Read on paper first. Do not open the IDE until section 8.</li>
+<li>Every question has small steps under it. Do them in order.</li>
+<li>Stuck? Read the yellow box. It points at where to look — never the answer.</li>
+<li>Write something in every box. A wrong answer you can talk about beats an empty box.</li>
+</ol>
+</div>
+
+<hr />
+<h2>1 · The Map of the Window 🗺️</h2>
+<p>Before any code: every number in your game is a distance in <strong>pixels</strong>, measured from the top-left corner.</p>
+<div style="page-break-inside:avoid; break-inside:avoid; margin:10px 0 4px">
+<div style="position:relative;height:330px;width:520px;max-width:100%;margin:0 auto;background:#eafce9;border:2px solid #444;border-radius:6px">
+  <span style="position:absolute;left:6px;top:4px;font:700 11px 'JetBrains Mono',monospace;color:#222">(0, 0) start here</span>
+
+  <div style="position:absolute;left:150px;top:26px;width:330px;border-top:2px solid #d63b3b"></div>
+  <span style="position:absolute;left:150px;top:6px;font:700 12px 'JetBrains Mono',monospace;color:#d63b3b">◀ S_WIDTH = 400 pixels ▶</span>
+
+  <div style="position:absolute;left:26px;top:60px;height:230px;border-left:2px solid #6b4ee6"></div>
+  <span style="position:absolute;left:34px;top:296px;font:700 12px 'JetBrains Mono',monospace;color:#6b4ee6">▲ S_HEIGHT = 400 pixels ▼</span>
+
+  <div style="position:absolute;left:0;top:150px;width:250px;border-top:1px dashed #444"></div>
+  <span style="position:absolute;left:60px;top:128px;font:700 11px 'JetBrains Mono',monospace;color:#444">bullet_x = 197 → across from the LEFT</span>
+
+  <div style="position:absolute;left:250px;top:0;height:150px;border-left:1px dashed #444"></div>
+  <span style="position:absolute;left:258px;top:70px;font:700 11px 'JetBrains Mono',monospace;color:#444">bullet_y = 175 ↓ down from the TOP</span>
+
+  <div style="position:absolute;left:250px;top:150px;width:10px;height:26px;background:#d00;border:1px solid #900"></div>
+  <span style="position:absolute;left:268px;top:152px;font:700 10px 'JetBrains Mono',monospace;color:#900">the bullet (drawn bigger here)</span>
+
+  <div style="position:absolute;left:225px;top:200px;width:60px;height:60px;background:#0ff;border:1px solid #066"></div>
+  <span style="position:absolute;left:292px;top:222px;font:700 11px 'JetBrains Mono',monospace;color:#066">player 50 × 50</span>
+
+</div>
+<p style="font:700 12px 'JetBrains Mono',monospace;color:#444;margin:6px 0 0;text-align:center">x grows to the RIGHT · y grows DOWNWARDS · the bottom of the window is y = 400</p>
+</div>
+
+<p><strong>In one sentence each: what is <code>S_WIDTH</code>, and what is <code>S_HEIGHT</code>?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>A bullet sits at <code>[197, 20]</code>. Describe where it is on the screen.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Which is bigger for something near the top of the screen — a big <code>y</code> or a small <code>y</code>?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>2 · The Size of One Bullet 📏</h2>
+<p><code>bullet_x</code> and <code>bullet_y</code> say <strong>where</strong> the bullet is. <code>bullet_width</code> and <code>bullet_height</code> say <strong>how big</strong> it is. Four different jobs, four different numbers.</p>
+<div style="page-break-inside:avoid; break-inside:avoid; margin:10px 0 4px">
+<div style="position:relative;height:240px;background:#f7f7fb;border:2px solid #ddd;border-radius:6px">
+  <span style="position:absolute;left:10px;top:8px;font:700 12px 'JetBrains Mono',monospace;color:#666">zoomed in ×10</span>
+
+  <div style="position:absolute;left:120px;top:50px;width:60px;height:160px;background:#d00;border:1px solid #900"></div>
+
+  <div style="position:absolute;left:120px;top:34px;width:60px;border-top:2px solid #6b4ee6"></div>
+  <span style="position:absolute;left:190px;top:26px;font:700 12px 'JetBrains Mono',monospace;color:#6b4ee6">bullet_width = 6 → how WIDE</span>
+
+  <div style="position:absolute;left:100px;top:50px;height:160px;border-left:2px solid #d63b3b"></div>
+  <span style="position:absolute;left:190px;top:120px;font:700 12px 'JetBrains Mono',monospace;color:#d63b3b">bullet_height = 16 → how TALL</span>
+
+  <span style="position:absolute;left:120px;top:214px;font:700 11px 'JetBrains Mono',monospace;color:#444">the corner here is (bullet_x, bullet_y)</span>
+</div>
+</div>
+
+<div class="info"><span class="lab">The line that uses all four</span>
+<code>pygame.draw.rect(screen, bullet_colour, (bullet[0], bullet[1], bullet_width, bullet_height))</code><br>
+Position first, size second. Always in that order.
+</div>
+
+<p><strong>Your bullet is 6 wide and 16 tall. Draw the shape you expect — tall and thin, or short and fat?</strong></p>
+<table style='border-collapse:collapse; width:100%; margin:10px 0 20px;'><tr><td style='border:1px solid #cccccc; height:90px;'>&nbsp;</td></tr></table>
+
+<p><strong>Which two of these four numbers change while the bullet flies up the screen?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>A player at <code>player_x = 380</code> is 50 wide, in a window 400 wide. What is wrong, and which line in your game stops it?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>3 · Predict 🔮</h2>
+<p>Read each block. Write what happens — just from reading.</p>
+<pre><code class="language-python">bullet = [197, 300]
+bullet_speed = 12
+
+bullet[1] = bullet[1] - bullet_speed
+print(bullet)
+</code></pre>
+<p class="mini-q">Step 1 — Which slot changed, and what does that slot mean?</p>
+
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p class="mini-q">Step 2 — What prints? Did the bullet move up or down?</p>
+
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">bullets = []
+bullets.append([197, 300])
+bullets.append([197, 300])
+bullets.append([197, 300])
+
+print(len(bullets))
+</code></pre>
+<p class="mini-q">What prints? Why are they allowed to look identical?</p>
+
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">bullet_cooldown = 300
+bullet_lastshot = 0
+now = 250
+
+print(now - bullet_lastshot &gt; bullet_cooldown)
+</code></pre>
+<p class="mini-q">Step 1 — Work out the left side of the `>` first.</p>
+
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p class="mini-q">Step 2 — True or False? So does a bullet get made?</p>
+
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">bullets = [[0, 10], [0, 20], [0, 30], [0, 40]]
+
+for bullet in bullets:
+    bullets.remove(bullet)
+
+print(bullets)
+</code></pre>
+<p class="mini-q">Careful — this is the trap from the lesson. What is left in the list?</p>
+
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>4 · Trace the Cooldown 📋</h2>
+<p>Your game runs 60 frames a second, so <code>now</code> jumps about 16 each frame. You are holding SPACE the whole time.</p>
+<p><code>bullet_cooldown = 300</code></p>
+<div class="steps"><span class="lab">How to fill each row</span>
+<ol>
+<li>Work out <code>now - bullet_lastshot</code>.</li>
+<li>Is that bigger than 300? Write yes or no.</li>
+<li>If yes, a bullet is made and <code>bullet_lastshot</code> becomes <code>now</code>.</li>
+<li>If no, <code>bullet_lastshot</code> does not change. Carry it down to the next row.</li>
+</ol>
+</div>
+
+<div style="page-break-inside:avoid; break-inside:avoid; margin:14px 0">
+<table style="width:100%">
+<tr><th>now</th><th>bullet_lastshot</th><th>now − lastshot</th><th>bigger than 300?</th><th>bullet made?</th></tr>
+<tr><td>0</td><td>0</td><td>0</td><td>no</td><td>no</td></tr>
+<tr><td>160</td><td style="height:34px">&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>320</td><td style="height:34px">&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>480</td><td style="height:34px">&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>640</td><td style="height:34px">&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>800</td><td style="height:34px">&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+</table>
+</div>
+
+<p><strong>Holding SPACE for 3 whole seconds — how many bullets with a cooldown of 300?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>And with no cooldown at all, at 60 frames a second?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<div class="stuck"><span class="lab">Stuck?</span> 3 seconds is 3000 milliseconds. How many 300s fit inside 3000?</div>
+
+<hr />
+<h2>5 · Trace the Bullets List 🧾</h2>
+<p>One bullet is fired, then the game runs three more frames. <code>bullet_speed = 12</code>. Bullets are deleted when <code>y</code> goes below 0.</p>
+<p>Fill in the list after each frame.</p>
+<div style="page-break-inside:avoid; break-inside:avoid; margin:14px 0">
+<table style="width:100%">
+<tr><th>frame</th><th>what happens</th><th>bullets list after the frame</th><th>len(bullets)</th></tr>
+<tr><td>1</td><td>SPACE pressed, bullet made at y = 300</td><td>[[197, 300]]</td><td>1</td></tr>
+<tr><td>2</td><td>move loop runs</td><td style="height:34px">&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>3</td><td>move loop runs, SPACE pressed again (cooldown allows it)</td><td style="height:34px">&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>4</td><td>move loop runs</td><td style="height:34px">&nbsp;</td><td>&nbsp;</td></tr>
+</table>
+</div>
+
+<p><strong>The new bullet in frame 3 starts at y = 300 again. Why not at 276 like the first one?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>6 · Spot the Bug 🐛</h2>
+<p>Every one of these is a real mistake from a real shooter game. Work the steps for each.</p>
+<div class="steps"><span class="lab">Bug method — use it every time</span>
+<ol>
+<li>Say what this code is <b>supposed</b> to do.</li>
+<li>Read it one line at a time and say what it <b>actually</b> does.</li>
+<li>Circle the exact line where those two stop matching.</li>
+<li>Write the fixed code.</li>
+<li>Say why your fix works.</li>
+</ol>
+</div>
+
+<p><strong>Bug A</strong> — Bullets should disappear off the top. Instead about half of them stay in the list forever.</p>
+<pre><code class="language-python">for bullet in bullets:
+    if bullet[1] &lt; 0:
+        bullets.remove(bullet)
+</code></pre>
+<p><strong>Hint:</strong> four bullets go in. Count how many the loop actually looks at.</p>
+<p class="mini-q">Write the fixed code:</p>
+
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p class="mini-q">Why was it wrong? Why does your fix work?</p>
+
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug B</strong> — Holding SPACE gives a solid wall of bullets. The cooldown seems to do nothing.</p>
+<pre><code class="language-python">if keys[pygame.K_SPACE] and now - bullet_lastshot &gt; bullet_cooldown:
+    bullet_x = player_x + (player_width // 2) - (bullet_width // 2)
+    bullet_y = player_y
+    bullets.append([bullet_x, bullet_y])
+</code></pre>
+<p><strong>Hint:</strong> something must change after a shot, or the sum stays true forever.</p>
+<p class="mini-q">Write the fixed code:</p>
+
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p class="mini-q">Why was it wrong? Why does your fix work?</p>
+
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug C</strong> — Bullets come out of the ship and fall to the bottom of the screen.</p>
+<pre><code class="language-python">for bullet in bullets:
+    bullet[1] = bullet[1] + bullet_speed
+</code></pre>
+<p><strong>Hint:</strong> in pygame, y = 0 is the top.</p>
+<p class="mini-q">Write the fixed code:</p>
+
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p class="mini-q">Why was it wrong? Why does your fix work?</p>
+
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug D</strong> — No bullets are ever visible, even though <code>len(bullets)</code> keeps going up.</p>
+<pre><code class="language-python">for bullet in bullets:
+    pygame.draw.rect(screen, bullet_colour, (bullet[0], bullet[1], bullet_width, bullet_height))
+
+screen.fill((152, 251, 152))
+pygame.draw.rect(screen, CYAN, (player_x, player_y, player_width, player_height))
+</code></pre>
+<p><strong>Hint:</strong> what does <code>screen.fill</code> do to everything drawn before it?</p>
+<p class="mini-q">Write the fixed code:</p>
+
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p class="mini-q">Why was it wrong? Why does your fix work?</p>
+
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug E</strong> — This is from your own file. Three enemies cross the bottom on the same frame. The score only goes up by 2, and one enemy stays in the game invisibly — it can still end your game.</p>
+<pre><code class="language-python">for enemy in enemies:
+    if enemy[1] &gt; S_HEIGHT:
+        enemies.remove(enemy)
+        score += 1
+</code></pre>
+<p><strong>Hint:</strong> you have seen this exact shape already today.</p>
+<p class="mini-q">Write the fixed code:</p>
+
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p class="mini-q">Why was it wrong? Why does your fix work?</p>
+
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>7 · Explain the Code 📖</h2>
+<p>Your own lines from today. Answer from reading only.</p>
+<pre><code class="language-python">bullet_x = player_x + (player_width // 2) - (bullet_width // 2)
+</code></pre>
+<p class="mini-q">Step 1 — What does <code>player_x + (player_width // 2)</code> point at?</p>
+
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p class="mini-q">Step 2 — Why subtract half the bullet width after that?</p>
+
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p class="mini-q">Step 3 — What would the bullet look like if you deleted the whole subtraction?</p>
+
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">for bullet in bullets[:]:
+    for enemy in enemies[:]:
+</code></pre>
+<p class="mini-q">Both lists carry <code>[:]</code>. Explain what would break if you removed it from just one of them.</p>
+
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">if bullet_rect.colliderect(enemy_rect):
+    bullets.remove(bullet)
+    enemies.remove(enemy)
+    score = score + 10
+    break
+</code></pre>
+<p class="mini-q">Step 1 — What exactly does <code>break</code> stop?</p>
+
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p class="mini-q">Step 2 — Two enemies overlap each other and one bullet hits both. Without <code>break</code>, which line crashes, and what is the error called?</p>
+
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">enemy_rect = pygame.Rect(enemy[0], enemy[1], enemy_width, enemy_height)
+</code></pre>
+<p class="mini-q">This line is inside the loop, not above it. Explain why it cannot be written once outside.</p>
+
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>8 · Code It 💻</h2>
+<p>Open <code>main.py</code> in the IDE at <strong>app.english-coding.co.uk</strong>. One task at a time. Run the game after every task.</p>
+<p><strong>Task 1 — Count your misses.</strong></p>
+<div class="steps"><span class="lab">Steps</span>
+<ol>
+<li>Above the game loop, make a variable <code>misses = 0</code>.</li>
+<li>Find the loop that deletes bullets leaving the top of the screen.</li>
+<li>A bullet leaving the top means you missed. Add 1 to <code>misses</code> there.</li>
+<li>Print <code>misses</code> at the same moment, so you can watch it in the console.</li>
+</ol>
+</div>
+
+<div class="check"><span class="lab">You know it works when</span> firing straight up with no enemy around makes the number climb, and hitting an enemy does not.</div>
+
+<p><strong>Task 2 — Show it on screen.</strong></p>
+<div class="steps"><span class="lab">Steps</span>
+<ol>
+<li>You already build <code>score_surface</code> with <code>game_font.render</code>. Copy that pattern for misses.</li>
+<li>Blit it under the score, not on top of it — change the second number in the position.</li>
+<li>Run it. Both lines should be readable at the same time.</li>
+</ol>
+</div>
+
+<div class="check"><span class="lab">You know it works when</span> score and misses both show, and neither one overlaps the other.</div>
+
+<p><strong>Task 3 — Double barrel.</strong></p>
+<div class="steps"><span class="lab">Steps</span>
+<ol>
+<li>Find the SPACE block where you append one bullet.</li>
+<li>Append a second bullet in the same block, a little to the left.</li>
+<li>Move the first one a little to the right, so they leave from both wings.</li>
+<li>Run it. Both bullets should fly up together and both should be able to hit.</li>
+</ol>
+</div>
+
+<div class="check"><span class="lab">You know it works when</span> one press of SPACE puts two bullets on screen, and shooting one enemy with both does not crash the game.</div>
+
+<div class="stuck"><span class="lab">Stuck on any task?</span> Print the value you are unsure about — <code>print(misses)</code>, <code>print(len(bullets))</code> — run the game and read the console. If a change breaks everything, undo it and make a smaller change.</div>
+
+<p><strong>Write your plan here before you code.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>9 · Explain Your Code 🎥</h2>
+<p>Record a short video on your phone explaining the code <strong>you</strong> wrote. Try to use these words: <strong>list</strong>, <strong>copy</strong>, <strong>index</strong>, <strong>cooldown</strong>, <strong>collide</strong>, <strong>remove</strong>.</p>
+<blockquote>
+<ol>
+<li>Fire once and point at the line that made the bullet.</li>
+<li>Point at the line that moves it and say why it is a minus.</li>
+<li>Show your cooldown line and say what would happen without it.</li>
+<li>Show one place you wrote <code>[:]</code> and explain what it protects you from.</li>
+<li>Show your misses counter working.</li>
+</ol>
+</blockquote>
+<p><strong>Plan what you will say here before you record.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your video or photo to teacher on KakaoTalk.</p>
+<div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>
+</div></body></html>

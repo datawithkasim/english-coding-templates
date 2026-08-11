@@ -19,6 +19,7 @@
 | CSS 색상과 글씨 꾸미기 (CSS Colors & Text Styling) | 연습 · 기초 | 선택자 · 색상 · padding · border · margin | [PDF](https://github.com/datawithkasim/english-coding-templates/raw/master/999-extras/worksheets/css-colors-text-styling.pdf) |
 | CSS 플렉스박스 레이아웃 (CSS Flexbox Layout) | 연습 · 기초 | display: flex · flex-direction · justify-content · align-items · gap | [PDF](https://github.com/datawithkasim/english-coding-templates/raw/master/999-extras/worksheets/css-layout-flexbox.pdf) |
 | 헬퍼 함수 만들기 — 기초 (Helper Functions) | 연습 · 기초 | 함수 정의 · 호출 · 매개변수 · 재사용 (반복문 없이) | [PDF](https://github.com/datawithkasim/english-coding-templates/raw/master/999-extras/worksheets/helper-functions.pdf) |
+| 파이게임 총알과 리스트 (Bullets & Lists) | 연습 · 심화 | 리스트 복사 `[:]` · 쿨다운 타이머 · 충돌 판정 · 디버깅 | [PDF](https://github.com/datawithkasim/english-coding-templates/raw/master/999-extras/worksheets/pygame-bullets-and-lists.pdf) |
 | 파이게임 점수·목숨·HUD (Score, Lives & HUD) | 연습 · 심화 | 게임 루프 · 프레임 · 타이머 · blit · 디버깅 | [PDF](https://github.com/datawithkasim/english-coding-templates/raw/master/999-extras/worksheets/pygame-score-lives-hud.pdf) |
 | 미로 1주차 단어 (Maze Wk1 Words) | 단어 | while · loop · detect · wall · forward | [PDF](https://github.com/datawithkasim/english-coding-templates/raw/master/999-extras/worksheets/vocab-week1-maze.pdf) |
 
