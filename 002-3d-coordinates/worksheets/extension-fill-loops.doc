@@ -1,0 +1,183 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head><meta charset='utf-8'>
+<title>🟩 Fill Loops — English Worksheet</title>
+<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
+<style>
+@page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
+div.WordSection1 { page: WordSection1; }
+body { font-family: "Segoe UI", Arial, sans-serif; font-size: 11.5pt; color: #1a1a2e; line-height: 1.5; }
+h1 { font-size: 21pt; color: #6b4ee6; margin: 4px 0 6px; }
+h2 { font-size: 15pt; color: #6b4ee6; border-top: 1px solid #dddddd; padding-top: 8px; margin: 18px 0 10px; }
+h3, h4 { font-size: 11.5pt; margin: 12px 0 6px; }
+p { margin: 7px 0; }
+.brand { font-size: 10.5pt; font-weight: bold; color: #ff7849; letter-spacing: .06em;
+         border-bottom: 2px solid #ff7849; padding-bottom: 6px; margin-bottom: 14px; }
+table { border-collapse: collapse; margin: 10px 0; }
+th, td { border: 1px solid #c8c8c8; padding: 4px 9px; text-align: center; }
+th { background: #f3eefc; color: #6b4ee6; font-weight: bold; }
+pre { font-family: Consolas, "Courier New", monospace; font-size: 10.5pt; background: #f4f4f5;
+      border: 1px solid #dddddd; padding: 8px 10px; white-space: pre-wrap; }
+pre code { background: transparent; color: #1a1a2e; }
+code { font-family: Consolas, "Courier New", monospace; background: #fff1e8; color: #d6531f; padding: 0 3px; }
+blockquote { border-left: 3px solid #ff7849; background: #fff6ef; padding: 8px 12px;
+             color: #6a3a1c; margin: 9px 0; }
+ul, ol { margin: 7px 0 7px 26px; }
+p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
+.footer { color: #999999; font-size: 8.5pt; text-align: center; margin-top: 18px;
+          border-top: 1px solid #eeeeee; padding-top: 6px; }
+.footer b { color: #ff7849; }
+</style></head>
+<body><div class=WordSection1>
+<div class="brand">📚 ENGLISH CODING · 영어코딩</div>
+<style>
+.steps { border-left: 4px solid #6b4ee6; background: #f7f5ff; border-radius: 0 8px 8px 0; padding: 10px 14px; margin: 12px 0; }
+.steps .lab { font-family: "Inter", sans-serif; font-size: 11px; font-weight: 700; letter-spacing: .06em; color: #6b4ee6; text-transform: uppercase; }
+.steps ol { margin: 6px 0 0; padding-left: 20px; }
+.steps li { margin: 3px 0; font-size: 14.5px; }
+.stuck { border: 2px dashed #ffc75c; background: #fffdf3; border-radius: 8px; padding: 9px 14px; margin: 12px 0; font-size: 14px; }
+.stuck .lab { font-family: "Inter", sans-serif; font-size: 11px; font-weight: 700; letter-spacing: .06em; color: #c07a00; text-transform: uppercase; display: block; margin-bottom: 3px; }
+.check { border-left: 4px solid #2e9e5b; background: #f2fbf5; border-radius: 0 8px 8px 0; padding: 9px 14px; margin: 12px 0; font-size: 14px; }
+.check .lab { font-family: "Inter", sans-serif; font-size: 11px; font-weight: 700; letter-spacing: .06em; color: #2e9e5b; text-transform: uppercase; display: block; margin-bottom: 3px; }
+.where { border-left: 4px solid #1f7f9c; background: #f1fafd; border-radius: 0 8px 8px 0; padding: 9px 14px; margin: 12px 0; font-size: 14px; }
+.where .lab { font-family: "Inter", sans-serif; font-size: 11px; font-weight: 700; letter-spacing: .06em; color: #1f7f9c; text-transform: uppercase; display: block; margin-bottom: 3px; }
+.warn { border-left: 4px solid #d94f4f; background: #fdf3f3; border-radius: 0 8px 8px 0; padding: 9px 14px; margin: 12px 0; font-size: 14px; }
+.warn .lab { font-family: "Inter", sans-serif; font-size: 11px; font-weight: 700; letter-spacing: .06em; color: #b93131; text-transform: uppercase; display: block; margin-bottom: 3px; }
+.mini-q { font-size: 14px; font-weight: 700; margin: 10px 0 2px; }
+.timing { font-family: "Inter", sans-serif; font-size: 12px; color: #8a8aa0; letter-spacing: .04em; text-transform: uppercase; font-weight: 700; }
+.tpl { font-family: "Inter", sans-serif; font-size: 11px; font-weight: 700; letter-spacing: .06em; color: #6b4ee6; text-transform: uppercase; margin: 12px 0 -6px; }
+table.tr { border-collapse: collapse; width: 100%; margin: 10px 0; font-size: 14px; }
+table.tr th, table.tr td { border: 1px solid #ddd; padding: 5px 9px; text-align: center; }
+table.tr th { background: #f7f5ff; color: #6b4ee6; font-size: 12px; text-transform: uppercase; letter-spacing: .05em; }
+
+/* nothing gets cut in half by a page break */
+.steps, .stuck, .check, .where, .warn, .mini-q, .tpl,
+table, tr, blockquote, pre, ul, ol,
+.write-space, .answer-lines, .qa { page-break-inside: avoid; break-inside: avoid; }
+h1, h2, h3, h4, .mini-q, .timing, .tpl { page-break-after: avoid; break-after: avoid; }
+p { orphans: 3; widows: 3; }
+</style>
+
+<h1>🟩 Fill Loops — English Worksheet</h1>
+<p><strong>Topic:</strong> One corner, six rectangles · <strong>Course:</strong> 3D Coordinates · <strong>Level:</strong> Extension · <strong>Time:</strong> about 40 minutes</p>
+<p><span class="timing">Type <code>del</code> before every <code>run</code>. Every time.</span></p>
+<p>Every <code>???</code> is one short thing for you to work out. There are no answers on this sheet.</p>
+<hr />
+<h2>1 · Read the loop 🔍</h2>
+<pre><code class="language-python">x_start = 1
+z_start = 1
+x_end = 1
+z_end = 1
+for i in range(1, 7):
+    blocks.fill(EMERALD_BLOCK,
+        pos(x_start, 0, z_start),
+        pos(x_end, 0, z_end), REPLACE)
+    x_end = x_end + 2
+    z_end = z_end + 3
+</code></pre>
+<p><strong><code>range(1, 7)</code> gives you which numbers? Write them all.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Two lines inside the loop change a variable. Write them.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Four variables never change. Which?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<div class="check"><span class="lab">Got it right if</span> your list of numbers stops at 6, not 7.</div>
+
+<hr />
+<h2>2 · Fill the table ✏️</h2>
+<p>Do it in your head first. Run the code after.</p>
+<table class="tr">
+<tr><th>i</th><th>x_end</th><th>z_end</th><th>size</th><th>blocks</th></tr>
+<tr><td>1</td><td>1</td><td>1</td><td>1 x 1</td><td>1</td></tr>
+<tr><td>2</td><td>3</td><td>4</td><td>3 x 4</td><td>12</td></tr>
+<tr><td>3</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>4</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>5</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>6</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+</table>
+
+<p><strong>Add up the last column. How many blocks does the code write?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Now walk on your build and count it. How many blocks are really there?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<div class="mini-q">The two numbers are different.</div>
+
+<p><strong>Why?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>3 · One fill instead of six 🎯</h2>
+<p>Only the last rectangle is still visible.</p>
+<div class="tpl">Template</div>
+
+<pre><code class="language-python">blocks.fill(EMERALD_BLOCK,
+    pos(1, 0, 1),
+    pos(???, 0, ???), REPLACE)
+</code></pre>
+<div class="steps"><span class="lab">Steps</span>
+<ol>
+<li>Type <code>del</code>.</li>
+<li>Run your one-line version.</li>
+<li>Type <code>del</code>. Run the loop version.</li>
+<li>Look at both. Same shape?</li>
+</ol>
+</div>
+
+<div class="check"><span class="lab">Works when</span> both builds look exactly the same.</div>
+
+<hr />
+<h2>4 · Make it stand up 🧱</h2>
+<p>Right now <code>y_start</code> and <code>y_end</code> are both <code>0</code>, so your build is one block tall.</p>
+<div class="tpl">Template · inside the loop</div>
+
+<pre><code class="language-python">    x_end = x_end + 2
+    z_end = z_end + 3
+    ??? = ??? + ???
+</code></pre>
+<div class="warn"><span class="lab">Start small</span>
+Use <b>1</b> first. Adding 3 six times makes it 15 tall and your <code>del</code> cannot reach the top.</div>
+
+<p><strong>Before you run it: how tall will it be after 6 turns if you add 1 each time?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<div class="check"><span class="lab">Works when</span> it is a solid block you can stand next to, not a floor.</div>
+
+<hr />
+<h2>5 · Pull them apart ✂️</h2>
+<p>The near corner never moves, so the shapes sit on top of each other. Move it and they separate.</p>
+<div class="tpl">Template · inside the loop</div>
+
+<pre><code class="language-python">    ??? = ??? + ???
+</code></pre>
+<p><strong>Tree of thought: tree 3 is 5 wide. How far must the corner move so shapes do not touch?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<div class="check"><span class="lab">Works when</span> you can walk between the shapes.</div>
+
+<div class="stuck"><span class="lab">Still one lump?</span>
+You changed <code>x_end</code> again instead of <code>x_start</code>. Read the variable name carefully.</div>
+
+<hr />
+<h2>6 · Show Your Work 📸🎥</h2>
+<p>Record <strong>one video</strong>, one take, no stopping. A phone is fine. Show these in order:</p>
+<blockquote>
+<ol>
+<li>Type <code>del</code>, then <code>run</code>. Walk around your build.</li>
+<li>Show the two lines inside the loop and say what each one does.</li>
+<li>Show your filled table and say why the two totals are different.</li>
+<li>Show your one-line version next to the loop version.</li>
+<li>Show your standing-up build and say which variable you changed.</li>
+</ol>
+</blockquote>
+<p>Try to use these words: <strong>loop</strong>, <strong>variable</strong>, <strong>corner</strong>, <strong>fill</strong>, <strong>cover</strong>.</p>
+<p><strong>Plan what you will say before you record.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<h3>Submit ✅</h3>
+<p>Send this worksheet and your video to teacher on KakaoTalk.</p>
+<div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>
+</div></body></html>

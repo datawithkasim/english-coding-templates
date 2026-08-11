@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>🧬 DNA Spiral — English Worksheet</title>
+<style>
+@page { size: A4; margin: 18mm 16mm 22mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-family: "Inter", "Segoe UI", system-ui, sans-serif; color: #1a1a2e; }
+body { font-size: 15px; line-height: 1.55; }
+
+.cover { border-bottom: 3px solid #ff7849; padding-bottom: 14px; margin-bottom: 20px; }
+.brand { font-size: 14px; font-weight: 800; color: #ff7849; letter-spacing: .06em; }
+h1 { font-size: 28px; color: #6b4ee6; margin: 8px 0 6px; line-height: 1.25; }
+h2 { font-size: 19px; color: #6b4ee6; margin: 22px 0 12px; padding-top: 10px; border-top: 1px solid #eee; page-break-before: always; }
+section.first h2, h2:first-of-type { border-top: none; padding-top: 0; page-break-before: avoid; }
+h3, h4 { font-size: 15px; margin: 14px 0 8px; color: #1a1a2e; }
+p { margin: 8px 0; }
+strong { color: #1a1a2e; }
+em { color: #555; }
+
+ul, ol { margin: 8px 0 8px 24px; }
+li { margin: 3px 0; }
+
+/* Grids (e.g. pixel-art coordinate grids) render as light graph paper. */
+table { border-collapse: collapse; margin: 12px 0; }
+th, td { border: 1px solid #ddd; padding: 4px 9px; text-align: center; font-size: 14px; }
+th { background: #faf7ff; color: #6b4ee6; font-weight: 700; }
+
+pre {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 13.5px;
+  background: #1e1e2e;
+  color: #b9f6ca;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 10px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  page-break-inside: avoid;
+  line-height: 1.5;
+}
+pre code { background: transparent; padding: 0; color: inherit; }
+code {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  background: #fff1e8;
+  color: #ff7849;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+blockquote {
+  margin: 10px 0;
+  padding: 10px 16px;
+  background: #fff6ef;
+  border-left: 3px solid #ff7849;
+  border-radius: 0 6px 6px 0;
+  color: #6a3a1c;
+}
+
+.write-space {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #ffffff 0,
+    #ffffff 27px,
+    #d4d4d4 27px,
+    #d4d4d4 28px
+  );
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  min-height: 114px;
+  margin: 10px 0 20px;
+  page-break-inside: avoid;
+}
+.write-space.short { min-height: 86px; }
+.write-space.tall { min-height: 170px; }
+/* Drawing box: same frame, no ruled lines — for "draw the shape" prompts. */
+.write-space.blank { background-image: none; }
+
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
+hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
+
+.meta { color: #666; font-size: 13px; margin: 0 0 14px; }
+.answer-lines {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 14px 16px;
+  background: #fafafa;
+  white-space: pre;
+  line-height: 2.2;
+}
+
+footer {
+  position: fixed;
+  bottom: 10mm; left: 16mm; right: 16mm;
+  text-align: center;
+  font-size: 10px;
+  color: #aaa;
+}
+footer b { color: #ff7849; }
+</style>
+</head>
+<body>
+<div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
+<style>
+.steps { border-left: 4px solid #6b4ee6; background: #f7f5ff; border-radius: 0 8px 8px 0; padding: 10px 14px; margin: 12px 0; }
+.steps .lab { font-family: "Inter", sans-serif; font-size: 11px; font-weight: 700; letter-spacing: .06em; color: #6b4ee6; text-transform: uppercase; }
+.steps ol { margin: 6px 0 0; padding-left: 20px; }
+.steps li { margin: 3px 0; font-size: 14.5px; }
+.stuck { border: 2px dashed #ffc75c; background: #fffdf3; border-radius: 8px; padding: 9px 14px; margin: 12px 0; font-size: 14px; }
+.stuck .lab { font-family: "Inter", sans-serif; font-size: 11px; font-weight: 700; letter-spacing: .06em; color: #c07a00; text-transform: uppercase; display: block; margin-bottom: 3px; }
+.check { border-left: 4px solid #2e9e5b; background: #f2fbf5; border-radius: 0 8px 8px 0; padding: 9px 14px; margin: 12px 0; font-size: 14px; }
+.check .lab { font-family: "Inter", sans-serif; font-size: 11px; font-weight: 700; letter-spacing: .06em; color: #2e9e5b; text-transform: uppercase; display: block; margin-bottom: 3px; }
+.where { border-left: 4px solid #1f7f9c; background: #f1fafd; border-radius: 0 8px 8px 0; padding: 9px 14px; margin: 12px 0; font-size: 14px; }
+.where .lab { font-family: "Inter", sans-serif; font-size: 11px; font-weight: 700; letter-spacing: .06em; color: #1f7f9c; text-transform: uppercase; display: block; margin-bottom: 3px; }
+.warn { border-left: 4px solid #d94f4f; background: #fdf3f3; border-radius: 0 8px 8px 0; padding: 9px 14px; margin: 12px 0; font-size: 14px; }
+.warn .lab { font-family: "Inter", sans-serif; font-size: 11px; font-weight: 700; letter-spacing: .06em; color: #b93131; text-transform: uppercase; display: block; margin-bottom: 3px; }
+.mini-q { font-size: 14px; font-weight: 700; margin: 10px 0 2px; }
+.timing { font-family: "Inter", sans-serif; font-size: 12px; color: #8a8aa0; letter-spacing: .04em; text-transform: uppercase; font-weight: 700; }
+.tpl { font-family: "Inter", sans-serif; font-size: 11px; font-weight: 700; letter-spacing: .06em; color: #6b4ee6; text-transform: uppercase; margin: 12px 0 -6px; }
+table.tr { border-collapse: collapse; width: 100%; margin: 10px 0; font-size: 14px; }
+table.tr th, table.tr td { border: 1px solid #ddd; padding: 5px 9px; text-align: center; }
+table.tr th { background: #f7f5ff; color: #6b4ee6; font-size: 12px; text-transform: uppercase; letter-spacing: .05em; }
+
+/* nothing gets cut in half by a page break */
+.steps, .stuck, .check, .where, .warn, .mini-q, .tpl,
+table, tr, blockquote, pre, ul, ol,
+.write-space, .answer-lines, .qa { page-break-inside: avoid; break-inside: avoid; }
+h1, h2, h3, h4, .mini-q, .timing, .tpl { page-break-after: avoid; break-after: avoid; }
+p { orphans: 3; widows: 3; }
+</style>
+
+<h1>🧬 DNA Spiral — English Worksheet</h1>
+<p><strong>Topic:</strong> Lists and <code>%</code> make a spiral · <strong>Course:</strong> 3D Coordinates · <strong>Level:</strong> Extension · <strong>Time:</strong> about 40 minutes</p>
+<p><span class="timing">Type <code>del</code> before every <code>run</code>. This build is 30 tall.</span></p>
+<p>Every <code>???</code> is one short thing for you to work out. There are no answers on this sheet.</p>
+<h2>1 · Eight spots 📍</h2>
+<p>Two lists hold eight places around a circle.</p>
+<pre><code class="language-python">XS = [ 6, 4, 0, -4, -6, -4,  0,  4]
+ZS = [ 0, 4, 6,  4,  0, -4, -6, -4]
+</code></pre>
+<div class="qa"><p><strong>Spot 0 is <code>XS[0]</code>, <code>ZS[0]</code>. Write it.</strong></p>
+<div class="write-space short"></div></div>
+
+<div class="qa"><p><strong>Write spot 2 and spot 5.</strong></p>
+<div class="write-space short"></div></div>
+
+<div class="qa"><p><strong>The centre is (8, 8). Spot 0 lands at x = 8 + 6 = 14. Where does spot 4 land?</strong></p>
+<div class="write-space short"></div></div>
+
+<div class="check"><span class="lab">Got it right if</span> spot 0 and spot 4 are on opposite sides of the centre.</div>
+
+<h2>2 · The <code>%</code> sign 🔁</h2>
+<p><code>%</code> gives the <strong>remainder</strong> after dividing.</p>
+<p><strong>Fill this in.</strong></p>
+<table class="tr">
+<tr><th>i</th><th>0</th><th>1</th><th>7</th><th>8</th><th>9</th><th>15</th><th>16</th></tr>
+<tr><th>i % 8</th><td>0</td><td>1</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+</table>
+
+<div class="qa"><p><strong>What is the biggest number <code>i % 8</code> can ever be?</strong></p>
+<div class="write-space short"></div></div>
+
+<div class="mini-q">Why this matters.</div>
+
+<div class="qa"><p><strong>Your lists only have 8 spots. <code>i</code> counts to 23. Explain what <code>%</code> is doing for you.</strong></p>
+<div class="write-space"></div></div>
+
+<h2>3 · The other strand ↔️</h2>
+<pre><code class="language-python">k = i % 8
+j = (k + 4) % 8
+</code></pre>
+<p><strong>Fill this in.</strong></p>
+<table class="tr">
+<tr><th>k</th><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th></tr>
+<tr><th>j</th><td>4</td><td>5</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+</table>
+
+<div class="qa"><p><strong>Why is there a second <code>% 8</code> on the <code>j</code> line? What goes wrong without it?</strong></p>
+<div class="write-space"></div></div>
+
+<div class="check"><span class="lab">Got it right if</span> every j is between 0 and 7.</div>
+
+<h2>4 · Build it 🧬</h2>
+<div class="tpl">Template</div>
+
+<pre><code class="language-python">XS = [6, 4, 0, -4, -6, -4, 0, 4]
+ZS = [0, 4, 6, 4, 0, -4, -6, -4]
+
+def on_chat():
+    for i in range(0, 24):
+        k = i % 8
+        j = (??? + ???) % ???
+        ax = 8 + XS[k]
+        az = 8 + ZS[k]
+        bx = 8 + XS[???]
+        bz = 8 + ZS[???]
+        blocks.fill(GOLD_BLOCK,
+            pos(ax, ???, az), pos(ax + 1, ???, az + 1), REPLACE)
+        blocks.fill(EMERALD_BLOCK,
+            pos(bx, ???, bz), pos(bx + 1, ???, bz + 1), REPLACE)
+player.on_chat(&quot;dna&quot;, on_chat)
+</code></pre>
+<div class="mini-q">The `y` blanks are all the same thing.</div>
+
+<div class="qa"><p><strong>Which variable makes it climb?</strong></p>
+<div class="write-space short"></div></div>
+
+<div class="check"><span class="lab">Works when</span> two coloured strands wind around each other, and they are never on the same side.</div>
+
+<div class="stuck"><span class="lab">It is a straight tower?</span>
+Your `y` is a fixed number instead of a variable. It must change every turn.</div>
+
+<div class="stuck"><span class="lab">Both strands in the same place?</span>
+Check the `j` line. `(k + 4)` not `(k + 8)`.</div>
+
+<h2>5 · Add the bars 🪜</h2>
+<p>Real DNA has rungs joining the two strands.</p>
+<div class="tpl">Template · inside the loop</div>
+
+<pre><code class="language-python">        if i % ??? == 0:
+            blocks.fill(QUARTZ_BLOCK,
+                pos(ax, i, az), pos(bx, i, bz), REPLACE)
+</code></pre>
+<div class="qa"><p><strong>24 steps. You want 6 bars. What number goes in the blank?</strong></p>
+<div class="write-space short"></div></div>
+
+<div class="check"><span class="lab">Works when</span> you can count your bars and get the number you planned.</div>
+
+<h2>6 · Show Your Work 📸🎥</h2>
+<p>Record <strong>one video</strong>, one take, no stopping. A phone is fine. Show these in order:</p>
+<blockquote>
+<ol>
+<li>Type <code>del</code>, then <code>dna</code>. Walk all the way round it.</li>
+<li>Show your two lists and say what one spot means.</li>
+<li>Show the <code>k</code> line and explain <code>%</code> in your own words.</li>
+<li>Show the <code>j</code> line and say why it is always the opposite side.</li>
+<li>Show your bars and say how you chose the number.</li>
+</ol>
+</blockquote>
+<p>Try to use these words: <strong>list</strong>, <strong>remainder</strong>, <strong>opposite</strong>, <strong>loop</strong>, <strong>climb</strong>.</p>
+<div class="qa"><p><strong>Plan what you will say before you record.</strong></p>
+<div class="write-space tall" style="min-height: 240px"></div></div>
+
+<h3>Submit ✅</h3>
+<p>Send this worksheet and your video to teacher on KakaoTalk.</p>
+</body>
+</html>

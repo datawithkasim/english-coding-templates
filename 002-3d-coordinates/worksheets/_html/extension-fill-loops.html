@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>🟩 Fill Loops — English Worksheet</title>
+<style>
+@page { size: A4; margin: 18mm 16mm 22mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-family: "Inter", "Segoe UI", system-ui, sans-serif; color: #1a1a2e; }
+body { font-size: 15px; line-height: 1.55; }
+
+.cover { border-bottom: 3px solid #ff7849; padding-bottom: 14px; margin-bottom: 20px; }
+.brand { font-size: 14px; font-weight: 800; color: #ff7849; letter-spacing: .06em; }
+h1 { font-size: 28px; color: #6b4ee6; margin: 8px 0 6px; line-height: 1.25; }
+h2 { font-size: 19px; color: #6b4ee6; margin: 22px 0 12px; padding-top: 10px; border-top: 1px solid #eee; page-break-before: always; }
+section.first h2, h2:first-of-type { border-top: none; padding-top: 0; page-break-before: avoid; }
+h3, h4 { font-size: 15px; margin: 14px 0 8px; color: #1a1a2e; }
+p { margin: 8px 0; }
+strong { color: #1a1a2e; }
+em { color: #555; }
+
+ul, ol { margin: 8px 0 8px 24px; }
+li { margin: 3px 0; }
+
+/* Grids (e.g. pixel-art coordinate grids) render as light graph paper. */
+table { border-collapse: collapse; margin: 12px 0; }
+th, td { border: 1px solid #ddd; padding: 4px 9px; text-align: center; font-size: 14px; }
+th { background: #faf7ff; color: #6b4ee6; font-weight: 700; }
+
+pre {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 13.5px;
+  background: #1e1e2e;
+  color: #b9f6ca;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 10px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  page-break-inside: avoid;
+  line-height: 1.5;
+}
+pre code { background: transparent; padding: 0; color: inherit; }
+code {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  background: #fff1e8;
+  color: #ff7849;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+blockquote {
+  margin: 10px 0;
+  padding: 10px 16px;
+  background: #fff6ef;
+  border-left: 3px solid #ff7849;
+  border-radius: 0 6px 6px 0;
+  color: #6a3a1c;
+}
+
+.write-space {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #ffffff 0,
+    #ffffff 27px,
+    #d4d4d4 27px,
+    #d4d4d4 28px
+  );
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  min-height: 114px;
+  margin: 10px 0 20px;
+  page-break-inside: avoid;
+}
+.write-space.short { min-height: 86px; }
+.write-space.tall { min-height: 170px; }
+/* Drawing box: same frame, no ruled lines — for "draw the shape" prompts. */
+.write-space.blank { background-image: none; }
+
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
+hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
+
+.meta { color: #666; font-size: 13px; margin: 0 0 14px; }
+.answer-lines {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 14px 16px;
+  background: #fafafa;
+  white-space: pre;
+  line-height: 2.2;
+}
+
+footer {
+  position: fixed;
+  bottom: 10mm; left: 16mm; right: 16mm;
+  text-align: center;
+  font-size: 10px;
+  color: #aaa;
+}
+footer b { color: #ff7849; }
+</style>
+</head>
+<body>
+<div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
+<style>
+.steps { border-left: 4px solid #6b4ee6; background: #f7f5ff; border-radius: 0 8px 8px 0; padding: 10px 14px; margin: 12px 0; }
+.steps .lab { font-family: "Inter", sans-serif; font-size: 11px; font-weight: 700; letter-spacing: .06em; color: #6b4ee6; text-transform: uppercase; }
+.steps ol { margin: 6px 0 0; padding-left: 20px; }
+.steps li { margin: 3px 0; font-size: 14.5px; }
+.stuck { border: 2px dashed #ffc75c; background: #fffdf3; border-radius: 8px; padding: 9px 14px; margin: 12px 0; font-size: 14px; }
+.stuck .lab { font-family: "Inter", sans-serif; font-size: 11px; font-weight: 700; letter-spacing: .06em; color: #c07a00; text-transform: uppercase; display: block; margin-bottom: 3px; }
+.check { border-left: 4px solid #2e9e5b; background: #f2fbf5; border-radius: 0 8px 8px 0; padding: 9px 14px; margin: 12px 0; font-size: 14px; }
+.check .lab { font-family: "Inter", sans-serif; font-size: 11px; font-weight: 700; letter-spacing: .06em; color: #2e9e5b; text-transform: uppercase; display: block; margin-bottom: 3px; }
+.where { border-left: 4px solid #1f7f9c; background: #f1fafd; border-radius: 0 8px 8px 0; padding: 9px 14px; margin: 12px 0; font-size: 14px; }
+.where .lab { font-family: "Inter", sans-serif; font-size: 11px; font-weight: 700; letter-spacing: .06em; color: #1f7f9c; text-transform: uppercase; display: block; margin-bottom: 3px; }
+.warn { border-left: 4px solid #d94f4f; background: #fdf3f3; border-radius: 0 8px 8px 0; padding: 9px 14px; margin: 12px 0; font-size: 14px; }
+.warn .lab { font-family: "Inter", sans-serif; font-size: 11px; font-weight: 700; letter-spacing: .06em; color: #b93131; text-transform: uppercase; display: block; margin-bottom: 3px; }
+.mini-q { font-size: 14px; font-weight: 700; margin: 10px 0 2px; }
+.timing { font-family: "Inter", sans-serif; font-size: 12px; color: #8a8aa0; letter-spacing: .04em; text-transform: uppercase; font-weight: 700; }
+.tpl { font-family: "Inter", sans-serif; font-size: 11px; font-weight: 700; letter-spacing: .06em; color: #6b4ee6; text-transform: uppercase; margin: 12px 0 -6px; }
+table.tr { border-collapse: collapse; width: 100%; margin: 10px 0; font-size: 14px; }
+table.tr th, table.tr td { border: 1px solid #ddd; padding: 5px 9px; text-align: center; }
+table.tr th { background: #f7f5ff; color: #6b4ee6; font-size: 12px; text-transform: uppercase; letter-spacing: .05em; }
+
+/* nothing gets cut in half by a page break */
+.steps, .stuck, .check, .where, .warn, .mini-q, .tpl,
+table, tr, blockquote, pre, ul, ol,
+.write-space, .answer-lines, .qa { page-break-inside: avoid; break-inside: avoid; }
+h1, h2, h3, h4, .mini-q, .timing, .tpl { page-break-after: avoid; break-after: avoid; }
+p { orphans: 3; widows: 3; }
+</style>
+
+<h1>🟩 Fill Loops — English Worksheet</h1>
+<p><strong>Topic:</strong> One corner, six rectangles · <strong>Course:</strong> 3D Coordinates · <strong>Level:</strong> Extension · <strong>Time:</strong> about 40 minutes</p>
+<p><span class="timing">Type <code>del</code> before every <code>run</code>. Every time.</span></p>
+<p>Every <code>???</code> is one short thing for you to work out. There are no answers on this sheet.</p>
+<h2>1 · Read the loop 🔍</h2>
+<pre><code class="language-python">x_start = 1
+z_start = 1
+x_end = 1
+z_end = 1
+for i in range(1, 7):
+    blocks.fill(EMERALD_BLOCK,
+        pos(x_start, 0, z_start),
+        pos(x_end, 0, z_end), REPLACE)
+    x_end = x_end + 2
+    z_end = z_end + 3
+</code></pre>
+<div class="qa"><p><strong><code>range(1, 7)</code> gives you which numbers? Write them all.</strong></p>
+<div class="write-space short"></div></div>
+
+<div class="qa"><p><strong>Two lines inside the loop change a variable. Write them.</strong></p>
+<div class="write-space short"></div></div>
+
+<div class="qa"><p><strong>Four variables never change. Which?</strong></p>
+<div class="write-space short"></div></div>
+
+<div class="check"><span class="lab">Got it right if</span> your list of numbers stops at 6, not 7.</div>
+
+<h2>2 · Fill the table ✏️</h2>
+<p>Do it in your head first. Run the code after.</p>
+<table class="tr">
+<tr><th>i</th><th>x_end</th><th>z_end</th><th>size</th><th>blocks</th></tr>
+<tr><td>1</td><td>1</td><td>1</td><td>1 x 1</td><td>1</td></tr>
+<tr><td>2</td><td>3</td><td>4</td><td>3 x 4</td><td>12</td></tr>
+<tr><td>3</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>4</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>5</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>6</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+</table>
+
+<div class="qa"><p><strong>Add up the last column. How many blocks does the code write?</strong></p>
+<div class="write-space short"></div></div>
+
+<div class="qa"><p><strong>Now walk on your build and count it. How many blocks are really there?</strong></p>
+<div class="write-space short"></div></div>
+
+<div class="mini-q">The two numbers are different.</div>
+
+<div class="qa"><p><strong>Why?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>3 · One fill instead of six 🎯</h2>
+<p>Only the last rectangle is still visible.</p>
+<div class="tpl">Template</div>
+
+<pre><code class="language-python">blocks.fill(EMERALD_BLOCK,
+    pos(1, 0, 1),
+    pos(???, 0, ???), REPLACE)
+</code></pre>
+<div class="steps"><span class="lab">Steps</span>
+<ol>
+<li>Type <code>del</code>.</li>
+<li>Run your one-line version.</li>
+<li>Type <code>del</code>. Run the loop version.</li>
+<li>Look at both. Same shape?</li>
+</ol>
+</div>
+
+<div class="check"><span class="lab">Works when</span> both builds look exactly the same.</div>
+
+<h2>4 · Make it stand up 🧱</h2>
+<p>Right now <code>y_start</code> and <code>y_end</code> are both <code>0</code>, so your build is one block tall.</p>
+<div class="tpl">Template · inside the loop</div>
+
+<pre><code class="language-python">    x_end = x_end + 2
+    z_end = z_end + 3
+    ??? = ??? + ???
+</code></pre>
+<div class="warn"><span class="lab">Start small</span>
+Use <b>1</b> first. Adding 3 six times makes it 15 tall and your <code>del</code> cannot reach the top.</div>
+
+<div class="qa"><p><strong>Before you run it: how tall will it be after 6 turns if you add 1 each time?</strong></p>
+<div class="write-space short"></div></div>
+
+<div class="check"><span class="lab">Works when</span> it is a solid block you can stand next to, not a floor.</div>
+
+<h2>5 · Pull them apart ✂️</h2>
+<p>The near corner never moves, so the shapes sit on top of each other. Move it and they separate.</p>
+<div class="tpl">Template · inside the loop</div>
+
+<pre><code class="language-python">    ??? = ??? + ???
+</code></pre>
+<div class="qa"><p><strong>Tree of thought: tree 3 is 5 wide. How far must the corner move so shapes do not touch?</strong></p>
+<div class="write-space short"></div></div>
+
+<div class="check"><span class="lab">Works when</span> you can walk between the shapes.</div>
+
+<div class="stuck"><span class="lab">Still one lump?</span>
+You changed <code>x_end</code> again instead of <code>x_start</code>. Read the variable name carefully.</div>
+
+<h2>6 · Show Your Work 📸🎥</h2>
+<p>Record <strong>one video</strong>, one take, no stopping. A phone is fine. Show these in order:</p>
+<blockquote>
+<ol>
+<li>Type <code>del</code>, then <code>run</code>. Walk around your build.</li>
+<li>Show the two lines inside the loop and say what each one does.</li>
+<li>Show your filled table and say why the two totals are different.</li>
+<li>Show your one-line version next to the loop version.</li>
+<li>Show your standing-up build and say which variable you changed.</li>
+</ol>
+</blockquote>
+<p>Try to use these words: <strong>loop</strong>, <strong>variable</strong>, <strong>corner</strong>, <strong>fill</strong>, <strong>cover</strong>.</p>
+<div class="qa"><p><strong>Plan what you will say before you record.</strong></p>
+<div class="write-space tall" style="min-height: 240px"></div></div>
+
+<h3>Submit ✅</h3>
+<p>Send this worksheet and your video to teacher on KakaoTalk.</p>
+</body>
+</html>
