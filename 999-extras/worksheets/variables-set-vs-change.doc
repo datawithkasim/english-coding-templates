@@ -1,0 +1,182 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head><meta charset='utf-8'>
+<title>🐒 Extra — set or change? Two Ways to Give a Variable a Number</title>
+<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
+<style>
+@page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
+div.WordSection1 { page: WordSection1; }
+body { font-family: "Segoe UI", Arial, sans-serif; font-size: 11.5pt; color: #1a1a2e; line-height: 1.5; }
+h1 { font-size: 21pt; color: #6b4ee6; margin: 4px 0 6px; }
+h2 { font-size: 15pt; color: #6b4ee6; border-top: 1px solid #dddddd; padding-top: 8px; margin: 18px 0 10px; }
+h3, h4 { font-size: 11.5pt; margin: 12px 0 6px; }
+p { margin: 7px 0; }
+.brand { font-size: 10.5pt; font-weight: bold; color: #ff7849; letter-spacing: .06em;
+         border-bottom: 2px solid #ff7849; padding-bottom: 6px; margin-bottom: 14px; }
+table { border-collapse: collapse; margin: 10px 0; }
+th, td { border: 1px solid #c8c8c8; padding: 4px 9px; text-align: center; }
+th { background: #f3eefc; color: #6b4ee6; font-weight: bold; }
+pre { font-family: Consolas, "Courier New", monospace; font-size: 10.5pt; background: #f4f4f5;
+      border: 1px solid #dddddd; padding: 8px 10px; white-space: pre-wrap; }
+pre code { background: transparent; color: #1a1a2e; }
+code { font-family: Consolas, "Courier New", monospace; background: #fff1e8; color: #d6531f; padding: 0 3px; }
+blockquote { border-left: 3px solid #ff7849; background: #fff6ef; padding: 8px 12px;
+             color: #6a3a1c; margin: 9px 0; }
+ul, ol { margin: 7px 0 7px 26px; }
+p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
+.footer { color: #999999; font-size: 8.5pt; text-align: center; margin-top: 18px;
+          border-top: 1px solid #eeeeee; padding-top: 6px; }
+.footer b { color: #ff7849; }
+</style></head>
+<body><div class=WordSection1>
+<div class="brand">📚 ENGLISH CODING · 영어코딩</div>
+<h1>🐒 Extra — set or change? Two Ways to Give a Variable a Number</h1>
+<p><strong>Topic:</strong> <code>set</code> vs <code>change</code> · <strong>Course:</strong> Builder Basics · <strong>Level:</strong> Intermediate · <strong>Time:</strong> about 35 minutes</p>
+<p>A variable is a number with a name. <code>set</code> gives it a brand new number. <code>change</code> adds to the number it already holds.</p>
+<hr />
+<h2>1 · Predict 🔮</h2>
+<p>Read the code. The agent moves the number of blocks that <code>monkey</code> holds.</p>
+<pre><code>set monkey to 2
+move forward by monkey
+change monkey by 3
+move forward by monkey
+set monkey to 1
+move forward by monkey
+</code></pre>
+<p><strong>Fill the table. Write what <code>monkey</code> holds before each move.</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Move</th>
+<th style="text-align: center;"><code>monkey</code> before this move</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<p><strong>How many blocks does the agent move in total?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>2 · Which Block Do You Need? ✏️</h2>
+<p><strong><code>monkey</code> holds 5. You run <code>change monkey by 5</code>. Now <code>monkey</code> holds… Circle one:</strong> 5 · 10 · 25</p>
+<p><strong><code>monkey</code> holds 5. You run <code>set monkey to 5</code>. Now <code>monkey</code> holds… Circle one:</strong> 5 · 10 · 0</p>
+<p><strong>You want the number to start at 6. Circle one:</strong> <code>set monkey to 6</code> · <code>change monkey by 6</code></p>
+<p><strong><code>monkey</code> holds 6 and you want 6 more. Circle one:</strong> <code>set monkey to 6</code> · <code>change monkey by 6</code></p>
+<p><strong>Finish the rule in your own words.</strong></p>
+<blockquote>
+<p><code>set</code> means ______.</p>
+<p><code>change</code> means ______.</p>
+</blockquote>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>3 · Find the Bug 🐛</h2>
+<p><strong>Bug A</strong> — This should build three walls: 4 blocks long, then 8, then 12. It builds 4, then 12, then 12.</p>
+<pre><code>set monkey to 4
+move forward by monkey
+set monkey to 12
+move forward by monkey
+set monkey to 12
+move forward by monkey
+</code></pre>
+<p><strong>Hint:</strong> what number does the second wall need?</p>
+<p><strong>Write the fixed code. Use <code>change</code> instead.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug B</strong> — The first wall should be 4 blocks long. It comes out 8.</p>
+<pre><code>set monkey to 4
+repeat 3 times
+    change monkey by 4
+    move forward by monkey
+</code></pre>
+<p><strong>Which two lines swap places? Write the fixed code.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why does the order of those two lines matter? One sentence.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>4 · Count the Corner 📐</h2>
+<p>The agent starts on <strong>A1</strong> facing right. It places 5 blocks along row <strong>A</strong>. Then it turns right and finishes the L.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>A</strong></td>
+<td>■</td>
+<td>■</td>
+<td>■</td>
+<td>■</td>
+<td>■</td>
+</tr>
+<tr>
+<td><strong>B</strong></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>■</td>
+</tr>
+<tr>
+<td><strong>C</strong></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>■</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Count the ■ blocks in the picture. How many in total? Circle one:</strong> 7 · 8 · 10</p>
+<p><strong>After the turn, how many more blocks does the agent still place? Circle one:</strong> 2 · 3 · 5</p>
+<p><strong>The corner block is A5. Why is it not placed twice? One sentence.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Write the code for this L. Use <code>monkey</code> for the long arm.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>5 · Show Your Work 📸🎥</h2>
+<p>Switch to your homework world. Build <strong>three walls in a row</strong>: the first 4 blocks long, the second 8, the third 12. Use one variable and <code>change</code> it — no <code>set</code> inside the loop. Then change <strong>one number</strong> (the start value or the change amount) and run it again.</p>
+<p>Record <strong>one video</strong> — one take, no stopping (a phone is fine). Show these in order:</p>
+<p><strong>1 · Your code.</strong> Scroll through it. Say what each part does. Point at your <code>change</code> block and say the new number it makes.</p>
+<p><strong>2 · Your build.</strong> Point the camera. Show both versions.</p>
+<p>Fill the blanks:</p>
+<blockquote>
+<p>Today I built ______.</p>
+<p>I built it using this code: ______.</p>
+<p>In this code I used ______.</p>
+<p>The hardest part was ______.</p>
+<p>That part was hard because ______.</p>
+<p>The most fun part was ______.</p>
+<p>Something new I learned was ______.</p>
+</blockquote>
+<p><strong>Write your lines here, then say them in your video.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h3>Submit ✅</h3>
+<p>Send this worksheet + your video to teacher on KakaoTalk.</p>
+<div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>
+</div></body></html>

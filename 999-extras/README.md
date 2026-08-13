@@ -21,6 +21,7 @@
 | 헬퍼 함수 만들기 — 기초 (Helper Functions) | 연습 · 기초 | 함수 정의 · 호출 · 매개변수 · 재사용 (반복문 없이) | [PDF](https://github.com/datawithkasim/english-coding-templates/raw/master/999-extras/worksheets/helper-functions.pdf) |
 | 파이게임 총알과 리스트 (Bullets & Lists) | 연습 · 심화 | 리스트 복사 `[:]` · 쿨다운 타이머 · 충돌 판정 · 디버깅 | [PDF](https://github.com/datawithkasim/english-coding-templates/raw/master/999-extras/worksheets/pygame-bullets-and-lists.pdf) |
 | 파이게임 점수·목숨·HUD (Score, Lives & HUD) | 연습 · 심화 | 게임 루프 · 프레임 · 타이머 · blit · 디버깅 | [PDF](https://github.com/datawithkasim/english-coding-templates/raw/master/999-extras/worksheets/pygame-score-lives-hud.pdf) |
+| set과 change 구분 (set or change?) | 연습 · 중급 | 변수 · `set` vs `change` · 커지는 구조물 · 코너 세기 (블록 코딩) | [PDF](https://github.com/datawithkasim/english-coding-templates/raw/master/999-extras/worksheets/variables-set-vs-change.pdf) |
 | 미로 1주차 단어 (Maze Wk1 Words) | 단어 | while · loop · detect · wall · forward | [PDF](https://github.com/datawithkasim/english-coding-templates/raw/master/999-extras/worksheets/vocab-week1-maze.pdf) |
 
 > 단어 워크시트는 매주 코스에서 배우는 핵심 단어를 따로 연습하는 자료입니다. 숙제와 함께 보내드릴 수 있습니다.
