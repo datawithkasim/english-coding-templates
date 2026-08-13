@@ -1,0 +1,274 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head><meta charset='utf-8'>
+<title>🦙 Functions Extension · 64 Cages — English Worksheet</title>
+<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
+<style>
+@page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
+div.WordSection1 { page: WordSection1; }
+body { font-family: "Segoe UI", Arial, sans-serif; font-size: 11.5pt; color: #1a1a2e; line-height: 1.5; }
+h1 { font-size: 21pt; color: #6b4ee6; margin: 4px 0 6px; }
+h2 { font-size: 15pt; color: #6b4ee6; border-top: 1px solid #dddddd; padding-top: 8px; margin: 18px 0 10px; }
+h3, h4 { font-size: 11.5pt; margin: 12px 0 6px; }
+p { margin: 7px 0; }
+.brand { font-size: 10.5pt; font-weight: bold; color: #ff7849; letter-spacing: .06em;
+         border-bottom: 2px solid #ff7849; padding-bottom: 6px; margin-bottom: 14px; }
+table { border-collapse: collapse; margin: 10px 0; }
+th, td { border: 1px solid #c8c8c8; padding: 4px 9px; text-align: center; }
+th { background: #f3eefc; color: #6b4ee6; font-weight: bold; }
+pre { font-family: Consolas, "Courier New", monospace; font-size: 10.5pt; background: #f4f4f5;
+      border: 1px solid #dddddd; padding: 8px 10px; white-space: pre-wrap; }
+pre code { background: transparent; color: #1a1a2e; }
+code { font-family: Consolas, "Courier New", monospace; background: #fff1e8; color: #d6531f; padding: 0 3px; }
+blockquote { border-left: 3px solid #ff7849; background: #fff6ef; padding: 8px 12px;
+             color: #6a3a1c; margin: 9px 0; }
+ul, ol { margin: 7px 0 7px 26px; }
+p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
+.footer { color: #999999; font-size: 8.5pt; text-align: center; margin-top: 18px;
+          border-top: 1px solid #eeeeee; padding-top: 6px; }
+.footer b { color: #ff7849; }
+</style></head>
+<body><div class=WordSection1>
+<div class="brand">📚 ENGLISH CODING · 영어코딩</div>
+<h1>🦙 Functions Extension · 64 Cages — English Worksheet</h1>
+<p><strong>Topic:</strong> One function, three loops · <strong>Course:</strong> Functions &amp; Games · <strong>Level:</strong> Extension (after helper functions) · <strong>Time:</strong> about 45 minutes</p>
+<p>Last time one function built one cage. This time the same function builds <strong>64</strong>, stacked in a <strong>4 × 4 × 4</strong> tower. Every cage holds an animal and stands on grass.</p>
+<p>Your cage from last lesson:</p>
+<pre><code class="language-python">def make_cage(x: number, y: number, z: number, animal: number):
+    blocks.fill(OAK_FENCE,
+        pos(x, y, z),
+        pos(x + 4, y + 3, z + 4), FillOperation.HOLLOW)
+    blocks.fill(GRASS,
+        pos(x, y, z),
+        pos(x + 4, y, z + 4), FillOperation.REPLACE)
+    mobs.spawn(animal, pos(x + 2, y + 1, z + 2))
+</code></pre>
+<p>One cage is <strong>5 wide, 4 tall, 5 deep</strong>.</p>
+<hr />
+<h2>1 · Predict 🔮</h2>
+<p>Read each one. Write the number <strong>and the reason</strong>.</p>
+<pre><code class="language-python">for col in range(4):
+    make_cage(col * 6, 0, 0, LLAMA)
+</code></pre>
+<p><strong>How many cages? Which way do they run?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">for row in range(4):
+    for col in range(4):
+        make_cage(col * 6, 0, row * 6, LLAMA)
+</code></pre>
+<p><strong>How many cages now? What shape do they make?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<pre><code class="language-python">for level in range(4):
+    for row in range(4):
+        for col in range(4):
+            make_cage(col * 6, level * 5, row * 6, LLAMA)
+</code></pre>
+<p><strong>How many cages? Which loop lifts them off the ground?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>A cage is 4 tall. The levels are 5 apart. What would happen if you changed <code>level * 5</code> to <code>level * 3</code>?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>2 · Spot the Bug 🐛</h2>
+<p>Each one runs. Each one is wrong. Fix it, then say why.</p>
+<p><strong>Bug A</strong> — This should build 64 cages. You count 16.</p>
+<pre><code class="language-python">for row in range(4):
+    for col in range(4):
+        make_cage(col * 6, 0, row * 6, LLAMA)
+</code></pre>
+<p><strong>Write the fix:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug B</strong> — Every animal disappears the moment the cage appears.</p>
+<pre><code class="language-python">def make_cage(x: number, y: number, z: number, animal: number):
+    mobs.spawn(animal, pos(x + 2, y + 1, z + 2))
+    blocks.fill(OAK_FENCE,
+        pos(x, y, z),
+        pos(x + 4, y + 3, z + 4), FillOperation.HOLLOW)
+</code></pre>
+<p><strong>Write the fix:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Bug C</strong> — All 64 cages land in one flat layer, cutting through each other.</p>
+<pre><code class="language-python">for level in range(4):
+    for row in range(4):
+        for col in range(4):
+            make_cage(col * 6, 0, row * 6, LLAMA)
+</code></pre>
+<p><strong>Write the fix:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why was it wrong?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>3 · Read the Grid 🧊</h2>
+<p>Each loop owns one direction.</p>
+<div style="page-break-inside:avoid;break-inside:avoid;margin:14px 0">
+<table>
+<thead>
+<tr>
+<th>loop</th>
+<th>it changes</th>
+<th>direction</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>col</code></td>
+<td>x</td>
+<td>across</td>
+</tr>
+<tr>
+<td><code>level</code></td>
+<td>y</td>
+<td>up</td>
+</tr>
+<tr>
+<td><code>row</code></td>
+<td>z</td>
+<td>away from you</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Fill in the missing numbers for <code>make_cage(col * 6, level * 5, row * 6, LLAMA)</code>:</p>
+<div style="page-break-inside:avoid;break-inside:avoid;margin:14px 0">
+<table>
+<thead>
+<tr>
+<th>col</th>
+<th>level</th>
+<th>row</th>
+<th>x</th>
+<th>y</th>
+<th>z</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>3</td>
+<td>0</td>
+<td>0</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>0</td>
+<td>2</td>
+<td>0</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td>3</td>
+<td>3</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>The last row is the far top corner. How far is that cage from where you stand?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>4 · Build It 🧱</h2>
+<p>Stand somewhere with open space above you and behind you. The tower needs about <strong>20 blocks</strong> in each direction.</p>
+<p>Fill the blanks and run it:</p>
+<pre><code class="language-python">def make_cage(x: number, y: number, z: number, animal: number):
+    blocks.fill(OAK_FENCE,
+        pos(x, y, z),
+        pos(x + 4, y + 3, z + 4), FillOperation.HOLLOW)
+    blocks.fill(GRASS,
+        pos(______, ______, ______),
+        pos(x + 4, ______, z + 4), FillOperation.REPLACE)
+    mobs.spawn(______, pos(x + 2, y + 1, z + 2))
+
+for level in range(______):
+    for row in range(______):
+        for col in range(______):
+            make_cage(col * 6, level * ______, row * 6, ______)
+</code></pre>
+<p><strong>Your tower must have:</strong></p>
+<div style="page-break-inside:avoid;break-inside:avoid;margin:14px 0">
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Check</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>64 cages, 4 across, 4 up, 4 deep</td>
+</tr>
+<tr>
+<td>2</td>
+<td>an animal alive inside every cage</td>
+</tr>
+<tr>
+<td>3</td>
+<td>grass on the floor of every cage</td>
+</tr>
+<tr>
+<td>4</td>
+<td>no cage cutting through another cage</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Once the 64 stand up, keep going. Different animals on each level, or a gate you can walk through.</p>
+<hr />
+<h2>5 · Show Your Work 📸🎥</h2>
+<p>Run your code and walk around the finished tower.</p>
+<p>Record <strong>one video</strong> — one take, no stopping (a phone is fine). Show these in order:</p>
+<ol>
+<li>Your code on screen, and explain what each of the three loops does.</li>
+<li>The tower in the world, and count a row of cages out loud.</li>
+</ol>
+<p><strong>Fill the blanks:</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<blockquote>
+<p>Today I built ______.</p>
+<p>I built it using this code: ______.</p>
+<p>In this code I used ______.</p>
+<p>The hardest part was ______.</p>
+<p>That part was hard because ______.</p>
+<p>The most fun part was ______.</p>
+<p>Something new I learned was ______.</p>
+</blockquote>
+<h3>Submit</h3>
+<p>Send your video on KakaoTalk.</p>
+<div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>
+</div></body></html>
