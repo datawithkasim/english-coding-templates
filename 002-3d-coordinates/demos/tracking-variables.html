@@ -1,0 +1,2797 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Fill Loops · Tracking Variables</title>
+<style>
+/* inlined from english-coding-slides/assets/style.css */
+/* English Coding — shared slide deck styles */
+
+:root {
+  --bg: #0a0d13;
+  --ink: #e8eef6;
+  --accent: #38d0e0;
+  --accent-2: #8b5cf6;
+  --soft: #232b3a;
+  --panel: #141b27;
+  --code-bg: #1e1e2e;
+  --code-ink: #f5f5f5;
+  --kw: #ff79c6;
+  --str: #f1fa8c;
+  --num: #bd93f9;
+  --com: #8a97b8;
+  --fn: #50fa7b;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  height: 100%;
+  background: var(--bg);
+  font-family: "Inter", -apple-system, "Segoe UI", system-ui, sans-serif;
+  color: var(--ink);
+  overflow: hidden;
+}
+
+/* Stage fills the entire viewport on every screen size so presentation
+   doesn't require resizing the window. The old fixed 1:1 + 900px cap design
+   left dark bands on projectors and phones alike. */
+.stage {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh; /* dynamic vh accounts for mobile browser chrome */
+  background: var(--bg);
+  border-radius: 0;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  padding: 4.5% 6%;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+}
+.slide.active { display: flex; animation: fade .25s ease; }
+@keyframes fade { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+
+/* Sizing strategy: clamp(min, scaler, max).
+   Scaler uses min(vmin, vw/1.4) so big landscape projectors grow text
+   beyond the old vmin-only ceiling without making portrait phones huge.
+   Caps raised so a 1920×1080 projector shows ~120px headings instead of
+   the old pinched 88px. */
+h1 { font-size: clamp(44px, min(10.2vmin, 7.3vw), 158px); line-height: 1.05; margin-bottom: .25em; }
+h2 { font-size: clamp(31px, min(7vmin, 5vw), 108px); line-height: 1.1; margin-bottom: .5em; color: var(--accent-2); }
+p, li { font-size: clamp(20px, min(4.1vmin, 2.7vw), 50px); line-height: 1.5; }
+.sub { color: var(--accent); font-weight: 700; }
+.big { font-size: clamp(22px, min(4.5vmin, 3.2vw), 59px); font-weight: 600; }
+.center { text-align: center; }
+.center-all { justify-content: center; align-items: center; text-align: center; }
+.emoji { font-size: clamp(62px, min(13.5vmin, 10vw), 200px); margin-bottom: .15em; line-height: 1; }
+
+/* Cap line length inside slides so paragraphs on wide projectors don't
+   stretch into 1900px run-on lines. Code blocks are exempt — they need
+   to display full source width when possible. */
+.slide > h1, .slide > h2, .slide > p, .slide > .big, .slide > ul, .slide > ol { max-width: min(1400px, 92%); }
+.slide.center-all > h1, .slide.center-all > h2, .slide.center-all > p, .slide.center-all > .big { margin-left: auto; margin-right: auto; }
+
+code {
+  font-family: "JetBrains Mono", "Fira Code", Menlo, Consolas, monospace;
+  background: var(--soft);
+  padding: .08em .35em;
+  border-radius: 6px;
+  font-size: .92em;
+  color: var(--ink);
+}
+
+pre {
+  background: var(--code-bg);
+  color: var(--code-ink);
+  padding: 1em 1.3em;
+  border-radius: 14px;
+  font-family: "JetBrains Mono", "Fira Code", Menlo, Consolas, monospace;
+  font-size: clamp(16px, min(3.3vmin, 2.3vw), 40px);
+  line-height: 1.55;
+  overflow: hidden;
+  white-space: pre;
+  margin-top: .3em;
+  max-width: min(1600px, 96%);
+}
+pre code { background: transparent; padding: 0; color: inherit; font-size: 1em; }
+.kw  { color: var(--kw); }
+.str { color: var(--str); }
+.num { color: var(--num); }
+.com { color: var(--com); font-style: italic; }
+.fn  { color: var(--fn); }
+
+.pill {
+  display: inline-block;
+  padding: .4em 1em;
+  border-radius: 999px;
+  background: var(--accent);
+  color: white;
+  font-weight: 700;
+  font-size: clamp(13px, min(2.4vmin, 1.6vw), 28px);
+  margin-bottom: .8em;
+  width: fit-content;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+.pill.purple { background: var(--accent-2); }
+
+.nav {
+  position: absolute;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  z-index: 10;
+}
+.nav button {
+  background: rgba(255,255,255,.1);
+  color: white;
+  border: 0;
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  font-size: 22px;
+  cursor: pointer;
+  transition: background .15s;
+  line-height: 1;
+}
+.nav button:hover { background: var(--accent); }
+.counter {
+  color: white;
+  font-weight: 600;
+  background: rgba(255,255,255,.1);
+  padding: 0 16px;
+  height: 42px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  font-variant-numeric: tabular-nums;
+}
+
+ul { padding-left: 1.2em; }
+ul li { margin-bottom: .35em; }
+
+.footer-tag {
+  position: absolute;
+  top: 22px;
+  right: 28px;
+  font-size: 11px;
+  color: var(--ink);
+  opacity: .35;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+.bilingual {
+  font-size: clamp(15px, 2.4vmin, 20px);
+  color: var(--ink);
+  opacity: .55;
+  margin-top: .35em;
+  font-weight: 500;
+}
+
+.fruit-row, .icon-row {
+  display: flex; justify-content: center; gap: .4em;
+  font-size: clamp(40px, 7vmin, 70px);
+}
+.fruit-row span, .icon-row span {
+  background: var(--panel); padding: .15em .35em; border-radius: 16px;
+  box-shadow: 0 4px 0 var(--soft);
+  animation: bounce 1.6s infinite;
+}
+.fruit-row span:nth-child(1) { animation-delay: 0s; }
+.fruit-row span:nth-child(2) { animation-delay: .2s; }
+.fruit-row span:nth-child(3) { animation-delay: .4s; }
+.fruit-row span:nth-child(4) { animation-delay: .6s; }
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  20% { transform: translateY(-12px); }
+  40% { transform: translateY(0); }
+}
+
+.opt-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 4%;
+  margin-top: .6em;
+}
+.opt-grid.two { grid-template-columns: 1fr 1fr; }
+.opt-card {
+  text-align: center;
+  padding: 1em .6em;
+  background: var(--panel);
+  border-radius: 16px;
+  box-shadow: 0 4px 0 var(--soft);
+}
+.opt-card .ico { font-size: clamp(34px, 6.5vmin, 56px); line-height: 1; }
+.opt-card .name { font-weight: 700; font-size: clamp(15px, 2.4vmin, 22px); margin-top: .3em; }
+.opt-card .ex {
+  font-family: "JetBrains Mono", monospace;
+  font-size: clamp(10px, 1.6vmin, 14px);
+  color: var(--accent-2);
+  margin-top: .3em;
+  font-weight: 600;
+}
+
+/* === Iteration / value visualizations === */
+.viz { display: flex; flex-direction: column; gap: clamp(.5em, 1.4vmin, 1em); }
+.viz pre { margin: 0; font-size: clamp(15px, 2.5vmin, 22px); padding: .85em 1.1em; }
+
+.iter-row { display: flex; justify-content: center; gap: .55em; flex-wrap: wrap; }
+.iter-item {
+  background: #2a2a3e; color: #f5f5f5;
+  font-family: "JetBrains Mono", "Fira Code", monospace;
+  font-size: clamp(18px, 3.2vmin, 30px);
+  font-weight: 700;
+  padding: .4em .8em; border-radius: 10px;
+  min-width: 1.6em; text-align: center;
+  border: 3px solid transparent;
+}
+
+.var-row {
+  text-align: center;
+  font-family: "JetBrains Mono", monospace;
+  font-size: clamp(18px, 3.2vmin, 28px);
+  height: 1.6em; position: relative; font-weight: 700;
+}
+.var-row .label { color: var(--ink); }
+.var-vals { display: inline-grid; vertical-align: baseline; min-width: 4em; text-align: left; }
+.var-val {
+  grid-area: 1 / 1; white-space: nowrap;
+  color: var(--accent); opacity: 0;
+}
+
+.output-box {
+  background: #1e1e2e; border-radius: 12px;
+  padding: .75em 1.1em;
+  font-family: "JetBrains Mono", monospace;
+  color: #f5f5f5;
+  font-size: clamp(16px, 2.8vmin, 24px);
+  line-height: 1.45;
+}
+.output-box .out-label { color: var(--com); font-size: .8em; margin-bottom: .25em; }
+.output-box .out-line { opacity: 0; }
+
+/* 3-item / 4s cycle */
+.viz-3 .iter-item:nth-child(1) { animation: hl3 4s infinite; }
+.viz-3 .iter-item:nth-child(2) { animation: hl3 4s infinite 1s; }
+.viz-3 .iter-item:nth-child(3) { animation: hl3 4s infinite 2s; }
+.viz-3 .var-val:nth-child(1)  { animation: vv3 4s infinite; }
+.viz-3 .var-val:nth-child(2)  { animation: vv3 4s infinite 1s; }
+.viz-3 .var-val:nth-child(3)  { animation: vv3 4s infinite 2s; }
+.viz-3 .out-line:nth-child(2) { animation: out3a 4s infinite; }
+.viz-3 .out-line:nth-child(3) { animation: out3b 4s infinite; }
+.viz-3 .out-line:nth-child(4) { animation: out3c 4s infinite; }
+@keyframes hl3 {
+  0%, 24% { background: var(--accent); color: white; border-color: var(--accent); transform: scale(1.14); box-shadow: 0 6px 18px rgba(56,208,224,.45); }
+  26%, 100% { background: #2a2a3e; color: #f5f5f5; border-color: transparent; transform: scale(1); box-shadow: none; }
+}
+@keyframes vv3 { 0%, 24% { opacity: 1; } 26%, 100% { opacity: 0; } }
+@keyframes out3a { 0%, 12% { opacity: 0; transform: translateX(-6px); } 17%, 89% { opacity: 1; transform: none; } 95%, 100% { opacity: 0; } }
+@keyframes out3b { 0%, 37% { opacity: 0; transform: translateX(-6px); } 42%, 89% { opacity: 1; transform: none; } 95%, 100% { opacity: 0; } }
+@keyframes out3c { 0%, 62% { opacity: 0; transform: translateX(-6px); } 67%, 89% { opacity: 1; transform: none; } 95%, 100% { opacity: 0; } }
+
+/* 4-item / 5s cycle */
+.viz-4 .iter-item:nth-child(1) { animation: hl4 5s infinite; }
+.viz-4 .iter-item:nth-child(2) { animation: hl4 5s infinite 1s; }
+.viz-4 .iter-item:nth-child(3) { animation: hl4 5s infinite 2s; }
+.viz-4 .iter-item:nth-child(4) { animation: hl4 5s infinite 3s; }
+.viz-4 .var-val:nth-child(1)  { animation: vv4 5s infinite; }
+.viz-4 .var-val:nth-child(2)  { animation: vv4 5s infinite 1s; }
+.viz-4 .var-val:nth-child(3)  { animation: vv4 5s infinite 2s; }
+.viz-4 .var-val:nth-child(4)  { animation: vv4 5s infinite 3s; }
+.viz-4 .out-line:nth-child(2) { animation: out4a 5s infinite; }
+.viz-4 .out-line:nth-child(3) { animation: out4b 5s infinite; }
+.viz-4 .out-line:nth-child(4) { animation: out4c 5s infinite; }
+.viz-4 .out-line:nth-child(5) { animation: out4d 5s infinite; }
+@keyframes hl4 {
+  0%, 19% { background: var(--accent-2); color: white; border-color: var(--accent-2); transform: scale(1.14); box-shadow: 0 6px 18px rgba(139,92,246,.45); }
+  21%, 100% { background: #2a2a3e; color: #f5f5f5; border-color: transparent; transform: scale(1); box-shadow: none; }
+}
+@keyframes vv4 { 0%, 19% { opacity: 1; } 21%, 100% { opacity: 0; } }
+@keyframes out4a { 0%, 9%  { opacity: 0; transform: translateX(-6px); } 14%, 91% { opacity: 1; transform: none; } 96%, 100% { opacity: 0; } }
+@keyframes out4b { 0%, 29% { opacity: 0; transform: translateX(-6px); } 34%, 91% { opacity: 1; transform: none; } 96%, 100% { opacity: 0; } }
+@keyframes out4c { 0%, 49% { opacity: 0; transform: translateX(-6px); } 54%, 91% { opacity: 1; transform: none; } 96%, 100% { opacity: 0; } }
+@keyframes out4d { 0%, 69% { opacity: 0; transform: translateX(-6px); } 74%, 91% { opacity: 1; transform: none; } 96%, 100% { opacity: 0; } }
+
+/* 5-item / 6s cycle */
+.viz-5 .iter-item:nth-child(1) { animation: hl5 6s infinite; }
+.viz-5 .iter-item:nth-child(2) { animation: hl5 6s infinite 1s; }
+.viz-5 .iter-item:nth-child(3) { animation: hl5 6s infinite 2s; }
+.viz-5 .iter-item:nth-child(4) { animation: hl5 6s infinite 3s; }
+.viz-5 .iter-item:nth-child(5) { animation: hl5 6s infinite 4s; }
+.viz-5 .var-val:nth-child(1)  { animation: vv5 6s infinite; }
+.viz-5 .var-val:nth-child(2)  { animation: vv5 6s infinite 1s; }
+.viz-5 .var-val:nth-child(3)  { animation: vv5 6s infinite 2s; }
+.viz-5 .var-val:nth-child(4)  { animation: vv5 6s infinite 3s; }
+.viz-5 .var-val:nth-child(5)  { animation: vv5 6s infinite 4s; }
+.viz-5 .out-line:nth-child(2) { animation: out5a 6s infinite; }
+.viz-5 .out-line:nth-child(3) { animation: out5b 6s infinite; }
+.viz-5 .out-line:nth-child(4) { animation: out5c 6s infinite; }
+.viz-5 .out-line:nth-child(5) { animation: out5d 6s infinite; }
+.viz-5 .out-line:nth-child(6) { animation: out5e 6s infinite; }
+@keyframes hl5 {
+  0%, 16% { background: var(--accent); color: white; border-color: var(--accent); transform: scale(1.14); box-shadow: 0 6px 18px rgba(56,208,224,.45); }
+  18%, 100% { background: #2a2a3e; color: #f5f5f5; border-color: transparent; transform: scale(1); box-shadow: none; }
+}
+@keyframes vv5 { 0%, 16% { opacity: 1; } 18%, 100% { opacity: 0; } }
+@keyframes out5a { 0%, 7%  { opacity: 0; transform: translateX(-6px); } 12%, 92% { opacity: 1; transform: none; } 97%, 100% { opacity: 0; } }
+@keyframes out5b { 0%, 24% { opacity: 0; transform: translateX(-6px); } 29%, 92% { opacity: 1; transform: none; } 97%, 100% { opacity: 0; } }
+@keyframes out5c { 0%, 41% { opacity: 0; transform: translateX(-6px); } 46%, 92% { opacity: 1; transform: none; } 97%, 100% { opacity: 0; } }
+@keyframes out5d { 0%, 57% { opacity: 0; transform: translateX(-6px); } 62%, 92% { opacity: 1; transform: none; } 97%, 100% { opacity: 0; } }
+@keyframes out5e { 0%, 74% { opacity: 0; transform: translateX(-6px); } 79%, 92% { opacity: 1; transform: none; } 97%, 100% { opacity: 0; } }
+
+/* JS-driven random.choice picker */
+.picker {
+  background: var(--code-bg); border-radius: 14px;
+  padding: 1.4em 1em;
+  display: flex; flex-direction: column; gap: .8em;
+  align-items: center;
+}
+.picker .pickrow { display: flex; gap: .5em; flex-wrap: wrap; justify-content: center; }
+.picker .pkitem {
+  background: #3a3a52; color: #f5f5f5;
+  font-family: "JetBrains Mono", monospace;
+  font-size: clamp(17px, 3vmin, 26px); font-weight: 700;
+  padding: .45em .85em; border-radius: 10px;
+  border: 3px solid transparent;
+  transition: all .12s ease;
+}
+.picker .pkitem.spin {
+  background: var(--accent-2); color: white; border-color: var(--accent-2);
+  transform: scale(1.08);
+}
+.picker .pkitem.win {
+  background: var(--accent); color: white; border-color: var(--accent);
+  transform: scale(1.22);
+  box-shadow: 0 8px 28px rgba(56,208,224,.55);
+}
+.picker .pkresult {
+  color: var(--code-ink);
+  font-family: "JetBrains Mono", monospace;
+  font-size: clamp(18px, 3.2vmin, 28px);
+  font-weight: 700;
+  min-height: 1.5em;
+}
+.picker .pkresult .arrow { color: var(--com); }
+.picker .pkresult .val { color: var(--str); }
+
+.dice {
+  background: var(--code-bg); border-radius: 14px;
+  padding: 1.4em;
+  display: flex; flex-direction: column; gap: .9em;
+  align-items: center;
+}
+.dice .face {
+  width: clamp(80px, 16vmin, 140px);
+  height: clamp(80px, 16vmin, 140px);
+  background: var(--panel);
+  border-radius: 18px;
+  box-shadow: 0 8px 0 var(--soft);
+  display: flex; align-items: center; justify-content: center;
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 800;
+  font-size: clamp(40px, 8vmin, 72px);
+  color: var(--ink);
+  transition: transform .15s ease;
+}
+.dice .face.rolling { animation: shake .12s infinite; }
+.dice .face.landed { color: var(--accent); transform: scale(1.1); }
+@keyframes shake {
+  0% { transform: translate(0,0) rotate(0); }
+  25% { transform: translate(-4px,2px) rotate(-3deg); }
+  50% { transform: translate(4px,-2px) rotate(3deg); }
+  75% { transform: translate(-2px,-2px) rotate(-2deg); }
+  100% { transform: translate(0,0) rotate(0); }
+}
+.dice .dlabel {
+  color: var(--code-ink); font-family: "JetBrains Mono", monospace;
+  font-size: clamp(18px, 3.2vmin, 28px); font-weight: 700;
+}
+.dice .dlabel .val { color: var(--str); }
+.dice .dlabel .arrow { color: var(--com); }
+
+/* Variable box visual */
+.varbox-row {
+  display: flex; gap: 1em; justify-content: center; flex-wrap: wrap;
+  margin: .8em 0;
+}
+.varbox {
+  background: var(--panel);
+  border: 3px solid var(--accent);
+  border-radius: 14px;
+  padding: .6em 1em;
+  box-shadow: 0 6px 0 var(--soft);
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 700;
+  font-size: clamp(16px, 2.8vmin, 24px);
+  text-align: center;
+  min-width: 6em;
+}
+.varbox .name {
+  display: block;
+  color: var(--accent);
+  font-size: .8em;
+  font-weight: 800;
+  margin-bottom: .15em;
+}
+.varbox .val { color: var(--ink); }
+
+/* speech bubble */
+.bubble-card {
+  background: var(--panel);
+  border-radius: 18px;
+  padding: 1em 1.4em;
+  box-shadow: 0 6px 0 var(--soft);
+  font-size: clamp(18px, 3.2vmin, 28px);
+  font-weight: 600;
+  position: relative;
+  margin: 1em auto;
+  max-width: 72%;
+  text-align: center;
+}
+.bubble-card.you { padding-left: 3.2em; }
+.bubble-card.computer { padding-right: 3.2em; }
+.bubble-card.you::before {
+  content: "💻";
+  position: absolute;
+  left: .35em;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2em;
+}
+.bubble-card.computer::before {
+  content: "🤖";
+  position: absolute;
+  right: .35em;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2em;
+}
+
+/* checklist */
+.check-list { list-style: none; padding: 0; }
+.check-list li {
+  background: var(--panel);
+  border-radius: 12px;
+  padding: .6em 1em;
+  margin-bottom: .5em;
+  box-shadow: 0 3px 0 var(--soft);
+  font-size: clamp(17px, 2.8vmin, 24px);
+}
+.check-list li::before {
+  content: "✓";
+  color: var(--fn);
+  font-weight: 800;
+  margin-right: .5em;
+  background: #1e1e2e;
+  padding: 0 .35em;
+  border-radius: 6px;
+}
+
+/* === Pedagogy template components (added in retrofit) === */
+
+/* Recap & retrieve card — slot 2 */
+.recap-q {
+  background: var(--panel);
+  border: 3px solid var(--accent-2);
+  border-radius: 16px;
+  padding: 1.2em 1.4em;
+  box-shadow: 0 6px 0 var(--soft);
+  margin: 1em 0;
+}
+.recap-q .label {
+  display: inline-block;
+  background: var(--accent-2);
+  color: white;
+  font-size: clamp(13px, 2.1vmin, 17px);
+  font-weight: 800;
+  padding: .25em .7em;
+  border-radius: 999px;
+  margin-bottom: .6em;
+  letter-spacing: .04em;
+}
+.recap-q .q {
+  font-size: clamp(20px, 3.4vmin, 30px);
+  font-weight: 700;
+  color: var(--ink);
+}
+.recap-q details {
+  margin-top: .6em;
+}
+.recap-q details summary {
+  cursor: pointer;
+  font-weight: 700;
+  color: var(--accent);
+  font-size: clamp(15px, 2.5vmin, 20px);
+  list-style: none;
+}
+.recap-q details summary::after { content: " 🔍"; }
+.recap-q details[open] summary::after { content: " 👇"; }
+.recap-q details .ans {
+  margin-top: .5em;
+  font-size: clamp(17px, 2.8vmin, 24px);
+  color: var(--accent-2);
+  font-weight: 700;
+}
+
+/* Predict card — slot 3 */
+.predict-card {
+  background: var(--panel);
+  border: 3px dashed var(--accent);
+  border-radius: 16px;
+  padding: 1.2em 1.4em;
+  box-shadow: 0 6px 0 var(--soft);
+  margin: 1em 0;
+}
+.predict-card .label {
+  display: inline-block;
+  background: var(--accent);
+  color: white;
+  font-size: clamp(13px, 2.1vmin, 17px);
+  font-weight: 800;
+  padding: .25em .7em;
+  border-radius: 999px;
+  margin-bottom: .6em;
+  letter-spacing: .04em;
+}
+.predict-card .q {
+  font-size: clamp(20px, 3.4vmin, 30px);
+  font-weight: 700;
+  color: var(--ink);
+}
+.predict-card pre { margin-top: .5em; margin-bottom: .5em; }
+.predict-card details {
+  margin-top: .6em;
+  background: #161d2a;
+  border-radius: 10px;
+  padding: .5em .8em;
+}
+.predict-card details summary {
+  cursor: pointer;
+  font-weight: 700;
+  color: var(--accent);
+  font-size: clamp(15px, 2.5vmin, 20px);
+  list-style: none;
+}
+.predict-card details summary::after { content: " 🔍 reveal"; }
+.predict-card details[open] summary::after { content: " ⬇"; }
+.predict-card details .ans {
+  margin-top: .4em;
+  font-family: "JetBrains Mono", monospace;
+  font-size: clamp(16px, 2.7vmin, 22px);
+  color: var(--accent-2);
+  font-weight: 700;
+}
+
+/* Vocab preview table — slot 4 */
+.vocab-table {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: .5em 1em;
+  margin: .8em 0;
+  font-size: clamp(15px, 2.6vmin, 22px);
+  align-items: center;
+}
+.vocab-table .term {
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 800;
+  color: var(--accent);
+  background: var(--soft);
+  padding: .2em .6em;
+  border-radius: 8px;
+}
+.vocab-table .gloss {
+  color: var(--ink);
+  font-weight: 600;
+}
+.vocab-table .ko {
+  color: var(--accent-2);
+  font-weight: 600;
+  font-size: .9em;
+}
+.vocab-table .konglish {
+  background: rgba(255,180,90,.16);
+  color: #ffcf8f;
+  font-size: .75em;
+  padding: .15em .5em;
+  border-radius: 6px;
+  font-weight: 700;
+}
+
+/* Compare row — broken vs fixed (slot 8) */
+.compare-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1em;
+  margin: .8em 0;
+}
+.compare-row .col {
+  border-radius: 14px;
+  padding: 1em;
+  position: relative;
+}
+.compare-row .col.bad {
+  background: rgba(220,53,69,.14);
+  border: 3px solid #dc3545;
+}
+.compare-row .col.good {
+  background: rgba(40,167,69,.14);
+  border: 3px solid #28a745;
+}
+.compare-row .col .tag {
+  position: absolute;
+  top: -.7em;
+  left: 1em;
+  padding: .15em .6em;
+  border-radius: 999px;
+  font-size: clamp(11px, 1.9vmin, 16px);
+  font-weight: 800;
+  letter-spacing: .04em;
+}
+.compare-row .col.bad .tag { background: #dc3545; color: white; }
+.compare-row .col.good .tag { background: #28a745; color: white; }
+.compare-row .col pre {
+  margin-top: .3em;
+  font-size: clamp(13px, 2.2vmin, 19px);
+  padding: .7em .9em;
+}
+
+/* Sentence frame card — slot 10 */
+.frame-card {
+  background: var(--panel);
+  border: 3px solid var(--accent-2);
+  border-radius: 16px;
+  padding: 1.2em 1.4em;
+  box-shadow: 0 6px 0 var(--soft);
+  margin: 1em 0;
+}
+.frame-card .label {
+  display: inline-block;
+  background: var(--accent-2);
+  color: white;
+  font-size: clamp(13px, 2.1vmin, 17px);
+  font-weight: 800;
+  padding: .25em .7em;
+  border-radius: 999px;
+  margin-bottom: .6em;
+  letter-spacing: .04em;
+}
+.frame-card .frame {
+  font-size: clamp(20px, 3.4vmin, 30px);
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.5;
+}
+.frame-card .frame .blank {
+  display: inline-block;
+  min-width: 3.5em;
+  border-bottom: 3px solid var(--accent);
+  margin: 0 .15em;
+}
+.frame-card .frame code {
+  background: var(--code-bg);
+  color: var(--fn);
+  padding: .1em .4em;
+  border-radius: 6px;
+  font-size: .9em;
+}
+.frame-card .pair-prompt {
+  margin-top: .8em;
+  font-size: clamp(15px, 2.5vmin, 20px);
+  color: var(--accent);
+  font-weight: 700;
+}
+.frame-card .pair-prompt::before { content: "👯 "; }
+
+/* Slot label badge — used to mark slot # in the corner of each slide */
+.slot-badge {
+  position: absolute;
+  top: 22px;
+  left: 28px;
+  background: var(--soft);
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .14em;
+  padding: .25em .7em;
+  border-radius: 999px;
+  opacity: .6;
+  z-index: 5;
+}
+
+/* === Readability bumps === */
+/* compare-row code was tight — give it more room */
+.compare-row {
+  gap: .9em;
+  margin-top: 1.4em;     /* room for floating tags above each col */
+}
+.compare-row .col {
+  min-width: 0;          /* let grid shrink the column */
+  /* no overflow: hidden — would clip the absolute .tag pill above */
+}
+.compare-row .col pre {
+  font-size: clamp(13px, 2.2vmin, 19px);
+  padding: .8em .9em;
+  line-height: 1.5;
+  white-space: pre-wrap;       /* wrap long lines instead of overflowing */
+  word-break: break-word;
+  overflow-wrap: break-word;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+.compare-row .col p {
+  font-size: clamp(13px, 2vmin, 16px);
+  margin-top: .5em;
+  line-height: 1.4;
+}
+
+/* predict-card spacing */
+.predict-card pre { font-size: clamp(15px, 2.5vmin, 22px); }
+.predict-card details .ans { font-size: clamp(17px, 2.9vmin, 24px); padding-top: .3em; }
+
+/* vocab-table line-height + breathing */
+.vocab-table { row-gap: .7em; }
+
+/* slide padding bumped on dense slots */
+.slide.dense { padding: 7%; }
+
+/* === New animation patterns (auto-loops) === */
+
+/* Pattern A: Variable fill (W1) — value flies into a box, box pulses, then a "read" arrow appears */
+.var-fill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .6em;
+  margin: 1em 0;
+  position: relative;
+}
+.var-fill .step-row {
+  display: flex; align-items: center; gap: .8em; flex-wrap: wrap; justify-content: center;
+}
+.var-fill .input-pill {
+  background: var(--accent-2); color: white; font-family: "JetBrains Mono", monospace;
+  font-weight: 700; font-size: clamp(15px, 2.6vmin, 22px);
+  padding: .35em .8em; border-radius: 10px;
+  animation: vfFly 6s infinite;
+}
+.var-fill .arrow-icon { font-size: clamp(20px, 3.2vmin, 28px); animation: vfArrow 6s infinite; }
+.var-fill .target-box {
+  background: var(--panel); border: 3px solid var(--accent); border-radius: 14px;
+  padding: .5em 1em; box-shadow: 0 6px 0 var(--soft);
+  font-family: "JetBrains Mono", monospace; font-weight: 700;
+  font-size: clamp(15px, 2.6vmin, 22px); min-width: 7em; text-align: center;
+  animation: vfBox 6s infinite;
+}
+.var-fill .target-box .name { display: block; color: var(--accent); font-size: .8em; margin-bottom: .15em; }
+.var-fill .target-box .val { color: var(--ink); animation: vfVal 6s infinite; }
+.var-fill .read-line {
+  font-family: "JetBrains Mono", monospace; font-size: clamp(14px, 2.4vmin, 20px);
+  background: var(--code-bg); color: var(--code-ink);
+  padding: .5em .9em; border-radius: 10px;
+  animation: vfRead 6s infinite;
+}
+.var-fill .read-line .out {
+  display: inline-block; color: var(--str); animation: vfOut 6s infinite; opacity: 0;
+}
+@keyframes vfFly {
+  0%, 8% { transform: translateX(-30px); opacity: 0; }
+  12%, 30% { transform: translateX(0); opacity: 1; }
+  35%, 100% { transform: translateX(0); opacity: 0; }
+}
+@keyframes vfArrow {
+  0%, 12% { opacity: 0; }
+  18%, 30% { opacity: 1; }
+  35%, 100% { opacity: 0; }
+}
+@keyframes vfBox {
+  0%, 8% { box-shadow: 0 6px 0 var(--soft); transform: scale(1); }
+  35%, 50% { box-shadow: 0 8px 24px rgba(56,208,224,.45); transform: scale(1.06); }
+  60%, 100% { box-shadow: 0 6px 0 var(--soft); transform: scale(1); }
+}
+@keyframes vfVal {
+  0%, 28% { opacity: 0; }
+  32%, 100% { opacity: 1; }
+}
+@keyframes vfRead {
+  0%, 50% { opacity: 0.3; }
+  55%, 95% { opacity: 1; }
+}
+@keyframes vfOut {
+  0%, 65% { opacity: 0; }
+  72%, 95% { opacity: 1; }
+}
+
+/* Pattern B: Match indicator (W5/W6) — descends through if/elif/else, stops on match */
+.match-flow {
+  display: flex; flex-direction: column; gap: .35em; margin: .8em 0;
+  position: relative;
+}
+.match-flow .row {
+  display: flex; align-items: center; gap: .6em;
+  font-family: "JetBrains Mono", monospace; font-weight: 700;
+  font-size: clamp(15px, 2.6vmin, 22px);
+  background: var(--panel); border: 2px solid var(--soft); border-radius: 10px;
+  padding: .55em .9em;
+  color: var(--ink);
+}
+.match-flow .row .verdict {
+  margin-left: auto; font-family: "Inter", sans-serif; font-weight: 800;
+  font-size: clamp(13px, 2.1vmin, 17px);
+  padding: .2em .55em; border-radius: 999px;
+}
+.match-flow .row.skip { color: #aaa; border-color: #2a3340; }
+.match-flow .row.skip .verdict { background: #2a3340; color: #93a1b5; }
+.match-flow .row.hit {
+  background: rgba(40,167,69,.14); border-color: #28a745;
+  color: var(--ink);
+  animation: mfPulse 4s infinite;
+}
+.match-flow .row.hit .verdict { background: #28a745; color: white; }
+@keyframes mfPulse {
+  0%, 50%, 100% { box-shadow: 0 0 0 rgba(40,167,69,0); transform: scale(1); }
+  20%, 35% { box-shadow: 0 0 0 8px rgba(40,167,69,.18); transform: scale(1.02); }
+}
+/* Sequential reveal of rows */
+.match-flow .row:nth-child(1) { animation: mfRow 4s infinite; }
+.match-flow .row:nth-child(2) { animation: mfRow 4s infinite .25s; }
+.match-flow .row:nth-child(3) { animation: mfRow 4s infinite .5s; }
+.match-flow .row:nth-child(4) { animation: mfRow 4s infinite .75s; }
+@keyframes mfRow {
+  0%, 5% { transform: translateX(-12px); opacity: 0; }
+  12%, 100% { transform: translateX(0); opacity: 1; }
+}
+
+/* Pattern C: Pair-up (W8) — two rows with pulsing connectors by index */
+.pair-up {
+  display: flex; flex-direction: column; gap: .8em; align-items: center;
+  margin: .8em 0;
+}
+.pair-up .pair-row {
+  display: flex; gap: .6em; flex-wrap: wrap; justify-content: center;
+}
+.pair-up .pair-row .pcell {
+  background: var(--accent); color: white;
+  font-family: "JetBrains Mono", monospace; font-weight: 700;
+  font-size: clamp(15px, 2.6vmin, 22px);
+  padding: .45em .85em; border-radius: 10px;
+  border: 3px solid transparent;
+  min-width: 6em; text-align: center;
+}
+.pair-up .pair-row.b .pcell { background: var(--accent-2); }
+.pair-up .pair-row .pcell.lit {
+  transform: scale(1.18);
+  box-shadow: 0 8px 24px rgba(56,208,224,.5);
+  border-color: white;
+}
+.pair-up .pair-row.b .pcell.lit { box-shadow: 0 8px 24px rgba(139,92,246,.5); }
+.pair-up .connector {
+  font-size: clamp(22px, 4vmin, 36px);
+  animation: pairBlink 1s infinite;
+}
+@keyframes pairBlink {
+  0%, 100% { opacity: .3; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.15); }
+}
+/* Three-pair cycle: 0 → 1 → 2 (stays on each ~1.3s, 4s cycle) */
+.pair-up.p3 .pair-row .pcell:nth-child(1) { animation: pcell0 4s infinite; }
+.pair-up.p3 .pair-row .pcell:nth-child(2) { animation: pcell1 4s infinite; }
+.pair-up.p3 .pair-row .pcell:nth-child(3) { animation: pcell2 4s infinite; }
+@keyframes pcell0 {
+  0%, 24% { transform: scale(1.18); box-shadow: 0 8px 24px rgba(0,0,0,.3); border-color: white; }
+  26%, 100% { transform: scale(1); box-shadow: none; border-color: transparent; }
+}
+@keyframes pcell1 {
+  0%, 32% { transform: scale(1); box-shadow: none; border-color: transparent; }
+  34%, 58% { transform: scale(1.18); box-shadow: 0 8px 24px rgba(0,0,0,.3); border-color: white; }
+  60%, 100% { transform: scale(1); box-shadow: none; border-color: transparent; }
+}
+@keyframes pcell2 {
+  0%, 66% { transform: scale(1); box-shadow: none; border-color: transparent; }
+  68%, 92% { transform: scale(1.18); box-shadow: 0 8px 24px rgba(0,0,0,.3); border-color: white; }
+  95%, 100% { transform: scale(1); box-shadow: none; border-color: transparent; }
+}
+
+/* Pattern D: Cleaning chain (W3) — auto-cycles raw → lower → strip → done */
+.clean-chain {
+  display: flex; flex-direction: column; gap: .4em; align-items: center;
+  margin: .6em 0;
+}
+.clean-chain .cc-step {
+  background: var(--panel); border: 3px solid var(--soft); border-radius: 14px;
+  padding: .55em 1.2em;
+  font-family: "JetBrains Mono", monospace; font-weight: 700;
+  font-size: clamp(16px, 2.8vmin, 24px);
+  min-width: 14em; text-align: center;
+  box-shadow: 0 4px 0 var(--soft);
+}
+.clean-chain .cc-step.s1 { color: var(--ink); animation: cc1 8s infinite; }
+.clean-chain .cc-step.s2 { color: var(--accent-2); animation: cc2 8s infinite; }
+.clean-chain .cc-step.s3 { color: var(--accent); animation: cc3 8s infinite; }
+.clean-chain .cc-step.s4 { background: var(--accent); color: white; border-color: var(--accent); animation: cc4 8s infinite; }
+.clean-chain .arrow {
+  font-family: "JetBrains Mono", monospace;
+  font-size: clamp(13px, 2.2vmin, 18px);
+  color: var(--accent-2); font-weight: 700;
+  animation: ccArrow 8s infinite;
+}
+@keyframes cc1 {
+  0%, 95% { transform: scale(1); border-color: var(--soft); }
+  3%, 22% { transform: scale(1.04); border-color: var(--ink); box-shadow: 0 6px 18px rgba(0,0,0,.12); }
+}
+@keyframes cc2 {
+  0%, 22%, 95% { opacity: .4; transform: scale(.95); border-color: var(--soft); }
+  25%, 45% { opacity: 1; transform: scale(1.04); border-color: var(--accent-2); box-shadow: 0 6px 18px rgba(139,92,246,.25); }
+  50%, 95% { opacity: .55; transform: scale(1); }
+}
+@keyframes cc3 {
+  0%, 47%, 95% { opacity: .4; transform: scale(.95); border-color: var(--soft); }
+  50%, 70% { opacity: 1; transform: scale(1.04); border-color: var(--accent); box-shadow: 0 6px 18px rgba(56,208,224,.25); }
+  75%, 95% { opacity: .55; transform: scale(1); }
+}
+@keyframes cc4 {
+  0%, 72%, 95% { opacity: 0; transform: scale(.85); }
+  76%, 92% { opacity: 1; transform: scale(1.06); box-shadow: 0 8px 28px rgba(56,208,224,.4); }
+}
+@keyframes ccArrow {
+  0%, 100% { opacity: .5; }
+  10%, 80% { opacity: 1; }
+}
+
+/* Pattern E: Terminal type (W4) — lines appear sequentially with blinking caret */
+.terminal {
+  background: var(--code-bg); border-radius: 14px; padding: .9em 1.1em;
+  font-family: "JetBrains Mono", monospace; color: var(--code-ink);
+  font-size: clamp(14px, 2.4vmin, 20px); line-height: 1.6;
+}
+.terminal .line { opacity: 0; }
+.terminal .line .prompt { color: var(--str); }
+.terminal .line .typed { color: white; }
+.terminal .line .echo { color: var(--code-ink); }
+.terminal .line .ok { color: var(--fn); font-weight: 700; }
+.terminal .line:nth-child(1) { animation: tLine 7s infinite; }
+.terminal .line:nth-child(2) { animation: tLine 7s infinite 1s; }
+.terminal .line:nth-child(3) { animation: tLine 7s infinite 2s; }
+.terminal .line:nth-child(4) { animation: tLine 7s infinite 3s; }
+.terminal .line:nth-child(5) { animation: tLine 7s infinite 4s; }
+.terminal .line:nth-child(6) { animation: tLine 7s infinite 5s; }
+@keyframes tLine {
+  0%, 12% { opacity: 0; transform: translateX(-8px); }
+  16%, 92% { opacity: 1; transform: none; }
+  96%, 100% { opacity: 0; }
+}
+
+/* === Roadmap MEGA deck components === */
+
+/* progress bar showing current stage 1-8 */
+.stage-bar {
+  display: flex; gap: .35em; justify-content: center;
+  padding: 0 0 1em 0; flex-wrap: wrap;
+}
+.stage-bar .step {
+  width: clamp(24px, 4.6vmin, 42px); height: 7px;
+  border-radius: 4px;
+  background: var(--soft);
+  transition: background .2s;
+}
+.stage-bar .step.done { background: var(--accent); opacity: .85; }
+.stage-bar .step.current {
+  background: var(--accent-2);
+  box-shadow: 0 0 0 3px rgba(139,92,246,.18);
+}
+.stage-bar .num {
+  font-size: clamp(11px, 1.9vmin, 15px);
+  color: var(--ink); opacity: .55; font-weight: 700;
+  font-family: monospace;
+}
+
+/* stage header slides — big numerals */
+.stage-header { text-align: center; }
+.stage-header .num {
+  font-size: clamp(80px, 18vmin, 180px);
+  color: var(--accent); font-weight: 800; line-height: 1;
+  font-family: "JetBrains Mono", monospace;
+  letter-spacing: -.04em;
+  text-shadow: 4px 4px 0 var(--soft);
+}
+.stage-header .stage-label {
+  font-size: clamp(13px, 2.2vmin, 18px); letter-spacing: .2em;
+  color: var(--ink); opacity: .55; font-weight: 800;
+  text-transform: uppercase; margin-top: .4em;
+}
+.stage-header h1 {
+  margin-top: .2em;
+  font-size: clamp(42px, 7vmin, 70px);
+}
+
+/* topic grid — 2 or 3 cols of topic chips */
+.topic-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .8em;
+  margin-top: .6em;
+}
+.topic-grid.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.topic-chip {
+  background: var(--panel);
+  border: 2px solid var(--soft);
+  border-radius: 14px;
+  padding: .8em 1em;
+  box-shadow: 0 4px 0 var(--soft);
+  text-align: left;
+  font-size: clamp(13px, 2.2vmin, 17px);
+}
+.topic-chip .head {
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 800; color: var(--accent);
+  font-size: clamp(15px, 2.5vmin, 19px);
+  margin-bottom: .25em;
+}
+.topic-chip .desc { color: var(--ink); opacity: .75; }
+.topic-chip.purple { border-color: var(--accent-2); }
+.topic-chip.purple .head { color: var(--accent-2); }
+
+/* "you are here" callout — links roadmap stage to our courses */
+.you-are-here {
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  color: white; border-radius: 16px; padding: 1em 1.2em;
+  margin: .8em 0;
+  font-size: clamp(15px, 2.5vmin, 21px); font-weight: 700;
+  box-shadow: 0 6px 0 rgba(0,0,0,.1);
+}
+.you-are-here .label {
+  font-size: .8em; opacity: .85; letter-spacing: .1em;
+  text-transform: uppercase; display: block; margin-bottom: .2em;
+}
+.you-are-here a { color: white; text-decoration: underline; }
+
+/* mini-code chip — used for code references inline */
+.code-chip {
+  background: var(--code-bg); color: var(--fn);
+  font-family: "JetBrains Mono", monospace;
+  font-size: .9em; padding: .1em .4em; border-radius: 5px;
+  font-weight: 700;
+}
+
+/* ============ MCQ Quiz ============ */
+.mcq .q {
+  font-size: clamp(17px, 2.8vmin, 22px);
+  margin-bottom: .8em;
+  line-height: 1.35;
+}
+.mcq .opts {
+  display: flex; flex-direction: column; gap: .45em;
+  margin-top: .4em;
+}
+.mcq .opt {
+  text-align: left; width: 100%;
+  padding: .65em .9em;
+  border-radius: 10px;
+  border: 2px solid var(--soft);
+  background: var(--panel);
+  font: inherit; font-size: clamp(14px, 2.3vmin, 17px);
+  color: var(--ink);
+  cursor: pointer;
+  transition: all .12s;
+  font-family: inherit;
+}
+.mcq .opt:hover:not(.disabled) {
+  border-color: var(--accent);
+  background: rgba(56,208,224,.06);
+}
+.mcq .opt.disabled { cursor: default; opacity: .6; }
+.mcq .opt.right {
+  border-color: #2bb673;
+  background: rgba(43,182,115,.12);
+  opacity: 1;
+  font-weight: 600;
+}
+.mcq .opt.wrong {
+  border-color: #d33;
+  background: rgba(221,51,51,.08);
+  opacity: 1;
+}
+.mcq .opt code, .mcq .opt pre {
+  font-family: "JetBrains Mono", monospace;
+  font-size: .92em;
+}
+.mcq .qfeedback {
+  margin-top: .8em;
+  padding: .6em .9em;
+  border-radius: 8px;
+  font-size: clamp(13px, 2vmin, 16px);
+  display: none;
+  line-height: 1.4;
+}
+.mcq .qfeedback.show { display: block; }
+.mcq .qfeedback.good { background: rgba(43,182,115,.12); color: #7ee0b0; border: 1px solid #2bb673; }
+.mcq .qfeedback.bad  { background: rgba(221,51,51,.08); color: #ff9a9a; border: 1px solid #d33; }
+.mcq .qmeta {
+  font-size: 11px; letter-spacing: .08em;
+  text-transform: uppercase;
+  opacity: .55;
+  margin-bottom: .2em;
+}
+
+.mcq-score .score-val {
+  font-size: clamp(56px, 10vmin, 96px);
+  font-weight: 800;
+  color: var(--accent);
+  line-height: 1;
+  margin: .3em 0;
+}
+.mcq-score .score-msg {
+  font-size: clamp(16px, 2.6vmin, 20px);
+  opacity: .85;
+  margin-top: .3em;
+}
+.quiz-reset {
+  margin-top: .8em;
+  background: transparent;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  padding: .35em .9em;
+  border-radius: 999px;
+  cursor: pointer;
+  font: inherit;
+  font-size: 13px;
+}
+.quiz-reset:hover { background: var(--accent); color: white; }
+
+/* ============ Edge cases + Debug slides ============ */
+.edge-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: .6em;
+  margin-top: .4em;
+}
+.edge-card {
+  background: rgba(56,208,224,.06);
+  border-left: 4px solid var(--accent);
+  padding: .65em .8em;
+  border-radius: 6px;
+}
+.edge-card .ehead {
+  font-weight: 700;
+  font-size: clamp(14px, 2.3vmin, 17px);
+  color: var(--accent);
+  margin-bottom: .2em;
+}
+.edge-card .edesc {
+  font-size: clamp(13px, 2vmin, 15px);
+  opacity: .85;
+  line-height: 1.35;
+}
+
+.debug-box {
+  background: var(--code-bg);
+  border-radius: 8px;
+  padding: 1em;
+  position: relative;
+}
+.debug-tag {
+  position: absolute; top: -10px; left: 12px;
+  background: #d33; color: white;
+  padding: .15em .6em; border-radius: 999px;
+  font-size: 11px; font-weight: 700;
+  letter-spacing: .08em;
+}
+.debug-tag.fix { background: #2bb673; }
+.debug-reveal {
+  margin-top: .7em;
+  padding: .7em .9em;
+  background: rgba(43,182,115,.1);
+  border-left: 4px solid #2bb673;
+  border-radius: 6px;
+  font-size: clamp(13px, 2.1vmin, 16px);
+  line-height: 1.4;
+}
+
+/* ============ Practice slide ============ */
+.practice-task {
+  background: rgba(139,92,246,.08);
+  border-left: 4px solid var(--accent-2);
+  padding: .9em 1em;
+  border-radius: 8px;
+  margin-bottom: .6em;
+  font-size: clamp(15px, 2.5vmin, 18px);
+  line-height: 1.4;
+}
+.practice-hint {
+  margin-top: .5em;
+  font-size: clamp(12px, 1.9vmin, 14px);
+  opacity: .65;
+  font-style: italic;
+}
+
+/* ============================================================
+   Code visualization patterns — animated teaching aids.
+   See also: viz-3 / viz-4 / viz-5 for for-loop iteration above.
+   Each pattern below loops on its own CSS timeline so students
+   see the construct play out repeatedly without clicking.
+============================================================ */
+
+/* ---------- shared scaffolding ---------- */
+.viz-stage {
+  background: var(--code-bg);
+  border-radius: 14px;
+  padding: clamp(.9em, 2.2vmin, 1.4em);
+  color: var(--code-ink);
+  font-family: "JetBrains Mono", "Fira Code", monospace;
+  display: flex; flex-direction: column;
+  gap: clamp(.5em, 1.6vmin, 1em);
+  align-items: stretch;
+}
+.viz-stage .vlabel {
+  color: var(--com);
+  font-size: clamp(13px, 2vmin, 17px);
+  letter-spacing: .04em;
+}
+.viz-pill {
+  display: inline-block;
+  background: #2a2a3e;
+  color: #f5f5f5;
+  font-weight: 700;
+  font-size: clamp(15px, 2.6vmin, 22px);
+  padding: .35em .8em;
+  border-radius: 10px;
+  border: 3px solid transparent;
+  font-family: "JetBrains Mono", monospace;
+}
+.viz-pill.kw { color: var(--kw); }
+.viz-pill.str { color: var(--str); }
+.viz-pill.num { color: var(--num); }
+.viz-arrow {
+  font-size: clamp(20px, 3.4vmin, 30px);
+  color: var(--com);
+  text-align: center;
+  line-height: 1;
+}
+
+/* ---------- IF / ELSE branching (viz-if) ----------
+   Cycles two scenarios (true then false) every 8s so students see
+   both branches taken. Markup expectations:
+
+   <div class="viz viz-if">
+     <div class="if-input">
+       <span class="case case-a">age = 14</span>
+       <span class="case case-b">age = 9</span>
+     </div>
+     <div class="if-cond">age >= 13</div>
+     <div class="if-branches">
+       <div class="if-branch true">print("teen")</div>
+       <div class="if-branch false">print("kid")</div>
+     </div>
+     <div class="if-output">
+       <div class="out-label">▸ Output</div>
+       <div class="out-line out-a">teen</div>
+       <div class="out-line out-b">kid</div>
+     </div>
+   </div>
+*/
+.viz-if { display: flex; flex-direction: column; gap: clamp(.55em, 1.6vmin, 1em); }
+.viz-if .if-input,
+.viz-if .if-cond,
+.viz-if .if-branches,
+.viz-if .if-output {
+  background: #2a2a3e;
+  border-radius: 12px;
+  padding: .65em .9em;
+  font-family: "JetBrains Mono", monospace;
+  color: #f5f5f5;
+  font-size: clamp(16px, 2.9vmin, 26px);
+  font-weight: 700;
+  text-align: center;
+  position: relative;
+}
+.viz-if .if-input { display: flex; justify-content: center; gap: .8em; }
+.viz-if .if-input .case {
+  padding: .25em .75em;
+  border-radius: 8px;
+  background: #3a3a52;
+  border: 3px solid transparent;
+  opacity: .35;
+  transition: opacity .25s;
+}
+.viz-if .if-cond {
+  display: inline-block; align-self: center;
+  border: 3px solid transparent;
+}
+.viz-if .if-branches { display: flex; gap: 1em; justify-content: center; padding: 0; background: transparent; }
+.viz-if .if-branch {
+  flex: 1; max-width: 50%;
+  padding: .55em .9em; border-radius: 10px;
+  background: #2a2a3e; border: 3px solid transparent;
+  opacity: .35;
+  transition: opacity .25s;
+}
+.viz-if .if-branch.true::before  { content: "✓ true →  "; color: var(--fn); font-weight: 800; }
+.viz-if .if-branch.false::before { content: "✗ false →  "; color: #ff79c6; font-weight: 800; }
+.viz-if .if-output { background: #1e1e2e; }
+.viz-if .if-output .out-label { color: var(--com); font-size: .7em; font-weight: 500; margin-bottom: .25em; }
+.viz-if .if-output .out-line { opacity: 0; color: var(--str); }
+
+/* Scenario A: 0–4s — case-a glows, condition turns green, true branch lights */
+.viz-if .if-input .case-a   { animation: ifc-a 8s infinite; }
+.viz-if .if-input .case-b   { animation: ifc-b 8s infinite; }
+.viz-if .if-cond            { animation: ifcond 8s infinite; }
+.viz-if .if-branch.true     { animation: ifbtrue 8s infinite; }
+.viz-if .if-branch.false    { animation: ifbfalse 8s infinite; }
+.viz-if .if-output .out-a   { animation: ifout-a 8s infinite; }
+.viz-if .if-output .out-b   { animation: ifout-b 8s infinite; }
+@keyframes ifc-a {
+  0%,5%   { opacity: .35; background: #3a3a52; border-color: transparent; transform: scale(1); }
+  10%,45% { opacity: 1; background: var(--accent); border-color: var(--accent); transform: scale(1.06); }
+  50%,100% { opacity: .35; background: #3a3a52; border-color: transparent; transform: scale(1); }
+}
+@keyframes ifc-b {
+  0%,55%  { opacity: .35; background: #3a3a52; border-color: transparent; transform: scale(1); }
+  60%,95% { opacity: 1; background: var(--accent); border-color: var(--accent); transform: scale(1.06); }
+  98%,100%{ opacity: .35; transform: scale(1); }
+}
+@keyframes ifcond {
+  0%,12%   { background: #2a2a3e; border-color: transparent; color: #f5f5f5; }
+  15%,45%  { background: rgba(80,250,123,.18); border-color: var(--fn); color: var(--fn); }
+  48%,62%  { background: #2a2a3e; border-color: transparent; color: #f5f5f5; }
+  65%,95%  { background: rgba(255,121,198,.18); border-color: var(--kw); color: var(--kw); }
+  98%,100% { background: #2a2a3e; border-color: transparent; color: #f5f5f5; }
+}
+@keyframes ifbtrue {
+  0%,18%   { opacity: .35; transform: scale(1); background: #2a2a3e; }
+  22%,45%  { opacity: 1; transform: scale(1.04); background: rgba(80,250,123,.16); border-color: var(--fn); }
+  48%,100% { opacity: .35; transform: scale(1); background: #2a2a3e; border-color: transparent; }
+}
+@keyframes ifbfalse {
+  0%,68%   { opacity: .35; transform: scale(1); background: #2a2a3e; }
+  72%,95%  { opacity: 1; transform: scale(1.04); background: rgba(255,121,198,.16); border-color: var(--kw); }
+  98%,100% { opacity: .35; transform: scale(1); background: #2a2a3e; border-color: transparent; }
+}
+@keyframes ifout-a {
+  0%,28%   { opacity: 0; transform: translateX(-6px); }
+  32%,46%  { opacity: 1; transform: none; }
+  50%,100% { opacity: 0; }
+}
+@keyframes ifout-b {
+  0%,78%   { opacity: 0; transform: translateX(-6px); }
+  82%,96%  { opacity: 1; transform: none; }
+  99%,100% { opacity: 0; }
+}
+
+/* ---------- WHILE loop (viz-while) ----------
+   Cycles: var box updates, condition check pulses, body fires.
+   Designed for 4 iterations (true,true,true,false-exit). 8s cycle.
+
+   <div class="viz viz-while">
+     <div class="wh-var"><span class="vname">count</span> = <span class="vval">
+       <span>0</span><span>1</span><span>2</span><span>3</span>
+     </span></div>
+     <div class="wh-cond">count &lt; 3</div>
+     <div class="wh-body">print(count); count += 1</div>
+     <div class="output-box">
+       <div class="out-label">▸ Output</div>
+       <div class="out-line">0</div>
+       <div class="out-line">1</div>
+       <div class="out-line">2</div>
+       <div class="out-line wh-exit">→ exit loop</div>
+     </div>
+   </div>
+*/
+.viz-while { display: flex; flex-direction: column; gap: clamp(.5em, 1.4vmin, .9em); }
+.viz-while .wh-var,
+.viz-while .wh-cond,
+.viz-while .wh-body {
+  background: #2a2a3e;
+  border-radius: 12px;
+  padding: .6em .9em;
+  font-family: "JetBrains Mono", monospace;
+  color: #f5f5f5;
+  font-size: clamp(16px, 2.8vmin, 24px);
+  font-weight: 700;
+  text-align: center;
+  border: 3px solid transparent;
+}
+.viz-while .wh-var .vname { color: var(--accent); }
+.viz-while .wh-var .vval { display: inline-grid; vertical-align: baseline; min-width: 1.2em; color: var(--num); }
+.viz-while .wh-var .vval > span {
+  grid-area: 1 / 1; text-align: center; opacity: 0;
+}
+.viz-while .wh-var .vval > span:nth-child(1) { animation: wv 8s infinite; }
+.viz-while .wh-var .vval > span:nth-child(2) { animation: wv 8s infinite 2s; }
+.viz-while .wh-var .vval > span:nth-child(3) { animation: wv 8s infinite 4s; }
+.viz-while .wh-var .vval > span:nth-child(4) { animation: wv 8s infinite 6s; }
+@keyframes wv { 0%,22% { opacity: 1; } 25%,100% { opacity: 0; } }
+
+.viz-while .wh-cond { animation: whcond 8s infinite; }
+@keyframes whcond {
+  0%,4%   { background: #2a2a3e; border-color: transparent; color: #f5f5f5; }
+  6%,22%  { background: rgba(80,250,123,.16); border-color: var(--fn); color: var(--fn); transform: scale(1.02); }
+  25%,29% { background: rgba(80,250,123,.16); border-color: var(--fn); color: var(--fn); }
+  31%,47% { background: rgba(80,250,123,.16); border-color: var(--fn); color: var(--fn); transform: scale(1.02); }
+  50%,54% { background: rgba(80,250,123,.16); border-color: var(--fn); color: var(--fn); }
+  56%,72% { background: rgba(80,250,123,.16); border-color: var(--fn); color: var(--fn); transform: scale(1.02); }
+  75%,79% { background: #2a2a3e; border-color: transparent; }
+  81%,96% { background: rgba(255,121,198,.16); border-color: var(--kw); color: var(--kw); transform: scale(1.02); }
+  99%,100% { background: #2a2a3e; border-color: transparent; color: #f5f5f5; transform: scale(1); }
+}
+.viz-while .wh-body { animation: whbody 8s infinite; }
+@keyframes whbody {
+  0%,9%   { opacity: .3; transform: scale(1); }
+  12%,22% { opacity: 1; transform: scale(1.03); background: rgba(56,208,224,.14); border-color: var(--accent); }
+  25%,34% { opacity: .3; transform: scale(1); background: #2a2a3e; border-color: transparent; }
+  37%,47% { opacity: 1; transform: scale(1.03); background: rgba(56,208,224,.14); border-color: var(--accent); }
+  50%,59% { opacity: .3; transform: scale(1); background: #2a2a3e; border-color: transparent; }
+  62%,72% { opacity: 1; transform: scale(1.03); background: rgba(56,208,224,.14); border-color: var(--accent); }
+  75%,100%{ opacity: .25; transform: scale(1); background: #2a2a3e; border-color: transparent; }
+}
+.viz-while .output-box .out-line:nth-child(2) { animation: whout1 8s infinite; }
+.viz-while .output-box .out-line:nth-child(3) { animation: whout2 8s infinite; }
+.viz-while .output-box .out-line:nth-child(4) { animation: whout3 8s infinite; }
+.viz-while .output-box .wh-exit { animation: whexit 8s infinite; color: var(--kw); }
+@keyframes whout1 { 0%,18%   { opacity: 0; transform: translateX(-6px);} 22%,95% { opacity: 1; transform: none;} 98%,100%{opacity:0;} }
+@keyframes whout2 { 0%,43%   { opacity: 0; transform: translateX(-6px);} 47%,95% { opacity: 1; transform: none;} 98%,100%{opacity:0;} }
+@keyframes whout3 { 0%,68%   { opacity: 0; transform: translateX(-6px);} 72%,95% { opacity: 1; transform: none;} 98%,100%{opacity:0;} }
+@keyframes whexit { 0%,82%   { opacity: 0; transform: translateX(-6px);} 86%,98% { opacity: 1; transform: none;} 99%,100%{opacity:0;} }
+
+/* ---------- FUNCTION call + return (viz-func) ----------
+   Visualises call → body executes → return value flows back.
+
+   <div class="viz viz-func">
+     <div class="fn-caller">
+       <span class="fn-callcode">greet(<span class="arg">"Min"</span>)</span>
+       <span class="fn-result"><span class="rv">"Hello, Min!"</span></span>
+     </div>
+     <div class="fn-flow-down">↓ call</div>
+     <div class="fn-body">
+       <div class="fn-sig">def greet(<span class="param">name</span>):</div>
+       <div class="fn-line">return "Hello, " + <span class="param-use">name</span> + "!"</div>
+     </div>
+     <div class="fn-flow-up">↑ return</div>
+   </div>
+*/
+.viz-func { display: flex; flex-direction: column; gap: clamp(.45em, 1.3vmin, .8em); }
+.viz-func .fn-caller,
+.viz-func .fn-body {
+  background: #2a2a3e;
+  border-radius: 12px;
+  padding: .65em .9em;
+  font-family: "JetBrains Mono", monospace;
+  color: #f5f5f5;
+  font-size: clamp(15px, 2.7vmin, 22px);
+  border: 3px solid transparent;
+}
+.viz-func .fn-caller {
+  display: flex; justify-content: space-between; align-items: center; gap: 1em; flex-wrap: wrap;
+}
+.viz-func .fn-callcode { font-weight: 700; }
+.viz-func .fn-callcode .arg { color: var(--str); }
+.viz-func .fn-result { color: var(--com); font-size: .9em; }
+.viz-func .fn-result .rv { color: var(--str); font-weight: 700; opacity: 0; }
+.viz-func .fn-body { text-align: left; }
+.viz-func .fn-sig { color: var(--kw); font-weight: 700; margin-bottom: .25em; }
+.viz-func .fn-sig .param { color: var(--accent); }
+.viz-func .fn-line { color: #f5f5f5; padding-left: 1.5em; }
+.viz-func .fn-line .param-use { color: var(--accent); }
+.viz-func .fn-flow-down,
+.viz-func .fn-flow-up {
+  text-align: center; color: var(--com);
+  font-family: "JetBrains Mono", monospace;
+  font-size: clamp(15px, 2.4vmin, 20px);
+}
+
+.viz-func .fn-caller { animation: fncall 5s infinite; }
+.viz-func .fn-body   { animation: fnbody 5s infinite; }
+.viz-func .fn-flow-down { animation: fnarrowd 5s infinite; }
+.viz-func .fn-flow-up   { animation: fnarrowu 5s infinite; }
+.viz-func .fn-result .rv { animation: fnret 5s infinite; }
+.viz-func .fn-callcode .arg { animation: fnarg 5s infinite; }
+.viz-func .fn-sig .param { animation: fnparam 5s infinite; }
+.viz-func .fn-line .param-use { animation: fnparamuse 5s infinite; }
+
+@keyframes fncall {
+  0%,4%   { background: rgba(56,208,224,.16); border-color: var(--accent); }
+  20%,80% { background: #2a2a3e; border-color: transparent; }
+  88%,100%{ background: rgba(80,250,123,.16); border-color: var(--fn); }
+}
+@keyframes fnbody {
+  0%,18%  { background: #2a2a3e; border-color: transparent; opacity: .55; }
+  25%,68% { background: rgba(139,92,246,.14); border-color: var(--accent-2); opacity: 1; }
+  78%,100%{ background: #2a2a3e; border-color: transparent; opacity: .55; }
+}
+@keyframes fnarrowd { 0%,8% { color: var(--com);} 12%,22% { color: var(--accent); transform: scale(1.3);} 28%,100% { color: var(--com); transform: scale(1);} }
+@keyframes fnarrowu { 0%,72% { color: var(--com); transform: scale(1);} 76%,88% { color: var(--fn); transform: scale(1.3);} 92%,100% { color: var(--com); transform: scale(1);} }
+@keyframes fnret    { 0%,82% { opacity: 0; transform: translateY(4px);} 88%,98% { opacity: 1; transform: none;} 100% { opacity: 0; } }
+@keyframes fnarg    { 0%,4% { background: rgba(241,250,140,.2); padding: 0 .25em; border-radius: 4px;} 18%,100% { background: transparent; padding: 0; } }
+@keyframes fnparam  { 0%,18% { background: transparent;} 24%,30% { background: rgba(56,208,224,.25); padding: 0 .2em; border-radius: 4px;} 36%,100% { background: transparent; padding: 0;} }
+@keyframes fnparamuse { 0%,30% { background: transparent;} 36%,48% { background: rgba(56,208,224,.3); padding: 0 .2em; border-radius: 4px;} 54%,100% { background: transparent; padding: 0;} }
+
+/* ---------- Variable re-assignment timeline (viz-reassign) ----------
+   Code lines play in sequence; var box on right shows current value.
+
+   <div class="viz viz-reassign">
+     <div class="ra-code">
+       <div class="ra-line">x = 1</div>
+       <div class="ra-line">x = x + 4</div>
+       <div class="ra-line">x = x * 2</div>
+       <div class="ra-line">x = x - 3</div>
+     </div>
+     <div class="ra-box">
+       <span class="ra-name">x</span>
+       <span class="ra-vals">
+         <span>1</span><span>5</span><span>10</span><span>7</span>
+       </span>
+     </div>
+   </div>
+*/
+.viz-reassign {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: clamp(.7em, 2vmin, 1.4em);
+  align-items: center;
+}
+.viz-reassign .ra-code {
+  background: #2a2a3e;
+  border-radius: 12px;
+  padding: .8em 1em;
+  font-family: "JetBrains Mono", monospace;
+  color: #f5f5f5;
+  font-size: clamp(16px, 2.8vmin, 24px);
+  line-height: 1.7;
+}
+.viz-reassign .ra-line {
+  padding: .15em .5em;
+  border-radius: 6px;
+  opacity: .35;
+  border-left: 3px solid transparent;
+}
+.viz-reassign .ra-box {
+  background: var(--panel);
+  border: 4px solid var(--accent);
+  border-radius: 16px;
+  padding: 1em 1.2em;
+  box-shadow: 0 6px 0 var(--soft);
+  text-align: center;
+  font-family: "JetBrains Mono", monospace;
+}
+.viz-reassign .ra-name {
+  display: block;
+  color: var(--accent);
+  font-weight: 800;
+  font-size: clamp(18px, 3vmin, 26px);
+  margin-bottom: .25em;
+}
+.viz-reassign .ra-vals {
+  position: relative; display: inline-block;
+  min-height: 1.4em; min-width: 2em;
+  font-size: clamp(28px, 5vmin, 48px);
+  font-weight: 800;
+  color: var(--ink);
+}
+.viz-reassign .ra-vals > span {
+  position: absolute; left: 50%; top: 0;
+  transform: translateX(-50%);
+  opacity: 0;
+}
+.viz-reassign .ra-line:nth-child(1) { animation: ra-line 8s infinite 0s; }
+.viz-reassign .ra-line:nth-child(2) { animation: ra-line 8s infinite 2s; }
+.viz-reassign .ra-line:nth-child(3) { animation: ra-line 8s infinite 4s; }
+.viz-reassign .ra-line:nth-child(4) { animation: ra-line 8s infinite 6s; }
+.viz-reassign .ra-vals > span:nth-child(1) { animation: ra-val 8s infinite 0s; }
+.viz-reassign .ra-vals > span:nth-child(2) { animation: ra-val 8s infinite 2s; }
+.viz-reassign .ra-vals > span:nth-child(3) { animation: ra-val 8s infinite 4s; }
+.viz-reassign .ra-vals > span:nth-child(4) { animation: ra-val 8s infinite 6s; }
+@keyframes ra-line {
+  0%,1%   { opacity: .35; background: transparent; border-left-color: transparent; }
+  3%,22%  { opacity: 1; background: rgba(56,208,224,.16); border-left-color: var(--accent); }
+  25%,100%{ opacity: .35; background: transparent; border-left-color: transparent; }
+}
+@keyframes ra-val {
+  0%,1%   { opacity: 0; transform: translateX(-50%) translateY(8px) scale(.85); }
+  4%,22%  { opacity: 1; transform: translateX(-50%) translateY(0) scale(1.1); color: var(--accent); }
+  25%,100%{ opacity: 0; transform: translateX(-50%) scale(1); }
+}
+
+/* ---------- Dict / object lookup (viz-dict) ----------
+   <div class="viz viz-dict">
+     <div class="d-table">
+       <div class="d-row"><span class="d-key">"hp"</span><span class="d-sep">:</span><span class="d-val">35</span></div>
+       <div class="d-row"><span class="d-key">"type"</span><span class="d-sep">:</span><span class="d-val">"electric"</span></div>
+       <div class="d-row"><span class="d-key">"name"</span><span class="d-sep">:</span><span class="d-val">"Pikachu"</span></div>
+     </div>
+     <div class="d-lookup">pokemon[<span class="d-q d-q1">"hp"</span><span class="d-q d-q2">"name"</span>]</div>
+     <div class="output-box">
+       <div class="out-label">▸ Output</div>
+       <div class="out-line d-out d-out1">35</div>
+       <div class="out-line d-out d-out2">"Pikachu"</div>
+     </div>
+   </div>
+*/
+.viz-dict { display: flex; flex-direction: column; gap: clamp(.5em, 1.4vmin, .9em); }
+.viz-dict .d-table {
+  background: #2a2a3e;
+  border-radius: 12px;
+  padding: .6em .9em;
+  font-family: "JetBrains Mono", monospace;
+  color: #f5f5f5;
+  font-size: clamp(15px, 2.6vmin, 22px);
+}
+.viz-dict .d-row {
+  display: flex; gap: .5em; align-items: center;
+  padding: .25em .4em; border-radius: 6px;
+}
+.viz-dict .d-key { color: var(--str); font-weight: 700; min-width: 5em; }
+.viz-dict .d-sep { color: var(--com); }
+.viz-dict .d-val { color: var(--num); font-weight: 700; }
+.viz-dict .d-lookup {
+  background: #1e1e2e;
+  border-radius: 12px;
+  padding: .55em .9em;
+  font-family: "JetBrains Mono", monospace;
+  color: #f5f5f5;
+  font-size: clamp(16px, 2.8vmin, 24px);
+  text-align: center; font-weight: 700;
+}
+/* Grid-stack so both q-strings share one inline slot sized to the widest key.
+   Keeps brackets and the rest of the lookup text on a single line in flow. */
+.viz-dict .d-qs { display: inline-grid; vertical-align: baseline; }
+.viz-dict .d-q { grid-area: 1 / 1; opacity: 0; color: var(--str); white-space: nowrap; text-align: center; }
+.viz-dict .d-q.d-q1 { animation: dq1 8s infinite; }
+.viz-dict .d-q.d-q2 { animation: dq2 8s infinite; }
+@keyframes dq1 { 0%,2% { opacity: 0; } 4%,46% { opacity: 1; } 48%,100% { opacity: 0; } }
+@keyframes dq2 { 0%,52% { opacity: 0; } 54%,96% { opacity: 1; } 98%,100% { opacity: 0; } }
+
+/* Row 1 (hp) — selected scenario 1 */
+.viz-dict .d-row:nth-child(1) { animation: drow-1 8s infinite; }
+.viz-dict .d-row:nth-child(2) { animation: drow-0 8s infinite; }
+.viz-dict .d-row:nth-child(3) { animation: drow-2 8s infinite; }
+@keyframes drow-1 {
+  0%,8%   { background: transparent; }
+  12%,40% { background: rgba(56,208,224,.18); outline: 2px solid var(--accent); }
+  44%,100%{ background: transparent; outline: none; }
+}
+@keyframes drow-2 {
+  0%,58%  { background: transparent; }
+  62%,90% { background: rgba(139,92,246,.18); outline: 2px solid var(--accent-2); }
+  94%,100%{ background: transparent; outline: none; }
+}
+@keyframes drow-0 { 0%,100% { background: transparent; } }
+
+.viz-dict .output-box .d-out { opacity: 0; }
+.viz-dict .output-box .d-out1 { animation: dout1 8s infinite; }
+.viz-dict .output-box .d-out2 { animation: dout2 8s infinite; }
+@keyframes dout1 { 0%,18% { opacity: 0; transform: translateX(-6px);} 22%,46% { opacity: 1; transform: none;} 50%,100% { opacity: 0;} }
+@keyframes dout2 { 0%,68% { opacity: 0; transform: translateX(-6px);} 72%,96% { opacity: 1; transform: none;} 99%,100% { opacity: 0;} }
+
+/* ---------- List index pointer (viz-index) ----------
+   Pointer travels along an array, value of expression updates in box.
+   <div class="viz viz-index">
+     <div class="iter-row">
+       <div class="iter-item">"a"</div><div class="iter-item">"b"</div><div class="iter-item">"c"</div><div class="iter-item">"d"</div>
+     </div>
+     <div class="idx-expr"><span class="idx-name">items</span>[<span class="idx-num"><span>0</span><span>1</span><span>2</span><span>3</span></span>]</div>
+     <div class="output-box">
+       <div class="out-label">▸ value</div>
+       <div class="out-line">"a"</div><div class="out-line">"b"</div><div class="out-line">"c"</div><div class="out-line">"d"</div>
+     </div>
+   </div>
+   Reuses viz-4 highlight + var-val for the index number.
+*/
+.viz-index { display: flex; flex-direction: column; gap: clamp(.5em, 1.4vmin, 1em); }
+.viz-index .idx-expr {
+  text-align: center;
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 700;
+  font-size: clamp(18px, 3.2vmin, 28px);
+  color: var(--ink);
+  background: var(--panel);
+  border-radius: 12px;
+  padding: .4em .8em;
+  box-shadow: 0 4px 0 var(--soft);
+}
+.viz-index .idx-name { color: var(--accent-2); }
+.viz-index .idx-num {
+  display: inline-grid; vertical-align: baseline;
+  min-width: 1.2em; color: var(--accent); font-weight: 800;
+}
+.viz-index .idx-num > span { grid-area: 1 / 1; text-align: center; opacity: 0; }
+.viz-index .idx-num > span:nth-child(1) { animation: vv4 5s infinite; }
+.viz-index .idx-num > span:nth-child(2) { animation: vv4 5s infinite 1s; }
+.viz-index .idx-num > span:nth-child(3) { animation: vv4 5s infinite 2s; }
+.viz-index .idx-num > span:nth-child(4) { animation: vv4 5s infinite 3s; }
+.viz-index .iter-item:nth-child(1) { animation: hl4 5s infinite; }
+.viz-index .iter-item:nth-child(2) { animation: hl4 5s infinite 1s; }
+.viz-index .iter-item:nth-child(3) { animation: hl4 5s infinite 2s; }
+.viz-index .iter-item:nth-child(4) { animation: hl4 5s infinite 3s; }
+.viz-index .out-line:nth-child(2) { animation: out4a 5s infinite; }
+.viz-index .out-line:nth-child(3) { animation: out4b 5s infinite; }
+.viz-index .out-line:nth-child(4) { animation: out4c 5s infinite; }
+.viz-index .out-line:nth-child(5) { animation: out4d 5s infinite; }
+
+/* ---------- Event flow (viz-event) ----------
+   click → listener → DOM update. Used by web002 events.
+   <div class="viz viz-event">
+     <div class="ev-step ev-click">🖱 click</div>
+     <div class="viz-arrow">↓</div>
+     <div class="ev-step ev-listen">button.addEventListener("click", run)</div>
+     <div class="viz-arrow">↓</div>
+     <div class="ev-step ev-run">run() fires</div>
+     <div class="viz-arrow">↓</div>
+     <div class="ev-step ev-dom">DOM updates ✓</div>
+   </div>
+*/
+.viz-event { display: flex; flex-direction: column; gap: clamp(.25em, .8vmin, .5em); align-items: center; }
+.viz-event .ev-step {
+  background: #2a2a3e; color: #f5f5f5;
+  font-family: "JetBrains Mono", monospace;
+  font-size: clamp(15px, 2.6vmin, 22px);
+  font-weight: 700;
+  padding: .55em 1em; border-radius: 12px;
+  border: 3px solid transparent;
+  opacity: .4;
+  text-align: center;
+}
+.viz-event .ev-click  { animation: ev-step 4s infinite 0s; }
+.viz-event .ev-listen { animation: ev-step 4s infinite .9s; }
+.viz-event .ev-run    { animation: ev-step 4s infinite 1.8s; }
+.viz-event .ev-dom    { animation: ev-step 4s infinite 2.7s; background: rgba(80,250,123,.14); }
+@keyframes ev-step {
+  0%,2%   { opacity: .4; transform: scale(1); background: #2a2a3e; border-color: transparent; }
+  6%,18%  { opacity: 1; transform: scale(1.06); background: rgba(56,208,224,.22); border-color: var(--accent); }
+  24%,100%{ opacity: .55; transform: scale(1); background: #2a2a3e; border-color: transparent; }
+}
+
+/* ---------- Coordinates / movement (viz-coord) ----------
+   For pygame x/y, gravity, collisions. Shows a sprite moving on a grid.
+
+   <div class="viz viz-coord" data-mode="move-x">
+     <div class="cg-grid">
+       <div class="cg-axis">x →</div>
+       <div class="cg-track"><div class="cg-sprite">🎮</div></div>
+     </div>
+     <div class="cg-readout"><span class="cg-name">x</span> = <span class="cg-val"><span>0</span><span>100</span><span>200</span><span>300</span></span></div>
+   </div>
+*/
+.viz-coord {
+  background: #2a2a3e;
+  border-radius: 14px;
+  padding: 1em;
+  display: flex; flex-direction: column; gap: .8em;
+}
+.viz-coord .cg-grid {
+  background: #1e1e2e;
+  border-radius: 10px;
+  padding: 1em .6em;
+  position: relative;
+  min-height: clamp(80px, 16vmin, 140px);
+  display: flex; flex-direction: column; justify-content: center;
+}
+.viz-coord .cg-axis {
+  color: var(--com); font-family: "JetBrains Mono", monospace;
+  font-size: clamp(13px, 2vmin, 17px);
+  margin-bottom: .4em;
+}
+.viz-coord .cg-track {
+  position: relative; height: clamp(40px, 8vmin, 60px);
+  background: repeating-linear-gradient(to right, transparent 0, transparent 24px, rgba(255,255,255,.08) 24px, rgba(255,255,255,.08) 25px);
+  border-radius: 6px;
+}
+.viz-coord .cg-sprite {
+  position: absolute; left: 0; top: 50%;
+  transform: translateY(-50%);
+  font-size: clamp(28px, 5.5vmin, 48px);
+  animation: cg-move 4s infinite ease-in-out;
+}
+@keyframes cg-move {
+  0%,5%    { left: 4%; }
+  25%,30%  { left: 32%; }
+  50%,55%  { left: 60%; }
+  75%,80%  { left: 88%; }
+  95%,100% { left: 4%; }
+}
+.viz-coord .cg-readout {
+  font-family: "JetBrains Mono", monospace;
+  font-size: clamp(16px, 2.8vmin, 24px);
+  color: #f5f5f5; text-align: center; font-weight: 700;
+}
+.viz-coord .cg-name { color: var(--accent); }
+.viz-coord .cg-val {
+  display: inline-grid; vertical-align: baseline;
+  min-width: 2.5em; color: var(--num);
+}
+.viz-coord .cg-val > span { grid-area: 1 / 1; text-align: center; opacity: 0; }
+.viz-coord .cg-val > span:nth-child(1) { animation: vv4 4s infinite; }
+.viz-coord .cg-val > span:nth-child(2) { animation: vv4 4s infinite 1s; }
+.viz-coord .cg-val > span:nth-child(3) { animation: vv4 4s infinite 2s; }
+.viz-coord .cg-val > span:nth-child(4) { animation: vv4 4s infinite 3s; }
+
+/* ============================================================
+   End code-viz patterns
+============================================================ */
+
+/* ============ Narrow-viewport adaptations ============
+   Stage already fills 100vw/100vh at every size. These rules only restack
+   side-by-side components that can't fit a narrow width.
+*/
+
+@media (max-width: 600px) {
+  .slide { padding: 5vw; }
+  /* Side-by-side compare → stacked on phones */
+  .compare-row {
+    grid-template-columns: 1fr !important;
+    display: grid;
+    gap: .6em;
+  }
+  /* Options that show 3 across become 2 */
+  .opt-grid { grid-template-columns: 1fr 1fr; gap: 3vw; }
+  .opt-grid.two { grid-template-columns: 1fr; }
+  /* Vocab table — collapse 3-column grid to a 2-column term+gloss stack */
+  .vocab-table {
+    grid-template-columns: auto 1fr !important;
+    gap: .4em .8em;
+  }
+  .vocab-table .ko {
+    grid-column: 2 / -1;
+    font-size: .9em;
+    opacity: .85;
+  }
+  /* Edge cards stack on narrow */
+  .edge-grid { grid-template-columns: 1fr; }
+  /* Code blocks scroll horizontally rather than overflow */
+  pre { overflow-x: auto; white-space: pre; }
+  /* Nav buttons hug the bottom edge */
+  .nav { bottom: 12px; }
+  /* Viz: branches stack vertically; reassign collapses to 1 col */
+  .viz-if .if-branches { flex-direction: column; }
+  .viz-if .if-branch { max-width: 100%; }
+  .viz-reassign { grid-template-columns: 1fr; }
+  .viz-func .fn-caller { flex-direction: column; gap: .3em; align-items: flex-start; }
+}
+
+@media (max-width: 420px) {
+  .slide { padding: 4vw; }
+  .opt-grid { grid-template-columns: 1fr; }
+  h1 { font-size: clamp(36px, 9vw, 56px); }
+  h2 { font-size: clamp(26px, 7vw, 42px); }
+  pre { font-size: clamp(13px, 3.6vw, 18px); }
+}
+
+@media (max-height: 480px) and (orientation: landscape) {
+  .slide { padding: 2vh 3vw; }
+}
+
+/* =========================================================
+   BC bootcamp track — activity components
+   Added with BC001 W1. Used by: trace grid, debug card,
+   MCQ quiz, stretch list, exit ticket, activity tag pill.
+   ========================================================= */
+
+.activity-tag {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  font-size: .65em;
+  font-weight: 700;
+  letter-spacing: .05em;
+  padding: .15em .55em;
+  border-radius: 999px;
+  margin-left: .4em;
+  vertical-align: middle;
+}
+
+/* Trace grid — student fills in variable values per line */
+.trace-grid {
+  display: grid;
+  grid-template-columns: auto 1fr 1fr;
+  gap: .4em;
+  margin-top: .5em;
+  font-size: clamp(14px, 2.4vmin, 28px);
+  max-width: 100%;
+}
+.trace-grid.cols-4 { grid-template-columns: auto 1fr 1fr 1fr; }
+.trace-grid.cols-5 { grid-template-columns: auto 1fr 1fr 1fr 1fr; }
+.trace-grid .cell {
+  background: var(--panel);
+  border: 2px solid var(--soft);
+  border-radius: 10px;
+  padding: .4em .6em;
+  text-align: center;
+  min-width: 0;
+}
+.trace-grid .head { background: var(--soft); font-weight: 700; color: var(--ink); }
+.trace-grid code { font-family: 'JetBrains Mono', monospace; }
+.trace-grid details { cursor: pointer; display: inline-block; }
+.trace-grid summary { list-style: none; color: var(--accent); font-weight: 700; }
+.trace-grid summary::-webkit-details-marker { display: none; }
+.trace-grid .reveal { color: #6fe0a0; font-weight: 700; }
+
+/* Debug card — reveal-the-fix pattern */
+.debug-card {
+  margin-top: .5em;
+  background: var(--panel);
+  border: 2px dashed var(--accent);
+  border-radius: 12px;
+  padding: .5em .8em;
+}
+.debug-card summary {
+  font-weight: 700;
+  color: var(--accent);
+  cursor: pointer;
+  list-style: none;
+}
+.debug-card summary::-webkit-details-marker { display: none; }
+.debug-card .err {
+  font-family: 'JetBrains Mono', monospace;
+  background: rgba(220,53,69,.10);
+  border-left: 3px solid var(--accent);
+  padding: .3em .5em;
+  margin: .35em 0;
+  font-size: .85em;
+}
+
+/* MCQ quiz card */
+.quiz-card {
+  background: var(--panel);
+  border: 2px solid var(--soft);
+  border-radius: 18px;
+  padding: 1em 1.1em;
+  margin-top: .6em;
+  box-shadow: 0 4px 0 var(--soft);
+}
+.quiz-card .q { font-weight: 700; margin-bottom: .4em; color: var(--accent-2); }
+.quiz-card .opts { display: grid; gap: .35em; }
+.quiz-card details {
+  background: var(--bg);
+  border-radius: 10px;
+  padding: .45em .7em;
+  cursor: pointer;
+  border: 1px solid var(--soft);
+}
+.quiz-card details[open] { background: rgba(80,250,123,.12); border-color: #3aa76a; }
+.quiz-card summary { list-style: none; font-weight: 600; }
+.quiz-card summary::-webkit-details-marker { display: none; }
+.quiz-card .ans { margin-top: .3em; color: #6fe0a0; font-weight: 700; }
+
+/* Stretch challenges — tiered bonus list */
+.stretch-list { display: grid; gap: .5em; margin-top: .6em; }
+.stretch-list .item {
+  background: var(--panel);
+  border: 2px dashed var(--accent-2);
+  border-radius: 14px;
+  padding: .55em .8em;
+}
+.stretch-list .item .lvl {
+  color: var(--accent-2);
+  font-weight: 700;
+  margin-right: .4em;
+}
+
+/* Exit ticket */
+.exit {
+  background: var(--panel);
+  border: 3px solid var(--accent);
+  border-radius: 18px;
+  padding: .9em 1em;
+  margin-top: .5em;
+}
+.exit .label {
+  color: var(--accent);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: .7em;
+  letter-spacing: .08em;
+}
+
+/* ===== Print → PDF handout =====================================================
+   Any deck can be exported with: python scripts/build-deck-pdf.py <deck.html>
+   On screen only .slide.active shows; for print we reveal every slide, one per
+   16:9 landscape page. clamp() sizes resolve oddly against the print box, so the
+   key text roles are pinned to fixed pt. */
+@page { size: 297mm 167mm; margin: 0; }
+@media print {
+  html, body { width: 297mm; height: auto; margin: 0; }
+  .stage { position: static; width: 297mm; height: auto; overflow: visible; }
+  .footer-tag, .nav { display: none !important; }
+  .slide {
+    position: static !important; inset: auto !important;
+    display: flex !important;
+    break-after: page; page-break-after: always;
+    break-inside: avoid; page-break-inside: avoid;
+    width: 297mm; height: 167mm;
+    box-sizing: border-box;
+    animation: none !important;
+  }
+  .slide:last-of-type { break-after: auto; page-break-after: avoid; }
+  h1 { font-size: 64pt !important; }
+  h2 { font-size: 34pt !important; }
+  p, li, .big { font-size: 18pt !important; }
+  .big { font-size: 22pt !important; }
+  pre { font-size: 15pt !important; }
+  .emoji { font-size: 72pt !important; }
+  .bilingual { font-size: 13pt !important; }
+  .opt-card .ico { font-size: 30pt !important; }
+  .opt-card .name { font-size: 18pt !important; }
+  .opt-card .ex { font-size: 14pt !important; }
+}
+
+/* ============================================================
+   DB debate track — live speaking timer
+   Turns in this course are 30–45 seconds and the limit is enforced,
+   so the clock belongs on the slide rather than on someone's phone.
+   ============================================================ */
+.dtimer{margin:1.2em auto 0;max-width:80%;text-align:center}
+.dtimer .dtime{font-size:clamp(64px,18vmin,160px);font-weight:800;line-height:1;
+  font-variant-numeric:tabular-nums;color:var(--accent);transition:color .2s}
+.dtimer.warn .dtime{color:#ffb454}
+.dtimer.done .dtime{color:#ff5f56}
+.dtimer .dbtns{display:flex;gap:.5em;justify-content:center;flex-wrap:wrap;margin-top:1em}
+.dtimer button{font:inherit;font-size:clamp(13px,2.2vmin,18px);padding:.45em 1.1em;
+  border-radius:999px;border:2px solid var(--accent);background:transparent;
+  color:var(--accent);cursor:pointer}
+.dtimer button:hover{background:var(--accent);color:#0b0e14}
+.dtimer button.stop{border-color:#ff5f56;color:#ff5f56}
+.dtimer button.stop:hover{background:#ff5f56;color:#0b0e14}
+/* the teacher's spoken model — prose, not code, so it must not be mono */
+.model-box{background:rgba(255,255,255,.04);border-left:4px solid var(--accent-2);
+  border-radius:10px;padding:1em 1.2em;margin-top:1em;text-align:left;
+  font-size:clamp(17px,3vmin,26px);line-height:1.75}
+.model-box b{color:var(--accent)}
+
+</style>
+<style>
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 1.4rem; align-items: center; }
+  .two.wide-left { grid-template-columns: 1.25fr 1fr; }
+  .two.wide-right { grid-template-columns: 1fr 1.25fr; }
+  .two > * { min-width: 0; }
+  @media (max-width: 950px) { .two, .two.wide-left, .two.wide-right { grid-template-columns: 1fr; } }
+
+  .line { font-size: clamp(17px, 3vmin, 30px); line-height: 1.35; }
+  .line b { color: var(--accent); }
+  .line.big { font-size: clamp(21px, 3.8vmin, 40px); }
+  .quiet { color: var(--com); font-size: clamp(13px, 1.9vmin, 18px); }
+
+  pre { background: var(--code-bg); border-radius: .5em; padding: .7em .9em; margin: .3em 0;
+        font-family: "JetBrains Mono", monospace; font-size: clamp(11px, 1.7vmin, 16px);
+        line-height: 1.55; overflow-x: auto; color: var(--code-ink); text-align: left;
+        display: inline-block; }
+  pre.tiny { font-size: clamp(10px, 1.4vmin, 14px); }
+  pre .hot { display: block; background: rgba(255,184,108,.16); }
+  pre .dim { color: #4a5670; }
+
+  .skel { border: 2px dashed var(--accent-2); border-radius: .6em; background: rgba(139,92,246,.06);
+          padding: .5em .8em; margin: .5em 0; }
+  .skel pre { background: transparent; padding: 0; overflow: visible; }
+  .blank { color: #ffb86c; background: rgba(255,184,108,.15); border-radius: .25em; padding: 0 .35em; }
+
+  .rev { display: inline-block; cursor: pointer; user-select: none; margin: .4em 0;
+         border: 2px solid var(--accent-2); border-radius: 2em; padding: .25em 1.1em;
+         color: var(--accent-2); background: transparent;
+         font-family: "JetBrains Mono", monospace; font-size: clamp(12px, 1.8vmin, 16px); }
+  .rev:hover { background: rgba(139,92,246,.15); }
+  .hid { display: none; }
+
+  canvas.sim { width: 100%; height: auto; max-width: 380px; display: block; margin: 0 auto;
+               background: #0d1117; border: 2px solid var(--soft); border-radius: .4em; }
+
+  button.btn { cursor: pointer; border: 2px solid var(--accent); background: transparent;
+               color: var(--accent); border-radius: 2em; padding: .3em 1.1em; margin: .3em .3em 0 0;
+               font-family: "JetBrains Mono", monospace; font-size: clamp(12px, 1.8vmin, 16px); }
+  button.btn:hover { background: rgba(56,208,224,.15); }
+  button.btn.alt { border-color: var(--accent-2); color: var(--accent-2); }
+
+  .readout { font-family: "JetBrains Mono", monospace; text-align: center;
+             font-size: clamp(13px, 2vmin, 19px); color: var(--com); margin-top: .4em; }
+  .readout b { color: var(--accent); }
+
+  table.vt { border-collapse: collapse; margin: .5em auto 0;
+             font-family: "JetBrains Mono", monospace; font-size: clamp(12px, 2vmin, 19px); }
+  table.vt th, table.vt td { border: 1px solid var(--soft); padding: .18em .55em; text-align: center; }
+  table.vt th { color: var(--com); font-size: .78em; }
+  table.vt td { color: var(--accent); }
+  table.vt td.q { color: #ffb86c; }
+  table.vt tr.on td { background: rgba(56,208,224,.1); }
+
+  table.nm { border-collapse: collapse; margin: .4em auto 0;
+             font-family: "JetBrains Mono", monospace; font-size: clamp(11px, 1.8vmin, 17px); }
+  table.nm th, table.nm td { border: 1px solid var(--soft); padding: .2em .55em; }
+  table.nm th { color: var(--com); font-size: .8em; }
+  table.nm td { color: var(--code-ink); }
+  table.nm td.log { color: #c08a55; }
+  table.nm td.lf { color: #7fb04a; }
+
+  ul.tick { list-style: none; padding-left: 0; font-size: clamp(15px, 2.4vmin, 24px); }
+  ul.tick li { font-size: inherit; margin: .35em 0; padding-left: 1.4em; position: relative; }
+  ul.tick li::before { content: "→"; color: var(--accent); position: absolute; left: 0; }
+
+  .tag { display: inline-block; font-family: "JetBrains Mono", monospace;
+         font-size: clamp(11px, 1.7vmin, 16px); border-radius: .35em; padding: .1em .5em; }
+  .tag.same { color: #8a97b8; border: 1px solid #3a445c; }
+  .tag.up { color: #ffb86c; border: 1px solid #ffb86c; }
+</style>
+</head>
+<body>
+<div class="stage">
+  <div class="footer-tag">Fill Loops · 6 🔢</div>
+
+  <!-- 1  title -->
+  <div class="slide active center-all">
+    <div class="emoji">🔢</div>
+    <h1>Why so many<br>numbers?</h1>
+    <p class="line" style="margin-top:.3em">Today you <b>count</b>, then <b>track</b>, then code.</p>
+    <p class="bilingual">숫자를 먼저 세고, 그다음에 코드를 써요</p>
+  </div>
+
+  <!-- 2  recap -->
+  <div class="slide center-all">
+    <div class="pill purple">Recap</div>
+    <p class="line big" style="margin:.4em 0">What does a variable do?</p>
+    <span class="rev" data-t="a2">show answer</span>
+    <div id="a2" class="hid">
+      <p class="line">It <b>holds</b> a number.<br>It can <b>change</b> later.</p>
+      <p class="quiet">A box with a name on it.</p>
+    </div>
+    <p class="bilingual">변수는 이름 붙인 상자예요</p>
+  </div>
+
+  <!-- 3  predict: loop with no updates -->
+  <div class="slide">
+    <div class="two wide-right">
+      <div>
+        <div class="pill">Predict 🤔</div>
+<pre class="tiny"><span style="color:var(--kw)">for</span> i <span style="color:var(--kw)">in</span> range(<span style="color:var(--num)">3</span>):
+    blocks.fill(<span style="color:var(--str)">OAK_LOG</span>,
+        pos(<span style="color:var(--num)">2</span>,<span style="color:var(--num)">0</span>,<span style="color:var(--num)">2</span>),
+        pos(<span style="color:var(--num)">2</span>,<span style="color:var(--num)">3</span>,<span style="color:var(--num)">2</span>), REPLACE)</pre>
+        <p class="line" style="margin-top:.4em">3 loops. How many trunks do you see?</p>
+        <p class="bilingual">몇 개가 보일까요?</p>
+      </div>
+      <div>
+        <canvas class="sim" id="pC" width="340" height="300" style="max-width:320px"></canvas>
+        <div style="text-align:center">
+          <button class="btn" id="pRun">run ▶</button>
+          <button class="btn alt" id="pFix">add updates</button>
+        </div>
+        <div class="readout" id="pMsg">nothing built yet</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4  concept: loop + variables -->
+  <div class="slide center-all">
+    <p class="line big">The loop says <b>do it again</b>.</p>
+    <p class="line big" style="margin-top:.3em">The variables say <b>do it here</b>.</p>
+    <p class="quiet" style="margin-top:.6em">Same numbers every time = one tree, built 3 times.</p>
+    <p class="bilingual">반복문은 횟수, 변수는 위치를 정해요</p>
+  </div>
+
+  <!-- 5  one box = 6 numbers -->
+  <div class="slide">
+    <div class="two wide-right">
+      <div>
+        <p class="line big">One <code>fill</code>.<br><b>6</b> numbers.</p>
+        <p class="line quiet" style="margin-top:.5em">A corner to start from.<br>A corner to stop at.</p>
+        <p class="bilingual">시작 모서리 3개, 끝 모서리 3개</p>
+      </div>
+      <div>
+        <canvas class="sim" id="sixC" width="330" height="300" style="max-width:310px"></canvas>
+        <div class="readout">from <b>(2,&nbsp;0,&nbsp;2)</b> to <b>(2,&nbsp;3,&nbsp;2)</b></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6  two boxes = 12 numbers + names -->
+  <div class="slide">
+    <div class="two wide-right">
+      <div>
+        <p class="line big">Two boxes.<br><b>12</b> numbers.</p>
+        <p class="quiet" style="margin-top:.4em">Trunk is one box. Leaves are another box.</p>
+        <table class="nm">
+          <tr><th></th><th>start</th><th>end</th></tr>
+          <tr><td class="log">trunk</td><td class="log">x_start<br>y_start<br>z_start</td><td class="log">x_end<br>y_end<br>z_end</td></tr>
+          <tr><td class="lf">leaves</td><td class="lf">leaf_x_start<br>leaf_y_start<br>leaf_z_start</td><td class="lf">leaf_x_end<br>leaf_y_end<br>leaf_z_end</td></tr>
+        </table>
+        <p class="bilingual">상자 하나에 숫자 6개, 상자 2개면 12개예요</p>
+      </div>
+      <div>
+        <canvas class="sim" id="twoC" width="330" height="330" style="max-width:300px"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <!-- 7  count, don't guess -->
+  <div class="slide">
+    <div class="two wide-left">
+      <div>
+        <canvas class="sim" id="cntC" width="360" height="300" style="max-width:360px"></canvas>
+        <div style="text-align:center">
+          <button class="btn" id="cntNum">show numbers</button>
+        </div>
+      </div>
+      <div>
+        <p class="line big">Count it.<br>Do not guess it.</p>
+        <p class="line quiet" style="margin-top:.5em">Read the screen.<br>Write the numbers down.<br>Then find the rule.</p>
+        <p class="bilingual">머리로 생각하지 말고, 화면을 보고 세어요</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 8  stretch vs slide -->
+  <div class="slide">
+    <div class="two wide-left">
+      <div>
+        <canvas class="sim" id="mvC" width="360" height="260" style="max-width:360px"></canvas>
+        <div style="text-align:center">
+          <button class="btn" id="mvStretch">end only ▶</button>
+          <button class="btn" id="mvSlide">start + end ▶</button>
+          <button class="btn alt" id="mvReset">reset</button>
+        </div>
+        <div class="readout" id="mvMsg">from z 2 to z 4</div>
+      </div>
+      <div>
+        <p class="line big">Two tools.</p>
+        <p class="line" style="margin-top:.5em">End only = it <b>stretches</b>.</p>
+        <p class="line">Start and end = it <b>moves</b>.</p>
+        <p class="quiet" style="margin-top:.4em">Trunk grows taller: y_end only.<br>Next tree along: z_start and z_end.</p>
+        <p class="bilingual">끝만 바꾸면 늘어나고, 둘 다 바꾸면 옮겨져요</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 9  tracker: predict then reveal -->
+  <div class="slide">
+    <div class="two wide-left">
+      <div>
+        <canvas class="sim" id="trC" width="380" height="290" style="max-width:380px"></canvas>
+        <div style="text-align:center">
+          <button class="btn" id="trBack">◀</button>
+          <button class="btn" id="trFwd">loop ▶</button>
+          <button class="btn alt" id="trReset">reset</button>
+        </div>
+      </div>
+      <div>
+        <p class="line">Say the next row <b>out loud</b> first.</p>
+        <table class="vt">
+          <tr><th>i</th><th>y_end</th><th>z_start</th><th>z_end</th></tr>
+          <tr id="tr1"><td>1</td><td>3</td><td>2</td><td>2</td></tr>
+          <tr id="tr2"><td>2</td><td class="q">?</td><td class="q">?</td><td class="q">?</td></tr>
+          <tr id="tr3"><td>3</td><td class="q">?</td><td class="q">?</td><td class="q">?</td></tr>
+        </table>
+        <p class="quiet" style="text-align:center">+1 taller &nbsp;·&nbsp; +4 along</p>
+        <p class="bilingual">다음 값을 먼저 말해 보고 확인해요</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 10  which change, which stay -->
+  <div class="slide center-all">
+    <p class="line big" style="margin-bottom:.3em">Which ones change?</p>
+    <table class="nm" style="font-size:clamp(12px,2vmin,19px)">
+      <tr><td>x_start · x_end</td><td><span class="tag same">same</span></td></tr>
+      <tr><td>y_start</td><td><span class="tag same">same</span></td></tr>
+      <tr><td>y_end</td><td><span class="tag up">+ 1</span></td></tr>
+      <tr><td>z_start · z_end</td><td><span class="tag up">+ 4</span></td></tr>
+    </table>
+    <p class="quiet" style="margin-top:.5em">Leaves follow the same rules, one box higher.</p>
+    <p class="bilingual">x는 그대로, y_end는 1씩, z는 4씩 늘어요</p>
+  </div>
+
+  <!-- 11  inside the loop -->
+  <div class="slide">
+    <div class="two">
+      <div>
+        <p class="quiet">outside 😖</p>
+<pre class="tiny"><span style="color:var(--kw)">for</span> i <span style="color:var(--kw)">in</span> range(<span style="color:var(--num)">3</span>):
+    blocks.fill(...)
+z_start = z_start + <span style="color:var(--num)">4</span>
+z_end = z_end + <span style="color:var(--num)">4</span></pre>
+        <p class="quiet">Runs once, at the end. 3 trees in one spot.</p>
+      </div>
+      <div>
+        <p class="quiet">inside 😀</p>
+<pre class="tiny"><span style="color:var(--kw)">for</span> i <span style="color:var(--kw)">in</span> range(<span style="color:var(--num)">3</span>):
+    blocks.fill(...)
+<span class="hot">    z_start = z_start + <span style="color:var(--num)">4</span>
+</span><span class="hot">    z_end = z_end + <span style="color:var(--num)">4</span></span></pre>
+        <p class="quiet">Runs every loop. 3 trees in a row.</p>
+      </div>
+    </div>
+    <p class="bilingual" style="text-align:center">업데이트는 반복문 안에 들여쓰기 해요</p>
+  </div>
+
+  <!-- 12  full code -->
+  <div class="slide center-all">
+<pre class="tiny"><span style="color:var(--kw)">def</span> <span style="color:var(--fn)">on_chat</span>():
+    x_start = <span style="color:var(--num)">2</span>;  y_start = <span style="color:var(--num)">0</span>;  z_start = <span style="color:var(--num)">2</span>
+    x_end = <span style="color:var(--num)">2</span>;  y_end = <span style="color:var(--num)">3</span>;  z_end = <span style="color:var(--num)">2</span>
+    leaf_x_start = <span style="color:var(--num)">1</span>;  leaf_y_start = <span style="color:var(--num)">4</span>;  leaf_z_start = <span style="color:var(--num)">1</span>
+    leaf_x_end = <span style="color:var(--num)">3</span>;  leaf_y_end = <span style="color:var(--num)">6</span>;  leaf_z_end = <span style="color:var(--num)">3</span>
+    <span style="color:var(--kw)">for</span> i <span style="color:var(--kw)">in</span> range(<span style="color:var(--num)">3</span>):
+        blocks.fill(<span style="color:var(--str)">OAK_LOG</span>,
+            pos(x_start, y_start, z_start),
+            pos(x_end, y_end, z_end), REPLACE)
+        blocks.fill(<span style="color:var(--str)">OAK_LEAVES</span>,
+            pos(leaf_x_start, leaf_y_start, leaf_z_start),
+            pos(leaf_x_end, leaf_y_end, leaf_z_end), REPLACE)
+<span class="hot">        y_end = y_end + <span style="color:var(--num)">1</span>
+</span><span class="hot">        z_start = z_start + <span style="color:var(--num)">4</span>;  z_end = z_end + <span style="color:var(--num)">4</span>
+</span><span class="hot">        leaf_y_start = leaf_y_start + <span style="color:var(--num)">1</span>;  leaf_y_end = leaf_y_end + <span style="color:var(--num)">1</span>
+</span><span class="hot">        leaf_z_start = leaf_z_start + <span style="color:var(--num)">4</span>;  leaf_z_end = leaf_z_end + <span style="color:var(--num)">4</span></span>
+player.on_chat(<span style="color:var(--str)">"trees"</span>, on_chat)</pre>
+  </div>
+
+  <!-- 13  modify + your turn -->
+  <div class="slide center-all">
+    <div class="pill purple">Your turn</div>
+    <p class="line big" style="margin:.3em 0 .3em">Fill the blanks. Then make 5 trees.</p>
+    <div class="skel">
+<pre>leaf_y_start = leaf_y_start + <span class="blank">?</span>
+leaf_z_start = leaf_z_start + <span class="blank">?</span>
+leaf_z_end   = leaf_z_end + <span class="blank">?</span></pre></div>
+    <span class="rev" data-t="a13">show answer</span>
+    <div id="a13" class="hid"><p class="line">+ <b>1</b>, + <b>4</b>, + <b>4</b></p></div>
+    <p class="quiet" style="margin-top:.4em">Leaves must move with the trunk, or they float.</p>
+    <p class="bilingual">잎도 기둥과 같이 움직여야 해요</p>
+  </div>
+
+  <!-- 14  close -->
+  <div class="slide center-all">
+    <div class="emoji">🌳</div>
+    <p class="line big">6 numbers per box.</p>
+    <p class="line big" style="margin-top:.2em">Count first. Code second.</p>
+  </div>
+
+</div>
+<script>
+/* inlined from english-coding-slides/assets/deck.js */
+// English Coding — shared slide deck navigation + helpers
+
+(function () {
+  const slides = document.querySelectorAll('.slide');
+  const counter = document.getElementById('counter');
+  const prev = document.getElementById('prev');
+  const next = document.getElementById('next');
+  let i = 0;
+
+  function show(n) {
+    i = (n + slides.length) % slides.length;
+    slides.forEach((s, idx) => s.classList.toggle('active', idx === i));
+    if (counter) counter.textContent = `${i + 1} / ${slides.length}`;
+  }
+  if (next) next.onclick = () => show(i + 1);
+  if (prev) prev.onclick = () => show(i - 1);
+  document.addEventListener('keydown', (e) => {
+    // Don't hijack arrows/space while a slide's own control (e.g. a range
+    // slider in a live sim) has focus.
+    const t = e.target;
+    if (t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.tagName === 'SELECT')) return;
+    if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') { e.preventDefault(); show(i + 1); }
+    if (e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); show(i - 1); }
+    if (e.key === 'Home') show(0);
+    if (e.key === 'End') show(slides.length - 1);
+  });
+
+  // === reusable random.choice picker animation ===
+  window.startPicker = function (rootId) {
+    const root = document.getElementById(rootId);
+    if (!root) return;
+    const items = root.querySelectorAll('.pkitem');
+    const result = root.querySelector('.pkresult .val');
+    let spinTimer = null;
+
+    function clearAll() {
+      items.forEach(it => { it.classList.remove('spin'); it.classList.remove('win'); });
+    }
+
+    function runCycle() {
+      clearAll();
+      if (result) result.textContent = '';
+      let j = 0;
+      spinTimer = setInterval(() => {
+        items.forEach(it => it.classList.remove('spin'));
+        items[j % items.length].classList.add('spin');
+        j++;
+      }, 110);
+      setTimeout(() => {
+        clearInterval(spinTimer);
+        items.forEach(it => it.classList.remove('spin'));
+        const winner = items[Math.floor(Math.random() * items.length)];
+        winner.classList.add('win');
+        if (result) result.textContent = '"' + winner.dataset.v + '"';
+        setTimeout(runCycle, 2200);
+      }, 1600);
+    }
+    runCycle();
+  };
+
+  // === reusable dice animation ===
+  window.startDice = function (rootId, min, max) {
+    const root = document.getElementById(rootId);
+    if (!root) return;
+    const face = root.querySelector('.face');
+    const val = root.querySelector('.dlabel .val');
+    let rollTimer = null;
+    min = min || 1; max = max || 6;
+
+    function rand() { return min + Math.floor(Math.random() * (max - min + 1)); }
+
+    function runRoll() {
+      face.classList.remove('landed');
+      face.classList.add('rolling');
+      if (val) val.textContent = '?';
+      rollTimer = setInterval(() => { face.textContent = rand(); }, 90);
+      setTimeout(() => {
+        clearInterval(rollTimer);
+        const result = rand();
+        face.textContent = result;
+        face.classList.remove('rolling');
+        face.classList.add('landed');
+        if (val) val.textContent = result;
+        setTimeout(runRoll, 2000);
+      }, 1500);
+    }
+    runRoll();
+  };
+
+  // === multi-pick combine viz ===
+  window.startCombine = function (rootId) {
+    const root = document.getElementById(rootId);
+    if (!root) return;
+    const items = root.querySelectorAll('.mitem');
+    const lines = root.querySelectorAll('.mlog .ln');
+    const slots = Array.from(lines).map(ln => ln.querySelector('.rval'));
+
+    function reset() {
+      items.forEach(it => it.classList.remove('win'));
+      lines.forEach(ln => ln.classList.remove('show'));
+      slots.forEach(s => { if (s) s.textContent = ''; });
+    }
+
+    function pickOnce(slotIdx, doneCb) {
+      let j = 0;
+      const spinT = setInterval(() => {
+        items.forEach(it => it.classList.remove('win'));
+        items[j % items.length].classList.add('win');
+        j++;
+      }, 90);
+      setTimeout(() => {
+        clearInterval(spinT);
+        items.forEach(it => it.classList.remove('win'));
+        const winner = items[Math.floor(Math.random() * items.length)];
+        winner.classList.add('win');
+        if (slots[slotIdx]) slots[slotIdx].textContent = '"' + winner.dataset.v + '"';
+        if (lines[slotIdx]) lines[slotIdx].classList.add('show');
+        setTimeout(() => {
+          items.forEach(it => it.classList.remove('win'));
+          doneCb();
+        }, 700);
+      }, 900);
+    }
+
+    function runCycle() {
+      reset();
+      pickOnce(0, () => pickOnce(1, () => pickOnce(2, () => setTimeout(runCycle, 1800))));
+    }
+    runCycle();
+  };
+
+  // === MCQ Quiz support ===
+  // Each .mcq slide has data-correct="N" + .opt buttons.
+  // Score tracked per-deck in window.__quizState.
+  window.__quizState = window.__quizState || { score: 0, answered: 0, total: 0 };
+
+  // Fisher-Yates in-place shuffle.
+  function shuffle(arr) {
+    for (let i = arr.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr;
+  }
+
+  // Shuffle .opt children inside a single .mcq slide and remap data-correct
+  // to the new index of what was previously the correct option. All decks
+  // ship with the correct option at index 0; without shuffling, students
+  // learn "always pick the first" instead of the concept.
+  function shuffleMcq(m) {
+    const correct = parseInt(m.dataset.correct, 10);
+    if (Number.isNaN(correct)) return;
+    const container = m.querySelector('.opts') || (m.querySelector('.opt') && m.querySelector('.opt').parentElement);
+    if (!container) return;
+    const opts = Array.from(container.querySelectorAll('.opt'));
+    if (opts.length < 2) return;
+    const correctEl = opts[correct];
+    if (!correctEl) return;
+    const order = shuffle(opts.map((_, i) => i));
+    order.forEach(idx => container.appendChild(opts[idx]));
+    m.dataset.correct = String(order.indexOf(correct));
+  }
+
+  function initQuiz() {
+    const mcqs = document.querySelectorAll('.mcq');
+    window.__quizState.total = mcqs.length;
+    mcqs.forEach(m => {
+      shuffleMcq(m);
+      const correct = parseInt(m.dataset.correct, 10);
+      const opts = m.querySelectorAll('.opt');
+      const feedback = m.querySelector('.qfeedback');
+      opts.forEach((opt, idx) => {
+        opt.addEventListener('click', () => {
+          if (m.dataset.done === '1') return;
+          m.dataset.done = '1';
+          opts.forEach(o => o.classList.add('disabled'));
+          if (idx === correct) {
+            opt.classList.add('right');
+            window.__quizState.score++;
+            if (feedback) {
+              feedback.classList.add('show', 'good');
+              feedback.innerHTML = '✓ Correct! ' + (m.dataset.explain || '');
+            }
+          } else {
+            opt.classList.add('wrong');
+            opts[correct].classList.add('right');
+            if (feedback) {
+              feedback.classList.add('show', 'bad');
+              feedback.innerHTML = '✗ Not quite. ' + (m.dataset.explain || '');
+            }
+          }
+          window.__quizState.answered++;
+        });
+      });
+    });
+
+    // Score slide: refresh on view
+    const scoreSlide = document.querySelector('.mcq-score');
+    if (scoreSlide) {
+      const update = () => {
+        const s = window.__quizState;
+        const val = scoreSlide.querySelector('.score-val');
+        const msg = scoreSlide.querySelector('.score-msg');
+        if (val) val.textContent = `${s.score} / ${s.total}`;
+        if (msg) {
+          const pct = s.total ? Math.round(s.score / s.total * 100) : 0;
+          if (pct >= 80)      msg.textContent = '🔥 Mastered it!';
+          else if (pct >= 50) msg.textContent = '👍 Good effort. Review the misses.';
+          else                msg.textContent = "📖 Re-read the slides. You'll get it.";
+        }
+      };
+      // Update whenever the score slide becomes visible
+      const obs = new MutationObserver(() => {
+        if (scoreSlide.classList.contains('active')) update();
+      });
+      obs.observe(scoreSlide, { attributes: true, attributeFilter: ['class'] });
+      update();
+    }
+
+    // Reset button (any)
+    document.querySelectorAll('.quiz-reset').forEach(b => {
+      b.addEventListener('click', () => {
+        window.__quizState = { score: 0, answered: 0, total: mcqs.length };
+        mcqs.forEach(m => {
+          delete m.dataset.done;
+          m.querySelectorAll('.opt').forEach(o => o.classList.remove('disabled','right','wrong'));
+          const fb = m.querySelector('.qfeedback');
+          if (fb) { fb.classList.remove('show','good','bad'); fb.innerHTML = ''; }
+        });
+        if (scoreSlide) {
+          const val = scoreSlide.querySelector('.score-val');
+          if (val) val.textContent = `0 / ${mcqs.length}`;
+        }
+      });
+    });
+  }
+
+  // auto-init: any element with data-picker / data-dice / data-combine
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('[data-picker]').forEach(el => window.startPicker(el.id));
+    document.querySelectorAll('[data-dice]').forEach(el => {
+      const r = el.dataset.range || '1-6';
+      const [a, b] = r.split('-').map(Number);
+      window.startDice(el.id, a, b);
+    });
+    document.querySelectorAll('[data-combine]').forEach(el => window.startCombine(el.id));
+    initQuiz();
+  });
+})();
+
+// === DB debate track: speaking timer =========================
+// One timer per slide. Passing 0 stops and resets it.
+(function () {
+  const running = {};
+  window.debateTimer = function (id, seconds) {
+    const root = document.getElementById(id);
+    if (!root) return;
+    const out = root.querySelector('.dtime');
+    clearInterval(running[id]);
+    root.classList.remove('warn', 'done');
+    if (!seconds) { out.textContent = '45'; return; }
+
+    let left = seconds;
+    out.textContent = left;
+    running[id] = setInterval(() => {
+      left -= 1;
+      out.textContent = left;
+      root.classList.toggle('warn', left <= 10 && left > 0);
+      if (left <= 0) {
+        clearInterval(running[id]);
+        root.classList.remove('warn');
+        root.classList.add('done');
+        out.textContent = 'TIME';
+      }
+    }, 1000);
+  };
+})();
+
+</script>
+<script>
+(function () {
+  function $(id) { return document.getElementById(id); }
+  var LOG = '#6b4a2b', LEAF = '#4f7a2a', DOT = '#38d0e0';
+
+  document.querySelectorAll('.rev').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var t = $(b.getAttribute('data-t')); if (t) t.classList.toggle('hid'); b.blur();
+    });
+  });
+
+  /* side view: z runs across, y runs up */
+  function grid(ctx, W, H, worldZ, worldY) {
+    var cell = Math.min(W / worldZ, (H - 8) / worldY);
+    var ox = (W - worldZ * cell) / 2, oy = H - 4;
+    ctx.fillStyle = '#0d1117'; ctx.fillRect(0, 0, W, H);
+    ctx.strokeStyle = '#1c2432'; ctx.lineWidth = 1;
+    for (var i = 0; i <= worldZ; i++) {
+      ctx.beginPath(); ctx.moveTo(ox + i * cell, oy); ctx.lineTo(ox + i * cell, oy - worldY * cell); ctx.stroke();
+    }
+    for (var j = 0; j <= worldY; j++) {
+      ctx.beginPath(); ctx.moveTo(ox, oy - j * cell); ctx.lineTo(ox + worldZ * cell, oy - j * cell); ctx.stroke();
+    }
+    return { cell: cell, ox: ox, oy: oy };
+  }
+  function box(ctx, g, z0, y0, z1, y1, colour) {
+    ctx.fillStyle = colour;
+    ctx.fillRect(g.ox + z0 * g.cell, g.oy - (y1 + 1) * g.cell,
+                 (z1 - z0 + 1) * g.cell - 1, (y1 - y0 + 1) * g.cell - 1);
+  }
+  function dot(ctx, g, z, y, label) {
+    var cx = g.ox + (z + 0.5) * g.cell, cy = g.oy - (y + 0.5) * g.cell;
+    ctx.fillStyle = DOT;
+    ctx.beginPath(); ctx.arc(cx, cy, Math.max(3, g.cell * 0.22), 0, 6.3); ctx.fill();
+    if (label) {
+      ctx.font = '12px monospace'; ctx.fillStyle = DOT;
+      ctx.fillText(label, cx + 8, cy + 4);
+    }
+  }
+  function label(ctx, text, x, y, colour) {
+    ctx.font = '12px monospace'; ctx.fillStyle = colour || '#8a97b8';
+    ctx.fillText(text, x, y);
+  }
+  /* one tree at loop step i (1-based), using Leo's numbers */
+  function trunkAt(ctx, g, i) {
+    box(ctx, g, 2 + 4 * (i - 1), 0, 2 + 4 * (i - 1), 3 + (i - 1), LOG);
+  }
+  function treeAt(ctx, g, i) {
+    var yEnd = 3 + (i - 1), zT = 2 + 4 * (i - 1);
+    var lz0 = 1 + 4 * (i - 1), lz1 = 3 + 4 * (i - 1);
+    var ly0 = 4 + (i - 1), ly1 = 6 + (i - 1);
+    box(ctx, g, zT, 0, zT, yEnd, LOG);
+    box(ctx, g, lz0, ly0, lz1, ly1, LEAF);
+  }
+
+  /* 3  predict */
+  (function () {
+    var c = $('pC'); if (!c) return;
+    var ctx = c.getContext('2d'), mode = 0;
+    function draw() {
+      var g = grid(ctx, c.width, c.height, 14, 11);
+      if (mode === 0) { label(ctx, 'empty', 8, 16); $('pMsg').textContent = 'nothing built yet'; return; }
+      if (mode === 1) {
+        for (var k = 0; k < 3; k++) trunkAt(ctx, g, 1);
+        label(ctx, 'x3 here', 8, 16, '#ff5555');
+        $('pMsg').innerHTML = '3 trunks. <b>Same spot.</b> You see 1.';
+      } else {
+        for (var i = 1; i <= 3; i++) trunkAt(ctx, g, i);
+        $('pMsg').innerHTML = 'variables changed. <b>3 trunks.</b>';
+      }
+    }
+    $('pRun').addEventListener('click', function () { mode = 1; draw(); this.blur(); });
+    $('pFix').addEventListener('click', function () { mode = 2; draw(); this.blur(); });
+    draw();
+  })();
+
+  /* 5  six numbers */
+  (function () {
+    var c = $('sixC'); if (!c) return;
+    var ctx = c.getContext('2d'), g = grid(ctx, c.width, c.height, 8, 8);
+    box(ctx, g, 2, 0, 2, 3, LOG);
+    dot(ctx, g, 2, 0, 'from');
+    dot(ctx, g, 2, 3, 'to');
+    label(ctx, 'z →', c.width - 34, c.height - 10);
+    label(ctx, 'y ↑', 8, 16);
+  })();
+
+  /* 6  two boxes */
+  (function () {
+    var c = $('twoC'); if (!c) return;
+    var ctx = c.getContext('2d'), g = grid(ctx, c.width, c.height, 8, 9);
+    treeAt(ctx, g, 1);
+    label(ctx, '6 numbers', 8, 18, '#7fb04a');
+    label(ctx, '6 numbers', 8, c.height - 12, '#c08a55');
+  })();
+
+  /* 7  count it */
+  (function () {
+    var c = $('cntC'); if (!c) return;
+    var ctx = c.getContext('2d'), on = false;
+    function draw() {
+      var g = grid(ctx, c.width, c.height, 14, 11);
+      treeAt(ctx, g, 1); treeAt(ctx, g, 2);
+      if (on) {
+        dot(ctx, g, 2, 3, 'z 2');
+        dot(ctx, g, 6, 4, 'z 6');
+        label(ctx, '2 to 6 = + 4', 8, 18, '#ffb86c');
+      } else {
+        label(ctx, 'how far apart?', 8, 18);
+      }
+    }
+    $('cntNum').addEventListener('click', function () { on = !on; draw(); this.blur(); });
+    draw();
+  })();
+
+  /* 8  stretch vs slide */
+  (function () {
+    var c = $('mvC'); if (!c) return;
+    var ctx = c.getContext('2d'), z0 = 2, z1 = 4;
+    function draw() {
+      var g = grid(ctx, c.width, c.height, 12, 7);
+      box(ctx, g, z0, 0, z1, 2, LOG);
+      dot(ctx, g, z0, 0); dot(ctx, g, z1, 2);
+      $('mvMsg').innerHTML = 'from z <b>' + z0 + '</b> to z <b>' + z1 + '</b> · width ' + (z1 - z0 + 1);
+    }
+    $('mvStretch').addEventListener('click', function () {
+      if (z1 < 11) z1 += 4; draw(); this.blur();
+    });
+    $('mvSlide').addEventListener('click', function () {
+      if (z1 < 11) { z0 += 4; z1 += 4; } draw(); this.blur();
+    });
+    $('mvReset').addEventListener('click', function () { z0 = 2; z1 = 4; draw(); this.blur(); });
+    draw();
+  })();
+
+  /* 9  tracker */
+  (function () {
+    var c = $('trC'); if (!c) return;
+    var ctx = c.getContext('2d'), step = 0;
+    var vals = [[3, 2, 2], [4, 6, 6], [5, 10, 10]];
+    function draw() {
+      var g = grid(ctx, c.width, c.height, 14, 11);
+      for (var i = 1; i <= 3; i++) {
+        if (i <= step) treeAt(ctx, g, i);
+        var row = $('tr' + i);
+        if (!row) continue;
+        row.className = (i === step) ? 'on' : '';
+        var td = row.getElementsByTagName('td');
+        for (var k = 0; k < 3; k++) {
+          if (i <= step) { td[k + 1].textContent = vals[i - 1][k]; td[k + 1].className = ''; }
+          else { td[k + 1].textContent = '?'; td[k + 1].className = 'q'; }
+        }
+      }
+    }
+    $('trFwd').addEventListener('click', function () { if (step < 3) step++; draw(); this.blur(); });
+    $('trBack').addEventListener('click', function () { if (step > 0) step--; draw(); this.blur(); });
+    $('trReset').addEventListener('click', function () { step = 0; draw(); this.blur(); });
+    draw();
+  })();
+})();
+</script>
+</body>
+</html>

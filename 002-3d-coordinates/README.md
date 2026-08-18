@@ -40,6 +40,7 @@
 | 🟩 **확장 3 (최고 심화)** | 채우기 루프 — 모서리 한 곳에서 사각형 여섯 개 만들기 (fill) | *없음* | *없음* | *없음* | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-3d-coordinates/worksheets/extension-fill-loops.pdf) | 〃 | 〃 | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-3d-coordinates/worksheets/extension-fill-loops.doc) | 〃 | 〃 |
 | 🌳 **확장 3 (최고 심화)** | 자라는 나무 — 루프 하나에 카운터 두 개 (높이와 너비 함께) | *없음* | *없음* | *없음* | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-3d-coordinates/worksheets/extension-growing-trees.pdf) | 〃 | 〃 | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-3d-coordinates/worksheets/extension-growing-trees.doc) | 〃 | 〃 |
 | 🧬 **확장 3 (최고 심화)** | DNA 나선 — 리스트와 나머지(%)로 나선 탑 쌓기 (30칸 높이) | *없음* | *없음* | *없음* | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-3d-coordinates/worksheets/extension-dna-spiral.pdf) | 〃 | 〃 | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-3d-coordinates/worksheets/extension-dna-spiral.doc) | 〃 | 〃 |
+| 🌈 **확장 3 (최고 심화)** | 색깔 기둥 — 변수 6개와 `+ 4` 계산만으로 4칸씩 색이 바뀌는 기둥 세우기 (x, y, z) | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-3d-coordinates/worlds/extension-colour-pillars.mcworld) | *없음* | *없음* | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-3d-coordinates/worksheets/extension-colour-pillars.pdf) | 〃 | 〃 | [받기](https://github.com/datawithkasim/english-coding-templates/raw/master/002-3d-coordinates/worksheets/extension-colour-pillars.doc) | 〃 | 〃 |
 
 > 💡 레슨 1~3은 벽 위 평면(x, y) 좌표에 익숙해지고, 레슨 5부터 세 축을 모두 쓰는 입체(x, y, z)로 확장합니다 — 조각상 → 엔더 드래곤 → 몹 머리를 직접 따라 만들며 입체 감각을 기릅니다. 레슨 8에는 배운 모든 것을 모아 미술관을 완성합니다.
 >
@@ -56,6 +57,7 @@
 - 🗂️ **전체 파일 저장소**: [GitHub 코스 폴더](https://github.com/datawithkasim/english-coding-templates/tree/master/002-3d-coordinates) — 월드·워크시트·코드 전부 여기 있습니다
 - 📦 [`worlds/`](./worlds) — 레슨별 월드 파일
 - 📝 [`worksheets/`](./worksheets) — 레슨별 영어 워크시트 (초급 · 중급 · 심화 PDF)
+- 🖥️ [`demos/`](./demos) — 수업 중 화면으로 보여 주는 자료 (브라우저에서 바로 열려요)
 
 각 자료는 **노션 숙제 페이지** 에서도 바로 받으실 수 있습니다. (페이지 링크는 카카오톡으로 안내드립니다.)
 

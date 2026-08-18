@@ -1,0 +1,196 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head><meta charset='utf-8'>
+<title>🌈 Colour Pillars — English Worksheet</title>
+<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
+<style>
+@page WordSection1 { size: 595.3pt 841.9pt; margin: 1.6cm 1.6cm 2cm; }
+div.WordSection1 { page: WordSection1; }
+body { font-family: "Segoe UI", Arial, sans-serif; font-size: 11.5pt; color: #1a1a2e; line-height: 1.5; }
+h1 { font-size: 21pt; color: #6b4ee6; margin: 4px 0 6px; }
+h2 { font-size: 15pt; color: #6b4ee6; border-top: 1px solid #dddddd; padding-top: 8px; margin: 18px 0 10px; }
+h3, h4 { font-size: 11.5pt; margin: 12px 0 6px; }
+p { margin: 7px 0; }
+.brand { font-size: 10.5pt; font-weight: bold; color: #ff7849; letter-spacing: .06em;
+         border-bottom: 2px solid #ff7849; padding-bottom: 6px; margin-bottom: 14px; }
+table { border-collapse: collapse; margin: 10px 0; }
+th, td { border: 1px solid #c8c8c8; padding: 4px 9px; text-align: center; }
+th { background: #f3eefc; color: #6b4ee6; font-weight: bold; }
+pre { font-family: Consolas, "Courier New", monospace; font-size: 10.5pt; background: #f4f4f5;
+      border: 1px solid #dddddd; padding: 8px 10px; white-space: pre-wrap; }
+pre code { background: transparent; color: #1a1a2e; }
+code { font-family: Consolas, "Courier New", monospace; background: #fff1e8; color: #d6531f; padding: 0 3px; }
+blockquote { border-left: 3px solid #ff7849; background: #fff6ef; padding: 8px 12px;
+             color: #6a3a1c; margin: 9px 0; }
+ul, ol { margin: 7px 0 7px 26px; }
+p.ruled { border-bottom: 1px solid #bdbdbd; margin: 0 0 13px 0; height: 13pt; }
+.footer { color: #999999; font-size: 8.5pt; text-align: center; margin-top: 18px;
+          border-top: 1px solid #eeeeee; padding-top: 6px; }
+.footer b { color: #ff7849; }
+</style></head>
+<body><div class=WordSection1>
+<div class="brand">📚 ENGLISH CODING · 영어코딩</div>
+<style>
+.steps { border-left: 4px solid #6b4ee6; background: #f7f5ff; border-radius: 0 8px 8px 0; padding: 10px 14px; margin: 12px 0; }
+.steps .lab { font-family: "Inter", sans-serif; font-size: 11px; font-weight: 700; letter-spacing: .06em; color: #6b4ee6; text-transform: uppercase; }
+.steps ol { margin: 6px 0 0; padding-left: 20px; }
+.steps li { margin: 3px 0; font-size: 14.5px; }
+.stuck { border: 2px dashed #ffc75c; background: #fffdf3; border-radius: 8px; padding: 9px 14px; margin: 12px 0; font-size: 14px; }
+.stuck .lab { font-family: "Inter", sans-serif; font-size: 11px; font-weight: 700; letter-spacing: .06em; color: #c07a00; text-transform: uppercase; display: block; margin-bottom: 3px; }
+.check { border-left: 4px solid #2e9e5b; background: #f2fbf5; border-radius: 0 8px 8px 0; padding: 9px 14px; margin: 12px 0; font-size: 14px; }
+.check .lab { font-family: "Inter", sans-serif; font-size: 11px; font-weight: 700; letter-spacing: .06em; color: #2e9e5b; text-transform: uppercase; display: block; margin-bottom: 3px; }
+.where { border-left: 4px solid #1f7f9c; background: #f1fafd; border-radius: 0 8px 8px 0; padding: 9px 14px; margin: 12px 0; font-size: 14px; }
+.where .lab { font-family: "Inter", sans-serif; font-size: 11px; font-weight: 700; letter-spacing: .06em; color: #1f7f9c; text-transform: uppercase; display: block; margin-bottom: 3px; }
+.warn { border-left: 4px solid #d94f4f; background: #fdf3f3; border-radius: 0 8px 8px 0; padding: 9px 14px; margin: 12px 0; font-size: 14px; }
+.warn .lab { font-family: "Inter", sans-serif; font-size: 11px; font-weight: 700; letter-spacing: .06em; color: #b93131; text-transform: uppercase; display: block; margin-bottom: 3px; }
+.mini-q { font-size: 14px; font-weight: 700; margin: 10px 0 2px; }
+.timing { font-family: "Inter", sans-serif; font-size: 12px; color: #8a8aa0; letter-spacing: .04em; text-transform: uppercase; font-weight: 700; }
+.tpl { font-family: "Inter", sans-serif; font-size: 11px; font-weight: 700; letter-spacing: .06em; color: #6b4ee6; text-transform: uppercase; margin: 12px 0 -6px; }
+table.tr { border-collapse: collapse; width: 100%; margin: 10px 0; font-size: 14px; }
+table.tr th, table.tr td { border: 1px solid #ddd; padding: 5px 9px; text-align: center; }
+table.tr th { background: #f7f5ff; color: #6b4ee6; font-size: 12px; text-transform: uppercase; letter-spacing: .05em; }
+
+/* nothing gets cut in half by a page break */
+.steps, .stuck, .check, .where, .warn, .mini-q, .tpl,
+table, tr, blockquote, pre, ul, ol,
+.write-space, .answer-lines, .qa { page-break-inside: avoid; break-inside: avoid; }
+h1, h2, h3, h4, .mini-q, .timing, .tpl { page-break-after: avoid; break-after: avoid; }
+p { orphans: 3; widows: 3; }
+</style>
+
+<h1>🌈 Colour Pillars — English Worksheet</h1>
+<p><strong>Topic:</strong> Six variables and <code>+ 4</code> · <strong>Course:</strong> 3D Coordinates · <strong>Level:</strong> Extension · <strong>Time:</strong> about 40 minutes</p>
+<p><span class="timing">World: variables intro · Type <code>del</code> before every <code>run</code>. Every time.</span></p>
+<p>Every <code>???</code> is one short thing for you to work out. There are no answers on this sheet.</p>
+<p>Count on the screen. Do not count in your head.</p>
+<hr />
+<h2>1 · Six variables. That is all 🎯</h2>
+<p>You get these six. No new ones.</p>
+<pre><code class="language-python">x_start = 2
+y_start = 0
+z_start = 2
+x_end = 2
+y_end = 3
+z_end = 2
+</code></pre>
+<p><strong>One <code>fill</code> from <code>y_start</code> to <code>y_end</code>. How many blocks tall is that? Count 0, 1, 2, 3.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<p><strong>Why is <code>y_end</code> 3 and not 4?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<div class="mini-q">A pillar is three of these stacked up. Each part is a different block.</div>
+
+<p><strong>Last week you made a new variable for every part. Why is that slow?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>2 · Plus 4, minus 4 ➕➖</h2>
+<p>You do not need new variables. You do maths inside <code>pos()</code>.</p>
+<pre><code class="language-python">pos(x_start, y_start + 4, z_start)
+</code></pre>
+<p><strong>Fill the table. Part 1 is done for you.</strong></p>
+<table class="tr">
+<tr><th>part</th><th>block</th><th>first y</th><th>last y</th><th>maths you write</th></tr>
+<tr><td>1</td><td>bottom</td><td>0</td><td>3</td><td>y_start &nbsp; y_end</td></tr>
+<tr><td>2</td><td>middle</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>3</td><td>top</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+</table>
+
+<p><strong>Why do you add 4 and not 3?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<div class="mini-q">Now start from the top instead.</div>
+
+<p><strong>If the top part uses <code>y_start</code>, what maths gives you the middle part and the bottom part?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>3 · One pillar, three colours 🌈</h2>
+<p>Pick three blocks you like. Write the block name straight inside <code>fill</code>.</p>
+<div class="tpl">Template</div>
+
+<pre><code class="language-python">blocks.fill(REDSTONE_BLOCK,
+    pos(x_start, y_start, z_start),
+    pos(x_end, y_end, z_end), REPLACE)
+blocks.fill(GOLD_BLOCK,
+    pos(x_start, y_start + ???, z_start),
+    pos(x_end, y_end + ???, z_end), REPLACE)
+blocks.fill(DIAMOND_BLOCK,
+    pos(x_start, y_start + ???, z_start),
+    pos(x_end, y_end + ???, z_end), REPLACE)
+</code></pre>
+<div class="where"><span class="lab">Careful</span>
+Both corners of one part move by the same amount. Move only the end and the part gets longer instead of moving up.</div>
+
+<p><strong>Run it. How tall is your whole pillar? Count it on the screen.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<div class="check"><span class="lab">Works when</span> you see three colours, four blocks each, standing in one straight pillar.</div>
+
+<div class="stuck"><span class="lab">Two colours touching in a strange place?</span>
+Your maths is `+ 3` or `+ 5`. Count one part again: 0, 1, 2, 3.</div>
+
+<hr />
+<h2>4 · A row of pillars 🔁</h2>
+<p>Now build four pillars in a row. Only <code>z</code> changes.</p>
+<div class="tpl">Template</div>
+
+<pre><code class="language-python">def on_chat():
+    x_start = 2
+    y_start = 0
+    z_start = 2
+    x_end = 2
+    y_end = 3
+    z_end = 2
+    for i in range(???):
+        blocks.fill(REDSTONE_BLOCK,
+            pos(x_start, y_start, z_start),
+            pos(x_end, y_end, z_end), REPLACE)
+        blocks.fill(GOLD_BLOCK,
+            pos(x_start, y_start + ???, z_start),
+            pos(x_end, y_end + ???, z_end), REPLACE)
+        blocks.fill(DIAMOND_BLOCK,
+            pos(x_start, y_start + ???, z_start),
+            pos(x_end, y_end + ???, z_end), REPLACE)
+        z_start = z_start + ???
+        z_end = z_end + ???
+player.on_chat(&quot;pillars&quot;, on_chat)
+</code></pre>
+<div class="where"><span class="lab">Careful</span>
+The two `z` lines go <b>inside</b> the loop, after all three fills. Count the spaces at the front.</div>
+
+<p><strong>Before you run: how many pillars, and where does the last one stand?</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<div class="stuck"><span class="lab">All four pillars in one spot?</span>
+Your `z` lines are outside the loop, so they run once at the end.</div>
+
+<div class="stuck"><span class="lab">Pillars stuck together?</span>
+`z` is going up by less than 4. Leave a gap and look again.</div>
+
+<p><strong>Your last pillar ends at z = ??? and y = ???. Write the <code>del</code> box that clears them all.</strong></p>
+<pre><code class="language-python">blocks.fill(AIR,
+    pos(0, 0, 0), pos(???, ???, ???), REPLACE)
+</code></pre>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<hr />
+<h2>5 · Show Your Work 📸🎥</h2>
+<p>Record <strong>one video</strong>, one take, no stopping. A phone is fine. Show these in order:</p>
+<blockquote>
+<ol>
+<li>Type <code>del</code>, then <code>pillars</code>. Walk past all four pillars.</li>
+<li>Point at your six variables and read them out.</li>
+<li>Show one <code>+ 4</code> and say which part of the pillar it moves.</li>
+<li>Show that the <code>z</code> lines are inside the loop.</li>
+<li>Read row 3 of your table out loud.</li>
+</ol>
+</blockquote>
+<p>Try to use these words: <strong>variable</strong>, <strong>loop</strong>, <strong>start</strong>, <strong>end</strong>, <strong>plus four</strong>.</p>
+<p><strong>Plan what you will say before you record.</strong></p>
+<p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p><p class="ruled">&nbsp;</p>
+
+<h3>Submit ✅</h3>
+<p>Send this worksheet and your video to teacher on KakaoTalk.</p>
+<div class="footer">영어코딩 · <b>english-coding.co.uk</b></div>
+</div></body></html>

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>🌈 Colour Pillars — English Worksheet</title>
+<style>
+@page { size: A4; margin: 18mm 16mm 22mm; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-family: "Inter", "Segoe UI", system-ui, sans-serif; color: #1a1a2e; }
+body { font-size: 15px; line-height: 1.55; }
+
+.cover { border-bottom: 3px solid #ff7849; padding-bottom: 14px; margin-bottom: 20px; }
+.brand { font-size: 14px; font-weight: 800; color: #ff7849; letter-spacing: .06em; }
+h1 { font-size: 28px; color: #6b4ee6; margin: 8px 0 6px; line-height: 1.25; }
+h2 { font-size: 19px; color: #6b4ee6; margin: 22px 0 12px; padding-top: 10px; border-top: 1px solid #eee; page-break-before: always; }
+section.first h2, h2:first-of-type { border-top: none; padding-top: 0; page-break-before: avoid; }
+h3, h4 { font-size: 15px; margin: 14px 0 8px; color: #1a1a2e; }
+p { margin: 8px 0; }
+strong { color: #1a1a2e; }
+em { color: #555; }
+
+ul, ol { margin: 8px 0 8px 24px; }
+li { margin: 3px 0; }
+
+/* Grids (e.g. pixel-art coordinate grids) render as light graph paper. */
+table { border-collapse: collapse; margin: 12px 0; }
+th, td { border: 1px solid #ddd; padding: 4px 9px; text-align: center; font-size: 14px; }
+th { background: #faf7ff; color: #6b4ee6; font-weight: 700; }
+
+pre {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 13.5px;
+  background: #1e1e2e;
+  color: #b9f6ca;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 10px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  page-break-inside: avoid;
+  line-height: 1.5;
+}
+pre code { background: transparent; padding: 0; color: inherit; }
+code {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  background: #fff1e8;
+  color: #ff7849;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+blockquote {
+  margin: 10px 0;
+  padding: 10px 16px;
+  background: #fff6ef;
+  border-left: 3px solid #ff7849;
+  border-radius: 0 6px 6px 0;
+  color: #6a3a1c;
+}
+
+.write-space {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #ffffff 0,
+    #ffffff 27px,
+    #d4d4d4 27px,
+    #d4d4d4 28px
+  );
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  min-height: 114px;
+  margin: 10px 0 20px;
+  page-break-inside: avoid;
+}
+.write-space.short { min-height: 86px; }
+.write-space.tall { min-height: 170px; }
+/* Drawing box: same frame, no ruled lines — for "draw the shape" prompts. */
+.write-space.blank { background-image: none; }
+
+/* Keep a question (and any hint/code above it) glued to its answer box so a
+   page break never lands between the prompt and the lines you write on. */
+.qa { page-break-inside: avoid; break-inside: avoid; }
+.qa > :last-child { margin-bottom: 20px; }
+
+hr { border: none; border-top: 1px dashed #d0d0d0; margin: 20px 0; }
+
+.meta { color: #666; font-size: 13px; margin: 0 0 14px; }
+.answer-lines {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 14px 16px;
+  background: #fafafa;
+  white-space: pre;
+  line-height: 2.2;
+}
+
+footer {
+  position: fixed;
+  bottom: 10mm; left: 16mm; right: 16mm;
+  text-align: center;
+  font-size: 10px;
+  color: #aaa;
+}
+footer b { color: #ff7849; }
+</style>
+</head>
+<body>
+<div class="cover"><div class="brand">📚 ENGLISH CODING · 영어코딩</div></div>
+<style>
+.steps { border-left: 4px solid #6b4ee6; background: #f7f5ff; border-radius: 0 8px 8px 0; padding: 10px 14px; margin: 12px 0; }
+.steps .lab { font-family: "Inter", sans-serif; font-size: 11px; font-weight: 700; letter-spacing: .06em; color: #6b4ee6; text-transform: uppercase; }
+.steps ol { margin: 6px 0 0; padding-left: 20px; }
+.steps li { margin: 3px 0; font-size: 14.5px; }
+.stuck { border: 2px dashed #ffc75c; background: #fffdf3; border-radius: 8px; padding: 9px 14px; margin: 12px 0; font-size: 14px; }
+.stuck .lab { font-family: "Inter", sans-serif; font-size: 11px; font-weight: 700; letter-spacing: .06em; color: #c07a00; text-transform: uppercase; display: block; margin-bottom: 3px; }
+.check { border-left: 4px solid #2e9e5b; background: #f2fbf5; border-radius: 0 8px 8px 0; padding: 9px 14px; margin: 12px 0; font-size: 14px; }
+.check .lab { font-family: "Inter", sans-serif; font-size: 11px; font-weight: 700; letter-spacing: .06em; color: #2e9e5b; text-transform: uppercase; display: block; margin-bottom: 3px; }
+.where { border-left: 4px solid #1f7f9c; background: #f1fafd; border-radius: 0 8px 8px 0; padding: 9px 14px; margin: 12px 0; font-size: 14px; }
+.where .lab { font-family: "Inter", sans-serif; font-size: 11px; font-weight: 700; letter-spacing: .06em; color: #1f7f9c; text-transform: uppercase; display: block; margin-bottom: 3px; }
+.warn { border-left: 4px solid #d94f4f; background: #fdf3f3; border-radius: 0 8px 8px 0; padding: 9px 14px; margin: 12px 0; font-size: 14px; }
+.warn .lab { font-family: "Inter", sans-serif; font-size: 11px; font-weight: 700; letter-spacing: .06em; color: #b93131; text-transform: uppercase; display: block; margin-bottom: 3px; }
+.mini-q { font-size: 14px; font-weight: 700; margin: 10px 0 2px; }
+.timing { font-family: "Inter", sans-serif; font-size: 12px; color: #8a8aa0; letter-spacing: .04em; text-transform: uppercase; font-weight: 700; }
+.tpl { font-family: "Inter", sans-serif; font-size: 11px; font-weight: 700; letter-spacing: .06em; color: #6b4ee6; text-transform: uppercase; margin: 12px 0 -6px; }
+table.tr { border-collapse: collapse; width: 100%; margin: 10px 0; font-size: 14px; }
+table.tr th, table.tr td { border: 1px solid #ddd; padding: 5px 9px; text-align: center; }
+table.tr th { background: #f7f5ff; color: #6b4ee6; font-size: 12px; text-transform: uppercase; letter-spacing: .05em; }
+
+/* nothing gets cut in half by a page break */
+.steps, .stuck, .check, .where, .warn, .mini-q, .tpl,
+table, tr, blockquote, pre, ul, ol,
+.write-space, .answer-lines, .qa { page-break-inside: avoid; break-inside: avoid; }
+h1, h2, h3, h4, .mini-q, .timing, .tpl { page-break-after: avoid; break-after: avoid; }
+p { orphans: 3; widows: 3; }
+</style>
+
+<h1>🌈 Colour Pillars — English Worksheet</h1>
+<p><strong>Topic:</strong> Six variables and <code>+ 4</code> · <strong>Course:</strong> 3D Coordinates · <strong>Level:</strong> Extension · <strong>Time:</strong> about 40 minutes</p>
+<p><span class="timing">World: variables intro · Type <code>del</code> before every <code>run</code>. Every time.</span></p>
+<p>Every <code>???</code> is one short thing for you to work out. There are no answers on this sheet.</p>
+<p>Count on the screen. Do not count in your head.</p>
+<h2>1 · Six variables. That is all 🎯</h2>
+<p>You get these six. No new ones.</p>
+<pre><code class="language-python">x_start = 2
+y_start = 0
+z_start = 2
+x_end = 2
+y_end = 3
+z_end = 2
+</code></pre>
+<div class="qa"><p><strong>One <code>fill</code> from <code>y_start</code> to <code>y_end</code>. How many blocks tall is that? Count 0, 1, 2, 3.</strong></p>
+<div class="write-space short"></div></div>
+
+<div class="qa"><p><strong>Why is <code>y_end</code> 3 and not 4?</strong></p>
+<div class="write-space short"></div></div>
+
+<div class="mini-q">A pillar is three of these stacked up. Each part is a different block.</div>
+
+<div class="qa"><p><strong>Last week you made a new variable for every part. Why is that slow?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>2 · Plus 4, minus 4 ➕➖</h2>
+<p>You do not need new variables. You do maths inside <code>pos()</code>.</p>
+<pre><code class="language-python">pos(x_start, y_start + 4, z_start)
+</code></pre>
+<p><strong>Fill the table. Part 1 is done for you.</strong></p>
+<table class="tr">
+<tr><th>part</th><th>block</th><th>first y</th><th>last y</th><th>maths you write</th></tr>
+<tr><td>1</td><td>bottom</td><td>0</td><td>3</td><td>y_start &nbsp; y_end</td></tr>
+<tr><td>2</td><td>middle</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>3</td><td>top</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+</table>
+
+<div class="qa"><p><strong>Why do you add 4 and not 3?</strong></p>
+<div class="write-space short"></div></div>
+
+<div class="mini-q">Now start from the top instead.</div>
+
+<div class="qa"><p><strong>If the top part uses <code>y_start</code>, what maths gives you the middle part and the bottom part?</strong></p>
+<div class="write-space"></div></div>
+
+<h2>3 · One pillar, three colours 🌈</h2>
+<p>Pick three blocks you like. Write the block name straight inside <code>fill</code>.</p>
+<div class="tpl">Template</div>
+
+<pre><code class="language-python">blocks.fill(REDSTONE_BLOCK,
+    pos(x_start, y_start, z_start),
+    pos(x_end, y_end, z_end), REPLACE)
+blocks.fill(GOLD_BLOCK,
+    pos(x_start, y_start + ???, z_start),
+    pos(x_end, y_end + ???, z_end), REPLACE)
+blocks.fill(DIAMOND_BLOCK,
+    pos(x_start, y_start + ???, z_start),
+    pos(x_end, y_end + ???, z_end), REPLACE)
+</code></pre>
+<div class="where"><span class="lab">Careful</span>
+Both corners of one part move by the same amount. Move only the end and the part gets longer instead of moving up.</div>
+
+<div class="qa"><p><strong>Run it. How tall is your whole pillar? Count it on the screen.</strong></p>
+<div class="write-space short"></div></div>
+
+<div class="check"><span class="lab">Works when</span> you see three colours, four blocks each, standing in one straight pillar.</div>
+
+<div class="stuck"><span class="lab">Two colours touching in a strange place?</span>
+Your maths is `+ 3` or `+ 5`. Count one part again: 0, 1, 2, 3.</div>
+
+<h2>4 · A row of pillars 🔁</h2>
+<p>Now build four pillars in a row. Only <code>z</code> changes.</p>
+<div class="tpl">Template</div>
+
+<pre><code class="language-python">def on_chat():
+    x_start = 2
+    y_start = 0
+    z_start = 2
+    x_end = 2
+    y_end = 3
+    z_end = 2
+    for i in range(???):
+        blocks.fill(REDSTONE_BLOCK,
+            pos(x_start, y_start, z_start),
+            pos(x_end, y_end, z_end), REPLACE)
+        blocks.fill(GOLD_BLOCK,
+            pos(x_start, y_start + ???, z_start),
+            pos(x_end, y_end + ???, z_end), REPLACE)
+        blocks.fill(DIAMOND_BLOCK,
+            pos(x_start, y_start + ???, z_start),
+            pos(x_end, y_end + ???, z_end), REPLACE)
+        z_start = z_start + ???
+        z_end = z_end + ???
+player.on_chat(&quot;pillars&quot;, on_chat)
+</code></pre>
+<div class="where"><span class="lab">Careful</span>
+The two `z` lines go <b>inside</b> the loop, after all three fills. Count the spaces at the front.</div>
+
+<div class="qa"><p><strong>Before you run: how many pillars, and where does the last one stand?</strong></p>
+<div class="write-space short"></div></div>
+
+<div class="stuck"><span class="lab">All four pillars in one spot?</span>
+Your `z` lines are outside the loop, so they run once at the end.</div>
+
+<div class="stuck"><span class="lab">Pillars stuck together?</span>
+`z` is going up by less than 4. Leave a gap and look again.</div>
+
+<p><strong>Your last pillar ends at z = ??? and y = ???. Write the <code>del</code> box that clears them all.</strong></p>
+<pre><code class="language-python">blocks.fill(AIR,
+    pos(0, 0, 0), pos(???, ???, ???), REPLACE)
+</code></pre>
+<div class="write-space short"></div>
+
+<h2>5 · Show Your Work 📸🎥</h2>
+<p>Record <strong>one video</strong>, one take, no stopping. A phone is fine. Show these in order:</p>
+<blockquote>
+<ol>
+<li>Type <code>del</code>, then <code>pillars</code>. Walk past all four pillars.</li>
+<li>Point at your six variables and read them out.</li>
+<li>Show one <code>+ 4</code> and say which part of the pillar it moves.</li>
+<li>Show that the <code>z</code> lines are inside the loop.</li>
+<li>Read row 3 of your table out loud.</li>
+</ol>
+</blockquote>
+<p>Try to use these words: <strong>variable</strong>, <strong>loop</strong>, <strong>start</strong>, <strong>end</strong>, <strong>plus four</strong>.</p>
+<div class="qa"><p><strong>Plan what you will say before you record.</strong></p>
+<div class="write-space tall" style="min-height: 240px"></div></div>
+
+<h3>Submit ✅</h3>
+<p>Send this worksheet and your video to teacher on KakaoTalk.</p>
+</body>
+</html>
