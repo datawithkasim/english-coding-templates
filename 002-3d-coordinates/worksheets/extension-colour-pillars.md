@@ -124,7 +124,7 @@ Both corners of one part move by the same amount. Move only the end and the part
 <div class="check"><span class="lab">Works when</span> you see three colours, four blocks each, standing in one straight pillar.</div>
 
 <div class="stuck"><span class="lab">Two colours touching in a strange place?</span>
-Your maths is `+ 3` or `+ 5`. Count one part again: 0, 1, 2, 3.</div>
+Your maths is <code>+ 3</code> or <code>+ 5</code>. Count one part again: 0, 1, 2, 3.</div>
 
 ---
 
@@ -158,17 +158,17 @@ player.on_chat("pillars", on_chat)
 ```
 
 <div class="where"><span class="lab">Careful</span>
-The two `z` lines go <b>inside</b> the loop, after all three fills. Count the spaces at the front.</div>
+The two <code>z</code> lines go <b>inside</b> the loop, after all three fills. Count the spaces at the front.</div>
 
 **Before you run: how many pillars, and where does the last one stand?**
 
 <div class="write-space short"></div>
 
 <div class="stuck"><span class="lab">All four pillars in one spot?</span>
-Your `z` lines are outside the loop, so they run once at the end.</div>
+Your <code>z</code> lines are outside the loop, so they run once at the end.</div>
 
 <div class="stuck"><span class="lab">Pillars stuck together?</span>
-`z` is going up by less than 4. Leave a gap and look again.</div>
+<code>z</code> is going up by less than 4. Leave a gap and look again.</div>
 
 **Your last pillar ends at z = ??? and y = ???. Write the `del` box that clears them all.**
 
