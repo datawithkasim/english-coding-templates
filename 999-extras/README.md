@@ -16,6 +16,7 @@
 | 딕셔너리 만들기 — 중급 (Add & Update) | 연습 · 중급 | 키 추가 · 값 수정 · `dict[key] = value` | [PDF](https://github.com/datawithkasim/english-coding-templates/raw/master/999-extras/worksheets/creating-dictionaries-intermediate.pdf) |
 | 딕셔너리 만들기 — 심화 (Advanced) | 연습 · 심화 | 딕셔너리 리스트 · 중첩 · `.get()` | [PDF](https://github.com/datawithkasim/english-coding-templates/raw/master/999-extras/worksheets/creating-dictionaries-advanced.pdf) |
 | 포켓몬 도감 깊이 검색 (Nested Data — Pokédex) | 연습 · 심화 | 중첩 딕셔너리 · 딕셔너리 리스트 · 인덱스 · `.get()` | [PDF](https://github.com/datawithkasim/english-coding-templates/raw/master/999-extras/worksheets/pokedex-deep-search.pdf) |
+| 카페 메뉴 — 항목 추가와 가격 변수 (Café Menu) | 숙제 · 중급 | 중첩 딕셔너리 · `.items()` · 변수에 값 담기 · f-string | [PDF](https://github.com/datawithkasim/english-coding-templates/raw/master/999-extras/worksheets/cafe-menu-four-more-items.pdf) |
 | CSS 색상과 글씨 꾸미기 (CSS Colors & Text Styling) | 연습 · 기초 | 선택자 · 색상 · padding · border · margin | [PDF](https://github.com/datawithkasim/english-coding-templates/raw/master/999-extras/worksheets/css-colors-text-styling.pdf) |
 | CSS 플렉스박스 레이아웃 (CSS Flexbox Layout) | 연습 · 기초 | display: flex · flex-direction · justify-content · align-items · gap | [PDF](https://github.com/datawithkasim/english-coding-templates/raw/master/999-extras/worksheets/css-layout-flexbox.pdf) |
 | 헬퍼 함수 만들기 — 기초 (Helper Functions) | 연습 · 기초 | 함수 정의 · 호출 · 매개변수 · 재사용 (반복문 없이) | [PDF](https://github.com/datawithkasim/english-coding-templates/raw/master/999-extras/worksheets/helper-functions.pdf) |
